@@ -1,0 +1,91 @@
+PROBLEMS:
+* multiwords: => diff # tokens
+	- dates
+	- prepositions, adverbs, conjunctions: no obstante(desr) vs no_obstante(freeling)
+	- named entities: Alejandro Toledo (nc! np in desr) vs Alejandro_Toledo(np in freeling)
+* estar: VM(desr) vs VA(freeling); esta hecha AQ(desr) vs VMpp(freeling)
+* aunque: CS(desr) vs CC(freeling)
+* bug desr: cuyo
+* clitics: attached(desr) vs split(freeling) => diff # tokens
+* contractions: del/al(desr) vs de/a+el(freeling) => diff # tokens
+* lemma for proper names NP: Camara(desr) vs camara(freeling); Francia(desr) vs francia(freeling)!!!
+* pronoun tags: relative pronoun "que" with tag pr00n000(desr) vs pr000000(freeling)?
+
+#Adjectives		=> gen,num[,fun]
+1	Category	A		
+2	Type		Q|O|0
+3	Degree		0|A|C|S
+4	Gender		M|F|C		=> gen=m,f,c
+5	Number		S|P|N		=> num=s,p,n?
+6	Function	0|P		=> fun=p
+
+#Adverbs		=> _
+1	Category	R
+2	Type		G|N
+
+#Determiners		=> gen,num[,per,pno]
+1	Category	D
+2	Type		D|P|T|E|I|A|R|N
+3	Person		1|2|3		=> per=1,2,3
+4	Gender		M|F|C|N		=> gen=m,f,c,n
+5	Number		S|P|N		=> num=s,p,n
+6	Possessor	S|P		=> pno=s,p
+
+#Nouns			=> gen,num
+1	Category	N				=> CPOS=n
+2	Type		C|P				=> POS=nc,np
+3	Gender		M|F|C		=> gen=m,f,c
+4	Number		S|P|N		=> num=s,p,n
+5	NERtype		G|O|P
+6	?		0
+7	?		0
+
+#Verbs			=> gen,num[,per],mod[,ten]
+1	Category	V				=> CPOS=v
+2	Type		M|A|S				=> POS=vm,va,vs
+3	Mode		I|S|M|N|G|P	=> mod=i,s,m,g,p
+4	Tense		P|I|F|S|C|0	=> ten=p,i,f,s,c
+5	Person		1|2|3|0		=> per=1,2,3
+6	Number		S|P|0		=> num=s,p
+7	Gender		M|F|0		=> gen=m,f,c
+
+#Pronouns		=> gen,num[,per,cas]
+1	Category	P
+2	Type		P|D|X|I|T|R|N|E
+3	Person		1|2|3|0					# que	que	p	pr	gen=0|num=c ???
+4	Gender		M|F|C|N		=> gen=m,f,c,n,0?	# cuyo	cuyo	p	pr	gen=0|num=m ???
+5	Number		S|P|N		=> num=s,p,0		# donde	donde	p	pr	gen=0|num=0
+6	Case		N|A|D|O|0	=> cas=n,a,d,o		# contigo	contigo	p	pp	gen=c|num=s|per=2|cas=o
+7	Possessor	S|P|0
+8	Politeness	P|0
+
+#Conjunctions		=> _
+1	Category	C				=> CPOS=c
+2	Type		C|S				=> POS=cc,cs
+
+#Interjections		=> _
+1	Category	I				=> CPOS=i
+							=> POS=i
+
+#Abbreviations		=> _
+1	Category	Y				=> CPOS=y?
+
+#Prepositions		=> gen,num,for
+1	Category	S				=> CPOS=s
+2	Type		P				=> POS=sp
+3	Form		S|C		=> for=s,c
+4	Gender		M|0		=> gen=m,c
+5	Number		S|0		=> num=s,c
+
+#Punctuation marks	=> _
+1	Category	F				=> CPOS=F
+2	?		a|c|d|e|g|h|i|l|p|r|s|t|x|z	=> POS=Faa,Fat,...,Fp,
+...individual labels...	
+
+#Numbers		=> _
+1	Category	Z				=> CPOS=Z
+2	Type		[m]				=> POS=Z,Zm
+
+#Dates			=> _
+1	Category	W				=> CPOS=w
+							=> POS=w
