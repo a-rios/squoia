@@ -1,0 +1,129 @@
+## 1.row: lemma, 2.row: semantic tag, 3. row: condition, where semantic tag should be inserted (can be a perl regular expression)
+
+blá		[+Masc]	my.mi=/NRoot/
+blé		[+Masc]	my.mi=/NRoot/
+
+# masculine
+ampullu		[+Masc]	my.smi=/NCM/
+apucha		[+Masc]	my.mi=/NRoot/
+awalla		[+Masc]	my.mi=/NRoot/
+awki		[+Masc]	my.mi=/NRoot/
+awkillu		[+Masc]	my.mi=/NRoot/
+churi		[+Masc]	my.mi=/NRoot/
+kaka		[+Masc]	my.mi=/NRoot/
+kaku		[+Masc]	my.mi=/NRoot/
+maqta		[+Masc]	my.mi=/NRoot/
+machu		[+Masc]	my.mi=/NRoot/
+machu_ka	[Masc+]	my.mi=/NRoot/
+maqlla		[+Masc]	my.mi=/NRoot/
+marq'ani	[+Masc]	my.mi=/NRoot/
+masa		[+Masc]	my.slem=cuñado
+qatay		[+Masc]	my.mi=/NRoot/
+qatay_masi	[+Masc]	my.mi=/NRoot/
+qari		[+Masc]	my.mi=/NRoot/
+qhari		[+Masc]	my.mi=/NRoot/
+qhipa_tayta	[+Masc]	my.mi=/NRoot/
+quncha		[+Masc]	my.mi=/NRoot/
+qusa		[+Masc]	my.mi=/NRoot/
+runa		[+Masc]	my.mi=/NRoot/
+tayta		[+Masc]	my.mi=/NRoot/
+tura		[+Masc]	my.mi=/NRoot/
+urqu		[+Masc]	my.mi=/NRoot/
+warma		[+Masc]	my.smi=/NCM/
+wawa		[+Masc] my.smi=/NCM/
+wayna		[+Masc]	my.mi=/NRoot/
+willka		[+Masc]	my.smi=/NCM/
+wiraqucha	[+Masc]	my.mi=/NRoot/
+wispa		[+Masc]	my.smi=/NCM/
+yaya		[+Masc]	my.mi=/NRoot/
+
+
+#feminine
+ampullu		[+Fem]	my.smi=/NCF/
+awkilla		[+Fem]	my.mi=/NRoot/
+aqi		[+Fem]	my.mi=/NRoot/
+china		[+Fem]	my.mi=/NRoot/
+hatucha		[+Fem]	my.mi=/NRoot/
+kisma		[+Fem]	my.mi=/NRoot/
+kiwachi		[+Fem]	my.mi=/NRoot/
+llumchuy	[+Fem]	my.mi=/NRoot/
+mama		[+Fem]	my.mi=/NRoot/
+ñaña		[+Fem]	my.mi=/NRoot/
+pana		[+Fem]	my.mi=/NRoot/
+paya		[+Fem]	my.mi=/NRoot/
+paya_ka		[+Fem]	my.mi=/NRoot/
+qhachun		[+Fem]	my.mi=/NRoot/
+qhachun_masi	[+Fem]	my.mi=/NRoot/
+quya		[+Fem]	my.mi=/NRoot/
+sipas		[+Fem]	my.mi=/NRoot/
+t'asqi		[+Fem]	my.mi=/NRoot/
+ususi		[+Fem]	my.mi=/NRoot/
+warma		[+Fem]	my.smi=/NCF/
+warmi		[+Fem]	my.mi=/NRoot/
+wawa		[+Fem]	my.smi=/NCF/
+willka		[+Fem]	my.smi=/NCF/
+wispa		[+Fem]	my.smi=/NCF/
+
+#human (fem./masc.)
+#warma	[+Hum]	my.mi=/NRoot/
+#willka	[+Hum]	my.mi=/NRoot/
+#ampullu	[+Hum]	my.mi=/NRoot/
+#wispa	[+Hum]	my.mi=/NRoot/
+
+mulla	[+Hum]	my.mi=/NRoot/
+yuyaq	[+Hum]	my.mi=/NRoot/
+
+# not animated (only attribute nouns)
+mawk'a	[-Anim]	my.mi=/NRoot/
+
+
+# movement verbs, intransitive
+chaka	[+Mov]	my.slem=/cruzar/
+chaya	[+Mov]	my.slem=/llegar|arribar/
+chimpa	[+Mov]	my.slem=/vadear/
+ri	[+Mov]	my.mi=/VRoot/
+phawa	[+Mov]	my.slem=/volar|correr/
+puri	[+Mov]	my.mi=/VRoot/
+chakcha	[+Mov]	my.mi=/VRoot/
+chancha	[+Mov]	my.mi=/VRoot/
+hamu	[+Mov]	!(my.slem=futuro)
+hayku	[+Mov]	my.mi=/VRoot/
+ichi	[+Mov]	my.mi=/VRoot/
+kirki	[+Mov]	my.mi=/VRoot/
+kuti	[+Mov]	my.slem=/retroceder|volver|retornar|regresar/
+lamphi	[+Mov]	my.mi=/VRoot/
+lanq'i	[+Mov]	my.mi=/VRoot/
+lat'a	[+Mov]	my.mi=/VRoot/
+lluqa	[+Mov]	my.mi=/VRoot/ 
+lluqsi	[+Mov]	!(my.slem=fuera)
+maywi	[+Mov]	my.mi=/VRoot/ girar,voltear
+muyu	[+Mov]	my.slem=/girar|voltear|dar_una_vuelta|dar_vueltas/
+p'ikwa	[+Mov]	my.mi=/VRoot/
+qaqapa	[+Mov]	my.mi=/VRoot/
+suchu	[+Mov]	my.slem=/rodar/
+sinku	[+Mov]	my.mi=/VRoot/
+siqa	[+Mov]	!(my.slem=cuesta)
+tuytu	[+Mov]	my.mi=/VRoot/
+thama	[+Mov]	my.mi=/VRoot/
+thampi	[+Mov]	my.mi=/VRoot/
+thaski	[+Mov]	my.mi=/VRoot/
+t'aqpi	[+Mov]	my.mi=/VRoot/
+t'inqu	[+Mov]	my.mi=/VRoot/
+ura	[+Mov]	my.slem=/bajar|descender/
+uytu	[+Mov]	my.mi=/VRoot/
+wicha	[+Mov]	my.mi=/VRoot/
+winwi	[+Mov]	my.mi=/VRoot/
+
+
+
+# movement verbs, transitive
+apa	[+Mov]	!(my.slem=/portátil|remitente/)
+lluk'i	[+Mov]	my.mi=/VRoot/
+marq'a	[+Mov]	my.mi=/VRoot/
+pusa	[+Mov]	!(my.slem=/guía|acompañante/)
+qipi	[+Mov]	my.mi=/VRoot/
+rampa	[+Mov]	my.mi=/VRoot/
+rikra	[+Mov]	my.mi=/VRoot/
+sat'i	[+Mov]	my.mi=/VRoot/
+
+
