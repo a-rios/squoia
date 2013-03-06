@@ -3,6 +3,18 @@ compile: g++ -o tagFLdesr tagFLdesr.cc -lboost_filesystem-mt -lpcre -lcfg+ -ldb_
 
  */
 
+//------------------------------------------------------------------//
+//  adapted sample_analyzer.cc from FreeLing,
+// NOTE: FreeLing 3.0 must be installed on your system to use this!
+//  - output format is conll
+//  some changes:
+//  - proper nouns get pos=nc (common noun)
+//  -> easier for parser, but morph column 
+//    contains np=typeOfNp, so the original tag can 
+//    later be restored
+//  - numeral determiners: dn (FreeLing: Z)
+//------------------------------------------------------------------//
+
 using namespace std;
 
 #include <sstream>
