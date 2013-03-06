@@ -35,7 +35,7 @@ and then use readInSemanticDix.pl to store it as hash to a file.
 squoia_analyzer needs the FreeLing library for Spanish to be installed, available here:
 http://nlp.lsi.upc.edu/freeling/
 
-FreeLing is used for tokenization, tagging and named entity recognition and named entity classification. 
+FreeLing is used for tokenization, tagging, named entity recognition and named entity classification. 
 The folder FreeLingModules contains some adapted files to be used with FreeLing among others:
  - an adapted analyzer that return the tagged text in conll format
  - an adapted dictionary
