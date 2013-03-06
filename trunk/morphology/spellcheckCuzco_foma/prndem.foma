@@ -1,0 +1,18 @@
+# demonstrative pronouns
+
+define PrnDem [
+  "PrnDem" : {waq}
+| "PrnDem" : {waqna}
+| "PrnDem" : {chay}
+| "PrnDem" : {chayna}
+| "PrnDem" : {chhay}
+| "PrnDem" : {chhayna}
+| "PrnDem" : {kay}
+| "PrnDem" : {kayna}
+| "PrnDem" : {khayna}
+| "PrnDem" : {haqay}
+| "PrnDem" : {haqayna}
+| "PrnDem" : {haqhay}
+| "PrnDem" : {haq'ay}
+]
+;

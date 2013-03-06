@@ -1,0 +1,31 @@
+# demonstrative pronouns
+
+  [{wak} "[" "PrnDem" "]"] : {wak}
+| [{waq} "[" "PrnDem" "]"] : {waq}
+| [{waj} "[" "PrnDem" "]"] : {waj}
+| [{wakna} "[" "PrnDem" "]"] : {wakna}
+| [{waqna} "[" "PrnDem" "]"] : {waqna}
+| [{wajna} "[" "PrnDem" "]"] : {wajna}
+| [{chay} "[" "PrnDem" "]"] : {chay}
+| [{chayna} "[" "PrnDem" "]"] : {chayna}
+| [{chhay} "[" "PrnDem" "]"] : {chhay}
+| [{chhayna} "[" "PrnDem" "]"] : {chhayna}
+| [{kay} "[" "PrnDem" "]"] : {kay}
+| [{kayna} "[" "PrnDem" "]"] : {kayna}
+| [{khay} "[" "PrnDem" "]"] : {khay}
+| [{khayna} "[" "PrnDem" "]"] : {khayna}
+| [{haqay} "[" "PrnDem" "]"] : {haqay}
+| [{haqhay} "[" "PrnDem" "]"] : {haqhay}
+| [{haq'ay} "[" "PrnDem" "]"] : {haq'ay}
+| [{jaqay} "[" "PrnDem" "]"] : {jaqay}
+| [{jaqhay} "[" "PrnDem" "]"] : {jaqhay}
+| [{jaq'ay} "[" "PrnDem" "]"] : {jaq'ay}
+| [{haqayna} "[" "PrnDem" "]"] : {haqayna}
+| [{haqhayna} "[" "PrnDem" "]"] : {haqhayna}
+| [{haq'ayna} "[" "PrnDem" "]"] : {haq'ayna}
+| [{jaqayna} "[" "PrnDem" "]"] : {jaqayna}
+| [{jaqhayna} "[" "PrnDem" "]"] : {jaqhayna}
+| [{jaq'ayna} "[" "PrnDem" "]"] : {jaq'ayna}
+| [{chahay} "[" "PrnDem" "]"] : {chahay}
+| [{chhaqay} "[" "PrnDem" "]"] : {chhaqay}
+;

@@ -1,0 +1,27 @@
+# roots that may appear as second part of nominal compounds, other nominal roots as second part of a compound are possible, but then the compound tends to be written as two separate roots (with a space in between). This list is probably not complete.
+
+define NRootCMPin [
+  "=NRootCMP:compañero" : {masi}
+|  "=NRootCMP:casa" : {wasi}
+|  "=NRootCMP:centro,mitad" : {chawpi}
+|  "=NRootCMP:región" : {suyu}
+|  "=NRootCMP:rincón" : {kuchu}
+|  "=NRootCMP:ser_humano" : {runa}
+|  "=NRootCMP:al_lado,encima" : {pata}
+|  "=NRootCMP:al_lado,encima" : {patay}
+|  "=NRootCMP:luna,mes" : {killa}
+|  "=NRootCMP:techo,cubierta" : {qata}
+|  "=NRootCMP:especialista" : {kamayuq}
+|  "=NRootCMP:lago" : {qucha} 
+|  "=NRootCMP:tierra" : {pampa} 
+|  "=NRootCMP:mundo,tiempo" : {pacha} 
+|  "=NRootCMP:lengua" : {simi} 
+|  "=NRootCMP:pueblo,región" : {marka} 
+|  "=NRootCMP:madre" : {mama} 
+|  "=NRootCMP:padre" : {tayta} 
+| "=NRootCMP:corazón" : {sunqu} 
+| "=NRootCMP:corazón" : {pirqa} 
+| "=NRootCMP:corazón" : {mayu} 
+| "=NRootCMP:mismo" : {kiki}
+|  "=NRootCMP:pareja_en_trabajo" : {waki}]
+;

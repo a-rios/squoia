@@ -1,0 +1,5 @@
+# nominal slot 4: number
+
+  [ "[" "--" "]" {kuna} "[" "Num" "]" "[" "+Pl" "]"] : {kuna}
+| ["[" "--" "]" {kuna} "[" "Num" "]" "[" "+Pl" "]" "[" "^DB" "]" "[" "--" "]" {yuq} "[" "NDeriv" "]"  "[" "+Poss" "]" "@PLYUQ" ]: {kunayuq}
+;

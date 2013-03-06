@@ -1,0 +1,7 @@
+#nominal slot 7: case
+
+   [ "[" "--" "]" {kama}  "[" "Cas" "]" "[" "+Dist" "]"] : {kama}
+|  [ "[" "--" "]" {rayku}   "[" "Cas" "]" "[" "+Kaus" "]"] : {rayku}
+|  [ "[" "--" "]" {wan}   "[" "Cas" "]" "[" "+Con_Inst" "]"] : {wan}
+|  [ "[" "--" "]" {puwan}   "[" "Cas" "]" "[" "+Soc" "]"] : {puwan} 
+;

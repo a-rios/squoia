@@ -1,0 +1,9 @@
+# ambivalent suffixes slot 6
+
+define AS=6 [
+ "+DirE" : {mi}"@MI"
+| "+IndE" : {si}"@SI"
+| "+Asmp" : {cha}"@CHA"
+| "+Top" : {qa}
+| "+QTop" : {ri}
+| "+Dub" : [{suna}|{sina}]];
