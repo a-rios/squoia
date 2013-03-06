@@ -1,0 +1,7 @@
+# nominalizing suffixes that do not allow for successive verbablization (converbs), may only be followed by possessive and amb. suffixes
+
+define VtoNfinal [
+  "+DS" : {pti}
+| "+SS_Sim" : {stin}
+| "+SS" : {spa}]
+;

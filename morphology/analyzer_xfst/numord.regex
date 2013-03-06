@@ -1,0 +1,10 @@
+
+  [ {ñiqin} "[" "NRoot" "]" "[" "+NumOrd" "]" ] :  {ñiqin}
+| [ {ñiqi} "[" "NRoot" "]" "[" "+NumOrd" "]" ] :  {ñiqi}
+| [ {ñeqe} "[" "NRoot" "]" "[" "+NumOrd" "]" ] :  {ñeqe}
+| [ {ñeqen} "[" "NRoot" "]" "[" "+NumOrd" "]" ] :  {ñeqen}
+| [ {ñiq'i} "[" "NRoot" "]" "[" "+NumOrd" "]" ] :  {ñiq'i}
+| [ {ñiq'in} "[" "NRoot" "]" "[" "+NumOrd" "]" ] :  {ñiq'in}
+| [ {ñeq'e} "[" "NRoot" "]" "[" "+NumOrd" "]" ] :  {ñeq'e}
+| [ {ñeq'en} "[" "NRoot" "]" "[" "+NumOrd" "]" ] :  {ñeq'en}
+;
