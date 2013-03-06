@@ -1,0 +1,294 @@
+\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand\shorthandsspanish{}
+\usepackage{covington}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{varwidth}
+\usepackage{arydshln}
+\usepackage{lsalike}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,decorations.pathreplacing,fadings}
+%opening
+\title{Esquema de anotaciones morfol\'ogicas para el Quechua}
+\author{Annette Rios}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Anotaci\'on Morfolog\'ogica}
+
+La anotaci\'on morfol\'ogica tiene dos niveles para cada parte de una palabra:\\
+\begin{enumerate}
+ \item un tipo de 'POS-Tag' (\emph{parts-of-speech}) que contiene la informaci\'on sobre la clase de morfema, v\'ease la tabla \ref{Ap:clases} en el ap\'endice \ref{Ap:morf}
+  \item una etiqueta morfol\'ogica en el caso de sufijos o la clase de ra\'iz en el caso de las ra\'ices, v\'ease la tabla \ref{Ap:tags} el ap\'endice \ref{Ap:morf}
+\end{enumerate}
+
+
+La anotaci\'on sint\'actica se basa en unidades de grupos de morf\'emas, llamados \emph{inflectional groups}, en lo siguiente abreviado como IG.
+En el esquema nominal de palabras tenemos 5 IG's, en el esquema verbal s\'olo 3, v\'ease tabla \ref{Tab:IG}.  
+En el caso de los sufijos independientes o ambivalentes optamos por hacer de cada \emph{slot} un IG. Tenemos  7 \emph{slots} de sufijos independientes, ilustrado en la tabla \ref{Tab:Ambivalent Suffixes}.
+Ejemplos:
+\begin{examples}
+ \item\label{Ex:qati} \gll qati -ra -mu -sha -qti -n -\~{n}a -s
+      to.herd -Rptn -Dir -Prog -DS -3.Sg.Poss -Disc -IndE
+      \glt'..when he was gone away herding (they say)..'
+\glend
+\item[6 IGs:] 
+	\gll qatiramu -sha -qti -n -\~{n}a -s
+	IG1 IG2 IG3 IG4 IG5 IG6
+\glt
+\glend
+
+\item\label{Ex:wawa} \gll wawa -yki -kuna -wan
+	   child -2.Sg.Poss -Pl -Inst
+      \glt 'with your children'
+\glend
+
+\item[3 IGs:]
+ \gll wawa -ykikuna -wan
+      IG1 IG2 IG3
+\glt	    
+\glend
+
+\end{examples}
+\pagebreak
+\begin{table}
+\caption{Esquema nominal/verbal, IG's}\label{Tab:IG}
+\begin{center}
+        \begin{tabular}{ccp{3cm}ccc}
+
+ & nominal scheme &  & verbal scheme & \\ \cmidrule[1pt]{1-2} \cmidrule[1pt]{4-5}
+& \tikz[remember picture] \node (nw) {nominal root};& & \tikz[remember picture] \node (vw) {verbal root}; & \\
+nom. IG 1 &  & & & verb. IG 1 \\
+& derivation & & derivation &  \\ \cmidrule[1pt]{1-2} \cmidrule[1pt]{4-5}
+\multirow{3}{1.7cm}{nom. IG 2}&poss. derivation& & object& verb. IG 2\\ \cmidrule[1pt]{4-5}
+& plural& &  \tikz[remember picture] \node (a) {aspect}; & \multirow{4}{1.6cm}{verb. IG 3} \\ \cmidrule[1pt]{1-2} 
+nom. IG 3&case 1& & tense &\\ \cmidrule[1pt]{1-2} 
+
+nom. IG 4& case 2  &   & subject(object) &\\ \cmidrule[1pt]{1-2} 
+
+nom IG 5 &\tikz[remember picture] \node (k) {case 3};   &  & \tikz[remember picture] \node (m) {mood};&\\ \cmidrule[1pt]{1-2} \cmidrule[1pt]{4-5} \addlinespace \addlinespace
+
+        \end{tabular}
+\end{center}
+%\path[->] (start) edge node {c} (s1)
+\begin{tikzpicture}[remember picture]
+\path [overlay,bend right,->,very thick,blue,opacity=.3]
+(a.west) edge node[below] {NS} (nw.south);
+\path [overlay,bend right,->,very thick,red,opacity=.3]
+(nw) edge node[above] {VS} (vw.south);
+\end{tikzpicture}
+\end{table}
+
+
+
+
+\begin{table}
+\begin{addmargin}{\dimexpr -\oddsidemargin-1in\relax}
+    \caption{Sufijos ambivalentes/independentes, slots}\label{Tab:Ambivalent Suffixes}
+   \vspace{0.4cm}
+    \begin{center}
+      \small
+       \begin{tabular}{c:c:c:c:c:ll:ll}
+
+\multicolumn{1}{c}{slot 1} & \multicolumn{1}{c}{slot 2}  &\multicolumn{1}{c}{slot 3}  & \multicolumn{1}{c}{slot 4} & \multicolumn{1}{c}{slot 5}  & \multicolumn{2}{c}{slot 6} & \multicolumn{2}{c}{slot 7}\\  \addlinespace
+\hline
+\multirow{3}{1cm}{\textit{hina} 'Sim'} & \multirow{6}{1cm}{\textit{puni} 'Cert'} & \multirow{2}{2cm}{\textit{pas/pis} 'Add'} &  \multirow{6}{1.7cm}{\textit{taq} \\'Con/Intr'} &  \multirow{6}{1.7cm}{\textit{chu} \\'Neg/Intr'} & \textit{mi} & 'DE'& \textit{iki} & 'Res'\\ \cline{6-9}
+& &  \multirow{4}{2cm}{\textit{raq} 'Cont'} & & & \textit{si} & 'IE' & \multirow{2}{0.5cm}{\textit{\'A}} & \multirow{2}{0.7cm}{'Emp'}\\ \cline{6-7} \cdashline{3-3}
+&  & & & & \textit{cha} & 'Ass' &\\ \cdashline{6-6} \cline{6-9}
+\multirow{3}{1cm}{\textit{pacha} 'desde'}& & \multirow{4}{2cm}{\textit{\~{n}a} 'Disc'}  & & & \textit{qa} & \multicolumn{1}{l|}{'Top'}&  \multirow{3}{0.5cm}{\textit{ya}} & \multirow{3}{0.7cm}{'Emp'} \\ \cline{3-3} \cline{6-7}
+& & & & & \textit{ri} & \multicolumn{1}{l|}{'QTop'} &  & \\ \cline{6-7}
+& & & & & \textit{suna} & \multicolumn{1}{l|}{'Dub'}  \\ 
+%\bottomrule \bottomrule
+\hline 
+        \end{tabular}
+    \end{center}
+   \vspace{0.2cm}
+  \centering \scriptsize (dashed line - combination possible vs. normal line - combination not possible)\\
+	
+\end{addmargin}
+\end{table}
+
+
+\clearpage
+
+
+
+\bibliographystyle{lsalike}
+\bibliography{./quechua}
+
+%\pagebreak
+\appendix
+ 
+\section{Etiquetas morfol\'ogicas}\label{Ap:morf}
+\subsection{Clases de morfemas}\label{Ap:clases}
+
+\begin{center}
+\begin{tabular}{lll}
+abreviaciones & ingl\'es & espa\~nol\\ \midrule
+AS & ambivalent suffixes & sufijos ambivalentes (independientes\\
+Asp & aspect & aspecto\\
+NDeriv & nominal derivation suffixes & sufijos de derivaci\'on nominal\\
+NPers & nominal person suffixes (possessives) &sufijos nominales de persona (posesivos\\
+NS & nominalizing suffixes & sufijos nominalizadores\\
+Num & number & n\'umero\\
+Root & ra\'iz\\
+Tns & Tense & tiempo \\
+VDeriv & verbal derivational suffixes & sufijos de derivaci\'on verbal\\
+VPers & verbal person suffixes & sufijos verbales de persona\\
+VS & verbalizing suffixes & sufijos verbalizadores\\
+\end{tabular}
+\end{center}
+
+
+\subsection{Morfolog\'ia}\label{Ap:tags}
+
+\begin{center}
+\begin{tabular}{llll}
+abreviaciones & ingl\'es & espa\~nol\\ \midrule
+\multicolumn{3}{c}{\underline{abreviaciones usadas en las etiquetas}}\\ \addlinespace
+Excl & exclusive (in 1. person plural) & exclusiva (en 1. persona plural\\
+Fut& future tense & futuro \\
+Hab& habitual past & pasado habitual \\
+Imp& imperative & imperativo \\
+Incl& Inclusive & inclusiva (en 1. persona plural\\
+IPst& past of indirect evidence & pasado de evidencialidad indirecta \\
+Obj& object participant & objeto \\
+Pl& plural & plural \\
+Poss& possessive & posesivo \\
+Pot& potential & potencial \\
+NPst& evidentially) neutral past & pasado neutral \\
+NRoot & nominal roots & ra\'ices nominales\\
+NRootCMP & nominal compounds & compuestos nominales \\
+NRootES & nominal root of Spanish origin & ra\'ices nominales espa\~noles\\
+NRootNUM & nominal roots,numbers & ra\'ices nominales, n\'umeros\\
+Part & particles & part\'iculas\\
+PrnDem & demonstrative pronouns & pronombres demonstrativos \\
+PrnInterr & interrogative pronouns & pronombres interrogativos\\
+PrnPrs & personal pronouns & pronombres personales\\
+Sg & singular & singular \\
+Subj& subject participant & sujeto \\ 
+VRoot & verbal roots & ra\'ices verbales\\
+VRootES & verbal roots of Spanish origin & ra\'ices verbales espa\~noles\\
+\end{tabular}
+
+\begin{tabular}{llll}
+\multicolumn{3}{c}{\underline{etiquetas de sufijos/part\'iculas individuales}}\\ \addlinespace
+
++Abl & ablative case ('from') & caso ablativo & -manta\\
++Abss & abessive ('without') & abesivo &-nnaq\\
++Acc & accusative case  & acusativo & -ta\\
++Add & additive ('too, even') & aditivo  & -pas\\
++Aff & affective & afectivo &  -yku\\
++Affir & affirmative & affirmativo & arí \\
++Ag & agentive ('nomen agentis') & agentivo & -q\\
++Aprx & approximative ('near, about')& approximativo & -niq\\
++Asmp & assumption & suposici\'on,asunci\'on & -ch/cha\\
++Asmp{\textunderscore}Emph & empathic assumption & suposici\'on,asunci\'on emp\'atica & -chá\\
++Ass & assistive & asistivo & -ysi/-schi\\
++Aug & augmentative & augmentativo & -su \\ 
++Autotrs & autotransformative & autotransformativo & -lli\\
++Ben & benefactive & benefactivo & -paq\\
++Caus & causative & causativo & -chi\\
++Char & characterization & caracterizaci\'on & -li/-raya\\
++Cis{\textunderscore}Trs & cislocative/translocative & cislocativo/translocativo & -mu\\
++Con{\textunderscore}Inst & connective/instrumental & conectivo/instrumental &  -wan\\
++Con{\textunderscore}Intr & contrastive/interrogative & contrastivo/interrogativo& -taq\\
++Cond & conditional particle 'si' (Spanish loan)\\
++Conec & conective particle & part\'icula conectiva & ima\\
++Cont & continuative  & continuativo & -nya\\
++Contr & contrastive particle ('or') & part\'icula contrastiva &icha\\
++DS & different subject  & sujeto diferente & -qti/pti \\
++Dat{\textunderscore}Ill & dative/illative & dativo/illativo & -man\\
++Def & definitively & defintivo & -puni\\
++Des & desiderative & desiderativo &    -naya\\
++Desesp & desesperative & desesperativo &  -pasa\\
+
+\end{tabular}
+
+
+\begin{tabular}{llll}
++Dim & diminutive & diminutivo & -cha\\
++DirE & direct evidence & evidencialidad directa & -mi/n\\
++DirE{\textunderscore}Emph & empathic direct evidence & evidencialidad directa emp\'atica & -má\\
++Disc & discontinuative  & discontinuativo & -ña\\
++Dist & distributive, nominal suffix & distributivo (nominal)  & -kama\\
++Distr & distributive, verbal suffix  & distributivo (verbal) & -nka\\
++Dub & dubitative &dubitativo  & -suna\\
++Emph & empathic  & emp\'atico & -yá\\
++Fact & factitive &factitivo & -cha\\
++Fut & future & futuro \\
++Gen & genitive case & caso genitivo & -pa\\
++Hon{\textunderscore}Aff & honorific/affective/limitative & honor\'ifico/afectivo/limitativo & -lla\\
++IPst & past of indirect evidence & pasado de evidencialidad indirecta  & -sqa\\
++Iclsv & inclusive case & caso inclusivo & -ntin\\
++Imp & imperative & imperativo \\
++Inch & inchoative & incoativo & -ri\\
++IndE & indirect evidence & evidencialidad indirecta  & -si/s\\
++IndE{\textunderscore}Emph & empathic indirect evidence & evidencialidad indirecta emp\'atica & -sá\\
++Inf & infinitive & infinitivo & -y\\
++Int & intentional & intencional & -rpari\\
++Intr & interrogative & interrogativo & -chu\\
++Intr{\textunderscore}Neg & interrogative/negation & interrogativo/negaci\'on & -chu\\
++Intrup & interruptive & interruptivo & -ykacha/kacha\\
++Intsoc & intersociative & intersociativo & -pura\\
++Kaus & cause & causa & -rayku\\
++Loc & locative & locativo & -pi\\
++MPoss & multi-possessor & multi-posesor & -sapa\\
++MRep & multi-repetitive & multi-repetitivo & -paya\\
++NPst & neutral past & pasado neutral & -rqa/ra\\
++Neg & negation & negaci\'on & -chu, mana, ama\\
++Neg{\textunderscore}Emph & empathic negation particle & negaci\'on emp\'atica & maná\\
++Neg{\textunderscore}Imp & imperative negation particle & negaci\'on imperativa &ama\\
++NumOrd & ordinal numeral marker & n\'umero ordinal &ñiqin\\
++Obl & obligation & obligaci\'on  & -na\\
++Perdur & perdurative & perdurativo & -raya\\
++Perf & perfect & perfecto & -sqa\\
++Pl & plural & plural & -kuna\\
++Posi & positional & posicional & -mpa\\
++Poss & possessive & posesivo \\
++Pot & potential & potencial & -man\\
++Prog & progressive & progresivo & -sha\\
++Proloc & prolocative & prolocativo  & -nta\\
++QTop & topic marker in questions & t\'opico en preguntas & -ri\\
++Rel & relational & relacional & -n\\
++Rem & rememorative & rememorativo & -ymana\\
++Rep & repetitive & repetitivo & -pa\\
++Res & resignation particle/suffix & resignaci\'on & -iki\\
+\end{tabular}
+
+%\pagebreak
+\begin{tabular}{llll}
++Reub & reubicative & reubicativo & -na\\
++Rflx{\textunderscore}Int & reflexive/intensifier  & reflexivo/intensificador & -ku\\
++Rgr{\textunderscore}Iprs & regressive/interpersonal & regresivo/interpersonal & -pu\\
++Rptn & repentine ('surprise, haste, urgency') &repentino & -rqu/ru\\
++Rzpr & reciprocal & rec\'iproco & -na\\
++SS & same subject & sujeto id\'entico & -spa\\
++SS{\textunderscore}Sim & simultaneous same subject & sujeto id\'entico y acci\'on simult\'anea & -stin\\
++Sim & similarity & similaridad & -hina, -niraq, hina\\
++Sim{\textunderscore}Disk & simulative/discontinuative & simulativo/discontinuativo & -tiya\\
++Sml & simulative & simulativo  & -ykacha/kacha\\
++Soc & sociative & sociativo & -puwan\\
++Term & terminative & terminativo & -kama\\
++Top & topic marker & t\'opico & -qa\\
++Trs & transformative & transformativo & -ya\\
++Vdim & verbal diminutive ('childishness') & diminutivo verbal & -cha\\
++Abtmp & abtemporal particle ('since')& part\'icula abterminal & pacha\\
+
+\end{tabular}
+\end{center}
+
+
+
+\end{document}
