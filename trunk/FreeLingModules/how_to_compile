@@ -1,1 +1,0 @@
- g++ -o matxinFL3 matxinFL3.cc  -lboost_filesystem-mt -lpcre -lcfg+ -ldb_cxx -lfreeling -lboost_program_options-mt -I/opt/matxin/local/include/ -L/opt/matxin/local/lib/
