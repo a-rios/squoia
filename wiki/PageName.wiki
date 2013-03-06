@@ -1,0 +1,16 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+Machine translation (MT) research has been dominated by the statistical approach in recent years. But this approach requires large parallel corpora as training material. For many language pairs (as e.g. Spanish - Quechua) there exist only small amounts of translated written texts. Therefore it is worthwhile to explore alternative paths that allow the development of hybrid machine translation systems which combine the rule-based approach with statistical methods.
+
+We have chosen to investigate the automatic translation from Spanish to Quechua and from Spanish to German.
+
+Quechua is a group of closely related indigenous languages, spoken by 8-10 million people in Peru, Bolivia, Ecuador, Southern Colombia and the North-West of Argentina. In this project, we confine ourselves to the variety spoken in the region of Cuzco (Peru).
+
+This approach allows us to study one pair of languages which are typologically clearly different (Spanish - Quechua). We will contrast this language pair with a typologically closer pair (Spanish - German) which enables us to use larger linguistic resources (bilingual corpora, bilingual dictionaries, language analysis and generation tools). This contrast will shed new light on the development of MT systems under very different conditions. The use of Spanish as source language is advantageous from a theoretical and practical perspective. It allows close comparisons and profits from the availability of open source analysis modules for Spanish.
