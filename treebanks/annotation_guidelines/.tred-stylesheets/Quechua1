@@ -1,0 +1,101 @@
+context: TredMacro
+node: #{black}${word}
+
+node: #{darkblue}${cat}#{darkgreen}${pos}
+
+node: #{blue}${morph/Tags[1]/Tag}${morph/Tags[2]/Tag}${morph/Tags[3]/Tag}${morph/Tags[4]${morph/Tags[5]${morph/Tags/Tag}/Tag[6]}/Tag}
+
+node: #{darkred}${translation}
+
+label:<? 
+  my $pd=-10+8*$Tiger_Corpus::chld_pos->{$this->parent};
+  '#{-coords:n,p+70+'.$pd.'}#{-anchor:center}#{brown}${label}'
+?>
+
+
+
+text: <?
+  $${#name} eq 'terminal' ? 
+    "#{-tag:".(join(",",$this,grep {$_->{'#name'} eq 'nonterminal'} $this->ancestors))."}"
+    .$${word}
+  : () ?>
+
+
+rootstyle: #{balance:0}
+  #{skipHiddenLevels:1}
+  #{CurrentTextBox-fill:red}
+  #{nodeXSkip:40}
+  #{nodeYSkip:50}
+  #{baseYPos:10}
+  #{NodeLabel-skipempty:1}
+  #{NodeLabel-halign:center}#{Node-textalign:center}
+  #{CurrentOval-outline:red}
+  #{CurrentOval-width:3}
+  <?
+    my (%prev,%level);
+    $Tiger_Corpus::chld_pos=\%prev;
+    $Tiger_Corpus::max_level=$level{$this}=0;
+    $Tiger_Corpus::levels=\%level;
+    my $hidden = FileUserData('hide');
+    for my $n ($this->descendants) {
+      my $lvl = $level{$n}=$level{ $n->parent }+1;
+      $prev{$n->{id}} = $prev{$n}=$prev{ $n->lbrother || "" } + 1;
+      $Tiger_Corpus::max_level = $lvl if !$hidden->{$n} && $lvl>$Tiger_Corpus::max_level;
+    }
+  ?>
+
+
+style:
+<?
+  if ( ! $this->parent ) {
+     '#{Node-hide:1}'
+  } else {
+    my $styles='';
+    my $is_nonterminal = $${#name} eq 'nonterminal' ? 1 : 0;
+   my $smooth='0';
+   my $pd=-10+8*$Tiger_Corpus::chld_pos->{$this->parent};
+   my $nd=0;
+   if ($is_nonterminal) {
+    $nd=-10+8*$Tiger_Corpus::chld_pos->{$this};
+  
+    $styles .= "#{NodeLabel-yadj:$nd}";
+   }
+    my $coords = qq{n,n+$nd,n,p+$pd,p,p+$pd};
+    if (length $${secedges/secedge/idref}) {
+      my $td=-10+8*$Tiger_Corpus::chld_pos->{ $${secedges/secedge/idref} };
+      my $t='[? $node->{id} eq "'.$${secedges/secedge/idref}.'" ?]';
+      my $xn=qq{xn};
+      my $yn=qq{yn+$nd};
+      my $xt=qq{x$t-10*sgn(x$t-$xn)};
+      my $yt=qq{y$t+$td};
+      my $X=qq{($xt-$xn)};
+      my $Y=qq{($yt-$yn)};
+      my $D=qq{sqrt($X**2+$Y**2)};
+      my $d=qq{(25/$D+0.12)};
+      $coords.=qq{&$xn,$yn,($xt+$xn)/2 - $Y*$d,($yt+$yn)/2 + $X*$d,$xt,$yt};
+      $styles .= '#{Line-arrow:&last}#{Line-fill:&orange}#{Line-width:&1}';
+    }
+    $styles .= "#{Line-coords:$coords}#{Line-smooth:$smooth&1}";
+
+    if ($is_nonterminal and $this->parent->parent) {
+      $styles .= "#{Node-rellevel:-0.50}";
+    } elsif (!$is_nonterminal) {
+      my $level = ($Tiger_Corpus::max_level - $Tiger_Corpus::levels->{$this}) - 1;
+      $level/=10;
+      $styles.= "#{Node-level:$level}";
+    }
+
+    $styles .= 
+    $is_nonterminal ? 
+       "#{Node-shape:oval}#{Oval-fill:lightyellow}#{Node-surroundtext:1}#{NodeLabel-valign:center}" 
+     :  "#{NodeLabel-yadj:-20}#{Line-dash:}#{Oval-fill:yellow}";
+     $styles;
+  }
+?>
+
+
+style: <? "#{Node-hide:1}" if FileUserData('hide')->{$this}; ?>
+
+style:<? "#{Oval-fill:lightgray}" if ($this->{'#name'} eq 'nonterminal' and FileUserData('fold')->{$this}) ?>
+
+style:<? my ($x,$y)=($this->{'.xadj'}||0,$this->{'.yadj'}||0); qq(#{Node-xadj:$x}#{Node-yadj:$y}) ?>
