@@ -1,0 +1,90 @@
+###############################################
+#                                             #
+#  Linguistic Resources used in this project  #
+#                                             #
+###############################################
+
+ Lexica
+---------
+Note on the semantic dictionaries for Spanish used in this project:
+
+The list of nouns with their corresponding semantic tags has been extracted from the Spanish Resource Grammar in september 2012.
+ 
+Montserrat Marimon, Natalia Seghezzi and Núria Bel.
+  An Open-source Lexicon for Spanish, Procesamiento del Lenguaje Natural, n. 39, pp. 131-137. Septiembre, 2007. ISSN 1135-5948.
+
+The original files are available from: 
+http://www.upf.edu/pdi/iula/montserrat.marimon/spanish_resource_grammar.html
+
+The lexicon of verb frames has been taken from AncoraLex Spanish 2.0.3:
+http://clic.ub.edu/corpus/en/ancora-descarregues
+
+see also:
+Taulé, M., M.A. Martí, M. Recasens (2009). 
+  AnCora: Multilevel Annotated Corpora for Catalan and Spanish, Proceedings of 6th International Conference on language Resources and Evaluation.
+  
+Unfortunately, Ancora is not freely available, you have to register to download the resource. 
+Every verb comes in its own xml file, in order to read them into a hash, paste them all in one file, e.g. like this:
+
+$ cat *.xml > allVerbs.xml
+
+and then use readInSemanticDix.pl to store it as hash to a file.
+
+ FreeLing 3
+-----------
+squoia_analyzer needs the FreeLing library for Spanish to be installed, available here:
+http://nlp.lsi.upc.edu/freeling/
+
+FreeLing is used for tokenization, tagging and named entity recognition and named entity classification. 
+The folder FreeLingModules contains some adapted files to be used with FreeLing among others:
+ - an adapted analyzer that return the tagged text in conll format
+ - an adapted dictionary
+ - an adapted constraint grammar to fine tune the tagger
+
+ 
+ DeSR Parser
+------------
+A statistical dependency parser from Giuseppe Attardi (University of Pisa), available here:
+https://sites.google.com/site/desrparser/
+
+It can also be tested online:
+http://paleo.di.unipi.it/es/parse
+
+G. Attardi, F. Dell'Orletta. 
+2009. Reverse Revision and Linear Tree Combination for Dependency Parsing. In Proc. of the North American Chapter of the Association for Computational Linguistics - Human Language Technologies short papers (NAACL HLT) 2009 conference, Boulder, Colorado.
+ 
+
+ 
+ molif-de
+-----------
+ Finite state morphology tool for German, used for generation of the German output:
+ https://files.ifi.uzh.ch/cl/siclemat/sprachanalyse/molif/
+ 
+ 
+ TeEd - Tree Editor
+---------------------
+Tool used for the annotation of the Quechua treebank, available from:
+ http://ufal.mff.cuni.cz/tred/
+ 
+In order to visualize the Quechua treebank files, install TrEd and copy the stylesheets in trunk/treebanks/quz/stylesheets_for_tred to .tred-stylesheets in your home directory.
+Start TrEd, open one of the .pml files (those contain the annotations) and select one of the Quechua stylesheets.
+A description of the annotation scheme can be found in trunk/treebanks/annotation_guidelines/anotacion.pdf (dependency trees).
+
+ Annotate 3.6
+---------------
+Annotation tool for phrase structures, used for the German and Spanish treebanks. Available from:
+http://www.coli.uni-saarland.de/projects/sfb378/negra-corpus/annotate.html
+
+The Spanish treebank is annotated according to the AnCora guidelines (phrase structures), but with a simplified tagset.
+The German treebank is annotated according to the TigerCorpus guidelines (phrase structures)
+
+ TreeAligner
+-------------
+Tool used to annotate the alignments of the parallel treebanks (so far only Spanish-German). Available from:
+http://kitt.cl.uzh.ch/kitt/treealigner
+
+In order to visualize the parallel trees Spanish-German, download TreeAligner and open one of the 'alignments' files.
+
+
+
+ 
