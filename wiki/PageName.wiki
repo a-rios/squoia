@@ -1,11 +1,4 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
-
-
-= Details =
+# Project overview
 
 Machine translation (MT) research has been dominated by the statistical approach in recent years. But this approach requires large parallel corpora as training material. For many language pairs (as e.g. Spanish - Quechua) there exist only small amounts of translated written texts. Therefore it is worthwhile to explore alternative paths that allow the development of hybrid machine translation systems which combine the rule-based approach with statistical methods.
 
