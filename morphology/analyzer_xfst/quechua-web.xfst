@@ -3,6 +3,7 @@
 
        #derivation boundary
        define DB [[ "[" "^DB" "]"] :0];
+       define removeDB ["" <- "[" "^DB" "]"];
 
       #Morpheme-Boundary
        define MB [[ "[""--""]"] :0];
@@ -618,11 +619,8 @@ define HAKU  [{haku} "[" "VRoot" "+2.Sg.Subj.Imp" "]" "[" "=venir" "]"] : {haku}
 
 ######################################################################################
 
-
-#define Wort [[Noun|Verb|Prn|Partikeln|HAKU] (AS)] .o. NounRules .o. GENACC .o. Gross;
-define Wort IGRules .o. [[Noun|Verb|Prn|Partikeln|HAKU] (AS)] .o. NounRules .o. GENACC .o. AmbiRules .o. Gross;
-
-define Wort2  FeatRestr .o. Cleanup2 .o. [Wort|SonderWort] .o. Allophone .o. Cleanup1 ;
+define Wort IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. AmbiRules .o. UpperCase;
+define Wort2  FeatRestr .o. Cleanup2 .o. [Wort|SpecialWord] .o. Allophone .o. Cleanup1 ;
 read regex removeDB .o. Wort2;
 
 save stack quechua-web.fst

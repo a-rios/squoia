@@ -11,31 +11,36 @@
 #			to lump morphemes into groups      #
 ############################################################
 
-# Moegliche Text-Dateien als Input:
+# indicate path to text file to analyse:
 
 TEXTS:=  texts/acuerdo_nacional_2002_QUE.txt 
 
-all:  tokenize.fst quechua-web.fst verticalize.fst 
+normal:  quechua-web.fst 
 db: quechua-web-db.fst
+vertical: vertical.fst
 
 
-analysed.txt: all
-	cat $(TEXTS) | tokenize-utf -utf8 tokenize.fst | lookup-utf -flags xcKv29TT quechua-web.fst  > $@
+analysed.txt: normal
+	cat $(TEXTS) | perl tokenize.pl | lookup -flags xcKv29TT quechua-web.fst | tail -n+2  > $@
 
 analysed-db.txt: db
-	cat $(TEXTS) | tokenize-utf -utf8 tokenize.fst | lookup-utf -flags xcKv29TT quechua-web-db.fst  > $@
+	cat $(TEXTS) | perl tokenize.pl | lookup -flags xcKv29TT quechua-web-db.fst | tail -n+2  > $@$@
 
 analysed-db-truecase.txt: db
-	cat $(TEXTS) | tokenize-utf -utf8 tokenize.fst | lookup-utf -flags cKv29TT quechua-web-db.fst  > $@
+	cat $(TEXTS) | perl tokenize.pl | lookup -flags cKv29TT quechua-web-db.fst | tail -n+2  > $@$@
 
-vertical.tsv: analysed.txt
-	 tokenize-utf -utf8 verticalize.fst < $< |  tail -n+2 | perl -F'\t' -lane '; print "$$F[0]\t$$F[1]"' | perl -F'\[' -lane '; print "$$F[0]\t$$F[1]"' > $@
+vertical.tsv: analysed.txt, vertical
+	 tokenize verticalize.fst < $< |  tail -n+2 | perl -F'\t' -lane '; print "$$F[0]\t$$F[1]"' | perl -F'\[' -lane '; print "$$F[0]\t$$F[1]"' > $@
 
-failures.txt: all
-	cat $(TEXTS) | tokenize-utf -utf8 tokenize.fst | lookup-utf -utf8 -flags cKv29TT quechua-web.fst | grep '+?' |gawk '{print $$1}' | sort -u  > $@
+failures.txt: normal
+	cat $(TEXTS) | perl tokenize.pl | lookup -flags xcKv29TT quechua-web.fst | perl listwrongspellings.pl  > $@
+	
+failures-db.txt: db
+	cat $(TEXTS) | perl tokenize.pl | lookup -flags xcKv29TT quechua-web-db.fst | perl listwrongspellings.pl  > $@
 
-failures-db.txt: all db
-	cat $(TEXTS) | tokenize-utf -utf8 tokenize.fst | lookup-utf -utf8 -flags cKv29TT quechua-web-db.fst | grep '+?' |gawk '{print $$1}' | sort -u  > $@
+clean: 
+	rm  *.fst
 
 %.fst:%.xfst
-	xfst-utf -utf8 -f $<
+	xfst -f $<
+
