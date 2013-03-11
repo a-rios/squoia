@@ -10,6 +10,7 @@
     <sdef n="split"    c="1:n translation that need to be split up (-> 2,3.. nodes)"/>
     <sdef n="root_type"    c="quechua root type"/>
     <sdef n="complex_mi"    c="complex root with additional morphology"/>
+    <sdef n="verbmi"    c="verbal person marker needed for generation"/>
     <sdef n="func"    c="attributive use of nominal root translated from Spanish adjective"/>    
   </sdefs>
   <pardefs>
@@ -309,177 +310,191 @@
       <e><p><l><s n="parol"/>VAG0000</l><r><s n="mi"/>VRoot+SS</r></p></e>
       
       <!--  habríamos hecho -> ruwasunman kar(q)an (incl)/ ruwaykuman kar(q)an (excl) -->
-      <e><p><l><s n="parol"/>VAIC1P0</l><r><s n="mi"/>pastpotential</r></p></e>     
+      <e><p><l><s n="parol"/>VAIC1P0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential<s n="verbmi"/>VRoot+1.Pl.Excl.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIC1P0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential<s n="verbmi"/>VRoot+1.Pl.Incl.Pot_Copula+NPst+3.Sg.Subj</r></p></e>  
       <!-- habría hecho -> ruwayman kar(q)an -->
-      <e><p><l><s n="parol"/>VAIC1S0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential</r></p></e>      
+      <e><p><l><s n="parol"/>VAIC1S0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential<s n="verbmi"/>VRoot+1.Sg.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>      
       <!-- habríais hecho -> ruwawaqchis kar(q)an -->
-      <e><p><l><s n="parol"/>VAIC2P0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential</r></p></e>
-      <!--habrías hecho -> ruwaq kar(q)an -->     
-      <e><p><l><s n="parol"/>VAIC2S0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential</r></p></e>      
+      <e><p><l><s n="parol"/>VAIC2P0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential<s n="verbmi"/>VRoot+2.Pl.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <!--habrías hecho -> ruwaq kar(q)an -->
+      <e><p><l><s n="parol"/>VAIC2S0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential<s n="verbmi"/>VRoot+2.Sg.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
       <!-- habrían hecho -> ruwankuman kar(q)an-->         
-      <e><p><l><s n="parol"/>VAIC3P0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential</r></p></e>      
+      <e><p><l><s n="parol"/>VAIC3P0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential<s n="verbmi"/>VRoot+3.Sg.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>      
        <!-- habría hecho -> ruwanman kar(q)an-->        
-      <e><p><l><s n="parol"/>VAIC3S0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential</r></p></e>  
+      <e><p><l><s n="parol"/>VAIC3S0</l><r><s n="parol"/>VAI<s n="mi"/>pastpotential<s n="verbmi"/>VRoot+3.Pl.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>  
       
       <!-- habremos hecho - ña.. ruwasunchisña/ ruwasaqkuña-> pasar informaciones morfológicas al verbo principal
 	   relative clauses: -na or -q -->  
-      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc</r></p></e>  
-      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc<s n="verbmi"/>VRoot+1.Pl.Excl.Subj.Fut+Disc</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Fut+Disc</r></p></e> 
+      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!--habré hecho-> ña..  ruwasaqña--> 
-      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc</r></p></e> 
-      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc<s n="verbmi"/>VRoot+1.Sg.Fut+Disc</r></p></e> 
+      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF1S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- habréis hecho-> ña.. ruwankichisña --> 
-      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc</r></p></e>
-      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc<s n="verbmi"/>VRoot+2.Pl.Fut+Discs</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- habrás hecho -> ña.. ruwankiña--> 
-      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc</r></p></e> 
-      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc<s n="verbmi"/>VRoot+2.Sg.Fut+Disc</r></p></e> 
+      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF2S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- habrán hecho -> ña.. ruwanqakuña --> 
-      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc</r></p></e>
-      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc<s n="verbmi"/>VRoot+3.Pl.Subj.Fut+Disc</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!--habrá hecho -> ña.. ruwanqaña--> 
-      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc</r></p></e>
-      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>futureDisc<s n="verbmi"/>VRoot+3.Sg.Subj.Fut+Disc</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIF3S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       
       <!-- habíamos hecho , rel. clause -> -sqa, -q--> 
-      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
       <!-- había hecho--> 
-      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII1S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- habíais hecho--> 
-      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII2P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- habías hecho--> 
-      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII2S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- habían hecho--> 
-      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII3P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- había hecho--> 
-      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAII3S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       
       <!-- hemos hecho, rel. clause -> -sqa, -q--> 
-      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>present<s n="verbmi"/>VRoot+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>present<s n="verbmi"/>VRoot+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e>
       <!--he hecho--> 
-      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>present</r></p></e>  
-      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e> 
-      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>present<s n="verbmi"/>VRoot+1.Sg.Subj</r></p></e>  
+      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP1S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- habéis hecho--> 
-      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>present<s n="verbmi"/>VRoot+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP2P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- has hecho--> 
-      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>present</r></p></e> 
-      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e> 
-      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>present<s n="verbmi"/>VRoot+2.Sg.Subj</r></p></e> 
+      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP2S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- han hecho--> 
-      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>present</r></p></e> 
-      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>present<s n="verbmi"/>VRoot+3.Pl.Subj</r></p></e> 
+      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- ha hecho--> 
-      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>present<s n="verbmi"/>VRoot+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIP3S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       
       <!-- hubimos hecho, rel clause -> -sqa, q -->  
-      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
       <!-- hube hecho--> 
-      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS1S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- hubisteis hecho--> 
-      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!--hubiste hecho--> 
-      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS2S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- hubieron hecho--> 
-      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3P0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- hubo hecho--> 
-      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VAIS3S0</l><r><s n="parol"/>VAI<s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       
       <!-- habemos hecho--> 
-      <e><p><l><s n="parol"/>VAM01P0</l><r><s n="parol"/>VAM<s n="mi"/>imperative</r></p></e>      
+      <e><p><l><s n="parol"/>VAM01P0</l><r><s n="parol"/>VAM<s n="mi"/>imperative<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Imp</r></p></e>      
       <!-- haber hecho -> kay --> 
-      <e><p><l><s n="parol"/>VAN0000</l><r><s n="parol"/>VAN<s n="mi"/>infinitive</r></p></e>
+      <e><p><l><s n="parol"/>VAN0000</l><r><s n="parol"/>VAN<s n="mi"/>infinitive<s n="verbmi"/>VRoot+Inf</r></p></e>
            
       <!--subjuntivo futuro: hubiéremos hecho-> ruwananchis (kan), ruwanayku kan--> 
       <e><p><l><s n="parol"/>VASF1P0</l><r><s n="mi"/>obligative</r></p></e>
@@ -501,62 +516,67 @@
       <e><p><l><s n="parol"/>VASF3S0</l><r><s n="mi"/>obligative</r></p></e>
       
       <!--  hubiésemos/hubiéramos hecho -> ruwasunman/sunchisman/swan kar(q)a(n) (incl.), main verb-ykuman kar(q)an/kasqa(n)--> 
-      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>pastpotential</r></p></e>
-      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>SS</r></p></e>  
-      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>DS</r></p></e> 
-      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>pastpotential<s n="verbmi"/>VRoot+1.Pl.Incl.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>  
+      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>pastpotential<s n="verbmi"/>VRoot+1.Pl.Excl.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VASI1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e>
       <!-- hubiera/hubiese hecho-> main verb-yman kar(q)a(n)/kasqa(n) --> 
-      <e><p><l><s n="parol"/>VASI1S0</l><r><s n="mi"/>pastpotential</r></p></e>
-      <e><p><l><s n="parol"/>VASI1S0</l><r><s n="mi"/>SS</r></p></e>  
-      <e><p><l><s n="parol"/>VASI1S0</l><r><s n="mi"/>DS</r></p></e> 
-      <e><p><l><s n="parol"/>VASI1S0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VASI1S0</l><r><s n="mi"/>pastpotential<s n="verbmi"/>VRoot+1.Sg.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VASI1S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>  
+      <e><p><l><s n="parol"/>VASI1S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VASI1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Sg.Poss</r></p></e>
       <!-- hubieseis/hubierais hecho-> main verb-waqchis kar(q)a(n)/kasqa(n) --> 
-      <e><p><l><s n="parol"/>VASI2P0</l><r><s n="mi"/>pastpotential</r></p></e>
-      <e><p><l><s n="parol"/>VASI2P0</l><r><s n="mi"/>SS</r></p></e>  
-      <e><p><l><s n="parol"/>VASI2P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VASI2P0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VASI2P0</l><r><s n="mi"/>pastpotential<s n="verbmi"/>VRoot+2.Pl.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VASI2P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>  
+      <e><p><l><s n="parol"/>VASI2P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASI2P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Pl.Poss</r></p></e>
       <!-- hubieras/hubieses hecho-> main verb-waq kar(q)a(n)/kasqa(n) --> 
-      <e><p><l><s n="parol"/>VASI2S0</l><r><s n="mi"/>pastpotential</r></p></e>
-      <e><p><l><s n="parol"/>VASI2S0</l><r><s n="mi"/>SS</r></p></e>  
-      <e><p><l><s n="parol"/>VASI2S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VASI2S0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VASI2S0</l><r><s n="mi"/>pastpotential<s n="verbmi"/>VRoot+2.Sg.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VASI2S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>  
+      <e><p><l><s n="parol"/>VASI2S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASI2S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Sg.Poss</r></p></e>
       <!-- hubieran/hubiesen hecho-> main verb-nkuman/-nmanku kar(q)a(n)/kasqa(n)--> 
-      <e><p><l><s n="parol"/>VASI3P0</l><r><s n="mi"/>pastpotential</r></p></e>
-      <e><p><l><s n="parol"/>VASI3P0</l><r><s n="mi"/>SS</r></p></e>  
-      <e><p><l><s n="parol"/>VASI3P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VASI3P0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VASI3P0</l><r><s n="mi"/>pastpotential<s n="verbmi"/>VRoot+3.Pl.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VASI3P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>  
+      <e><p><l><s n="parol"/>VASI3P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASI3P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Pl.Poss</r></p></e>
       <!-- hubiera/hubiese hecho-> main verb-nman kar(q)a(n)/kasqa(n) --> 
-      <e><p><l><s n="parol"/>VASI3S0</l><r><s n="mi"/>pastpotential</r></p></e>
-      <e><p><l><s n="parol"/>VASI3S0</l><r><s n="mi"/>SS</r></p></e>  
-      <e><p><l><s n="parol"/>VASI3S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VASI3S0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VASI3S0</l><r><s n="mi"/>pastpotential<s n="verbmi"/>VRoot+3.Sg.Subj.Pot_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VASI3S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>  
+      <e><p><l><s n="parol"/>VASI3S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASI3S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
       
       <!-- hayamos hecho-> depends on context: 
       sin que hayamos hecho algo, se fue -> manaraq ruwaptinchis(qa) ripun,
       siento que hayamos hecho mal -> mana allin ruwasqanchista.. (?)--> 
-      <e><p><l><s n="parol"/>VASP1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VASP1P0</l><r><s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VASP1P0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+SS+1.Pl.Incl.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VASP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+SS+1.Pl.Excl.Poss</r></p></e>
       <!-- haya hecho-> kanan, but see above --> 
-      <e><p><l><s n="parol"/>VASP1S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VASP1S0</l><r><s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VASP1S0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASP1S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP1S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e> 
       <!-- hayáis hecho-> kanaykichis, s.above --> 
-      <e><p><l><s n="parol"/>VASP2P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VASP2P0</l><r><s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VASP2P0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP2P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASP2P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP2P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e> 
       <!-- hayas hecho-> kanayki --> 
-      <e><p><l><s n="parol"/>VASP2S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VASP2S0</l><r><s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VASP2S0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP2S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASP2S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP2S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e> 
       <!-- hayan hecho-> kananku --> 
-      <e><p><l><s n="parol"/>VASP3P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VASP3P0</l><r><s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VASP3P0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP3P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASP3P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP3P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e> 
       <!-- haya hecho-> kanay --> 
-      <e><p><l><s n="parol"/>VASP3S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VASP3S0</l><r><s n="mi"/>SS</r></p></e> 
-      <e><p><l><s n="parol"/>VASP3S0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP3S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VASP3S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e> 
+      <e><p><l><s n="parol"/>VASP3S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e> 
     </pardef>
      
     
