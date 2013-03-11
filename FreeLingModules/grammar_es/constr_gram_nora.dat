@@ -73,10 +73,10 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 SustInicial = <informe> <total> <oficial>;
 
 
-% Conjunto de palabras que pueden ser sustantivos o adjetivos. Creado para aplicar la regla L013: Cuando el sustantivo que va antes de cualquier SustAdj no tiene probabilidad 1, esta palabra SustAdj es etiquetada como sustantivo (NC). Esta regla trata de corregir ese error para que estas palabras SustAdj sean etiquetadas correctamente como adjetivos (AQ).
+% Conjunto de palabras que pueden ser sustantivos o adjetivos. Creado para aplicar la regla L013: Cuando el sustantivo que va antes de cualquier SustAdj1 no tiene probabilidad 1, esta palabra SustAdj1 es etiquetada como sustantivo (NC). Esta regla trata de corregir ese error para que estas palabras SustAdj1 sean etiquetadas correctamente como adjetivos (AQ).
 
-SustAdj = (financieros);
-SustAdj = <local> <ciudadano> <directivo> <complejo> <ruso>;
+SustAdj1 = (financieros);
+SustAdj1 = <local> <ciudadano> <directivo> <complejo> <ruso>;
 
 
 % Conjunto de palabras que pueden ser sustantivos o adjetivos. Creado para aplicar la regla L014: Cuando delante tienen un sustantivo, entonces ejercen como adjetivos.
@@ -84,6 +84,10 @@ SustAdj = <local> <ciudadano> <directivo> <complejo> <ruso>;
 Adj = <característica> <técnica> <científico> <responsable> <inglés> <extremista> <víctima>;
 Adj = (operativo);
 
+
+% Conjunto de palabras que pueden ser adjetivos o adverbios. Creado para la regla L029: Cuando delante tienen el verbo "estar", entonces son adjetivos.
+
+AdjAdv = <claro>;
 
 
 
@@ -373,11 +377,11 @@ CONSTRAINTS
 1.0 RG*
 	(not -1 D* or A*)
 	(0 (cerca));
-	
+
 112.0 NC*
 	(-1 D* or A*)
 	(0 (cerca));
-	
+
 %% nado: if preceeded by article or adejctive -> NC
 %% else: verb (1 persona singular, presente)
 
@@ -388,14 +392,14 @@ CONSTRAINTS
 234.0 NC*
 	(-1 D* or A*)
 	(0 (nado));
-	
+
 %% logro: if preceeded by article or adjective-> NC
 %% else: verb (1 persona singular, presente)
 
 3.0 V*
 	(not -1 D* or A*)
 	(0 (logro));
-	
+
 3.0 NC*
 	(-1 D* or A* or SP*)
 	(0 (nado));
@@ -433,7 +437,7 @@ CONSTRAINTS
 6.0 A*
 	(1 NC*)
 	(0 (laterales) or (retoques));
-	
+
 %%6.0 A*
 %%	(-1 NC*)
 %%	(0 (laterales) or (retoques));
@@ -452,7 +456,7 @@ CONSTRAINTS
 7.0 NC*
 	(-1 D* or A*)
 	(0 (estado));
-	
+
 %% poco: if followed by adjective -> RG
 %% else: DI
 
@@ -466,17 +470,17 @@ CONSTRAINTS
 9.0 V*
 	(not -1 D* or A*)
 	(0 (entrega));
-	
+
 9.0 NC*
 	(-1 D* or A* or SP*)
 	(0 (entrega));
-	
+
 %% p.e. simulacro sorpresa, sistema piloto, ...: both NC, not Adj
 % comentadas aquellas con peso 10.0 porque están incluidas en regla L007
 
 %10.0 NC*
 %	(-1 NC*)
-%	(0 (sorpresa));	
+%	(0 (sorpresa));
 
 15.0 NC*
 	(-1 NC*)
@@ -625,14 +629,14 @@ CONSTRAINTS
 
 
 % REGLA L013
-% "Se quiere impulsar la educación sobre temas financieros." -> Cuando el sustantivo que va antes de "financieros" no tiene probabilidad 1, "financieros" (en plural!) es etiquetado como sustantivo. Pasa lo mismo con todas las palabras contenidas en el conjunto SustAdj definido más arriba.
+% "Se quiere impulsar la educación sobre temas financieros." -> Cuando el sustantivo que va antes de "financieros" no tiene probabilidad 1, "financieros" (en plural!) es etiquetado como sustantivo. Pasa lo mismo con todas las palabras contenidas en el conjunto SustAdj1 definido más arriba.
 11.0 AQ*
-    (0 {SustAdj})
+    (0 {SustAdj1})
     (-1 NC*);
 
 % Variante (por si enmedio hay un adverbio, p.ej. "Este es un caso altamente complejo."):
 11.0 AQ*
-    (0 {SustAdj})
+    (0 {SustAdj1})
     (-2 NC*);
 
 
@@ -659,11 +663,17 @@ CONSTRAINTS
     (-1 C*)
     (-2 NC*);
 
-% Variante con adjetivos:
+% Variantes con adjetivos:
 3.0 AQ*
     (0 VMP*)
     (-1 C*)
     (-2 AQ*);
+
+7.0 AQ*
+    (-3 NC*)
+    (-2 AQ*)
+    (-1 CC)
+    (0 NC*);
 
 
 % REGLA L017
@@ -707,11 +717,13 @@ CONSTRAINTS
 % El participio de un verbo, colocado detrás de un sustantivo, es un adjetivo.
 % "El índice de prensa refleja el nivel de libertad de prensa en medios escritos y electrónicos." -> "escritos" es adjetivo, no verbo ni sustantivo.
 %18.0 AQ*
-700.0 AQ*
-    (0 VMP*)
-    (-1* N* barrier <ser> or PR*);
+%700.0 AQ*
+%    (0 VMP*)
+%    (-1* N* barrier <ser> or PR*);
 % Puede haber adverbios y conjunciones de por medio... ej.:
 % "Sólo ahí en donde hay periodistas incómodos y bien preparados puede florecer la libertad de prensa."
+% Cambiar esta regla, crea conflictos con otras construcciones, y un peso de 700 es una barbaridad.
+% REVISAR
 
 
 % REGLA L023
@@ -764,14 +776,6 @@ CONSTRAINTS
 % REGLA L028
 % A continuación vienen varias reglas para regular el etiquetado correcto de "estar" (a veces como VM* y a veces como VA*) y los verbos en participio que vienen detrás (que deben ser adjetivos, no verbos). Cuidado no crear conflictos con Regla L018.
 
-% L028 A Annette
-% estar sólo puede ser VA si le sigue un gerundio
-%15.0 AQ*
-415.0 VM*
-    (0 <estar>)
-    (not 1* VMG*);
-
-
 % L028 A
 % "Mario está cansado de jugar" -> "cansado" es adjetivo, no verbo.
 %15.0 AQ*
@@ -788,7 +792,7 @@ CONSTRAINTS
 
 % L028 C
 % "La población está muy pero que muy decepcionada." -> "decepcionada" es adjetivo, no verbo.
-% "Muchos administradores no están lo suficientemente capacitados." -> "capacitados es adjetivo, no verbo.
+% "Muchos administradores no están lo suficientemente capacitados." -> "capacitados" es adjetivo, no verbo.
 % Que lo marque como adjetivo aunque haya muchas más cosas de por medio...
 %5.0 AQ*
 7.0 AQ*
@@ -804,10 +808,16 @@ CONSTRAINTS
     (1* AQ*);
 % ¿Poner un barrier?
 
+% L028 D, parte b: la misma que acabamos de declarar, pero con la forma "está", que por alguna razón da problemas.
+16.0 VM*
+    (0 (está))
+    (1 AQ*);
+
 % L028 E
 % "Mario está comiendo pollo." -> "está" es verbo auxiliar, no principal.
 % Esto es así siempre que le sigue un verbo en gerundio.
-400.0 VA*
+%20.0 VA*
+39.0 VA*
     (0 <estar>)
     (1 VMG*);
 
@@ -819,6 +829,44 @@ CONSTRAINTS
     (not -1* VM*)
     (not 1* VMI* or VMS*);
 % Nota importante: esta regla funciona perfectamente excepto con la forma verbal "está", que por alguna razón da problemas y requiere un peso de 200 para que actúe. ¿Por qué pasa esto? Ni idea! Tema para estudiar a fondo!
+
+
+% REGLA L029
+% "El perfil de la reforma financiera está claro." -> Cuando antes de un adverbio viene el verbo "estar", entonces no es adv., sino adj.
+1.0 AQ*
+    (0 {AdjAdv})
+    (-1 <estar>);
+
+
+% REGLA L030
+% Si antes de "ejemplares" viene un sust, entonces "ejemplares" es un adj.
+%23.0 AQ*
+24.0 AQ*
+    (0 <ejemplar> or <miembro>)
+    (-1 NC*);
+
+
+% REGLA L031
+% Si después de "antecedentes" viene un adj, entonces "antecedentes" es un sust.
+13.0 NC*
+    (0 <antecedente>)
+    (1 AQ*);
+
+
+% REGLA L032
+% Construcción "un modesto XX" en temas económicos, cuando se habla de crecimiento, etc., siendo XX una cifra numérica.
+% En estos casos, "modesto" es adjetivo, no sustantivo.
+13.0 AQ*
+    (0 <modesto>)
+    (-1 D*)
+    (1 Z*);
+
+
+% REGLA L033
+% Cuando un participio verbal va seguido por la preposición "por", entonces es un participio y no un adjetivo, siempre y cuando no forme parte de la construcción "estar + participio", donde entonces sí es un adjetivo (Regla L028).
+%3.0 V*
+%    (0 AQ*)
+%    (1 S*(por));
 
 
 
