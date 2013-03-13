@@ -10,7 +10,7 @@
     <sdef n="split"    c="1:n translation that need to be split up (-> 2,3.. nodes)"/>
     <sdef n="root_type"    c="quechua root type"/>
     <sdef n="complex_mi"    c="complex root with additional morphology"/>
-    <sdef n="verbmi"    c="verbal person marker needed for generation"/>
+    <sdef n="verbmi"    c="verbal morphology needed for generation"/>
     <sdef n="func"    c="attributive use of nominal root translated from Spanish adjective"/>    
   </sdefs>
   <pardefs>
@@ -957,131 +957,138 @@
       <e><p><l><s n="parol"/>VMII1S0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>VRoot+Ag_Copula+NPst+1.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII1S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
       <e><p><l><s n="parol"/>VMII1S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
-      <e><p><l><s n="parol"/>VMII1S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMII1S0</l><r><s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VMII1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMII1S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- andabais  -> --> 
       <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+2.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+2.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>VRoot+Ag_Copula+NPst+2.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
       <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
-      <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMII2P0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- andabas  -> --> 
       <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+2.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+2.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>VRoot+Ag_Copula+NPst+2.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
       <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
-      <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMII2S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- andaban  -> --> 
       <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+3.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+3.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>VRoot+Ag_Copula+NPst+3.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
       <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
-      <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMII3P0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       <!-- andaba  -> --> 
       <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+3.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+3.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>VRoot+Ag_Copula+NPst+3.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
       <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
-      <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>agentive</r></p></e>
+      <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMII3S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
       
       <!-- andamos  -> --> 
-      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>present</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>present<s n="verbmi"/>VRoot+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>present<s n="verbmi"/>VRoot+1.Pl.Excl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
       <!-- ando  -> --> 
-      <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>present</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>present<s n="verbmi"/>VRoot+1.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIP1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
       <!-- andais  -> --> 
-      <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>present</r></p></e>
+      <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>present<s n="verbmi"/>VRoot+2.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIP2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
       <!-- andas  -> --> 
-      <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>present</r></p></e>
+      <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>present<s n="verbmi"/>VRoot+2.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIP2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
       <!-- andan  -> --> 
-      <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>present</r></p></e>
+      <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>present<s n="verbmi"/>VRoot+3.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIP3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
       <!-- anda  -> --> 
-      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>present</r></p></e>
+      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>present<s n="verbmi"/>VRoot+3.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
       
       <!-- past simple: andamos  -> --> 
-      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>indirectpast</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Pl.Excl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
       <!-- anduve  -> --> 
-      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>indirectpast</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+1.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIS1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
       <!-- anduvisteis  -> --> 
-      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>indirectpast</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+2.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
       <!-- anduviste  -> --> 
-      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>indirectpast</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+2.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIS2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
       <!-- anduvieron  -> --> 
-      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>indirectpast</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+3.Pl.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
       <!-- anduvo  -> --> 
-      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>indirectpast</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>directpast<s n="verbmi"/>VRoot+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>VRoot+IPst+3.Sg.Subj</r></p></e>
       <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>agentive</r></p></e>
-      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>agentive<s n="verbmi"/>VRoot+Ag</r></p></e>
+      <e><p><l><s n="parol"/>VMIS3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
       
       <!-- imperative: andemos  -> --> 
-      <e><p><l><s n="parol"/>VMM01P0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VMM01P0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Imp</r></p></e>
       <!-- andad  -> --> 
-      <e><p><l><s n="parol"/>VMM02P0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VMM02P0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+2.Pl.Subj.Imp</r></p></e>
       <!-- anda  -> --> 
-      <e><p><l><s n="parol"/>VMM02S0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VMM02S0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+2.Sg.Subj.Imp</r></p></e>
       <!-- anden  -> --> 
-      <e><p><l><s n="parol"/>VMM03P0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VMM03P0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+3.Pl.Subj.Imp</r></p></e>
       <!-- ande  -> --> 
-      <e><p><l><s n="parol"/>VMM03S0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VMM03S0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+3.Sg.Subj.Imp</r></p></e>
 
 
       <!-- Subjuntivo in Quechua, depends on context: 
@@ -1093,114 +1100,125 @@
 	  me dijo que me vaya -> pasapuy! niwarqan-->
 	
       <!-- subjuntivo futuro: anduviéremos  -> --> 
-      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>future</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>future<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>future<s n="verbmi"/>VRoot+1.Pl.Excl.Subj.Fut</r></p></e>
       <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e>
       <!-- anduviere  -> --> 
-      <e><p><l><s n="parol"/>VMSF1S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSF1S0</l><r><s n="mi"/>future</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1S0</l><r><s n="mi"/>future<s n="verbmi"/>VRoot+1.Sg.Subj.Fut</r></p></e>
       <e><p><l><s n="parol"/>VMSF1S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSF1S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSF1S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
       <!-- anduviereis  -> --> 
-      <e><p><l><s n="parol"/>VMSF2P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSF2P0</l><r><s n="mi"/>future</r></p></e>
+      <e><p><l><s n="parol"/>VMSF2P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSF2P0</l><r><s n="mi"/>future<s n="verbmi"/>VRoot+2.Pl.Subj.Fut</r></p></e>
       <e><p><l><s n="parol"/>VMSF2P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSF2P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSF2P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
       <!-- anduvieres  -> --> 
-      <e><p><l><s n="parol"/>VMSF2S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSF2S0</l><r><s n="mi"/>future</r></p></e>
+      <e><p><l><s n="parol"/>VMSF2S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSF2S0</l><r><s n="mi"/>future<s n="verbmi"/>VRoot+2.Sg.Subj.Fut</r></p></e>
       <e><p><l><s n="parol"/>VMSF2S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSF2S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSF2S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
       <!-- anduvieren -> --> 
-      <e><p><l><s n="parol"/>VMSF3P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSF3P0</l><r><s n="mi"/>future</r></p></e>
+      <e><p><l><s n="parol"/>VMSF3P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSF3P0</l><r><s n="mi"/>future<s n="verbmi"/>VRoot+3.Pl.Subj.Fut</r></p></e>
       <e><p><l><s n="parol"/>VMSF3P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSF3P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSF3P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
       <!-- anduviere  -> --> 
-      <e><p><l><s n="parol"/>VMSF3S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSF3S0</l><r><s n="mi"/>future</r></p></e>
+      <e><p><l><s n="parol"/>VMSF3S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSF3S0</l><r><s n="mi"/>future<s n="verbmi"/>VRoot+3.Sg.Subj.Fut</r></p></e>
       <e><p><l><s n="parol"/>VMSF3S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSF3S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSF3S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
       
       <!--subjuntivo imperfecto: anduviésemos/anduviéramos  -> --> 
-      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+1.Pl.Excl.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e>
       <!-- anduviese/anduviera  -> --> 
-      <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+1.Sg.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSI1S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
       <!-- anduvieseis/anduvierais  -> --> 
-      <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+2.Pl.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSI2P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
       <!-- anduvieses/anduvieras  -> --> 
-      <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+2.Sg.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSI2S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
       <!-- anduviesen/anduvieran  -> --> 
-      <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+3.Pl.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSI3P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
       <!-- anduviese/anduviera  -> --> 
-      <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+3.Sg.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSI3S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
       
       <!--subjuntivo presente: andemos  -> --> 
-      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+1.Pl.Excl.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>DS</r></p></e>   
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Incl.Poss</r></p></e>   
+      <e><p><l><s n="parol"/>VMSP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Pl.Excl.Poss</r></p></e> 
       <!-- ande (no imperative here) -> --> 
-      <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+1.Sg.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSP1S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+1.Sg.Poss</r></p></e>
       <!-- andéis  -> --> 
-      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+2.Pl.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+2.Pl.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Pl.Poss</r></p></e>
       <!-- andes  -> --> 
-      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+2.Sg.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+2.Sg.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSP2S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+2.Sg.Poss</r></p></e>
       <!-- anden  -> --> 
-      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+3.Pl.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+3.Pl.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3P0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Pl.Poss</r></p></e>
       <!-- ande  -> --> 
-      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>potential</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>imperative<s n="verbmi"/>VRoot+3.Sg.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+3.Sg.Subj.Pot</r></p></e>
       <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>SS<s n="verbmi"/>VRoot+SS</r></p></e>
-      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VMSP3S0</l><r><s n="mi"/>DS<s n="verbmi"/>VRoot+DS+3.Sg.Poss</r></p></e>
            </pardef>
 	   
      <pardef n="Verb_aux_ser">
@@ -1212,335 +1230,371 @@
       <e><p><l><s n="parol"/>VSG0000</l><r><s n="mi"/>Copula+SS</r></p></e>
       
       <!-- seríamos--> 
-      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>DS</r></p></e>     
+      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>passive<s n="verbmi"/>Vroot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>passive<s n="verbmi"/>Vroot+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Pl.Incl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Pl.Excl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Incl.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VSIC1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Excl.Poss</r></p></e> 
       <!-- sería--> 
-      <e><p><l><s n="parol"/>VSIC1S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIC1S0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSIC1S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIC1S0</l><r><s n="mi"/>DS</r></p></e>           
+      <e><p><l><s n="parol"/>VSIC1S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIC1S0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSIC1S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIC1S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Sg.Poss</r></p></e>           
       <!-- seríais--> 
-      <e><p><l><s n="parol"/>VSIC2P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIC2P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSIC2P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIC2P0</l><r><s n="mi"/>DS</r></p></e>     
+      <e><p><l><s n="parol"/>VSIC2P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIC2P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+2.Pl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSIC2P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIC2P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Pl.Poss</r></p></e>     
       <!-- serías--> 
-      <e><p><l><s n="parol"/>VSIC2S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIC2S0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSIC2S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIC2S0</l><r><s n="mi"/>DS</r></p></e>     
+      <e><p><l><s n="parol"/>VSIC2S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIC2S0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+2.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSIC2S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIC2S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Sg.Poss</r></p></e>     
       <!-- serían--> 
-      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>DS</r></p></e>     
+      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+3.Pl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Pl.Poss</r></p></e>     
       <!-- sería--> 
-      <e><p><l><s n="parol"/>VSIC3S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>DS</r></p></e>     
+      <e><p><l><s n="parol"/>VSIC3S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+3.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIC3P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Sg.Poss</r></p></e>     
       
       <!-- seremos--> 
-      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>obligative</r></p></e> 
+      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+1.Pl.Incl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+1.Pl.Excl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Incl.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VSIF1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+1.Pl.Excl.Poss</r></p></e> 
       <!-- seré--> 
-      <e><p><l><s n="parol"/>VSIF1S0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSIF1S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIF1S0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VSIF1S0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+1.Sg.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSIF1S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIF1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Sg.Poss</r></p></e>
       <!-- seréis--> 
-      <e><p><l><s n="parol"/>VSIF2P0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSIF2P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIF2P0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VSIF2P0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+2.Pl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSIF2P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIF2P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+2.Pl.Poss</r></p></e>
       <!-- serás--> 
-      <e><p><l><s n="parol"/>VSIF2S0</l><r><s n="mi"/>future</r></p></e>
-       <e><p><l><s n="parol"/>VSIF2S0</l><r><s n="mi"/>passive</r></p></e>
-       <e><p><l><s n="parol"/>VSIF2S0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VSIF2S0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+2.Sg.Subj.Fut</r></p></e>
+       <e><p><l><s n="parol"/>VSIF2S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Obl+2.Sg.Poss</r></p></e>
+       <e><p><l><s n="parol"/>VSIF2S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+2.Sg.Poss</r></p></e>
        <!-- serán, -na in relative clauses, el hombre que será pegado -> maqanan runa--> 
-      <e><p><l><s n="parol"/>VSIF3P0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSIF3P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIF3P0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VSIF3P0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+3.Pl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSIF3P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIF3P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+3.Pl.Poss</r></p></e>
       <!-- será--> 
-      <e><p><l><s n="parol"/>VSIF3S0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSIF3S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSIF3S0</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VSIF3S0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+3.Sg.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSIF3S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIF3S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+3.Sg.Poss</r></p></e>
       
       
       <!-- éramos--> 
-      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>habitualpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>Copula+Ag_Copula+NPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>Copula+Ag_Copula+NPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Excl.Poss</r></p></e>
       <!-- era--> 
-      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>habitualpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>Copula+Ag_Copula+NPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Sg.Poss</r></p></e>
       <!-- erais--> 
-      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>habitualpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>Copula+Ag_Copula+NPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Pl.Poss</r></p></e>
       <!-- eras--> 
-      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>habitualpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>perfect</r></p></e>
+      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>Copula+Ag_Copula+NPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Sg.Poss</r></p></e>
       <!-- eran (rel. clauses -sqa)--> 
-      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>habitualpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>Copula+Ag_Copula+NPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSII3P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Pl.Poss</r></p></e>
       <!-- era--> 
-      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>habitualpast</r></p></e>
-      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>habitualpast<s n="verbmi"/>Copula+Ag_Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSII3S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Sg.Poss</r></p></e>
       
       <!-- somos--> 
-      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>present<s n="verbmi"/>Copula+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>present<s n="verbmi"/>Copula+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
       <!-- soy--> 
-      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>present<s n="verbmi"/>Copula+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP1S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
       <!-- sois--> 
-      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>present<s n="verbmi"/>Copula+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
       <!-- eres--> 
-      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>present<s n="verbmi"/>Copula+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP2S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
       <!-- son--> 
-      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>present<s n="verbmi"/>Copula+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
       <!-- es--> 
-      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>present</r></p></e>
-      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>present<s n="verbmi"/>Copula+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIP3S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
       
       <!-- fuimos--> 
-      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+1.Pl.Incl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+1.Pl.Excl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
       <!-- fui--> 
-      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+1.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS1S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
       <!-- fuisteis--> 
-      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+2.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
       <!-- fuiste--> 
-      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+2.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS2S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
       <!-- fueron--> 
-      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+3.Pl.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
       <!-- fue--> 
-      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>indirectpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>directpast</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>DS</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>indirectpast<s n="verbmi"/>Copula+IPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>directpast<s n="verbmi"/>Copula+NPst+3.Sg.Subj</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSIS3S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
       
       <!-- seamos (imperativo)--> 
-      <e><p><l><s n="parol"/>VSM01P0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VSM01P0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+1.Pl.Incl.Subj.Imp</r></p></e>
       <!-- sed--> 
-      <e><p><l><s n="parol"/>VSM02P0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VSM02P0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+2.Pl.Subj.Imp</r></p></e>
       <!-- sé--> 
-      <e><p><l><s n="parol"/>VSM02S0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VSM02S0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+2.Sg.Subj.Imp</r></p></e>
       <!-- sean--> 
-      <e><p><l><s n="parol"/>VSM03P0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VSM03P0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+3.Pl.Subj.Imp</r></p></e>
       <!-- sea--> 
-      <e><p><l><s n="parol"/>VSM03S0</l><r><s n="mi"/>imperative</r></p></e>
+      <e><p><l><s n="parol"/>VSM03S0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+3.Sg.Subj.Imp</r></p></e>
       
       <!-- ser--> 
-      <e><p><l><s n="parol"/>VSN0000</l><r><s n="mi"/>infinitive</r></p></e>
-      <e><p><l><s n="parol"/>VSN0000</l><r><s n="mi"/>passive</r></p></e>
+      <e><p><l><s n="parol"/>VSN0000</l><r><s n="mi"/>infinitive<s n="verbmi"/>Copula+Inf</r></p></e>
+      <e><p><l><s n="parol"/>VSN0000</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf_Copula+Inf</r></p></e>
       <!-- había sido cansado/pegado--> 
-      <e><p><l><s n="parol"/>VSP00SM</l><r><s n="mi"/>participle</r></p></e>
+      <e><p><l><s n="parol"/>VSP00SM</l><r><s n="mi"/>participle<s n="verbmi"/>Copula+Perf</r></p></e>
+      <e><p><l><s n="parol"/>VSP00SM</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf</r></p></e>
       
       <!--subjuntive future: (neglectable) fuéremos--> 
-      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+1.Pl.Incl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+1.Pl.Excl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Excl.Poss</r></p></e>
       <!-- fuere--> 
-      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+1.Sg.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF1S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Sg.Poss</r></p></e>
       <!-- fuereis--> 
-      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+2.Pl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Pl.Poss</r></p></e>
       <!-- fueres--> 
-      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+2.Sg.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF2S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Sg.Poss</r></p></e>
       <!-- fueren--> 
-      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+3.Pl.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Pl.Poss</r></p></e>
       <!-- fuere--> 
-      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>future</r></p></e>
-      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>future<s n="verbmi"/>Copula+3.Sg.Subj.Fut</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSF3S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Sg.Poss</r></p></e>
       
       <!-- fuésemos/fuéramos--> 
-      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Pl.Incl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Pl.Excl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Excl.Poss</r></p></e>
       <!-- fuese/fuera--> 
-      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI1S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Sg.Poss</r></p></e>
       <!-- fueseis/fuerais--> 
-      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+2.Pl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Pl.Poss</r></p></e>
       <!-- fueses/fueras--> 
-      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+2.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI2S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Sg.Poss</r></p></e>
       <!-- fuesen/fueran--> 
-      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+3.Pl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Pl.Poss</r></p></e>
       <!-- fuese/fuera--> 
-      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>DS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+3.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSI3S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Sg.Poss</r></p></e>
       
       <!-- seamos-->
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>passive</r></p></e> 
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+1.Pl.Incl.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Pl.Excl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Pl.Incl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Pl.Excl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Incl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Pl.Excl.Poss</r></p></e> 
       <!-- sea (no imperative here)--> 
-      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>passive</r></p></e> 
-      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+1.Sg.Poss</r></p></e> 
+      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+1.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+1.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1S0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+1.Sg.Poss</r></p></e> 
       <!-- seáis--> 
-      <e><p><l><s n="parol"/>VSSP2P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS</r></p></e>       
+      <e><p><l><s n="parol"/>VSSP2P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+2.Pl.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+2.Pl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Pl.Poss</r></p></e>       
       <!-- seas--> 
-      <e><p><l><s n="parol"/>VSSP2S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VSSP2S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+2.Sg.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+2.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+2.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+2.Sg.Poss</r></p></e> 
       <!-- sean--> 
-      <e><p><l><s n="parol"/>VSSP3P0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VSSP3P0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+3.Pl.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Pl.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+3.Pl.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Pl.Poss</r></p></e> 
       <!-- sea--> 
-      <e><p><l><s n="parol"/>VSSP3S0</l><r><s n="mi"/>passive</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS</r></p></e>
-      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS</r></p></e> 
+      <e><p><l><s n="parol"/>VSSP3S0</l><r><s n="mi"/>passive<s n="verbmi"/>VRoot+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>imperative<s n="verbmi"/>Copula+3.Sg.Subj.Imp</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>obligative<s n="verbmi"/>Copula+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>perfect<s n="verbmi"/>Copula+Perf+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>potential<s n="verbmi"/>Copula+3.Sg.Subj.Pot</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>SS<s n="verbmi"/>Copula+SS</r></p></e>
+      <e><p><l><s n="parol"/>VSSP1P0</l><r><s n="mi"/>DS<s n="verbmi"/>Copula+DS+3.Sg.Poss</r></p></e> 
      </pardef>
      
      <pardef n="Verb_main_inf"> <!-- some Spanish nouns have to be translated as Quechua infinitives--> 
