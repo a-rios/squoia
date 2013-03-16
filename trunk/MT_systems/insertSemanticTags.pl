@@ -48,7 +48,7 @@ my %semanticLexicon =();
 	my ($lemma, $semTag ,$condition ) = split( /\s*\t+\s*/, $_, 3 );
 	my @value = ($semTag, $condition);
 	$semanticLexicon{$lemma} = \@value;
-	#print "$lemma:$semanticLexicon{$lemma}\n";
+	#print STDERR "$lemma:$semanticLexicon{$lemma}\n";
 	
 }
 #read xml from STDIN
@@ -62,10 +62,12 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		foreach my $wordnode (@NODES) 
 		{
 			#print 'bla';
-			if ( $wordnode->hasAttribute('lem'))      #if node has attribute lem, read lemma
+			if ( $wordnode->hasAttribute('lem') ||$wordnode->hasAttribute('slem'))      #if node has attribute lem, read lemma
 			{
 				my $lem  = $wordnode->getAttribute('lem');
-				if (exists($semanticLexicon{$lem}))# if there's an entry in the semantic lexicon for this lemma
+				my $slem = $wordnode->getAttribute('slem');
+
+				if ( $wordnode->hasAttribute('lem') && exists($semanticLexicon{$lem})) # if there's an entry in the semantic lexicon for this lemma
 				{
 					# get condition(s) for insertion, split, remove empty fields
 					my $nodeCondition = @{$semanticLexicon{$lem}}[1]; 
@@ -77,11 +79,27 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 
 					my $result= &evalConditions(\@conditions,$wordnode);
 
-					if ($result)
+					if ($result || (scalar(@conditions)==1 && $conditions[0] eq '-') )
 					{
 						$wordnode->setAttribute('sem', @{$semanticLexicon{$lem}}[0]);
 					}		
 				} 
+				elsif( $wordnode->hasAttribute('slem') && exists($semanticLexicon{$slem}))
+				{
+					# get condition(s) for insertion, split, remove empty fields
+					my $nodeCondition = @{$semanticLexicon{$slem}}[1]; 
+
+					my @conditionsWithEmptyfields = split( /(\!|&&|\|\||\)|\()/, $nodeCondition);
+
+					#remove empty fields resulted from split
+					my @conditions = grep {$_} @conditionsWithEmptyfields; 
+
+					my $result= &evalConditions(\@conditions,$wordnode);
+					if ($result || (scalar(@conditions)==1 && @conditions[0] eq '-') )
+					{
+						$wordnode->setAttribute('sem', @{$semanticLexicon{$slem}}[0]);
+					}
+				}
 			}
 		}
 	}
