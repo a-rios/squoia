@@ -1,0 +1,65 @@
+#   chunk:   
+#     my	= the current chunk/node
+#     parent	= the parent of the current node (may be a chunk or a node)
+#     chunkparent = first antecedent that is a chunk (if parent is a chunk, chunkparent and parent are identical)
+#     chunkgrandparent = chunkparent of chunkparent
+#     lsibling = left sibling
+#     rsibling = right sibling
+#     child = a child node/chunk (condition evaluates to true if at least one child node matches)
+#     chunkchild = first descendant that is a chunk
+# prep source	case/adpos target (will be inserted)	condition	   default(+/-)  # comment
+
+
+# Simple prepositions
+#####################
+
+
+# how treat ambiguous cases (cd-a, cd/ci)? better generate both..?
+a	case=+Acc	chunkparent.si=cd 	- 			# veo A Juan, JuanTA rikuni
+a	case=+Dat	chunkparent.si=ci || chunkparent.si=cc	+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
+a	case=+Loc	xpath{child::CHUNK[@type="sn"]/NODE[@smi="W"]}	-	# hora: a las 4 de la tarde -> -pi
+de	case=+Gen	chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00"]})	-  # genitive: if head is a noun chunk and child is not a geographical proper name
+de 	case=+Abl	chunkparent.type=grup-verb || xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00"]}	+  # ablative: verb 
+# TODO: de -> material, should be ablative
+
+acerca_de
+al_lado_de
+ante
+antes_de
+a_pesar_de 
+bajo 
+cerca_de 
+con 
+con_objeto_de 
+contra 
+en_contra_de 
+cabe 
+de 
+debajo_de
+delante_de
+dentro_de
+detrás_de
+desde 
+después_de 
+desque
+durante 
+en 
+en_virtud_de 
+encima
+entre 
+excepto 
+frente_a
+al_frente_de
+enfrente_de
+fuera_de
+hacia 
+hasta
+lejos_de
+junto_a
+mediante 
+para 
+por_eso
+por 
+sin 
+sobre
+tras
