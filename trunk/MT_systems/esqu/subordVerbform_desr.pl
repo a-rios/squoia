@@ -80,6 +80,11 @@ foreach my $sentence (@sentenceList)
  					$nbrOfFinalClauses++;
  					$verbChunk->setAttribute('verbform', 'obligative');
  				}
+ 				# if this is a passive clause with 'ser'/'estar'
+ 				elsif($verbChunk->exists('child::NODE[starts-with(@mi,"VMP")]/NODE[@lem="ser" or @lem="estar"]'))
+ 				{
+ 					$verbChunk->setAttribute('verbform', 'passive');
+ 				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
  				elsif( $verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="si" or @lem="cuando" or @lem="mientras_que"]') || $verbChunk->exists('parent::CHUNK[@type="coor-v"]/NODE[@cpos="v"]/NODE[@lem="si" or @lem="cuando"]') )
  				{

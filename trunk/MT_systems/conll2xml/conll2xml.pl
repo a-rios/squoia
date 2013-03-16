@@ -8,6 +8,34 @@ binmode STDIN, ':utf8';
 use File::Spec::Functions qw(rel2abs);
 use File::Basename;
 
+my %mapCliticToEaglesTag =       (
+        'la'		=> 'PP3FSA00',
+        'las'		=> 'PP3FPA00',
+        'lo'		=> 'PP3MSA00',
+        'los'		=> 'PP3MPA00',
+        'le'		=> 'PP30SD00',
+        'les'		=> 'PP30PD00',
+        'me'		=> 'PP10S000', # PP1CS000?
+        'te'		=> 'PP20S000', # PP2CS000?
+        'se'		=> 'PP30N000', # PP3CN000? could be le|les => se  or refl se ...or passive|impersonal se ...?
+        'nos'		=> 'PP10P000', # PP1CP000?
+        'os'		=> 'PP20P000' # PP2CP000?
+                );
+
+my %mapCliticFormToLemma =       (
+        'la'		=> 'lo',
+        'las'		=> 'los',
+        'lo'		=> 'lo',
+        'los'		=> 'los',
+        'le'		=> 'le',
+        'les'		=> 'les',
+        'me'		=> 'me',
+        'te'		=> 'te',
+        'se'		=> 'se',
+        'nos'		=> 'nos',
+        'os'		=> 'os'
+                );
+
 
 # read conll file and create xml (still flat)
 my $scount=1; #sentence ord
@@ -49,6 +77,16 @@ while (<>)
      }
      
      my $eaglesTag = &toEaglesTag($pos, $info);
+     # if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
+     if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/)
+     {
+	print STDERR "clitics in verb $lem: $word\n";
+	my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
+	if ($clstr !~ /^$/)	# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
+	{
+		&createAppendCliticNodes($sentence,$scount,$id,$clstr);
+	}
+     }
      if($eaglesTag =~ /^NP/)
      {
      	$pos="np";
@@ -77,7 +115,7 @@ while (<>)
   }
 
 #my $docstring = $dom->toString(3);
-#print STDOUT $docstring;
+#print STDERR $docstring;
 #print "------------------------------------------------\n";
 
 ## adjust dependencies (word level), 
@@ -158,7 +196,7 @@ for(my $i = 0; $i < scalar(@sentences); $i++)
 
 
 #my $docstring = $dom->toString(3);
-#print STDOUT $docstring;
+#print STDERR $docstring;
 #print "------------------------------------------------\n";
 #print "------------------------------------------------\n";
 
@@ -217,6 +255,16 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 else
 				 {
 				 	$verbchunk->setAttribute('type', 'grup-verb');
+				 }
+				 
+				 # if this is the main verb in the chunk labeled as VA, change pos to VM
+				 if($node->getAttribute('pos') eq 'va' && !$node->exists('child::NODE[@pos="vm"]'))
+				 {
+				 	my $eaglesTag = $node->getAttribute('mi');
+				 	substr($eaglesTag, 1, 1) = "M";
+				 	$node->setAttribute('mi',$eaglesTag);
+				 	$node->setAttribute('pos', 'vm');
+				 	print STDERR "change mi to $eaglesTag\n";
 				 }
 				 
 				 # if relative clause with preposition preceding relative pronoun-> desr makes wrong analysis:
@@ -471,12 +519,12 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 						
 					}
 					# Problem with clitic pronouns la sirena SE LO comerá, SE LO diré cuando llegue)-> head se--concat--lo--concat--verb 
-					# edit: same problem with 'me lo, te la, etc', -> adapted regex, note that $clitic2 contains also 'me,te,no,vos' now
-				 	elsif($node->getAttribute('rel') eq 'CONCAT' && $node->exists('parent::NODE[@pos="pp" and (@lem="lo" or @lem="le" or @lem="te" or @lem="me" or @lem="nos" or @lem="vos")]'))
+					# edit: same problem with 'me lo, te la, etc', -> adapted regex, note that $clitic2 contains also 'me,te,no,vos,os' now
+				 	elsif($node->getAttribute('rel') eq 'CONCAT' && $node->exists('parent::NODE[@pos="pp" and (@lem="lo" or @lem="le" or @lem="te" or @lem="me" or @lem="nos" or @lem="vos" or @lem="os")]'))
 				 	{
 				 		#print STDERR "abzweigung erwischt\n";
 				 		$clitic = $node->parentNode();
-				 		$clitic2 = @{$clitic->parentNode()->findnodes('parent::CHUNK[@type="sn"]/NODE[@lem="se" or @lem="te" or @lem="me" or @lem="nos" or @lem="vos"][1]')}[0];
+				 		$clitic2 = @{$clitic->parentNode()->findnodes('parent::CHUNK[@type="sn"]/NODE[@lem="se" or @lem="te" or @lem="me" or @lem="nos" or @lem="vos" or @lem="os"][1]')}[0];
 				 		# if 'se lo'
 				 		if($clitic && $clitic2)
 				 		{
@@ -1201,8 +1249,8 @@ sub isCongruent{
 					}		
 				}
 			}
-			# if 'me,te,se,nos,vos' as suj -> change to cd-a
-			elsif($subjNode->exists('self::NODE[@lem="me" or @lem="te" or @lem="se" or @lem="nos" or @lem="vos" or @lem="le" or @lem="lo"]'))
+			# if 'me,te,se,nos,vos,os' as suj -> change to cd-a
+			elsif($subjNode->exists('self::NODE[@lem="me" or @lem="te" or @lem="se" or @lem="nos" or @lem="vos" or @lem="os" or @lem="le" or @lem="lo"]'))
 			{
 				return 0;
 			}
@@ -1556,7 +1604,17 @@ sub model2{
  				 	  $lem = "estar";
      				  $pos = "va";
     		 	 }
- 			 	 my $eaglesTag = &toEaglesTag($pos, $info);
+ 			 	my $eaglesTag = &toEaglesTag($pos, $info);
+				# if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
+				if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/)
+				{
+					print STDERR "clitics in verb $lem: $word\n";
+					my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
+					if ($clstr !~ /^$/)	# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
+					{
+						&createAppendCliticNodes($sentence,$sentenceId,$id,$clstr);
+					}
+				}
    				 if($eaglesTag =~ /^NP/)
    				 {
   		 	 		$pos="np";
@@ -1585,5 +1643,133 @@ sub model2{
 	else
 	{
 		print STDERR "failed to parse sentence!\n";
+	}
+}
+
+# clitics stuff
+# freeling could retokenize the enclitics but we don't split the verb forms before parsing
+# because desr parser was apparently not trained on data with separate clitics
+sub getCliticRelation{
+	my $cltag = $_[0];
+
+	my $rel;
+	if ($cltag =~ /^PP...A/)
+	{
+		$rel = "cd";
+	}
+	elsif ($cltag =~ /^PP...D/)
+	{
+		$rel = "ci";
+	}
+	else
+	{
+		$rel = "cd/ci";
+	}
+	return $rel;
+}
+
+sub splitCliticsFromVerb{
+	my $word = $_[0];
+	my $vtag = $_[1];
+	my $vlem = $_[2];
+
+	my @vfcl;	# TODO change the verb form in the verb node? currently not...
+	# gerund
+	if ($vtag =~ /V.G/ and $word =~ /(.*ndo)([^d]+)/)
+	{
+		$vfcl[0] = $1;
+		$vfcl[1] = $2;
+		print STDERR "verb gerund $vfcl[0] ; clitics $vfcl[1]\n";
+	}
+	# infinitive
+	elsif ($vtag =~ /V.N/ and $word =~ /(.*r)([^r]+)/)
+	{
+		$vfcl[0] = $1;
+		$vfcl[1] = $2;
+		print STDERR "verb infinitive $vfcl[0] ; clitics $vfcl[1]\n";
+	}
+	# imperative
+	elsif ($vtag =~ /V.M/)
+	{
+		my $vend = "";
+		# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
+		if ($vtag =~ /V.M02S0/ and $vlem =~ /([mst][ei])r$/)	# cómetelas => come-telas (comer) ; vístete => viste-te (vestir) TODO Spanish verb ending in "ler" (not "ller") ?
+		{
+			$vend = $1;
+		}
+		elsif ($vtag =~ /V.M03S/ and $vlem =~ /([mst]a)r$/)	# mátelo => mate-lo (matar)	TODO Spanish verb ending in "lar" (not "llar") ?
+		{
+			$vend = $1;
+			$vend =~ s/a/e/;
+		}
+		print STDERR "$vtag verb $vlem form ends in $vend\n";
+		if ($word =~ /(.*?$vend)((me|te|nos|os|se|la|las|lo|los|le|les)+)$/)
+		{
+			$vfcl[0] = $1;
+			$vfcl[1] = $2;
+		}
+		else
+		{
+			$vfcl[0] = $word;
+			$vfcl[1] = "";
+		}		
+		print STDERR "verb imperative $vfcl[0] ; clitics $vfcl[1]\n";
+	}
+	return $vfcl[1];	# only return a single variable, the clitic string
+}
+
+sub getClitics{
+	my $clstr = $_[0];
+	
+	my $cl = $clstr;
+	my @clitics;
+	while ($cl !~ /^$/) {
+		if ($cl =~ /(.*)(la|las|lo|los|le|les)$/)
+		{
+			$cl = $1;
+			unshift(@clitics,$2);
+		}
+		elsif ($cl =~ /(.*)(me|te|se|nos)$/)
+		{
+			$cl = $1;
+			unshift(@clitics,$2);
+		}
+		elsif ($cl =~ /(.*)(os)$/)
+		{
+			$cl = $1;
+			unshift(@clitics,$2);
+		}
+	}
+	return \@clitics;
+}
+
+sub createAppendCliticNodes{
+	my $sentence = $_[0];
+	my $scount = $_[1];
+	my $verbid = $_[2];
+	my $clstr = $_[3];
+
+	my $clid = int($verbid) + 0.1;
+	my $clitics = &getClitics($clstr);
+	foreach my $c (@{$clitics})
+	{
+		print STDERR "$c\n";
+		my $cliticNode = XML::LibXML::Element->new( 'NODE' );
+		$sentence->appendChild($cliticNode);
+		$cliticNode->setAttribute( 'ord', $clid ); # TODO new id...
+		$cliticNode->setAttribute( 'form', $c );
+		$cliticNode->setAttribute( 'lem', $mapCliticFormToLemma{$c} );
+		$cliticNode->setAttribute( 'pos', "pp" );
+		$cliticNode->setAttribute( 'cpos', "p" );
+		$cliticNode->setAttribute( 'head', $verbid );	# head of clitics is the verb itself
+		my $cleaglesTag = $mapCliticToEaglesTag{$c};
+		print STDERR "eagles tag for clitic $c : $cleaglesTag\n";
+		my $clrel = &getCliticRelation($cleaglesTag);
+		$cliticNode->setAttribute( 'rel', $clrel );	# TODO rel = cd|ci|creg? refl?
+		print STDERR "possible relation for clitic $c : $clrel\n";
+		$cliticNode->setAttribute( 'mi', $cleaglesTag );
+		my $clkey = "$scount:$clid";
+		$docHash{$clkey}= $cliticNode;
+		$clid += 0.1;
 	}
 }

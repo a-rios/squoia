@@ -115,7 +115,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 												my @synattrlist = $firstsyn->attributes();
 												foreach my $synattr (@synattrlist)
 												{
-													unless($synattr =~ /ref|slem|smi|sform|UpCase/)
+													unless($synattr =~ /ref|slem|smi|sform|UpCase|complex_mi/)
 													{
 													$node->removeAttribute($synattr->nodeName);
 													}
