@@ -12707,9 +12707,9 @@
   <p><l>estallar</l><r>t'uqya</r></p><par n="Verb_main"/>
 </e>
 <!-- estar. Kachkay.  -->
-<!--<e>
-  <p><l>estar</l><r>Kachkay</r></p><par n="Verb_main"/>
-</e>-->
+<e>
+  <p><l>estar</l><r>ka</r></p><par n="Verb_main"/>
+</e>
 <!-- estimar.   Yupaychay,   khuyay; chaninchay. -->
 <e>
   <p><l>estimar</l><r>yupa<s n="complex_mi"/>VRoot+Inf+Fact</r></p><par n="Verb_main"/>

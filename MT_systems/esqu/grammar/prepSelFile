@@ -19,8 +19,11 @@ a	case=+Acc	chunkparent.si=cd 	- 			# veo A Juan, JuanTA rikuni
 a	case=+Dat	chunkparent.si=ci || chunkparent.si=cc	+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
 a	case=+Loc	xpath{child::CHUNK[@type="sn"]/NODE[@smi="W"]}	-	# hora: a las 4 de la tarde -> -pi
 de	case=+Gen	chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00"]})	-  # genitive: if head is a noun chunk and child is not a geographical proper name
-de 	case=+Abl	chunkparent.type=grup-verb || xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00"]}	+  # ablative: verb 
-# TODO: de -> material, should be ablative
+de 	case=+Abl	chunkparent.type=grup-verb || xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00"]}
+de	func=attributtive	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]"]}
+
+#contains(@slem, "acero|acetileno|acetona|ácido|aerosol|agua|aguanieve|aire|álcali|alcohol|algodón|aluminio|amoniaco|arcilla|asbesto|bambú|basalto|benzoato|berilio|bicarbonato|bicloruro|bifosfato|bioalcohol|bioetanol|biogás|bisulfuro|boro|brandy|bromo|bronce|butano|cachemir|cadmio|calcio|calcita|cal|canela|carbohidrato|carbono|cartón|cafeína|celulosa|cemento|cera|cerámica|cesio|cloro|cobalto|cobre|cocaína|codeína|colágeno|colesterol|corcho|cortisona|criptón|cristalito|cuarzo|dióxido|ébano|esmaltín|estaño|estera|estiércol|estradiol|estragón|estriol|etano|flúor|formalina|gas|gluten|gneis|grava|greda|helio|henna|hierro|jade|lana|lapislázuli|lavanda|licra|linalol|linóleo|lino|litio|madera|madreperla|magnesio|mármol|mentol|mirra|monóxido|nácar|nicotina|neón|nitrato|nylón|oro|opio|osmio|óxido|oxígeno|ozono|paladio|pana|papel|paprika|parafina|peróxido|petróleo|plástico|plata|plomo|plutonio|piedra|poliéster|pólvora|porcelana|potasio|propanol|propano|proteína|satén|sebo|seda|sisal|soda|sosa|sulfato|sulfuro|tanino|teflón|tela|tierra|uranio|vidrio|yerro|yeso|yodo|zinc") ]}	+  # ablative: verb 
+# TODO: de -> material, should be ablative, Mengenangaben: una tasa DE café?
 
 acerca_de
 al_lado_de
