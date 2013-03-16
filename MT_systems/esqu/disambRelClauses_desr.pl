@@ -738,7 +738,7 @@ sub evaluateSingleFrame{
 			# ditransitive: if head noun is iobj, rel-prn with 'a' (la casa A LA que pusieron una techa, no *la casa que pusieron techa) 
 			#-> we only need to disambiguate between the cases where the head noun is obj or subj (e.g. la casa que dieron a Jośe vs. el hombre que dio la casa a José)		
 			# if rel-clause has overt subj but no obj -> head noun is obj
-			elsif(!&hasSubj($relClause) && $relClause->exists('CHUNK[@si="ci" or @si="creg" or @si="cd-a" or @si="cd"]'))
+			elsif(!&hasSubj($relClause) && $relClause->exists('CHUNK[@si="ci" or @si="creg" or @si="cd-a" or @si="cd" or @si="cd/ci"]'))
 			{
 				# if agentive
 				if($thematicRoleOfSubj =~ /agt|cau|exp|src|ins|loc/)
@@ -885,20 +885,20 @@ sub hasSubj{
 sub hasDobj{
 	my $relClauseNode = $_[0];
 	
-	return($relClauseNode->exists('CHUNK[@si="cd" or @si="cd-a"]') );
+	return($relClauseNode->exists('CHUNK[@si="cd" or @si="cd-a" or @si="cd/ci"]') );
 
 }
 
 sub hasDorSPobj{
 	my $relClauseNode = $_[0];
 	
-	return ($relClauseNode->exists('CHUNK[@si="cd" or @si="cd-a" or @si="creg"]') );
+	return ($relClauseNode->exists('CHUNK[@si="cd" or @si="cd-a" or @si="creg" or @si="cd/ci"]') );
 }
 
 sub hasIobj{
 	my $relClauseNode = $_[0];
 	
-	return ($relClauseNode->exists('CHUNK[@si="ci" or @si="cd-a"]') );
+	return ($relClauseNode->exists('CHUNK[@si="ci" or @si="cd-a" or @si="cd/ci"]') );
 }
 
 sub hasRflx{
