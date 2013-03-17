@@ -1812,8 +1812,9 @@
 <!--<e>
   <p><l>acerca_de</l><r><s n="mi"/>NRoot+3.Sg.Poss++Gen</r></p><par n="Prepositions"/>
 </e>-->
+  <!--ponerse al lado de alguien-> sayapakuy, al lado de +noun -> qayllapi/patanpi -->
 <e>
-  <p><l>al_lado_de</l><r><s n="prep"/>al_lado_de</r></p><par n="Prepositions"/>
+  <p><l>al_lado_de</l><r><s n="prep"/></r></p><par n="Prepositions"/>
 </e>
 <!-- ñawpa-n -->
 <e>
@@ -1825,6 +1826,9 @@
 <!-- aswanpas -->
 <e>
   <p><l>a_pesar_de</l><r><s n="prep"/>a_pesar_de</r></p><par n="Prepositions"/>
+</e> 
+<e>
+  <p><l>a_pesar_de_todo</l><r><s n="prep"/>a_pesar_de_todo</r></p><par n="Prepositions"/>
 </e> 
 <e>
   <p><l>bajo</l><r><s n="prep"/>bajo</r></p><par n="Prepositions"/>
