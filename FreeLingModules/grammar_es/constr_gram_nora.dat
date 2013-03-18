@@ -686,7 +686,8 @@ CONSTRAINTS
 
 % REGLA L018
 % "La información objetiva que trata malentendidos es la base de la reconciliación." -> "malentendidos" es un sustantivo, no un verbo.
-15.0 NC*
+%15.0 NC*
+17.0 NC*
     (0 VMP*)
     (-1* VM*)
     (not -1* <estar>);
@@ -724,6 +725,13 @@ CONSTRAINTS
 % "Sólo ahí en donde hay periodistas incómodos y bien preparados puede florecer la libertad de prensa."
 % Cambiar esta regla, crea conflictos con otras construcciones, y un peso de 700 es una barbaridad.
 % REVISAR
+10.0 AQ*
+    (0 VMP*)
+    (-1 N*);
+
+10.0 AQ*
+    (0 VMP)
+    (-2 N*);
 
 
 % REGLA L023
@@ -867,6 +875,9 @@ CONSTRAINTS
 %3.0 V*
 %    (0 AQ*)
 %    (1 S*(por));
+
+
+% REGLA L034
 
 
 
