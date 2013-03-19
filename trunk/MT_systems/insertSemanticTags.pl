@@ -24,33 +24,45 @@ use File::Basename;
 my $path = dirname(rel2abs($0));
 require "$path/util.pl";
 
-
-# retrieve hash with config parameters from disk, get path to file with semantic information
-eval
-{
-	retrieve('parameters');
-
-} or die "No parameters defined. Run readConfig.pl first!";
-
-	my %hash = %{ retrieve("parameters") }; 
-my $semanticDictFile= $hash{"SemFile"} or die "Semantic dictionary not specified in config!";
-open SEMFILE, "< $semanticDictFile" or die "Can't open $semanticDictFile : $!";
-
 my %semanticLexicon =();
 
- #read semantic information from file into a hash (lemma, semantic Tag,  condition)
- while(<SEMFILE>)
- {
- 	chomp;
- 	s/#.*//;     # no comments
-	s/^\s+//;    # no leading white
-	s/\s+$//;    # no trailing white
-	my ($lemma, $semTag ,$condition ) = split( /\s*\t+\s*/, $_, 3 );
-	my @value = ($semTag, $condition);
-	$semanticLexicon{$lemma} = \@value;
-	#print STDERR "$lemma:$semanticLexicon{$lemma}\n";
+eval
+{
+	retrieve('semLex');
+	my %semanticLexicon = %{ retrieve("semLex") }; 
+
+} or print STDERR "Read semantic lexicon first!";
+
+if(!%semanticLexicon)
+{
+	# retrieve hash with config parameters from disk, get path to file with semantic information
+	eval
+	{
+		retrieve('parameters');
+
+	} or die "No parameters defined. Run readConfig.pl first!";
+
+	my %hash = %{ retrieve("parameters") }; 
+	my $semanticDictFile= $hash{"SemFile"} or die "Semantic dictionary not specified in config!";
+	open SEMFILE, "< $semanticDictFile" or die "Can't open $semanticDictFile : $!";
+
+
+ 	#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+ 	while(<SEMFILE>)
+ 	{
+	 	chomp;
+	 	s/#.*//;     # no comments
+		s/^\s+//;    # no leading white
+		s/\s+$//;    # no trailing white
+		my ($lemma, $semTag ,$condition ) = split( /\s*\t+\s*/, $_, 3 );
+		my @value = ($semTag, $condition);
+		$semanticLexicon{$lemma} = \@value;
 	
+		#print STDERR "$lemma:$semanticLexicon{$lemma}\n";
+	}
+	store \%semanticLexicon, 'semLex';
 }
+
 #read xml from STDIN
 my $parser = XML::LibXML->new({encoding => 'utf-8'});
 my $dom    = XML::LibXML->load_xml( IO => *STDIN);

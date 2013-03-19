@@ -120,9 +120,9 @@ feraz	mira	-	0.1
 
 #hacer falta (hacer falta que-> separate entry in lexicon)
 # le hace falta su mama -> watu-, hace falto trabajo -> pisi-, hace falta que hablemos -> na+kan
-hacer_falta	watu	child.smi=/PP...D00/						0.2
-hacer_falta	pisi	-						0.3
-hacer_falta	-na	rsibling.type=grup-verb-inf&&rsibling.si=dobj	0.1
+hacer_falta	watu	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]}	0.1
+hacer_falta	pisi	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]}	0.2
+hacer_falta	ka	xpath{child::CHUNK[@type="grup-verb" or @type="coor-v"]}								0.3
 
 #lengua: qallu (de la boca), simi (idioma)
 lengua	qallu	 -			0.1
