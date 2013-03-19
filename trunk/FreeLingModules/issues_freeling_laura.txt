@@ -1,0 +1,28 @@
+Issues with FreeLing (urgent)
+
+1. está -> analyzed as 2.Sg imperative
+-> La puertá está cerrada -> está = VMM02S0
+
+2. haber as VM if existencial clause with 'hay' (but also había, hubiera, etc.)
+  -> currently always VA
+  -> leads to parse trees that lttoolbox can't handle -> crash
+
+3. el son del tambor -> 'son' should be NC, gets tagged as VS
+
+4. intercambio analyzed as VM when it should be NC, e.g. in:
+  'permite que haya intercambio de informaciones'
+  
+5. como: CS vs SP!
+   se conoce como la catarata de la sirena -> should be SP (preposition), but gets tagged as CS
+   
+6. malentendidos: VMP vs. NC
+   'tratan malentendidos' -> gets tagged as VMP, should be NC
+
+7. participle vs AQ with preceding AQ! 
+  -> 'cuestiones políticas y sociales centradas'
+   -> centradas tagged as VMP, should be AQ
+
+8. distancia: VM vs. NC:
+   Para los periodistas suele ser difícil guardar distancia a hechos en los que conocidos..
+   -> distancia tagged as verb (VM), should be NC here
+
