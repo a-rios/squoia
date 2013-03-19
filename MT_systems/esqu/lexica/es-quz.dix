@@ -6,7 +6,7 @@
     <sdef n="si"    c="syntactic information"/>
     <sdef n="lem"    c="lem"/>
     <sdef n="addlem"    c="addlem"/>
-    <sdef n="prep"    c="prep"/>
+    <sdef n="adpos"    c="adpositions (pre- or postpositions)"/>
     <sdef n="split"    c="1:n translation that need to be split up (-> 2,3.. nodes)"/>
     <sdef n="root_type"    c="quechua root type"/>
     <sdef n="complex_mi"    c="complex root with additional morphology"/>
@@ -177,10 +177,10 @@
       <e><p><l><s n="parol"/>PP3MS000</l><r><s n="mi"/>PrnPers+3.Sg</r></p></e>
       <e><p><l><s n="parol"/>PP3FS000</l><r><s n="mi"/>PrnPers+3.Sg</r></p></e>
       <e><p><l><s n="parol"/>PP3NS000</l><r><s n="mi"/>PrnPers+3.Sg</r></p></e>
-      <e><p><l><s n="parol"/>PP3FSA00</l><r><s n="mi"/>PrnPers+3.Pl+Acc</r></p></e>
-      <e><p><l><s n="parol"/>PP3CSD00</l><r><s n="mi"/>PrnPers+3.Pl+Dat</r></p></e>
-      <e><p><l><s n="parol"/>PP3CNA00</l><r><s n="mi"/>PrnPers+3.Pl+Acc</r></p></e>
-      <e><p><l><s n="parol"/>PP3MSA00</l><r><s n="mi"/>PrnPers+3.Pl+Acc</r></p></e>
+      <e><p><l><s n="parol"/>PP3FSA00</l><r><s n="mi"/>PrnPers+Acc</r></p></e>
+      <e><p><l><s n="parol"/>PP3CSD00</l><r><s n="mi"/>PrnPers+Dat</r></p></e>
+      <e><p><l><s n="parol"/>PP3CNA00</l><r><s n="mi"/>PrnPers+Acc</r></p></e>
+      <e><p><l><s n="parol"/>PP3MSA00</l><r><s n="mi"/>PrnPers+Acc</r></p></e>
       <!-- se, (a) sí -> -ku, 0-->
       <e><p><l><s n="parol"/>P0000000</l><r><s n="mi"/>++Rflx</r></p></e>
       <e><p><l><s n="parol"/>P03CN000</l><r><s n="mi"/>++Rflx</r></p></e>
@@ -887,7 +887,7 @@
       <e><p><l><s n="parol"/>VMG0000</l><r><s n="mi"/>SS</r></p></e>
       <!-- Infinitive -y , obligative (-> hay que hacer, tener que hacer..)-->
       <e><p><l><s n="parol"/>VMN0000</l><r><s n="mi"/>infinitive</r></p></e>
-      <e><p><l><s n="parol"/>VMN0000</l><r><s n="mi"/>obligative</r></p></e>
+      <e><p><l><s n="parol"/>VMN0000</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
       
       <!-- andaríamos  -> --> 
       <e><p><l><s n="parol"/>VMIC1P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Pot</r></p></e>
@@ -1807,137 +1807,158 @@
   </section>
 <section id="prepositions" type="standard">
 <e>
-  <p><l>a</l><r><s n="prep"/>a</r></p><par n="Prepositions"/>
+  <p><l>a</l><r><s n="adpos"/>a</r></p><par n="Prepositions"/>
 </e> 
 <!--<e>
   <p><l>acerca_de</l><r><s n="mi"/>NRoot+3.Sg.Poss++Gen</r></p><par n="Prepositions"/>
 </e>-->
   <!--ponerse al lado de alguien-> sayapakuy, al lado de +noun -> qayllapi/patanpi -->
 <e>
-  <p><l>al_lado_de</l><r><s n="prep"/></r></p><par n="Prepositions"/>
+  <p><l>al_lado_de</l><r><s n="adpos"/>al_lado_de</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>alrededor_de</l><r><s n="adpos"/>alrededor_de</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>a_la_derecha_de</l><r><s n="adpos"/>a_la_derecha_de</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>a_la_izquierda_de</l><r><s n="adpos"/>a_la_izquierda_de</r></p><par n="Prepositions"/>
 </e>
 <!-- ñawpa-n -->
 <e>
-  <p><l>ante</l><r><s n="prep"/>ante</r></p><par n="Prepositions"/>
+  <p><l>ante</l><r><s n="adpos"/>ante</r></p><par n="Prepositions"/>
 </e> 
-<!--<e>
-  <p><l>antes_de</l><r><s n="mi"/>NRoot+3.Sg.Poss++Gen</r></p><par n="Prepositions"/>
-</e> -->
+<e>
+  <p><l>antes_de</l><r><s n="adpos"/>antes_de</r></p><par n="Prepositions"/>
+</e> 
 <!-- aswanpas -->
 <e>
-  <p><l>a_pesar_de</l><r><s n="prep"/>a_pesar_de</r></p><par n="Prepositions"/>
+  <p><l>a_pesar_de</l><r><s n="adpos"/>a_pesar_de</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>a_pesar_de_todo</l><r><s n="prep"/>a_pesar_de_todo</r></p><par n="Prepositions"/>
+  <p><l>a_pesar_de_todo</l><r><s n="adpos"/>a_pesar_de_todo</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>bajo</l><r><s n="prep"/>bajo</r></p><par n="Prepositions"/>
+  <p><l>arriba_de</l><r><s n="adpos"/>arriba_de</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>cerca_de</l><r><s n="prep"/>cerca_de</r></p><par n="Prepositions"/>
+  <p><l>bajo</l><r><s n="adpos"/>bajo</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>con</l><r><s n="prep"/>con</r></p><par n="Prepositions"/>
+  <p><l>cerca_de</l><r><s n="adpos"/>cerca_de</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>con_objeto_de</l><r><s n="prep"/>con_objeto_de</r></p><par n="Prepositions"/>
+  <p><l>con</l><r><s n="adpos"/>con</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>contra</l><r><s n="prep"/>contra</r></p><par n="Prepositions"/>
+  <p><l>con_objeto_de</l><r><s n="adpos"/>con_objeto_de</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>en_contra_de</l><r><s n="prep"/>en_contra_de</r></p><par n="Prepositions"/>
+  <p><l>contra</l><r><s n="adpos"/>contra</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>cabe</l><r><s n="prep"/>cabe</r></p><par n="Prepositions"/>
+  <p><l>en_contra_de</l><r><s n="adpos"/>en_contra_de</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>de</l><r><s n="prep"/>de</r></p><par n="Prepositions"/>
+  <p><l>cabe</l><r><s n="adpos"/>cabe</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>debajo_de</l><r><s n="prep"/>debajo_de</r></p><par n="Prepositions"/>
+  <p><l>de</l><r><s n="adpos"/>de</r></p><par n="Prepositions"/>
+</e> 
+<e>
+  <p><l>debajo_de</l><r><s n="adpos"/>debajo_de</r></p><par n="Prepositions"/>
 </e>
 <e>
-  <p><l>delante_de</l><r><s n="prep"/>delante_de</r></p><par n="Prepositions"/>
+  <p><l>delante_de</l><r><s n="adpos"/>delante_de</r></p><par n="Prepositions"/>
 </e>
 <e>
-  <p><l>dentro_de</l><r><s n="prep"/>dentro_de</r></p><par n="Prepositions"/>
+  <p><l>dentro_de</l><r><s n="adpos"/>dentro_de</r></p><par n="Prepositions"/>
 </e>
 <e>
-  <p><l>detrás_de</l><r><s n="prep"/>detrás_de</r></p><par n="Prepositions"/>
+  <p><l>detrás_de</l><r><s n="adpos"/>detrás_de</r></p><par n="Prepositions"/>
 </e>
 <e>
-  <p><l>desde</l><r><s n="prep"/>desde</r></p><par n="Prepositions"/>
+  <p><l>desde</l><r><s n="adpos"/>desde</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>después_de</l><r><s n="prep"/>después_de</r></p><par n="Prepositions"/>
+  <p><l>después_de</l><r><s n="adpos"/>después_de</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>desque</l><r><s n="prep"/>desque</r></p><par n="Prepositions"/>
+  <p><l>desque</l><r><s n="adpos"/>desque</r></p><par n="Prepositions"/>
 </e> 
 <!-- -kama o unaypi? -->
 <e>
-  <p><l>durante</l><r><s n="prep"/>durante</r></p><par n="Prepositions"/>
+  <p><l>durante</l><r><s n="adpos"/>durante</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>en</l><r><s n="prep"/>en</r></p><par n="Prepositions"/>
+  <p><l>en</l><r><s n="adpos"/>en</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>en_virtud_de</l><r><s n="prep"/>en_virtud_de</r></p><par n="Prepositions"/>
+  <p><l>en_medio_de</l><r><s n="adpos"/>en_medio_de</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>encima</l><r><s n="prep"/>encima</r></p><par n="Prepositions"/>
-</e>
-<e>
-  <p><l>entre</l><r><s n="prep"/>entre</r></p><par n="Prepositions"/>
+  <p><l>en_virtud_de</l><r><s n="adpos"/>en_virtud_de</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>excepto</l><r><s n="prep"/>excepto</r></p><par n="Prepositions"/>
+  <p><l>encima</l><r><s n="adpos"/>encima</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>encima_de</l><r><s n="adpos"/>encima_de</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>entre</l><r><s n="adpos"/>entre</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>frente_a</l><r><s n="prep"/>frente_a</r></p><par n="Prepositions"/>
-</e>
-<e>
-  <p><l>al_frente_de</l><r><s n="prep"/>al_frente_de</r></p><par n="Prepositions"/>
-</e>
-<e>
-  <p><l>enfrente_de</l><r><s n="prep"/>enfrente_de</r></p><par n="Prepositions"/>
-</e>
-<e>
-  <p><l>fuera_de</l><r><s n="prep"/>fuera_de</r></p><par n="Prepositions"/>
-</e>
-<e>
-  <p><l>hacia</l><r><s n="prep"/>hacia</r></p><par n="Prepositions"/>
+  <p><l>excepto</l><r><s n="adpos"/>excepto</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>hasta</l><r><s n="prep"/>hasta</r></p><par n="Prepositions"/>
+  <p><l>frente_a</l><r><s n="adpos"/>frente_a</r></p><par n="Prepositions"/>
 </e>
 <e>
-  <p><l>lejos_de</l><r><s n="prep"/>lejos_de</r></p><par n="Prepositions"/>
+  <p><l>al_frente_de</l><r><s n="adpos"/>al_frente_de</r></p><par n="Prepositions"/>
 </e>
 <e>
-  <p><l>junto_a</l><r><s n="prep"/>junto_a</r></p><par n="Prepositions"/>
+  <p><l>enfrente_de</l><r><s n="adpos"/>enfrente_de</r></p><par n="Prepositions"/>
 </e>
 <e>
-  <p><l>mediante</l><r><s n="prep"/>mediante</r></p><par n="Prepositions"/>
+  <p><l>en_frente_de</l><r><s n="adpos"/>en_frente_de</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>fuera_de</l><r><s n="adpos"/>fuera_de</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>hacia</l><r><s n="adpos"/>hacia</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>para</l><r><s n="prep"/>para</r></p><par n="Prepositions"/>
+  <p><l>hasta</l><r><s n="adpos"/>hasta</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>lejos_de</l><r><s n="adpos"/>lejos_de</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>junto_a</l><r><s n="adpos"/>junto_a</r></p><par n="Prepositions"/>
+</e>
+<e>
+  <p><l>mediante</l><r><s n="adpos"/>mediante</r></p><par n="Prepositions"/>
+</e> 
+<e>
+  <p><l>para</l><r><s n="adpos"/>para</r></p><par n="Prepositions"/>
 </e> 
 <!-- por eso - chayrayku -->
 <e>
-  <p><l>por</l><r><s n="prep"/>por</r></p><par n="Prepositions"/>
+  <p><l>por</l><r><s n="adpos"/>por</r></p><par n="Prepositions"/>
 </e> 
 <!-- sin NC, sin casa, sin dientes.. -->
 <!-- sin+Inf -> sin mirar, se fue - mana qhawaspa, ripun-->
 <e>
-  <p><l>sin</l><r><s n="prep"/>sin</r></p><par n="Prepositions"/>
+  <p><l>sin</l><r><s n="adpos"/>sin</r></p><par n="Prepositions"/>
 </e> 
 <e>
-  <p><l>sobre</l><r><s n="prep"/>sobre</r></p><par n="Prepositions"/>
+  <p><l>sobre</l><r><s n="adpos"/>sobre</r></p><par n="Prepositions"/>
 </e>
 <e>
-  <p><l>tras</l><r><s n="prep"/>tras</r></p><par n="Prepositions"/>
+  <p><l>tras</l><r><s n="adpos"/>tras</r></p><par n="Prepositions"/>
 </e>
 </section>
 
@@ -7512,10 +7533,6 @@
 <e>
   <p><l>niebla</l><r>phuyu</r></p><par n="Noun"/>
 </e>
-<!--nieto. Willka. -->
-<e>
-  <p><l>nieto</l><r>nieto</r></p><par n="Noun"/>
-</e>
 <!--nieve. Rit'i. -->
 <e>
   <p><l>nieve</l><r>rit'i</r></p><par n="Noun"/>
@@ -9501,6 +9518,9 @@
 <e>
   <p><l>bisnieto</l><r>willka</r></p><par n="Noun"/>
 </e>
+<e>
+  <p><l>biznieto</l><r>willka</r></p><par n="Noun"/>
+</e>
 <!--concuñada. Qhachun_masi, llumchuy_masi. -->
 <e>
   <p><l>concuñado</l><r>qhachun_masi<s n="complex_mi"/>NRoot_NRoot</r></p><par n="kinships-f"/>
@@ -9561,6 +9581,10 @@
 <e>
   <p><l>marido</l><r>qusa</r></p><par n="Noun"/>
 </e>
+<!--nieto. Willka. -->
+<e>
+  <p><l>nieto</l><r>nieto</r></p><par n="Noun"/>
+</e>
 <!--padrastro. Qhipa_tayta. -->
 <e>
   <p><l>padrastro</l><r>qhipa_tayta<s n="complex_mi"/>NRoot_NRoot</r></p><par n="Noun"/>
@@ -9595,6 +9619,10 @@
 <!--suegro. kaka (también tío materno)-->
 <e>
   <p><l>suegro</l><r>kaka</r></p><par n="kinships-m"/>
+</e>
+<!--tataranieto/a. ampullu.-->
+<e>
+  <p><l>tataranieto</l><r>ampullu</r></p><par n="Noun"/>
 </e>
 <!--yerno. Qatay, masa.-->
 <e>
@@ -9688,6 +9716,9 @@
 <!--maricón. Maqlla. -->
 <e>
   <p><l>maricón</l><r>maqlla</r></p><par n="Noun"/>
+</e>
+<e>
+  <p><l>marica</l><r>maqlla</r></p><par n="Noun"/>
 </e>
 <!--señor. Wiraqucha, tayta. señora: mama,  -->
 <e>
@@ -13103,11 +13134,13 @@
 <e>
   <p><l>hacer_falta</l><r>pisi</r></p><par n="Verb_main"/>
 </e>
+<!--special case: hace falta que + subjuntivo -> 'hace falta que' -> kan, subj.-verb: +-na 
+ hace falta que te vayas -> ripunayki kan-->
 <e>
-  <p><l>hacer_falta</l><r>-na<s n="complex_mi"/>++Obl_Copula+3.Sg</r></p><par n="Verb_main"/>
+  <p><l>hacer_falta</l><r>ka</r></p><par n="Verb_main"/>
 </e>
 <e>
-  <p><l>hacer_falta_que</l><r>-na<s n="complex_mi"/>++Obl_Copula+3.Sg</r></p><par n="Verb_main"/>
+  <p><l>hacer_falta_que</l><r>ka</r></p><par n="Verb_main"/>
 </e>
 <!-- hacinar. Qutuy, arkuy, pirway.-->
 <e>

@@ -110,10 +110,12 @@ foreach my $sentence (@sentenceList)
  					if(&isSubjunctive($verbChunk) or &isFuture($verbChunk))
  					{
  						$verbChunk->setAttribute('verbform', 'obligative');
+ 						$verbChunk->setAttribute('case', '+Acc');
  					}
  					else
  					{
  						$verbChunk->setAttribute('verbform', 'perfect');
+ 						$verbChunk->setAttribute('case', '+Acc');
  					}
  				}
 				# if this is a final clause,  -na?
@@ -121,6 +123,18 @@ foreach my $sentence (@sentenceList)
 				{
 					$nbrOfFinalClauses++;
 					$verbChunk->setAttribute('verbform', 'obligative');
+				}
+				# special case: hace falta que + subjuntivo -> 'hace falta que' -> kan, subj.-verb: +-na 
+				# hace falta que te vayas -> ripunayki kan
+				# also: hace falta comprar pan -> t'anta rantinan kan
+				elsif($verbChunk->exists('child::NODE[ @lem="hacer_falta" or @lem="hacer_falta_que"]') )
+				{
+					$verbChunk->setAttribute('verbform', 'main');
+					my $subordVerb = @{$verbChunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v"]')}[0];
+					if( $subordVerb)
+					{
+						$subordVerb->setAttribute('verbform', 'obligative');
+					}
 				}
 				else
 				{

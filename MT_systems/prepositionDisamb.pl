@@ -70,10 +70,10 @@ while (<PREPFILE>) {
 	# get all nodes (NODE) with prepositions on source side (prep=srcprep)
 	foreach my $wordnode ( $dom->getElementsByTagName('NODE')) 
 	{
-		if ( $wordnode->hasAttribute('prep')) 
+		if ( $wordnode->hasAttribute('adpos')) 
 			{
 			#get value of prep, this is the key for prepSel to access its possible transations
-			my $translationsref = $prepSel{$wordnode->getAttribute('prep')};				
+			my $translationsref = $prepSel{$wordnode->getAttribute('adpos')};				
 			
 			foreach my $target (@$translationsref)
 			{

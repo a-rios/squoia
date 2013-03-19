@@ -121,20 +121,28 @@ while (<LEXSELFILE>) {
 				$parentnode->removeAttribute($synattr->nodeName);
 			}
 			# delete all SYN childs of NODE that do not contain the lem=bestTranslation
+			# in case there is more than one SYN with this lemma: copy values of the first to node, 
+			# but keep other SYN's, don't delete them
+			my $bestTranslationIsSetInNode=0;
 			foreach my $synnode (@childnodes) 
 			{
 				#print $synnode->getAttribute('lem');
-				if($synnode->getAttribute('lem') eq $bestTranslation)
+				if($synnode->getAttribute('lem') eq $bestTranslation && !$bestTranslationIsSetInNode)
 				{
+					$bestTranslationIsSetInNode =1;
 					my @attributelist = $synnode->attributes();
 					foreach my $attribute (@attributelist)
 					{
 						my $val = $attribute->getValue();
 						my $attr = $attribute->nodeName;
 						$parentnode->setAttribute($attr,$val);
+						$parentnode->removeChild( $synnode );
 					}
 				}
-				$parentnode->removeChild( $synnode );
+				elsif($synnode->getAttribute('lem') ne $bestTranslation )
+				{
+					$parentnode->removeChild( $synnode );
+				}
 			}
 		}	
 	}
