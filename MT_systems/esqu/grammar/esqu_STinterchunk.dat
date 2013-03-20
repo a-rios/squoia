@@ -1,0 +1,13 @@
+# 1							2				3				4			5		6		7
+# chunk1Cond						chunk1Attr			chunk2Cond			chunk2Attr		ch1ch2Path	direction	writeMode
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+# copy attribue nouncase generated from preposition to noun in the pp
+# -> this is only necessary in case the preposition is a postposition marked with 3.Sg.Poss and the noun needs a genitive suffix
+# detrás de la casa: wasiPA qhipan
+my.nouncase=/.+/ && my.type=/grup-sp|coor-sp/		nouncase			my.type=sn			nouncase		child		1to2		concat
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+# copy object information in verbmi attribute in sn-chunks (clitics me,te,se) to the next higher verb chunk
+my.verbmi=/.+/ && my.type=/sn|coor-n/			verbmi				my.type=/grup-verb|coor-v/	verbmi			parent		1to2		concat
