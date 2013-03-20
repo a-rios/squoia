@@ -1,0 +1,21 @@
+# 1			2			3				4			5		6
+# descendantCond	descendantAttr		ancestorCond			ancestorAttr		direction	writeMode
+# move all the information that is relevant for the syntactic and morphological generation from the nodes to their chunks
+
+# copy attribute 'func' (function) up to the chunk 
+# -> e.g. preposition 'de' might have func=attributive in 
+# 'casa de piedra' -> noun in 'de' pp functions as adjective in quz:
+# -> 'rumi wasi' -> not 'rumimanta wasi'
+my.func=/.+/		func			my.type=/.+/				func			up		concat
+
+# copy attribute 'case' to chunk (sn or grup-sp)
+my.case=/.+/		case			my.type=/.+/				case			up		concat
+
+# copy attribute 'verbmi' to next first ancestor verb chunk
+my.verbmi=/.+/		verbmi			my.type=/grup-verb|coor-v/		mi			up		concat
+
+# copy attribute nouncase, if present, from original preposition to chunk and from there to the noun in the preposition chunk
+my.nouncase=/.+/	nouncase		my.type=/grup-sp|coor-sp/	nouncase		up			concat
+my.type=/sn|coor-n/		case			my.type=/grup-sp|coor-sp/	nouncase		down			concat
+
+

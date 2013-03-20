@@ -1,0 +1,157 @@
+#
+# Rules to solve lexical ambiguity
+#
+# Format:
+# lemmaSRC        lemmaTRGT          condition           weight  ## comment
+#
+# condition: if the condition evaluates to true, then it returns the target lemma
+# my -> this node, parent -> parent node, child -> child node (true if condition is met for at least one child node), 
+# rsibling/lsibling -> right/left sibling node (true if condition is met for at least one sibling node to the right/left)
+#
+# default value
+#   if none of the conditions for lemmaSRC evaluates to true:
+#     + : default value for lemmaSRC
+
+#gender related ambiguities
+viejo		paya		(my.smi=/AQ0F/&&parent.sem=[+Fem])||my.smi=/NCF/	0.1	
+viejo		machu		(my.smi=/AQ0M/&&parent.sem=[+Masc])||my.smi=/NCM/	0.2
+viejo		mawk'a		-							0.3
+
+#vejez: payayay (fem.), machuyay (masc.)
+vejez		paya		rsibling.headsmi=/NCF/&&rsibling.type=sp-de		0.1							0.1	
+vejez		machu		rsibling.headsmi=/NCM/&&rsibling.type=sp-de		0.2
+
+anciano		paya		my.smi=/AQ.F/||parent.sem=[+Fem]			0.1
+anciano		machu		my.smi=/AQ.M/||parent.sem=[+Masc]			0.2
+anciano		yuyaq		-							0.3
+
+#adolescente-> smi=NCC, need to check if head noun is masc/fem or if used as noun, if fem/masc article present
+adolescente	t'asqi		chunkparent.headsem=[+Fem]||child.smi=/D..F../||rsibling.type=sadv&&chunkgrandparent.headsem=[+Fem]		0.1
+adolescente	maqta		chunkparent.headsem=[+Masc]||child.smi=/D..M../rsibling.type=sadv&&chunkgrandparent.headsem=[+Masc]		0.2
+
+chico		wayna		my.smi=/NCM/	-
+chico		sipas		my.smi=/NCF/	-
+chico		huch'uy		my.smi=/AQ/	-
+
+mozo		sipas		my.smi=/NCF/	-
+mozo		wayna		my.smi=/NCM/	-
+
+señor		mama		my.smi=/NCF/	-
+señor		wiraqucha	my.smi=/NCM/	-
+
+joven		sipas		(my.smi=/AQ/&&(chunkparent.headsem=[+Fem]||(chunkgrandparent.headsem=[+Fem]&&rsibling.type=sadv)))||(my.smi=/NC/&&child.smi=/D..F../)	0.1
+joven		wayna		(my.smi=/AQ/&&(chunkparent.headsem=[+Masc]||(chunkgrandparent.headsem=[+Masc]&&rsibling.type=sadv)))||(my.smi=/NC/&&child.smi=/D..M../)	0.2
+
+mozo		sipas		my.smi=/NCF/	-
+mozo		wayna		my.smi=/NCM/	-
+
+# fem/masc: warmi, qhari (human), china/urqu (animals)
+feminino	warmi	-	0.2
+feminino	china	-	0.1
+masculino	qhari	-	0.2
+masculino	urqu	-	0.1
+
+#gender distinction in kinship terms
+#suegro: kaka, suegra: kisma (de hombre), kiwachi (de mujer): proper nouns..?
+suegro		kaka		my.smi=/NCM/								0.1
+suegro		kisma		my.smi=/NCF/&&(rsibling.headsmi=/NCM/&&rsibling.type=sp-de)		0.2
+suegro		kiwachi		my.smi=/NCF/&&(rsibling.headsmi=/NCF/&&rsibling.type=sp-de)		0.3
+
+#cuñada: qhachun, cuñado: qatay
+cuñado		qhachun		my.smi=/NCF/	-
+cuñado		masa		my.smi=/NCM/	-
+concuñado	qhachun_masi	my.smi=/NCF/	-
+concuñado	qatay_masi	my.smi=/NCM/	-
+
+# hermana: ñaña (de mujer), pana (de hombre) / hermano: tura (de mujer), wawqi (de hombre) 
+#(lexicon has 2 separate entries for hermana and hermano, so we don't need disambiguate only the gender 
+# of the refering person, but not the gender of the sibling (only possible with de-pp (la hermana del general..))
+
+hermano		ñaña		rsibling.headsmi=/NCF/&&rsibling.type=sp-de		0.1
+hermano		pana		rsibling.headsmi=/NCM/&&rsibling.type=sp-de		0.2
+
+hermano		tura		rsibling.headsmi=/NCF/&&rsibling.type=sp-de		0.1
+hermano		wawqi		rsibling.headsmi=/NCM/&&rsibling.type=sp-de		0.2
+
+# hija: (warmi) wawa (de mujer), ususi (de hombre) / hijo: (qhari) wawa (de mujer), churi (de hombre) 
+#(lexicon has 2 separate entries for hijo and hija, so we don't need disambiguate only the gender 
+# of the refering person, but not the gender of the parent (only possible with de-pp (la hija del general..))
+
+hijo		wawa		rsibling.headsmi=/NCF/&&rsibling.type=sp-de		0.2
+hijo		ususi		rsibling.headsmi=/NCM/&&rsibling.type=sp-de		0.1
+
+hijo		wawa		rsibling.headsmi=/NCF/&&rsibling.type=sp-de		0.2
+hijo		churi		rsibling.headsmi=/NCM/&&rsibling.type=sp-de		0.1
+
+
+# animals that have a feminine form in Spanish: zorro, zorrillo, perro, gato
+zorro		china_atuq	my.smi=/NCF/	-
+zorro		atuq		my.smi=/NCM/	-
+perro		china_allqu	my.smi=/NCF/	-
+zorro		allqu		my.smi=/NMF/	-
+zorrillo	china_añas	my.smi=/NCF/	-
+zorrillo	añas		my.smi=/NCM/	-
+gato		china_misi	my.smi=/NCF/	-
+gato		misi		my.smi=/NCM/	-
+
+
+
+# other ambiguities
+#abochornar, calor-> rupha-, avergonzarse -> p'inqa-
+abochornar	rupha	-	0.1
+abochornar	p'inqa	-	0.2
+
+#alto, suni (altitude), hatun -> height
+alto	suni	-	0.1
+alto	hatun	-	0.2
+
+#edad, mita (era), wata (años),TODO: edad de hielo/piedra/etc -> XPath? wäre eleganter als informationen herumschieben
+edad	mit'a	(rsibling.headslem=/hielo|bronce|piedra/||child.slem=/moderno|medio/)			0.1
+edad	wata	-	0.2
+
+#falta: hucha (de respeto), pisiy (ausencia), panta (error), estar en falta -> separate entry in lexicon
+falta	hucha	my.smi=/NC/&&rsibling.headslem=respeto			0.1
+falta	pisi	my.smi=/NC/&&rsibling.type=sp-de			0.3
+falta	panta	my.smi=/NC/&&(child.smi=/DP/||rsibling.type=/PX/)	0.2
+
+#feraz. Ruruq [-Anim], miraq.[+Anim]
+feraz	ruru	-	0.2
+feraz	mira	-	0.1
+
+#hacer falta (hacer falta que-> separate entry in lexicon)
+# le hace falta su mama -> watu-, hace falto trabajo -> pisi-, hace falta que hablemos -> na+kan
+hacer_falta	watu	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]}	0.1
+hacer_falta	pisi	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]}	0.2
+hacer_falta	ka	xpath{child::CHUNK[@type="grup-verb" or @type="coor-v"]}								0.3
+
+#lengua: qallu (de la boca), simi (idioma)
+lengua	qallu	 -			0.1
+lengua	simi	 sibling.smi=/AQ.+/	0.2
+
+#llama: llama (animal), nina (fuego)
+llama	llama	-	0.1
+llama	nina	-	0.2
+
+# propietario, kaqniyuq, but with sp-de: propietario de algo-> algoyuq
+
+propietario	+Poss		rsibling.type=sp-de		0.1
+propietario	ka		-				0.2
+
+#rico (dinero, poder): qhapaq, (comida) miski, hauptverb von clause -> XPath?? (nächst höherer chunk mit grup-verb..
+rico		qhapaq		chunkgrandparent.type=grup-verb&&chunkgrandparent.headslem=ser			0.2
+rico		miski		chunkgrandparent.type=grup-verb&&chunkgrandparent.headslem=estar		0.1
+
+# verbs
+
+#acertar: watu- (adivinar), chayachi- (el blanco)
+acertar		watu		-		0.2
+acertar		chaya		-		0.1
+
+# conducir pusa- (+Anim), apa- (-Anim)
+conducir	pusa		-		0.1
+conducir	apa		-		0.2
+
+# contar: yupa- (count), willa- (tell)
+
+contar		yupa	-	0.1
+contar		willa	-	0.2
