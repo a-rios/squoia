@@ -1,21 +1,26 @@
-# 1			2			3				4			5		6
-# descendantCond	descendantAttr		ancestorCond			ancestorAttr		direction	writeMode
+# 1			2				3					4			5		6
+# descendantCond	descendantAttr			ancestorCond				ancestorAttr		direction	writeMode
 # move all the information that is relevant for the syntactic and morphological generation from the nodes to their chunks
 
 # copy attribute 'func' (function) up to the chunk 
 # -> e.g. preposition 'de' might have func=attributive in 
 # 'casa de piedra' -> noun in 'de' pp functions as adjective in quz:
 # -> 'rumi wasi' -> not 'rumimanta wasi'
-my.func=/.+/		func			my.type=/.+/				func			up		concat
+my.func=/.+/ && my.adpos=/.+/		func		my.type=/grup-sp|coor-sp/		func			up		concat
 
 # copy attribute 'case' to chunk (sn or grup-sp)
-my.case=/.+/		case			my.type=/.+/				case			up		concat
+my.case=/.+/		case				my.type=/.+/				case			up		concat
 
 # copy attribute 'verbmi' to next first ancestor verb chunk
-my.verbmi=/.+/		verbmi			my.type=/grup-verb|coor-v/		mi			up		concat
+my.verbmi=/.+/		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
 
 # copy attribute nouncase, if present, from original preposition to chunk and from there to the noun in the preposition chunk
-my.nouncase=/.+/	nouncase		my.type=/grup-sp|coor-sp/	nouncase		up			concat
-my.type=/sn|coor-n/		case			my.type=/grup-sp|coor-sp/	nouncase		down			concat
+my.nouncase=/.+/		nouncase		my.type=/grup-sp|coor-sp/		nouncase		up		concat
+#my.type=/sn|coor-n/		case			my.type=/grup-sp|coor-sp/		nouncase		down		concat
 
+# copy all the object clitics for 1st and 2nd persons to the sn chunk (and from there to the verb chunk)
+my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			verbmi			up		concat
+
+# copy lemma of the main verb (first node child in verbchunk) to the verb chunk (needed for generation)
+my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]})			lem			my.type=/grup-verb|coor-v/		lem			up		concat
 

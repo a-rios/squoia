@@ -152,6 +152,7 @@ foreach my $sentence (@sentenceList)
  			$nbrOfNonFiniteChunks++;
  		}
  	}
+ 	
 }
 
 print STDERR "\n****************************************************************************************\n";

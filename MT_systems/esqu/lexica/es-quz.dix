@@ -884,10 +884,15 @@
       <pardef n="Verb_main">
       <!-- main verbs --> 
       <!-- gerundio, haciendo, mirando -> -spa (?) TODO: disambiguate auxiliary, take that value--> 
-      <e><p><l><s n="parol"/>VMG0000</l><r><s n="mi"/>SS</r></p></e>
+      <e><p><l><s n="parol"/>VMG0000</l><r><s n="mi"/>SS</r></p></e>VMP00SM
       <!-- Infinitive -y , obligative (-> hay que hacer, tener que hacer..)-->
       <e><p><l><s n="parol"/>VMN0000</l><r><s n="mi"/>infinitive</r></p></e>
       <e><p><l><s n="parol"/>VMN0000</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
+      <!-- participles: no morphology (morphological information comes from auxiliary, but transfer lemma  -->
+      <e><p><l><s n="parol"/>VMP00SM</l><r></r></p></e>
+      <e><p><l><s n="parol"/>VMP00SF</l><r></r></p></e>
+      <e><p><l><s n="parol"/>VMP00PM</l><r></r></p></e>
+      <e><p><l><s n="parol"/>VMP00PF</l><r></r></p></e>
       
       <!-- andaríamos  -> --> 
       <e><p><l><s n="parol"/>VMIC1P0</l><r><s n="mi"/>potential<s n="verbmi"/>VRoot+1.Pl.Incl.Subj.Pot</r></p></e>
@@ -2661,13 +2666,16 @@
 <e>
   <p><l>por_dónde</l><r>may<s n="mi"/>PrnInterr+3.Sg.Poss+Acc</r></p><par n="Prepositions"/>
 </e> 
+<!--por favor. ama hinachu kay. -->
+<e>
+  <p><l>por_favor</l><r>ama_hina_ka<s n="mi"/>Part_Part+Neg_Copula+2.Sg.Subj.Imp</r></p><par n="Prepositions"/>
+</e> 
 <e>
   <p><l>según_decir</l><r>++IndE<s n="mi"/>++IndE</r></p><par n="Adverb"/>
 </e> 
 <e>
   <p><l>en_frente</l><r>chimpa<s n="mi"/>NRoot</r></p><par n="Adverb"/>
 </e> 
-
 <!--abajo. Uray. -->
 <e>
   <p><l>abajo</l><r>uray<s n="mi"/>NRoot</r></p><par n="Adverb"/>
@@ -2764,6 +2772,22 @@
 <!--aquí[+Mov]. kayman. -->
 <e>
   <p><l>aquí</l><r>kay<s n="mi"/>PrnDem+Dat</r></p><par n="Adverb"/>
+ </e>
+ <!--ahí[-Mov]. chaypi.-->
+<e>
+  <p><l>ahí</l><r>chay<s n="mi"/>PrnDem+Loc</r></p><par n="Adverb"/>
+ </e>
+<!--ahí[+Mov]. chayman. -->
+<e>
+  <p><l>ahí</l><r>chay<s n="mi"/>PrnDem+Dat</r></p><par n="Adverb"/>
+ </e>
+ <!--allá[-Mov]. haqaypi.-->
+<e>
+  <p><l>allá</l><r>haqay<s n="mi"/>PrnDem+Loc</r></p><par n="Adverb"/>
+ </e>
+<!--allá[+Mov]. haqayman. -->
+<e>
+  <p><l>allá</l><r>haqay<s n="mi"/>PrnDem+Dat</r></p><par n="Adverb"/>
  </e>
 <!--así. Hina. -->
 <e>

@@ -13,13 +13,13 @@ my %mapCliticToEaglesTag =       (
         'las'		=> 'PP3FPA00',
         'lo'		=> 'PP3MSA00',
         'los'		=> 'PP3MPA00',
-        'le'		=> 'PP30SD00',
-        'les'		=> 'PP30PD00',
-        'me'		=> 'PP10S000', # PP1CS000?
-        'te'		=> 'PP20S000', # PP2CS000?
-        'se'		=> 'PP30N000', # PP3CN000? could be le|les => se  or refl se ...or passive|impersonal se ...?
-        'nos'		=> 'PP10P000', # PP1CP000?
-        'os'		=> 'PP20P000' # PP2CP000?
+        'le'		=> 'PP3CSD00',
+        'les'		=> 'PP3CPD00',
+        'me'		=> 'PP1CS000', # PP1CS000?
+        'te'		=> 'PP2CS000', # PP2CS000?
+        'se'		=> 'PP3CN000', # PP3CN000? could be le|les => se  or refl se ...or passive|impersonal se ...?
+        'nos'		=> 'PP1CP000', # PP1CP000?
+        'os'		=> 'PP2CP000' # PP2CP000?
                 );
 
 my %mapCliticFormToLemma =       (
@@ -1103,7 +1103,7 @@ sub toEaglesTag{
 		
 		if($gen eq 'c')
 		{
-			$gen = '0';
+			$gen = 'C';
 		}
 		if($info =~ /cas=/)
 		{

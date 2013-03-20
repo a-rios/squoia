@@ -84,10 +84,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 					# get condition(s) for insertion, split, remove empty fields
 					my $nodeCondition = @{$semanticLexicon{$lem}}[1]; 
 
-					my @conditionsWithEmptyfields = split( /(\!|&&|\|\||\)|\()/, $nodeCondition);
-
-					#remove empty fields resulted from split
-					my @conditions = grep {$_} @conditionsWithEmptyfields; 
+#					my @conditionsWithEmptyfields = split( /(\!|&&|\|\||\)|\()/, $nodeCondition);
+#
+#					#remove empty fields resulted from split
+#					my @conditions = grep {$_} @conditionsWithEmptyfields; 
+					my @conditions = &splitConditionsIntoArray($nodeCondition);
 
 					my $result= &evalConditions(\@conditions,$wordnode);
 
