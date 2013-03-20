@@ -19,6 +19,14 @@
 my.slem=ebrio	k	VRoot+Ag	my.smi=/NC/
 my.slem=ebrio	k	VRoot+Perf	my.smi=/AQ/
 
+# aqui, ahí, allá: kay, chay, haqay +Loc if static, +Dat with movement verbs
+my.slem=aquí	k	PrnDem+Loc		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
+my.slem=aquí	k	PrnDem+Dat		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
+my.slem=ahí	k	PrnDem+Loc		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
+my.slem=ahí	k	PrnDem+Dat		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
+my.slem=allá	k	PrnDem+Loc		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
+my.slem=allá	k	PrnDem+Dat		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
+
 #################
 #  main verbs
 #################
