@@ -91,12 +91,6 @@ foreach my $sentence (@sentenceList)
  					#check if same subject 
  					&compareSubjects($verbChunk);
  				}
- 				# if this is a main clause, or a coordinated verbform of a main clause, set verform to 'main'
- 				elsif( ($verbChunk->exists('self::CHUNK[@si="top"]') ||  $verbChunk->exists('parent::CHUNK[@si="top" and @type="coor-v"]')) && !$verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]') )
- 				{
- 					$nbrOfMainClauses++;
- 					$verbChunk->setAttribute('verbform', 'main');
- 				}
  				# if subordinated clause is a gerund -> set to spa-form (trabaja cantando)
  				elsif($verbChunk->exists('child::NODE[starts-with(@mi, "VMG")]') && !$verbChunk->exists('descendant::NODE[@pos="va" or @pos="vs"]') && !$verbChunk->exists('child::NODE[starts-with(@mi, "VMG")]/NODE[@lem="venir" or @lem="ir" or @lem="andar" or @lem="estar"]')  )
  				{
@@ -130,12 +124,18 @@ foreach my $sentence (@sentenceList)
 				elsif($verbChunk->exists('child::NODE[ @lem="hacer_falta" or @lem="hacer_falta_que"]') )
 				{
 					$verbChunk->setAttribute('verbform', 'main');
-					my $subordVerb = @{$verbChunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v"]')}[0];
+					my $subordVerb = @{$verbChunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@mi="VMN0000"]')}[0];
 					if( $subordVerb)
 					{
-						$subordVerb->setAttribute('verbform', 'obligative');
+						$subordVerb->parentNode->setAttribute('verbform', 'obligative');
 					}
 				}
+				# if this is a main clause, or a coordinated verbform of a main clause, set verbform to 'main'
+ 				elsif( ($verbChunk->exists('self::CHUNK[@si="top"]') ||  $verbChunk->exists('parent::CHUNK[@si="top" and @type="coor-v"]')) && !$verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]') )
+ 				{
+ 					$nbrOfMainClauses++;
+ 					$verbChunk->setAttribute('verbform', 'main');
+ 				}
 				else
 				{
 					$nbrOfAmbigousClauses++;

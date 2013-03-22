@@ -82,11 +82,11 @@
      
      <pardef n="Determiners">
        <!--no definite articles in Quechua -->       
-      <e><p><l><s n="parol"/>DA0FP0</l><r><s n="mi"/>++Pl</r></p></e>
-      <e><p><l><s n="parol"/>DA0FS0</l><r><s n="mi"/>++Sg</r></p></e>
-      <e><p><l><s n="parol"/>DA0MP0</l><r><s n="mi"/>++Pl</r></p></e>
-      <e><p><l><s n="parol"/>DA0MS0</l><r><s n="mi"/>++Sg</r></p></e>
-      <e><p><l><s n="parol"/>DA0NS0</l><r><s n="mi"/>++Sg</r></p></e>
+      <e><p><l><s n="parol"/>DA0FP0</l><r></r></p></e>
+      <e><p><l><s n="parol"/>DA0FS0</l><r></r></p></e>
+      <e><p><l><s n="parol"/>DA0MP0</l><r></r></p></e>
+      <e><p><l><s n="parol"/>DA0MS0</l><r></r></p></e>
+      <e><p><l><s n="parol"/>DA0NS0</l><r></r></p></e>
       
       <!--demonstratives -->
       <e><p><l><s n="parol"/>DD0CP0</l><r><s n="mi"/>PrnDem+Pl</r></p></e>
@@ -885,9 +885,9 @@
       <!-- main verbs --> 
       <!-- gerundio, haciendo, mirando -> -spa (?) TODO: disambiguate auxiliary, take that value--> 
       <e><p><l><s n="parol"/>VMG0000</l><r><s n="mi"/>SS</r></p></e>VMP00SM
-      <!-- Infinitive -y , obligative (-> hay que hacer, tener que hacer..)-->
+	<!-- Infinitive -y , obligative (-> hay que hacer, tener que hacer..-> hay que ->+3.Sg.Poss, tener que -> person from tener)-->
       <e><p><l><s n="parol"/>VMN0000</l><r><s n="mi"/>infinitive</r></p></e>
-      <e><p><l><s n="parol"/>VMN0000</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl+3.Sg.Poss</r></p></e>
+      <e><p><l><s n="parol"/>VMN0000</l><r><s n="mi"/>obligative<s n="verbmi"/>VRoot+Obl</r></p></e>
       <!-- participles: no morphology (morphological information comes from auxiliary, but transfer lemma  -->
       <e><p><l><s n="parol"/>VMP00SM</l><r></r></p></e>
       <e><p><l><s n="parol"/>VMP00SF</l><r></r></p></e>

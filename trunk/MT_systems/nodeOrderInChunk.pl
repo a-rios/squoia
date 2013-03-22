@@ -72,7 +72,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 
 				# evaluate all head condition(s), if true for this node, check if the childnode conditions apply
 				if(&evalConditions(\@headConditions,$node))
-				{
+				{ 
 					my $order = @{ $rules{$headCond} }[1];
 					my @variablesWithNewPositions = split(/\s+/,$order);
 					my %variablesWithNodeRefs =();
@@ -103,7 +103,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 							my @singleChildNodeConditionsforEvaluation = &splitConditionsIntoArray($childNodeCondition);
 
 							if(&evalConditions(\@singleChildNodeConditionsforEvaluation,$child))
-							{
+							{ 
 								push(@{$variablesWithNodeRefs{$variable}},$child);
 								if (exists($nodesNotCoveredByConditions{$ref})) 
 								{
@@ -147,13 +147,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 						
 					# @inputSequence = original sequence of nodes (by variables),
 					# @variablesWithNewPositions = new sequence of nodes as defined in grammar file
-					#print STDERR "input sequence: @inputSequence\n"; print STDERR scalar(@inputSequence);	
-					#print STDERR "variables with node pos: @variablesWithNewPositions\n";		print STDERR scalar(@variablesWithNewPositions);	
+					# print STDERR "input sequence: @inputSequence\n"; print STDERR scalar(@inputSequence);	
+					# print STDERR "variables with node pos: @variablesWithNewPositions\n";		print STDERR scalar(@variablesWithNewPositions);	
 									
 					my $outputSequence = &mergeArrays(\@inputSequence,\@variablesWithNewPositions);
 					
-					#print STDERR "output sequence: @{$outputSequence}\n";
-
 					#print STDERR "output sequence: @{$outputSequence}\n";
 					
 					# insert attribute ord (order) into xml of all the nodes,
