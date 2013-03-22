@@ -202,8 +202,8 @@ sub mergeArrays{
 	my $oldHeadPos = &getPos($oldSequence,'head');
 
 	
-	#print STDERR "old sequence: @{$oldSequence}\n";
-	#print STDERR "new sequence: @{$newSequence}\n";
+#	print STDERR "old sequence: @{$oldSequence}\n";
+#	print STDERR "new sequence: @{$newSequence}\n";
 
 		
 	# work through new order on the left of the head, comparing 2 by 2 elements
