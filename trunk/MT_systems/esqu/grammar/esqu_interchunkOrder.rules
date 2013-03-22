@@ -1,0 +1,8 @@
+# head chunk condition (no more than one rule per head!) - child chunk Condition(s) (can be several chunks) - ordering ("+": immediate; ".": at some distance preceding)
+
+#only CHUNK
+
+## order in verb chunks: only relevant if more than one verb has to be generated from the chunks
+## -> no auxiliaries, but infinitive complements, e.g. 'puedo/quiero hacer'
+## -> in all other cases, only a form of the main verb has to be generated
+my.type=grup-verb && !(xpath{child::NODE[starts-with(@smi,"V")]/NODE[@slem="que"]})			infinitive:my.smi=/VMN0000/,mainverb:my.smi=/VM[^N]/	

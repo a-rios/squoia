@@ -1,0 +1,11 @@
+# head chunk condition (no more than one rule per head!) - child chunk Condition(s) (can be several chunks) - ordering ("+": immediate; ".": at some distance preceding)
+
+#only CHUNK
+
+## coordinations
+xpath{self::CHUNK[not(@type="F-term")]} && xpath{child::CHUNK}		child:xpath{self::CHUNK[not(@type="F-term")]}		child .head
+
+#my.type=sn		adj:my.type=/sa|coor-sa/		adj .head
+
+## Noun and prepositional phrases
+#my.type=/CNP|NP/		xSPEC:my.type=nounSpec,xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .head +xPP .xCOMA +xSREL +xCOMB
