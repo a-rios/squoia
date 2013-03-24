@@ -4,7 +4,7 @@
 use utf8;                  # Source code is UTF-8
 use open ':utf8';
 use Storable; # to retrieve hash from disk
-binmode STDIN, ':utf8';
+#binmode STDIN, ':utf8';
 #binmode STDOUT, ':utf8';
 use strict;
 use XML::LibXML;

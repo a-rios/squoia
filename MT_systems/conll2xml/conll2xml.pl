@@ -78,7 +78,7 @@ while (<>)
      
      my $eaglesTag = &toEaglesTag($pos, $info);
      # if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
-     if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/)
+     if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/ and $word !~ /parte|frente|adelante|base|menos$/)
      {
 	print STDERR "clitics in verb $lem: $word\n";
 	my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
@@ -236,11 +236,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		
 #my $docstring = $dom->toString(3);
 #print STDERR $docstring;
-##print STDERR  $node->toString;
+###print STDERR  $node->toString;
 #print STDERR "\n---------------------------------\n";
 #print STDERR  $node->getAttribute('lem');
 #print STDERR "\n---------------------------------\n";
-		
+#		
 			#if this is a main verb or auxiliary used as main verb 
 			# (as auxiliary rel=v, auxilaries don't get their own chunk, they should live inside the main verbs' chunk)
 			if ($node->exists('self::NODE[starts-with(@mi,"V")] and not(self::NODE[@rel="v"])'))
@@ -1171,10 +1171,10 @@ sub isCongruent{
 		elsif($parentNode->getAttribute('mi') !~ /1|2|3/)
 		{
 			my $parentNodeCand = &getFiniteVerb($parentNode);
-			if($parentNodeCand)
+			if($parentNodeCand != -1)
 			{
 				$parentNode = $parentNodeCand;
-			
+				$parentNodeCand->toString()."\n\n";
 			}
 			#if no finite verb found, don't change anything
 			else
@@ -1565,8 +1565,11 @@ sub attachNewChunkUnderChunk{
 			$parent = @{$parent->findnodes('ancestor::CHUNK[1]')}[0];
 		}
 		#print STDERR "parent node after ". $parent->toString() . "\n";
-		$parent->appendChild($newChunk);
-		return $parent;
+		if($parent)
+		{
+			$parent->appendChild($newChunk);
+			return $parent;
+		}
     }
     #this should not happen
     else
@@ -1606,7 +1609,8 @@ sub model2{
     		 	 }
  			 	my $eaglesTag = &toEaglesTag($pos, $info);
 				# if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
-				if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/)
+				# exclude certain words that may occur at the end of the lemma in locutions (e.g. echar_de_menos) -> we don't want to split -os in this case!
+				if($eaglesTag =~ /^V.[GNM]/ and $word !~ /parte|frente|adelante|base|menos$/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/)
 				{
 					print STDERR "clitics in verb $lem: $word\n";
 					my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
