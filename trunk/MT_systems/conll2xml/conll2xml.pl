@@ -862,7 +862,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		if($head eq '0')
 		{
 			my $chunkparent = $node->parentNode();
-			if($chunkparent)
+			if($chunkparent && $chunkparent->exists('self::CHUNK') )
 			{
 				$chunkparent->setAttribute('si', 'top');
 				$chunkparent->setAttribute('ord', $node->getAttribute('ord'));
@@ -885,6 +885,43 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 					
 					$topverbchunk->setAttribute('si', 'S');
 					$realMain->parentNode->setAttribute('si', 'top');
+				}
+			}
+			elsif(!$sentence->exists('child::CHUNK'))
+			{
+			# wrong analysis, head of sentence is a node instead of chunk -> get first verb chunk and make this the head
+			# if there is no verb chunk -> take the first child that a chunk (any type) and make this the head
+			    my $topnode = @{$sentence->findnodes('child::NODE[1]')}[0];
+				my $firstverbchunk = @{$sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
+				if($firstverbchunk && $topnode)
+				{
+					$sentence->appendChild($firstverbchunk);
+					$firstverbchunk->appendChild($topnode);
+					$firstverbchunk->setAttribute('si', 'top');
+					print STDERR "moved verb chunk to top in sentence: $sentenceId\n";
+					
+				}
+				else
+				{
+					my $firstAnyChunk = @{$sentence->findnodes('descendant::CHUNK[1]')}[0];
+					if($firstAnyChunk && $topnode)
+					{
+						$sentence->appendChild($firstAnyChunk);
+						$firstAnyChunk->appendChild($topnode);
+						$firstAnyChunk->setAttribute('si', 'top');
+						print STDERR "moved non-verbal chunk to top in sentence: $sentenceId\n";
+					}
+					# if no chunk: create an artificial chunk (otherwise lexical module will crash!)
+					elsif($topnode)
+					{
+						my $dummyChunk =  XML::LibXML::Element->new( 'CHUNK' );
+						$dummyChunk->setAttribute('si', 'top');
+						$dummyChunk->setAttribute('type', 'dummy');
+						$dummyChunk->setAttribute('ord', $node->getAttribute('ord'));
+						$sentence->appendChild($dummyChunk);
+						$dummyChunk->appendChild($topnode);
+						print STDERR "inserted dummy chunk as head in sentence: $sentenceId\n";
+					}
 				}
 			}
 			my @verbchunks = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]');
@@ -924,7 +961,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 	
 				 }
 			}
-			# check if all chunks are children of chunks (if node have child chunks, the lexical transfer is not amused)
+			# check if all chunks are children of chunks (if nodes have child chunks, the lexical transfer module is not amused)
 			foreach my $chunk ($sentence->getElementsByTagName('CHUNK'))
 			{
 				if($chunk->parentNode->nodeName eq 'NODE')
