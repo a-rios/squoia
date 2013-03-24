@@ -83,8 +83,12 @@ my.smi=/VMSP.../	k	perfect				 	chunkparent.verbform=perfect	 # complement claus
 my.smi=/VMSP.../	k	obligative				chunkparent.verbform=obligative	
 my.smi=/VMSP.../	k	imperative				chunkparent.si=top && xpath{child::NODE[@slem="que"]} && xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]}
 # main clause: potential or imperative (TODO: other options?)
-my.smi=/VMSP.../	d	obligative,perfect,SS,DS			chunkparent.verbform=main
+my.smi=/VMSP.../	d	obligative,perfect,SS,DS		chunkparent.verbform=main
 
+
+# special case: tener que +inf -> handled in intrachunk_transfer, delete all SYN's as they don't contain obligative as option
+my.slem=tener		k	obligative					rsibling.slem=que 
+my.slem=tener		d	perfect,present,DS,SS,agentive,present,future,indirectpast,potential,pastpotential,directpast,imperative	rsibling.slem=que 
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
