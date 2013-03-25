@@ -3178,6 +3178,7 @@ zona_horaria zona_horaria NCFS000 I
 
 %%%%%%%%%%%%%
 %%% Añadidas por Laura
+a_continuación a_continuación SPS00 I 
 a_corto_plazo a_corto_plazo RG I
 a_largo_plazo a_largo_plazo RG I
 a_medio_plazo a_medio_plazo RG I

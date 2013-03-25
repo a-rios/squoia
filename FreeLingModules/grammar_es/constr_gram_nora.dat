@@ -613,7 +613,7 @@ CONSTRAINTS
 
 
 % REGLA L011
-% "Los expertos evaluaron un total de 37 proyectos de la Academia." -> "total" aquí es sustantivo, no adjetivo.
+% "Los expertos evaluaron un total de 37 proyectos de la Academia." -> "total" aquí (después de un determinante) es sustantivo, no adjetivo.
 15.0 NC*
     (0 AQ*)
     (-1 D*);
@@ -687,10 +687,11 @@ CONSTRAINTS
 % REGLA L018
 % "La información objetiva que trata malentendidos es la base de la reconciliación." -> "malentendidos" es un sustantivo, no un verbo.
 %15.0 NC*
-17.0 NC*
-    (0 VMP*)
-    (-1* VM*)
-    (not -1* <estar>);
+%17.0 NC*
+%    (0 VMP*)
+%    (-1* VM*)
+%    (not -1* <estar>);
+% Regla comentada porque es errónea.
 
 
 % REGLA L019
@@ -723,14 +724,17 @@ CONSTRAINTS
 %    (-1* N* barrier <ser> or PR*);
 % Puede haber adverbios y conjunciones de por medio... ej.:
 % "Sólo ahí en donde hay periodistas incómodos y bien preparados puede florecer la libertad de prensa."
-% Cambiar esta regla, crea conflictos con otras construcciones, y un peso de 700 es una barbaridad.
-% REVISAR
-10.0 AQ*
+% Un peso de 700 es una barbaridad. Cambiada por:
+%10.0 AQ*
+%14.0 AQ*
+%150.0 AQ*
+14.0 AQ*
     (0 VMP*)
     (-1 N*);
+%    (-1* N* barrier V* or R* or D* or P* or C* or I* or S* or F* or Z* or W*);
 
-10.0 AQ*
-    (0 VMP)
+13.0 AQ*
+    (0 VMP*)
     (-2 N*);
 
 
@@ -757,6 +761,13 @@ CONSTRAINTS
 8.0 AQ*
     (0 VMP*)
     (-1 OUT_OF_BOUNDS);
+% OJO: si tengo la preposición "por" detrás, entonces es un verbo en participio. Para ello la regla L025B.
+
+% REGLA L025B
+6.0 VMP*
+    (1 SPS00(junto con));
+%    (1 SPS00(por) or SPS00(junto));
+%or SPS00(junto*));
 
 
 % REGLA L026
