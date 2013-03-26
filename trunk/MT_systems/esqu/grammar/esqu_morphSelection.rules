@@ -47,6 +47,9 @@ my.smi=VMN0000	k	infinitive			 	!(chunkparent.verbform=obligative)
 my.smi=/VM...../	k	SS				 	chunkparent.verbform=SS
 my.smi=/VM...../	k	DS				 	chunkparent.verbform=DS
 
+# in case this needs to be a switch reference form, but the programme failed to determine whether SS or DS -> keep those two, but delete all other otions 
+my.smi=/VM...../	d	agentive,perfect,present,obligative,future,potential,imperative			chunkparent.verbform=switch
+
 # agentive relative clauses
 my.smi=/VM...../	k	agentive			 	chunkparent.verbform=rel:agentive
 
@@ -103,6 +106,8 @@ my.slem=tener		d	perfect,present,DS,SS,agentive,present,future,indirectpast,pote
 my.smi=/VA...../ && my.slem=haber	k	SS				 	chunkparent.verbform=SS
 my.smi=/VA...../ && my.slem=haber	k	DS				 	chunkparent.verbform=DS
 
+my.smi=/VM...../			d	agentive,perfect,present,obligative,futureDisc,potential,pastpotential,indirectpast,directpast			chunkparent.verbform=switch
+
 # agentive relative clause
 my.smi=/VA...../ && my.slem=haber	k	agentive				chunkparent.verbform=rel:agentive
 
@@ -139,6 +144,8 @@ my.smi=/VASP.../ && my.slem=haber	k	potential				chunkparent.verbform=main
 # switch reference
 my.smi=/VA...../ && my.slem=estar	k	progressive_SS					chunkparent.verbform=SS
 my.smi=/VA...../ && my.slem=estar	k	progressive_DS					chunkparent.verbform=DS
+
+my.smi=/VM...../			d	progressive_agentive,progressive_directpast,progressive_future,progressive_indirectpast,progressive_obligative,progressive_perfect,progressive_potential,progressive_present			chunkparent.verbform=switch
 
 # agentive relative clause
 my.smi=/VA...../ && my.slem=estar	k	progressive_agentive				chunkparent.verbform=rel:agentive
@@ -179,6 +186,8 @@ my.smi=/VS...../ && my.slem=ser	k	passive				chunkparent.verbform=passive
 # switch-reference, always the same:
 my.smi=/VS...../ && my.slem=ser	k	SS				chunkparent.verbform=SS
 my.smi=/VS...../ && my.slem=ser	k	DS				chunkparent.verbform=DS
+
+my.smi=/VM...../			d	passive,agentive,infinitive,obligative,future,perfect,present,potential,participle			chunkparent.verbform=switch
 
 # agentive relative clause, always the same (not true for non-agentive forms)
 my.smi=/VS...../ && my.slem=ser	k	agentive			chunkparent.verbform=rel:agentive

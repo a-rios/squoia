@@ -25,8 +25,8 @@ my.nouncase=/.+/		nouncase		my.type=/grup-sp|coor-sp/		nouncase		up		concat
 my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			verbmi			up		concat
 
 # copy lemma of the main verb (first node child in verbchunk) to the verb chunk (needed for generation)
-my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && !(my.lem=unknown)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
-my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && my.lem=unknown			slem			my.type=/grup-verb|coor-v/		lem			up		concat
+my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
+my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && my.lem=unspecified			slem			my.type=/grup-verb|coor-v/		lem			up		concat
 
 # tener que hacer algo -> ruwana+possessive kan -> extract person information from finite verb and copy that to the attribute verbmi of the verb chunk and write form of KAN to the chunk for generation
 # alternatives marked with '#'
