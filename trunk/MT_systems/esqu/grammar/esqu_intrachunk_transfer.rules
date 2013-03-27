@@ -12,10 +12,10 @@ my.func=/.+/ && my.adpos=/.+/		func				my.type=/grup-sp|coor-sp/		func			up		con
 my.case=/.+/				case				my.type=/.+/				case			up		concat
 
 # copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que)	verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber)		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
 
-# if finite verb is unknown in complex verb chunk, copy verbmi of (non-finite) main verb
-my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NODE[@unknown="transfer"]} 		verbmi			my.type=/grup-verb|coor-v/	verbmi		up	concat
+# if finite verb is unknown in complex verb chunk or lem is deber (deber hacer), copy verbmi of (non-finite) main verb
+my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NODE[@unknown="transfer" or @slem="deber"]} 		verbmi			my.type=/grup-verb|coor-v/	verbmi		up	concat
 
 # copy attribute nouncase, if present, from original preposition to chunk and from there to the noun in the preposition chunk
 my.nouncase=/.+/		nouncase		my.type=/grup-sp|coor-sp/		nouncase		up		concat
@@ -28,26 +28,44 @@ my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			verbmi			up		concat
 my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
 my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && my.lem=unspecified			slem			my.type=/grup-verb|coor-v/		lem			up		concat
 
-# tener que hacer algo -> ruwana+possessive kan -> extract person information from finite verb and copy that to the attribute verbmi of the verb chunk and write form of KAN to the chunk for generation
+# tener que hacer algo / deber hacer algo -> ruwana+possessive kan -> extract person information from finite verb and copy that to the attribute verbmi of the verb chunk and write form of KAN to the chunk for generation
 # alternatives marked with '#'
 # rules I:
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1S/	"+1.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1P/	"#+1.Pl.Incl.Poss"		my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1P/	"#+1.Pl.Excl.Poss"		my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/2S/	"+2.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/2P/	"+2.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/3S/	"+3.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/3P/	"+3.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1S/	"+1.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1P/	"#+1.Pl.Incl.Poss"		my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1P/	"#+1.Pl.Excl.Poss"		my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/2S/	"+2.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/2P/	"+2.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/3S/	"+3.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/3P/	"+3.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
 
 # rules II:
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]}		 	"ka"				my.type=/grup-verb/			lem2			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...P/	"+3.Sg.Subj"			my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...F/	"+3.Sg.Subj.Fut"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...I/	"#+NPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...I/	"#+IPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...S/	"#+NPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...S/	"#+IPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...C/	"+3.Sg.Subj+Pot"		my.type=/grup-verb/			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]}		 	"ka"				my.type=/grup-verb/			lem2			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...P/	"+3.Sg.Subj"			my.type=/grup-verb/			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...F/	"+3.Sg.Subj.Fut"		my.type=/grup-verb/			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...I/	"#+NPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...I/	"#+IPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...S/	"#+NPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...S/	"#+IPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...C/	"+3.Sg.Subj+Pot"		my.type=/grup-verb/			verbmi2			up		concat
 
 # copy func=attribute to the chunk level (e.g. of originally Spanish adjectives) for later reordering
 my.func=attributive			func		my.type=/sa|coor-sa/				func					up			concat
+
+# copy all information from certain nodes to their head
+# -> either the chunk and from there to the head chunk (if node has its own chunk)
+# -> or just to the head chunk (if node does not have its own chunk)
+my.smi=RN					+Neg				my.type=/.+/					chunkmi			up		concat
+
+my.slem=e					"+Add"				my.type=/sn|coor-n/				mi			up		concat
+my.slem=e					"+Intr"				my.type=/grup-verb|coor-v/			chunkmi			up		concat
+
+my.slem=/tal_vez|quizás|posiblemente/		"+Asmp"				my.type=/.+/					chunkmi			up		concat
+my.slem=/también/				"+Add"				my.type=/.+/					chunkmi			up		concat
+
+
+
+
+
+
+
