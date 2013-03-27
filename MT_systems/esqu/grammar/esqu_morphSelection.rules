@@ -27,6 +27,14 @@ my.slem=ahí	k	PrnDem+Dat		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coo
 my.slem=allá	k	PrnDem+Loc		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
 my.slem=allá	k	PrnDem+Dat		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
 
+# conmigo vs mí -> same tag, disambiguate here:
+my.smi=PP1CSO00	k	++1.Sg.Obj			my.slem=mí
+my.smi=PP1CSO00	k	PrnPers+1.Sg+Inst		my.slem=conmigo
+my.smi=PP2CSO00	k	++2.Sg.Obj			my.slem=tí
+my.smi=PP2CSO00	k	PrnPers+1.Sg+Inst		my.slem=contigo
+my.smi=PP3CSO00	k	++Rflx				my.slem=sí
+my.smi=PP3CSO00	k	PrnPers+3.Sg+Inst		my.slem=consigo
+
 #################
 #  main verbs
 #################
@@ -92,6 +100,9 @@ my.smi=/VMSP.../	d	obligative,perfect,SS,DS		chunkparent.verbform=main
 # special case: tener que +inf -> handled in intrachunk_transfer, delete all SYN's as they don't contain obligative as option
 my.slem=tener		k	obligative					rsibling.slem=que 
 my.slem=tener		d	perfect,present,DS,SS,agentive,present,future,indirectpast,potential,pastpotential,directpast,imperative	rsibling.slem=que 
+# special case: deber +inf -> handled in intrachunk_transfer, delete all SYN's as they don't contain obligative as option
+#my.slem=deber		k	obligative					xpath{parent::NODE/parent::CHUNK[@verbform="obligative"]}
+my.slem=deber		d	perfect,present,DS,SS,agentive,present,future,indirectpast,potential,pastpotential,directpast,imperative	xpath{parent::NODE/parent::CHUNK[@verbform="obligative"]}
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#

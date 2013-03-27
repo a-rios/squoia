@@ -86,8 +86,8 @@ foreach my $sentence (@sentenceList)
  				}
  		
  				
- 				# if this verb has a 'tener que' part -> obligative, TODO: hay que?
- 				if($verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || ($verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="tener"]') && $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="que"]') ))
+ 				# if this verb has a 'tener que' part or deber +inf -> obligative, TODO: hay que?
+ 				if($verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || ($verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="tener"]') && $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="deber"]') )
  				{
  					$nbrOfFinalClauses++;
  					$verbChunk->setAttribute('verbform', 'obligative');

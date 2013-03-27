@@ -155,3 +155,7 @@ conducir	apa		-		0.2
 
 contar		yupa	-	0.1
 contar		willa	-	0.2
+
+#deber deuda/algo -> manuka-, deber hacer algo -> obligative
+deber		manuka		-
+deber		+Obl		xpath{parent::NODE[starts-with(@smi,"V")]}

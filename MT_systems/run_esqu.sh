@@ -9,6 +9,7 @@ export GRAMMAR_DIR=$ESQU_DIR/grammar
 export OUTPUT_DIR=$GRAMMAR_DIR/output
 
 export FREELING_CONFIG=$FREELINGSHARE/es_desr.cfg
+#export FREELING_CONFIG=$FREELINGSHARE/es_desrHMM.cfg
 export FREELING_PARAM="-f $FREELING_CONFIG $*"
 export FREELING_PORT="8866"
 export MATXIN_DIX=$ESQU_DIR/lexica/es-quz.bin
