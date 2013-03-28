@@ -63,8 +63,10 @@ my.slem=e					"+Intr"				my.type=/grup-verb|coor-v/			chunkmi			up		concat
 my.slem=/tal_vez|quizás|posiblemente/		"+Asmp"				my.type=/.+/					chunkmi			up		concat
 my.slem=/también/				"+Add"				my.type=/.+/					chunkmi			up		concat
 
+# copy all information from add_mi in verbs to verbmi (concat)
+my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi			up		concat
 
-
+# copy all the morphological information in replace_mi to mi (even possible? if not, do that during generation) TODO
 
 
 
