@@ -29,12 +29,13 @@ my %semanticLexicon =();
 eval
 {
 	retrieve('semLex');
-	my %semanticLexicon = %{ retrieve("semLex") }; 
+	%semanticLexicon = %{ retrieve("semLex") };
 
 } or print STDERR "Read semantic lexicon first!";
 
 if(!%semanticLexicon)
 {
+	print STDERR "read lexicon with semantic tags to insert \n";
 	# retrieve hash with config parameters from disk, get path to file with semantic information
 	eval
 	{
@@ -69,6 +70,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN);
 
 foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{	
+		print STDERR "inserting semantic tags in sentence ".$sentence->getAttribute('ref')."\n";
 		my @NODES = $sentence->findnodes('descendant::NODE');
 		push(@NODES,$sentence->findnodes('descendant::SYN'));
 		foreach my $wordnode (@NODES) 

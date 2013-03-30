@@ -1,13 +1,35 @@
 # 1							2				3				4			5		6		7
 # chunk1Cond						chunk1Attr			chunk2Cond			chunk2Attr		ch1ch2Path	direction	writeMode
 # --------------------------------------------------------------------------------------------------------------------------- #
+#  possible paths:
+#	'my'			=> '.',
+#	'child'			=> 'child::CHUNK',
+#	'parent'		=> '..',
+#	'chunkparent'		=> 'ancestor::CHUNK[1]',
+#	'chunkgrandparent'	=> 'ancestor::CHUNK[2]',
+#	'lsibling'		=> 'preceding-sibling::CHUNK',
+#	'rsibling'		=> 'following-sibling::CHUNK'
+
+
+
 
 # copy attribue nouncase generated from preposition to noun in the pp
 # -> this is only necessary in case the preposition is a postposition marked with 3.Sg.Poss and the noun needs a genitive suffix
 # detrás de la casa: wasiPA qhipan
-my.nouncase=/.+/ && my.type=/grup-sp|coor-sp/		nouncase			my.type=sn			nouncase		child		1to2		concat
+#my.nouncase=/.+/ && my.type=/grup-sp|coor-sp/		nouncase			my.type=sn			nouncase		child		1to2		concat
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 
-# copy object information in verbmi attribute in sn-chunks (clitics me,te,se) to the next higher verb chunk
-my.verbmi=/.+/ && my.type=/sn|coor-n/			verbmi				my.type=/grup-verb|coor-v/	verbmi			parent		1to2		concat
+# copy object information in verbmi attribute in sn-chunks (clitics me,te,se) to the next higher verb chunk 
+# or to the pp chunk ( a mí, a tí..) and from there to the next higher verb chunk
+my.verbmi=/.+/ && my.type=/sn|coor-n/			verbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="grup-sp" and not(@spform)]/CHUNK[@type="sn"]/@verbmi} 		verbmi			chunkgrandparent		1to2		concat
+my.verbmi=/.+/ && my.type=/sn|coor-n/			verbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]}			verbmi			parent				1to2		concat
+
+#my.verbmi=/.+/ && my.type=/sn|coor-n/			verbmi				my.type=/grup-verb|coor-v/		verbmi			chunkgrandparent		1to2		concat
+
+
+# copy chunkmi to chunk above, be it nominal or verbal (independent suffixes)
+my.type=/sadv/ && my.chunkmi=/.+/			chunkmi				my.type=/grup-verb|coor-v/		chunkmi			parent				1to2		concat
+
+
+

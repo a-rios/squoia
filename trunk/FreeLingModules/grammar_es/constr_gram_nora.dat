@@ -765,8 +765,8 @@ CONSTRAINTS
 
 % REGLA L025B
 6.0 VMP*
-    (1 SPS00(junto con));
-%    (1 SPS00(por) or SPS00(junto));
+    (1 SPS00(por) or SPS00(junto));
+%   (1 SPS00(junto con));
 %or SPS00(junto*));
 
 

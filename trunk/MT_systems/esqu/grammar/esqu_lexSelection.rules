@@ -97,6 +97,7 @@ gato		misi		my.smi=/NCM/	-
 
 
 # other ambiguities
+
 #abochornar, calor-> rupha-, avergonzarse -> p'inqa-
 abochornar	rupha	-	0.1
 abochornar	p'inqa	-	0.2
