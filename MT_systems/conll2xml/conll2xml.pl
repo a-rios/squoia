@@ -693,27 +693,36 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			# if this is a preposition, make a prepositional chunk (grup-sp)
 			elsif ($node->exists('self::NODE[starts-with(@mi,"SP")]'))
 			{
-				 my $ppchunk = XML::LibXML::Element->new( 'CHUNK' );
-				  #if this node is parent of a coordination
-				 if ($node->exists('child::NODE[@lem="ni" or @rel="coord"]'))
+				 #print STDERR "parent of prep: \n".$parent->toString."\n";
+				 #if head is an infinitive (para hacer, voy a hacer, de hacer etc)-> don't create a chunk, preposition just hangs below verb
+				 if($parent->exists('self::CHUNK/NODE[@mi="VMN0000" or @mi="VSN0000"]'))
 				 {
-				 	$ppchunk->setAttribute('type', 'coor-sp');
+				 	
 				 }
-				 # no coordination
 				 else
 				 {
-				 	$ppchunk->setAttribute('type', 'grup-sp');
+				 	my $ppchunk = XML::LibXML::Element->new( 'CHUNK' );
+				  	#if this node is parent of a coordination
+				 	if ($node->exists('child::NODE[@lem="ni" or @rel="coord"]'))
+				 	{
+				 		$ppchunk->setAttribute('type', 'coor-sp');
+					 }
+					 # no coordination
+					 else
+					 {
+				 		$ppchunk->setAttribute('type', 'grup-sp');
+					 }
+					 $ppchunk->setAttribute('si', $node->getAttribute('rel'));
+					 $ppchunk->setAttribute('ord', $node->getAttribute('ord'));
+					 #$node->removeAttribute('rel');
+					 $node->removeAttribute('head');
+					 $ppchunk->appendChild($node);
+					 $parent->appendChild($ppchunk);
+					  # the key in hash should point now to the chunk instead of the node
+					 my $ord = $node->getAttribute('ord');
+					 my $idKey = "$sentenceId:$ord";
+					 $docHash{$idKey}= $ppchunk;
 				 }
-				 $ppchunk->setAttribute('si', $node->getAttribute('rel'));
-				 $ppchunk->setAttribute('ord', $node->getAttribute('ord'));
-				 #$node->removeAttribute('rel');
-				 $node->removeAttribute('head');
-				 $ppchunk->appendChild($node);
-				 $parent->appendChild($ppchunk);
-				  # the key in hash should point now to the chunk instead of the node
-				 my $ord = $node->getAttribute('ord');
-				 my $idKey = "$sentenceId:$ord";
-				 $docHash{$idKey}= $ppchunk;
 			}
 			# if this is an adjective, make an adjective chunk (sa)
 			elsif ($node->exists('self::NODE[starts-with(@mi,"A")]'))
@@ -1141,6 +1150,10 @@ sub toEaglesTag{
 		if($gen eq 'c')
 		{
 			$gen = 'C';
+		}
+		if($num eq 'c')
+		{
+			$num = 'N';
 		}
 		if($info =~ /cas=/)
 		{

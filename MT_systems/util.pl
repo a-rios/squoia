@@ -378,6 +378,8 @@ my %mapChunkHash =	(
 	'my'		=> '.',
 	'child'		=> 'child::CHUNK',
 	'parent'	=> '..',
+	'chunkparent'	=> 'ancestor::CHUNK[1]',
+	'chunkgrandparent'	=> 'ancestor::CHUNK[2]',
 	'lsibling'	=> 'preceding-sibling::CHUNK',
 	'rsibling'	=> 'following-sibling::CHUNK'
 		);
@@ -408,7 +410,7 @@ sub getRelatedChunks{
 	my $pathStr = $_[1];
 
 	my $xpath = &mapPath2XPath($pathStr,\%mapChunkHash);
-	print STDERR "$xpath\n";
+	print STDERR "xpath to related chunks: $xpath\n";
 	my @candidates = $srcChunk->findnodes($xpath);
 	print STDERR scalar(@candidates). " candidates\n";
 	return @candidates;
@@ -601,7 +603,12 @@ sub evalConditions{
 						 # relative path, check if it leads to a node
 						else {
 							#print STDERR "xpath $xpathStr is relative\n";
-							$cond = (scalar(@pathnodes) > 0);
+							# this doesn't work, need to explicitely assign 0!!!! 
+							# empty value can't be evaluated by eval!!!
+							#$cond = (scalar(@pathnodes) > 0);
+							if((scalar(@pathnodes) > 0)){$cond =1;}
+							else{$cond=0;}
+							
 						}
 					}
 					# no condition given, treat as false and consider probability
@@ -693,7 +700,7 @@ sub evalConditions{
 		 				
  				my $resultCond = eval "@copyConditions";
  				#print STDERR "-@$conditions-";
- 				#print STDERR "$resultCond\n";
+ 				#print STDERR "resultsConditions: @copyConditions::: $resultCond\n";
 			return $resultCond;
 
 

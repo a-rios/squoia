@@ -3,26 +3,46 @@ Issues with FreeLing (urgent)
 1. está -> analyzed as 2.Sg imperative
 -> La puertá está cerrada -> está = VMM02S0
 
-2. haber as VM if existencial clause with 'hay' (but also había, hubiera, etc.)
+2. vayas -> tagged as noun, e.g. in:
+  'hace falta que te vayas'
+
+3. haber as VM if existencial clause with 'hay' (but also había, hubiera, etc.)
   -> currently always VA
   -> leads to parse trees that lttoolbox can't handle -> crash
 
-3. el son del tambor -> 'son' should be NC, gets tagged as VS
+4. el son del tambor -> 'son' should be NC, gets tagged as VS
 
-4. intercambio analyzed as VM when it should be NC, e.g. in:
+5. intercambio analyzed as VM when it should be NC, e.g. in:
   'permite que haya intercambio de informaciones'
   
-5. como: CS vs SP!
+6. como: CS vs SP!
    se conoce como la catarata de la sirena -> should be SP (preposition), but gets tagged as CS
    
-6. malentendidos: VMP vs. NC
+7. malentendidos: VMP vs. NC
    'tratan malentendidos' -> gets tagged as VMP, should be NC
 
-7. participle vs AQ with preceding AQ! 
+8. participle vs AQ with preceding AQ! 
   -> 'cuestiones políticas y sociales centradas'
    -> centradas tagged as VMP, should be AQ
 
-8. distancia: VM vs. NC:
+9. distancia: VM vs. NC:
    Para los periodistas suele ser difícil guardar distancia a hechos en los que conocidos..
    -> distancia tagged as verb (VM), should be NC here
+   
+10. DI vs. PI -> todas las casas = DI, acptaron a todos -> PI
+
+11. please add to locutions (as conjunctions, CS):
+    - por eso
+    - ni siquiera
+    - aún no
+   
+12. adjectives vs. participles: el hombre adinerado -> adinerado gets tagged as VMP, should be AQ
+
+13. proper names, weird behaviour in coordination: 
+    Pedro y Maria van a casa. -> Maria correctly NP00SP0, Pedro NP00000
+    but:
+    Pedro y Maria no se conocen. -> Pedro correctly NP00SP0, Maria NP00000
+    strange....
+    
+
 

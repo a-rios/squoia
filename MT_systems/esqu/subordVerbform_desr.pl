@@ -251,7 +251,8 @@ foreach my $sentence (@sentenceList)
 					}
 				}
 				# if this is a main clause, or a coordinated verbform of a main clause, set verbform to 'main'
- 				elsif( ($verbChunk->exists('self::CHUNK[@si="top"]') ||  $verbChunk->exists('parent::CHUNK[@si="top" and @type="coor-v"]')) && !$verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]') )
+				# also: if this is not the top chunk, but there's no other verb chunk above this one, set verb form to main (probably a parser error)
+ 				elsif( ($verbChunk->exists('self::CHUNK[@si="top"]') ||  $verbChunk->exists('parent::CHUNK[@si="top" and @type="coor-v"]')) && !$verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]') || !$verbChunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]') )
  				{
  					$nbrOfFiniteForms++;
  					$verbChunk->setAttribute('verbform', 'main');

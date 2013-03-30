@@ -89,7 +89,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								#if more than one target mi, can only be delete, not keep
 								if(scalar(@targetMIs)>1 && $keepOrDelete eq 'k')
 								{
-									print STDERR "error: more than one translation option with target mi=$trgtMI!\n Something's wrong here, won't disambiguate.";
+									print STDERR "error: more than one translation option with target mi=$trgtMI!\n Something's wrong here, won't disambiguate.\n";
 								}
 								# else, only one target mi with k or d, or more than one with d
 								else
@@ -97,14 +97,8 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 									foreach my $trgt (@targetMIs)
 									{
 										my $xpathstring= 'child::SYN[@mi="'.$trgt.'"]';
-										# find synnode with this 'mi', should only be one!
+										# find synnode with this 'mi', can be more than one
 										my @matchingSyns = $node->findnodes($xpathstring);
-										if(scalar(@matchingSyns)>1)
-										{
-											print STDERR "error: more than one translation option with target mi $trgtMI!\n Something's wrong here, won't disambiguate.";
-										}
-										elsif(scalar(@matchingSyns) ==1)
-										{
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
 									
@@ -127,12 +121,17 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								    				$value =~ s/"//g;
 								    				$attr =~ s/\s//g;
 								    				$node->setAttribute($attr, $value);
+								    				
+								    				
 								    			}
-								    			#delete all SYN nodes
+								    			#delete all SYN nodes that did not match
 								    			foreach my $syn (@SYNnodes)
 								    			{
-								    				$node->removeChild($syn);
+								    				unless( grep( $_ == $syn, @matchingSyns ))
+								    				{$node->removeChild($syn);}
 								    			}
+								    			#delete SYN node whose attributes have been copied to node
+								    			$node->removeChild($matchingtranslation);
 								   			}
 								   			elsif($keepOrDelete eq 'd')
 								   			{
@@ -142,7 +141,6 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   			{
 								    			print STDERR "error: invalid option $keepOrDelete! Valid options are: k (keep) or d (delete). Won't disambiguate.";
 								   			 }
-										}
 									}
 								}
 							}

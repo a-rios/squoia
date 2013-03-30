@@ -28,12 +28,22 @@ my.slem=allá	k	PrnDem+Loc		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="
 my.slem=allá	k	PrnDem+Dat		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
 
 # conmigo vs mí -> same tag, disambiguate here:
-my.smi=PP1CSO00	k	++1.Sg.Obj			my.slem=mí
-my.smi=PP1CSO00	k	PrnPers+1.Sg+Inst		my.slem=conmigo
-my.smi=PP2CSO00	k	++2.Sg.Obj			my.slem=tí
-my.smi=PP2CSO00	k	PrnPers+1.Sg+Inst		my.slem=contigo
-my.smi=PP3CSO00	k	++Rflx				my.slem=sí
-my.smi=PP3CSO00	k	PrnPers+3.Sg+Inst		my.slem=consigo
+# a mí -> ++1.Sg.Obj, para/por mí -> ñuqapaq /wan etc
+my.smi=PP1CSO00	k	++1.Sg.Obj			my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
+my.smi=PP1CSO00	k	PrnPers				my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
+my.smi=PP1CSO00	k	PrnPers+Inst			my.slem=conmigo
+
+my.smi=PP2CSO00	k	++2.Sg.Obj			my.slem=tí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
+my.smi=PP2CSO00	k	PrnPers				my.slem=tí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
+my.smi=PP2CSO00	k	PrnPers+Inst			my.slem=contigo
+
+my.smi=PP3CSO00	k	++Rflx				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
+my.smi=PP3CSO00	k	Noun				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
+my.smi=PP3CSO00	k	Noun+Inst			my.slem=consigo
+
+my.smi=PP3CNO00	k	++Rflx				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
+my.smi=PP3CNO00	k	Noun				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
+my.smi=PP3CNO00	k	Noun+Inst			my.slem=consigo
 
 #################
 #  main verbs

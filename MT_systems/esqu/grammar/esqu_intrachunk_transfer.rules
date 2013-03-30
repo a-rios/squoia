@@ -18,15 +18,15 @@ my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(m
 my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NODE[@unknown="transfer" or @slem="deber"]} 		verbmi			my.type=/grup-verb|coor-v/	verbmi		up	concat
 
 # copy attribute nouncase, if present, from original preposition to chunk and from there to the noun in the preposition chunk
-my.nouncase=/.+/		nouncase		my.type=/grup-sp|coor-sp/		nouncase		up		concat
-#my.type=/sn|coor-n/		case			my.type=/grup-sp|coor-sp/		nouncase		down		concat
+my.nouncase=/.+/			nouncase		my.type=/grup-sp|coor-sp/		nouncase		up		concat
+my.spform=/.+/ && my.smi=/^SP/		spform			my.type=/grup-sp|coor-sp/		spform			up		concat
 
 # copy all the object clitics for 1st and 2nd persons to the sn chunk (and from there to the verb chunk)
 my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			verbmi			up		concat
 
 # copy lemma of the main verb (first node child in verbchunk) to the verb chunk (needed for generation)
-my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
-my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && my.lem=unspecified			slem			my.type=/grup-verb|coor-v/		lem			up		concat
+my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified || my.unknown=transfer)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
+my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && (my.lem=unspecified || my.unknown=transfer)		slem					my.type=/grup-verb|coor-v/		lem			up		concat
 
 # tener que hacer algo / deber hacer algo -> ruwana+possessive kan -> extract person information from finite verb and copy that to the attribute verbmi of the verb chunk and write form of KAN to the chunk for generation
 # alternatives marked with '#'
@@ -55,10 +55,11 @@ my.func=attributive			func		my.type=/sa|coor-sa/				func					up			concat
 # copy all information from certain nodes to their head
 # -> either the chunk and from there to the head chunk (if node has its own chunk)
 # -> or just to the head chunk (if node does not have its own chunk)
-my.smi=RN					+Neg				my.type=/.+/					chunkmi			up		concat
+my.smi=RN					+Neg				my.type=/sadv/					chunkmi			up		concat
 
-my.slem=e					"+Add"				my.type=/sn|coor-n/				mi			up		concat
-my.slem=e					"+Intr"				my.type=/grup-verb|coor-v/			chunkmi			up		concat
+# coordination: if coordinated nouns: -wan (or better -pas? TODO), if coordinated clauses: -taq
+my.slem=e || my.slem=y				"+Instr"			my.type=/sn|coor-n/				chunkmi			up		concat
+my.slem=e || my.slem=y				"+Intr"				my.type=/grup-verb|coor-v/			chunkmi			up		concat
 
 my.slem=/tal_vez|quizás|posiblemente/		"+Asmp"				my.type=/.+/					chunkmi			up		concat
 my.slem=/también/				"+Add"				my.type=/.+/					chunkmi			up		concat
@@ -66,7 +67,16 @@ my.slem=/también/				"+Add"				my.type=/.+/					chunkmi			up		concat
 # copy all information from add_mi in verbs to verbmi (concat)
 my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi			up		concat
 
+# construction 'voy a +Inf: insert +Fut in verbmi of chunk
+my.slem=ir && parent.smi=VMN0000		"+Fut"				my.type=/grup-verb|coor-v/			verbmi			up 		concat
+
+# if sn chunk and si=cd -> set mi=+Acc (also for cd/ci and cd-a, TODO: better Acc as default or Dat?)
+my.smi=/^N/					"+Acc"				my.si=/cd/					case			up		concat
+
+# if sn chunk and si=ci -> set mi=+Dat
+
 # copy all the morphological information in replace_mi to mi (even possible? if not, do that during generation) TODO
+
 
 
 
