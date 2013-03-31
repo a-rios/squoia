@@ -1,0 +1,6 @@
+#origNodeConditions							parentChunkAttrVal	targetChunkAttrVal
+#my.pos=/PRELS/ && parent.pos=/VV/ && chunkparent.type=/VP/		relPro="no"	type=NP-relpro,comment="relative pronoun"
+
+my.smi=/^D[DTEI]/				func=hasdet		type=det
+
+
