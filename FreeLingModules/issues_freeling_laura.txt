@@ -1,7 +1,9 @@
 Issues with FreeLing (urgent)
 
-1. está -> analyzed as 2.Sg imperative
--> La puertá está cerrada -> está = VMM02S0
+1. mayo -> analyzed as verb, e.g. in:
+   'me voy el 14 de mayo', VMIP1S0, lemma mayar (really FreeLing?)
+   also with julio -> me voy el 14 de julio/Julio -> julio as NP
+   
 
 2. vayas -> tagged as noun, e.g. in:
   'hace falta que te vayas'
@@ -43,6 +45,8 @@ Issues with FreeLing (urgent)
     but:
     Pedro y Maria no se conocen. -> Pedro correctly NP00SP0, Maria NP00000
     strange....
-    
+
+ 14. Even stranger: Juan and María tagged as geographical names after 'de':
+     La casa de Juan es bonita. -> Juan = NP00G00
 
 
