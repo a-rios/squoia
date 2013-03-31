@@ -24,6 +24,10 @@ a	case=+Acc	chunkparent.si=cd || (chunkparent.si=cc && xpath{ancestor::CHUNK[@ty
 a	case=+Dat	chunkparent.si=ci || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[ditrans]"]})		+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
 a	case=+Loc	xpath{child::CHUNK[@type="sn"]/NODE[@smi="W"]}	-	# hora: a las 4 de la tarde -> -pi
 a	adpos=none 		parent.smi=VMN0000			# voy a +infinitive
+
+al	case=+Acc	chunkparent.si=cd || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(@sem="[ditrans]")]})	- 			# veo A Juan, JuanTA rikuni
+al	case=+Dat	chunkparent.si=ci || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[ditrans]"]})		+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
+
 acerca_de	func=topic	-	+ # TODO: really topic? 
 afuera_de	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
@@ -63,8 +67,15 @@ en_contra_de	postpos=contran,nouncase=+Gen	-
 cabe 
 # TODO: Mengenangaben: una tasa DE café?
 de	case=+Gen		chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or @sem="[+Mat]"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
-de 	case=+Abl		chunkparent.type=grup-verb || xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00"]}	+
-de	func=attributive	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]"]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
+de 	case=+Abl		chunkparent.type=grup-verb 	+
+de	case=+Loc		xpath{parent::CHUNK/parent::CHUNK[@type="date"]} || xpath{descendant::CHUNK[@type="date"]} 	- # el 14 de diciembre -> 14 diciembre/Qhapaq ramymi killapi, also: 'del año 2003' -> 2003 wataPI
+de	func=attributive	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]" or @smi="NP00G00"]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
+
+del	case=+Gen		chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or @sem="[+Mat]"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
+del 	case=+Abl		chunkparent.type=grup-verb 	+
+del	case=+Loc		xpath{parent::CHUNK/parent::CHUNK[@type="date"]} || xpath{descendant::CHUNK[@type="date"]} 	- # el 14 de diciembre -> 14 diciembre/Qhapaq ramymi killapi, also: 'del año 2003' -> 2003 wataPI
+del	func=attributive	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]" or @smi="NP00G00" ]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
+
 
 debajo_de	spform=uraypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
 debajo_de	spform=uraykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}

@@ -1,0 +1,387 @@
+transitive:
+
+lss="A11.transitive-causative" 			(old_type=transitive oder causative, args: subj,obj (pp) )
+lss="A12.diransitive-causative-state" 		(old_type=transitive, args: subj,obj, pp)
+lss="A13.ditransitive-causative-instrumental"	(old_type=transitive, args: subj,obj, pp)
+
+lss="A21.transitive-agentive-patient"		(old_type=transitive, args: subj,obj (pp))
+lss="A22.transitive-agentive-theme"		(old_type=transitive, args: subj, pp) (eg. entenderse con)
+lss="A23.transitive-agentive-extension"		(old_type=transitive, object_extension, impersonal, args: subj, obj, pp oder obj pp) 
+----------------------------------------
+ditransitive:
+
+lss="A31.ditransitive-patient-locative"		(old_type=ditransitive, benefactive, oblique_subject: args: subj,obj, (pp) (loc))
+lss="A32.ditransitive-patient-benefactive"
+lss="A33.ditransitive-theme-locative"
+lss="A34.ditransitive-patient-theme"
+lss="A35.ditransitive-theme-cotheme"
+----------------------------------------
+intransitive:
+
+lss="B11.unaccusative-motion"
+lss="B12.unaccusative-passive-ditransitive"
+lss="B21.unaccusative-state"
+lss="B22.unaccusative-passive-transitive"
+lss="B23.unaccusative-cotheme"
+lss="B23.unaccusative-theme-cotheme"
+
+lss="C11.state-existential"
+lss="C21.state-attributive"
+lss="C31.state-scalar"
+lss="C41.state-benefective"
+lss="C42.state-experiencer"
+
+lss="D11.inergative-agentive"
+lss="D21.inergative-experiencer"
+lss="D31.inergative-source"
+
+##################################################################################################
+TRANSITIVES:
+
+A11.transitive-causative
+------------------------
+[x cause[become[y<state>]]]
+Arg0=CAU
+Arg1=TEM
+
+Diatheses : [+anticausative(B21)7 ] [+causative(=)] [+impersonal(=) ][+resultative(C21)] [+/-passive(B22)]
+[+benefactive(=)]
+
+Spanish verbs: abrir ‘to open’, romper ‘to break’, cerrar ‘to close’, hundir ‘to sink’, . . .
+
+A12.transitive-causative-state
+-------------------------------
+[x cause[become[y<state>z ]]]
+Arg0=CAU
+Arg1=TEM
+Arg2=EFI
+
+Diatheses: [+anticausative(B21)] [+causative(A11)] [+impersonal(=)] [+resultative(C21)] [+/-passive(B12)]
+[+benefactive(=)]
+Spanish verbs: habituar ‘to get used’, disfrazar ‘to disguise’, promocionar ‘to promote’, . . .
+
+Spanish verbs: habituar ‘to get used’, disfrazar ‘to disguise’, promocionar ‘to promote’, . . .
+(Verbs in this class are defined by the presence of a participant z, arg2, which bears the final state θ-role.)
+
+A13.transitive-causative-instrumental
+--------------------------------------
+[x cause[become[y<state>(with) z ]]]
+Arg0=CAU
+Arg1=TEM
+Arg2=INS
+
+Diatheses: [+anticausative(B21)] [+causative(A11)] [+impersonal(=)] [+resultative(C21)] [+/-passive(B12)]
+[+benefactive(=)]
+
+Spanish verbs: encharcar ‘to waterlog’, enguarrar ‘to get dirty’, plagar ‘to plague’, . . .
+(the change in state is lexically encoded in the verb stem.)
+
+A11-13 -> intransitivized by 'se'
+
+
+A21.transitive-agentive-patient
+--------------------------------
+[[x do-something]cause[become[y<state>]]]
+Arg0=AGT
+Arg1=PAT
+
+Diatheses: [+causative(A11)] [+benefactive(=)] [+/-passive(B22)] [+impersonal(=)] [+/-resultative(C21)] [+/-
+intransitive(D11)] [+oblique subject(=)]
+Spanish verbs: hacer ‘to do’, querer ‘to want’, ver ‘to see’, . . .
+
+
+A22.transitive-agentive-theme
+-------------------------------
+[[x do-something]cause[become[y<state>]]]
+Arg0=AGT
+Arg1=TEM, always PP-obj
+Diatheses: [+causative(A11)] [+benefactive(=)] [+passive(B22)] [+impersonal(=)] [+/-resultative(C21)] [+/-
+intransitive(D11)]
+
+Spanish verbs: participar ‘to participate’, insistir ‘to insist’, luchar ‘to fight’, . . .
+
+The internal argument y in A22 class is assigned the theme θ-role. Its syntactic function is always preposi-
+tional object, and may be introduced by a variety of prepositions. 
+
+A23.transitive-agentive-extension
+----------------------------------
+[[x do-something]cause[become[y<state>]]]
+Arg0=AGT
+Arg1=EXT, PP-obj or d-obj
+Diatheses: [+causative(A11)] [+benefactive(=)] [+passive(B22)] [+impersonal(=)] [+/-resultative(C21)] [+/-
+intransitive(D11)]
+
+Spanish verbs: recorrer ‘to cover (a distance)’, tardar ‘to take (time)’, correr ‘to run’, . . .
+
+The internal argument y in A22 class is assigned the extension θ-role. Its syntactic role may be either direct
+object or prepositional object.
+
+
+##################################################################################################
+
+DITRANSITIVES:
+
+A31.ditransitive-patient-locative
+-----------------------------------
+[[x do-something]cause[become[y<place>z ]]]
+Arg0=AGT
+Arg1=PAT, always d-obj
+Arg2=LOC, pp-obj (location)
+
+Diatheses: [+causative(A11)] [+passive(B12)] [+oblique subject(=)] [+/-resultative(C21)] [+impersonal(=)]
+[+benefactive(=)]
+
+Spanish verbs: señalar ‘to point out’, colocar ‘to place’, registrar ‘to register’, . . .
+
+The internal argument y in A31 class is assigned patient θ-role and is always the direct object. The third
+argument might be syntactically a prepositional object or an (argumental) adjunct, and it is always assigned
+the location θ-role. The semantic interpretation of arg2 is, therefore, bounded to a physical location in space.
+
+A32.ditransitive-patient-benefactive
+-------------------------------------
+[[x do-something]cause[become[y<place>z ]]]
+Arg0=AGT
+Arg1=PAT, always d-obj
+Arg2=BEN, always i-obj
+Diatheses: [+causative(A11)] [+passive(B12)] [+/-resultative(C21)] [+impersonal(=)]
+
+Spanish verbs: decir ‘to say’, dar ‘to give’, explicar ‘to explain’, . . .
+
+The internal argument y in A32 class is assigned patient θ-role and is always the direct object. The third
+argument is syntactically the indirect object, and it is always assigned the beneficiary θ-role. The semantic
+interpretation of arg2 as a place is therefore less literal than in A31 class: it must include traits such as
+[+human] or [+animate]. Most verbs of physical and verbal transfer belong to this class.
+
+A33.ditransitive-theme-locative
+--------------------------------
+[[x do-something]cause[become[y<place>z ]]]
+Arg0=AGT
+Arg1=TEM, always pp-obj
+Arg2=LOC, adjunct, location
+Diatheses: [+causative(A11)] [+impersonal(=)] [+resultative(C21)] [+oblique subject(=)] [+benefactive(=)]
+[+/-passive(B12)]
+
+Spanish verbs: competir ‘to compete’, implicar ‘to imply’, coincidir ‘to agree’, . . .
+
+The internal argument y in A33 class is assigned theme θ-role and is always the prepositional object. The
+third argument is syntactically an adjunct, and it is always assigned the locative θ-role. Again, as in A31, the
+semantic interpretation of arg2 as a place is literal. This class has no direct object, syntactically. Only a small,
+restricted set of verbs belong to this class.
+
+A34.ditransitive-patient-theme
+-------------------------------
+[[x do-something]cause[become[y<state>z ]]]
+Arg0=AGT
+Arg1=PAT, always d-obj
+Arg2=TEM, always pp-obj
+Diatheses: [+causative(A11)] [+impersonal(=)] [+resultative(C21)] [+passive(B12)] [+oblique subject(=)] [+bene-
+factive(=)]
+
+Spanish verbs: acusar ‘to accuse’, ayudar ‘to help’, condenar ‘to condemn’, . . .
+
+The internal argument y in A34 class is assigned patient θ-role and is always the direct object. The third
+argument is syntactically a prepositional object, and it is always assigned the theme θ-role. In this class, arg2 is
+no longer associated to a semantic interpretation bound to a locative. It is, broadly speaking, closer to depicting
+an amalgam of final state/instrument/comitative θ-roles.
+
+A35.ditransitive-theme-cotheme
+-------------------------------
+[[x do-something]cause[become[y<state>z ]]]
+Arg0=AGT
+Arg1=TEM, always d-obj
+Arg2=COT, always pp-obj
+
+Diatheses: [+causative(A11)] [+impersonal(=)] [+resultative(C21)] [+cotheme(B23)] [+passive(B12)] [+bene-
+factive(=)]
+
+Spanish verbs: separar ‘to sepparate’, conectar ‘to connect’, aliar ‘to ally’, . . .
+
+The internal argument y in A35 class is assigned theme θ-role and is always the direct object. The third
+argument is syntactically a prepositional object, and it is always assigned the cotheme θ-role. In this class, arg2
+should be interpreted close to a comitative.
+
+##################################################################################################
+
+INTRANSITIVES:
+
+Achievements:
+#############
+
+B11.unaccusative-motion
+-------------------------
+[become[y<place>]]
+Arg1=TEM, subj
+Arg2=LOC, pp-obj/adjunct
+
+Diatheses: [+impersonal(=)] [+causative(A11)] [+resultative(C21)]
+
+Spanish verbs: ir ‘to go’, salir ‘to exit’, parar ‘to stop’, . . .
+
+Arg1 is syntactically the subject and is associated to the theme θ-role. Arg2 may syntactically be an adjunct
+or a prepositional object and is associated to the location θ-role, or to the more specific destination or origin.
+
+B12.unaccusative-passive-ditransitive
+--------------------------------------
+[become[y<place>]]
+Arg1=PAT, subj
+Arg2=LOC/BEN/TEM, pp-obj/adjunct
+Arg0=AGT, optional, external agent (demoted subj from ditransitive form)
+Diatheses: no
+Spanish verbs: preguntar ‘to ask’, consultar ‘to consult’, dirigir ‘to address/direct’, . . .
+(todo se han preguntado)
+
+This LSS is specific for encapsulating the passivization of ditransitive verbs. All arguments and θ-roles are
+shared with its active counterpart, although there is a change both in the lexical structure (from accomplishment
+to achievement) and in its syntactic counterpart. The first internal argument (arg1) is the subject and keeps
+its patient θ-role, and the external argument (arg0) may appear as an oblique agent complement, keeping its
+original agent θ-role too. The second internal argument (arg2) encompasses the list of possibilities given in A3
+class: it may be a prepositional object or an adjunct, as syntax goes, and it can be associated to the beneficiary,
+location or theme θ-roles.
+
+
+B21.unaccusative-state
+-----------------------
+[become[y<state>]]
+Arg1=TEM, subj
+Arg2=EFI, pp-obj/adjunct
+Diatheses: [+causative(A11)] [+impersonal(=)]
+
+Spanish verbs: producir ‘to cause/produce’, convertir ‘to convert/become’, pasar ‘to pass’, . . .
+
+Arg1 is syntactically the subject and is associated to the theme θ-role. Arg2 may syntactically be an adjunct,
+a prepositional object or a predicative complement and is associated to the final state θ-role or, alternatively,
+to the attribute or initial state θ-roles.
+
+B22.unaccusative-passive-transitive
+------------------------------------
+[become[y<state>]]
+Arg1=PAT, subj
+Arg0=AGT, demoted subj
+Diatheses: no
+Spanish verbs: ver ‘to see’, considerar ‘to consider’, utilizar ‘to use’, . . .
+
+This LSS is specific for encapsulating the passivization of transitive verbs, as B12 did so with ditransitive
+ones. All arguments and θ-roles are shared with its active counterpart, although there is a change both in the
+lexical structure (from accomplishment to achievement) and in its syntactic counterpart. The internal argument
+(arg1) is the subject and keeps its patient θ-role, and the external argument (arg0) may appear as an oblique
+agent complement, keeping its original agent θ-role too.
+Being itself the result of a diathesis, class B22 is considered to participate in no other alternations.
+
+B23.unaccusative-cotheme
+-------------------------
+[become[y<state>]]
+Arg1=TEM, subj
+Arg2=COT, pp-obj
+Diatheses: no
+Spanish verbs: separar ‘to sepparate’, asociar ‘to associate’, desconectar ‘to disconnect’, . . .
+
+This is the last of the classes which result from diatheses. In this case, the class is formed by verbs from
+the A35 class which have undergone the cotheme alternation, and shares arguments and θ-roles with it: arg1
+is the subject, with theme θ-role, and arg2 is a prepositional object with cotheme θ-role. It is not possible to
+have the external argument expressed in this LSS.
+Being itself the result of a diathesis, class B23 is considered to participate in no other alternations.
+
+
+C11.state-existential
+-----------------------
+[x <place>y]
+Arg1=TEM
+Arg2=LOC, pp-obj/adjunct (location)
+
+Diatheses: [+impersonal(=)] [+causative(A11)] [+oblique subject(=)] [+cognate object(=)] [+resultative(C21)]
+[+benefactive(=)]
+
+Spanish verbs: haber ‘to be/have’, estar ‘to be’, existir ‘to exist’, . . .
+
+Arg1 is syntactically the subject. Arg2 maps to a locative and is syntactically an adjunct or a prepositional
+complement, if expressed at all. It is very common for verbs belonging to this class to show just one explicit
+argument. Auxiliary verb haber (Spanish) /haver (Catalan) in its use as main verb (existential ‘to be’ or ‘to
+10
+have’) belongs to this class.
+
+C21.state-attributive
+----------------------
+[x <state>y]
+Arg1=TEM
+Arg2=ATR, d-obj/pp
+
+Diatheses: [+causative(A11)] [+impersonal(=)] [+benefactive(=)] [+/-resultative(=)]
+
+Spanish verbs: ser ‘to be’, tener ‘to have’, estar ‘to be’, . . .
+
+Arg1 is syntactically the subject, while arg2 is syntactically an attribute, typically, or a direct object, for
+such verbs as tener (Spanish) / tenir (Catalan) –‘to have’. As for θ-roles, arg2 maps to an attribute. Copulative
+verbs such as ser when used as a main verb or estar in its most common sense belong to this class.
+
+C31.state-scalar
+-------------------
+[x <state>y]
+Arg1=TEM
+Arg2=EXT, d-obj/pp-obj/adjunct
+
+Diatheses: [+causative(A11)] [+impersonal(=)]
+
+Spanish verbs: valer ‘to cost’, pesar ‘to weigh’, durar ‘to last’, . . .
+
+Arg1 is syntactically the subject while arg2 may either be a direct object, an adjunct or a prepositional
+object. Arg2 maps with extension θ-role, an argument referring to some sizable and measurable magnitude
+such as length, weight, time, price, etc. Notice that, even if verbs belonging to this class appear to be transitive
+–they may accept a direct object complement–, passive alternation is not possible.
+
+C41.state-benefactive
+-----------------------
+[x <place>y]
+Arg1=TEM subj
+Arg2=BEN iobj
+Diatheses: [+causative(A11)] [+impersonal(=)]
+
+Spanish verbs: servir ‘to be useful’, suceder ‘to happen’, ocurrir ‘to occur’, . . .
+
+Arg1 is syntactically the subject, while arg2 is the indirect object and maps to a beneficiary θ-role.
+
+
+C42.state-experiencer
+----------------------
+[x <place>y]
+Arg1=TEM subj
+Arg2=EXP iobj
+Diatheses: [+causative(A11)] [+impersonal(=)] [+/-resultative(C21)]
+
+Spanish verbs: parecer ‘to seem’, importar ‘to be important’, desagradar ‘to dislike’, . . .
+
+Arg1 is syntactically the subject, while arg2 is the indirect object and maps to a experiencer θ-role.
+
+
+D11.inergative-agentive
+-------------------------
+[x act<manner/instrument>]
+Arg0=AGT, subj
+Diatheses: [+impersonal(=)] [+causative(A11)] [+object extension(A21)] [+resultative(C21)]
+
+Spanish verbs: actuar ‘to act’, regresar ‘to come back’, volar ‘to fly’, . . .
+
+Arg0 is syntactically the subject, and its θ-role is agent. Verbs belonging to this class may be made transitive
+by adding a direct object, as the diatheses alternations point out.
+
+D21.inergative-experiencer
+---------------------------
+[x act<manner/instrument>]
+Arg0=EXP, subj
+Diatheses: [+causative(A11)] [+impersonal(=)] [+cognate object(A21)] [+resultative(C21)]
+
+Spanish verbs: dormir ‘to sleep’, vivir ‘to live’, oír ‘to hear’, . . .
+
+Arg0 is syntactically the subject, and its θ-role is experiencer. Verbs belonging to this class may be made
+transitive by adding a direct object whose semantic content is normally already present in the verb (like in
+dream a dream).
+
+D31.inergative-source
+----------------------
+[x act<manner/instrument>]
+Arg0=SRC, subj
+Diatheses: [+causative(A11)] [+impersonal(=)] [+cognate object(A21)] [+resultative(C21)]
+
+Spanish verbs: llorar ‘to cry’, toser ‘to cough’, sudar ‘to sweat’, . . .
+
+Arg0 is syntactically the subject, and its θ-role is source. Verbs belonging to this class may be made transitive
+by adding a direct object whose semantic content is somehow already present in the verb (like in cry tears).

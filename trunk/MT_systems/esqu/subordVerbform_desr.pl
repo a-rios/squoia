@@ -2,7 +2,7 @@
 
 
 use utf8;                  # Source code is UTF-8
-use open ':utf8';
+#use open ':utf8';
 use Storable; # to retrieve hash from disk
 #binmode STDIN, ':utf8';
 #binmode STDOUT, ':utf8';
@@ -18,31 +18,6 @@ my $parser = XML::LibXML->new({encoding => 'utf-8'});
 my $dom    = XML::LibXML->load_xml( IO => *STDIN);
 
 my @sentenceList = $dom->getElementsByTagName('SENTENCE');
-
-# note that if the subordinated clause preceeds the main clause, subordination depends on main verb:
-#  <SENTENCE ord="1">
-#    <CHUNK type="grup-verb" si="top" ord="6">
-#      <NODE ord="6" form="saldré" lem="salir" pos="vm" cpos="v" rel="sentence" mi="VMIF1S0">
-#        <NODE ord="1" form="Cuando" lem="cuando" pos="cs" cpos="c" head="6" rel="conj" mi="CS"/>
-#      </NODE>
-#      <CHUNK type="grup-verb" si="suj" ord="2">
-#        <NODE ord="2" form="termino" lem="terminar" pos="vm" cpos="v" rel="suj" mi="VMIP1S0"/>
-#        <CHUNK type="grup-sp" si="creg" ord="3">
-#          <NODE ord="3" form="de" lem="de" pos="sp" cpos="s" rel="creg" mi="SPS00"/>
-#          <CHUNK type="grup-verb" si="S" ord="4">
-#            <NODE ord="4" form="comer" lem="comer" pos="vm" cpos="v" rel="S" mi="VMN0000"/>
-#          </CHUNK>
-#        </CHUNK>
-#        <CHUNK type="F-term" si="term" ord="5">
-#          <NODE ord="5" form="," lem="," pos="Fc" cpos="F" mi="FC"/>
-#        </CHUNK>
-#      </CHUNK>
-#      <CHUNK type="F-term" si="term" ord="7">
-#        <NODE ord="7" form="." lem="." pos="Fp" cpos="F" mi="FP"/>
-#      </CHUNK>
-#    </CHUNK>
-#  </SENTENCE>
-
 
 my $nbrOfRelClauses =0;
 my $nbrOfSwitchForms=0;
@@ -76,13 +51,13 @@ foreach my $sentence (@sentenceList)
  			{
  				my $conjunction;
  				# get conjunction, if present:
- 				if($verbChunk->exists('parent::CHUNK[@type="coor-v"]'))
- 				{
- 					$conjunction = @{$verbChunk->findnodes('parent::CHUNK[@type="coor-v"]/NODE[@cpos="v"]/NODE[@pos="cs"]')}[0];
+ 				if($verbChunk->exists('parent::CHUNK[@type="coor-v"]') )
+ 				{ 
+ 					$conjunction = @{$verbChunk->findnodes('parent::CHUNK[@type="coor-v"]/NODE[@cpos="v"]/NODE[@pos="cs" or @pos="cc"]')}[0];
  				}
- 				else
+ 				elsif($verbChunk->getAttribute('si') ne 'top')
  				{
- 					$conjunction = @{$verbChunk->findnodes('child::NODE[@cpos="v"]/NODE[@pos="cs"]')}[0];
+ 					$conjunction = @{$verbChunk->findnodes('child::NODE[@cpos="v"]/NODE[@pos="cs" or @pos="cc"]')}[0];
  				}
  		
  				
@@ -264,7 +239,10 @@ foreach my $sentence (@sentenceList)
 				}
  			}
 			else
-			{
+			{ 
+				#this is a relative clause, copy verbform value to chunk (otherwise, it will get lost during the lexical transfer)
+				my $reltype = $verbChunk->findvalue('child::NODE/descendant-or-self::NODE/@verbform');
+				$verbChunk->setAttribute('verbform',$reltype);
 				$nbrOfRelClauses++;
 			}
  		}

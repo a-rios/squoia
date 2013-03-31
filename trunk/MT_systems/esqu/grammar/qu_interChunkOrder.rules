@@ -2,10 +2,26 @@
 
 #only CHUNK
 
-## coordinations
-xpath{self::CHUNK[not(@type="F-term")]} && xpath{child::CHUNK}		child:xpath{self::CHUNK[not(@type="F-term")]}		child .head
+## VERB CHUNKS ####
+
+# general order within verb chunks: SOV
+
+# order in subordinated verb chunk: first is second clause, last is head
+my.type=grup-verb			subV:xpath{child::NODE/descendant::NODE[@smi="CS"]},otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]},suj:my.si=suj,dobj:my.si=/cd/,iobj:my.si=ci,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP			subV .Coma .suj .dobj .iobj .otherchildren .head .Punc
+
+# order in coordinated verb chunk: keep order of clauses
+my.type=coor-v && xpath{child::NODE/descendant::NODE[@smi="CC"]}			coV:my.type=/grup-verb|coor-v/,otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]},suj:my.si=suj && my.type=/sn|coor-n/,dobj:my.si=/cd/ && my.type=/sn|coor-n/,iobj:my.si=ci && my.type=/sn|coor-n/,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP			suj .dobj .iobj .otherchildren .head .Coma .coV .Punc
+
+### nominal chunks ####
+
+my.type=/sn|coor-n/			rel:my.verbform=/^rel/,adj:(my.func=attributive || child.smi=/^A/),pp:(my.type=/grup-sp|coor-sp/ && !(child.postpos=/.+/) && !(child.spform=/.+/)) 		 pp .rel .adj +head
+#my.type=/sn|coor-n/			pp:my.type=/grup-sp|coor-sp/ && !(child.postpos=/.+/) && !(child.spform=/.+/) 	pp .head
+
+
+my.type=/grup-sp/&& child.postpos=/.+/			noun:my.type=/sn|coor-n/				noun .head
+
+## general rule: head final
+#xpath{self::CHUNK[not(@type="F-term")]} && xpath{child::CHUNK}		child:xpath{self::CHUNK[not(@type="F-term")]}		child .head
 
 #my.type=sn		adj:my.type=/sa|coor-sa/		adj .head
 
-## Noun and prepositional phrases
-#my.type=/CNP|NP/		xSPEC:my.type=nounSpec,xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .head +xPP .xCOMA +xSREL +xCOMB

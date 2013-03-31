@@ -99,6 +99,8 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 										my $xpathstring= 'child::SYN[@mi="'.$trgt.'"]';
 										# find synnode with this 'mi', can be more than one
 										my @matchingSyns = $node->findnodes($xpathstring);
+										if(scalar(@matchingSyns)>0)
+										{
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
 									
@@ -141,6 +143,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   			{
 								    			print STDERR "error: invalid option $keepOrDelete! Valid options are: k (keep) or d (delete). Won't disambiguate.";
 								   			 }
+										}
 									}
 								}
 							}
