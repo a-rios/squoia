@@ -71,7 +71,7 @@ while (<>)
      my ($id, $word, $lem, $cpos, $pos, $info, $head, $rel, $phead, $prel) = split (/\t|\s/);	 
      
      # special case with estar (needs to be vm for desr and form instead of lemma -> set lemma back to 'estar')
-     if(($pos eq 'vm' || $pos eq 'va') && $lem =~ /^est/ && $lem !~ /r$/)
+     if(($pos =~ /vm|va/ || $pos eq 'va') && $lem =~ /^est/ && $lem !~ /r$/)
      {
      	$lem = "estar";
      }
@@ -1652,10 +1652,10 @@ sub model2{
   				my ($id, $word, $lem, $cpos, $pos, $info, $head, $rel, $phead, $prel) = split (/\t|\s/);	 
      
    			 	# special case with estar (needs to be vm for desr and form instead of lemma -> set lemma back to 'estar')
-  				 if($pos eq 'vm' && $lem =~ /^est/ && $lem !~ /r$/)
+  				 if($pos =~ /vm|va/ && $lem =~ /^est/ && $lem !~ /r$/)
  			 	 {
  				 	  $lem = "estar";
-     				  $pos = "va";
+     				  #$pos = "va";
     		 	 }
  			 	my $eaglesTag = &toEaglesTag($pos, $info);
 				# if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)

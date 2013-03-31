@@ -367,6 +367,7 @@ sub getPos{
 my %mapNodeHash =	(
 	'my'		=> '.',
 	'child'		=> 'child::NODE',
+	'firstchild'=> 'child::NODE[1]',
 	'parent'	=> '..',
 	'lsibling'	=> 'preceding-sibling::NODE',
 	'rsibling'	=> 'following-sibling::NODE',
@@ -377,6 +378,7 @@ my %mapNodeHash =	(
 my %mapChunkHash =	(
 	'my'		=> '.',
 	'child'		=> 'child::CHUNK',
+	'firstchild'=> 'child::CHUNK[1]',
 	'parent'	=> '..',
 	'chunkparent'	=> 'ancestor::CHUNK[1]',
 	'chunkgrandparent'	=> 'ancestor::CHUNK[2]',
