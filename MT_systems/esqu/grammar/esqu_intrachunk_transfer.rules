@@ -24,6 +24,10 @@ my.spform=/.+/ && my.smi=/^SP/		spform			my.type=/grup-sp|coor-sp/		spform			up	
 # copy all the object clitics for 1st and 2nd persons to the sn chunk (and from there to the verb chunk)
 my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			verbmi			up		concat
 
+# copy possessive suffixes to noun chunk
+my.mi=/\+\+.+Poss/		mi			my.type=/sn|coor-n/			poss			up		concat
+
+
 # copy lemma of the main verb (first node child in verbchunk) to the verb chunk (needed for generation)
 my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified || my.unknown=transfer)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
 my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && (my.lem=unspecified || my.unknown=transfer)		slem					my.type=/grup-verb|coor-v/		lem			up		concat

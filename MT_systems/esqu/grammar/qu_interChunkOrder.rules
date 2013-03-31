@@ -14,7 +14,7 @@ my.type=coor-v && xpath{child::NODE/descendant::NODE[@smi="CC"]}			coV:my.type=/
 
 ### nominal chunks ####
 
-my.type=/sn|coor-n/			rel:my.verbform=/^rel/,adj:(my.func=attributive || child.smi=/^A/),pp:(my.type=/grup-sp|coor-sp/ && !(child.postpos=/.+/) && !(child.spform=/.+/)) 		 pp .rel .adj +head
+my.type=/sn|coor-n/			rel:my.verbform=/^rel/,adj:(my.func=attributive || child.smi=/^A/),pp:(my.type=/grup-sp|coor-sp/ && !(child.postpos=/.+/) && !(child.spform=/.+/)),det:my.type=det,sn:type=sn,year:my.type=date 		 pp .year .det .rel .adj +head .sn
 #my.type=/sn|coor-n/			pp:my.type=/grup-sp|coor-sp/ && !(child.postpos=/.+/) && !(child.spform=/.+/) 	pp .head
 
 
@@ -23,5 +23,5 @@ my.type=/grup-sp/&& child.postpos=/.+/			noun:my.type=/sn|coor-n/				noun .head
 ## general rule: head final
 #xpath{self::CHUNK[not(@type="F-term")]} && xpath{child::CHUNK}		child:xpath{self::CHUNK[not(@type="F-term")]}		child .head
 
-#my.type=sn		adj:my.type=/sa|coor-sa/		adj .head
+
 

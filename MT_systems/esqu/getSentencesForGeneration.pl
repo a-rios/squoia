@@ -91,9 +91,15 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			{
  				print STDOUT $chunk->getAttribute('conj')."\n";
  			}
- 			# find the noun (should be only one per chunk), ignore definite articles (and indefinite articles?) TODO
- 			my $noun = @{$chunk->findnodes('child::NODE[not(starts-with(@smi,"DA"))]')}[0];
+ 			# find the noun (should be only one per chunk), ignore definite articles (and indefinite articles?), and also possessive pronouns (those are realized as suffixes) TODO
+ 			my $noun = @{$chunk->findnodes('child::NODE[not(starts-with(@smi,"DA") and not(starts-with(@smi,"DP")))]')}[0];
  			&printNode($noun);
+ 			# print possessive suffix, if there is any
+ 			if($chunk->hasAttribute('poss'))
+ 			{
+ 				print STDOUT $chunk->getAttribute('poss');	
+ 			}
+ 			# print case, if there is any
  			if($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase'))
  			{
  				print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase');
@@ -182,6 +188,18 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			my $date = @{$chunk->findnodes('child::NODE[@smi="W"]')}[0];
  			&printNode($date);
+ 			print STDOUT "\n";
+ 		}
+ 		# determiner (demonstrative, indefinite, interrogative or exclamative)
+ 		elsif($chunk->exists('self::CHUNK[@type="det"]') )
+ 		{
+ 			# if there's a conjunction to be inserted and this is the first node in the clause
+ 			if($chunk->hasAttribute('conj'))
+ 			{
+ 				print STDOUT $chunk->getAttribute('conj')."\n";
+ 			}
+ 			my $det = @{$chunk->findnodes('child::NODE')}[0];
+ 			&printNode($det);
  			print STDOUT "\n";
  		}
  	}
@@ -325,18 +343,31 @@ sub mapEaglesTagToQuechuaMorph{
 		my $number = substr($eaglesTag,3,1);
 		my $grade = substr($eaglesTag,6,1);
 		
+		# note that proper names can contain several words in slem 'Juan_Perez', or 'Universidad_Nacional'
 		#person
 		if($eaglesTag =~ /SP/)
 		{
-			print STDOUT "$slem";
+			my (@words) = split('_',$slem);
+			for(my $i=0;$i<scalar(@words)-1;$i++)
+			{
+				print STDOUT @words[$i]."\n";
+			}
+			print STDOUT @words[-1];
 		}
-		elsif($type eq 'P' && $number =~ /S|0/)
+		# other proper name
+		elsif($type eq 'P')
 		{
-			print STDOUT "$slem ni:VRoot+Perf";
-		}
-		elsif($type eq 'P' && $number eq 'P')
-		{
-			print STDOUT "$slem ni:VRoot+Perf+Pl";
+			my (@words) = split('_',$slem);
+			for(my $i=0;$i<scalar(@words)-1;$i++)
+			{
+				print STDOUT @words[$i]."\n";
+			}
+			print STDOUT @words[-1]."\n";
+			print STDOUT "ni:VRoot+Perf";
+			if( $number eq 'P')
+			{
+				print STDOUT "+Pl";
+			}
 		}
 		#common noun
 		else
@@ -355,6 +386,7 @@ sub mapEaglesTagToQuechuaMorph{
 				print STDOUT "+Pl";
 			}
 		}
+		print STDOUT $node->findvalue('parent::CHUNK[@type="sn" or @type="coor-n"]/@poss');
 		print STDOUT $node->findvalue('parent::CHUNK[@type="sn" or @type="coor-n"]/@nouncase');
 	}
 	# note, this shouldn't be necessary under normal cirumstances, as all verb information is copied to the verb chunk
