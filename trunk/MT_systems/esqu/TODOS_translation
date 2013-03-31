@@ -2,7 +2,7 @@ TODOS translation:
 
 - estar as vm: better translate as ka-chka- instead of ka-?
 - nouns with possessive suffixes, (llapa, kiki..)
-- numbers and dates
+- numbers and dates -> horas (months ok)
 - participles vs. adjectives: e.g. adinerado
   -> add paradigm Noun to all Particple-N/V forms
   -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong)
@@ -18,3 +18,9 @@ TODOS translation:
 - de + geographic proper name: maybe better translate as attributive than +Abl
 - possessive pronouns -> possessive suffixes
 - en_cuanto_a -> +Top
+- tener hambre, sed etc: delete 'tener' from output and attach finite morphology to verb with -naya
+- keep translated indefinite article as huk? or better no article at all as default?
+- default word order in verb chunk with adverb: adv obj verb, obj adj verb?
+- me acuerdo -> results in 1.Sg.Subj + 1.Obj -> change to +Rflx
+- direct speech: if subj in direct speech = coreferent with subj of ni- 
+  --> change to first person!
