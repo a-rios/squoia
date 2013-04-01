@@ -53,7 +53,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  	{
  		my $chunk = $chunkSequence{$idref};
  		#if this is a verb chunk, get lemma and verbmi directly from chunk, no need to process the nodes
- 		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]'))
+ 		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]') && !$chunk->hasAttribute('delete') )
  		{
  			
  			# if there's a node (e.g. interrogative pronoun) in verb chunk or
@@ -67,24 +67,67 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			
  			# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
  			my $lemma = $chunk->getAttribute('lem');
- 			$lemma =~ s/r$//;
+ 			if($chunk->exists('child::NODE[@lem="unspecified"]'))
+ 			{
+ 				$lemma =~ s/r$//;
+ 			}
  			my $verbmi = $chunk->getAttribute('verbmi');
  			#in case an auxiliary needs to be generated, get that too
  			my $lemma2 = $chunk->getAttribute('lem2');
  			my $verbmi2 = $chunk->getAttribute('verbmi2');
+ 			# preverbs: quotation, nispa nin
+ 			my $lemma1 = $chunk->getAttribute('lem1');
+ 			my $verbmi1 = $chunk->getAttribute('verbmi1');
  			my $chunkmi = $chunk->getAttribute('chunkmi');
+ 			my ($verbprs) = ($verbmi =~ m/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)/ );
+ 			my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
+ 			my ($objprs) = ($verbmi =~ m/\+([12]\.[PS][lg])(\.Incl|\.Excl)?\.Obj/ );
+ 			print STDERR "subj obj: $subjprs, $objprs\n";
+ 			
+ 			# nispa
+ 			if($lemma1 && $verbmi1)
+ 			{
+ 				print STDOUT "$lemma1:$verbmi1\n";
+ 			}
+ 			# check if subj and obj are same person, if so, change obj to reflexive
+ 			if($verbmi =~ $subjprs."Obj")
+ 			{
+ 				#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
+ 				$verbmi =~ s/\Q$subjprs\E($inclExcl)?\.Obj/Rflx/g;
+ 				#print STDERR "replaced: $verbmi\n";
+ 			}
+ 			# if there was a new subject inserted during transfer, change that (e.g. in direct speech)
+ 			if($chunk->getAttribute('verbprs') ne '')
+ 			{
+ 				my $newverbprs = $chunk->getAttribute('verbprs');
+ 				
+ 				#print STDERR "old verb prs: $verbprs\n";
+ 				$verbmi =~ s/\Q$verbprs\E/$newverbprs/g;
+ 			}
+ 			# if original subject is an object in Quechua, change that (e.g. tengo hambre -> yarqanaya-wa-n)
+ 			# and introduce a 3rd person subject marker to the verb
+ 			if($chunk->hasAttribute('subjToObj'))
+ 			{
+ 				$verbmi =~ s/\Q$verbprs\E/\+3.Sg.Subj/g;
+ 				if($subjprs =~ /1|2/)
+ 				{
+ 					$verbmi = $verbmi."+".$subjprs.$inclExcl.".Obj";
+ 					#print STDERR "new verbmi: $verbmi\n";
+ 				}
+ 			}
  			
  			print STDOUT "$lemma:$verbmi";
- 			if($chunkmi ne ''){print $chunkmi;}
+ 			
  			if($lemma2 && $verbmi2)
  			{
  				print STDOUT "\n$lemma2:$verbmi2";
  			}
+ 			if($chunkmi ne ''){print $chunkmi;}
  			print STDOUT "\n";
  		}
  		# if this is a noun chunk, but NOT a pronoun (note, pronouns have an attribute  verbmi that has been copied to their verb,
  		# pronouns are realized as suffixes: we don't need to process them here)
- 		elsif($chunk->exists('self::CHUNK[@type="sn" or @type="coor-n"]') && !$chunk->hasAttribute('verbmi') && !$chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@spform'))
+ 		elsif($chunk->exists('self::CHUNK[@type="sn" or @type="coor-n"]') && !$chunk->hasAttribute('verbmi') && !$chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@spform') && !$chunk->hasAttribute('delete') )
  		{	
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
@@ -119,7 +162,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  		}
  		# pp-chunks:
  		# if the chunk contains an attribute spform: this contains the whole pp, just print this
- 		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]/@spform') )
+ 		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]/@spform') && !$chunk->hasAttribute('delete') )
  		{
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
@@ -129,7 +172,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			print STDOUT $chunk->getAttribute('spform')."\n";
  			
  		} 
- 		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]') && !$chunk->exists('child::CHUNK[@type="sn"]/@verbmi') && $chunk->exists('child::NODE/@postpos') && !$chunk->hasAttribute('case') )
+ 		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]') && !$chunk->exists('child::CHUNK[@type="sn"]/@verbmi') && $chunk->exists('child::NODE/@postpos') && !$chunk->hasAttribute('case') && !$chunk->hasAttribute('delete')  )
  		{
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
@@ -142,14 +185,14 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			print STDOUT "\n";
  		}
  		#punctuation: print as is
- 		elsif($chunk->exists('self::CHUNK[@type="F-term"]') )
+ 		elsif($chunk->exists('self::CHUNK[@type="F-term"]') && $chunk->getAttribute('delete') ne 'yes')
  		{
  			my $pmark = $chunk->findvalue('child::NODE/@slem');
  			
  			print STDOUT "$pmark\n";
  		}
  		# adverbs: RN 'no' -> print only if without 'nada,nunca or jamás', in those cases -> no is already contained in the suffix -chu in the verb chunk
- 		elsif($chunk->exists('self::CHUNK[@type="sadv" or @type="coor-sadv"]') && !($chunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/descendant::NODE[@slem="nada" or @slem="nunca" or @slem="jamás"]') && $chunk->exists('child::NODE[@smi="RN"]') ) )      
+ 		elsif($chunk->exists('self::CHUNK[@type="sadv" or @type="coor-sadv"]') && !($chunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/descendant::NODE[@slem="nada" or @slem="nunca" or @slem="jamás"]') && $chunk->exists('child::NODE[@smi="RN"]') ) && !$chunk->hasAttribute('delete') )      
  		{
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
@@ -167,7 +210,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			print STDOUT "\n";
  		}
  		# adjectives: print as is
- 		elsif($chunk->exists('self::CHUNK[@type="sa" or @type="coor-sa"]') )
+ 		elsif($chunk->exists('self::CHUNK[@type="sa" or @type="coor-sa"]') && !$chunk->hasAttribute('delete'))
  		{
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
@@ -179,7 +222,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			print STDOUT "\n";
  		}
  		# dates: print as is (only numbers are in a date-chunk)
- 		elsif($chunk->exists('self::CHUNK[@type="date"]') )
+ 		elsif($chunk->exists('self::CHUNK[@type="date"]') && !$chunk->hasAttribute('delete') )
  		{
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
@@ -191,7 +234,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			print STDOUT "\n";
  		}
  		# determiner (demonstrative, indefinite, interrogative or exclamative)
- 		elsif($chunk->exists('self::CHUNK[@type="det"]') )
+ 		elsif($chunk->exists('self::CHUNK[@type="det"]') && !$chunk->hasAttribute('delete'))
  		{
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
@@ -327,7 +370,7 @@ sub mapEaglesTagToQuechuaMorph{
 	}
 	elsif($eaglesTag eq 'RG')
 	{
-		print  STDOUT "$slem:NRoot+Acc";
+		print  STDOUT "$slem";
 	}
 #	# determiners, should all be in lexicon, TODO: check if complete
 #	elsif($eaglesTag =~ /^D/)

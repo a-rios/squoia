@@ -67,7 +67,8 @@ en_contra_de	postpos=contran,nouncase=+Gen	-
 cabe 
 # TODO: Mengenangaben: una tasa DE café?
 de	case=+Gen		chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or @sem="[+Mat]"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
-de 	case=+Abl		chunkparent.type=grup-verb 	+
+de 	case=+Abl		xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(@slem="acordar")]} 	+
+de	case=+Acc		xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		- # acordarse de
 de	case=+Loc		xpath{parent::CHUNK/parent::CHUNK[@type="date"]} || xpath{descendant::CHUNK[@type="date"]} 	- # el 14 de diciembre -> 14 diciembre/Qhapaq ramymi killapi, also: 'del año 2003' -> 2003 wataPI
 de	func=attributive	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]" or @smi="NP00G00"]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
 

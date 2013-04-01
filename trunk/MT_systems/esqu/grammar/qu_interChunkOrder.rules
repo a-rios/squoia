@@ -10,7 +10,7 @@
 my.type=grup-verb			subV:xpath{child::NODE/descendant::NODE[@smi="CS"]},otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]},suj:my.si=suj,dobj:my.si=/cd/,iobj:my.si=ci,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP			subV .Coma .suj .dobj .iobj .otherchildren .head .Punc
 
 # order in coordinated verb chunk: keep order of clauses
-my.type=coor-v && xpath{child::NODE/descendant::NODE[@smi="CC"]}			coV:my.type=/grup-verb|coor-v/,otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]},suj:my.si=suj && my.type=/sn|coor-n/,dobj:my.si=/cd/ && my.type=/sn|coor-n/,iobj:my.si=ci && my.type=/sn|coor-n/,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP			suj .dobj .iobj .otherchildren .head .Coma .coV .Punc
+my.type=/coor-v|grup-verb/ && !(xpath{child::NODE/descendant::NODE[@smi="CS"]})			coV:my.type=/grup-verb|coor-v/&&!(my.si=/cd/),otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]},suj:my.si=suj && my.type=/sn|coor-n/,dobj:my.si=/cd/ && my.type=/sn|coor-n/,iobj:my.si=ci && my.type=/sn|coor-n/,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP			suj .dobj .iobj .otherchildren .head .Coma .coV .Punc
 
 ### nominal chunks ####
 

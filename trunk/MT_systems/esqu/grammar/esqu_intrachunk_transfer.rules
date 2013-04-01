@@ -79,7 +79,33 @@ my.smi=/^N/					"+Acc"				my.si=/cd/					case			up		concat
 
 # if sn chunk and si=ci -> set mi=+Dat
 
-# copy all the morphological information in replace_mi to mi (even possible? if not, do that during generation) TODO
+## forms of tener hambre, tener hipo etc: in Quechua, one root, delete object####
+my.slem=hipo && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="hik'i" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=/flojera|pereza/ && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="qilla" and @slem="tener"]}	"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=enemistad && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="awqa" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=miedo && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="mancha" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=pareja && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="yanacha" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=pena && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="llaki" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=vergüenza && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="vergüenza" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=/compasión|piedad/ && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="khuya" and @slem="tener"]}	"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=/fragancia|olor/ && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="q'apa" and @slem="tener"]}	"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=hambre && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="mikhunaya" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=sed && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="ununaya" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=sueño && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="puñunaya" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
+
+
+## special case, forms with -naya: make Subj -> Obj (tengo hambre -> yarqanayaWAn)
+
+xpath{self::NODE[@lem="mikhunaya" and @slem="tener"]}		"yes"	my.type=/grup-verb|coor-v/	subjToObj	up	overwrite
+xpath{self::NODE[@lem="ununaya" and @slem="tener"]}		"yes"	my.type=/grup-verb|coor-v/	subjToObj	up	overwrite
+xpath{self::NODE[@lem="puñunaya" and @slem="tener"]}		"yes"	my.type=/grup-verb|coor-v/	subjToObj	up	overwrite
+
+# acordarse [de alguien] -> []-ta yuyarikuy -> with 1st/2nd person, add Obj to verb 
+# me acuerdo de ti -> qamta yuyarisayki
+# TODO: any difference here between 1.Pl.Incl vs. Excl?
+# any difference between 2 Sg vs. Pl?
+my.smi=/^PP1.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		"++1.Sg.Obj"			my.type=/sn|coor-n/		verbmi		up	concat
+my.smi=/^PP2.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		"++2.Sg.Obj"			my.type=/sn|coor-n/		verbmi		up	concat
 
 
 
