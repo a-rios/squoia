@@ -194,9 +194,22 @@ foreach my $sentence (@sentenceList)
  						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
  						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|manifestar|mencionar|oficiar|opinar|proclamar|proponer|razonar|revelar|responder|sostener|señalar|testificar|testimoniar/)
  						{
+ 							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
+							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
+							&compareSubjects($verbChunk);
+							if($verbChunk->getAttribute('verbform') eq 'SS' && &isSingular($verbChunk))
+							{
+								$verbChunk->setAttribute('verbprs', '+1.Sg.Subj')
+							}
+							elsif($verbChunk->getAttribute('verbform') eq 'SS' && !&isSingular($verbChunk))
+							{
+								$verbChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
+							}
+							# set both this verb and the head verb to 'main'
 							$verbChunk->setAttribute('verbform', 'main');
-							$headVerbCHunk->setAttribute('lem2', 'ni');
-							$headVerbCHunk->setAttribute('verbmi2', '+SS');
+							$headVerbCHunk->setAttribute('lem1', 'ni');
+							$headVerbCHunk->setAttribute('verbmi1', '+SS');
+							
  						}
  						else
  						{
@@ -336,9 +349,10 @@ sub compareSubjects{
 					my ($subjNoun, $subjMI ) = &getSubjectNoun($verbChunk);
 					my ($subjNounMain,$subjMIMain ) =  &getSubjectNoun($mainverb);
 		
-				#if subjects of main and subord clause found, check if they're the same
+				# if subjects of main and subord clause found, check if they're the same
 				if($subjNounMain,$subjNoun,$subjMIMain,$subjMI)
 				{
+					#print STDERR "main: $subjNounMain $subjMIMain | sub: $subjNoun $subjMI\n";
 					if($subjNounMain eq $subjNoun && $subjMIMain eq $subjMI)
 					{
 						$nbrOfSwitchForms++;
@@ -380,6 +394,19 @@ sub isSubjunctive{
 	}
 }
 
+sub isSingular{
+	my $verbChunk = $_[0];
+	my $finiteVerb = &getFiniteVerb($verbChunk);
+	if($finiteVerb)
+	{
+		return substr($finiteVerb->getAttribute('mi'), 5, 1) eq 'S';
+	}
+	else
+	{
+		return 0;
+	}
+}
+
 sub isFuture{
 	my $verbChunk = $_[0];
 	my $finiteVerb = &getFiniteVerb($verbChunk);
@@ -396,7 +423,7 @@ sub isFuture{
 sub getSubjectNoun{
 	my $verbChunk = $_[0];
 	my ($subjectNoun,$subjectNounMI);
-	my $subjectChunk = @{$verbChunk->findnodes('child::CHUNK[@si="subj" or @si="subj-a"][1]')}[-1];
+	my $subjectChunk = @{$verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]')}[-1];
 	
 	if($subjectChunk)
 	{
@@ -412,7 +439,7 @@ sub getSubjectNoun{
 	else
 	{
 		print STDERR "no subject, no coref in: ";
-		#print STDERR $verbChunk->toString;
+		print STDERR $verbChunk->getAttribute('ord');
 		print STDERR "\n";
 	}
 

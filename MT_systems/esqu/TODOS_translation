@@ -12,15 +12,18 @@ TODOS translation:
 - permanecer +Adj -> Adj-raya- 
 - 1pl.incl vs. excl -> check for pronouns/possessive suffixes
 - 'hace tiempo', atm: pacha ruran ;) -> change to ñawpaq pachapi or something like that
-(- use finite verb forms if even if verb chunk is has not si=top, but there's no verb chunk above (parser error) )
+( done- use finite verb forms if even if verb chunk is has not si=top, but there's no verb chunk above (parser error) )
 - if denominado + proper name: delete denominado, otherwise 'nisqa' is doubled
   denominado+Dim palcayoc ni:VRoot+Perf
 - de + geographic proper name: maybe better translate as attributive than +Abl
 - possessive pronouns -> possessive suffixes
 - en_cuanto_a -> +Top
-- tener hambre, sed etc: delete 'tener' from output and attach finite morphology to verb with -naya
+( done - tener hambre, sed etc: delete 'tener' from output and attach finite morphology to verb with -naya)
 - keep translated indefinite article as huk? or better no article at all as default?
 - default word order in verb chunk with adverb: adv obj verb, obj adj verb?
-- me acuerdo -> results in 1.Sg.Subj + 1.Obj -> change to +Rflx
-- direct speech: if subj in direct speech = coreferent with subj of ni- 
-  --> change to first person!
+( done  - me acuerdo -> results in 1.Sg.Subj + 1.Obj -> change to +Rflx )
+( done   - me acuerdo de ti -> add 1.Sg.Obj to verb )
+( done:  - direct speech: if subj in direct speech = coreferent with subj of ni-  --> change to first person!)
+- interjections in own chunk?
+- getSentencesForGeneration -> join strings together instead of printing them out directly -> strip ',' and '++' 
+  -> reordering of suffixes!

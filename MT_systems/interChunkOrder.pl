@@ -56,7 +56,7 @@ my @allHeadConditions = keys(%rules);
 # get all SENTENCE chunks, iterate over childchunks
 foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 {
-	print STDERR $sentence->toString;
+	#print STDERR $sentence->toString;
 	#get all CHUNKS within SENTENCE
 	my @sentenceCHUNKS = $sentence->findnodes('descendant::CHUNK');
 

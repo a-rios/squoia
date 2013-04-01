@@ -52,10 +52,11 @@ while (<LEXSELFILE>) {
 
 	my $parser = XML::LibXML->new("utf8");
 	my $dom    = XML::LibXML->load_xml( IO => *STDIN );
-
+	
 	# get all nodes (NODE) with ambigous translations (SYN)
 	foreach my $parentnode ( $dom->getElementsByTagName('NODE')) 
 	{
+		print STDERR "Lexical disambiguation in sentence: ".$parentnode->findvalue('ancestor::SENTENCE/@ref').", node:".$parentnode->getAttribute('ref')."\n";
 		my @childnodes = $parentnode->getChildrenByLocalName('SYN');
 		
 		# create hash to store values of synonyms of this particular node

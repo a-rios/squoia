@@ -153,10 +153,55 @@ conducir	pusa		-		0.1
 conducir	apa		-		0.2
 
 # contar: yupa- (count), willa- (tell)
-
 contar		yupa	-	0.1
 contar		willa	-	0.2
 
 #deber deuda/algo -> manuka-, deber hacer algo -> obligative
 deber		manuka		-
 deber		+Obl		xpath{parent::NODE[starts-with(@smi,"V")]}
+
+# acordar: yuyari- (recordar) or kamachinaku- (llegar a un acuerdo)
+# if with reflexive + de-obj: yuyari, with direct object: kamachinaku
+acordar		yuya		xpath{parent::CHUNK/CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@slem="de"]}				0.2
+acordar		kama		xpath{parent::CHUNK/CHUNK[@type="sn" or @type="coor-n"]/NODE[starts-with(@smi,"N") and contains(@si,"cd")]}	0.1
+
+##### TENER ######
+
+# tener enemistad
+tener	awqa		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="enemistad"]}		0.1
+
+# tener flojera, pereza
+tener	qilla		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="flojera" or @slem="pereza"]}		0.1
+
+# tener hambre
+tener	mikhunaya		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="hambre"]}		0.1
+
+# tener hipo
+tener	hik'i		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="hipo"]}		0.1
+
+# tener miedo
+tener	mancha		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="miedo"]}		0.1
+
+# tener pareja
+tener	yanacha		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="pareja"]}		0.1
+
+# tener pena
+tener	llaki		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="pena"]}		0.1
+
+# tener sed
+tener	ununaya		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="sed"]}		0.1
+
+# tener sueño
+tener	puñunaya	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="sueño"]}		0.1
+
+# tener vergüenza
+tener	p'inqa		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="vergüenza"]}		0.1
+
+# tener compasión
+tener	khuya		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="compasión" or @slem="piedad"]}		0.1
+
+# tener fragancia
+tener	q'apa		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="fragancia" or @slem="olor"]}		0.1
+
+# tener: default, use tene-
+tener	unspecified	-	0.2
