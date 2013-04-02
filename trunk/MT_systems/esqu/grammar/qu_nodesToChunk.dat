@@ -1,6 +1,8 @@
 #origNodeConditions							parentChunkAttrVal	targetChunkAttrVal
 #my.pos=/PRELS/ && parent.pos=/VV/ && chunkparent.type=/VP/		relPro="no"	type=NP-relpro,comment="relative pronoun"
 
-my.smi=/^D[DTEI]/ && !(chunkparent.delete=yes)				func=hasdet		type=det
+my.smi=/^D[DTEI]/ && !(chunkparent.delete=yes) && !my.slem=uno				func=hasdet		type=det
+
+my.smi=/^DI/ && my.slem=uno && xpath{parent::NODE[@slem="día"]}				func=hasdet		type=det
 
 

@@ -596,7 +596,16 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 	{
 				 		$node->setAttribute('rel','S');
 				 	}
-				 
+				 	# if this is a gerund labeled as 'suj' with no verbal child node -> change label to 'cc'
+				 	elsif($node->getAttribute('rel') eq 'suj' && $node->getAttribute('mi') =~ /^VMG/ && !$node->exists('child::NODE[@lem="estar"]'))
+				 	{
+				 		$node->setAttribute('rel','gerundi');
+				 	}
+				 	#if this verb chunk is labeled as 'cd' but main verb has no 'que' and this is not an infinitive: change label to 'S'
+				 	elsif($node->getAttribute('rel') eq 'cd' && $node->getAttribute('mi') !~ /^V[MAS]N/ && !$parent->exists('descendant::NODE[@lem="que"]' ))
+				 	{
+				 		$node->setAttribute('rel','S');
+				 	}
 				 # relative clauses: if head of verbchunk is a nominal chunk + verbchunk has descendant = relative pronoun -> set si="S"
 				 if($node->exists('parent::NODE[@cpos="n"]') && $node->exists('child::NODE[@pos="pr"]'))
 				 {
@@ -857,6 +866,22 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 my $ord = $node->getAttribute('ord');
 				 my $idKey = "$sentenceId:$ord";
 				 $docHash{$idKey}= $datechunk;
+			}
+			# if this is an interjection
+			elsif ($node->exists('self::NODE[@mi="I"]'))
+			{
+				 my $interjectionchunk = XML::LibXML::Element->new( 'CHUNK' );
+				 $interjectionchunk->setAttribute('type', 'interjec');
+				 $interjectionchunk->setAttribute('si', $node->getAttribute('rel'));
+				 $interjectionchunk->setAttribute('ord', $node->getAttribute('ord')); 
+				 $node->removeAttribute('rel');
+				 $node->removeAttribute('head');
+				 $interjectionchunk->appendChild($node);
+				 $parent->appendChild($interjectionchunk);
+				 # the key in hash should point now to the chunk instead of the node
+				 my $ord = $node->getAttribute('ord');
+				 my $idKey = "$sentenceId:$ord";
+				 $docHash{$idKey}= $interjectionchunk;
 			}			
 			else
 			{

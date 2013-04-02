@@ -35,5 +35,6 @@ my.type=/sadv/ && my.chunkmi=/.+/			chunkmi				my.type=/grup-verb|coor-v/		chunk
 my.type=coor-n && my.chunkmi=+Instr			chunkmi				my.type=sn				chunkmi			child				1to2		concat	
 
 
-
-
+# in a pp with a coordinated np inside: copy the case/nouncase attribute to the second coordinated np
+#my.type=/grup-sp|coor-sp/ && child.type=coor-n		case			my.type=sn && chunkparent.type=coor-n			case			ancestor	1to2		overwrite	
+my.type=sn && chunkparent.type=coor-n 			case		my.type=/grup-sp|coor-sp/			case		chunkgrandparent	2to1		overwrite	

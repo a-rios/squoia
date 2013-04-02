@@ -3,8 +3,13 @@
 
 ## order in verb chunks: only relevant if more than one verb has to be generated from the chunks
 ## -> no auxiliaries, but infinitive complements, e.g. 'puedo/quiero hacer'
+## or gerunds: se fue riendo, 
 ## -> in all other cases, only a form of the main verb has to be generated
 my.smi=VMN0000			modalverb:my.smi=/VM[^N]/		head +modalverb
+
+## -> gerunds, e.g. 'se fue riendo'
+## TODO: better upgrade to chunks?
+my.smi=VMG0000			finiteVerb:my.smi=/VM[^G]/		head .finiteVerb
 
 ## order in sn chunks: indefinite/demonstrative pronouns: before noun
 my.smi=/^N/			det:my.smi/^D/				det .head
