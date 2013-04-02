@@ -1,9 +1,12 @@
 Issues with FreeLing (urgent)
 
+0. mira tagged as 2. imperative in:
+   María habla mientras Pedro mira tele.
+   This ocurrs probabaly with several verbs.. may be useful to define a general rule for this (never imperative with CS, generally give 3 singular more weight?)
+
 1. mayo -> analyzed as verb, e.g. in:
    'me voy el 14 de mayo', VMIP1S0, lemma mayar (really FreeLing?)
    also with julio -> me voy el 14 de julio/Julio -> julio as NP
-   
 
 2. vayas -> tagged as noun, e.g. in:
   'hace falta que te vayas'
@@ -12,6 +15,8 @@ Issues with FreeLing (urgent)
   -> currently always VA
   -> leads to parse trees that lttoolbox can't handle -> crash
 
+4. me acuerdo de ti -> acuerdo tagged as NC, should be VM 
+  
 4. el son del tambor -> 'son' should be NC, gets tagged as VS
 
 5. intercambio analyzed as VM when it should be NC, e.g. in:

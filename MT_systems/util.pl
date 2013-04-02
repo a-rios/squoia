@@ -379,6 +379,7 @@ my %mapChunkHash =	(
 	'my'		=> '.',
 	'child'		=> 'child::CHUNK',
 	'firstchild'=> 'child::CHUNK[1]',
+	'descendant'=> 'descendant::CHUNK',
 	'parent'	=> '..',
 	'chunkparent'	=> 'ancestor::CHUNK[1]',
 	'chunkgrandparent'	=> 'ancestor::CHUNK[2]',

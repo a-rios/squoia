@@ -58,20 +58,33 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			
  			# if there's a node (e.g. interrogative pronoun) in verb chunk or
  			#if wrong analysis-> there might be a node in the verbchunk that doesn't belong here, extract that node
- 			my @spareNodes = $chunk->findnodes('child::NODE[starts-with(@smi,"V")]/descendant::NODE[not(starts-with(@smi, "V") or starts-with(@smi, "C") or starts-with(@smi,"PR") )]');
+ 			my @spareNodes = $chunk->findnodes('child::NODE[starts-with(@smi,"V")]/descendant::NODE[not(starts-with(@smi, "V") or starts-with(@smi, "C") or starts-with(@smi,"PR") or starts-with(@smi,"S"))]');
  			foreach my $sparenode (@spareNodes)
  			{
 				&printNode($sparenode);
 				print STDOUT "\n";
  			}
  			
+ 			my $verbmi = $chunk->getAttribute('verbmi');
  			# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
  			my $lemma = $chunk->getAttribute('lem');
  			if($chunk->exists('child::NODE[@lem="unspecified"]'))
  			{
  				$lemma =~ s/r$//;
+ 				if(!$chunk->hasAttribute('verbmi'))
+ 				{
+ 					# if this a participle without finite verb, use -sqa form
+ 					if($chunk->exists('child::NODE[starts-with(@smi,"VMP")]'))
+ 					{ 
+ 						$verbmi="VRoot+Perf";
+ 					}
+ 					# if this a gerund without finite verb, use -spa form
+ 					elsif($chunk->exists('child::NODE[starts-with(@smi,"VMG")]'))
+ 					{
+ 						$verbmi="VRoot+SS";
+ 					}
+ 				}
  			}
- 			my $verbmi = $chunk->getAttribute('verbmi');
  			#in case an auxiliary needs to be generated, get that too
  			my $lemma2 = $chunk->getAttribute('lem2');
  			my $verbmi2 = $chunk->getAttribute('verbmi2');
@@ -82,7 +95,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			my ($verbprs) = ($verbmi =~ m/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)/ );
  			my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
  			my ($objprs) = ($verbmi =~ m/\+([12]\.[PS][lg])(\.Incl|\.Excl)?\.Obj/ );
- 			print STDERR "subj obj: $subjprs, $objprs\n";
+ 			#print STDERR "subj obj: $subjprs, $objprs\n";
  			
  			# nispa
  			if($lemma1 && $verbmi1)
@@ -117,6 +130,12 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			
  			print STDOUT "$lemma:$verbmi";
+ 			
+ 			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
+ 			if($verbmi eq '' && $chunk->exists('child::NODE[@mi="infinitive"]'))
+ 			{
+ 				print STDOUT "VRoot+Inf";
+ 			}
  			
  			if($lemma2 && $verbmi2)
  			{
@@ -157,8 +176,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			
  			# print content of chunkmi, if present
- 			print STDOUT $chunk->getAttribute('chunkmi')."\n";
- 				 
+ 			print STDOUT $chunk->getAttribute('chunkmi')."\n";	 
  		}
  		# pp-chunks:
  		# if the chunk contains an attribute spform: this contains the whole pp, just print this
@@ -234,7 +252,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			print STDOUT "\n";
  		}
  		# determiner (demonstrative, indefinite, interrogative or exclamative)
- 		elsif($chunk->exists('self::CHUNK[@type="det"]') && !$chunk->hasAttribute('delete'))
+ 		# TODO: print huk or not? (atm, not) huk is not really an indefinite article like Spanish 'un/a' (huk is atm only promoted to chunk before 'día')
+ 		elsif($chunk->exists('self::CHUNK[@type="det"]') && !$chunk->hasAttribute('delete') )
  		{
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
@@ -243,6 +262,28 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			my $det = @{$chunk->findnodes('child::NODE')}[0];
  			&printNode($det);
+ 			# as this node has been created AFTER intrachunk movement: check if function is cd or ci
+ 			# and add case suffix if necessary
+ 			if($chunk->getAttribute('si') =~ /cd/)
+ 			{
+ 				print STDOUT "+Acc";
+ 			}
+ 			elsif($chunk->getAttribute('si') eq 'ci')
+ 			{
+ 				print STDOUT "+Dat";
+ 			}
+ 			print STDOUT "\n";
+ 		}
+ 		# interjections: print as is
+ 		elsif($chunk->exists('self::CHUNK[@type="interjec"]') && !$chunk->hasAttribute('delete'))
+ 		{
+ 			# if there's a conjunction to be inserted and this is the first node in the clause
+ 			if($chunk->hasAttribute('conj'))
+ 			{
+ 				print STDOUT $chunk->getAttribute('conj')."\n";
+ 			}
+ 			my $interjec = @{$chunk->findnodes('child::NODE')}[0];
+ 			&printNode($interjec);
  			print STDOUT "\n";
  		}
  	}
@@ -293,13 +334,13 @@ sub printNode{
  		if($replace_mi ne ''){print STDOUT ":$replace_mi";}
  		else
  		{
- 			my ($root,$morph) = $mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Copula|Part|PrnDem|PrnInterr|PrnPers)(.*)/ ;
+ 			my ($root,$morph) = $mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)(.*)/ ;
  			#print STDERR "root: $root, morph: $morph\n";
  			#my @lems = split( '_',$node->getAttribute('lem'));
  		
  			if($add_mi ne '')
  			{ 
- 			 	my ($correctroot,$addmorph) = $add_mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Copula|Part|PrnDem|PrnInterr|PrnPers)(.*)/  ;
+ 			 	my ($correctroot,$addmorph) = $add_mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)(.*)/  ;
  				#print STDERR "add_mi: $add_mi, $correctroot,$addmorph"; 
  				if($correctroot ne '' )
  				{
@@ -353,18 +394,22 @@ sub mapEaglesTagToQuechuaMorph{
 		# ordinal
 		if($type eq 'O')
 		{
-			print  STDOUT "$slem ñiqin\n";
+			print  STDOUT "$slem\nñiqin\n";
 		}
 		else
 		{
 			if($grade =~ /A|S/)
 			{
-					print  STDOUT "aswan $slem";
+					print  STDOUT "aswan\n$slem";
 			}
 			# diminutive
-			else
+			elsif($grade =~ /D/)
 			{
 				print  STDOUT "$slem+Dim";
+			}
+			else
+			{
+				print  STDOUT "$slem";
 			}
 		}
 	}

@@ -59,7 +59,7 @@ foreach my $sentence (@sentenceList)
  				{
  					$conjunction = @{$verbChunk->findnodes('child::NODE[@cpos="v"]/NODE[@pos="cs" or @pos="cc"]')}[0];
  				}
- 		
+ 				if($conjunction){print STDERR "conj: ".$conjunction->toString();}
  				
  				# if this verb has a 'tener que' part or deber +inf -> obligative, TODO: hay que?
  				if($verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || ($verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="tener"]') && $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="deber"]') )
@@ -164,7 +164,7 @@ foreach my $sentence (@sentenceList)
  				}
  				# if this is a final clause,  -na?
 				
-				elsif($conjunction && $conjunction =~ /con_fin_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
+				elsif($conjunction && $conjunction->getAttribute('lem') =~ /con_fin_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
 				{
 					$nbrOfFinalClauses++;
 					$verbChunk->setAttribute('verbform', 'obligative');
@@ -177,12 +177,20 @@ foreach my $sentence (@sentenceList)
 						$verbChunk->setAttribute('case', '+Ben');
 					}
 				}
+				# mientras, mientras que -> na -kama/ -spa/-pti?
+				elsif($conjunction && $conjunction->getAttribute('lem') =~ /mientras/ )
+				{
+					$nbrOfFinalClauses++;
+					$verbChunk->setAttribute('verbform', 'obligative');
+					$verbChunk->setAttribute('case', '+Term');
+				}
  				# if subordinated clause is a gerund -> set to spa-form (trabaja cantando)
- 				elsif($verbChunk->exists('child::NODE[starts-with(@mi, "VMG")]') && !$verbChunk->exists('descendant::NODE[@pos="va" or @pos="vs"]') && !$verbChunk->exists('child::NODE[starts-with(@mi, "VMG")]/NODE[@lem="venir" or @lem="ir" or @lem="andar" or @lem="estar"]')  )
- 				{
- 					$nbrOfSwitchForms++;
- 					$verbChunk->setAttribute('verbform', 'SS');
- 				}
+ 				# wrong, gerund is main verb in chunk TOGETHER with finite verb -> verbform of gerund always SS, but verbform of finite verb -> disambiguate like any other chunk
+# 				elsif($verbChunk->exists('child::NODE[starts-with(@mi, "VMG")]') && !$verbChunk->exists('descendant::NODE[@pos="va" or @pos="vs"]') && !$verbChunk->exists('child::NODE[starts-with(@mi, "VMG")]/NODE[@lem="venir" or @lem="ir" or @lem="andar" or @lem="estar"]')  )
+# 				{
+# 					$nbrOfSwitchForms++;
+# 					$verbChunk->setAttribute('verbform', 'SS');
+# 				}
  				# if this is a complement clause (-> nominal form), TODO: already ++Acc?
  				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT"]/NODE/NODE[@pos="cs"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
  				{
@@ -374,10 +382,11 @@ sub compareSubjects{
 		}
 	}
 	 # if no main verb found, set verbform to ambiguous
+	 # edit: set verb form to switch, as its probably either -spa or -pti
 	else
 	{
 		$nbrOfAmbigousClauses++;
-		$verbChunk->setAttribute('verbform', 'ambiguous');
+		$verbChunk->setAttribute('verbform', 'switch');
 	}
 }
 

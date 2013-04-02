@@ -1,5 +1,7 @@
 TODOS translation:
 
+- IMPORTANT: split sentences at ';', otherwise parser does really weird things!!!
+- topicalized nouns with relative clauses: fueron ellos quienes dejaron, es ahi donde queda -> generate only rel-clause (finite), delete head
 - estar as vm: better translate as ka-chka- instead of ka-?
 - nouns with possessive suffixes, (llapa, kiki..)
 - numbers and dates -> horas (months ok)
@@ -18,12 +20,19 @@ TODOS translation:
 - de + geographic proper name: maybe better translate as attributive than +Abl
 - possessive pronouns -> possessive suffixes
 - en_cuanto_a -> +Top
+- empezar/ponerse a hacer -> -ri, llegar a hacer -> ?
 ( done - tener hambre, sed etc: delete 'tener' from output and attach finite morphology to verb with -naya)
 - keep translated indefinite article as huk? or better no article at all as default?
 - default word order in verb chunk with adverb: adv obj verb, obj adj verb?
+- más o menos -> hina hinalla
 ( done  - me acuerdo -> results in 1.Sg.Subj + 1.Obj -> change to +Rflx )
 ( done   - me acuerdo de ti -> add 1.Sg.Obj to verb )
 ( done:  - direct speech: if subj in direct speech = coreferent with subj of ni-  --> change to first person!)
 - interjections in own chunk?
 - getSentencesForGeneration -> join strings together instead of printing them out directly -> strip ',' and '++' 
   -> reordering of suffixes!
+- replace VRoot with Verb in dix
+- IMPORTANT: combinations of CS & CC -> treat as CC (?), in locutions -> e.g. pero cuando
+- check ALL locutions in locutions_laura.dat for translations!
+- En cuanto + verb (as soon as)
+- resolve mientras/mientras que -> -na -kama
