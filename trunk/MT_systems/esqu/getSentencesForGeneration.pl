@@ -16,6 +16,136 @@ require "$path/../util.pl";
 my $parser = XML::LibXML->new({encoding => 'utf-8'});
 my $dom    = XML::LibXML->load_xml( IO => *STDIN);
 
+
+# use slots 1-20 for verbs
+# 21 for nominalizers
+# 22- for nominal morphology
+# verbalizations are handled directly in the lexicon, no need to specify that here
+my %mapTagsToSlots = (
+	'+Perdur'		=> 1,
+	'+Rem'			=> 1,
+	'+Desesp'		=> 1,
+	'+Int'			=> 1,
+	'+Stat_Multi'	=> 1,
+	'+Multi'		=> 1,
+	'+VSml'			=> 1,
+	'+Intrup'		=> 1,
+	'+VCont'		=> 1,
+	'+Vdim'			=> 1,
+	'+Autotrs'		=> 1,
+	'+MRep'			=> 1,
+	'+Des'			=> 1,
+	'+Ass'			=> 2,
+	'+Rep'			=> 2,
+	'+Aff'			=> 3,
+	'+Inch'			=> 3,
+	'+Rptn'			=> 4,
+	'+Caus'			=> 5,
+	'+Rzpr'			=> 6,
+	'+Rptn'			=> 7,
+	'+Rflx'			=> 8,
+	'+Iprs'			=> 9,
+	'+Cis'			=> 10,
+	'+1.Sg.Obj'			=> 11,
+	'+1.Obj'			=> 11,
+	'+1.Pl.Incl.Obj'	=> 11,
+	'+1.Pl.Excl.Obj'	=> 11,
+	'+2.Sg.Obj'			=> 11,
+	'+2.Pl.Obj'			=> 11,
+	'+2.Obj'			=> 11,
+	'+Prog'				=> 12,
+	# here come the nominalizing Suffixes, if any
+	'+Perf'		=> 20,
+	'+SS'		=> 20,
+	'+DS'		=> 20,
+	'+SSsim'	=> 20,
+	'+Inf'		=> 20,
+	'+Char'		=> 20,
+	'+Obl'		=> 20,
+	'+Ag'		=> 20,
+	'+Posi'		=> 20,
+	# finite verb suffixes
+	'+IPst'				=> 21,
+	'+NPst'				=> 21,
+	'+1.Sg.Subj'				=> 22,
+	'+2.Sg.Subj'				=> 22,
+	'+3.Sg.Subj'				=> 22,
+	'+1.Pl.Incl.Subj'			=> 22,
+	'+1.Pl.Excl.Subj'			=> 22,
+	'+2.Pl.Subj'				=> 22,
+	'+3.Pl.Subj'				=> 22,
+	'+1.Sg.Subj.Fut'			=> 22,
+	'+2.Sg.Subj.Fut'			=> 22,
+	'+3.Sg.Subj.Fut'			=> 22,
+	'+1.Pl.Incl.Subj.Fut'		=> 22,
+	'+1.Pl.Excl.Subj.Fut'		=> 22,
+	'+2.Pl.Subj.Fut'			=> 22,
+	'+3.Pl.Subj.Fut'			=> 22,	
+	'+1.Sg.Subj.Pot'			=> 22,
+	'+2.Sg.Subj.Pot'			=> 22,
+	'+3.Sg.Subj.Pot'			=> 22,
+	'+1.Pl.Incl.Subj.Pot'		=> 22,
+	'+1.Pl.Excl.Subj.Pot'		=> 22,
+	'+2.Pl.Subj.Pot'			=> 22,
+	'+3.Pl.Subj.Pot'			=> 22,	
+	'+2.Sg.Subj.Imp'			=> 22,
+	'+3.Sg.Subj.Imp'			=> 22,
+	'+1.Pl.Incl.Subj.Imp'		=> 22,
+	'+2.Pl.Subj.Imp'			=> 22,
+	'+3.Pl.Subj.Imp'			=> 22,	
+	'+3.Pl.Subj.Hab'			=> 22,
+	# nominal suffixes
+	'+Aug'				=> 30,
+	'+Dim'				=> 30,
+	'+MPoss'			=> 31,
+	'+Abss'				=> 31,
+	'+Poss'				=> 32,
+	'+1.Sg.Poss'		=> 33,
+	'+2.Sg.Poss'		=> 33,
+	'+3.Sg.Poss'		=> 33,
+	'+1.Pl.Incl.Poss'	=> 33,
+	'+1.Pl.Excl.Poss'	=> 33,
+	'+2.Pl.Poss'		=> 33,
+	'+3.Pl.Poss'		=> 33,
+	'+Pl'				=> 34,
+	'+Iclsv'			=> 35,
+	'+Intsoc'			=> 35,
+	'+Distr'			=> 35,
+	'+Aprx'				=> 35,
+	'+Acc'				=> 36,
+	'+Dat'				=> 36,
+	'+Abl'				=> 36,
+	'+Gen'				=> 36,
+	'+Proloc'			=> 36,
+	'+Ben'				=> 36,
+	'+Loc'				=> 36,
+	'+Term'				=> 37,
+	'+Kaus'				=> 38,
+	'+Soc'				=> 38,
+	'+Instr'			=> 39,
+	# independent suffixes
+	'+Abtmp'			=> 40,
+	'+Sim'				=> 41,
+	'+Def'				=> 42,
+	'+Cont'			=> 43,
+	'+Disc'			=> 43,
+	'+Add'			=> 44,
+	'+Intr'			=> 45,
+	'+Neg'			=> 46,
+	'+DirE'			=> 47,
+	'+IndE'			=> 47,
+	'+Asmp'			=> 47,
+	'+Top'			=> 47,
+	'+QTop'			=> 47,
+	'+Dub'			=> 47,
+	'+Res'			=> 48,
+	'+IndEemph'			=> 48,
+	'+Asmpemph'			=> 48,
+	'+DirEemph'			=> 48,
+	'+Emph'				=> 48
+	);
+
+
 my @verbchunksWithConjunction = $dom->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v") and @conj]');
 foreach my $vchunk (@verbchunksWithConjunction)
 {
@@ -30,7 +160,7 @@ foreach my $vchunk (@verbchunksWithConjunction)
  				}
  				else
  				{
- 					print STDOUT $vchunk->getAttribute('conj')."\n";
+ 					$vchunk->setAttribute('conjHere','yes')."\n";
  				}
 
 }
@@ -55,13 +185,18 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  		#if this is a verb chunk, get lemma and verbmi directly from chunk, no need to process the nodes
  		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]') && !$chunk->hasAttribute('delete') )
  		{
+ 			# if there's a conjunction to be inserted and this verb chunk has no children chunks, print conjunction first
+ 			if($chunk->hasAttribute('conjHere'))
+ 			{
+ 				print STDOUT $chunk->getAttribute('conj')."\n";
+ 			}
  			
  			# if there's a node (e.g. interrogative pronoun) in verb chunk or
  			#if wrong analysis-> there might be a node in the verbchunk that doesn't belong here, extract that node
  			my @spareNodes = $chunk->findnodes('child::NODE[starts-with(@smi,"V")]/descendant::NODE[not(starts-with(@smi, "V") or starts-with(@smi, "C") or starts-with(@smi,"PR") or starts-with(@smi,"S"))]');
  			foreach my $sparenode (@spareNodes)
  			{
-				&printNode($sparenode);
+				&printNode($sparenode,$chunk);
 				print STDOUT "\n";
  			}
  			
@@ -91,6 +226,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			# preverbs: quotation, nispa nin
  			my $lemma1 = $chunk->getAttribute('lem1');
  			my $verbmi1 = $chunk->getAttribute('verbmi1');
+ 			my $auxlem = $chunk->getAttribute('auxlem');
+ 			my $auxverbmi = $chunk->getAttribute('auxverbmi');
  			my $chunkmi = $chunk->getAttribute('chunkmi');
  			my ($verbprs) = ($verbmi =~ m/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)/ );
  			my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
@@ -128,18 +265,23 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  					#print STDERR "new verbmi: $verbmi\n";
  				}
  			}
- 			
- 			print STDOUT "$lemma:$verbmi";
+ 			# clean up and adjust morphology tags
+ 			my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
+ 			print STDOUT "$lemma:$sortedVerbmi";
  			
  			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
  			if($verbmi eq '' && $chunk->exists('child::NODE[@mi="infinitive"]'))
  			{
- 				print STDOUT "VRoot+Inf";
+ 				print STDOUT "+Inf";
  			}
  			
  			if($lemma2 && $verbmi2)
  			{
  				print STDOUT "\n$lemma2:$verbmi2";
+ 			}
+ 			if($auxlem && $auxverbmi)
+ 			{
+ 				print STDOUT "\n$auxlem:$auxverbmi";
  			}
  			if($chunkmi ne ''){print $chunkmi;}
  			print STDOUT "\n";
@@ -155,28 +297,29 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			# find the noun (should be only one per chunk), ignore definite articles (and indefinite articles?), and also possessive pronouns (those are realized as suffixes) TODO
  			my $noun = @{$chunk->findnodes('child::NODE[not(starts-with(@smi,"DA") and not(starts-with(@smi,"DP")))]')}[0];
- 			&printNode($noun);
- 			# print possessive suffix, if there is any
- 			if($chunk->hasAttribute('poss'))
- 			{
- 				print STDOUT $chunk->getAttribute('poss');	
- 			}
- 			# print case, if there is any
- 			if($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase'))
- 			{
- 				print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase');
- 			}
- 			elsif($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case'))
- 			{
- 				print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case');
- 			}
- 			elsif($chunk->hasAttribute('case'))
- 			{
- 				print $chunk->getAttribute('case');
- 			}
- 			
- 			# print content of chunkmi, if present
- 			print STDOUT $chunk->getAttribute('chunkmi')."\n";	 
+ 			&printNode($noun,$chunk);
+ 			print STDOUT "\n";	
+# 			# print possessive suffix, if there is any
+# 			if($chunk->hasAttribute('poss'))
+# 			{
+# 				print STDOUT $chunk->getAttribute('poss');	
+# 			}
+# 			# print case, if there is any
+# 			if($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase'))
+# 			{
+# 				print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase');
+# 			}
+# 			elsif($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case'))
+# 			{
+# 				print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case');
+# 			}
+# 			elsif($chunk->hasAttribute('case'))
+# 			{
+# 				print $chunk->getAttribute('case');
+# 			}
+# 			
+# 			# print content of chunkmi, if present
+# 			print STDOUT $chunk->getAttribute('chunkmi')."\n";	 
  		}
  		# pp-chunks:
  		# if the chunk contains an attribute spform: this contains the whole pp, just print this
@@ -199,7 +342,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			my $postpos = @{$chunk->findnodes('child::NODE[starts-with(@smi,"SP")]')}[0];
  			
- 			&printNode($postpos);
+ 			&printNode($postpos,$chunk);
  			print STDOUT "\n";
  		}
  		#punctuation: print as is
@@ -218,13 +361,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				print STDOUT $chunk->getAttribute('conj')."\n";
  			}
  			my $adverb = @{$chunk->findnodes('child::NODE[@smi="RG" or @smi="RN" ]')}[0];
- 			&printNode($adverb);
- 			# if this is 'mana' and negation has scope over verb (note that this is always the case, 
- 			# because lexical negation (nada - mana imapas) is already handled in the lexicon)
- 			if($adverb->getAttribute('smi') eq 'RN')
- 			{
- 				print STDOUT "+DirE#mana:Part+IndE";
- 			}
+ 			&printNode($adverb,$chunk);
+# 			# if this is 'mana' and negation has scope over verb (note that this is always the case, 
+# 			# because lexical negation (nada - mana imapas) is already handled in the lexicon)
+# 			if($adverb->getAttribute('smi') eq 'RN')
+# 			{
+# 				print STDOUT "+DirE#mana:Part+IndE";
+# 			}
  			print STDOUT "\n";
  		}
  		# adjectives: print as is
@@ -236,7 +379,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				print STDOUT $chunk->getAttribute('conj')."\n";
  			}
  			my $adjective = @{$chunk->findnodes('child::NODE[starts-with(@smi,"A")]')}[0];
- 			&printNode($adjective);
+ 			&printNode($adjective,$chunk);
  			print STDOUT "\n";
  		}
  		# dates: print as is (only numbers are in a date-chunk)
@@ -248,7 +391,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				print STDOUT $chunk->getAttribute('conj')."\n";
  			}
  			my $date = @{$chunk->findnodes('child::NODE[@smi="W"]')}[0];
- 			&printNode($date);
+ 			&printNode($date,$chunk);
  			print STDOUT "\n";
  		}
  		# determiner (demonstrative, indefinite, interrogative or exclamative)
@@ -261,17 +404,17 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				print STDOUT $chunk->getAttribute('conj')."\n";
  			}
  			my $det = @{$chunk->findnodes('child::NODE')}[0];
- 			&printNode($det);
- 			# as this node has been created AFTER intrachunk movement: check if function is cd or ci
- 			# and add case suffix if necessary
- 			if($chunk->getAttribute('si') =~ /cd/)
- 			{
- 				print STDOUT "+Acc";
- 			}
- 			elsif($chunk->getAttribute('si') eq 'ci')
- 			{
- 				print STDOUT "+Dat";
- 			}
+ 			&printNode($det,$chunk);
+# 			# as this node has been created AFTER intrachunk movement: check if function is cd or ci
+# 			# and add case suffix if necessary
+# 			if($chunk->getAttribute('si') =~ /cd/)
+# 			{
+# 				print STDOUT "+Acc";
+# 			}
+# 			elsif($chunk->getAttribute('si') eq 'ci')
+# 			{
+# 				print STDOUT "+Dat";
+# 			}
  			print STDOUT "\n";
  		}
  		# interjections: print as is
@@ -283,7 +426,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				print STDOUT $chunk->getAttribute('conj')."\n";
  			}
  			my $interjec = @{$chunk->findnodes('child::NODE')}[0];
- 			&printNode($interjec);
+ 			&printNode($interjec,$chunk);
  			print STDOUT "\n";
  		}
  	}
@@ -295,13 +438,22 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 #my $docstring = $dom->toString;
 #print STDOUT $docstring;
 
+
 sub printNode{
 	my $node = $_[0];
+	my $chunk = $_[1];
+	
+	my $nodeString='';
+	my $lemma;
 	
 	# if Spanish word in dictionary, but no translation: take source lemma + mi
  	if($node->getAttribute('lem') eq 'unspecified')
  	{
- 		print STDOUT  $node->getAttribute('slem').":".$node->getAttribute('mi');
+ 		#print STDOUT  $node->getAttribute('slem').":".$node->getAttribute('mi');
+ 		$lemma = $node->getAttribute('slem');
+ 		$nodeString = $node->getAttribute('mi');
+ 		$nodeString = $nodeString.&getMorphFromChunk($node,$chunk);
+ 		print STDOUT "$lemma:".&adjustMorph($nodeString,\%mapTagsToSlots) ;
  	}
  	# else: if this is a postposition:
  	elsif($node->getAttribute('smi') =~ /^SP/)
@@ -316,10 +468,11 @@ sub printNode{
  		my $preform = $node->getAttribute('preform');
  		my $postform = $node->getAttribute('postform');
  		my $firstform = $node->getAttribute('firstform');
- 		my $lem =  $node->getAttribute('lem');
+ 		$lemma =  $node->getAttribute('lem');
  		my $replace_mi =  $node->getAttribute('replace_mi');
  		my $add_mi = $node->getAttribute('add_mi');
  		
+ 		# preforms and postforms are full forms, don't need to be generated -> print them directly to STDOUT
  		if($firstform ne '') {print STDOUT "$firstform\n";}
  		if($preform ne '')
  		{
@@ -328,15 +481,17 @@ sub printNode{
  			my @pfs = grep {$_} @pfsWithEmtpyFields; 
  			for my $preword (@pfs){print STDOUT "$preword\n";}
  		}
- 		# print lemma
- 		print STDOUT $lem;
- 		# print morphology:
- 		if($replace_mi ne ''){print STDOUT ":$replace_mi";}
- 		else
+
+ 		# retrieve morphology:
+ 		if($replace_mi ne '')
  		{
- 			my ($root,$morph) = $mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)(.*)/ ;
+ 			#print STDOUT ":$replace_mi";
+ 			$nodeString = $nodeString."$replace_mi";
+ 		}
+ 		else
+ 		{ 
+ 			my ($root,$morph) = $mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)?(.*)/ ;
  			#print STDERR "root: $root, morph: $morph\n";
- 			#my @lems = split( '_',$node->getAttribute('lem'));
  		
  			if($add_mi ne '')
  			{ 
@@ -344,18 +499,25 @@ sub printNode{
  				#print STDERR "add_mi: $add_mi,....$add_morph\n"; 
  				if($correctroot ne '' )
  				{
- 					print STDOUT ":$correctroot$addmorph$morph";
+ 					#print STDOUT ":$correctroot$addmorph$morph";
+ 					$nodeString = $nodeString."$correctroot$addmorph$morph";
  				}
  				else
  				{
- 					print STDOUT ":$root$addmorph$morph";
+ 					#print STDOUT ":$root$addmorph$morph";
+ 					$nodeString = $nodeString."$root$addmorph$morph";
  				}
  			}
  			else
  			{
- 				print STDOUT ":$root$morph";
+ 				#print STDOUT ":$root$morph";
+ 				$nodeString = $nodeString."$root$morph";
  			}
  		}
+ 		$nodeString = $nodeString.&getMorphFromChunk($node,$chunk);
+ 		#print STDERR "node string: $nodeString\n";
+ 		# clean up and adjust morphology tags
+ 		print STDOUT "$lemma:".&adjustMorph($nodeString,\%mapTagsToSlots);
  		if($postform ne '')
  		{
  			my @pfsWithEmtpyFields = split('#',$postform);
@@ -370,19 +532,80 @@ sub printNode{
  	# -> take source lemma and try to generate morphological tags from source tag
  	else
  	{
- 		#print STDOUT  $node->getAttribute('slem').": ";
- 		&mapEaglesTagToQuechuaMorph($node);
- 		#map to morf
+ 		$nodeString = $nodeString.&mapEaglesTagToQuechuaMorph($node,$chunk);
+ 		my ($lem, $morph) = split(':', $nodeString);
+ 		$nodeString = &adjustMorph($morph,\%mapTagsToSlots);
+ 		print STDOUT "$lem:".$nodeString;
  	}
  	
 }
 
-
+sub getMorphFromChunk{
+	my $node = $_[0];
+	my $chunk = $_[1];
+	my $morphString = '';
+		# get morphology information from chunk resulted from transfer, if any:
+ 		# if sn chunk
+ 		if($chunk->getAttribute('type') =~ /sn|coor-n/)
+ 		{ 
+ 			# print possessive suffix, if there is any
+ 			if($chunk->hasAttribute('poss'))
+ 			{
+ 				#print STDOUT $chunk->getAttribute('poss');	
+ 				$morphString = $morphString.$chunk->getAttribute('poss');
+ 			}
+ 			# print case, if there is any
+ 			if($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase'))
+ 			{
+ 				#print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase');
+ 				$morphString = $morphString.$chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase');
+ 			}
+ 			elsif($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case'))
+ 			{
+	 			#print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case');
+	 			$morphString = $morphString.$chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case');
+	 		}
+ 			elsif($chunk->hasAttribute('case'))
+ 			{
+ 				#print $chunk->getAttribute('case');
+ 				$morphString = $morphString.$chunk->getAttribute('case');
+ 			}
+ 		}
+ 		# if this is 'mana' and negation has scope over verb (note that this is always the case, 
+ 		# because lexical negation (nada - mana imapas) is already handled in the lexicon)
+ 		elsif($node->getAttribute('smi') eq 'RN')
+ 		{
+ 			#print STDOUT "+DirE#mana:Part+IndE";
+ 			#$morphString = $morphString."+DirE#mana:Part+IndE";
+ 			$morphString = $morphString."+DirE";
+ 		}
+ 		# if this is a 'det' chunk: as this node has been created AFTER intrachunk movement: check if function is cd or ci
+ 		# and add case suffix if necessary
+ 		elsif($chunk->getAttribute('type') eq 'det')
+ 		{
+ 			if($chunk->getAttribute('si') =~ /cd/)
+ 			{
+ 				#print STDOUT "+Acc";
+ 				$morphString = $morphString."+Acc";
+ 			}
+ 			elsif($chunk->getAttribute('si') eq 'ci')
+ 			{
+ 				#print STDOUT "+Dat";
+ 				$morphString = $morphString."+Dat";
+ 			}
+ 		}
+ 		# print content of chunkmi, if present
+ 		#print STDOUT $chunk->getAttribute('chunkmi');
+ 		$morphString = $morphString.$chunk->getAttribute('chunkmi');
+ 		return $morphString;	 
+}	
 
 sub mapEaglesTagToQuechuaMorph{
 	my $node = $_[0];
+	my $chunk = $_[1];
 	my $eaglesTag = $node->getAttribute('smi');
 	my $slem = $node->getAttribute('slem');
+	my $EagleMorphs = '';
 	
 	#adjectives
 	if($eaglesTag =~ /^A/)
@@ -415,7 +638,9 @@ sub mapEaglesTagToQuechuaMorph{
 	}
 	elsif($eaglesTag eq 'RG')
 	{
-		print  STDOUT "$slem";
+		#print  STDOUT "$slem";
+		$EagleMorphs = "$slem:";
+		$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
 	}
 #	# determiners, should all be in lexicon, TODO: check if complete
 #	elsif($eaglesTag =~ /^D/)
@@ -440,7 +665,8 @@ sub mapEaglesTagToQuechuaMorph{
 			{
 				print STDOUT @words[$i]."\n";
 			}
-			print STDOUT @words[-1];
+			#print STDOUT @words[-1];
+			$EagleMorphs = $EagleMorphs.@words[-1].":";
 		}
 		# other proper name
 		elsif($type eq 'P')
@@ -451,31 +677,38 @@ sub mapEaglesTagToQuechuaMorph{
 				print STDOUT @words[$i]."\n";
 			}
 			print STDOUT @words[-1]."\n";
-			print STDOUT "ni:VRoot+Perf";
+			#print STDOUT "ni:VRoot+Perf";
+			$EagleMorphs = $EagleMorphs."ni:VRoot+Perf";
 			if( $number eq 'P')
 			{
-				print STDOUT "+Pl";
+				#print STDOUT "+Pl";
+				$EagleMorphs = $EagleMorphs."+Pl";
 			}
 		}
 		#common noun
 		else
 		{
-			print STDOUT "$slem";
+			#print STDOUT "$slem";
+			$EagleMorphs = "$slem:";
 			if($grade eq 'A')
 			{
-				print STDOUT "+Aug";
+				#print STDOUT "+Aug";
+				$EagleMorphs = $EagleMorphs."+Aug";
 			}
 			if($grade eq 'D')
 			{
-				print STDOUT "+Dim";
+				#print STDOUT "+Dim";
+				$EagleMorphs = $EagleMorphs."+Dim";
 			}
 			if($number eq 'P')
 			{
-				print STDOUT "+Pl";
+				#print STDOUT "+Pl";
+				$EagleMorphs = $EagleMorphs."+Pl";
 			}
 		}
-		print STDOUT $node->findvalue('parent::CHUNK[@type="sn" or @type="coor-n"]/@poss');
-		print STDOUT $node->findvalue('parent::CHUNK[@type="sn" or @type="coor-n"]/@nouncase');
+		$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
+		#print STDOUT $node->findvalue('parent::CHUNK[@type="sn" or @type="coor-n"]/@poss');
+		#print STDOUT $node->findvalue('parent::CHUNK[@type="sn" or @type="coor-n"]/@nouncase');
 	}
 	# note, this shouldn't be necessary under normal cirumstances, as all verb information is copied to the verb chunk
 #	elsif($eaglesTag =~ /^V/)
@@ -492,6 +725,7 @@ sub mapEaglesTagToQuechuaMorph{
 	{
 		print STDOUT "$slem";
 	}
+	return $EagleMorphs;
 }
 
 sub getFirstChild{
@@ -518,4 +752,44 @@ sub getFirstChild{
 
  		
 	}
+}
+
+
+
+sub adjustMorph{
+	my $morphString = $_[0];
+	my $mapTagsToSlotsRef = $_[1];
+	
+	#extract root: 
+	my ($roottag) = ($morphString =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)/ ) ;
+	#delete double ++ and commas
+	$morphString =~ s/$roottag//;
+	$morphString =~ s/\+\+(\+)?/\+/g;
+	$morphString =~ s/,//g;
+	
+	my @morphs = split(/(\+)/, $morphString);
+
+	my %sortedMorphs =();
+	my $sortedMorphString ='';
+	#print STDERR "morphemes:"; 
+	foreach my $m (@morphs)
+	{
+		unless($m eq '+' or $m eq '')
+		{
+			$m = '+'.$m;
+			my $slot = $mapTagsToSlots{$m};
+			$sortedMorphs{$m} = $slot;
+		}
+	}
+	# sort %sortedMorphs by value
+	# (advantage of using a hash: tags that have been accumulated double during transfer -> only one will appear in the output)
+	foreach my $tag (sort { $sortedMorphs{$a} <=> $sortedMorphs{$b} } keys %sortedMorphs) 
+	{
+  		$sortedMorphString= $sortedMorphString.$tag;
+	}
+	return $sortedMorphString;
+	#print STDERR "unsorted morph: $morphString\n";
+	#print STDERR "sorted morph: $sortedMorphString\n";
+	
+
 }

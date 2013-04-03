@@ -46,6 +46,10 @@ parent.type=sn					"+Dat"				my.si=ci					case			up		concat
 # copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
 my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && !(parent.mi=infinitive) && ( my.slem=estar || !(parent.smi=VMG0000))		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
 
+# copy lemma and morphology of auxiliary to head chunk (only relevant with habitual past forms)
+my.auxlem=/.+/				auxlem				my.type=/grup-verb|coor-v/		auxlem			up	overwrite
+my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwrite
+
 # special case: modal verbs with infinitive complement (quiero/puedo hacer)
 # main verb: infinitive +Acc, main verb: finite
 # sometimes: all in one chunk (if parser labeled modal verb with rel="v")
