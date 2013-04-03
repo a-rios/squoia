@@ -7,10 +7,10 @@
 # general order within verb chunks: SOV
 
 # order in subordinated verb chunk: first is second clause, last is head
-my.type=grup-verb && xpath{child::NODE/descendant::NODE[@smi="CS"]}				suj:my.si=suj,dobj:my.si=/cd/,iobj:my.si=ci,adjunct:my.si=cc,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP,otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}			 adjunct .suj .dobj .iobj .otherchildren .head .Coma .Punc
+my.type=grup-verb && xpath{child::NODE/descendant::NODE[@smi="CS"]}				suj:my.si=suj,dobj:my.si=/cd/,iobj:my.si=ci,adjunct:my.si=/cc|ao|atr/,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP,otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}			 adjunct .suj .dobj .iobj .otherchildren .head .Coma .Punc
 
 # order in coordinated verb chunk: keep order of clauses
-my.type=/coor-v|grup-verb/ && !(xpath{child::NODE/descendant::NODE[@smi="CS"]})			subV:my.type=/grup-verb|coor-v/&&!(my.si=/cd|gerundi/)&&xpath{child::NODE/descendant::NODE[@smi="CS"]},coV:my.type=/grup-verb|coor-v/&&!(my.si=/cd|gerundi/),suj:my.si=suj && my.type=/sn|coor-n/,dobj:my.si=/cd/ && my.type=/sn|coor-n|grup-verb|coor-v/,iobj:my.si=ci && my.type=/sn|coor-n/,adjunct:my.si=cc,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP,gerund:my.si=gerundi,otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}			subV .gerund .adjunct .suj .dobj .iobj .otherchildren .head .Coma .coV .Punc
+my.type=/coor-v|grup-verb/ && !(xpath{child::NODE/descendant::NODE[@smi="CS"]})			subV:my.type=/grup-verb|coor-v/&&!(my.si=/cd|gerundi/)&&xpath{child::NODE/descendant::NODE[@smi="CS"]},coV:my.type=/grup-verb|coor-v/&&!(my.si=/cd|gerundi/),suj:my.si=suj && my.type=/sn|coor-n/,dobj:my.si=/cd/ && my.type=/sn|coor-n|grup-verb|coor-v/,iobj:my.si=ci && my.type=/sn|coor-n/,adjunct:my.si=/cc|ao|atr/,Coma:my.type=F-term && child.smi=FC,Punct:my.type=F-term && child.smi=FP,gerund:my.si=gerundi,otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}			subV .gerund .adjunct .suj .dobj .iobj .otherchildren .head .Coma .coV .Punc
 
 ### nominal chunks ####
 
