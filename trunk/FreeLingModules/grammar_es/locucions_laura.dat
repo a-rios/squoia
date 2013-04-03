@@ -2216,7 +2216,10 @@ guerra_civil_española guerra_civil_española NCFS000 I
 <habitación>_<individual> habitación_individual $1:NC I
 <hábito>_<alimentario> hábito_alimentario $1:NC I
 <hacer>_tiempo hacer_tiempo RG I
+<hacer>_tiempo_que hacer_tiempo_que RG I
 <hacer>_mucho_tiempo hacer_mucho_tiempo RG I
+<hacer>_mucho_tiempo_atrás hacer_mucho_tiempo_atrás RG I
+<hacer>_mucho_tiempo_que hacer_mucho_tiempo_que RG I
 <hacer>_cargo hacer_cargo $1:VM I
 <hacer>_cimarra hacer_cimarra $1:VM I
 <hacer>_el_longui hacerse_el_longui $1:VM I

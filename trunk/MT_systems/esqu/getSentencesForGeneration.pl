@@ -340,8 +340,8 @@ sub printNode{
  		
  			if($add_mi ne '')
  			{ 
- 			 	my ($correctroot,$addmorph) = $add_mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)(.*)/  ;
- 				#print STDERR "add_mi: $add_mi, $correctroot,$addmorph"; 
+ 			 	my ($correctroot,$addmorph) = ($add_mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)?(.*)/ ) ;
+ 				#print STDERR "add_mi: $add_mi,....$add_morph\n"; 
  				if($correctroot ne '' )
  				{
  					print STDOUT ":$correctroot$addmorph$morph";
