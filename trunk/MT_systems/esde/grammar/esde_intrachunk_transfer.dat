@@ -42,7 +42,7 @@ my.spos=/V.FIN/&&my.pos=ADV&&my.mi=/./	mi		my.smi=/VMG/			mi			up		overwrite
 # volver + INF => FIN + wieder
 #      <NODE ref="3" alloc="9" slem="comer" smi="VMN0000" sform="comer" UpCase="none" lem="essen" pos="VVINF" mi="Inf">
 #        <NODE ref="1" alloc="0" slem="volver" smi="VMIP3S0" sform="Vuelve" UpCase="none" lem="zurück|gehen" pos="VVFIN" mi="3.Sg.Pres.Ind">
-#        <NODE ref="2" alloc="7" slem="a" smi="SPS00" sform="a" UpCase="none" lem="" pos="APPR" prep="a">
+#        <NODE ref="2" alloc="7" slem="a" smi="SPS00" sform="a" UpCase="none" lem="" pos="APPR" adpos="a">
 my.spos=/V.FIN/&&my.pos=ADV&&!(parent.slem=estar)	spos		my.smi=/VMN/&&my.pos=/V.INF/	pos			up		overwrite
 my.spos=/V.FIN/&&my.pos=ADV&&parent.slem=estar		VAFIN		my.smi=/VMN/&&my.pos=/V.INF/	pos			up		overwrite
 my.spos=/V.PP/&&my.pos=ADV		spos		my.smi=/VMN/&&my.pos=/V.INF/	pos			up		overwrite
@@ -63,8 +63,8 @@ my.spos=/V.FIN/&&my.pos=VAFIN		VVPP		my.smi=/VMN/&&my.mi=Inf		pos			up		overwrit
 #      <NODE ref="5" alloc="19" slem="ser" smi="VSN0000" UpCase="none" lem="sein" pos="VAINF" mi="Inf">
 #        <NODE ref="3" alloc="11" slem="llegar" smi="VMIP3S0" UpCase="none" lem="werden" pos="VAFIN" mi="3.Sg.Pres.Ind">
 #	...
-#        <NODE ref="4" alloc="17" slem="a" smi="SPS00" UpCase="none" lem="" pos="APPR" prep="a" delete="yes">
-my.prep=a&&my.delete=yes&&lsibling.slem=/llegar/	delete		my.smi=/VSN/	delete			up		overwrite
+#        <NODE ref="4" alloc="17" slem="a" smi="SPS00" UpCase="none" lem="" pos="APPR" adpos="a" delete="yes">
+my.adpos=a&&my.delete=yes&&lsibling.slem=/llegar/	delete		my.smi=/VSN/	delete			up		overwrite
 
 # importar => sein_wichtig:
 #      <NODE ref="5" alloc="" slem="importar" smi="VMIP3S0" sform="importa" UpCase="none" lem="sein_wichtig" complex_pos="VA_ADJD" split="yes" spos="VAFIN" mi="3.Sg.Pres.Ind">
@@ -113,10 +113,10 @@ my.lem=/./		lem			my.type=VP			headlem			up		no-overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 # head preposition node of PP chunk sets the case of the whole chunk
-# TODO: do the prepositions have an attribute "pos"? should it be "prep" instead? do we need that?
+# TODO: do the prepositions have an attribute "pos"? should it be "adpos" instead? do we need that?
 my.cas=/./&&my.pos=/APPR/	cas		my.type=/PP/			cas			up		overwrite
 
-#my.prep=/./		prep			my.type=PP			prep			up		no-overwrite
+#my.adpos=/./		adpos			my.type=PP			adpos			up		no-overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 # Articles/Determiners

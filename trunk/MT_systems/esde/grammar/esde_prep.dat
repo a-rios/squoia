@@ -1,6 +1,6 @@
 # Format:
 # source	target		condition							default		## comment
-# prep=		case/prep	chunkgrandparent||chunkparent					+/-
+# adpos=	case/adpos	chunkgrandparent||chunkparent					+/-
 #
 # example:
 # src   	trgt		condition							default (+/-)
@@ -51,7 +51,7 @@ con		lem=mit		-	+
 # ======
 # keep the preposition when there is no determiner/specifier
 # la posibilidad de riego => die Moeglichkeit von Bewaesserung
-de		lem=von,cas=Dat		chunkparent.si=sp-mod&&xpath{NODE[@pos="NN" and count(NODE)=0]}	-	# prep is head of noun without child
+de		lem=von,cas=Dat		chunkparent.si=sp-mod&&xpath{NODE[@pos="NN" and count(NODE)=0]}	-	# adpos is head of noun without child
 # la casa de mi padre => das Haus meines Vaters (without preposition)
 de		cas=Gen,delete=yes	chunkparent.si=sp&&chunkgrandparent.type=/NP/	-
 # de manera significativa => auf signifikante Art

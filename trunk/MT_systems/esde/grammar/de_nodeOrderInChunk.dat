@@ -14,7 +14,7 @@ chunkparent.type=/NP|PP/&&my.pos=NN && my.smi=/NC/&&(parent.type=NP || parent.de
 #chunkparent.type=PP&&my.pos=/APPR/		xDET:my.pos=ART,xADJ:my.pos=/ADJ/,xN:my.pos=NN		head .xDET .xADJ +xN
 
 # flat PP (without nested NP): indirect object (Dat case in German) or special case of direct object with preposition "a" for human: veo al hombre alto
-my.prep=a&&my.delete=yes&&parent.smi=/./&&!(parent.smi=/V[AMS]N/)		xART:my.smi=/D[AP].+/,xADJ:my.pos=/ADJ/||my.smi=/AO/||(my.smi=CC&&child.smi=/A[OQ]/),xN:my.pos=NN	head .xART .xADJ +xN
+my.adpos=a&&my.delete=yes&&parent.smi=/./&&!(parent.smi=/V[AMS]N/)		xART:my.smi=/D[AP].+/,xADJ:my.pos=/ADJ/||my.smi=/AO/||(my.smi=CC&&child.smi=/A[OQ]/),xN:my.pos=NN	head .xART .xADJ +xN
 
 # TODO: are all the PP flat? (without nested NP): con el telescopio amarillo => mit dem gelben Teleskop
 my.pos=/APPR/&&chunkparent.type=/PP/		xART:my.smi=/D[AP].+/||my.pos=ART,xADJ:my.pos=/ADJ/||my.smi=/AO/||(my.smi=CC&&child.smi=/A[OQ]/),xN:my.pos=/NN|NE/	head .xART .xADJ +xN
@@ -53,7 +53,7 @@ my.pos=/V.FIN/&&chunkparent.type=VP&&chunkparent.si=/vsubord/	xPDO:my.smi=/PP...
 #    <CHUNK ref="1" type="VP" alloc="0" si="top" headlem="irren" nodechunk="[-finVerb]" p_ord="2" ord="2">
 #      <NODE ref="4" alloc="12" slem="equivocar" smi="VMN0000" sform="equivocar" UpCase="none" lem="irren" pos="VVPP" mi="Inf">        
 #        <NODE ref="2" alloc="3" slem="volver" smi="VMP00SM" sform="vuelto" UpCase="none" lem="wieder" pos="ADV" mi="Pos.*.*.Sg.*" spos="VVPP"></NODE>
-#        <NODE ref="3" alloc="10" slem="a" smi="SPS00" sform="a" UpCase="none" lem="" pos="APPR" prep="a" delete="yes"></NODE>
+#        <NODE ref="3" alloc="10" slem="a" smi="SPS00" sform="a" UpCase="none" lem="" pos="APPR" adpos="a" delete="yes"></NODE>
 #        <NODE ref="5" alloc="21" slem="me" smi="PP1CS000" sform="me" UpCase="none" lem="ich_PRF" pos="PRF" mi="1.Sg" cas="Akk"></NODE>
 #      </NODE>
 my.pos=/VV/&&chunkparent.type=VP&&chunkparent.si=/top/&&chunkparent.nodechunk=[-finVerb]	xPDO:my.smi=/PP...A/||(my.pos=PPER&&my.cas=Akk),xPIO:my.smi=/PP...D/||(my.pos=PPER&&my.cas=Dat),xADV:my.spos=/VV/&&my.pos=ADV,xPRF:my.pos=PRF		xPRF +xPDO +xPIO +xADV +head

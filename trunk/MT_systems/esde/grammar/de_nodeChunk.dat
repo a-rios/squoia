@@ -59,7 +59,7 @@ my.pos=/PRF|PPER/ && parent.pos=/V[AMV]INF|V[AMV]PP|V[AMV]FIN/		clitics="no"	typ
 # transformed to:
 #	CHUNK(PP) > CHUNK(NP) > NODE(NN)
 #      <CHUNK ref="3" type="PP-von" alloc="22" si="sp-obj" cas="Dat" mi="Masc.Sg" p_ord="0" c_ord="2" ord="3">
-#        <NODE ref="4" alloc="22" slem="de" smi="SPS00" sform="de" UpCase="none" lem="von" pos="APPR" prep="de" cas="Dat" ord="0">
+#        <NODE ref="4" alloc="22" slem="de" smi="SPS00" sform="de" UpCase="none" lem="von" pos="APPR" adpos="de" cas="Dat" ord="0">
 #          <NODE ref="6" alloc="26" slem="factor" smi="NCMS000" sform="factor" UpCase="none" lem="Faktor" molif="112" pos="NN" mi="Masc.Sg" cas="Dat" ord="3">
 #            <NODE ref="5" alloc="24" slem="el" smi="DA0MS0" sform="el" UpCase="none" lem="d(er)" pos="ART" flex="Sw" deftype="Def" mi="Masc.Sg" cas="Dat" ord="1">
 #</NODE>

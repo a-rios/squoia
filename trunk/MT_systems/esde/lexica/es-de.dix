@@ -4,7 +4,7 @@
     <sdef n="mi"     c="Morphological information"/>
     <sdef n="parol"  c="PAROLE style tag"/>
     <sdef n="cas"    c="case information"/>
-    <sdef n="prep"   c="source preposition"/>
+    <sdef n="adpos"   c="source preposition"/>
     <sdef n="si"     c="syntactic information"/>
     <sdef n="sem"    c="semantic information"/>
     <sdef n="pos"    c="part of speech, -> for intra-chunk order"/>
@@ -18342,36 +18342,36 @@ según	CS -> SP?
 
 
 <!-- Prepositions -->
-        <e><p><l>a</l><r><s n='prep'/>a</r></p><par n='PREP'/></e> <!-- removes the node... -->
-        <e><p><l>al<s n='parol'/>SPCMS</l><r>al<s n='prep'/>a</r></p><par n='PREP'/></e> <!-- TODO split contractions -->
+        <e><p><l>a</l><r><s n='adpos'/>a</r></p><par n='PREP'/></e> <!-- removes the node... -->
+        <e><p><l>al<s n='parol'/>SPCMS</l><r>al<s n='adpos'/>a</r></p><par n='PREP'/></e> <!-- TODO split contractions -->
         <e><p><l>ante</l><r>vor<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
         <e><p><l>ápud</l><r>in<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- apud: para señalar algo que está en la obra, o en el libro de alguien-->
         <e><p><l>bajo</l><r>unter<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
         <e><p><l>cabe</l><r>asdf<s n='cas'/>Dat</r></p><par n='PREP'/></e> <!-- TODO: cabe? --> 
-        <e><p><l>como</l><r>wie<s n='cas'/>Nom<s n='prep'/>como</r></p><par n='PREP'/></e>
-        <e><p><l>con</l><r>mit<s n='cas'/>Dat<s n='prep'/>con</r></p><par n='PREP'/></e>
+        <e><p><l>como</l><r>wie<s n='cas'/>Nom<s n='adpos'/>como</r></p><par n='PREP'/></e>
+        <e><p><l>con</l><r>mit<s n='cas'/>Dat<s n='adpos'/>con</r></p><par n='PREP'/></e>
         <e><p><l>contra</l><r>gegen<s n='cas'/>Akk</r></p><par n='PREP'/></e>
         <e><p><l>contra</l><r>kontra<s n='cas'/>Akk</r></p><par n='PREP'/></e>
         <e><p><l>contra</l><r>wider<s n='cas'/>Akk</r></p><par n='PREP'/></e>
         <!--e><p><l>de</l><r>von<s n='cas'/>Dat</r></p></e-->
-        <e><p><l>de</l><r><s n='prep'/>de</r></p><par n='PREP'/></e>
-        <e><p><l>del</l><r>del<s n='prep'/>de</r></p><par n='PREP'/></e> <!-- TODO split contractions -->
+        <e><p><l>de</l><r><s n='adpos'/>de</r></p><par n='PREP'/></e>
+        <e><p><l>del</l><r>del<s n='adpos'/>de</r></p><par n='PREP'/></e> <!-- TODO split contractions -->
         <e><p><l>desde</l><r>seit<s n='cas'/>Dat</r></p><par n='PREP'/></e>
-        <e><p><l>dirección</l><r><s n='prep'/>dirección</r></p><par n='PREP'/></e>
+        <e><p><l>dirección</l><r><s n='adpos'/>dirección</r></p><par n='PREP'/></e>
         <e><p><l>donde</l><r>bei<s n='cas'/>Dat</r></p><par n='PREP'/></e> <!-- donde as preposition: "en casa de, en el sitio de" = "at (someone's place)"-->
         <e><p><l>durante</l><r>während<s n='cas'/>Dat</r></p><par n='PREP'/></e>
-        <e><p><l>en</l><r><s n='prep'/>en</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
+        <e><p><l>en</l><r><s n='adpos'/>en</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
         <e><p><l>entre</l><r>zwischen<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
         <e><p><l>excepto</l><r>außer<s n='cas'/>Dat</r></p><par n='PREP'/></e> <!-- außer, ausser -->
         <e><p><l>hacia</l><r>nach<s n='cas'/>Dat</r></p><par n='PREP'/></e>
         <e><p><l>hasta</l><r>bis<s n='cas'/>Akk</r></p><par n='PREP'/></e>
         <e><p><l>mediante</l><r>durch<s n='cas'/>Akk</r></p><par n='PREP'/></e>
         <e><p><l>mediante</l><r>mittels<s n='cas'/>Gen</r></p><par n='PREP'/></e>
-        <e><p><l>para</l><r>für<s n='cas'/>Akk<s n='prep'/>para</r></p><par n='PREP'/></e>
-        <e><p><l>para</l><r>zu<s n='cas'/>Dat<s n='prep'/>para</r></p><par n='PREP'/></e>
+        <e><p><l>para</l><r>für<s n='cas'/>Akk<s n='adpos'/>para</r></p><par n='PREP'/></e>
+        <e><p><l>para</l><r>zu<s n='cas'/>Dat<s n='adpos'/>para</r></p><par n='PREP'/></e>
         <e><p><l>per</l><r>pro<s n='cas'/>Akk</r></p><par n='PREP'/></e> <!-- per, pro -->
-        <e><p><l>por</l><r><s n='prep'/>por</r></p><par n='PREP'/></e>
-        <e><p><l>pro</l><r>pro<s n='prep'/>pro</r></p><par n='PREP'/></e>
+        <e><p><l>por</l><r><s n='adpos'/>por</r></p><par n='PREP'/></e>
+        <e><p><l>pro</l><r>pro<s n='adpos'/>pro</r></p><par n='PREP'/></e>
         <e><p><l>salvo</l><r>außer<s n='cas'/>Dat</r></p><par n='PREP'/></e> <!-- außer, ausser -->
         <e><p><l>según</l><r>gemäß<s n='cas'/>Dat</r></p><par n='PREP'/></e>
         <e><p><l>sin</l><r>ohne<s n='cas'/>Akk</r></p><par n='PREP'/></e>
