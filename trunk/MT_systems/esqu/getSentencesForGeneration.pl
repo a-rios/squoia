@@ -28,7 +28,6 @@ my %mapTagsToSlots = (
 	'+Int'			=> 1,
 	'+Stat_Multi'	=> 1,
 	'+Multi'		=> 1,
-	'+VSml'			=> 1,
 	'+Intrup'		=> 1,
 	'+VCont'		=> 1,
 	'+Vdim'			=> 1,
@@ -201,6 +200,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			
  			my $verbmi = $chunk->getAttribute('verbmi');
+ 			my $addverbmi = $chunk->getAttribute('addverbmi');
+ 			$verbmi = $verbmi.$addverbmi;
  			# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
  			my $lemma = $chunk->getAttribute('lem');
  			if($chunk->exists('child::NODE[@lem="unspecified"]'))
@@ -265,26 +266,35 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  					#print STDERR "new verbmi: $verbmi\n";
  				}
  			}
- 			# clean up and adjust morphology tags
- 			my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
- 			print STDOUT "$lemma:$sortedVerbmi";
- 			
  			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
- 			if($verbmi eq '' && $chunk->exists('child::NODE[@mi="infinitive"]'))
- 			{
- 				print STDOUT "+Inf";
- 			}
+ 			if($chunk->exists('child::NODE[@mi="infinitive"]'))
+ 				{
+ 					$verbmi=$verbmi."+Inf";
+ 				}
  			
- 			if($lemma2 && $verbmi2)
- 			{
- 				print STDOUT "\n$lemma2:$verbmi2";
+ 			# clean up and adjust morphology tags
+ 			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
+ 			if($lemma2 eq '' && $auxlem eq '' && $verbmi ne '')
+ 			{ 
+ 				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
+ 				print STDOUT "$lemma:$sortedVerbmi\n";
  			}
- 			if($auxlem && $auxverbmi)
+ 			else
  			{
- 				print STDOUT "\n$auxlem:$auxverbmi";
+ 				my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
+ 				print STDOUT "$lemma:$sortedVerbmi";
+ 				
+ 				if($lemma2 && $verbmi2)
+ 				{
+ 					print STDOUT "\n$lemma2:".&adjustMorph($verbmi2,\%mapTagsToSlots);
+ 				}
+ 				if($auxlem && $auxverbmi)
+ 				{
+ 					print STDOUT "\n$auxlem:$auxverbmi";
+ 				}
+ 				if($chunkmi ne ''){print STDOUT &adjustMorph($chunkmi,\%mapTagsToSlots);}
+ 				print STDOUT "\n";
  			}
- 			if($chunkmi ne ''){print $chunkmi;}
- 			print STDOUT "\n";
  		}
  		# if this is a noun chunk, but NOT a pronoun (note, pronouns have an attribute  verbmi that has been copied to their verb,
  		# pronouns are realized as suffixes: we don't need to process them here)
@@ -298,28 +308,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			# find the noun (should be only one per chunk), ignore definite articles (and indefinite articles?), and also possessive pronouns (those are realized as suffixes) TODO
  			my $noun = @{$chunk->findnodes('child::NODE[not(starts-with(@smi,"DA") and not(starts-with(@smi,"DP")))]')}[0];
  			&printNode($noun,$chunk);
- 			print STDOUT "\n";	
-# 			# print possessive suffix, if there is any
-# 			if($chunk->hasAttribute('poss'))
-# 			{
-# 				print STDOUT $chunk->getAttribute('poss');	
-# 			}
-# 			# print case, if there is any
-# 			if($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase'))
-# 			{
-# 				print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase');
-# 			}
-# 			elsif($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case'))
-# 			{
-# 				print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case');
-# 			}
-# 			elsif($chunk->hasAttribute('case'))
-# 			{
-# 				print $chunk->getAttribute('case');
-# 			}
-# 			
-# 			# print content of chunkmi, if present
-# 			print STDOUT $chunk->getAttribute('chunkmi')."\n";	 
+ 			print STDOUT "\n";	 
  		}
  		# pp-chunks:
  		# if the chunk contains an attribute spform: this contains the whole pp, just print this
@@ -362,12 +351,6 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			my $adverb = @{$chunk->findnodes('child::NODE[@smi="RG" or @smi="RN" ]')}[0];
  			&printNode($adverb,$chunk);
-# 			# if this is 'mana' and negation has scope over verb (note that this is always the case, 
-# 			# because lexical negation (nada - mana imapas) is already handled in the lexicon)
-# 			if($adverb->getAttribute('smi') eq 'RN')
-# 			{
-# 				print STDOUT "+DirE#mana:Part+IndE";
-# 			}
  			print STDOUT "\n";
  		}
  		# adjectives: print as is
@@ -405,16 +388,6 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			my $det = @{$chunk->findnodes('child::NODE')}[0];
  			&printNode($det,$chunk);
-# 			# as this node has been created AFTER intrachunk movement: check if function is cd or ci
-# 			# and add case suffix if necessary
-# 			if($chunk->getAttribute('si') =~ /cd/)
-# 			{
-# 				print STDOUT "+Acc";
-# 			}
-# 			elsif($chunk->getAttribute('si') eq 'ci')
-# 			{
-# 				print STDOUT "+Dat";
-# 			}
  			print STDOUT "\n";
  		}
  		# interjections: print as is
@@ -515,6 +488,7 @@ sub printNode{
  			}
  		}
  		$nodeString = $nodeString.&getMorphFromChunk($node,$chunk);
+ 		$nodeString = &deleteUnusedTags($nodeString,$chunk);
  		#print STDERR "node string: $nodeString\n";
  		# clean up and adjust morphology tags
  		print STDOUT "$lemma:".&adjustMorph($nodeString,\%mapTagsToSlots);
@@ -527,7 +501,6 @@ sub printNode{
  		}
  	}
  		
- 		#print STDOUT $node->getAttribute('lem').":".$node->getAttribute('mi')."\n";
  	# else if word not contained in dictionary -> no lemma, no morphology
  	# -> take source lemma and try to generate morphological tags from source tag
  	else
@@ -538,6 +511,16 @@ sub printNode{
  		print STDOUT "$lem:".$nodeString;
  	}
  	
+}
+
+sub deleteUnusedTags{
+	my $morphString = $_[0];
+	my $chunk = $_[1];
+	my $deleteMorph = $chunk->getAttribute('deleteMorph');
+	my @morphsToDelete = split(',',$deleteMorph);
+	foreach my $del (@morphsToDelete)
+	{$morphString =~ s/\Q$del\E//;}
+	return $morphString;
 }
 
 sub getMorphFromChunk{
@@ -721,7 +704,7 @@ sub mapEaglesTagToQuechuaMorph{
 	#	elsif($eaglesTag =~ /^P/)
 	
 	#conjunctions, interjections,prepositions,dates
-	elsif($eaglesTag =~ /^C|I|S|W/)
+	elsif($eaglesTag =~ /^C|I|S|W|D/)
 	{
 		print STDOUT "$slem";
 	}

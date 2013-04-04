@@ -45,6 +45,16 @@ my.smi=PP3CNO00	k	++Rflx				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NOD
 my.smi=PP3CNO00	k	Noun				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
 my.smi=PP3CNO00	k	Noun+Inst			my.slem=consigo
 
+# possessive pronouns 3rd person, Spanish: all 'su', qu: need number of possessor, if possessed noun is singular
+# (if both possessor and possessed noun plural -> -nku +kuna -> realized as -nkuna anyway, just take singular
+# singular is default, keep plural only if there's a double marked possessive with a plural possessor
+# (something like 'su casa de mis tíos' in Adean Spanish)
+my.smi=/^DP3/	k	++3.Pl.Poss			xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/NODE[@slem="de"]} && xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi,"NCMP") or starts-with(@smi,"NCFP") or starts-with(@smi,"NCCP") or starts-with(@smi,"PP3MP") or starts-with(@smi,"PP3FP") or starts-with(@smi,"PP3CP") or starts-with(@smi,"PP3NP")]}
+
+my.smi=/^DP3/	k	++3.Sg.Poss			!(xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/NODE[@slem="de"]} && xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi,"NCMP") or starts-with(@smi,"NCFP") or starts-with(@smi,"NCCP") or starts-with(@smi,"PP3MP") or starts-with(@smi,"PP3FP") or starts-with(@smi,"PP3CP") or starts-with(@smi,"PP3NP")]} )
+
+
+
 #################
 #  main verbs
 #################

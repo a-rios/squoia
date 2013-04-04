@@ -1,13 +1,18 @@
 TODOS translation:
 
+- things to ask Roger:
+- keep translated indefinite article as huk? or better no article at all as default?
+- default word order in verb chunk with adverb: adv obj verb, obj adj verb?
+- estar as vm: better translate as ka-chka- instead of ka-?
+
 - IMPORTANT: split sentences at ';', otherwise parser does really weird things!!!
 - sentences with mientras, mientras que -> parser doesn't get a single one of them right, correct in conll2xml
   -> resolve mientras/mientras que -> -na -kama
+- IMPORTANT: combinations of CS & CC -> treat as CC (?), in locutions -> e.g. pero cuando
+- check ALL locutions in locutions_laura.dat for translations!
 - topicalized nouns with relative clauses: fueron ellos quienes dejaron, es ahi donde queda -> generate only rel-clause (finite), delete head
-- estar as vm: better translate as ka-chka- instead of ka-?
 - nouns with possessive suffixes, (llapa, kiki..)
 - distributive -nka
-- delete redundant plural forms (e.g. kimsa runakuna -> should be kimsa runa)
 - numbers and dates -> horas (months ok)
 - participles vs. adjectives: e.g. adinerado
   -> add paradigm Noun to all Particple-N/V forms
@@ -20,22 +25,18 @@ TODOS translation:
   denominado+Dim palcayoc ni:VRoot+Perf
 - en_cuanto_a -> +Top
 - En cuanto + finite verb (as soon as)
-- empezar/ponerse a hacer -> -ri, llegar a hacer -> ?
-- keep translated indefinite article as huk? or better no article at all as default?
-- default word order in verb chunk with adverb: adv obj verb, obj adj verb?
+- empezar/ponerse a hacer -> -ri, llegar a hacer -> 
 - más o menos -> hina hinalla
-- interjections in own chunk?
-- getSentencesForGeneration -> join strings together instead of printing them out directly -> strip ',' and '++' 
-  -> reordering of suffixes!
-- replace VRoot with Verb in dix
-- IMPORTANT: combinations of CS & CC -> treat as CC (?), in locutions -> e.g. pero cuando
-- check ALL locutions in locutions_laura.dat for translations!
-- enfrentarse contra -> maqanaku- --wan
+
+- enfrentarse contra -> maqanaku- -wan
 - if verb chunk contains only participle: use -sqa form
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
+- generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
 
 GENERATION;
-- change tag for ykacha verbal to VSml and nya to VCont
+- restore upper case
+- verbal forms involving 2 persons
+
 --------------------------------------------------------------------------------------------------------------------------
 ( done - hace tiempo, atm: pacha ruran -> changed to ñawpaq pacha/ unay pacha or something like that)
 ( done - use finite verb forms if even if verb chunk is has not si=top, but there's no verb chunk above (parser error) )
@@ -48,3 +49,9 @@ GENERATION;
 ( done - verbchunks -> chunkmi belongs at the end of the verbchunk (last verb) -> independent suffixes )
 ( done - change habitual past forms in dictionary with '_' to auxlem / auxverbmi)
 ( done - habitual past form 3rd person plural -qku!! change in dictionary )
+( done - delete redundant plural forms (e.g. kimsa runakuna -> should be kimsa runa) )
+( done - getSentencesForGeneration -> join strings together  -> strip ',' and '++' -> reordering of suffixes! )
+( done - interjections in own chunk? )
+
+
+( done - change tag for nya to VCont)
