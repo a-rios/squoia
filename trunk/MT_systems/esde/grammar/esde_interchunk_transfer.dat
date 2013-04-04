@@ -1,0 +1,14 @@
+# 1				2			3				4			5		6
+# descendantCond		descendantAttr		ancestorCond			ancestorAttr		direction	writeMode
+
+# mark the clause as subject holder
+#my.si=subj			YES			my.si=top			subhold			up		overwrite
+
+# AP chunk modifies NP chunk: pass the morphological information from the NP down to the AP
+my.type=AP&&my.si=/adj-mod|s.a/	mi			my.type=NP&&my.mi=/./		mi			down		overwrite
+
+# NP with function 'cc': set accusative case [condOrigen: si=top or type=VP or ?]
+my.si=top			Akk			my.type=NP&&my.si=cc		cas			down		overwrite
+
+# NP with flex: pass the info down to the AP
+#my.type=AP			flex			my.type=NP&&my.flex=/./		flex			down		no-overwrite
