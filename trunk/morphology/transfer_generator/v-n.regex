@@ -1,0 +1,8 @@
+#Nominalisierende Suffixe
+
+"+Inf" : {y}
+|"+Char" : {li} 
+|"+Obl" : {na}
+|"+Ag" : {q}
+|"+Posi" : {mpa}
+;
