@@ -13,7 +13,7 @@
 
 # indicate path to text file to analyse:
 
-TEXTS:=  texts/acuerdo_nacional_2002_QUE.txt 
+TEXTS:=  texts/acuerdo_nacional_QUE.txt
 
 normal:  quechua-web.fst 
 db: quechua-web-db.fst
