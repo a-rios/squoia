@@ -1,0 +1,58 @@
+# head chunk condition (no more than one rule per head!) - child chunk Condition(s) (can be several chunks) - ordering ("+": immediate; ".": at some distance preceding)
+
+#only CHUNK
+
+## coordinations
+#my.type=CNP	"do nothing, let the chunks, i.e. the NPs appear in the same order
+
+## Noun and prepositional phrases
+my.type=/CNP|NP/				xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]},xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
+
+#my.type=PP||my.type=PP-von		xSPEC:my.type=nounSpec,xAP:my.type=/C?AP/,xNP:my.type=/NP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			head .xSPEC .xAP .xNP +xPP .xCOMA +xSREL +xCOMB
+#my.type=PP				xSPEC:my.type=nounSpec,xAP:my.type=AP,xNP:my.type=NP,xPP:my.type=PP		head .xSPEC .xAP .xNP +xPP
+
+my.type=PP		xNP:my.type=/NP|CNP/,xCOM:my.type=/P-com|P-eos/	head +xNP +xCOM
+
+my.type=AP				xAVP:my.type=AVP								xAVP .head
+
+## Verb position ##
+# Main clause Declarative : SVO
+# finite verb in main clause just after the subject; adverbs after verb
+my.type=VP&&!(my.finVerb=no)&&!(my.si=S)&&!(my.senttype=inter)		xET:my.type=AVP&&my.si=et,xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xPO:my.type=/PP/&&my.si=sp-obj,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf|VP-inf/,xCOM:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-sub"]]},xEOS:my.type=/P-eos/		xET +xSU +head .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xPO .xATT .xVPR .xCOM .xSC +xEOS
+
+# finite verb in main clause just after the subject, the non-finite verb (head) at the end
+my.type=VP&&my.finVerb=no&&!(my.si=S)&&!(my.ppexcep=/./)&&!(my.senttype=inter)	xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/VP|VZ-inf/,xCOM:my.type=/P-com/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb	xSU +xVFIN .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR .head +xCOM +xSC +xEOS
+
+# exception: modal/"command" verb past participle => auxilliary(finite), main verb (infinite), modal/command verb (past participle)
+my.type=VP&&my.finVerb=no&&!(my.si=S)&&my.ppexcep=yes&&!(my.senttype=inter)	xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xCOM:my.type=/P-com/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb	xSU +xVFIN .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR .head +xCOM +xSC +xEOS
+
+# Main clause Interrogative : VSO
+# TODO: where should neg be put?
+# xWH: all kinds of wh-words (and functions: subject, object, adv-loc/manner,...)
+my.type=VP&&!(my.finVerb=no)&&!(my.si=S)&&my.senttype=inter		xVPR:my.type=VerbPrefix,xSU:my.si=suj&&!(xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]}),xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/&&!(xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]}),xNIO:my.si=ci&&my.type=/NP|PP/,xWH:xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]},xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xCOM:my.type=/P-com/,xEOS:my.type=/P-eos/	xWH +head +xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR .xCOM .xSC +xEOS
+
+# finite verb in main clause just before the subject, the non-finite verb (head) at the end
+my.type=VP&&my.finVerb=no&&!(my.si=S)&&my.senttype=inter&&!(my.ppexcep=/./)		xVPR:my.type=VerbPrefix,xSU:my.si=suj&&!(xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]}),xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/&&!(xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]}),xNIO:my.si=ci&&my.type=/NP|PP/,xWH:xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]},xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xCOM:my.type=/P-com/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb		xWH +xVFIN +xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xAVP .xNEG .xATT .xVPR .head +xCOM +xSC +xEOS
+
+# exception: modal/"command" verb past participle => auxilliary(finite), main verb (infinite), modal/command verb (past participle)
+#my.type=VP&&my.finVerb=no&&!(my.si=vsubord)&&my.senttype=inter&&my.ppexcep=yes			xVPR:my.type=VerbPrefix,xSU:my.si=suj&&!(xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]}),xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/&&!(xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]}),xNIO:my.si=ci&&my.type=/NP|PP/,xWH:xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]},xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xCOM:my.type=/P-com/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb		xWH +xVFIN +xSU .xPDO .xPIO .xNIO .xNDO .xDATE .xAVP .xNEG .xATT .xVPR .xPP .head +xCOM +xSC +xEOS
+
+# Subordinated clauses: SOV
+# finite verb in subordinated clause at the very end; adverbs before the verb
+my.type=VP&&!(my.finVerb=no)&&my.si=S			xSCJ:my.type=subConj,xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xEOS:my.type=/P-eos/		xSCJ .xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +head +xEOS
+
+# finite verb in subordinated clause at the very end, the non-finite verb (head) just before the finite
+my.type=VP&&my.finVerb=no&&my.si=S&&!(my.ppexcep=/./)		xSCJ:my.type=subConj,xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb	xSCJ .xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +head +xVFIN +xEOS
+
+# exception: modal/"command" verb past participle => auxilliary(finite), main verb (infinite), modal/command verb (past participle)
+my.type=VP&&my.finVerb=no&&my.si=S&&my.ppexcep=yes		xSCJ:my.type=subConj,xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb	xSCJ .xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +xVFIN +head +xEOS
+
+# Infinitive verb clause: OV
+# Preposition is the head
+# TODO: this is probably not necessary given that the verb with ZU is being upgraded to a chunk... see next rule with VZUINF as head
+my.type=VZ-inf			xVINF:my.type=VZUINF,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/		head .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVINF +xSC
+# Infinite verb is the head
+my.type=VZUINF			xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/		xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .head +xSC
+
+# Verb is the head
+my.type=VP-inf		xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/		xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .head +xSC
