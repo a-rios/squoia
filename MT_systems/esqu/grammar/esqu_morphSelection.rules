@@ -143,21 +143,20 @@ my.smi=/VM...../			d	agentive,perfect,present,obligative,futureDisc,potential,pa
 my.smi=/VA...../ && my.slem=haber	k	agentive				chunkparent.verbform=rel:agentive
 
 # indicative future
-my.smi=/VAIF.../ && my.slem=haber	k	obligative				chunkparent.verbform=obligative
-my.smi=/VAIF.../ && my.slem=haber	k	obligative				chunkparent.verbform=rel:not.agentive
+my.smi=/VAIF.../ && my.slem=haber	k	obligative				chunkparent.verbform=/rel:not\.agentive|obligative/
 my.smi=/VAIF.../ && my.slem=haber	k	futureDisc				chunkparent.verbform=main
 
 # imperfect past (había hecho) -> plusquamperfect
-my.smi=/VAII.../ && my.slem=haber	k	perfect					chunkparent.verbform=rel:not.agentive
+my.smi=/VAII.../ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
 my.smi=/VAII.../ && my.slem=haber	k	indirectpast				chunkparent.verbform=main
 
 # perfect past (hubo hecho)
-my.smi=/VAIS.../ && my.slem=haber	k	perfect					chunkparent.verbform=rel:not.agentive
+my.smi=/VAIS.../ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
 # in main clause: directpast or indirectpast, delete everything else
 my.smi=/VAIS.../ && my.slem=haber	d	SS,DS,agentive,perfect			chunkparent.verbform=main
 
 # indicative present TODO: main clause, he hecho-> ruwani or ruwarani?
-my.smi=/VAIP.../ && my.slem=haber	k	perfect					chunkparent.verbform=rel:not.agentive
+my.smi=/VAIP.../ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
 my.smi=/VAIP.../ && my.slem=haber	k	present					chunkparent.verbform=main
 
 # subjuntivo hubiésemos/hubiéramos hecho, TODO: relative clauses??

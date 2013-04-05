@@ -181,6 +181,8 @@ my.smi=/^PP1.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="gr
 my.smi=/^PP2.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		"++2.Sg.Obj"			my.type=/sn|coor-n/		verbmi		up	concat
 
 
+  # Negation
+my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
 
 
 

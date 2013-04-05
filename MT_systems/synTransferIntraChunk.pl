@@ -27,7 +27,10 @@ use utf8;
 use Storable; # to retrieve hash from disk
 #binmode STDIN, ':utf8';
 use XML::LibXML;
-require "util.pl";
+use File::Spec::Functions qw(rel2abs);
+use File::Basename;
+my $path = dirname(rel2abs($0));
+require "$path/util.pl";
 
 # retrieve hash with config parameters from disk
 my %hash;
