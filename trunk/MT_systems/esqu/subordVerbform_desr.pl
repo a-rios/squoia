@@ -192,20 +192,24 @@ foreach my $sentence (@sentenceList)
 # 					$verbChunk->setAttribute('verbform', 'SS');
 # 				}
  				# if this is a complement clause (-> nominal form), TODO: already ++Acc?
- 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT"]/NODE/NODE[@pos="cs"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
+ 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT"]/descendant::NODE[@pos="cs"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
  				{
  					$nbrOfNominalForms++;
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
  					if($headVerbCHunk)
  					{
  						my $headVerb = &getMainVerb($headVerbCHunk);
+ 						print STDERR "head verb: \n".$headVerb->toString."\n";
  						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
  						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|manifestar|mencionar|oficiar|opinar|proclamar|proponer|razonar|revelar|responder|sostener|señalar|testificar|testimoniar/)
  						{
  							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
 							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
+							# note: if compareSubjects gives 'switch', this means that both verbs are 3rd persons and have the same number, but at least
+							#  one of the clauses has no overt subject. It is safe to assume that in this case the subjects are coreferential with a say verb in the main clause
 							&compareSubjects($verbChunk);
-							if($verbChunk->getAttribute('verbform') eq 'SS' && &isSingular($verbChunk))
+							#print $verbChunk->toString."\n";
+							if(($verbChunk->getAttribute('verbform') eq 'SS' || $verbChunk->getAttribute('verbform') eq 'switch') && &isSingular($verbChunk))
 							{
 								$verbChunk->setAttribute('verbprs', '+1.Sg.Subj')
 							}
@@ -313,8 +317,8 @@ sub compareSubjects{
 			my $verbPersonMain = substr ($verbMIMain, 4, 1);
 			my $verbNumberMain = substr ($verbMIMain, 5, 1);
 		
-			#print STDERR $finiteMainVerb ->getAttribute('lem').": $verbMIMain\n";
-			#print STDERR $finiteVerb->getAttribute('lem').": $verbMI\n";
+			print STDERR $finiteMainVerb ->getAttribute('lem').": $verbMIMain\n";
+			print STDERR $finiteVerb->getAttribute('lem').": $verbMI\n";
 		
 			if($verbPerson eq $verbPersonMain && $verbNumber eq $verbNumberMain)
 			{
@@ -342,8 +346,8 @@ sub compareSubjects{
 		  		my $verbNumberMain = substr ($finiteMainVerb->getAttribute('mi'), 5, 1);
 		  		my $verbNumber = substr ($finiteVerb->getAttribute('mi'), 5, 1);
 		  	
-		 	 	#print STDERR $finiteMainVerb ->getAttribute('lem').": ".$finiteMainVerb->getAttribute('mi')."\n";
-				#print STDERR $finiteVerb->getAttribute('lem').": ".$finiteVerb->getAttribute('mi')."\n";
+		 	 	print STDERR $finiteMainVerb ->getAttribute('lem').": ".$finiteMainVerb->getAttribute('mi')."\n";
+				print STDERR $finiteVerb->getAttribute('lem').": ".$finiteVerb->getAttribute('mi')."\n";
 		  	
 			  	if($verbNumber ne $verbNumberMain)
 			  	{
@@ -372,10 +376,15 @@ sub compareSubjects{
 						$verbChunk->setAttribute('verbform', 'DS');
 					}
 				}
+				elsif(!$subjNounMain && !$subjNoun)
+				{
+					$nbrOfSwitchForms++;
+					$verbChunk->setAttribute('verbform', 'SS'); 
+				}
 				else
 				{
 					$nbrOfAmbigousClauses++;
-					$verbChunk->setAttribute('verbform', 'switch'); # maybe better default=DS here?
+					$verbChunk->setAttribute('verbform', 'switch'); # maybe better default=SS here?
 				}
 			}
 		  	}

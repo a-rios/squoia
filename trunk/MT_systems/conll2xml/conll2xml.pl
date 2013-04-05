@@ -234,9 +234,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			$parent = $sentence;
 		}
 		
-#my $docstring = $dom->toString(3);
+my $docstring = $dom->toString(3);
 #print STDERR $docstring;
-###print STDERR  $node->toString;
+####print STDERR  $node->toString;
 #print STDERR "\n---------------------------------\n";
 #print STDERR  $node->getAttribute('lem');
 #print STDERR "\n---------------------------------\n";
@@ -1011,9 +1011,33 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 					}
 				}
 			}
+			# make sure no chunk has a sibling node, lexical transfer module doesn't like that either
+			my @nodesWithChunkSiblings = $sentence->findnodes('descendant::NODE[preceding-sibling::CHUNK]');
 			
-		}
+			foreach my $node (@nodesWithChunkSiblings)
+			{# print STDERR "node sibl: ".$node->toString()."\n";
+					# if CC or CS -> try to attach it to the following verb chunk, if that fails to the preceding
+					# if there's no verb chunk, attach it to the next higher chunk (probably an error by the tagger, but let's try to avoid 
+					# making the lexical transfer fail)
+					# NOTE: no need to copy children of sibling, as NODE with child CHUNKS have already been taken care of above
+					
+					my $possibleHead = @{$node->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE/descendant-or-self::NODE')}[0];
+					my $possibleHead2 = @{$node->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE/descendant-or-self::NODE')}[0];					
+					if($possibleHead)
+						{$possibleHead->appendChild($node);}
+					elsif($possibleHead2)
+						{$possibleHead->appendChild($node);}
+					else
+						{
+							$possibleHead = @{$node->findnodes('ancestor::SENTENCE/CHUNK[@si="top"]/NODE/descendant-or-self::NODE')}[0];
+							#print $possibleHead->toString()."\n\n";
+							if($possibleHead){$possibleHead->appendChild($node);}
+						}
+					}
+				
+			}
 	}
+
 }
 
 
