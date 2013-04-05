@@ -93,6 +93,8 @@ my %mapTagsToSlots = (
 	'+2.Pl.Subj.Imp'			=> 22,
 	'+3.Pl.Subj.Imp'			=> 22,	
 	'+3.Pl.Subj.Hab'			=> 22,
+	'+Fut'						=> 23,
+	'+Pot'						=> 23,
 	# nominal suffixes
 	'+Aug'				=> 30,
 	'+Dim'				=> 30,
@@ -233,7 +235,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			my ($verbprs) = ($verbmi =~ m/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)/ );
  			my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
  			my ($objprs) = ($verbmi =~ m/\+([12]\.[PS][lg])(\.Incl|\.Excl)?\.Obj/ );
- 			#print STDERR "subj obj: $subjprs, $objprs\n";
+ 			#print STDERR "verbmi: $verbmi .......... subj obj: $subjprs, $objprs\n";
  			
  			# nispa
  			if($lemma1 && $verbmi1)
@@ -267,7 +269,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				}
  			}
  			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
- 			if($chunk->exists('child::NODE[@mi="infinitive"]'))
+ 			if($verbmi eq '' && $chunk->exists('child::NODE[@mi="infinitive"]'))
  				{
  					$verbmi=$verbmi."+Inf";
  				}
