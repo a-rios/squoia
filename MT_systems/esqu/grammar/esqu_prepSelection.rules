@@ -107,7 +107,8 @@ detrás_de	spform=qhipankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="
 detrás_de	postpos=qhipan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
 desde		case=+Abl
-después_de 	postpos=hawa
+#después_de 	postpos=hawa TODO, really hawa? qhipa seems better (?)
+después_de 	postpos=qhipa
 desque		case=+Abl
 durante		func=deleteNode
 en		case=+Loc	-	+

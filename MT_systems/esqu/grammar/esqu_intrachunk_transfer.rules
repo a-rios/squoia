@@ -2,6 +2,10 @@
 # descendantCond	descendantAttr			ancestorCond				ancestorAttr		direction	writeMode
 # move all the information that is relevant for the syntactic and morphological generation from the nodes to their chunks
 
+    ###########
+    # GRUP-SP #
+    ###########
+
 # copy attribute 'func' (function) up to the chunk 
 # -> e.g. preposition 'de' might have func=attributive in 
 # 'casa de piedra' -> noun in 'de' pp functions as adjective in quz:
@@ -57,6 +61,9 @@ my.smi=/^DN|^Z$/				"+Pl"				my.type=/sn|coor-n/				deleteMorph		up		concat
 # copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
 my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && !(parent.mi=infinitive) && ( my.slem=estar || !(parent.smi=VMG0000))		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
 
+# ir a + infinitive: copy attribute 'verbmi' from 'ir' (if finite) to verbmi in chunk
+my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && parent.smi=VMN0000		verbmi			my.type=/grup-verb|coor-v/		verbmi		up	concat
+
 # copy lemma and morphology of auxiliary to head chunk (only relevant with habitual past forms)
 my.auxlem=/.+/				auxlem				my.type=/grup-verb|coor-v/		auxlem			up	overwrite
 my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwrite
@@ -68,9 +75,9 @@ my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwr
 # also:
 # subordinated participle -> subieron ascendiendo, se fue riendo, entra flotando, etc.
 # -> finite verb: verbmi2, lem2; gerund: lem, verbmi (+SS)
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (parent.mi=infinitive || (parent.smi=VMG0000 && !(my.slem=estar) ) )		verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (parent.smi=VMG0000 && !(my.slem=estar) ) )					lem				my.type=/grup-verb|coor-v/		lem2			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && xpath{parent::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)									"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (parent.mi=infinitive || (parent.smi=VMG0000 && !(my.slem=estar) ) )		verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (parent.smi=VMG0000 && !(my.slem=estar) ) )					lem				my.type=/grup-verb|coor-v/		lem2			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{parent::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)									"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
 
 # copy mi from gerund to verbmi of chunk
 my.smi=VMG0000 && !(xpath{child::NODE[@slem="estar"]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
@@ -91,7 +98,7 @@ my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && (my.lem=unspecif
 # copy all information from add_mi in verbs to verbmi (concat)
 my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi				up		concat
 
-# construction 'voy a +Inf: insert +Fut in verbmi of chunk
+# construction 'ir a +Inf: insert +Fut in verbmi of chunk
 my.slem=ir && parent.smi=VMN0000		"+Fut"				my.type=/grup-verb|coor-v/			addverbmi			up 		concat
 
 # relative clauses with 'donde' -> add Locative suffix
