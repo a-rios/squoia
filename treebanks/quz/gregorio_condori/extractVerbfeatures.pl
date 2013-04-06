@@ -17,6 +17,30 @@ use XML::LibXML;
 my $parser = XML::LibXML->new({encoding => 'utf-8'});
 my $dom    = XML::LibXML->load_xml( IO => *STDIN);
 
+my %mapMorphsToFeatures = (
+	'+Inf'		=> 'infinitive',
+	'+Perf'		=> 'perfect',
+	'+Obl'		=> 'obligative',
+	'+Ag'		=> 'agentive',
+	'+SS'		=> 'SS',
+	'+DS'		=> 'DS'
+);
+
+my %mapMorphsToClasses = (
+	'+Inf'		=> 1,
+	'+Perf'			=> 2,
+	'+Obl'		=> 3,
+	'+Ag'			=> 4,
+	'+SS'	=> 5,
+	'+DS'		=> 6,
+	'finite'		=> 7,
+);
+
+#print STDOUT "\n######################################################################################################\n";
+#
+#print STDOUT "##   head verb\t head translation\t subord verb\t subord translation\t form\t linker     ##\n";
+#print STDOUT "######################################################################################################\n\n";
+
 foreach my $nt ($dom->getElementsByTagName('nonterminal'))
 {
 	# TODO: NRoot+verbalizing, done
@@ -28,28 +52,58 @@ foreach my $nt ($dom->getElementsByTagName('nonterminal'))
 			my @verbChildren = &getVerbalChildren($v);
 			if(scalar(@verbChildren)>0)
 			{
-				my $lem = $v->findvalue('word/text()');
+				my $lem;
+				my $trans;
 				my $sublem;
+				my $subtrans;
 				my $form;
 				my $linker;
+				if(&isHabitualPastKAN($v) )
+				{
+					$lem = $v->findvalue('child::children/terminal[label/text()="hab"]/word/text()');
+					$trans = $v->findvalue('child::children/terminal[label/text()="hab"]/translation/text()');
+				}
+				# KAN but no habitual past
+				elsif($v->exists('child::word[text()="KAN"]'))
+				{
+					$lem = "ka";
+					$trans = "ser";
+				}
+				else
+				{
+					$lem = $v->findvalue('word/text()');
+					$trans = $v->findvalue('translation/text()');
+				}
+				
+				$trans =~ s/=//;
 			
 				foreach my $child (@verbChildren)
-				{ #print $child->toString()."\n---------------------------------------------\n";
+				{ #print "\n-----------------".$child->findvalue('word/text()')."::".$child->findvalue('order/text()')."-------------------\n";
 					
 					# if this is a  'hab' form, print lemma from 'hab', not copula
 					# with hab -> habitual past, finite form, get lemma from 'hab' verb
 					# DON'T print this: it's not a subordinated verb!
 					if(&isHabitualPast($child) )
-					{ 
+					{
 						next;
 #						$lem = $child->findvalue('child::word/text()');
 #						$sublem = $lem;
 #						$form = "finite";
 					}
-					elsif($child->exists('child::children/terminal[label[text()="s.subj" or text()="s.subj_obj" or text()="s.subj_iobj"] ]') || $child->exists('word[text()="KAN"]') )
+					elsif($child->exists('child::children/terminal[label[text()="s.subj" or text()="s.subj_obj" or text()="s.subj_iobj"] ]') || &isHabitualPastKAN($child) ||  $child->exists('child::word[text()="KAN" or text()="haku" or text()="Haku"]') )
 					{
 						$form = "finite";
-						$sublem = $child->findvalue('word/text()');
+						if($child->exists('child::word[text()="KAN"]'))
+						{
+							$sublem = "ka";
+							$subtrans = "ser";
+						}
+						else
+						{
+							$sublem = $child->findvalue('word/text()');
+							$subtrans = $child->findvalue('translation/text()');
+							$subtrans =~ s/=//;
+						}
 						my $linkernode = @{$child->findnodes('child::children/terminal[label[text()="linker"]]')}[0];
 						if($linkernode)
 						{
@@ -65,23 +119,31 @@ foreach my $nt ($dom->getElementsByTagName('nonterminal'))
 							}
 						}
 					}
-					elsif($child->exists('child::children/terminal/label[text()="ns"]') && $form eq '' && !&isHabitualPast($child) )
-					{
+					elsif($child->exists('child::children/terminal/label[text()="ns"]') && $form eq '' )
+					{ 
 						$sublem = $child->findvalue('word/text()');
+						$subtrans = $child->findvalue('translation/text()');
+						$subtrans =~ s/=//;
 						my $nominalizer = @{$child->findnodes('child::children/terminal[label[text()="ns"]]')}[0];
-						my $nsmorph = $nominalizer->findvalue('child::word/text()');
+						my $nsmorph = $nominalizer->findvalue('child::morph/tag[1]/text()');
 						$form = $nsmorph;
 					}
-					#else{print "child: ".$child->findvalue('word/text()');}
-					#print STDOUT lc("$lem\t$sublem\t$form\t$linker\n");
-					print STDOUT "$lem\t$sublem\t$form\t$linker\n";
+						#print STDOUT lc("$lem\t$sublem\t$form\t$linker\n");
+						#print STDOUT "$lem\t\t$trans\t\t$sublem\t\t$subtrans\t$form\t$linker\n";
+						$form = $mapMorphsToClasses{$form};
+						print STDOUT lc("$form mainV:$lem\t mainTrans:$trans\tsubV:$sublem\tsubTrans:$subtrans");
+						if($linker ne''){print:lc("\tsublinker$linker");}
+						print "\n";
+						#print STDOUT "$form".lc("\t$lem\t$trans\t$sublem\t$subtrans\t$linker")."\n";
+						
+					
 					$form = '';
 					$linker = '';
 				}
 				
 			}
 	}	
-print "\n";
+#print "\n";
 }
 
 
@@ -99,3 +161,16 @@ sub isHabitualPast{
 	my $terminal = $_[0];
 	return $terminal->exists('child::label[text()="hab"]');
 }
+
+sub isHabitualPastKAN{
+	my $terminal = $_[0];
+	#print "\n-----------------".$terminal->findvalue('word/text()')."::".$terminal->findvalue('order/text()')."-------------------\n";
+	return $terminal->exists('child::children/terminal/label/text()="hab"') &&  $terminal->exists('child::word[text()="KAN" or text()="ka"]') ;
+}
+
+#sub mapMorphs{
+#	my $morph = $_[0];
+#	
+#	return
+#}
+
