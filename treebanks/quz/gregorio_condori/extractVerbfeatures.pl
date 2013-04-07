@@ -2,16 +2,9 @@
 
 
 use utf8;                  # Source code is UTF-8
-#use open ':utf8';
-use Storable; # to retrieve hash from disk
-#binmode STDIN, ':utf8';
 binmode STDOUT, ':utf8';
 use strict;
 use XML::LibXML;
-#use File::Spec::Functions qw(rel2abs);
-#use File::Basename;
-#my $path = dirname(rel2abs($0));
-#require "$path/../util.pl";
 
 #read xml from STDIN
 my $parser = XML::LibXML->new({encoding => 'utf-8'});
@@ -128,12 +121,32 @@ foreach my $nt ($dom->getElementsByTagName('nonterminal'))
 						my $nsmorph = $nominalizer->findvalue('child::morph/tag[1]/text()');
 						$form = $nsmorph;
 					}
-						#print STDOUT lc("$lem\t$sublem\t$form\t$linker\n");
-						#print STDOUT "$lem\t\t$trans\t\t$sublem\t\t$subtrans\t$form\t$linker\n";
 						$form = $mapMorphsToClasses{$form};
-						print STDOUT lc("$form mainV:$lem\t mainTrans:$trans\tsubV:$sublem\tsubTrans:$subtrans");
-						if($linker ne''){print:lc("\tsublinker$linker");}
+						
+						# print all information
+						#print STDOUT lc("$form 1:$lem 2:$trans 3:$sublem 4:$subtrans 5:$linker");
+						# don't print subordinated lemma and translation
+#						print STDOUT lc("$form 1:$lem 2:$trans 3:$linker");
+						
+#						if($linker ne '')
+#						{
+#							print :lc(" 5:$linker");
+#						}
+#						print "\n";
+						# string with binary values:
+						print "$form 1:";
+						&printAsBinaryNumbers($lem);
+						print " 2:";
+						&printAsBinaryNumbers($trans);
+						print " 3:";
+						&printAsBinaryNumbers($sublem);
+						print " 4:";
+						&printAsBinaryNumbers($subtrans);
+						print " 5:";
+						&printAsBinaryNumbers($linker);
+						
 						print "\n";
+						
 						#print STDOUT "$form".lc("\t$lem\t$trans\t$sublem\t$subtrans\t$linker")."\n";
 						
 					
@@ -173,4 +186,24 @@ sub isHabitualPastKAN{
 #	
 #	return
 #}
+
+
+sub printAsBinaryNumbers{
+	my $string = $_[0];
+
+	if($string ne '')
+	{
+		my $strLength = length($string);
+		#my @bytes = unpack("b128",$string);
+		my @bytes = unpack("b64",$string);
+		print "1@bytes";
+		#my $pretty = join(" ", pack("b64",@bytes));
+		#print $pretty;
+	}
+	else
+	{
+		print "0";
+	}
+}
+
 

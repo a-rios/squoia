@@ -135,7 +135,7 @@ llama	nina	-	0.2
 
 # propietario, kaqniyuq, but with sp-de: propietario de algo-> algoyuq
 
-propietario	+Poss		rsibling.type=sp-de		0.1
+propietario	+Poss		xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="de"]}		0.1
 propietario	ka		-				0.2
 
 #rico (dinero, poder): qhapaq, (comida) miski, hauptverb von clause -> XPath?? (nächst höherer chunk mit grup-verb..
