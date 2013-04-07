@@ -51,6 +51,13 @@ parent.type=sn					"+Dat"				my.si=ci					case			up		concat
 # if plural noun with a child node that is a number: delete plural suffix (kimsa runa, not *kimsa runakuna)
 my.smi=/^DN|^Z$/				"+Pl"				my.type=/sn|coor-n/				deleteMorph		up		concat
 
+# propietario de algo -> algo-yuq
+# copy ++Poss from propietario to sn chunk, and from there (over child grup-sp) to the possessed noun
+# and then delete genitive from the pp chunk ('de') in between
+my.slem=propietario && xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="de"]} && my.moveToHead_mi=/.+/	moveToHead_mi			my.type=/sn|coor-n/		chunkmi		up	concat
+my.slem=propietario && xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="de"]}				"yes"				my.type=/sn|coor-n/		delete		up	concat
+my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="propietario"]}			"none"				my.type=/grup-sp|coor-sp/	case		up	overwrite
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
     #########
     # VERBS #

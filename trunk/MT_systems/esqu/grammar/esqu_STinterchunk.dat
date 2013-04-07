@@ -4,6 +4,9 @@
 #  possible paths:
 #	'my'			=> '.',
 #	'child'			=> 'child::CHUNK',
+#	'firstchild'		=> 'child::CHUNK[1]',
+#	'chunkgrandchild'	=> 'descendant::CHUNK[2]',
+#	'descendant'		=> 'descendant::CHUNK',
 #	'parent'		=> '..',
 #	'chunkparent'		=> 'ancestor::CHUNK[1]',
 #	'chunkgrandparent'	=> 'ancestor::CHUNK[2]',
@@ -34,6 +37,9 @@ my.type=/sadv/ && my.chunkmi=/.+/			chunkmi				my.type=/grup-verb|coor-v/		chunk
 # copy chunkmi=+Inst in coordination from head to child (from coor-n to sn)
 my.type=coor-n && my.chunkmi=+Instr			chunkmi				my.type=sn				chunkmi			child				1to2		concat	
 
+
+# copy ++Poss from propietario to the possessed noun
+my.type=sn && child.slem=propietario && my.chunkmi=++Poss	chunkmi			my.type=sn				chunkmi			chunkgrandchild			1to2		concat
 
 # in a pp with a coordinated np inside: copy the case/nouncase attribute to the second coordinated np
 #my.type=/grup-sp|coor-sp/ && child.type=coor-n		case			my.type=sn && chunkparent.type=coor-n			case			ancestor	1to2		overwrite	

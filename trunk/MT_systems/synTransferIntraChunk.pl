@@ -146,9 +146,9 @@ sub propagateAttr{
 		}
 	}
 	elsif ($wmode eq "overwrite") {
-#print STDERR "overwrite attribute $trgAttr with value $srcVal\n";
-#print STDERR $srcNode->nodePath()." propagates to ".$trgNode->nodePath()."\n";
-#print STDERR $srcNode->toString()."\n==>\n".$trgNode->toString()."\n\n";
+print STDERR "overwrite attribute $trgAttr with value $srcVal\n";
+print STDERR $srcNode->nodePath()." propagates to ".$trgNode->nodePath()."\n";
+print STDERR $srcNode->toString()."\n==>\n".$trgNode->toString()."\n\n";
 		$trgNode->setAttribute($trgAttr,$srcVal);
 	}
 	elsif ($wmode eq "no-overwrite") {
