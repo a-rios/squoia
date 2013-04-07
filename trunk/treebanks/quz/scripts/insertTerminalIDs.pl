@@ -14,20 +14,22 @@ use XML::LibXML;
 #read xml from STDIN
 #my $parser = XML::LibXML->new({encoding => 'utf-8'});
 my $dom    = XML::LibXML->load_xml( IO => *STDIN);
-my $counter = 1;
+#my $counter = 1;
 
 foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
 
-	print STDERR "inserting IDs in sentence: $counter\n";
-	my $nonterminal = @{$sentence->findnodes('child::root/nonterminal')}[0];
+	my $sID = $sentence->getAttribute('id');
+	my @terminals = $sentence->findnodes('descendant::terminal');
 	#print $nonterminal;
-	$sentence->setAttribute('id', 's'.$counter);
-	$nonterminal->setAttribute('id', 's'.$counter."_VROOT");
 	
-	$counter++;
-	
-
+	foreach my $terminal (@terminals)
+	{
+	  my $ord = @{$terminal->findnodes('child::order/text()')}[0];
+	#  print $ord;
+	  my $id = $sID."_".$ord;
+	  $terminal->setAttribute('id', $id);
+	}
 }
 
 my $corpus= @{$dom->getElementsByTagName('corpus')}[0];
