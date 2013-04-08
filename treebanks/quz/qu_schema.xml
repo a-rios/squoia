@@ -55,6 +55,7 @@
    </member>
   </structure>
  </type>
+ 
  <type name="nonterminal.type">
   <structure role="#NODE">
    <member name="id" role="#ID" as_attribute="1">
@@ -77,6 +78,7 @@
    </member>
   </structure>
  </type>
+ 
  <type name="terminal.type">
   <structure role="#NODE">
    <member name="id" role="#ID" as_attribute="1">
