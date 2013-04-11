@@ -4,13 +4,17 @@ TODOS translation:
 - keep translated indefinite article as huk? or better no article at all as default?
 - default word order in verb chunk with adverb: adv obj verb, obj adj verb?
 - estar as vm: better translate as ka-chka- instead of ka-?
+- relative clauses with 'donde', como traducir? la casa donde jugaron... pukllasqa(pi) wasi?
 
 - IMPORTANT: split sentences at ';', otherwise parser does really weird things!!!
 - sentences with mientras, mientras que -> parser doesn't get a single one of them right, correct in conll2xml
   -> resolve mientras/mientras que -> -na -kama
 - IMPORTANT: combinations of CS & CC -> treat as CC (?), in locutions -> e.g. pero cuando
 - check ALL locutions in locutions_laura.dat for translations!
-- topicalized nouns with relative clauses: fueron ellos quienes dejaron, es ahi donde queda -> generate only rel-clause (finite), delete head
+- topicalized nouns with relative clauses: fueron ellos quienes dejaron,
+- lo que hacemos es... lo que encontramos es...
+( - modalverb + infinitive -> sometimes, parser labels modal as 'v' -> both verbs in one chunk)
+- relative clauses with hay que -> obligative (las inercias que hay que combatir -> obl in all tenses)
 - nouns with possessive suffixes, (llapa, kiki..)
 - distributive -nka
 - numbers and dates -> horas (months ok)
@@ -28,6 +32,11 @@ TODOS translation:
 - empezar/ponerse a hacer -> -ri, llegar a hacer -> 
 - más o menos -> hina hinalla
 - convertirse EN -> tuky ..-MAN
+- direct speech in Spanish: don't compare subject with main clause, translate 'as is' to Quechua!! 
+- de igual manera -> parser messes that up -> add to locutions
+- encontrarse en el sentido de estar -> 'ka-', no 'tinku-'
+- IMPORTANT: subj in nominal clause -> genitive!
+
 
 - enfrentarse contra -> maqanaku- -wan
 - if verb chunk contains only participle: use -sqa form
@@ -53,6 +62,7 @@ GENERATION;
 ( done - delete redundant plural forms (e.g. kimsa runakuna -> should be kimsa runa) )
 ( done - getSentencesForGeneration -> join strings together  -> strip ',' and '++' -> reordering of suffixes! )
 ( done - interjections in own chunk? )
+( done - es ahi donde queda -> generate only rel-clause (finite), delete head, add +Top to cc)
 
 
 ( done - change tag for nya to VCont)
