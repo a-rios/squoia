@@ -127,6 +127,36 @@ rikra	[+Mov]	my.smi=/^V/
 sat'i	[+Mov]	my.smi=/^V/
 mudar	[+Mov]	-
 
+# speech verbs
+admitir		[+speech]	-
+advertir	[+speech]	-
+afirmar		[+speech]	-
+alegar		[+speech]	-
+argumentar	[+speech]	-
+aseverar	[+speech]	-
+atestiguar	[+speech]	-
+confiar		[+speech]	-
+confesar	[+speech]	-
+contestar	[+speech]	-
+decir		[+speech]	-
+declarar	[+speech]	-
+expresar	[+speech]	-
+hablar		[+speech]	-
+indicar		[+speech]	-
+manifestar	[+speech]	-
+mencionar	[+speech]	-
+oficiar		[+speech]	-
+opinar		[+speech]	-
+proclamar	[+speech]	-
+proponer	[+speech]	-
+razonar		[+speech]	-
+recalcar	[+speech]	-
+revelar		[+speech]	-
+responder	[+speech]	-
+sostener	[+speech]	-
+señalar		[+speech]	-
+testificar	[+speech]	-
+
 # ditransitive verbs, needed for disambiguation of preposition 'a'
 achacar		[ditrans]	-
 aconsejar	[ditrans]	-

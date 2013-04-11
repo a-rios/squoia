@@ -905,23 +905,9 @@ my $docstring = $dom->toString(3);
 		# if this is the last node, sentence complete
 		if($i == scalar(@nodes)-1)
 		{ 
-			my $topverbchunk = @{$node->findnodes('ancestor::SENTENCE/CHUNK[(@type="grup-verb" or @type="coor-v")and @si="top"][1]')}[0];
-			# check if main verb is in fact a subordinated clause, if so, make second grup-verb head
-			# if coordinated vp: don't take first child grup-verb (this is the coordinated vp), take the last
-			if($topverbchunk && $topverbchunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]'))
-			{ #print STDERR $topverbchunk->toString;
-				my $realMain = @{$topverbchunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v" and not(child::NODE[@pos="cs"])]')}[-1];
-				if($realMain)
-				{
-					print STDERR "real main verb: ".$realMain->toString();
-					$topverbchunk->parentNode->appendChild($realMain->parentNode());
-					$realMain->parentNode()->appendChild($topverbchunk);
-					
-					$topverbchunk->setAttribute('si', 'S');
-					$realMain->parentNode->setAttribute('si', 'top');
-				}
-			}
-			elsif(!$sentence->exists('child::CHUNK'))
+			#my $docstring = $dom->toString(3);
+			#print STDERR $docstring."\n\n";
+			if(!$sentence->exists('child::CHUNK'))
 			{
 			# wrong analysis, head of sentence is a node instead of chunk -> get first verb chunk and make this the head
 			# if there is no verb chunk -> take the first child that a chunk (any type) and make this the head
@@ -956,6 +942,22 @@ my $docstring = $dom->toString(3);
 						$dummyChunk->appendChild($topnode);
 						print STDERR "inserted dummy chunk as head in sentence: $sentenceId\n";
 					}
+				}
+			}
+			# check if main verb is in fact a subordinated clause, if so, make second grup-verb head
+			# if coordinated vp: don't take first child grup-verb (this is the coordinated vp), take the last
+			my $topverbchunk = @{$node->findnodes('ancestor::SENTENCE/CHUNK[(@type="grup-verb" or @type="coor-v") and @si="top"][1]')}[0];
+			if($topverbchunk && $topverbchunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]'))
+			{ #print STDERR "top chunk".$topverbchunk->getAttribute('ord')."\n";
+				my $realMain = @{$topverbchunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v" and not(child::NODE[@pos="cs"])]')}[-1];
+				if($realMain)
+				{
+					print STDERR "real main verb: ".$realMain->toString();
+					$topverbchunk->parentNode->appendChild($realMain->parentNode());
+					$realMain->parentNode()->appendChild($topverbchunk);
+					
+					$topverbchunk->setAttribute('si', 'S');
+					$realMain->parentNode->setAttribute('si', 'top');
 				}
 			}
 			my @verbchunks = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]');
@@ -1581,12 +1583,15 @@ sub attachCSToCorrectHead{
 			{
 				my $node = $nodeHash{$i};
 				#print STDERR "i: $i ".$node->getAttribute('form')."\n";
-				if($node->getAttribute('pos') eq 'vm' && $i<scalar(@sequence) && $nodeHash{$i+1}->getAttribute('pos') ne 'vm' )
-				{
+				if($node && $node->getAttribute('pos') eq 'vm' && (!$nodeHash{$i+1} ||  $nodeHash{$i+1}->getAttribute('pos') ne 'vm' ) )
+				#if($node && $nodeHash{$i+1} && $node->getAttribute('pos') eq 'vm'  && $nodeHash{$i+1}->getAttribute('pos') ne 'vm' )
+				{ 
 					$followingMainVerb = $node;
 					last;
 				}
 			}
+			#print STDERR  "foll verb: ".$followingMainVerb->getAttribute('form')."\n";
+			#print STDERR  "current verb: ".$currentParent->getAttribute('form')."\n";
 			if($followingMainVerb && !$followingMainVerb->isSameNode($currentParent))
 			{
 				#print STDERR "foll verb: ".$followingMainVerb->toString();
