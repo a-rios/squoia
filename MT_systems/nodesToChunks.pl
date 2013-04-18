@@ -17,7 +17,7 @@ use strict;
 
 use utf8;
 use Storable; # to retrieve hash from disk
-binmode STDIN, ':utf8';
+#binmode STDIN, ':utf8';
 use XML::LibXML;
 require "util.pl";
 

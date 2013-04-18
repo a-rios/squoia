@@ -125,6 +125,10 @@ my.slem=tener		d	perfect,present,DS,SS,agentive,present,future,indirectpast,pote
 #my.slem=deber		k	obligative					xpath{parent::NODE/parent::CHUNK[@verbform="obligative"]}
 my.slem=deber		d	perfect,present,DS,SS,agentive,present,future,indirectpast,potential,pastpotential,directpast,imperative	xpath{parent::NODE/parent::CHUNK[@verbform="obligative"]}
 
+# if verbform=ambiguous, but verb has a PR child node -> delete all but agentive, perfect and obligative
+
+my.smi=/^VM/		d	SS,DS,present,future,potential,imperative,indirectpast,pastpotential,directpast		chunkparent.verbform=ambiguous && xpath{child::NODE[starts-with(@smi,"PR") or NODE[starts-with(@smi,"PR") ]]}
+
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 

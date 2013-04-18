@@ -2,8 +2,8 @@
 						
 use utf8;
 use strict;
-binmode STDIN, ':utf8';
-binmode STDOUT, ':utf8';
+#binmode STDIN, ':utf8';
+#binmode STDOUT, ':utf8';
 use XML::LibXML;
 require "util.pl";
 require "esde/outputGerman.pl";
