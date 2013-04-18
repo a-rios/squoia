@@ -718,6 +718,7 @@ a_suplicación_del a_suplicación_de SPCMS I
 a_súplica_de a_súplica_de SPS00 I
 a_súplica_del a_súplica_de SPCMS I
 a_sus_anchas a_sus_anchas RG I
+a_su_vez a_su_vez RG I
 a_tal_punto_que a_tal_punto_que CS I
 a_teja_vana a_teja_vana RG I
 atención_a_el_cliente atención_al_cliente NCFS000 I
@@ -1096,6 +1097,7 @@ con_el_sudor_de_la_frente con_el_sudor_de_la_frente RG I
 con_excepción_de con_excepción_de SPS00 I
 con_excepción_del con_excepción_de SPCMS I
 conexión_a_la_red conexión_a_la_red NCFS000 I
+con_fin_de_que con_fin_de_que CS I
 conferencia_episcopal conferencia_episcopal NCFS000 I
 conferencia_mundial conferencia_mundial NCFS000 I
 <conflicto>_<armar> conflicto_armado $1:NC I
@@ -1254,6 +1256,7 @@ dado_que dado_que CS I
 <dar>_carpetazo dar_carpetazo $1:VM I
 <dar>_cuenta dar_cuenta $1:VM I
 <dar>_de_alta dar_de_alta RG I
+<dar>_las_gracias dar_las_gracias $1:VM I
 <dar>_paso dar_paso $1:VM I
 <dar>_pie dar_pie $1:VM I
 <dato>_<bancario> dato_bancario $1:NC I
@@ -1556,6 +1559,8 @@ desarrollo_urbano desarrollo_urbano NCMS000 I
 <descarga>_<eléctrico> descarga_eléctrica $1:NC I
 desde_cero desde_cero RG I
 desde_el_momento_en_que desde_el_momento_en_que CS I
+desde_hace desde_hace SPS00 I
+desde_hacía desde_hace SPS00 I
 desde_luego desde_luego RG I
 desde_niño desde_niño RG I
 desde_que_el_mundo_es_mundo desde_que_el_mundo_es_mundo RG I
@@ -2682,6 +2687,7 @@ para_colmo para_colmo RG I
 para_dar_y_tomar para_dar_y_tomar RG I
 parálisis_<cerebral> parálisis_cerebral $1:NC I
 para_más_inri para_más_inri RG I
+para_que para_que CS I
 para_rato para_rato RG I
 para_remate para_remate RG I
 para_todo_trote para_todo_trote RG I
@@ -3118,6 +3124,7 @@ sino_que sino_que CC I
 sin_pena_ni_gloria sin_pena_ni_gloria RG I
 sin_perjuicio_de sin_perjuicio_de SPS00 I
 sin_perjuicio_del sin_perjuicio_de SPCMS I
+sin_que sin_que CS I
 sin_qué_ni_para_qué sin_qué_ni_para_qué RG I
 sin_ton_ni_son sin_ton_ni_son RG I
 sin_trastes sin_trastes RG I
