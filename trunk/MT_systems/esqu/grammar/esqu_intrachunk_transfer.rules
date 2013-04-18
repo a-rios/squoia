@@ -108,6 +108,10 @@ my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi		
 # construction 'ir a +Inf: insert +Fut in verbmi of chunk
 my.slem=ir && parent.smi=VMN0000		"+Fut"				my.type=/grup-verb|coor-v/			addverbmi			up 		concat
 
+# in verb chunks with verbform=ambiguous that contain a relative pronoun, all but obligative, perfect and agentive SYN nodes have been deleted
+# -> set verbform=rel
+my.smi=/^V/ && xpath{child::NODE[starts-with(@smi,"PR") or NODE[starts-with(@smi,"PR") ]]}		"rel:"		my.type=/grup-verb|coor-v/ && my.verbform=ambiguous		verbform	up	overwrite
+
 # relative clauses with 'donde' -> add Locative suffix
 # la casa donde vivía -> kawsasqaypi wasi
 my.slem=donde && my.smi=/^PR/				"+Loc"			my.verbform=/^rel:/				addverbmi			up		concat

@@ -291,6 +291,7 @@ a_favor_del a_favor_de SPCMS I
 a_fin_de a_fin_de SPS00 I
 a_fin_del a_fin_de SPCMS I
 a_fin_de_cuentas a_fin_de_cuentas RG I
+a_fin_de_que a_fin_de_que CS I
 a_fines_de a_fines_de SPS00 I
 a_fines_del a_fines_de SPCMS I
 a_flor_de_agua a_flor_de_agua RG I

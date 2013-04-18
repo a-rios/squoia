@@ -61,27 +61,35 @@ foreach my $sentence (@sentenceList)
  				{
  					$conjunction = @{$verbChunk->findnodes('child::NODE[@cpos="v"]/NODE[@pos="cs" or @pos="cc"]')}[0];
  				}
- 				if($conjunction){print STDERR "conj: ".$conjunction->toString();}
+ 				if($conjunction){print STDERR "conj in ".$verbChunk->getAttribute('ord').": ".$conjunction->toString();}
  				
  				# if this verb has a 'tener que' part or deber +inf -> obligative, TODO: hay que?
- 				if($verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || ($verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="tener"]') && $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="deber"]') )
+ 				if($verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || ($verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="tener"]') && $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="deber"]')  )
  				{
  					$nbrOfFinalClauses++;
  					$verbChunk->setAttribute('verbform', 'obligative');
  				}
  				# if this is hay/había/habrá que + infinitive -nan kan
- 				elsif($verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que"]') )
+ 				# note that parser can attach que to 'hay' but also to infinitive! 
+ 				elsif($verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que"]') || $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/NODE[@lem="que"]]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]'))
  				{
  					$nbrOfFiniteForms++;
  					$verbChunk->setAttribute('verbform','main');
  					#$verbChunk->setAttribute('delete','yes');
  					# get infintive of main verb and set this form to obligative
- 					my $infinitive = @{$verbChunk->findnodes('child::CHUNK[NODE[@mi="VMN0000"]/NODE[@lem="que"]][1]')}[0];
- 					if($infinitive)
+ 					my $infinitiveWithQUE = @{$verbChunk->findnodes('child::CHUNK[NODE[@mi="VMN0000"]/NODE[@lem="que"]][1]')}[0];
+ 					my $infinitiveWithoutQUE = @{$verbChunk->findnodes('child::CHUNK[NODE[@mi="VMN0000"]][1]')}[0];
+ 					if($infinitiveWithQUE)
  					{
  						$nbrOfFinalClauses++;
- 						$infinitive->setAttribute('verbform', 'obligative');
- 						$infinitive->setAttribute('addverbmi', '+3.Sg.Poss');
+ 						$infinitiveWithQUE->setAttribute('verbform', 'obligative');
+ 						$infinitiveWithQUE->setAttribute('addverbmi', '+3.Sg.Poss');
+ 					}
+ 					elsif($infinitiveWithoutQUE)
+ 					{
+ 						$nbrOfFinalClauses++;
+ 						$infinitiveWithoutQUE->setAttribute('verbform', 'obligative');
+ 						$infinitiveWithoutQUE->setAttribute('addverbmi', '+3.Sg.Poss');
  					}
  				}
  				# if this is a passive clause with 'ser'/'estar'
@@ -92,7 +100,7 @@ foreach my $sentence (@sentenceList)
  				# if this is a topicalization with 'ser' -> delete verb, but insert a topic marker
  				# -> es ahí donde viven -> kaypiQA kaswanku
  				elsif($verbChunk->exists('child::NODE[@lem="ser"]') && $verbChunk->findvalue('child::CHUNK[@type="sadv"]/NODE/@lem') =~ /ahí|allá|aquí/ && $verbChunk->exists('descendant::NODE[@lem="donde"]') )
- 				{print STDERR "hieeeeeeeeeer\n";
+ 				{
  					$verbChunk->setAttribute('delete', 'yes');
  					# set sadv chunkmi to +Top
  					my $sadv = @{$verbChunk->findnodes('child::CHUNK[NODE[@lem="ahí" or @lem="allá" or @lem="aquí"]][1]')}[0];
@@ -108,9 +116,8 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'main');
  				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /si|cuando|aunque|porque|con_tal_que/ && !$conjunction->getAttribute('lem') =~ /pero_cuando|y_cuando/)
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /si|^cuando$|aunque|porque|con_tal_que/ )
  				{
- 					
  					#check if same subject 
  					&compareSubjects($verbChunk);
  					if($conjunction->getAttribute('lem') =~ /porque|con_tal_que/ )
@@ -130,11 +137,15 @@ foreach my $sentence (@sentenceList)
  					}
  				}
  				# if this a subordinated clause with a finite verb (in Quechua)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|por_eso|ya_que|aun|aún|aun_no|aún_no/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|y_cuando|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|por_eso|ya_que|aun|aún|aun_no|aún_no/ )
  				{
  					$nbrOfFiniteForms;
  					$verbChunk->setAttribute('verbform', 'main');
- 					if($conjunction->getAttribute('lem') =~ /pero|empero/ )
+ 					if($conjunction->getAttribute('lem') eq 'pero_cuando' )
+ 					{
+ 						$verbChunk->setAttribute('conj', 'chaytaq');
+ 					}
+ 					elsif($conjunction->getAttribute('lem') =~ /pero|empero/ )
  					{
  						$verbChunk->setAttribute('conj', 'ichaqa');
  					}
@@ -202,7 +213,7 @@ foreach my $sentence (@sentenceList)
  				}
  				# if this is a final clause,  -na?
 				
-				elsif($conjunction && $conjunction->getAttribute('lem') =~ /con_fin_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
+				elsif($conjunction && $conjunction->getAttribute('lem') =~ /con_fin_de_que|a_fin_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
 				{
 					$nbrOfFinalClauses++;
 					$verbChunk->setAttribute('verbform', 'obligative');
@@ -230,7 +241,7 @@ foreach my $sentence (@sentenceList)
 # 					$verbChunk->setAttribute('verbform', 'SS');
 # 				}
  				# if this is a complement clause (-> nominal form), TODO: already ++Acc?
- 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]/descendant::NODE[@pos="cs"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
+ 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]/child::NODE[@pos="cs" and @lem="que" or NODE[@pos="cs" and @lem="que"]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
  				{
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
  					if($headVerbCHunk)
@@ -298,6 +309,36 @@ foreach my $sentence (@sentenceList)
  				{
  					$nbrOfFiniteForms++;
  					$verbChunk->setAttribute('verbform', 'main');
+ 				}
+ 				# if there is a grup-verb above, check if there's a finite verb in it, if not, this chunk is probably not the main verb, make this chunk finite
+ 				elsif($verbChunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]'))
+ 				{
+ 					my @parentVChunks = $verbChunk->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]');
+ 					my $finite =0;
+ 					foreach my $vchunk (@parentVChunks)
+ 					{
+ 						if(&getFiniteVerb($vchunk))
+ 						{
+ 							$finite=1;
+ 							last;
+ 						}
+ 					}
+ 					if(!$finite)
+ 					{
+ 						$nbrOfFiniteForms++;
+ 						$verbChunk->setAttribute('verbform', 'main');
+ 					}
+ 					else
+ 					{
+ 						$nbrOfAmbigousClauses++;
+						$verbChunk->setAttribute('verbform', 'ambiguous');	
+ 					}
+ 				}
+ 				# if still ambiguous: check if there's a coor-v parent with verbform set, if so, copy that
+ 				elsif($verbChunk->exists('parent::CHUNK[@type="coor-v"]/@verbform'))
+ 				{
+ 					my $verbform = $verbChunk->findvalue('parent::CHUNK[@type="coor-v"]/@verbform');
+ 					$verbChunk->setAttribute('verbform',$verbform);
  				}
 				else
 				{
@@ -446,7 +487,7 @@ sub isSubjunctive{
 	my $finiteVerb = &getFiniteVerb($verbChunk);
 	if($finiteVerb)
 	{
-		return substr($finiteVerb->getAttribute('mi'), 2, 1) eq 'S';
+		return substr($finiteVerb->getAttribute('mi'), 2, 1) =~ /S|M/;
 	}
 	else
 	{

@@ -116,7 +116,7 @@ while (<>)
 
 #my $docstring = $dom->toString(3);
 #print STDERR $docstring;
-#print "------------------------------------------------\n";
+#print STDERR "------------------------------------------------\n";
 
 ## adjust dependencies (word level), 
 my @sentences = $dom->getElementsByTagName('SENTENCE');
@@ -182,7 +182,7 @@ for(my $i = 0; $i < scalar(@sentences); $i++)
 			{
 				my $pos = $node->getAttribute('pos');
 			
-				if($pos =~ /d.|s.|p[^I]|c.|n./ && scalar(@nodes) > 4)
+				if($pos =~ /d.|s.|p[^I]|c.|n.|r.|F./ && scalar(@nodes) > 4)
 				{
 					&model2($sentence);
 					$model2 = 1;
@@ -210,6 +210,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	#my $chunkCount = 1;
 	my $parent;
 	my @nodes =  $sentence->getElementsByTagName('NODE');
+	my $nonewChunk = 0;
 	
 	for(my $i=0; $i<scalar(@nodes); $i++)
 	{ #print "\n ord chunk: $chunkCount\n";
@@ -234,7 +235,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			$parent = $sentence;
 		}
 		
-my $docstring = $dom->toString(3);
+#my $docstring = $dom->toString(3);
 #print STDERR $docstring;
 ####print STDERR  $node->toString;
 #print STDERR "\n---------------------------------\n";
@@ -591,6 +592,18 @@ my $docstring = $dom->toString(3);
 				 			}
 				 		}
 				 	}
+#					# if this is an infinitive with 'que' and head is 'tener' -> insert this verb into head chunk, as head of tener!
+#					# too complicated, let classifier handle this!
+#					elsif($node->exists('child::NODE[@lem="que"]') && $parent->exists('child::NODE[@lem="tener"]') )
+# 					{
+# 						my $tener = @{$parent->findnodes('child::NODE[@lem="tener"]')}[0];
+# 						if($tener)
+# 						{
+# 							parent->appendChild($node);
+# 							$node->appendChild($tener);
+# 							$nonewChunk=1;
+# 						}
+#	 				}
 				 	# if this verb is labeled as 'suj', but is local person -> change label to 'S'
 				 	elsif($node->getAttribute('rel') eq 'suj' && $node->getAttribute('mi') =~ /1|2/ )
 				 	{
@@ -615,17 +628,19 @@ my $docstring = $dom->toString(3);
 				 {
 				 	$verbchunk->setAttribute('si', $node->getAttribute('rel'));
 				 }
-				 $verbchunk->setAttribute('ord', $node->getAttribute('ord'));
+				 
 			
-				 #$node->removeAttribute('rel');
-				 $node->removeAttribute('head');
-				 $verbchunk->appendChild($node);
-				 if($snchunk)
-				 {
-				 	$verbchunk->appendChild($snchunk);
-				 }
-				 elsif($clitic2 && $clitic)
-				 {
+		    	$verbchunk->setAttribute('ord', $node->getAttribute('ord'));
+			
+				#$node->removeAttribute('rel');
+				$node->removeAttribute('head');
+				$verbchunk->appendChild($node);
+				if($snchunk)
+				{
+					$verbchunk->appendChild($snchunk);
+				}
+				elsif($clitic2 && $clitic)
+				{
 				 	$verbchunk->appendChild($clitic2->parentNode);
 		 			$verbchunk->appendChild($clitic->parentNode);
 				 }
@@ -703,10 +718,10 @@ my $docstring = $dom->toString(3);
 			elsif ($node->exists('self::NODE[starts-with(@mi,"SP")]'))
 			{
 				 #print STDERR "parent of prep: \n".$parent->toString."\n";
-				 #if head is an infinitive (para hacer, voy a hacer, de hacer etc)-> don't create a chunk, preposition just hangs below verb
-				 if($parent->exists('self::CHUNK/NODE[@mi="VMN0000" or @mi="VSN0000"]'))
+				 # if head is an infinitive (para hacer, voy a hacer, de hacer etc)-> don't create a chunk, preposition just hangs below verb
+				 # check if preposition precedes infinitive, otherwise make a chunk
+				 if($parent->exists('self::CHUNK/NODE[@mi="VMN0000" or @mi="VSN0000"]') && $parent->getAttribute('ord')> $node->getAttribute('ord'))
 				 {
-				 	
 				 }
 				 else
 				 {
