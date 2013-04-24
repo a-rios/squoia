@@ -732,7 +732,7 @@ sub getHeadNoun($;$){
 	}
 
 	#assure that head noun is above rel-clause (in cases of wrong analysis)
-	if(&isAncestor($relClause,$headNoun))
+	if($headNoun && &isAncestor($relClause,$headNoun))
 		{
 			undef($headNoun);
 		}

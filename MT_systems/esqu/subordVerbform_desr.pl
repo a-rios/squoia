@@ -242,6 +242,7 @@ foreach my $sentence (@sentenceList)
 # 				}
  				# if this is a complement clause (-> nominal form), TODO: already ++Acc?
  				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]/child::NODE[@pos="cs" and @lem="que" or NODE[@pos="cs" and @lem="que"]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
+ 				#elsif($verbChunk->exists('self::CHUNK[@si="cd"]/child::NODE[@pos="cs" and @lem="que" or NODE[@pos="cs" and @lem="que"]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
  				{
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
  					if($headVerbCHunk)
