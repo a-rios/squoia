@@ -58,11 +58,11 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 		{
 			my $firstverb = @{$verbchunk->findnodes('child::NODE[@pos="vm" or @pos="vs"][1]')}[-1];	
 			my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and @si="S"]/NODE[@pos="vm" or @pos="vs"]');
-			if(scalar(@coordVerbs)>0)
+			if($firstverb && scalar(@coordVerbs)>0)
 			{
 				@verbforms = ($firstverb, @coordVerbs);
 			}
-			else
+			elsif($firstverb)
 			{
 				push (@verbforms, $firstverb);
 			}
@@ -97,11 +97,11 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 		{
 			my $firstverb = @{$verbchunk->findnodes('child::NODE[@pos="vm" or @pos="vs"][1]')}[-1];	
 			my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and @si="S"]/NODE[@pos="vm" or @pos="vs"]');
-			if(scalar(@coordVerbs)>0)
+			if($firstverb && scalar(@coordVerbs)>0)
 			{
 				@verbforms = ($firstverb, @coordVerbs);
 			}
-			else
+			elsif($firstverb)
 			{
 				push (@verbforms, $firstverb);
 			}
@@ -581,11 +581,11 @@ sub setVerbform {
 		my @verbforms =();
 		my $firstverb = @{$verbchunk->findnodes('child::NODE[@pos="vm"][1]')}[-1];	
 		my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and @si="S"]/NODE[@pos="vm"]');
-		if(scalar(@coordVerbs)>0)
+		if($firstverb && scalar(@coordVerbs)>0)
 		{
 			@verbforms = ($firstverb, @coordVerbs);
 		}
-		else
+		elsif($firstverb)
 		{
 			push (@verbforms, $firstverb);
 		}
