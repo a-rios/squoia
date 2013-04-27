@@ -776,8 +776,8 @@ sub getMainVerb{
 		#get sentence id
 		my $sentenceID = $relClause->findvalue('ancestor::SENTENCE/@ord');
 		print STDERR "main verb not found in sentence nr. $sentenceID: \n ";
-		print $relClause->toString();
-		print "\n";
+		print STDERR $relClause->toString();
+		print STDERR "\n";
 	}
 }
 
