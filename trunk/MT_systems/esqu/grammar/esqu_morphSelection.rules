@@ -105,8 +105,8 @@ my.smi=/VMIF.../	k	obligative				chunkparent.verbform=rel:not.agentive
 my.smi=/VMIC.../	k	potential				chunkparent.verbform=main
 
 # subjuntivo imperfecto
-my.smi=/VMSI.../	k	potential				chunkparent.verbform=main && !(xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[@sem="[+speech]"]})
-my.smi=/VMSI.../	k	imperative				chunkparent.verbform=main && xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[@sem="[+speech]"]}
+my.smi=/VMSI.../	k	potential				chunkparent.verbform=main && !(xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]})
+my.smi=/VMSI.../	k	imperative				chunkparent.verbform=main && xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]}
 my.smi=/VMSI.../	k	perfect				 	chunkparent.verbform=perfect	 # complement clause
 my.smi=/VMSI.../	k	obligative				chunkparent.verbform=obligative
 
