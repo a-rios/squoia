@@ -20,13 +20,13 @@
 
 
 # how treat ambiguous cases (cd-a, cd/ci)? better generate both..?
-a	case=+Acc	chunkparent.si=cd || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(@sem="[ditrans]")]})	- 			# veo A Juan, JuanTA rikuni
-a	case=+Dat	chunkparent.si=ci || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[ditrans]"]})		+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
+a	case=+Acc	chunkparent.si=cd || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(contains(@sem,"ditrans"))]})	- 			# veo A Juan, JuanTA rikuni
+a	case=+Dat	chunkparent.si=ci || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"ditrans")]})		+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
 a	case=+Loc	xpath{child::CHUNK[@type="sn"]/NODE[@smi="W"]}	-	# hora: a las 4 de la tarde -> -pi
 a	adpos=none 		parent.smi=VMN0000			# voy a +infinitive
 
-al	case=+Acc	chunkparent.si=cd || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(@sem="[ditrans]")]})	- 			# veo A Juan, JuanTA rikuni
-al	case=+Dat	chunkparent.si=ci || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[ditrans]"]})		+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
+al	case=+Acc	chunkparent.si=cd || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(contains(@sem,"ditrans"))]})	- 			# veo A Juan, JuanTA rikuni
+al	case=+Dat	chunkparent.si=ci || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"ditrans")]})		+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
 
 acerca_de	func=topic	-	+ # TODO: really topic? 
 afuera_de	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+

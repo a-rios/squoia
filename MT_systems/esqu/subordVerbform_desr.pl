@@ -290,6 +290,46 @@ foreach my $sentence (@sentenceList)
  						}
  					}
  				}
+ 					# if this is a complement clause of a speech verb, no linker needed!
+ 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
+ 				{
+ 					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
+ 					if($headVerbCHunk)
+ 					{
+ 						my $headVerb = &getMainVerb($headVerbCHunk);
+ 						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
+ 						#if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|manifestar|mencionar|oficiar|opinar|proclamar|proponer|razonar|recalcar|revelar|responder|sostener|señalar|testificar|testimoniar/)
+ 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|manifestar|mencionar|oficiar|opinar|proclamar|proponer|razonar|recalcar|revelar|responder|sostener|señalar|testificar|testimoniar/)
+ 						{
+ 							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
+							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
+							# note: if compareSubjects gives 'switch', this means that both verbs are 3rd persons and have the same number, but at least
+							#  one of the clauses has no overt subject. It is safe to assume that in this case the subjects are coreferential with a say verb in the main clause
+							&compareSubjects($verbChunk);
+							#print $verbChunk->toString."\n";
+							if(($verbChunk->getAttribute('verbform') eq 'SS' || $verbChunk->getAttribute('verbform') eq 'switch') && &isSingular($verbChunk))
+							{
+								$verbChunk->setAttribute('verbprs', '+1.Sg.Subj')
+							}
+							elsif($verbChunk->getAttribute('verbform') eq 'SS' && !&isSingular($verbChunk))
+							{
+								$verbChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
+							}
+							# set both this verb and the head verb to 'main'
+							$verbChunk->setAttribute('verbform', 'main');
+							$headVerbCHunk->setAttribute('lem1', 'ni');
+							$headVerbCHunk->setAttribute('verbmi1', '+SS');
+							$nbrOfFiniteForms++;
+							$nbrOfSwitchForms--;
+							
+ 						}
+ 						else
+ 						{
+ 							$nbrOfAmbigousClauses++;
+							$verbChunk->setAttribute('verbform', 'ambiguous');
+ 						}
+ 					}
+ 				}
 				# special case: hace falta que + subjuntivo -> 'hace falta que' -> kan, subj.-verb: +-na 
 				# hace falta que te vayas -> ripunayki kan
 				# also: hace falta comprar pan -> t'anta rantinan kan
