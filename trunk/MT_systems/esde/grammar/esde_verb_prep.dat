@@ -1,0 +1,43 @@
+# 1		2	3		4	5
+# ESverb	ESprep	DEverb		DEprep	DEcas
+
+advertir	de	hin|weisen	auf	Akk
+advertir	de	warnen		vor	Dat
+basar		en	beruhen		auf	Dat
+consistir	en	beruhen		auf	Dat
+consistir	en	beruhen		in	Dat
+consistir	en	bestehen	in	Dat
+consistir	en	bestehen	aus	Dat
+consistir	en	handeln		um	Akk
+consistir	en	sich_handeln	um	Akk
+insistir	en	bestehen	auf	Akk
+insistir	en	beharren	auf	Akk
+insistir	en	drängen		auf	Akk
+insistir	en	insistieren	auf	Akk
+pensar		en	denken		an	Akk
+pensar		en	nach|denken	über	Akk
+prescindir	de	ab|sehen	von	Dat
+prescindir	de	verzichten	auf	Akk
+prevenir	de	warnen		vor	Dat
+renegar		de	los|sagen	von	Dat
+# esde_prep.dat:
+# soñar con => traeumen von
+#con		cas=Dat,lem=von		xpath{self::NODE[parent::CHUNK[@si="creg" and parent::CHUNK[NODE[@slem="soñar"]]]]}	-
+#con		cas=Dat,lem=von		xpath{self::NODE[parent::CHUNK[@si="s" and @type="PP" and parent::CHUNK[@si="creg" and parent::CHUNK[NODE[@slem="soñar"]]]]]}	-
+soñar		con	träumen		von	Dat
+
+acusar		de	an|klagen	-	Gen
+acusar		de	beschuldigen	-	Gen
+acusar		de	bezichtigen	-	Gen
+insistir	en	betonen		-	Akk
+renegar		de	ab|schwören	-	Dat
+renegar		de	verfluchen	-	Akk
+
+#buscar		-	suchen		-	Akk	# TODO: generate both variants?
+buscar		-	suchen		nach	Dat
+#esperar	-	erwarten	-	Akk
+esperar		-	warten		auf	Akk
+#esperar	-	erhoffen	-	Akk
+esperar		-	hoffen		auf	Akk
+
+
