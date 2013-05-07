@@ -12,3 +12,9 @@ my.si=top			Akk			my.type=NP&&my.si=cc		cas			down		overwrite
 
 # NP with flex: pass the info down to the AP
 #my.type=AP			flex			my.type=NP&&my.flex=/./		flex			down		no-overwrite
+
+##Pronouns/Clitics
+# ES reflexive verbs => DE irreflexive verbs: delete reflexive pronoun
+#my.type=/NP/&child.pos=/PRF/	delete			my.type=/VP/&child.irrefl=yes	yes			down		overwrite
+my.type=/NP/	delete			my.type=/VP/	yes			down		overwrite
+

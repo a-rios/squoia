@@ -26,3 +26,7 @@ my.type=AP			flex			my.type=NP&&my.flex=/./		flex			parent		2to1		no-overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 
+##Pronouns/Clitics
+# ES reflexive verbs => DE irreflexive verbs: delete reflexive pronoun
+xpath{//CHUNK[@type="NP" and NODE[@pos="PRF"]]}		delete		xpath{//CHUNK[@type="VP" and NODE[@irrefl="yes"]]}	yes	parent		2to1		overwrite
+

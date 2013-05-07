@@ -92,7 +92,7 @@ xpath{//CHUNK[@type="PP"]/CHUNK[@type="VP" and @si="S"]/descendant::NODE[starts-
 
 ##Pronouns/Clitics
 # ES reflexive verbs => DE irreflexive verbs: delete reflexive pronoun
-my.pos=/PRF/		delete		my.pos=/VV/&&my.irrefl=yes		yes		down		overwrite
+my.pos=/PRF/		delete		xpath{//CHUNK[@type="VP" and NODE[@irrefl="yes"]]/CHUNK[@type="NP"]}	yes		down		overwrite
 
 # pronoun directly dependent of the verb (clitic) TODO: with 3rd person or separate?
 # case of the 1st/2nd person pronoun clitic form is ambiguous, depends also on the verb: direct object "te veo" vs indirect "te doy algo"

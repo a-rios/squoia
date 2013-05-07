@@ -16,9 +16,10 @@ como	da		chunkparent.si=/S-sub/		-
 # Pronouns
 # reflexive or irreflexive personal pronouns
 #irreflexive
-me	ich		!(xpath{//NODE[starts-with(@smi,"PP1CS") and parent::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Sg")]]]})
+#me	ich		!(xpath{//NODE[starts-with(@smi,"PP1CS") and parent::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Sg")]]]})
+me	ich		!(xpath{//NODE[starts-with(@smi,"PP1CS") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Sg")]]]]})
 #reflexive
-me	ich_PRF		xpath{//NODE[starts-with(@smi,"PP1CS") and parent::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Sg")]]]}
+me	ich_PRF		xpath{//NODE[starts-with(@smi,"PP1CS") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Sg")]]]]}
 #irreflexive
 te	du		xpath{//NODE[starts-with(@smi,"PP2CS") and parent::NODE[starts-with(@pos,"VV") and count(descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"2.Sg")])=0]]}
 #reflexive
@@ -106,18 +107,37 @@ acabar	haben_soeben	parent.smi=/VMN/&&rsibling.slem=de		prob=0.7
 # casar [transitiv,irreflexiv] = vermaehlen/trauen/verheiraten: "el cura casa a la pareja" => "der Pfarrer traut das Paar"
 # casarse [reflexiv] = heiraten [irreflexiv]/sich vermaehlen : "se casaron por lo civil" => "sie heirateten standesamtlich"
 # caution! depends on the previous identification of reflexiv pronouns
-casar	trauen		xpath{//NODE[starts-with(@pos,"VV") and count(NODE[@pos="PRF"])=0]}	prob=0.2
-casar	heiraten	xpath{//NODE[@slem="casar" and ( (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"1.Sg")] and count(NODE[starts-with(@smi,"PP1CS")])=1) or (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"1.Pl")] and count(NODE[starts-with(@smi,"PP1CP")])=1) or (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"2.Sg")] and count(NODE[starts-with(@smi,"PP2CS")])=1) or (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"2.Pl")] and count(NODE[starts-with(@smi,"PP2CP")])=1) or (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"3")] and count(NODE[@slem="se"])=1) )]}	prob=0.8
+casar	trauen		xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=0]}	-
+casar	heiraten	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=1]}
+#casar	heiraten	xpath{//NODE[@slem="casar" and ( (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"1.Sg")] and count(NODE[starts-with(@smi,"PP1CS")])=1) or (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"1.Pl")] and count(NODE[starts-with(@smi,"PP1CP")])=1) or (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"2.Sg")] and count(NODE[starts-with(@smi,"PP2CS")])=1) or (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"2.Pl")] and count(NODE[starts-with(@smi,"PP2CP")])=1) or (descendant-or-self::NODE[contains(@pos,"FIN") and starts-with(@mi,"3")] and count(NODE[@slem="se"])=1) )]}	prob=0.8
 
 # colgar = hängen: "la imagen cuelga en la pared" => "das Bild hängt an der Wand"
 # colgar algo = etwas aufhängen: "cuelgo el cuadro a la pared" => "ich hänge das Bild an die Wand"
 colgar	auf|hängen	chunkparent.chunkchild.smi=/dobj/	prob=0.6
 colgar	hängen		chunkparent.type=/VP/			prob=0.4
 
+# despertarse = auf|wachen
+# despertar = wecken, erwecken, auf|wecken
+despertar	wecken		xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=0]}
+despertar	erwecken	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=0]}
+despertar	auf|wecken	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=0]}
+despertar	auf|wachen	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=1]}
+
 # disminuir = ab|nehmen: "la lluvia disminuye" => "der Regen nimmt ab"
 # disminuir algo = etwas verringern: "el calor disminuye los rendimientos" => "die Hitze verringert die Ertraege"
 disminuir	verringern	chunkparent.chunkchild.smi=/dobj/	prob=0.6
 disminuir	ab|nehmen	chunkparent.type=/VP/			prob=0.4
+
+# insistir = insistieren, nach|haken: "insistieron" => "sie insistierten"
+# insistir en algo = auf etwas(Dat) insistieren, draengen, beharren, bestehen; etwas betonen: "insistieron en el problema" => "sie beharrten auf dem Problem"
+insistir	insistieren	chunkparent.chunkchild.smi=/dobj/	prob=0.6
+# intransitiv
+insistir	insistieren	chunkparent.type=/VP/			prob=0.4
+
+# levantar = heben
+# levantarse = auf|stehen
+levantar	heben		xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=0]}
+levantar	auf|stehen	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=1]}
 
 # llegar a + place = ankommen; erreichen: "llega al aeropuerto" => "er kommt an den Flughafen an"; "er erreicht den Flughafen"
 # llegar a + inf = schaffen: "llega a hacer algo" => "er schafft es, etwas zu machen"
