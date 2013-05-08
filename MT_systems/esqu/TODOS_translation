@@ -6,53 +6,64 @@ TODOS translation:
 - estar as vm: better translate as ka-chka- instead of ka-?
 - relative clauses with 'donde', como traducir? la casa donde jugaron... pukllasqa(pi) wasi?
 - relative clauses with 'cuyo/a'?
+- check missing verb forms involving 2 participants (missing in grammar books)
 
-- IMPORTANT: split sentences at ';', otherwise parser does really weird things!!!
-- sentences with mientras, mientras que -> parser doesn't get a single one of them right, correct in conll2xml
-  -> resolve mientras/mientras que -> -na -kama
-- IMPORTANT: combinations of CS & CC -> treat as CC (?), in locutions -> e.g. pero cuando
-- check ALL locutions in locutions_laura.dat for translations!
-- topicalized nouns with relative clauses: fueron ellos quienes dejaron,
-- lo que hacemos es... lo que encontramos es...
-( - modalverb + infinitive -> sometimes, parser labels modal as 'v' -> both verbs in one chunk)
-- relative clauses with hay que -> obligative (las inercias que hay que combatir -> obl in all tenses)
-- nouns with possessive suffixes, (llapa, kiki..)
+- IMPORTANT: split sentences at ';', otherwise parser does weird things!!!
 - distributive -nka
 - numbers and dates -> horas (months ok)
 - participles vs. adjectives: e.g. adinerado
   -> add paradigm Noun to all Particple-N/V forms
   -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong)
-- según dice(n)
 - dueño/propietario de -> yuq
 - permanecer +Adj -> Adj-raya- 
 - 1pl.incl vs. excl -> check for pronouns/possessive suffixes
+  -> eliminate impossible combinations, e.g.:
+    - 1.pl + imperative -> must be excl, cannot be incl
+    - 2. > 1.pl. -> must be excl, cannot be incl
 - if denominado + proper name: delete denominado, otherwise 'nisqa' is doubled
   denominado+Dim palcayoc ni:VRoot+Perf
-- en_cuanto_a -> +Top
-- En cuanto + finite verb (as soon as)
-- empezar/ponerse a hacer -> -ri, llegar a hacer -> 
-- más o menos -> hina hinalla
-- convertirse EN -> tuky ..-MAN
-- direct speech in Spanish: don't compare subject with main clause, translate 'as is' to Quechua!! 
-- de igual manera -> parser messes that up -> add to locutions
-- encontrarse en el sentido de estar -> 'ka-', no 'tinku-'
-- IMPORTANT: subj in nominal clause -> genitive!
-- evidential 'dice(n) que' in Andean Spanish -> don't treat as direct speech!
-- write rules in morph-disamb: ambiguous verb chunk that contains rel. pronoun: delete all finite forms
-- siendo -kaspa en 'siendo la más extendida el quechua sureño.'
-- tener años
-- dar_miedo -> locutions
-- haber de + infinitive
-- el hecho de que + subjuntivo
-
-- enfrentarse contra -> maqanaku- -wan
-- if verb chunk contains only participle: use -sqa form
+  
+- evidential 'dice(n) que' in Andean Spanish -> don't treat as direct speech! also: según dice(n)
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
 
+LEXICON:
+- encontrarse en el sentido de estar -> 'ka-', no 'tinku-'
+- más o menos -> hina hinalla
+
+SUBORDINATED CLAUSES:
+- el hecho de que + subjuntivo
+- if verb chunk contains only participle: use -sqa form
+- siendo -kaspa en 'siendo la más extendida el quechua sureño.'
+- IMPORTANT: subj in nominal clause -> genitive!
+- En cuanto + finite verb (as soon as)
+- sentences with mientras, mientras que -> parser doesn't get a single one of them right, correct in conll2xml
+  -> resolve mientras/mientras que -> -na -kama
+- relative clauses with hay que -> obligative (las inercias que hay que combatir -> obl in all tenses)
+- direct speech in Spanish: don't compare subject with main clause, translate 'as is' to Quechua!! 
+
+CONSTRUCTIONS WITH INFINITIVE:
+- empezar/ponerse a hacer -> -ri, llegar a hacer -> 
+- haber de + infinitive
+
+TOPIC/FOCUS:
+- topicalized nouns with relative clauses: fueron ellos quienes dejaron,
+- lo que hacemos es... lo que encontramos es...
+- en_cuanto_a -> +Top
+
+PREP-OBJECTS:
+- convertirse EN -> tuky ..-MAN
+- enfrentarse contra -> maqanaku- -wan
+
+LOCUTIONS:
+- tener años
+- dar_miedo -> locutions
+- check ALL locutions in locutions_laura.dat for translations!
+- de igual manera -> parser messes that up -> add to locutions
+
 GENERATION;
 - restore upper case
-- verbal forms involving 2 persons
+
 
 --------------------------------------------------------------------------------------------------------------------------
 ( done - hace tiempo, atm: pacha ruran -> changed to ñawpaq pacha/ unay pacha or something like that)
@@ -70,6 +81,9 @@ GENERATION;
 ( done - getSentencesForGeneration -> join strings together  -> strip ',' and '++' -> reordering of suffixes! )
 ( done - interjections in own chunk? )
 ( done - es ahi donde queda -> generate only rel-clause (finite), delete head, add +Top to cc)
-
-
+( done - nouns with possessive suffixes, (llapa, kiki..) )
+( done - write rules in morph-disamb: ambiguous verb chunk that contains rel. pronoun: delete all finite forms)
+( done - GENERATION: verbal forms involving 2 persons)
+( (un)done - IMPORTANT: combinations of CS & CC -> treat as CC (?), in locutions -> e.g. pero cuando)
+( done - modalverb + infinitive -> sometimes, parser labels modal as 'v' -> both verbs in one chunk)
 ( done - change tag for nya to VCont)
