@@ -5,7 +5,7 @@ define Cleanup [ [ "[" ] ?* "]" @> 0 ] ;
 
 
 #Vowels and Consonants
-define Voc [a|i|u];
+define Voc [a|i|u|o|e];
 define Cons [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|'|’];
 
 # symbols that may ocurr in a root (note that the root might be Spanish or something else, if it couldn't be translated!)
@@ -114,9 +114,9 @@ define PHON [KACHA .o. KACHA2 .o. YKU .o. YKU2 .o. RQU .o. RQU2 .o. KU .o. KU2 .
 
    ###################################################
 
-       #-----------------#
-       # Verbale Flexion #
-       #-----------------#     
+       #-------------------#
+       # Verbal Inflection #
+       #-------------------#     
 
        #-----------------------------------------------------------------------#
        # spezielle Past-Formen der 3.Person                                    #
@@ -127,133 +127,115 @@ define PHON [KACHA .o. KACHA2 .o. YKU .o. YKU2 .o. RQU .o. RQU2 .o. KU .o. KU2 .
            define 3PLPST [ "+3.Pl.Subj" -> {ku} || PST _ ];
            define PAST [3SGPST .o. 3PLPST];
 
-       #-------------------------#
-       # Portmanteau Futurformen #
-       # 1.Sg -> -waq            #
-       # 2.Sg -> -nki            #
-       # 3.Sg -> -nqa            #
-       # 1.Pl.incl -> -sun       #
-       # 1.Pl.excl -> -saqku     #
-       # 2.Pl -> nkichis         #
-       # 3.Pl -> nqaku           #
-       #-------------------------#
-           define FUT ["+Fut"];
-           define 1SGFUT ["+1.Sg.Subj" -> {saq} || FUT _];
-           define 3SGFUT ["+3.Sg.Subj" -> {nqa} || FUT _];
-           define 1PLincFUT ["+1.Pl.Incl.Subj" -> {sun} || FUT _];
-           define 1PLexcFUT ["+1.Pl.Excl.Subj" -> {saqku} || FUT _];
-           define 3PLFUT ["+3.Pl.Subj" -> {nqaku} || FUT _];
-           define FUT1 ["+Fut" -> ""];
-           define FUTUR [1SGFUT .o. 3SGFUT .o. 1PLincFUT .o. 1PLexcFUT .o. 3PLFUT ];
-
-       #--------------------------------------------#
-       # Portmanteau Potentialformen:               #
-       # 1.Sg + Pot -> y-man (nicht -ni-man)        #
-       # 1.Pl.Excl + Pot -> y-man-ku (nicht ykuman) #
-       # 3.Pl + Pot -> nmanku (nicht -nku-man)      #
-       #--------------------------------------------#
-           define POT ["+Pot"];
-           define 1SGPOT ["+1.Sg.Subj" -> {y} || _ POT ];
-           define 1PLexcPOT ["+1.Pl.Excl.Subj" -> {ymanku} || _ POT ];
-           define 3PLPOT ["+3.Pl.Subj" -> {nmanku} || _ POT ]; 
-           define POT2 [ "+Pot" -> {man} || ~$[{nmanku}|{ymanku}] _ ];
-           define POT3 [ "+Pot" -> "" || [{nmanku}|{ymanku}] _ ];
-           define POTENTIAL [1SGPOT .o. 1PLexcPOT .o. 3PLPOT];
-
-       #------------------------------#
-       # Portmanteau Imperativformen: #
-       # 2.Sg -> -y                   #
-       # 3.Sg -> -chun                #
-       # 1.Pl.Incl -> -sun            #
-       # 2.Pl -> -ychis               #
-       # 3.Pl -> -chunku              #
-       #------------------------------#
-           define IMP ["+Imp"];
-           define 2SGIMP ["+2.Sg.Subj" -> y || _ IMP];
-           define 3SGIMP ["+3.Sg.Subj" -> {chun} || _ IMP];
-           define 1PLincIMP ["+1.Pl.Incl.Subj" -> {sun} || _ IMP];
-           define 2PLIMP ["+2.Pl.Subj" -> {ychik} || _ IMP];
-           define 3PLIMP ["+3.Pl.Subj" -> {chunku} || _ IMP];
-           define IMP1 ["+Imp" -> ""];
-           define IMPERATIV [2SGIMP .o. 3SGIMP .o. 1PLincIMP .o. 2PLIMP .o. 3PLIMP];
-
-define TEMPMOD [PAST .o. POTENTIAL .o. FUTUR .o. IMPERATIV];
-define TEMPMODdefault [POT3 .o. POT2 .o. FUT1 .o. IMP1];
-
-       #-----------------------------------------#
-       # Portmanteausuffixe mit 2 Partizipanten: #
-       #-----------------------------------------#
-           define 1SGOBJ ["+1.Sg.Obj"];
-           define 1SGSUB ["+1.Sg.Subj"];
-           define 2SGOBJ ["+2.Sg.Obj"];
-           define 2SGSUB ["+2.Sg.Subj"];
-           define 1PLexcOBJ ["+1.Pl.Excl.Obj"];
-           define 1PLexcSUB ["+1.Pl.Excl.Subj"];
-           define 1PLincOBJ ["+1.Pl.Incl.Obj"];
-           define 3SG ["+3.Sg.Subj"];
-           define 3PL ["+3.Pl.Subj"];
+       #---------------------------------------------------#
+       # forms with 2 participants (only irregular forms): #
+       #---------------------------------------------------#
+           
        #--------------------------------------#
        # 1.Sg > 2.Sg -> -yki                  #
-       # 1.Sg > 2.Sg & Fut -> -sqayki         #
        #--------------------------------------#
-           define 1SGon2SG ["+2.Sg.Obj" -> "++" || _ $[1SGSUB]] .o. ["+Fut" -> {sqa}, "+1.Sg.Subj" -> {yki} || $["++"] _] .o. ["++" -> "" ];
+           define 1SGon2SGprs ["+2.Sg.Obj" -> "++" || _ $["+1.Sg.Subj"]] .o. [ "+1.Sg.Subj" -> {yki} || $["++"] _] .o. ["++" -> "" ];
+           define 1SGon2SGfut ["+2.Sg.Obj" -> "++" || _ $["+1.Sg.Subj.Fut"]] .o. [ "+1.Sg.Subj.Fut" -> {sqayki} || $["++"] _] .o. ["++" -> "" ];
+           define 1SGon2SGpot ["+2.Sg.Obj" -> "++" || _ $["+1.Sg.Subj.Pot"]] .o. [ "+1.Sg.Subj.Pot" -> {ykiman} || $["++"] _] .o. ["++" -> "" ];
+           define 1SGon2SG [1SGon2SGfut .o. 1SGon2SGpot .o. 1SGon2SGprs  ];
 
        #--------------------------------------#
        # 1.Sg > 2.Pl -> -ykichis              #
-       # 1.Sg > 2.Pl & Fut-> -sqaykichis      #
        #--------------------------------------#
-           define 1SGon2PL ["+2.Pl.Obj" -> "++" || _  $[1SGSUB]] .o. ["+Fut" -> {sqa} ,"+1.Sg.Subj" -> {ykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1SGon2PLprs ["+2.Pl.Obj" -> "++" || _  $["+1.Sg.Subj"]] .o. ["+1.Sg.Subj" -> {ykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1SGon2PLfut ["+2.Pl.Obj" -> "++" || _  $["+1.Sg.Subj.Fut"]] .o. ["+1.Sg.Subj.Fut" -> {sqaykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1SGon2PLpot ["+2.Pl.Obj" -> "++" || _  $["+1.Sg.Subj.Pot"]] .o. ["+1.Sg.Subj.Pot" -> {ykichikman} || $["++"] _ ] .o. ["++" -> ""];
+           define 1SGon2PL [1SGon2PLprs .o. 1SGon2PLfut .o. 1SGon2PLpot];
 
        #--------------------------------------#
        # 1.Pl.Excl > 2.Sg  -> -ykiku          #
-       # 1.Pl.Excl > 2.Sg & Fut -> -sqaykiku  #
        #--------------------------------------#
-           define 1PLon2SG ["+2.Sg.Obj" -> "++", "+2.Pl.Obj" -> "++" || _  $[1PLexcSUB]] .o. ["+Fut" -> {sqa},"+1.Pl.Excl.Subj" -> {ykiku} || $["++"] _ ] .o. ["++" -> ""];
-   define 1on2 [1SGon2SG .o. 1SGon2PL .o. 1PLon2SG];
+           define 1PLon2SGprs ["+2.Sg.Obj" -> "++" || _  $["+1.Pl.Excl.Subj"]] .o. ["+1.Pl.Excl.Subj" -> {ykiku} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2SGfut ["+2.Sg.Obj" -> "++" || _  $["+1.Pl.Excl.Subj.Fut"]] .o. ["+1.Pl.Excl.Subj.Fut" -> {sqaykiku} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2SGpot ["+2.Sg.Obj" -> "++" || _  $["+1.Pl.Excl.Subj.Pot"]] .o. ["+1.Pl.Excl.Subj.Pot" -> {ykikuman} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2SG [1PLon2SGprs .o. 1PLon2SGfut .o. 1PLon2SGpot];
+ 
+       #-------------------------------------------------#
+       # 1.Pl.Excl > 2.Pl  -> -ykichik    TODO: check !! #
+       #-------------------------------------------------#  
+           define 1PLon2PLprs ["+2.Pl.Obj" -> "++" || _  $["+1.Pl.Excl.Subj"]] .o. ["+1.Pl.Excl.Subj" -> {ykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2PLfut ["+2.Pl.Obj" -> "++" || _  $["+1.Pl.Excl.Subj.Fut"]] .o. ["+1.Pl.Excl.Subj.Fut" -> {sqaykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2PLpot ["+2.Pl.Obj" -> "++" || _  $["+1.Pl.Excl.Subj.Pot"]] .o. ["+1.Pl.Excl.Subj.Pot" -> {ykichikman} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2PL [1PLon2PLprs .o. 1PLon2PLfut .o. 1PLon2PLpot];
+   define 1on2 [1SGon2SG .o. 1SGon2PL .o. 1PLon2SG .o. 1PLon2PL];
 
        #--------------------------------------#
        # 2.Sg > 1.Pl.Excl -> -wankiku         #
        # 2.Sg > 1.Pl.Excl & Imp -> -wayku     #
        #--------------------------------------#
-           define 2SGon1PLexcIMP ["+2.Sg.Subj" -> {yku} || $["+1.Pl.Excl.Obj"] _  $["+Imp"]];
-           define 2SGon1PLexc ["+2.Sg.Subj" -> {nkiku} || $["+1.Pl.Excl.Obj"] _  ~$["+Imp"]];
-   define 2on1 [2SGon1PLexcIMP .o. 2SGon1PLexc];
+           define 2SGon1PLexc ["+2.Sg.Subj" -> {nkiku} || $["+1.Pl.Excl.Obj"] _  ];
+           define 2SGon1PLexcImp ["+2.Sg.Subj.Imp" -> {yku} || $["+1.Pl.Excl.Obj"] _  ];
+           define 2SGon1PLexcFut ["+2.Sg.Subj.Fut" -> {nkiku} || $["+1.Pl.Excl.Obj"] _  ];
+           define 2SGon1PLexcPot ["+2.Sg.Subj.Pot" -> {nkikuman} || $["+1.Pl.Excl.Obj"] _  ];
+           
+   define 2on1 [ 2SGon1PLexc .o. 2SGon1PLexcImp .o. 2SGon1PLexcFut .o. 2SGon1PLexcPot];
 
        #--------------------------------------#
-       # 3. > 2.Sg -> -sunki                  #
-       # 3. > 2.Pl -> -sunkichis              #
+       # 3.Sg > 2.Sg -> -sunki                #
+       # 3.Sg > 2.Pl -> -sunkichik            #
+       # 3.Pl > 2.Sg -> -sunkiku	      #
+       # 3.Pl > 2.Pl -> -sunkichik ?? TODO: check #
        #--------------------------------------#
-           define 3on2SG ["+3.Sg.Subj" -> {nki} , "+3.Pl.Subj" -> {nki} || $["+2.Sg.Obj"] _ ];
-           define 3on2PL ["+3.Sg.Subj" -> {nkichik} , "+3.Pl.Subj" -> {nkichik} || $["+2.Pl.Obj"] _ ];
-   define 3on2 [3on2SG .o. 3on2PL];
+       
+           define 3SGon2SG ["+3.Sg.Subj" -> {nki} || $["+2.Sg.Obj"] _ ];
+           define 3SGon2SGfut ["+3.Sg.Subj.Fut" -> {nki}  || $["+2.Sg.Obj"] _ ];          
+           define 3SGon2SGpot ["+3.Sg.Subj.Pot" -> {nkiman}  || $["+2.Sg.Obj"] _ ];
+           
+           define 3SGon2PL ["+3.Sg.Subj" -> {nkichik} || $["+2.Pl.Obj"] _ ];
+           define 3SGon2PLfut ["+3.Sg.Subj.Fut" -> {nkichik}  || $["+2.Pl.Obj"] _ ];
+           define 3SGon2PLpot ["+3.Sg.Subj.Pot" -> {nkichikman}  || $["+2.Pl.Obj"] _ ];
+           
+           define 3PLon2SG ["+3.Pl.Subj" -> {nkiku} || $["+2.Sg.Obj"] _ ];
+           define 3PLon2SGfut ["+3.Pl.Subj.Fut" -> {nkiku}  || $["+2.Sg.Obj"] _ ];          
+           define 3PLon2SGpot ["+3.Pl.Subj.Pot" -> {nkikuman}  || $["+2.Sg.Obj"] _ ];
+           
+           define 3PLon2PL ["+3.Pl.Subj" -> {nkichik} || $["+2.Pl.Obj"] _ ];
+           define 3PLon2PLfut ["+3.Pl.Subj.Fut" -> {nkichik}  || $["+2.Pl.Obj"] _ ];
+           define 3PLon2PLpot ["+3.Pl.Subj.Pot" -> {nkichikman}  || $["+2.Pl.Obj"] _ ];
+           
+   define 3on2 [3SGon2SG .o. 3SGon2SGfut .o. 3SGon2SGpot .o. 3SGon2PL .o. 3SGon2PLfut .o. 3SGon2PLpot .o. 3PLon2SG .o. 3PLon2SGfut .o. 3PLon2SGpot .o. 3PLon2PL .o. 3PLon2PLfut .o. 3PLon2PLpot];
 
-       #---------------------------------------------------#
-       # 3. > 1.Pl.Incl & Fut -> -wasun                    #
-       # 3 > 1.Pl.Incl -> -wanchik                         #
-       # 3.Sg > 1.Pl.Excl -> -wanku (nicht -wan)           #
-       # 3.Sg > 1.Pl.Excl & Fut -> -wanqaku (nicht -wanqa) #
-       # 3.Pl > 1.Sg -> -wan (nicht -wanku)                #
-       # 3.Pl > 1.Sg & Fut -> -wanqa (nicht -wanqaku)      #
-       #---------------------------------------------------#
-           define 3on1PLincFUT["+3.Sg.Subj" -> {sun} , "+3.Pl.Subj" -> {sun} || $[1PLincOBJ] & $[FUT] _ ];
-           define 3on1PLinc["+3.Sg.Subj" -> {nchik} , "+3.Pl.Subj" -> {nchik} || $[1PLincOBJ] & ~$[FUT] _ ];
-           define 3SGon1PLexcFUT["+3.Sg.Subj" -> {nqaku} || $[1PLexcOBJ] & $[FUT] _ ];
-           define 3SGon1PLexc["+3.Sg.Subj" -> {nku} || $[1PLexcOBJ] & ~$[FUT] _ ];
-           define 3PLon1SGFUT["+3.Pl.Subj" -> {nqa} || $[1SGOBJ] & $[FUT] _ ];
-           define 3PLon1SG["+3.Pl.Subj" -> {n} || $[1SGOBJ] & ~$[FUT] _ ];
-   define 3on1 [3on1PLincFUT.o. 3on1PLinc .o. 3SGon1PLexcFUT .o. 3SGon1PLexc .o. 3PLon1SGFUT .o. 3PLon1SG];   
+       #-----------------------------------------------------#
+       # 3.Sg/Pl > 1.Pl.Incl > -wa -nchik                    #
+       # 3.Sg/Pl > 1.Pl.Incl & Fut -> -wa -sun               #
+       # 3.Sg/Pl > 1.Pl.Incl & Pot -> -wa -sunman (-chwan)   #
+       # 3.Sg/Pl > 1.Pl.Excl > -wa -nku                      #
+       # 3.Sg/Pl > 1.Pl.Excl & Fut-> -wa -nqaku              #
+       # 3.Sg/Pl > 1.Pl.Excl & Pott-> -wa -nkuman ?? TODO: check !!  #
+       # 3.Pl > 1.Sg -> -wa -n (not -wanku)                  #
+       # 3.Pl > 1.Sg & Fut -> -wa -nqa (not -wanqaku)        #
+       # 3.Pl > 1.Sg & Pot -> -wa -nkuman                    #
+       #-----------------------------------------------------#
+           define 3on1PLinc    ["+3.Sg.Subj" -> {nchik} , "+3.Pl.Subj" -> {nchik} || $["+1.Pl.Incl.Obj"] _ ];
+           define 3on1PLincFUT ["+3.Sg.Subj.Fut" -> {sun} , "+3.Pl.Subj.Fut" -> {sun}  || $["+1.Pl.Incl.Obj"] _ ];
+           define 3on1PLincPOT ["+3.Sg.Subj.Pot" -> {sunman} , "+3.Pl.Subj.Pot" -> {sunman}  || $["+1.Pl.Incl.Obj"] _ ];
+           
+           define 3SGon1PLexc    ["+3.Sg.Subj" -> {nku} , "+3.Pl.Subj" -> {nku} || $["+1.Pl.Excl.Obj"]  _ ];
+           define 3SGon1PLexcFUT ["+3.Sg.Subj.Fut" -> {nqaku} , "+3.Pl.Subj.Fut" -> {nqaku} || $["+1.Pl.Excl.Obj"]  _ ];
+           define 3SGon1PLexcPOT ["+3.Sg.Subj.Pot" -> {nkuman} , "+3.Pl.Subj.Pot" -> {nkuman} || $["+1.Pl.Excl.Obj"]  _ ];
+           
+           define 3PLon1SG    ["+3.Pl.Subj" -> {n} || $["+1.Sg.Obj"] _ ];
+           define 3PLon1SGfut ["+3.Pl.Subj.Fut" -> {nqa} || $["+1.Sg.Obj"] _ ];
+           define 3PLon1SGpot ["+3.Pl.Subj.Pot" -> {nkuman} || $["+1.Sg.Obj"] _ ];
+           
+   define 3on1 [3on1PLinc .o. 3on1PLincFUT .o. 3on1PLincPOT.o.  3SGon1PLexc .o. 3SGon1PLexcFUT .o.3SGon1PLexcPOT.o. 3PLon1SG .o. 3PLon1SGfut .o. 3PLon1SGpot];   
 define SubjObj [1on2 .o. 2on1 .o. 3on2 .o. 3on1];
 
        #--------------------------#
        # Default Personalsuffixe: #
        #--------------------------#
-           define 1SGPERS ["+1.Sg.Subj" -> {ni} ||~$[FUT] _ ~$[POT|IMP] ];
-           define 2SGPERS ["+2.Sg.Subj" -> {nki} || _ ~$[IMP] ];
-           define 3SGPERS [ "+3.Sg.Subj" -> {n} || ~$[PST|FUT] _ ];
-           define 1PLincPERS [ "+1.Pl.Incl.Subj" -> {nchik} || ~$[FUT] _ ];
-           define 1PLexcPERS [ "+1.Pl.Excl.Subj" -> {yku} || ~$[FUT] _ ];
-           define 2PLPERS ["+2.Pl.Subj" -> {nkichik} || _ ~$[IMP] ];
-           define 3PLPERS [ "+3.Pl.Subj" -> {nku} || ~$[PST|FUT] _ ~$[POT]];
+           define 1SGPERS ["+1.Sg.Subj" -> {ni} , "+1.Sg.Subj.Fut" -> {saq}, "+1.Sg.Subj.Pot" -> {yman} ];
+           define 2SGPERS ["+2.Sg.Subj" -> {nki}, "+2.Sg.Subj.Fut" -> {nki} , "+2.Sg.Subj.Pot" -> {waq}, "+2.Sg.Subj.Imp" -> {y}];
+           define 3SGPERS [ "+3.Sg.Subj" -> {n}, "+3.Sg.Subj.Fut" -> {nqa}, "+3.Sg.Subj.Pot" -> {nman}, "+3.Sg.Subj.Imp" -> {chun} || ~$[PST] _ ];
+           define 1PLincPERS [ "+1.Pl.Incl.Subj" -> {nchik}, "+1.Pl.Incl.Subj.Fut" -> {sun}, "+1.Pl.Incl.Subj.Pot" -> {chwan}, "+1.Pl.Incl.Subj.Imp" -> {sun} ];
+           define 1PLexcPERS [ "+1.Pl.Excl.Subj" -> {yku}, "+1.Pl.Excl.Subj.Fut" -> {saqku}, "+1.Pl.Excl.Subj.Pot" -> {ykuman} ];
+           define 2PLPERS ["+2.Pl.Subj" -> {nkichik} , "+2.Pl.Subj.Fut" -> {nkichik}, "+2.Pl.Subj.Pot" -> {waqchik}, "+2.Pl.Subj.Imp" -> {ykichik}    ];
+           define 3PLPERS [ "+3.Pl.Subj" -> {nku} , "+3.Pl.Subj.Fut" -> {nqaku}, "+3.Pl.Subj.Pot" -> {nkuman}, "+3.Pl.Subj.Imp" -> {chunku} , "+3.Pl.Subj.Hab" -> {qku}   ];
 
            define 1SGPERSobj ["+1.Sg.Obj" -> {wa}];
            define 2SGPERSobj ["+2.Sg.Obj" -> {su}];
@@ -263,7 +245,7 @@ define SubjObj [1on2 .o. 2on1 .o. 3on2 .o. 3on1];
 
 define PERS [1SGPERS .o. 2SGPERS .o. 3SGPERS .o. 1PLincPERS .o. 1PLexcPERS .o. 2PLPERS .o. 3PLPERS .o. 1SGPERSobj .o. 2SGPERSobj .o. 1PLincPERSobj .o. 1PLexcPERSobj .o. 2PLPERSobj];
 
-define VDERIV [PHON .o. SubjObj .o. TEMPMOD   .o. PERS .o. TEMPMODdefault];
+define VDERIV [PHON .o. SubjObj .o. PERS];
 
    ###################################################
 
@@ -334,7 +316,7 @@ define AS [(HonAff) (AS=1) (HonAff) (AS=2) (AS=3)^{0,2} (HonAff) (AS=4)(HonAff) 
        ##########
        
        
-       define Root [ (UPPER) Numbers* [VocRoot|ConsRoot|%_]* (":"):0];
+       define Root [ (UPPER) Numbers* [VocRoot|ConsRoot|%_|"-"]* (":"):0];
 
 ######################################################################
 ######################################################################
@@ -459,21 +441,15 @@ define Verb [[Root|VDeriv] VerbSuffixes ] .o. VDERIV;
        # Satzzeichen #
        #-------------#
        
-       define punc [%,|%.|"%"|'|%;|%/|"-"|%!|%?|%+|%(|%)|%[|%]|%:|%&|%"|%\|%^|%~|%`|%°|%§|%¿|%¡|%»|%«|%’|%@|%#|%*|%=|%}|%{|%_|%<|%>];
+       define punc [%,|%.|"%"|'|%;|%/|"-"|%!|%?|%+|%(|%)|%[|%]|%:|%&|%"|%\|%^|%~|%`|%°|%§|%¿|%¡|%»|%«|%’|%@|%#|%*|%=|%}|%{|%_|%<|%>|%—];
        
 
 
 #########################################################################
 
 
-       #-------------------------------------------------#
-       # Zusammengehängt:                                #
-       # der Trennstrich der Compound-Nomen              #
-       # und den Verben mit inkorporierter Nominalwurzel #
-       # muss noch entfernt werden                       #
-       #-------------------------------------------------#
-
-define generator1 [Noun|Verb|punc] .o. ASphon .o. ["-" -> "" ] ; 
+define generator1 [Noun|Verb|punc] .o. ASphon ;
+#.o. ["-" -> "" ] ; 
 
 read regex generator1 .i;
 

@@ -78,7 +78,7 @@ while (<>)
      
      my $eaglesTag = &toEaglesTag($pos, $info);
      # if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
-     if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/ and $word !~ /parte|frente|adelante|base|menos$/)
+     if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/ and $word !~ /parte|frente|adelante|base|menos$/ and $word !~ /_/)
      {
 	print STDERR "clitics in verb $lem: $word\n";
 	my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
@@ -942,7 +942,10 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 					if($firstAnyChunk && $topnode)
 					{
 						$sentence->appendChild($firstAnyChunk);
-						$firstAnyChunk->appendChild($topnode);
+						# attach original topnode as child to child node of new top node 
+						# note: node must be attached to child NODE of top chunk, otherwise we have node siblings and the lexical transfer module is not happy
+						my $newtopnode = @{$firstAnyChunk->findnodes('child::NODE[1]')}[0];
+						$newtopnode->appendChild($topnode);
 						$firstAnyChunk->setAttribute('si', 'top');
 						print STDERR "moved non-verbal chunk to top in sentence: $sentenceId\n";
 					}
@@ -1032,7 +1035,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			my @nodesWithChunkSiblings = $sentence->findnodes('descendant::NODE[preceding-sibling::CHUNK]');
 			
 			foreach my $node (@nodesWithChunkSiblings)
-			{# print STDERR "node sibl: ".$node->toString()."\n";
+			{		# print STDERR "node sibl: ".$node->toString()."\n";
 					# if CC or CS -> try to attach it to the following verb chunk, if that fails to the preceding
 					# if there's no verb chunk, attach it to the next higher chunk (probably an error by the tagger, but let's try to avoid 
 					# making the lexical transfer fail)
@@ -1050,9 +1053,20 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 							#print $possibleHead->toString()."\n\n";
 							if($possibleHead){$possibleHead->appendChild($node);}
 						}
-					}
-				
 			}
+			# make sure nodes have no (node) siblings, again, lexical transfer module will crash
+			# solution: attach second sibling as (last) child of first
+			my @nodesWithNodeSiblings = $sentence->findnodes('descendant::NODE[preceding-sibling::NODE]');
+			foreach my $node (@nodesWithNodeSiblings)
+			{
+				my $prevsibling = $node->previousSibling();
+				if($prevsibling)
+				{
+					$prevsibling->appendChild($node);
+				}
+			}	
+				
+		}
 	}
 
 }
@@ -1729,7 +1743,7 @@ sub model2{
  			 	my $eaglesTag = &toEaglesTag($pos, $info);
 				# if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
 				# exclude certain words that may occur at the end of the lemma in locutions (e.g. echar_de_menos) -> we don't want to split -os in this case!
-				if($eaglesTag =~ /^V.[GNM]/ and $word !~ /parte|frente|adelante|base|menos$/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/)
+				if($eaglesTag =~ /^V.[GNM]/ and $word !~ /parte|frente|adelante|base|menos$/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/ and $word != /_/)
 				{
 					print STDERR "clitics in verb $lem: $word\n";
 					my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);

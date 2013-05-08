@@ -1797,6 +1797,7 @@ en_contra_del en_contra_de SPCMS I
 en_cuanto_a en_cuanto_a SPS00 I
 en_cuanto_al en_cuanto_a SPCMS I
 en_cuanto_que en_cuanto_que CS I
+en_cuanto en_cuanto CS I
 en_cuclillas en_cuclillas RG I
 en_cuerpo_y_alma en_cuerpo_y_alma RG I
 <encuesta>_de_opinión encuesta_de_opinión $1:NC I
@@ -2718,7 +2719,6 @@ pensamiento_filosófico pensamiento_filosófico NCMS000 I
 <pensión>_de_jubilación pensión_de_jubilación $1:NC I
 pequeñas_y_medianas_empresas pequeñas_y_medianas_empresas NCFP000 I
 <pequeño>_<empresa> pequeña_empresa $1:NC I
-pero_cuando pero_cuando CC I
 per_cápita per_cápita AQ0CN0 I
 <período>_de_vacaciones período_de_vacaciones $1:NC I
 período_de_validez período_de_validez NCMS000 I

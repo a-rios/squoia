@@ -243,11 +243,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				print STDOUT "$lemma1:$verbmi1\n";
  			}
  			# check if subj and obj are same person, if so, change obj to reflexive
- 			if($verbmi =~ $subjprs."Obj")
+ 			if($subjprs ne '' && $verbmi =~ $subjprs."Obj")
  			{
  				#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
  				$verbmi =~ s/\Q$subjprs\E($inclExcl)?\.Obj/Rflx/g;
- 				#print STDERR "replaced: $verbmi\n";
+ 				#print STDERR "replaced $subjprs: $verbmi\n";
  			}
  			# if there was a new subject inserted during transfer, change that (e.g. in direct speech)
  			if($chunk->getAttribute('verbprs') ne '')
@@ -292,7 +292,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				}
  				if($auxlem && $auxverbmi)
  				{
- 					print STDOUT "\n$auxlem:$auxverbmi";
+ 					print STDOUT "\n$auxlem:".&adjustMorph($auxverbmi,\%mapTagsToSlots);
  				}
  				if($chunkmi ne ''){print STDOUT &adjustMorph($chunkmi,\%mapTagsToSlots);}
  				print STDOUT "\n";
@@ -748,7 +748,7 @@ sub adjustMorph{
 	#extract root: 
 	my ($roottag) = ($morphString =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)/ ) ;
 	#delete double ++ and commas
-	$morphString =~ s/$roottag//;
+	$morphString =~ s/$roottag//g;
 	$morphString =~ s/\+\+(\+)?/\+/g;
 	$morphString =~ s/,//g;
 	
