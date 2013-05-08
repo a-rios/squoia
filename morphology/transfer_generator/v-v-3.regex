@@ -1,9 +1,9 @@
 #Slot3
 
 
- "+1.Obj" : {wa}
-|"+2.Obj" : {su}
-|"+1.Sg.Obj"
+# "+1.Obj" : {wa}
+#|"+2.Obj" : {su}
+"+1.Sg.Obj"
 |"+2.Sg.Obj"
 |"+1.Pl.Incl.Obj"
 |"+1.Pl.Excl.Obj"

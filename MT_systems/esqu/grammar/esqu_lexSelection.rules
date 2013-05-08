@@ -205,3 +205,7 @@ tener	q'apa		xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="frag
 
 # tener: default, use tene-
 tener	unspecified	-	0.2
+
+# usted/ustedes
+usted	qam	my.sform="usted"	-
+usted	qamkuna	my.sform="ustedes"	-

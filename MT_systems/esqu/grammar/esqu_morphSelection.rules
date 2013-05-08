@@ -31,19 +31,22 @@ my.slem=allá	k	PrnDem+Dat		xpath{ancestor::CHUNK[@type="grup-verb" or @type="co
 # a mí -> ++1.Sg.Obj, para/por mí -> ñuqapaq /wan etc
 my.smi=PP1CSO00	k	++1.Sg.Obj			my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
 my.smi=PP1CSO00	k	PrnPers				my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
-my.smi=PP1CSO00	k	PrnPers+Inst			my.slem=conmigo
+my.smi=PP1CSO00	k	PrnPers+Instr			my.slem=conmigo
 
 my.smi=PP2CSO00	k	++2.Sg.Obj			my.slem=tí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
 my.smi=PP2CSO00	k	PrnPers				my.slem=tí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
-my.smi=PP2CSO00	k	PrnPers+Inst			my.slem=contigo
+my.smi=PP2CSO00	k	PrnPers+Instr			my.slem=contigo
+
+my.smi=PP2CP000	k	++2.Pl.Obj			my.sform=os || xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
+my.smi=PP2CP000	k	PrnPers				(my.slem=vosotros || my.slem=usted) && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
 
 my.smi=PP3CSO00	k	++Rflx				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
 my.smi=PP3CSO00	k	Noun				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
-my.smi=PP3CSO00	k	Noun+Inst			my.slem=consigo
+my.smi=PP3CSO00	k	Noun+Instr			my.slem=consigo
 
 my.smi=PP3CNO00	k	++Rflx				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
 my.smi=PP3CNO00	k	Noun				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
-my.smi=PP3CNO00	k	Noun+Inst			my.slem=consigo
+my.smi=PP3CNO00	k	Noun+Instr			my.slem=consigo
 
 # possessive pronouns 3rd person, Spanish: all 'su', qu: need number of possessor, if possessed noun is singular
 # (if both possessor and possessed noun plural -> -nku +kuna -> realized as -nkuna anyway, just take singular

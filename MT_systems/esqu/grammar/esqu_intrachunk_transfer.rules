@@ -66,7 +66,9 @@ my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="p
    # morphological information inserted during transfer that is needed by all synonyms for generation goes to addverbmi, all information that is needed only by primary node goes to verbmi! 
     
 # copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && !(parent.mi=infinitive) && ( my.slem=estar || !(parent.smi=VMG0000))		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
+#my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && !(parent.mi=infinitive) && ( my.slem=estar || !(parent.smi=VMG0000))		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && !(xpath{ancestor::NODE[@mi="infinitive"]}) && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]}))		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
+
 
 # ir a + infinitive: copy attribute 'verbmi' from 'ir' (if finite) to verbmi in chunk
 my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && parent.smi=VMN0000		verbmi			my.type=/grup-verb|coor-v/		verbmi		up	concat
@@ -82,15 +84,22 @@ my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwr
 # also:
 # subordinated participle -> subieron ascendiendo, se fue riendo, entra flotando, etc.
 # -> finite verb: verbmi2, lem2; gerund: lem, verbmi (+SS)
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (parent.mi=infinitive || (parent.smi=VMG0000 && !(my.slem=estar) ) )		verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (parent.smi=VMG0000 && !(my.slem=estar) ) )					lem				my.type=/grup-verb|coor-v/		lem2			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{parent::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)									"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
+#my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (parent.mi=infinitive || (parent.smi=VMG0000 && !(my.slem=estar) ) )		verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
+#my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (parent.smi=VMG0000 && !(my.slem=estar) ) )					lem				my.type=/grup-verb|coor-v/		lem2			up		concat
+#my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{parent::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)									"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
+
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) )	verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (xpath{ancestor::NODE[@mi="infinitive"]} && !(my.slem=estar) ) )							lem				my.type=/grup-verb|coor-v/		lem2			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{ancestor::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)													"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
 
 # copy mi from gerund to verbmi of chunk
 my.smi=VMG0000 && !(xpath{child::NODE[@slem="estar"]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
 
 # if infinitive in own chunk, add +Inf and +Acc to morphology
-my.mi=infinitive && !(xpath{following-sibling::NODE}) && parent.si=cd			"+Inf+Acc"			my.type=/grup-verb|coor-v/			addverbmi		up		concat
+my.mi=infinitive && !(xpath{following-sibling::NODE}) && parent.si=cd			"+Acc"			my.type=/grup-verb|coor-v/			addverbmi		up		concat
+
+# if verb chunk with only infinitive: copy verbmi to chunk
+my.mi=infinitive && !(xpath{following-sibling::NODE})					verbmi				my.type=grup-verb				verbmi			up		concat
 
 # if finite verb is unknown in complex verb chunk or lem is deber (deber hacer), copy verbmi of (non-finite) main verb
 my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NODE[@unknown="transfer" or @slem="deber"]} 		verbmi			my.type=/grup-verb|coor-v/	addverbmi		up	concat
@@ -99,8 +108,8 @@ my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NO
 my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			addverbmi			up		concat
 
 # copy lemma of the main verb (first node child in verbchunk) to the verb chunk (needed for generation)
-my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified || my.unknown=transfer)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
-my.smi=/^V/ && !(xpath{parent::NODE[starts-with(@smi,"V")]}) && (my.lem=unspecified || my.unknown=transfer)		slem			my.type=/grup-verb|coor-v/		lem			up		concat
+my.smi=/^V/ && !(xpath{ancestor::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified || my.unknown=transfer)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
+my.smi=/^V/ && !(xpath{ancestor::NODE[starts-with(@smi,"V")]}) && (my.lem=unspecified || my.unknown=transfer)		slem			my.type=/grup-verb|coor-v/		lem			up		concat
 
 # copy all information from add_mi in verbs to verbmi (concat)
 my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi				up		concat
@@ -204,9 +213,30 @@ my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
 
 
 
+    #################################
+    # POSSESSOR on relational nouns #
+    #################################
+    
+# concern nouns like llapa -n/-nku, sapa -y/yki/n etc.    
 
 
+# 1.Sg:
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="yo"]} || xpath{ancestor::CHUNK[contains(@verbmi,"1.Sg.Subj") or contains(@verbmi2,"1.Sg.Subj")]} )				add_mi		my.type=/.+/		"1.Sg.Poss"	down	overwrite
+# 1.Pl (preliminary solution: incl/excl not disambiguated yet!!):
+#my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"1.Pl.Excl.Subj")]} ||  xpath{ancestor::CHUNK[contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi2,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Excl.Poss#1.Pl.Incl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"1.Pl.Excl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Excl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi2,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Incl.Poss"	down	overwrite
 
+#2.Sg:
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="tú"]} || xpath{ancestor::CHUNK[contains(@verbmi,"2.Sg.Subj") or contains(@verbmi2,"2.Sg.Subj")]} )				add_mi		my.type=/.+/		"2.Sg.Poss"	down	overwrite
+# 2.Pl:
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="vosotros" or @sform="ustedes"]} || xpath{ancestor::CHUNK[contains(@verbmi,"2.Pl.Subj") or contains(@verbmi2,"2.Pl.Subj")]} )			add_mi		my.type=/.+/		"2.Pl.Poss"	down	overwrite
+
+#3.Pl:
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="ellos" ]} || xpath{ancestor::CHUNK[contains(@verbmi,"3.Pl.Subj") or contains(@verbmi2,"3.Pl.Subj")]} )			add_mi		my.type=/.+/		"3.Pl.Poss"	down	overwrite
+
+#default: 3.Sg.Poss (-n)
+my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@smi,"PP1") or starts-with(@smi,"PP2") or @lem="paykuna"]}) && !(xpath{ancestor::CHUNK[contains(@verbmi,"1.Sg.Subj") or contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"2.Sg.Subj") or contains(@verbmi,"2.Pl.Subj") or contains(@verbmi2,"3.Pl") ]}) )			add_mi		my.type=/.+/		"3.Sg.Poss"	down	overwrite
 
 
 

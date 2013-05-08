@@ -59,7 +59,7 @@ arriba_de	postpos=hanaqnin,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/C
 
 bajo		postpos=uran,nouncase=+Gen		-
 cerca_de 	postpos=sichpan,nouncase=+Gen
-con		case=+Inst
+con		case=+Instr
 contra		case=+Abl	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="proteger" or @slem="defender" or @slem="velar" or @slem="amparar" or @slem="cubrir"]}	-
 contra		case=+Dat	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="apoyar" or @slem="chocar" or @slem="apretar" or @slem="estrellar" or @sem="[+Mov]"]}				-
 contra		postpos=contran,nouncase=+Gen	-	+
@@ -115,7 +115,7 @@ en		case=+Loc	-	+
 en		case=+Acc		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="confiar" or @slem="comerciar"]}	-
 en		case=+Dat		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="poner" or @slem="introducir" or @slem="meter" or @slem="insertar" or @slem="penetrar" or @slem="entrar" or @slem="enclavar" or @slem="colocar" or @slem="acoplar" or @slem="depositar" or @slem="convertir"]}	-
 
-en_virtud_de	case=+Inst
+en_virtud_de	case=+Instr
 encima		postpos=hanan
 
 encima_de	spform=hanaypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
@@ -165,12 +165,12 @@ junto_a		spform=qayllaykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@typ
 junto_a		spform=qayllankupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
 junto_a		postpos=qayllan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
-mediante	case=+Inst	-
+mediante	case=+Instr	-
 para		case=+Ben	-
 para		case=+Dat # para allá
 por		case=+Proloc	xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}	-
 por		case=+Kaus	-
-por		case=+Inst	-
+por		case=+Instr	-
 por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}
 sino		lem=sinu	-
 

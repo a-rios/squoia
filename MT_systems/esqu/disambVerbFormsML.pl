@@ -165,7 +165,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 								print STDERR "$candverb,$subordverb,$linker\n";
 								my $class = &predictVerbform($candverb,$subordverb,$linker);
 								$newverbform = $mapClassToVerbform{$class};
-								$node->parentNode->setAttribute('verbform', "ML:".$newverbform);
+								#$node->parentNode->setAttribute('verbform', "ML:".$newverbform);
+								$node->parentNode->setAttribute('verbform', $newverbform);
 								#print STDOUT "$candverb,$subordverb,$linker\n";
 								$found = 1;
 								last;
@@ -188,7 +189,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 									#print STDOUT "$candverb,$subordverb,$linker\n";
 									my $class = &predictVerbform($candverb,$subordverb,$linker);
 									$newverbform = $mapClassToVerbform{$class};
-									$node->parentNode->setAttribute('verbform', "ML:".$newverbform);
+									#$node->parentNode->setAttribute('verbform', "ML:".$newverbform);
+									$node->parentNode->setAttribute('verbform', $newverbform);
 									$found = 1;
 									last;
 								}
