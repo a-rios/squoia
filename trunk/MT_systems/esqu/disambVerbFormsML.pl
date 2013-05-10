@@ -162,12 +162,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 							if ($cand->parentNode->hasAttribute('verbform')) {
 								print STDERR "found candidate main verb left of subordinated verb\n";
 								my $candverb = $cand->getAttribute('slem');
-								print STDERR "$candverb,$subordverb,$linker\n";
+								print STDERR "classifiy: $candverb,$subordverb,$linker\n";
 								my $class = &predictVerbform($candverb,$subordverb,$linker);
 								$newverbform = $mapClassToVerbform{$class};
 								#$node->parentNode->setAttribute('verbform', "ML:".$newverbform);
 								$node->parentNode->setAttribute('verbform', $newverbform);
-								#print STDOUT "$candverb,$subordverb,$linker\n";
 								$found = 1;
 								last;
 							}
@@ -185,7 +184,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 										next; 
 									}
 									my $candverb = $cand->getAttribute('slem');
-									print STDERR "$candverb,$subordverb,$linker\n";
+									print STDERR "classifiy: $candverb,$subordverb,$linker\n";
 									#print STDOUT "$candverb,$subordverb,$linker\n";
 									my $class = &predictVerbform($candverb,$subordverb,$linker);
 									$newverbform = $mapClassToVerbform{$class};
@@ -194,6 +193,15 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 									$found = 1;
 									last;
 								}
+							}
+							# if still no main verb: ML with subord+linker
+							if(not $found)
+							{
+								my $class = &predictVerbform('0',$subordverb,$linker);
+								$newverbform = $mapClassToVerbform{$class};
+								$node->parentNode->setAttribute('verbform', $newverbform);
+								print STDERR "no main verb but linker\n";
+								print STDERR "classify: 0,$subordverb,$linker\n";
 							}
 						
 						}

@@ -11,9 +11,7 @@ TODOS translation:
 - IMPORTANT: split sentences at ';', otherwise parser does weird things!!!
 - distributive -nka
 - numbers and dates -> horas (months ok)
-- participles vs. adjectives: e.g. adinerado
-  -> add paradigm Noun to all Particple-N/V forms
-  -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong)
+
 - dueño/propietario de -> yuq
 - permanecer +Adj -> Adj-raya- 
 - 1pl.incl vs. excl -> check for pronouns/possessive suffixes
@@ -28,8 +26,9 @@ TODOS translation:
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
 
 LEXICON:
-- encontrarse en el sentido de estar -> 'ka-', no 'tinku-'
-- más o menos -> hina hinalla
+- participles vs. adjectives: e.g. adinerado
+  (done -> add paradigm Noun to all Particple-N/V forms)
+  -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong)
 
 SUBORDINATED CLAUSES:
 - el hecho de que + subjuntivo
@@ -56,10 +55,10 @@ PREP-OBJECTS:
 - enfrentarse contra -> maqanaku- -wan
 
 LOCUTIONS:
-- tener años
-- dar_miedo -> locutions
 - check ALL locutions in locutions_laura.dat for translations!
-- de igual manera -> parser messes that up -> add to locutions
+
+TRANSFER:
+
 
 GENERATION;
 - restore upper case
@@ -87,3 +86,9 @@ GENERATION;
 ( (un)done - IMPORTANT: combinations of CS & CC -> treat as CC (?), in locutions -> e.g. pero cuando)
 ( done - modalverb + infinitive -> sometimes, parser labels modal as 'v' -> both verbs in one chunk)
 ( done - change tag for nya to VCont)
+( done - encontrarse en el sentido de estar -> 'ka-', no 'tinku-')
+( done - más o menos -> hina hinalla)
+( done - tener años -> lex. disambiguation)
+( done - dar miedo -> lex. disambiguation)
+( done - de igual manera -> parser messes that up -> add to locutions)
+( done - adapt lexical disambiguation to allow more than one translation option)

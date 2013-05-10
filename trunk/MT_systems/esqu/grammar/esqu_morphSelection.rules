@@ -10,9 +10,10 @@
 # rsibling/lsibling -> right/left sibling node (true if condition is met for at least one sibling node to the right/left)
 # chunkparent: first ancestor that is a chunk
 
-# IMPORTANT: sequence matters! the module works top down, so if you have a node with different 
-# tranlsation option for which more than one condition evaluates to true: 
-# if both are set to 'k' (keep this node, delete all others), only the first one will be kept!
+# IMPORTANT: 
+# if more than one translation option with 'k' for a node evaluates to true, the first one will be used to fill 
+# the attributes of NODE, but the all others that evaluate to true will be kept as SYN nodes!
+
 
 #TODO: funktioniert nicht
 #ebrio, machaq (ser), machasqa (estar), leave for language model
