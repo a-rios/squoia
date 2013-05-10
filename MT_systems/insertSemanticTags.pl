@@ -31,17 +31,17 @@ eval
 	retrieve('semLex');
 	%semanticLexicon = %{ retrieve("semLex") };
 
-} or print STDERR "Read semantic lexicon first!";
+} or print STDERR "Read semantic lexicon first!\n";
 
 if(!%semanticLexicon)
 {
-	print STDERR "read lexicon with semantic tags to insert \n";
+	print STDERR "reading lexicon with semantic tags to insert \n";
 	# retrieve hash with config parameters from disk, get path to file with semantic information
 	eval
 	{
 		retrieve('parameters');
 
-	} or die "No parameters defined. Run readConfig.pl first!";
+	} or die "No parameters defined. Run readConfig.pl first!\n";
 
 	my %hash = %{ retrieve("parameters") }; 
 	my $semanticDictFile= $hash{"SemFile"} or die "Semantic dictionary not specified in config!";
