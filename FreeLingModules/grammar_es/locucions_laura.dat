@@ -1434,6 +1434,7 @@ de_muchas_leguas de_muchas_leguas RG I
 de_mucho_efecto de_mucho_efecto RG I
 de_mucho_trote de_mucho_trote RG I
 de_ninguna_manera de_ninguna_manera RG I
+de_igual_manera de_igual_manera RG I
 denominación_social denominación_social NCFS000 I
 dentro_de dentro_de SPS00 I
 dentro_del dentro_de SPCMS I
@@ -2466,6 +2467,7 @@ margen_bruto margen_bruto NCCS000 I
 más_allá_de más_allá_de SPS00 I
 más_allá_del más_allá_de SPCMS I
 más_de_la_cuenta más_de_la_cuenta RG I
+más_o_menos más_o_menos RG I
 más_valiera más_valiera RG I
 <matemática>_<aplicar> matemática_aplicada $1:NC I
 <material>_<complementario> material_complementario $1:NC I
@@ -3464,6 +3466,7 @@ si_bien si_bien CC I
 sin_embargo sin_embargo CC A
 <tener>_como_<objetivo> tener_como_objetivo $1:VM I
 <tratar>_como_<igual> tratar_como_igual $1:VM I
+
 
 
 
