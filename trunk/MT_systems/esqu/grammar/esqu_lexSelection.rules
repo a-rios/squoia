@@ -148,8 +148,12 @@ hacer_falta	ka	k	!(xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUN
 #llama	nina	k	-
 
 # propietario, kaqniyuq, but with sp-de: propietario de algo-> algoyuq
-propietario	+Poss		k	xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="de"]}
-propietario	ka		k	!(xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="de"]})
+propietario	+Poss		k	xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]}
+propietario	ka		k	!(xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]})
+
+# dueño
+dueño	unspecified	k		!(xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]})
+dueño	+Poss		k		xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]}
 
 #rico (dinero, poder): qhapaq, (comida) miski, hauptverb von clause -> XPath?? (nächst höherer chunk mit grup-verb..
 rico		qhapaq		k	chunkgrandparent.type=grup-verb&&chunkgrandparent.headslem=ser

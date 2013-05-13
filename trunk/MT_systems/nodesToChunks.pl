@@ -16,6 +16,7 @@
 use strict;
 
 use utf8;
+use open ':utf8';
 use Storable; # to retrieve hash from disk
 #binmode STDIN, ':utf8';
 use XML::LibXML;

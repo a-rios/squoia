@@ -406,7 +406,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  		}
  	}
  	# emtpy line between sentences
- 	print STDOUT "\n";
+ 	print STDOUT "#EOS\n";
 }
 
 # print new xml to stdout
@@ -545,12 +545,12 @@ sub getMorphFromChunk{
  				#print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase');
  				$morphString = $morphString.$chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@nouncase');
  			}
- 			elsif($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case'))
+ 			elsif($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case') && $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case') ne 'none')
  			{
 	 			#print $chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case');
 	 			$morphString = $morphString.$chunk->findvalue('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@case');
 	 		}
- 			elsif($chunk->hasAttribute('case'))
+ 			elsif($chunk->hasAttribute('case') && $chunk->getAttribute('case') ne 'none' )
  			{
  				#print $chunk->getAttribute('case');
  				$morphString = $morphString.$chunk->getAttribute('case');

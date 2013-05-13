@@ -39,8 +39,15 @@ my.type=coor-n && my.chunkmi=+Instr			chunkmi				my.type=sn				chunkmi			child		
 
 
 # copy ++Poss from propietario to the possessed noun
-my.type=sn && child.slem=propietario && my.chunkmi=++Poss	chunkmi			my.type=sn				chunkmi			chunkgrandchild			1to2		concat
+child.slem=/propietario|dueño/ && my.chunkmi=++Poss	chunkmi			my.type=sn				chunkmi			chunkgrandchild			1to2		concat
 
 # in a pp with a coordinated np inside: copy the case/nouncase attribute to the second coordinated np
-#my.type=/grup-sp|coor-sp/ && child.type=coor-n		case			my.type=sn && chunkparent.type=coor-n			case			ancestor	1to2		overwrite	
-my.type=sn && chunkparent.type=coor-n 			case		my.type=/grup-sp|coor-sp/			case		chunkgrandparent	2to1		overwrite	
+#my.type=/grup-sp|coor-sp/ && child.type=coor-n		case			my.type=sn && chunkparent.type=coor-n			case			ancestor	1to2		overwrite
+my.type=sn && chunkparent.type=coor-n 			case		my.type=/grup-sp|coor-sp/			case		chunkgrandparent	2to1		overwrite
+
+
+    ##########
+    # QUOTES #
+    ##########
+    
+my.type=F-term			punc		!(my.type=F-term)	punc			parent			1to2		concat

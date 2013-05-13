@@ -859,8 +859,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 						warn  "could not reattach child of punctuation chunk".$node->getAttribute('ord')." in sentence: $sentenceId" if $@;	
 				 	}
 				 }
+
 				 eval {$parent->appendChild($fpchunk);};
-				 warn  "could not punctuation chunk to parent chunk".$node->getAttribute('ord')." in sentence: $sentenceId" if $@;
+				 warn  "could not append punctuation chunk to parent chunk".$node->getAttribute('ord')." in sentence: $sentenceId" if $@;
 			     # the key in hash should point now to the chunk instead of the node
 				 my $ord = $node->getAttribute('ord');
 				 my $idKey = "$sentenceId:$ord";
@@ -1065,6 +1066,22 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 					$prevsibling->appendChild($node);
 				}
 			}	
+			
+			 # make sure final punctuation (.!?) is child of top chunk, if not, append to top chunk
+			 # -> otherwise punctuation will appear in some random position in the translated output!
+			 my @finalPunc = $sentence->findnodes('descendant::NODE[@lem="." or @lem="!" or @lem="?"]');
+			 
+			 foreach my $punc (@finalPunc) 
+			 { 
+			 		if(isLastNode($punc,$sentence) && !$punc->exists('parent::CHUNK/parent::SENTENCE') )
+			 		{
+				 		my $topchunk = @{$sentence->findnodes('child::CHUNK[1]')}[0];
+				 		my $puncChunk = $punc->parentNode();
+				 		if($topchunk && $puncChunk){
+				 		$topchunk->appendChild($puncChunk);
+				 		}
+			 		}
+			 }
 				
 		}
 	}
@@ -1909,4 +1926,25 @@ sub createAppendCliticNodes{
 		$docHash{$clkey}= $cliticNode;
 		$clid += 0.1;
 	}
+}
+
+sub isLastNode{
+	my $node = $_[0];
+	my $sentence = $_[1];
+	
+	my %nodeHash =();
+
+	# read sentence into hash, key is 'ord'
+	foreach my $node ($sentence->findnodes('descendant::NODE'))
+			{
+				my $key = $node->getAttribute('ord');
+				print STDERR $node->getAttribute('form')."key: $key\n";
+				$nodeHash{$key} = $node;
+			}
+			my $nodeord = $node->getAttribute('ord');
+		
+			my @sequence = sort {$a<=>$b} keys %nodeHash;			
+			print STDERR "last node: ".@sequence[0]."n";
+			return ( scalar(@sequence)>1 && $nodeHash{@sequence[-1]}->isSameNode($node) );
+			
 }

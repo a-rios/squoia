@@ -42,12 +42,12 @@ my.smi=PP2CP000	k	++2.Pl.Obj			my.sform=os || xpath{parent::CHUNK/parent::CHUNK/
 my.smi=PP2CP000	k	PrnPers				(my.slem=vosotros || my.slem=usted) && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
 
 my.smi=PP3CSO00	k	++Rflx				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
-my.smi=PP3CSO00	k	Noun				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
-my.smi=PP3CSO00	k	Noun+Instr			my.slem=consigo
+my.smi=PP3CSO00	k	NRoot				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
+my.smi=PP3CSO00	k	NRoot+Instr			my.slem=consigo
 
 my.smi=PP3CNO00	k	++Rflx				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
-my.smi=PP3CNO00	k	Noun				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
-my.smi=PP3CNO00	k	Noun+Instr			my.slem=consigo
+my.smi=PP3CNO00	k	NRoot				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
+my.smi=PP3CNO00	k	NRoot+Instr			my.slem=consigo
 
 # possessive pronouns 3rd person, Spanish: all 'su', qu: need number of possessor, if possessed noun is singular
 # (if both possessor and possessed noun plural -> -nku +kuna -> realized as -nkuna anyway, just take singular

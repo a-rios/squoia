@@ -24,6 +24,7 @@
 
 use strict;
 use utf8;
+use open ':utf8';
 use Storable; # to retrieve hash from disk
 #binmode STDIN, ':utf8';
 use XML::LibXML;
@@ -135,11 +136,14 @@ sub propagateAttr{
 	if ($srcVal eq '') {
 		$srcVal = $srcAttr;
 	}
+	unless ($srcVal eq '"'){
 	$srcVal =~ s/["]//g;
+	}
 	if ($wmode eq "concat") {
 		if ($trgNode->hasAttribute($trgAttr)) {
 			my $newVal = $trgNode->getAttribute($trgAttr).",".$srcVal;
 			$trgNode->setAttribute($trgAttr,$newVal);
+			print STDERR "ATTRIBUTE...............$srcVal";
 		}
 		else {
 			$trgNode->setAttribute($trgAttr,$srcVal);			
