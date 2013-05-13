@@ -174,12 +174,16 @@ por		case=+Instr	-
 por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}
 sino		lem=sinu	-
 
-sobre	spform=hawaypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-sobre	spform=hawaykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-sobre	spform=hawanchikpi,hawaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-sobre	spform=hawaykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-sobre	spform=hawankupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
-sobre	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
+# sobre -> locativo: el libro está sobre la mesa -> hawa
+# sobre -> tema: el libro sobre la selva, hablar sobre algo -> Ablativo
+sobre	spform=hawaypi			xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
+sobre	spform=hawaykipi			xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
+sobre	spform=hawanchikpi,hawaykupi	xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
+sobre	spform=hawaykichikpi		xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
+sobre	spform=hawankupi			xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
+sobre	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
+
+sobre	case=+Abl	!(xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]})	+
 
 tras	spform=qhipaypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
 tras	spform=qhipaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}

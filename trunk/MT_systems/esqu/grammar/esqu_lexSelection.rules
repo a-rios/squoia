@@ -12,8 +12,10 @@
 # chunkparent: first ancestor that is a chunk, chunkgrandparent etc.
 
 # IMPORTANT: 
-# if more than one translation option with 'k' for a node evaluates to true, the first one will be used to fill 
-# the attributes of NODE, but the all others that evaluate to true will be kept as SYN nodes!
+# - if more than one translation option with 'k' for a node evaluates to true, the first one will be used to fill 
+#   the attributes of NODE, but the all others that evaluate to true will be kept as SYN nodes!
+# - rules are stored in a hash, key is the combination of the source lemma (1st column) and target lemma (2nd column in rules)
+#  --> it's not possible to have more than one rule with the same source lemma and the same target lemma!!
 
 #gender related ambiguities
 viejo		paya		k	(my.smi=/AQ0F/&&parent.sem=[+Fem])||my.smi=/NCF/

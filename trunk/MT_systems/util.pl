@@ -121,6 +121,7 @@ sub getFiniteVerb{
 	# finite verb is the one with a person marking (1,2,3)
 	my $verb = @{$verbchunk->findnodes('child::NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
 	my $verb2Cand = @{$verbchunk->findnodes('child::NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
+	my $verb3Cand = @{$verbchunk->findnodes('child::NODE/NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
 	if($verb)
 	{
 		return $verb;
@@ -128,6 +129,10 @@ sub getFiniteVerb{
 	elsif($verb2Cand)
 	{
 		return $verb2Cand;	
+	}
+	elsif($verb3Cand)
+	{
+		return $verb3Cand;	
 	}
 	else
 	{

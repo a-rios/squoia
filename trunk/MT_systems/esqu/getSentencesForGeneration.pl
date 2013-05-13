@@ -337,7 +337,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			print STDOUT "\n";
  		}
  		#punctuation: print as is
- 		elsif($chunk->exists('self::CHUNK[@type="F-term"]') && $chunk->getAttribute('delete') ne 'yes')
+ 		elsif($chunk->exists('self::CHUNK[@type="F-term"]') && $chunk->getAttribute('delete') ne 'yes'  )
  		{
  			my $pmark = $chunk->findvalue('child::NODE/@slem');
  			
@@ -358,6 +358,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  		# adjectives: print as is
  		elsif($chunk->exists('self::CHUNK[@type="sa" or @type="coor-sa"]') && !$chunk->hasAttribute('delete'))
  		{
+ 			
  			# if there's a conjunction to be inserted and this is the first node in the clause
  			if($chunk->hasAttribute('conj'))
  			{
@@ -775,6 +776,17 @@ sub adjustMorph{
 	return $sortedMorphString;
 	#print STDERR "unsorted morph: $morphString\n";
 	#print STDERR "sorted morph: $sortedMorphString\n";
-	
+}
 
+sub printPrePunctuation{
+	my $chunk = $_[0];
+	# if there's an attribute PrePunc: opening punctuation, print this first
+ 	if($chunk->hasAttribute('PrePunc'))
+ 	{
+ 		if($chunk->getAttribute('PrePunc') eq 'quot'){
+ 			print STDOUT "\"\n";
+ 			}
+ 		else{
+ 			print STDOUT $chunk->getAttribute('PrePunc')."\n";}
+ 			}
 }
