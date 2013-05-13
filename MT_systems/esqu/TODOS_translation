@@ -12,7 +12,6 @@ TODOS translation:
 - distributive -nka
 - numbers and dates -> horas (months ok)
 
-- dueño/propietario de -> yuq
 - permanecer +Adj -> Adj-raya- 
 - 1pl.incl vs. excl -> check for pronouns/possessive suffixes
   -> eliminate impossible combinations, e.g.:
@@ -92,3 +91,4 @@ GENERATION;
 ( done - dar miedo -> lex. disambiguation)
 ( done - de igual manera -> parser messes that up -> add to locutions)
 ( done - adapt lexical disambiguation to allow more than one translation option)
+( done - dueño/propietario de -> yuq)

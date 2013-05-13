@@ -54,9 +54,9 @@ my.smi=/^DN|^Z$/				"+Pl"				my.type=/sn|coor-n/				deleteMorph		up		concat
 # propietario de algo -> algo-yuq
 # copy ++Poss from propietario to sn chunk, and from there (over child grup-sp) to the possessed noun
 # and then delete genitive from the pp chunk ('de') in between
-my.slem=propietario && xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="de"]} && my.moveToHead_mi=/.+/	moveToHead_mi			my.type=/sn|coor-n/		chunkmi		up	concat
-my.slem=propietario && xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="de"]}				"yes"				my.type=/sn|coor-n/		delete		up	concat
-my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="propietario"]}			"none"				my.type=/grup-sp|coor-sp/	case		up	overwrite
+my.slem=/propietario|dueño/ && xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]} && my.moveToHead_mi=/.+/		moveToHead_mi			my.type=/.+/		chunkmi		up	concat
+my.slem=/propietario|dueño/ && xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]}					"yes"				my.type=/.+/		delete		up	concat
+my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="propietario" or @slem="dueño"]}				"none"				my.type=/grup-sp|coor-sp/	case		up	overwrite
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
     #########
@@ -239,5 +239,10 @@ my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="ellos" ]
 my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@smi,"PP1") or starts-with(@smi,"PP2") or @lem="paykuna"]}) && !(xpath{ancestor::CHUNK[contains(@verbmi,"1.Sg.Subj") or contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"2.Sg.Subj") or contains(@verbmi,"2.Pl.Subj") or contains(@verbmi2,"3.Pl") ]}) )			add_mi		my.type=/.+/		"3.Sg.Poss"	down	overwrite
 
 
-
+    ##########
+    # QUOTES #
+    ##########
+    
+parent.type=F-term		slem				my.type=F-term				punc			up		concat
+    
 
