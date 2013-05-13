@@ -50,4 +50,4 @@ my.type=sn && chunkparent.type=coor-n 			case		my.type=/grup-sp|coor-sp/			case	
     # QUOTES #
     ##########
     
-my.type=F-term			punc		!(my.type=F-term)	punc			parent			1to2		concat
+#my.type=F-term && my.PrePunc=/.+/			PrePunc		!(my.type=F-term)	PrePunc			parent			1to2		concat

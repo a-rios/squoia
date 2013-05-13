@@ -11,8 +11,10 @@
 # chunkparent: first ancestor that is a chunk
 
 # IMPORTANT: 
-# if more than one translation option with 'k' for a node evaluates to true, the first one will be used to fill 
-# the attributes of NODE, but the all others that evaluate to true will be kept as SYN nodes!
+# - if more than one translation option with 'k' for a node evaluates to true, the first one will be used to fill 
+#   the attributes of NODE, but the all others that evaluate to true will be kept as SYN nodes!
+# - rules are stored in a hash, key is the combination of the node condition (1st column) and morphology attribute (3rd column in rules)
+#  --> it's not possible to have more than one rule with the same node condition and the same morphology attribute!!
 
 
 #TODO: funktioniert nicht
@@ -76,50 +78,48 @@ my.smi=VMN0000	k	infinitive			 	!(chunkparent.verbform=obligative)
 # subordinated clause -spa (same subject) vs. -pti (same subject)
 
 # switch-reference
-my.smi=/VM...../	k	SS				 	chunkparent.verbform=SS
-my.smi=/VM...../	k	DS				 	chunkparent.verbform=DS
+my.smi=/^VM/	k	SS				 	chunkparent.verbform=SS
+my.smi=/^VM/	k	DS				 	chunkparent.verbform=DS
 
 # in case this needs to be a switch reference form, but the programme failed to determine whether SS or DS -> keep those two, but delete all other otions 
-my.smi=/VM...../	d	agentive,perfect,present,obligative,future,potential,imperative			chunkparent.verbform=switch
+my.smi=/^VM/	d	agentive,perfect,present,obligative,future,potential,imperative			chunkparent.verbform=switch
 
 # agentive relative clauses
-my.smi=/VM...../	k	agentive			 	chunkparent.verbform=rel:agentive
+my.smi=/^VM/	k	agentive			 	chunkparent.verbform=rel:agentive
 
 # indicative present
-my.smi=/VMIP.../	k	perfect				 	chunkparent.verbform=/rel:not\.agentive|perfect/
-my.smi=/VMIP.../	k	present				 	chunkparent.verbform=main
+my.smi=/^VMIP/	k	perfect				 	chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VMIP/	k	present				 	chunkparent.verbform=main
 
 # indicative imperfect past
-my.smi=/VMII.../	k	perfect				 	chunkparent.verbform=rel:not.agentive
-my.smi=/VMII.../	k	perfect				 	chunkparent.verbform=perfect
+my.smi=/^VMII/	k	perfect				 	chunkparent.verbform=/rel:not\.agentive|perfect/
 #if main clause: keep options  direct, indirect or habitual past
-my.smi=/VMII.../	d	agentive,perfect,SS,DS			chunkparent.verbform=main
+my.smi=/^VMII/	d	agentive,perfect,SS,DS			chunkparent.verbform=main
 
 # indicative past simple
-my.smi=/VMIS.../	k	perfect			 		chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VMIS/	k	perfect			 		chunkparent.verbform=/rel:not\.agentive|perfect/
 #if main clause: keep options  direct, indirect past
-my.smi=/VMIS.../	d	agentive,perfect,SS,DS			chunkparent.verbform=main
+my.smi=/^VMIS/	d	agentive,perfect,SS,DS			chunkparent.verbform=main
 
 # indicative future
-my.smi=/VMIF.../	k	future					chunkparent.verbform=main
-my.smi=/VMIF.../	k	obligative				chunkparent.verbform=obligative
-my.smi=/VMIF.../	k	obligative				chunkparent.verbform=rel:not.agentive
+my.smi=/^VMIF/	k	future					chunkparent.verbform=main
+my.smi=/^VMIF/	k	obligative				chunkparent.verbform=/obligative|rel:not\.agentive/
 
 # conditional present, TODO: relative clauses in conditional?
-my.smi=/VMIC.../	k	potential				chunkparent.verbform=main
+my.smi=/^VMIC/	k	potential				chunkparent.verbform=main
 
 # subjuntivo imperfecto
-my.smi=/VMSI.../	k	potential				chunkparent.verbform=main && !(xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]})
-my.smi=/VMSI.../	k	imperative				chunkparent.verbform=main && xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]}
-my.smi=/VMSI.../	k	perfect				 	chunkparent.verbform=perfect	 # complement clause
-my.smi=/VMSI.../	k	obligative				chunkparent.verbform=obligative
+my.smi=/^VMSI/	k	potential				chunkparent.verbform=main && !(xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]})
+my.smi=/^VMSI/	k	imperative				chunkparent.verbform=main && xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]}
+my.smi=/^VMSI/	k	perfect				 	chunkparent.verbform=perfect	 # complement clause
+my.smi=/^VMSI/	k	obligative				chunkparent.verbform=obligative
 
 # subjuntivo present, TODO: relative clauses?
-my.smi=/VMSP.../	k	perfect				 	chunkparent.verbform=perfect	 # complement clause
-my.smi=/VMSP.../	k	obligative				chunkparent.verbform=obligative	
-my.smi=/VMSP.../	k	imperative				chunkparent.si=top && xpath{child::NODE[@slem="que"]} && xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]}
+my.smi=/^VMSP/	k	perfect				 	chunkparent.verbform=perfect	 # complement clause
+my.smi=/^VMSP/	k	obligative				chunkparent.verbform=obligative	
+my.smi=/^VMSP/	k	imperative				chunkparent.si=top && xpath{child::NODE[@slem="que"]} && xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]}
 # main clause: potential or imperative (TODO: other options?)
-my.smi=/VMSP.../	d	obligative,perfect,SS,DS		chunkparent.verbform=main
+my.smi=/^VMSP/	d	obligative,perfect,SS,DS		chunkparent.verbform=main
 
 
 # special case: tener que +inf -> handled in intrachunk_transfer, delete all SYN's as they don't contain obligative as option
@@ -143,132 +143,131 @@ my.smi=/^VM/		d	SS,DS,present,future,potential,imperative,indirectpast,pastpoten
 # HABER
 
 #switch reference
-my.smi=/VA...../ && my.slem=haber	k	SS				 	chunkparent.verbform=SS
-my.smi=/VA...../ && my.slem=haber	k	DS				 	chunkparent.verbform=DS
+my.smi=/^VA/ && my.slem=haber	k	SS				 	chunkparent.verbform=SS
+my.smi=/^VA/ && my.slem=haber	k	DS				 	chunkparent.verbform=DS
 
-my.smi=/VM...../			d	agentive,perfect,present,obligative,futureDisc,potential,pastpotential,indirectpast,directpast			chunkparent.verbform=switch
+my.smi=/^VM/			d	agentive,perfect,present,obligative,futureDisc,potential,pastpotential,indirectpast,directpast			chunkparent.verbform=switch
 
 # agentive relative clause
-my.smi=/VA...../ && my.slem=haber	k	agentive				chunkparent.verbform=rel:agentive
+my.smi=/^VA/ && my.slem=haber	k	agentive				chunkparent.verbform=rel:agentive
 
 # indicative future
-my.smi=/VAIF.../ && my.slem=haber	k	obligative				chunkparent.verbform=/rel:not\.agentive|obligative/
-my.smi=/VAIF.../ && my.slem=haber	k	futureDisc				chunkparent.verbform=main
+my.smi=/^VAIF/ && my.slem=haber	k	obligative				chunkparent.verbform=/rel:not\.agentive|obligative/
+my.smi=/^VAIF/ && my.slem=haber	k	futureDisc				chunkparent.verbform=main
 
 # imperfect past (había hecho) -> plusquamperfect
-my.smi=/VAII.../ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
-my.smi=/VAII.../ && my.slem=haber	k	indirectpast				chunkparent.verbform=main
+my.smi=/^VAII/ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAII/ && my.slem=haber	k	indirectpast				chunkparent.verbform=main
 
 # perfect past (hubo hecho)
-my.smi=/VAIS.../ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAIS/ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
 # in main clause: directpast or indirectpast, delete everything else
-my.smi=/VAIS.../ && my.slem=haber	d	SS,DS,agentive,perfect			chunkparent.verbform=main
+my.smi=/^VAIS/ && my.slem=haber	d	SS,DS,agentive,perfect			chunkparent.verbform=main
 
 # indicative present TODO: main clause, he hecho-> ruwani or ruwarani?
-my.smi=/VAIP.../ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
-my.smi=/VAIP.../ && my.slem=haber	k	present					chunkparent.verbform=main
+my.smi=/^VAIP/ && my.slem=haber	k	perfect					chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAIP/ && my.slem=haber	k	present					chunkparent.verbform=main
 
 # subjuntivo hubiésemos/hubiéramos hecho, TODO: relative clauses??
-my.smi=/VASI.../ && my.slem=haber	k	obligative				chunkparent.verbform=obligative
-my.smi=/VASI.../ && my.slem=haber	k	pastpotential				chunkparent.verbform=main
+my.smi=/^VASI/ && my.slem=haber	k	obligative				chunkparent.verbform=obligative
+my.smi=/^VASI/ && my.slem=haber	k	pastpotential				chunkparent.verbform=main
 
 # subjuntivo present: hayamos hecho, TODO: relative clause? main clause, present potential (noch nicht in dix, TODO?
-my.smi=/VASP.../ && my.slem=haber	k	obligative				chunkparent.verbform=obligative
-my.smi=/VASP.../ && my.slem=haber	k	potential				chunkparent.verbform=main
+my.smi=/^VASP/ && my.slem=haber	k	obligative				chunkparent.verbform=obligative
+my.smi=/^VASP/ && my.slem=haber	k	potential				chunkparent.verbform=main
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 # ESTAR as auxiliary (only with gerund, in all other uses: estar mi=VM)
 
 # switch reference
-my.smi=/VA...../ && my.slem=estar	k	progressive_SS					chunkparent.verbform=SS
-my.smi=/VA...../ && my.slem=estar	k	progressive_DS					chunkparent.verbform=DS
+my.smi=/^VA/ && my.slem=estar	k	progressive_SS					chunkparent.verbform=SS
+my.smi=/^VA/ && my.slem=estar	k	progressive_DS					chunkparent.verbform=DS
 
-my.smi=/VM...../			d	progressive_agentive,progressive_directpast,progressive_future,progressive_indirectpast,progressive_obligative,progressive_perfect,progressive_potential,progressive_present			chunkparent.verbform=switch
+my.smi=/^VM/			d	progressive_agentive,progressive_directpast,progressive_future,progressive_indirectpast,progressive_obligative,progressive_perfect,progressive_potential,progressive_present			chunkparent.verbform=switch
 
 # agentive relative clause
-my.smi=/VA...../ && my.slem=estar	k	progressive_agentive				chunkparent.verbform=rel:agentive
+my.smi=/^VA/ && my.slem=estar	k	progressive_agentive				chunkparent.verbform=rel:agentive
 
 # indicative future, estaremos haciendo
-my.smi=/VAIF.../ && my.slem=estar	k	progressive_future				chunkparent.verbform=main
-my.smi=/VAIF.../ && my.slem=estar	k	progressive_obligative				chunkparent.verbform=/rel:not\.agentive|obligative/
+my.smi=/^VAIF/ && my.slem=estar	k	progressive_future				chunkparent.verbform=main
+my.smi=/^VAIF/ && my.slem=estar	k	progressive_obligative				chunkparent.verbform=/rel:not\.agentive|obligative/
 
 # past imperfect, estaba haciendo
-my.smi=/VAII.../ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAII/ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
 # main verb: progressive_directpast or progressive_indirectpast, delete everything else
-my.smi=/VAII.../ && my.slem=estar	d	progressive_agentive,progressive_perfect,progressive_DS,progressive_SS		chunkparent.verbform=main
+my.smi=/^VAII/ && my.slem=estar	d	progressive_agentive,progressive_perfect,progressive_DS,progressive_SS		chunkparent.verbform=main
 
 # indicative past simple, estuve haciendo
-my.smi=/VAIS.../ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAIS/ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
 # main verb: progressive_directpast or progressive_indirectpast, delete everything else
-my.smi=/VAIS.../ && my.slem=estar	d	progressive_agentive,progressive_perfect,progressive_DS,progressive_SS		chunkparent.verbform=main 
+my.smi=/^VAIS/ && my.slem=estar	d	progressive_agentive,progressive_perfect,progressive_DS,progressive_SS		chunkparent.verbform=main 
 
 # indicative present
-my.smi=/VAIP.../ && my.slem=estar	k	progressive_present				chunkparent.verbform=main
-my.smi=/VAIP.../ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAIP/ && my.slem=estar	k	progressive_present				chunkparent.verbform=main
+my.smi=/^VAIP/ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
 
 # subjuntive past, estuvieramos haciendo, TODO: relative clauses?
-my.smi=/VASI.../ && my.slem=estar	k	progressive_potential				chunkparent.verbform=main
+my.smi=/^VASI/ && my.slem=estar	k	progressive_potential				chunkparent.verbform=main
 
 # subjuntive present, estemos haciendo, TODO: relative clauses?
-my.smi=/VASP.../ && my.slem=estar	k	progressive_potential				chunkparent.verbform=main
-my.smi=/VASP.../ && my.slem=estar	k	progressive_obligative				chunkparent.verbform=obligative 
-my.smi=/VASP.../ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=perfect	#complement
+my.smi=/^VASP/ && my.slem=estar	k	progressive_potential				chunkparent.verbform=main
+my.smi=/^VASP/ && my.slem=estar	k	progressive_obligative				chunkparent.verbform=obligative 
+my.smi=/^VASP/ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=perfect	#complement
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 # SER as passive or main verb (always VS)
 
 # passive, always the same
-my.smi=/VS...../ && my.slem=ser	k	passive				chunkparent.verbform=passive
+my.smi=/^VS/ && my.slem=ser	k	passive				chunkparent.verbform=passive
 
 # switch-reference, always the same:
-my.smi=/VS...../ && my.slem=ser	k	SS				chunkparent.verbform=SS
-my.smi=/VS...../ && my.slem=ser	k	DS				chunkparent.verbform=DS
+my.smi=/^VS/ && my.slem=ser	k	SS				chunkparent.verbform=SS
+my.smi=/^VS/ && my.slem=ser	k	DS				chunkparent.verbform=DS
 
-my.smi=/VM...../			d	passive,agentive,infinitive,obligative,future,perfect,present,potential,participle			chunkparent.verbform=switch
+my.smi=/^VM/			d	passive,agentive,infinitive,obligative,future,perfect,present,potential,participle			chunkparent.verbform=switch
 
 # agentive relative clause, always the same (not true for non-agentive forms)
-my.smi=/VS...../ && my.slem=ser	k	agentive			chunkparent.verbform=rel:agentive
+my.smi=/^VS/ && my.slem=ser	k	agentive			chunkparent.verbform=rel:agentive
 
 # infinitive
-my.smi=/VSN0000/ && my.slem=ser	k	infinitive			!(chunkparent.verbform=passive)&&!(chunkparent.verbform=obligative)
-my.smi=/VSN0000/ && my.slem=ser	k	obligative			chunkparent.verbform=obligative
+my.smi=/^VSN0000/ && my.slem=ser	k	infinitive			!(chunkparent.verbform=passive)&&!(chunkparent.verbform=obligative)
+my.smi=/^VSN0000/ && my.slem=ser	k	obligative			chunkparent.verbform=obligative
 
 # conditional
-my.smi=/VSIC.../ && my.slem=ser	k	potential			chunkparent.verbform=main
+my.smi=/^VSIC/ && my.slem=ser	k	potential			chunkparent.verbform=main
 
 # future
-my.smi=/VSIF.../ && my.slem=ser	k	future				chunkparent.verbform=main
-my.smi=/VSIF.../ && my.slem=ser	k	obligative			chunkparent.verbform=obligative
-my.smi=/VSIF.../ && my.slem=ser	k	obligative			chunkparent.verbform=rel:not.agentive
+my.smi=/^VSIF/ && my.slem=ser	k	future				chunkparent.verbform=main
+my.smi=/^VSIF/ && my.slem=ser	k	obligative			chunkparent.verbform=/obligative|rel:not\.agentive/=
 
 # past imperfect
-my.smi=/VSII.../ && my.slem=ser	k	perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VSII/ && my.slem=ser	k	perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
 # main verb: directpast, indirectpast or habitual past, delete everything else
-my.smi=/VSII.../ && my.slem=ser	d	agentive,perfect,DS,SS,passive		chunkparent.verbform=main
+my.smi=/^VSII/ && my.slem=ser	d	agentive,perfect,DS,SS,passive		chunkparent.verbform=main
 
 # past simple
-my.smi=/VSIP.../ && my.slem=ser	k	perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VSIP/ && my.slem=ser	k	perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
 # main verb: directpast or indirectpast, delete everything else
-my.smi=/VSII.../ && my.slem=ser	d	agentive,perfect,DS,SS,passive		chunkparent.verbform=main
+my.smi=/^VSII/ && my.slem=ser	d	agentive,perfect,DS,SS,passive		chunkparent.verbform=main
 
 # present
-my.smi=/VSIP.../ && my.slem=ser	k	present				chunkparent.verbform=main
-my.smi=/VSIP.../ && my.slem=ser	k	perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VSIP/ && my.slem=ser	k	present				chunkparent.verbform=main
+my.smi=/^VSIP/ && my.slem=ser	k	perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
 
 # simple past
-my.smi=/VSIS.../ && my.slem=ser	k	perfect					chunkparent.verbform=perfect
-my.smi=/VSIS.../ && my.slem=ser	k	passive					chunkparent.verbform=passive
-my.smi=/VSIS.../&& my.slem=ser	d	agentive,perfect,SS,DS,passive		chunkparent.verbform=main
+my.smi=/^VSIS/ && my.slem=ser	k	perfect					chunkparent.verbform=perfect
+my.smi=/^VSIS/ && my.slem=ser	k	passive					chunkparent.verbform=passive
+my.smi=/^VSIS/&& my.slem=ser	d	agentive,perfect,SS,DS,passive		chunkparent.verbform=main
 
 # subjuntive past
-my.smi=/VSII.../ && my.slem=ser	k	obligative			chunkparent.verbform=obligative		#complement
-my.smi=/VSII.../ && my.slem=ser	k	perfect				chunkparent.verbform=perfect		#complement
-my.smi=/VSII.../ && my.slem=ser	k	potential			chunkparent.verbform=main
+my.smi=/^VSII/ && my.slem=ser	k	obligative			chunkparent.verbform=obligative		#complement
+my.smi=/^VSII/ && my.slem=ser	k	perfect				chunkparent.verbform=perfect		#complement
+my.smi=/^VSII/ && my.slem=ser	k	potential			chunkparent.verbform=main
 
 # participle sido: había sido cansado vs había sido pegado
-my.smi=/VSP00S./ && my.slem=ser	k	passive				chunkparent.verbform=passive
-my.smi=/VSP00S./ && my.slem=ser	k	participle			!(chunkparent.verbform=passive)
+my.smi=/^VSP00S/ && my.slem=ser	k	passive				chunkparent.verbform=passive
+my.smi=/^VSP00S/ && my.slem=ser	k	participle			!(chunkparent.verbform=passive)
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#

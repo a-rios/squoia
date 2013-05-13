@@ -46,6 +46,8 @@ my $dom = XML::LibXML->createDocument ('1.0', 'UTF-8');
 my $root = $dom->createElementNS( "", "corpus" );
 $dom->setDocumentElement( $root );
 my $sentence; # actual sentence
+# necessary to differentiate between opening and closing quotes, tagger doesn't do that
+my $openQuot=1;
 
 while (<>) 
   {
@@ -74,6 +76,16 @@ while (<>)
      if(($pos =~ /vm|va/ || $pos eq 'va') && $lem =~ /^est/ && $lem !~ /r$/)
      {
      	$lem = "estar";
+     }
+     # quotes, opening -> fea, closing -> fet
+     if($pos eq 'Fe')
+     {
+     	if($openQuot){
+     		$pos = 'Fea';
+     		$openQuot=0;}
+     	else{
+			$pos = 'Fet';
+     		$openQuot=1;}
      }
      
      my $eaglesTag = &toEaglesTag($pos, $info);
@@ -1069,8 +1081,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			
 			 # make sure final punctuation (.!?) is child of top chunk, if not, append to top chunk
 			 # -> otherwise punctuation will appear in some random position in the translated output!
-			 my @finalPunc = $sentence->findnodes('descendant::NODE[@lem="." or @lem="!" or @lem="?"]');
-			 
+			 # TODO: ! and ? -> direct speech!!
+			# my @finalPunc = $sentence->findnodes('descendant::NODE[@lem="." or @lem="!" or @lem="?"]');
+			 my @finalPunc = $sentence->findnodes('descendant::NODE[@lem="."]');
 			 foreach my $punc (@finalPunc) 
 			 { 
 			 		if(isLastNode($punc,$sentence) && !$punc->exists('parent::CHUNK/parent::SENTENCE') )
@@ -1938,13 +1951,15 @@ sub isLastNode{
 	foreach my $node ($sentence->findnodes('descendant::NODE'))
 			{
 				my $key = $node->getAttribute('ord');
-				print STDERR $node->getAttribute('form')."key: $key\n";
+				#print STDERR $node->getAttribute('form')."key: $key\n";
 				$nodeHash{$key} = $node;
 			}
 			my $nodeord = $node->getAttribute('ord');
 		
 			my @sequence = sort {$a<=>$b} keys %nodeHash;			
-			print STDERR "last node: ".@sequence[0]."n";
+			#print STDERR "last node: ".@sequence[0]."n";
 			return ( scalar(@sequence)>1 && $nodeHash{@sequence[-1]}->isSameNode($node) );
 			
 }
+
+

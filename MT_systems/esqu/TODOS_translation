@@ -7,8 +7,9 @@ TODOS translation:
 - relative clauses with 'donde', como traducir? la casa donde jugaron... pukllasqa(pi) wasi?
 - relative clauses with 'cuyo/a'?
 - check missing verb forms involving 2 participants (missing in grammar books)
+- el libro sobre la selva -> por el momento, sach'a-sach'amanta libro -> ablative correct or not good?
 
-- IMPORTANT: split sentences at ';', otherwise parser does weird things!!!
+- IMPORTANT: split sentences at ';', otherwise parser does weird things!!! 
 - distributive -nka
 - numbers and dates -> horas (months ok)
 
@@ -30,18 +31,17 @@ LEXICON:
   -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong)
 
 SUBORDINATED CLAUSES:
-- el hecho de que + subjuntivo
+(- el hecho de que + subjuntivo) ?
 - if verb chunk contains only participle: use -sqa form
-- siendo -kaspa en 'siendo la más extendida el quechua sureño.'
 - IMPORTANT: subj in nominal clause -> genitive!
 - En cuanto + finite verb (as soon as)
 - sentences with mientras, mientras que -> parser doesn't get a single one of them right, correct in conll2xml
   -> resolve mientras/mientras que -> -na -kama
 - relative clauses with hay que -> obligative (las inercias que hay que combatir -> obl in all tenses)
 - direct speech in Spanish: don't compare subject with main clause, translate 'as is' to Quechua!! 
+- perception verbs +Inf -> translate with agentive form: te veo bailar -> tusuq riku(su)ni (no 'tusuyta rikuni') 
 
 CONSTRUCTIONS WITH INFINITIVE:
-- empezar/ponerse a hacer -> -ri, llegar a hacer -> 
 - haber de + infinitive
 
 TOPIC/FOCUS:
@@ -53,14 +53,16 @@ PREP-OBJECTS:
 - convertirse EN -> tuky ..-MAN
 - enfrentarse contra -> maqanaku- -wan
 
+PREPOSITIONS:
+
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
 
 TRANSFER:
 
-
 GENERATION;
 - restore upper case
+- +Fut from addverbmi -> missing in xfst generation
 
 
 --------------------------------------------------------------------------------------------------------------------------
@@ -92,3 +94,6 @@ GENERATION;
 ( done - de igual manera -> parser messes that up -> add to locutions)
 ( done - adapt lexical disambiguation to allow more than one translation option)
 ( done - dueño/propietario de -> yuq)
+( done  -sobre -> Ablative vs. hawa, e.g. el libro está sobre la mesa vs. un libro sobre la selva -> translate with -manta (?), not hawa! ) 
+( done - siendo -kaspa en 'siendo la más extendida el quechua sureño.')
+( done - empezar/ponerse a hacer -> -ri, llegar a hacer -> -ri (inchoative) )
