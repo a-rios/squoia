@@ -56,7 +56,6 @@ TRANSFER:
 
 GENERATION;
 - restore upper case
-- +Fut from addverbmi -> missing in xfst generation
 
 
 --------------------------------------------------------------------------------------------------------------------------
@@ -102,3 +101,4 @@ GENERATION;
 ( done - direct speech in Spanish: don't compare subject with main clause, translate 'as is' to Quechua!! )
 ( done - en_cuanto_a -> +Top )
 ( done - relative clauses with hay que -> obligative (las inercias que hay que combatir -> obl in all tenses) )
+( done - +Fut from addverbmi -> change to ..Subj.Fut in getSentencesForGeneration.pl)
