@@ -96,13 +96,25 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								{
 									foreach my $trgt (@targetMIs)
 									{
-										my $xpathstring= 'child::SYN[@mi="'.$trgt.'"]';
+										my $xpathstring;
+										if($trgt !~ /=/)
+										{
+											$xpathstring= 'child::SYN[@mi="'.$trgt.'"]';
+										}
+										#if other attribute than mi should be used for disambiguation
+										else
+										{
+											my ($attr,$value) = split('=',$trgt);
+											$xpathstring= 'child::SYN[@'.$attr.'="'.$value.'"]';
+										}
+										#print STDERR "xpath: $xpathstring\n";
 										# find synnode with this 'mi', can be more than one
 										my @matchingSyns = $node->findnodes($xpathstring);
 										if(scalar(@matchingSyns)>0)
 										{
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
+											print STDERR "match:".$matchingtranslation->toString()."\n";
 									
 								 		   	if($keepOrDelete eq 'k')
 								   			{
@@ -113,7 +125,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 												{
 													unless($synattr =~ /ref|slem|smi|sform|UpCase|complex_mi/)
 													{
-													$node->removeAttribute($synattr->nodeName);
+														$node->removeAttribute($synattr->nodeName);
 													}
 												}
 												# fill in attributes of best translation
@@ -137,7 +149,44 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   			}
 								   			elsif($keepOrDelete eq 'd')
 								   			{
-								    			$node->removeChild($matchingtranslation);
+								   				# get all syn nodes, copy attributes of first syn that is NOT in matching translations
+								   				# to NODE, delete all that are in @matchingtranslations, unless there is non left
+								   				# in this case: keep last syn and print warning to STDERR
+								   				my $firstsyn = $SYNnodes[0];
+								   				if( grep( $_ == $firstsyn, @matchingSyns ))
+								   				{
+								   					# delete the attributes of the first SYN child that have been "copied" into the parent NODE
+													my $firstsyn = $SYNnodes[0];
+													my @synattrlist = $firstsyn->attributes();
+													foreach my $synattr (@synattrlist)
+													{
+														unless($synattr =~ /ref|slem|smi|sform|UpCase|complex_mi/)
+														{
+															$node->removeAttribute($synattr->nodeName);
+														}
+													}
+													# fill in attributes of first SYN that is not in matchingtranslations
+								    				foreach my $syn (@SYNnodes)
+								    				{
+								    					if(!grep( $_ == $syn, @matchingSyns ) or $syn == @SYNnodes[-1])
+								    					{
+								    						my @Attributes = $syn->attributes();
+								    						foreach my $synattr (@Attributes)
+								    						{
+								    							my ($attr,$value) = split('=',$synattr);
+								    							$value =~ s/"//g;
+								    							$attr =~ s/\s//g;
+								    							$node->setAttribute($attr, $value);
+								    						}
+								    						last;
+								    					}
+								    				}
+								   				}
+								   				#remove all matching translations:
+								   				foreach my $matchingtranslation (@matchingSyns)
+								   				{	#print STDERR "delete: ".$matchingtranslation->toString()."\n";
+								   					$node->removeChild($matchingtranslation);
+								   				}
 								    		}
 								   			else
 								   			{

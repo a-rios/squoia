@@ -235,6 +235,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			my ($verbprs) = ($verbmi =~ m/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)/ );
  			my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
  			my ($objprs) = ($verbmi =~ m/\+([12]\.[PS][lg])(\.Incl|\.Excl)?\.Obj/ );
+ 			my ($subjprsPoss,$inclExclPoss) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Poss/ );
+ 			#print STDERR "verbmi: $verbmi .......... poss subj: $subjprsPoss\n";
  			#print STDERR "verbmi: $verbmi .......... subj obj: $subjprs, $objprs\n";
  			
  			# nispa
@@ -247,6 +249,14 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			{
  				#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
  				$verbmi =~ s/\Q$subjprs\E($inclExcl)?\.Obj/Rflx/g;
+ 				#print STDERR "replaced $subjprs: $verbmi\n";
+ 			}
+ 			# if this is a nominal (perfect or obligative) form, check if object and possessive suffix are same person
+ 			# -> if so, replace object suffix with reflexive
+ 			if($chunk->getAttribute('verbform') =~ /perfect|obligative/ && $subjprsPoss ne '' && $verbmi =~ $subjprs."Obj")
+ 			{
+ 				#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
+ 				$verbmi =~ s/\Q$subjprsPoss\E($inclExcl)?\.Obj/Rflx/g;
  				#print STDERR "replaced $subjprs: $verbmi\n";
  			}
  			# if there was a new subject inserted during transfer, change that (e.g. in direct speech)
@@ -273,7 +283,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				{
  					$verbmi=$verbmi."+Inf";
  				}
- 			
+ 			# if this is a nominal verb chunk with a case suffix
+ 			if( $chunk->hasAttribute('case'))
+ 				{
+ 					$verbmi=$verbmi.$chunk->getAttribute('case');
+ 				}
  			# clean up and adjust morphology tags
  			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
  			if($lemma2 eq '' && $auxlem eq '' && $verbmi ne '')
