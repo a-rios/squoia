@@ -767,6 +767,15 @@ sub adjustMorph{
 	$morphString =~ s/\+\+(\+)?/\+/g;
 	$morphString =~ s/,//g;
 	
+	# if there's a +Fut tag that was added during the transfer:
+	# attach this to subj tag: 1.Sg.Subj+Fut = 1.Sg.Subj.Fut
+	if($morphString =~ /\+Fut/)
+	{
+		$morphString =~ s/Subj/Subj.Fut/g;
+		$morphString =~ s/\+Fut//g;
+	}
+	
+	
 	my @morphs = split(/(\+)/, $morphString);
 
 	my %sortedMorphs =();

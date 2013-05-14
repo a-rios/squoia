@@ -99,7 +99,7 @@ my.smi=/VMG0000|VSG0000/ && !(xpath{child::NODE[@slem="estar" or @slem="seguir"]
 my.mi=infinitive && !(xpath{following-sibling::NODE}) && parent.si=cd			"+Acc"			my.type=/grup-verb|coor-v/			addverbmi		up		concat
 
 # if verb chunk with only infinitive: copy verbmi to chunk
-my.mi=infinitive && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[@slem="poner" or @slem="ir" or @slem="empezar" or @slem="comenzar"]}) 			verbmi				my.type=grup-verb				verbmi			up		concat
+my.mi=infinitive && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && !(xpath{descendant::NODE[@slem="poner" or @slem="ir" or @slem="empezar" or @slem="comenzar"]}) 			verbmi				my.type=grup-verb				verbmi			up		concat
 
 # if finite verb is unknown in complex verb chunk or lem is deber (deber hacer), copy verbmi of (non-finite) main verb
 my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NODE[@unknown="transfer" or @slem="deber"]} 		verbmi			my.type=/grup-verb|coor-v/	addverbmi		up	concat
