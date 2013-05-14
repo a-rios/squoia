@@ -13,16 +13,17 @@ TODOS translation:
   correct or not? -> ella sabe que tú te has ido -> qam rikusqaykita yachan or qamPA rikusqaykita yachan?
   (a.t.m: with PA -> rule in STinterchunk.rules)
 - En cuanto + finite verb (as soon as) -> spa/pti + wan ?
+(- el hecho de que + subjuntivo) ?
 
 - IMPORTANT: split sentences at ';', otherwise parser does weird things!!! 
-- distributive -nka
+- distributive -nka 
 - numbers and dates -> horas (months ok)
 
 - permanecer +Adj -> Adj-raya- 
 - if denominado + proper name: delete denominado, otherwise 'nisqa' is doubled
   denominado+Dim palcayoc ni:VRoot+Perf
   
-- evidential 'dice(n) que' in Andean Spanish -> don't treat as direct speech! also: según dice(n)
+( IMPOSSIBLE DISTINCTION (?) - evidential 'dice(n) que' in Andean Spanish -> don't treat as direct speech! also: según dice(n))
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
 
@@ -32,10 +33,7 @@ LEXICON:
   -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong)
 
 SUBORDINATED CLAUSES:
-(- el hecho de que + subjuntivo) ?
 (- if verb chunk contains only participle: use -sqa form)
-- relative clauses with hay que -> obligative (las inercias que hay que combatir -> obl in all tenses)
-- direct speech in Spanish: don't compare subject with main clause, translate 'as is' to Quechua!! 
 - perception verbs +Inf -> translate with agentive form: te veo bailar -> tusuq riku(su)ni (no 'tusuyta rikuni') 
 
 CONSTRUCTIONS WITH INFINITIVE:
@@ -44,10 +42,9 @@ CONSTRUCTIONS WITH INFINITIVE:
 TOPIC/FOCUS:
 - topicalized nouns with relative clauses: fueron ellos quienes dejaron,
 - lo que hacemos es... lo que encontramos es...
-- en_cuanto_a -> +Top
 
 PREP-OBJECTS:
-- convertirse EN -> tuky ..-MAN
+- convertirse EN -> tukuy ..-MAN
 - enfrentarse contra -> maqanaku- -wan
 
 PREPOSITIONS:
@@ -102,3 +99,6 @@ GENERATION;
 ( done - sentences with mientras, mientras que -> parser doesn't get a single one of them right, correct in conll2xml
 	-> resolve mientras/mientras que -> -na -kama
 	-> fine without comas (?) )
+( done - direct speech in Spanish: don't compare subject with main clause, translate 'as is' to Quechua!! )
+( done - en_cuanto_a -> +Top )
+( done - relative clauses with hay que -> obligative (las inercias que hay que combatir -> obl in all tenses) )

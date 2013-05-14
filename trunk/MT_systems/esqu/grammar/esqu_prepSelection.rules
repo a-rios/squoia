@@ -125,6 +125,8 @@ encima_de	spform=hanaykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type=
 encima_de	spform=hanankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
 encima_de	postpos=hanan,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
+en_cuanto_a	case=+Top		-
+
 en_medio_de	postpos=chawpin,nouncase=+Gen	-
 
 entre		case=+Intsoc		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Masc]" or @sem="[+Fem]" or @sem="[+Hum]"]}
