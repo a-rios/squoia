@@ -239,6 +239,15 @@ tener	q'apa		k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="fr
 # tener: default, use tene-
 tener	unspecified	k	!(xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="fragancia" or @slem="olor" or @slem="compasión" or @slem="piedad" or @slem="vergüenza" or @slem="sueño" or @slem="sed" or @slem="pena" or @slem="pareja" or @slem="miedo" or @slem="hipo" or @slem="hambre" or @slem="flojera" or @slem="pereza" or @slem="enemistad" or @slem="año"]})
 
+  #####################
+  # PERSONAL PRONOUNS #
+  #####################
+  
 # usted/ustedes
 usted	k	qam		my.sform=usted
 usted	k	qamkuna		my.sform=ustedes
+
+# personal pronoun 1.Pl -> if verb is 2 pers: must be 1.pl.excl
+# -> 2 > 1.pl cannot be inclusive
+# nosotros/as (nos is disambiguated in morphSelection.rules)
+nosotros	ñuqayku		k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/child::CHUNK[contains(@si,"cd")]/NODE[contains(@mi,"++2")]} 

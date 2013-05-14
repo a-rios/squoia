@@ -710,6 +710,17 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 {
 				 	$node->setAttribute('rel', 'ci'); 
 				 }
+				 # if this is tú/yo/ etc and congruent with verb -> this is the subject
+				 #if($node->getAttribute('lem') =~ /^yo|tú|él|ellos|nosotros|vosotros/ && $parent->exists('self::*[@type="grup-verb" or @cpos="v"]') && &isCongruent($node,$parent) ==1 )
+				 # problem: STDIN is set to :utf8, libxml doesn't like that, can't match tú/él directly
+				 if($node->getAttribute('mi') =~ /PP2CSN0.|PP3.S000/ && $parent->exists('self::*[@type="grup-verb" or @cpos="v"]') && &isCongruent($node,$parent))
+				 {
+				 	$node->setAttribute('rel', 'suj-a');
+				 }
+				 elsif($node->getAttribute('lem') =~ /^yo|ellos|nosotros|vosotros/ && $parent->exists('self::*[@type="grup-verb" or @cpos="v"]') && &isCongruent($node,$parent) )
+				 {
+				 	$node->setAttribute('rel', 'suj-a');
+				 }
 				 $nounchunk->setAttribute('si', $node->getAttribute('rel'));
 				 $nounchunk->setAttribute('ord', $node->getAttribute('ord'));
 				 #$node->removeAttribute('rel');

@@ -26,7 +26,7 @@
 # copy object information in addverbmi attribute in sn-chunks (clitics me,te,se) to the next higher verb chunk 
 # or to the pp chunk ( a mí, a tí..) and from there to the next higher verb chunk
 my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="grup-sp" and not(@spform)]/CHUNK[@type="sn"]/@addverbmi} 		addverbmi			chunkgrandparent		1to2		concat
-my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]}			addverbmi			parent				1to2		concat
+my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]} && ( !(child.slem=/^ir$/marchar/) && !(child.smi=/VMM01P0|VMSP1P0/ ) )			addverbmi			parent				1to2		concat
 
 #my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				my.type=/grup-verb|coor-v/		addverbmi			chunkgrandparent		1to2		concat
 
@@ -44,6 +44,12 @@ child.slem=/propietario|dueño/ && my.chunkmi=++Poss	chunkmi			my.type=sn				chu
 # in a pp with a coordinated np inside: copy the case/nouncase attribute to the second coordinated np
 #my.type=/grup-sp|coor-sp/ && child.type=coor-n		case			my.type=sn && chunkparent.type=coor-n			case			ancestor	1to2		overwrite
 my.type=sn && chunkparent.type=coor-n 			case		my.type=/grup-sp|coor-sp/			case		chunkgrandparent	2to1		overwrite
+
+# subject in nominal verb chunk: add genitive
+# TODO check if thats correct: 
+# ella sabe que tú te has ido -> qam(pa?) rikusqaykita yachan
+my.si=/suj/ 		case		my.verbform=/perfect|obligative/ && my.case=+Acc	"+Gen"		parent		2to1		overwrite
+
 
 
     ##########

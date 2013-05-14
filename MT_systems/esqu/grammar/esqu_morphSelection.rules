@@ -9,6 +9,8 @@
 # my -> this node, parent -> parent node, child -> child node (true if condition is met for at least one child node), 
 # rsibling/lsibling -> right/left sibling node (true if condition is met for at least one sibling node to the right/left)
 # chunkparent: first ancestor that is a chunk
+# other attributes than 'mi' can be used as morphTRGT, with 'attr=value', e.g. verbmi=bla will check all syn nodes where verbmi=bla for given conditions
+# if no attr is given, morphTRGT is 'mi'
 
 # IMPORTANT: 
 # - if more than one translation option with 'k' for a node evaluates to true, the first one will be used to fill 
@@ -51,6 +53,11 @@ my.smi=PP3CNO00	k	++Rflx				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NOD
 my.smi=PP3CNO00	k	NRoot				my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
 my.smi=PP3CNO00	k	NRoot+Instr			my.slem=consigo
 
+# personal pronoun 1.Pl -> if verb is 2 pers: must be 1.pl.excl
+# -> 2 > 1.pl cannot be inclusive
+# nos:
+my.smi=/PP1.P000/	k	++1.Pl.Excl.Obj			xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/descendant::NODE[contains(@verbmi,"2")]} 
+
 # possessive pronouns 3rd person, Spanish: all 'su', qu: need number of possessor, if possessed noun is singular
 # (if both possessor and possessed noun plural -> -nku +kuna -> realized as -nkuna anyway, just take singular
 # singular is default, keep plural only if there's a double marked possessive with a plural possessor
@@ -62,8 +69,11 @@ my.smi=/^DP3/	k	++3.Sg.Poss			!(xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="g
 
 
 #################
-#  main verbs
+#   verbs	#
 #################
+
+# all verbs: if 1.pl > 2 -> cannot be inclusive, keep only 1.pl.excl
+my.smi=/^V.+1P/	d	verbmi=VRoot+1.Pl.Incl.Subj		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK/*[contains(@mi,"++2")]}
 
 # infinitive: -y or -na (-> hay que hacer, tener que hacer)
 my.smi=VMN0000	k	obligative			 	chunkparent.verbform=obligative
@@ -90,11 +100,13 @@ my.smi=/^VM/	k	agentive			 	chunkparent.verbform=rel:agentive
 # indicative present
 my.smi=/^VMIP/	k	perfect				 	chunkparent.verbform=/rel:not\.agentive|perfect/
 my.smi=/^VMIP/	k	present				 	chunkparent.verbform=main
+my.smi=/^VMIP/	k	obligative				chunkparent.verbform=obligative
 
 # indicative imperfect past
 my.smi=/^VMII/	k	perfect				 	chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VMII/	k	obligative			 	chunkparent.verbform=obligative
 #if main clause: keep options  direct, indirect or habitual past
-my.smi=/^VMII/	d	agentive,perfect,SS,DS			chunkparent.verbform=main
+my.smi=/^VMII/	d	agentive,perfect,SS,DS,obligative	chunkparent.verbform=main
 
 # indicative past simple
 my.smi=/^VMIS/	k	perfect			 		chunkparent.verbform=/rel:not\.agentive|perfect/
@@ -110,14 +122,16 @@ my.smi=/^VMIC/	k	potential				chunkparent.verbform=main
 
 # subjuntivo imperfecto
 my.smi=/^VMSI/	k	potential				chunkparent.verbform=main && !(xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]})
-my.smi=/^VMSI/	k	imperative				chunkparent.verbform=main && xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]}
+my.smi=/^VMSI/	k	imperative				chunkparent.verbform=main && (xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]} || xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]} )
 my.smi=/^VMSI/	k	perfect				 	chunkparent.verbform=perfect	 # complement clause
 my.smi=/^VMSI/	k	obligative				chunkparent.verbform=obligative
 
 # subjuntivo present, TODO: relative clauses?
 my.smi=/^VMSP/	k	perfect				 	chunkparent.verbform=perfect	 # complement clause
 my.smi=/^VMSP/	k	obligative				chunkparent.verbform=obligative	
-my.smi=/^VMSP/	k	imperative				chunkparent.si=top && xpath{child::NODE[@slem="que"]} && xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]}
+# if there's a '!' present: imperative 
+my.smi=/^VMSP/	k	imperative				chunkparent.si=top && xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]}
+
 # main clause: potential or imperative (TODO: other options?)
 my.smi=/^VMSP/	d	obligative,perfect,SS,DS		chunkparent.verbform=main
 

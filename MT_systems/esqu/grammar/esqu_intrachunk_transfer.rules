@@ -66,7 +66,7 @@ my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="p
 # morphological information inserted during transfer that is needed by all synonyms for generation goes to addverbmi, all information that is needed only by primary node goes to verbmi! 
     
 # copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && (!(xpath{ancestor::NODE[@mi="infinitive"]}) || xpath{ancestor::NODE[@mi="infinitive" and not(@slem="poner" or @slem="empezar" or @slem="llegar" or @slem="comenzar" or @slem="ir")]} || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) ) && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]}))		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && (!(xpath{ancestor::NODE[@mi="infinitive"]}) || xpath{ancestor::NODE[@mi="infinitive" and not(@slem="poner" or @slem="empezar" or @slem="llegar" or @slem="comenzar" or @slem="ir")]} || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) ) && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]}))		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
 
 
 # ir a + infinitive: copy attribute 'verbmi' from 'ir' (if finite) to verbmi in chunk
@@ -108,7 +108,8 @@ my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NO
 my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			addverbmi			up		concat
 
 # copy lemma of the main verb (first node child in verbchunk) to the verb chunk (needed for generation)
-my.smi=/^V/ && !(xpath{ancestor::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified || my.unknown=transfer)		lem			my.type=/grup-verb|coor-v/		lem			up		concat
+# except with 1.Pl imperative of ir/marchar -> irregular form 'haku'
+my.smi=/^V/ && !(xpath{ancestor::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspecified || my.unknown=transfer) && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ )		lem			my.type=/grup-verb|coor-v/		lem			up		concat
 my.smi=/^V/ && !(xpath{ancestor::NODE[starts-with(@smi,"V")]}) && (my.lem=unspecified || my.unknown=transfer)		slem			my.type=/grup-verb|coor-v/		lem			up		concat
 
 # copy all information from add_mi in verbs to verbmi (concat)
@@ -127,6 +128,11 @@ my.slem=donde && my.smi=/^PR/				"+Loc"			my.verbform=/^rel:/				addverbmi			up	
 
 # set 3.Sg of copula (kan) to be deleted
 my.lem=ka && my.verbmi=/Copula\+3\.Sg\.Subj/ && my.mi=present 				"yes"			my.type=/grup-verb|coor-v/ && my.lem=ka			delete		up		overwrite
+
+# special case: imperative 1.pl of 'ir/marchar' -> irregular form 'haku'
+my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/	"haku"		my.type=/grup-verb|coor-v/	lem		up	overwrite
+my.mi=imperative && my.slem=/^ir$|marchar/ && my.smi=/VMM01P0|VMSP1P0/	""		my.type=/grup-verb|coor-v/	verbmi		up	overwrite
+my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/ && my.slem=/^ir$|marchar/ 	""		my.type=/grup-verb|coor-v/	addverbmi	up	overwrite
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
