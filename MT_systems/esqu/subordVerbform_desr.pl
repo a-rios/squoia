@@ -70,8 +70,8 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'obligative');
  				}
  				# if this is hay/había/habrá que + infinitive -nan kan
- 				# note that parser can attach que to 'hay' but also to infinitive! 
- 				elsif($verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que"]') || $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/NODE[@lem="que"]]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]'))
+ 				# note that parser can attach 'que' to 'hay' but also to infinitive! 
+ 				elsif(( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || ( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/NODE[@lem="que"]]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]') ) )
  				{
  					$nbrOfFiniteForms++;
  					$verbChunk->setAttribute('verbform','main');
@@ -91,7 +91,7 @@ foreach my $sentence (@sentenceList)
  						$infinitiveWithoutQUE->setAttribute('verbform', 'obligative');
  						$infinitiveWithoutQUE->setAttribute('addverbmi', '+3.Sg.Poss');
  					}
- 				}
+ 				} 			
  				# if this is a passive clause with 'ser'/'estar'
  				elsif($verbChunk->exists('child::NODE[starts-with(@mi,"VMP")]/NODE[@lem="ser" or @lem="estar"]'))
  				{
@@ -305,13 +305,14 @@ foreach my $sentence (@sentenceList)
 							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
 							# note: if compareSubjects gives 'switch', this means that both verbs are 3rd persons and have the same number, but at least
 							#  one of the clauses has no overt subject. It is safe to assume that in this case the subjects are coreferential with a say verb in the main clause
+							# NOTE: only with indirect speech, do not alter direct speech (when there's no 'que')
 							&compareSubjects($verbChunk);
 							#print $verbChunk->toString."\n";
-							if(($verbChunk->getAttribute('verbform') eq 'SS' || $verbChunk->getAttribute('verbform') eq 'switch') && &isSingular($verbChunk))
+							if( ($verbChunk->getAttribute('verbform') eq 'SS' || $verbChunk->getAttribute('verbform') eq 'switch') && &isSingular($verbChunk) && $verbChunk->exists('descendant::NODE[@slem="que" and @smi="CS"]') )
 							{
 								$verbChunk->setAttribute('verbprs', '+1.Sg.Subj')
 							}
-							elsif($verbChunk->getAttribute('verbform') eq 'SS' && !&isSingular($verbChunk))
+							elsif($verbChunk->getAttribute('verbform') eq 'SS' && !&isSingular($verbChunk) && $verbChunk->exists('descendant::NODE[@slem="que" and @smi="CS"]') )
 							{
 								$verbChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
 							}
@@ -393,6 +394,34 @@ foreach my $sentence (@sentenceList)
 				my $reltype = $verbChunk->findvalue('child::NODE/descendant-or-self::NODE/@verbform');
 				$verbChunk->setAttribute('verbform',$reltype);
 				$nbrOfRelClauses++;
+				
+				# if this is a relative clause with hay/había/habrá que + infinitive  --> use obligative, but only on main verb, 
+				# set delete=yes in haber
+ 				# 'las inercias que hay que combatir'
+ 				# note that parser can attach 'que' to 'hay' but also to infinitive! 
+ 				if(( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || ( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/NODE[@lem="que"]]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]') ) )
+ 				{
+ 					$nbrOfFiniteForms++;
+ 					#$verbChunk->setAttribute('verbform','main');
+ 					$verbChunk->setAttribute('delete','yes');
+ 					# get infintive of main verb and set this form to obligative
+ 					my $infinitiveWithQUE = @{$verbChunk->findnodes('child::CHUNK[NODE[@mi="VMN0000"]/NODE[@lem="que"]][1]')}[0];
+ 					my $infinitiveWithoutQUE = @{$verbChunk->findnodes('child::CHUNK[NODE[@mi="VMN0000"]][1]')}[0];
+ 					if($infinitiveWithQUE)
+ 					{
+ 						$nbrOfFinalClauses++;
+ 						$infinitiveWithQUE->setAttribute('verbform', 'obligative');
+ 						$infinitiveWithQUE->setAttribute('addverbmi', '+3.Sg.Poss');
+ 					}
+ 					elsif($infinitiveWithoutQUE)
+ 					{
+ 						$nbrOfFinalClauses++;
+ 						$infinitiveWithoutQUE->setAttribute('verbform', 'obligative');
+ 						$infinitiveWithoutQUE->setAttribute('addverbmi', '+3.Sg.Poss');
+ 					}
+ 				}
+
+ 				
 			}
  		}
  		else
