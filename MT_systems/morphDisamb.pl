@@ -74,8 +74,8 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 					{
 							# check for each target conditions if one of the matching rules applies
 							# if yes, check if k=keep or d=delete 
-							# -> if keep, we're done, delete all other nodes and make this the only translation option
-							# -> if delete, delete and look at next SYN node
+							# -> if keep, keep all matching SYN nodes and delete all the other SYN nodes
+							# -> if delete, delete all matching SYN nodes
 							
 							# get target conditions
 							my $trgtConds = @{ $morphSel{$ruleskey}}[0];
@@ -86,16 +86,9 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								#keep or delete?
 								my $keepOrDelete = @{ $morphSel{$ruleskey}}[1];
 								my @targetMIs = split(',',$trgtMI);
-								#if more than one target mi, can only be delete, not keep
-								if(scalar(@targetMIs)>1 && $keepOrDelete eq 'k')
+								my @matchingSyns=();
+								foreach my $trgt (@targetMIs)
 								{
-									print STDERR "error: more than one translation option with target mi=$trgtMI!\n Something's wrong here, won't disambiguate.\n";
-								}
-								# else, only one target mi with k or d, or more than one with d
-								else
-								{
-									foreach my $trgt (@targetMIs)
-									{
 										my $xpathstring;
 										if($trgt !~ /=/)
 										{
@@ -109,21 +102,23 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 										}
 										#print STDERR "xpath: $xpathstring\n";
 										# find synnode with this 'mi', can be more than one
-										my @matchingSyns = $node->findnodes($xpathstring);
-										if(scalar(@matchingSyns)>0)
-										{
+										my @matchingSynsCand = $node->findnodes($xpathstring);
+										push(@matchingSyns,@matchingSynsCand);
+									}
+									if(scalar(@matchingSyns)>0)
+									{
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
-											print STDERR "match:".$matchingtranslation->toString()."\n";
+											#foreach my $m (@matchingSyns){print STDERR "match:".$matchingtranslation->toString()."\n";}
 									
 								 		   	if($keepOrDelete eq 'k')
 								   			{
 								    			# delete the attributes of the first SYN child that have been "copied" into the parent NODE
-												my $firstsyn = $SYNnodes[0];
-												my @synattrlist = $firstsyn->attributes();
+												#my $firstsyn = $SYNnodes[0];
+												my @synattrlist = $node->attributes();
 												foreach my $synattr (@synattrlist)
 												{
-													unless($synattr =~ /ref|slem|smi|sform|UpCase|complex_mi/)
+													unless($synattr =~ /ref|slem|smi|sform|UpCase/)
 													{
 														$node->removeAttribute($synattr->nodeName);
 													}
@@ -142,7 +137,8 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								    			foreach my $syn (@SYNnodes)
 								    			{
 								    				unless( grep( $_ == $syn, @matchingSyns ))
-								    				{$node->removeChild($syn);}
+								    				{
+								    					$node->removeChild($syn);}
 								    			}
 								    			#delete SYN node whose attributes have been copied to node
 								    			$node->removeChild($matchingtranslation);
@@ -156,11 +152,11 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   				if( grep( $_ == $firstsyn, @matchingSyns ))
 								   				{
 								   					# delete the attributes of the first SYN child that have been "copied" into the parent NODE
-													my $firstsyn = $SYNnodes[0];
-													my @synattrlist = $firstsyn->attributes();
+													#my $firstsyn = $SYNnodes[0];
+													my @synattrlist = $node->attributes();
 													foreach my $synattr (@synattrlist)
 													{
-														unless($synattr =~ /ref|slem|smi|sform|UpCase|complex_mi/)
+														unless($synattr =~ /ref|slem|smi|sform|UpCase/)
 														{
 															$node->removeAttribute($synattr->nodeName);
 														}
@@ -194,9 +190,8 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   			 }
 										}
 									}
-								}
 							}
-						}
+						
 					}
 			}
 	}

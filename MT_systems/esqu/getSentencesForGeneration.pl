@@ -353,9 +353,12 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  		#punctuation: print as is
  		elsif($chunk->exists('self::CHUNK[@type="F-term"]') && $chunk->getAttribute('delete') ne 'yes'  )
  		{
+ 			# print mi with the punctuation ->  after morphological generation
+ 			# -> when printing out sentences, it's useful to know whether to attach punctuation to preceding or following word!!
  			my $pmark = $chunk->findvalue('child::NODE/@slem');
+ 			my $pmi = $chunk->findvalue('child::NODE/@smi');
  			
- 			print STDOUT "$pmark\n";
+ 			print STDOUT "$pmark-PUNC-$pmi\n";
  		}
  		# adverbs: RN 'no' -> print only if without 'nada,nunca or jamás', in those cases -> no is already contained in the suffix -chu in the verb chunk
  		elsif($chunk->exists('self::CHUNK[@type="sadv" or @type="coor-sadv"]') && !($chunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/descendant::NODE[@slem="nada" or @slem="nunca" or @slem="jamás"]') && $chunk->exists('child::NODE[@smi="RN"]') ) && !$chunk->hasAttribute('delete') )      
@@ -508,13 +511,24 @@ sub printNode{
  		$nodeString = &deleteUnusedTags($nodeString,$chunk);
  		#print STDERR "node string: $nodeString\n";
  		# clean up and adjust morphology tags
- 		print STDOUT "$lemma:".&adjustMorph($nodeString,\%mapTagsToSlots);
- 		if($postform ne '')
+ 		if($postform eq ''){
+ 			print STDOUT "$lemma:".&adjustMorph($nodeString,\%mapTagsToSlots);
+ 		}
+ 		else
  		{
+ 			print STDOUT "$lemma\n";
  			my @pfsWithEmtpyFields = split('#',$postform);
  			# remove empty fields resulted from split
  			my @pfs = grep {$_} @pfsWithEmtpyFields; 
- 			for my $postword (@pfs){print STDOUT "\n$postword";}
+ 			foreach my $postword (@pfs){
+ 				if(!$postword == @pfs[-1]){
+ 					print STDOUT "$postword\n";
+ 					}
+ 				# if this is the last postword, attach morphology!
+ 				else{
+ 					print STDOUT "$postword:".&adjustMorph($nodeString,\%mapTagsToSlots);
+ 				}
+ 			}
  		}
  	}
  		
@@ -605,6 +619,7 @@ sub mapEaglesTagToQuechuaMorph{
 	my $chunk = $_[1];
 	my $eaglesTag = $node->getAttribute('smi');
 	my $slem = $node->getAttribute('slem');
+	my $sform = $node->getAttribute('sform');
 	my $EagleMorphs = '';
 	
 	#adjectives
@@ -671,7 +686,8 @@ sub mapEaglesTagToQuechuaMorph{
 		# other proper name
 		elsif($type eq 'P')
 		{
-			my (@words) = split('_',$slem);
+			# use sform instead of slem for proper nouns to keep original casing!
+			my (@words) = split('_',$sform);
 			for(my $i=0;$i<scalar(@words)-1;$i++)
 			{
 				print STDOUT @words[$i]."\n";

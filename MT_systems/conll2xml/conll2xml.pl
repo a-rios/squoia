@@ -48,6 +48,7 @@ $dom->setDocumentElement( $root );
 my $sentence; # actual sentence
 # necessary to differentiate between opening and closing quotes, tagger doesn't do that
 my $openQuot=1;
+my $openBar=1;
 
 while (<>) 
   {
@@ -87,6 +88,16 @@ while (<>)
 			$pos = 'Fet';
      		$openQuot=1;}
      }
+     # hyphen, opening -> fga, closing -> fgt
+     if($pos eq 'Fg')
+     {
+     	if($openQuot){
+     		$pos = 'Fga';
+     		$openBar=0;}
+     	else{
+			$pos = 'Fgt';
+     		$openBar=1;}
+     }
      
      my $eaglesTag = &toEaglesTag($pos, $info);
      # if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
@@ -107,6 +118,11 @@ while (<>)
      if($lem eq 'y' || $lem eq 'o')
      {
      	$rel = 'coord';
+     }
+     # Numbers: FreeLing uses their form as lemma (may be uppercased) -> change lem to lowercase for numbers!
+     if($pos eq 'Z')
+     {
+     	$lem = lc($lem);
      }
      $wordNode->setAttribute( 'ord', $id );
      $wordNode->setAttribute( 'form', $word );
@@ -1453,11 +1469,11 @@ sub isCongruent{
 				{
 					$nounNumber = $nounNumber = substr ($subjMI, 4, 1);
 				}
-				elsif($subjNode->getAttribute('cpos') eq 'Z' && $subjNode->getAttribute('lem') eq '1')
+				elsif($subjNode->getAttribute('pos') eq 'Z' && ($subjNode->getAttribute('lem') eq '1' || $subjNode->getAttribute('lem') eq 'uno' ))
 				{
 					$nounNumber = 'S';
 				}
-				elsif($subjNode->getAttribute('cpos') eq 'Z' && $subjNode->getAttribute('lem') ne '1')
+				elsif($subjNode->getAttribute('pos') eq 'Z' && ($subjNode->getAttribute('lem') ne '1' || $subjNode->getAttribute('lem') ne 'uno' ))
 				{
 					$nounNumber = 'P';
 				}

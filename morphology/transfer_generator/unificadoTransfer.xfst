@@ -442,13 +442,14 @@ define Verb [[Root|VDeriv] VerbSuffixes ] .o. VDERIV;
        #-------------#
        
        define punc [%,|%.|"%"|'|%;|%/|"-"|%!|%?|%+|%(|%)|%[|%]|%:|%&|%"|%\|%^|%~|%`|%°|%§|%¿|%¡|%»|%«|%’|%@|%#|%*|%=|%}|%{|%_|%<|%>|%—];
+       define puncWord [punc "-PUNC-" UPPER+ ];
        
 
 
 #########################################################################
 
 
-define generator1 [Noun|Verb|punc] .o. ASphon ;
+define generator1 [Noun|Verb|puncWord|"#EOS"] .o. ASphon ;
 #.o. ["-" -> "" ] ; 
 
 read regex generator1 .i;

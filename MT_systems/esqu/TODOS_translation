@@ -14,7 +14,8 @@ TODOS translation:
   (a.t.m: with PA -> rule in STinterchunk.rules)
 - En cuanto + finite verb (as soon as) -> spa/pti + wan ?
 (- el hecho de que + subjuntivo) ?
-
+- 'de' in partitive: 'tres de ellos', 'dos de las casas' -> Ablative, Genitive, or something else?
+ 
 - IMPORTANT: split sentences at ';', otherwise parser does weird things!!! 
 - distributive -nka 
 - numbers and dates -> horas (months ok)
@@ -43,19 +44,14 @@ TOPIC/FOCUS:
 - topicalized nouns with relative clauses: fueron ellos quienes dejaron,
 - lo que hacemos es... lo que encontramos es...
 
-PREP-OBJECTS:
+PREPOSITIONS/ PREP-OBJECTS:
 - convertirse EN -> tukuy ..-MAN
 - enfrentarse contra -> maqanaku- -wan
-
-PREPOSITIONS:
+- 'de' in partitive: 'tres de ellos', 'dos de las casas' -> Ablative, Genitive, or something else?
 
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
 
-TRANSFER:
-
-GENERATION;
-- restore upper case
 
 
 --------------------------------------------------------------------------------------------------------------------------
@@ -102,3 +98,7 @@ GENERATION;
 ( done - en_cuanto_a -> +Top )
 ( done - relative clauses with hay que -> obligative (las inercias que hay que combatir -> obl in all tenses) )
 ( done - +Fut from addverbmi -> change to ..Subj.Fut in getSentencesForGeneration.pl)
+( done - restore upper case)
+( done - LEXICAL TRANSFER - numbers! -> adapted matxin-xfer-lex )
+( done - lexicon ordinal numbers )
+( done - MORPH DISAMB: -restrict habitual past forms to 'soler' (?) )
