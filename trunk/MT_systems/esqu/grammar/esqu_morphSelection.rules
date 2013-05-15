@@ -75,6 +75,14 @@ my.smi=/^DP3/	k	++3.Sg.Poss			!(xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="g
 # all verbs: if 1.pl > 2 -> cannot be inclusive, keep only 1.pl.excl
 my.smi=/^V.+1P/	d	verbmi=VRoot+1.Pl.Incl.Subj		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK/*[contains(@mi,"++2")]}
 
+# all verb forms: if rel: delete all but obligative,perfect and agentive
+my.smi=/^V/	k	agentive,perfect,obligative		chunkparent.verbform=rel:
+
+# all verbs: switch-reference
+my.smi=/^V/	k	SS				 	chunkparent.verbform=SS
+my.smi=/^V/	k	DS				 	chunkparent.verbform=DS
+my.smi=/^V/	k	DS,SS				 	chunkparent.verbform=switch
+
 # infinitive: -y or -na (-> hay que hacer, tener que hacer)
 my.smi=VMN0000	k	obligative			 	chunkparent.verbform=obligative
 my.smi=VMN0000	k	infinitive			 	!(chunkparent.verbform=obligative)
@@ -87,12 +95,8 @@ my.smi=VMN0000	k	infinitive			 	!(chunkparent.verbform=obligative)
 # main clause, la mujer camina -> purin
 # subordinated clause -spa (same subject) vs. -pti (same subject)
 
-# switch-reference
-my.smi=/^VM/	k	SS				 	chunkparent.verbform=SS
-my.smi=/^VM/	k	DS				 	chunkparent.verbform=DS
-
 # in case this needs to be a switch reference form, but the programme failed to determine whether SS or DS -> keep those two, but delete all other otions 
-my.smi=/^VM/	d	agentive,perfect,present,obligative,future,potential,imperative			chunkparent.verbform=switch
+#my.smi=/^VM/	d	agentive,perfect,present,obligative,future,potential,imperative			chunkparent.verbform=switch
 
 # agentive relative clauses
 my.smi=/^VM/	k	agentive			 	chunkparent.verbform=rel:agentive
@@ -105,8 +109,10 @@ my.smi=/^VMIP/	k	obligative				chunkparent.verbform=obligative
 # indicative imperfect past
 my.smi=/^VMII/	k	perfect				 	chunkparent.verbform=/rel:not\.agentive|perfect/
 my.smi=/^VMII/	k	obligative			 	chunkparent.verbform=obligative
+# if this is 'soler' and past tense -> habitual
+my.smi=/^VMII/	k	habitualpast			 	my.slem=soler
 #if main clause: keep options  direct, indirect or habitual past
-my.smi=/^VMII/	d	agentive,perfect,SS,DS,obligative	chunkparent.verbform=main
+my.smi=/^VMII/	d	agentive,perfect,SS,DS,obligative,habitualpast	chunkparent.verbform=main && !(my.slem=soler)
 
 # indicative past simple
 my.smi=/^VMIS/	k	perfect			 		chunkparent.verbform=/rel:not\.agentive|perfect/
@@ -144,7 +150,6 @@ my.slem=tener		d	perfect,present,DS,SS,agentive,present,future,indirectpast,pote
 my.slem=deber		d	perfect,present,DS,SS,agentive,present,future,indirectpast,potential,pastpotential,directpast,imperative	xpath{parent::NODE/parent::CHUNK[@verbform="obligative"]}
 
 # if verbform=ambiguous, but verb has a PR child node -> delete all but agentive, perfect and obligative
-
 my.smi=/^VM/		d	SS,DS,present,future,potential,imperative,indirectpast,pastpotential,directpast		chunkparent.verbform=ambiguous && xpath{child::NODE[starts-with(@smi,"PR") or NODE[starts-with(@smi,"PR") ]]}
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -157,10 +162,9 @@ my.smi=/^VM/		d	SS,DS,present,future,potential,imperative,indirectpast,pastpoten
 # HABER
 
 #switch reference
-my.smi=/^VA/ && my.slem=haber	k	SS				 	chunkparent.verbform=SS
-my.smi=/^VA/ && my.slem=haber	k	DS				 	chunkparent.verbform=DS
-
-my.smi=/^VM/			d	agentive,perfect,present,obligative,futureDisc,potential,pastpotential,indirectpast,directpast			chunkparent.verbform=switch
+#my.smi=/^VA/ && my.slem=haber	k	SS				 	chunkparent.verbform=SS
+#my.smi=/^VA/ && my.slem=haber	k	DS				 	chunkparent.verbform=DS
+#my.smi=/^VM/			d	agentive,perfect,present,obligative,futureDisc,potential,pastpotential,indirectpast,directpast			chunkparent.verbform=switch
 
 # agentive relative clause
 my.smi=/^VA/ && my.slem=haber	k	agentive				chunkparent.verbform=rel:agentive
@@ -195,10 +199,9 @@ my.smi=/^VASP/ && my.slem=haber	k	potential				chunkparent.verbform=main
 # ESTAR as auxiliary (only with gerund, in all other uses: estar mi=VM)
 
 # switch reference
-my.smi=/^VA/ && my.slem=estar	k	progressive_SS					chunkparent.verbform=SS
-my.smi=/^VA/ && my.slem=estar	k	progressive_DS					chunkparent.verbform=DS
-
-my.smi=/^VM/			d	progressive_agentive,progressive_directpast,progressive_future,progressive_indirectpast,progressive_obligative,progressive_perfect,progressive_potential,progressive_present			chunkparent.verbform=switch
+#my.smi=/^VA/ && my.slem=estar	k	progressive_SS					chunkparent.verbform=SS
+#my.smi=/^VA/ && my.slem=estar	k	progressive_DS					chunkparent.verbform=DS
+#my.smi=/^VM/			d	progressive_agentive,progressive_directpast,progressive_future,progressive_indirectpast,progressive_obligative,progressive_perfect,progressive_potential,progressive_present			chunkparent.verbform=switch
 
 # agentive relative clause
 my.smi=/^VA/ && my.slem=estar	k	progressive_agentive				chunkparent.verbform=rel:agentive
@@ -237,10 +240,9 @@ my.smi=/^VASP/ && my.slem=estar	k	progressive_perfect				chunkparent.verbform=pe
 my.smi=/^VS/ && my.slem=ser	k	passive				chunkparent.verbform=passive
 
 # switch-reference, always the same:
-my.smi=/^VS/ && my.slem=ser	k	SS				chunkparent.verbform=SS
-my.smi=/^VS/ && my.slem=ser	k	DS				chunkparent.verbform=DS
-
-my.smi=/^VM/			d	passive,agentive,infinitive,obligative,future,perfect,present,potential,participle			chunkparent.verbform=switch
+#my.smi=/^VS/ && my.slem=ser	k	SS				chunkparent.verbform=SS
+#my.smi=/^VS/ && my.slem=ser	k	DS				chunkparent.verbform=DS
+#my.smi=/^VM/			d	passive,agentive,infinitive,obligative,future,perfect,present,potential,participle			chunkparent.verbform=switch
 
 # agentive relative clause, always the same (not true for non-agentive forms)
 my.smi=/^VS/ && my.slem=ser	k	agentive			chunkparent.verbform=rel:agentive
@@ -258,8 +260,10 @@ my.smi=/^VSIF/ && my.slem=ser	k	obligative			chunkparent.verbform=/obligative|re
 
 # past imperfect
 my.smi=/^VSII/ && my.slem=ser	k	perfect				chunkparent.verbform=/rel:not\.agentive|perfect/
+# if this is 'soler' and past tense -> habitual
+my.smi=/^VSII/	k	habitualpast			 	my.slem=soler
 # main verb: directpast, indirectpast or habitual past, delete everything else
-my.smi=/^VSII/ && my.slem=ser	d	agentive,perfect,DS,SS,passive		chunkparent.verbform=main
+my.smi=/^VSII/ && my.slem=ser	d	agentive,perfect,DS,SS,passive,habitualpast		chunkparent.verbform=main && !(my.slem=soler)
 
 # past simple
 my.smi=/^VSIP/ && my.slem=ser	k	perfect				chunkparent.verbform=/rel:not\.agentive|perfect/

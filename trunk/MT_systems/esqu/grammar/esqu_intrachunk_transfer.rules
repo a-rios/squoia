@@ -66,7 +66,7 @@ my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="p
 # morphological information inserted during transfer that is needed by all synonyms for generation goes to addverbmi, all information that is needed only by primary node goes to verbmi! 
     
 # copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && (!(xpath{ancestor::NODE[@mi="infinitive"]}) || xpath{ancestor::NODE[@mi="infinitive" and not(@slem="poner" or @slem="empezar" or @slem="llegar" or @slem="comenzar" or @slem="ir")]} || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) ) && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]}))		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) )  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) 		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
 
 
 # ir a + infinitive: copy attribute 'verbmi' from 'ir' (if finite) to verbmi in chunk
@@ -83,9 +83,9 @@ my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwr
 # also:
 # subordinated participle -> subieron ascendiendo, se fue riendo, entra flotando, etc.
 # -> finite verb: verbmi2, lem2; gerund: lem, verbmi (+SS)
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|comenzar/) 				verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (xpath{ancestor::NODE[@mi="infinitive"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|llegar|comenzar/) 										lem				my.type=/grup-verb|coor-v/		lem2			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{ancestor::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)  && !(my.slem=/poner|empezar|ir|comenzar|llegar/) 				"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|comenzar|soler/) 				verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (xpath{ancestor::NODE[@mi="infinitive"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|llegar|comenzar/) && !(my.lem=unspecified)							lem				my.type=/grup-verb|coor-v/		lem2			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{ancestor::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)  && !(my.slem=/poner|empezar|ir|comenzar|llegar|soler/) 				"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
 
 # llegar/empezar/poner(se)/comenzar a +Inf:
 # lem = lem of infinitive, verbmi = mi of finite verb +Inch
