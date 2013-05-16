@@ -71,7 +71,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 
 					# evaluate all head condition(s), if true for this node, check if the childnode conditions apply
 					if(&evalConditions(\@nodeConditions,$node))
-					{
+					{ 
 							# check for each target conditions if one of the matching rules applies
 							# if yes, check if k=keep or d=delete 
 							# -> if keep, keep all matching SYN nodes and delete all the other SYN nodes
@@ -89,27 +89,35 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								my @matchingSyns=();
 								foreach my $trgt (@targetMIs)
 								{
+										# create xpath string to find matching synonyms:
+										# NOTE: as this may not be the first rule to be applied, its possible that the values in $node belong to a SYN that has already been deleted,
+										# if this was a rule with 'k' -> check also node itself if if matches!
 										my $xpathstring;
+										my $selfXpathString;
 										if($trgt !~ /=/)
 										{
 											$xpathstring= 'child::SYN[@mi="'.$trgt.'"]';
+											$selfXpathString = 'self::NODE[@mi="'.$trgt.'"]';
 										}
 										#if other attribute than mi should be used for disambiguation
 										else
 										{
 											my ($attr,$value) = split('=',$trgt);
 											$xpathstring= 'child::SYN[@'.$attr.'="'.$value.'"]';
+											$selfXpathString= 'self::NODE[@'.$attr.'="'.$value.'"]';
 										}
 										#print STDERR "xpath: $xpathstring\n";
 										# find synnode with this 'mi', can be more than one
 										my @matchingSynsCand = $node->findnodes($xpathstring);
+										my @matchingSynsCand2 = $node->findnodes($selfXpathString);
 										push(@matchingSyns,@matchingSynsCand);
+										push(@matchingSyns,@matchingSynsCand2);
 									}
 									if(scalar(@matchingSyns)>0)
 									{
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
-											#foreach my $m (@matchingSyns){print STDERR "match:".$matchingtranslation->toString()."\n";}
+											#foreach my $m (@matchingSyns){print STDERR "match for $ruleskey:".$matchingtranslation->toString()."\n";}
 									
 								 		   	if($keepOrDelete eq 'k')
 								   			{
@@ -124,6 +132,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 													}
 												}
 												# fill in attributes of best translation
+												@SYNnodes = $node->getChildrenByLocalName('SYN');
 								    			foreach my $bestattr (@matchingtranslationAttributes)
 								    			{
 								    				my ($attr,$value) = split('=',$bestattr);
@@ -148,11 +157,6 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   				# get all syn nodes, copy attributes of first syn that is NOT in matching translations
 								   				# to NODE, delete all that are in @matchingtranslations, unless there is non left
 								   				# in this case: keep last syn and print warning to STDERR
-								   				my $firstsyn = $SYNnodes[0];
-								   				if( grep( $_ == $firstsyn, @matchingSyns ))
-								   				{
-								   					# delete the attributes of the first SYN child that have been "copied" into the parent NODE
-													#my $firstsyn = $SYNnodes[0];
 													my @synattrlist = $node->attributes();
 													foreach my $synattr (@synattrlist)
 													{
@@ -162,8 +166,9 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 														}
 													}
 													# fill in attributes of first SYN that is not in matchingtranslations
+													my @SYNnodes = $node->getChildrenByLocalName('SYN');
 								    				foreach my $syn (@SYNnodes)
-								    				{
+								    				{#print STDERR "inserted in node:".$firstsyn->toString."\n";
 								    					if(!grep( $_ == $syn, @matchingSyns ) or $syn == @SYNnodes[-1])
 								    					{
 								    						my @Attributes = $syn->attributes();
@@ -177,7 +182,6 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								    						last;
 								    					}
 								    				}
-								   				}
 								   				#remove all matching translations:
 								   				foreach my $matchingtranslation (@matchingSyns)
 								   				{	#print STDERR "delete: ".$matchingtranslation->toString()."\n";
@@ -193,6 +197,13 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 							}
 						
 					}
+			}
+			# if this node has only one SYN child left (when all other SYNs have been deleted)
+			# -> delete, as SYN is already contained in NODE
+			my @remainingSYNs = $node->findnodes('child::SYN');
+			if(scalar(@remainingSYNs) == 1 )
+			{
+				$node->removeChild(@remainingSYNs[0]);
 			}
 	}
 

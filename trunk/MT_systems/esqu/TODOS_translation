@@ -52,6 +52,11 @@ PREPOSITIONS/ PREP-OBJECTS:
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
 
+DISAMBIGUATION:
+- take NPst as default but include option for IPst as argument to translation system
+
+GENARATION
+-generate synonyms
 
 
 --------------------------------------------------------------------------------------------------------------------------
