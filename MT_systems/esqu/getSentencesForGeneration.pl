@@ -737,7 +737,7 @@ sub mapEaglesTagToQuechuaMorph{
 	#	elsif($eaglesTag =~ /^P/)
 	
 	#conjunctions, interjections,prepositions,dates
-	elsif($eaglesTag =~ /^C|I|S|W|D/)
+	elsif($eaglesTag =~ /^C|I|S|W|D|Z/)
 	{
 		print STDOUT "$slem";
 	}
