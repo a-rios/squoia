@@ -93,7 +93,7 @@ my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitiv
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			verbmi			up	concat
 
 # copy mi from gerund to verbmi of chunk
-my.smi=/VMG0000|VSG0000/ && !(xpath{child::NODE[@slem="estar" or @slem="seguir"]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
+my.smi=/VMG0000|VSG0000/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir"]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
 
 # if infinitive in own chunk, add +Inf and +Acc to morphology
 my.mi=infinitive && !(xpath{following-sibling::NODE}) && parent.si=cd			"+Acc"			my.type=/grup-verb|coor-v/			addverbmi		up		concat
