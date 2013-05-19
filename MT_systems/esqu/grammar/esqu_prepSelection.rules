@@ -10,11 +10,6 @@
 # prep source	case/adpos targets (will be inserted)	condition	   default(+/-)  # comment
 
 
-# TODO: antes de comer -> manaraq mikhuSPA
-# TODO: aunque sea -> maskipas (adverb)
-# TODO: con_objeto_de -> na-paq 
-# TODO: sin hacer, para hacer -> mana +SS, +Obl+Ben
-
 # Simple prepositions
 #####################
 
@@ -46,7 +41,7 @@ ante		spform=ñawk'iykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="
 ante		spform=ñawk'inkupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
 ante		postpos=ñawk'in,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}
 
-antes_de	lem=mana,mi=Part+Cont	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb"]/NODE[@mi="infinitive"]}
+antes_de	prepos=manaraq			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb"]/NODE[@mi="infinitive"]}
 a_pesar_de 	postpos=hinata	-
 a_pesar_de_todo 	spform=chay_hinata	-
 

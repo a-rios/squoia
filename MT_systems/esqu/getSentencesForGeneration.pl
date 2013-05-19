@@ -157,8 +157,8 @@ foreach my $vchunk (@verbchunksWithConjunction)
  				if($firstchild)
  				{
  					$firstchild->setAttribute('conj', $vchunk->getAttribute('conj'));
- 					print STDERR "attribute set: ".$firstchild->getAttribute('conj')."\n";
- 					print STDERR $firstchild->toString()."\n";
+ 					#print STDERR "attribute set: ".$firstchild->getAttribute('conj')."\n";
+ 					#print STDERR $firstchild->toString()."\n";
  				}
  				else
  				{
@@ -281,14 +281,14 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
  			if($verbmi eq '' && $chunk->exists('child::NODE[@mi="infinitive"]'))
- 				{
+ 			{
  					$verbmi=$verbmi."+Inf";
- 				}
+ 			}
  			# if this is a nominal verb chunk with a case suffix
  			if( $chunk->hasAttribute('case'))
- 				{
+ 			{
  					$verbmi=$verbmi.$chunk->getAttribute('case');
- 				}
+ 			}
  			# if lema = ir/marchar and morph contains +Rflx -> irse=riPUy -> change +Rflx to +Iprs
  			if($lemma eq 'ri' && $verbmi =~ /Rflx/)
  			{
@@ -775,7 +775,7 @@ sub getFirstChild{
 	else
 	{
 		# consider linear sequence in sentence; 
- 		my @childchunks = $chunk->findnodes('child::CHUNK');
+ 		my @childchunks = $chunk->findnodes('child::CHUNK[not(@delete="yes") and not(@type="F-term")]');
  	
  		my %chunkSequence =();
  	
@@ -803,9 +803,12 @@ sub adjustMorph{
 	#extract root: 
 	my ($roottag) = ($morphString =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)/ ) ;
 	#delete double ++ and commas
-	$morphString =~ s/$roottag//g;
+	if($roottag ne ''){
+		$morphString =~ s/$roottag//g;
+	}
 	$morphString =~ s/\+\+(\+)?/\+/g;
 	$morphString =~ s/,//g;
+	
 	
 	# if there's a +Fut tag that was added during the transfer:
 	# attach this to subj tag: 1.Sg.Subj+Fut = 1.Sg.Subj.Fut
@@ -821,7 +824,17 @@ sub adjustMorph{
 		$morphString =~ s/Subj/Subj.Pot/g;
 		$morphString =~ s/\+Pot//g;
 	}
-	
+	# same for past forms NPst/IPst
+	if($morphString =~ /\+NPst/)
+	{
+		$morphString =~ s/Subj/Subj.NPst/g;
+		$morphString =~ s/\+NPst//g;
+	}
+	if($morphString =~ /\+IPst/)
+	{
+		$morphString =~ s/Subj/Subj.IPst/g;
+		$morphString =~ s/\+IPst//g;
+	}
 	
 	my @morphs = split(/(\+)/, $morphString);
 
@@ -843,9 +856,9 @@ sub adjustMorph{
 	{
   		$sortedMorphString= $sortedMorphString.$tag;
 	}
-	return $sortedMorphString;
 	#print STDERR "unsorted morph: $morphString\n";
 	#print STDERR "sorted morph: $sortedMorphString\n";
+	return $sortedMorphString;
 }
 
 sub printPrePunctuation{

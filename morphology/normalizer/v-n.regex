@@ -1,0 +1,13 @@
+# nominalizing suffixes
+
+   {sqa}  : {sqa}
+|  {y} : {y}
+|  {ti}   : {ti}
+|  {li}   : {li}
+|  {yli}  : {yli}
+|  {liku}  : {liku}
+|  {lu}  : {lu}
+|  {na}  : {na}
+|  [{q}"AMBIGUO"] : {q}
+|  {mpa}  : {mpa}
+;

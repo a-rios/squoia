@@ -1,0 +1,16 @@
+# person pronouns
+
+  {ñuqa}  : {ñuqa}
+| {ñuqa} : {nuqa}
+| {qam}  : {qam}
+| {qam}  : {qan}
+| {pay}  : {pay}
+| {ñuqanchik}  : {nuqanchis}
+| {ñuqanchik} : {nuqanchik}
+| {ñuqanchik}  : {nuqanchiq}
+| {ñuqanchik} : {ñuqanchis}
+| {ñuqanchik} : {ñuqanchik}
+| {ñuqanchik}  : {ñuqanchiq}
+| {ñuqayku}  : {ñuqayku}
+| {ñuqayku} : {nuqayku}
+;

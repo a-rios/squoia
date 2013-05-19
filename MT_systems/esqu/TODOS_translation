@@ -48,6 +48,11 @@ Kimsa wasimanta winti-ku-nqa.
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
 
+
+# TODO: aunque sea -> maskipas (adverb)
+# TODO: con_objeto_de -> na-paq 
+
+
 LEXICON:
 - participles vs. adjectives: e.g. adinerado
   (done -> add paradigm Noun to all Particple-N/V forms)
@@ -60,7 +65,6 @@ SUBORDINATED CLAUSES:
 - more than one infinitive in verb chunk: tenemos que aprender a vivir, hay que saber cocinar etc.
 
 CONSTRUCTIONS WITH INFINITIVE:
-- haber de + infinitive
 
 TOPIC/FOCUS:
 - topicalized nouns with relative clauses: fueron ellos quienes dejaron,
@@ -133,3 +137,7 @@ after more testing:
 ( done - lexicon ordinal numbers )
 ( done - MORPH DISAMB: -restrict habitual past forms to 'soler' (?) )
 ( done - DISAMBIGUATION: take NPst as default but include option for IPst as argument to translation system)
+( done - antes de comer -> manaraq mikhuSPA, antes de que vengan -> manaraq hamuPTInku )
+( done - sin hacer, sin que haga -> SS vs. DS)
+( done - para+Inf -> +Obl+Ben +poss.pers from main verb)
+( done - haber de + infinitive -> -na -poss kan )

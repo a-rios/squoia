@@ -83,14 +83,12 @@ my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="p
 # copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
 my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) )  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) 		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
 
-
-# ir a + infinitive: copy attribute 'verbmi' from 'ir' (if finite) to verbmi in chunk
-my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && parent.smi=VMN0000		verbmi			my.type=/grup-verb|coor-v/		verbmi		up	concat
-
 # copy lemma and morphology of auxiliary to head chunk (only relevant with habitual past forms)
 my.auxlem=/.+/				auxlem				my.type=/grup-verb|coor-v/		auxlem			up	overwrite
 my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwrite
 
+#---------------------------------------------
+# COMPLEMENT CLAUSES
 # special case: modal verbs with infinitive complement (quiero/puedo hacer)
 # main verb: infinitive +Acc, main verb: finite
 # sometimes: all in one chunk (if parser labeled modal verb with rel="v")
@@ -107,24 +105,62 @@ my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(m
 my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitive				verbmi		my.type=/grup-verb|coor-v/			verbmi			up	concat
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			verbmi			up	concat
 
-# copy mi from gerund to verbmi of chunk
-my.smi=/VMG0000|VSG0000/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" ]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
-
 # if infinitive in own chunk, add +Inf and +Acc to morphology
 my.mi=infinitive && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]})  && parent.si=cd 			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat
+#---------------------------------------------
 
+#---------------------------------------------
+# NON-FINITE CHUNKS:
+# Infinitive:
 # if verb chunk with only infinitive: copy verbmi to chunk
 # note: in passive verb chunks, infinitive might not be top node in chunk! check for ancestor nodes too
-my.mi=/infinitive|SS/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) 			verbmi				my.type=grup-verb && !(xpath{self::CHUNK[count(descendant::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
+my.mi=/infinitive|SS|obligative/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) 			verbmi				my.type=grup-verb && !(xpath{self::CHUNK[count(descendant::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
 
-# if infinitive with 'haber de' -> write "+Obl" to verbmi (morph of haber will be copied to auxlem and auxverbmi)
-my.mi=infinitive && xpath{descendant::NODE[@slem="haber"]} && xpath{descendant::NODE[@slem="de"]}			"+Obl"			my.type=/grup-verb|coor-v/		verbmi		up		concat
+# Gerunds:
+# copy mi from gerund to verbmi of chunk
+my.smi=/VMG0000|VSG0000/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" ]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
+#----------------------------------------------
 
+#----------------------------------------------
+# HABER DE + INFINITIVE (has de pensarlo bien)
+# -> write "+Obl" to verbmi (tense of haber needs to be copied to auxlem and auxverbmi, but pers is always 3.Sg)
+# -> write subj person from haber as possessive suffix to verbmi
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber"]} && xpath{descendant::NODE[@slem="de"]}				"+Obl"			my.type=/grup-verb|coor-v/		verbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="de"]} && xpath{descendant::NODE[@slem="haber"]} 				"ka"			my.type=/grup-verb|coor-v/		auxlem		up		concat
+xpath{descendant::NODE[@slem="de"]} && my.mi=infinitive && xpath{descendant::NODE[@slem="haber"]} 				"+3.Sg.Subj"		my.type=/grup-verb|coor-v/		auxverbmi	up		concat
+
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@verbmi,"Fut")]} && xpath{descendant::NODE[@slem="de"]}	"+Fut"			my.type=/grup-verb|coor-v/		auxverbmi	up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@verbmi,"Pot")]} && xpath{descendant::NODE[@slem="de"]}	"+Pot"			my.type=/grup-verb|coor-v/		auxverbmi	up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@verbmi,"NPst")]} && xpath{descendant::NODE[@slem="de"]}	"+NPst"			my.type=/grup-verb|coor-v/		auxverbmi	up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@verbmi,"IPst")]} && xpath{descendant::NODE[@slem="de"]}	"+IPst"			my.type=/grup-verb|coor-v/		auxverbmi	up		concat
+
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"1S")]} && xpath{descendant::NODE[@slem="de"]}	"+1.Sg.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"1P")]} && xpath{descendant::NODE[@slem="de"]}	"+1.Pl.Incl.Poss"	my.type=/grup-verb|coor-v/		verbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"2S")]} && xpath{descendant::NODE[@slem="de"]}	"+2.Sg.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"2P")]} && xpath{descendant::NODE[@slem="de"]}	"+2.Pl.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"3S")]} && xpath{descendant::NODE[@slem="de"]}	"+3.Sg.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"3P")]} && xpath{descendant::NODE[@slem="de"]}	"+3.Pl.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
+#-------------------------------------------------
+
+#-------------------------------------------------
+# IR A + INFINITIVE
+# copy attribute 'verbmi' from 'ir' (if finite) to verbmi in chunk
+# and insert +Fut in verbmi of chunk
+my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && parent.smi=VMN0000		verbmi			my.type=/grup-verb|coor-v/		verbmi		up	concat
+my.slem=ir && parent.smi=VMN0000		"+Fut"				my.type=/grup-verb|coor-v/			addverbmi			up 		concat
+#-------------------------------------------------
+
+#-------------------------------------------------
+# FINITE VERB UNKNOWN
 # if finite verb is unknown in complex verb chunk, copy verbmi of (non-finite) main verb
 my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NODE[@unknown="transfer" and starts-with(@smi,"V")]} 		verbmi			my.type=/grup-verb|coor-v/	addverbmi		up	concat
+#-------------------------------------------------
 
+#-------------------------------------------------
+# OBJECT CLITICS
 # copy all the object clitics for 1st and 2nd persons to the sn chunk (and from there to the verb chunk)
 my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			addverbmi			up		concat
+#-------------------------------------------------
 
 # copy lemma of the main verb (first node child in verbchunk) to the verb chunk (needed for generation)
 # except with 1.Pl imperative of ir/marchar -> irregular form 'haku'
@@ -133,9 +169,6 @@ my.smi=/^V/ && !(xpath{ancestor::NODE[starts-with(@smi,"V")]}) && (my.lem=unspec
 
 # copy all information from add_mi in verbs to verbmi (concat)
 my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi				up		concat
-
-# construction 'ir a +Inf: insert +Fut in verbmi of chunk
-my.slem=ir && parent.smi=VMN0000		"+Fut"				my.type=/grup-verb|coor-v/			addverbmi			up 		concat
 
 # in verb chunks with verbform=ambiguous that contain a relative pronoun, all but obligative, perfect and agentive SYN nodes have been deleted
 # -> set verbform=rel
@@ -153,8 +186,10 @@ my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/	"haku"		m
 my.mi=imperative && my.slem=/^ir$|marchar/ && my.smi=/VMM01P0|VMSP1P0/	""		my.type=/grup-verb|coor-v/	verbmi		up	overwrite
 my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/ && my.slem=/^ir$|marchar/ 	""		my.type=/grup-verb|coor-v/	addverbmi	up	overwrite
 
+
 # continuar + gerund: add +Perdur to verbmi
 my.slem=continuar && xpath{ancestor::NODE[starts-with(@smi,"VSG") or starts-with(@smi,"VMG") or starts-with(@smi,"VAG")]}	"+Perdur"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
     ###########################
