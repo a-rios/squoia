@@ -1,20 +1,40 @@
 TODOS translation:
 
 - things to ask Roger:
-- keep translated indefinite article as huk? or better no article at all as default?
-- default word order in verb chunk with adverb: adv obj verb, obj adj verb?
-- estar as vm: better translate as ka-chka- instead of ka-?
-- relative clauses with 'donde', como traducir? la casa donde jugaron... pukllasqa(pi) wasi?
-- relative clauses with 'cuyo/a'?
+- not agentive relative clauses in conditional: la casa que podría comprar -> verbform in quechua?? potential, kein rel-satz
+- continuar + gerund -> -raya? -nya, -miya? -chka-lla
+- keep translated indefinite article as huk? or better no article at all as default? -kein!
+- default word order in verb chunk with adverb: adv obj verb, obj adj verb? beide möglich!!
+- estar as vm: better translate as ka-chka- instead of ka-? mit -chka!
+- relative clauses with 'donde', como traducir? la casa donde jugaron... pukllasqa(pi) wasi? -> pukllachkanku chay wasi
+- relative clauses with 'cuyo/a'?  la señora cuya hija se fue -> ususin ripurqan chay mama
 - check missing verb forms involving 2 participants (missing in grammar books)
-- el libro sobre la selva -> por el momento, sach'a-sach'amanta libro -> ablative correct or not good?
-- quedarse + Adj -> resultativo, como traducir?
+- el libro sobre la selva -> por el momento, sach'a-sach'amanta libro -> ablative correct or not good?, Ablative ok!
+- quedarse + Adj -> resultativo, como traducir? -> adj+cha+ku
 - IMPORTANT: subj in nominal clause -> genitive!
-  correct or not? -> ella sabe que tú te has ido -> qam rikusqaykita yachan or qamPA rikusqaykita yachan?
+  correct or not? -> ella sabe que tú te has ido -> qam rikusqaykita yachan or qamPA rikusqaykita yachan? RIPU, no riku-! genitive: beide möglich, más natural con genitivo
   (a.t.m: with PA -> rule in STinterchunk.rules)
-- En cuanto + finite verb (as soon as) -> spa/pti + wan ?
+- En cuanto + finite verb (as soon as) -> spa/pti + wan ?, -spa/pti (evt. mit -wan)
 (- el hecho de que + subjuntivo) ?
+el hecho de que sea tarde
+tarde kaptin,
+ el hecho de que trabajen duro
+sinchita llamk'aptinku,
 - 'de' in partitive: 'tres de ellos', 'dos de las casas' -> Ablative, Genitive, or something else?
+-> tres de ellos se fueron - Paykuna-manta kimsantin ripun. 
+tres de las casas se venden
+Wasimanta kimsa winti-ku-nqa.
+Kimsa wasimanta winti-ku-nqa.
+[1:02:13 AM] Roger Gonzalo Segura: Kimsa kaq wasikunamanta winti-ku-nqa.
+[1:02:15 AM] Roger Gonzalo Segura: wasikunamanta Kimsa kaq winti-ku-nqa
+
+
+- watayuq kay (tener años)
+ (-raya -> sostener, quedarse suspendido, SUSPENSOR)
+ -> permanece cantando -> taki-chka -lla -n
+ -> permanece tranquilo/callado:  quedó tranquilo  = Tranquilo-m quada-ku-n./amulla-cha-ku-n/Tranquilo-cha-ku-n, tranquilo-lla-m chura-ku-n 
+ 
+ - CHANGED aunque from CC to CS
  
 - IMPORTANT: split sentences at ';', otherwise parser does weird things!!! 
 - distributive -nka 
@@ -36,6 +56,8 @@ LEXICON:
 SUBORDINATED CLAUSES:
 (- if verb chunk contains only participle: use -sqa form)
 - perception verbs +Inf -> translate with agentive form: te veo bailar -> tusuq riku(su)ni (no 'tusuyta rikuni') 
+- avoid kana kan (debe ser) -> change to kanan
+- more than one infinitive in verb chunk: tenemos que aprender a vivir, hay que saber cocinar etc.
 
 CONSTRUCTIONS WITH INFINITIVE:
 - haber de + infinitive
@@ -52,12 +74,15 @@ PREPOSITIONS/ PREP-OBJECTS:
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
 
-DISAMBIGUATION:
-- take NPst as default but include option for IPst as argument to translation system
-
 GENARATION
--generate synonyms
+- generate synonyms
 
+NEGATION
+- sin +inf, sin+Noun/Adj etc!
+
+after more testing:
+ - words that cannot be generated: just print lemma
+ - word nodes where lem contains '+' -> don't print
 
 --------------------------------------------------------------------------------------------------------------------------
 ( done - hace tiempo, atm: pacha ruran -> changed to ñawpaq pacha/ unay pacha or something like that)
@@ -107,3 +132,4 @@ GENARATION
 ( done - LEXICAL TRANSFER - numbers! -> adapted matxin-xfer-lex )
 ( done - lexicon ordinal numbers )
 ( done - MORPH DISAMB: -restrict habitual past forms to 'soler' (?) )
+( done - DISAMBIGUATION: take NPst as default but include option for IPst as argument to translation system)

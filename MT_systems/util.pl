@@ -177,7 +177,7 @@ sub splitConditionsIntoArray{
 	}
 	#print STDERR  @conditions[0];
 	my @conditionsWithoutEmptyFields= grep {$_} @conditions;
-	#print @conditionsWithoutEmptyFields;
+	#print "conditions::: @conditionsWithoutEmptyFields\n";
 	return @conditionsWithoutEmptyFields;
 }
 
@@ -587,7 +587,7 @@ sub evalConditions{
 				foreach my $cond (@copyConditions) {
 				
 					#print STDERR $wordnode->getAttribute('prep');
-					#print STDERR ":$cond ";
+					#print STDERR "\ncond: $cond \n";
 					my ( $nodeAttr, $value ) = split( '=', $cond );
 					my ( $noderef, $attribute ) = split( /\./, $nodeAttr );
 

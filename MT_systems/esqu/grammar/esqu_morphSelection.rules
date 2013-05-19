@@ -92,8 +92,10 @@ my.smi=/^V/	d	directpast		xpath{ancestor::corpus[@evidentiality="indirect"]}
 my.smi=/^V/	d	habitualpast		!(my.slem=soler)
 
 # infinitive: -y or -na (-> hay que hacer, tener que hacer)
+# or -spa -> sin hacer -> mana ruraspa
 my.smi=VMN0000	k	obligative			 	chunkparent.verbform=obligative
-my.smi=VMN0000	k	infinitive			 	!(chunkparent.verbform=obligative)
+my.smi=VMN0000	k	SS				 	chunkparent.verbform=SS
+my.smi=VMN0000	k	infinitive			 	!(chunkparent.verbform=/obligative|SS/)
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
@@ -133,6 +135,7 @@ my.smi=/^VMIF/	k	obligative				chunkparent.verbform=/obligative|rel:not\.agentiv
 
 # conditional present, TODO: relative clauses in conditional?
 my.smi=/^VMIC/	k	potential				chunkparent.verbform=main
+my.smi=/^VMIC/	k	obligative				chunkparent.verbform=/obligative|rel:not\.agentive/
 
 # subjuntivo imperfecto
 my.smi=/^VMSI/	k	potential				chunkparent.verbform=main && !(xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]})
@@ -142,7 +145,7 @@ my.smi=/^VMSI/	k	obligative				chunkparent.verbform=obligative
 
 # subjuntivo present, TODO: relative clauses?
 my.smi=/^VMSP/	k	perfect				 	chunkparent.verbform=perfect	 # complement clause
-my.smi=/^VMSP/	k	obligative				chunkparent.verbform=obligative	
+my.smi=/^VMSP/	k	obligative				chunkparent.verbform=/obligative|rel:not\.agentive/
 # if there's a '!' present: imperative 
 my.smi=/^VMSP/	k	imperative				chunkparent.verbform=main && xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]}
 

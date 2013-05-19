@@ -88,9 +88,11 @@ while (<PREPFILE>) {
 				my $translationCondition =  @$target[1];    		
 
 				my @conditions = &splitConditionsIntoArray($translationCondition);
+				#print STDERR "@conditions\n";
 
 				# evaluate condition(s) to true or false
 				my $result= &evalConditions(\@conditions,$wordnode);
+				#print STDERR "result: $result\n";
 				
 				# save result of evaluation as value of condition
 				@$target[3] = $result;

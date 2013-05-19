@@ -14,6 +14,7 @@ define ConsRoot [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|x|y|z|'|’];
 define UPPER 	[A|B|C|D|E|F|G|H|I|J|K|L|M|N|Ñ|O|P|Q|R|S|T|U|V|W|X|Y|Z|Á|É|Í|Ó|Ú|Ü];
 define Numbers [%0|1|2|3|4|5|6|7|8|9|%,|%.|%'];
 
+
 #######################################################################
 #######################################################################
 
@@ -260,7 +261,8 @@ define VDERIV [PHON .o. SubjObj .o. PERS];
        #-------------------------#
            define GEN1 ["+Gen" -> {pa} || Cons _];
            define GEN2 ["+Gen" -> {p} || Voc _];
-       define GEN [GEN1 .o. GEN2];
+           define defaultGEN ["+Gen" -> {pa}];
+       define GEN [GEN1 .o. GEN2 .o. defaultGEN];
 
        #---------------------------------------#
        # Epenthese von -ni bei Possessiv- und  #
@@ -316,7 +318,7 @@ define AS [(HonAff) (AS=1) (HonAff) (AS=2) (AS=3)^{0,2} (HonAff) (AS=4)(HonAff) 
        ##########
        
        
-       define Root [ (UPPER) Numbers* [VocRoot|ConsRoot|%_|"-"]* (":"):0];
+       define Root [  [VocRoot|ConsRoot|Numbers|UPPER|%_|"-"]* (":"):0];
 
 ######################################################################
 ######################################################################
@@ -337,7 +339,7 @@ define V=V=6 @re"v-v-6.regex" ;
 define V=V=7 @re"v-v-7.regex" ;
 
 
-define VerbSuffixes [V=V=1^{0,2} V=V=2^{0,3} (V=V=1) (V=V=3) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)];
+define VerbSuffixes [(HonAff) V=V=1^{0,2} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)];
 
 
 #########################################################################
@@ -385,14 +387,15 @@ define NounSuffixes [(N=N=1) (HonAff) (N=N=2)^{0,2} (N=N=3) (N=N=4) (N=N=5)^{0,2
        define VtoN @re"v-n.regex" ;
        define VtoNfinal @re"v-n-final.regex" ; #mit diesen Suffixen nominalisierte Verben können nicht wieder verbalisiert werden
        define Relational "+Rel" : {n};
+       define VerbalSuffixesBeforeNS  [V=V=1^{0,3} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] ;
 
        #------------------------#
        # nominalisierte Verben: #
        # VRoot + VtoN = NDeriv1 #
        # "taki-qti", "taki-y"   #
        #------------------------#
-       define NDeriv1 [Root V=V=1^{0,3} V=V=2^{0,3} (V=V=3) (V=V=4) VtoN];
-       define NDeriv1final [Root V=V=1^{0,3} V=V=2^{0,3} (V=V=3) (V=V=4) VtoNfinal];
+       define NDeriv1 [Root VerbalSuffixesBeforeNS VtoN];
+       define NDeriv1final [Root VerbalSuffixesBeforeNS VtoNfinal];
 
        #----------------------------#
        # verbalisierte Nomen:       #
@@ -408,8 +411,8 @@ define NounSuffixes [(N=N=1) (HonAff) (N=N=2)^{0,2} (N=N=3) (N=N=4) (N=N=5)^{0,2
        # NRoot + NtoV + VtoN = NDeriv2  #
        # "wasi-n-cha-y", "hatun-ya-sqa" #
        #--------------------------------#
-       define NDeriv2 [VDeriv1 V=V=1^{0,2} (V=V=2)(V=V=3) (V=V=4) VtoN];
-       define NDeriv2final [VDeriv1 V=V=1^{0,2} (V=V=2) (V=V=3) (V=V=4) VtoNfinal];
+       define NDeriv2 [VDeriv1 VerbalSuffixesBeforeNS VtoN];
+       define NDeriv2final [VDeriv1 VerbalSuffixesBeforeNS VtoNfinal];
 
        #--------------------------------#
        # verbalisierte Nomen Nr.2:      #
@@ -423,8 +426,8 @@ define NounSuffixes [(N=N=1) (HonAff) (N=N=2)^{0,2} (N=N=3) (N=N=4) (N=N=5)^{0,2
        # VRoot + VtoN + NtoV +VtoN = NDeriv3 #
        # "yuya-y-cha-ku-y"                   #
        #-------------------------------------#
-       define NDeriv3 [VDeriv2 V=V=1^{0,2} (V=V=2) VtoN];
-       define NDeriv3final [VDeriv2 V=V=1^{0,2} (V=V=2) VtoNfinal];
+       define NDeriv3 [VDeriv2 VerbalSuffixesBeforeNS VtoN];
+       define NDeriv3final [VDeriv2 VerbalSuffixesBeforeNS VtoNfinal];
 
 define NDeriv [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
 define VDeriv [VDeriv|VDeriv1|VDeriv2];
@@ -441,7 +444,7 @@ define Verb [[Root|VDeriv] VerbSuffixes ] .o. VDERIV;
        # Satzzeichen #
        #-------------#
        
-       define punc [%,|%.|"%"|'|%;|%/|"-"|%!|%?|%+|%(|%)|%[|%]|%:|%&|%"|%\|%^|%~|%`|%°|%§|%¿|%¡|%»|%«|%’|%@|%#|%*|%=|%}|%{|%_|%<|%>|%—];
+       define punc [%,|%.|"%"|'|%;|%/|"-"|%!|%?|%+|%(|%)|%[|%]|%:|"&"|%"|%\|%^|%~|%`|%°|%§|%¿|%¡|%»|%«|%’|%@|%#|%*|%=|%}|%{|%_|%<|%>|%—|"..."|"``"];
        define puncWord [punc "-PUNC-" UPPER+ ];
        
 

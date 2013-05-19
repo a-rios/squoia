@@ -43,17 +43,12 @@ child.slem=/propietario|dueño/ && my.chunkmi=++Poss	chunkmi			my.type=sn				chu
 
 # in a pp with a coordinated np inside: copy the case/nouncase attribute to the second coordinated np
 #my.type=/grup-sp|coor-sp/ && child.type=coor-n		case			my.type=sn && chunkparent.type=coor-n			case			ancestor	1to2		overwrite
-my.type=sn && chunkparent.type=coor-n 			case		my.type=/grup-sp|coor-sp/			case		chunkgrandparent	2to1		overwrite
+my.type=sn && chunkparent.type=coor-n 			case			my.type=/grup-sp|coor-sp/ && my.case=/.+/			case		chunkgrandparent	2to1		overwrite
 
 # subject in nominal verb chunk: add genitive
 # TODO check if thats correct: 
 # ella sabe que tú te has ido -> qam(pa?) rikusqaykita yachan
 my.si=/suj/ 		case		my.verbform=/perfect|obligative/ && my.case=+Acc	"+Gen"		parent		2to1		overwrite
 
-
-
-    ##########
-    # QUOTES #
-    ##########
-    
-#my.type=F-term && my.PrePunc=/.+/			PrePunc		!(my.type=F-term)	PrePunc			parent			1to2		concat
+## sólo/solamente -> copy chunkmi from sadv chunk to head
+child.slem=/sólo|solamente/ && my.chunkmi=++Lim		chunkmi			my.type=/.+/		chunkmi		parent		1to2		concat

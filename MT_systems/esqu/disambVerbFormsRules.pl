@@ -79,6 +79,7 @@ foreach my $sentence (@sentenceList)
  	
  	foreach my $verbChunk (@verbChunks)
  	{
+ 		#print STDERR "disambiguating verb chunk: ".$verbChunk->getAttribute('ord')."\n";
  		if(&getFiniteVerb($verbChunk))
  		{
  			# disambiguation needed only if not relative clause (those are handled separately)
@@ -151,14 +152,19 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'main');
  				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /si|^cuando$|aunque|porque|con_tal_que/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si$|^cuando$|aunque|porque|con_tal_que/ )
  				{
  					#check if same subject 
  					&compareSubjects($verbChunk);
  					if($conjunction->getAttribute('lem') =~ /porque|con_tal_que/ )
  					{
  						$nbrOfSwitchForms++;
- 						$verbChunk->setAttribute('verbmi', '+DirE,+IndE');
+ 						if($sentence->getAttribute('evidentiality') eq 'indirect'){
+ 							$verbChunk->setAttribute('chunkmi', '+IndE');
+ 						}
+ 						else{
+ 							$verbChunk->setAttribute('chunkmi', '+DirE');
+ 						}
  					}
  					elsif($conjunction->getAttribute('lem') =~ /aunque|bien|bien_si/ )
  					{
@@ -170,6 +176,15 @@ foreach my $sentence (@sentenceList)
  						$nbrOfSwitchForms++;
  						$verbChunk->setAttribute('verbmi', '+Top');
  					}
+ 				}
+ 				# if this is a subordinated clause with 'sin_que..'-> DS form 
+ 				# -> in same subject contexts, verb would be infinitive
+ 				# -> me fui sin que lo notaran (DS), me fui sin notarles (SS)
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /sin_que/ )
+ 				{
+ 					$nbrOfSwitchForms++;
+ 					$verbChunk->setAttribute('verbform', 'DS');
+ 					$verbChunk->setAttribute('conj', 'mana');
  				}
  				# if this a subordinated clause with a finite verb (in Quechua)
  				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|y_cuando|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|por_eso|ya_que|aun|aún|aun_no|aún_no/ )
@@ -268,16 +283,8 @@ foreach my $sentence (@sentenceList)
 					$verbChunk->setAttribute('verbform', 'obligative');
 					$verbChunk->setAttribute('case', '+Term');
 				}
- 				# if subordinated clause is a gerund -> set to spa-form (trabaja cantando)
- 				# wrong, gerund is main verb in chunk TOGETHER with finite verb -> verbform of gerund always SS, but verbform of finite verb -> disambiguate like any other chunk
-# 				elsif($verbChunk->exists('child::NODE[starts-with(@mi, "VMG")]') && !$verbChunk->exists('descendant::NODE[@pos="va" or @pos="vs"]') && !$verbChunk->exists('child::NODE[starts-with(@mi, "VMG")]/NODE[@lem="venir" or @lem="ir" or @lem="andar" or @lem="estar"]')  )
-# 				{
-# 					$nbrOfSwitchForms++;
-# 					$verbChunk->setAttribute('verbform', 'SS');
-# 				}
  				# if this is a complement clause (-> nominal form), TODO: already ++Acc?
  				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]/child::NODE[@pos="cs" and @lem="que" or NODE[@pos="cs" and @lem="que"]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
- 				#elsif($verbChunk->exists('self::CHUNK[@si="cd"]/child::NODE[@pos="cs" and @lem="que" or NODE[@pos="cs" and @lem="que"]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
  				{
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
  					if($headVerbCHunk)
@@ -312,7 +319,7 @@ foreach my $sentence (@sentenceList)
  						else
  						{	
  							$nbrOfNominalForms++;
- 							if(&isSubjunctive($verbChunk) || &isFuture($verbChunk))
+ 							if(&isSubjunctive($verbChunk) || &isFuture($verbChunk) || &isConditional($verbChunk))
  							{
  								$verbChunk->setAttribute('verbform', 'obligative');
  								$verbChunk->setAttribute('case', '+Acc');
@@ -458,6 +465,12 @@ foreach my $sentence (@sentenceList)
 
  				
 			}
+ 		}
+ 		# if this is an infinitive chunk with 'sin' -> set verbform to -spa (SS)
+ 		# -> lo dije sin pensar -> mana yuyaspa rimarqani
+ 		elsif(!&getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="sin"]') )
+ 		{
+ 			$verbChunk->setAttribute('verbform','SS');
  		}
  		else
  		{
@@ -619,6 +632,19 @@ sub isFuture{
 	if($finiteVerb)
 	{
 		return substr($finiteVerb->getAttribute('mi'), 3, 1) eq 'F';
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+sub isConditional{
+	my $verbChunk = $_[0];
+	my $finiteVerb = &getFiniteVerb($verbChunk);
+	if($finiteVerb)
+	{
+		return substr($finiteVerb->getAttribute('mi'), 3, 1) eq 'C';
 	}
 	else
 	{
