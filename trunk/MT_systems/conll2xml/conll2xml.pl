@@ -81,6 +81,10 @@ while (<>)
      # quotes, opening -> fea, closing -> fet
      if($pos eq 'Fe')
      {
+     	# for some reason, apostrophes are not encoded by libxml -> leads to crash!
+     	# -> replace them with quotes..
+     	$word = '"';
+     	$lem = '"';
      	if($openQuot){
      		$pos = 'Fea';
      		$openQuot=0;}
@@ -272,7 +276,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 #		
 			#if this is a main verb or auxiliary used as main verb 
 			# (as auxiliary rel=v, auxilaries don't get their own chunk, they should live inside the main verbs' chunk)
-			if ($node->exists('self::NODE[starts-with(@mi,"V")] and not(self::NODE[@rel="v"])'))
+			# if this is a finite verb with rel=v, check if its a finite verb and head is non-finite
+			# -> avoid having two finite verbs in one chunk!
+			if ($node->exists('self::NODE[starts-with(@mi,"V")] and not(self::NODE[@rel="v"])')  )
 			{
 				 my $verbchunk = XML::LibXML::Element->new( 'CHUNK' );
 				  #if this node is parent of a coordination
@@ -742,7 +748,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 #$node->removeAttribute('rel');
 				 $node->removeAttribute('head');
 				 $nounchunk->appendChild($node);
-				 $parent = &attachNewChunkUnderChunk($nounchunk,$parent); # $parent->appendChild($nounchunk);
+				 $parent = &attachNewChunkUnderChunk($nounchunk,$parent,$sentence); # $parent->appendChild($nounchunk);
 				 # the key in hash should point now to the chunk instead of the node
 				 my $ord = $node->getAttribute('ord');
 				 my $idKey = "$sentenceId:$ord";
@@ -806,7 +812,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 #$node->removeAttribute('rel');
 				 $node->removeAttribute('head');
 				 $sachunk->appendChild($node);
-				$parent = &attachNewChunkUnderChunk($sachunk,$parent);
+				$parent = &attachNewChunkUnderChunk($sachunk,$parent,$sentence);
 				 #$parent->appendChild($sachunk);
 				  # the key in hash should point now to the chunk instead of the node
 				 my $ord = $node->getAttribute('ord');
@@ -833,7 +839,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 #$node->removeAttribute('rel');
 				 $node->removeAttribute('head');
 				 $sadvchunk->appendChild($node);
-				$parent = &attachNewChunkUnderChunk($sadvchunk,$parent);
+				$parent = &attachNewChunkUnderChunk($sadvchunk,$parent,$sentence);
 				#if ($parent->nodeName eq 'NODE') {
 				#	print STDERR "adverb chunk" . $sadvchunk->toString(). " within NODE ". $parent->toString() ." has to be appended to a higher CHUNK\n";
 				#	$parent = @{$parent->findnodes('ancestor::CHUNK[1]')}[0];
@@ -845,7 +851,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 $docHash{$idKey}= $sadvchunk;
 			}
 			# if this is a subordination (CS), check if attached to correct verb (gets often attached to main clause instead of subordinated verb)
-			elsif($node->getAttribute('pos') eq 'cs')
+			elsif($node->getAttribute('pos') eq 'cs' && !$parent->exists('child::NODE[@pos="vs"]') )
 			{
 				&attachCSToCorrectHead($node, $sentence);
 			}
@@ -881,10 +887,14 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 		$firstchild->setAttribute('head', '0');
 				 		$parent = $firstchild;
 				 	}
-				 	# else: sentence consists only of punctuation marks? leave as is..
+				 	# else: sentence consists only of punctuation marks? 
+				 	# append to Chunk and leave as is..
 				 	else
 				 	{
-				 		last;
+				 		$fpchunk->appendChild($node);
+				 		eval {$parent->appendChild($fpchunk);};
+						warn  "could not append punctuation chunk to parent chunk".$node->getAttribute('ord')." in sentence: $sentenceId" if $@;
+				 		next;
 				 	}
 				 }
 				 my @children = $node->childNodes();
@@ -957,70 +967,35 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				$chunkparent->setAttribute('ord', $node->getAttribute('ord'));
 			}
 		}
-		# if this is the last node, sentence complete
-		if($i == scalar(@nodes)-1)
-		{ 
-			#my $docstring = $dom->toString(3);
-			#print STDERR $docstring."\n\n";
-			if(!$sentence->exists('child::CHUNK'))
+	}
+my $docstring = $dom->toString(3);
+print STDERR $docstring;
+print STDERR "\n------------------------\n";
+	
+ 	# sentence complete: check if topnode is a CHUNK, if not, change this
+ 	# otherwise lexical transfer crashes!
+	if($sentence->exists('child::NODE'))
+	{
+		&moveTopNodeUnderChunk($sentence);
+	}
+	# check if main verb is in fact a subordinated clause, if so, make second grup-verb head
+	# if coordinated vp: don't take first child grup-verb (this is the coordinated vp), take the last
+	my $topverbchunk = @{$sentence->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v") and @si="top"][1]')}[0];
+	if($topverbchunk && $topverbchunk->exists('child::NODE[@cpos="v"]/descendant::NODE[@pos="cs"]'))
+	{ print STDERR "top chunk".$topverbchunk->getAttribute('ord')."\n";
+			my $realMain = @{$topverbchunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v" and not(child::NODE[@pos="cs"])]')}[-1];
+			if($realMain)
 			{
-			# wrong analysis, head of sentence is a node instead of chunk -> get first verb chunk and make this the head
-			# if there is no verb chunk -> take the first child that a chunk (any type) and make this the head
-			    my $topnode = @{$sentence->findnodes('child::NODE[1]')}[0];
-				my $firstverbchunk = @{$sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
-				if($firstverbchunk && $topnode)
-				{
-					$sentence->appendChild($firstverbchunk);
-					$firstverbchunk->appendChild($topnode);
-					$firstverbchunk->setAttribute('si', 'top');
-					print STDERR "moved verb chunk to top in sentence: $sentenceId\n";
-					
-				}
-				else
-				{
-					my $firstAnyChunk = @{$sentence->findnodes('descendant::CHUNK[1]')}[0];
-					if($firstAnyChunk && $topnode)
-					{
-						$sentence->appendChild($firstAnyChunk);
-						# attach original topnode as child to child node of new top node 
-						# note: node must be attached to child NODE of top chunk, otherwise we have node siblings and the lexical transfer module is not happy
-						my $newtopnode = @{$firstAnyChunk->findnodes('child::NODE[1]')}[0];
-						$newtopnode->appendChild($topnode);
-						$firstAnyChunk->setAttribute('si', 'top');
-						print STDERR "moved non-verbal chunk to top in sentence: $sentenceId\n";
-					}
-					# if no chunk: create an artificial chunk (otherwise lexical module will crash!)
-					elsif($topnode)
-					{
-						my $dummyChunk =  XML::LibXML::Element->new( 'CHUNK' );
-						$dummyChunk->setAttribute('si', 'top');
-						$dummyChunk->setAttribute('type', 'dummy');
-						$dummyChunk->setAttribute('ord', $node->getAttribute('ord'));
-						$sentence->appendChild($dummyChunk);
-						$dummyChunk->appendChild($topnode);
-						print STDERR "inserted dummy chunk as head in sentence: $sentenceId\n";
-					}
-				}
+				print STDERR "real main verb: ".$realMain->toString();
+				$topverbchunk->parentNode->appendChild($realMain->parentNode());
+				$realMain->parentNode()->appendChild($topverbchunk);			
+				$topverbchunk->setAttribute('si', 'S');
+				$realMain->parentNode->setAttribute('si', 'top');
 			}
-			# check if main verb is in fact a subordinated clause, if so, make second grup-verb head
-			# if coordinated vp: don't take first child grup-verb (this is the coordinated vp), take the last
-			my $topverbchunk = @{$node->findnodes('ancestor::SENTENCE/CHUNK[(@type="grup-verb" or @type="coor-v") and @si="top"][1]')}[0];
-			if($topverbchunk && $topverbchunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]'))
-			{ #print STDERR "top chunk".$topverbchunk->getAttribute('ord')."\n";
-				my $realMain = @{$topverbchunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v" and not(child::NODE[@pos="cs"])]')}[-1];
-				if($realMain)
-				{
-					print STDERR "real main verb: ".$realMain->toString();
-					$topverbchunk->parentNode->appendChild($realMain->parentNode());
-					$realMain->parentNode()->appendChild($topverbchunk);
-					
-					$topverbchunk->setAttribute('si', 'S');
-					$realMain->parentNode->setAttribute('si', 'top');
-				}
-			}
-			my @verbchunks = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]');
-			foreach my $verbchunk (@verbchunks)
-			{
+	}
+	my @verbchunks = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]');
+	foreach my $verbchunk (@verbchunks)
+	{
 			 	# check if one of the verbs in this sentence has more than one subject (can happen with statistical parsers!), if only one is congruent with the verb, make this the subject 
 				# and the other 'cd-a', if more than one is congruent, make the first one the subject (the one that precedes the verb)
 				# simpler: check if first subject is congruent, if not, check next etc
@@ -1054,75 +1029,125 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 	}
 				 	
 				 }
+	}
+	# check if all chunks are children of chunks (if nodes have child chunks, the lexical transfer module is not amused)
+	foreach my $chunk ($sentence->getElementsByTagName('CHUNK'))
+	{
+		if($chunk->parentNode->nodeName eq 'NODE')
+		{
+			my $realparent = @{$chunk->findnodes('ancestor::CHUNK[1]')}[0];
+			if($realparent){
+				$realparent->appendChild($chunk);
 			}
-			# check if all chunks are children of chunks (if nodes have child chunks, the lexical transfer module is not amused)
-			foreach my $chunk ($sentence->getElementsByTagName('CHUNK'))
-			{
-				if($chunk->parentNode->nodeName eq 'NODE')
-				{
-					my $realparent = @{$chunk->findnodes('ancestor::CHUNK[1]')}[0];
-					if($realparent)
-					{
-						$realparent->appendChild($chunk);
-					}
-					else
-					{
-						$sentence->appendChild($chunk);
-					}
+			else{
+				$sentence->appendChild($chunk);
+			}
+		}
+	}
+	# make sure no chunk has a sibling node, lexical transfer module doesn't like that either
+	my @nodesWithChunkSiblings = $sentence->findnodes('descendant::NODE[preceding-sibling::CHUNK]');			
+	foreach my $node (@nodesWithChunkSiblings)
+	{		# print STDERR "node sibl: ".$node->toString()."\n";
+			# if CC or CS -> try to attach it to the following verb chunk, if that fails to the preceding
+			# if there's no verb chunk, attach it to the next higher chunk (probably an error by the tagger, but let's try to avoid 
+			# making the lexical transfer fail)
+			# NOTE: no need to copy children of sibling, as NODE with child CHUNKS have already been taken care of above
+			my $possibleHead = @{$node->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE/descendant-or-self::NODE')}[0];
+			my $possibleHead2 = @{$node->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE/descendant-or-self::NODE')}[0];					
+			if($possibleHead){
+				$possibleHead->appendChild($node);
+			}
+			elsif($possibleHead2){
+				$possibleHead->appendChild($node);
+			}
+			else{
+				$possibleHead = @{$node->findnodes('ancestor::SENTENCE/CHUNK[@si="top"]/NODE/descendant-or-self::NODE')}[0];
+				#print $possibleHead->toString()."\n\n";
+				if($possibleHead){
+					$possibleHead->appendChild($node);
 				}
 			}
-			# make sure no chunk has a sibling node, lexical transfer module doesn't like that either
-			my @nodesWithChunkSiblings = $sentence->findnodes('descendant::NODE[preceding-sibling::CHUNK]');
-			
-			foreach my $node (@nodesWithChunkSiblings)
-			{		# print STDERR "node sibl: ".$node->toString()."\n";
-					# if CC or CS -> try to attach it to the following verb chunk, if that fails to the preceding
-					# if there's no verb chunk, attach it to the next higher chunk (probably an error by the tagger, but let's try to avoid 
-					# making the lexical transfer fail)
-					# NOTE: no need to copy children of sibling, as NODE with child CHUNKS have already been taken care of above
-					
-					my $possibleHead = @{$node->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE/descendant-or-self::NODE')}[0];
-					my $possibleHead2 = @{$node->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE/descendant-or-self::NODE')}[0];					
-					if($possibleHead)
-						{$possibleHead->appendChild($node);}
-					elsif($possibleHead2)
-						{$possibleHead->appendChild($node);}
-					else
-						{
-							$possibleHead = @{$node->findnodes('ancestor::SENTENCE/CHUNK[@si="top"]/NODE/descendant-or-self::NODE')}[0];
-							#print $possibleHead->toString()."\n\n";
-							if($possibleHead){$possibleHead->appendChild($node);}
-						}
-			}
-			# make sure nodes have no (node) siblings, again, lexical transfer module will crash
-			# solution: attach second sibling as (last) child of first
-			my @nodesWithNodeSiblings = $sentence->findnodes('descendant::NODE[preceding-sibling::NODE]');
-			foreach my $node (@nodesWithNodeSiblings)
-			{
-				my $prevsibling = $node->previousSibling();
-				if($prevsibling)
-				{
-					$prevsibling->appendChild($node);
-				}
-			}	
-			
-			 # make sure final punctuation (.!?) is child of top chunk, if not, append to top chunk
-			 # -> otherwise punctuation will appear in some random position in the translated output!
-			 # TODO: ! and ? -> direct speech!!
-			# my @finalPunc = $sentence->findnodes('descendant::NODE[@lem="." or @lem="!" or @lem="?"]');
-			 my @finalPunc = $sentence->findnodes('descendant::NODE[@lem="."]');
-			 foreach my $punc (@finalPunc) 
-			 { 
-			 		if(isLastNode($punc,$sentence) && !$punc->exists('parent::CHUNK/parent::SENTENCE') )
-			 		{
-				 		my $topchunk = @{$sentence->findnodes('child::CHUNK[1]')}[0];
-				 		my $puncChunk = $punc->parentNode();
-				 		if($topchunk && $puncChunk){
-				 		$topchunk->appendChild($puncChunk);
-				 		}
-			 		}
+	}
+	# make sure nodes have no (node) siblings, again, lexical transfer module will crash
+	# solution: attach second sibling as (last) child of first
+	my @nodesWithNodeSiblings = $sentence->findnodes('descendant::NODE[preceding-sibling::NODE]');
+	foreach my $node (@nodesWithNodeSiblings){
+		my $prevsibling = $node->previousSibling();
+		if($prevsibling){
+			$prevsibling->appendChild($node);
+		}
+	}	
+	
+	# make sure final punctuation (.!?) is child of top chunk, if not, append to top chunk
+	# -> otherwise punctuation will appear in some random position in the translated output!
+	# TODO: ! and ? -> direct speech!!
+	# my @finalPunc = $sentence->findnodes('descendant::NODE[@lem="." or @lem="!" or @lem="?"]');
+	my @finalPunc = $sentence->findnodes('descendant::NODE[@lem="."]');
+	foreach my $punc (@finalPunc){
+			if(isLastNode($punc,$sentence) && !$punc->exists('parent::CHUNK/parent::SENTENCE') ){
+				 my $topchunk = @{$sentence->findnodes('child::CHUNK[1]')}[0];
+				 my $puncChunk = $punc->parentNode();
+				 if($topchunk && $puncChunk){
+				 	$topchunk->appendChild($puncChunk);
+				 }
 			 }
-				
+	}
+	# if there's a sólo/solamente -> find right head
+	# parser ALWAYS attaches this to the verb, but that may not be correct, 
+	# e.g. 'Sólo Juan sabe lo que ha hecho.' TODO: nomás!
+	if( $sentence->exists('descendant::NODE[@lem="sólo" or @lem="sólamente"]') )
+	{
+		my @solos = $sentence->findnodes('descendant::NODE[@lem="sólo" or @lem="sólamente"]');
+		my $nodeHashref = &nodesIntoSortedHash($sentence);
+		foreach my $solo (@solos){
+			 my $soloOrd = $solo->getAttribute('ord');
+			 my $chunk = @{$solo->findnodes('ancestor::CHUNK[1]')}[0];
+			 my $parent = $chunk->parentNode();
+			 my $nodeAfterSolo = $nodeHashref->{$soloOrd+1};
+			 # if next node is a noun, sólo probably refers to that
+			 if($nodeAfterSolo && $nodeAfterSolo->getAttribute('mi') =~ /^N/ ){
+			 	 my $nodeAfterSoloParentChunk = @{$nodeAfterSolo->findnodes('ancestor::CHUNK[1]')}[0];
+			 	 if($nodeAfterSoloParentChunk && $chunk && $parent)
+			 	 {
+			 	 	$parent->removeChild($chunk);
+			 	 	# if $nodeAfterSoloParentChunk is descendant of solo -> attach this chunk first to parent,
+			 	 	# then attach chunk to $nodeAfterSoloParentChunk to avoid hierarchy request errors
+			 	 	if(&isAncestor($nodeAfterSoloParentChunk, $chunk)){
+			 	 		$parent->appendChild($nodeAfterSoloParentChunk);
+			 	 	}
+			 	 	$nodeAfterSoloParentChunk->appendChild($chunk);
+			 	 }
+			 }
+		}
+	}
+	# check if this sentence contains a verb chunk with more than one finite verb in it
+	# -> make two chunks 
+	my @verbchunksWithTwoFiniteVerbs =  $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v" and child::NODE/descendant-or-self::NODE[@cpos="v" and ( contains(@mi,"1") or contains(@mi,"2") or contains(@mi,"3") )]/descendant::NODE[@cpos="v" and ( contains(@mi,"1") or contains(@mi,"2") or contains(@mi,"3"))] ]' );
+	
+	if(scalar(@verbchunksWithTwoFiniteVerbs)>0)
+	{ 
+		foreach my $doubleVerbChunk (@verbchunksWithTwoFiniteVerbs)
+		{
+			#get both finite verbs
+			my $topFiniteVerb = @{$doubleVerbChunk->findnodes('child::NODE/descendant-or-self::NODE[@cpos="v" and ( contains(@mi,"1") or contains(@mi,"2") or contains(@mi,"3") )][1]')}[0];
+			if($topFiniteVerb)
+			{
+				my @dependendFiniteVerbs = $topFiniteVerb->findnodes('descendant::NODE[@cpos="v" and ( contains(@mi,"1") or contains(@mi,"2") or contains(@mi,"3") )]');
+				# make new chunks and attach the chunks to verb chunk
+				foreach my $finiteVerb (@dependendFiniteVerbs)
+				{
+					my $newVerbChunk = XML::LibXML::Element->new( 'CHUNK' );
+				 	$newVerbChunk->setAttribute('type', 'grup-verb');
+					$newVerbChunk->setAttribute('si', $finiteVerb->getAttribute('rel'));
+				 	$newVerbChunk->setAttribute('ord', $finiteVerb->getAttribute('ord')); 
+					$finiteVerb->removeAttribute('rel');
+					$finiteVerb->removeAttribute('head');
+				 	$newVerbChunk->appendChild($finiteVerb);
+				 	$doubleVerbChunk->appendChild($newVerbChunk);
+					
+				}
+			}
+		
 		}
 	}
 
@@ -1130,11 +1155,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 
 
 			
-#				 # if this is marked as subject, check if morph of verb matches
-#				 if($node->getAttribute('rel') eq 'suj' && &notCongruent($node,$parent))
-#				 {
-#				 	$node->setAttribute('rel', 'cd-a')
-#				 }
+
 
 
 # print new xml to stdout
@@ -1640,6 +1661,20 @@ sub hasRealSubj{
 	return 0;
 }
 
+sub nodesIntoSortedHash{
+	my $sentence = $_[0];
+	my %nodeHash =();
+
+			# read sentence into hash, key is 'ord'
+			foreach my $node ($sentence->getElementsByTagName('NODE'))
+			{
+				my $key = $node->getAttribute('ord');
+				$nodeHash{$key} = $node;
+			}
+			my @sequence = sort {$a<=>$b} keys %nodeHash;
+	return \%nodeHash;
+}
+
 sub attachCSToCorrectHead{
 	my $cs = $_[0];
 	my $sentence = $_[1];
@@ -1745,6 +1780,7 @@ sub isAncestor{
 sub attachNewChunkUnderChunk{
 	my $newChunk = $_[0];
 	my $parent = $_[1];
+	my $sentence = $_[2];
 
     if($newChunk && $parent)
     {
@@ -1759,6 +1795,12 @@ sub attachNewChunkUnderChunk{
 		{
 			$parent->appendChild($newChunk);
 			return $parent;
+		}
+		# no parent chunk, attach to sentence
+		else
+		{
+			$sentence->appendChild($newChunk);
+			return $sentence;
 		}
     }
     #this should not happen
@@ -1987,6 +2029,53 @@ sub isLastNode{
 			#print STDERR "last node: ".@sequence[0]."n";
 			return ( scalar(@sequence)>1 && $nodeHash{@sequence[-1]}->isSameNode($node) );
 			
+}
+
+
+sub moveTopNodeUnderChunk{
+	my $sentence = $_[0];
+	my $sentenceId = $sentence->getAttribute('ord');
+	# wrong analysis, head of sentence is a node instead of chunk -> get first verb chunk and make this the head
+	# if there is no verb chunk -> take the first child that a chunk (any type) and make this the head
+	 my $topnode = @{$sentence->findnodes('child::NODE[1]')}[0];
+	 my $firstverbchunk = @{$sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
+ 	 if($firstverbchunk && $topnode)
+	 {
+		$sentence->appendChild($firstverbchunk);
+		$firstverbchunk->appendChild($topnode);
+		$firstverbchunk->setAttribute('si', 'top');
+		print STDERR "moved verb chunk to top in sentence: $sentenceId\n";
+	}
+	else	
+	{
+		my $firstAnyChunk = @{$sentence->findnodes('descendant::CHUNK[1]')}[0];
+		if($firstAnyChunk && $topnode)
+		{
+			$sentence->appendChild($firstAnyChunk);
+			# attach original topnode as child to child node of new top node 
+			# note: node must be attached to child NODE of top chunk, otherwise we have node siblings and the lexical transfer module is not happy
+			my $newtopnode = @{$firstAnyChunk->findnodes('child::NODE[1]')}[0];
+			$newtopnode->appendChild($topnode);
+			$firstAnyChunk->setAttribute('si', 'top');
+			print STDERR "moved non-verbal chunk to top in sentence: $sentenceId\n";
+		}
+		# if no chunk: create an artificial chunk (otherwise lexical module will crash!)
+		elsif($topnode)
+		{
+			my $dummyChunk =  XML::LibXML::Element->new( 'CHUNK' );
+			$dummyChunk->setAttribute('si', 'top');
+			$dummyChunk->setAttribute('type', 'dummy');
+			$dummyChunk->setAttribute('ord', $topnode->getAttribute('ord'));
+			$sentence->appendChild($dummyChunk);
+			$dummyChunk->appendChild($topnode);
+			print STDERR "inserted dummy chunk as head in sentence: $sentenceId\n";
+		}
+	}
+	# check if topnode is now chunk, if not, repeat
+	if($sentence->findnodes('child::NODE')){
+		&moveTopNodeUnderChunk($sentence);
+	}
+	
 }
 
 

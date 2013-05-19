@@ -12,6 +12,17 @@
 # -> 'rumi wasi' -> not 'rumimanta wasi'
 my.func=/.+/ && my.adpos=/.+/		func				my.type=/grup-sp|coor-sp/		func			up		concat
 
+# preform (e.g. mana) that has printed first in chunk
+# NOTE: not really prepositions, just something that needs to appear to the left of the noun
+my.prepos=/.+/				prepos				my.type=/grup-sp|coor-sp/		prepos			up		concat
+
+    ##############
+    # DETRMINERS #
+    ##############
+    
+# delete plural suffix in demonstrative or indefinite pronouns if head is a number
+my.smi=/^DD/ && my.mi=/\+Pl/			"+Pl"			my.type=det				deleteMorph		up		concat
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
     #########
@@ -19,7 +30,7 @@ my.func=/.+/ && my.adpos=/.+/		func				my.type=/grup-sp|coor-sp/		func			up		con
     #########
 
 # copy attribute 'case' to chunk (sn or grup-sp)
-my.case=/.+/				case				my.type=/.+/				case			up		concat
+my.case=/.+/				case				my.type=/.+/ && !(my.type=/grup-verb|coor-v/)				case			up		concat
 
 # copy attribute nouncase, if present, from original preposition to chunk and from there to the noun in the preposition chunk
 my.nouncase=/.+/			nouncase		my.type=/grup-sp|coor-sp/		nouncase		up		concat
@@ -50,6 +61,10 @@ parent.type=sn					"+Dat"				my.si=ci					case			up		concat
 
 # if plural noun with a child node that is a number: delete plural suffix (kimsa runa, not *kimsa runakuna)
 my.smi=/^DN|^Z$/				"+Pl"				my.type=/sn|coor-n/				deleteMorph		up		concat
+
+# if case is +Abss (-nnaq) -> delete Pluralsuffix
+# -> sin dientes -> kirunnaq, not kirukunannaq !
+my.smi=/^N/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@case="+Abss"]}		"+Pl"			my.type=/sn|coor-n/		deleteMorph	up	concat
 
 # propietario de algo -> algo-yuq
 # copy ++Poss from propietario to sn chunk, and from there (over child grup-sp) to the possessed noun
@@ -93,16 +108,20 @@ my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitiv
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			verbmi			up	concat
 
 # copy mi from gerund to verbmi of chunk
-my.smi=/VMG0000|VSG0000/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir"]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
+my.smi=/VMG0000|VSG0000/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" ]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
 
 # if infinitive in own chunk, add +Inf and +Acc to morphology
-my.mi=infinitive && !(xpath{following-sibling::NODE}) && parent.si=cd			"+Acc"			my.type=/grup-verb|coor-v/			addverbmi		up		concat
+my.mi=infinitive && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]})  && parent.si=cd 			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat
 
 # if verb chunk with only infinitive: copy verbmi to chunk
-my.mi=infinitive && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && !(xpath{descendant::NODE[@slem="poner" or @slem="ir" or @slem="empezar" or @slem="comenzar"]}) 			verbmi				my.type=grup-verb				verbmi			up		concat
+# note: in passive verb chunks, infinitive might not be top node in chunk! check for ancestor nodes too
+my.mi=/infinitive|SS/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) 			verbmi				my.type=grup-verb && !(xpath{self::CHUNK[count(descendant::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
 
-# if finite verb is unknown in complex verb chunk or lem is deber (deber hacer), copy verbmi of (non-finite) main verb
-my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NODE[@unknown="transfer" or @slem="deber"]} 		verbmi			my.type=/grup-verb|coor-v/	addverbmi		up	concat
+# if infinitive with 'haber de' -> write "+Obl" to verbmi (morph of haber will be copied to auxlem and auxverbmi)
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber"]} && xpath{descendant::NODE[@slem="de"]}			"+Obl"			my.type=/grup-verb|coor-v/		verbmi		up		concat
+
+# if finite verb is unknown in complex verb chunk, copy verbmi of (non-finite) main verb
+my.verbmi=/.+/ && xpath{self::NODE[@smi="VMN0000" or starts-with(@smi,"VMP")]/NODE[@unknown="transfer" and starts-with(@smi,"V")]} 		verbmi			my.type=/grup-verb|coor-v/	addverbmi		up	concat
 
 # copy all the object clitics for 1st and 2nd persons to the sn chunk (and from there to the verb chunk)
 my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			addverbmi			up		concat
@@ -134,6 +153,8 @@ my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/	"haku"		m
 my.mi=imperative && my.slem=/^ir$|marchar/ && my.smi=/VMM01P0|VMSP1P0/	""		my.type=/grup-verb|coor-v/	verbmi		up	overwrite
 my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/ && my.slem=/^ir$|marchar/ 	""		my.type=/grup-verb|coor-v/	addverbmi	up	overwrite
 
+# continuar + gerund: add +Perdur to verbmi
+my.slem=continuar && xpath{ancestor::NODE[starts-with(@smi,"VSG") or starts-with(@smi,"VMG") or starts-with(@smi,"VAG")]}	"+Perdur"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
     ###########################
@@ -159,25 +180,26 @@ my.slem=/también/				"+Add"				my.type=/.+/					chunkmi			up		concat
     #######################
 
 # tener que hacer algo / deber hacer algo -> ruwana+possessive kan -> extract person information from finite verb and copy that to the attribute verbmi of the verb chunk and write form of KAN to the chunk for generation
+# NOTE: do not add lem2 and verbmi2 if this is a complement or relative clause, in these cases, only nominal form of main verb is needed
 # alternatives marked with '#'
 # rules I:
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1S/	"+1.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1P/	"#+1.Pl.Incl.Poss"		my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/1P/	"#+1.Pl.Excl.Poss"		my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/2S/	"+2.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/2P/	"+2.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/3S/	"+3.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/3P/	"+3.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1S/	"+Obl+1.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1P/	"#+1.Pl.Incl.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1P/	"#+1.Pl.Excl.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/2S/	"+Obl+2.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/2P/	"+Obl+2.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3S/	"+Obl+3.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3P/	"+Obl+3.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
 
 # rules II:
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]}		 	"ka"				my.type=/grup-verb/			lem2			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...P/	"+3.Sg.Subj"			my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...F/	"+3.Sg.Subj.Fut"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...I/	"#+NPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...I/	"#+IPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...S/	"#+NPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...S/	"#+IPst+3.Sg.Subj"		my.type=/grup-verb/			verbmi2			up		concat
-my.slem=/tener|deber/ && xpath{parent::NODE[@smi="VMN0000"]} && my.smi=/...C/	"+3.Sg.Subj+Pot"		my.type=/grup-verb/			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]}		 	"ka"				my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			lem2			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/...P/	"+3.Sg.Subj"			my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/...F/	"+3.Sg.Subj.Fut"		my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/...I/	"#+NPst+3.Sg.Subj"		my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/...I/	"#+IPst+3.Sg.Subj"		my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/...S/	"#+NPst+3.Sg.Subj"		my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/...S/	"#+IPst+3.Sg.Subj"		my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			verbmi2			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/...C/	"+3.Sg.Subj+Pot"		my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			verbmi2			up		concat
 
 
 ## forms of tener hambre, tener hipo etc: in Quechua, one root, delete object####
@@ -245,11 +267,10 @@ my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="ellos" ]
 my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@smi,"PP1") or starts-with(@smi,"PP2") or @lem="paykuna"]}) && !(xpath{ancestor::CHUNK[contains(@verbmi,"1.Sg.Subj") or contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"2.Sg.Subj") or contains(@verbmi,"2.Pl.Subj") or contains(@verbmi2,"3.Pl") ]}) )			add_mi		my.type=/.+/		"3.Sg.Poss"	down	overwrite
 
 
-    #########################
-    # pre-chunk punctuation #
-    #########################
-    
-#my.smi=/FAA|FIA|FCA|FG|FLA|FPA|FRA/		slem				my.type=F-term				PrePunc			up		concat
-#my.smi=FE					"quot"				my.type=F-term				PrePunc			up		concat
-   
+    ######################################################################
+    # SPECIAL CASES: spanish words that are realized as quechua suffixes #
+    ######################################################################
 
+my.slem=/incluso|sólo/ && my.mi=/^\+\+/		mi			my.type=/.+/		chunkmi		up	concat
+my.mi=/^\+\+/ && my.slem=/incluso|sólo/ 	"yes"			my.type=/.+/		delete		up	concat
+# permanecer

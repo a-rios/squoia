@@ -11,7 +11,7 @@
 
 
 # TODO: antes de comer -> manaraq mikhuSPA
-# TODO: aunque sea -> maskipas
+# TODO: aunque sea -> maskipas (adverb)
 # TODO: con_objeto_de -> na-paq 
 # TODO: sin hacer, para hacer -> mana +SS, +Obl+Ben
 
@@ -175,6 +175,12 @@ por		case=+Kaus	-
 por		case=+Instr	-
 por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}
 sino		lem=sinu	-
+
+# sin hacer ->mana ruwaspa, sin dientes -> kiruNNAQ, sin Pedro -> mana PedroWAN
+# default:  -nnaq (?)
+sin		prepos=mana			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb" or @type="coor-v"]
+sin		case=+Abss			!(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb" or @type="coor-v"]} )
+sin		prepos=mana,nouncase=+Instr	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn" or @type="coor-n"]/NODE[starts-with(@smi,"NP")]
 
 # sobre -> locativo: el libro está sobre la mesa -> hawa
 # sobre -> tema: el libro sobre la selva, hablar sobre algo -> Ablativo

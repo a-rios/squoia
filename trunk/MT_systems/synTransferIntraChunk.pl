@@ -94,10 +94,11 @@ foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
 					last if $found;
 				}
 				if ($found) {	
-#					print STDERR "found ancestor ".$ancestor->getAttribute('ref')."\n";
+#					print STDERR "\n\n\nfound ancestor ".$ancestor->getAttribute('ref')."\n";
 #					print STDERR $ancestor->nodeName."\n";
 					my $configline = $intraConditions{$condpair};
 					my ($descAttr,$ancAttr,$direction,$wmode) = split(/\t/,$configline);
+#					print STDERR "attr from to: $descAttr, $ancAttr\n\n";
 #					print STDERR "direction $direction\n";
 					if ($direction eq "up") {
 						&propagateAttr($node,$descAttr,$ancestor,$ancAttr,$wmode);

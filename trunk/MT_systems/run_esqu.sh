@@ -16,14 +16,13 @@ export MATXIN_DIX=$ESQU_DIR/lexica/es-quz.bin
 export MATXIN_CONFIG=$GRAMMAR_DIR/es-qu.cfg
 
 # path to desr parser & its model
-export DESR_DIR="/home/clsquoia/parser/desr-1.2.6"
-export DESR_DIR2="/home/clsquoia/parser/desr-1.3.2"
+#export DESR_DIR_OLD="/home/clsquoia/parser/desr-1.2.6"
+export DESR_DIR="/home/clsquoia/parser/desr-1.3.2"
 export DESR_CONFIG=$DESR_DIR/spanishv2.conf
 export DESR_MODEL=$DESR_DIR/spanish_es4.MLP
 #export DESR_MODEL=$DESR_DIR/spanish.MLP
 export DESR_PARAMS="-m $DESR_MODEL -c $DESR_CONFIG"
 export EVID=$1
-# "$EVID" = "-indirect"]
 
 if [ -n "$EVID" ] && [ "$EVID" = "-indirect" ] ; then
         echo  "evidentiality set to $1" >&2
@@ -43,7 +42,7 @@ perl readConfig.pl $MATXIN_CONFIG;
 #| perl esqu/getSentencesForGeneration.pl | xmllint --format - 
 
 # server-client mode, new desr parser
-$MATXIN_BIN/analyzer_client $FREELING_PORT |$DESR_DIR2/src/desr $DESR_PARAMS  | perl conll2xml/conll2xml.pl  | perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX | perl esqu/disambVerbFormsML.pl | perl splitNodes.pl | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl  | perl recursiveNumberChunks.pl| perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | xmllint --format - 
+$MATXIN_BIN/analyzer_client $FREELING_PORT |$DESR_DIR/src/desr $DESR_PARAMS  |perl conll2xml/conll2xml.pl   | perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID  |$MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl esqu/disambVerbFormsML.pl | perl splitNodes.pl | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl  | perl recursiveNumberChunks.pl| perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | xmllint --format - 
 
 #$MATXIN_BIN/analyzer_client $FREELING_PORT |$DESR_DIR/src/desr $DESR_PARAMS | perl conll2xml/conll2xml.pl  | perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/subordVerbform_desr.pl | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl splitNodes.pl | perl insertSemanticTags.pl | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl | perl synTransferIntraChunk.pl | perl STinterchunk.pl | perl recursiveNumberChunks.pl| perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl | perl esqu/getSentencesForGeneration.pl
 

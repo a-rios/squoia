@@ -157,7 +157,8 @@ foreach my $vchunk (@verbchunksWithConjunction)
  				if($firstchild)
  				{
  					$firstchild->setAttribute('conj', $vchunk->getAttribute('conj'));
- 					#print STDERR "attribute set: ".$firstchild->getAttribute('conj')."\n";
+ 					print STDERR "attribute set: ".$firstchild->getAttribute('conj')."\n";
+ 					print STDERR $firstchild->toString()."\n";
  				}
  				else
  				{
@@ -288,6 +289,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				{
  					$verbmi=$verbmi.$chunk->getAttribute('case');
  				}
+ 			# if lema = ir/marchar and morph contains +Rflx -> irse=riPUy -> change +Rflx to +Iprs
+ 			if($lemma eq 'ri' && $verbmi =~ /Rflx/)
+ 			{
+ 				$verbmi =~ s/Rflx/Iprs/g;
+ 			}
  			# clean up and adjust morphology tags
  			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
  			if($lemma2 eq '' && $auxlem eq '' && $verbmi ne '')
@@ -350,6 +356,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			&printNode($postpos,$chunk);
  			print STDOUT "\n";
  		}
+ 		# if there's a preform (e.g. mana) print this first
+ 		# NOTE: not really prepositions, just something that needs to appear to the left of the noun
+ 		# print just preform, not node
+ 		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]')&& $chunk->hasAttribute('prepos') && !$chunk->hasAttribute('delete')  )
+ 		{
+ 				print STDOUT $chunk->getAttribute('prepos')."\n";
+ 		}
  		#punctuation: print as is
  		elsif($chunk->exists('self::CHUNK[@type="F-term"]') && $chunk->getAttribute('delete') ne 'yes'  )
  		{
@@ -357,8 +370,12 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			# -> when printing out sentences, it's useful to know whether to attach punctuation to preceding or following word!!
  			my $pmark = $chunk->findvalue('child::NODE/@slem');
  			my $pmi = $chunk->findvalue('child::NODE/@smi');
- 			
+ 			if($pmark =~ /etcétera|etc/){
+ 				print STDOUT "$pmark:\n";
+ 			}
+ 			else{
  			print STDOUT "$pmark-PUNC-$pmi\n";
+ 			}
  		}
  		# adverbs: RN 'no' -> print only if without 'nada,nunca or jamás', in those cases -> no is already contained in the suffix -chu in the verb chunk
  		elsif($chunk->exists('self::CHUNK[@type="sadv" or @type="coor-sadv"]') && !($chunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/descendant::NODE[@slem="nada" or @slem="nunca" or @slem="jamás"]') && $chunk->exists('child::NODE[@smi="RN"]') ) && !$chunk->hasAttribute('delete') )      
@@ -426,10 +443,6 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  	# emtpy line between sentences
  	print STDOUT "#EOS\n";
 }
-
-# print new xml to stdout
-#my $docstring = $dom->toString;
-#print STDOUT $docstring;
 
 
 sub printNode{
@@ -508,8 +521,9 @@ sub printNode{
  			}
  		}
  		$nodeString = $nodeString.&getMorphFromChunk($node,$chunk);
+ 		#print STDERR "new node string: $nodeString\n";
  		$nodeString = &deleteUnusedTags($nodeString,$chunk);
- 		#print STDERR "node string: $nodeString\n";
+ 		#print STDERR "deleted morphs node string: $nodeString\n";
  		# clean up and adjust morphology tags
  		if($postform eq ''){
  			print STDOUT "$lemma:".&adjustMorph($nodeString,\%mapTagsToSlots);
@@ -548,6 +562,11 @@ sub deleteUnusedTags{
 	my $morphString = $_[0];
 	my $chunk = $_[1];
 	my $deleteMorph = $chunk->getAttribute('deleteMorph');
+	# special case: chunks of type 'det' have been created AFTER syntactic transfer 
+	# -> their 'deleteMorph is in parent chunk!
+	if($chunk->getAttribute('type') eq 'det'){
+		$deleteMorph = $chunk->findvalue('parent::CHUNK/@deleteMorph');
+	}
 	my @morphsToDelete = split(',',$deleteMorph);
 	foreach my $del (@morphsToDelete)
 	{$morphString =~ s/\Q$del\E//;}
@@ -632,22 +651,26 @@ sub mapEaglesTagToQuechuaMorph{
 		# ordinal
 		if($type eq 'O')
 		{
-			print  STDOUT "$slem\nñiqin\n";
+			print  STDOUT "$slem\n";
+			$EagleMorphs = "ñiqin:";
 		}
 		else
 		{
 			if($grade =~ /A|S/)
 			{
-					print  STDOUT "aswan\n$slem";
+				print  STDOUT "aswan\n";
+				$EagleMorphs = "$slem:";
 			}
 			# diminutive
 			elsif($grade =~ /D/)
 			{
-				print  STDOUT "$slem+Dim";
+				#print  STDOUT "$slem+Dim";
+				$EagleMorphs = "$slem:+Dim";
 			}
 			else
 			{
-				print  STDOUT "$slem";
+				#print  STDOUT "$slem";
+				$EagleMorphs = "$slem:";
 			}
 		}
 	}
@@ -655,7 +678,6 @@ sub mapEaglesTagToQuechuaMorph{
 	{
 		#print  STDOUT "$slem";
 		$EagleMorphs = "$slem:";
-		$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
 	}
 #	# determiners, should all be in lexicon, TODO: check if complete
 #	elsif($eaglesTag =~ /^D/)
@@ -675,7 +697,7 @@ sub mapEaglesTagToQuechuaMorph{
 		#person
 		if($eaglesTag =~ /SP/)
 		{
-			my (@words) = split('_',$slem);
+			my (@words) = split('_',$sform);
 			for(my $i=0;$i<scalar(@words)-1;$i++)
 			{
 				print STDOUT @words[$i]."\n";
@@ -722,7 +744,7 @@ sub mapEaglesTagToQuechuaMorph{
 				$EagleMorphs = $EagleMorphs."+Pl";
 			}
 		}
-		$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
+		#$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
 		#print STDOUT $node->findvalue('parent::CHUNK[@type="sn" or @type="coor-n"]/@poss');
 		#print STDOUT $node->findvalue('parent::CHUNK[@type="sn" or @type="coor-n"]/@nouncase');
 	}
@@ -739,8 +761,10 @@ sub mapEaglesTagToQuechuaMorph{
 	#conjunctions, interjections,prepositions,dates
 	elsif($eaglesTag =~ /^C|I|S|W|D|Z/)
 	{
-		print STDOUT "$slem";
+		$EagleMorphs = "$slem:";
+		#print STDOUT "$slem";
 	}
+	$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
 	return $EagleMorphs;
 }
 
@@ -789,6 +813,13 @@ sub adjustMorph{
 	{
 		$morphString =~ s/Subj/Subj.Fut/g;
 		$morphString =~ s/\+Fut//g;
+	}
+	# if there's a +Pot tag that was added during the transfer:
+	# attach this to subj tag: 1.Sg.Subj+Pot = 1.Sg.Subj.Pot
+	if($morphString =~ /\+Pot/)
+	{
+		$morphString =~ s/Subj/Subj.Pot/g;
+		$morphString =~ s/\+Pot//g;
 	}
 	
 	
