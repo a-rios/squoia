@@ -52,3 +52,18 @@ my.si=/suj/ 		case		my.verbform=/perfect|obligative/ && my.case=+Acc	"+Gen"		par
 
 ## sólo/solamente -> copy chunkmi from sadv chunk to head
 child.slem=/sólo|solamente/ && my.chunkmi=++Lim		chunkmi			my.type=/.+/		chunkmi		parent		1to2		concat
+
+
+# para +infinitive: verbchunk is set to obligative, but needs person of verb as possessive suffix!
+my.verbform=obligative && parent.type=grup-sp && parent.case=+Ben			verbmi			my.type=/grup-verb|coor-v/ && (my.verbmi=/1\.Sg\.Subj/ || my.verbmi2=/1\.Sg\.Subj/)			"+1.Sg.Poss"		ancestor	2to1	concat
+my.verbform=obligative && parent.case=+Ben && parent.type=grup-sp 			verbmi			my.type=/grup-verb|coor-v/ && (my.verbmi=/1\.Pl\.Excl\.Subj/ || my.verbmi2=/1\.\Pl\.Excl.Subj/)		"+1.Pl.Excl.Poss"	ancestor	2to1	concat
+parent.type=grup-sp && parent.case=+Ben && my.verbform=obligative			verbmi			my.type=/grup-verb|coor-v/ && (my.verbmi=/1\.Pl\.Incl\.Subj/ || my.verbmi2=/1\.\Pl\.Incl.Subj/)		"+1.Pl.Incl.Poss"	ancestor	2to1	concat
+
+parent.case=+Ben && parent.type=grup-sp && my.verbform=obligative			verbmi			my.type=/grup-verb|coor-v/ && (my.verbmi=/2\.Sg.Subj/ || my.verbmi2=/2\.Sg.Subj/)			"+2.Sg.Poss"		ancestor	2to1	concat
+parent.case=+Ben && my.verbform=obligative && parent.type=grup-sp 			verbmi			my.type=/grup-verb|coor-v/ && (my.verbmi=/2\.Pl.Subj/ || my.verbmi2=/2\.Pl.Subj/)			"+2.Pl.Poss"		ancestor	2to1	concat
+parent.type=grup-sp && my.verbform=obligative && parent.case=+Ben			verbmi			my.type=/grup-verb|coor-v/ && (my.verbmi=/3\.Sg.Subj/ || my.verbmi2=/3\.Sg.Subj/)			"+3.Sg.Poss"		ancestor	2to1	concat
+xpath{self::CHUNK[@verbform="obligative"]} && parent.type=grup-sp && parent.case=+Ben	verbmi			my.type=/grup-verb|coor-v/ && (my.verbmi=/3\.Pl.Subj/ || my.verbmi2=/1\.Pl.Subj/)			"+3.Pl.Poss"		ancestor	2to1	concat
+
+# para + inf -> copy case from grup-sp to infinitive chunk
+xpath{self::CHUNK[@verbform="obligative"]}  && parent.case=+Ben && parent.type=grup-sp	case			my.type=/grup-sp|coor-sp/		case		parent		2to1		concat
+

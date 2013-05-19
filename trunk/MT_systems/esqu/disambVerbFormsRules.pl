@@ -186,6 +186,13 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'DS');
  					$verbChunk->setAttribute('conj', 'mana');
  				}
+ 				# antes de hacer -> manaraq + finite verb -> DS (if SS -> verb would be infinitive)
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /antes_de_que/ )
+ 				{
+ 					$nbrOfSwitchForms++;
+ 					$verbChunk->setAttribute('verbform', 'DS');
+ 					$verbChunk->setAttribute('conj', 'manaraq');
+ 				}
  				# if this a subordinated clause with a finite verb (in Quechua)
  				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|y_cuando|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|por_eso|ya_que|aun|aún|aun_no|aún_no/ )
  				{
@@ -466,11 +473,17 @@ foreach my $sentence (@sentenceList)
  				
 			}
  		}
- 		# if this is an infinitive chunk with 'sin' -> set verbform to -spa (SS)
+ 		# if this is an infinitive chunk with 'sin' or 'antes de' -> set verbform to -spa (SS)
  		# -> lo dije sin pensar -> mana yuyaspa rimarqani
- 		elsif(!&getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="sin"]') )
+ 		elsif(!&getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="sin" or @lem="antes_de"]') )
  		{
  			$verbChunk->setAttribute('verbform','SS');
+ 		}
+ 		# if this is an infinitive chunk with 'para' -> set verbform to obligative
+ 		# -> se fue a Lima para trabajar -> llamk'ananpaq Limata ripun.
+ 		elsif(!&getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="para"]') )
+ 		{
+ 			$verbChunk->setAttribute('verbform','obligative');
  		}
  		else
  		{

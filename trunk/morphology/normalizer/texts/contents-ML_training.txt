@@ -1,0 +1,17 @@
+Contents of ML_traning.txt, in this order:
+- Bible Cuzco Quechua
+- Acuerdo Nacional 2002
+- Acuerdo Nacional 2003
+- Peruvian constitution 1993, normalized
+- defensoria Peru
+- Cuentos del Alto Urubamba
+(- El hijo del Oso, ambiguous orthography)
+- Vivencias (Kinderbuch)
+- modulo1
+- las posibilidades de la literatura Quechua 
+- la literatura quechua
+- translation arguedas by Jaime Pantigozo
+- Trilce
+(- yanu mayu,  ambiguous orthography)
+(- all testigos ayacuchano -> too many OCR errors)
+(- all testigos cuzqueño -> too many OCR errors)

@@ -1,0 +1,21 @@
+# nominal slot 1: derivation
+
+ {chika} : {chika}
+| {chikan} : {chikan}
+| {karay} : {karay}
+| {kankaray} : {kankaray}
+| {chaq} : {chaq}
+| {su} : {su}
+| {chachaq} : {chachaq}
+|  {cha} : {cha}
+|  {niraq} : {niray}
+|  {niraq} : {niraq}
+|  {niraq} : {nira}
+|  {rikuq} : {rikuq}
+|  {ti}: {ti}
+|  {li}: {li}
+|  {liku}: {liku}
+|  {yli}: {yli}
+|  {lu}: {lu}
+|  {mpa} : ["@MPA"{mpa}]
+;
