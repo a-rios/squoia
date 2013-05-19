@@ -152,7 +152,6 @@
       define AS=6  @re"as-6.regex" ;
       define AS=7  @re"as-7.regex" ;
       define HonAff  @re"hon_aff.regex";
-      define NtinWan  @re"ntin-wan.regex";
 
       define AS [(HonAff) (AS=1) (HonAff) (AS=2) (AS=3)^{0,2} (HonAff) (AS=4) (HonAff) (AS=5) (AS=6) (AS=7)] ;
 
