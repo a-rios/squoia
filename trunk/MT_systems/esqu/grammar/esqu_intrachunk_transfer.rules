@@ -106,7 +106,7 @@ my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitiv
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			verbmi			up	concat
 
 # if infinitive in own chunk, add +Inf and +Acc to morphology
-my.mi=infinitive && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]})  && parent.si=cd 			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat
+xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]})  && parent.si=cd 			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat
 #---------------------------------------------
 
 #---------------------------------------------
@@ -114,7 +114,7 @@ my.mi=infinitive && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NOD
 # Infinitive:
 # if verb chunk with only infinitive: copy verbmi to chunk
 # note: in passive verb chunks, infinitive might not be top node in chunk! check for ancestor nodes too
-my.mi=/infinitive|SS|obligative/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) 			verbmi				my.type=grup-verb && !(xpath{self::CHUNK[count(descendant::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
+my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) 			verbmi				my.type=grup-verb && !(xpath{self::CHUNK[count(descendant::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk

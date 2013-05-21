@@ -1,57 +1,35 @@
 TODOS translation:
 
-- things to ask Roger:
+things to ask Roger:
+RELATIVE CLAUSES:
 - not agentive relative clauses in conditional: la casa que podría comprar -> verbform in quechua?? potential, kein rel-satz
 - continuar + gerund -> -raya? -nya, -miya? -chka-lla
-- keep translated indefinite article as huk? or better no article at all as default? -kein!
-- default word order in verb chunk with adverb: adv obj verb, obj adj verb? beide möglich!!
-- estar as vm: better translate as ka-chka- instead of ka-? mit -chka!
 - relative clauses with 'donde', como traducir? la casa donde jugaron... pukllasqa(pi) wasi? -> pukllachkanku chay wasi
+--  Nuqaq  ̃llaqta tiyasqayqa hatun.
+    ’La ciudad donde vivo es grande.’ (hastings)
 - relative clauses with 'cuyo/a'?  la señora cuya hija se fue -> ususin ripurqan chay mama
 - check missing verb forms involving 2 participants (missing in grammar books)
-- el libro sobre la selva -> por el momento, sach'a-sach'amanta libro -> ablative correct or not good?, Ablative ok!
-- quedarse + Adj -> resultativo, como traducir? -> adj+cha+ku
-- IMPORTANT: subj in nominal clause -> genitive!
-  correct or not? -> ella sabe que tú te has ido -> qam rikusqaykita yachan or qamPA rikusqaykita yachan? RIPU, no riku-! genitive: beide möglich, más natural con genitivo
-  (a.t.m: with PA -> rule in STinterchunk.rules)
-- En cuanto + finite verb (as soon as) -> spa/pti + wan ?, -spa/pti (evt. mit -wan)
-(- el hecho de que + subjuntivo) ?
-el hecho de que sea tarde
-tarde kaptin,
- el hecho de que trabajen duro
-sinchita llamk'aptinku,
-- 'de' in partitive: 'tres de ellos', 'dos de las casas' -> Ablative, Genitive, or something else?
--> tres de ellos se fueron - Paykuna-manta kimsantin ripun. 
-tres de las casas se venden
-Wasimanta kimsa winti-ku-nqa.
-Kimsa wasimanta winti-ku-nqa.
-[1:02:13 AM] Roger Gonzalo Segura: Kimsa kaq wasikunamanta winti-ku-nqa.
-[1:02:15 AM] Roger Gonzalo Segura: wasikunamanta Kimsa kaq winti-ku-nqa
 
+- quedarse + Adj -> resultativo, como traducir? -> adj+cha+ku
+- En cuanto + finite verb (as soon as) -> spa/pti + wan ?, -spa/pti (evt. mit -wan)
 
 - watayuq kay (tener años)
  (-raya -> sostener, quedarse suspendido, SUSPENSOR)
  -> permanece cantando -> taki-chka -lla -n
  -> permanece tranquilo/callado:  quedó tranquilo  = Tranquilo-m quada-ku-n./amulla-cha-ku-n/Tranquilo-cha-ku-n, tranquilo-lla-m chura-ku-n 
  
- - CHANGED aunque from CC to CS
  
 - IMPORTANT: split sentences at ';', otherwise parser does weird things!!! 
-- distributive -nka 
+- distributive -nka ( cada uno)
 - numbers and dates -> horas (months ok)
 
 - permanecer +Adj -> Adj-raya- 
-- if denominado + proper name: delete denominado, otherwise 'nisqa' is doubled
-  denominado+Dim palcayoc ni:VRoot+Perf
   
 ( IMPOSSIBLE DISTINCTION (?) - evidential 'dice(n) que' in Andean Spanish -> don't treat as direct speech! also: según dice(n))
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
 
-
 # TODO: aunque sea -> maskipas (adverb)
-# TODO: con_objeto_de -> na-paq 
-
 
 LEXICON:
 - participles vs. adjectives: e.g. adinerado
@@ -60,8 +38,6 @@ LEXICON:
 
 SUBORDINATED CLAUSES:
 (- if verb chunk contains only participle: use -sqa form)
-- perception verbs +Inf -> translate with agentive form: te veo bailar -> tusuq riku(su)ni (no 'tusuyta rikuni') 
-- avoid kana kan (debe ser) -> change to kanan
 - more than one infinitive in verb chunk: tenemos que aprender a vivir, hay que saber cocinar etc.
 
 CONSTRUCTIONS WITH INFINITIVE:
@@ -73,7 +49,6 @@ TOPIC/FOCUS:
 PREPOSITIONS/ PREP-OBJECTS:
 - convertirse EN -> tukuy ..-MAN
 - enfrentarse contra -> maqanaku- -wan
-- 'de' in partitive: 'tres de ellos', 'dos de las casas' -> Ablative, Genitive, or something else?
 
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
@@ -86,7 +61,7 @@ NEGATION
 
 after more testing:
  - words that cannot be generated: just print lemma
- - word nodes where lem contains '+' -> don't print
+ - word nodes where lem contains '+(+)' -> don't print
 
 --------------------------------------------------------------------------------------------------------------------------
 ( done - hace tiempo, atm: pacha ruran -> changed to ñawpaq pacha/ unay pacha or something like that)
@@ -141,3 +116,22 @@ after more testing:
 ( done - sin hacer, sin que haga -> SS vs. DS)
 ( done - para+Inf -> +Obl+Ben +poss.pers from main verb)
 ( done - haber de + infinitive -> -na -poss kan )
+( done - default word order in verb chunk with adverb: adv obj verb, obj adj verb? both posible! )
+( done - estar as vm: better translate as ka-chka- instead of ka-? mit -chka! )
+( done - el libro sobre la selva -> por el momento, sach'a-sach'amanta libro -> ablative correct or not good?, Ablative ok!)
+( done - IMPORTANT: subj in nominal clause -> genitive!
+	 ella sabe que tú te has ido -> qam rikusqaykita yachan or qamPA rikusqaykita yachan? Roger: both possible, más natural con genitivo )
+( done - special case: ri+Rflx = ripu-, not riku- (irse)) 
+( done - con_objeto_de, a_fin_de, con_fin_de -> na-Poss-paq )
+( done - 'de' in partitive: 'tres de ellos', 'dos de las casas' -> Ablative, Genitive, or something else?
+	-> tres de ellos se fueron - Paykuna-manta kimsantin ripun. 
+	tres de las casas se venden
+	Wasimanta kimsa winti-ku-nqa.
+	Kimsa wasimanta winti-ku-nqa.
+(done - el hecho de que + subjuntivo
+	el hecho de que sea tarde - tarde kaptin,
+	el hecho de que trabajen duro - sinchita llamk'aptinku )
+(done - perception verbs +Inf -> translate with agentive form: te veo bailar -> tusuq riku(su)ni (no 'tusuyta rikuni') )
+(done - avoid kana kan (debe ser) -> change to kanan (kan) )
+(done - CHANGED aunque from CC to CS in freeling dicc.src )
+

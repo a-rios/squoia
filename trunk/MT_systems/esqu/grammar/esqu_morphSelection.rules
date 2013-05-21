@@ -95,7 +95,8 @@ my.smi=/^V/	d	habitualpast		!(my.slem=soler)
 # or -spa -> sin hacer -> mana ruraspa
 my.smi=VMN0000	k	obligative			 	chunkparent.verbform=obligative
 my.smi=VMN0000	k	SS				 	chunkparent.verbform=SS
-my.smi=VMN0000	k	infinitive			 	!(chunkparent.verbform=/obligative|SS/)
+my.smi=VMN0000	k	agentive			 	chunkparent.verbform=agentive
+my.smi=VMN0000	k	infinitive			 	!(chunkparent.verbform=/obligative|SS|agentive/)
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 

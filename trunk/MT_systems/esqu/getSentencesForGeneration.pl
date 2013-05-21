@@ -824,17 +824,6 @@ sub adjustMorph{
 		$morphString =~ s/Subj/Subj.Pot/g;
 		$morphString =~ s/\+Pot//g;
 	}
-	# same for past forms NPst/IPst
-	if($morphString =~ /\+NPst/)
-	{
-		$morphString =~ s/Subj/Subj.NPst/g;
-		$morphString =~ s/\+NPst//g;
-	}
-	if($morphString =~ /\+IPst/)
-	{
-		$morphString =~ s/Subj/Subj.IPst/g;
-		$morphString =~ s/\+IPst//g;
-	}
 	
 	my @morphs = split(/(\+)/, $morphString);
 

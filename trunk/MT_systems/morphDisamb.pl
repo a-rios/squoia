@@ -126,7 +126,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 												my @synattrlist = $node->attributes();
 												foreach my $synattr (@synattrlist)
 												{
-													unless($synattr =~ /ref|slem|smi|sform|UpCase/)
+													unless($synattr =~ /ref|slem|smi|sform|UpCase|sem/)
 													{
 														$node->removeAttribute($synattr->nodeName);
 													}
@@ -157,10 +157,11 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   				# get all syn nodes, copy attributes of first syn that is NOT in matching translations
 								   				# to NODE, delete all that are in @matchingtranslations, unless there is non left
 								   				# in this case: keep last syn and print warning to STDERR
+								   				# note: this is the morphological disambiuation -> keep sem attribute (no lexical differences in SYN's disambiguated here!)
 													my @synattrlist = $node->attributes();
 													foreach my $synattr (@synattrlist)
 													{
-														unless($synattr =~ /ref|slem|smi|sform|UpCase/)
+														unless($synattr =~ /ref|slem|smi|sform|UpCase|sem/)
 														{
 															$node->removeAttribute($synattr->nodeName);
 														}

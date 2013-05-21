@@ -44,12 +44,12 @@ while (<PREPFILE>) {
 	s/^\s+//;    # no leading white
 	s/\s+$//;    # no trailing white
 	next if /^$/;	# skip if empty line
-	my ( $srcprep, $trgtprep, $condition, $prob ) = split( /\s*\t+\s*/, $_, 4 );
+	my ( $srcprep, $trgtprep, $condition, $isDefault ) = split( /\s*\t+\s*/, $_, 4 );
 
 
 	# read into hash, key is srcprep, for each key define a two-dimensional array of
 	# translations, whose element are arrays of the values read in from the prep file
-	my @value = ($trgtprep, $condition, $prob );
+	my @value = ($trgtprep, $condition, $isDefault );
 
 	if (!exists( $prepSel{$srcprep} )) 
 	{
@@ -96,15 +96,18 @@ while (<PREPFILE>) {
 				
 				# save result of evaluation as value of condition
 				@$target[3] = $result;
+				#print "$translationCondition  $result\n";
 
 			}	
+			
 							
 			# Sorted by condition value, then default
 			my @FullSort = sort {$b->[3] cmp $a->[3]
  						 ||
  					 $a->[2] cmp $b->[2]
 							} @$translationsref;				
-
+			
+			#for(my $i;$i<3;$i++){print STDERR $FullSort[$i][0]."\n";}
 		
 			#write specified attribute of the best translation into xml node
 			my $trgt = $FullSort[0][0];
