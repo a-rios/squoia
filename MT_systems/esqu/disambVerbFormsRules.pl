@@ -152,7 +152,7 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'main');
  				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si$|^cuando$|aunque|porque|con_tal_que/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si$|^cuando$|aunque|porque|con_tal_que|el_hecho_de_que/ )
  				{
  					#check if same subject 
  					&compareSubjects($verbChunk);
@@ -270,7 +270,7 @@ foreach my $sentence (@sentenceList)
  				}
  				# if this is a final clause,  -na?
 				
-				elsif($conjunction && $conjunction->getAttribute('lem') =~ /con_fin_de_que|a_fin_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
+				elsif($conjunction && $conjunction->getAttribute('lem') =~ /con_fin_de_que|a_fin_de_que|con_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
 				{
 					$nbrOfFinalClauses++;
 					$verbChunk->setAttribute('verbform', 'obligative');
@@ -479,11 +479,17 @@ foreach my $sentence (@sentenceList)
  		{
  			$verbChunk->setAttribute('verbform','SS');
  		}
- 		# if this is an infinitive chunk with 'para' -> set verbform to obligative
+ 		# if this is an infinitive chunk with 'para', 'con_objeto_de', con/a_fin_de -> set verbform to obligative
  		# -> se fue a Lima para trabajar -> llamk'ananpaq Limata ripun.
- 		elsif(!&getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="para"]') )
+ 		elsif(!&getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="para" or @lem="con_objeto_de" or @lem="con_fin_de" or @lem="a_fin_de" ]') )
  		{
  			$verbChunk->setAttribute('verbform','obligative');
+ 		}
+ 		# infinitive chunk that is a complement clause of a perception verb:
+ 		# agentive form: te veo bailar -> tusuq rikusuni
+ 		elsif(!&getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->getAttribute('si') =~ /cd/ && $verbChunk->findvalue('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v"]/@lem') =~ /contemplar|descubrir|escuchar|imaginar|mirar|notar|observar|oír|percibir|sentir|^ver$/ )
+ 		{
+ 			$verbChunk->setAttribute('verbform','agentive');
  		}
  		else
  		{
