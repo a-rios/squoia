@@ -1,0 +1,7 @@
+# Configuration: ChildToSiblingFile
+# 	child chunks become siblings of head (parent) chunks (to be reordered independently among other chunks)
+# Format:
+#	1				2
+#	childChunkCondition		targetChunkAttrVal
+
+my.type=AVP	comment="upgrade adverb chunk",flat=true

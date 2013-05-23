@@ -89,6 +89,10 @@ my.spos=/VAPP/&&my.pos=VA	pos	my.type=VP	VAPP	down	overwrite
 #xpath{//CHUNK[@type="VP-inf"]/descendant::NODE[starts-with(@pos,"V") and contains(@pos,"INF") and count(NODE[starts-with(@pos,"V")])=0]}	zu	my.type=VP-inf&&lsibling.pos=/VV/&&!(lsibling.cmdverb=/yes/)		yes			down		overwrite
 xpath{//CHUNK[@type="PP"]/CHUNK[@type="VP" and @si="S"]/descendant::NODE[starts-with(@pos,"V") and contains(@pos,"INF") and count(NODE[starts-with(@pos,"V")])=0]}	zu	my.type=VP			yes			down		overwrite
 
+# Reflexive verbs
+my.spos=/VVFIN/&&my.pos=/VV/&&my.refl=/yes/	pos	my.type=/VP/	"VVFIN"		down	overwrite
+my.spos=/VVPP/&&my.pos=/VV/&&my.refl=/yes/	pos	my.type=/VP/	"VVPP"		down	overwrite
+my.spos=/VVINF/&&my.pos=/VV/&&my.refl=/yes/	pos	my.type=/VP/	"VVINF"		down	overwrite
 
 ##Pronouns/Clitics
 # ES reflexive verbs => DE irreflexive verbs: delete reflexive pronoun

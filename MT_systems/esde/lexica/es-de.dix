@@ -221,7 +221,7 @@
     </pardef>
     <!-- Main verbs with reflexive pronoun -->
     <pardef n='VM_VV_REFL'>
-      <e><p><l></l><r><s n='refl'/>yes<s n='split'/>yes<s n='complex_pos'/>PR_VV</r></p><par n="VM_VV_MAIN"/></e>
+      <e><p><l><s n="parol"/>VM</l><r><s n='refl'/>yes<s n='split'/>yes<s n='complex_pos'/>PRF_VV<s n="aux"/>haben<s n="spos"/>VV</r></p><par n="Verb"/></e>
     </pardef>
     <!-- Past participles as adjective -->
     <pardef n='VMPP_ADJ'>
@@ -1121,7 +1121,9 @@
    <e><p><l>absorber</l><r>auf|saugen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acelerar</l><r>beschleunigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acentuar</l><r>betonen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>acercar</l><r>nahen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>acercar</l><r>nahen<s n="irrefl"/>yes</r></p><par n="VM_VV_MAIN_BE"/></e>	<!-- acercarse = nahen -->
+   <e><p><l>acercar</l><r>heran|nahen<s n="irrefl"/>yes</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>acercar</l><r>heran|bringen</r></p><par n="VM_VV_MAIN"/></e>	<!-- acercar algo/a alguien = etw./jmdn heran|bringen -->
    <e><p><l>acoger</l><r>empfangen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acumular</l><r>akkumulieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>adoptar</l><r>adoptieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -1444,7 +1446,7 @@
    <e><p><l>borrar</l><r>aus|radieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>bostezar</l><r>gähnen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>bramar</l><r>brüllen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>bregar</l><r>sich_durchbeißen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>bregar</l><r>sich_durch|beißen</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>bromear</l><r>scherzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>broncear</l><r>bräunen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>bucear</l><r>ein|tauchen</r></p><par n="VM_VV_MAIN"/></e>
@@ -1467,7 +1469,7 @@
    <e><p><l>chamuscar</l><r>an|sengen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>chantajear</l><r>erpressen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>chapecar</l><r>flechten</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>charlar</l><r>sich_unterhalten</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>charlar</l><r>sich_unterhalten</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>chirriar</l><r>quietschen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>chupar</l><r>saugen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>civilizar</l><r>zivilisieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -1602,7 +1604,7 @@
    <e><p><l>maullar</l><r>miauen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mear</l><r>pissen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mendigar</l><r>betteln</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>militar</l><r>sich_ein|setzen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>militar</l><r>sich_ein|setzen</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>mojar</l><r>befeuchten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>moler</l><r>mahlen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>molestar</l><r>nerven</r></p><par n="VM_VV_MAIN"/></e>
@@ -1630,7 +1632,7 @@
    <e><p><l>pescar</l><r>fischen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pilar</l><r>zerstampfen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>placer</l><r>gefallen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>platicar</l><r>sich_unterhalten</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>platicar</l><r>sich_unterhalten</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>pololear</l><r>aus|gehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>posar</l><r>posieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>precaver</l><r>verhindern</r></p><par n="VM_VV_MAIN"/></e>
@@ -1729,8 +1731,7 @@
    <e><p><l>abrumar</l><r>zerdrücken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>absolver</l><r>vergeben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>absorber</l><r>absorbieren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>abstenerse de</l><r>sich enthalten</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>abstener</l><r>vorenthalten</r></p><par n="VM_VV_MAIN"/></e>
+   <!--e><p><l>abstener</l><r>sich_enthalten</r></p><par n="VM_VV_REFL"/></e-->	<!-- abstenerse = sich enthalten TODO: no need for sich? mark as refl? -->
    <e><p><l>abstener</l><r>entziehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abstener</l><r>enthalten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abstraer</l><r>abstrahieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -1739,7 +1740,7 @@
    <e><p><l>abultar</l><r>auf|häufen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abultar</l><r>an|häufen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abundar</l><r>reichlich vorhanden sein</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>abundar</l><r>wimmeln (von)</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>abundar</l><r>wimmeln (von)</r></p><par n="VM_VV_MAIN"/></e>	<!-- TODO: abundan los peligros => es wimmelt von Gefahren : DE impersonal -->
    <e><p><l>aburguesarse</l><r>spießig werden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abusar</l><r>missbrauchen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abusar</l><r>aus|nutzen</r></p><par n="VM_VV_MAIN"/></e>
@@ -1772,7 +1773,8 @@
    <e><p><l>acepillar</l><r>glatt bürsten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>aceptar</l><r>an|nehmen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>aceptar</l><r>akzeptieren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>acercarse</l><r>sich nähern</r></p><par n="VM_VV_MAIN"/></e>
+   <!--e><p><l>acercarse</l><r>sich_nähern</r></p><par n="VM_VV_REFL"/></e-->
+   <e><p><l>acercar</l><r>nähern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acercar</l><r>an|nähern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acertar</l><r>erfassen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acertar</l><r>treffen</r></p><par n="VM_VV_MAIN"/></e>
@@ -1781,11 +1783,13 @@
    <e><p><l>achicar</l><r>verkleinern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>achicar</l><r>erniedrigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>achispar</l><r>beschwipsen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>aclararse</l><r>klar werden</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>aclararse</l><r>klar werden</r></p><par n="VM_VV_MAIN"/></e>	<!-- TODO: aclararse => klar werden: DE adjd+werden -->
    <e><p><l>aclarar</l><r>klären</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>aclimatarse</l><r>sich akklimatisieren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>aclimatarse</l><r>sich einleben</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>acobardar</l><r>einschüchtern</r></p><par n="VM_VV_MAIN"/></e>
+   <!--e><p><l>aclimatarse</l><r>sich akklimatisieren</r></p><par n="VM_VV_REFL"/></e>
+   <e><p><l>aclimatarse</l><r>sich einleben</r></p><par n="VM_VV_REFL"/></e-->
+   <e><p><l>aclimatar</l><r>akklimatisieren</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>aclimatar</l><r>ein|leben</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>acobardar</l><r>ein|schüchtern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acoger</l><r>auf|nehmen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acoger</l><r>an|nehmen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acoger</l><r>willkommen heißen</r></p><par n="VM_VV_MAIN"/></e>
@@ -1794,8 +1798,10 @@
    <e><p><l>acomodar</l><r>an|passen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acomodar</l><r>auf|nehmen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acompañar</l><r>begleiten</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>acomplejarse</l><r>sich schämen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>acomplejarse</l><r>sich minderwertig fühlen</r></p><par n="VM_VV_MAIN"/></e>
+   <!--e><p><l>acomplejarse</l><r>sich schämen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>acomplejarse</l><r>sich minderwertig fühlen</r></p><par n="VM_VV_MAIN"/></e-->
+   <e><p><l>acomplejar</l><r>schämen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>acomplejar</l><r>minderwertig fühlen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acomplejar</l><r>minderwertig fühlen lassen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acondicionar</l><r>an|passen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acondicionar</l><r>klimatisieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -4200,24 +4206,24 @@
    <e><p><l>privar</l><r>die Möglichkeit nehmen</r></p><par n="VM_VV_MAIN"/></e> <!-- privar de => die Möglichkeit nehmen -->
    <e><p><l>privar</l><r>ab|erkennen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>privar</l><r>entziehen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>privar</l><r>vorenthalten</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>privar</l><r>vor|enthalten</r></p><par n="VM_VV_MAIN"/></e>	<!-- privar a alguien de algo => jmdm etwas vor|enthalten -->
    <e><p><l>privilegiar</l><r>begünstigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>privilegiar</l><r>bevorzugen</r></p><par n="VM_VV_MAIN"/></e>
    <!--e><p><l>probar suerte</l><r>sein Glück versuchen</r></p><par n="VM_VV_MAIN"/></e-->
    <e><p><l>probar</l><r>an|probieren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>probar</l><r>ausprobieren</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>probar</l><r>aus|probieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>probar</l><r>beweisen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>probar</l><r>belegen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>probar</l><r>erproben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>probar</l><r>probieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>probar</l><r>versuchen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>probar</l><r>beweisen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>proceder</l><r>fortfahren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>proceder</l><r>weitermachen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>proceder</l><r>herkommen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>proceder</l><r>herstammen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>proceder</l><r>verfahren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>proceder</l><r>vorgehen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>proceder</l><r>fort|fahren</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>proceder</l><r>weiter|machen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>proceder</l><r>her|kommen</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>proceder</l><r>her|stammen</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>proceder</l><r>verfahren</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>proceder</l><r>vor|gehen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>proceder</l><r>handeln</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>procesar</l><r>einen Prozess führen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>procesar</l><r>prozessieren</r></p><par n="VM_VV_MAIN"/></e>
