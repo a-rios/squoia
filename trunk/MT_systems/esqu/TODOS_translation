@@ -3,7 +3,7 @@ TODOS translation:
 things to ask Roger:
 RELATIVE CLAUSES:
 - not agentive relative clauses in conditional: la casa que podría comprar -> verbform in quechua?? potential, kein rel-satz
-- continuar + gerund -> -raya? -nya, -miya? -chka-lla
+- continuar + gerund -> -raya? -nya, -miya? -chka-lla ( -ykacha?)
 - relative clauses with 'donde', como traducir? la casa donde jugaron... pukllasqa(pi) wasi? -> pukllachkanku chay wasi
 --  Nuqaq  ̃llaqta tiyasqayqa hatun.
     ’La ciudad donde vivo es grande.’ (hastings)
@@ -23,8 +23,6 @@ RELATIVE CLAUSES:
 - distributive -nka ( cada uno)
 - numbers and dates -> horas (months ok)
 
-- permanecer +Adj -> Adj-raya- 
-  
 ( IMPOSSIBLE DISTINCTION (?) - evidential 'dice(n) que' in Andean Spanish -> don't treat as direct speech! also: según dice(n))
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
@@ -44,7 +42,6 @@ CONSTRUCTIONS WITH INFINITIVE:
 
 TOPIC/FOCUS:
 - topicalized nouns with relative clauses: fueron ellos quienes dejaron,
-- lo que hacemos es... lo que encontramos es...
 
 PREPOSITIONS/ PREP-OBJECTS:
 - convertirse EN -> tukuy ..-MAN
@@ -55,9 +52,6 @@ LOCUTIONS:
 
 GENARATION
 - generate synonyms
-
-NEGATION
-- sin +inf, sin+Noun/Adj etc!
 
 after more testing:
  - words that cannot be generated: just print lemma
@@ -134,4 +128,7 @@ after more testing:
 (done - perception verbs +Inf -> translate with agentive form: te veo bailar -> tusuq riku(su)ni (no 'tusuyta rikuni') )
 (done - avoid kana kan (debe ser) -> change to kanan (kan) )
 (done - CHANGED aunque from CC to CS in freeling dicc.src )
+(done - indirect questions with 'si' -> direct speech ('preguntaron si vendiste la casa' -> 'wasita rantirqankichu, nispa tapurqanku.') )
+(done - lo que hacemos es... lo que encontramos es... add Topic suffix )
+(done - NEGATION - sin +inf, sin+Noun/Adj etc!)
 

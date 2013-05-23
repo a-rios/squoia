@@ -67,3 +67,12 @@ xpath{self::CHUNK[@verbform="obligative"]} && parent.type=grup-sp && parent.case
 # para, a_fin_de, con_fin_de, con_objeto_de + inf -> copy case from grup-sp to infinitive chunk
 xpath{self::CHUNK[@verbform="obligative"]}  && parent.case=+Ben && parent.type=grup-sp	case			my.type=/grup-sp|coor-sp/		case		parent		2to1		concat
 
+# subject of a relative clause with IHRC=yes (internally headed relative clause)
+# -> add genitive suffix to subject
+# also: add possessive suffix of subject person to (nominal) verbform if the rel.clause is not.agentive (in intrachunk.rules!)
+my.type=/sn|coo-n/ && my.si=/suj/		case		my.IHRC=yes		"+Gen"		parent			2to1			concat
+
+
+
+
+

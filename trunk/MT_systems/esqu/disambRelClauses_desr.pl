@@ -130,6 +130,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 	# headless relclauses: only with 'quien', 'el/los que', 'la/las que', ('aquel/aquella que' ??)
 	# 'Quién está informado vive mejor', 'Los que trabajan, comen'
 	# -> always agentive form (?) 'YACHAQqa aswan allinta kawsan. LLAMK'AQKUNA mikhunku'
+	# also: lo que, el que -> insert topic suffix in this chunk! 
 	my @headlessRelClauses = $sentence->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v")]/NODE[@cpos="v"]/NODE[(@lem="quien" and @rel="suj") or (@pos="da" and @rel="spec")]');
 	foreach my $subjOfheadlessRelclause (@headlessRelClauses)
 	{ 
@@ -139,25 +140,33 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 		unless($subjOfheadlessRelclause->exists('ancestor::CHUNK[@type="sn" or @type="grup-sp"]'))
 		{
 			my $verbform = $subjOfheadlessRelclause->parentNode();
+			my $verbchunk = @{$verbform->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
 			if ($verbform)
 			{
 				if(($verbform->exists('child::NODE[(not(@form="lo") and not(@form="Lo")) and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3S/) || ($verbform->exists('child::NODE[(not(@form="los") and not(@form="Los")) and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3P/) || ($subjOfheadlessRelclause->getAttribute('lem') eq 'quien' && $verbform->getAttribute('lem') !~ /estar|ser/))
 				{
 					$verbform->setAttribute('verbform', 'rel:agentive');
+					$verbchunk->setAttribute('chunkmi', '+Top');
+					# set HLRC (headless relative clause)
+					$verbchunk->setAttribute('HLRC', 'yes');
 				}
 				else
 				{ 	# if lo que, los que-> check if verb is congruent, if so, check if rel-clause contains an object
 					if( ($verbform->exists('child::NODE[(@form="lo" or @form="Lo") and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3S/) || ($verbform->exists('child::NODE[(@form="los" or @form="Los") and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3P/) )
 					{
-						my $verbchunk = @{$verbform->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
+						#my $verbchunk = @{$verbform->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
 						if($verbchunk && hasDorSPobj($verbchunk))
 						{
 							$verbform->setAttribute('verbform', 'rel:agentive');
+							$verbchunk>setAttribute('chunkmi', '+Top');
+							$verbchunk->setAttribute('HLRC', 'yes');
 						}
 					}
 					else
 					{
 						$verbform->setAttribute('verbform', 'rel:not.agentive');
+						$verbchunk->setAttribute('chunkmi', '+Top');
+						$verbchunk->setAttribute('HLRC', 'yes');
 					}
 				}
 			}	
@@ -178,6 +187,12 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 		if($relprn->getAttribute('lem') !~ /que|quien|cual/)
 		{
 			&setVerbform($relClause,0);
+			# if relative pronoun is 'donde' -> this has to be translated as an internally headed RC:
+			# 'La ciudad donde vivo es grande' -> ñuqap llaqta tiyasqayqa hatunmi
+			if($relprn->getAttribute('lem') eq 'donde')
+			{
+				$relClause->setAttribute('IHRC', 'yes');
+			}
 		}
 		#if main verb in rel clause is 'ser' -> always attributive, never agentive head noun (passive or attributive)
 		elsif($relClause->exists('child::NODE[@lem="ser"]'))

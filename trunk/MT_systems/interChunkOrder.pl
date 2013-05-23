@@ -105,10 +105,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 							{
 								# split the conditions on the child chunks into variable and actual conditions (e.g. x1:my.func=attributive)
 								#replace double colon within xpath with special string so it will not get split
-								$childCond =~ s/(xpath{[^}]+)::([^}]+})/\1XPATHDOUBLECOLON\2/g;
+								#$childCond =~ s/(xpath{[^}]+)::([^}]+})/\1XPATHDOUBLECOLON\2/g;
+								$childCond =~ s/::/XPATHDOUBLECOLON/g;
+								#print STDERR "child chunk escaped cond: $childCond\n";
 								my ($variable, $childChunkCondition) =  split( ':', $childCond);
 								#put the double colon back
 								$childChunkCondition =~ s/XPATHDOUBLECOLON/::/g;
+								#print STDERR "child chunk cond: $childChunkCondition \n";
 								my @singleChildChunkConditionsforEvaluation = &splitConditionsIntoArray($childChunkCondition);
 
 								if(&evalConditions(\@singleChildChunkConditionsforEvaluation,$child))

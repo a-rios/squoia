@@ -73,6 +73,7 @@ my.slem=/propietario|dueño/ && xpath{following-sibling::CHUNK[@type="grup-sp"]/
 my.slem=/propietario|dueño/ && xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]}					"yes"				my.type=/.+/		delete		up	concat
 my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="propietario" or @slem="dueño"]}				"none"				my.type=/grup-sp|coor-sp/	case		up	overwrite
 
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
     #########
     # VERBS #
@@ -102,7 +103,7 @@ my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(m
 
 # llegar/empezar/poner(se)/comenzar a +Inf:
 # lem = lem of infinitive, verbmi = mi of finite verb +Inch
-my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitive				verbmi		my.type=/grup-verb|coor-v/			verbmi			up	concat
+my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitive && my.verbmi=/.+/ 				verbmi		my.type=/grup-verb|coor-v/			verbmi			up	concat
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			verbmi			up	concat
 
 # if infinitive in own chunk, add +Inf and +Acc to morphology
@@ -114,11 +115,11 @@ xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(
 # Infinitive:
 # if verb chunk with only infinitive: copy verbmi to chunk
 # note: in passive verb chunks, infinitive might not be top node in chunk! check for ancestor nodes too
-my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) 			verbmi				my.type=grup-verb && !(xpath{self::CHUNK[count(descendant::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
+my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && my.verbmi=/.+/ 			verbmi				my.type=grup-verb && !(xpath{self::CHUNK[count(descendant::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk
-my.smi=/VMG0000|VSG0000/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" ]})					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
+my.smi=/VMG0000|VSG0000/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" ]})  					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
 #----------------------------------------------
 
 #----------------------------------------------
@@ -175,8 +176,9 @@ my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi		
 my.smi=/^V/ && xpath{child::NODE[starts-with(@smi,"PR") or NODE[starts-with(@smi,"PR") ]]}		"rel:"		my.type=/grup-verb|coor-v/ && my.verbform=ambiguous		verbform	up	overwrite
 
 # relative clauses with 'donde' -> add Locative suffix
+# wrong -> translate as IHRC, see below
 # la casa donde vivía -> kawsasqaypi wasi
-my.slem=donde && my.smi=/^PR/				"+Loc"			my.verbform=/^rel:/				addverbmi			up		concat
+#my.slem=donde && my.smi=/^PR/				"+Loc"			my.verbform=/^rel:/				addverbmi			up		concat
 
 # set 3.Sg of copula (kan) to be deleted
 my.lem=ka && my.verbmi=/Copula\+3\.Sg\.Subj/ && my.mi=present 				"yes"			my.type=/grup-verb|coor-v/ && my.lem=ka			delete		up		overwrite
@@ -186,10 +188,21 @@ my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/	"haku"		m
 my.mi=imperative && my.slem=/^ir$|marchar/ && my.smi=/VMM01P0|VMSP1P0/	""		my.type=/grup-verb|coor-v/	verbmi		up	overwrite
 my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/ && my.slem=/^ir$|marchar/ 	""		my.type=/grup-verb|coor-v/	addverbmi	up	overwrite
 
-
 # continuar + gerund: add +Perdur to verbmi
 my.slem=continuar && xpath{ancestor::NODE[starts-with(@smi,"VSG") or starts-with(@smi,"VMG") or starts-with(@smi,"VAG")]}	"+Perdur"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
 
+#------------------------------------------------------------
+# IHRC: INTERNALLY HEADED RELATIVE CLAUSES
+# subject of a relative clause with IHRC=yes (internally headed relative clause)
+# -> add possessive suffix of subject person to (nominal) verbform if the rel.clause is not.agentive
+# also: -> add genitive suffix to subject (in STinterchunk.rules!)
+my.verbmi=/.+/ && my.smi=/1S/		"+1.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
+my.verbmi=/.+/ && my.smi=/1P/		"+1.Incl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
+#my.verbmi=/.+/ && my.smi=/1P/		"+1.Excl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
+my.verbmi=/.+/ && my.smi=/2S/		"+2.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
+my.verbmi=/.+/ && my.smi=/2P/		"+2.Pl.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
+my.verbmi=/.+/ && my.smi=/3S/		"+3.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
+my.verbmi=/.+/ && my.smi=/3P/		"+3.Pl.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
     ###########################

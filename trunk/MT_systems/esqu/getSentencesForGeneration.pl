@@ -184,6 +184,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  	foreach my $idref (sort {$a<=>$b} (keys (%chunkSequence))) 
  	{
  		my $chunk = $chunkSequence{$idref};
+ 		#print STDERR "new chunk: ";
+ 		#print STDERR $chunk->getAttribute('ref')."\n";
  		#if this is a verb chunk, get lemma and verbmi directly from chunk, no need to process the nodes
  		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]') && !$chunk->hasAttribute('delete') )
  		{
@@ -195,7 +197,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			
  			# if there's a node (e.g. interrogative pronoun) in verb chunk or
  			#if wrong analysis-> there might be a node in the verbchunk that doesn't belong here, extract that node
- 			my @spareNodes = $chunk->findnodes('child::NODE[starts-with(@smi,"V")]/descendant::NODE[not(starts-with(@smi, "V") or starts-with(@smi, "C") or starts-with(@smi,"PR") or starts-with(@smi,"S"))]');
+ 			my @spareNodes = $chunk->findnodes('child::NODE[starts-with(@smi,"V")]/descendant::NODE[not(starts-with(@smi, "V") or starts-with(@smi, "C") or starts-with(@smi,"PR") or starts-with(@smi,"DA") or starts-with(@smi,"S"))]');
  			foreach my $sparenode (@spareNodes)
  			{
 				&printNode($sparenode,$chunk);
