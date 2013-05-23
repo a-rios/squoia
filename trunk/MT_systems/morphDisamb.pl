@@ -91,7 +91,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								{
 										# create xpath string to find matching synonyms:
 										# NOTE: as this may not be the first rule to be applied, its possible that the values in $node belong to a SYN that has already been deleted,
-										# if this was a rule with 'k' -> check also node itself if if matches!
+										# if this was a rule with 'k' -> check also node itself  matches!
 										my $xpathstring;
 										my $selfXpathString;
 										if($trgt !~ /=/)
@@ -112,12 +112,13 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 										my @matchingSynsCand2 = $node->findnodes($selfXpathString);
 										push(@matchingSyns,@matchingSynsCand);
 										push(@matchingSyns,@matchingSynsCand2);
+										
 									}
 									if(scalar(@matchingSyns)>0)
-									{
+									{ 
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
-											#foreach my $m (@matchingSyns){print STDERR "match for $ruleskey:".$matchingtranslation->toString()."\n";}
+											#foreach my $m (@matchingSyns){print STDERR "match for $ruleskey:".$m->toString()."\n";}
 									
 								 		   	if($keepOrDelete eq 'k')
 								   			{
@@ -193,7 +194,9 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   			{
 								    			print STDERR "error: invalid option $keepOrDelete! Valid options are: k (keep) or d (delete). Won't disambiguate.";
 								   			 }
+								   			 
 										}
+										
 									}
 							}
 						
@@ -202,7 +205,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 			# if this node has only one SYN child left (when all other SYNs have been deleted)
 			# -> delete, as SYN is already contained in NODE
 			my @remainingSYNs = $node->findnodes('child::SYN');
-			if(scalar(@remainingSYNs) == 1 )
+			if(scalar(@remainingSYNs) == 1 && @remainingSYNs[0]->getAttribute('lem') eq $node->getAttribute('lem') && @remainingSYNs[0]->getAttribute('mi') eq $node->getAttribute('mi') )
 			{
 				$node->removeChild(@remainingSYNs[0]);
 			}
