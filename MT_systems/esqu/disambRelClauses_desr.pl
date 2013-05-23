@@ -158,7 +158,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 						if($verbchunk && hasDorSPobj($verbchunk))
 						{
 							$verbform->setAttribute('verbform', 'rel:agentive');
-							$verbchunk>setAttribute('chunkmi', '+Top');
+							$verbchunk->setAttribute('chunkmi', '+Top');
 							$verbchunk->setAttribute('HLRC', 'yes');
 						}
 					}

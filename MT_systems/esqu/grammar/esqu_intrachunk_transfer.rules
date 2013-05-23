@@ -115,7 +115,7 @@ xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(
 # Infinitive:
 # if verb chunk with only infinitive: copy verbmi to chunk
 # note: in passive verb chunks, infinitive might not be top node in chunk! check for ancestor nodes too
-my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && my.verbmi=/.+/ 			verbmi				my.type=grup-verb && !(xpath{self::CHUNK[count(descendant::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
+my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && my.verbmi=/.+/ 			verbmi				my.type=/grup-verb|coor-v/ && !(xpath{self::CHUNK/NODE[count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk
