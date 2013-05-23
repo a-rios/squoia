@@ -152,7 +152,7 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'main');
  				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si$|^cuando$|aunque|porque|con_tal_que|el_hecho_de_que/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aunque|porque|con_tal_que|el_hecho_de_que/ )
  				{
  					#check if same subject 
  					&compareSubjects($verbChunk);
@@ -171,11 +171,14 @@ foreach my $sentence (@sentenceList)
  						$nbrOfSwitchForms++;
  						$verbChunk->setAttribute('verbmi', '+Add');
  					}
- 					elsif($conjunction->getAttribute('lem') =~ /^si$/ )
- 					{
- 						$nbrOfSwitchForms++;
- 						$verbChunk->setAttribute('verbmi', '+Top');
- 					}
+ 				}
+ 				# with si: conditional, switch +Top, but note: might also be an indirect question ('preguntaron si compraste la casa')
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') eq 'si' && !$verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="preguntar" or @lem="interrogar"]') )
+ 				{
+ 					#check if same subject 
+ 					&compareSubjects($verbChunk);
+ 					$nbrOfSwitchForms++;
+ 					$verbChunk->setAttribute('verbmi', '+Top');
  				}
  				# if this is a subordinated clause with 'sin_que..'-> DS form 
  				# -> in same subject contexts, verb would be infinitive
@@ -291,7 +294,7 @@ foreach my $sentence (@sentenceList)
 					$verbChunk->setAttribute('case', '+Term');
 				}
  				# if this is a complement clause (-> nominal form), TODO: already ++Acc?
- 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]/child::NODE[@pos="cs" and @lem="que" or NODE[@pos="cs" and @lem="que"]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
+ 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]/child::NODE[@pos="cs" and (@lem="que" or @lem="si") or NODE[@pos="cs" and (@lem="que" or @lem="si") ]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
  				{
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
  					if($headVerbCHunk)
@@ -299,7 +302,7 @@ foreach my $sentence (@sentenceList)
  						my $headVerb = &getMainVerb($headVerbCHunk);
  						#print STDERR "head verb: \n".$headVerb->toString."\n";
  						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
- 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|manifestar|mencionar|oficiar|opinar|proclamar|proponer|razonar|recalcar|revelar|responder|sostener|señalar|testificar|testimoniar/)
+ 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|sostener|señalar|testificar|testimoniar/)
  						{
  							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
 							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
@@ -319,6 +322,11 @@ foreach my $sentence (@sentenceList)
 							$verbChunk->setAttribute('verbform', 'main');
 							$headVerbCHunk->setAttribute('lem1', 'ni');
 							$headVerbCHunk->setAttribute('verbmi1', '+SS');
+							# indirect question with 'si' -> add -chu to (now direct speech) verbchunk
+							if($conjunction->getAttribute('lem') eq 'si')
+							{
+								$verbChunk->setAttribute('verbmi', '+Neg');
+							}
 							$nbrOfFiniteForms++;
 							$nbrOfSwitchForms--;
 							
@@ -340,7 +348,7 @@ foreach my $sentence (@sentenceList)
  					}
  				}
  					# if this is a complement clause of a speech verb, no linker needed!
- 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
+ 				elsif(!$conjunction && $verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
  				{
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
  					if($headVerbCHunk)
@@ -348,7 +356,7 @@ foreach my $sentence (@sentenceList)
  						my $headVerb = &getMainVerb($headVerbCHunk);
  						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
  						#if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|manifestar|mencionar|oficiar|opinar|proclamar|proponer|razonar|recalcar|revelar|responder|sostener|señalar|testificar|testimoniar/)
- 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|manifestar|mencionar|oficiar|opinar|proclamar|proponer|razonar|recalcar|revelar|responder|sostener|señalar|testificar|testimoniar/)
+ 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|sostener|señalar|testificar|testimoniar/)
  						{
  							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
 							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
@@ -357,11 +365,11 @@ foreach my $sentence (@sentenceList)
 							# NOTE: only with indirect speech, do not alter direct speech (when there's no 'que')
 							&compareSubjects($verbChunk);
 							#print $verbChunk->toString."\n";
-							if( ($verbChunk->getAttribute('verbform') eq 'SS' || $verbChunk->getAttribute('verbform') eq 'switch') && &isSingular($verbChunk) && $verbChunk->exists('descendant::NODE[@slem="que" and @smi="CS"]') )
+							if( ($verbChunk->getAttribute('verbform') eq 'SS' || $verbChunk->getAttribute('verbform') eq 'switch') && &isSingular($verbChunk) && $verbChunk->exists('descendant::NODE[(@lem="que" or @lem="si") and @mi="CS"]') )
 							{
 								$verbChunk->setAttribute('verbprs', '+1.Sg.Subj')
 							}
-							elsif($verbChunk->getAttribute('verbform') eq 'SS' && !&isSingular($verbChunk) && $verbChunk->exists('descendant::NODE[@slem="que" and @smi="CS"]') )
+							elsif($verbChunk->getAttribute('verbform') eq 'SS' && !&isSingular($verbChunk) && $verbChunk->exists('descendant::NODE[@lem="que" and @mi="CS"]') )
 							{
 								$verbChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
 							}
