@@ -33,7 +33,7 @@ while (<CHUNKORDERFILE>) {
 
 	# split childchunks into array and remove empty fields resulted from split
 	$childchunks =~ s/(xpath{[^}]+),([^}]+})/\1XPATHCOMMA\2/g;	#replace comma within xpath with special string so it will not get split
-	my @childsWithEmptyFields = split( ',', $childchunks);
+	my @childsWithEmptyFields = split( /\s*,\s*/, $childchunks);
 	foreach my $ch (@childsWithEmptyFields) {
 		$ch =~ s/XPATHCOMMA/,/g;	#replace comma back
 	}

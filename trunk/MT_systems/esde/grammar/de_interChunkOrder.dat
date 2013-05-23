@@ -6,7 +6,7 @@
 #my.type=CNP	"do nothing, let the chunks, i.e. the NPs appear in the same order
 
 ## Noun and prepositional phrases
-my.type=/CNP|NP/				xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]},xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
+my.type=/CNP|NP/				xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
 
 #my.type=PP||my.type=PP-von		xSPEC:my.type=nounSpec,xAP:my.type=/C?AP/,xNP:my.type=/NP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			head .xSPEC .xAP .xNP +xPP .xCOMA +xSREL +xCOMB
 #my.type=PP				xSPEC:my.type=nounSpec,xAP:my.type=AP,xNP:my.type=NP,xPP:my.type=PP		head .xSPEC .xAP .xNP +xPP
