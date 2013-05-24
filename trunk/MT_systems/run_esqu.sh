@@ -42,8 +42,7 @@ perl readConfig.pl $MATXIN_CONFIG;
 #| perl esqu/getSentencesForGeneration.pl | xmllint --format - 
 
 # server-client mode, new desr parser
-#$MATXIN_BIN/analyzer_client $FREELING_PORT |$DESR_DIR/src/desr $DESR_PARAMS  |perl conll2xml/conll2xml.pl |
-perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID  |$MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl esqu/disambVerbFormsML.pl | perl splitNodes.pl  | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl | perl recursiveNumberChunks.pl | perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | xmllint --format - 
+$MATXIN_BIN/analyzer_client $FREELING_PORT |$DESR_DIR/src/desr $DESR_PARAMS  |perl conll2xml/conll2xml.pl |perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID  |$MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl esqu/disambVerbFormsML.pl | perl splitNodes.pl  | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl | perl recursiveNumberChunks.pl | perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | xmllint --format - 
 
 # | perl childToSiblingChunk.pl 
 

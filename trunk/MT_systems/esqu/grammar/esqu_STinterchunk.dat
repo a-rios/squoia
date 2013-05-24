@@ -72,6 +72,11 @@ xpath{self::CHUNK[@verbform="obligative"]}  && parent.case=+Ben && parent.type=g
 # also: add possessive suffix of subject person to (nominal) verbform if the rel.clause is not.agentive (in intrachunk.rules!)
 my.type=/sn|coo-n/ && my.si=/suj/		case		my.IHRC=yes		"+Gen"		parent			2to1			concat
 
+# +Add from también: move to parent chunk
+# NOTE: parser attaches 'también' ALWAYS to the verb, might not be always correct, but there's really no way to be certain... 
+# -> we attach -pas to the verb
+my.chunkmi=++Add && child.slem=también			chunkmi			my.type=/.+/ && !(my.delete=yes)		chunkmi		parent		1to2		concat
+
 
 
 

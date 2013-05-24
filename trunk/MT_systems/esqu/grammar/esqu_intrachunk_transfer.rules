@@ -219,7 +219,8 @@ my.slem=e || my.slem=y				"+Instr"			my.type=/sn|coor-n/				chunkmi			up		concat
 my.slem=e || my.slem=y				"+Intr"				my.type=/grup-verb|coor-v/			chunkmi			up		concat
 
 my.slem=/tal_vez|quizás|posiblemente/		"+Asmp"				my.type=/.+/					chunkmi			up		concat
-my.slem=/también/				"+Add"				my.type=/.+/					chunkmi			up		concat
+my.slem=/también/				"++Add"				my.type=/.+/					chunkmi			up		concat
+my.slem=también 				"yes"				my.type=/.+/					delete			up		concat
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
