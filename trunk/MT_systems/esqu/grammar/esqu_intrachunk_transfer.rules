@@ -1,6 +1,15 @@
 # 1			2				3					4			5		6
 # descendantCond	descendantAttr			ancestorCond				ancestorAttr		direction	writeMode
 # move all the information that is relevant for the syntactic and morphological generation from the nodes to their chunks
+# shortnames in xpath:
+#	'my'		=> '.',
+#	'child'		=> 'child::NODE',
+#	'firstchild'	=> 'child::NODE[1]',
+#	'parent'	=> '..',
+#	'lsibling'	=> 'preceding-sibling::NODE',
+#	'rsibling'	=> 'following-sibling::NODE',
+#	'chunkchild'	=> 'child::CHUNK',
+#	'chunkparent'	=> 'ancestor::CHUNK[1]'
 
     ###########
     # GRUP-SP #
@@ -54,7 +63,10 @@ my.mi=/\+\+.+Obj/		"yes"			my.type=/sn|coor-n/		delete		up		overwrite
 my.slem=se				"yes"				my.type=/sn|coor-n/		delete		up		overwrite
 
 # if sn chunk and si=cd -> set mi=+Acc (also for cd/ci and cd-a, TODO: better Acc as default or Dat?)
-parent.type=sn					"+Acc"				my.si=/cd/					case			up		concat
+# NOTE: no accusative in nominal verb chunks! 
+# -> Maria vió que hice una casa = Mariya ñuqap wasi rurasqayta rikurqan (no wasiTA)
+# another special case: nominal head of internally headed relative clause: will be moved into rel-clause, don't insert case markers!
+parent.type=sn					"+Acc"				my.si=/cd/ && !(chunkparent.verbform=/perfect|obligative|^rel/) && !(chunkchild.IHRC=yes)			case			up		concat
 
 # if sn chunk and si=ci -> set mi=+Dat
 parent.type=sn					"+Dat"				my.si=ci					case			up		concat

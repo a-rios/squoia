@@ -116,6 +116,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 
 								if(&evalConditions(\@singleChildChunkConditionsforEvaluation,$child))
 								{
+									#print STDERR "matched child $variable:".$child->toString()."\n";
 									push(@{$variablesWithChunkRefs{$variable}},$child);
 									if (exists($chunksNotCoveredByConditions{$c_ord})) 
 									{
@@ -174,7 +175,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 					
 					#print STDERR "output sequence: @{$outputSequence}\n";
 
-					#print STDERR "output sequence: @{$outputSequence}\n";
+					print STDERR "output sequence: @{$outputSequence}\n";
 					
 					# insert attribute ord (order) into xml of all the chunks,
 					# order is defined by the index of the variable @outputSequence
