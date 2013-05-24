@@ -38,7 +38,7 @@ while (<MORPHSELFILE>) {
 	s/^\s+//;    # no leading white
 	s/\s+$//;    # no trailing white
 	next if /^$/;	# skip if empty line
-	my ( $srcNodeConds, $keepOrDelete, $trgtMI, $conditions, $prob ) = split( /\s*\t+\s*/, $_, 5 );
+	my ( $srcNodeConds, $trgtMI, $keepOrDelete, $conditions, $prob ) = split( /\s*\t+\s*/, $_, 5 );
 
 	$conditions =~ s/\s//g;	# no whitespace within condition
 	# assure key is unique, use srclemma:trgtlemma as key

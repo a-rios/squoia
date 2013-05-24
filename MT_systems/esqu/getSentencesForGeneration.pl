@@ -300,6 +300,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
  			if($lemma2 eq '' && $auxlem eq '' && $verbmi ne '')
  			{ 
+ 				#print STDERR "chunkmi: $chunkmi\n";
  				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
  				print STDOUT "$lemma:$sortedVerbmi\n";
  			}
@@ -319,6 +320,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				if($chunkmi ne ''){print STDOUT &adjustMorph($chunkmi,\%mapTagsToSlots);}
  				print STDOUT "\n";
  			}
+ 			
  		}
  		# if this is a noun chunk, but NOT a pronoun (note, pronouns have an attribute  verbmi that has been copied to their verb,
  		# pronouns are realized as suffixes: we don't need to process them here)
