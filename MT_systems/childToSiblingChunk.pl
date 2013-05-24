@@ -57,7 +57,7 @@ foreach my $chunk ( $dom->findnodes('//CHUNK/CHUNK/CHUNK') ) {	# the candidates 
 			# "move" the CHUNK node to the grandparent CHUNK to become a sibling of the parent CHUNK
 			$chunk->unbindNode();
 			$grandparent->appendChild($chunk);
-			my @attributes = split(",",$targetAttributes{$chunkCond});
+			my @attributes = split(/\s*,\s*/,$targetAttributes{$chunkCond});
 			foreach my $attrVal (@attributes) {
 				my ($newChunkAttr,$newChunkVal) = split("=", $attrVal);
 				$newChunkVal =~ s/["]//g;

@@ -207,8 +207,8 @@ sub mergeArrays{
 	my $oldHeadPos = &getPos($oldSequence,'head');
 
 	
-#	print STDERR "old sequence: @{$oldSequence}\n";
-#	print STDERR "new sequence: @{$newSequence}\n";
+	#print STDERR "old sequence: @{$oldSequence}\n";
+	#print STDERR "new sequence: @{$newSequence}\n";
 
 		
 	# work through new order on the left of the head, comparing 2 by 2 elements
@@ -245,6 +245,7 @@ if($newHeadPos > 0)
 				{
 					my $precedingPosition = &getPos($oldSequence,$precedingElement);
 					splice (@{$oldSequence},$precedingPosition,0,$variable);
+					#print STDERR "after insertion with +: @{$oldSequence}\n";
 					$precedingOperator = $operator;
 					$precedingElement = $variable;
 				}
@@ -259,8 +260,8 @@ if($newHeadPos > 0)
 					if($precedingPosition>0)
 					{	
 						$precedingPosition--;
-						print STDERR @{$oldSequence}[$precedingPosition] =~ /y.*/;
-						while(@{$oldSequence}[$precedingPosition] =~ /y.*/ && $precedingPosition >0)
+						#print STDERR @{$oldSequence}[$precedingPosition] =~ /^y.*/;
+						while(@{$oldSequence}[$precedingPosition] =~ /^y.*/ && $precedingPosition >0)
 						{
 							$precedingPosition--;
 						}
@@ -284,6 +285,7 @@ if($newHeadPos<scalar(@{$newSequence}))
 		# reset oldHeadPos to values of head in oldSequence (that's the starting point) 
 		$oldHeadPos = &getPos($oldSequence, 'head');
 		my $precedingElement = @{$oldSequence}[$oldHeadPos];
+		#print STDERR "pre changed old sequence2: @{$oldSequence}\n";
 	
 		for (my $i=$newHeadPos+1;$i<scalar(@{$newSequence});$i++)
 		{
@@ -317,20 +319,21 @@ if($newHeadPos<scalar(@{$newSequence}))
 				{
 					
 					my $precedingPosition = &getPos($oldSequence,$precedingElement);
+					print STDERR "el: $precedingElement. $precedingPosition\n";
 				
 					#print STDERR "prec pos: $precedingPosition, element match:";
 					if($precedingPosition<scalar(@{$oldSequence}))
 					{	
 						$precedingPosition++;
-						print STDERR @{$oldSequence}[$precedingPosition] =~ /y.*/;
-						while(@{$oldSequence}[$precedingPosition] =~ /y.*/ && $precedingPosition<scalar(@{$oldSequence}))
+						#print STDERR @{$oldSequence}[$precedingPosition] =~ /^y.*/;
+						while(@{$oldSequence}[$precedingPosition] =~ /^y.*/ && $precedingPosition<scalar(@{$oldSequence}))
 						{
 							$precedingPosition++;
 						}
 						#print STDERR ",prec pos after while: $precedingPosition\n";
 					}
 					splice (@{$oldSequence},$precedingPosition,0,$variable);
-					#print STDERR "after insertion: @{$oldSequence}\n";
+					#print STDERR "after insertion2: @{$oldSequence}\n";
 					$precedingElement = $variable;
 				}
 			}
@@ -360,7 +363,8 @@ sub getPos{
 	my $arrayref=$_[0];
 	my $element = $_[1];
 	my $index = 0;
-	++$index until @{$arrayref}[$index]  =~ /(\.|\+)?$element/ or $index > scalar(@{$arrayref});
+	++$index until @{$arrayref}[$index]  =~ /^(\.|\+)?$element$/ or $index > scalar(@{$arrayref});
+	#print STDERR "element: $element, index $index\n";
 	if($index>scalar(@{$arrayref}))
 	{
 		#print STDERR "Error: variable not in array\n";
