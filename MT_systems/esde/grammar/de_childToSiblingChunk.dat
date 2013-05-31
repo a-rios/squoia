@@ -4,4 +4,4 @@
 #	1				2
 #	childChunkCondition		targetChunkAttrVal
 
-my.type=AVP	comment="upgrade adverb chunk",flat=true
+#my.type=AVP	comment="upgrade adverb chunk",flat=true

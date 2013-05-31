@@ -1,6 +1,8 @@
 # 1		2	3		4	5
 # ESverb	ESprep	DEverb		DEprep	DEcas
 
+acabar		en	enden		auf	Akk
+acabar		en	enden		mit	Dat
 advertir	de	hin|weisen	auf	Akk
 advertir	de	warnen		vor	Dat
 basar		en	beruhen		auf	Dat
@@ -30,8 +32,12 @@ acusar		de	an|klagen	-	Gen
 acusar		de	beschuldigen	-	Gen
 acusar		de	bezichtigen	-	Gen
 insistir	en	betonen		-	Akk
+percatar	de	bemerken	-	Akk
+percatar	de	erkennen	-	Akk
+percatar	de	wahr|nehmen	-	Akk
 renegar		de	ab|schwören	-	Dat
 renegar		de	verfluchen	-	Akk
+seguir		con	fort|setzen	-	Akk
 
 #buscar		-	suchen		-	Akk	# TODO: generate both variants?
 buscar		-	suchen		nach	Dat
