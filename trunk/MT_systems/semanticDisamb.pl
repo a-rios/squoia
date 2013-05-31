@@ -104,7 +104,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 										my @matchingSynsCand2 = $node->findnodes($selfXpathString);
 										push(@matchingSyns,@matchingSynsCand);
 										push(@matchingSyns,@matchingSynsCand2);
-										#foreach my $m (@matchingSynsCand){print STDERR "match cand:".$m->toString()."\n";}
+										foreach my $m (@matchingSynsCand){print STDERR "match cand:".$m->toString()."\n";}
 								}
 									#print STDERR "xpath: $xpathstring\n";
 									if(scalar(@matchingSyns)>0)
@@ -143,7 +143,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 								    					$node->removeChild($syn);}
 								    			}
 								    			#delete SYN node whose attributes have been copied to node
-								    			$node->removeChild($matchingtranslation);
+								    			#$node->removeChild($matchingtranslation);
 								   			}
 								   			elsif($keepOrDelete eq 'd')
 								   			{

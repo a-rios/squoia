@@ -171,7 +171,7 @@ my.pos=/V.FIN/		subjnum		xpath{//CHUNK[@type="VP" and CHUNK[@si="suj" and @type=
 #my.pos=/NN|ART|PPOSAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&my.si=ci	Dat			down		no-overwrite
 #my.pos=/NN|ART|PPOSAT|PIAT/		cas		my.type=/NP/&&chunkparent.cas=Dat	Dat		down		no-overwrite
 #my.pos=/ADJ/				cas		my.type=/AP/&&chunkgrandparent.cas=Dat	Dat		down		no-overwrite
-my.pos=/NN|ART|PPOSAT|PDAT|PIAT/		cas		my.type=/NP/&&chunkparent.cas=/./	chunkparent.cas		down		no-overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|PPER/		cas		my.type=/NP/&&chunkparent.cas=/./	chunkparent.cas		down		no-overwrite
 my.pos=/ADJ/				cas		my.type=/AP/&&chunkgrandparent.cas=/./	chunkparent.chunkparent.cas		down		no-overwrite
 
 # set gender (and number) of ADJ if head noun is singular

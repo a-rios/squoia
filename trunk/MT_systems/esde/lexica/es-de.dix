@@ -81,17 +81,17 @@
       <e><p><l>M03S0</l><r>IMP<s n="mi"/>Sg</r></p></e>
       <!-- finite forms: add FIN to pos; add the morphological information in STTS format: PERS.NUM.TIME.MODE -->
       <!-- andaríamos  -> --> 
-      <e><p><l>IC1P0</l><r>FIN<s n="mi"/>Cond++1.Pl.Past.Konj</r></p></e> <!-- Conditional Flag?!? -->
+      <e><p><l>IC1P0</l><r>FIN<s n="tense"/>Cond<s n="mi"/>1.Pl.Past.Konj</r></p></e> <!-- Conditional Flag?!? -->
       <!-- andaría  -> --> 
-      <e><p><l>IC1S0</l><r>FIN<s n="mi"/>Cond++1.Sg.Past.Konj</r></p></e>
+      <e><p><l>IC1S0</l><r>FIN<s n="tense"/>Cond<s n="mi"/>1.Sg.Past.Konj</r></p></e>
       <!-- andaríais  -> --> 
-      <e><p><l>IC2P0</l><r>FIN<s n="mi"/>Cond++2.Pl.Past.Konj</r></p></e>
+      <e><p><l>IC2P0</l><r>FIN<s n="tense"/>Cond<s n="mi"/>2.Pl.Past.Konj</r></p></e>
       <!-- andarías  -> --> 
-      <e><p><l>IC2S0</l><r>FIN<s n="mi"/>Cond++2.Sg.Past.Konj</r></p></e>
+      <e><p><l>IC2S0</l><r>FIN<s n="tense"/>Cond<s n="mi"/>2.Sg.Past.Konj</r></p></e>
       <!-- andarían  -> --> 
-      <e><p><l>IC3P0</l><r>FIN<s n="mi"/>Cond++3.Pl.Past.Konj</r></p></e>
+      <e><p><l>IC3P0</l><r>FIN<s n="tense"/>Cond<s n="mi"/>3.Pl.Past.Konj</r></p></e>
       <!-- andaría  -> --> 
-      <e><p><l>IC3S0</l><r>FIN<s n="mi"/>Cond++3.Sg.Past.Konj</r></p></e>
+      <e><p><l>IC3S0</l><r>FIN<s n="tense"/>Cond<s n="mi"/>3.Sg.Past.Konj</r></p></e>
     <!-- Future -->
       <!--e><p><l></l><r></r></p><par n="VM_VV_Future"/></e-->
       <!-- andaremos  -> (wir) werden gehen --> 
@@ -1014,12 +1014,15 @@
    <e><p><l>acabar</l><r>haben_soeben<s n="complex_pos"/>VA_ADV<s n="split"/>yes</r></p><par n='VPERIPH_SWITCH'/></e>
    <e><p><l>acabar</l><r>schliesslich<s n="pos"/>ADV<s n="split"/>no</r></p><par n='VPERIPH_SWITCH'/></e>
    <e><p><l>acabar</l><r>beenden<s n="split"/>no</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>acabar</l><r>enden</r></p><par n='VM_VV_MAIN'/></e>		<!-- acabar en => enden auf+Akk/+Dat; enden mit+Dat -->
    <e><p><l>deber</l><r>müssen</r></p><par n='VM_VM_MODAL'/></e>
    <e><p><l>poder</l><r>können</r></p><par n='VM_VM_MODAL'/></e>	<!-- e.g. form="puede" lem="poder" mi="VMIP3S0" -->
    <e><p><l>poder</l><r>mögen</r></p><par n="VM_VM_MODAL"/></e>
    <e><p><l>poder</l><r>dürfen</r></p><par n="VM_VM_MODAL"/></e>
    <e><p><l>seguir</l><r>folgen<s n="cas"/>Dat</r></p><par n='VM_VV_MAIN'/></e>	<!-- seguir = folgen; sigue -->
    <e><p><l>seguir</l><r>noch<s n="pos"/>ADV</r></p><par n='VPERIPH_SWITCH'/></e>	<!-- seguir = folgen; seguir + gerund = "noch" sigue comiendo = isst noch/weiterhin -->
+   <e><p><l>seguir</l><r>weiter|machen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>seguir</l><r>fort|setzen</r></p><par n="VM_VV_MAIN"/></e>	<!-- setzen not in molif? -->
    <e><p><l>soler</l><r>gewoehnlich<s n="pos"/>ADV</r></p><par n='VPERIPH_SWITCH'/></e>	<!-- soler + inf = "gewoehnlich/oft?"; suele comer pan = er isst gewoehnlich Brot -->
    <e><p><l>soler</l><r>pflegen</r></p><par n='VM_VV_MAIN'/></e>		<!-- soler + inf = "pflegen" + zu -->
    <e><p><l>tener</l><r>haben</r></p><par n='VM_VA_HABEN'/></e>		<!-- tener => haben -->
@@ -1081,7 +1084,8 @@
    <e><p><l>invitar</l><r>ein|laden</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: verbs with "laden" not in molif? -->
    <e><p><l>ir</l><r>gehen<s n="irrefl"/>yes</r></p><par n='VM_VV_MAIN_BE'/></e>
    <e><p><l>lavar</l><r>waschen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: verbs with "waschen" not in molif? -->
-   <e><p><l>llegar</l><r>an|kommen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>llegar</l><r>an|kommen</r></p><par n='VM_VV_MAIN_BE'/></e>
+   <e><p><l>llegar</l><r>ein|treffen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>llegar</l><r>erreichen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>llegar</l><r>schaffen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>llegar</l><r>werden</r></p><par n='VM_VA_MODAL'/></e>
@@ -1278,7 +1282,6 @@
    <e><p><l>levantar</l><r>auf|stehen<s n="irrefl"/>yes</r></p><par n="VM_VV_MAIN"/></e>	<!-- TODO: reflexiv ? -->
    <e><p><l>levantar</l><r>heben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>ligar</l><r>binden</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>llegar</l><r>an|kommen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llenar</l><r>füllen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llevar</l><r>hin|bringen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llorar</l><r>weinen</r></p><par n="VM_VV_MAIN"/></e>
@@ -1305,7 +1308,6 @@
    <e><p><l>pasar</l><r>passieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pedir</l><r>bestellen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pelear</l><r>fetzen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>pensar</l><r>denken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>perder</l><r>verlieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>permanecer</l><r>bleiben</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>pertenecer</l><r>gehören</r></p><par n="VM_VV_MAIN"/></e>
@@ -1334,7 +1336,6 @@
    <e><p><l>saber</l><r>wissen</r></p><par n="VM_VV_MAIN"/></e> <!-- TODO: wissen, koennen, kennen -->
    <e><p><l>salir</l><r>heraus|gehen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>saltar</l><r>springen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>seguir</l><r>folgen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>sembrar</l><r>säen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>sentar</l><r>setzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>sentir</l><r>fühlen</r></p><par n="VM_VV_MAIN"/></e>
@@ -1744,9 +1745,7 @@
    <e><p><l>aburguesarse</l><r>spießig werden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abusar</l><r>missbrauchen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abusar</l><r>aus|nutzen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>acabar de + Inf.</l><r>eine Handlung vor kurzem vollendet haben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acabar</l><r>auf|essen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>acabar</l><r>beenden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acabar</l><r>ab|schließen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acabar</l><r>fertig stellen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>acalambrarse</l><r>verkrampfen</r></p><par n="VM_VV_MAIN"/></e>
@@ -2383,11 +2382,9 @@
    <e><p><l>disfrutar</l><r>genießen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>disidir</l><r>ab|spalten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>disminuir</l><r>verkleinern</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>disminuir</l><r>verringern</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>disminuir</l><r>zurückgehen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>disminuir</l><r>zurück|gehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>disminuir</l><r>vermindern</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>disminuir</l><r>ab|nehmen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>disminuir</l><r>nachlassen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>disminuir</l><r>nach|lassen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>disolverse</l><r>sich lösen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>disolverse</l><r>sich auflösen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dispararse</l><r>sich zerstreuen</r></p><par n="VM_VV_MAIN"/></e>
@@ -3340,8 +3337,6 @@
    <e><p><l>llamar</l><r>nennen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llamar</l><r>rufen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llegar a ser</l><r>werden (z.B. Beruf)</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>llegar</l><r>an|kommen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>llegar</l><r>eintreffen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llenarse</l><r>voll werden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llenarse</l><r>sich füllen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llenar</l><r>füllen</r></p><par n="VM_VV_MAIN"/></e>
@@ -3881,13 +3876,14 @@
    <e><p><l>penetrar</l><r>eindringen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pensar</l><r>denken</r></p><par n="VM_VV_MAIN"/></e> <!-- pensar en => denken an -->
    <e><p><l>pensar</l><r>gedenken</r></p><par n="VM_VV_MAIN"/></e> <!-- pensar + Inf => zu tun gedenken -->
-   <e><p><l>pensar</l><r>vorhaben</r></p><par n="VM_VV_MAIN"/></e><!-- pensar + Inf => zu tun vorhaben -->
-   <e><p><l>pensar</l><r>glauben</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>pensar</l><r>meinen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>pensar</l><r>überlegen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>pensar</l><r>denken</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>pensar</l><r>nach|denken</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>percatar</l><r>bemerken</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>pensar</l><r>vor|haben</r></p><par n="VM_VV_MAIN"/></e><!-- pensar + Inf => zu tun vorhaben -->
+   <e><p><l>pensar</l><r>glauben</r></p><par n="VM_VV_MAIN"/></e>	<!-- pensar que => glauben, dass -->
+   <e><p><l>pensar</l><r>meinen</r></p><par n="VM_VV_MAIN"/></e>	<!-- pensar que => glauben, dass -->
+   <e><p><l>pensar</l><r>überlegen</r></p><par n="VM_VV_MAIN"/></e>	<!-- pensar (intransitiv) => ueberlegen -->
+   <e><p><l>pensar</l><r>nach|denken</r></p><par n="VM_VV_MAIN"/></e>	<!-- pensar (intransitiv) => nachdenken -->
+   <e><p><l>percatar</l><r>bemerken<s n='irrefl'/>yes</r></p><par n="VM_VV_MAIN"/></e>	<!-- percatarse de algo => etwas(Akk) bemerken, wahrnehmen, erkennen -->
+   <e><p><l>percatar</l><r>erkennen<s n='irrefl'/>yes</r></p><par n="VM_VV_MAIN"/></e>	<!-- erkennen not in molif; "kenn" OLIF22 -->
+   <e><p><l>percatar</l><r>wahr|nehmen<s n='irrefl'/>yes</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>percibir</l><r>empfinden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>percibir</l><r>erkennen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>percibir</l><r>fühlen</r></p><par n="VM_VV_MAIN"/></e>
@@ -5294,8 +5290,6 @@
    <e><p><l>saltarse un obstáculo</l><r>ein Hindernis überspringen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>saltar</l><r>springen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>secar</l><r>trocknen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>seguir</l><r>folgen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>seguir</l><r>weiter|machen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>se le cae</l><r>es fällt ihm herunter</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>señalar</l><r>hin|weisen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>señalar</l><r>zeigen</r></p><par n="VM_VV_MAIN"/></e>
@@ -5376,7 +5370,9 @@
 
 <!-- Nouns -->
 <!-- abuela: form='abuela' lem='abuela' mi='NCFS000'; abuelitas: form='abuelitas' lem='abuela' mi='NCFP00D'-->
-   <e><p><l>abuela</l><r>Grossmutter</r></p><par n='NC_N_53_MUTTER'/></e> 
+   <e><p><l>abuelo</l><r>Großeltern</r></p><par n='NC_N_618_FERIEN'/></e>
+   <e><p><l>abuelo</l><r>Grosseltern</r></p><par n='NC_N_618_FERIEN'/></e>
+   <e><p><l>abuelo</l><r>Grossmutter</r></p><par n='NC_N_53_MUTTER'/></e> 
    <e><p><l>abuela<s n='parol'/>NCFS00D</l><r>Grossmutterchen</r></p><par n='NC_N_DIM_CHEN_SG'/></e> 
    <e><p><l>abuela<s n='parol'/>NCFP00D</l><r>Grossmutterchen</r></p><par n='NC_N_DIM_CHEN_PL'/></e>
    <e><p><l>ángel</l><r>Engel</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -5420,6 +5416,7 @@
    <e><p><l>erradicación</l><r>Tilgung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>escenario</l><r>Szenario</r></p><par n="NC_N_71_AUTO"/></e>
    <e><p><l>espectro</l><r>Spektrum</r></p><par n="NC_N_79_KRITERIUM"/></e>
+   <e><p><l>expectativa</l><r>Erwartung</r></p><par n="NC_N_64_FRAU"/></e>
    <e><p><l>experto</l><r>Experte</r></p><par n="NC_N_63_AUTOMAT"/></e>
    <e><p><l>factor</l><r>Faktor</r></p><par n="NC_N_112_TRAKTOR"/></e>
    <e><p><l>fin</l><r>Ende</r></p><par n="NC_N_NUM_NEUT"/></e>
@@ -5555,6 +5552,7 @@
    <e><p><l>vecino</l><r>Nachbar</r></p><par n='NC_N_112_TRAKTOR'/></e>		<!-- TODO no molif class -->
    <e><p><l>vecino</l><r>Nachbarin</r></p><par n='NC_N_87_STUDENTIN'/></e>
    <e><p><l>vino</l><r>Wein</r></p><par n='NC_N_56_TISCH'/></e>
+   <e><p><l>vino_tinto</l><r>Rotwein</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>web</l><r>Web</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>yunta</l><r>Gespann</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>zanja</l><r>Graben</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -6848,6 +6846,8 @@ tutor	Tutor
    <e><p><l>abordaje</l><r>Entern</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abril</l><r>April</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abuelo</l><r>Großvater</r></p><par n='NC_N_51_VATER'/></e>
+   <e><p><l>abuelo</l><r>Grossvater</r></p><par n='NC_N_51_VATER'/></e>
+   <e><p><l>abuelo</l><r>Großmutter</r></p><par n='NC_N_53_MUTTER'/></e>
    <e><p><l>abundancia</l><r>Überfluss</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
    <e><p><l>academia</l><r>Akademie</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>acción</l><r>Tätigkeit</r></p><par n='NC_N_64_FRAU'/></e>
@@ -6987,6 +6987,8 @@ tutor	Tutor
    <e><p><l>carnicero</l><r>Fleischer</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>carpeta</l><r>Ordner</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>carrera</l><r>Lauf</r></p><par n='NC_N_55_WUNSCH'/></e>
+   <e><p><l>carrera</l><r>Rennen</r></p><par n='NC_N_86_AUFBAUEN'/></e>
+   <e><p><l>carrera</l><r>Studium</r></p><par n='NC_N_79_KRITERIUM'/></e>
    <e><p><l>carta</l><r>Brief</r></p><par n='NC_N_56_TISCH'/></e>
    <!--e><p><l>casa</l><r>Haus</r></p><par n='NC_N_674_SCHLOSS'/></e>		 TODO why other molif? also 61_BUCH ?!? -->
    <e><p><l>caso</l><r>Fall</r></p><par n='NC_N_55_WUNSCH'/></e>
@@ -7349,7 +7351,7 @@ tutor	Tutor
    <e><p><l>limitación</l><r>Einschränkung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>limpieza</l><r>Reinlichkeit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>literatura</l><r>Literatur</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>lluvia</l><r>Regen</r></p><par n='NC_N_54_ZEICHEN'/></e>
+   <e><p><l>lluvia</l><r>Regen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>localidad</l><r>Dorf</r></p><par n='NC_N_61_BUCH'/></e>
    <e><p><l>locomotora</l><r>Lokomotive</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>lugar</l><r>Stelle</r></p><par n='NC_N_76_FEDER'/></e>
@@ -7565,6 +7567,7 @@ tutor	Tutor
    <e><p><l>proyecto</l><r>Projekt</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>publicación</l><r>Veröffentlichung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>pueblo</l><r>Dorf</r></p><par n='NC_N_61_BUCH'/></e>
+   <e><p><l>pueblo</l><r>Volk</r></p><par n='NC_N_61_BUCH'/></e>
    <e><p><l>puente</l><r>Brücke</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>puerta</l><r>Tür</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>pulgón</l><r>Blattlaus</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -7940,7 +7943,7 @@ tutor	Tutor
    <e><p><l>agrimensura</l><r>Vermessung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>agrícola</l><r>landwirtschaftlich</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>aguacate</l><r>Avocado</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>aguacero</l><r>Platzregen</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>aguacero</l><r>Platzregen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>aguada</l><r>Waserplatz</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>aguafuerte</l><r>Radierung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>aguardiente</l><r>Schnaps</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
@@ -8446,6 +8449,7 @@ tutor	Tutor
    <e><p><l>biomasa</l><r>Biomasse</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>biota</l><r>Biota</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>bisabuelo</l><r>Urgroßvater</r></p><par n='NC_N_51_VATER'/></e>
+   <e><p><l>bisabuelo</l><r>Urgroßmutter</r></p><par n='NC_N_53_MUTTER'/></e>
    <e><p><l>bisagra</l><r>Scharnier</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>bisalto</l><r>Schottenerbse</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>bismuto</l><r>Wismuth</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -8585,7 +8589,8 @@ tutor	Tutor
    <e><p><l>cajón</l><r>Schublade</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>cala</l><r>Drachenwurz</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>calabaza</l><r>Kürbis</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>calabobos</l><r>Sprühregen</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>calabobos</l><r>Landregen</r></p><par n='NC_N_73_WAGEN'/></e>
+   <e><p><l>calabobos</l><r>Sprühregen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>calamar</l><r>Kalmar</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>calamidad</l><r>Kalamität</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>calandria</l><r>Kalanderleche</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -8863,6 +8868,7 @@ tutor	Tutor
    <e><p><l>cilicio</l><r>Bußgürtel</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cimarrón</l><r>Cimarrón</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cinc</l><r>Zink</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>cine</l><r>Kino</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>cine</l><r>Lichtspieltheater</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cinemática</l><r>Kinematik</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>cinto</l><r>Gürtel</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -9763,7 +9769,8 @@ tutor	Tutor
    <e><p><l>garrafa</l><r>Karaffe</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>garrocha</l><r>Stange</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>garrote</l><r>Garrotte</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>garúa</l><r>Sprühregen</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>garúa</l><r>Nieselregen</r></p><par n='NC_N_73_WAGEN'/></e>
+   <e><p><l>garúa</l><r>Sprühregen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>gasolinera</l><r>Tankstelle</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>gatera</l><r>Katzenklappe</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>gaucho</l><r>Gaucho</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -10328,7 +10335,7 @@ tutor	Tutor
    <e><p><l>llanto</l><r>Weinen</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>llave</l><r>Schlüssel</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>lleno</l><r>voll</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>llovizna</l><r>Sprühregen</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>llovizna</l><r>Sprühregen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>lob</l><r>Lob</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>lobo</l><r>Wolf</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>locativo</l><r>Lokativ</r></p><par n='NC_N_56_TISCH'/></e>
@@ -11748,11 +11755,11 @@ tutor	Tutor
    <e><p><l>tapioca</l><r>Tapioka</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>taquipnea</l><r>Tachypnoe</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>tara</l><r>Tara</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>tarde</l><r>spät</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>tarjeta</l><r>Karte</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>tarta</l><r>Kuchen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>tartamudez</l><r>Stottern</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>tatarabuelo</l><r>Ururgroßvater</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>tatarabuelo</l><r>Ururgroßvater</r></p><par n='NC_N_51_VATER'/></e>
+   <e><p><l>tatarabuelo</l><r>Ururgroßmutter</r></p><par n='NC_N_53_MUTTER'/></e>
    <e><p><l>taxi</l><r>Taxi</r></p><par n='NC_N_71_AUTO'/></e>
    <e><p><l>taxon</l><r>Taxon</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>taxonomía</l><r>Taxonomie</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -12696,6 +12703,7 @@ veintitodos
    <e><p><l>siguiente</l><r>nah<s n="grad"/>Sup<s n="molif"/>440</r></p><par n='AQ_ADJ'/></e>  <!-- folgend not in molif! "naechst" forms as nah_ADJA_Sup.... -->
    <e><p><l>sostenible</l><r>nachhaltig<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
    <e><p><l>suficiente</l><r>ausreichend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
+   <e><p><l>tinto</l><r>Rot-</r></p><par n='AQ_TRUNC'/></e> 
    <e><p><l>tropical</l><r>tropisch<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>verde</l><r>grün<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>viejo</l><r>alt<s n="molif"/>434</r></p><par n='AQ_ADJ'/></e> 
@@ -18551,9 +18559,12 @@ sin_contar_con	SPS00
    <e><p><l>te<s n="parol"/>PP2CS000</l><r>du_PRF<s n="pos"/>PRF<s n="mi"/>2.Sg<s n="cas"/>Akk</r></p></e>	<!-- te = dich/dir -->
    <e><p><l>ti<s n="parol"/>PP2CSO00</l><r>du<s n="pos"/>PPER<s n="mi"/>2.Sg.*</r></p></e>	<!-- ti = dich/dir -->
    <e><p><l>tú<s n="parol"/>PP2CSN00</l><r>du<s n="pos"/>PPER<s n="mi"/>2.Sg.*</r></p></e>	<!-- tú = du -->
-   <e><p><l>te<s n="parol"/>PP2CP000</l><r>ihr<s n="pos"/>PPER<s n="mi"/>2.Pl.*<s n="cas"/>Akk</r></p></e>	<!-- os = euch -->
-   <e><p><l>te<s n="parol"/>PP2CP000</l><r>ihr_PRF<s n="pos"/>PRF<s n="mi"/>2.Pl<s n="cas"/>Akk</r></p></e>	<!-- os = euch; reflexive-->
-   <e><p><l>usted<s n="parol"/>PP2CS00P</l><r>Sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*</r></p></e>	<!-- usted = Sie/Ihnen -->
+   <e><p><l>os<s n="parol"/>PP2CP000</l><r>ihr<s n="pos"/>PPER<s n="mi"/>2.Pl.*<s n="cas"/>Akk</r></p></e>	<!-- os = euch -->
+   <e><p><l>os<s n="parol"/>PP2CP000</l><r>ihr_PRF<s n="pos"/>PRF<s n="mi"/>2.Pl<s n="cas"/>Akk</r></p></e>	<!-- os = euch; reflexive-->
+   <e><p><l>usted<s n="parol"/>PP2CS000</l><r>Sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*</r></p></e>	<!-- usted = Sie/Ihnen -->
+   <e><p><l>usted<s n="parol"/>PP2CP000</l><r>Sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*</r></p></e>	<!-- ustedes = Sie/Ihnen -->
+   <e><p><l>usted<s n="parol"/>PP2CP000</l><r>ihr<s n="pos"/>PPER<s n="mi"/>2.Pl.*</r></p></e>	<!-- TODO L.A. flag? ustedes = ihr/euch -->
+   <e><p><l>usted<s n="parol"/>PP2CS00P</l><r>Sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*</r></p></e>	<!-- usted = Sie/Ihnen; TODO Sie not in molif -->
    <e><p><l>usted<s n="parol"/>PP2CP00P</l><r>Sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*</r></p></e>	<!-- ustedes = Sie/Ihnen -->
    <e><p><l>tú<s n="parol"/>PP2CN00P</l><r>Sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*</r></p></e>	<!-- usted = Sie/Ihnen -->
    <e><p><l>vosotros<s n="parol"/>PP2FP000</l><r>ihr<s n="pos"/>PPER<s n="mi"/>2.Pl.*</r></p></e>	<!-- vosotras = ihr/euch -->

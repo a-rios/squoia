@@ -125,6 +125,7 @@ foreach my $objchunk ( $dom->findnodes('//CHUNK[@si="'.$DOBJ_FUNC.'"]') ) {	# TO
 			$prepnode->setAttribute('slem', $SLprep);
 			$prepnode->setAttribute('lem', $TLprep);
 			$prepnode->setAttribute('pos',$TL_PREP_POS);
+			$prepnode->setAttribute('cas',$TLcase);
 			# add the chunk and node to the tree
 			$verbchunk->addChild($prepchunk);
 			$prepchunk->addChild($prepnode);
