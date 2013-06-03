@@ -1630,6 +1630,12 @@ diario_oficial_de_la_unión_europea diario_oficial_de_la_unión_europea NCMS000 
 <dictadura>_<militar> dictadura_militar $1:NC I
 <dieta>_<equilibrar> dieta_equilibrada $1:NC I
 dietética_y_nutrición dietética_y_nutrición NCMS000 I
+diente_molar diente_molar NCMS000 I
+diente_premolar diente_premolar NCMS000 I
+diente_incisivo diente_incisivo NCMS000 I
+diente_de_leche diente_de_leche NCMS000 I
+diente_permanente diente_permanente NCMS000 I
+diente_torcido diente_torcido NCMS000 I
 dignidad_humana dignidad_humana NCFS000 I
 dióxido_de_azufre dióxido_de_azufre NCFS000 I
 dióxido_de_carbono dióxido_de_carbono NCFS000 I
@@ -1730,6 +1736,7 @@ educación_sexual educación_sexual NCFS000 I
 educación_vial educación_vial NCFS000 I
 <efecto>_<directo> efecto_directo $1:NC I
 <efecto>_<especial> efecto_especial $1:NC I
+el_hecho_de_que el_hecho_de_que CS I
 ejecución_de_sentencia ejecución_de_sentencia NCFS000 I
 <eje>_<principal> eje_principal $1:NC I
 <ejercicio>_<económico> ejercicio_económico $1:NC I
@@ -2549,6 +2556,7 @@ movimiento_internacional movimiento_internacional NCMS000 I
 movimiento_nacional movimiento_nacional NCMS000 I
 movimiento_obrero movimiento_obrero NCMS000 I
 movimiento_revolucionario movimiento_revolucionario NCMS000 I
+muela_del_juicio muela_del_juicio NCFS000 I
 <muerte>_<violento> muerte_violenta $1:NC I
 muestra_representativa muestra_representativa NCFS000 I
 mundo_material mundo_material NCMS000 I
