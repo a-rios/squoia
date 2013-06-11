@@ -92,6 +92,9 @@ hermano	Bruder		k	my.smi=/NCM/
 hijo	Tochter		k	my.smi=/NCF/
 hijo	Sohn		k	my.smi=/NCM/
 
+juez	Richterin	k	my.smi=/NCF/
+juez	Richter		k	my.smi=/NCM/
+
 # plural form is ambiguous "die Vaeter/Eltern"
 # padre	Vater	k	my.smi=/NCMS/
 # padre	Eltern	k	my.smi=/NCMP/
@@ -152,7 +155,7 @@ estar	gerade	k	parent.smi=/VMG/
 acabar	schliesslich	xpath{//NODE[following-sibling::CHUNK[@type="VZ-inf" and NODE[@slem="por"]]]}	#prob=0.3
 acabar	beenden		!((parent.smi=/VMN/&&rsibling.slem=de) or xpath{//NODE[following-sibling::CHUNK[@type="VZ-inf" and NODE[@slem="por"]]]})	#prob=0.1
 acabar	haben_soeben	parent.smi=/VMN/&&rsibling.slem=de	#prob=0.7
-acabar	enden		k	xpath{//NODE[parent::CHUNK[]/CHUNK[@type="PP" and @si="creg"]]}
+#acabar	enden		k	xpath{//NODE[parent::CHUNK[]/CHUNK[@type="PP" and @si="creg"]]}
 
 # casar [transitiv,irreflexiv] = vermaehlen/trauen/verheiraten: "el cura casa a la pareja" => "der Pfarrer traut das Paar"
 # casarse [reflexiv] = heiraten [irreflexiv, intransitiv]/sich vermaehlen : "se casaron por lo civil" => "sie heirateten standesamtlich"
@@ -194,9 +197,9 @@ levantar	auf|stehen	xpath{self::NODE[starts-with(@pos,"VV") and count(following-
 # llegar a + place = ankommen; erreichen: "llega al aeropuerto" => "er kommt an den Flughafen an"; "er erreicht den Flughafen"
 # llegar a + inf = schaffen: "llega a hacer algo" => "er schafft es, etwas zu machen"
 # llegar a ser + something = werden: "llega a ser imposible" => "es wird unmoeglich"
-llegar	an|kommen	!(parent.smi=/V[AMS]N/)&&rsibling.slem=a	prob=0.7
-llegar	schaffen	parent.smi=/VMN/&&&&rsibling.slem=a		prob=0.2
-llegar	werden		parent.smi=/VSN/&&rsibling.slem=a		prob=0.1
+llegar	an|kommen	k	!(parent.smi=/V[AMS]N/&&child.slem=a)
+llegar	schaffen	k	parent.smi=/VMN/&&child.slem=a
+llegar	werden		k	parent.smi=/VSN/&&child.slem=a
 
 # quedar con alguien = sich verabreden mit jemandem; abmachen mit; verbleiben
 # quedar en algo = etwas ausmachen; etwas vereinbaren
@@ -219,6 +222,6 @@ tener	müssen	parent.smi=/VMN/&&rsibling.slem=que		-
 
 # volver = zurueck|gehen: "Volvemos a casa" => "Wir gehen nach Hause zurueck"
 # volver = "wieder": "Vuelve a comer" => "er isst wieder"
-volver	zurück|gehen	!(parent.smi=/VMN/&&rsibling.slem=a)		-
-volver	wieder		parent.smi=/VMN/&&rsibling.slem=a		-
+volver	drehen,um|drehen,zurück|gehen,zurück|kehren,zurück|kommen	k	!(parent.smi=/VMN/&&child.slem=a)
+volver	wieder		k	parent.smi=/VMN/&&child.slem=a
 
