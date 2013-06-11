@@ -100,6 +100,7 @@ sub compAttrValue{
 	else {
 		#print STDERR "string comparing $attribute value with $valueStr\n";
 		#return ($attribute eq $valueStr);
+		$valueStr =~ s/^"(.+)"$/\1/;
 		if ($attribute eq $valueStr)
 			{return 1;}
 		else

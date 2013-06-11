@@ -16,6 +16,12 @@ my.unknown=/./&&my.smi=/NCFP/		"Fem.Pl"	my.type=/NP|PP/		mi			up		no-overwrite
 # Negation
 my.smi=/RN/		yes		my.type=/AVP/		neg		up		overwrite
 
+# Comparison
+# tanto como
+my.smi=RG&&child.slem=como	compar		my.type=/AVP/		compar		up		overwrite
+# igual/más/menos que
+my.smi=RG&&child.slem=que	compar		my.type=/AVP/		compar		up		overwrite
+
 # --------------------------------------------------------------------------------------------------------------------------- #
 ## Verbs
 # Auxiliary: haben|sein
@@ -181,6 +187,11 @@ my.pos=/ADJ/			mi		my.type=AP&&chunkparent.mi=/Sg/		chunkparent.mi		down		overwr
 # set gender and number of ART; formerly concatenated... ancestor condition alternative for multiword proper names with morphological information like "die demokratische Republik Kongo"
 #my.pos=/ART|PPOSAT|PIAT|PDAT/			mi		my.type=/NP|PP/&&my.mi=/./	mi			down		concat
 my.pos=/ART|PPOSAT|PIAT|PDAT/			mi		(my.type=/NP|PP/||my.smi=/NP/)&&my.mi=/./	mi			down		overwrite
+
+# contracted forms "al" and "del" split into 2 nodes under the PP chunk; get the gender info from the grandchild PP(NP(NN))
+my.pos=/ART/&&my.slem=/al|del/	mi	xpath{//CHUNK[@type="PP" and CHUNK[@type="NP"]/NODE[@pos="NN" and @mi="Fem.Sg"]]}	"Fem.Sg"	down	overwrite
+my.pos=/ART/&&my.slem=/al|del/	mi	xpath{//CHUNK[@type="PP" and CHUNK[@type="NP"]/NODE[@pos="NN" and @mi="Neut.Sg"]]}	"Neut.Sg"	down	overwrite
+my.pos=/ART/&&my.slem=/al|del/	mi	xpath{//CHUNK[@type="PP" and CHUNK[@type="NP"]/NODE[@pos="NN" and @mi="Masc.Sg"]]}	"Masc.Sg"	down	overwrite
 
 # set case from preposition to nested noun, specifiers and modifiers
 #not nested anymore 20130214

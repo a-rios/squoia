@@ -12,16 +12,31 @@ consistir	en	bestehen	in	Dat
 consistir	en	bestehen	aus	Dat
 consistir	en	handeln		um	Akk
 consistir	en	sich_handeln	um	Akk
+#fiarse de = sich verlassen auf
+fiar		de	verlassen	auf	Akk
+guiar		por	richten		nach	Dat
+guiar		por	halten		an	Dat
 insistir	en	bestehen	auf	Akk
 insistir	en	beharren	auf	Akk
 insistir	en	drängen		auf	Akk
 insistir	en	insistieren	auf	Akk
+#reírse de = lachen ueber = jmdn auslachen
+reír		de	lachen		über	Akk
+reír		de	belachen	-	Akk
+reír		de	aus|lachen	-	Akk
 pensar		en	denken		an	Akk
 pensar		en	nach|denken	über	Akk
+persistir	en	bestehen	auf	Dat
+persistir	en	beharren	auf	Dat
 prescindir	de	ab|sehen	von	Dat
 prescindir	de	verzichten	auf	Akk
 prevenir	de	warnen		vor	Dat
+#quejarse de = sich beschweren ueber
+quejar		de	beschweren	über	Akk
 renegar		de	los|sagen	von	Dat
+renunciar	a	ab|sehen	von	Dat
+renunciar	a	verzichten	auf	Akk
+residir		en	beruhen		auf	Dat
 # esde_prep.dat:
 # soñar con => traeumen von
 #con		cas=Dat,lem=von		xpath{self::NODE[parent::CHUNK[@si="creg" and parent::CHUNK[NODE[@slem="soñar"]]]]}	-
@@ -31,7 +46,11 @@ soñar		con	träumen		von	Dat
 acusar		de	an|klagen	-	Gen
 acusar		de	beschuldigen	-	Gen
 acusar		de	bezichtigen	-	Gen
+#adueñarse de = sich+Dat etwas+Akk aneignen
+adueñar		de	an|eignen	-	Akk
 insistir	en	betonen		-	Akk
+optar		por	aus|wählen	-	Akk
+optar		por	wählen		-	Akk
 percatar	de	bemerken	-	Akk
 percatar	de	erkennen	-	Akk
 percatar	de	wahr|nehmen	-	Akk
@@ -46,4 +65,7 @@ esperar		-	warten		auf	Akk
 #esperar	-	erhoffen	-	Akk
 esperar		-	hoffen		auf	Akk
 
+manipular	-	hantieren	mit	Dat
+#padecer	-	erleiden	-	Akk
+padecer		-	leiden		an	Dat
 

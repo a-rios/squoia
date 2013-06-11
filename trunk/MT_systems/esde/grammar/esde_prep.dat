@@ -13,6 +13,14 @@
 a		cas=Akk,delete=yes	chunkparent.si=dobj||chunkgrandparent.si=dobj		-
 # doy el libro a mi padre (iobj) => ich gebe meinem Vater das Buch
 a		cas=Dat,delete=yes	chunkparent.si=iobj					+
+
+# with verbs of movement
+# A => AN: an|kommen
+al		cas=Dat,lem=an_d(er)	xpath{//CHUNK[@type="PP" and @smi="cc" and parent::CHUNK[@type="VP"]/NODE[@lem="an|kommen"]]/NODE[@slem="al"]}
+
+# A => IN: gehen (ins Zentrum, ins Bett, ins Kino, in die Schule, in die Stadt, in den Laden, in die USA/Schweiz)
+# A => NACH: gehen (nach Hause, nach Amerika/Deutschland/Frankreich/Paris)
+# A => ZU: gehen (zur Schule, zum Flughafen, zu jemandem)
 # voy a la escuela (sp-obj) => ich gehe in die Schule/zur Schule?
 # voy a la ciudad => ich gehe in die Stadt
 #a		cas=Akk,lem=in		chunkparent.si=sp-obj&&child.pos=NN		+
@@ -32,9 +40,10 @@ a		cas=Dat,lem=dazu	xpath{self::NODE[parent::CHUNK[@si="s" and @type="PP" and pa
 
 # verb periphrases with "a"
 # llega a ser imposible => es wird unmoeglich
-a		delete=yes	chunkparent.type=VP&&lsibling.slem=/llegar/			-
+a		delete=yes	chunkparent.type=VP&&parent.slem=/llegar/			-
 # Juan vuelve a comer => Juan isst wieder
 a		delete=yes	chunkparent.type=VP&&lsibling.slem=/volver/&&lsibling.lem=/wieder/	-
+a		delete=yes	chunkparent.type=VP&&parent.slem=/volver/&&parent.lem=/wieder/	-
 # Juan empieza a comer => Juan faengt an zu essen
 a		lem=zu		chunkparent.type=VP						-
 
@@ -63,6 +72,7 @@ de		lem=auf,cas=Akk		chunkparent.type=/PP/&&xpath{parent::CHUNK[@type="PP" and C
 
 # la mujer viene del campo => die Frau kommt vom Land
 de 		lem=von,cas=Dat		chunkgrandparent.type=VP				-
+del 		lem=von_d(er),cas=Dat		chunkgrandparent.type=VP				-
 # viene de Alemania => sie kommt aus Deutschland
 #de 	mi=+Abl	chunkgrandparent.headsmi=/V.+/	+
 
