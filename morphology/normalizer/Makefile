@@ -18,7 +18,7 @@ TEXTS:=  texts/bible_bolivian.txt
 normal:  normalizer.fst 
 
 
-analysed_normalized.txt: normal
+normalized.txt: normal
 	cat $(TEXTS) | perl tokenize.pl | lookup -flags xcKv29TT normalizer.fst | tail -n+2  > $@
 
 failures.txt: normal

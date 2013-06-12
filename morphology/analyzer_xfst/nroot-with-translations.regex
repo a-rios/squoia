@@ -154,7 +154,7 @@
 | [ {ayni} "[" "NRoot" "]" "["  "=trabajo_comunal" "]" ] : {ayni}
 | [ {ayphu} "[" "NRoot" "]" "["  "=opaco,nube" "]" ] : {ayphu}
 | [ {aypu} "[" "NRoot" "]" "["  "=opaco,nube" "]" ] : {aypu}
-| [ {ayqi} "[" "NRoot" "]" "["  "=huída" "]" ] : {ayqi}
+| [ {ayqi} "[" "NRoot" "]" "["  "=huida" "]" ] : {ayqi}
 | [ {aysiri} "[" "NRoot" "]" "["  "=brujo" "]" ] : {aysiri}
 | [ {ayu} "[" "NRoot" "]" "["  "=adúltero" "]" ] : {ayu}
 | [ {aywaqi} "[" "NRoot" "]" "["  "=criador" "]" ] : {aywaqi}

@@ -598,6 +598,15 @@ define HATUN HATUN1 .o. HATUN2 .o. HATUN3 ;
 # kacha- should not be analyzed as ka (copula) and -cha (Vdim)!
 define KACHA [~$[ {ka}%["VRoot"%] %["=ser"%] %["--"%] {cha}]];
 
+# riku- should not be analyzed es ri -ku ('irse', this would be ripu-)
+define RIKU [~$[ {ri}%["VRoot"%] %["=ir"%] %["^DB"%] %["--"%] {ku}]];
+
+# paqari- should not be analyzed es paqa -ri 
+define PAQARI [~$[ {paqa}%["VRoot"%] %["=lavar"%] %["--"%] {ri}]];
+
+# tukuy- should not be analyzed es tuku -y 
+define TUKUY [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y}]];
+
 # forbid -llalla analized as +Lim+Lim -> if a word contains a sequence -llalla, the first -lla is probably part of the root
 # consider chukllalla -> good analysis: chuklla(=choza)-lla(+Lim), bad analysis: chuk(=silencio)-lla(+Lim)-lla(+Lim)
 define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
@@ -608,7 +617,7 @@ define PACHAMAMA [~$[ {pacha}%["NRoot" ?* {mama}%["NRoot" ]];
 
 define GENACC [~$[{q}"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. TAPI .o. PITA .o. MANTA .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. NAWPA .o. CHIQA .o. YANA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA];
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. TAPI .o. PITA .o. MANTA .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. NAWPA .o. CHIQA .o. YANA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. RIKU .o. PAQARI .o. TUKUY];
 
 ######################################################################################
 
