@@ -744,7 +744,7 @@ kancha	kancha[NRootES]
 
 ruwasqa	ruwa[VRoot][=hacer][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
-,	,[$,]
+.	.[$.]
 
 Ña	Ña[Part_Disc]
 
@@ -1602,6 +1602,8 @@ riki	riki[NRoot][=por_supuesto]
 
 Hinaman	Hina[Part_Sim][^DB][--]man[Cas][+Dat_Ill]
 
+cheqaqmá	chiqaq[NRoot][=verdad,derecho][^DB][--]má[Amb][+DirE_Emph]
+
 kasqa	ka[VRoot][=ser][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 riki	riki[NRoot][=por_supuesto]
@@ -1696,7 +1698,7 @@ karan	ka[VRoot][=ser][^DB][--]ra[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 aswan	aswan[NRoot][=más,mucho]
 
-kaska	kaska[NRoot][=más]
+kasqa	ka[VRoot][=ser][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 llaqtan	llaqta[NRoot][=pueblo][^DB][--]n[NPers][+3.Sg.Poss]
 
@@ -1850,7 +1852,7 @@ kinrayushaqña	kinra[VRoot][=cruzar][--]yu[VDeriv][+Aff][^DB][--]sha[Asp][+Prog]
 
 t'ikraspallaña	t'ikra[VRoot][=volver][^DB][--]spa[NS][+SS][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ña[Amb][+Disc]
 
-nana	nana[NRoot][=dolor]
+mana	mana[Part_Neg]
 
 allin	allin[NRoot][=bueno]
 
@@ -2426,6 +2428,8 @@ madrinaypa	madrina[NRootES][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]pa[Cas][+Gen]
 
 qosanwan	qusa[NRoot][=marido][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]wan[Cas][+Con_Inst]
 
+notachikunaypaq	nota[VRootES][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben]
+
 .	.[$,]
 
 Pero	Pero[NRootES]
@@ -2535,6 +2539,8 @@ wasinpi	wasi[NRoot][=casa][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 mana	mana[Part_Neg]
 
 puñuyta	puñu[VRoot][=dormir][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
+
+atiyunichu	ati[VRoot][=poder,vencer][--]yu[VDeriv][+Aff][^DB][--]ni[VPers][+1.Sg.Subj][^DB][--]chu[Amb][+Intr_Neg]
 
 manchay	mancha[VRoot][=tener_miedo][^DB][--]y[NS][+Inf]
 
@@ -3178,7 +3184,7 @@ pasanku	pasa[VRootES][^DB][--]nku[VPers][+3.Pl.Subj]
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
-qoya	quya[NRoot][=reina,esposa_del_inca]
+q'oya	q'uya[NRoot][=paja_dura]
 
 ukhupi	ukhu[NRoot][=dentro][^DB][--]pi[Cas][+Loc]
 
@@ -3330,6 +3336,8 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$,]
 
+Chhaynan	chhayna[PrnDem][^DB][--]n[NPers][+3.Sg.Poss]
+
 Sicuanita	Sicuani[NP][^DB][--]ta[Cas][+Acc]
 
 chayamurani	chaya[VRoot][=llegar][--]mu[VDeriv][+Cis_Trs][^DB][--]ra[Tns][+NPst][--]ni[VPers][+1.Sg.Subj]
@@ -3416,7 +3424,7 @@ lliw	lliw[NRoot][=todo]
 
 chico	chico[NRootES]
 
-nina	nina[NRoot][=fuego]
+hina	hina[Part_Sim]
 
 puñurapoq	puñu[VRoot][=dormir][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]q[NS][+Ag]
 
@@ -3959,6 +3967,8 @@ la	la[SP]
 mañana	mañana[SP]
 
 Willkamayupi	Willka[NRoot][=sagrado]mayu[NRoot][=río][^DB][--]pi[Cas][+Loc]
+
+bañakunaypaq	baña[VRootES][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben]
 
 .	.[$,]
 
@@ -4566,6 +4576,8 @@ chay	chay[PrnDem]
 
 k'irikuna	k'iri[NRoot][=herida][--]kuna[Num][+Pl]
 
+hoqpaqkama	huq[NRootNUM][^DB][--]paq[Cas][+Ben][^DB][--]kama[Cas][+Dist]
+
 totalmente	totalmente[SP]
 
 qhaliyapoqtinsi	qhali[NRoot][=sano][--]ya[VS][+Trs][--]pu[VDeriv][+Rgr_Iprs][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]si[Amb][+IndE]
@@ -4756,6 +4768,8 @@ llasachikun	llasa[VRoot][=pesar][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+
 
 .	.[$,]
 
+Chhaynan	chhayna[PrnDem][^DB][--]n[Amb][+DirE]
+
 vida	vida[NRootES]
 
 kashan	ka[VRoot][=ser][^DB][--]sha[Asp][+Prog][--]n[VPers][+3.Sg.Subj]
@@ -4886,6 +4900,8 @@ kanman	ka[VRoot][=ser][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot]
 
 .	.[$,]
 
+Chhaynan	Chhayna[PrnDem][^DB][--]n[NPers][+3.Sg.Poss]
+
 sufrimiento	sufrimiento[NRootES]
 
 .	.[$,]
@@ -4942,7 +4958,7 @@ chaywanmi	chay[PrnDem][^DB][--]wan[Cas][+Con_Inst][^DB][--]mi[Amb][+DirE]
 
 astawan	as[NRoot][=poco][^DB][--]ta[Cas][+Acc][^DB][--]wan[Cas][+Con_Inst]
 
-munankuwanku	munankuwanku	+?
+munakuwanku	muna[VRoot][=querer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]wanku[VPers][+3.Subj_1.Pl.Excl.Obj]
 
 .	.[$,]
 
@@ -5003,6 +5019,8 @@ qowaqku	qu[VRoot][=dar][^DB][--]wa[VPers][+1.Obj][^DB][--]qku[VPers][+3.Pl.Subj.
 Mayninpi	May[PrnInterr][=dónde][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 kachawaq	kacha[VRoot][=mandar][^DB][--]wa[VPers][+1.Obj][^DB][--]q[NS][+Ag]
+
+compadrenpata	compadre[NRootES][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pa[Cas][+Gen][^DB][--]ta[Cas][+Acc]
 
 ,	,[$,]
 
@@ -6265,6 +6283,8 @@ qowaqku	qu[VRoot][=dar][^DB][--]wa[VPers][+1.Obj][^DB][--]qku[VPers][+3.Pl.Subj.
 sarata	sara[NRoot][=maíz][^DB][--]ta[Cas][+Acc]
 
 mankaq	manka[NRoot][=olla][^DB][--]q[Cas][+Gen]
+
+kuskanninta	kuskanninta	+?
 
 .	.[$,]
 
@@ -8558,8 +8578,6 @@ riki	riki[NRoot][=por_supuesto]
 
 ...	...[$,]
 
-.	.[$,]
-
 "	"[$,]
 
 ,	,[$,]
@@ -9110,6 +9128,8 @@ huch'uy	huch'uy[NRoot][=pequeño]
 
 camionchan	camion[NRootES][--]cha[NDeriv][+Dim][^DB][--]n[Amb][+DirE]
 
+hinaspan	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]n[NPers][+3.Sg.Poss]
+
 cargallawan	carga[NRootES][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wan[Cas][+Con_Inst]
 
 pureq	puri[VRoot][=andar][^DB][--]q[NS][+Ag]
@@ -9404,6 +9424,8 @@ kani	ka[VRoot][=ser][^DB][--]ni[VPers][+1.Sg.Subj]
 
 reqsichikuspa	riqsi[VRoot][=conocer][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]spa[NS][+SS]
 
+munakunaypaq	muna[VRoot][=querer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben]
+
 .	.[$,]
 
 Chhayna	Chhayna[PrnDem]
@@ -9687,6 +9709,8 @@ tukuyta	tuku[VRoot][=acabar,suceder,convertirse][^DB][--]y[NS][+Inf][^DB][--]ta[
 maqanayukoq	maqa[VRoot][=pegar][--]na[VDeriv][+Rzpr][--]yu[VDeriv][+Aff][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
 kayku	ka[VRoot][=ser][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
+
+yawarchakunaykukamaraq	yawar[NRoot][=sangre][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]kama[Cas][+Term][^DB][--]raq[Amb][+Cont]
 
 ,	,[$,]
 
@@ -10131,7 +10155,7 @@ fronterapi	frontera[NRootES][^DB][--]pi[Cas][+Loc]
 .	.[$,]
 
 Chay	Chay[PrnDem]
-]
+
 guerrapis	guerra[NRootES][^DB][--]pi[Cas][+Loc][^DB][--]s[Amb][+IndE]
 
 chileno	chileno[NRootES]
@@ -10195,7 +10219,7 @@ pisi	pisi[NRoot][=poco]
 soldado	soldado[NRootES]
 
 peruanota	peruano[NRootES][^DB][--]ta[Cas][+Acc]
-]
+
 rikuspa	riku[VRoot][=ver,conocer,aparecer][^DB][--]spa[NS][+SS]
 
 ,	,[$,]
@@ -11189,6 +11213,8 @@ wanunrayku	wanu[NRoot][=abono][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]rayku[Cas][+
 carga	carga[NRootES]
 
 uywanrayku	uywa[NRoot][=cría][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]rayku[Cas][+Kaus]
+
+.	.[$.]
 
 Mana	Mana[Part_Neg]
 
@@ -12680,6 +12706,8 @@ wark'anakuspa	wark'a[VRoot][=hondear][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+R
 
 chikchiwan	chikchi[NRoot][=granizo][^DB][--]wan[Cas][+Con_Inst]
 
+maqanakunanpaq	maqa[VRoot][=pegar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]paq[Cas][+Ben]
+
 hina	hina[Part_Sim]
 
 .	.[$,]
@@ -13549,6 +13577,8 @@ soldado	soldado[NRootES]
 karani	ka[VRoot][=ser][^DB][--]ra[Tns][+NPst][--]ni[VPers][+1.Sg.Subj]
 
 Cuartel	Cuartel[NRootES]
+
+Maruripanpapi	Maruripanpapi	+?
 
 kinsa	kinsa[NRootNUM]
 
@@ -15342,6 +15372,8 @@ Hoqnintaq	Huq[NRootNUM][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]taq[Amb][+Con_Int
 
 qhoñayki	qhuña[NRoot][=moco][^DB][--]yki[NPers][+2.Sg.Poss]
 
+pichakunaykipaq	picha[VRoot][=barrer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]yki[NPers][+2.Sg.Poss][^DB][--]paq[Cas][+Ben]
+
 .	.[$,]
 
 Lana	Lana	+?
@@ -15939,8 +15971,6 @@ de	de[SP]
 semana	semana[NRootES]
 
 ...	...[$,]
-
-.	.[$,]
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -16903,6 +16933,8 @@ qochiriwanku	qu[VRoot][=dar][^DB][--]chi[VDeriv][+Caus][--]ri[VDeriv][+Inch][^DB
 soldado	soldado[NRootES]
 
 p'achatataq	p'acha[NRoot][=ropa][^DB][--]ta[Cas][+Acc][^DB][--]taq[Amb][+Con_Intr]
+
+vestikunaypaq	vestikunaypaq	+?
 
 qowanku	qu[VRoot][=dar][^DB][--]wa[VPers][+1.Obj][^DB][--]nku[VPers][+3.Pl.Subj]
 
@@ -18020,6 +18052,8 @@ wañusunchis	wañu[VRoot][=morir][^DB][--]sunchis[VPers][+1.Pl.Incl.Subj.Fut]
 
 Chaymanta	Chay[PrnDem][^DB][--]manta[Cas][+Abl]
 
+hanpikunaypaqmi	hampi[VRoot][=curar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben][^DB][--]mi[Amb][+DirE]
+
 askha	askha[NRoot][=mucho]
 
 kuti	kuti[NRoot][=vez]
@@ -18197,6 +18231,8 @@ huk	huk[NRootNUM]
 kantunpin	kantunpin	+?
 
 waqaychaq	waqa[VRoot][=guardar,proteger][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]q[NS][+Ag]
+
+noqaqta	noqaqta	+?
 
 ,	,[$,]
 
@@ -19118,6 +19154,8 @@ riki	riki[NRoot][=por_supuesto]
 
 kunan	kunan[NRoot][=ahora]
 
+convento	convento	+?
+
 Santa	Santa[SP]
 
 Teresa	Teresa[NP]
@@ -19151,7 +19189,7 @@ warmikunata	warmi[NRoot][=mujer][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc]
 horqospan	hurqu[VRoot][=sacar][^DB][--]spa[NS][+SS][^DB][--]n[NPers][+3.Sg.Poss]
 
 ,	,[$,]
-]
+
 kay	kay[PrnDem]
 
 españakuna	españa[NP][--]kuna[Num][+Pl]
@@ -20710,7 +20748,7 @@ tarde	tarde[NRootES]
 
 y	y[SP]
 
-manaña	mana[Part_Neg][^DB][--]ña[Amb][+Disc]
+mañana	mañana[SP]
 
 ,	,[$,]
 
@@ -21043,7 +21081,7 @@ puskay	puska[VRoot][=hilar][^DB][--]y[NS][+Inf]
 yachasqay	yacha[VRoot][=saber,habitar][^DB][--]sqa[NS][+Perf][^DB][--]y[NPers][+1.Sg.Poss]
 
 p'unchaymanta	p'unchay[NRoot][=día][^DB][--]manta[Cas][+Abl]
-]
+
 pachan	pacha[NRoot][=mundo,tiempo][^DB][--]n[Amb][+DirE]
 
 ,	,[$,]
@@ -21989,6 +22027,8 @@ noqanchis	nuqanchis[PrnPers+1.Pl.Incl]
 aqha	aqha[NRoot][=chicha]
 
 tomasqanchis	toma[VRootES][^DB][--]sqa[NS][+Perf][^DB][--]nchis[NPers][+1.Pl.Incl.Poss]
+
+saborchayachikunanpaq	saborchayachikunanpaq	+?
 
 .	.[$,]
 
@@ -23049,7 +23089,7 @@ oficonta	oficonta	+?
 rurashaqta	rura[VRoot][=hacer][^DB][--]sha[Asp][+Prog][^DB][--]q[NS][+Ag][^DB][--]ta[Cas][+Acc]
 
 "	"[$,]
-]
+
 niyqa	ni[VRoot][=decir][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
 
 .	.[$,]
@@ -23167,6 +23207,8 @@ karanchu	ka[VRoot][=ser][^DB][--]ra[Tns][+NPst][--]n[VPers][+3.Sg.Subj][^DB][--]
 ni	ni[SP]
 
 pipas	pi[PrnInterr][=quién][^DB][--]pas[Amb][+Add]
+
+wayk'ukunaypaq	wayk'u[VRoot][=cocinar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben]
 
 llant'a	llant'a[NRoot][=leña]
 
@@ -23908,6 +23950,8 @@ tiyaqku	tiya[VRoot][=haber,estar,habitar,estar_sentado][^DB][--]qku[VPers][+3.Pl
 
 Chay	Chay[PrnDem]
 
+qamarakunaq	qama[VRoot][=pujar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]q[Cas][+Gen]
+
 willawasqankumantaqa	willa[VRoot][=contar][^DB][--]wa[VPers][+1.Obj][^DB][--]sqa[NS][+Perf][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
 wakillantan	waki[NRoot][=parte,otro][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc][^DB][--]n[Amb][+DirE]
@@ -23949,8 +23993,6 @@ Diosninchista	Dios[NRootES][^DB][--]ninchis[NPers][+1.Pl.Incl.Poss][^DB][--]ta[C
 askha	askha[NRoot][=mucho]
 
 enemigonkuna	enemigo[NRootES][^DB][--]n[NPers][+3.Sg.Poss][--]kuna[Num][+Pl]
-
-.	.[$,]
 
 qatikachaspa	qati[VRoot][=seguir,arrear][--]kacha[VDeriv][+Intrup][^DB][--]spa[NS][+SS]
 
@@ -24492,6 +24534,8 @@ karayku	ka[VRoot][=ser][^DB][--]ra[Tns][+NPst][--]yku[VPers][+1.Pl.Excl.Subj]
 
 suwa	suwa[NRoot][=ladrón]
 
+tunpamanta	tumpa[NRoot][=poco][^DB][--]manta[Cas][+Abl]
+
 preso	preso[NRootES]
 
 ,	,[$,]
@@ -24573,6 +24617,8 @@ tukukoqmi	tuku[VRoot][=acabar,suceder,convertirse][^DB][--]ku[VDeriv][+Rflx_Int]
 karanku	ka[VRoot][=ser][^DB][--]ra[Tns][+NPst][--]nku[VPers][+3.Pl.Subj]
 
 pendejadasninku	pendejadas[NRootES][^DB][--]ninku[NPers][+3.Pl.Poss]
+
+willakunankupaq	willa[VRoot][=contar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]paq[Cas][+Ben]
 
 .	.[$,]
 
@@ -25414,6 +25460,8 @@ willakoqku	willa[VRoot][=contar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qku[VPers
 
 kay	kay[PrnDem]
 
+qamarakuna	qama[VRoot][=pujar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl]
+
 ,	,[$,]
 
 manan	mana[Part_Neg][^DB][--]n[Amb][+DirE]
@@ -25433,6 +25481,8 @@ suwakunkun	suwa[VRoot][=robar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][
 Kunanqa	Kunan[NRoot][=ahora][^DB][--]qa[Amb][+Top]
 
 imachá	ima[NRoot][=cosa][^DB][--]chá[Amb][+Asmp_Emph]
+
+qamarakunamanta	qama[VRoot][=pujar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]manta[Cas][+Abl]
 
 .	.[$,]
 
@@ -25671,6 +25721,7 @@ chayqa	chay[PrnDem][^DB][--]qa[Amb][+Top]
 mana	mana[Part_Neg]
 
 willankumanchu	willa[VRoot][=contar][^DB][--]nku[VPers][+3.Pl.Subj][--]man[Mod][+Pot][^DB][--]chu[Amb][+Intr_Neg]
+
 ,	,[$,]
 
 ni	ni[SP]
@@ -25712,6 +25763,8 @@ suwakusqanku	suwa[VRoot][=robar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+
 kashan	ka[VRoot][=ser][^DB][--]sha[Asp][+Prog][--]n[VPers][+3.Sg.Subj]
 
 ña	ña[Part_Disc]
+
+yacharukunanpaq	yacha[VRoot][=saber,habitar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]paq[Cas][+Ben]
 
 otaq	o[Part_Contr][^DB][--]taq[Amb][+Con_Intr]
 
@@ -26125,6 +26178,8 @@ Khaynan	Khayna[PrnDem][^DB][--]n[Amb][+DirE]
 
 kay	kay[PrnDem]
 
+qamarakunaq	qama[VRoot][=pujar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]q[Cas][+Gen]
+
 vidan	vida[NRootES][^DB][--]n[Amb][+DirE]
 
 .	.[$,]
@@ -26415,6 +26470,8 @@ reqsiwaranchu	riqsi[VRoot][=conocer][^DB][--]wa[VPers][+1.Obj][^DB][--]ra[Tns][+
 
 ,	,[$,]
 
+tapukunaypaqtaqmi	tapu[VRoot][=preguntar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
+
 viajerokuna	viajero[NRootES][--]kuna[Num][+Pl]
 
 kanchus	ka[VRoot][=ser][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]chu[Amb][+Intr_Neg][^DB][--]s[Amb][+IndE]
@@ -26429,7 +26486,7 @@ chaypaq	chay[PrnDem][^DB][--]paq[Cas][+Ben]
 
 huk	huk[NRootNUM]
 
-aqha[NRoot][=chicha]
+aqha	aqha[NRoot][=chicha]
 
 vendena	vende[VRootES][^DB][--]na[NS][+Obl]
 
@@ -26853,6 +26910,8 @@ qori	quri[NRoot][=oro]
 
 idolochaq	idolo[NRootES][--]chaq[NDeriv][+Aug]
 
+encantakunanpaq	encantakunanpaq	+?
+
 .	.[$,]
 
 Pero	Pero[NRootES]
@@ -26990,6 +27049,8 @@ chayamuspaqa	chaya[VRoot][=llegar][--]mu[VDeriv][+Cis_Trs][^DB][--]spa[NS][+SS][
 askha	askha[NRoot][=mucho]
 
 killan	killa[NRoot][=luna][^DB][--]n[Amb][+DirE]
+
+convento	convento	+?
 
 La	La[SP]
 
@@ -27232,6 +27293,8 @@ wasiyta	wasi[NRoot][=casa][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]ta[Cas][+Acc]
 hanpuran	hampu[VRoot][=regresar][^DB][--]ra[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 ,	,[$,]
+
+puñuman	puñu[NRoot][=soñoliento][^DB][--]man[Cas][+Dat_Ill]
 
 mankankuna	manka[NRoot][=olla][^DB][--]n[NPers][+3.Sg.Poss][--]kuna[Num][+Pl]
 
@@ -27581,6 +27644,8 @@ kashaqtin	ka[VRoot][=ser][^DB][--]sha[Asp][+Prog][^DB][--]qti[NS][+DS][^DB][--]n
 
 cocinera	cocinera[NRootES]
 
+muchachachanpaq	muchachachanpaq	+?
+
 .	.[$,]
 
 Chaymi	Chay[PrnDem][^DB][--]mi[Amb][+DirE]
@@ -27768,6 +27833,8 @@ aceptani	acepta[VRootES][^DB][--]ni[VPers][+1.Sg.Subj]
 cuarto	cuarto[NRootES]
 
 pagomanta	pago[NRootES][^DB][--]manta[Cas][+Abl]
+
+quedakunaypaq	quedakunaypaq	+?
 
 ,	,[$,]
 
@@ -28183,6 +28250,8 @@ q'epita	q'ipi[NRoot][=bulto][^DB][--]ta[Cas][+Acc]
 
 ruraspa	rura[VRoot][=hacer][^DB][--]spa[NS][+SS]
 
+mikhuchinakunaykupaq	mikhu[VRoot][=comer][^DB][--]chi[VDeriv][+Caus][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]paq[Cas][+Ben]
+
 ;	;[$,]
 
 kunan	kunan[NRoot][=ahora]
@@ -28226,6 +28295,8 @@ millakuy	milla[VRoot][=tener_asco][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+
 ,	,[$,]
 
 padrastronkuta	padrastro[NRootES][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]ta[Cas][+Acc]
+
+p'enqakunankupaq	p'inqa[VRoot][=avergonzar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]paq[Cas][+Ben]
 
 kunan	kunan[NRoot][=ahora]
 
@@ -29517,6 +29588,8 @@ kani	ka[VRoot][=ser][^DB][--]ni[VPers][+1.Sg.Subj]
 
 Kay	Kay[PrnDem]
 
+hanpikunaypaqmi	hampi[VRoot][=curar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben][^DB][--]mi[Amb][+DirE]
+
 warmiyta	warmi[NRoot][=mujer][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
 mercadopi	mercado[NRootES][^DB][--]pi[Cas][+Loc]
@@ -29814,6 +29887,8 @@ qorani	qu[VRoot][=dar][^DB][--]ra[Tns][+NPst][--]ni[VPers][+1.Sg.Subj]
 paypa	pay[PrnPers+3.Sg][^DB][--]pa[Cas][+Gen]
 
 saludninpi	salud[NRootES][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
+
+misayachikunanpaq	misa[NRootES][--]ya[VS][+Trs][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]paq[Cas][+Ben]
 
 ima	ima[Part_Conec]
 
@@ -30581,6 +30656,8 @@ hina	hina[Part_Sim]
 
 Panpamarkapi	Panpa[NRoot][=suelo,tierra]marka[NRoot][=pueblo,provincia][^DB][--]pi[Cas][+Loc]
 
+quedakunanpaq	quedakunanpaq	+?
+
 .	.[$,]
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
@@ -30864,6 +30941,8 @@ achhuyusqa	achhu[VRoot][=acercarse][--]yu[VDeriv][+Aff][^DB][--]sqa[Tns_VPers][+
 huk	huk[NRootNUM]
 
 mallkichaman	mallki[NRoot][=árbol][--]cha[NDeriv][+Dim][^DB][--]man[Cas][+Dat_Ill]
+
+llanthukunanpaq	llanthu[VRoot][=sombrear][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]paq[Cas][+Ben]
 
 .	.[$,]
 
@@ -32875,6 +32954,8 @@ faltashaqtinsi	falta[VRootES][^DB][--]sha[Asp][+Prog][^DB][--]qti[NS][+DS][^DB][
 
 fatigasqa	fatiga[VRootES][^DB][--]sqa[NS][+Perf]
 
+wasanpanmanta	wasanpanmanta	+?
+
 chutayukusqa	chuta[VRoot][=jalar][--]yu[VDeriv][+Aff][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 ,	,[$,]
@@ -32939,7 +33020,7 @@ kunan	kunan[NRoot][=ahora]
 
 hatun	hatun[NRoot][=grande]
 
-cpnventowan	convento[NRootES][^DB][--]wan[Cas][+Con_Inst] 
+conventowan	convento[NRootES][^DB][--]wan[Cas][+Con_Inst] 
 
 taparapunku	tapa[VRoot][=ocultar][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]nku[VPers][+3.Pl.Subj]
 
@@ -34091,6 +34172,8 @@ hinaspas	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+
 
 kay	kay[PrnDem]
 
+hanpi	hampi[NRoot][=remedio]
+
 t'oqokunata	t'uqu[NRoot][=agujero][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc]
 
 t'uruwan	t'uru[NRoot][=fango][^DB][--]wan[Cas][+Con_Inst]
@@ -35106,6 +35189,8 @@ rimayta	rima[VRoot][=hablar][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
 atispankuñataq	ati[VRoot][=poder,vencer][^DB][--]spa[NS][+SS][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]ña[Amb][+Disc][^DB][--]taq[Amb][+Con_Intr]
 
 maqanayukoqku	maqa[VRoot][=pegar][--]na[VDeriv][+Rzpr][--]yu[VDeriv][+Aff][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
+
+yawarchakunankukama	yawar[NRoot][=sangre][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]kama[Cas][+Term]
 
 ,	,[$,]
 
@@ -36205,7 +36290,7 @@ aceptawanku	acepta[VRootES][^DB][--]wanku[VPers][+3.Subj_1.Pl.Excl.Obj]
 
 huk	huk[NRootNUM]
 
-chikan	chika[NRoot][=mucho,tanto][--]cha[NDeriv][+Dim][^DB][--]n[NPers][+3.Sg.Poss]
+chikachan	chika[NRoot][=mucho,tanto][--]cha[NDeriv][+Dim][^DB][--]n[NPers][+3.Sg.Poss]
 
 ukyasqa	ukya[VRoot][=tomar][^DB][--]sqa[NS][+Perf]
 
@@ -36335,6 +36420,8 @@ kan	ka[VRoot][=ser][^DB][--]n[VPers][+3.Sg.Subj]
 
 chaypaqtaqmi	chay[PrnDem][^DB][--]paq[Cas][+Ben][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
 
+alistakuna	alistakuna	+?
+
 ,	,[$,]
 
 curan	cura[NRootES][^DB][--]n[Amb][+DirE]
@@ -36430,6 +36517,8 @@ Juan	Juan[NP]
 p'unchay	p'unchay[NRoot][=día]
 
 .	.[$,]
+
+Casarakunaykupaq	casa[VRootES][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]paq[Cas][+Ben]
 
 misapaqmi	misa[NRootES][^DB][--]paq[Cas][+Ben][^DB][--]mi[Amb][+DirE]
 
@@ -37697,6 +37786,8 @@ maqamusqanki	maqa[VRoot][=pegar][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[Tns][+IPst]
 
 kunanmi	kunan[NRoot][=ahora][^DB][--]mi[Amb][+DirE]
 
+lisuraykunanta	lisuraykunanta	+?
+
 carcelta	carcel[NRootES][^DB][--]ta[Cas][+Acc]
 
 rinki	ri[VRoot][=ir][^DB][--]nki[VPers][+2.Sg.Subj]
@@ -38643,6 +38734,8 @@ qallarinku	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]nku[VPers][+3.Pl.
 
 lotekuna	lote[NRootES][--]kuna[Num][+Pl]
 
+rakinakunankupaq	raki[NRoot][=parte][--]na[VS][+Reub][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]paq[Cas][+Ben]
+
 .	.[$,]
 
 Noqapas	Nuqa[PrnPers+1.Sg][^DB][--]pas[Amb][+Add]
@@ -39367,6 +39460,8 @@ pillapas	pi[PrnInterr][=quién][^DB][--]lla[Amb][+Lim_Aff][^DB][--]pas[Amb][+Add
 
 reqsisqanwanmi	riqsi[VRoot][=conocer][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]wan[Cas][+Con_Inst][^DB][--]mi[Amb][+DirE]
 
+pusachikuna	pusa[VRoot][=llevar][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl]
+
 kaq	ka[VRoot][=ser][^DB][--]q[NS][+Ag]
 
 .	.[$,]
@@ -39623,11 +39718,7 @@ t'anta	t'anta[NRoot][=pan]
 
 ropa	ropa[NRootES]
 
-.	.[$,]
-
-.	.[$,]
-
-.	.[$,]
+...	...[$,]
 
 imaymana	imaymana[NRoot][=toda_clase_de,todos]
 
@@ -40221,6 +40312,8 @@ parlaykuña	parla[VRootES][^DB][--]yku[VPers][+1.Pl.Excl.Subj][^DB][--]ña[Amb][
 
 llank'aq	llank'a[VRoot][=trabajar][^DB][--]q[NS][+Ag]
 
+qhepakunaykipaq	qhipa[VRoot][=quedar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]yki[NPers][+2.Sg.Poss][^DB][--]paq[Cas][+Ben]
+
 .	.[$,]
 
 Qayna	Qayna[NRoot][=último]
@@ -40434,7 +40527,6 @@ Hoqmanta	Huq[NRootNUM][^DB][--]manta[Cas][+Abl]
 carajo	carajo[NRootES]
 
 ,	,[$,]
-
 
 preocupasqa	preocupa[VRootES][^DB][--]sqa[NS][+Perf]
 
@@ -40759,6 +40851,8 @@ mana	mana[Part_Neg]
 hayk'aqpas	hayk'aq[PrnInterr][=cuándo][^DB][--]pas[Amb][+Add]
 
 fabriaq	fabriaq	+?
+
+wisq'akunanta	wisq'a[VRoot][=cerrar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
 permitenmanchu	permite[VRootES][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot][^DB][--]chu[Amb][+Intr_Neg]
 
@@ -45410,7 +45504,6 @@ apapun	apa[VRoot][=llevar][--]pu[VDeriv][+Rgr_Iprs][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$,]
 
-
 Kaypin	Kay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]n[Amb][+DirE]
 
 tiyaran	tiya[VRoot][=haber,estar,habitar,estar_sentado][^DB][--]ra[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
@@ -45619,7 +45712,7 @@ iskay	iskay[NRootNUM]
 
 p'unchay	p'unchay[NRoot][=día]
 
-wasiman	wasi[NRoot][=casa][^DB][--]man[Cas][+Dat_Ill]
+wasan	wasa[NRoot][=espalda,posterior,exterior][^DB][--]n[NPers][+3.Sg.Poss]
 
 ruphay	rupha[VRoot][=arder][^DB][--]y[NS][+Inf]
 
@@ -46301,6 +46394,8 @@ apachinpoqku	apa[VRoot][=llevar][^DB][--]chi[VDeriv][+Caus][--]m[VDeriv][+Cis_Tr
 
 ,	,[$,]
 
+conventoman	conventoman	+?
+
 pongueajeta	pongueaje[NRootES][^DB][--]ta[Cas][+Acc]
 
 padrekunata	padre[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc]
@@ -46312,6 +46407,8 @@ pasananpaq	pasa[VRootES][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][
 .	.[$,]
 
 Kay	Kay[PrnDem]
+
+convento	convento	+?
 
 Santo	Santo[NRootES]
 
@@ -46361,6 +46458,8 @@ barredormanta	barredor[NRootES][^DB][--]manta[Cas][+Abl]
 
 .	.[$,]
 
+Conventopi	convento[NRootES][^DB][--]pi[Cas][+Loc]
+
 pongueajenku	pongueaje[NRootES][^DB][--]nku[NPers][+3.Pl.Poss]
 
 pasaq	pasa[VRootES][^DB][--]q[NS][+Ag]
@@ -46384,6 +46483,8 @@ el	el[SP]
 que	que[SP]
 
 menos	menos[NRoot][=menos]
+
+conventota	conventota	+?
 
 hamuyta	hamu[VRoot][=venir][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
 
@@ -46775,6 +46876,8 @@ Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
 mamay	mama[NRoot][=madre,señora][^DB][--]y[NPers][+1.Sg.Poss]
 
+conventota	conventota	+?
+
 rimaq	rima[VRoot][=hablar][^DB][--]q[NS][+Ag]
 
 hamun	hamu[VRoot][=venir][^DB][--]n[VPers][+3.Sg.Subj]
@@ -46854,6 +46957,8 @@ saqey	saqi[VRoot][=dejar][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 ,	,[$,]
 
 ususiyki	ususi[NRoot][=hija][^DB][--]yki[NPers][+2.Sg.Poss]
+
+conventota	conventota	+?
 
 cocineramanta	cocinera[NRootES][^DB][--]manta[Cas][+Abl]
 
@@ -47079,6 +47184,8 @@ lechemanta	leche[NRootES][^DB][--]manta[Cas][+Abl]
 
 wakinta	waki[NRoot][=parte,otro][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
+conventopi	conventopi	+?
+
 saqeqku	saqi[VRoot][=dejar][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
 
 ,	,[$,]
@@ -47251,7 +47358,7 @@ p'anamuwan	p'ana[VRoot][=golpear][--]mu[VDeriv][+Cis_Trs][^DB][--]wa[VPers][+1.O
 
 Huk	Huk[NRootNUM]
 
-chikan	chikan	chika[NRoot][=mucho,tanto][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
+chikanta	chika[NRoot][=mucho,tanto][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
 kay	kay[PrnDem]
 
@@ -48958,7 +49065,6 @@ suyanku	suya[VRoot][=esperar][^DB][--]nku[VPers][+3.Pl.Subj]
 señoraq	señora[NRootES][^DB][--]q[Cas][+Gen]
 
 hatarimunanta	hata[VRoot][=levantarse][--]ri[VDeriv][+Inch][--]mu[VDeriv][+Cis_Trs][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
-
 
 .	.[$,]
 
@@ -52454,6 +52560,8 @@ aswan	aswan[NRoot][=más,mucho]
 
 karuman	karu[NRoot][=lejos][^DB][--]man[Cas][+Dat_Ill]
 
+astakunanpaq	asta[VRoot][=transportar,arrear][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]paq[Cas][+Ben]
+
 .	.[$,]
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
@@ -53210,6 +53318,8 @@ callen	calle[NRootES][^DB][--]n[NPers][+3.Sg.Poss]
 
 reqseqllapas	riqsi[VRoot][=conocer][^DB][--]q[NS][+Ag][^DB][--]lla[Amb][+Lim_Aff][^DB][--]pas[Amb][+Add]
 
+haykuyoqqa	hayku[NRoot][=boca][^DB][--]yuq[NDeriv][+Poss][^DB][--]qa[Amb][+Top]
+
 .	.[$,]
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
@@ -53875,8 +53985,6 @@ thallarayashaqta	thalla[VRoot][=tenderse][--]raya[VDeriv][+Perdur][^DB][--]sha[A
 Inti	Inti[NRoot][=sol]
 
 Taytaman	Tayta[NRoot][=padre][^DB][--]man[Cas][+Dat_Ill]
-
-
 
 wasanpamanta	wasa[NRoot][=espalda,posterior,exterior][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pa[Cas][+Gen][^DB][--]manta[Cas][+Abl]
 
@@ -55566,6 +55674,8 @@ llama	llama[NRoot][=llama]
 
 aycha	aycha[NRoot][=cuerpo,carne]
 
+t'inpu	t'impu[NRoot][=sancochado]
+
 karan	ka[VRoot][=ser][^DB][--]ra[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$,]
@@ -55612,7 +55722,7 @@ hamurani	hamu[VRoot][=venir][^DB][--]ra[Tns][+NPst][--]ni[VPers][+1.Sg.Subj]
 
 chay	chay[PrnDem]
 
-neqkunakamallan niq[NRoot][=apróximado][--]kuna[Num][+Pl][--]kama[Cas][+Term][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[Amb][+DirE]
+neqkunakamallan	niq[NRoot][=apróximado][--]kuna[Num][+Pl][--]kama[Cas][+Term][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[Amb][+DirE]
 
 porque	porque[NRootES]
 
@@ -55968,6 +56078,8 @@ bañarun	baña[VRootES][--]ru[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Subj]
 
 Wawataqmi	Wawa[NRoot][=niño][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
 
+mancharikunapaqraq	mancha[VRoot][=tener_miedo][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]paq[Cas][+Ben][^DB][--]raq[Amb][+Cont]
+
 huch'uychalla	huch'uy[NRoot][=pequeño][--]cha[NDeriv][+Dim][^DB][--]lla[Amb][+Lim_Aff]
 
 karan	ka[VRoot][=ser][^DB][--]ra[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
@@ -56109,8 +56221,6 @@ Icha	Icha[Part_Contr]
 wañurunchu	wañu[VRoot][=morir][--]ru[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]chu[Amb][+Intr_Neg]
 
 ?	?[$,]
-
-,	,[$,]
 
 -	-[$-]
 
@@ -57166,6 +57276,8 @@ wasita	wasi[NRoot][=casa][^DB][--]ta[Cas][+Acc]
 
 conseguimuni	consegui[VRootES][--]mu[VDeriv][+Cis_Trs][^DB][--]ni[VPers][+1.Sg.Subj]
 
+empleakunaypaq	empleakunaypaq	+?
+
 .	.[$,]
 
 Chhayna	Chhayna[PrnDem]
@@ -57952,6 +58064,8 @@ kay	kay[PrnDem]
 
 qhariman	qhari[NRoot][=macho][^DB][--]man[Cas][+Dat_Ill]
 
+churakunaypaq	chura[VRoot][=poner][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben]
+
 !	![$,]
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
@@ -58535,6 +58649,8 @@ qosaykiku	qu[VRoot][=dar][^DB][--]sqaykiku[VPers][+1.Pl.Excl.Subj_2.Sg.Obj.Fut]
 ladoykupi	lado[NRootES][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]pi[Cas][+Loc]
 
 mikhunayki	mikhu[VRoot][=comer][^DB][--]na[NS][+Obl][^DB][--]yki[NPers][+2.Sg.Poss]
+
+qhatukunaykipaq	qhatu[VRoot][=negociar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]yki[NPers][+2.Sg.Poss][^DB][--]paq[Cas][+Ben]
 
 .	.[$,]
 
@@ -60494,6 +60610,8 @@ chaskimusunchis	chaski[VRoot][=recibir,aceptar][--]mu[VDeriv][+Cis_Trs][^DB][--]
 
 Khaynatan	Khayna[PrnDem][^DB][--]ta[Cas][+Acc][^DB][--]n[Amb][+DirE]
 
+casarakunaykupaqqa	casa[VRootES][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
+
 yuyayurayku	yuya[VRoot][=recordar,pensar][--]yu[VDeriv][+Aff][^DB][--]ra[Tns][+NPst][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$,]
@@ -60617,7 +60735,6 @@ llank'ashani	llank'a[VRoot][=trabajar][^DB][--]sha[Asp][+Prog][--]ni[VPers][+1.S
 chaypipas	chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+Add]
 
 kallantaqmi	ka[VRoot][=ser][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
-
 
 fijo	fijo[NRootES]
 
@@ -60852,6 +60969,8 @@ horqoyta	hurqu[VRoot][=sacar][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
 munaqtiymi	muna[VRoot][=querer][^DB][--]qti[NS][+DS][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]mi[Amb][+DirE]
 
 mana	mana[Part_Neg]
+
+convento	convento	+?
 
 padrekuna	padre[NRootES][--]kuna[Num][+Pl]
 
