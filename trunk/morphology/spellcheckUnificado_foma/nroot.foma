@@ -126,7 +126,7 @@ define NRootQin [
 |  "=trabajo_comunal" : {ayni}
 |  "=arma" : {ayñi}
 |  "=borroso,opaco" : {aypu}
-|  "=huída" : {ayqi}
+|  "=huida" : {ayqi}
 |  "=ola" : {ayti}
 |  "=cactéa" : {ayrampu}
 |  "=adúltero" : {ayu}
@@ -307,7 +307,7 @@ define NRootQin [
 |  "=frazada_tejida" : {chusi}
 |  "=lechuza" : {ch'usiq}
 |  "=pata" : {chuska}
-|  "=deseado,malhumorado" : {chusku}
+|  "=malhumorado" : {chusku}
 |  "=bolsa" : {ch'uspa}
 |  "=mosca" : {ch'uspi}
 |  "=mosquito" : {ch'uspicha}
@@ -344,7 +344,7 @@ define NRootQin [
 |  "=boquiabierto,tonto" : {hanrapa}
 |  "=corral" : {hap'aka}
 |  "=interesado" : {hap'i}
-|  "=eructo" : {hapna}
+|  "=eructo" : {hap'a}
 |  "=porción_de_una_mano" : {hapt'a}
 |  "=deuda" : {haqa}
 |  "=abstracto" : {haqi}
@@ -659,7 +659,6 @@ define NRootQin [
 |  "=músculo" : {llapllan}
 | "=delgado" : {llapsa}
 |  "=lengua_de_vaca" : {llaqi}
-| "=delicado" : {llaqlla}
 |  "=bronce" : {llaqsa}
 |  "=pueblo" : {llaqta}
 |  "=poblano" : {llaqtaku}

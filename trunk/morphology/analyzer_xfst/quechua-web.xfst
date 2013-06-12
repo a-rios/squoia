@@ -599,6 +599,15 @@ define HATUN HATUN1 .o. HATUN2 .o. HATUN3 ;
 # kacha- should not be analyzed as ka (copula) and -cha (Vdim)!
 define KACHA [~$[ {ka}%["VRoot"%] %["=ser"%] %["--"%] {cha}]];
 
+# riku- should not be analyzed es ri -ku ('irse', this would be ripu-)
+define RIKU [~$[ {ri}%["VRoot"%] %["=ir"%] %["^DB"%] %["--"%]  {ku}]];
+
+# paqari- should not be analyzed es paqa -ri 
+define PAQARI [~$[ {paqa}%["VRoot"%] %["=lavar"%] %["--"%] {ri}]];
+
+# tukuy- should not be analyzed es tuku -y 
+define TUKUY [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y}]];
+
 # forbid -llalla analized as +Lim+Lim -> if a word contains a sequence -llalla, the first -lla is probably part of the root
 # consider chukllalla -> good analysis: chuklla(=choza)-lla(+Lim), bad analysis: chuk(=silencio)-lla(+Lim)-lla(+Lim)
 define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];

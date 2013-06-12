@@ -1,11 +1,6 @@
 # set char-encoding utf-8
 # -*- encoding: utf-8 -*-
 
-       define removeDB ["" <- "[" "^DB" "]"];
-
-      #Morpheme-Boundary
-       define MB [[ "[""--""]"] :0];
-
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
@@ -36,26 +31,28 @@
       # Ersetze optional u durch o und i durch e, falls in Umgebung von q #
       #-------------------------------------------------------------------#
 
-      define Allophone1 [ u (->) o||  _ (s|t|n|r|l) q, q (s|t|n|r|h|l|') _  , _ (s|t|n|r|l){cc}, {cc}(s|t|n|r|h|l|') _ ] .o. [i (->) e || _ (s|t|n|r|h|l) q, q (s|t|n|r|l|ll|h|') _ , _ (s|t|n|r|h|l){cc}, {cc}(s|t|n|r|l|ll|') _  ];
+      define Allophone1 [ u (->) o||  _ ?* q, q ?* _  , _  ?* {cc}, {cc} ?* _ ] .o. [i (->) e || _ ?* q, q ?* _ , _ ?* {cc}, {cc} ?* _  ];
 
+      
+      # apply only to roots, not to suffixes!
       #define Allophone2 [ m (->) n || _ p];
-      define Allophone2 [ m (->) n || \"@MPA" _ p ];
+      define Allophone2 [ m (->) n ||  _ p ];
       define Allophone3 [ {ll} (->) l || _ q];
 
-      define Allophone [Allophone1 .o. Allophone2 .o. Allophone3] ;
+      define Allophone [ Allophone2 .o. Allophone3] ;
 
        #---------------------------#
        # alternative orthographies #
        #---------------------------#
 
-       define Orthography1 [ {q} (->) {cc}];
-       define Orthography2 [ {wi} (->) {hui}];
-       define Orthography3 [ {wa} (->) {hua}];
-       define Orthography4 [ {wa} (->) {gua}];
+       define Orthography1 [ {q} (->) {cc}, {Q} (->) {Cc}];
+       define Orthography2 [ {wi} (->) {hui}, {Wi} (->) {Hui}  ];
+       define Orthography3 [ {wa} (->) {hua}, {Wa} (->) {Hua} ];
+       define Orthography4 [ {wa} (->) {gua}, {Wa} (->) {Gua}];
        define Orthography5 [ {w} (->) {u} || {a}_ ];
-       define Orthography6 [ {h} (->) {j}];
+       define Orthography6 [ {h} (->) {j}, {H} (->) {J} ];
        define Orthography7 [ {k} (->) {j} || Vowel_];
-       define Orthography8 [ {ch} (->) {ts}];
+       define Orthography8 [ {ch} (->) {ts}, {Ch} (->) {Ts} ];
        define Orthography9 [ {ph} (->) {f}];
        define Orthography10 [ {w} (->) {u} || Vowel _ ];
        define Orthography11 [ {q} (->) {j} || Vowel_];
@@ -63,7 +60,7 @@
        
        define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11];
 
-       define QuechuaOrtho Allophone .o. Orthography;
+       define QuechuaOrtho Allophone1 .o. Orthography;
 
        # apply after Cleanup
        define Accent [ a (->) á, u (->) ú , i (->) í, e (->) é, o (->) ó];
@@ -164,8 +161,8 @@
        #        #
        ##########
 
-       define VROOT @re"vroot.regex";
-       define VRootTrans @re"vroot.regex" ;
+       define VROOT @re"vroot.regex" .o. Allophone;
+       define VRootTrans @re"vroot.regex" .o. Allophone;
 
 
        define V=V=1 @re"v-v-1.regex" ;
@@ -192,9 +189,9 @@
 
        define NRootNUM  @re"nroot-num.regex"  ;
        define NRootINDEF @re"nroot-indef-with-translations.regex" ;
-       define NRootCMP @re"nroot.regex" ;
+       define NRootCMP @re"nroot.regex" .o. Allophone;
        
-       define NROOT [NRootQ|NRootNUM|NRootINDEF];
+       define NROOT [NRootQ|NRootNUM|NRootINDEF] .o. Allophone;
 
        define N=N=1 @re"n-n-1.regex" ;
        define N=N=2  @re"n-n-2.regex" ;
@@ -306,7 +303,7 @@ define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
        #-------------------#
        # personal pronouns #
        #-------------------#
-       define PrnPers @re"prnpers.regex";
+       define PrnPers @re"prnpers.regex" .o. Allophone;
        define PrnPersInfl [PrnPers  (HonAff) (N=N=1) (HonAff) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} (N=N=7)^{0,2}];
 
        #------------------------#
@@ -335,8 +332,8 @@ define Prn [PrnPersInfl|PrnDemInfl|PrnInterrogInfl] ;
        # normal (nominal) and      #
        # verbalizable particles    #
        #---------------------------#
-       define Particle @re"particle.regex";
-       define verbalizableParticle @re"particle-verb.regex";
+       define Particle @re"particle.regex" .o. Allophone;
+       define verbalizableParticle @re"particle-verb.regex" .o. Allophone;
 
        define ParticleBasic [verbalizableParticle (HonAff)(N=N=5)(HonAff)(N=N=6)^{0,2} (N=N=7)]; # zb. manantin
 
@@ -384,12 +381,12 @@ define Particles [[Particle|ParticleBasic|ParticleVerb|ParticleVerbNoun]] ;
        ###########
 
        define Digits [1:1|2:2|3:3|4:4|5:5|6:6|7:7|8:8|9:9|%0:%0];
-       define Nbr  Digits+ "[" "CARD" "]" ;
+       define Nbr  Digits+ ;
 
        #-----------------#
        # Ordinal numbers #
        #-----------------#
-       define Ord @re"numord.regex";
+       define Ord @re"numord.regex" .o. Allophone;
        define WordNbr NRootNUM+;
        define OrdNbr [(Nbr|WordNbr) Ord];
 
@@ -399,6 +396,20 @@ define Particles [[Particle|ParticleBasic|ParticleVerb|ParticleVerbNoun]] ;
 ################################################################################
 
   define SpecialWord [Letters|Punctuation|Number];
+  
+  
+  define QTI [~$[q"AMBIGUO"{ti}]];
+  define PAQ [~$[{paq}"AMBIGUO"]];
+  define YUQ [~$[{yuq}"AMBIGUO"]];
+  define TAQ [~$[{taq}"AMBIGUO"]];
+  define TAP [~$[{tap}"AMBIGUO"]];
+  define CHUSAQ [~$[{ch'usap}"AMBIGUO"]];
+  define NAWPAQ [~$[{ñawpap}"AMBIGUO"]];
+  define ALLIN [~$[{allim}"AMBIGUO"]];
+  define GENACC [~$[p"AMBIGUO"{ta}]];
+  define WAN [~$[{wam}"AMBIGUO"]];
+  
+  define FeatRestr [QTI .o. PAQ .o. YUQ .o. TAQ .o. TAP .o. CHUSAQ .o. NAWPAQ .o. ALLIN .o. GENACC .o. WAN];
 
 ######################################################################################
 
@@ -409,9 +420,7 @@ define HAKU  {haku} : {haku};
 ######################################################################################
 
 define Wort  [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. AmbiRules .o. UpperCase;
-define Wort2 Cleanup2 .o. [Wort|SpecialWord] .o. Allophone .o. QuechuaOrtho .o. Cleanup1 ;
+read regex FeatRestr .o. Cleanup2 .o. [Wort|SpecialWord] .o. Allophone .o. QuechuaOrtho  .o. Accent .o. Cleanup1 ;
 #define Wort2  [Wort|SpecialWord] .o. Allophone  ;
-
-read regex removeDB .o. Wort2;
 
 save stack normalizer.fst

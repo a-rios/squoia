@@ -9,5 +9,5 @@
 |  {lu}  : {lu}
 |  {na}  : {na}
 |  [{q}"AMBIGUO"] : {q}
-|  {mpa}  : {mpa}
+|  {mpa}  : ["@MPA"{mpa}]
 ;

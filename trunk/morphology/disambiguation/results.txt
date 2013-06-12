@@ -1,0 +1,47 @@
+gregorio v1 c2:
+
+*************************************************
+
+   total sentences: 71
+   total words: 1015
+   correct class: 79.80
+   wrong class: 20.20
+   wrong class, xfst failures not considered: 2.56
+
+*************************************************
+
+gregorio v1 c2 simple:
+
+*************************************************
+
+   total sentences: 71
+   total words: 1015
+   correct class: 79.80
+   wrong class: 20.20
+   wrong class, xfst failures not considered: 2.56
+
+*************************************************
+
+gregorio v2 c2:
+
+*************************************************
+
+   total sentences: 71
+   total words: 1015
+   correct class: 80.30
+   wrong class: 19.70
+   wrong class, xfst failures not considered: 2.07
+
+*************************************************
+
+gregorio v2 c2 simple:
+
+*************************************************
+
+   total sentences: 71
+   total words: 1015
+   correct class: 79.61
+   wrong class: 20.39
+   wrong class, xfst failures not considered: 2.76
+
+*************************************************
