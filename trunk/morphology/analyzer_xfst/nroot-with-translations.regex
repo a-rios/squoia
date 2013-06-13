@@ -674,7 +674,6 @@
 | [ {iltacha} "[" "NRoot" "]" "["  "=pañal" "]" ] : {iltacha}
 | [ {ima} "[" "NRoot" "]" "["  "=cosa" "]" ] : {ima}
 | [ {imasi} "[" "NRoot" "]" "["  "=adivinanza" "]" ] : {imasi}
-| [ {imas} "[" "NRoot" "]" "["  "=conjetura" "]" ] : {imas}
 | [ {imaymana} "[" "NRoot" "]" "["  "=toda_clase_de,todos" "]" ] : {imaymana}
 | [ {inan} "[" "NRoot" "]" "["  "=antes" "]" ] : {inan}
 | [ {inap} "[" "NRoot" "]" "["  "=arco_iris" "]" ] : {inap}
@@ -758,7 +757,6 @@
 | [ {kallwa} "[" "NRoot" "]" "["  "=golondrina" "]" ] : {kallwa}
 | [ {kamachi} "[" "NRoot" "]" "["  "=ley" "]" ] : {kamachi}
 | [ {k'ama} "[" "NRoot" "]" "["  "=muela" "]" ] : {k'ama}
-| [ {kama} "[" "NRoot" "]" "["  "=muela" "]" ] : {kama}
 | [ {kamari} "[" "NRoot" "]" "["  "=regalo" "]" ] : {kamari}
 | [ {k'amatu} "[" "NRoot" "]" "["  "=especie_de_arbusto" "]" ] : {k'amatu}
 | [ {kamayuq} "[" "NRoot" "]" "["  "=especialista" "]" ] : {kamayuq}
@@ -1115,7 +1113,6 @@
 | [ {llanthu} "[" "NRoot" "]" "["  "=sombra" "]" ] : {llanthu}
 | [ {llantu} "[" "NRoot" "]" "["  "=sombra" "]" ] : {llantu}
 | [ {llañu} "[" "NRoot" "]" "["  "=delgado" "]" ] : {llañu}
-| [ {llapacha} "[" "NRoot" "]" "["  "=trapo" "]" ] : {llapacha}
 | [ {llapha} "[" "NRoot" "]" "["  "=amplio" "]" ] : {llapha}
 | [ {llaphi} "[" "NRoot" "]" "["  "=tibio" "]" ] : {llaphi}
 | [ {llap'i} "[" "NRoot" "]" "["  "=pesadilla" "]" ] : {llap'i}
@@ -1124,7 +1121,6 @@
 | [ {llapta} "[" "NRoot" "]" "["  "=mañoso,astuto" "]" ] : {llapta}
 | [ {llaqi} "[" "NRoot" "]" "["  "=lengua_de_vaca" "]" ] : {llaqi}
 | [ {llaqsa} "[" "NRoot" "]" "["  "=bronce" "]" ] : {llaqsa}
-| [ {llaqtaku} "[" "NRoot" "]" "["  "=poblano" "]" ] : {llaqtaku}
 | [ {llaqta} "[" "NRoot" "]" "["  "=pueblo" "]" ] : {llaqta}
 | [ {llaqtu} "[" "NRoot" "]" "["  "=desdentado" "]" ] : {llaqtu}
 | [ {llaqu} "[" "NRoot" "]" "["  "=desafilado" "]" ] : {llaqu}
@@ -2290,7 +2286,7 @@
 | [ {unku} "[" "NRoot" "]" "["  "=prenda" "]" ] : {unku}
 | [ {unqu} "[" "NRoot" "]" "["  "=enfermo" "]" ] : {unqu}
 | [ {untu} "[" "NRoot" "]" "["  "=manteca" "]" ] : {untu}
-| [ {unu} "[" "NRoot" "]" "["  "=agua" "]" ] : {unu}
+| [ {unu} "[" "NRoot" "]" "["  "=agua,millón" "]" ] : {unu}
 | [ {upa} "[" "NRoot" "]" "["  "=tonto,sordo" "]" ] : {upa}
 | [ {upi} "[" "NRoot" "]" "["  "=chicha" "]" ] : {upi}
 | [ {uqa} "[" "NRoot" "]" "["  "=oca" "]" ] : {uqa}

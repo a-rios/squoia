@@ -1781,9 +1781,8 @@
 | [ {yalli} "[" "VRoot" "]" "[" "=exceder" "]" ] :  {yalli}
 | [ {yallu} "[" "VRoot" "]" "[" "=sancochar" "]" ] :  {yallu}
 | [ {yamki} "[" "VRoot" "]" "[" "=cambiar" "]" ] :  {yamki}
-| [ {yanapa} "[" "VRoot" "]" "[" "=ayudar" "]" ] :  {yanapa}
 | [ {yaña} "[" "VRoot" "]" "[" "=experimentar" "]" ] :  {yaña}
-| [ {yana} "[" "VRoot" "]" "[" "=servir" "]" "@YANA" ] :  {yana}
+| [ {yana} "[" "VRoot" "]" "[" "=servir,ayudar" "]" ] :  {yana}
 | [ {yanki} "[" "VRoot" "]" "[" "=intercambiar" "]" ] :  {yanki}
 | [ {yanu} "[" "VRoot" "]" "[" "=cocinar" "]" ] :  {yanu}
 | [ {yapa} "[" "VRoot" "]" "[" "=añadir" "]" ] :  {yapa}

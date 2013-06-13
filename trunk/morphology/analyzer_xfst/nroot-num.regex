@@ -23,6 +23,6 @@
 | [ {chunka} "[""NRootNUM"  "]" ] :   {chunka}
 | [ {pachak} "[""NRootNUM"  "]" ] :   {pachak}
 | [ {pachaq} "[""NRootNUM"  "]" ] :   {pachaq}
-| [ {unu} "[""NRootNUM"  "]" ] :   {unu}
+#| [ {unu} "[""NRootNUM"  "]" ] :   {unu}
 | [ {waranqa} "[""NRootNUM"  "]" ] :   {waranqa}
 ;
