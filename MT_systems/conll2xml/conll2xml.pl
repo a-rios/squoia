@@ -1479,7 +1479,7 @@ sub isCongruent{
 				$nounNumber = 'P';
 			}
 			#  exception with 'parte' -> 'una buena parte de ellos radican en países pobres..' -> ignore number
-			elsif( $subjNode->getAttribute('lem') =~ /parte|n.mero/)
+			elsif( $subjNode->getAttribute('lem') =~ /parte|n.mero/ || $subjNode->exists('child::NODE[@lem="%"]') || $subjNode->exists('child::CHUNK/NODE[@lem="%"]'))
 			{
 				return 1;
 			}

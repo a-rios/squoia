@@ -31,6 +31,7 @@ LEXICON:
 - participles vs. adjectives: e.g. adinerado
   (done -> add paradigm Noun to all Particple-N/V forms)
   -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong)
+- construir + Noun -> -cha
 
 SUBORDINATED CLAUSES:
 (- if verb chunk contains only participle: use -sqa form)
@@ -47,6 +48,8 @@ PREPOSITIONS/ PREP-OBJECTS:
 
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
+
+- (de) color + 'color' es -> delete color (casa de color azul -> anqas wasi) 
 
 GENARATION
 - generate synonyms
