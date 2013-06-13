@@ -71,6 +71,13 @@ se	sie		k	!(xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding-s
 #reflexive
 se	sie_PRF		k	xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"3")]]]]}
 
+##############
+# Adjectives #
+##############
+
+político	Schwieger-	d	!(xpath{//NODE[parent::CHUNK[preceding-sibling::NODE[@slem="familia"]]]})
+
+
 #########
 # Nouns #
 #########
@@ -105,6 +112,10 @@ papa	Papst		k	my.smi=/NCM/
 
 participante	Teilnehmerin	k	child.smi=/D..F/
 participante	Teilnehmer	k	child.smi=/D..M/
+
+# TODO: all ES nouns ending with "ista"
+accionista	Aktionärin	k	child.smi=/D..F/
+accionista	Aktionär	k	child.smi=/D..M/
 
 periodista	Journalistin	k	child.smi=/D..F/
 periodista	Journalist	k	child.smi=/D..M/

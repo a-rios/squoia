@@ -650,13 +650,13 @@ print STDERR "def type: $deftype\tgender: $gen\tnumber $num\n";
 	# Conjunctions: KON, KOUS
 	# Prepositions: APPR; TODO: what about the contraction form APPRART?
 	# Pronouns: PWAV
-	# Punctuation signs: $. and $,
+	# Punctuation signs: $. and $, and $(
 	# Separable verb prefix: PTKVZ
 	# ADVerbs
 	elsif ($pos =~ /ADV/) {		# TODO map the pos of closed classes from molif to smor? do we really need this?
 		$morphStr = &genADV($format,$lem);
 	}
-	elsif ($pos =~/ADV|KON|KOUS|APPR|\$\.|\$,|PTKVZ|PWAV/) {
+	elsif ($pos =~/ADV|KON|KOUS|APPR|\$\.|\$,|\$\(|PTKVZ|PWAV/) {
 		#already lemma_pos
 	}
 	# Dates: [W] (not CARD nor NN because dates are automatically mapped to [W], the lemma written with digits and placeholders)
