@@ -6,9 +6,7 @@ binmode STDIN, ':utf8';
 binmode STDERR, ':utf8';
 binmode STDOUT, ':utf8';
 use strict;
-my @words;
-my $newWord=1;
-my $index=0;
+
 
 
 # check if paramenter was given, either:
@@ -28,6 +26,10 @@ unless($mode eq '-test' or $mode eq '-train' or !$mode){
   	print STDERR "-test/-train is optional, default is -test\n";	
   	exit;
 }
+
+my @words;
+my $newWord=1;
+my $index=0;
 
 while(<STDIN>){
 	
@@ -52,15 +54,15 @@ while(<STDIN>){
 		
 		my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
 		# simplify tags
-#		for (my $i=0;$i<scalar(@morphtags);$i++){
-#			my $tag = @morphtags[$i];
-#			if($tag =~ /Subj/){
-#				@morphtags[$i] = "+Subj"
-#			}
-#			if($tag =~ /Poss/){
-#				@morphtags[$i] = "+Poss"
-#			}
-#		}
+		for (my $i=0;$i<scalar(@morphtags);$i++){
+			my $tag = @morphtags[$i];
+			if($tag =~ /Subj/){
+				@morphtags[$i] = "+Subj"
+			}
+			if($tag =~ /Poss/){
+				@morphtags[$i] = "+Poss"
+			}
+		}
 		
 		my $allmorphs='';
 		foreach my $morph (@morphtags){
@@ -80,7 +82,7 @@ while(<STDIN>){
 #       PrnDem PrnInterr PrnPers 
 #       SP 
 #       VRoot VRootES 
-# TODO: satzgrenzen
+
        
 		if($newWord)
 		{
@@ -100,6 +102,8 @@ while(<STDIN>){
 	
 }
 
+my $lastlineEmpty=0;
+
 foreach my $word (@words){
 	my $analyses = @$word[1];
 	#my $analysis = @$analyses[0];
@@ -109,14 +113,17 @@ foreach my $word (@words){
 	
 	my $form = @$word[0];
 	
-	if($form eq '#EOS'){
+	if($form eq '#EOS' ){
+		unless($lastlineEmpty == 1){
 		print "\n";
+		$lastlineEmpty =1;
 		next;
+		}
 	}
 	else
 	{
 		print "$form\t";
-	
+		$lastlineEmpty =0;
 		# uppercase/lowercase?
 		#punctuation (punctuation has never more than one analysis, so we can just take @$analyses[0])
 		if(@$analyses[0]->{'pos'} eq '$'){
@@ -150,32 +157,32 @@ foreach my $word (@words){
 		#possible morph tags, variant 1: take only those morph tags into account that are present in ALL analyses
 		my $printedmorphs='';
 		my $nbrOfMorph =0;
-#		my $allmorphs;
-#		foreach my $analysis (@$analyses){
-#			my $morphsref = $analysis->{'morph'};
-#			foreach my $morph (@$morphsref){
-#				if(&isContainedInAllAnalyses($analyses,$morph) ){
-#					unless($printedmorphs =~ /\Q$morph\E/){
-#					print "$morph\t";
-#					$printedmorphs = $printedmorphs.$morph;
-#					$nbrOfMorph++;
-#					}
-#				}
-#			}	
-#		}	
-	
-		#possible morph tags, variant 2: take ALL morph tags into account 
+		my $allmorphs;
 		foreach my $analysis (@$analyses){
 			my $morphsref = $analysis->{'morph'};
-			#print $morphsref;
 			foreach my $morph (@$morphsref){
-			unless($printedmorphs =~ /\Q$morph\E/){
-			print "$morph\t";
-				$printedmorphs = $printedmorphs.$morph;
-				$nbrOfMorph++;
+				if(&isContainedInAllAnalyses($analyses,$morph) ){
+					unless($printedmorphs =~ /\Q$morph\E/){
+					print "$morph\t";
+					$printedmorphs = $printedmorphs.$morph;
+					$nbrOfMorph++;
+					}
 				}
-			}
-		}
+			}	
+		}	
+	
+		#possible morph tags, variant 2: take ALL morph tags into account 
+#		foreach my $analysis (@$analyses){
+#			my $morphsref = $analysis->{'morph'};
+#			#print $morphsref;
+#			foreach my $morph (@$morphsref){
+#			unless($printedmorphs =~ /\Q$morph\E/){
+#			print "$morph\t";
+#				$printedmorphs = $printedmorphs.$morph;
+#				$nbrOfMorph++;
+#				}
+#			}
+#		}
 		while($nbrOfMorph<10){
 			print "ZZZ\t";
 			$nbrOfMorph++;
