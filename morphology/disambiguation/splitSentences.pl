@@ -20,7 +20,9 @@ while(<>){
        # print $splitter->split($text);
         my @sentences = $splitter->split_array($text);
         foreach my $s (@sentences){
-        	print $s." #EOS\n";
+        	unless($s =~ /^$/){
+        		print $s." #EOS\n";
+        	}
         }
         
         
