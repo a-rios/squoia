@@ -132,6 +132,8 @@ my.cas=/./&&my.pos=/APPR/	cas		my.type=/PP/			cas			up		overwrite
 # Articles/Determiners
 # delete article where semantic mark [-Art] set
 my.pos=/ART/		delete		my.sem=[-Art]		yes		down		overwrite
+# delete article in percentage: el 80 % => (deleted) 80 %
+my.pos=/ART/		delete		xpath{//CHUNK[CHUNK/NODE[@slem="%"]]}		yes	down	overwrite
 
 # head NN with neutral number gets the information from determiner
 # TODO: masc; only direct transfer to the chunk?
