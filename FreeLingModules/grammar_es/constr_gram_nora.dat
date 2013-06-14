@@ -76,7 +76,7 @@ SustInicial = <informe> <total> <oficial>;
 % Conjunto de palabras que pueden ser sustantivos o adjetivos. Creado para aplicar la regla L013: Cuando el sustantivo que va antes de cualquier SustAdj1 no tiene probabilidad 1, esta palabra SustAdj1 es etiquetada como sustantivo (NC). Esta regla trata de corregir ese error para que estas palabras SustAdj1 sean etiquetadas correctamente como adjetivos (AQ).
 
 SustAdj1 = (financieros);
-SustAdj1 = <local> <ciudadano> <directivo> <complejo> <ruso>;
+SustAdj1b = <local> <ciudadano> <directivo> <complejo> <ruso>;
 
 
 % Conjunto de palabras que pueden ser sustantivos o adjetivos. Creado para aplicar la regla L014: Cuando delante tienen un sustantivo, entonces ejercen como adjetivos.
@@ -526,7 +526,8 @@ CONSTRAINTS
 
 % REGLA L002
 % "cuando cocina Miguel, la casa huele de maravilla" -> "cocina" es verbo, no sust.
-10.0 VMIP*
+%10.0 VMIP*
+12.0 VMIP*
     (0 NCFS*(cocina))
     (-1 C*);
 
@@ -536,7 +537,8 @@ CONSTRAINTS
 % "¿qué cocinas hoy?" -> "cocinas" es verbo (indicativo), no sust.
 % "haz lo que quieras" -> "haz" es verbo (imperativo), no sust.
 % "me gustan las papas con mojo" -> "mojo" es sust., no verbo.
-12.5 VM*
+%14.0 VM*
+14.0 VM*
     (0 NC*)
     (not -1 D* or A* or S*);
 
@@ -546,7 +548,8 @@ CONSTRAINTS
 % "los cocina muy ricos" (los macarrones)
 % "los oigo muy bien" (los tambores)
 % Antes de verbo, el determinante artículo (DA) no es determinante, sino pronombre personal (PP).
-15.0 PP*
+%15.0 PP*
+20.0 PP*
     (0 DA*)
     (1 V*);
 
@@ -614,8 +617,9 @@ CONSTRAINTS
 
 % REGLA L011
 % "Los expertos evaluaron un total de 37 proyectos de la Academia." -> "total" aquí (después de un determinante) es sustantivo, no adjetivo.
-15.0 NC*
-    (0 AQ*)
+%15.0 NC*
+37.0 NC*
+    (0 AQ*<total>)
     (-1 D*);
 
 
@@ -630,14 +634,25 @@ CONSTRAINTS
 
 % REGLA L013
 % "Se quiere impulsar la educación sobre temas financieros." -> Cuando el sustantivo que va antes de "financieros" no tiene probabilidad 1, "financieros" (en plural!) es etiquetado como sustantivo. Pasa lo mismo con todas las palabras contenidas en el conjunto SustAdj1 definido más arriba.
+%11.0 AQ*
 11.0 AQ*
     (0 {SustAdj1})
     (-1 NC*);
+
+11.0 AQ*
+    (0 {SustAdj1b})
+    (-1 NC*);
+
 
 % Variante (por si enmedio hay un adverbio, p.ej. "Este es un caso altamente complejo."):
 11.0 AQ*
     (0 {SustAdj1})
     (-2 NC*);
+
+11.0 AQ*
+    (0 {SustAdj1b})
+    (-2 NC*);
+
 
 
 % REGLA L014
@@ -679,9 +694,10 @@ CONSTRAINTS
 % REGLA L017
 % "Meta del taller fue el desarrollo de personal en la emisora [...]" -> "meta" es sustantivo, no verbo.
 % Regla específica para este sustantivo, pero es probable que haya más casos...
-3.5 NC*
+%3.5 NC*
+8.0 NC*
     (0 (meta))
-    (1 <de>);
+    (1 <del>);
 
 
 % REGLA L018
@@ -696,13 +712,18 @@ CONSTRAINTS
 
 % REGLA L019
 % Le damos un poco más de peso a "noticia" como sustantivo, para que frases como "Practicamos diferentes géneros de periodismo: entrevista, noticia, reportaje..." sean analizadas correctamente.
-7.5 NC*
+%7.5 NC*
+14.0 NC*
     (0 (noticia) or (noticias));
+
+7.0 NC*
+    (0 (entrevista) or (entrevistas));
 
 
 % REGLA L020
 % "Tres preguntas a Jens-Uwe Rahe, encargado de proyecto en la Región Cercano Oriente." -> "encargado" es sustantivo, no verbo.
-18.0 NC*
+%18.0 NC*
+23.0 NC*
     (0 VM*(encargado))
     (1 <de>)
     (not -1 <estar>);
@@ -774,10 +795,10 @@ CONSTRAINTS
 % El participio de un verbo, colocado detrás de un sustantivo y una coma, es un adjetivo.
 % "El participio de un verbo, colocado detrás de un sustantivo..." -> "colocado" es adjetivo, no verbo.
 % "El Directorio Ejecutivo, integrado por 24 titulares, está encargado de dirigir la organización." -> "integrado" es adjetivo, no verbo.
-11.0 AQ*
-    (0 VMP*)
-    (-1 Fc or Fpa or Fe or Fra)
-    (-2 N*);
+%11.0 AQ*
+%    (0 VMP*)
+%    (-1 Fc or Fpa or Fe or Fra)
+%    (-2 N*);
 
 
 % REGLA L027
@@ -843,16 +864,15 @@ CONSTRAINTS
 % L028 F
 % "¿Dónde están los aseos?" -> "están" es verbo principal, no auxiliar.
 % Esto es así siempre que no hay otro verbo principal en la oración.
-3.0 VM*
+%3.0 VM*
+10.0 VM*
     (0 <estar>)
     (not -1* VM*)
     (not 1* VMI* or VMS*);
-% Nota importante: esta regla funciona perfectamente excepto con la forma verbal "está", que por alguna razón da problemas y requiere un peso de 200 para que actúe. ¿Por qué pasa esto? Ni idea! Tema para estudiar a fondo!
-
 
 % REGLA L029
 % "El perfil de la reforma financiera está claro." -> Cuando antes de un adverbio viene el verbo "estar", entonces no es adv., sino adj.
-1.0 AQ*
+2.0 AQ*
     (0 {AdjAdv})
     (-1 <estar>);
 
