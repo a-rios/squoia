@@ -38,14 +38,22 @@ a		cas=Dat,lem=dazu	xpath{self::NODE[parent::CHUNK[@si="s" and @type="PP" and pa
 # example? 
 #a		mi=+Loc		child.pos=[Zm]							-
 
+
 # verb periphrases with "a"
-# llega a ser imposible => es wird unmoeglich
+#-------------------------
+# llegar A + INF
+	# llega a ser imposible => es wird unmoeglich
 a		delete=yes	chunkparent.type=VP&&parent.slem=/llegar/			-
-# Juan vuelve a comer => Juan isst wieder
+
+# volver A + INF
+	# Juan vuelve a comer => Juan isst wieder
 a		delete=yes	chunkparent.type=VP&&lsibling.slem=/volver/&&lsibling.lem=/wieder/	-
 a		delete=yes	chunkparent.type=VP&&parent.slem=/volver/&&parent.lem=/wieder/	-
-# Juan empieza a comer => Juan faengt an zu essen
-a		lem=zu		chunkparent.type=VP						-
+
+# empezar A + INF
+	# Juan empieza a comer => Juan faengt an zu essen
+	# mark the preposition for deletion, since it is embedded in the finite verb node V.FIN and should be moved with the infinite V.INF node
+a		lem=zu,delete=yes	chunkparent.type=VP						-
 
 
 # = CON =

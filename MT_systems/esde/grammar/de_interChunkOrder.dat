@@ -2,11 +2,16 @@
 
 #only CHUNK
 
-## coordinations
+################
+# Coordination #
+################
 #my.type=CNP	"do nothing, let the chunks, i.e. the NPs appear in the same order
+my.type=/CNP/	xSPEC:my.type=nounSpec, xAP:my.type=/C?AP/, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTNP:xpath{//CHUNK[@type="CNP"]/CHUNK[@type="NP" and count(following-sibling::CHUNK[@type="NP"])=0]}		xSPEC .xAP .head +xCOMA .xCOCONJ +xLASTNP
+
+my.type=/CVP/	xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTVP:xpath{//CHUNK[@type="CVP"]/CHUNK[@type="VP" and count(following-sibling::CHUNK[@type="VP"])=0]}	head +xCOMA .xCOCONJ +xLASTVP
 
 ## Noun and prepositional phrases
-my.type=/CNP|NP/				xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
+my.type=/^NP/				xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
 
 #my.type=PP||my.type=PP-von		xSPEC:my.type=nounSpec,xAP:my.type=/C?AP/,xNP:my.type=/NP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			head .xSPEC .xAP .xNP +xPP .xCOMA +xSREL +xCOMB
 #my.type=PP				xSPEC:my.type=nounSpec,xAP:my.type=AP,xNP:my.type=NP,xPP:my.type=PP		head .xSPEC .xAP .xNP +xPP
