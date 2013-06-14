@@ -1,94 +1,141 @@
-#origNodeConditions										parentChunkAttrVal	targetChunkAttrVal
-#my.pos=/V[AM]FIN/ && parent.pos=/V[VM]/ && chunkparent.type=/VP.*/ && chunkparent.si=top	nodechunk=finVerb	type=finVerb,comment="upgraded node"
+#################
+# NODE TO CHUNK #
+#################
+#	1			2			3
+# origNodeConditions	parentChunkAttrVal	targetChunkAttrVal
 
-#      <CHUNK ref="12" type="VP" si="S">
-#        <NODE ref="12" alloc="" slem="cosechar" smi="VMN0000" sform="cosechar" UpCase="none" lem="ernten" pos="VVINF" mi="Inf">
-#          <NODE ref="7" alloc="" slem="si" smi="CS" sform="si" UpCase="none" lem="wenn" pos="KOUS"/>
-#          <NODE ref="11" alloc="" slem="poder" smi="VMIP3P0" sform="pueden" UpCase="none" lem="können" pos="VMFIN" mi="3.Pl.Pres.Ind">
+# example
+# my.pos=/V[AM]FIN/ && parent.pos=/V[VM]/ && chunkparent.type=/VP.*/ && chunkparent.si=top	nodechunk=finVerb	type=finVerb,comment="upgraded node"
+
+################
+# Coordination #
+################
+
+my.pos=/KON/		coord="yes"	type=coConj
+
+######################
+# Subord Conjunction #
+######################
+	#      <CHUNK ref="12" type="VP" si="S">
+	#        <NODE ref="12" alloc="" slem="cosechar" smi="VMN0000" sform="cosechar" UpCase="none" lem="ernten" pos="VVINF" mi="Inf">
+	#          <NODE ref="7" alloc="" slem="si" smi="CS" sform="si" UpCase="none" lem="wenn" pos="KOUS"/>
+	#          <NODE ref="11" alloc="" slem="poder" smi="VMIP3P0" sform="pueden" UpCase="none" lem="können" pos="VMFIN" mi="3.Pl.Pres.Ind">
+
 my.pos=/KOUS/&& chunkparent.type=/VP/		subord="yes"	type=subConj,comment="subordinating conjunction"
 
-# put embedded node with finite verb into a separate chunk, set (some) attribute(s) of the parent chunk and the target chunk
-# example: the verb phrase with auxiliary and past participle "ha comido":
-# parent:CHUNK(type=VP) > NODE(pos=VVPP sform=comido) > NODE(pos=VAFIN sform=ha)
-# gets transformed into:
-# parent:CHUNK(type=VP) > NODE(pos=VVPP) & parent > target:CHUNK(type=finVerb comment="upgraded node") > NODE(pos=VAFIN)
+###############
+# Finite Verb #
+###############
+	# put embedded node with finite verb into a separate chunk, set (some) attribute(s) of the parent chunk and the target chunk
+	# example: the verb phrase with auxiliary and past participle "ha comido":
+	# parent:CHUNK(type=VP) > NODE(pos=VVPP sform=comido) > NODE(pos=VAFIN sform=ha)
+	# gets transformed into:
+	# parent:CHUNK(type=VP) > NODE(pos=VVPP) & parent > target:CHUNK(type=finVerb comment="upgraded node") > NODE(pos=VAFIN)
+
 my.pos=/V[AM]FIN/ && parent.pos=/V[VMA]/ && chunkparent.type=/VP.*/		finVerb="no"	type=finVerb,comment="upgraded node"
 
-# verb periphrases: empezar a + INF
-my.pos=/VVFIN/ && parent.pos=/VVINF/ && chunkparent.type=/VP/			finVerb="no"	type=finVerb,comment="verb periphrase"
 
-# split synthetic future forms into analytic forms
-# example: "comeremos" => "[wir] werden essen"
+# verb periphrase #
+#-----------------#
+	# empezar a + INF
+
+my.pos=/VVFIN/ && parent.pos=/V[AMV]INF/ && chunkparent.type=/VP/			finVerb="no"	type=finVerb,comment="verb periphrase"
+
+
+# Future #
+#--------#
+	# split synthetic future forms into analytic forms
+	# example: "comeremos" => "[wir] werden essen"
+
 my.pos=/VAFIN/ && lsibling.pos=/V.INF/ && chunkparent.type=/VP/			finVerb="no"	type=finVerb,comment="future auxiliary"
 
-# Relative Pronouns
-# put embedded relative pronoun into a separate chunk
-#         <CHUNK ref="6" type="VP" si="S">
-#          <NODE ref="6" alloc="" slem="estar" smi="VMIP3S0" sform="está" UpCase="none" lem="gerade" pos="ADV" spos="VVFIN" mi="3.Sg.Pres.Ind">
-#            <SYN lem="gerade" pos="ADV" spos="VVFIN" mi="3.Sg.Pres.Ind"/>
-#            <SYN lem="sein" pos="VAFIN" mi="3.Sg.Pres.Ind"/>
-#            <NODE ref="5" alloc="" slem="que" smi="PR00C000" sform="que" UpCase="none" lem="d(er)" pos="PRELS"/>
-#          </NODE>
+####################
+# Relative Pronoun #
+####################
+	# put embedded relative pronoun into a separate chunk
+	#         <CHUNK ref="6" type="VP" si="S">
+	#          <NODE ref="6" alloc="" slem="estar" smi="VMIP3S0" sform="está" UpCase="none" lem="gerade" pos="ADV" spos="VVFIN" mi="3.Sg.Pres.Ind">
+	#            <SYN lem="gerade" pos="ADV" spos="VVFIN" mi="3.Sg.Pres.Ind"/>
+	#            <SYN lem="sein" pos="VAFIN" mi="3.Sg.Pres.Ind"/>
+	#            <NODE ref="5" alloc="" slem="que" smi="PR00C000" sform="que" UpCase="none" lem="d(er)" pos="PRELS"/>
+	#          </NODE>
+
 my.pos=/PRELS/ && parent.pos=/VV/ && chunkparent.type=/VP/		relPro="no"	type=NP-relpro,comment="relative pronoun"
 
-# ART before AP within NP
-# split article/specifier from NP to insert AP between this article/specifier and the head noun
-# example: "una manzana muy madura" => ein sehr reifer Apfel
-# parent:CHUNK(type=NP) > NODE(pos=NN sform=manzana) > orig:NODE(pos=ART sform=una)
-# transformed to:
-# parent:CHUNK(type=NP) > NODE(pos=NN sform=manzana) & parent > target:CHUNK(type=nounSpec comment="noun specifier") > orig:NODE(pos=ART sform=una)
-#my.pos=/ART/&&parent.pos=/NN/ && chunkparent.type=/CNP|NP/			nounSpec="no"	type=nounSpec,comment="noun specifier"
-# all determiner, not only smi=/DA/ => pos=ART, but also smi=/DP/ => pos=PPOSAT, etc.
-my.smi=/^D/&&parent.pos=/NN/ && chunkparent.type=/CNP|NP/			nounSpec="no"	type=nounSpec,comment="noun specifier"
+###########
+# Article #
+###########
+	# ART before AP within NP
+	# split article/specifier from NP to insert AP between this article/specifier and the head noun
+	# example: "una manzana muy madura" => ein sehr reifer Apfel
+	# parent:CHUNK(type=NP) > NODE(pos=NN sform=manzana) > orig:NODE(pos=ART sform=una)
+	# transformed to:
+	# parent:CHUNK(type=NP) > NODE(pos=NN sform=manzana) & parent > target:CHUNK(type=nounSpec comment="noun specifier") > orig:NODE(pos=ART sform=una)
+	#my.pos=/ART/&&parent.pos=/NN/ && chunkparent.type=/CNP|NP/			nounSpec="no"	type=nounSpec,comment="noun specifier"
+	# all determiner, not only smi=/DA/ => pos=ART, but also smi=/DP/ => pos=PPOSAT, etc.
 
-# VZ-inf
-# put embedded node with infinite verb into a separate chunk, so the verb+zu can be put at the end of the VZ-inf clause
+my.smi=/^D/&&(parent.pos=/NN/||parent.unknown="transfer"&&parent.smi=/^NC/) && chunkparent.type=/CNP|NP/	nounSpec="no"	type=nounSpec,comment="noun specifier"
+
+#################
+# Infinite Verb #
+#################
+	# VZ-inf
+	# put embedded node with infinite verb into a separate chunk, so the verb+zu can be put at the end of the VZ-inf clause
+
 my.pos=/V[AMV]INF/ && parent.pos=APPR && chunkparent.type=VZ-inf	zuVerb="no"	type=VZUINF,comment="verb+zu clause"
 
+##########
+# Clitic #
+##########
+	# separate them from verb phrase to order them freely?
+	# example: "No trabajas porque sigues comiendolas" => du arbeitest nicht, weil du sie noch isst
+	#	"Ahora trabaja pues ya no las esta comiendo" => er arbeitet jetzt da er sie nicht mehr isst
 
-# Clitics
-# separate them from verb phrase to order them freely?
-# example: "No trabajas porque sigues comiendolas" => du arbeitest nicht, weil du sie noch isst
-#	"Ahora trabaja pues ya no las esta comiendo" => er arbeitet jetzt da er sie nicht mehr isst
 my.pos=/PRF|PPER/ && parent.pos=/V[AMV]INF|V[AMV]PP|V[AMV]FIN/		clitics="no"	type=cliticPRON,comment="clitics"
 
-# Flat PPs
-# upgrade embedded NP node to chunk
-# example: "de los factores climaticos" => von den klimatischen Faktoren
-#	CHUNK(PP) > NODE(NN)
-# transformed to:
-#	CHUNK(PP) > CHUNK(NP) > NODE(NN)
-#      <CHUNK ref="3" type="PP-von" alloc="22" si="sp-obj" cas="Dat" mi="Masc.Sg" p_ord="0" c_ord="2" ord="3">
-#        <NODE ref="4" alloc="22" slem="de" smi="SPS00" sform="de" UpCase="none" lem="von" pos="APPR" adpos="de" cas="Dat" ord="0">
-#          <NODE ref="6" alloc="26" slem="factor" smi="NCMS000" sform="factor" UpCase="none" lem="Faktor" molif="112" pos="NN" mi="Masc.Sg" cas="Dat" ord="3">
-#            <NODE ref="5" alloc="24" slem="el" smi="DA0MS0" sform="el" UpCase="none" lem="d(er)" pos="ART" flex="Sw" deftype="Def" mi="Masc.Sg" cas="Dat" ord="1">
-#</NODE>
-#            <NODE ref="7" alloc="33" slem="clima'tico" smi="AQ0MS0" sform="clima'tico" UpCase="none" lem="klimatisch" molif="90" pos="ADJA" mi="Masc.Sg" cas="Dat" ord="2">
-#</NODE>
-#          </NODE>
-#        </NODE>
-#      </CHUNK>
+###########
+# Flat PP #	TODO: check if still needed
+###########
+	# upgrade embedded NP node to chunk
+	# example: "de los factores climaticos" => von den klimatischen Faktoren
+	#	CHUNK(PP) > NODE(NN)
+	# transformed to:
+	#	CHUNK(PP) > CHUNK(NP) > NODE(NN)
+	#      <CHUNK ref="3" type="PP-von" alloc="22" si="sp-obj" cas="Dat" mi="Masc.Sg" p_ord="0" c_ord="2" ord="3">
+	#        <NODE ref="4" alloc="22" slem="de" smi="SPS00" sform="de" UpCase="none" lem="von" pos="APPR" adpos="de" cas="Dat" ord="0">
+	#          <NODE ref="6" alloc="26" slem="factor" smi="NCMS000" sform="factor" UpCase="none" lem="Faktor" molif="112" pos="NN" mi="Masc.Sg" cas="Dat" ord="3">
+	#            <NODE ref="5" alloc="24" slem="el" smi="DA0MS0" sform="el" UpCase="none" lem="d(er)" pos="ART" flex="Sw" deftype="Def" mi="Masc.Sg" cas="Dat" ord="1">
+	#</NODE>
+	#            <NODE ref="7" alloc="33" slem="clima'tico" smi="AQ0MS0" sform="clima'tico" UpCase="none" lem="klimatisch" molif="90" pos="ADJA" mi="Masc.Sg" cas="Dat" ord="2">
+	#</NODE>
+	#          </NODE>
+	#        </NODE>
+	#      </CHUNK>
+
 my.pos=NN && chunkparent.type=/PP/		deep="yes"	type=NP,comment="NP from flat PP"
 
-# Coordinations
-# upgrade coordinated adjective phrases 
-# example: "Los factores económicos, climáticos o meteorológicos" => "die oekonomischen, klimatischen oder meteorologischen Faktoren"
-#	CHUNK(NP) > NODE(NN) > NODE(PUNC ,) > NODE(economico ADJ) NODE(CC o) > NODE(climatico ADJ) NODE (meteorologico ADJ)
-#      <CHUNK ref="1" type="NP" alloc="0" si="subj">
-#        <NODE ref="2" alloc="4" slem="factor" smi="NCMP000" sform="factores" UpCase="none" lem="Faktor" molif="112" pos="NN" mi="Masc.Pl">
-#          <NODE ref="1" alloc="0" slem="el" smi="DA0MP0" sform="Los" UpCase="none" lem="d(er)" pos="ART" flex="Sw" deftype="Def" mi=".Pl">
-#</NODE>
-#          <NODE ref="4" alloc="23" slem="," smi="Fc" sform="," UpCase="none" lem="," pos="$,">
-#            <NODE ref="3" alloc="13" slem="económico" smi="AQ0MP0" sform="económicos" UpCase="none" lem="oekonomisch" molif="90" pos="ADJ" mi="*.Pl">
-#</NODE>
-#            <NODE ref="6" alloc="36" slem="o" smi="CC" sform="o" UpCase="none" lem="oder" pos="KON">
-#              <NODE ref="5" alloc="25" slem="climático" smi="AQ0MP0" sform="climáticos" UpCase="none" lem="klimatisch" molif="90" pos="ADJ" mi="*.Pl">
-#</NODE>
-#              <NODE ref="7" alloc="38" slem="meteorológico" smi="AQ0MP0" sform="meteorológicos" UpCase="none" lem="meteorologisch" molif="90" pos="ADJ" mi="*.Pl">
-#</NODE>
-#            </NODE>
-#          </NODE>
-#        </NODE>
-#      </CHUNK>
+################
+# Coordination #
+################
+	# upgrade coordinated adjective phrases 
+	# example: "Los factores económicos, climáticos o meteorológicos" => "die oekonomischen, klimatischen oder meteorologischen Faktoren"
+	#	CHUNK(NP) > NODE(NN) > NODE(PUNC ,) > NODE(economico ADJ) NODE(CC o) > NODE(climatico ADJ) NODE (meteorologico ADJ)
+	#      <CHUNK ref="1" type="NP" alloc="0" si="subj">
+	#        <NODE ref="2" alloc="4" slem="factor" smi="NCMP000" sform="factores" UpCase="none" lem="Faktor" molif="112" pos="NN" mi="Masc.Pl">
+	#          <NODE ref="1" alloc="0" slem="el" smi="DA0MP0" sform="Los" UpCase="none" lem="d(er)" pos="ART" flex="Sw" deftype="Def" mi=".Pl">
+	#</NODE>
+	#          <NODE ref="4" alloc="23" slem="," smi="Fc" sform="," UpCase="none" lem="," pos="$,">
+	#            <NODE ref="3" alloc="13" slem="económico" smi="AQ0MP0" sform="económicos" UpCase="none" lem="oekonomisch" molif="90" pos="ADJ" mi="*.Pl">
+	#</NODE>
+	#            <NODE ref="6" alloc="36" slem="o" smi="CC" sform="o" UpCase="none" lem="oder" pos="KON">
+	#              <NODE ref="5" alloc="25" slem="climático" smi="AQ0MP0" sform="climáticos" UpCase="none" lem="klimatisch" molif="90" pos="ADJ" mi="*.Pl">
+	#</NODE>
+	#              <NODE ref="7" alloc="38" slem="meteorológico" smi="AQ0MP0" sform="meteorológicos" UpCase="none" lem="meteorologisch" molif="90" pos="ADJ" mi="*.Pl">
+	#</NODE>
+	#            </NODE>
+	#          </NODE>
+	#        </NODE>
+	#      </CHUNK>
+
 my.pos=/KON/ && chunkparent.type=/NP|PP/ && child.pos=/ADJA/	coord="yes"	type=CAP,comment="coord AP from flat NP/PP"
 #my.pos=/\$,/ && chunkparent.type=/NP|PP/ &&

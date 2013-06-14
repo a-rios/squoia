@@ -1,7 +1,16 @@
 # Configuration: ChildToSiblingFile
 # 	child chunks become siblings of head (parent) chunks (to be reordered independently among other chunks)
 # Format:
-#	1				2
-#	childChunkCondition		targetChunkAttrVal
+#		1			2
+#	childChunkCondition	targetChunkAttrVal
 
-#my.type=AVP	comment="upgrade adverb chunk",flat=true
+# example
+# 	my.type=AVP		comment="upgrade adverb chunk",flat=true
+
+############################
+# Coordinating Conjunction #
+############################
+	# bring "y"-CHUNK from "spec"-CHUNK to CNP-CHUNK
+
+my.type=/coConj/&&chunkparent.type=/nounSpec/			comment="coordinating conjunction"
+

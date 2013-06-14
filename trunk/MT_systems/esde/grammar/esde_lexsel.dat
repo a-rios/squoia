@@ -228,8 +228,8 @@ seguir	noch					k	parent.smi=/VMG/
 
 # tener = haben: "Tenemos un coche" => "Wir haben ein Auto"
 # tener que + INF = muessen: "Tuvieron que levantarse temprano" => "Sie mussten frueh aufstehen"
-tener	haben	!(parent.smi=/VMN/&&rsibling.slem=que)		-
-tener	müssen	parent.smi=/VMN/&&rsibling.slem=que		-
+tener	haben	k	!(parent.smi=/VMN/&&rsibling.slem=que)
+tener	müssen	k	parent.smi=/VMN/&&rsibling.slem=que
 
 # volver = zurueck|gehen: "Volvemos a casa" => "Wir gehen nach Hause zurueck"
 # volver = "wieder": "Vuelve a comer" => "er isst wieder"
