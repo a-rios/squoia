@@ -26,6 +26,7 @@ my $correctClass=0;
 my $unknownWords=0;
 my $nbrOfSentences=0;
 my $lines=0;
+my $unamb =0;
 
  while (!eof(CRF) and !eof(GOLD)) {
  	  
@@ -45,26 +46,38 @@ my $lines=0;
 		$nbrOfSentences++;
 		next;
 	}
-	else{
+	else
+	{
 		 my @rowsCRF = split (/\t|\s/, $crfLine);	 
 		 my @rowsGOLD = split (/\t|\s/, $goldLine);	 
 		 
+		 # pos(morph) evaluation
 		 my $classCRF = @rowsCRF[16];
 		 my $classGOLD = @rowsGOLD[16]; 
+		 
 		 #print "$crfLine\n";
-		 #print "\n id:$id word:$word lem:$lem cpos:$cpos pos:$pos info:$info head:$head rel:$rel  \n";
-		
-		#print "$word: $head: $ghead----$rel:$grel\n";
+		unless(@rowsGOLD[16] eq 'none' && @rowsCRF[16] eq 'none')
+		{
+			print "$classCRF $classGOLD\n $crfLine $goldLine\n";
+		}
 		$wcount++;
 		if($classCRF eq $classGOLD)
 		{
 			$correctClass++;
+			#print "$classCRF $classGOLD\n";
 		}
+		# pos eval: count xfst failures
 		# check if first pos in results is ZZZ, in this case, xfst could not analyse the word
 		# -> count those separately for evaluation
 		elsif(@rowsCRF[2] eq 'ZZZ')
 		{
 			$unknownWords++;
+		}
+		
+		# morph eval: count unambiguous forms
+		if(@rowsGOLD[16] eq 'none' && @rowsCRF[16] eq 'none')
+		{
+			$unamb++;
 		}
 	}
 
@@ -85,8 +98,13 @@ my $wrong = ($nbrOfwrong/$wcount)*100;
 my $truewrong = (($nbrOfwrong-$unknownWords)/$wcount)*100;
 
 
+my $wordsToDisamb = $wcount-$unamb;
+my $correctMorph = $correctClass-$unamb;
+my $nbrOfCorrectMorph = ($correctMorph/$wordsToDisamb)*100;
+
  
 print "\n*************************************************\n\n";
+print "POS EVAL:\n";
 print "   total sentences: $nbrOfSentences\n";
 print "   total words: $wcount\n";
 print "   correct class: ";
@@ -95,6 +113,11 @@ print "   wrong class: ";
    printf("%.2f", $wrong); print "\n";
 print "   wrong class, xfst failures not considered: "; 
    printf("%.2f", $truewrong); print "\n\n";
+print "*************************************************\n\n";
+print "MORPH EVAL:\n";
+print "   morph disamb, ambiguous forms: $wordsToDisamb\n"; 
+print "   correct: $correctMorph : ";
+	printf("%.2f", $nbrOfCorrectMorph); print "\n\n";   
 print "*************************************************\n\n";
 
 
