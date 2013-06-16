@@ -24,6 +24,7 @@ unless($mode eq '-1' or $mode eq '-2' or $mode eq '-3' or !$mode){
   	exit;
 }
 
+
 my @words;
 my $newWord=1;
 my $index=0;
@@ -31,68 +32,69 @@ my $index=0;
 my @words;
 my $newWord=1;
 my $index=0;
+
+my $storedWords;
+
 
 while(<STDIN>){
-	
-	if (/^$/)
-	{
-		$newWord=1;
-	}
-	else
-	{	
-		my ($form, $analysis) = split(/\t/);
-	
-		my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
 		
-		my ($root) = $analysis =~ m/^([^\[]+?)\[/ ;
-		#print "$root\n";
-		
-		if($pos eq ''){
-			if($form eq '#EOS'){
-				$pos = '#EOS';
-			}
-			else{
-				$pos = "ZZZ";
-			}
-		}
-		
-		my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
-		
-		my $allmorphs='';
-		foreach my $morph (@morphtags){
-			$allmorphs = $allmorphs.$morph;
-		}
-	
-		#print "allmorphs: $allmorphs\n";
-		#print "morphs: @morphtags\n\n";
-	
-		#print "$form: $root morphs: @morphtags\n";
-		my %hashAnalysis;
-		$hashAnalysis{'pos'} = $pos;
-		$hashAnalysis{'morph'} = \@morphtags;
-		$hashAnalysis{'string'} = $_;
-		$hashAnalysis{'root'} = $root;
-    	$hashAnalysis{'allmorphs'} = $allmorphs;
-    
-		if($newWord)
+		if (/^$/)
 		{
-			my @analyses = ( \%hashAnalysis ) ;
-			my @word = ($form, \@analyses);
-			push(@words,\@word);
-			$index++;
+			$newWord=1;
 		}
 		else
-		{
-			my $thisword = @words[-1];
-			my $analyses = @$thisword[1];
-			push(@$analyses, \%hashAnalysis);
-		}
-		$newWord=0;	
- }
-	
+		{	
+			my ($form, $analysis) = split(/\t/);
+		
+			my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
+			
+			my ($root) = $analysis =~ m/^([^\[]+?)\[/ ;
+			#print "$root\n";
+			
+			if($pos eq ''){
+				if($form eq '#EOS'){
+					$pos = '#EOS';
+				}
+				else{
+					$pos = "ZZZ";
+				}
+			}
+			
+			my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
+			
+			my $allmorphs='';
+			foreach my $morph (@morphtags){
+				$allmorphs = $allmorphs.$morph;
+			}
+		
+			#print "allmorphs: $allmorphs\n";
+			#print "morphs: @morphtags\n\n";
+		
+			#print "$form: $root morphs: @morphtags\n";
+			my %hashAnalysis;
+			$hashAnalysis{'pos'} = $pos;
+			$hashAnalysis{'morph'} = \@morphtags;
+			$hashAnalysis{'string'} = $_;
+			$hashAnalysis{'root'} = $root;
+	    	$hashAnalysis{'allmorphs'} = $allmorphs;
+	    
+			if($newWord)
+			{
+				my @analyses = ( \%hashAnalysis ) ;
+				my @word = ($form, \@analyses);
+				push(@words,\@word);
+				$index++;
+			}
+			else
+			{
+				my $thisword = @words[-1];
+				my $analyses = @$thisword[1];
+				push(@$analyses, \%hashAnalysis);
+			}
+			$newWord=0;	
+	 }
+		
 }
-
-
 if($mode eq '-1')
 {
 	# get NS/ VS ambiguities
@@ -126,6 +128,7 @@ if($mode eq '-1')
 		}
 		# -sqa
 		elsif(($allmorphs =~ /Perf/ && $string !~ /Cas|Num|Poss/ )|| ($allmorphs =~ /\+IPst/ && $allmorphs !~ /1|2/ ) || $allmorphs =~ /\Q+3.Sg.Subj.IPst\E/)
+		#elsif( $allmorphs =~ /Perf/ || $allmorphs =~ /\+IPst/  || $allmorphs =~ /\Q+3.Sg.Subj.IPst\E/)
 		{
 				push(@possibleClasses, "IPst");
 				if($allmorphs =~ /IPst/  ){$actualClass = "IPst";}
@@ -172,6 +175,7 @@ if($mode eq '-1')
 		}
 		# -y
 		elsif($allmorphs =~ /\Q+2.Sg.Subj.Imp\Q/|| ($allmorphs =~ /Inf/ && $string !~ /Cas|Poss|Num/ ) )
+		#elsif($allmorphs =~ /\Q+2.Sg.Subj.Imp\Q/|| $allmorphs =~ /Inf/  )
 		{
 				push(@possibleClasses, "Imp");
 				push(@possibleClasses, "Inf");
@@ -192,8 +196,7 @@ if($mode eq '-1')
 		push(@$word, \@possibleClasses);
 		push(@$word, $actualClass);
 		#print @$word[0].": @possibleClasses\n";
-		#print "actual: $actualClass\n\n";
-		
+		#print "actual: $actualClass\n\n";	
 	}
 }
 
@@ -263,12 +266,12 @@ if($mode eq '-2')
 		push(@$word, $actualClass);
 		#print @$word[0].": @possibleClasses\n";
 		#print "actual: $actualClass\n\n";
-		
 	}
+
 }
 
 if($mode eq '-3')
-{
+{	
 	# check remaining ambiguities
 	# disambiguate indepenent suffixes 
 	foreach my $word (@words){
@@ -280,6 +283,7 @@ if($mode eq '-3')
 		
 			# -n
 			if( ($allmorphs =~ /\Q+3.Sg.Poss\E/ && $string !~ /3\.Sg\.Poss.*(Cas|Pl)/ ) || ($allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/ && $string !~ /Cas|Num.+DirE/) )
+			#if( $allmorphs =~ /\Q+3.Sg.Poss\E/ || $allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/  )
 			{
 				push(@possibleClasses, "DirE");
 				push(@possibleClasses, "Poss");
@@ -288,6 +292,7 @@ if($mode eq '-3')
 			}
 			# -pis
 			elsif($allmorphs =~ /\Q+Loc+IndE\E/ || ($allmorphs =~ /\Q+Add\E/ && $string !~ /Add.*(IndE|DirE|Asmp)/) )
+			#elsif($allmorphs =~ /\Q+Loc+IndE\E/ || $allmorphs =~ /\Q+Add\E/  )
 			{
 				push(@possibleClasses, "Loc_IndE");
 				push(@possibleClasses, "Add");
@@ -315,40 +320,93 @@ if($mode eq '-3')
 		push(@$word, $actualClass);
 		#print @$word[0].": @possibleClasses\n";
 		#print "actual: $actualClass\n\n";
-		
 	}
 }
 
 my $lastlineEmpty=0;
 
-foreach my $word (@words){
+# print all words, unambiguous ones with class 'none'
+#foreach my $word (@words){
+#	my $analyses = @$word[1];
+#	my $form = @$word[0];
+#	my $possibleClasses = @$word[2];
+#	my $correctClass = @$word[3];
+#	
+#	if($form eq '#EOS' ){
+#		unless($lastlineEmpty == 1){
+#			print "\n";
+#			$lastlineEmpty =1;
+#			next;
+#		}
+#	}
+#	else
+#	{
+#		print "$form\t";
+#		$lastlineEmpty =0;
+#		# uppercase/lowercase?
+#
+##		elsif(substr($form,0,1) eq uc(substr($form,0,1))){
+##			print "uc\t";
+##		}
+##		# lowercase
+##		else{
+##			print "lc\t";
+##		}
+#		print @$analyses[0]->{'pos'}."\t";
+#
+#
+#		my $nbrOfClasses =0;
+#		# possible classes
+#		foreach my $class (@$possibleClasses){
+#			print "$class\t";
+#			$nbrOfClasses++;
+#		}
+#		
+#		while($nbrOfClasses<4){
+#			print "ZZZ\t";
+#			$nbrOfClasses++;
+#		}
+#
+#		#possible morph tags: take ALL morph tags into account 
+#		my $printedmorphs='';
+#		my $nbrOfMorph =0;
+#		foreach my $analysis (@$analyses){
+#			my $morphsref = $analysis->{'morph'};
+#			#print $morphsref;
+#			foreach my $morph (@$morphsref){
+#			unless($printedmorphs =~ /\Q$morph\E/){
+#			print "$morph\t";
+#				$printedmorphs = $printedmorphs.$morph;
+#				$nbrOfMorph++;
+#				}
+#			}
+#		}
+#		while($nbrOfMorph<10){
+#			print "ZZZ\t";
+#			$nbrOfMorph++;
+#		}
+#	
+#		
+#		print "$correctClass";
+#
+#	
+#		print "\n";
+#	}
+#}
+
+# print only ambiguous words, with context as features
+
+for (my $i=0;$i<scalar(@words);$i++){
+	my $word = @words[$i];
 	my $analyses = @$word[1];
 	my $form = @$word[0];
 	my $possibleClasses = @$word[2];
 	my $correctClass = @$word[3];
 	
-	if($form eq '#EOS' ){
-		unless($lastlineEmpty == 1){
-			print "\n";
-			$lastlineEmpty =1;
-			next;
-		}
-	}
-	else
-	{
+   if(scalar(@$possibleClasses)>1){
 		print "$form\t";
-		$lastlineEmpty =0;
-		# uppercase/lowercase?
 
-#		elsif(substr($form,0,1) eq uc(substr($form,0,1))){
-#			print "uc\t";
-#		}
-#		# lowercase
-#		else{
-#			print "lc\t";
-#		}
 		print @$analyses[0]->{'pos'}."\t";
-
 
 		my $nbrOfClasses =0;
 		# possible classes
@@ -381,11 +439,65 @@ foreach my $word (@words){
 			$nbrOfMorph++;
 		}
 	
+		# print context words (preceding)
+		for (my $j=$i-1;$j>($i-3);$j--)
+		{
+			my $word = @words[$j];
+			my $analyses = @$word[1];
+			my $form = @$word[0];
+			
+			print "$form\t";
+			print @$analyses[0]->{'pos'}."\t";
+			#print morphs of context words
+			my $printedmorphs='';
+			my $nbrOfMorph =0;
+			foreach my $analysis (@$analyses){
+				my $morphsref = $analysis->{'morph'};
+				#print $morphsref;
+				foreach my $morph (@$morphsref){
+				unless($printedmorphs =~ /\Q$morph\E/){
+				print "$morph\t";
+					$printedmorphs = $printedmorphs.$morph;
+					$nbrOfMorph++;
+					}
+				}
+			}
+			while($nbrOfMorph<10){
+				print "ZZZ\t";
+				$nbrOfMorph++;
+			}
+		}
 		
+		# print context words (following)
+		for (my $j=$i+1;$j<($i+3);$j++)
+		{
+			my $word = @words[$j];
+			my $analyses = @$word[1];
+			my $form = @$word[0];
+			
+			print "$form\t";
+			print @$analyses[0]->{'pos'}."\t";
+			#print morphs of context words
+			my $printedmorphs='';
+			my $nbrOfMorph =0;
+			foreach my $analysis (@$analyses){
+				my $morphsref = $analysis->{'morph'};
+				#print $morphsref;
+				foreach my $morph (@$morphsref){
+				unless($printedmorphs =~ /\Q$morph\E/){
+				print "$morph\t";
+					$printedmorphs = $printedmorphs.$morph;
+					$nbrOfMorph++;
+					}
+				}
+			}
+			while($nbrOfMorph<10){
+				print "ZZZ\t";
+				$nbrOfMorph++;
+			}
+		}
 		print "$correctClass";
-
-	
-		print "\n";
+		print "\n\n";
 	}
 }
 

@@ -1140,6 +1140,8 @@ chaskimusunchis	chaski[VRoot][=recibir,aceptar][--]mu[VDeriv][+Cis_Trs][^DB][--]
 
 Khaynatan	Khayna[PrnDem][^DB][--]ta[Cas][+Acc][^DB][--]n[Amb][+DirE]
 
+casarakunaykupaqqa	casa[VRootES][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top] 
+
 yuyayurayku	yuya[VRoot][=recordar,pensar][--]yu[VDeriv][+Aff][^DB][--]ra[Tns][+NPst][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$,]
@@ -1271,7 +1273,6 @@ llank'ashani	llank'a[VRoot][=trabajar][^DB][--]sha[Asp][+Prog][--]ni[VPers][+1.S
 chaypipas	chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+Add]
 
 kallantaqmi	ka[VRoot][=ser][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
-
 
 fijo	fijo[NRootES]
 
@@ -1526,6 +1527,8 @@ horqoyta	hurqu[VRoot][=sacar][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
 munaqtiymi	muna[VRoot][=querer][^DB][--]qti[NS][+DS][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]mi[Amb][+DirE]
 
 mana	mana[Part_Neg]
+
+convento	convento[SP]
 
 padrekuna	padre[NRootES][--]kuna[Num][+Pl]
 
