@@ -37,7 +37,6 @@ elsif($mode == '-2' or $mode == '-3'){
 
 
 my @words;
-my @ambWords;
 my $newWord=1;
 my $index=0;
 
@@ -104,6 +103,7 @@ if($mode eq '-1')
 		
 	}
 	close XFST;
+	my $disambiguatedForms=0;
 	# if a word has more than one analysis that differ only in length of the root by 1, and last letter is -q/-y/-n 
 	# delete the one with the shorter root (e.g. millay -> milla -y/millay, qapaq-> qapa-q/qapaq, allin -> alli -n/ allin)
 	foreach my $word (@words)
@@ -129,6 +129,7 @@ if($mode eq '-1')
 					{
 						splice (@{$analyses},$j,1);	
 						$j--;
+						$disambiguatedForms++;
 						#print "1 to delete $root, compared with $postroot\n";
 						last;	
 					}
@@ -136,6 +137,7 @@ if($mode eq '-1')
 					{
 						splice (@{$analyses},$j,1);	
 						$j--;
+						$disambiguatedForms++;
 						#print "1 to delete $root, compared with $postroot\n";
 						last;	
 					}
@@ -151,12 +153,14 @@ if($mode eq '-1')
 							{
 								splice (@{$analyses},$j,1);	
 								$j--;
+								$disambiguatedForms++;
 								#print "2 to delete $root, compared with $preroot\n";
 							}
 							elsif($root eq 'u' && $preroot eq 'o')
 							{
 								splice (@{$analyses},$j,1);	
 								$j--;
+								$disambiguatedForms++;
 								#print "2 to delete $root, compared with $postroot\n";
 								last;	
 							}
@@ -175,6 +179,7 @@ if($mode eq '-1')
 						my $postmorphs = $analysis->{'morph'};
 						if(grep {$_ =~ /Term/} @$postmorphs){
 							splice (@{$analyses},$j,1);	
+							$disambiguatedForms++;
 							$j--;
 							#print "2 to delete @$morphs\n";
 							#print "compared with @$postmorphs\n";
@@ -188,6 +193,7 @@ if($mode eq '-1')
 						my $premorphs = $analysis->{'morph'};
 						if(grep {$_ =~ /Term/} @$premorphs){
 							splice (@{$analyses},$j,1);	
+							$disambiguatedForms++;
 							$j--;
 							#print "2 to delete @$morphs\n";
 							#print "compared with @$premorphs\n";
@@ -200,7 +206,8 @@ if($mode eq '-1')
 			}
 		}
 	}
-
+	#print "prev: $disambiguatedForms\n";
+	store \$disambiguatedForms, 'prevdisambMorph1';
 
 	# get NS / VS ambiguities
 	foreach my $word (@words)
@@ -219,7 +226,8 @@ if($mode eq '-1')
 				if(&containedInOtherMorphs($analyses,"+Perf","+IPst+1.Sg.Subj_2.Sg.Obj")){
 					push(@possibleClasses, "IPst");
 				}
-				push(@ambWords,$word);
+				#push(@ambWords,$word);
+				push(@$word, "amb");
 				#print "@$word[0]\n";
 			}
 			# -sqaykichik
@@ -230,7 +238,8 @@ if($mode eq '-1')
 				if(&containedInOtherMorphs($analyses,"+Perf","+IPst+1.Sg.Subj_2.Pl.Obj")){
 					push(@possibleClasses, "IPst");
 				}
-				push(@ambWords,$word);
+				#push(@ambWords,$word);
+				push(@$word, "amb");
 				#print "@$word[0]\n";
 			}
 			# -sqa
@@ -238,7 +247,8 @@ if($mode eq '-1')
 			{
 				push(@possibleClasses, "IPst");
 				push(@possibleClasses, "Perf");
-				push(@ambWords,$word);
+				#push(@ambWords,$word);
+				push(@$word, "amb");
 				#print "@$word[0]\n";
 			}
 			# -y
@@ -246,7 +256,8 @@ if($mode eq '-1')
 			{
 				push(@possibleClasses, "Imp");
 				push(@possibleClasses, "Inf");
-				push(@ambWords,$word);
+				#push(@ambWords,$word);
+				push(@$word, "amb");
 				#print "@$word[0]\n";
 			}
 			# -yman
@@ -254,7 +265,8 @@ if($mode eq '-1')
 			{
 				push(@possibleClasses, "Pot");
 				push(@possibleClasses, "Inf");
-				push(@ambWords,$word);
+				#push(@ambWords,$word);
+				push(@$word, "amb");
 				#print "@$word[0]\n";
 			}
 			# -ykuna
@@ -262,7 +274,8 @@ if($mode eq '-1')
 			{
 				push(@possibleClasses, "Inf");
 				push(@possibleClasses, "Aff_Obl");
-				push(@ambWords,$word);
+				#push(@ambWords,$word);
+				push(@$word, "amb");
 				#print "@$word[0]\n";
 			}
 #			# -nakuna
@@ -276,7 +289,8 @@ if($mode eq '-1')
 			{
 				push(@possibleClasses, "Pl");
 				push(@possibleClasses, "Rflx_Obl");
-				push(@ambWords,$word);
+				#push(@ambWords,$word);
+				push(@$word, "amb");
 				#print "@$word[0]\n";
 			}
 			# -cha
@@ -288,7 +302,8 @@ if($mode eq '-1')
 				if(&containedInOtherMorphs($analyses,"+Dim","+Vdim+Rflx_Int+Obl") or &containedInOtherMorphs($analyses,"+Fact","+Vdim") ){
 					push(@possibleClasses, "Vdim");
 				}
-				push(@ambWords,$word);
+				#push(@ambWords,$word);
+				push(@$word, "amb");
 				#print "@$word[0]\n";
 			}
 			
@@ -310,7 +325,7 @@ if($mode eq '-1')
 	}
 	# store @words to disk
 	store \@words, 'words1';
-	store \@ambWords, 'ambWords';
+#	store \@ambWords, 'ambWords';
 	printCrf(\@words);
 	
 }
@@ -689,13 +704,36 @@ sub notContainedInMorphs{
 	return 1;
 }
 
+sub printXFST{
+	my $wordsref = $_[0];
+	my @words = @$wordsref;
+	
+	foreach my $word (@words){
+		my $analyses = @$word[1];
+		foreach my $analysis (@$analyses){
+			print STDERR $analysis->{'string'};
+		}
+		print STDERR "\n";
+	}
+	
+}
+
 sub disambMorph1{
 	my $wordsref = $_[0];
 	my @words = @$wordsref;
 	
 	#retrieve ambwords from disk
-	my $ambwordsref = retrieve('ambWords');
-	@ambWords = @$ambwordsref;
+	#my $ambwordsref = retrieve('ambWords');
+	#@ambWords = @$ambwordsref;
+	my @ambWords;
+	foreach my $w (@words){
+		# check if marked as ambiguous
+		if(@$w[2] eq 'amb'){
+			#print @$w[0]."\n";
+			push(@ambWords, $w);
+		}
+		
+	}
 	
 	my @crfLinesWithEmpty = <CRF>;
 
@@ -717,12 +755,11 @@ sub disambMorph1{
 		#print "$form $crfform\n";
 		if($form ne $crfform ){
 			unless($crfform =~ /^\s*$/){
-			print "not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
+			print STDERR "not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
 			exit;
 			}
 		}
 		#print "same word in line ".($i+1).": xfst:$form, crf:$crfform\n";
-		
 	}
 	
 	#my $last = @words[-1];
@@ -730,74 +767,101 @@ sub disambMorph1{
 	#print "last word in intern:".@$last[0]."\n";
 	#print "prelast word in intern:".@$last2[0]."\n";
 	
-	#if(scalar(@crfLines) != scalar(@words)){
-	#	print "crf file and xfst file do not contain the same number of words, cannot disambiguate!\n";
-	#	print "words in $crfFile: ".scalar(@crfLines)."\n";
-	#	print "words in $xfstFile: ".scalar(@words)."\n";
-	#	exit;
-	#}
-	
 	my $unambigForms = 0;
 	my $ambigForms = 0;
 	my $stillambigForms =0;
+	my $disambiguatedForms=0;
+	
+	my $ambIndex=0;
 	
 	for(my $i=0;$i<scalar(@words);$i++){
 		my $word = @words[$i];
 		my $analyses = @$word[1];
 		my $form = @$word[0];
 		
-		# only one analysis, print as is
-		if(scalar(@$analyses) == 1){
-			#print @$analyses[0]->{'string'}."\n";
+		if(scalar(@$analyses) > 1)
+		{
+			$ambigForms++;
+		}
+		else
+		{
 			$unambigForms++;
 		}
-		
-		else
-		{	
-			$ambigForms++;
-			# get valid pos from crf file (same index!)
-			my $crfline = @crfLines[$i];
+		# only one analysis, print as is
+#		if(scalar(@$analyses) == 1){
+#			#print @$analyses[0]->{'string'}."\n";
+#			$unambigForms++;
+#		}
+#		
+#		else
+#		{	
+		# NEW: don't print, change @words and store to disk
+		if(@$word[2] eq 'amb' && scalar(@$analyses) > 1)
+		{
+			# get valid pos from crf file 
+			my $crfline = @crfLines[$ambIndex];
+			$ambIndex++;
 			my (@rows) = split('\t',$crfline);
-			my $correctPos = @rows[-1];
+			my $correctMorph = @rows[-1];
+			#print "@rows[0] : $correctMorph\n"; #----- ".@$word[0]."\n";
 			
 			# possible root pos
 			for(my $j=0;$j<scalar(@$analyses);$j++) {
 				my $analysis = @$analyses[$j];
-				my $pos = $analysis->{'pos'};
+				my $allmorphs = $analysis->{'allmorphs'};
 				
-				if($pos !~ /\Q$correctPos\E/ && scalar(@$analyses) > 1){
+				# at this point, all the classes/tags are mutually exclusive, so we can just check whether the class is contained in allmorphs		
+				# -sqayki: Perf, IPst, Fut
+				# -sqaykichik: Perf, IPst, Fut
+				# -sqa: Perf, IPst
+				# -y: Inf, Imp
+				# -yman: Inf, Pot
+				# -ykuna: Inf, Aff_Obl
+				# -kuna: Pl, Rflx_Obl
+				# -cha: Fact, Dim
+				if($allmorphs !~ /\Q$correctMorph\E/ && scalar(@$analyses) > 1){
 					splice (@{$analyses},$j,1);	
+					$disambiguatedForms++;
 					$j--;		
 				}
 			}
 	
-			for(my $j=0;$j<scalar(@$analyses);$j++) {
-				my $analysis = @$analyses[$j];
-					print @$analyses[$j]->{'string'};
-			}
-	
-			# for debugging: print only forms that are still ambiguous
-			if(scalar(@$analyses) > 1){
+			# for debugging: print disambiguated forms
+#			for(my $j=0;$j<scalar(@$analyses);$j++) {
+#				my $analysis = @$analyses[$j];
+#					print @$analyses[$j]->{'string'};
+#			}
+			
+		#	print "\n";
+			
+		}
+		# for debugging: print only forms that are still ambiguous
+		if(scalar(@$analyses) > 1){
 					$stillambigForms++;
 	#				for(my $j=0;$j<scalar(@$analyses);$j++) {
 	#				my $analysis = @$analyses[$j];
 	#				print @$analyses[$j]->{'string'};
 	#			}
 		}
-			
-			print "\n";
-			
-		}
 	}
+	# retrieve number of previously disambiguated forms ('rule' based, e.g +Dist/+Term, chiqan/chiqa etc.)
+	my $prevdisamb = retrieve('prevdisambMorph1');
+	#print "prev $$prevdisamb\n";
 	
-	my $unamb = ($unambigForms/($unambigForms+$ambigForms));
-	my $amb = ($ambigForms/($unambigForms+$ambigForms));
-	my $stillamb = ($stillambigForms/($unambigForms+$ambigForms));
+	# for testing: print xfst to STDERR
+	#&printXFST(\@words);
+	my $totalWords = scalar(@words);
+	my $unamb = $unambigForms/$totalWords;
+	my $amb = ($$prevdisamb + $ambigForms)/$totalWords;
+	my $disamb = ($$prevdisamb + $disambiguatedForms)/$totalWords;
+	my $stillamb = $stillambigForms/$ambigForms;
+	$ambigForms = $$prevdisamb + $ambigForms;
 	
-	
+	print STDERR "number of words: $totalWords\n"; 
 	print STDERR "unambiguous forms: $unambigForms: "; printf STERR ("%.2f", $unamb); print STDERR "\n";
 	print STDERR "ambiguous forms: $ambigForms: "; printf STDERR ("%.2f", $amb); print STDERR "\n";
-	print STDERR "still ambiguous after pos disambiguation: "; printf STDERR ("%.2f", $stillamb); print STDERR "\n";
+	print STDERR "disambiguated with morph1: rules: $$prevdisamb, crf: $disambiguatedForms: "; printf STDERR ("%.2f", $disamb); print STDERR "\n";
+	print STDERR "still ambiguous after morph1 disambiguation: $stillambigForms: $stillamb"; printf STDERR ("%.2f", $stillamb); print STDERR "\n";
 	
 	close CFG;
 }
