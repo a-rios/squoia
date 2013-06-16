@@ -27,6 +27,7 @@ my $unknownWords=0;
 my $nbrOfSentences=0;
 my $lines=0;
 my $unamb =0;
+my $wordsToDisamb =0;
 
  while (!eof(CRF) and !eof(GOLD)) {
  	  
@@ -34,6 +35,8 @@ my $unamb =0;
       my $goldLine = <GOLD>;
       $lines++;
 
+	#print "test: ".$crfLine;
+	#print "gold: ".$goldLine;
 	#if one of the lines is empty, but the other is not-> mismatch in files		
 	if( ($crfLine =~ /^\s*$/) != ($goldLine =~ /^\s*$/) )
 	{
@@ -48,23 +51,32 @@ my $unamb =0;
 	}
 	else
 	{
+		 $wcount++;
 		 my @rowsCRF = split (/\t|\s/, $crfLine);	 
 		 my @rowsGOLD = split (/\t|\s/, $goldLine);	 
 		 
 		 # pos(morph) evaluation
-		 my $classCRF = @rowsCRF[16];
-		 my $classGOLD = @rowsGOLD[16]; 
+		 
+		 my $classCRF = @rowsCRF[-1];
+		 my $classGOLD = @rowsGOLD[-1]; 
 		 
 		 #print "$crfLine\n";
-		unless(@rowsGOLD[16] eq 'none' && @rowsCRF[16] eq 'none')
+		#print " @rowsCRF[0], @rowsGOLD[0] ----  $classCRF, $classGOLD\n";
+		unless($classGOLD eq 'none' && $classCRF eq 'none')
 		{
-			print "$classCRF $classGOLD\n $crfLine $goldLine\n";
+			#print "$classCRF $classGOLD\n $crfLine $goldLine\n";
 		}
-		$wcount++;
-		if($classCRF eq $classGOLD)
+
+		if($classCRF eq $classGOLD && $classGOLD ne 'none')
 		{
 			$correctClass++;
-			#print "$classCRF $classGOLD\n";
+			$wordsToDisamb++;
+			#print "correct:  $classCRF  $classGOLD\n";
+		}
+		# morph eval: count unambiguous forms
+		elsif($classGOLD eq 'none'){
+				#print "unamb: $classCRF $classGOLD\n";
+				$unamb++;
 		}
 		# pos eval: count xfst failures
 		# check if first pos in results is ZZZ, in this case, xfst could not analyse the word
@@ -73,12 +85,13 @@ my $unamb =0;
 		{
 			$unknownWords++;
 		}
-		
-		# morph eval: count unambiguous forms
-		if(@rowsGOLD[16] eq 'none' && @rowsCRF[16] eq 'none')
-		{
-			$unamb++;
+		elsif($classGOLD ne 'none'){
+			$wordsToDisamb++;
+			#print "false: $classCRF $classGOLD\n";
 		}
+		
+
+
 	}
 
 # check xfst gold standard consistency
@@ -98,9 +111,9 @@ my $wrong = ($nbrOfwrong/$wcount)*100;
 my $truewrong = (($nbrOfwrong-$unknownWords)/$wcount)*100;
 
 
-my $wordsToDisamb = $wcount-$unamb;
-my $correctMorph = $correctClass-$unamb;
-my $nbrOfCorrectMorph = ($correctMorph/$wordsToDisamb)*100;
+#my $wordsToDisamb = $wcount-$unamb;
+$correctClass;
+my $nbrOfCorrectMorph = ($correctClass/$wordsToDisamb)*100;
 
  
 print "\n*************************************************\n\n";
@@ -116,7 +129,7 @@ print "   wrong class, xfst failures not considered: ";
 print "*************************************************\n\n";
 print "MORPH EVAL:\n";
 print "   morph disamb, ambiguous forms: $wordsToDisamb\n"; 
-print "   correct: $correctMorph : ";
+print "   correct: $correctClass : ";
 	printf("%.2f", $nbrOfCorrectMorph); print "\n\n";   
 print "*************************************************\n\n";
 
