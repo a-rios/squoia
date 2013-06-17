@@ -103,14 +103,10 @@ while(<STDIN>){
 }
 
 my $lastlineEmpty=0;
+my $ambigForms =0;
 
 foreach my $word (@words){
 	my $analyses = @$word[1];
-	#my $analysis = @$analyses[0];
-	#print "pos:".$analysis->{'pos'}."\n";
-	my $analysis2 = @$analyses[1];
-	#print $analysis2->{'pos'}."\n";
-	
 	my $form = @$word[0];
 	
 	if($form eq '#EOS' ){
@@ -147,6 +143,10 @@ foreach my $word (@words){
 				$printedroots = $printedroots.$pos;
 				$nbrOfPos++;
 			}
+		}
+		
+		if($nbrOfPos > 1){
+			$ambigForms++;
 		}
 	
 		while($nbrOfPos<4){
@@ -197,6 +197,8 @@ foreach my $word (@words){
 		print "\n";
 	}
 }
+
+#print STDERR "forms with ambiguos root pos: $ambigForms\n";
 
 
 sub isContainedInAllAnalyses{

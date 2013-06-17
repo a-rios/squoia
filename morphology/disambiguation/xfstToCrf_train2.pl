@@ -287,7 +287,7 @@ if($mode eq '-3')
 			{
 				push(@possibleClasses, "DirE");
 				push(@possibleClasses, "Poss");
-				if($allmorphs =~  /DirE/){$actualClass = "DireE";}
+				if($allmorphs =~  /DirE/){$actualClass = "DirE";}
 				elsif($allmorphs =~ /Poss/ ){$actualClass = "Poss";}
 			}
 			# -pis
@@ -438,66 +438,156 @@ for (my $i=0;$i<scalar(@words);$i++){
 			print "ZZZ\t";
 			$nbrOfMorph++;
 		}
-	
-		# print context words (preceding)
-		for (my $j=$i-1;$j>($i-3);$j--)
-		{
-			my $word = @words[$j];
-			my $analyses = @$word[1];
-			my $form = @$word[0];
-			
-			print "$form\t";
-			print @$analyses[0]->{'pos'}."\t";
-			#print morphs of context words
-			my $printedmorphs='';
-			my $nbrOfMorph =0;
-			foreach my $analysis (@$analyses){
-				my $morphsref = $analysis->{'morph'};
-				#print $morphsref;
-				foreach my $morph (@$morphsref){
-				unless($printedmorphs =~ /\Q$morph\E/){
-				print "$morph\t";
-					$printedmorphs = $printedmorphs.$morph;
-					$nbrOfMorph++;
-					}
-				}
-			}
-			while($nbrOfMorph<10){
-				print "ZZZ\t";
-				$nbrOfMorph++;
-			}
-		}
 		
-		# print context words (following)
-		for (my $j=$i+1;$j<($i+3);$j++)
-		{
-			my $word = @words[$j];
-			my $analyses = @$word[1];
-			my $form = @$word[0];
-			
-			print "$form\t";
-			print @$analyses[0]->{'pos'}."\t";
-			#print morphs of context words
-			my $printedmorphs='';
-			my $nbrOfMorph =0;
-			foreach my $analysis (@$analyses){
-				my $morphsref = $analysis->{'morph'};
-				#print $morphsref;
-				foreach my $morph (@$morphsref){
-				unless($printedmorphs =~ /\Q$morph\E/){
-				print "$morph\t";
-					$printedmorphs = $printedmorphs.$morph;
-					$nbrOfMorph++;
+					my $bos =0;
+			# print context words (preceding)
+			for (my $j=$i-1;$j>($i-3);$j--)
+			{
+				my $word = @words[$j];
+				my $analyses = @$word[1];
+				my $form = @$word[0];
+				
+				if($form eq '#EOS')
+				{
+					$bos =1;
+				}
+				if($bos!=1)
+				{
+					print "$form\t";
+					print @$analyses[0]->{'pos'}."\t";
+					#print morphs of context words
+					my $printedmorphs='';
+					my $nbrOfMorphP =0;
+					foreach my $analysis (@$analyses){
+						my $morphsref = $analysis->{'morph'};
+						#print $morphsref;
+						foreach my $morph (@$morphsref){
+						unless($printedmorphs =~ /\Q$morph\E/){
+						print "$morph\t";
+							$printedmorphs = $printedmorphs.$morph;
+							$nbrOfMorphP++;
+							}
+						}
+					}
+					while($nbrOfMorphP<10){
+						print "ZZZ\t";
+						$nbrOfMorphP++;
+					}
+				}
+				# else: if bos
+				else
+				{	my $nbrOfMorphP =0;
+					while($nbrOfMorphP<12){	
+						print "ZZZ\t";
+						$nbrOfMorphP++;
 					}
 				}
 			}
-			while($nbrOfMorph<10){
-				print "ZZZ\t";
-				$nbrOfMorph++;
+			
+			my $eos =0;
+			
+			# print context words (following)
+			for (my $j=$i+1;$j<($i+3);$j++)
+			{
+				my $word = @words[$j];
+				my $analyses = @$word[1];
+				my $form = @$word[0];
+				
+				if($form eq '#EOS')
+				{
+					$eos =1;
+				}
+				if($eos!=1)
+				{
+					print "$form\t";
+					print @$analyses[0]->{'pos'}."\t";
+					#print morphs of context words
+					my $printedmorphs='';
+					my $nbrOfMorphF =0;
+					foreach my $analysis (@$analyses){
+						my $morphsref = $analysis->{'morph'};
+						#print $morphsref;
+						foreach my $morph (@$morphsref){
+						unless($printedmorphs =~ /\Q$morph\E/){
+						print "$morph\t";
+							$printedmorphs = $printedmorphs.$morph;
+							$nbrOfMorphF++;
+							}
+						}
+					}
+					while($nbrOfMorphF<10){
+						print "ZZZ\t";
+						$nbrOfMorphF++;
+					}
+				}
+				# else: if eos
+				else
+				{	my $nbrOfMorphP =0;
+					while($nbrOfMorphP<12){	
+						print "ZZZ\t";
+						$nbrOfMorphP++;
+					}
+				}
 			}
-		}
 		print "$correctClass";
 		print "\n\n";
 	}
 }
 
+#	old version	
+#		# print context words (preceding)
+#		for (my $j=$i-1;$j>($i-3);$j--)
+#		{
+#			my $word = @words[$j];
+#			my $analyses = @$word[1];
+#			my $form = @$word[0];
+#			
+#			print "$form\t";
+#			print @$analyses[0]->{'pos'}."\t";
+#			#print morphs of context words
+#			my $printedmorphs='';
+#			my $nbrOfMorph =0;
+#			foreach my $analysis (@$analyses){
+#				my $morphsref = $analysis->{'morph'};
+#				#print $morphsref;
+#				foreach my $morph (@$morphsref){
+#				unless($printedmorphs =~ /\Q$morph\E/){
+#				print "$morph\t";
+#					$printedmorphs = $printedmorphs.$morph;
+#					$nbrOfMorph++;
+#					}
+#				}
+#			}
+#			while($nbrOfMorph<10){
+#				print "ZZZ\t";
+#				$nbrOfMorph++;
+#			}
+#		}
+#		
+#		# print context words (following)
+#		for (my $j=$i+1;$j<($i+3);$j++)
+#		{
+#			my $word = @words[$j];
+#			my $analyses = @$word[1];
+#			my $form = @$word[0];
+#			
+#			print "$form\t";
+#			print @$analyses[0]->{'pos'}."\t";
+#			#print morphs of context words
+#			my $printedmorphs='';
+#			my $nbrOfMorph =0;
+#			foreach my $analysis (@$analyses){
+#				my $morphsref = $analysis->{'morph'};
+#				#print $morphsref;
+#				foreach my $morph (@$morphsref){
+#				unless($printedmorphs =~ /\Q$morph\E/){
+#				print "$morph\t";
+#					$printedmorphs = $printedmorphs.$morph;
+#					$nbrOfMorph++;
+#					}
+#				}
+#			}
+#			while($nbrOfMorph<10){
+#				print "ZZZ\t";
+#				$nbrOfMorph++;
+#			}
