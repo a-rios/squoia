@@ -190,7 +190,7 @@ Maña	Maña[NRoot][=solicitud]
 
 #EOS	#EOS	+?
 
-awpaq	Ñawpaq[NRoot][=antes]
+Ñawpaq	Ñawpaq[NRoot][=antes]
 
 tutas	tuta[NRoot][=noche][^DB][--]s[Amb][+IndE]
 
@@ -444,7 +444,7 @@ nisqa	ni[VRoot][=decir][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 ¡	¡[$.]
 
-Aha	Aha[NRoot][=dificíl]
+Ahá	Ahá	+?
 
 !	![$.]
 
@@ -3710,7 +3710,7 @@ wakmanta	wak[PrnDem][^DB][--]manta[Cas][+Abl]
 
 Mallkuqa	Mallku[NRoot][=jefe][^DB][--]qa[Amb][+Top]
 
-rikhuririrqamusqa	rikhuri[VRoot][=aparecer,ver][--]ri[VDeriv][+Inch][--]rqa[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+rikhurirqamusqa	rikhuri[VRoot][=aparecer,ver][--]ri[VDeriv][+Inch][--]rqa[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
@@ -4124,7 +4124,7 @@ yanaschakuymanchu	yanaschakuymanchu	yanaschakuymanchu	+?
 
 #EOS	#EOS	+?
 
-Manaña	Mana[Part_Neg][^DB][--]ña[Amb][+Disc]
+Manañan	Mana[Part_Neg][^DB][--]ña[Amb][+Disc][^DB][--]n[Amb][+DirE]
 
 chay	chay[PrnDem]
 

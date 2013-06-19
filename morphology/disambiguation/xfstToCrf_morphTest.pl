@@ -409,7 +409,7 @@ if($mode eq '-2')
 
 if($mode eq '-3')
 {	
-	# @word: 0: form, 1:@analyses, 2:@possibleClasses, 3:correctClass, 4: amb
+	# @word: 0: form, 1:@analyses, 2:@possibleClasses, 3:correctClass, 4: amb 5: hasEvidential, 6: previousHasGenitive
 	#retrieve words from disk
 	my $wordsref = retrieve('words2');
 	@words = @$wordsref;
@@ -418,7 +418,8 @@ if($mode eq '-3')
 	&disambMorph2(\@words);
 	
 	# get ambiguities in independent suffixes
-	foreach my $word (@words){
+	for(my $i=0;$i<scalar(@words);$i++){
+		my $word = @words[$i];
 		my $analyses = @$word[1];
 		my @possibleClasses = ();
 		
@@ -429,14 +430,30 @@ if($mode eq '-3')
 			{
 				push(@possibleClasses, "DirE");
 				push(@possibleClasses, "Poss");
-				@$word[3] = "amb3"
+				@$word[3] = "amb3";
+				# check if sentence already contains an evidential suffix
+				@$word[5] = &sentenceHasEvid(\@words, $i);
+				#print "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
+				# check if preceding word has a genitive suffix
+				unless($i==0){
+					my $preword = @words[$i-1];
+					my $preanalyses =  @$preword[1];
+					if(@$preanalyses[0]->{'allmorphs'} =~ /\+Gen/){
+						@$word[6] = 1;
+					}
+					else{
+						@$word[6] = 0;
+					}
+				}
+				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
 			}
 			# -pis
 			elsif(&containedInOtherMorphs($analyses,"+Loc+IndE","+Add"))
 			{
 				push(@possibleClasses, "Loc_IndE");
 				push(@possibleClasses, "Add");
-				@$word[3] = "amb3"
+				@$word[3] = "amb3";
+				@$word[5] = &sentenceHasEvid(\@words, $i);
 			}
 	
 			# -s with Spanish roots: Plural or IndE (e.g. derechus)
@@ -449,7 +466,8 @@ if($mode eq '-3')
 					{
 						push(@possibleClasses, "Pl");
 						push(@possibleClasses, "IndE");
-						@$word[3] = "amb3"
+						@$word[3] = "amb3";
+						@$word[5] = &sentenceHasEvid(\@words, $i);
 					}
 				}
 				
@@ -510,7 +528,7 @@ sub printCrf{
 	   if(scalar(@$possibleClasses)>1){
 	   		#push(@ambWords,$word);
 			print "$form\t";
-	
+			
 			print @$analyses[0]->{'pos'}."\t";
 	
 			my $nbrOfClasses =0;
@@ -632,6 +650,21 @@ sub printCrf{
 						print "ZZZ\t";
 						$nbrOfMorphP++;
 					}
+				}
+			}
+			# for morph3: add info about evidential and genitive suffixes 
+			if($mode eq '-3'){
+				if(@$word[4] eq ''){
+					print "ZZZ\t";
+				}
+				else{
+					print "@$word[4]\t";
+				}
+				if(@$word[5] eq ''){
+					print "ZZZ\t";
+				}
+				else{
+					print "@$word[5]\t";
 				}
 			}
 			print "\n\n";
@@ -1212,6 +1245,54 @@ sub disambMorph3{
 	
 	close CFG;
 }
+
+sub sentenceHasEvid{
+	my $wordsref = $_[0];
+	my @words = @$wordsref;
+	my $i = $_[1];
+	
+	my $word = @words[$i];
+	
+	my $analyses = @$word[1];
+	my $form = @$word[0];
+	
+	my $j = $i-1;
+	my $prestring = $form;
+	#print "word: $prestring\n";
+	while($prestring !~ /\[\$/){
+		my $preword = @words[$j];
+		my $preanalyses = @$preword[1];
+		# don't consider forms that are still ambiguous
+		if(scalar(@$preanalyses)==1){
+			$prestring = @$preanalyses[0]->{'string'};
+			my $preallmorphs = @$preanalyses[0]->{'allmorphs'};
+			if($preallmorphs =~ /DirE|IndE|Asmp/ && $prestring!~ /hinaspan/ ){
+				#print "found $prestring, $preallmorphs\n";
+				return 1;
+			}
+		}
+		$j--;
+	}
+	my $j = $i+1;
+	my $poststring = $form;
+	#print "word: $poststring\n";
+	while($poststring !~ /\[\$/){
+		my $postword = @words[$j];
+		my $postanalyses = @$postword[1];
+		if(scalar(@$postanalyses)==1){
+			$poststring = @$postanalyses[0]->{'string'};
+			my $postallmorphs = @$postanalyses[0]->{'allmorphs'};
+			if($postallmorphs =~ /DirE|IndE|Asmp/ && $poststring !~ /hinaspan/  ){
+				#print "found $poststring, $postallmorphs\n";
+				return 1;
+			}
+		}
+		$j++;
+	}
+	#print "\n";
+	return 0;
+}
+
 
 # OLD print!
 # print all words

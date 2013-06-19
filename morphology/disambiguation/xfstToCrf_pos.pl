@@ -6,7 +6,7 @@ binmode STDIN, ':utf8';
 binmode STDERR, ':utf8';
 binmode STDOUT, ':utf8';
 use strict;
-
+use Storable;
 
 
 # check if paramenter was given, either:
@@ -103,11 +103,17 @@ while(<STDIN>){
 }
 
 my $lastlineEmpty=0;
-my $ambigForms =0;
+my $ambigPos =0;
+my $ambigForms=0;
 
 foreach my $word (@words){
 	my $analyses = @$word[1];
 	my $form = @$word[0];
+	
+	# count ambiguous words in total for evaluation
+	if(scalar(@$analyses)>1){
+		$ambigForms++;
+	}
 	
 	if($form eq '#EOS' ){
 		unless($lastlineEmpty == 1){
@@ -119,6 +125,7 @@ foreach my $word (@words){
 	else
 	{
 		print "$form\t";
+		print lc($form)."\t";
 		$lastlineEmpty =0;
 		# uppercase/lowercase?
 		#punctuation (punctuation has never more than one analysis, so we can just take @$analyses[0])
@@ -146,7 +153,7 @@ foreach my $word (@words){
 		}
 		
 		if($nbrOfPos > 1){
-			$ambigForms++;
+			$ambigPos++;
 		}
 	
 		while($nbrOfPos<4){
@@ -198,8 +205,9 @@ foreach my $word (@words){
 	}
 }
 
-#print STDERR "forms with ambiguos root pos: $ambigForms\n";
-
+print STDERR "forms with ambiguos root pos: $ambigPos\n";
+print STDERR "forms with more than one analysis: $ambigForms\n";
+	store \$ambigForms, 'totalAmbigForms';
 
 sub isContainedInAllAnalyses{
 	my $analyses = $_[0];

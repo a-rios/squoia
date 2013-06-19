@@ -124,7 +124,7 @@ municipal	municipal	+?
 
 alqokuna	allqu[NRoot][=perro][--]kuna[Num][+Pl]
 
-pakallanpi	paka[NRoot][=escondite,oculto,águila][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
+pakallanpi	paka[NRoot][=escondite,oculto][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 vendeq	vendeq	+?
 
@@ -177,7 +177,7 @@ municipal	municipal	+?
 
 esquinamanta	esquina[NRootES][^DB][--]manta[Cas][+Abl]
 
-rikhuriramun	rikhuri[VRoot][=aparecer,ver][--]ri[VDeriv][+Inch][--]ra[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^DB][--]n[VPers][+3.Sg.Subj]
+rikhuriramun	rikhu[VRoot][=aparecer,ver][--]ri[VDeriv][+Inch][--]ra[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^DB][--]n[VPers][+3.Sg.Subj]
 
 hinaspa	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS]
 
@@ -271,8 +271,8 @@ mikhunata	mikhu[VRoot][=comer][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc]
 
 panpapi	pampa[NRoot][=suelo,tierra][^DB][--]pi[Cas][+Loc]
 
-rikuspan	riku[VRoot][=ver,conocer,aparecer][^DB][--]spa[NS][+SS][^DB][--]n[NPers][+3.Sg.Poss]
-rikuspan	riku[VRoot][=ver,conocer,aparecer][^DB][--]spa[NS][+SS][^DB][--]n[Amb][+DirE]
+rikuspan	riku[VRoot][=ver,aparecer][^DB][--]spa[NS][+SS][^DB][--]n[NPers][+3.Sg.Poss]
+rikuspan	riku[VRoot][=ver,aparecer][^DB][--]spa[NS][+SS][^DB][--]n[Amb][+DirE]
 
 ,	,[$.]
 
@@ -427,8 +427,6 @@ tardenta	tarde[NRootES][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
 rasphiyaykuy	rasphi[NRoot][=penumbra][--]ya[VS][+Trs][--]yku[VDeriv][+Aff][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 rasphiyaykuy	rasphi[NRoot][=penumbra][--]ya[VS][+Trs][--]yku[VDeriv][+Aff][^DB][--]y[NS][+Inf]
-rasphiyaykuy	rasphi[NRoot][=penumbra]yayku[VRoot][=entrar][^DB][--]y[VPers][+2.Sg.Subj.Imp]
-rasphiyaykuy	rasphi[NRoot][=penumbra]yayku[VRoot][=entrar][^DB][--]y[NS][+Inf]
 
 qallariyllata	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ta[Cas][+Acc]
 
@@ -570,7 +568,7 @@ primer	primer	+?
 
 p'unchay	p'unchay[NRoot][=día]
 
-rikuwasqanmantan	riku[VRoot][=ver,conocer,aparecer][^DB][--]wa[VPers][+1.Obj][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl][^DB][--]n[Amb][+DirE]
+rikuwasqanmantan	riku[VRoot][=ver,aparecer][^DB][--]wa[VPers][+1.Obj][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl][^DB][--]n[Amb][+DirE]
 
 soldadontapas	soldadontapas	+?
 
@@ -741,7 +739,7 @@ hap'isqan	hap'i[VRoot][=agarrar,entender][^DB][--]sqa[NS][+Perf][^DB][--]n[Amb][
 
 may	may[PrnInterr][=dónde]
 
-kuti	kuti[NRoot][=vez,apto]
+kuti	kuti[NRoot][=vez]
 
 chukchamanta	chukcha[NRoot][=cabello][^DB][--]manta[Cas][+Abl]
 
@@ -803,7 +801,7 @@ Chaymi	chay[PrnDem][^DB][--]mi[Amb][+DirE]
 
 askha	askha[NRoot][=mucho]
 
-kuti	kuti[NRoot][=vez,apto]
+kuti	kuti[NRoot][=vez]
 
 guardiakunaq	guardiakunaq	+?
 
@@ -1008,7 +1006,7 @@ rakhun	rakhu[NRoot][=grueso][^DB][--]n[Amb][+DirE]
 
 kunka	kunka[NRoot][=voz,cuello]
 
-qhari	qhari[NRoot][=macho,varón]
+qhari	qhari[NRoot][=macho]
 
 hina	hina[Part_Sim]
 
@@ -1162,7 +1160,7 @@ noqapas	nuqa[PrnPers+1.Sg][^DB][--]pas[Amb][+Add]
 
 ñawpaq	ñawpaq[NRoot][=antes]
 
-qhariywan	qhari[NRoot][=macho,varón][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]wan[Cas][+Con_Inst]
+qhariywan	qhari[NRoot][=macho][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]wan[Cas][+Con_Inst]
 
 casadachu	casadachu	+?
 
@@ -1207,7 +1205,6 @@ allinchu	allin[NRoot][=bueno][^DB][--]chu[Amb][+Intr_Neg]
 
 kasunman	ka[VRoot][=ser][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Fut][--]man[Mod][+Pot]
 kasunman	kasu[NRoot][=flaco][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]man[Cas][+Dat_Ill]
-kasunman	hacer_caso[VRootES][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot]
 
 ,	,[$.]
 
@@ -1374,7 +1371,6 @@ llank'ashani	llank'a[VRoot][=trabajar][^DB][--]sha[Asp][+Prog][--]ni[VPers][+1.S
 chaypipas	chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+Add]
 
 kallantaqmi	ka[VRoot][=ser][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
-kallantaqmi	kalla[NRoot][=brecha][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
 
 fijo	fijo	+?
 
@@ -1440,13 +1436,13 @@ seguro	seguro[SP]
 
 waqaqta	waqa[VRoot][=llorar,guardar,proteger][^DB][--]q[NS][+Ag][^DB][--]ta[Cas][+Acc]
 
-rikuspa	riku[VRoot][=ver,conocer,aparecer][^DB][--]spa[NS][+SS]
+rikuspa	riku[VRoot][=ver,aparecer][^DB][--]spa[NS][+SS]
 
 compasionpin	compasionpin	+?
 
 huk	huk[NRootNUM]
 
-wiraqocha	wira[NRoot][=grasa][^DB][--]qucha[NRoot][=lago]
+wiraqocha	wiraqucha[NRoot][=señor]
 
 gringo	gringo[NRootES]
 
@@ -1656,7 +1652,7 @@ convento	convento	+?
 
 padrekuna	padre[NRootES][--]kuna[Num][+Pl]
 
-sutiykuta	suti[NRoot][=nombre,verdad][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]ta[Cas][+Acc]
+sutiykuta	suti[NRoot][=nombre][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]ta[Cas][+Acc]
 
 libropi	libro[NRootES][^DB][--]pi[Cas][+Loc]
 
@@ -1698,7 +1694,7 @@ hay	hay	+?
 
 mana	mana[Part_Neg]
 
-rikhurinchu	rikhuri[VRoot][=aparecer,ver][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]chu[Amb][+Intr_Neg]
+rikhurinchu	rikhu[VRoot][=aparecer,ver][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]chu[Amb][+Intr_Neg]
 
 .	.[$.]
 
@@ -1748,7 +1744,7 @@ sapa	sapa[NRoot][=cada,solo]
 
 p'unchay	p'unchay[NRoot][=día]
 
-rikuwaspa	riku[VRoot][=ver,conocer,aparecer][^DB][--]wa[VPers][+1.Obj][^DB][--]spa[NS][+SS]
+rikuwaspa	riku[VRoot][=ver,aparecer][^DB][--]wa[VPers][+1.Obj][^DB][--]spa[NS][+SS]
 
 sayk'usqa	sayk'u[VRoot][=cansarse][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 sayk'usqa	sayk'u[VRoot][=cansarse][^DB][--]sqa[NS][+Perf]
@@ -1917,7 +1913,7 @@ Santiagopi	Santiagopi	+?
 
 maynin	may[PrnInterr][=dónde][^DB][--]nin[NPers][+3.Sg.Poss]
 
-kuti	kuti[NRoot][=vez,apto]
+kuti	kuti[NRoot][=vez]
 
 Gregoriopuwan	Gregoriopuwan	+?
 
@@ -1925,7 +1921,7 @@ Gregoriopuwan	Gregoriopuwan	+?
 
 maynin	may[PrnInterr][=dónde][^DB][--]nin[NPers][+3.Sg.Poss]
 
-kutitaq	kuti[NRoot][=vez,apto][^DB][--]taq[Amb][+Con_Intr]
+kutitaq	kuti[NRoot][=vez][^DB][--]taq[Amb][+Con_Intr]
 
 noqa	nuqa[PrnPers+1.Sg]
 
@@ -2033,7 +2029,7 @@ botella	botella	+?
 
 maynin	may[PrnInterr][=dónde][^DB][--]nin[NPers][+3.Sg.Poss]
 
-kuteqa	kuti[NRoot][=vez,apto][^DB][--]qa[Amb][+Top]
+kuteqa	kuti[NRoot][=vez][^DB][--]qa[Amb][+Top]
 
 tawa	tawa[NRootNUM]
 
@@ -2085,7 +2081,7 @@ vendeyman	vendeyman	+?
 
 #EOS	#EOS	+?
 
-Rikunin	riku[VRoot][=ver,conocer,aparecer][^DB][--]ni[VPers][+1.Sg.Subj][^DB][--]n[Amb][+DirE]
+Rikunin	riku[VRoot][=ver,aparecer][^DB][--]ni[VPers][+1.Sg.Subj][^DB][--]n[Amb][+DirE]
 
 salidan	salidan	+?
 
@@ -2261,11 +2257,10 @@ pobre	pobre	+?
 almanchis	almanchis	+?
 
 haqay	haqay[PrnDem]
-haqay	haqa[NRoot][=deuda][^DB][--]y[NPers][+1.Sg.Poss]
 
 niraq	niraq[NRoot][=color,clase,especie]
 
-kutita	kuti[NRoot][=vez,apto][^DB][--]ta[Cas][+Acc]
+kutita	kuti[NRoot][=vez][^DB][--]ta[Cas][+Acc]
 
 sayan	saya[VRoot][=parar][^DB][--]n[VPers][+3.Sg.Subj]
 
