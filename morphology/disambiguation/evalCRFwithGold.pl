@@ -47,11 +47,20 @@ if($mode eq '-pos' or $mode eq '-morph')
 				my ($word,$rest) = split (/\t|\s/, $crfLine);	 
 				 my ($word2,$rest2) = split (/\t|\s/, $goldLine);	 
 				 
-				if($word ne $word2)
-				{die "different words: $word vs. $word2, at line $lines\n";}
+				  $word =~ s/e/i/g;
+				 $word =~ s/o/u/g;
+				 $word =~ s/ó/u/g;
+				 
+				 $word2 =~ s/e/i/g;
+				 $word2 =~ s/o/u/g;
+
+				if(lc($word) ne lc($word2)){
+					#print "different words: $word vs. $word2, at line $lines\n";
+				}
 
 		#print "test: ".$crfLine;
 		#print "gold: ".$goldLine;
+		#print "$word : $word2\n";
 		#if one of the lines is empty, but the other is not-> mismatch in files		
 		if( ($crfLine =~ /^\s*$/) != ($goldLine =~ /^\s*$/) )
 		{
@@ -88,15 +97,15 @@ if($mode eq '-pos' or $mode eq '-morph')
 			 elsif($mode eq '-pos')
 			 {
 			 	# only pos: count ambiguos words
-			 	if(@rowsCRF[4] ne 'ZZZ'){
+			 	if(@rowsCRF[3] ne 'ZZZ'){
 	#		 		print "$classCRF : $classGOLD\n";
 					$wordsToDisamb++;
 			 	}
 			 	# with lc, index 4, without, 3
-				if($classCRF eq $classGOLD && @rowsCRF[4] ne 'ZZZ'){
+				if($classCRF eq $classGOLD && @rowsCRF[3] ne 'ZZZ'){
 					$correctClass++;
 				}
-				elsif($classCRF ne $classGOLD && @rowsCRF[4] ne 'ZZZ'){
+				elsif($classCRF ne $classGOLD && @rowsCRF[3] ne 'ZZZ'){
 					$wrongClass++;
 					print "$classCRF : $classGOLD\n";
 				}

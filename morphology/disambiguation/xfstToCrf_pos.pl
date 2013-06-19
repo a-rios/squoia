@@ -52,6 +52,14 @@ while(<STDIN>){
 			}
 		}
 		
+		my ($lem) = ($_ =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
+		$lem = lc($lem);
+		if($lem eq ''){
+			$lem = 'ZZZ';
+		}
+		
+		#print STDERR "$lem\n";
+		
 		my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
 		# simplify tags
 #		for (my $i=0;$i<scalar(@morphtags);$i++){
@@ -74,6 +82,7 @@ while(<STDIN>){
 		$hashAnalysis{'pos'} = $root;
 		$hashAnalysis{'morph'} = \@morphtags;
 		$hashAnalysis{'allmorphs'} = $allmorphs;
+		$hashAnalysis{'lem'} = $lem;
 	
 #	   ALFS 
 #       CARD 
@@ -124,8 +133,9 @@ foreach my $word (@words){
 	}
 	else
 	{
-		print "$form\t";
+		#print "$form\t";
 		print lc($form)."\t";
+		
 		$lastlineEmpty =0;
 		# uppercase/lowercase?
 		#punctuation (punctuation has never more than one analysis, so we can just take @$analyses[0])
@@ -194,6 +204,30 @@ foreach my $word (@words){
 			print "ZZZ\t";
 			$nbrOfMorph++;
 		}
+		
+		#print possible lemmas 
+		# possible root pos
+		my $printedlems='';
+		my $nbrOfLems =0;
+		foreach my $analysis (@$analyses){
+			my $lem = $analysis->{'lem'};
+			unless($printedlems =~ /\Q$lem\E/){
+				print "$lem\t";
+				$printedlems = $printedlems.$lem;
+				$nbrOfLems++;
+			}
+		}
+		
+		my $ambigLems=0;
+		if($nbrOfLems > 1){
+			$ambigLems++;
+		}
+	
+		while($nbrOfLems<2){
+			print "ZZZ\t";
+			$nbrOfLems++;
+		}
+		
 	
 		# only one analysis, take pos from @$analyses[0]
 		if($mode eq '-train')
