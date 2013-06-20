@@ -55,6 +55,7 @@ while(<STDIN>){
 		my ($lem) = ($_ =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
 		$lem = lc($lem);
 		if($lem eq ''){
+			#$lem = $form;
 			$lem = 'ZZZ';
 		}
 		
@@ -115,6 +116,16 @@ my $lastlineEmpty=0;
 my $ambigPos =0;
 my $ambigForms=0;
 
+
+my $xfstWordsRefLem = retrieve('PossibleLemmasForTrain');
+my %xfstwordsLem = %$xfstWordsRefLem;
+my $xfstWordsRefMorph = retrieve('PossibleMorphsForTrain');
+my %xfstwordsMorph = %$xfstWordsRefMorph;
+my $xfstWordsRefPos = retrieve('PossibleRootsForTrain');
+my %xfstwordsPos = %$xfstWordsRefPos;
+
+
+
 foreach my $word (@words){
 	my $analyses = @$word[1];
 	my $form = @$word[0];
@@ -161,6 +172,17 @@ foreach my $word (@words){
 				$nbrOfPos++;
 			}
 		}
+		# get possible roots from stored hash (need xfst analysis to get those!)
+		if($mode eq '-train'){
+			my $possiblePosRef = $xfstwordsPos{$form};
+			foreach my $possPos (@$possiblePosRef){
+				unless($printedroots =~ /\Q$possPos\E/){
+					print "$possPos\t";
+					$printedroots = $printedroots.$possPos;
+					$nbrOfPos++;
+				}
+			}
+		}
 		
 		if($nbrOfPos > 1){
 			$ambigPos++;
@@ -200,6 +222,21 @@ foreach my $word (@words){
 				}
 			}
 		}
+		# get possible morphs from stored hash (need xfst analysis to get those!)
+		if($mode eq '-train'){
+			my $possibleMorphsRef = $xfstwordsMorph{$form};
+			foreach my $possAllmorph (@$possibleMorphsRef){
+				my @morphs = split('#', $possAllmorph);
+				foreach my $morph (@morphs){
+					unless($printedmorphs =~ /\Q$morph\E/){
+						print "$morph\t";
+						$printedmorphs = $printedmorphs.$morph;
+						$nbrOfMorph++;
+					}
+				}
+			}
+		}
+		
 		while($nbrOfMorph<10){
 			print "ZZZ\t";
 			$nbrOfMorph++;
@@ -207,14 +244,26 @@ foreach my $word (@words){
 		
 		#print possible lemmas 
 		# possible root pos
-		my $printedlems='';
+		my $printedlems='#';
 		my $nbrOfLems =0;
 		foreach my $analysis (@$analyses){
 			my $lem = $analysis->{'lem'};
-			unless($printedlems =~ /\Q$lem\E/){
+			unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
 				print "$lem\t";
-				$printedlems = $printedlems.$lem;
+				$printedlems = $printedlems.'#'.$lem."#";
 				$nbrOfLems++;
+			}
+		}
+		
+		# get possible lemmas from stored hash (need xfst analysis to get those!)
+		if($mode eq '-train'){
+			my $possibleLemmasRef = $xfstwordsLem{$form};
+			foreach my $lem (@$possibleLemmasRef){
+				unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
+					print "$lem\t";
+					$printedlems = $printedlems.'#'.$lem."#";
+					$nbrOfLems++;
+				}
 			}
 		}
 		

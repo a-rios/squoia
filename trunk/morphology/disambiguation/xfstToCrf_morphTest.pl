@@ -369,20 +369,20 @@ if($mode eq '-2')
 				@$word[3] = "amb2";
 			}
 			# NOMINAL morphology
-			# -nkuna
-			elsif(&containedInOtherMorphs($analyses,"+3.Pl.Poss+Pl","+3.Sg.Poss+Pl"))
-			{
-				push(@possibleClasses, "Sg");
-				push(@possibleClasses, "Pl");
-				@$word[3] = "amb2";
-			}
-			# -ykuna
-			elsif(&containedInOtherMorphs($analyses,"+1.Pl.Excl.Poss+Pl","+1.Sg.Poss+Pl"))
-			{
-				push(@possibleClasses, "Sg");
-				push(@possibleClasses, "Pl");
-				@$word[3] = "amb2";
-			}
+#			# -nkuna
+#			elsif(&containedInOtherMorphs($analyses,"+3.Pl.Poss+Pl","+3.Sg.Poss+Pl"))
+#			{
+#				push(@possibleClasses, "Sg");
+#				push(@possibleClasses, "Pl");
+#				@$word[3] = "amb2";
+#			}
+#			# -ykuna
+#			elsif(&containedInOtherMorphs($analyses,"+1.Pl.Excl.Poss+Pl","+1.Sg.Poss+Pl"))
+#			{
+#				push(@possibleClasses, "Sg");
+#				push(@possibleClasses, "Pl");
+#				@$word[3] = "amb2";
+#			}
 	
 			# else: other ambiguities, leave
 			else
@@ -970,57 +970,57 @@ sub disambMorph2{
 				my $analysis = @$analyses[$j];
 				my $allmorphs = $analysis->{'allmorphs'};
 				
-				# at this point, the classes/tags are NOT unique (Sg,Pl), so we cannot just check whether the class is contained in allmorphs		
-				# -sun: Imp, Fut
-				# -nqa: Top, Fut
-				# -sqaykiku: Fut, IPst
-				# -ykuna: Sg, Pl
-				# -nkuna: Sg, Pl
-				if($correctMorph eq 'Pl'  && $form =~ /ykuna/)
-				{
-					if($allmorphs !~ /\Q1.Pl.Excl.Poss\E/ && scalar(@$analyses) > 1){
-						splice (@{$analyses},$j,1);	
-						$disambiguatedForms++;
-						$j--;
-					}
-					
-				}
-				elsif($correctMorph eq 'Sg'  && $form =~ /ykuna/)
-				{
-					if($allmorphs !~ /\Q1.Sg.Poss\E/ && scalar(@$analyses) > 1){
-						splice (@{$analyses},$j,1);	
-						$disambiguatedForms++;
-						$j--;
-					}
-					
-				}
-				elsif($correctMorph eq 'Pl'  && $form =~ /nkuna/)
-				{
-					if($allmorphs !~ /\Q3.Pl.Poss\E/ && scalar(@$analyses) > 1){
-						splice (@{$analyses},$j,1);	
-						$disambiguatedForms++;
-						$j--;
-					}
-					
-				}
-				elsif($correctMorph eq 'Sg'  && $form =~ /nkuna/)
-				{
-					if($allmorphs !~ /\Q3.Sg.Poss\E/ && scalar(@$analyses) > 1){
-						splice (@{$analyses},$j,1);	
-						$disambiguatedForms++;
-						$j--;
-					}
-					
-				}
+#				# at this point, the classes/tags are NOT unique (Sg,Pl), so we cannot just check whether the class is contained in allmorphs		
+#				# -sun: Imp, Fut
+#				# -nqa: Top, Fut
+#				# -sqaykiku: Fut, IPst
+#				# -ykuna: Sg, Pl
+#				# -nkuna: Sg, Pl
+#				if($correctMorph eq 'Pl'  && $form =~ /ykuna/)
+#				{
+#					if($allmorphs !~ /\Q1.Pl.Excl.Poss\E/ && scalar(@$analyses) > 1){
+#						splice (@{$analyses},$j,1);	
+#						$disambiguatedForms++;
+#						$j--;
+#					}
+#					
+#				}
+#				elsif($correctMorph eq 'Sg'  && $form =~ /ykuna/)
+#				{
+#					if($allmorphs !~ /\Q1.Sg.Poss\E/ && scalar(@$analyses) > 1){
+#						splice (@{$analyses},$j,1);	
+#						$disambiguatedForms++;
+#						$j--;
+#					}
+#					
+#				}
+#				elsif($correctMorph eq 'Pl'  && $form =~ /nkuna/)
+#				{
+#					if($allmorphs !~ /\Q3.Pl.Poss\E/ && scalar(@$analyses) > 1){
+#						splice (@{$analyses},$j,1);	
+#						$disambiguatedForms++;
+#						$j--;
+#					}
+#					
+#				}
+#				elsif($correctMorph eq 'Sg'  && $form =~ /nkuna/)
+#				{
+#					if($allmorphs !~ /\Q3.Sg.Poss\E/ && scalar(@$analyses) > 1){
+#						splice (@{$analyses},$j,1);	
+#						$disambiguatedForms++;
+#						$j--;
+#					}
+#					
+#				}
 				# no confusion with other tags, just check whether allmorphs contains them
-				else
-				{
+				#else
+				#{
 					if($allmorphs !~ /\Q$correctMorph\E/ && scalar(@$analyses) > 1){
 						splice (@{$analyses},$j,1);	
 						$disambiguatedForms++;
 						$j--;		
 					}
-				}
+				#}
 				
 			}
 

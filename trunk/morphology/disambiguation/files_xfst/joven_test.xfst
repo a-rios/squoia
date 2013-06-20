@@ -245,7 +245,7 @@ Chayllapi	chay[PrnDem][^DB][--]lla[Amb][+Lim_Aff][^DB][--]pi[Cas][+Loc]
 
 papata	papa[NRoot][=patata][^DB][--]ta[Cas][+Acc]
 
-suwarusqaku	suwa[VRoot][=robar][--]ru[VDeriv][+Rptn][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst]
+suwarusqaku	suwa[VRoot][=robar][--]rqu[VDeriv][+Rptn][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst]
 
 .	.[$.]
 
@@ -362,8 +362,8 @@ chawpi	chawpi[NRoot][=centro,mitad]
 
 tutata	tuta[NRoot][=noche][^DB][--]ta[Cas][+Acc]
 
-puñurapusqa	puñu[VRoot][=dormir][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
-puñurapusqa	puñu[VRoot][=dormir][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf]
+puñurapusqa	puñu[VRoot][=dormir][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+puñurapusqa	puñu[VRoot][=dormir][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf]
 
 .	.[$.]
 
@@ -371,7 +371,7 @@ puñurapusqa	puñu[VRoot][=dormir][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs]
 
 Hinamanqa	hina[Part_Sim][^DB][--]man[Cas][+Dat_Ill][^DB][--]qa[Amb][+Top]
 
-suwarapullasqakutaq	suwa[VRoot][=robar][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]lla[Amb][+Lim_Aff][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst][^DB][--]taq[Amb][+Con_Intr]
+suwarapullasqakutaq	suwa[VRoot][=robar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]lla[Amb][+Lim_Aff][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst][^DB][--]taq[Amb][+Con_Intr]
 
 .	.[$.]
 
@@ -445,7 +445,7 @@ Khaynata	khayna[PrnDem][^DB][--]ta[Cas][+Acc]
 
 qhawachkaqtiy	qhawa[VRoot][=mirar][^DB][--]chka[Asp][+Prog][^DB][--]qti[NS][+DS][^DB][--]y[NPers][+1.Sg.Poss]
 
-suwarapuwallantaq	suwa[VRoot][=robar][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]wa[VPers][+1.Obj][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]taq[Amb][+Con_Intr]
+suwarapuwallantaq	suwa[VRoot][=robar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]wa[VPers][+1.Obj][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]taq[Amb][+Con_Intr]
 
 ,	,[$.]
 
@@ -453,8 +453,8 @@ chawpi	chawpi[NRoot][=centro,mitad]
 
 tutata	tuta[NRoot][=noche][^DB][--]ta[Cas][+Acc]
 
-puñurapunaykama	puñu[VRoot][=dormir][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]kama[Cas][+Term]
-puñurapunaykama	puñu[VRoot][=dormir][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]kama[Cas][+Dist]
+puñurapunaykama	puñu[VRoot][=dormir][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]kama[Cas][+Term]
+puñurapunaykama	puñu[VRoot][=dormir][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]kama[Cas][+Dist]
 
 .	.[$.]
 
@@ -606,8 +606,8 @@ qhawachkallasqanpi	qhawa[VRoot][=mirar][^DB][--]chka[Asp][+Prog][^DB][--]lla[Amb
 
 aschallata	as[NRoot][=poco][--]cha[NDeriv][+Dim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ta[Cas][+Acc]
 
-puñuriruchkasqa	puñu[VRoot][=dormir][--]ri[VDeriv][+Inch][--]ru[VDeriv][+Rptn][^DB][--]chka[Asp][+Prog][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
-puñuriruchkasqa	puñu[VRoot][=dormir][--]ri[VDeriv][+Inch][--]ru[VDeriv][+Rptn][^DB][--]chka[Asp][+Prog][^DB][--]sqa[NS][+Perf]
+puñuriruchkasqa	puñu[VRoot][=dormir][--]ri[VDeriv][+Inch][--]rqu[VDeriv][+Rptn][^DB][--]chka[Asp][+Prog][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+puñuriruchkasqa	puñu[VRoot][=dormir][--]ri[VDeriv][+Inch][--]rqu[VDeriv][+Rptn][^DB][--]chka[Asp][+Prog][^DB][--]sqa[NS][+Perf]
 
 .	.[$.]
 
@@ -695,7 +695,7 @@ usqhaylla	usqha[VRoot][=apurarse][^DB][--]y[NS][+Inf][^DB][--]lla[Amb][+Lim_Aff]
 
 papata	papa[NRoot][=patata][^DB][--]ta[Cas][+Acc]
 
-suwarukuchkasqaku	suwa[VRoot][=robar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]chka[Asp][+Prog][--]sqaku[VPers][+3.Pl.Subj.IPst]
+suwarukuchkasqaku	suwa[VRoot][=robar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]chka[Asp][+Prog][--]sqaku[VPers][+3.Pl.Subj.IPst]
 
 .	.[$.]
 
@@ -816,8 +816,8 @@ munakuymanta	muna[VRoot][=querer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+I
 
 yaqa	yaqa[NRoot][=casi]
 
-phatarusqa	phata[VRoot][=reventar][--]ru[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
-phatarusqa	phata[VRoot][=reventar][--]ru[VDeriv][+Rptn][^DB][--]sqa[NS][+Perf]
+phatarusqa	phata[VRoot][=reventar][--]rqu[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+phatarusqa	phata[VRoot][=reventar][--]rqu[VDeriv][+Rptn][^DB][--]sqa[NS][+Perf]
 
 :	:[$.]
 
@@ -829,8 +829,8 @@ Manachus	mana[Part_Neg][^DB][--]chu[Amb][+Intr_Neg][^DB][--]s[Amb][+IndE]
 
 iskayllatapis	iskay[NRootNUM][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ta[Cas][+Acc][^DB][--]pis[Amb][+Add]
 
-qhiparachikuyman	qhipa[VRoot][=quedar][--]ra[VDeriv][+Rptn][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]yman[VPers][+1.Sg.Subj.Pot]
-qhiparachikuyman	qhipa[VRoot][=quedar][--]ra[VDeriv][+Rptn][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]man[Cas][+Dat_Ill]
+qhiparachikuyman	qhipa[VRoot][=quedar][--]rqa[VDeriv][+Rptn][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]yman[VPers][+1.Sg.Subj.Pot]
+qhiparachikuyman	qhipa[VRoot][=quedar][--]rqa[VDeriv][+Rptn][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]man[Cas][+Dat_Ill]
 
 -	-[$.]
 
@@ -880,7 +880,7 @@ hanaqman	hanaq[NRoot][=arriba,superior][^DB][--]man[Cas][+Dat_Ill]
 
 pinchikilla	pinchikilla	+?
 
-wañurapuq	wañu[VRoot][=morir][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]q[NS][+Ag]
+wañurapuq	wañu[VRoot][=morir][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]q[NS][+Ag]
 
 hina	hina[Part_Sim]
 
@@ -1165,7 +1165,7 @@ kutimunchu	kuti[VRoot][=volver][--]mu[VDeriv][+Cis_Trs][^DB][--]n[VPers][+3.Sg.S
 
 Papatachá	papa[NRoot][=patata][^DB][--]ta[Cas][+Acc][^DB][--]chá[Amb][+Asmp_Emph]
 
-suwarachimun	suwa[VRoot][=robar][--]ra[VDeriv][+Rptn][^DB][--]chi[VDeriv][+Caus][--]mu[VDeriv][+Cis_Trs][^DB][--]n[VPers][+3.Sg.Subj]
+suwarachimun	suwa[VRoot][=robar][--]rqa[VDeriv][+Rptn][^DB][--]chi[VDeriv][+Caus][--]mu[VDeriv][+Cis_Trs][^DB][--]n[VPers][+3.Sg.Subj]
 
 -	-[$.]
 
@@ -1949,7 +1949,7 @@ pasakun	pasa[VRootES][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 Munaqtiykiqa	muna[VRoot][=querer][^DB][--]qti[NS][+DS][^DB][--]yki[NPers][+2.Sg.Poss][^DB][--]qa[Amb][+Top]
 
-q'ipiruykimanmi	q'ipi[VRoot][=llevar][--]ru[VDeriv][+Rptn][^DB][--]yki[VPers][+1.Sg.Subj_2.Sg.Obj][--]man[Mod][+Pot][^DB][--]mi[Amb][+DirE]
+q'ipiruykimanmi	q'ipi[VRoot][=llevar][--]rqu[VDeriv][+Rptn][^DB][--]yki[VPers][+1.Sg.Subj_2.Sg.Obj][--]man[Mod][+Pot][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
 
@@ -1969,7 +1969,7 @@ pachaqa	pacha[NRoot][=mundo,tiempo][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
 
-q'ipiruykimanyá	q'ipi[VRoot][=llevar][--]ru[VDeriv][+Rptn][^DB][--]yki[VPers][+1.Sg.Subj_2.Sg.Obj][--]man[Mod][+Pot][^DB][--]yá[Amb][+Emph]
+q'ipiruykimanyá	q'ipi[VRoot][=llevar][--]rqu[VDeriv][+Rptn][^DB][--]yki[VPers][+1.Sg.Subj_2.Sg.Obj][--]man[Mod][+Pot][^DB][--]yá[Amb][+Emph]
 
 -	-[$.]
 
@@ -1987,7 +1987,7 @@ kanman	ka[VRoot][=ser][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot]
 
 ,	,[$.]
 
-q'ipirukuwankiman	q'ipi[VRoot][=llevar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]wa[VPers][+1.Obj][^DB][--]nki[VPers][+2.Sg.Subj][--]man[Mod][+Pot]
+q'ipirukuwankiman	q'ipi[VRoot][=llevar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]wa[VPers][+1.Obj][^DB][--]nki[VPers][+2.Sg.Subj][--]man[Mod][+Pot]
 
 chayqa	chay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -2029,7 +2029,7 @@ quwanki	qu[VRoot][=dar][^DB][--]wa[VPers][+1.Obj][^DB][--]nki[VPers][+2.Sg.Subj]
 kaypi	ka[VRoot][=ser][^DB][--]y[NS][+Inf][^DB][--]pi[Cas][+Loc]
 kaypi	kay[PrnDem][^DB][--]pi[Cas][+Loc]
 
-mikhurunaypaq	mikhu[VRoot][=comer][--]ru[VDeriv][+Rptn][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben]
+mikhurunaypaq	mikhu[VRoot][=comer][--]rqu[VDeriv][+Rptn][^DB][--]na[NS][+Obl][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]paq[Cas][+Ben]
 
 ,	,[$.]
 
@@ -2416,8 +2416,8 @@ phawasqankupis	phawa[VRoot][=correr,volar][^DB][--]sqa[NS][+Perf][^DB][--]nku[NP
 
 aycha	aycha[NRoot][=cuerpo,carne]
 
-tukurakapusqa	tuku[VRoot][=acabar,suceder,convertirse][--]ra[VDeriv][+Rptn][^DB][--]ka[VDeriv][+Rflx_Int][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
-tukurakapusqa	tuku[VRoot][=acabar,suceder,convertirse][--]ra[VDeriv][+Rptn][^DB][--]ka[VDeriv][+Rflx_Int][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf]
+tukurakapusqa	tuku[VRoot][=acabar,suceder,convertirse][--]rqa[VDeriv][+Rptn][^DB][--]ka[VDeriv][+Rflx_Int][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+tukurakapusqa	tuku[VRoot][=acabar,suceder,convertirse][--]rqa[VDeriv][+Rptn][^DB][--]ka[VDeriv][+Rflx_Int][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf]
 
 .	.[$.]
 
@@ -2599,8 +2599,8 @@ Kunanqa	kunan[NRoot][=ahora][^DB][--]qa[Amb][+Top]
 
 wayna	wayna[NRoot][=joven]
 
-armarukuy	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[VPers][+2.Sg.Subj.Imp]
-armarukuy	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
+armarukuy	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[VPers][+2.Sg.Subj.Imp]
+armarukuy	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
 
 kay	ka[VRoot][=ser][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 kay	ka[VRoot][=ser][^DB][--]y[NS][+Inf]
@@ -2618,8 +2618,8 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 Waynas	wayna[NRoot][=joven][^DB][--]s[Amb][+IndE]
 
-armarukusqa	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
-armarukusqa	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+Perf]
+armarukusqa	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+armarukusqa	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+Perf]
 
 ,	,[$.]
 
@@ -2656,7 +2656,7 @@ tukusqaña	tuku[VRoot][=acabar,suceder,convertirse][^DB][--]sqa[NS][+Perf][^DB][
 
 #EOS	#EOS	+?
 
-Armarukuqtinku	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qti[NS][+DS][^DB][--]nku[NPers][+3.Pl.Poss]
+Armarukuqtinku	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qti[NS][+DS][^DB][--]nku[NPers][+3.Pl.Poss]
 
 hinas	hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -2664,7 +2664,7 @@ hinas	hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
 sumaqtaraq	sumaq[NRoot][=lindo][^DB][--]ta[Cas][+Acc][^DB][--]raq[Amb][+Cont]
 
-waynayarusqaku	wayna[NRoot][=joven][--]ya[VS][+Trs][--]ru[VDeriv][+Rptn][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst]
+waynayarusqaku	wayna[NRoot][=joven][--]ya[VS][+Trs][--]rqu[VDeriv][+Rptn][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst]
 
 .	.[$.]
 
@@ -3367,8 +3367,8 @@ Kay	kay[PrnDem]
 
 kiwnachata	kiwnachata	+?
 
-wayk'urukuy	wayk'u[VRoot][=cocinar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[VPers][+2.Sg.Subj.Imp]
-wayk'urukuy	wayk'u[VRoot][=cocinar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
+wayk'urukuy	wayk'u[VRoot][=cocinar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[VPers][+2.Sg.Subj.Imp]
+wayk'urukuy	wayk'u[VRoot][=cocinar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
 
 -	-[$.]
 
@@ -3499,8 +3499,8 @@ paykunawan	pay[PrnPers+3.Sg][--]kuna[Num][+Pl][^DB][--]wan[Cas][+Con_Inst]
 Chaykama	chay[PrnDem][^DB][--]kama[Cas][+Term]
 Chaykama	chay[PrnDem][^DB][--]kama[Cas][+Dist]
 
-wayk'urukuchkay	wayk'u[VRoot][=cocinar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]chka[Asp][+Prog][^DB][--]y[NS][+Inf]
-wayk'urukuchkay	wayk'u[VRoot][=cocinar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]chka[Asp][+Prog][--]y[VPers][+2.Sg.Subj.Imp]
+wayk'urukuchkay	wayk'u[VRoot][=cocinar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]chka[Asp][+Prog][^DB][--]y[NS][+Inf]
+wayk'urukuchkay	wayk'u[VRoot][=cocinar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]chka[Asp][+Prog][--]y[VPers][+2.Sg.Subj.Imp]
 
 qusqayta	qu[VRoot][=dar][^DB][--]sqa[NS][+Perf][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
@@ -3523,7 +3523,7 @@ pasanankama	pasa[VRootES][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB]
 
 hatarirquspa	hata[VRoot][=levantarse][--]ri[VDeriv][+Inch][--]rqu[VDeriv][+Rptn][^DB][--]spa[NS][+SS]
 
-yaparukun	yapa[VRoot][=añadir][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
+yaparukun	yapa[VRoot][=añadir][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 kiwnataqa	kiwnataqa	+?
 
@@ -3535,13 +3535,13 @@ Achkhachatas	achkha[NRoot][=mucho][--]cha[NDeriv][+Dim][^DB][--]ta[Cas][+Acc][^D
 
 kiwnataqa	kiwnataqa	+?
 
-yaparukun	yapa[VRoot][=añadir][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
+yaparukun	yapa[VRoot][=añadir][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 ,	,[$.]
 
 hinaspas	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
-wayk'urukun	wayk'u[VRoot][=cocinar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
+wayk'urukun	wayk'u[VRoot][=cocinar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 hatun	hatun[NRoot][=grande]
 
@@ -3553,7 +3553,7 @@ mankapi	manka[NRoot][=olla][^DB][--]pi[Cas][+Loc]
 
 Hinas	hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
-wayk'urukuqtinqa	wayk'u[VRoot][=cocinar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
+wayk'urukuqtinqa	wayk'u[VRoot][=cocinar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
 
@@ -3631,8 +3631,8 @@ atisqanta	ati[VRoot][=poder,vencer][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.S
 
 #EOS	#EOS	+?
 
-Saksarusqas	saksa[VRoot][=saciarse][--]ru[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst][^DB][--]s[Amb][+IndE]
-Saksarusqas	saksa[VRoot][=saciarse][--]ru[VDeriv][+Rptn][^DB][--]sqa[NS][+Perf][^DB][--]s[Amb][+IndE]
+Saksarusqas	saksa[VRoot][=saciarse][--]rqu[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst][^DB][--]s[Amb][+IndE]
+Saksarusqas	saksa[VRoot][=saciarse][--]rqu[VDeriv][+Rptn][^DB][--]sqa[NS][+Perf][^DB][--]s[Amb][+IndE]
 
 pisillawan	pisi[NRoot][=poco][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wan[Cas][+Con_Inst]
 pisillawan	pisi[VRoot][=faltar][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj]
@@ -3701,8 +3701,8 @@ kachkaqtinsi	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][^DB][--]qti[NS][+DS][^DB][
 
 ñust'a	ñust'a[NRoot][=doncella]
 
-kutiyurusqa	kuti[VRoot][=volver][--]yu[VDeriv][+Aff][--]ru[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
-kutiyurusqa	kuti[VRoot][=volver][--]yu[VDeriv][+Aff][--]ru[VDeriv][+Rptn][^DB][--]sqa[NS][+Perf]
+kutiyurusqa	kuti[VRoot][=volver][--]yu[VDeriv][+Aff][--]rqu[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+kutiyurusqa	kuti[VRoot][=volver][--]yu[VDeriv][+Aff][--]rqu[VDeriv][+Rptn][^DB][--]sqa[NS][+Perf]
 
 ,	,[$.]
 
@@ -3736,7 +3736,7 @@ Kay	kay[PrnDem]
 
 mikhunacha	mikhu[VRoot][=comer][^DB][--]na[NS][+Obl][--]cha[NDeriv][+Dim]
 
-wayk'urukusqaymi	wayk'u[VRoot][=cocinar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+Perf][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]mi[Amb][+DirE]
+wayk'urukusqaymi	wayk'u[VRoot][=cocinar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+Perf][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]mi[Amb][+DirE]
 
 thuturparin	thutu[VRoot][=criticar][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -3795,7 +3795,7 @@ wayk'ukuyku	wayk'u[VRoot][=cocinar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]yku[VP
 Imapaq	ima[Part_Conec][^DB][--]paq[Cas][+Ben]
 Imapaq	ima[NRoot][=cosa][^DB][--]paq[Cas][+Ben]
 
-yapakuranki	yapa[VRoot][=añadir][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]ra[Tns][+NPst][--]nki[VPers][+2.Sg.Subj]
+yapakuranki	yapa[VRoot][=añadir][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]rqa[Tns][+NPst][--]nki[VPers][+2.Sg.Subj]
 
 .	.[$.]
 
@@ -3928,8 +3928,8 @@ Watamantataqsi	wata[NRoot][=año][^DB][--]manta[Cas][+Abl][^DB][--]taq[Amb][+Con
 
 mana	mana[Part_Neg]
 
-yuyarapusqachu	yuya[VRoot][=recordar,pensar][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst][^DB][--]chu[Amb][+Intr_Neg]
-yuyarapusqachu	yuya[VRoot][=recordar,pensar][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf][^DB][--]chu[Amb][+Intr_Neg]
+yuyarapusqachu	yuya[VRoot][=recordar,pensar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst][^DB][--]chu[Amb][+Intr_Neg]
+yuyarapusqachu	yuya[VRoot][=recordar,pensar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf][^DB][--]chu[Amb][+Intr_Neg]
 
 warmin	warmi[NRoot][=mujer][^DB][--]n[NPers][+3.Sg.Poss]
 warmin	warmi[NRoot][=mujer][^DB][--]n[Amb][+DirE]
@@ -3982,7 +3982,7 @@ huq	huq[NRootNUM]
 
 p'unchaw	p'unchaw[NRoot][=día]
 
-lluqsirakapusqanmanta	lluqsi[VRoot][=salir][--]ra[VDeriv][+Rptn][^DB][--]ka[VDeriv][+Rflx_Int][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl]
+lluqsirakapusqanmanta	lluqsi[VRoot][=salir][--]rqa[VDeriv][+Rptn][^DB][--]ka[VDeriv][+Rflx_Int][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl]
 
 .	.[$.]
 
@@ -4133,11 +4133,11 @@ yanay	yana[NRoot][=negro][^DB][--]y[NPers][+1.Sg.Poss]
 yanay	yana[VRoot][=servir,ayudar][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 yanay	yana[VRoot][=servir,ayudar][^DB][--]y[NS][+Inf]
 
-wikch'urapuwan	wikch'u[VRoot][=echar][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj]
+wikch'urapuwan	wikch'u[VRoot][=echar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj]
 
 ,	,[$.]
 
-qunqarapuwan	qunqa[VRoot][=olvidar][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj]
+qunqarapuwan	qunqa[VRoot][=olvidar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
@@ -4241,8 +4241,8 @@ Q'ipisqaykiyá	q'ipi[VRoot][=llevar][^DB][--]sqa[NS][+Perf][^DB][--]yki[NPers][+
 
 Ichaqa	icha[Part_Contr][^DB][--]qa[Amb][+Top]
 
-armarukusunraq	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Fut][^DB][--]raq[Amb][+Cont]
-armarukusunraq	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Imp][^DB][--]raq[Amb][+Cont]
+armarukusunraq	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Fut][^DB][--]raq[Amb][+Cont]
+armarukusunraq	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Imp][^DB][--]raq[Amb][+Cont]
 
 kay	ka[VRoot][=ser][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 kay	ka[VRoot][=ser][^DB][--]y[NS][+Inf]
@@ -4254,7 +4254,7 @@ quchapi	qucha[NRoot][=lago][^DB][--]pi[Cas][+Loc]
 
 #EOS	#EOS	+?
 
-Armarukunkusyá	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][+3.Pl.Subj][^DB][--]s[Amb][+IndE][--]yá[Amb][+Emph]
+Armarukunkusyá	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][+3.Pl.Subj][^DB][--]s[Amb][+IndE][--]yá[Amb][+Emph]
 
 iskayninku	iskay[NRootNUM][^DB][--]ninku[NPers][+3.Pl.Poss]
 
@@ -4264,9 +4264,9 @@ iskayninku	iskay[NRootNUM][^DB][--]ninku[NPers][+3.Pl.Poss]
 
 Waynallamansi	wayna[NRoot][=joven][^DB][--]lla[Amb][+Lim_Aff][^DB][--]man[Cas][+Dat_Ill][^DB][--]si[Amb][+IndE]
 
-armarukuqtinku	arma[VRoot][=bañar][--]ru[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qti[NS][+DS][^DB][--]nku[NPers][+3.Pl.Poss]
+armarukuqtinku	arma[VRoot][=bañar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qti[NS][+DS][^DB][--]nku[NPers][+3.Pl.Poss]
 
-tukurapusqaku	tuku[VRoot][=acabar,suceder,convertirse][--]ra[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst]
+tukurapusqaku	tuku[VRoot][=acabar,suceder,convertirse][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst]
 
 iskayninku	iskay[NRootNUM][^DB][--]ninku[NPers][+3.Pl.Poss]
 
@@ -4276,7 +4276,7 @@ iskayninku	iskay[NRootNUM][^DB][--]ninku[NPers][+3.Pl.Poss]
 
 Quchamanta	qucha[NRoot][=lago][^DB][--]manta[Cas][+Abl]
 
-lluqsiramuspataq	lluqsi[VRoot][=salir][--]ra[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^DB][--]spa[NS][+SS][^DB][--]taq[Amb][+Con_Intr]
+lluqsiramuspataq	lluqsi[VRoot][=salir][--]rqa[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^DB][--]spa[NS][+SS][^DB][--]taq[Amb][+Con_Intr]
 
 ,	,[$.]
 
@@ -4319,8 +4319,8 @@ Kutichipullasqaykin	kuti[VRoot][=volver][^DB][--]chi[VDeriv][+Caus][--]pu[VDeriv
 
 #EOS	#EOS	+?
 
-Q'ipirullaway	q'ipi[VRoot][=llevar][--]ru[VDeriv][+Rptn][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wa[VPers][+1.Obj][^DB][--]y[VPers][+2.Sg.Subj.Imp]
-Q'ipirullaway	q'ipi[VRoot][=llevar][--]ru[VDeriv][+Rptn][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wa[VPers][+1.Obj][^DB][--]y[NS][+Inf]
+Q'ipirullaway	q'ipi[VRoot][=llevar][--]rqu[VDeriv][+Rptn][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wa[VPers][+1.Obj][^DB][--]y[VPers][+2.Sg.Subj.Imp]
+Q'ipirullaway	q'ipi[VRoot][=llevar][--]rqu[VDeriv][+Rptn][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wa[VPers][+1.Obj][^DB][--]y[NS][+Inf]
 
 .	.[$.]
 
