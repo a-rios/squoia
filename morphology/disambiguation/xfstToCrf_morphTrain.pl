@@ -237,22 +237,22 @@ if($mode eq '-2')
 		}
 		
 		# NOMINAL morphology, with possible VS
-		# -nkuna
-		elsif($allmorphs =~ /\Q+3.Pl.Poss+Pl\E/ || $allmorphs =~ /\Q+3.Sg.Poss+Pl\E/ )
-		{
-				push(@possibleClasses, "Sg");
-				push(@possibleClasses, "Pl");
-				if($allmorphs =~  /\Q+3.Pl.Poss+Pl\E/ ){$actualClass = "Pl";}
-				elsif($allmorphs =~ /\Q+3.Sg.Poss+Pl\E/ ){$actualClass = "Sg";}
-		}
-		# -ykuna
-		elsif($allmorphs =~ /\Q+1.Pl.Excl.Poss+Pl\E/ || $allmorphs =~ /\Q+1.Sg.Poss+Pl\E/ )
-		{
-			push(@possibleClasses, "Sg");
-			push(@possibleClasses, "Pl");
-			if($allmorphs =~  /\Q+1.Pl.Excl.Poss+Pl\E/ ){$actualClass = "Pl";}
-			elsif($allmorphs =~ /\Q+1.Sg.Poss+Pl\E/ ){$actualClass = "Sg";}
-		}
+#		# -nkuna
+#		elsif($allmorphs =~ /\Q+3.Pl.Poss+Pl\E/ || $allmorphs =~ /\Q+3.Sg.Poss+Pl\E/ )
+#		{
+#				push(@possibleClasses, "Sg");
+#				push(@possibleClasses, "Pl");
+#				if($allmorphs =~  /\Q+3.Pl.Poss+Pl\E/ ){$actualClass = "Pl";}
+#				elsif($allmorphs =~ /\Q+3.Sg.Poss+Pl\E/ ){$actualClass = "Sg";}
+#		}
+#		# -ykuna
+#		elsif($allmorphs =~ /\Q+1.Pl.Excl.Poss+Pl\E/ || $allmorphs =~ /\Q+1.Sg.Poss+Pl\E/ )
+#		{
+#			push(@possibleClasses, "Sg");
+#			push(@possibleClasses, "Pl");
+#			if($allmorphs =~  /\Q+1.Pl.Excl.Poss+Pl\E/ ){$actualClass = "Pl";}
+#			elsif($allmorphs =~ /\Q+1.Sg.Poss+Pl\E/ ){$actualClass = "Sg";}
+#		}
 		# else: other ambiguities, leave
 		else
 		{

@@ -56,7 +56,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 				 $word2 =~ s/o/u/g;
 
 				if(lc($word) ne lc($word2)){
-					#print "different words: $word vs. $word2, at line $lines\n";
+					#print "different words: crf: $word vs. gold: $word2, at line $lines\n";
 				}
 
 		#print "test: ".$crfLine;
@@ -113,6 +113,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 				elsif($classCRF ne $classGOLD && @rowsCRF[3] ne 'ZZZ'){
 					$wrongClass++;
 					print "$classCRF : $classGOLD\n";
+					print "crf: $crfLine gold: $goldLine\n\n";
 				}
 				# pos eval: count xfst failures
 				# check if first pos in results is ZZZ, in this case, xfst could not analyse the word
