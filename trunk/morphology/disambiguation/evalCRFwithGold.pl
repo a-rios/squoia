@@ -34,6 +34,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 	my $unamb =0;
 	my $wordsToDisamb =0;
 	my $wrongClass =0;
+	my $nbrTokens=0;
 
 	while (!eof(CRF) and !eof(GOLD)) 
  	{
@@ -75,9 +76,13 @@ if($mode eq '-pos' or $mode eq '-morph')
 		}
 		else
 		{
-			 $wcount++;
+			$nbrTokens++;
 			 my @rowsCRF = split (/\t|\s/, $crfLine);	 
 			 my @rowsGOLD = split (/\t|\s/, $goldLine);	 
+			 
+			 unless(@rowsCRF[1] eq 'n'){
+			 	$wcount++;
+			}
 			 
 			 # pos(morph) evaluation
 			 my $classCRF = @rowsCRF[-1];
@@ -90,7 +95,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 				}
 				else{
 					$wrongClass++;
-					print "$classCRF : $classGOLD\n";
+					#print "$classCRF : $classGOLD\n";
 				}
 			
 			 }
@@ -140,17 +145,22 @@ if($mode eq '-pos' or $mode eq '-morph')
 	{
 		my $correctPos = ($correctClass/$wordsToDisamb)*100;
 		my $wrongPos = ($wrongClass/$wordsToDisamb)*100;
+		
+		my $totalWrong = ($wrongClass/$wcount)*100;
 		#my $truewrongPos = (($wrongClass-$unknownWords)/$wordsToDisamb)*100;
 		 
 		print "\n*************************************************\n\n";
 		print "POS EVAL:\n";
 		print "   total sentences: $nbrOfSentences\n";
+		print "   total token: $nbrTokens\n";
 		print "   total words: $wcount\n";
 		print "   ambiguous roots: $wordsToDisamb\n";
 		print "   correct class: $correctClass : ";
 		   printf("%.2f", $correctPos); print "%\n";
 		print "   wrong class: $wrongClass : "; 
 		   printf("%.2f", $wrongPos); print "%\n";
+		print "total wrong  roots: ";
+		 printf("%.2f", $totalWrong); print "%\n";
 	#	print "   wrong class, xfst failures not considered: "; 
 	#	   printf("%.2f", $truewrongPos); print "\n\n";
 		print "*************************************************\n\n";
