@@ -35,6 +35,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 	my $wordsToDisamb =0;
 	my $wrongClass =0;
 	my $nbrTokens=0;
+	my $prevErrors = 0;
 
 	while (!eof(CRF) and !eof(GOLD)) 
  	{
@@ -56,7 +57,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 				 $word2 =~ s/o/u/g;
 
 				if(lc($word) ne lc($word2)){
-					#print "different words: crf: $word vs. gold: $word2, at line $lines\n";
+					print "different words: crf: $word vs. gold: $word2, at line $lines\n";
 				}
 
 		#print "test: ".$crfLine;
@@ -94,8 +95,13 @@ if($mode eq '-pos' or $mode eq '-morph')
 					$correctClass++;
 				}
 				else{
-					$wrongClass++;
-					#print "$classCRF : $classGOLD\n";
+					# discount root errors from previous step
+					if($classGOLD eq 'none'){$prevErrors++;}
+					else{
+						$wrongClass++;
+						print "$crfLine  $goldLine\n\n";
+						
+					}
 				}
 			
 			 }
@@ -138,6 +144,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 		print "   ambiguous forms: $wcount\n"; 
 		print "   correct: $correctClass : ";
 			printf("%.2f", $nbrOfCorrectMorph); print "%\n\n";  
+		print "   wrong analysis from previous step (pos): $prevErrors\n";
 		print "   wrong: $wrongClass : ";
 			printf("%.2f", $nbrOfWrongMorph); print "%\n\n";  
 		print "*************************************************\n\n";

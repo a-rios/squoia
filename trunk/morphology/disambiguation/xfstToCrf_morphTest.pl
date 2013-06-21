@@ -527,7 +527,7 @@ sub printCrf{
 		
 	   if(scalar(@$possibleClasses)>1){
 	   		#push(@ambWords,$word);
-			print "$form\t";
+			print lc($form)."\t";
 			
 			print @$analyses[0]->{'pos'}."\t";
 	
@@ -778,7 +778,7 @@ sub disambMorph1{
 		my $analyses = @$ambword[1];
 		my $form = @$ambword[0];
 		#print "$form $crfform\n";
-		if($form ne $crfform ){
+		if(lc($form) ne lc($crfform) ){
 			unless($crfform =~ /^\s*$/){
 			print STDERR "not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
 			exit;
