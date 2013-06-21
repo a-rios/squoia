@@ -534,8 +534,6 @@
 | [ {hakima} "[" "NRoot" "]" "["  "=freno" "]" ] : {hakima}
 | [ {hakllu} "[" "NRoot" "]" "["  "=dislalia" "]" ] : {hakllu}
 | [ {hak'u} "[" "NRoot" "]" "["  "=harina,suave" "]" ] : {hak'u}
-| [ {haku} "[" "NRoot" "]" "["  "=manta" "]" ] : {haku}
-| [ {hakuq} "[" "NRoot" "]" "["  "=vacío" "]" ] : {hakuq}
 | [ {halki} "[" "NRoot" "]" "["  "=comelón" "]" ] : {halki}
 | [ {hallq'a} "[" "NRoot" "]" "["  "=prueba" "]" ] : {hallq'a}
 | [ {hallqa} "[" "NRoot" "]" "["  "=suni,salvaje" "]" ] : {hallqa}

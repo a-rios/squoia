@@ -280,7 +280,7 @@
 | [{rima} "[" "VRoot" "]" "[" "=hablar" "]" ] :  {rima} 
 | [{ruk'a} "[" "VRoot" "]" "[" "=ejecutar" "]" ] :  {ruk'a} 
 | [{ruqu} "[" "VRoot" "]" "[" "=cortar" "]" ] :  {ruqu} 
-| [{rura} "[" "VRoot" "]" "[" "=hacer" "]" ] :  {rura} 
+#| [{rura} "[" "VRoot" "]" "[" "=hacer" "]" ] :  {rura} 
 | [{ruwa} "[" "VRoot" "]" "[" "=hacer" "]" ] :  {ruwa} 
 | [{rutu} "[" "VRoot" "]" "[" "=cortar" "]" ] :  {rutu} 
 | [{sanka} "[" "VRoot" "]" "[" "=trabajar" "]" ] :  {sanka} 
