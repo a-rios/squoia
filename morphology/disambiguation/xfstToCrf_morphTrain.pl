@@ -2,9 +2,11 @@
 
 use strict;
 use open ':utf8';
+use utf8;
 binmode STDIN, ':utf8';
 binmode STDERR, ':utf8';
 binmode STDOUT, ':utf8';
+use Storable;
 
 # check if paramenter was given, either:
 # -train (disambiguated input, add class in last row)
@@ -229,7 +231,7 @@ if($mode eq '-2')
 		}
 		# -nqa
 		elsif($allmorphs =~ /\Q+3.Sg.Subj+Top\E/ || $allmorphs =~ /\Q+3.Sg.Subj.Fut\E/ )
-		{
+		{#print "@$word[0]: $allmorphs\n";
 			push(@possibleClasses, "Top");
 			push(@possibleClasses, "Fut");
 			if($allmorphs =~  /Top/){$actualClass = "Top";}
@@ -348,6 +350,10 @@ if($mode eq '-3')
 
 my $lastlineEmpty=0;
 
+#my $xfstWordsRefLem = retrieve('PossibleLemmasForTrain');
+#my %xfstwordsLem = %$xfstWordsRefLem;
+my $xfstWordsRefMorph = retrieve('PossibleMorphsForTrain');
+my %xfstwordsMorph = %$xfstWordsRefMorph;
 
 # print only ambiguous words, with context as features
 
@@ -359,7 +365,7 @@ for (my $i=0;$i<scalar(@words);$i++){
 	my $correctClass = @$word[3];
 	
    if(scalar(@$possibleClasses)>1){
-		print "$form\t";
+		print lc($form)."\t";
    
 
 		print @$analyses[0]->{'pos'}."\t";
@@ -390,12 +396,29 @@ for (my $i=0;$i<scalar(@words);$i++){
 				}
 			}
 		}
+		# add other possible morphs for ambiguous forms (need xfst analysis for this!)
+		# TODO: only for -1/-3? with -3, there shouldn't be other ambiguities...(?)
+		# get possible morphs from stored hash (need xfst analysis to get those!)
+		if($mode eq '-1' or $mode eq '-2'){
+			my $possibleMorphsRef = $xfstwordsMorph{$form};
+			foreach my $possAllmorph (@$possibleMorphsRef){
+				my @morphs = split('#', $possAllmorph);
+				foreach my $morph (@morphs){
+					unless($printedmorphs =~ /\Q$morph\E/){
+						print "$morph\t";
+						$printedmorphs = $printedmorphs.$morph;
+						$nbrOfMorph++;
+					}
+				}
+			}
+		}
+		
 		while($nbrOfMorph<10){
 			print "ZZZ\t";
 			$nbrOfMorph++;
 		}
 		
-					my $bos =0;
+			my $bos =0;
 			# print context words (preceding)
 			for (my $j=$i-1;$j>($i-3);$j--)
 			{
@@ -425,6 +448,21 @@ for (my $i=0;$i<scalar(@words);$i++){
 							}
 						}
 					}
+					# get possible morphs from stored hash (need xfst analysis to get those!)
+					if($mode eq '-1' or $mode eq '-2'){
+						my $possibleMorphsRef = $xfstwordsMorph{$form};
+						foreach my $possAllmorph (@$possibleMorphsRef){
+							my @morphs = split('#', $possAllmorph);
+							foreach my $morph (@morphs){
+								unless($printedmorphs =~ /\Q$morph\E/){
+									print "$morph\t";
+									$printedmorphs = $printedmorphs.$morph;
+									$nbrOfMorphP++;
+								}
+							}
+						}
+					}
+					
 					while($nbrOfMorphP<10){
 						print "ZZZ\t";
 						$nbrOfMorphP++;
@@ -471,6 +509,20 @@ for (my $i=0;$i<scalar(@words);$i++){
 							}
 						}
 					}
+					# get possible morphs from stored hash (need xfst analysis to get those!)
+					if($mode eq '-1' or $mode eq '-2'){
+						my $possibleMorphsRef = $xfstwordsMorph{$form};
+						foreach my $possAllmorph (@$possibleMorphsRef){
+							my @morphs = split('#', $possAllmorph);
+							foreach my $morph (@morphs){
+								unless($printedmorphs =~ /\Q$morph\E/){
+									print "$morph\t";
+									$printedmorphs = $printedmorphs.$morph;
+									$nbrOfMorphF++;
+								}
+							}
+						}
+					}
 					while($nbrOfMorphF<10){
 						print "ZZZ\t";
 						$nbrOfMorphF++;
@@ -478,10 +530,10 @@ for (my $i=0;$i<scalar(@words);$i++){
 				}
 				# else: if eos
 				else
-				{	my $nbrOfMorphP =0;
-					while($nbrOfMorphP<12){	
+				{	my $nbrOfMorphF =0;
+					while($nbrOfMorphF<12){	
 						print "ZZZ\t";
-						$nbrOfMorphP++;
+						$nbrOfMorphF++;
 					}
 				}
 			}
