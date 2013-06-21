@@ -20,9 +20,13 @@ my.smi=/RN/		yes		my.type=/AVP/		neg		up		overwrite
 
 # Comparison
 # tanto como
-my.smi=RG&&child.slem=como	compar		my.type=/AVP/		compar		up		overwrite
+#my.smi=RG&&child.slem=como	compar		my.type=/AVP/		compar		up		overwrite
 # igual/más/menos que
-my.smi=RG&&child.slem=que	compar		my.type=/AVP/		compar		up		overwrite
+#my.smi=RG&&child.slem=que	compar		my.type=/AVP/		compar		up		overwrite
+
+my.smi=RG&&my.compar=yes	compar		my.type=/AVP/		compar		up		overwrite
+my.pos=ADJA			grad		xpath{//CHUNK[@type="AP" and CHUNK/NODE[@slem="más"]]}		Sup	down	overwrite
+my.smi=RG&&my.slem=más		delete		my.type=/AVP/		yes		down		overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 # --------------------------------------------------------------------------------------------------------------------------- #
@@ -182,7 +186,7 @@ my.pos=/NN|ART|PPOSAT|PDAT|PIAT/	cas		my.type=/NP/&&my.si=cc&&my.cas=/./	cas		do
 
 # distinguish type of adjective: attribute (atr) to a predicate ADJD or modifier of a noun ADJA
 #my.pos=/ADJ/		pos			my.type=/NP|AP|PP/&&!(my.si=atr)		ADJA		down		overwrite
-my.pos=/ADJ/		pos			my.type=/NP|PP/||(my.type=AP&&!(my.si=atr))	ADJA		down		overwrite
+my.pos=/ADJ/		pos			my.type=/NP|PP/||(my.type=/C?AP/&&!(my.si=atr))	ADJA		down		overwrite
 
 # article/determiner/pronoun sets the flexion type of adjectives in the same chunk
 # overwrite for the case of "all/dies/jen"+possessive pronoun => like after possessive pronoun, i.e. mixed
@@ -191,9 +195,11 @@ my.flex=/./		flex			my.type=/C?NP/			flex			up		overwrite
 my.pos=/ADJ/		flex			my.type=/C?NP/&&my.flex=/./	flex			down		overwrite	# TODO: no article => St; default?
 
 # NP with flex: pass the info down thru the AP to the ADJ
-my.pos=/ADJ/		flex			my.type=AP&&chunkparent.flex=/./	chunkparent.flex		down		no-overwrite
+my.pos=/ADJ/		flex			my.type=/C?AP/&&chunkparent.flex=/./	chunkparent.flex		down		no-overwrite
+my.pos=/ADJ/		flex			my.type=/C?AP/&&chunkgrandparent.flex=/./	chunkparent.chunkparent.flex		down		no-overwrite
 # set case of direct objects to Akk
-my.pos=/ADJ/		cas			my.type=AP&&chunkparent.si=cd		Akk				down		no-overwrite
+my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkparent.si=cd	Akk		down		no-overwrite
+my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkgrandparent.si=cd	Akk		down		no-overwrite
 
 
 # set case of direct objects to Akk (or another case like Dat given by the head verb)
@@ -201,7 +207,7 @@ my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&my.si=cd&&chunkparent
 my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&(my.si=cd||chunkparent.si=cd)&&!(chunkparent.dobjcas=/./)	Akk			down		no-overwrite
 
 # set case of subjects and attributives to Nom
-my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=NP&&my.si=/atr|suj/	Nom			down		no-overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=NP&&my.si=/atr|suj/	Nom			down		overwrite
 
 # set number of subject PWS "wer" to singular in finite verb
 my.pos=/V.FIN/		subjnum		xpath{//CHUNK[@type="VP" and CHUNK[@si="suj" and @type="NP" and NODE[@pos="PWS"]]]}	"Sg"	down	overwrite
@@ -211,11 +217,13 @@ my.pos=/V.FIN/		subjnum		xpath{//CHUNK[@type="VP" and CHUNK[@si="suj" and @type=
 #my.pos=/NN|ART|PPOSAT|PIAT/		cas		my.type=/NP/&&chunkparent.cas=Dat	Dat		down		no-overwrite
 #my.pos=/ADJ/				cas		my.type=/AP/&&chunkgrandparent.cas=Dat	Dat		down		no-overwrite
 my.pos=/NN|ART|PPOSAT|PDAT|PIAT|PPER/		cas		my.type=/NP/&&chunkparent.cas=/./	chunkparent.cas		down		no-overwrite
-my.pos=/ADJ/				cas		my.type=/AP/&&chunkgrandparent.cas=/./	chunkparent.chunkparent.cas		down		no-overwrite
+#my.pos=/ADJ/				cas		my.type=/C?AP/&&chunkgrandparent.cas=/./	chunkparent.chunkparent.cas		down		no-overwrite
+my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Dat"]/descendant::CHUNK[(@type="CAP" or @type="AP") or NODE[@pos="ADJA"]]}	"Dat"		down	no-overwrite
 
 # set gender (and number) of ADJ if head noun is singular
-my.pos=/ADJ/			mi		my.type=/NP|PP/&&my.mi=/Sg/		mi			down		overwrite
-my.pos=/ADJ/			mi		my.type=AP&&chunkparent.mi=/Sg/		chunkparent.mi		down		overwrite
+my.pos=/ADJ/			mi		my.type=/NP|PP/&&my.mi=/Sg/			mi				down		overwrite
+my.pos=/ADJ/			mi		my.type=/C?AP/&&chunkparent.mi=/Sg/		chunkparent.mi			down		overwrite
+my.pos=/ADJ/			mi		my.type=/C?AP/&&chunkgrandparent.mi=/Sg/	chunkparent.chunkparent.mi	down		overwrite
 
 # set gender and number of ART; formerly concatenated... ancestor condition alternative for multiword proper names with morphological information like "die demokratische Republik Kongo"
 #my.pos=/ART|PPOSAT|PIAT|PDAT/			mi		my.type=/NP|PP/&&my.mi=/./	mi			down		concat
@@ -241,9 +249,8 @@ my.pos=PPER&&my.smi=/PP...D../	delete		my.type=VP&&chunkchild.si=ci		yes			down	
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 # ES relative pronoun "que" without gender/number information
-my.pos=/PRELS/&&my.slem=que	mi		my.type=/S\-rel/&&chunkparent.type=/NP|PP/	chunkparent.mi			down		overwrite
-#my.pos=/PRELS/&&my.slem=/que|cuyo/	mi		my.type=/S\-rel/&&chunkparent.type=/NP|PP/	chunkparent.mi			down		overwrite
-my.pos=/PRELAT/&&my.slem=cuyo	mi		my.type=/S\-rel/&&chunkparent.type=/NP|PP/	chunkparent.mi			down		overwrite
+my.pos=/PRELS/&&my.slem=que	mi		my.type=/VP/&&my.si=/S/&&chunkparent.type=/NP/	chunkparent.mi			down		overwrite
+my.pos=/PRELAT/&&my.slem=cuyo	mi		my.type=/NP/&&chunkparent.type=/NP/	chunkparent.mi			down		overwrite
 
 
 # set type of "a"-PP for human direct object to NP

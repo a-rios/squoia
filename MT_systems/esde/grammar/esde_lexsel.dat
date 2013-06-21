@@ -152,8 +152,8 @@ apropiar	an|passen	k	my.smi=/VMP00/&&chunkparent.type=/VP/
 #haber	haben	my.smi=/VA.+/ && !(parent.aux=[be+])	#prob=0.8
 
 # Passive auxiliary
-ser	sein	k	my.smi=/VS.+/ && !(parent.smi=/VMP00[PS][FM]/&& chunkparent.type=/V-pas|VZ-inf/)	#prob=0.8
-ser	werden	k	my.smi=/VS.+/ && parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/V-pas|VZ-inf/		#prob=0.2
+ser	sein	k	my.smi=/VS.+/ && !(parent.smi=/VMP00[PS][FM]/&& chunkparent.type=/VP/)
+ser	werden	k	my.smi=/VS.+/ && parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/VP/
 
 # estar = sein: "El libro estaba en la mesa" => "Das Buch war auf dem Tisch"
 # estar + GERUND = gerade + FIN: "Estamos bebiendo vino" => "Wir trinken gerade Wein"
@@ -179,6 +179,10 @@ casar	heiraten	k	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sib
 # colgar algo = etwas aufhängen: "cuelgo el cuadro a la pared" => "ich hänge das Bild an die Wand"
 colgar	auf|hängen	k	xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE}
 colgar	hängen		k	!(xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE})
+
+# deber: main (-INF) vs modal (+INF) verb
+deber	schulden,verdanken	k	!(xpath{//NODE[@smi="VMN0000"]/NODE})
+deber	müssen,sollen		k	xpath{//NODE[@mi="Inf"]/NODE}
 
 # despertarse = auf|wachen
 # despertar = wecken, erwecken, auf|wecken

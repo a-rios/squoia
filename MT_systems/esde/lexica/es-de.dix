@@ -1067,6 +1067,7 @@
    <e><p><l>acabar</l><r>beenden<s n="split"/>no</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>acabar</l><r>enden</r></p><par n='VM_VV_MAIN'/></e>		<!-- acabar en => enden auf+Akk/+Dat; enden mit+Dat -->
    <e><p><l>deber</l><r>müssen</r></p><par n='VM_VM_MODAL'/></e>
+   <e><p><l>deber</l><r>sollen</r></p><par n="VM_VM_MODAL"/></e>
    <e><p><l>poder</l><r>können</r></p><par n='VM_VM_MODAL'/></e>	<!-- e.g. form="puede" lem="poder" mi="VMIP3S0" -->
    <e><p><l>poder</l><r>mögen</r></p><par n="VM_VM_MODAL"/></e>
    <e><p><l>poder</l><r>dürfen</r></p><par n="VM_VM_MODAL"/></e>
@@ -1097,6 +1098,7 @@
    <e><p><l>beber</l><r>trinken</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: verbs with "trinken" not in molif? -->
    <e><p><l>buscar</l><r>suchen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>cantar</l><r>singen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>centrar</l><r>konzentrieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>cocinar</l><r>kochen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>colgar</l><r>auf|hängen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: vs. transitive -->
    <e><p><l>colgar</l><r>hängen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: intransitive -->
@@ -1104,6 +1106,7 @@
    <e><p><l>comer</l><r>essen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>compensar</l><r>kompensieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>concebir</l><r>konzipieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>concretar</l><r>konkretisieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>consistir</l><r>bestehen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: prepositional object of verbs like here: consistir en = bestehen in/aus -->
    <e><p><l>cosechar</l><r>ernten</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>dar</l><r>geben</r></p><par n='VM_VV_MAIN'/></e>
@@ -1259,7 +1262,6 @@
    <e><p><l>cultivar</l><r>an|bauen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>curar</l><r>heilen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dar</l><r>geben</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>deber</l><r>müssen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>decir</l><r>sagen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dedicar</l><r>widmen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>defender</l><r>verteidigen</r></p><par n="VM_VV_MAIN"/></e>
@@ -2161,8 +2163,6 @@
    <e><p><l>dar un paseo</l><r>einen Spaziergang machen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dar</l><r>geben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>datar</l><r>datieren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>deber</l><r>müssen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>deber</l><r>sollen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>deber</l><r>schulden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>deber</l><r>verdanken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>debilitarse</l><r>schwach werden</r></p><par n="VM_VV_MAIN"/></e>
@@ -5421,6 +5421,7 @@
    <e><p><l>abanto</l><r>Schmutzgeier</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abarrote</l><r>Greisslerei</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abastecimiento</l><r>Versorgung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>abastecimiento_de_agua</l><r>Wasserversorgung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abazón</l><r>Backentasche</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abdicación</l><r>Abdankung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abdicación</l><r>Abdikation</r></p><par n='NC_N_64_FRAU'/></e>
@@ -5537,8 +5538,7 @@
    <e><p><l>abulia</l><r>Abulie</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abundancia</l><r>Menge</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abundancia</l><r>Überfluss</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
-   <e><p><l>aburridora</l><r>Langweilerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>aburridor</l><r>Langweiler</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>aburridor</l><r>Langweiler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>aburrimiento</l><r>Langeweile</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abuso</l><r>Missbrauch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>acabado</l><r>Erledigung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -5649,8 +5649,7 @@
    <e><p><l>acoso</l><r>Belästigung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>acoso</l><r>Verfolgung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>acracia</l><r>Akratie</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>acreedora</l><r>Gläubigerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>acreedor</l><r>Gläubiger</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>acreedor</l><r>Gläubiger</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>acrobacia</l><r>Akrobatik</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>acróbata</l><r>Akrobat</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>acromion</l><r>Akromion</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -5672,10 +5671,9 @@
    <e><p><l>activo</l><r>Aktive</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>acto</l><r>Akt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>acto</l><r>Tat</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>actor</l><r>Akteur</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>actor</l><r>Schauspieler</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>actriz</l><r>Schauspielerin</r></p><par n='NC_N_87_STUDENTIN'/></e>
-   <e><p><l>actriz</l><r>Schauspielerin</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>actor</l><r>Akteur</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
+   <e><p><l>actor</l><r>Schauspieler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>actriz</l><r>Schauspielerin</r></p><par n='NC_N_87_STUDENTIN'/></e>	<!-- gender -->
    <e><p><l>actuación</l><r>Aufführung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>actuación</l><r>Schauspielerei</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>actuación</l><r>Vorführung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -5729,9 +5727,8 @@
    <e><p><l>adjetivo</l><r>Eigenschaftswort</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>adjunto</l><r>Adjunkt</r></p><par n='NC_N_75_STUDENT'/></e>
    <e><p><l>administración</l><r>Verwaltung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>administradora</l><r>Verwalterin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>administrador</l><r>Administrator</r></p><par n='NC_N_112_TRAKTOR'/></e>
-   <e><p><l>administrador</l><r>Verwalter</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>administrador</l><r>Administrator</r></p><par n='NC_N_GENTRY_ORIN'/></e>	<!-- gender -->
+   <e><p><l>administrador</l><r>Verwalter</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>admiración</l><r>Bewunderung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>adobe</l><r>Lehm</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>adobe</l><r>Lehmziegel</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -5847,14 +5844,13 @@
    <e><p><l>agilidad</l><r>Beweglichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>agitación</l><r>Bewegung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>agitación</l><r>Unruhe</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>agitador</l><r>Agitator</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>agitador</l><r>Hetzer</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>agitador</l><r>Agitator</r></p><par n='NC_N_GENTRY_ORIN'/></e>	<!-- gender -->
+   <e><p><l>agitador</l><r>Hetzer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>aglomeración</l><r>Ansammlung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>aglomeración</l><r>Ballung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>aglomerado</l><r>Agglomerat</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>agnóstica</l><r>Agnostikerin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>agnosticismo</l><r>Agnostizismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
-   <e><p><l>agnóstico</l><r>Agnostiker</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>agnóstico</l><r>Agnostiker</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>agobio</l><r>Erschöpfung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>agonía</l><r>Agonie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>agonía</l><r>Todeskampf</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -5870,13 +5866,13 @@
    <e><p><l>agresión</l><r>Aggression</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>agresión</l><r>Angriff</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>agresividad</l><r>Aggressivität</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>agresor</l><r>Angreifer</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>agresor</l><r>Angreifer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>agrícola</l><r>landwirtschaftlich</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>agricultor</l><r>Bauer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>agricultor</l><r>Landwirt</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>agricultor</l><r>Bauer</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender with umlaut -->
+   <e><p><l>agricultor</l><r>Landwirt</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
    <e><p><l>agricultura</l><r>Landbau</r></p><par n='NC_N_113_BAU'/></e>	<!-- compound not in molif -->
    <e><p><l>agricultura</l><r>Landwirtschaft</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>agrimensor</l><r>Feldmesser</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>agrimensor</l><r>Feldmesser</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>agrimensura</l><r>Vermessung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>agrónomo</l><r>Landwirt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>agrupación</l><r>Gruppierung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -6278,7 +6274,6 @@
    <e><p><l>ananás</l><r>Ananas</r></p><par n='NC_N_87_STUDENTIN'/></e>
    <e><p><l>anapelo</l><r>Sturmhut</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>anaquel</l><r>Schrankfach</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>anaranjado</l><r>orangefarben</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>anarco</l><r>Anarchist</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>anarquía</l><r>Anarchie</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>anarquismo</l><r>Anarchismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
@@ -6289,9 +6284,9 @@
    <e><p><l>anchoa</l><r>Anchovi</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ancho</l><r>Breite</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>anchura</l><r>Breite</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>anciano</l><r>Senior</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>anciano</l><r>Senior</r></p><par n='NC_N_GENTRY_ORIN'/></e>	<!-- gender -->
    <e><p><l>ancla</l><r>Anker</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>andador</l><r>Lauflernhilfe</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>andador</l><r>Lauflernhilfe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>andamio</l><r>Gerüst</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>andar</l><r>Gehen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>andén</l><r>Bahnsteig</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -6341,10 +6336,8 @@
    <e><p><l>anillo</l><r>Ring</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>añil</l><r>Indigo</r></p><par n='NC_N_71_AUTO'/></e>
    <e><p><l>animación</l><r>Animation</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>animadora</l><r>Animateurin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>animadora</l><r>Entertainerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>animador</l><r>Animateur</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>animador</l><r>Entertainer</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>animador</l><r>Animateur</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
+   <e><p><l>animador</l><r>Entertainer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>animal domestico</l><r>Haustier</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>animal fabuloso</l><r>Fabeltier</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>animal</l><r>Tier</r></p><par n='NC_N_68_ZIEL'/></e>
@@ -6385,7 +6378,7 @@
    <e><p><l>anta</l><r>Elch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>antebrazo</l><r>Unterarm</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>antecedente</l><r>Vorfall</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>antecesor</l><r>Vorgänger</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>antecesor</l><r>Vorgänger</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>anteco</l><r>Gegenfüssler</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>antelación</l><r>Vorgriff</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>antelación</l><r>Vorwegnahme</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -6484,7 +6477,7 @@
    <e><p><l>apetito</l><r>Appetit</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>apical</l><r>Scheitel-</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ápice</l><r>Scheitelpunkt</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>apicultor</l><r>Imker</r></p><par n='NC_N_52_SPLITTER'/></e>
+   <e><p><l>apicultor</l><r>Imker</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>apicultura</l><r>Imkerei</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>apio</l><r>Sellerie</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>apisonadora</l><r>Walze</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -6604,7 +6597,7 @@
    <e><p><l>armada</l><r>Kriegsflotte</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>arma de fuego</l><r>Feuerwaffe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>armadillo</l><r>Gürteltier</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>armador</l><r>Reeder</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>armador</l><r>Reeder</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>arma</l><r>Waffe</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>armario</l><r>Schrank</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>armazón</l><r>Gerüst</r></p><par n='NC_N_68_ZIEL'/></e>
@@ -6621,7 +6614,7 @@
    <e><p><l>arpa</l><r>Harfe</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>arpón</l><r>Harpune</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>arqueología</l><r>Archäologie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>arqueólogo</l><r>Archäologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>arqueólogo</l><r>Archäolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>arquetipo</l><r>Archetyp</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>arquitecto</l><r>Architekt</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>arquitectura de ordenadores</l><r>Rechnerarchitektur</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -6697,7 +6690,7 @@
    <e><p><l>asco</l><r>Widerwille</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asedio</l><r>Belagerung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>aseidad</l><r>Aseität</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>asentador</l><r>Setzer</r></p><par n='NC_N_52_SPLITTER'/></e>
+   <e><p><l>asentador</l><r>Setzer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>asentamiento informal</l><r>Elendsviertel</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>asentamiento informal</l><r>Marginalsiedlung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>asentamiento informal</l><r>Slum</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -6709,12 +6702,10 @@
    <e><p><l>asesina</l><r>Mörderin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>asesinato</l><r>Ermordung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>asesinato</l><r>Mord</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>asesinato</l><r>Mord</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asesino a sueldo</l><r>Auftragsmörder</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asesino a sueldo</l><r>Killer</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asesino en serie</l><r>Serienmörder</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asesino</l><r>Mörder</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>asesino</l><r>Mörder</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asesor</l><r>Berater</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asfalto</l><r>Asphalt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asfixia</l><r>Ersticken</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -6769,7 +6760,7 @@
    <e><p><l>astilla</l><r>Splitter</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>astrógrafo</l><r>Astrografen</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>astrología</l><r>Astrologie</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>astrólogo</l><r>Astrologe</r></p><par n='NC_N_63_AUTOMAT'/></e>
+   <e><p><l>astrólogo</l><r>Astrolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>astrometría</l><r>Astrometrie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>astronauta</l><r>Astronaut</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>astronauta</l><r>Raumfahrer</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -6825,7 +6816,6 @@
    <e><p><l>átomo</l><r>Atom</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>atracción</l><r>Anziehung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>atracción</l><r>Attraktion</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>atraco</l><r>bewaffneter Überfall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>atraco</l><r>Raubüberfall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>atraco</l><r>Überfall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>atraso</l><r>Verspätung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -8289,27 +8279,22 @@
    <e><p><l>caravana</l><r>Wohnmobil</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>carbonera</l><r>Kohlenkeller</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>carbón</l><r>Kohle</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>carbón</l><r>Kohle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>carbono</l><r>Kohlenstoff</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>carbono</l><r>Kohlenstoff</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>carbunco</l><r>Milzbrand</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>carburador</l><r>Vergaser</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>carcajada</l><r>lautes Gelächter</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>carcaj</l><r>Köcher</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>carcax</l><r>Köcher</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>cárcel</l><r>Gefängnis</r></p><par n='NC_N_59_EREIGNIS'/></e>
-   <e><p><l>cárcel</l><r>Gefängnis</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>carcinoma</l><r>Karzinom</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>carda</l><r>Karde</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cardenal</l><r>Kardinal</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>cardenal</l><r>Kardinal</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cardencha</l><r>Karde</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cardiología</l><r>Kardiologie</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>cardiólogo</l><r>Kardiologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>cardiólogo</l><r>Kardiolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>cardiopatía</l><r>Herzkrankheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cardiopatía</l><r>Kardiopathie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cardo</l><r>Distel</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>cardo</l><r>Distel</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cardo</l><r>Kardone</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- Gemüseartischocke -->
    <e><p><l>carencia</l><r>Fehlen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>carencia</l><r>Mangel</r></p><par n='NC_N_51_VATER'/></e>
@@ -8322,14 +8307,12 @@
    <e><p><l>careza</l><r>Teuerheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cargador</l><r>Ladegerät</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>carga</l><r>Belastung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>carga</l><r>Belastung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>carga</l><r>Bürde</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>carga</l><r>Ladung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>carga</l><r>Zuladung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cargo</l><r>Vorwurf</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>caribú</l><r>Karibu</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>caricatura</l><r>Karikatur</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>caricatura</l><r>Karikatur</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>caricia</l><r>Liebkosung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>caricia</l><r>Zärtlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>caridad</l><r>Nächstenliebe</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -8339,10 +8322,8 @@
    <e><p><l>cariño</l><r>Liebe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cariño</l><r>Zuneigung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>carisma</l><r>Charisma</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>carisma</l><r>Charisma</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>carnada</l><r>Köder</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>carnaval</l><r>Fasching</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>carnaval</l><r>Fasching</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>carnaval</l><r>Fastnacht</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>carnaval</l><r>Karneval</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>carne de cerdo</l><r>Schweinefleisch</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -8350,7 +8331,6 @@
    <e><p><l>carne de gallina</l><r>Gänsehaut</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>carne de res</l><r>Rindfleisch</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>carne</l><r>Fleisch</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>carne</l><r>Fleisch</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>carné</l><r>Personalausweis</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>carne molida</l><r>Hackfleisch</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>carnero</l><r>Hammel</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -8968,12 +8948,9 @@
    <e><p><l>cicónido</l><r>Störche</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cidra</l><r>Zitronatzitrone</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cidro</l><r>Zitronatzitrone</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>ciega</l><r>Blinde</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>ciego</l><r>Blinde</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>ciego</l><r>Blinder</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>ciego</l><r>Blinde</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>cielito</l><r>Schätzchen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>cielo</l><r>Himmel</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>cielo</l><r>Himmel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cielo nuboso</l><r>bewölkter Himmel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ciempiés</l><r>Hundertfüßer</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ciempiés</l><r>Tausendfüßler</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -9093,13 +9070,10 @@
    <e><p><l>cisma</l><r>Schisma</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cisma</l><r>Spaltung</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cisne</l><r>Schwan</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>cisne</l><r>Schwan</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cisterciense</l><r>zirrhotisch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cisterna</l><r>Wasserspeicher</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cisterna</l><r>Zisterne</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>cisterna</l><r>Zisterne</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cistitis</l><r>Blasenentzündung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>cistitis</l><r>Blasenentzündung</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cisura</l><r>Riss</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>citación</l><r>Vorladung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>citación</l><r>Zitat</r></p><par n='NC_N_68_ZIEL'/></e>
@@ -9110,7 +9084,7 @@
    <e><p><l>citocinesis</l><r>Cytokinese</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>citología</l><r>Zelllehre</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>citología</l><r>Zytologie</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>citólogo</l><r>Zytologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>citólogo</l><r>Zytolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>citoplasma</l><r>Cytoplasma</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>citoplasma</l><r>Zytoplasma</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>citrato</l><r>Citrat</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -9122,11 +9096,8 @@
    <e><p><l>ciudadano</l><r>Staatsbürger</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ciudadano</l><r>Städter</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ciudadela</l><r>Zitadelle</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>ciudadela</l><r>Zitadelle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ciudad</l><r>Stadt</r></p><par n='NC_N_57_HAND'/></e>
-   <e><p><l>ciudad</l><r>Stadt</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>civilización</l><r>Zivilisation</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>civilización</l><r>Zivilisation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>civil</l><r>Zivilist</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>civismo</l><r>Bürgersinn</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>clamor</l><r>Geschrei</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -9382,7 +9353,6 @@
    <e><p><l>cola</l><r>Leim</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cola</l><r>Schlange</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cola</l><r>Schwanz</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
-   <e><p><l>cola</l><r>Schwanz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cola</l><r>Schweif</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cola</l><r>Warteschlange</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>colapso</l><r>Kollaps</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -9393,7 +9363,6 @@
    <e><p><l>colchoneta</l><r>Matte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>colchoneta</l><r>Unterlage</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>colchón</l><r>Matratze</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>colchón</l><r>Matratze</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>col de Bruselas</l><r>Rosenkohl</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>coleccionista</l><r>Sammler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>colección</l><r>Sammlung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -9411,8 +9380,7 @@
    <e><p><l>colector solar</l><r>Sonnenkollektor</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>colédoco</l><r>Ductus</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>colega</l><r>Kolleg</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
-   <e><p><l>colegiala</l><r>Schülerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>colegial</l><r>Schüler</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>colegial</l><r>Schüler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>colegio</l><r>Schule</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>colegio mayor</l><r>Studentenwohnheim</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>coleóptero</l><r>Käfer</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -9831,7 +9799,6 @@
    <e><p><l>conmutador</l><r>Weiche</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>conmutatividad</l><r>Kommutativität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>connotación</l><r>Nebenbedeutung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>conocida</l><r>Bekannte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>conocido</l><r>Bekannte</r></p><par n='NC_N_NUM_MASC'/></e>		<!-- gender -->
    <e><p><l>conocimiento</l><r>Kenntnis</r></p><par n='NC_N_89_KENNTNIS'/></e>
    <e><p><l>conocimiento</l><r>Wissen</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -10181,12 +10148,11 @@
    <e><p><l>cosmética</l><r>Kosmetik</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cosmografía</l><r>Kosmografie</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cosmología</l><r>Kosmologie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>cosmólogo</l><r>Kosmologe</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>cosmonauta</l><r>Kosmonautin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>cosmonauta</l><r>Kosmonaut</r></p><par n='NC_N_75_STUDENT'/></e>
-   <e><p><l>cosmonauta</l><r>Raumfahrer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>cosmopolita</l><r>Kosmopolit</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>cosmopolita</l><r>Weltbürger</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>cosmólogo</l><r>Kosmolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
+   <e><p><l>cosmonauta</l><r>Kosmonaut</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
+   <e><p><l>cosmonauta</l><r>Raumfahrer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>cosmopolita</l><r>Kosmopolit</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
+   <e><p><l>cosmopolita</l><r>Weltbürger</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>cosmopolitismo</l><r>Weltoffenheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cosmos</l><r>Kosmos</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cosmos</l><r>Weltall</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -10522,22 +10488,17 @@
    <e><p><l>dalle</l><r>Sense</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>damajuana</l><r>Korbflasche</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>dama</l><r>Dame</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>dama</l><r>Dame</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>damasco</l><r>Aprikosenbaum</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>damasco</l><r>Aprikose</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>damasco</l><r>Aprikose</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>danés</l><r>Däne</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- geog -->
    <e><p><l>danés</l><r>Dänin</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- geog -->
    <e><p><l>danés</l><r>Dänisch</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- ling -->
    <e><p><l>daño</l><r>Schaden</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>Danubio</l><r>Donau</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- geo -->
    <e><p><l>danza</l><r>Tanz</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
-   <e><p><l>danza</l><r>Tanz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>dársena</l><r>Hafenbecken</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>darvinismo</l><r>Darwinismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
    <e><p><l>datilera</l><r>Dattelpalme</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>dátil</l><r>Dattel</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>dátil</l><r>Dattel</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>dativo</l><r>Dativ</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>dato</l><r>Angabe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>dato</l><r>Datum</r></p><par n='NC_N_79_KRITERIUM'/></e>
@@ -10554,15 +10515,12 @@
    <e><p><l>decalitro</l><r>Dekaliter</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>decena</l><r>Dutzend</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>decencia</l><r>Anstand</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>decencia</l><r>Anstand</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>decenio</l><r>Jahrzehnt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>decepción</l><r>Enttäuschung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>decepción</l><r>Enttäuschung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>decímetro</l><r>Dezimeter</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>décimo</l><r>zehnte</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>decir</l><r>Sagen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>decisión</l><r>Entscheidung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>decisión</l><r>Entscheidung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>declaración</l><r>Deklaration</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>declaración</l><r>Erklärung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>declinación</l><r>Deklination</r></p><par n='NC_N_64_FRAU'/></e>
@@ -10598,7 +10556,6 @@
    <e><p><l>deformación</l><r>Verformung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>defunción</l><r>Sterben</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>defunción</l><r>Tod</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>defunción</l><r>Tod</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>degeneración</l><r>Ausartung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>degeneración</l><r>Degeneration</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>degeneración</l><r>Entartung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -10614,10 +10571,9 @@
    <e><p><l>dejadez</l><r>Schlampigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>delantal</l><r>Arztkittel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>delantal</l><r>Schürze</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>delantera</l><r>Stürmerin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>delantera</l><r>Sturm</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>delantero centro</l><r>Mittelstürmer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>delantero</l><r>Stürmer</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>delantero</l><r>Stürmer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>deleción</l><r>Deletion</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>delegación</l><r>Amt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>delegación</l><r>Delegation</r></p><par n='NC_N_64_FRAU'/></e>
@@ -10637,7 +10593,6 @@
    <e><p><l>delirio</l><r>Wahnvorstellung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>delito</l><r>Delikt</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>delito</l><r>Vergehen</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>de</l><r>von</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>demagogia</l><r>Demagogie</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>demandado</l><r>Angeklagter</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>demanda</l><r>Bedarf</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -10788,12 +10743,10 @@
    <e><p><l>desgaste</l><r>Verschleiß</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>desgracia</l><r>Unfall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>desgracia</l><r>Unglück</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>desgracia</l><r>Unglück</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>deshidratación</l><r>Austrocknung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>deshonra</l><r>Schande</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>deshora</l><r>Unzeit</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- destiempo = Unzeit =? deshora-->
    <e><p><l>desierto</l><r>Wüste</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>desierto</l><r>Wüste</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desigualdad</l><r>Ungleichheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desinfección</l><r>Desinfektion</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>desinfección</l><r>Desinfizierung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -10802,15 +10755,12 @@
    <e><p><l>desmoronamiento</l><r>Einsturz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>desmoronamiento</l><r>Verfall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>desnudez</l><r>Nacktheit</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>desnudez</l><r>Nacktheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desnutrición</l><r>Unterernährung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desobediencia</l><r>Ungehorsam</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>desolación</l><r>Trostlosigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desorden</l><r>Unordnung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>desorden</l><r>Unordnung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>despacho</l><r>Arbeitszimmer</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>despacho</l><r>Büro</r></p><par n='NC_N_71_AUTO'/></e>
-   <e><p><l>despacho</l><r>Büro</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>despecho</l><r>Trotz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>despedida</l><r>Abschied</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>despegue</l><r>Abflug</r></p><par n='NC_N_55_WUNSCH'/></e>
@@ -10835,9 +10785,7 @@
    <e><p><l>destino</l><r>Bestimmungsort</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>destino</l><r>Reiseziel</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>destino</l><r>Schicksal</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>destino</l><r>Schicksal</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>destino</l><r>Ziel</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>destornillador</l><r>Schraubendreher</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>destornillador</l><r>Schraubenzieher</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>destral</l><r>Handbeil</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>destreza</l><r>Geschicklichkeit</r></p><par n='NC_N_64_FRAU'/></e>
@@ -10879,8 +10827,7 @@
    <e><p><l>devoción</l><r>Zuneigung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>devolución</l><r>Rückgabe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>dextrosa</l><r>Dextrose</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>diabla</l><r>Teufelin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>diablo</l><r>Teufel</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>diablo</l><r>Teufel</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
    <e><p><l>diablura</l><r>Unheil</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>día de los Reyes</l><r>Dreikönigstag</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>diagénesis</l><r>Diagenese</r></p><par n='NC_N_76_FEDER'/></e>
@@ -10888,34 +10835,27 @@
    <e><p><l>diagrama</l><r>Diagramm</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>dialecto</l><r>Dialekt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>diálogo</l><r>Dialog</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>diálogo</l><r>Dialog</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>día</l><r>Tag</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>día</l><r>Tag</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>diamante</l><r>Diamant</r></p><par n='NC_N_75_STUDENT'/></e>
    <e><p><l>diámetro</l><r>Durchmesser</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>diámetro</l><r>Durchmesser</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>diaporama</l><r>Diashow</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>diario</l><r>Tagebuch</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>diario</l><r>Tageszeitung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>diario</l><r>Zeitung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>diarrea</l><r>Durchfall</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>diarrea</l><r>Durchfall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>dibujo</l><r>Muster</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>dibujo</l><r>Zeichen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>dibujo</l><r>Zeichnung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>diccionario</l><r>Wörterbuch</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>diccionario</l><r>Wörterbuch</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>dicha</l><r>Glück</r></p><par n='NC_N_NUM_NEUT'/></e>
+    <e><p><l>dicha</l><r>Glück</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>dicho</l><r>Ausspruch</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>dicho</l><r>Spruch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>diciembre</l><r>Dezember</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>dictadora</l><r>Diktatorin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>dictador</l><r>Diktator</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>dictador</l><r>Diktator</r></p><par n='NC_N_GENTRY_ORIN'/></e>	<!-- gender -->
    <e><p><l>dictadura</l><r>Diktatur</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>dictamen</l><r>Diktat</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>dictamen</l><r>Gutachten</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>didáctico</l><r>Didaktikerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>didáctico</l><r>Didaktiker</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>didáctico</l><r>Didaktiker</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>diente de ajo</l><r>Knoblauchzehe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>diente</l><r>Zahn</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>diéresis</l><r>Diärese</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -10970,9 +10910,9 @@
    <e><p><l>dios</l><r>Götze</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>diplomacia</l><r>Diplomatie</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>diploma</l><r>Diplom</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>diplomático</l><r>Diplomat</r></p><par n='NC_N_75_STUDENT'/></e>
+   <e><p><l>diplomático</l><r>Diplomat</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>diptongo</l><r>Diphthong</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>diputado</l><r>Abgeordnete</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>diputado</l><r>Abgeordnete</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>dique</l><r>Deich</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>dirección física</l><r>Hardware-Adresse</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>dirección física</l><r>MAC-Adresse</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -10985,14 +10925,14 @@
    <e><p><l>directiva</l><r>Anweisung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>director ejecutivo</l><r>CEO</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>director ejecutivo</l><r>Geschäftsführer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>director</l><r>Direktor</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>director</l><r>Regisseur</r></p><par n='NC_N_56_TISCH'/></e>
+   <e><p><l>director</l><r>Direktor</r></p><par n='NC_N_GENTRY_ORIN'/></e>	<!-- gender -->
+   <e><p><l>director</l><r>Regisseur</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
    <e><p><l>dirigente</l><r>Anführer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>dirigente</l><r>Leiter</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>disciplina de vota</l><r>Fraktionsdisziplin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>disciplina</l><r>Disziplin</r></p><par n='NC_N_64_FRAU'/></e> 
    <e><p><l>discípulo</l><r>Jünger</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>discípulo</l><r>Schüler</r></p><par n='NC_N_52_SPLITTER'/></e>
+   <e><p><l>discípulo</l><r>Schüler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>disco duro</l><r>Festplatte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>disco</l><r>Platte</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>disco</l><r>Schallplatte</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -11011,8 +10951,8 @@
    <e><p><l>discurso</l><r>Rede</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>discusión</l><r>Diskussion</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>discusión</l><r>Streit</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>diseñador</l><r>Designer</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>diseñador</l><r>Konstrukteur</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>diseñador</l><r>Designer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>diseñador</l><r>Konstrukteur</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
    <e><p><l>diseño</l><r>Design</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>diseño</l><r>Entwurf</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>disertación</l><r>Dissertation</r></p><par n='NC_N_64_FRAU'/></e>
@@ -11050,8 +10990,8 @@
    <e><p><l>distribución</l><r>Auslieferung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>distribución</l><r>Einteilung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>distribución</l><r>Verteilung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>distribuidor</l><r>Händler</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>distribuidor</l><r>Lieferant</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>distribuidor</l><r>Händler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>distribuidor</l><r>Lieferant</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>distrito</l><r>Bezirk</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>distrito</l><r>Kreis</r></p><par n='NC_N_676_PROZESS'/></e>
    <e><p><l>distrito</l><r>Verwaltungsbezirk</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -11092,7 +11032,7 @@
    <e><p><l>domicilio</l><r>Domizil</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>domicilio</l><r>Wohnsitz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>domingo</l><r>Sonntag</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>dominico</l><r>Dominikaner</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>dominico</l><r>Dominikaner</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
    <e><p><l>dominio</l><r>Beherrschung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>dominio</l><r>Bereich</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>dominio</l><r>Bewältigung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -11124,9 +11064,7 @@
    <e><p><l>drenaje</l><r>Drainage</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>drenaje</l><r>Dränage</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>driza</l><r>Fall</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>drogadicta</l><r>Drogensüchtige</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>drogadicto</l><r>Drogensüchtige</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>drogadicto</l><r>Drogensüchtiger</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>drogadicto</l><r>Drogensüchtige</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender TODO ...ige/r -->
    <e><p><l>droga</l><r>Droge</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>druida</l><r>Druide</r></p><par n='NC_N_63_AUTOMAT'/></e>
    <e><p><l>drupa</l><r>Steinfrucht</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -11139,21 +11077,15 @@
    <e><p><l>duda</l><r>Zweifel</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>duelo</l><r>Duell</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>duelo</l><r>Trauer</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>dueña</l><r>Eigentümerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>dueña</l><r>Gastwirtin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>dueña</l><r>Hauseigentümerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>dueña</l><r>Wirtin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>dueña</l><r>Wohnungseigentümerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>dueño</l><r>Eigentümer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>dueño</l><r>Gastwirt</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>dueño</l><r>Hauseigentümer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>dueño</l><r>Wirt</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>dueño</l><r>Wohnungseigentümer</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>dueño</l><r>Eigentümer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>dueño</l><r>Gastwirt</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
+   <e><p><l>dueño</l><r>Hauseigentümer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>dueño</l><r>Wirt</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
+   <e><p><l>dueño</l><r>Wohnungseigentümer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>duermevela</l><r>Halbschlaf</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>dulce</l><r>Süßigkeit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>dulzura</l><r>Süße</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>duna</l><r>Düne</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>duna</l><r>Düne</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>dúo</l><r>Duo</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>duplicado</l><r>Duplikat</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>duplicado</l><r>Kopie</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -11184,9 +11116,7 @@
    <e><p><l>ecuatoriano</l><r>Ecuadorianer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
    <e><p><l>edad adulta</l><r>Erwachsenenalter</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>edad</l><r>Alter</r></p><par n='NC_N_83_MITTEL'/></e>
-   <e><p><l>edad</l><r>Alter</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>edad media</l><r>Mittelalter</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>Edad Media</l><r>Mittelalter</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>edema</l><r>Ödem</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>edición</l><r>Ausgabe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>edición</l><r>Bearbeitung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -11194,7 +11124,6 @@
    <e><p><l>edicto</l><r>Edikt</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>edificio</l><r>Gebäude</r></p><par n='NC_N_83_MITTEL'/></e>
    <e><p><l>edificio</l><r>Gebäude</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>Edipo</l><r>Ödipus</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>educación de adultos</l><r>Erwachsenenbildung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>educación</l><r>Bildung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>educación</l><r>Erziehung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -11257,8 +11186,7 @@
    <e><p><l>elusión</l><r>Umgehung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>embajada</l><r>Auslandsvertretung</r></p><par n='NC_N_64_FRAU'/></e>	<!-- compound not in molif -->
    <e><p><l>embajada</l><r>Botschaft</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>embajadora</l><r>Botschafterin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>embajador</l><r>Botschafter</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>embajador</l><r>Botschafter</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>embarazo</l><r>Schwangerschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>embarcación</l><r>an Bord Gehen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>embarcación</l><r>Boot</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -11299,9 +11227,9 @@
    <e><p><l>empeño</l><r>Pfand</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>empeño</l><r>Verpfändung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>empeoramiento</l><r>Verschlechterung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>emperador</l><r>Kaiser</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>emperador</l><r>Kaiser</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>emperador</l><r>Schwertfisch</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>emperatriz</l><r>Kaiserin</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>emperatriz</l><r>Kaiserin</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>empleada</l><r>Angestellte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>empleada</l><r>Beschäftigte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>empleada</l><r>Hausangestellte</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -11343,13 +11271,10 @@
    <e><p><l>enchufe</l><r>Steckdose</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>enchufe</l><r>Stecker</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>encía</l><r>Zahnfleisch</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>encía</l><r>Zahnfleisch</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>enciclopedia</l><r>Enzyklopädie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>enciclopedia</l><r>Enzyklopädie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>encierro</l><r>Eingesperrtsein</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>encierro</l><r>Einsperren</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>encina</l><r>Steineiche</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>encina</l><r>Steineiche</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>encomienda</l><r>Auftrag</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>encomienda</l><r>Empfehlung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>encuadernación</l><r>Bucheinband</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -11378,8 +11303,6 @@
    <e><p><l>enfermera</l><r>Krankenpflegerin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>enfermera</l><r>Krankenschwester</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>enfermero</l><r>Krankenpfleger</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>enfermero</l><r>Krankenpfleger</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>enfermo</l><r>krank</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>enfisema</l><r>Emphysem</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>enfoque</l><r>Fokus</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>enfrentamiento</l><r>Konfrontation</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -11403,12 +11326,10 @@
    <e><p><l>enredo</l><r>Verwicklung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>enroque</l><r>Rochade</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ensalada</l><r>Salat</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>ensalada</l><r>Salat</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ensaladera</l><r>Salatschüssel</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ensaladilla rusa</l><r>russischer Salat</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ensalmo</l><r>Beschwörung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>ensayo</l><r>Aufsatz</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
-   <e><p><l>ensayo</l><r>Aufsatz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ensayo</l><r>Essay</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ensayo</l><r>Versuch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>enseñanza a distancia</l><r>Fernstudium</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -11472,9 +11393,7 @@
    <e><p><l>época</l><r>Zeitraum</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>época</l><r>Zeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>epopeya</l><r>Epos</r></p><par n='NC_N_424_EPOS'/></e>
-   <e><p><l>epopeya</l><r>Epos</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>equilibrio</l><r>Gleichgewicht</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>equilibrio</l><r>Gleichgewicht</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>equilibrista</l><r>Seiltänzer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>equinoccio de otoño</l><r>Herbstpunkt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>equinoccio</l><r>Äquinoktium</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -11499,7 +11418,6 @@
    <e><p><l>erotomanía</l><r>Erotomanie</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>erradicación</l><r>Ausmerzung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>erradicación</l><r>Ausrottung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>erradicación</l><r>Ausrottung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>erradicación</l><r>Tilgung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>errata</l><r>Druckfehler</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>error</l><r>Fehler</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -11509,9 +11427,7 @@
    <e><p><l>eructo</l><r>Rülpser</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>erupción</l><r>Ausbruch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>esbozo</l><r>Skizze</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>esbozo</l><r>Skizze</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escabeche</l><r>Marinade</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>escabeche</l><r>Marinade</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escalador</l><r>Bergsteiger</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>escalador</l><r>Kletterer</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>escala</l><r>Laufbahn</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -11520,7 +11436,6 @@
    <e><p><l>escala</l><r>Skala</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>Escalda</l><r>Schelde</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escalera</l><r>Leiter</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>escalera</l><r>Leiter</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escalera</l><r>Treppe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escalímetro</l><r>Dreikantmaßstab</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>escalofrío</l><r>Schauder</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -11552,9 +11467,7 @@
    <e><p><l>escaramujo</l><r>Heckenrose</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>escarcha</l><r>Reif</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>escarnio</l><r>Spott</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>escarnio</l><r>Spott</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>escasez</l><r>Knappheit</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>escasez</l><r>Knappheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escena</l><r>Szene</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escenario</l><r>Bühne</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escenario</l><r>Szenario</r></p><par n="NC_N_71_AUTO"/></e>
@@ -11564,16 +11477,13 @@
    <e><p><l>esclava</l><r>Sklavin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>esclavitud</l><r>Sklaverei</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>esclavo</l><r>Sklave</r></p><par n='NC_N_63_AUTOMAT'/></e>
-   <e><p><l>esclavo</l><r>Sklave</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>esclusa</l><r>Schleuse</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>escoba</l><r>Besen</r></p><par n='NC_N_73_WAGEN'/></e>
-   <e><p><l>escoba</l><r>Besen</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>escobillón</l><r>Besen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>escocesa</l><r>Schottin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escocés</l><r>Schotte</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>escocés</l><r>schottisch</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>escolta</l><r>Eskorte</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>escolta</l><r>Eskorte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escombro</l><r>Bauschutt</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>escondite</l><r>Versteck</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>escondite</l><r>Versteckspiel</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -11583,9 +11493,7 @@
    <e><p><l>escoria</l><r>Abschaum</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>escoria</l><r>Ramsch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>escoria</l><r>Schlacke</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>escoria</l><r>Schlacke</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>escorpión</l><r>Skorpion</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>escorpión</l><r>Skorpion</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>escorzonera</l><r>Schwarzwurzel</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>escote</l><r>Ausschnitt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- Kleidung -->
    <e><p><l>escote</l><r>Dekolletee</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -11634,8 +11542,7 @@
    <e><p><l>esgrima</l><r>Fechten</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>esgrima</l><r>Fechtkunst</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>esgrima</l><r>Fechtsport</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>esgrimidora</l><r>Fechterin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>esgrimidor</l><r>Fechter</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>esgrimidor</l><r>Fechter</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>esgrimista</l><r>Fechter</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>esgrimista</l><r>Fechtsportler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>esguince</l><r>Verstauchung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -12152,18 +12059,14 @@
    <e><p><l>facultativo</l><r>Arzt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>faena</l><r>Arbeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>faisán</l><r>Fasan</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>faisán</l><r>Fasan</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>faja</l><r>Binde</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>faja</l><r>Gurt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>falange</l><r>Phalanx</r></p><par n='NC_N_591_PHALANX'/></e>
    <e><p><l>falda</l><r>Rock</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>falda</l><r>Rock</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>falla</l><r>Fehler</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>falla</l><r>Störung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>fallecida</l><r>Tote</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>fallecida</l><r>Verstorbene</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>fallecido</l><r>Toter</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>fallecido</l><r>Verstorbener</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>fallecido</l><r>Toter</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
+   <e><p><l>fallecido</l><r>Verstorbener</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>fallecimiento</l><r>Dahinscheiden</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>fallecimiento</l><r>Hinscheiden</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>fallecimiento</l><r>Sterbefall</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -12176,7 +12079,6 @@
    <e><p><l>fallo</l><r>Gerichtsurteil</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>falo</l><r>Phallus</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>falsedad</l><r>Falschheit</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>falsedad</l><r>Falschheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>falsedad</l><r>Scheinheiligkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>falsedad</l><r>Unaufrichtigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>falsía</l><r>Falschheit</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -12184,7 +12086,6 @@
    <e><p><l>falsificación</l><r>Fälschung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>falta</l><r>Fehlen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>falta</l><r>Fehler</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>falta</l><r>Fehler</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>falta</l><r>Foul</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>falta</l><r>Foulspiel</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>falta</l><r>Mangel</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -12192,7 +12093,6 @@
    <e><p><l>falta</l><r>Verschulden</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>falta</l><r>Verstoß</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>fama</l><r>Ansehen</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>fama</l><r>Ansehen</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>fama</l><r>Ruf</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>fama</l><r>Ruhm</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>familia directa</l><r>Blutsverwandten</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -12208,7 +12108,6 @@
    <e><p><l>fantasía</l><r>Modeschmuck</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>fantasma</l><r>Geist</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>fantasma</l><r>Gespenst</r></p><par n='NC_N_70_GELD'/></e>
-   <e><p><l>fantasma</l><r>Gespenst</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>fantasma</l><r>Phantom</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>fantasmón</l><r>Angeber</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>fantoche</l><r>Marionette</r></p><par n='NC_N_76_FEDER'/></e>
@@ -12802,7 +12701,9 @@
    <e><p><l>galimatías</l><r>Kauderwelsch</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>galio</l><r>Gallium</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>galla</l><r>Frau</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>gallego</l><r>Galicisch</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>gallego</l><r>Galicier</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
+   <e><p><l>gallego</l><r>Galicisch</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- ling -->
+   <e><p><l>gallego</l><r>Spanier</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry --> <!-- L.A. peyorativo -->
    <e><p><l>galleta</l><r>Keks</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>galleta</l><r>Plätzchen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>gallina</l><r>Henne</r></p><par n='NC_N_76_FEDER'/></e>
@@ -12811,7 +12712,7 @@
    <e><p><l>gallo</l><r>Hahn</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>gallo</l><r>Kerl</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>gallo</l><r>Typ</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>galo</l><r>Franzose</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>galo</l><r>Franzose</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender with umlaut -->
    <e><p><l>galo</l><r>Gallier</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>galón</l><r>Galon</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>gamba</l><r>Garnele</r></p><par n='NC_N_76_FEDER'/></e>
@@ -12826,7 +12727,6 @@
    <e><p><l>ganado</l><r>Vieh</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>ganadora</l><r>Gewinnerin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ganador</l><r>Gewinner</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>ganador</l><r>Gewinner</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>gana</l><r>Appetit</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>gana</l><r>Lust</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gana</l><r>Verlangen</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -12987,13 +12887,12 @@
    <e><p><l>gimnasio</l><r>Sporthalle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gimnasio</l><r>Turnhalle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ginebra</l><r>Gin</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>ginebrés</l><r>Genfer</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>ginebrino</l><r>Genfer</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>ginecóloga</l><r>Frauenärztin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>ginecóloga</l><r>Gynäkologin</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>ginebrés</l><r>Genfer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>ginebrino</l><r>Genfer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>ginecóloga</l><r>Frauenärztin</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>ginecología</l><r>Gynäkologie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>ginecólogo</l><r>Frauenarzt</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>ginecólogo</l><r>Gynäkologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>ginecólogo</l><r>Frauenarzt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
+   <e><p><l>ginecólogo</l><r>Gynäkolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>gira</l><r>Rundfahrt</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gira</l><r>Rundreise</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gira</l><r>Tournee</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -13004,17 +12903,12 @@
    <e><p><l>giro</l><r>Wendung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>giroscopio</l><r>Kreiselinstrument</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>giróscopo</l><r>Kreiselinstrument</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>gitana</l><r>Zigeunerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>gitano</l><r>Zigeuner</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>gitano</l><r>Zigeuner</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>gitano</l><r>Zigeuner</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>glaciar</l><r>Gletscher</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>glaciar</l><r>Gletscher</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>gladiador</l><r>Gladiator</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>gladiolo</l><r>Gladiole</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>gladiolo</l><r>Gladiole</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>glande</l><r>Eichel</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>glándula</l><r>Drüse</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>glándula</l><r>Drüse</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>glaucoma</l><r>grüner Star</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>glicerina</l><r>Glyzerin</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>glicógeno</l><r>Glykogen</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -13145,12 +13039,12 @@
    <e><p><l>gravitación</l><r>Gravitation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gravitación</l><r>Schwerkraft</r></p><par n='NC_N_57_HAND'/></e>
    <e><p><l>gravitón</l><r>Graviton</r></p><par n='NC_N_88_HEMD'/></e>
-   <e><p><l>Grecia</l><r>Griechenland</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>greda</l><r>Ton</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>gremio</l><r>Gremium</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>gremio</l><r>Zunft</r></p><par n='NC_N_57_HAND'/></e>
    <e><p><l>grial</l><r>Gral</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>griego</l><r>Grieche</r></p><par n='NC_N_63_AUTOMAT'/></e>
+   <e><p><l>griego</l><r>Griech</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gentry -->
+   <e><p><l>griego</l><r>Griechisch</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- ling -->
    <e><p><l>grieta</l><r>Riss</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>grieta</l><r>Spalte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>grieta</l><r>Spalt</r></p><par n='NC_N_56_TISCH'/></e>
@@ -13219,26 +13113,19 @@
    <e><p><l>guepardo</l><r>Gepard</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>guerra civil</l><r>Bürgerkrieg</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>guerra</l><r>Krieg</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>guerra</l><r>Krieg</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>guerrera</l><r>Kriegerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>guerrero</l><r>Krieger</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>guerrero</l><r>Krieger</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>guerrilla</l><r>Guerillakrieg</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>guerrilla</l><r>Guerilla</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>guerrilla</l><r>Partisanenkrieg</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>guerrilla</l><r>Partisanen</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>guerrilla urbana</l><r>Stadtguerilla</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>guerrillera</l><r>Freischärlerin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>guerrillera</l><r>Guerillera</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>guerrillera</l><r>Partisane</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>guerrillera</l><r>Partisanin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>guerrillero</l><r>Freischärler</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>guerrillero</l><r>Guerillero</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>guerrillero</l><r>Partisan</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>guerrillero</l><r>Freischärler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>guerrillero</l><r>Guerillero</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender TODO DE o/a-->
+   <e><p><l>guerrillero</l><r>Partisan</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>gueto</l><r>Getto</r></p><par n='NC_N_71_AUTO'/></e>
    <e><p><l>guía de turismo</l><r>Fremdenführer</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>guía</l><r>Anleitung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>guía</l><r>Führerin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>guía</l><r>Führer</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>guía</l><r>Führer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>guía</l><r>Führung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>guía</l><r>Lenkung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>guijarro</l><r>Kieselstein</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -13256,7 +13143,6 @@
    <e><p><l>guiso</l><r>Gericht</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>guiso</l><r>Speise</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>guitarra</l><r>Gitarre</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>guitarra</l><r>Gitarre</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>guitarrista</l><r>Gitarrenspieler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>guitarrista</l><r>Gitarrist</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>gula</l><r>Völlerei</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -13293,18 +13179,15 @@
    <e><p><l>hada</l><r>Fee</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>hafnio</l><r>Hafnium</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>haiku</l><r>Haiku</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>haitiano</l><r>Haitianer</r></p><par n='NC_N_52_SPLITTER'/></e>
+   <e><p><l>haitiano</l><r>Haitianer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
    <e><p><l>halcón</l><r>Falke</r></p><par n='NC_N_63_AUTOMAT'/></e>
    <e><p><l>halita</l><r>Halit</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>hálito</l><r>Hauch</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>halitosis</l><r>Mundgeruch</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>hallazgo</l><r>Fund</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>hallazgo</l><r>Fund</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>hamaca</l><r>Hängematte</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>hamaca</l><r>Hängematte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>hamaca</l><r>Liegestuhl</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>hambre</l><r>Hunger</r></p><par n='NC_N_100052_OSTEN'/></e>
-   <e><p><l>hambre</l><r>Hunger</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>hamburguesa de queso</l><r>Cheeseburger</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>hamburguesa</l><r>Hamburger</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>hamburgués</l><r>Hamburger</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -13312,7 +13195,6 @@
    <e><p><l>haragán</l><r>Faulenzer</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>harén</l><r>Harem</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>harina</l><r>Mehl</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>harina</l><r>Mehl</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>hato</l><r>Viehherde</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>hausa</l><r>Hausa</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>hawaiano</l><r>Hawaiianisch</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -13379,21 +13261,18 @@
    <e><p><l>heráldica</l><r>Heraldik</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>herbicida</l><r>Herbizid</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>herbívoro</l><r>Pflanzenfresser</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>herbívoro</l><r>Pflanzerfresser</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>hercio</l><r>Hertz</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>heredera</l><r>Erbin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>heredero</l><r>Erbe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>heredero</l><r>Erb</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>hereje</l><r>Ketzer</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>herejía</l><r>Häresie</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>herejía</l><r>Irrglaube</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>herejía</l><r>Irrlehre</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>herejía</l><r>Ketzerei</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>herencia</l><r>Erbe</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>herida</l><r>Verletzte</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>herida</l><r>Verletzte</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>herida</l><r>Verletzung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>herida</l><r>Wunde</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>herida</l><r>Wunde</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>herido</l><r>Verletzter</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>herido</l><r>Verletzter</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>hermana</l><r>Schwester</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>hermanastro</l><r>Halbschwester</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>hermanastro</l><r>Stiefschwester</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -13553,30 +13432,25 @@
    <e><p><l>homínido</l><r>Menschenaffen</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>homofobia</l><r>Homophobie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>homofobia</l><r>Schwulenhass</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>homólogo</l><r>Amtskollege</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>homólogo</l><r>Amtskolleg</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>homólogo</l><r>Pendant</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>homomorfismo</l><r>Homomorphismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
    <e><p><l>homosexualidad</l><r>Homosexualität</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>homosexualidad</l><r>Homosexualität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>homosexual</l><r>schwul</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>honda</l><r>Schleuder</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>honda</l><r>Schleuder</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>honda</l><r>Steinschleuder</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>hondo</l><r>Boden</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>hondura</l><r>Tiefe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>honestidad</l><r>Aufrichtigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>honestidad</l><r>Ehrlichkeit</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>honestidad</l><r>Ehrlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>hongo</l><r>Melone</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>hongo</l><r>Pilz</r></p><par n='NC_N_676_PROZESS'/></e>
-   <e><p><l>hongo</l><r>Pilz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>honorario</l><r>Honorar</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>honor</l><r>Ehre</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>honradez</l><r>Anständigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>honradez</l><r>Ehrlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>honra</l><r>Ehre</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>hora</l><r>Stunde</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>hora</l><r>Stunde</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>horario</l><r>Fahrplan</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>horario</l><r>Öffnungszeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>horario</l><r>Stundenplan</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -13699,10 +13573,9 @@
    <e><p><l>identificación</l><r>Bestimmung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>identificación</l><r>Identifikation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>identificación</l><r>Identifizierung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>ideóloga</l><r>Ideologin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ideología</l><r>Ideologie</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>ideología</l><r>Weltanschauung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>ideólogo</l><r>Ideologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>ideólogo</l><r>Ideolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>idiolecto</l><r>Idiolekt</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>idioma</l><r>Fremdsprache</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>idioma</l><r>Sprache</r></p><par n='NC_N_76_FEDER'/></e>
@@ -13710,7 +13583,7 @@
    <e><p><l>idiota</l><r>Idiot</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>idiotez</l><r>Blödsinn</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>idiotez</l><r>Dummheit</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>idólatra</l><r>Götzendiener</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>idólatra</l><r>Götzendiener</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>idolatría</l><r>Abgötterei</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ídolo</l><r>Götzenbild</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>ídolo</l><r>Götze</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -13927,10 +13800,8 @@
    <e><p><l>indemnización</l><r>Schadenersatz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>indemnización</l><r>Schmerzensgeld</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>independencia</l><r>Unabhängigkeit</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>independencia</l><r>Unabhängigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indeterminación</l><r>Unbestimmtheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indeterminación</l><r>Unschlüssigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>India</l><r>Indien</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>indicación</l><r>Anweisung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indicación</l><r>Anzeige</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>indicación</l><r>Hinweis</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -13939,31 +13810,27 @@
    <e><p><l>indicador</l><r>Zeiger</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>indicativo</l><r>Indikativ</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>indicativo</l><r>Vorwahl</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>índice</l><r>Index</r></p><par n='NC_N_122_INDEX'/></e>
    <e><p><l>índice</l><r>Zeigefinger</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>indicio</l><r>Anhaltspunkt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>indicio</l><r>Anzeichen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>indicio</l><r>Indiz</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>indicio</l><r>Zeichen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>indiferencia</l><r>Gleichgültigkeit</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>indiferencia</l><r>Gleichgültigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indigencia</l><r>Armut</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indigencia</l><r>Bedürftigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indigestión</l><r>Magenverstimmung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indignación</l><r>Empörung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>índigo</l><r>Indigo</r></p><par n='NC_N_71_AUTO'/></e>
-   <e><p><l>indio</l><r>Inder</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>indio</l><r>Inder</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>indio</l><r>Indianer</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>indio</l><r>Indianer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>indio</l><r>Indio</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>indio</l><r>Indio</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>indio</l><r>Inder</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!--gender -->
+   <e><p><l>indio</l><r>Indianer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>indio</l><r>Indio</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender TODO der Indio/die India -->
    <e><p><l>indirecta</l><r>Anspielung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indiscreción</l><r>Indiskretion</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indisolubilidad</l><r>Unlöslichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indispensabilidad</l><r>Unerlässlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indisposición</l><r>Unwohlsein</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>individualidad</l><r>Individualität</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>individualidad</l><r>Individualität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>individualismo</l><r>Individualismus</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>individual</l><r>Set</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- Tisch -->
    <e><p><l>individuo</l><r>Individuum</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -13973,7 +13840,8 @@
    <e><p><l>índole</l><r>Wesen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>indolencia</l><r>Gleichgültigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>indolencia</l><r>Teilnahmslosigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>indonesio</l><r>Indonesisch</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>indonesio</l><r>Indonesier</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
+   <e><p><l>indonesio</l><r>Indonesisch</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- ling -->
    <e><p><l>inducción</l><r>Induktion</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>inductor</l><r>Anstifter</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>inductor</l><r>Induktor</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -14763,7 +14631,7 @@
    <e><p><l>legislatura</l><r>Legislaturperiode</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>legista</l><r>Rechtsgelehrte</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender TODO "...te/r" -->
    <e><p><l>legitimidad</l><r>Legitimität</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>lego</l><r>säkular</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>lego</l><r>Lai</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>legua</l><r>Meile</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>legumbre</l><r>Hülsenfrucht</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>lejanía</l><r>Entfernung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -15835,9 +15703,8 @@
    <e><p><l>metástasis</l><r>Metastase</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>metátesis</l><r>Metathese</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>meteorito</l><r>Meteorit</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>meteoróloga</l><r>Meteorologin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>meteorología</l><r>Meteorologie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>meteorólogo</l><r>Meteorologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>meteorólogo</l><r>Meteorologe</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>meteoro</l><r>Meteor</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>metodología</l><r>Methodik</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>metodología</l><r>Methodologie</r></p><par n='NC_N_76_FEDER'/></e>
@@ -16286,11 +16153,11 @@
    <e><p><l>muelle</l><r>Kai</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>muelle</l><r>Mole</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>muelle</l><r>Pier</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>muerta</l><r>Tote</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>muerta</l><r>Tote</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>muerta</l><r>Verstorbene</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>muerte</l><r>Sterben</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>muerte</l><r>Tod</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>muerto</l><r>Toter</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>muerto</l><r>Toter</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>muerto</l><r>Verstorbener</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>muestra</l><r>Anzeichen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>muestra</l><r>Geste</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16314,7 +16181,6 @@
    <e><p><l>multicasco</l><r>Mehrrumpfboot</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>multiplicación</l><r>Fortpflanzung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>multiplicación</l><r>Multiplikation</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>multiplicación</l><r>Multiplikation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>multiplicación</l><r>Übersetzung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>multiplicación</l><r>Vermehrung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>multitud</l><r>Menge</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16493,7 +16359,6 @@
    <e><p><l>nepalés</l><r>Nepali</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>nepotismo</l><r>Vetternwirtschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>neptunio</l><r>Neptunium</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>Neptuno</l><r>Neptun</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nervadura</l><r>Blattader</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>nervio</l><r>Nerv</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nervio</l><r>Rippe</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16517,7 +16382,7 @@
    <e><p><l>nevisca</l><r>leichter Schneefall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>newton</l><r>Newton</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>nexo</l><r>Verknüpfung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>nicaragüense</l><r>Nicaraguaner</r></p><par n='NC_N_52_SPLITTER'/></e>
+   <e><p><l>nicaragüense</l><r>Nicaraguaner</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
    <e><p><l>nicho</l><r>Nische</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nicotina</l><r>Nikotin</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>nido</l><r>Nest</r></p><par n='NC_N_70_GELD'/></e>
@@ -16525,7 +16390,6 @@
    <e><p><l>nieto</l><r>Enkel</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>nieve</l><r>Schnee</r></p><par n='NC_N_100052_OSTEN'/></e>
    <e><p><l>nihilismo</l><r>Nihilismus</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>Nilo</l><r>Nil</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nimbo</l><r>Heiligenschein</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nimbo</l><r>Hof</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nimbo</l><r>Nimbus</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -16539,14 +16403,11 @@
    <e><p><l>niño</l><r>Kind</r></p><par n='NC_N_70_GELD'/></e>
    <e><p><l>niobio</l><r>Niob</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>níquel</l><r>Nickel</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>níquel</l><r>Nickel</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>ñire</l><r>antarktische_Scheinbuche</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>níspero</l><r>Mispel</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>níspero</l><r>Mispel</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nitidez</l><r>Schärfe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nitrato</l><r>Nitrat</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>nitrógeno</l><r>Stickstoff</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>nitrógeno</l><r>Stickstoff</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>niveladora</l><r>Planierraupe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nivel</l><r>Ebene</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>nivel</l><r>Höhe</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16559,19 +16420,15 @@
    <e><p><l>noble</l><r>Edelfrau</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>noble</l><r>Edelmann</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nobleza</l><r>Adel</r></p><par n='NC_N_100052_OSTEN'/></e>
-   <e><p><l>nobleza</l><r>Adel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>Nochebuena</l><r>Heiligabend</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>noche</l><r>Abend</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>noche</l><r>Nacht</r></p><par n='NC_N_57_HAND'/></e>
-   <e><p><l>noche</l><r>Nacht</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>Nochevieja</l><r>Silvester</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>nochevieja</l><r>Silvester</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>nochevieja</l><r>Silvester</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>noción</l><r>Ahnung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>noción</l><r>Begriff</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>noción</l><r>Idee</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>noción</l><r>Vorstellung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>nodo</l><r>Knoten</r></p><par n='NC_N_54_ZEICHEN'/></e>
-   <e><p><l>nodo</l><r>Knoten</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nódulo</l><r>Knötchen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>nogal</l><r>Nussbaum</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nogal</l><r>Walnussbaum</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -16579,10 +16436,8 @@
    <e><p><l>nombramiento</l><r>Ernennung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nombre del host</l><r>Hostname</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nombre</l><r>Name</r></p><par n='NC_N_85_NAME'/></e>
-   <e><p><l>nombre</l><r>Name</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nomenclatura</l><r>Nomenklatur</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>nomeolvides</l><r>Vergissmeinnicht</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>nomeolvides</l><r>Vergissmeinnicht</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>nominación</l><r>Ernennung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nominación</l><r>Nominierung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nominalización</l><r>Substantivierung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -16598,7 +16453,6 @@
    <e><p><l>ñoqui</l><r>Kloß</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nórdico</l><r>Daunendecke</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>noria</l><r>Riesenrad</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>noria</l><r>Riesenrad</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>noria</l><r>Wasserrad</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>normalidad</l><r>Normalität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>normalidad</l><r>Regelmäßigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16613,12 +16467,12 @@
    <e><p><l>norte</l><r>Norden</r></p><par n='NC_N_100052_OSTEN'/></e>
    <e><p><l>norte</l><r>Nordwind</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>norte</l><r>Orientierungspunkt</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>noruego</l><r>Norwegisch</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>noruego</l><r>Norweger</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
+   <e><p><l>noruego</l><r>Norwegisch</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- ling -->
    <e><p><l>nostalgia</l><r>Fernweh</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>nostalgia</l><r>Heimweh</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>nostalgia</l><r>Nostalgie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nostalgia</l><r>Sehnsucht</r></p><par n='NC_N_57_HAND'/></e>
-   <e><p><l>nostalgia</l><r>Sehnsucht</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nota</l><r>Bemerkung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nota</l><r>Musiknote</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nota</l><r>Note</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16628,56 +16482,45 @@
    <e><p><l>notaría</l><r>Notariat</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>notario</l><r>Notar</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>noticia</l><r>Nachricht</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>noticia</l><r>Nachricht</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>noticia</l><r>Notiz</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>notificación</l><r>Benachrichtigung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>notificación</l><r>Mitteilung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nova</l><r>Nova</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>novato</l><r>Anfänger</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>novato</l><r>Anfänger</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>novato</l><r>Neuling</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>novato</l><r>Neuling</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>novedad</l><r>Neuerscheinung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>novedad</l><r>Neuheit</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>novedad</l><r>Neuheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>novedad</l><r>Neuigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>novela</l><r>Roman</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>novela</l><r>Roman</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>novela policíaca</l><r>Kriminalroman</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>novela policíaca</l><r>Krimi</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>novelista</l><r>Romanautor</r></p><par n='NC_N_GENTRY_ORIN'/></e>	<!-- gender -->
    <e><p><l>novelista</l><r>Romancier</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>noveno</l><r>neunte</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>novia</l><r>Braut</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>novia</l><r>Freundin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>novia</l><r>Verlobte</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>novia</l><r>Braut</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
+   <e><p><l>novia</l><r>Verlobte</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>noviazgo</l><r>Verlobung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>novicio</l><r>Novize</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>novicio</l><r>Noviz</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>noviembre</l><r>November</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>noviembre</l><r>November</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>novillo</l><r>Kalb</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>novio</l><r>Bräutigam</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>novio</l><r>Freund</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>novio</l><r>Verlobte</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>novio</l><r>Bräutigam</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
+   <e><p><l>novio</l><r>Freund</r></p><par n='NC_N_GENTRY_IN'/></e>	<!-- gender -->
+   <e><p><l>novio</l><r>Verlobte</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>nubarrón</l><r>Gewitterwolke</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nube</l><r>Wolke</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>nube</l><r>Wolke</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nubosidad</l><r>Bewölkung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nuca</l><r>Genick</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>nuca</l><r>Nacken</r></p><par n='NC_N_73_WAGEN'/></e>
-   <e><p><l>nuca</l><r>Nacken</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>núcleo</l><r>Atomkern</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>núcleo</l><r>Kern</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>núcleo</l><r>Kern</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>núcleo</l><r>Kernstück</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>núcleo</l><r>Zentrum</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>núcula</l><r>Nussfrucht</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>nudismo</l><r>Freikörperkultur</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nudo</l><r>Astknoten</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nudo</l><r>Knoten</r></p><par n='NC_N_54_ZEICHEN'/></e>
-   <e><p><l>nudo</l><r>Knoten</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nuera</l><r>Schwiegertochter</r></p><par n='NC_N_53_MUTTER'/></e>
    <e><p><l>nuero</l><r>Schwiegersohn</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>Nuevo Méjico</l><r>New Mexiko</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>nuez</l><r>Nuss</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nuez</l><r>Walnuss</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nuez</l><r>Walnuß</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -16686,7 +16529,6 @@
    <e><p><l>nulidad</l><r>Ungültigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nulo</l><r>nichtig</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ñu</l><r>Gnu</r></p><par n='NC_N_71_AUTO'/></e>
-   <e><p><l>ñu</l><r>Gnu</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>numeración</l><r>Nummerierung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>numerador</l><r>Zähler</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>numeral</l><r>Zahlwort</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -16705,21 +16547,16 @@
    <e><p><l>nutria</l><r>Fischotter</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nutria</l><r>Otter</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nutrición</l><r>Ernährung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>nutrición</l><r>Ernährung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nutriente</l><r>Nährstoff</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nutritivo</l><r>nährend</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>nylon</l><r>Nylon</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>oasis</l><r>Oase</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>oasis</l><r>Oase</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obediencia</l><r>Gehorsam</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>obelisco</l><r>Obelisk</r></p><par n='NC_N_75_STUDENT'/></e>
-   <e><p><l>obelisco</l><r>Obelisk</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>obenque</l><r>Want</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>obesidad</l><r>Fettleibigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obispado</l><r>Bistum</r></p><par n='NC_N_61_BUCH'/></e>
-   <e><p><l>obispado</l><r>Bistum</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>obispo</l><r>Bischof</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>obispo</l><r>Bischof</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>objeción</l><r>Bedenken</r></p><par n='NC_N_54_ZEICHEN'/></e>
    <e><p><l>objeción</l><r>Einwand</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>objetividad</l><r>Objektivität</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16727,12 +16564,10 @@
    <e><p><l>objetivo</l><r>Objektiv</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>objetivo</l><r>Objekt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>objetivo</l><r>Ziel</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>objetivo</l><r>Ziel</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>objetivo</l><r>Zweck</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>objeto</l><r>Absicht</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>objeto</l><r>Gegenstand</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>objeto</l><r>Objekt</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>objeto</l><r>Objekt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>objeto</l><r>Sache</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>objeto</l><r>Ziel</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>objeto</l><r>Zweck</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -16754,25 +16589,21 @@
    <e><p><l>obra</l><r>Tat</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obra</l><r>Werk</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>obra maestra</l><r>Meisterwerk</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>obrera</l><r>Arbeiterin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>obrera</l><r>Bauarbeiterin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>obrero</l><r>Arbeiter</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>obrero</l><r>Bauarbeiter</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>obrero</l><r>Arbeiter</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>obrero</l><r>Bauarbeiter</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>obscenidad</l><r>Obszönität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obsequio</l><r>Gabe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obsequio</l><r>Geschenk</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>obsequio</l><r>Geschenk</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>observación</l><r>Bemerkung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>observación</l><r>Beobachtung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>observación</l><r>Überwachung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>observador</l><r>Beobachter</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>observador</l><r>Beobachter</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>observatorio</l><r>Observatorium</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>observatorio</l><r>Warte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obsesión</l><r>Besessenheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obsesión</l><r>Zwangsvorstellung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obsidiana</l><r>Obsidian</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>obstáculo</l><r>Hindernis</r></p><par n='NC_N_59_EREIGNIS'/></e>
-   <e><p><l>obstáculo</l><r>Hindernis</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>obstáculo</l><r>Hürde</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obstetricia</l><r>Geburtshilfe</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>obstinación</l><r>Dickköpfigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16782,7 +16613,6 @@
    <e><p><l>obstrucción</l><r>Obstruktion</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obstrucción</l><r>Verstopfung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obtención</l><r>Beschaffung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>obtención</l><r>Beschaffung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obtención</l><r>Erhalt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>obús</l><r>Granate</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>obús</l><r>Haubitze</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -16790,20 +16620,15 @@
    <e><p><l>oca</l><r>Graugans</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ocarina</l><r>Okarina</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ocasión</l><r>Anlass</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
-   <e><p><l>ocasión</l><r>Anlass</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ocasión</l><r>Gelegenheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ocasión</l><r>Versuchung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ocaso</l><r>Sonnenuntergang</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>occidente</l><r>Abendland</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>occidente</l><r>Westen</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>occitano</l><r>Okzitanisch</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>occitano</l><r>Okzitanisch</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- ling -->
    <e><p><l>océano</l><r>Meer</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>océano</l><r>Ozean</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>océano</l><r>Ozean</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>Océano Pacífico</l><r>Pazifischer Ozean</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>Océano Pacífico</l><r>Stiller Ozean</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ocelote</l><r>Ozelot</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>ocelote</l><r>Ozelot</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ocio</l><r>Freizeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ocio</l><r>Muße</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ocio</l><r>Müßiggang</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -16834,9 +16659,9 @@
    <e><p><l>odio</l><r>Hass</r></p><par n='NC_N_681_HASS'/></e>
    <e><p><l>odisea</l><r>Odyssee</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>odontología</l><r>Zahnmedizin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>odontólogo</l><r>Zahnarzt</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>odontólogo</l><r>Zahnarzt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>odre</l><r>Ziegenleder</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>oeste</l><r>Westen</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>oeste</l><r>Westen</r></p><par n='NC_N_100052_OSTEN'/></e>
    <e><p><l>oeste</l><r>West</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>ofensa</l><r>Beleidigung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ofensa</l><r>Straftat</r></p><par n='NC_N_64_FRAU'/></e>
@@ -16856,7 +16681,7 @@
    <e><p><l>oficio</l><r>Berufung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ofrecimiento</l><r>Angebot</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>ofrenda</l><r>Opfer</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>oftalmólogo</l><r>Augenarzt</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>oftalmólogo</l><r>Augenarzt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>ogro</l><r>Oger</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ogro</l><r>Scheusal</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>ogro</l><r>Unhold</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -17089,9 +16914,8 @@
    <e><p><l>ornamento</l><r>Verzierung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ornitología</l><r>Ornithologie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ornitología</l><r>Vogelkunde</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>ornitólogo</l><r>Ornithologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>ornitólogo</l><r>Ornitholog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>ornitorrinco</l><r>Schnabeltier</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>ornitorrinco</l><r>Schnabeltier</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>orografía</l><r>Orografie</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>oro</l><r>Gold</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>oronja</l><r>Kaiserling</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -17137,18 +16961,14 @@
    <e><p><l>otitis media</l><r>Mittelohrentzündung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>otolito</l><r>Otolith</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>otoño</l><r>Herbst</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>otoño</l><r>Herbst</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>otorgamiento</l><r>Bewilligung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>otorrinolaringólogo</l><r>HNO-Arzt</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>otorrinolaringólogo</l><r>Oto-Rhino-Laryngolog</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>otorrinolaringólogo</l><r>HNO-Arzt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
+   <e><p><l>otorrinolaringólogo</l><r>Oto-Rhino-Laryngolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>ovación</l><r>Beifall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ovación</l><r>Ovation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>óvalo</l><r>Oval</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>óvalo</l><r>Oval</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>ovario</l><r>Eierstock</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>ovario</l><r>Eierstock</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>oveja</l><r>Schaf</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>oveja</l><r>Schaf</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>ovni</l><r>Ufo</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>óvolo</l><r>Ei</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>óvolo</l><r>Eizelle</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -17659,7 +17479,7 @@
    <e><p><l>patín</l><r>Schlittschuh</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>patio</l><r>Hof</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>patología</l><r>Pathologie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>patólogo</l><r>Pathologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>patólogo</l><r>Patholog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>pato</l><r>Ente</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>patraña</l><r>Lüge</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>patraña</l><r>Schwindelei</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -17745,7 +17565,7 @@
    <e><p><l>peculiaridad</l><r>Eigenart</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pedagogía</l><r>Erziehungswissenschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pedagogía</l><r>Pädagogik</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>pedagogo</l><r>Pädagoge</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>pedagogo</l><r>Pädagog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>pedal</l><r>Pedal</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pedante</l><r>Besserwisser</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>pedante</l><r>Pedant</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
@@ -17754,10 +17574,9 @@
    <e><p><l>pedantería</l><r>Pedanterie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pedazo</l><r>Bruchstück</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pedazo</l><r>Stück</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>pedazo</l><r>Stück</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pedestal</l><r>Sockel</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>pediatra</l><r>Kinderärztin</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>pediatra</l><r>Kinderarzt</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>pediatra</l><r>Kinderärztin</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
+   <e><p><l>pediatra</l><r>Kinderarzt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>pediatría</l><r>Kinderheilkunde</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pediatría</l><r>Pädiatrie</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>pedicura</l><r>Fußpflege</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -17782,7 +17601,8 @@
    <e><p><l>peineta</l><r>Kamm</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>peladero</l><r>kahle Landschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>peladero</l><r>Wüste</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>pelado</l><r>kahl</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pelado</l><r>Glatzkopf</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>pelado</l><r>Kind</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pelaje</l><r>Behaarung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pelaje</l><r>Fell</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>pelambre</l><r>Klatsch</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -17990,7 +17810,6 @@
    <e><p><l>periodo lectivo</l><r>Schuljahr</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>periodo lectivo</l><r>Vorlesungszeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>período</l><r>Abschnitt</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>período</l><r>Menstruation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>periodo</l><r>Periode</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>período</l><r>Periode</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>período</l><r>Zeitraum</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -18208,7 +18027,7 @@
    <e><p><l>pi</l><r>Pi</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>pimentón</l><r>Paprikagewürz</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pimentón</l><r>Paprika</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>pimienta</l><r>Pfeffer</r></p><par n='NC_N_100052_OSTEN'/></e>
+   <e><p><l>pimienta</l><r>Pfeffer</r></p><par n='NC_N_100052_OSTEN'/></e>	<!-- SPLITTER -->
    <e><p><l>pimiento</l><r>Paprika</r></p><par n='NC_N_84_CODE'/></e>
    <e><p><l>pimiento</l><r>Paprikaschote</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>piña</l><r>Ananas</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -18416,11 +18235,8 @@
    <e><p><l>plato</l><r>Gericht</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>plato</l><r>Speise</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>plato</l><r>Teller</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>plato</l><r>Teller</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>playa</l><r>Strand</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>playa</l><r>Strand</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>plaza</l><r>Platz</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
-   <e><p><l>plaza</l><r>Platz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>plaza</l><r>Stelle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>plazo</l><r>Frist</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>plazo</l><r>Termin</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -18430,14 +18246,13 @@
    <e><p><l>pleito</l><r>Prozess</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pleito</l><r>Rechtsstreit</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>plenitud</l><r>Fülle</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>plenitud</l><r>Fülle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pleonasmo</l><r>Pleonasmus</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>pliego</l><r>Briefmarkenbogen</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pliego</l><r>Bogen</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>pliego</l><r>Briefmarkenbogen</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pliegue</l><r>Falte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pliegue</l><r>Kniff</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>plomero</l><r>Klempner</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>plomo</l><r>Blei</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>plomo</l><r>Blei</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>plomo</l><r>Sicherung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>plumaje</l><r>Gefieder</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pluma</l><r>Feder</r></p><par n='NC_N_76_FEDER'/></e>
@@ -18528,11 +18343,10 @@
    <e><p><l>politeísmo</l><r>Polytheismus</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>política exterior</l><r>Außenpolitik</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>política interior</l><r>Innenpolitik</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>política</l><r>Politikerin</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>política</l><r>Politikerin</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>política</l><r>Politik</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>política</l><r>Politik</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>política monetaria</l><r>Währungspolitik</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>político</l><r>Politiker</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>político</l><r>Politiker</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>poliuria</l><r>Polyurie</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>póliza</l><r>Police</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>polizón</l><r>Schwarzfahrer</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -19524,8 +19338,8 @@
    <e><p><l>radiografía</l><r>Röntgenbild</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>radiología</l><r>Radiologie</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>radiología</l><r>Röntgen</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>radiólogo</l><r>Radiologe</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>radiólogo</l><r>Röntgenarzt</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>radiólogo</l><r>Radiolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
+   <e><p><l>radiólogo</l><r>Röntgenarzt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>radio</l><r>Funkgerät</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>radio</l><r>Hörfunk</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>radio</l><r>Radiogerät</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -20531,7 +20345,6 @@
    <e><p><l>revólver</l><r>Revolver</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>rey</l><r>König</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>rezo</l><r>Gebet</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>Rhodesia</l><r>Rhodesien</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>riachuelo</l><r>Bach</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>riachuelo</l><r>Flüsschen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>ribera</l><r>Ufer</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -20541,7 +20354,7 @@
    <e><p><l>rico</l><r>Reiche</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ridiculez</l><r>Lächerlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ridículo</l><r>Lächerlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>ridículo</l><r>lächerlich</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>ridículo</l><r>Lächerliche</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>riego</l><r>Bewässern</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>riego</l><r>Bewässerung</r></p><par n='NC_N_64_FRAU'/></e> 
    <e><p><l>riel</l><r>Bahnschiene</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -21161,8 +20974,8 @@
    <e><p><l>socialdemócrata</l><r>Sozialdemokrat</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>socialista</l><r>Sozialist</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>sociedad</l><r>Gesellschaft</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>sociólogo</l><r>Soziolog</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>socio</l><r>Partner</r></p><par n='NC_N_52_SPLITTER'/></e>
+   <e><p><l>sociólogo</l><r>Soziolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
+   <e><p><l>socio</l><r>Partner</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>soda</l><r>Soda</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>soda</l><r>Sodawasser</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>sodio</l><r>Natrium</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -21419,9 +21232,8 @@
    <e><p><l>tensión arterial</l><r>Blutdruck</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>tensión</l><r>Spannung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>tentempié</l><r>Snack</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>teóloga</l><r>Theologin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>teología</l><r>Theologie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>teólogo</l><r>Theologe</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>teólogo</l><r>Theolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>teorema</l><r>Theorem</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>teoría de autómatas</l><r>Automatentheorie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>teoría de computación</l><r>Berechenbarkeitstheorie</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -21776,7 +21588,7 @@
    <e><p><l>urna</l><r>Urne</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>urogallo</l><r>Auerhahn</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>urología</l><r>Urologie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>urólogo</l><r>Urologe</r></p><par n='NC_N_63_AUTOMAT'/></e>
+   <e><p><l>urólogo</l><r>Urolog</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gender -->
    <e><p><l>uro</l><r>Auerochse</r></p><par n='NC_N_63_AUTOMAT'/></e>
    <e><p><l>urraca</l><r>Elster</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>uso</l><r>Benutzung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -21794,7 +21606,7 @@
    <e><p><l>uva</l><r>Weintraube</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>úvula</l><r>Uvula</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>úvula</l><r>Zäpfchen</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>uxoricida</l><r>Gattinnenmord</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>uxoricida</l><r>Gattinnenmörder</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>vacaciones</l><r>Ferien</r></p><par n='NC_N_618_FERIEN'/></e>
    <e><p><l>vacaciones</l><r>Urlaub</r></p><par n='NC_N_56_TISCH'/></e>		<!-- ES pl = DE sg: las vacaciones = der Urlaub -->
    <e><p><l>vaca lechera</l><r>Milchkuh</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -21850,7 +21662,7 @@
    <e><p><l>váter</l><r>WC</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>Vaticano</l><r>Vatikan</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>vatio</l><r>Watt</r></p><par n='NC_N_88_HEMD'/></e>
-   <e><p><l>vecino</l><r>Nachbarin</r></p><par n='NC_N_87_STUDENTIN'/></e>
+   <e><p><l>vecino</l><r>Nachbarin</r></p><par n='NC_N_87_STUDENTIN'/></e>	<!-- gender -->
    <e><p><l>vecino</l><r>Nachbar</r></p><par n='NC_N_NUM_MASC'/></e>		<!-- TODO no molif class -->
    <e><p><l>vector</l><r>Vektor</r></p><par n='NC_N_112_TRAKTOR'/></e>
    <e><p><l>vega</l><r>Matte</r></p><par n='NC_N_76_FEDER'/></e>
@@ -22166,7 +21978,7 @@
    <e><p><l>zeugma</l><r>Zeugma</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>zigoto</l><r>Zygote</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>zinc</l><r>Zink</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>zíngaro</l><r>Zigeuner</r></p><par n='NC_N_52_SPLITTER'/></e>
+   <e><p><l>zíngaro</l><r>Zigeuner</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>zirconio</l><r>Zirkonium</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>zodiaco</l><r>Tierkreis</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>zodiaco</l><r>Zodiak</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -22479,6 +22291,7 @@
    <e><p><l>bolsas</l><r>Börsen</r></p><par n='NPorg_NE'/></e> 
    <e><p><l>instituto_austriaco_para_américa_latina</l><r>Lateinamerika-Institut<s n="mi"/>Neut.Sg</r></p><par n='NPorg_NE'/></e> 
    <e><p><l>onu</l><r>UNO</r></p><par n='NPorg_NE'/></e> 
+   <e><p><l>parlamento</l><r>Parlament</r></p><par n='NPorg_NE'/></e>
    <e><p><l>unión_europea</l><r>Europäische_Union</r></p><par n='NPorg_NE'/></e> 
    <e><p><l>ue</l><r>EU</r></p><par n='NPorg_NE'/></e> <!-- TODO acronyms? -->
 
@@ -22527,6 +22340,7 @@ veintitodos
    <e><p><l>adecuado</l><r>geeignet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>adecuado</l><r>passend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>adecuado</l><r>angemessen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
+   <e><p><l>adquirido</l><r>erworben<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>afectado</l><r>betroffen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>afectado</l><r>behaftet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>anticipado</l><r>vorzeitig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
@@ -22651,6 +22465,7 @@ veintitodos
    <e><p><l>amplio</l><r>breit<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>amplio</l><r>weit<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anaerobio</l><r>anaerob<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>anaranjado</l><r>orangefarben</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ancho</l><r>breit<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>antibalas</l><r>kugelsicher</r></p><par n='AQ_ADJ'/></e>	<!-- TODO antibalas as noun? -->
    <e><p><l>antibiótico</l><r>antibiotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22683,17 +22498,18 @@ veintitodos
    <e><p><l>eclesiástico</l><r>geistlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>eclesiástico</l><r>kirchlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>eclesiástico</l><r>Kirchen-</r></p><par n='AQ_TRUNC'/></e>
-   <e><p><l>económico</l><r>oekonomisch<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ecuatorial</l><r>äquatorial<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ecuatoriano</l><r>ecuadorianisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>enfermo</l><r>krank<s n="molif"/>132</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>entero</l><r>ganz<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>equino</l><r>pferdeartig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>equino</l><r>Pferd-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>equitativo</l><r>gerecht</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>eupátrida</l><r>eupatridisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>felón</l><r>treulos</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>financiero</l><r>finanziell<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>frecuente</l><r>häufig<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> 
+   <e><p><l>geográfico</l><r>geografisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>gran</l><r>groß<s n="molif"/>533</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>grande</l><r>groß<s n="molif"/>533</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>habitual</l><r>gewohnt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
@@ -22707,6 +22523,7 @@ veintitodos
    <e><p><l>insidioso</l><r>hinterlistig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>italiano</l><r>italienisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
    <e><p><l>junto</l><r>zusammen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
+   <e><p><l>lego</l><r>säkular</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>listo</l><r>schlau<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> <!-- TODO ser listo = schlau; estar listo = bereit/fertig; molif? -->
    <e><p><l>lascivo</l><r>lasziv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>local</l><r>lokal<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e>
@@ -22728,6 +22545,8 @@ veintitodos
    <e><p><l>periodístico</l><r>journalistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>periodístico</l><r>Presse-</r></p><par n='AQ_TRUNC'/></e> 
    <e><p><l>periodístico</l><r>Zeitungs-</r></p><par n='AQ_TRUNC'/></e> 
+   <e><p><l>prioritario</l><r>prioritär</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>prioritario</l><r>vorrangig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>proteccionista</l><r>protektionist</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>relativo</l><r>relativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rico</l><r>reich<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> 
@@ -22833,7 +22652,6 @@ veintitodos
    <e><p><l>inteligente</l><r>intelligent<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>intencional</l><r>absichtlich<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>internacional</l><r>international<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
-   <e><p><l>interno</l><r>innen<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>izquierdo</l><r>links<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>joven</l><r>jung<s n="molif"/>132</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>kurdo</l><r>kurdisch<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
@@ -23114,8 +22932,6 @@ veintitodos
    <e><p><l>alterado</l><r>aufgeregt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>alterado</l><r>verstört<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>alternativo</l><r>alternativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>alto</l><r>hoch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>alto</l><r>groß gewachsen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>alto</l><r>laut<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>altruista</l><r>altruistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>alucinógeno</l><r>halluzinogen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26117,7 +25933,6 @@ veintitodos
    <e><p><l>naciente</l><r>aufkommend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>naciente</l><r>anbrechend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nacional</l><r>inländisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>nacional</l><r>einheimisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nacional</l><r>national<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nacionalcatólico</l><r>nationalkatholisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nacionalista</l><r>nationalistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26688,7 +26503,6 @@ veintitodos
    <e><p><l>podrido</l><r>verdorben<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>poético</l><r>poetisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>poético</l><r>Dichter-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>polaco</l><r>polnisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polaco</l><r>polnisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polar</l><r>Pol-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polar</l><r>polar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>

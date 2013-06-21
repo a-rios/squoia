@@ -5,22 +5,35 @@
 ################
 # Coordination #
 ################
-#my.type=CNP	"do nothing, let the chunks, i.e. the NPs appear in the same order
-my.type=/CNP/	xSPEC:my.type=nounSpec, xAP:my.type=/C?AP/, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTNP:xpath{//CHUNK[@type="CNP"]/CHUNK[@type="NP" and count(following-sibling::CHUNK[@type="NP"])=0]}		xSPEC .xAP .head +xCOMA .xCOCONJ +xLASTNP
 
-my.type=/CVP/	xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTVP:xpath{//CHUNK[@type="CVP"]/CHUNK[@type="VP" and count(following-sibling::CHUNK[@type="VP"])=0]}	head +xCOMA .xCOCONJ +xLASTVP
+my.type=CAP		xAVP:my.type=/AVP/, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xCOCONJ: my.type=coConj, xLASTAP:xpath{//CHUNK[@type="AP" and count(following-sibling::CHUNK[@type="AP"])=0]}	xAVP +head +xCOMA .xCOCONJ +xLASTAP
 
-## Noun and prepositional phrases
-my.type=/^NP/				xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
+my.type=/CNP/		xSPEC:my.type=nounSpec, xAP:my.type=/C?AP/, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTNP:xpath{//CHUNK[@type="CNP"]/CHUNK[@type="NP" and count(following-sibling::CHUNK[@type="NP"])=0]}		xSPEC .xAP .head +xCOMA .xCOCONJ +xLASTNP
 
-#my.type=PP||my.type=PP-von		xSPEC:my.type=nounSpec,xAP:my.type=/C?AP/,xNP:my.type=/NP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			head .xSPEC .xAP .xNP +xPP .xCOMA +xSREL +xCOMB
-#my.type=PP				xSPEC:my.type=nounSpec,xAP:my.type=AP,xNP:my.type=NP,xPP:my.type=PP		head .xSPEC .xAP .xNP +xPP
+my.type=/CPP/		xNP:my.type=/NP/, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTPP:xpath{//CHUNK[@type="CPP"]/CHUNK[@type="PP" and count(following-sibling::CHUNK[@type="PP"])=0]}	head +xNP +xCOMA .xCOCONJ +xLASTPP
 
-my.type=PP		xNP:my.type=/NP|CNP/,xCOM:my.type=/P-com|P-eos/	head +xNP +xCOM
+my.type=/CVP/		xSU:my.si=suj, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTVP:xpath{//CHUNK[@type="CVP"]/CHUNK[@type="VP" and count(following-sibling::CHUNK[@type="VP"])=0]}	xSU +head +xCOMA .xCOCONJ +xLASTVP
 
-my.type=AP				xAVP:my.type=AVP								xAVP .head
+#############
+# Adjective #
+#############
+my.type=AP		xPP:my.type=/PP/, xAVP:my.type=AVP	xPP .xAVP .head
 
-## Verb position ##
+########
+# Noun #
+########
+
+my.type=NP		xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
+
+###############
+# Preposition #
+###############
+
+my.type=PP		xNP:my.type=/NP|CNP/,xCOM:my.type=/P-com|P-eos/		head +xNP +xCOM
+
+##########
+## Verb ##
+##########
 # Main clause Declarative : SVO
 # finite verb in main clause just after the subject; adverbs after verb
 my.type=VP&&!(my.finVerb=no)&&!(my.si=S)&&!(my.senttype=inter)		xCCC:xpath{//CHUNK[@ref="1" and (@type="AVP" or @type="PP") and CHUNK/NODE[@slem=","]]} , xET:my.type=AVP&&my.si=et, xVPR:my.type=VerbPrefix, xSU:my.si=suj, xATT:my.si=atr&&my.type=NP, xPDO:my.type=cliticPRON&&child.cas=Akk, xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat), xNDO:my.si=/cd|cd-a/&&my.type=/NP|PP/, xNIO:my.si=ci&&my.type=/NP|PP/, xPO:my.type=/PP/&&my.si=sp-obj, xNEG:my.type=AVP&&my.neg=yes, xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/||my.compar=/yes/), xCOMPADV:my.type=/AVP|AP/&&my.compar=/yes/&&!(my.neg=/yes/), xPP:my.type=/PP.*/, xDATE:my.type=data, xSC:my.type=/S-sub|VZ-inf|VP-inf/, xCOM:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-sub"]]}, xEOS:my.type=/P-eos/		xCCC .xET +xSU +head .xCOMPADV .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xPO .xATT .xVPR .xCOM .xSC +xEOS
@@ -44,7 +57,7 @@ my.type=VP&&my.finVerb=no&&!(my.si=S)&&my.senttype=inter&&!(my.ppexcep=/./)		xVP
 
 # Subordinated clauses: SOV
 # finite verb in subordinated clause at the very end; adverbs before the verb
-my.type=VP&&!(my.finVerb=no)&&my.si=S			xSCJ:my.type=subConj,xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xEOS:my.type=/P-eos/		xSCJ .xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +head +xEOS
+my.type=VP&&!(my.finVerb=no)&&my.si=S			xPREL:my.type=/NP-relpro/, xSCJ:my.type=subConj, xVPR:my.type=VerbPrefix, xSU:my.si=suj, xATT:my.si=atr&&my.type=NP, xPDO:my.type=cliticPRON&&child.cas=Akk, xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat), xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/, xNEG:my.type=AVP&&my.neg=yes, xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/), xPP:my.type=/PP.*/, xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/, xEOS:my.type=/P-eos/		xPREL .xSCJ +xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +head +xEOS
 
 # finite verb in subordinated clause at the very end, the non-finite verb (head) just before the finite
 my.type=VP&&my.finVerb=no&&my.si=S&&!(my.ppexcep=/./)		xSCJ:my.type=subConj,xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb	xSCJ .xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +head +xVFIN +xEOS
