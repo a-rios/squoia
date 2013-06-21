@@ -80,5 +80,5 @@
 |  [ "[" "--" "]" {sqaykichiq} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj.Fut" "]" ] : {saykichiq}
 |  [ "[" "--" "]" {sqaykiku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" "]" ] :{saykiku}
 |  [ "[" "--" "]" {rqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.NPst" "]" ] : {rqa}
-|  [ "[" "--" "]" {ra} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.NPst" "]" ] : {ra}
+|  [ "[" "--" "]" {rqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.NPst" "]" ] : {ra}
 |  [ "[" "--" "]" {sqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.IPst" "]" ] : {sqa};

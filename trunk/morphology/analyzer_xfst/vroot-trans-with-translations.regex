@@ -34,7 +34,6 @@
 | [{chakra} "[" "VRoot" "]" "[" "=cultivar" "]" ] :  {chakra} 
 | [{chamka} "[" "VRoot" "]" "[" "=tocar" "]" ] :  {chamka} 
 | [{chamqa} "[" "VRoot" "]" "[" "=lanzar,triturar" "]" ] :  {chamqa} 
-| [{chanqa} "[" "VRoot" "]" "[" "=lanzar" "]" ] :  {chanqa}
 | [{chapi} "[" "VRoot" "]" "[" "=lanzar,abollar" "]" ] :  {chapi} 
 | [{chaplla} "[" "VRoot" "]" "[" "=palpar" "]" ] :  {chaplla} 
 | [{chaprapa} "[" "VRoot" "]" "[" "=manosear" "]" ] :  {chaprapa} 
@@ -190,7 +189,6 @@
 | [{llamk'a} "[" "VRoot" "]" "[" "=trabajar" "]" ] :  {llamk'a} 
 | [{llamka} "[" "VRoot" "]" "[" "=trabajar" "]" ] :  {llamka} 
 | [{llank'a} "[" "VRoot" "]" "[" "=trabajar" "]" ] :  {llank'a} 
-| [{llanka} "[" "VRoot" "]" "[" "=trabajar" "]" ] :  {llanka} 
 | [{llampha} "[" "VRoot" "]" "[" "=extender" "]" ] :  {llampha} 
 | [{llamphi} "[" "VRoot" "]" "[" "=lamer" "]" ] :  {llamphi} 
 | [{llamp'u} "[" "VRoot" "]" "[" "=suavizar" "]" ] :  {llamp'u} 
@@ -244,7 +242,6 @@
 | [{ñawchi} "[" "VRoot" "]" "[" "=auxiliar" "]" ] :  {ñawchi} 
 | [{ñut'u} "[" "VRoot" "]" "[" "=aplastar" "]" ] :  {ñut'u} 
 | [{paska} "[" "VRoot" "]" "[" "=soltar" "]" ] :  {paska} 
-| [{pusa} "[" "VRoot" "]" "[" "=llevar" "]" ] :  {pusa} 
 | [{pusku} "[" "VRoot" "]" "[" "=remojar" "]" ] :  {pusku} 
 | [{putka} "[" "VRoot" "]" "[" "=enturbiar" "]" ] :  {putka} 
 | [{putpu} "[" "VRoot" "]" "[" "=envejecer" "]" ] :  {putpu} 
@@ -288,7 +285,6 @@
 | [{rutu} "[" "VRoot" "]" "[" "=cortar" "]" ] :  {rutu} 
 | [{sanka} "[" "VRoot" "]" "[" "=trabajar" "]" ] :  {sanka} 
 | [{saqi} "[" "VRoot" "]" "[" "=dejar" "]" ] :  {saqi} 
-| [{saru} "[" "VRoot" "]" "[" "=pisar" "]" ] :  {saru} 
 | [{sat'i} "[" "VRoot" "]" "[" "=introducir" "]" ] :  {sat'i} 
 | [{sati} "[" "VRoot" "]" "[" "=introducir" "]" ] :  {sati} 
 | [{siklla} "[" "VRoot" "]" "[" "=dirigir" "]" ] :  {siklla} 
@@ -324,8 +320,6 @@
 | [{waqa} "[" "VRoot" "]" "[" "=llorar" "]" ] :  {waqa} 
 | [{waqwa} "[" "VRoot" "]" "[" "=escasear" "]" ] :  {waqwa} 
 | [{waqya} "[" "VRoot" "]" "[" "=llamar" "]" ] :  {waqya} 
-| [{warku} "[" "VRoot" "]" "[" "=colgar" "]" ] :  {warku} 
-| [{wasa} "[" "VRoot" "]" "[" "=defender" "]" ] :  {wasa} 
 | [{waska} "[" "VRoot" "]" "[" "=enlazar" "]" ] :  {waska} 
 | [{wasqi} "[" "VRoot" "]" "[" "=renunciar" "]" ] :  {wasqi} 
 | [{wasta} "[" "VRoot" "]" "[" "=cargar" "]" ] :  {wasta} 
@@ -352,10 +346,5 @@
 | [{wit'u} "[" "VRoot" "]" "[" "=amputar" "]" ] :  {wit'u} 
 | [{yaksi} "[" "VRoot" "]" "[" "=fundir" "]" ] :  {yaksi} 
 | [{yakya} "[" "VRoot" "]" "[" "=establecer" "]" ] :  {yakya} 
-| [{yalli} "[" "VRoot" "]" "[" "=exceder" "]" ] :  {yalli} 
 | [{yanu} "[" "VRoot" "]" "[" "=cocinar" "]" ] :  {yanu} 
-| [{yarku} "[" "VRoot" "]" "[" "=subir" "]" ] :  {yarku} 
-| [{yuya} "[" "VRoot" "]" "[" "=recordar" "]" ] :  {yuya} 
-| [{yarqu} "[" "VRoot" "]" "[" "=salir" "]" ] :  {yarqu} 
-| [{yayku} "[" "VRoot" "]" "[" "=entrar" "]" ] :  {yayku} 
  ;

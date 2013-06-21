@@ -78,7 +78,7 @@
 | [ {gana} "[" "VRootES" "]" ] :  {gana}
 | [ {gasta} "[" "VRootES" "]" ] :  {gasta}
 | [ {gusta} "[" "VRootES" "]" ] :  {gusta}
-| [ {hacer_caso} "[" "VRootES" "]" ] :  {kasu}
+#| [ {hacer_caso} "[" "VRootES" "]" ] :  {kasu}
 | [ {importa} "[" "VRootES" "]" ] :  {impurta}
 | [ {insulta} "[" "VRootES" "]" ] :  {insulta}
 | [ {invita} "[" "VRootES" "]" ] :  {imbita}
