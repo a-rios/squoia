@@ -68,10 +68,13 @@ con		lem=mit		-	+
 # ======
 # keep the preposition when there is no determiner/specifier
 # la posibilidad de riego => die Moeglichkeit von Bewaesserung
-de		lem=von,cas=Dat		chunkparent.si=sp-mod&&xpath{NODE[@pos="NN" and count(NODE)=0]}	-	# adpos is head of noun without child
+de		lem=von,cas=Dat		xpath{self::NODE[parent::CHUNK[@si="sp"]/CHUNK[contains(@type,"NP")]/NODE[@pos="NN" and count(NODE)=0]]}	-	# adpos is head of noun without child
+
 # la casa de mi padre => das Haus meines Vaters (without preposition)
 de		cas=Gen,delete=yes	chunkparent.si=sp&&chunkgrandparent.type=/NP/	-
+de		cas=Gen,delete=yes	xpath{//CHUNK[contains(@type,"NP")]/CHUNK[@type="CPP"]/CHUNK[@si="sp"]/NODE}	-
 de		cas=Gen,delete=yes	xpath{//NODE[parent::CHUNK[@si="sp" and preceding-sibling::CHUNK/NODE[@slem="%"]]]}	-
+
 # de manera significativa => auf signifikante Art
 #de		lem=auf,cas=Akk		chunkparent.type=/PP/&&child.slem=manera		-
 #de		lem=auf,cas=Akk		chunkparent.type=/PP/&&chunkparent.chunkchild.child.slem=manera		-
@@ -111,15 +114,14 @@ en		lem=in,cas=Akk		chunkparent.type=PP&&chunkparent.si=sp-obj&&child.sem=[+Cont
 # Caminaron por el parque => Sie spazierten durch den Park
 # La empresa fue fundada en el siglo XIX => Die Firma wurde im 19. Jahrhundert gegruendet
 por		lem=durch,cas=Akk	chunkparent.type=PP&&(chunkgrandparent.type=V-pas||xpath{ancestor::CHUNK[@type="VZ-inf" and descendant::NODE[starts-with(@smi,"VS") and @voice="passive"]]})
+por		lem=durch,cas=Akk	chunkparent.type=PP&&chunkparent.si=cag
 
 # por = pro
 # una vez por semana => ein Mal pro Woche
 por		lem=pro,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) && xpath{ancestor::CHUNK[@type="PP" and preceding-sibling::CHUNK[NODE[@slem="vez"]]]}
 
 # por = fuer
-# TODO : replace the umlaut back (synTransferIntraChunk.pl crashes on my machine when there is a diacritic!?!)
 #por		lem=für,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 
-#por		lem=fuer,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas)
 
 # TODO verb periphrases with "por"
 # Acabamos por escribirle un mensaje => Wir schreiben ihm schliesslich eine Nachricht
