@@ -1,9 +1,0 @@
-#suffixes -ntin & -wan, the only case suffixes, that can be combined with -spa (same subject)
-
-   [ "[" "--" "]" {ntin} "[" "Cas" "]" "[" "+Iclsv" "]"]: "@POSS"{ntin}
-|   [ "[" "--" "]" {nti} "[" "Cas" "]" "[" "+Iclsv" "]"]: "@POSS"{nti}
-|  [ "[" "--" "]" {wan}   "[" "Cas" "]" "[" "+Con_Inst" "]"] : {wan}
-|   [ "[" "--" "]" {kama}  "[" "Cas" "]" "[" "+Dist" "]"] : {kama}
-|   [ "[" "--" "]" {pi}  "[" "Cas" "]" "[" "+Loc" "]"] : {pi}
-|   [ "[" "--" "]" {rayku}  "[" "Cas" "]" "[" "+Kaus" "]"] : {rayku}
-;
