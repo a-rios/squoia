@@ -844,7 +844,11 @@ sub disambMorph1{
 				# -ykuna: Inf, Aff_Obl
 				# -kuna: Pl, Rflx_Obl
 				# -cha: Fact, Dim
-				if($allmorphs !~ /\Q$correctMorph\E/ && scalar(@$analyses) > 1){
+				#$correctMorph = s/\n//;
+				chomp($correctMorph);
+				#print STDERR "$form: all: $allmorphs, correct: $correctMorph\n";
+				if($allmorphs !~ /$correctMorph/ && scalar(@$analyses) > 1){
+					#print STDERR "delete: $allmorphs\n";
 					splice (@{$analyses},$j,1);	
 					$disambiguatedForms++;
 					$j--;		
@@ -1015,7 +1019,9 @@ sub disambMorph2{
 				# no confusion with other tags, just check whether allmorphs contains them
 				#else
 				#{
-					if($allmorphs !~ /\Q$correctMorph\E/ && scalar(@$analyses) > 1){
+					#print STDERR "$form: all: $allmorphs, correct: $correctMorph\n";
+					if($allmorphs !~ /$correctMorph/ && scalar(@$analyses) > 1){
+						#print STDERR "delete: $allmorphs\n";
 						splice (@{$analyses},$j,1);	
 						$disambiguatedForms++;
 						$j--;		
@@ -1098,7 +1104,7 @@ sub disambMorph3{
 		my $analyses = @$ambword[1];
 		my $form = @$ambword[0];
 		#print "$form $crfform\n";
-		if($form ne $crfform ){
+		if(lc($form) ne lc($crfform) ){
 			unless($crfform =~ /^\s*$/){
 			print STDERR "not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
 			exit;
