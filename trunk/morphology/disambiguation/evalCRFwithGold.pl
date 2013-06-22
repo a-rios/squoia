@@ -271,11 +271,15 @@ elsif($mode eq '-xfst')
 	# check if files contain the same number of words
 	if(scalar(@goldwords) != scalar(@words)){
 		print STDERR "different number of words, cannot compare!\n";
-#		for (my $i=0;$i<scalar(@words) or $i<scalar(@goldwords);$i++ ){
-#			my $g = @goldwords[$i];
-#			my $w = @words[$i];
-#			print "test: @$w[0] , gold: @$g[0]\n";
-#		}
+		for (my $i=0;$i<scalar(@words) or $i<scalar(@goldwords);$i++ ){
+			my $g = @goldwords[$i];
+			my $w = @words[$i];
+			if(lc(@$w[0]) ne lc(@$g[0]) ){
+				print "in line $i, test: @$w[0] , gold: @$g[0]\n";
+				exit;
+			}
+			
+		}
 		print STDERR "results file contains ".scalar(@words)." words, but gold file contains ".scalar(@goldwords)."!\n";
 		exit;
 	}
@@ -300,20 +304,21 @@ elsif($mode eq '-xfst')
 			#print @$analyses[0]."\n".@$g[1]."\n\n";
 			unless(@$g[1] =~ /#EOS/)
 			{
-				if(@$analyses[0] eq @$g[1]){
+				if(lc(@$analyses[0]) eq lc(@$g[1])){
 					$correctAnalysis++;
 					#print @$analyses[0]; #."---".@$g[1]."\n";
+				}
+				# punctuation marks, don't count them
+				elsif(@$analyses[0] =~ /\Q$\E/){
+					$punct++;
 				}
 				#xfst failures, count separately
 				elsif(@$analyses[0] =~ /\+\?$/){
 					$xfstFailures++;
 				}
-				# punctuation marks, don't count them
-				elsif(@$analyses[0] =~ /\$/){
-					$punct++;
-				}
 				else{
 					$wrongAnalysis++;
+					print "word: @$g[0]\n";
 					print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
 				}
 			}
@@ -328,13 +333,14 @@ elsif($mode eq '-xfst')
 		#my $correct = ($correctAnalysis/$$totalAmbigForms)*100;
 	#	my $wrong = ($wrongAnalysis/$$totalAmbigForms)*100;
 		
-		my $wordforms = scalar(@words)-$punct;
+		my $wordforms = scalar(@words)-$punct-$nbrOfSentences;
 		my $correct = ($correctAnalysis/$wordforms)*100;
 		my $wrong = ($wrongAnalysis/$wordforms)*100;
 		
 		my $correctOfAmbForms = $$totalAmbigForms-$stillAmbigForms-$wrongAnalysis;
 		my $correctOfAmb = ($correctOfAmbForms/$$totalAmbigForms)*100;
 		my $wrongOfAmb = ($wrongAnalysis/$$totalAmbigForms)*100;
+		my $stillAmb = ($stillAmbigForms/$$totalAmbigForms)*100;
 		#my $truewrongPos = (($wrongClass-$unknownWords)/$wordsToDisamb)*100;
 		 
 		print "\n*************************************************\n\n";
@@ -348,8 +354,9 @@ elsif($mode eq '-xfst')
 		print "   total with wrong analysis: $wrongAnalysis : ";
 		  printf("%.2f", $wrong); print "%\n";
 		print "   xfst failures: $xfstFailures\n"; 
-		print "   total still ambiguous: $stillAmbigForms\n ";
-		
+		print "   total ambiguous words: $$totalAmbigForms\n";
+		print "   total still ambiguous: $stillAmbigForms:  ";
+		 printf("%.2f", $stillAmb); print "%\n";
 		print "   correct of ambiguous: $correctOfAmbForms : ";
 		   printf("%.2f", $correctOfAmb); print "%\n";
 		print "   wrong of ambiguous: $wrongAnalysis : "; 

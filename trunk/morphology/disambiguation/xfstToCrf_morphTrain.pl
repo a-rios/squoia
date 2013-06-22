@@ -286,7 +286,7 @@ if($mode eq '-3')
 		my $string = @$analyses[0]->{'string'};
 		
 			# -n
-			if( ($allmorphs =~ /\Q+3.Sg.Poss\E/ && $string !~ /3\.Sg\.Poss.*(Cas|Pl|Top)/ ) || ($allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/ && $string !~ /(Cas|Num).+DirE/) )
+			if( ($allmorphs =~ /\Q+3.Sg.Poss\E/ && $string !~ /3\.Sg\.Poss.*(Cas|Pl|Amb)/ ) || ($allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/ && $string !~ /(Cas|Num).+DirE/) )
 			#if( $allmorphs =~ /\Q+3.Sg.Poss\E/ || $allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/  )
 			{
 				push(@possibleClasses, "DirE");
@@ -410,6 +410,31 @@ for (my $i=0;$i<scalar(@words);$i++){
 						$nbrOfMorph++;
 					}
 				}
+			}
+		}
+		# mode -3: add missing morphs:
+		# +3.Sg.Poss for DirE and vice versa
+		# +Loc+IndE for Add and vice versa
+		elsif($mode eq '-3'){
+			if($correctClass eq 'DirE'){
+				print "+3.Sg.Poss\t";
+				$nbrOfMorph++;
+			}
+			elsif($correctClass eq 'Poss'){
+				print "+DirE\t";
+				$nbrOfMorph++;
+			}
+			elsif($correctClass eq 'Loc_IndE'){
+				print "+Add\t";
+				$nbrOfMorph++;
+			}
+			elsif($correctClass eq 'Add'){
+				print "+Loc\t+IndE\t";
+				$nbrOfMorph +=2;
+			}
+			elsif($correctClass eq 'Pl'){
+				print "+IndE\t";
+				$nbrOfMorph++;
 			}
 		}
 		
