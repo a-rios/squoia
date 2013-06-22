@@ -341,19 +341,21 @@ elsif($mode eq '-xfst')
 		my $correctOfAmb = ($correctOfAmbForms/$$totalAmbigForms)*100;
 		my $wrongOfAmb = ($wrongAnalysis/$$totalAmbigForms)*100;
 		my $stillAmb = ($stillAmbigForms/$$totalAmbigForms)*100;
+		my $xfstfailed = ($xfstFailures/$wordforms)*100;
 		#my $truewrongPos = (($wrongClass-$unknownWords)/$wordsToDisamb)*100;
 		 
 		print "\n*************************************************\n\n";
 		print "XFST EVAL:\n";
 		print "   total sentences: $nbrOfSentences\n";
-		print "   total token ".(scalar(@words)-$nbrOfSentences)."\n";
-		print "   total word forms $wordforms\n";
+		print "   total token: ".(scalar(@words)-$nbrOfSentences)."\n";
+		print "   total word forms: $wordforms\n";
 		 print "   punctuation marks: $punct\n";  
 		print "   total with correct analysis: $correctAnalysis : ";
 		 printf("%.2f", $correct); print "%\n";
 		print "   total with wrong analysis: $wrongAnalysis : ";
 		  printf("%.2f", $wrong); print "%\n";
-		print "   xfst failures: $xfstFailures\n"; 
+		print "   xfst failures: $xfstFailures: "; 
+		printf("%.2f", $xfstfailed); print "%\n";
 		print "   total ambiguous words: $$totalAmbigForms\n";
 		print "   total still ambiguous: $stillAmbigForms:  ";
 		 printf("%.2f", $stillAmb); print "%\n";
