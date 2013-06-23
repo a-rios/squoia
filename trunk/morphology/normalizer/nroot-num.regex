@@ -1,0 +1,28 @@
+# numerals 
+
+ [ {huk} "[" "NRootNUM"  "]" ] :   {huk}
+| [ {huk} "[""NRootNUM"  "]" ] :   {huq}
+| [ {huk} "[""NRootNUM"  "]" ] :   {shuk}
+| [ {huk} "[""NRootNUM"  "]" ] :   {uj}
+| [ {huk} "[""NRootNUM"  "]" ] :   {suk}
+| [ {iskay} "[""NRootNUM"  "]" ] :   {iskay}
+| [ {iskay} "[""NRootNUM"  "]" ] :   {ishkay}
+| [ {kimsa} "[""NRootNUM"  "]" ] :   {kimsa}
+| [ {kimsa} "[""NRootNUM"  "]" ] :   {kinsa}
+| [ {tawa} "[""NRootNUM"  "]" ] :   {tawa}
+| [ {pichqa} "[""NRootNUM"  "]" ] :   {pichqa}
+| [ {pichqa} "[""NRootNUM"  "]" ] :   {phichqa}
+| [ {pichqa} "[""NRootNUM"  "]" ] :   {pisqa}
+| [ {pichqa} "[""NRootNUM"  "]" ] :   {phisqa}
+| [ {suqta} "[""NRootNUM"  "]" ] :   {suqta}
+| [ {qanchis} "[""NRootNUM"  "]" ] :   {qanchis}
+| [ {qanchis} "[""NRootNUM"  "]" ] :   {q'anchis}
+| [ {qanchis} "[""NRootNUM"  "]" ] :   {k'anchis}
+| [ {pusaq} "[""NRootNUM"  "]" ] :   {pusaq}
+| [ {isqun} "[""NRootNUM"  "]" ] :   {isqun}
+| [ {chunka} "[""NRootNUM"  "]" ] :   {chunka}
+| [ {pachak} "[""NRootNUM"  "]" ] :   {pachak}
+| [ {pachak} "[""NRootNUM"  "]" ] :   {pachaq}
+#| [ {unu} "[""NRootNUM"  "]" ] :   {unu}
+| [ {waranqa} "[""NRootNUM"  "]" ] :   {waranqa}
+;

@@ -1,0 +1,84 @@
+# verbal slot 6: person markers
+
+   [ "[" "--" "]" {ni} "[" "VPers" "]" "[" "+1.Sg.Subj" "]" ] : {ni}
+|  [ "[" "--" "]" {nki} "[" "VPers" "]" "[" "+2.Sg.Subj" "]" ] : {nki}
+|  [ "[" "--" "]" {n} "[" "VPers" "]" "[" "+3.Sg.Subj" "]" ] : {n}
+|  [ "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj" "]" ] : {nchis}
+|  [ "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj" "]" ] : {nchiq}
+|  [ "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj" "]" ] : {nchik}
+|  [ "[" "--" "]" {yku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj" "]" ]  : {niku}
+|  [ "[" "--" "]" {yku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj" "]" ]  : {yku}
+|  [ "[" "--" "]" {nkichik} "[" "VPers" "]" "[" "+2.Pl.Subj" "]" ] : {nkichik}
+|  [ "[" "--" "]" {nkichik} "[" "VPers" "]" "[" "+2.Pl.Subj" "]" ] : {nkichis}
+|  [ "[" "--" "]" {nkichik} "[" "VPers" "]" "[" "+2.Pl.Subj" "]" ] : {nkichiq}
+|  [ "[" "--" "]" {nku} "[" "VPers" "]" "[" "+3.Pl.Subj" "]" ] : {nku}
+|  [ "[" "--" "]" {qku} "[" "VPers" "]" "[" "+3.Pl.Subj.Hab" "]" ] : {qku}
+|  [ "[" "--" "]"  {rqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.NPst" "]" ] : {rqaku}
+|  [ "[" "--" "]"  {sqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.IPst" "]" ] : {sqaku}
+|  [ "[" "--" "]"  {yman} "[" "VPers" "]" "[" "+1.Sg.Subj.Pot" "]" ] : {yman}
+|  [ "[" "--" "]" {waq} "[" "VPers" "]" "[" "+2.Sg.Subj.Pot" "]" ] : {waq}
+|  [ "[" "--" "]" {chwan} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {chwan}
+|  [ "[" "--" "]" {chwanchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {chwanchik}
+|  [ "[" "--" "]" {chwanchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {chwanchis}
+|  [ "[" "--" "]" {chwanchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {chwanchiq}
+|  [ "[" "--" "]" {chwan} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {swan}
+|  [ "[" "--" "]" {chwanchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {swanchis}
+|  [ "[" "--" "]" {waqninchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {waqninchik}
+|  [ "[" "--" "]" {waqninchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {waqninchiq}
+|  [ "[" "--" "]" {waqninchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {waqninchis}
+|  [ "[" "--" "]" {waqchik} "[" "VPers" "]" "[" "+2.Pl.Subj.Pot" "]" ] : {waqchik}
+|  [ "[" "--" "]" {waqchik} "[" "VPers" "]" "[" "+2.Pl.Subj.Pot" "]" ] : {waqchis}
+|  [ "[" "--" "]" {waqchik} "[" "VPers" "]" "[" "+2.Pl.Subj.Pot" "]" ] : {waqchiq}
+|  [ "[" "--" "]" {nmanku} "[" "VPers" "]" "[" "+3.Pl.Subj.Pot" "]" ] : {nmanku}
+|  [ "[" "--" "]" {saq} "[" "VPers" "]" "[" "+1.Sg.Subj.Fut" "]" ]  : {saq}
+|  [ "[" "--" "]" {nqa} "[" "VPers" "]" "[" "+3.Sg.Subj.Fut" "]" ] : {nqa}
+|  [ "[" "--" "]" {sun} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Fut" "]" ] : {sun}
+|  [ "[" "--" "]" {sunchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Fut" "]" ] : {sunchik}
+|  [ "[" "--" "]" {sunchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Fut" "]" ] : {sunchis}
+|  [ "[" "--" "]" {sunchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Fut" "]" ] : {sunchiq}
+|  [ "[" "--" "]" {saqku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj.Fut" "]" ] : {saqku}
+|  [ "[" "--" "]" {nqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.Fut" "]" ]  : {nqaku}
+|  [ "[" "--" "]" {y} "[" "VPers" "]" "[" "+2.Sg.Subj.Imp" "]" ] : {y}
+|  [ "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychik}
+|  [ "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychis}
+|  [ "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychiq}
+|  [ "[" "--" "]" {sun} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Imp" "]" ] : {sun}
+|  [ "[" "--" "]" {chun} "[" "VPers" "]" "[" "+3.Sg.Subj.Imp" "]" ] : {chun}
+|  [ "[" "--" "]" {chunku} "[" "VPers" "]" "[" "+3.Pl.Subj.Imp" "]" ] : {chunku}
+|  [ "[" "--" "]" {wanchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {wanchik}
+|  [ "[" "--" "]" {wanchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {wanchis}
+|  [ "[" "--" "]" {wanchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {wanchiq}
+|  [ "[" "--" "]" {wankiku} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Pl.Excl.Obj" "]" ] : {wankiku}
+|  [ "[" "--" "]" {wanku} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Excl.Obj" "]" ] : {wanku}
+|  [ "[" "--" "]" {wasun} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {wasun}
+|  [ "[" "--" "]" {wasunchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {wasunchik}
+|  [ "[" "--" "]" {wasunchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {wasunchis}
+|  [ "[" "--" "]" {wasunchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {wasunchiq}
+|  [ "[" "--" "]" {wanqaku} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Excl.Obj.Fut" "]" ] : {wanqaku}
+#|  [ "[" "--" "]" {waychik} "[" "VPers" "]" "[" "+2.Pl.Subj_1.Sg.Obj.Imp" "]" ] : {waychik}
+#|  [ "[" "--" "]" {waychik} "[" "VPers" "]" "[" "+2.Pl.Subj_1.Sg.Obj.Imp" "]" ] : {waychis}
+|  [ "[" "--" "]" {waychik} "[" "VPers" "]" "[" "+2.Pl.Subj_1.Sg.Obj.Imp" "]" ] : {waychiq}
+|  [ "[" "--" "]" {wayku} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Pl.Obj.Imp" "]" ] : {wayku}
+|  [ "[" "--" "]" {yki} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Sg.Obj" "]" ] : {yki}
+|  [ "[" "--" "]" {ykichik}"[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj" "]" ] :{ykichik}
+|  [ "[" "--" "]" {ykichik}"[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj" "]" ] :{ykichis}
+|  [ "[" "--" "]" {ykichik}"[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj" "]" ] :{ykichiq}
+|  [ "[" "--" "]"  {ykiku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj_2.Sg.Obj" "]" ] : {ykiku}
+|  [ "[" "--" "]" {sunki} "[" "VPers" "]" "[" "+3.Subj_2.Sg.Obj" "]" ] : {sunki}
+|  [ "[" "--" "]" {sunkiku} "[" "VPers" "]" "[" "+3.Pl.Subj_2.Sg.Obj" "]" ] : {sunkiku}
+|  [ "[" "--" "]" {sunkichik}"[" "VPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {sunkichik}
+|  [ "[" "--" "]" {sunkichik}"[" "VPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {sunkichis}
+|  [ "[" "--" "]" {sunkichik}"[" "VPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {sunkichiq}
+|  [ "[" "--" "]" {sqayki} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Sg.Obj.Fut" "]" ] : {sqayki}
+|  [ "[" "--" "]" {sqaykichik} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj.Fut" "]" ] : {sqaykichik}
+|  [ "[" "--" "]" {sqaykichik} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj.Fut" "]" ] : {sqaykichis}
+|  [ "[" "--" "]" {sqaykichik} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj.Fut" "]" ] : {sqaykichiq}
+|  [ "[" "--" "]" {sqaykiku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" "]" ] : {sqaykiku}
+|  [ "[" "--" "]" {sqayki} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Sg.Obj.Fut" "]" ] : {sayki}
+|  [ "[" "--" "]" {sqaykichik} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj.Fut" "]" ] : {saykichik}
+|  [ "[" "--" "]" {sqaykichik} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj.Fut" "]" ] : {saykichis}
+|  [ "[" "--" "]" {sqaykichik} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj.Fut" "]" ] : {saykichiq}
+|  [ "[" "--" "]" {sqaykiku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" "]" ] :{saykiku}
+|  [ "[" "--" "]" {rqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.NPst" "]" ] : {rqa}
+|  [ "[" "--" "]" {rqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.NPst" "]" ] : {ra}
+|  [ "[" "--" "]" {sqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.IPst" "]" ] : {sqa};
