@@ -1,4 +1,4 @@
 # ambivalent suffixes slot 5
 
   ["[" "--" "]" {chu} "[" "Amb" "]" "[" "+Intr_Neg" "]"] : {chu}
-| ["[" "--" "]" {chu} "[" "Amb" "]" "[" "+Neg" "]" ]: {tsu};
+| ["[" "--" "]" {tsu} "[" "Amb" "]" "[" "+Neg" "]" ]: {tsu};
