@@ -1,11 +1,11 @@
 #nominal slot 5: case
 
    [ "[" "--" "]" {ntin} "[" "Cas" "]" "[" "+Iclsv" "]"]:["@POSS"{ntin}]
-|  [ "[" "--" "]" {ntin} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSS"{nti}]
+|  [ "[" "--" "]" {nti} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSS"{nti}]
 |  [ "[" "--" "]" {nintin} "[" "Cas" "]" "[" "+Iclsv" "]"]:["@POSSni"{nintin}]
-|  [ "[" "--" "]" {nintin} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSSni"{ninti}]
-|  [ "[" "--" "]" {nintin} "[" "Cas" "]" "[" "+Iclsv" "]"]:["@POSSni"{ñintin}]
-|  [ "[" "--" "]" {nintin} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSSni"{ñinti}]
+|  [ "[" "--" "]" {ninti} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSSni"{ninti}]
+|  [ "[" "--" "]" {ñintin} "[" "Cas" "]" "[" "+Iclsv" "]"]:["@POSSni"{ñintin}]
+|  [ "[" "--" "]" {ñinti} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSSni"{ñinti}]
 |  [ "[" "--" "]" {pura} "[" "Cas" "]" "[" "+Intsoc" "]"] : {pura}
 |  [ "[" "--" "]"{nka}  "[" "Cas" "]" "[" "+Distr" "]"] : {nka}
 |  [ "[" "--" "]"{kama}  "[" "Cas" "]" "[" "+Term" "]"] : {kama}

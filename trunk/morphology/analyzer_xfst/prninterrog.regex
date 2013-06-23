@@ -2,14 +2,14 @@
 
   [ {may} "[" "PrnInterr" "]" "["  "=dónde" "]" ]: {may}
 | [ {pi} "[" "PrnInterr" "]" "["  "=quién" "]" ]: {pi}
-| [ {hayk'a} "[" "PrnInterr" "]" "["  "=cuánto" "]" ]: {hayka}
+| [ {hayka} "[" "PrnInterr" "]" "["  "=cuánto" "]" ]: {hayka}
 | [ {hayk'a} "[" "PrnInterr" "]" "["  "=cuánto" "]"]: {hayk'a}
-| [ {hayk'a} "[" "PrnInterr" "]" "["  "=cuánto" "]"]: {jayka}
-| [ {hayk'a} "[" "PrnInterr" "]" "["  "=cuánto" "]"]: {jayk'a}
-| [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {haykaq}
-| [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {hayk'aq}
-| [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {jaykaq}
-| [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {jayk'aq}
+| [ {jayka} "[" "PrnInterr" "]" "["  "=cuánto" "]"]: {jayka}
+| [ {jayk'a} "[" "PrnInterr" "]" "["  "=cuánto" "]"]: {jayk'a}
+| [ {haykaq} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {haykaq}
+| [ {hayk'aq} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {hayk'aq}
+| [ {jaykaq} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {jaykaq}
+| [ {jayk'aq} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {jayk'aq}
 | [ {imayna} "[" "PrnInterr" "]" "["  "=cómo" "]" ]: {imayna}
 | [ {mayqin} "[" "PrnInterr" "]" "["  "=cuál" "]"]: {mayqin}
 | [ {mayqan} "[" "PrnInterr" "]" "["  "=cuál" "]"]: {mayqan}

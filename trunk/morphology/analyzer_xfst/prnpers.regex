@@ -1,16 +1,16 @@
 # person pronouns
 
   [ {ñuqa} "[" "PrnPers+1.Sg" "]" ] : {ñuqa}
-| [ {ñuqa} "[" "PrnPers+1.Sg" "]" ] : {nuqa}
+| [ {nuqa} "[" "PrnPers+1.Sg" "]" ] : {nuqa}
 | [ {qam} "[" "PrnPers+2.Sg" "]" ] : {qam}
-| [ {qam} "[" "PrnPers+2.Sg" "]" ] : {qan}
+| [ {qan} "[" "PrnPers+2.Sg" "]" ] : {qan}
 | [ {pay} "[" "PrnPers+3.Sg" "]" ] : {pay}
-| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {nuqanchis}
-| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {nuqanchik}
-| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {nuqanchiq}
-| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {ñuqanchis}
+| [ {nuqanchis} "[" "PrnPers+1.Pl.Incl" "]" ] : {nuqanchis}
+| [ {nuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {nuqanchik}
+| [ {nuqanchiq} "[" "PrnPers+1.Pl.Incl" "]" ] : {nuqanchiq}
+| [ {ñuqanchis} "[" "PrnPers+1.Pl.Incl" "]" ] : {ñuqanchis}
 | [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {ñuqanchik}
-| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {ñuqanchiq}
+| [ {ñuqanchiq} "[" "PrnPers+1.Pl.Incl" "]" ] : {ñuqanchiq}
 | [ {ñuqayku} "[" "PrnPers+1.Pl.Excl" "]" ] : {ñuqayku}
-| [ {ñuqayku} "[" "PrnPers+1.Pl.Excl" "]" ] : {nuqayku}
+| [ {nuqayku} "[" "PrnPers+1.Pl.Excl" "]" ] : {nuqayku}
 ;
