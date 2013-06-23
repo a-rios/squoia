@@ -143,10 +143,12 @@
        #-----------------------------------------------------------------------------------------------------------------------------#
        # if in lower side {rqu} as {rqa}, {pu} as {pa} etc. -> we want those forms to appear on the upper side as well               #
        # (otherwise rqa/pa would appear as rqu/pu in the output, which would be wrong given the morphological context of these forms #
+       # for normalizer: rewrite ru as rqu and ra as rqa, respectivly (TODO: as well yu/yku, ya/yka?                                 #
        #-----------------------------------------------------------------------------------------------------------------------------#
 
        define rqurqa5 [ {rqa}"+rqu+" <- {rqu}"+rqu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
-       define rqurqa6 [ {ra}"+ru+" <- {ru}"+ru+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
+       define rqurqa6 [ {rqu}"+ru+" <- {ru}"+ru+" \\ _ ?* ~$["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
+       define rqurqa7 [ {rqa}"+ru+" <- {ru}"+ru+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define ykuyka3 [ {yka}"+yku+" <- {yku}"+yku+" \\ _   ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
        define ykuyka4 [ {ya}"+yu+" <- {yu}"+yu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
        define mpuDIR2 [ {m}"+mu+" <- {mu}"+mu+"  \\  _ ?* "@PU" ];
@@ -154,7 +156,7 @@
        define pupa2 [ {pa}"+pu+" <- {pu}"+pu+" \\  _  ?* ["@KU"|"@MU"] ];
        define kuka2 [ {ka}"+ku+" <- {ku}"+ku+" \\  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
 
-      define VerbRulesUpper  naRzpr  .o. rqurqa5 .o. rqurqa6 .o. ykuyka3 .o. ykuyka4 .o. mpuDIR2  .o. pupa2 .o. kuka2;
+      define VerbRulesUpper  naRzpr  .o. rqurqa5 .o. rqurqa6 .o. rqurqa7 .o. ykuyka3 .o. ykuyka4 .o. mpuDIR2  .o. pupa2 .o. kuka2;
 
        #-------------------------------------------------------------------------------------------#
        # rqu --> rqa before mu, pu , ri ,ysi (rqa can only be +Rptn in this position, everywhere   #
@@ -163,7 +165,7 @@
        define rqurqa1 [ {rqu}"@RQU"-> {rqa}"@RQU"  || _  ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa2 [ {ru}"@RQU"-> {ra}"@RQU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa3 [ {rqu}"@RQU" (->) {rqa}"@RQU"  || _  ?* "@KU"];
-       define rqurqa4 [ {ru}"@RQU" (->) {ra}"@RQU" || _ ?* "@KU"];      
+       define rqurqa4 [ {ru}"@RQU" (->) {rqa}"@RQU" || _ ?* "@KU"];      
 
        #--------------------------------------------------------------------------------------#
        # -yku becomes -yka before -mu, -pu, -ysi, -chi, -ri, -cha                             #
@@ -636,7 +638,8 @@ define HAKU  [{haku} "[" "VRoot" "+2.Sg.Subj.Imp" "]" "[" "=venir" "]"] : {haku}
 define Wort IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. AmbiRules .o. UpperCase;
 
 read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord] .o. Allophone .o. Cleanup1 .o. Accent;
+#read regex  [Wort|SpecialWord] .o. Allophone .o. Cleanup1 .o. Accent;
 #read regex  FeatRestr .o. [Wort|SpecialWord]  .o. Cleanup1;
 #read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord];
 
-save stack quechua-web-db.fst
+save stack normalizer.fst
