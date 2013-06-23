@@ -1,0 +1,20 @@
+# ambivalent suffixes slot 6
+
+  {mi}  :{mi}"@MI"
+|   {m}  : {m}"@MI"
+|   [{m}"AMBIGUO"]  : {n}"@MI"
+|  {si}  :{si}"@SI"
+|  {s}  : {s}"@SI"
+|  {cha} : {cha}"@CHA"
+|  {cha} : {chi}"@CHA"
+|  {ch} : {ch}"@CHA"
+|  {qa} :  {qa}
+|  {qa} :  {ha}
+|  {qa} : {cca}
+|   {ri} : {ri}
+|  {suna} : {suna}
+|  {sina} : {sina}
+| {má}  : {má}
+| {sá}  : {sá}
+| {chá}  : {chá}
+;

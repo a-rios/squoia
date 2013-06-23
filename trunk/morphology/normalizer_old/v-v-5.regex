@@ -1,0 +1,5 @@
+# verbal slot 5: tense
+
+  {rqa}  : {rqa}
+|  {rqa}: {ra}
+| {sqa}  : {sqa};

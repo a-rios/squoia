@@ -1,0 +1,7 @@
+# ambivalent suffixes slot 1
+
+{hina}  : {hina}
+|  {hina} : {jina}
+|  {pacha} : {pacha} ;
+
+
