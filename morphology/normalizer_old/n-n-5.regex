@@ -1,0 +1,10 @@
+#nominal slot 5: case
+
+   {ntin} :["@POSS"{ntin}]
+|  {nintin} :["@POSSni"{nintin}]
+|  {nintin} :["@POSSni"{ñintin}]
+|  {pura}  : {pura}
+| {nka}  : {nka}
+| {kama}   : {kama}
+| {niq}  : {niq}
+;

@@ -1,0 +1,9 @@
+# verbal slot 2: directionals and reflexive, allomorphic variants -ka, -pa, -m, see rules section in quechua.xfst
+
+   {ku} : {ku}
+|  {ka} : {ka}
+|  {pu}  : {pu}
+|  {pa}  : {pa}
+|   {mu} :  {mu}
+|   {mpu}  :  {mpu}
+|   {mpu}  :  {npu};
