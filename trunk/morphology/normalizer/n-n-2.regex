@@ -1,8 +1,0 @@
-# nominal slot 2: possessor derivation
-
-  {sapa} :{sapa}
-| {yuq} : ["@POSS"{yuq}]
-| {niyuq} : ["@POSSni"{niyuq}]
-| {niyuq} : ["@POSSni"{ñiyuq}]
-| {nnaq} : {nnaq}
-;
