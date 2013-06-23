@@ -3,6 +3,6 @@
   ["[" "--" "]" {sapa} "[" "NDeriv" "]" "[" "+MPoss" "]"] :{sapa}
 | ["[" "--" "]" {yuq} "[" "NDeriv" "]"  "[" "+Poss" "]" ]: ["@POSS"{yuq}]
 | ["[" "--" "]" {niyuq} "[" "NDeriv" "]"  "[" "+Poss" "]" ]: ["@POSSni"{niyuq}]
-| ["[" "--" "]" {ñiyuq} "[" "NDeriv" "]"  "[" "+Poss" "]" ]: ["@POSSni"{ñiyuq}]
+| ["[" "--" "]" {niyuq} "[" "NDeriv" "]"  "[" "+Poss" "]" ]: ["@POSSni"{ñiyuq}]
 | ["[" "--" "]" {nnaq} "[" "NDeriv" "]"  "[" "+Priv" "]" ]: {nnaq}
 ;
