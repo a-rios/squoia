@@ -1,6 +1,0 @@
-# ambivalent suffixes slot 3
-
- {pas}  : {pas}
-| {pas} : {pis}
-| {raq}  : {raq}
-| {ña}  : {ña} ;

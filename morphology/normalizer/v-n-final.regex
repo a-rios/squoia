@@ -1,9 +1,0 @@
-# nominalizing suffixes that do not allow for successive verbablization (converbs), may only be followed by possessive and amb. suffixes
-
-  {pti}   : {pti}
-| {pti}   : {qti}
-| {stin}  : {stin}
-| {stin} : {sti}
-| {spa}   : {spa}
-| {spa}  : {shpa}
-;
