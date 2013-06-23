@@ -1,0 +1,21 @@
+# nominal slot 1: derivation
+
+ [ "[" "--" "]" {chika} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chika}
+| [ "[" "--" "]" {chikan} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chikan}
+| [ "[" "--" "]" {karay} "[" "NDeriv" "]" "[" "+Aug" "]"] : {karay}
+| [ "[" "--" "]" {kankaray} "[" "NDeriv" "]" "[" "+Aug" "]"] : {kankaray}
+| [ "[" "--" "]" {chaq} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chaq}
+| [ "[" "--" "]" {su} "[" "NDeriv" "]" "[" "+Aug" "]"] : {su}
+| [ "[" "--" "]" {chachaq} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chachaq}
+| ["[" "--" "]" {cha} "[" "NDeriv" "]" "[" "+Dim" "]"] : {cha}
+| ["[" "--" "]" {niray} "[" "NDeriv" "]" "[" "+Sim" "]"] : {niray}
+| ["[" "--" "]" {niraq} "[" "NDeriv" "]" "[" "+Sim" "]"] : {niraq}
+| ["[" "--" "]" {nira} "[" "NDeriv" "]" "[" "+Sim" "]"] : {nira}
+| ["[" "--" "]" {rikuq} "[" "NDeriv" "]" "[" "+Sim" "]"] : {rikuq}
+| ["[" "--" "]" {ti} "[" "NDeriv" "]" "[" "+Char" "]"] : {ti}
+| ["[" "--" "]" {li} "[" "NDeriv" "]" "[" "+Char" "]"] : {li}
+| ["[" "--" "]" {liku} "[" "NDeriv" "]" "[" "+Char" "]"] : {liku}
+| ["[" "--" "]" {yli} "[" "NDeriv" "]" "[" "+Char" "]"] : {yli}
+| ["[" "--" "]" {lu} "[" "NDeriv" "]" "[" "+Char" "]"] : {lu}
+| ["[" "--" "]" {mpa} "[" "NDeriv" "]" "[" "+Posi" "]"] : ["@MPA"{mpa}]
+;

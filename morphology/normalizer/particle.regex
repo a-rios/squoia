@@ -1,0 +1,7 @@
+# non-verbalizable particles
+
+  [ {ari} "["  "Part_Affir" "]" ] :  {ari}
+| [ {ña} "["  "Part_Disc" "]" ] :  {ña}
+| [ {icha} "["  "Part_Contr" "]" ] :  {icha}
+| [ {si} "["  "Part_Cond" "]" ] :  {si}
+;

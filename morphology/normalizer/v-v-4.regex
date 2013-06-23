@@ -1,0 +1,6 @@
+# verbal slot 4: aspect
+
+  [ "[" "--" "]" {chka} "[" "Asp" "]" "[" "+Prog" "]"] : {chka}
+| [ "[" "--" "]" {chka} "[" "Asp" "]" "[" "+Prog" "]" ] : {sha}
+| [ "[" "--" "]" {chka} "[" "Asp" "]" "[" "+Prog" "]" ] : {sya}
+;

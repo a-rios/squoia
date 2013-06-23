@@ -1,0 +1,3 @@
+# ambivalent suffixes slot 4
+
+["[" "--" "]"  {taq} "[" "Amb" "]" "[" "+Con_Intr" "]"] : {taq};

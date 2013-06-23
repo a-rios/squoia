@@ -1,0 +1,3 @@
+# verbal slot 7: mood
+
+ [ "[" "--" "]"  {man} "[" "Mod" "]" "[" "+Pot" "]" ] : {man};
