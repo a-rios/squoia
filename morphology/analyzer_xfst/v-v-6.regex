@@ -13,9 +13,9 @@
 |  [ "[" "--" "]" {nkichiq} "[" "VPers" "]" "[" "+2.Pl.Subj" "]" ] : {nkichiq}
 |  [ "[" "--" "]" {nku} "[" "VPers" "]" "[" "+3.Pl.Subj" "]" ] : {nku}
 |  [ "[" "--" "]" {qku} "[" "VPers" "]" "[" "+3.Pl.Subj.Hab" "]" ] : {qku}
-|  [ "[" "--" "]"  {rqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.NPst" "]" ] : {rqaku}
-|  [ "[" "--" "]"  {sqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.IPst" "]" ] : {sqaku}
-|  [ "[" "--" "]"  {yman} "[" "VPers" "]" "[" "+1.Sg.Subj.Pot" "]" ] : {yman}
+|  [ "[" "--" "]" {rqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.NPst" "]" ] : {rqaku}
+|  [ "[" "--" "]" {sqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.IPst" "]" ] : {sqaku}
+|  [ "[" "--" "]" {yman} "[" "VPers" "]" "[" "+1.Sg.Subj.Pot" "]" ] : {yman}
 |  [ "[" "--" "]" {waq} "[" "VPers" "]" "[" "+2.Sg.Subj.Pot" "]" ] : {waq}
 |  [ "[" "--" "]" {chwan} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {chwan}
 |  [ "[" "--" "]" {chwanchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Pot" "]" ] : {chwanchik}
