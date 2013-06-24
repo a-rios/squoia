@@ -328,8 +328,8 @@
 | [ {ch'urku} "[" "VRoot" "]" "[" "=resolver" "]" ] :  {ch'urku}
 | [ {churpu} "[" "VRoot" "]" "[" "=poner_encima_de_fogón" "]" ] :  {churpu}
 | [ {churu} "[" "VRoot" "]" "[" "=circundar" "]" ] :  {churu}
-| [ {ch'usa} "[" "VRoot" "]" "[" "=faltar" "]" ] :  {ch'usa}
-| [ {chusa} "[" "VRoot" "]" "[" "=faltar" "]" ] :  {chusa}
+| [ {ch'usa} "[" "VRoot" "]" "[" "=faltar,ausentarse" "]" ] :  {ch'usa}
+| [ {chusa} "[" "VRoot" "]" "[" "=faltar,ausentarse" "]" ] :  {chusa}
 | [ {ch'uski} "[" "VRoot" "]" "[" "=pelar" "]" ] :  {ch'uski}
 | [ {chuski} "[" "VRoot" "]" "[" "=pelar" "]" ] :  {chuski}
 | [ {chusni} "[" "VRoot" "]" "[" "=zumbar" "]" ] :  {chusni}
