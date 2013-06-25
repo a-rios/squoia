@@ -2324,8 +2324,8 @@
 | [ {wallpa} "[" "NRoot" "]" "["  "=gallina" "]" ] : {wallpa}
 | [ {wallqa} "[" "NRoot" "]" "["  "=collar" "]" ] : {wallqa}
 | [ {wallwak'u} "[" "NRoot" "]" "["  "=áxila,sobaco" "]" ] : {wallwak'u}
-| [ {walta} "[" "NRoot" "]" "["  "=maleta" "]" ] : {walta}
-| [ {waltha} "[" "NRoot" "]" "["  "=maleta" "]" ] : {waltha}
+| [ {walta} "[" "NRoot" "]" "["  "=envoltorio" "]" ] : {walta}
+| [ {waltha} "[" "NRoot" "]" "["  "=envoltorio" "]" ] : {waltha}
 | [ {wamanga} "[" "NRoot" "]" "["  "=Huamanga" "]" ] : {wamanga}
 | [ {wamaq} "[" "NRoot" "]" "["  "=extraño,moderno" "]" ] : {wamaq}
 | [ {wamphu} "[" "NRoot" "]" "["  "=abertura" "]" ] : {wamphu}
@@ -2486,7 +2486,6 @@
 | [ {yuka} "[" "NRoot" "]" "["  "=engaño,yuca" "]" ] : {yuka}
 | [ {yuma} "[" "NRoot" "]" "["  "=semen" "]" ] : {yuma}
 | [ {yunka} "[" "NRoot" "]" "["  "=yunga" "]" ] : {yunka}
-| [ {yupanki} "[" "NRoot" "]" "["  "=contable" "]" ] : {yupanki}
 | [ {yupi} "[" "NRoot" "]" "["  "=huella" "]" ] : {yupi}
 | [ {yura} "[" "NRoot" "]" "["  "=planta" "]" ] : {yura}
 | [ {yuraq} "[" "NRoot" "]" "["  "=blanco" "]" ] : {yuraq}
