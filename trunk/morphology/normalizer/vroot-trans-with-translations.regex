@@ -19,7 +19,7 @@
 | [{apta} "[" "VRoot" "]" "[" "=agarrar" "]" ] :  {apta} 
 | [{aqu} "[" "VRoot" "]" "[" "=echar" "]" ] :  {aqu} 
 | [{arawa} "[" "VRoot" "]" "[" "=ahorcar" "]" ] :  {arawa} 
-| [{aspi} "[" "VRoot" "]" "[" "=escarbar" "]" ] :  {aspi} 
+| [{hasp'i} "[" "VRoot" "]" "[" "=escarbar" "]" ] :  {aspi} 
 | [{hasp'i} "[" "VRoot" "]" "[" "=escarbar" "]" ] :  {hasp'i} 
 | [{asta} "[" "VRoot" "]" "[" "=transportar,arrear" "]" ] :  {asta}
 | [{asya} "[" "VRoot" "]" "[" "=arrancar" "]" ] :  {asya} 
