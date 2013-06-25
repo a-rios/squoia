@@ -492,13 +492,14 @@ define Particles VerbRulesLower .o. [[Particle|ParticleBasic|ParticleVerb|Partic
 
        define Digits [1:1|2:2|3:3|4:4|5:5|6:6|7:7|8:8|9:9|%0:%0];
        define Nbr  Digits+ "[" "CARD" "]" ;
+       define OrdinalNbrs @re"numord.regex";
 
        #-----------------#
        # Ordinal numbers #
        #-----------------#
        define WordNbr NRootNUM+;
 
-    define Number [Nbr|WordNbr];
+    define Number [Nbr|WordNbr|OrdinalNbrs];
 
 
 ################################################################################
