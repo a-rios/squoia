@@ -1781,8 +1781,8 @@
 | [ {qucha} "[" "NRoot" "]" "["  "=lago" "]" ] : {qucha}
 | [ {q'uchi} "[" "NRoot" "]" "["  "=gato" "]" ] : {q'uchi}
 | [ {quchi} "[" "NRoot" "]" "["  "=gato" "]" ] : {quchi}
-| [ {quchu} "[" "NRoot" "]" "["  "=alegría,alegre" "]" ] : {q'uchu}
-| [ {quchu} "[" "NRoot" "]" "["  "=alegría,alegre" "]" ] : {quchu}
+| [ {q'uchu} "[" "NRoot" "]" "["  "=alegría,alegre" "]" ] : {q'uchu}
+| [ {q'uchu} "[" "NRoot" "]" "["  "=alegría,alegre" "]" ] : {quchu}
 | [ {qula} "[" "NRoot" "]" "["  "=prostituta" "]" ] : {qula}
 | [ {qulla} "[" "NRoot" "]" "["  "=majestuoso" "]" ] : {qulla}
 | [ {qulli} "[" "NRoot" "]" "["  "=morado" "]" ] : {qulli}
@@ -2450,7 +2450,8 @@
 | [ {yaqa} "[" "NRoot" "]" "["  "=casi" "]" ] : {yaqa}
 | [ {yaqulla} "[" "NRoot" "]" "["  "=manta" "]" ] : {yaqulla}
 | [ {yari} "[" "NRoot" "]" "["  "=contrario,sentido" "]" ] : {yari}
-| [ {yarqa} "[" "NRoot" "]" "["  "=sediento" "]" ] : {yarqa}
+| [ {yarqa} "[" "NRoot" "]" "["  "=hambruna" "]" ] : {yarqa}
+| [ {yarqha} "[" "NRoot" "]" "["  "=acequia" "]" ] : {yarqha}
 | [ {yasqa} "[" "NRoot" "]" "["  "=niño" "]" ] : {yasqa}
 | [ {yatiri} "[" "NRoot" "]" "["  "=curandero" "]" ] : {yatiri}
 | [ {yawa} "[" "NRoot" "]" "["  "=parecido" "]" ] : {yawa}
