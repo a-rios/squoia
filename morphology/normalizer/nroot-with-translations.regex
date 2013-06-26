@@ -399,8 +399,8 @@
 | [ {ch'uchali} "[" "NRoot" "]" "["  "=débil" "]" ] : {chuchali}
 | [ {chuchi} "[" "NRoot" "]" "["  "=granizo,pollo" "]" ] : {chuchi}
 | [ {chuchu} "[" "NRoot" "]" "["  "=duro,seno" "]" ] : {chuchu}
-| [ {uhu} "[" "NRoot" "]" "["  "=tos" "]" ] : {ch'uhu}
-| [ {uhu} "[" "NRoot" "]" "["  "=tos" "]" ] : {chuhu}
+| [ {ch'uhu} "[" "NRoot" "]" "["  "=tos" "]" ] : {ch'uhu}
+| [ {ch'uhu} "[" "NRoot" "]" "["  "=tos" "]" ] : {chuhu}
 | [ {chuka} "[" "NRoot" "]" "["  "=ángulo" "]" ] : {chuka}
 | [ {chukaru} "[" "NRoot" "]" "["  "=salvaje" "]" ] : {chukaru}
 | [ {chukcha} "[" "NRoot" "]" "["  "=cabello" "]" ] : {chukcha}
@@ -1362,6 +1362,8 @@
 | [ {ñutq'u} "[" "NRoot" "]" "["  "=seso" "]" ] : {ñusqhun}
 | [ {ñutq'u} "[" "NRoot" "]" "["  "=seso" "]" ] : {ñusq'un}
 | [ {ñutq'u} "[" "NRoot" "]" "["  "=seso" "]" ] : {ñusqun}
+| [ {ñutq'u} "[" "NRoot" "]" "["  "=seso" "]" ] : {ñutq'u}
+| [ {ñutq'u} "[" "NRoot" "]" "["  "=seso" "]" ] : {ñutq'un}
 | [ {ñust'a} "[" "NRoot" "]" "["  "=doncella" "]" ] : {ñust'a}
 | [ {ñust'a} "[" "NRoot" "]" "["  "=doncella" "]" ] : {ñusta}
 | [ {ñuti} "[" "NRoot" "]" "["  "=moco" "]" ] : {ñuti}
@@ -1448,7 +1450,8 @@
 | [ {pawi} "[" "NRoot" "]" "["  "=extravío" "]" ] : {pawi}
 | [ {pawkar} "[" "NRoot" "]" "["  "=coloración,florido,especie_de_ave,polícromo" "]" ] : {pawkar}
 | [ {pawkar} "[" "NRoot" "]" "["  "=coloración,florido,especie_de_ave,polícromo" "]" ] : {pawqar}
-| [ {pawqarwara} "[" "NRoot" "]" "["  "=primavera" "]" ] : {pawqarwara}
+| [ {pawkarwara} "[" "NRoot" "]" "["  "=primavera" "]" ] : {pawqarwara}
+| [ {pawkarwara} "[" "NRoot" "]" "["  "=primavera" "]" ] : {pawkarwara}
 | [ {paya} "[" "NRoot" "]" "["  "=vieja,abuela" "]" ] : {paya}
 | [ {phaka} "[" "NRoot" "]" "["  "=ingle" "]" ] : {phaka}
 | [ {phakwi} "[" "NRoot" "]" "["  "=mitad" "]" ] : {phakwi}
@@ -1600,7 +1603,7 @@
 | [ {qakya} "[" "NRoot" "]" "["  "=liviano" "]" ] : {qakya}
 | [ {q'ala} "[" "NRoot" "]" "["  "=desnudo" "]" ] : {q'ala}
 | [ {q'ala} "[" "NRoot" "]" "["  "=desnudo" "]" ] : {qala}
-| [ {qali} "[" "NRoot" "]" "["  "=sano" "]" ] : {qali}
+| [ {qhali} "[" "NRoot" "]" "["  "=sano" "]" ] : {qali}
 | [ {qalla} "[" "NRoot" "]" "["  "=rueda" "]" ] : {qalla}
 | [ {q'alla} "[" "NRoot" "]" "["  "=tajada,rebanada" "]" ] : {q'alla}
 | [ {qallcha} "[" "NRoot" "]" "["  "=inicio" "]" ] : {qallcha}
@@ -1734,13 +1737,12 @@
 | [ {qhichwa} "[" "NRoot" "]" "["  "=quechua,valle" "]" ] : {qichwa}
 | [ {q'illa} "[" "NRoot" "]" "["  "=cicatriz" "]" ] : {q'illa}
 | [ {qilla} "[" "NRoot" "]" "["  "=perezoso" "]" ] : {qilla}
-| [ {q'illay} "[" "NRoot" "]" "["  "=dinero" "]" ] : {q'illay}
 | [ {q'illi} "[" "NRoot" "]" "["  "=sucio" "]" ] : {q'illi}
 | [ {qhilli} "[" "NRoot" "]" "["  "=sucio" "]" ] : {qilli}
 | [ {qillpu} "[" "NRoot" "]" "["  "=gloria" "]" ] : {qillpu}
 | [ {qillqa} "[" "NRoot" "]" "["  "=letra" "]" ] : {qillqa}
 | [ {q'illu} "[" "NRoot" "]" "["  "=amarillo" "]" ] : {q'illu}
-| [ {qillu} "[" "NRoot" "]" "["  "=amarillo" "]" ] : {qillu}
+| [ {q'illu} "[" "NRoot" "]" "["  "=amarillo" "]" ] : {qillu}
 | [ {qillwa} "[" "NRoot" "]" "["  "=gaviota" "]" ] : {qillwa}
 | [ {q'imi} "[" "NRoot" "]" "["  "=apoyo" "]" ] : {q'imi}
 | [ {qimi} "[" "NRoot" "]" "["  "=apoyo" "]" ] : {qimi}
@@ -1749,14 +1751,14 @@
 | [ {qinqu} "[" "NRoot" "]" "["  "=cueva" "]" ] : {qinqu}
 | [ {q'inqu} "[" "NRoot" "]" "["  "=curva,curvatura" "]" ] : {q'inqu}
 | [ {q'inti} "[" "NRoot" "]" "["  "=colibrí,encogido" "]" ] : {q'inti}
-| [ {qinti} "[" "NRoot" "]" "["  "=colibrí" "]" ] : {qinti}
+| [ {q'inti} "[" "NRoot" "]" "["  "=colibrí,encogido" "]" ] : {qinti}
 | [ {qhipa} "[" "NRoot" "]" "["  "=atrás" "]" ] : {qipa}
 | [ {q'ipa} "[" "NRoot" "]" "["  "=sonoro" "]" ] : {q'ipa}
 | [ {q'ipi} "[" "NRoot" "]" "["  "=bulto" "]" ] : {q'ipi}
-| [ {qipi} "[" "NRoot" "]" "["  "=bulto,nudo" "]" ] : {qipi}
+| [ {q'ipi} "[" "NRoot" "]" "["  "=bulto,nudo" "]" ] : {qipi}
 | [ {qipu} "[" "NRoot" "]" "["  "=espina" "]" ] : {qipu}
 | [ {q'iqi} "[" "NRoot" "]" "["  "=vigor" "]" ] : {q'iqi}
-| [ {qiqi} "[" "NRoot" "]" "["  "=vigor" "]" ] : {qiqi}
+| [ {q'iqi} "[" "NRoot" "]" "["  "=vigor" "]" ] : {qiqi}
 | [ {qiqiri} "[" "NRoot" "]" "["  "=cuerno" "]" ] : {qiqiri}
 | [ {qiri} "[" "NRoot" "]" "["  "=herida" "]" ] : {qiri}
 | [ {q'iru} "[" "NRoot" "]" "["  "=vaso" "]" ] : {q'iru}
@@ -1766,7 +1768,7 @@
 | [ {qishya} "[" "NRoot" "]" "["  "=enfermo" "]" ] : {qishya}
 | [ {qisña} "[" "NRoot" "]" "["  "=nido" "]" ] : {qisña}
 | [ {qispi} "[" "NRoot" "]" "["  "=libre,vidrio" "]" ] : {qispi}
-| [ {q'ispi} "[" "NRoot" "]" "["  "=vidrio" "]" ] : {q'ispi}
+| [ {qispi} "[" "NRoot" "]" "["  "=vidrio" "]" ] : {q'ispi}
 | [ {q'isti} "[" "NRoot" "]" "["  "=encogido" "]" ] : {q'isti}
 | [ {qhisti} "[" "NRoot" "]" "["  "=lloriqueo" "]" ] : {qisti}
 | [ {qita} "[" "NRoot" "]" "["  "=barro" "]" ] : {qita}
@@ -1791,7 +1793,7 @@
 | [ {qullqa} "[" "NRoot" "]" "["  "=depósito" "]" ] : {qullqa}
 | [ {qullqi} "[" "NRoot" "]" "["  "=plata" "]" ] : {qullqi}
 | [ {qullu} "[" "NRoot" "]" "["  "=mal_agüero,montón" "]" ] : {qullu}
-| [ {qullur} "[" "NRoot" "]" "["  "=estrella" "]" ] : {qullur}
+| [ {quyllur} "[" "NRoot" "]" "["  "=estrella" "]" ] : {qullur}
 | [ {q'ullwa} "[" "NRoot" "]" "["  "=nulo" "]" ] : {q'ullwa}
 | [ {q'ullwa} "[" "NRoot" "]" "["  "=nulo" "]" ] : {qullwa}
 | [ {qulu} "[" "NRoot" "]" "["  "=calvo" "]" ] : {qulu}
@@ -1852,7 +1854,7 @@
 | [ {raka} "[" "NRoot" "]" "["  "=vagina" "]" ] : {raka}
 | [ {rakhu} "[" "NRoot" "]" "["  "=grueso" "]" ] : {rakhu}
 | [ {raki} "[" "NRoot" "]" "["  "=parte" "]" ] : {raki}
-| [ {raku} "[" "NRoot" "]" "["  "=grueso" "]" ] : {raku}
+| [ {rakhu} "[" "NRoot" "]" "["  "=grueso" "]" ] : {raku}
 | [ {ramphi} "[" "NRoot" "]" "["  "=penumbra" "]" ] : {ramphi}
 | [ {ranak'i} "[" "NRoot" "]" "["  "=penumbra" "]" ] : {ranak'i}
 | [ {rana} "[" "NRoot" "]" "["  "=venta" "]" ] : {rana}
@@ -2306,7 +2308,7 @@
 | [ {wamphu} "[" "NRoot" "]" "["  "=abertura" "]" ] : {wamphu}
 | [ {wamp'u} "[" "NRoot" "]" "["  "=barco,balsa" "]" ] : {wamp'u}
 | [ {wamp'u} "[" "NRoot" "]" "["  "=barco,balsa" "]" ] : {wampu}
-| [ {wamra} "[" "NRoot" "]" "["  "=joven" "]" ] : {wamra}
+| [ {warma} "[" "NRoot" "]" "["  "=joven" "]" ] : {wamra}
 | [ {wanaku} "[" "NRoot" "]" "["  "=guanaco" "]" ] : {wanaku}
 | [ {wani} "[" "NRoot" "]" "["  "=sombra" "]" ] : {wani}
 | [ {wank'a} "[" "NRoot" "]" "["  "=roca" "]" ] : {wank'a}
@@ -2380,7 +2382,7 @@
 | [ {wayñu} "[" "NRoot" "]" "["  "=huayno" "]" ] : {wayñu}
 | [ {wayqa} "[" "NRoot" "]" "["  "=bolsa" "]" ] : {wayqa}
 | [ {wayqi} "[" "NRoot" "]" "["  "=hermano" "]" ] : {wayqi}
-| [ {wayq'u} "[" "NRoot" "]" "["  "=papa_cocida,quebrada" "]" ] : {wayq'u}
+| [ {wayq'u} "[" "NRoot" "]" "["  "=quebrada,avalancha" "]" ] : {wayq'u}
 | [ {wayq'u} "[" "NRoot" "]" "["  "=quebrada,avalancha" "]" ] : {wayqu}
 | [ {wayra} "[" "NRoot" "]" "["  "=viento" "]" ] : {wayra}
 | [ {wayru} "[" "NRoot" "]" "["  "=cubo" "]" ] : {wayru}
