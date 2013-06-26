@@ -49,14 +49,20 @@
        # alternative orthographies #
        #---------------------------#
 
-       define Orthography1 [ {q} (->) {cc}];
-       define Orthography2 [ {wi} (->) {hui}];
-       define Orthography3 [ {wa} (->) {hua}];
-       define Orthography4 [ {w} (->) {u} || {a}_ ];
-       define Orthography5 [ {h} (->) {j}];
-       define Orthography6 [ {ch} (->) {ts}];
+       define Orthography1 [ {q} (->) {cc}, {Q} (->) {Cc}];
+       define Orthography2 [ {wi} (->) {hui}, {Wi} (->) {Hui}  ];
+       define Orthography3 [ {wa} (->) {hua}, {Wa} (->) {Hua} ];
+       define Orthography4 [ {wa} (->) {gua}, {Wa} (->) {Gua}];
+       define Orthography5 [ {w} (->) {u} || {a}_ ];
+       define Orthography6 [ {h} (->) {j}, {H} (->) {J} ];
+       define Orthography7 [ {k} (->) {j} || Vowel_];
+       define Orthography8 [ {ch} (->) {ts}, {Ch} (->) {Ts} ];
+       define Orthography9 [ {ph} (->) {f}];
+       define Orthography10 [ {w} (->) {u} || Vowel _ ];
+       define Orthography11 [ {q} (->) {j} || Vowel_];
        
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6];
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11];
+
 
        define QuechuaOrtho Allophone .o. Orthography;
 
