@@ -1751,7 +1751,6 @@
 | [ {qichwa} "[" "NRoot" "]" "["  "=quechua,valle" "]" ] : {qichwa}
 | [ {q'illa} "[" "NRoot" "]" "["  "=cicatriz" "]" ] : {q'illa}
 | [ {qilla} "[" "NRoot" "]" "["  "=perezoso" "]" ] : {qilla}
-| [ {q'illay} "[" "NRoot" "]" "["  "=dinero" "]" ] : {q'illay}
 | [ {q'illi} "[" "NRoot" "]" "["  "=sucio" "]" ] : {q'illi}
 | [ {qilli} "[" "NRoot" "]" "["  "=sucio" "]" ] : {qilli}
 | [ {qillpu} "[" "NRoot" "]" "["  "=gloria" "]" ] : {qillpu}

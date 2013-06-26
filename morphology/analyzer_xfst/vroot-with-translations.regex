@@ -1509,8 +1509,8 @@
 | [ {tihu} "[" "VRoot" "]" "[" "=correr" "]" ] :  {tihu}
 | [ {t'ika} "[" "VRoot" "]" "[" "=florecer" "]" ] :  {t'ika}
 | [ {tika} "[" "VRoot" "]" "[" "=florecer" "]" ] :  {tika}
-| [ {t'ikra} "[" "VRoot" "]" "[" "=volver" "]" ] :  {t'ikra}
-| [ {tikra} "[" "VRoot" "]" "[" "=volver" "]" ] :  {tikra}
+| [ {t'ikra} "[" "VRoot" "]" "[" "=voltear" "]" ] :  {t'ikra}
+| [ {tikra} "[" "VRoot" "]" "[" "=voltear" "]" ] :  {tikra}
 | [ {tiksi} "[" "VRoot" "]" "[" "=iniciar,fundar" "]" ] :  {tiksi}
 | [ {t'iksu} "[" "VRoot" "]" "[" "=inclinar" "]" ] :  {t'iksu}
 | [ {tiksu} "[" "VRoot" "]" "[" "=inclinar" "]" ] :  {tiksu}
