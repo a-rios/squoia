@@ -577,15 +577,15 @@ define YKACHA [~$["+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml"]];
 #define SAQ [~$["+Prog""+Ag"]]; #saq, if -sa is allowed as progressive allomorph (Bolivian Quechua)
 
 define PAS [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] [{si}|s] %["Amb"%] %["+IndE"]] ;
-define PAQ [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] {q} %["Cas"%] %["+Gen"]] ;
+define PAQ [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] [q|p] %["Cas"%] %["+Gen"]] ;
 
 define NTIN [~$[{nti}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] {n}]];
 define STIN [~$[{sti}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] {n}]]; # -stin, not as -sti -n (3.Sg.Subj, or DirE)
 define PTIN [~$[{pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] {n} %["Amb"%] ]]; #-pti -> Ayacuchano, but -n as DirE, only Cuzqueño
-define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%]{q} %["NS"%]]];
+define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%][q|p] %["NS"%]]];
 
-define TAQ  [~$[{ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] {q}%["Cas"%]]];
-define NIRAQ [~$[{nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] {q}%["Cas"%]]];
+define TAQ  [~$[{ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] [q|p]%["Cas"%]]];
+define NIRAQ [~$[{nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] [q|p]%["Cas"%]]];
 
 define DISC [~$[%["Part+Disc"%] %["^DB"%] %["--"%] {ña} ]]; #ñaña = sister, not 2 times +Disc
 #define tripleGEN [~$["+Gen""@PA""+Gen""@PA""+Gen""@PA"]];
@@ -629,7 +629,7 @@ define PACHAMAMA [~$[ {pacha}%["NRoot" ?* {mama}%["NRoot" ]];
 
 define WIRAQUCHA [~$[ {wira}%["NRoot" ?* {qucha}%["NRoot" ]];
 
-define GENACC [~$[{q}"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
+define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
 define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARI .o. TUKUY];
 
