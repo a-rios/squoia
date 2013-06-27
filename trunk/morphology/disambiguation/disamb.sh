@@ -1,6 +1,9 @@
-  
+#!/bin/bash
+
+#XFST_DIR=/home/clsquoia/google_squoia/morphology/analyzer_xfst
+#XFST_BIN=$XFST_DIR/quechua-web-db.fst
+
 XFST_DIR=/home/clsquoia/google_squoia/morphology/normalizer
-XFST_BIN=$XFST_DIR/quechua-web-db.fst
 XFST_BIN=$XFST_DIR/normalizer.fst
 TOKENIZER=$XFST_DIR/tokenize.pl
 
@@ -12,9 +15,10 @@ MORPH3_MODEL=morph3/sicuani_greg_model_c1
 
 XFST_FILE=$1
 
-perl splitSentences.pl  | perl $TOKENIZER | lookup -flags cKv29TT  $XFST_BIN > tmp/test.xfst
+#perl splitSentences.pl  |
+perl $TOKENIZER | lookup -flags cKv29TT  $XFST_BIN > tmp/test.xfst
 
-cat $XFST_FILE | perl xfstToCrf_pos.pl -test > tmp/pos.test
+cat tmp/test.xfst | perl xfstToCrf_pos.pl -test > tmp/pos.test
 
 crf_test -m $POS_MODEL tmp/pos.test > tmp/pos.result
 
@@ -33,3 +37,5 @@ perl xfstToCrf_morphTest.pl -3 tmp/morph2.result > tmp/morph3.test
 crf_test -m $MORPH3_MODEL tmp/morph3.test > tmp/morph3.result
 
 perl xfstToCrf_morphTest.pl -4 tmp/morph3.result > tmp/disamb.xfst
+
+cat tmp/disamb.xfst | perl printWords.pl
