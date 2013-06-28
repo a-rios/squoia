@@ -23,7 +23,7 @@ my.type=AP		xPP:my.type=/PP/, xAVP:my.type=AVP	xPP .xAVP .head
 # Noun #
 ########
 
-my.type=NP		xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]},xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
+my.type=NP		xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]}, xVAP:xpath{//CHUNK[@type="VP" and @si="S" and NODE[starts-with(@smi,"VMP")]]} , xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xVAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
 
 ###############
 # Preposition #

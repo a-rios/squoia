@@ -186,7 +186,7 @@ my.pos=/NN|ART|PPOSAT|PDAT|PIAT/	cas		my.type=/NP/&&my.si=cc&&my.cas=/./	cas		do
 
 # distinguish type of adjective: attribute (atr) to a predicate ADJD or modifier of a noun ADJA
 #my.pos=/ADJ/		pos			my.type=/NP|AP|PP/&&!(my.si=atr)		ADJA		down		overwrite
-my.pos=/ADJ/		pos			my.type=/NP|PP/||(my.type=/C?AP/&&!(my.si=atr))	ADJA		down		overwrite
+my.pos=/ADJ/		pos			my.type=/NP/||(my.type=/VP/&&child.pos=/ADJ/)||(my.type=/C?AP/&&!(my.si=atr))	ADJA		down		overwrite
 
 # article/determiner/pronoun sets the flexion type of adjectives in the same chunk
 # overwrite for the case of "all/dies/jen"+possessive pronoun => like after possessive pronoun, i.e. mixed
@@ -197,6 +197,8 @@ my.pos=/ADJ/		flex			my.type=/C?NP/&&my.flex=/./	flex			down		overwrite	# TODO: 
 # NP with flex: pass the info down thru the AP to the ADJ
 my.pos=/ADJ/		flex			my.type=/C?AP/&&chunkparent.flex=/./	chunkparent.flex		down		no-overwrite
 my.pos=/ADJ/		flex			my.type=/C?AP/&&chunkgrandparent.flex=/./	chunkparent.chunkparent.flex		down		no-overwrite
+# verb past participles as adjectives
+my.pos=/ADJ/		flex			my.type=/VP/&&child.pos=ADJA&&chunkparent.flex=/./	chunkparent.flex		down		no-overwrite
 # set case of direct objects to Akk
 my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkparent.si=cd	Akk		down		no-overwrite
 my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkgrandparent.si=cd	Akk		down		no-overwrite
@@ -224,6 +226,8 @@ my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Dat"]/descendant::CHUNK[(@type="CAP" or
 my.pos=/ADJ/			mi		my.type=/NP|PP/&&my.mi=/Sg/			mi				down		overwrite
 my.pos=/ADJ/			mi		my.type=/C?AP/&&chunkparent.mi=/Sg/		chunkparent.mi			down		overwrite
 my.pos=/ADJ/			mi		my.type=/C?AP/&&chunkgrandparent.mi=/Sg/	chunkparent.chunkparent.mi	down		overwrite
+# verb past participles as adjectives
+my.pos=/ADJ/		mi			my.type=/VP/&&child.pos=ADJA&&chunkparent.mi=/Sg/	chunkparent.mi		down		overwrite
 
 # set gender and number of ART; formerly concatenated... ancestor condition alternative for multiword proper names with morphological information like "die demokratische Republik Kongo"
 #my.pos=/ART|PPOSAT|PIAT|PDAT/			mi		my.type=/NP|PP/&&my.mi=/./	mi			down		concat
