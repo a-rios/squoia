@@ -7,7 +7,7 @@ XFST_DIR=/home/clsquoia/google_squoia/morphology/normalizer
 XFST_BIN=$XFST_DIR/normalizer.fst
 TOKENIZER=$XFST_DIR/tokenize.pl
 
-POS_MODEL=pos/sicuani_greg_c_0.3
+POS_MODEL=pos/sicuani_greg_c_5
 
 MORPH1_MODEL=morph1/sicuani_greg_model_c_1
 MORPH2_MODEL=morph2/sicuani_greg_model_c0.5
