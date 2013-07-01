@@ -11,14 +11,16 @@ POS_MODEL=pos/sicuani_greg_c_0.3
 
 MORPH1_MODEL=morph1/sicuani_greg_model_c_1
 MORPH2_MODEL=morph2/sicuani_greg_model_c0.5
-MORPH3_MODEL=morph3/sicuani_greg_model_c1
+MORPH3_MODEL=morph3/sicuani_greg_model_c0.5
 
 XFST_FILE=$1
 
 #perl splitSentences.pl  |
-perl $TOKENIZER | lookup -flags cKv29TT  $XFST_BIN > tmp/test.xfst
+#perl $TOKENIZER | lookup -flags cKv29TT  $XFST_BIN > tmp/test.xfst
 
-cat tmp/test.xfst | perl xfstToCrf_pos.pl -test > tmp/pos.test
+#cat tmp/test.xfst | perl xfstToCrf_pos.pl -test > tmp/pos.test
+
+cat $XFST_FILE | perl xfstToCrf_pos.pl -test > tmp/pos.test
 
 crf_test -m $POS_MODEL tmp/pos.test > tmp/pos.result
 

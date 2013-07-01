@@ -285,7 +285,7 @@ if($mode eq '-3')
 		my $allmorphs = @$analyses[0]->{'allmorphs'};
 		my $string = @$analyses[0]->{'string'};
 		
-			# -n
+			# -n: direct evidencial or 3.Sg.Poss
 			if( ($allmorphs =~ /\Q+3.Sg.Poss\E/ && $string !~ /3\.Sg\.Poss.*(Cas|Pl|Amb)/ ) || ($allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/ && $string !~ /(Cas|Num).+DirE/) )
 			#if( $allmorphs =~ /\Q+3.Sg.Poss\E/ || $allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/  )
 			{
@@ -308,6 +308,15 @@ if($mode eq '-3')
 					}
 				}
 				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
+			}
+			# yku-n: direct evidential or 3.Sg.Subj
+			elsif($allmorphs =~ /\Q+Aff+3.Sg.Subj\E/ || $string =~ /\Q+Aff][^DB][--]n[Amb\E/ ){
+				push(@possibleClasses, "DirEs");
+				push(@possibleClasses, "Subj");
+				if($allmorphs =~  /DirE/){$actualClass = "DirE";}
+				elsif($allmorphs =~ /\Q+3.Sg.Subj\E/ ){$actualClass = "Subj";}
+				# check if sentence already contains an evidential suffix
+				@$word[4] =  &sentenceHasEvid(\@words, $i);
 			}
 			# -pis
 			elsif($allmorphs =~ /\Q+Loc+IndE\E/ || ($allmorphs =~ /\Q+Add\E/ && $string !~ /Add.*(IndE|DirE|Asmp)/) )
@@ -423,6 +432,14 @@ for (my $i=0;$i<scalar(@words);$i++){
 			elsif($correctClass eq 'Poss'){
 				print "+DirE\t";
 				$nbrOfMorph++;
+			}
+			elsif($correctClass eq 'DirEs'){
+				print "+Aff\t+3.Sg.Subj\t";
+				$nbrOfMorph+=2;
+			}
+			elsif($correctClass eq 'Subj'){
+				print "+1.Pl.Excl.Subj\t+DirE\t";
+				$nbrOfMorph+=2;
 			}
 			elsif($correctClass eq 'Loc_IndE'){
 				print "+Add\t";

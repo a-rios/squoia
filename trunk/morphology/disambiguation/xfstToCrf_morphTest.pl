@@ -447,6 +447,18 @@ if($mode eq '-3')
 				}
 				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
 			}
+			# yku-n
+			if(&containedInOtherMorphs($analyses,"+1.Pl.Excl.Subj+DirE","+Aff+3.Sg.Subj") )
+			{
+				push(@possibleClasses, "DirEs");
+				push(@possibleClasses, "Subj");
+				@$word[3] = "amb3";
+				# check if sentence already contains an evidential suffix
+				@$word[5] = &sentenceHasEvid(\@words, $i);
+				#print "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
+				
+				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
+			}
 			# -pis
 			elsif(&containedInOtherMorphs($analyses,"+Loc+IndE","+Add"))
 			{
@@ -654,17 +666,17 @@ sub printCrf{
 			}
 			# for morph3: add info about evidential and genitive suffixes 
 			if($mode eq '-3'){
-				if(@$word[4] eq ''){
-					print "ZZZ\t";
-				}
-				else{
-					print "@$word[4]\t";
-				}
 				if(@$word[5] eq ''){
 					print "ZZZ\t";
 				}
 				else{
 					print "@$word[5]\t";
+				}
+				if(@$word[6] eq ''){
+					print "ZZZ\t";
+				}
+				else{
+					print "@$word[6]\t";
 				}
 			}
 			print "\n\n";
@@ -1156,6 +1168,7 @@ sub disambMorph3{
 				
 				# at this point, the classes/tags are NOT unique (Sg,Pl), so we cannot just check whether the class is contained in allmorphs		
 				# -n: DirE, Poss
+				# -n: DirEs, Subj
 				# -pis: Loc_IndE, Add
 				# -s: IndE, Pl
 				$correctMorph =~ s/\n//g;
@@ -1170,6 +1183,22 @@ sub disambMorph3{
 				elsif($correctMorph eq 'Poss'  )
 				{
 					if($string !~ /\Qn[NPers][+3.Sg.Poss]\E/ && scalar(@$analyses) > 1){
+						splice (@{$analyses},$j,1);	
+						$disambiguatedForms++;
+						$j--;
+					}
+				}
+				if($correctMorph eq 'DirEs')
+				{
+					if($string !~ /\Qn[Amb][+DirE]\E/ && scalar(@$analyses) > 1){
+						splice (@{$analyses},$j,1);	
+						$disambiguatedForms++;
+						$j--;
+					}
+				}
+				elsif($correctMorph eq 'Subj'  )
+				{
+					if($string !~ /\Q+Aff][^DB][--]n[VPers][+3.Sg.Subj\E/ && scalar(@$analyses) > 1){
 						splice (@{$analyses},$j,1);	
 						$disambiguatedForms++;
 						$j--;

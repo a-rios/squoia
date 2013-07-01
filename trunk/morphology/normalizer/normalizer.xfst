@@ -555,6 +555,7 @@ define TAPI [~$["+Acc"?*"+Loc"]];
 define PITA [~$["+Loc"?*"+Acc"]];
 define MANTA  [~$["+Dat_Ill"?*"+Acc"]];
 define TAMANTA [~$["+Acc"?*"+Abl"]];
+define MANTAQ [~$["+Abl"?*"+Gen"]];
 
 define NYARI [~$["+Cont"?*"+Inch"]];
 define QTI [~$["+Ag"?*"+Char"]] ;
@@ -631,7 +632,7 @@ define WIRAQUCHA [~$[ {wira}%["NRoot" ?* {qucha}%["NRoot" ]];
 
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARI .o. TUKUY];
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARI .o. TUKUY];
 
 ######################################################################################
 

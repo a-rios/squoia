@@ -274,9 +274,10 @@ elsif($mode eq '-xfst')
 		for (my $i=0;$i<scalar(@words) or $i<scalar(@goldwords);$i++ ){
 			my $g = @goldwords[$i];
 			my $w = @words[$i];
+			#print "in line $i, test: @$w[0] , gold: @$g[0]\n";
 			if(lc(@$w[0]) ne lc(@$g[0]) ){
 				print "in line $i, test: @$w[0] , gold: @$g[0]\n";
-				exit;
+				#exit;
 			}
 			
 		}
