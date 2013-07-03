@@ -7,7 +7,7 @@
 |  [ "[" "--" "]" {nintin} "[" "Cas" "]" "[" "+Iclsv" "]"]:["@POSSni"{ñintin}]
 |  [ "[" "--" "]" {nintin} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSSni"{ñinti}]
 |  [ "[" "--" "]" {pura} "[" "Cas" "]" "[" "+Intsoc" "]"] : {pura}
-|  [ "[" "--" "]"{nka}  "[" "Cas" "]" "[" "+Distr" "]"] : {nka}
-|  [ "[" "--" "]"{kama}  "[" "Cas" "]" "[" "+Term" "]"] : {kama}
-|  [ "[" "--" "]"{niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : {niq}
+|  [ "[" "--" "]" {nka}  "[" "Cas" "]" "[" "+Distr" "]"] : {nka}
+|  [ "[" "--" "]" {kama}  "[" "Cas" "]" "[" "+Term" "]"] : {kama}
+|  [ "[" "--" "]" {niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : {niq}
 ;

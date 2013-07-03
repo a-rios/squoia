@@ -1,0 +1,5 @@
+main normalizer.fst
+guesser guesser.fst
+
+main
+guesser
