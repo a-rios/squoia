@@ -199,11 +199,11 @@
        #define EVID3 [ {chi}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
        #define EVID4 [ {cha}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
 
-	define SI1 [  {s}"@SI"  => [a|e|i|o|u|á|é|í|ó|ú] _  ];
+	define SI1 [  {s}"@SI"  => Vowel _  ];
 	define SI2 [  {si}"@SI" => Cons _  ];
 
-	define MI1 [  {m}"@MI"  => [a|e|i|o|u|á|é|í|ó|ú] _  ];
-	define MI2 [  {n}"@MI"  => [a|e|i|o|u|á|é|í|ó|ú] _  ];
+	define MI1 [  {m}"@MI"  => Vowel _  ];
+	define MI2 [  {n}"@MI"  => Vowel _  ];
 	define MI3 [  {mi}"@MI" => Cons _  ];
 
 	define CHA1 [  {ch}"@CHA"  => Vowel _  ];
@@ -291,7 +291,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
       # define NROOT  [ [VowelRoot|ConsRoot|Numbers|%_|%&|"-"]+?  [VowelRoot|ConsRoot]] [ ["[" "NRootG" "]"] :0 ] ;
        define NROOT  [ [VowelRoot|ConsRoot|Numbers|%_|%&|"-"]+? ] [ ["[" "NRootG" "]"] :0 ] ;
 
-       define N=N=1 @re"n-n-1.regex" ;
+       define N=N=1 @re"n-n-1-guesser.regex" ;
        define N=N=2 DB @re"n-n-2.regex" ;
        #define N=N=3 DB @re"n-n-3-guesser.regex" ;
        define N=N=3 DB @re"n-n-3.regex" ;
@@ -425,7 +425,6 @@ define SQAMAN [~$["+IPst"?*["+1.Sg.Subj.Pot"|"+Pot"]]];
 define SQAFUT [~$[["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"]]];
 
 define YMAN [~$["+2.Sg.Subj.Imp"?*"+Pot"]];
-#define NKUMAN  [~$["+3.Pl.Subj"?*"+Pot"]]; #occurs in Gregorio -> nku -man as potential instead of -manku
 define YKACHA [~$["+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml"]];
 
 #define WAQ [~$["+1.Obj"%] %["^DB"%] %["--"%]{q}%["NS"%] %["+Ag"]]; #may occur
@@ -440,10 +439,8 @@ define PTIN [~$[{pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] {n} %["Amb"%] 
 define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%][q|p] %["NS"%]]];
 
 define TAQ  [~$[{ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] [q|p]%["Cas"%]]];
-define NIRAQ [~$[{nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] [q|p]%["Cas"%]]];
 
 define DISC [~$[%["Part+Disc"%] %["^DB"%] %["--"%] {ña} ]]; #ñaña = sister, not 2 times +Disc
-#define tripleGEN [~$["+Gen""@PA""+Gen""@PA""+Gen""@PA"]];
 
 define NTAWAN [~$[%["+Proloc"%] %["^DB"%] %["--"%] {wan}]];
 
@@ -451,10 +448,9 @@ define NTAWAN [~$[%["+Proloc"%] %["^DB"%] %["--"%] {wan}]];
 # consider chukllalla -> good analysis: chuklla(=choza)-lla(+Lim), bad analysis: chuk(=silencio)-lla(+Lim)-lla(+Lim)
 define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
 
-
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
-#define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT  ];
+#define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT  ];
 
 # only analyses with at least one suffix
 define MINSUFFIX  [~$[ ?*"--"?* ] ]; 
@@ -466,7 +462,7 @@ define MINSUFFIX  [~$[ ?*"--"?* ] ];
 #define Wort [[Noun|Verb|Prn|Particles] (AS)] .o. NounRules .o. GENACC ;
 define Wort IGRules .o. [[Noun|Verb] (AS)] .o. NounRules .o. GENACC .o. AmbiRules ;
 
-#read regex Cleanup2 .o. ~MINSUFFIX .o. FeatRestr .o. [Wort] .o. Allophone .o. Cleanup1 .o. Accent;
+#read regex Cleanup2 .o. ~MINSUFFIX .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent;
 read regex Cleanup2 .o. ~MINSUFFIX .o. Wort  .o. Cleanup1 .o. Accent;
 
 
