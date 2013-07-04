@@ -87,7 +87,7 @@ foreach my $word (@words){
 		for(my $j=0;$j<scalar(@$analyses);$j++) {
 			my $analysis = @$analyses[$j];
 			my $stringTest = $analysis->{'string'};
-			print $stringTest;
+			#print $stringTest;
 			my ($shortestRootTest) = ($stringTest =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
 			if(length($shortestRootTest)<$length && length($shortestRootTest)>2){
 				$shortestRoot = $shortestRootTest;
@@ -100,8 +100,36 @@ foreach my $word (@words){
 			}
 		}
 		
-		print "shortest: $shortestRoot, $length\n\n";
+		#print "shortest: $shortestRoot, $length\n";
+		#delete all analyses with other roots than $shortestRoot
+		for(my $j=0;$j<scalar(@$analyses);$j++) {
+			my $analysis = @$analyses[$j];
+			my $stringTest = $analysis->{'string'};
+			my ($shortestRootTest) = ($stringTest =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
+			unless($shortestRoot eq $shortestRootTest){
+				splice (@{$analyses},$j,1);	
+				$j--;
+				#print "remove: $stringTest";
+			}
+		}
+		
+#		print "after deletion: \n";
+#		for(my $j=0;$j<scalar(@$analyses);$j++) {
+#			my $analysis = @$analyses[$j];
+#			print $analysis->{'string'};
+#		}
+#		print "\n";
 		
 	}
 
 }
+
+	
+	foreach my $word (@words){
+		my $analyses = @$word[1];
+		foreach my $analysis (@$analyses){
+			print $analysis->{'string'};
+		}
+		print "\n";
+	}
+	

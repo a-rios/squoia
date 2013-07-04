@@ -206,10 +206,17 @@ elsif($mode eq '-xfst')
 		else
 		{	
 			my ($form, $analysis) = split(/\t/, $_, 2);
+			my $allmorphs;
 			# remove roots for comparison
 			unless($analysis =~ /\+\?/){
 				my ($root) = ($analysis =~ m/(.+?)\[/ );
 				$analysis =~ s/\Q$root\E// ;
+				my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
+			
+				$allmorphs='';
+				foreach my $morph (@morphtags){
+					$allmorphs = $allmorphs.$morph;
+				}
 			}
 			#print "$analysis\n";
 	    	if($form eq '#EOS'){
@@ -217,8 +224,9 @@ elsif($mode eq '-xfst')
 	    	}
 			if($newWord)
 			{
+				my @allmorphs = ($allmorphs);
 				my @analyses = ($analysis);
-				my @word = ($form, \@analyses);
+				my @word = ($form, \@analyses, \@allmorphs);
 				push(@words,\@word);
 				$index++;
 			}
@@ -241,13 +249,20 @@ elsif($mode eq '-xfst')
 		unless(/^$/)
 		{	
 			my ($form, $analysis) = split(/\t/, $_, 2);
+			my $allmorphs;
 			# remove roots for comparison
 			unless($analysis =~ /\+\?/){
 				my ($root) = ($analysis =~ m/(.+?)\[/ );
 				$analysis =~ s/\Q$root\E// ;
+				my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
+			
+				$allmorphs='';
+				foreach my $morph (@morphtags){
+					$allmorphs = $allmorphs.$morph;
+				}
 			}
 
-			my @word = ($form, $analysis);
+			my @word = ($form, $analysis, $allmorphs);
 			push(@goldwords, \@word);
 		 }
 		
@@ -297,6 +312,7 @@ elsif($mode eq '-xfst')
 		my $w = @words[$i];
 		
 		my $analyses = @$w[1];
+		my $allmorphs = @$w[2];
 		# more than one analysis: word is still ambiguous (root lemma)
 		if(scalar(@$analyses)>1){
 			$stillAmbigForms++;
@@ -305,13 +321,15 @@ elsif($mode eq '-xfst')
 			#print @$analyses[0]."\n".@$g[1]."\n\n";
 			unless(@$g[1] =~ /#EOS/)
 			{
-				if(lc(@$analyses[0]) eq lc(@$g[1])){
+				# punctuation marks, don't count them
+				if(@$analyses[0] =~ /\$/){
+					#print @$analyses[0]."\n";
+					$punct++;
+				}
+				#elsif(lc(@$analyses[0]) eq lc(@$g[1])){
+				elsif(@$allmorphs[0] eq @$g[2]){
 					$correctAnalysis++;
 					#print @$analyses[0]; #."---".@$g[1]."\n";
-				}
-				# punctuation marks, don't count them
-				elsif(@$analyses[0] =~ /\Q$\E/){
-					$punct++;
 				}
 				#xfst failures, count separately
 				elsif(@$analyses[0] =~ /\+\?$/){
