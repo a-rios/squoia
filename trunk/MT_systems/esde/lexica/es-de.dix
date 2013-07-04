@@ -1098,6 +1098,8 @@
    <e><p><l>andar</l><r>gehen</r></p><par n='VM_VV_MAIN_BE'/></e>		<!-- e.g. form="anda" lem="andar" mi="VMIP3S0" --> <!-- molifclass(geh) = 268; molifclass(an|geh) = 269; molifclass(begeh/entgeh/hintergeh) = 270; molifclass(wohl|geh) = 44 -->
    <e><p><l>apropiar</l><r>an|passen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>asustar</l><r>erschrecken</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>atender</l><r>bedienen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>atender</l><r>berücksichtigen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>atrever</l><r>wagen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>atropellar</l><r>um|fahren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>ayudar</l><r>helfen<s n="cas"/>Dat</r></p><par n='VM_VV_MAIN'/></e>
@@ -1155,6 +1157,7 @@
    <e><p><l>llegar</l><r>werden</r></p><par n='VM_VA_MODAL'/></e>
    <e><p><l>llover</l><r>regnen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO expletive -->
    <e><p><l>mantener</l><r>bewahren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>mariscar</l><r>Meeresfrüchte_ernten<s n="split"/>yes<s n="complex_pos"/>NN_VV</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>mirar</l><r>schauen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>mostrar</l><r>zeigen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>nevar</l><r>schneien</r></p><par n='VM_VV_MAIN'/></e>
@@ -2892,6 +2895,7 @@
    <e><p><l>hacer falta</l><r>nötig sein</r></p><par n="VM_VV_MAIN"/></e>
    <!--e><p><l>hacer gancho [coloq.]</l><r>verkuppeln</r></p><par n="VM_VV_MAIN"/></e-->
    <e><p><l>hacer gárgaras</l><r>gurgeln</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>hacer_poco</l><r>kürzlich<s n="pos"/>ADV</r></p><par n='VPERIPH_SWITCH'/></e>
    <e><p><l>hacer pupa</l><r>weh tun</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>hacerse de amigos</l><r>sich Freunde machen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>hacerse el tonto</l><r>sich dumm stellen</r></p><par n="VM_VV_MAIN"/></e>
@@ -6468,7 +6472,6 @@
    <e><p><l>aperitivo</l><r>Vorspeise</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>apertura</l><r>Öffnung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>apetito</l><r>Appetit</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>apical</l><r>Scheitel-</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ápice</l><r>Scheitelpunkt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>apicultor</l><r>Imker</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>apicultura</l><r>Imkerei</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -6703,7 +6706,6 @@
    <e><p><l>asfalto</l><r>Asphalt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asfixia</l><r>Ersticken</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>asiento</l><r>Sitz</r></p><par n='NC_N_676_PROZESS'/></e>
-   <e><p><l>asiento</l><r>Sitz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asignación</l><r>Zuteilung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>asignación</l><r>Zuweisung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>asignatura</l><r>Fach</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -6720,6 +6722,7 @@
    <e><p><l>asistencia</l><r>Mithilfe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>asistencia</l><r>Unterstützung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>asistencia</l><r>Vorlage</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>asistencia_técnica</l><r>Support</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asistente</l><r>Assistent</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>as</l><r>Ass</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>asma</l><r>Asthma</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -7950,6 +7953,8 @@
    <e><p><l>calidez</l><r>Wärme</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>califa</l><r>Kalif</r></p><par n='NC_N_75_STUDENT'/></e>
    <e><p><l>califato</l><r>Kalifat</r></p><par n='NC_N_68_ZIEL'/></e>
+   <e><p><l>calificación</l><r>Note</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>calificación</l><r>Qualifikation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>calificativo</l><r>Schulnote</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>californio</l><r>Californium</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- chem -->
    <e><p><l>californio</l><r>Kalifornier</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
@@ -12572,6 +12577,7 @@
    <e><p><l>gana</l><r>Verlangen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>gana</l><r>Wunsch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ganancia</l><r>Gewinn</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>ganancia</l><r>Verdienst</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ganchillo</l><r>Häkelnadel</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gancho</l><r>Haken</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>ganga</l><r>Bande</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -15421,6 +15427,7 @@
    <e><p><l>merced</l><r>Güte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mercenario</l><r>Söldner</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>mercurio</l><r>Quecksilber</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>merecimiento</l><r>Verdienst</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- el merecimiento = das Verdienst; la ganancia = der Verdienst -->
    <e><p><l>merendero</l><r>Ausflugslokal</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>merengue</l><r>Baisee</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>merengue</l><r>Baiser</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -15435,7 +15442,7 @@
    <e><p><l>merienda</l><r>Vesperbrot</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>merienda</l><r>Zwischenmahlzeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mérito</l><r>Leistung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>mérito</l><r>Verdienst</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>mérito</l><r>Verdienst</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- el mérito = das Verdienst; la ganancia = der Verdienst -->
    <e><p><l>merlán</l><r>Wittling</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>merluza</l><r>Schwips</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>merluza</l><r>Seehecht</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -18011,7 +18018,6 @@
    <e><p><l>politeísmo</l><r>Polytheismus</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>política exterior</l><r>Außenpolitik</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>política interior</l><r>Innenpolitik</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>política</l><r>Politikerin</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>política</l><r>Politik</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>política monetaria</l><r>Währungspolitik</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>político</l><r>Politiker</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
@@ -20314,7 +20320,9 @@
    <e><p><l>salamandra</l><r>Salamander</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>salario</l><r>Einkommen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>salario</l><r>Gehalt</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>salario_</l><r>Lohn</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>salario</l><r>Verdienst</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>salario_mínimo</l><r>Mindestlohn</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>salar</l><r>Salztonebene</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>salchicha</l><r>Würstchen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>salchicha</l><r>Wurst</r></p><par n='NC_N_57_HAND'/></e>
@@ -20381,6 +20389,8 @@
    <e><p><l>sarro</l><r>Zahnstein</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>sartén</l><r>Bratpfanne</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>sartén</l><r>Pfanne</r></p><par n='NC_N_76_FEDER'/></e>
+   <e><p><l>sastre</l><r>Schneider</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>sastrería</l><r>Schneiderei</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>satanismo</l><r>Teufelsanbeterei</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>satélite</l><r>Trabant</r></p><par n='NC_N_75_STUDENT'/></e>
    <e><p><l>satisfacción</l><r>Genugtuung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -21947,7 +21957,8 @@ veintitodos
 -->
    <e><p><l>último</l><r>letzt</r></p><par n='AO_ADJ'/></e> 
 <!-- Verb past participles as adjectives: VMP00[PS][FM] => ADJ  TODO: paradigm with VMPP|AQ ? not possible for all verbs because of lemma form: abrir/abierto; but abulta(r|do) -->
-   <e><p><l>abierto</l><r>offen<s n="molif"/>90</r></p><par n='VMPP_ADJ'/></e> 
+   <e><p><l>abrir</l><r>offen<s n="molif"/>90</r></p><par n='VMPP_ADJ'/></e> 
+   <e><p><l>adecuar</l><r>geeignet<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
    <e><p><l>conocer</l><r>bekannt<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
    <e><p><l>desconocer</l><r>unbekannt<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
    <e><p><l>equilibrar</l><r>ausgeglichen<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
@@ -22035,6 +22046,8 @@ veintitodos
    <e><p><l>importado</l><r>importiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>impreso</l><r>gedruckt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>industrializado</l><r>industrialisiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
+   <e><p><l>infectado</l><r>angesteckt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
+   <e><p><l>infectado</l><r>infiziert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>involucrado</l><r>verwickelt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>marcado</l><r>markiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>marginado</l><r>ausgeschlossen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
@@ -22095,6 +22108,7 @@ veintitodos
    <e><p><l>antibalas</l><r>kugelsicher</r></p><par n='AQ_ADJ'/></e>	<!-- TODO antibalas as noun? -->
    <e><p><l>antibiótico</l><r>antibiotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>antropomorfo</l><r>anthropomorph<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>apical</l><r>apikal</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>azerbaiyano</l><r>aserbaidschanisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>azerí</l><r>aserbaidschanisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bajo</l><r>tief<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e>
@@ -22370,7 +22384,7 @@ veintitodos
 <!-- adjective list from online dix http://savannah.nongnu.org/projects/ding-es-de : about 3700 es adjectives => 4770 es-de pairs -->
    <e><p><l>abatido</l><r>niedergeschlagen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>abdominal</l><r>abdominal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>abdominal</l><r>Bauch-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- TODO ES adjectives => DE compound nouns -->
+   <e><p><l>abdominal</l><r>Bauch-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e> <!-- TODO ES adjectives => DE compound nouns -->
    <e><p><l>aberrante</l><r>abweichend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>aberrante</l><r>anomal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>abierto</l><r>offen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22384,7 +22398,7 @@ veintitodos
    <e><p><l>a bordo</l><r>an Bord<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>aborigen</l><r>eingeboren<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>abortivo</l><r>abtreibend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>abortivo</l><r>Abtreibungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>abortivo</l><r>Abtreibungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>abrumador</l><r>erdrückend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>abrupto</l><r>steil<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>absolutista</l><r>absolutistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22440,7 +22454,7 @@ veintitodos
    <e><p><l>activo</l><r>tätig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>activo</l><r>fleißig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>acuático</l><r>aquatisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>acuático</l><r>Wasser-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>acuático</l><r>Wasser-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>acumulativo</l><r>gesammelt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>acuoso</l><r>wässrig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>adaptable</l><r>anpassungsfähig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22471,7 +22485,7 @@ veintitodos
    <e><p><l>adusto</l><r>verbrannt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>adverso</l><r>feindlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>adyacente</l><r>in der Nähe befindlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>aéreo</l><r>Luft-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>aéreo</l><r>Luft-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>afable</l><r>umgänglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>afable</l><r>leutselig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>afamado</l><r>berühmt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22508,7 +22522,7 @@ veintitodos
    <e><p><l>agradable</l><r>nett<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>agradable</l><r>freundlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>agradecido</l><r>dankbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>agrario</l><r>Agrar-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>agrario</l><r>Agrar-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>agrario</l><r>landwirtschaftlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>agresivo</l><r>aggressiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>agrícola</l><r>landwirtschaftlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22577,7 +22591,7 @@ veintitodos
    <e><p><l>ambos</l><r>beide<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ambulante</l><r>umherziehend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ambulante</l><r>fahrend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ambulante</l><r>Straßen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ambulante</l><r>Straßen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ameno</l><r>unterhaltsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ameno</l><r>lieblich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ameno</l><r>zierlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22589,11 +22603,11 @@ veintitodos
    <e><p><l>amoral</l><r>unmoralisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>amorfo</l><r>unförmig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>amoroso</l><r>liebenswürdig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>amoroso</l><r>Liebes-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>amoroso</l><r>Liebes-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>amplio</l><r>weiträumig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>amplio</l><r>geräumig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>amplio</l><r>breit<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>anabólico</l><r>Stoffwechsel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>anabólico</l><r>Stoffwechsel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>anal</l><r>anal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>análogo</l><r>analog<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anárquico</l><r>anarchisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22607,7 +22621,7 @@ veintitodos
    <e><p><l>andante</l><r>fahrend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>andante</l><r>reisend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>andante</l><r>wandernd<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>andino</l><r>Anden-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>andino</l><r>Anden-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>anecdótico</l><r>anekdotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>añejo</l><r>alt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>añejo</l><r>reif<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22615,7 +22629,7 @@ veintitodos
    <e><p><l>angelical</l><r>engelhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anglosajón</l><r>angelsächsisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>angosto</l><r>eng<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>angular</l><r>Winkel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>angular</l><r>Winkel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>animado</l><r>belebt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>animado</l><r>lebhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>animado</l><r>munter<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22628,15 +22642,15 @@ veintitodos
    <e><p><l>anormal</l><r>abnorm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anormal</l><r>abartig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anseático</l><r>hanseatisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>anseático</l><r>Hanse-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>anseático</l><r>Hanse-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>antagónico</l><r>widerstreitend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>antártico</l><r>antarktisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>antediluviano</l><r>vorsintflutlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>antepenúltimo</l><r>vorvorletzte<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anterior</l><r>vorherig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>antiadherente</l><r>Antihaft-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>antiadherente</l><r>Antihaft-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>antibalas</l><r>kugelsicher<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>anticaspa</l><r>Antischuppen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>anticaspa</l><r>Antischuppen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>anticipado</l><r>vorgezogen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anticuado</l><r>veraltet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anticuado</l><r>altmodisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22730,7 +22744,7 @@ veintitodos
    <e><p><l>asqueroso</l><r>ekelhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>asqueroso</l><r>widerlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>asqueroso</l><r>ekelig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>astral</l><r>Sternen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>astral</l><r>Sternen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>astronómico</l><r>astronomisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>astroso</l><r>schäbig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>astuto</l><r>gerissen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22746,7 +22760,7 @@ veintitodos
    <e><p><l>atlántico</l><r>atlantisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>atlético</l><r>athletisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>atmosférico</l><r>atmosphärisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>atómico</l><r>Atom-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>atómico</l><r>Atom-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>atónito</l><r>verwundert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>atractivo</l><r>anziehend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>atractivo</l><r>attraktiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22775,13 +22789,13 @@ veintitodos
    <e><p><l>autónomo</l><r>selbstständig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>autoritario</l><r>autoritär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>autosuficiente</l><r>selbsterhaltend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>auxiliar</l><r>Hilfs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>auxiliar</l><r>Hilfs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>avanzado</l><r>fortgeschritten<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>avaro</l><r>geizig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>aventajado</l><r>übervorteilt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>aventurado</l><r>riskant<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>avergonzado</l><r>beschämt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>avícola</l><r>Geflügelzucht-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>avícola</l><r>Geflügel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>avinagrado</l><r>sauer geworden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>avispado</l><r>schlau<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>azteca</l><r>aztekisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22791,7 +22805,7 @@ veintitodos
    <e><p><l>bacán</l><r>toll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bacteriológico</l><r>bakteriologisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bailable</l><r>tanzbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bailador</l><r>Tanz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>bailador</l><r>Tanz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>bajo</l><r>leise<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- Stimme -->
    <e><p><l>bajo</l><r>niedrig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bajo</l><r>klein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22799,13 +22813,13 @@ veintitodos
    <e><p><l>bajo</l><r>tief liegend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bajo</l><r>tief<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- Ton -->
    <e><p><l>balcánico</l><r>balkanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>balcánico</l><r>Balkan-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>balcánico</l><r>Balkan-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <!-- e><p><l>balcánico</l><r>vom Balkan<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> TODO "vom XXX" -->
    <e><p><l>balístico</l><r>ballistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>báltico</l><r>baltisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>banal</l><r>banal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>banal</l><r>unwesentlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bancario</l><r>Bank-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>bancario</l><r>Bank-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>baratero</l><r>billig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- Verkäufer, Laden -->
    <e><p><l>barato</l><r>billig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>barbárico</l><r>barbarisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22817,20 +22831,18 @@ veintitodos
    <e><p><l>barroco</l><r>barock<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>barroso</l><r>matschig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>básico</l><r>basisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>básico</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>básico</l><r>Basis-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>basura</l><r>Müll-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>basura</l><r>Schrott-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>basura</l><r>Trash-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>basurero</l><r>Müll-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bautismal</l><r>Tauf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>básico</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>básico</l><r>Basis-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>basura</l><r>Müll-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>	<!-- TODO check basura: adj? -->
+   <e><p><l>basura</l><r>Schrott-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>basura</l><r>Trash-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>basurero</l><r>Müll-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>bautismal</l><r>Tauf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>bebible</l><r>trinkbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>beige</l><r>beige<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>belga</l><r>belgisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bélico</l><r>kriegerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bélico</l><r>Kriegs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bélico</l><r>kriegerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bélico</l><r>Kriegs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>bélico</l><r>Kriegs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>belicoso</l><r>kriegerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>belicoso</l><r>kampflustig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bello</l><r>schön<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22838,7 +22850,7 @@ veintitodos
    <e><p><l>bendito</l><r>gesegnet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bendito</l><r>geweiht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>beneficioso</l><r>nützlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>beneficioso</l><r>gewinnbringend	<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>beneficioso</l><r>gewinnbringend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>benéfico</l><r>wohltätig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>benevolente</l><r>gutmütig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>benigno</l><r>gutartig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22853,7 +22865,7 @@ veintitodos
    <e><p><l>bicolor</l><r>zweifarbig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bicóncavo</l><r>bikonkav<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>biconvexo</l><r>bikonvex<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bidireccional</l><r>Zweiweg-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>bidireccional</l><r>Zweiweg-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>bidireccional</l><r>hin und zurück<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bidireccional</l><r>bidirektional<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bienal</l><r>zweijährig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22868,7 +22880,7 @@ veintitodos
    <e><p><l>bigote</l><r>enorm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bigotudo</l><r>schnurrbärtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bilateral</l><r>zweiseitig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>biliar</l><r>Gallen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>biliar</l><r>Gallen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>bilingüe</l><r>zweisprachig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bimensual</l><r>zweimonatig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>binario</l><r>binär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22908,9 +22920,9 @@ veintitodos
    <e><p><l>borroso</l><r>verschwommen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bosnio</l><r>bosnisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>botánico</l><r>botanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bóvido</l><r>Rinder-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bovino</l><r>Rinder-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>branquial</l><r>Kiemen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>bóvido</l><r>Rinder-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>bovino</l><r>Rinder-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>branquial</l><r>Kiemen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>brasileño</l><r>brasilianisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bravo</l><r>mutig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bravo</l><r>wild<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22924,7 +22936,7 @@ veintitodos
    <e><p><l>brincador</l><r>springend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>británica</l><r>britisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>británico</l><r>britisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bronquial</l><r>Bronchien-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>bronquial</l><r>Bronchien-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>bronquítico</l><r>bronchitisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>brumoso</l><r>dunstig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>brusco</l><r>plötzlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22935,7 +22947,7 @@ veintitodos
    <e><p><l>bruto</l><r>Brutto<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bruto</l><r>roh<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bruto</l><r>dumm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>buceador</l><r>Tauch-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>buceador</l><r>Tauch-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>buen</l><r>gut<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>búlgaro</l><r>bulgarisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>bullente</l><r>kochend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22945,11 +22957,11 @@ veintitodos
    <e><p><l>burlesco</l><r>burlesk<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>burocrático</l><r>bürokratisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>burro</l><r>dumm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>bursátil</l><r>Börsen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>bursátil</l><r>Börsen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>buscador</l><r>suchend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cabal</l><r>vollständig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cabal</l><r>genau<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>caballar</l><r>Pferde-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>caballar</l><r>Pferde-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>caballeroso</l><r>ritterlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cabeciduro</l><r>dickköpfig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cabelludo</l><r>haarig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22963,14 +22975,14 @@ veintitodos
    <e><p><l>calamitoso</l><r>gebrechlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calamitoso</l><r>unheilvoll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calamitoso</l><r>erbärmlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cálcico</l><r>Calcium-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cálcico</l><r>Calcium-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>calcificado</l><r>verkalkt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calcinado</l><r>verkohlt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calculable</l><r>berechenbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calculador</l><r>berechnend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calentito</l><r>warm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calentito</l><r>angenehm warm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>calibrador</l><r>Kalibrier-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>calibrador</l><r>Kalibrier-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cálido</l><r>warm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caliente</l><r>erregt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caliente</l><r>hitzig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -22985,12 +22997,12 @@ veintitodos
    <e><p><l>callado</l><r>still<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>callado</l><r>ruhig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>callado</l><r>schweigsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>callejero</l><r>Straßen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>callejero</l><r>Straßen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>calmado</l><r>ruhig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calmante</l><r>beruhigend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calmo</l><r>ruhig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calmo</l><r>brachliegend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>calórico</l><r>Kalorien-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>calórico</l><r>Kalorien-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>calumniador</l><r>verleumdend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calumnioso</l><r>verleumderisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caluroso</l><r>warm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23003,7 +23015,7 @@ veintitodos
    <e><p><l>cambiante</l><r>unbeständig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>camerunés</l><r>kamerunisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caminador</l><r>viellaufend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>campero</l><r>Land-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>campero</l><r>Land-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>campestre</l><r>ländlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>camuflado</l><r>getarnt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>camuflado</l><r>versteckt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23012,13 +23024,13 @@ veintitodos
    <e><p><l>canario</l><r>von den Kanarischen Inseln<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cancerígeno</l><r>krebserregend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>canceroso</l><r>krebsartig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>canceroso</l><r>Krebs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>canceroso</l><r>Krebs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>candente</l><r>glühend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cándido</l><r>naiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cándido</l><r>aufrichtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cándido</l><r>ehrlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>canelo</l><r>zimtfarben<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>canino</l><r>Hunde-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>canino</l><r>Hunde-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cano</l><r>grau<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cano</l><r>weiß<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>canónico</l><r>kanonisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23026,8 +23038,8 @@ veintitodos
    <e><p><l>canoso</l><r>weißhaarig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cansado</l><r>müde<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cansado</l><r>überdrüssig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cantador</l><r>Sing-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cantor</l><r>Sing-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cantador</l><r>Sing-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>cantor</l><r>Sing-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>caótico</l><r>chaotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>capacitado</l><r>befähigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>capacitivo</l><r>kapazitiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- [Physik] -->
@@ -23036,17 +23048,17 @@ veintitodos
    <e><p><l>capaz</l><r>imstande<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>capaz</l><r>tauglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>capilar</l><r>haardünn<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>capilar</l><r>Haar-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>capilar</l><r>Kapillar-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>capilar</l><r>Haar-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>capilar</l><r>Kapillar-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>capitalista</l><r>kapitalistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caprichoso</l><r>launisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>característico</l><r>charakteristisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caradura</l><r>frech<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caradura</l><r>unverschämt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>carbónico</l><r>Kohlen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cardiaco</l><r>Herz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>carbónico</l><r>Kohlen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>cardiaco</l><r>Herz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cardiológico</l><r>kardiologisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cardiovascular</l><r>Herzkreislauf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cardiovascular</l><r>Herzkreislauf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>caribeño</l><r>karibisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cariñoso</l><r>herzlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cariñoso</l><r>liebevoll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23079,9 +23091,9 @@ veintitodos
    <e><p><l>categórico</l><r>kategorisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>categórico</l><r>entscheidend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>catódico</l><r>kathodisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>catódico</l><r>Kathoden-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>catódico</l><r>Kathoden-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>católico</l><r>katholisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>caudal</l><r>Schwanz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>caudal</l><r>Schwanz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>causal</l><r>ursächlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>causal</l><r>kausal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>causante</l><r>verursachend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23097,14 +23109,14 @@ veintitodos
    <e><p><l>célebre</l><r>gefeiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>célebre</l><r>berühmt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>celestial</l><r>himmlisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>celestial</l><r>Himmels-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>celestial</l><r>Himmels-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>celoso</l><r>eifersüchtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>celta</l><r>keltisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cementero</l><r>Zement-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cementero</l><r>Zement-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ceniciento</l><r>aschgrau<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ceñido</l><r>hauteng<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ceñido</l><r>knapp<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cenital</l><r>Zenit-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cenital</l><r>Zenit-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>censurable</l><r>kritikwürdig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>centésimo</l><r>hundertste<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>centrado</l><r>ausgeglichen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23113,23 +23125,24 @@ veintitodos
    <e><p><l>central</l><r>zentral<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>céntrico</l><r>zentrisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>céntrico</l><r>zentral<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>centrífugo</l><r>Zentrifugal-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>centrífugo</l><r>zentrifugal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>centrífugo</l><r>Zentrifugal-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>centroafricano</l><r>zentralafrikanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>centroamericano</l><r>mittelamerikanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>centroeuropeo</l><r>mitteleuropäisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cerámico</l><r>keramisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cercano</l><r>in der Nähe<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cereal</l><r>Getreide-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cerebral</l><r>Gehirn-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ceremonial</l><r>Zeremonien-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cereal</l><r>Getreide-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>cerebral</l><r>Gehirn-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>ceremonial</l><r>zeremoniell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ceroso</l><r>wachsig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>certero</l><r>treffend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>certero</l><r>treffsicher<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>certero</l><r>zuverlässig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>certero</l><r>genau<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>certificatorio</l><r>bescheinigend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cervecero</l><r>Bier-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cervical</l><r>Nacken-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cervecero</l><r>Bier-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>cervical</l><r>Nacken-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>chalado</l><r>verrückt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>chapado</l><r>beschichtet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <!--e><p><l>chapado en oro, plata etc.</l><r>vergoldet, versilbert usw.<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e-->
@@ -23159,7 +23172,7 @@ veintitodos
    <e><p><l>chupado</l><r>kinderleicht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>chupado</l><r>mager<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>chupado</l><r>dünn<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ciánico</l><r>Cyan-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ciánico</l><r>Cyan-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cibernético</l><r>kybernetisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cicatrizante</l><r>vernarbend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cicatrizante</l><r>wundheilend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23177,15 +23190,15 @@ veintitodos
    <e><p><l>cierto</l><r>sicher<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cierto</l><r>wahr<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cierto</l><r>gewiss<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ciliar</l><r>Wimpern-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ciliar</l><r>Wimpern-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ciliar</l><r>Augenbrauen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cilíndrico</l><r>zylindrisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cinematográfico</l><r>Film-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cinematográfico</l><r>Film-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cínico</l><r>zynisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>circular</l><r>kreisförmig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>circular</l><r>Kreis-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>circulatorio</l><r>Kreislauf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>circulatorio</l><r>Verkehr-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>circular</l><r>Kreis-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>circulatorio</l><r>Kreislauf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>circulatorio</l><r>Verkehr-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>circundante</l><r>umgebend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>circunferente</l><r>begrenzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>circunspecto</l><r>zurückhaltend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23196,22 +23209,21 @@ veintitodos
    <e><p><l>cirrótico</l><r>Zirrhose-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>citado</l><r>zitiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>citado</l><r>erwähnt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cítrico</l><r>Zitrus-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cítrico</l><r>Zitronen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cítrico</l><r>Zitrus-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>cítrico</l><r>Zitronen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ciudadano</l><r>staatsbürgerlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ciudadano</l><r>städtisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ciudadano</l><r>die Stadtbewohner betreffend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cívico</l><r>Bürger-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>civil</l><r>Zivil-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cívico</l><r>Bürger-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>civil</l><r>Zivil-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>civil</l><r>zivil<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clamoroso</l><r>außergewöhnlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clamoroso</l><r>überwältigend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clandestino</l><r>heimlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clandestino</l><r>geheim<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clandestino</l><r>illegal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>clandestino</l><r>unter der Hand<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>clandestino</l><r>Schwarz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>clandestino</l><r>Untergrund-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>clandestino</l><r>unter der Hand<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- TODO ES adj -> DE PP ? -->
+   <e><p><l>clandestino</l><r>Schwarz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>clandestino</l><r>Untergrund-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>clarividente</l><r>hellseherisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>claro</l><r>deutlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>claro</l><r>hell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23232,7 +23244,7 @@ veintitodos
    <e><p><l>clavado</l><r>identisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clavado</l><r>pünktlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clavado</l><r>verdutzen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>clavicular</l><r>Schlüsselbein-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>clavicular</l><r>Schlüsselbein-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>clemente</l><r>barmherzig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cleptómano</l><r>kleptomanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clerical</l><r>klerikal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23241,13 +23253,13 @@ veintitodos
    <e><p><l>climatizado</l><r>klimatisiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>climatológico</l><r>klimatologisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>clínico</l><r>klinisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>clónico</l><r>Klon-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>clónico</l><r>Klon-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>clorado</l><r>chloriert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>clorofílico</l><r>Chlorophyll-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>coactivo</l><r>Zwangs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>coagulador</l><r>Gerinnungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>clorofílico</l><r>Chlorophyll-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>coactivo</l><r>Zwangs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>coagulador</l><r>Gerinnungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>coaxial</l><r>koaxial<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cobáltico</l><r>Kobalt-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cobáltico</l><r>Kobalt-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cobarde</l><r>feige<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cobrable</l><r>einziehbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cobrizo</l><r>kupferbraun<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23273,11 +23285,11 @@ veintitodos
    <e><p><l>cojo</l><r>hinkend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cojo</l><r>lahmend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>colateral</l><r>kollateral<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>colateral</l><r>Neben-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>colateral</l><r>Neben-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>colchado</l><r>gepolstert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>coleccionable</l><r>Sammel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>coleccionable</l><r>Sammel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>colectivo</l><r>kollektiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>colectivo</l><r>Sammel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>colectivo</l><r>Sammel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>colérico</l><r>cholerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>colgado</l><r>hängend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>colgante</l><r>hängend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23285,7 +23297,7 @@ veintitodos
    <e><p><l>colindante</l><r>angrenzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>colmado</l><r>voll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>coloidal</l><r>kolloidal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>coloidal</l><r>Kolloid-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>coloidal</l><r>Kolloid-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>colombiano</l><r>kolumbianisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cólones</l><r>Kölner<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>colorado</l><r>farbig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23318,15 +23330,15 @@ veintitodos
    <e><p><l>compensable</l><r>ersetzbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>compensador</l><r>ausgleichend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>compensatorio</l><r>ausgleichend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>compensatorio</l><r>Ausgleich-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>compensatorio</l><r>Ausgleich-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>competente</l><r>kompetent<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>competidor</l><r>Konkurrenz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>competidor</l><r>Konkurrenz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>competitivo</l><r>konkurrenzfähig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>competitivo</l><r>konkurrierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>complaciente</l><r>freundlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>complaciente</l><r>gefällig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>complejo</l><r>komplex<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>complementario</l><r>Zusatz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>complementario</l><r>Zusatz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>complementario</l><r>ergänzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>completo</l><r>komplett<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>completo</l><r>vollständig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23343,9 +23355,9 @@ veintitodos
    <e><p><l>comprometido</l><r>verlobt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>compuesto</l><r>zusammengesetzt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>compulsivo</l><r>zwanghaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>compulsivo</l><r>Zwangs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>compulsivo</l><r>Zwangs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>computable</l><r>berechenbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>computacional</l><r>Rechen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>computacional</l><r>Rechen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>computacional</l><r>rechnerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>común</l><r>gemeinschaftlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>común</l><r>gewöhnlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23380,8 +23392,8 @@ veintitodos
    <e><p><l>conectado</l><r>online<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conectado</l><r>verbunden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conexo</l><r>verbunden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>confederal</l><r>Bund-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>confederal</l><r>Bundes-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>confederal</l><r>Bund-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>	<!-- TODO both forms possible? -->
+   <e><p><l>confederal</l><r>Bundes-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>confesional</l><r>konfessionell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>confiable</l><r>vertrauenswürdig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>confidencial</l><r>vertraulich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23409,7 +23421,7 @@ veintitodos
    <e><p><l>conjuntivo</l><r>verbindend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conjunto</l><r>zusammen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conjunto</l><r>vereint<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>conmemorativo</l><r>Gedenk-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>conmemorativo</l><r>Gedenk-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>conmensurable</l><r>kommensurabel<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conmensurable</l><r>messbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conmensurable</l><r>vergleichbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23446,7 +23458,7 @@ veintitodos
    <e><p><l>contemporáneo</l><r>zeitgenössisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>contento</l><r>zufrieden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>contiguo</l><r>angrenzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>contiguo</l><r>Neben-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>contiguo</l><r>Neben-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>continental</l><r>kontinental<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>continuo</l><r>kontinuierlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>contráctil</l><r>zusammenziehbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23455,7 +23467,7 @@ veintitodos
    <e><p><l>contrario</l><r>gegenteilig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>contrario</l><r>gegnerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>contratado</l><r>beschäftigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>contributivo</l><r>Steuer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>contributivo</l><r>Steuer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>controlable</l><r>kontrollierbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>contundente</l><r>überzeugend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>contundente</l><r>reichhaltig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!--  [Chile] [Perú] contundente = reichhaltig (Essen) -->
@@ -23463,11 +23475,11 @@ veintitodos
    <e><p><l>convencional</l><r>konventionell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>convenido</l><r>abgemacht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conveniente</l><r>zweckmäßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>conveniente</l><r>Zweck-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>conveniente</l><r>Zweck-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>convergente</l><r>konvergent<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conversable</l><r>verhandelbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conversador</l><r>gesprächig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>convexo</l><r>konvex Mathematik<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>convexo</l><r>konvex<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>convulsivo</l><r>krampfartig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cooperativo</l><r>kooperativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>coqueto</l><r>kokett<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23499,7 +23511,7 @@ veintitodos
    <e><p><l>costoso</l><r>kostspielig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>costoso</l><r>teuer<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cotidiano</l><r>alltäglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>craneal</l><r>Schädel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>craneal</l><r>Schädel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>creativo</l><r>kreativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>creativo</l><r>schöpferisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>crecido</l><r>ausgewachsen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23508,7 +23520,7 @@ veintitodos
    <e><p><l>crédulo</l><r>leichtgläubig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>creíble</l><r>glaubhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>creído</l><r>eingebildet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>crematorio</l><r>Verbrennung-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>crematorio</l><r>Verbrennung-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>	<!-- TODO check Fugen S -->
    <e><p><l>cremoso</l><r>cremig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>crespo</l><r>kraus<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>creyente</l><r>gläubig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23535,11 +23547,11 @@ veintitodos
    <e><p><l>cuádruple</l><r>vierfach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cualificado</l><r>qualifiziert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cualitativo</l><r>qualitativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cuántico</l><r>Quanten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cuántico</l><r>Quanten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cuantitativo</l><r>quantitativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cuarentón</l><r>vierzigjährig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cubano</l><r>kubanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cúbico</l><r>Kubik-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cúbico</l><r>Kubik-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cuellicorto</l><r>kurzhälsig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cuerdo</l><r>gescheit<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cuestionable</l><r>fragwürdig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23551,7 +23563,7 @@ veintitodos
    <e><p><l>culto</l><r>gebildet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>culto</l><r>höflich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cultural</l><r>kulturell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cultural</l><r>Kultur-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cultural</l><r>Kultur-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cumplidor</l><r>zuverlässig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cumplidor</l><r>gewissenhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cumplidor</l><r>pflichtbewusst<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23577,12 +23589,12 @@ veintitodos
    <e><p><l>curvado</l><r>gekrümmt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>curvo</l><r>gekrümmt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>curvo</l><r>kurvig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>cutáneo</l><r>Haut-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cutáneo</l><r>Haut-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>dañado</l><r>beschädigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dañino</l><r>schädlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>débil</l><r>schwach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>de bolsillo</l><r>Taschen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>de cabecera</l><r>Chef-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>de bolsillo</l><r>Taschen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>	<!-- TODO check ES de bolsillo: adj? -->
+   <e><p><l>de cabecera</l><r>Chef-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>	<!-- TODO check ES de cabecera: adj? libro de cabecera: Bettlektuere/Lieblingsbuch; medico de cabecera: Hausarzt -->
    <e><p><l>decaído</l><r>heruntergekommen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>decaído</l><r>verfallen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>decaído</l><r>schwach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23612,8 +23624,8 @@ veintitodos
    <e><p><l>degenerado</l><r>pervers<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dejado</l><r>nachlässig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dejado</l><r>schlampig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>delantero</l><r>Vorder-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>delantero</l><r>Vor-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>delantero</l><r>Vorder-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>delantero</l><r>Vor-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>delantero</l><r>vordere<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>delgado</l><r>schlank<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>delgado</l><r>dünn<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23689,12 +23701,12 @@ veintitodos
    <e><p><l>descuidado</l><r>schlampig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>desdichado</l><r>unglücklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>deseable</l><r>wünschenswert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>desechable</l><r>Einweg-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>desechable</l><r>Einweg-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>desechable</l><r>wegwerfbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>desempleado</l><r>arbeitslos<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>deseoso</l><r>begierig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>desequilibrado</l><r>unausgeglichen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>desértico</l><r>Wüsten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>desértico</l><r>Wüsten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>desesperado</l><r>verzweifelt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>desesperante</l><r>zum Verzweifeln<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>desgraciado</l><r>unglücklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23754,7 +23766,7 @@ veintitodos
    <e><p><l>dichoso</l><r>glücklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>diestro</l><r>flink<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>diestro</l><r>geschickt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>dietético</l><r>Diät-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>dietético</l><r>Diät-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>diferente</l><r>verschieden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>diferente</l><r>anders<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>difícil</l><r>schwierig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23762,17 +23774,16 @@ veintitodos
    <e><p><l>difunto</l><r>verstorben<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>difuso</l><r>verschwommen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>difuso</l><r>diffus<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>digestivo</l><r>Verdauungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>digestivo</l><r>Verdauungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>digestivo</l><r>verdauungsfördernd<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>digno</l><r>würdig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dinámico</l><r>dynamisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dinámico</l><r>kraftvoll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>diplomado</l><r>Diplom-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>diplomado</l><r>diplomiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>diplomático</l><r>diplomatisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>directivo</l><r>leitend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>directivo</l><r>führend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>directo</l><r>direkt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>disciplinado</l><r>diszipliniert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>disciplinado</l><r>diszipliniert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>disconforme</l><r>nicht einverstanden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>discreto</l><r>diskret<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23806,10 +23817,10 @@ veintitodos
    <e><p><l>divorciado</l><r>geschieden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dócil</l><r>nachgiebig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dócil</l><r>fügsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>doctoral</l><r>Doktor-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>doctoral</l><r>Doktor-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>dolido</l><r>beleidigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>doloroso</l><r>schmerzhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>doméstico</l><r>Haus-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>doméstico</l><r>Haus-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>dominante</l><r>dominierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dominante</l><r>vorherrschend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dominante</l><r>herrschend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23828,21 +23839,21 @@ veintitodos
    <e><p><l>ebrio</l><r>betrunken<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ecológico</l><r>ökologisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ecologista</l><r>ökologisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ecologista</l><r>Ökologie-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ecologista</l><r>Ökologie-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>económico</l><r>preiswert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>económico</l><r>ökonomisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>económico</l><r>sparsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>económico</l><r>wirtschaftlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>económico</l><r>Wirtschafts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>económico</l><r>Wirtschafts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ecuménico</l><r>ökumenisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>educado</l><r>gebildet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>educado</l><r>kultiviert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>educativo</l><r>Lern-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>educativo</l><r>Bildungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>educativo</l><r>Lern-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>educativo</l><r>Bildungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>efectivo</l><r>effektiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>efectivo</l><r>wirklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>efectivo</l><r>real<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>efervescente</l><r>Brause-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>efervescente</l><r>Brause-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>eficiente</l><r>effizient<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>eficiente</l><r>wirksam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>eficiente</l><r>tüchtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23896,7 +23907,7 @@ veintitodos
    <e><p><l>endiablado</l><r>teuflisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>en directo</l><r>live<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>enemigo</l><r>feindlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>energético</l><r>Energie-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>energético</l><r>Energie-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>energético</l><r>energetisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>enérgico</l><r>energisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>enérgico</l><r>entschlossen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23935,7 +23946,7 @@ veintitodos
    <e><p><l>equivocado</l><r>irrtümlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>erótico</l><r>erotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>errado</l><r>irrig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>errado</l><r>Fehl-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>errado</l><r>Fehl-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>errante</l><r>ziellos<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>errante</l><r>umherirrend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>erróneo</l><r>irrig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23951,8 +23962,8 @@ veintitodos
    <e><p><l>esclarecido</l><r>berühmt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>esclarecido</l><r>herausragend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>escocés</l><r>schottisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>escocés</l><r>Schotten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>escolar</l><r>Schul-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>escocés</l><r>Schotten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>escolar</l><r>Schul-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>escotado</l><r>tief ausgeschnitten<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>escrupuloso</l><r>gewissenhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>escrupuloso</l><r>peinlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23973,8 +23984,9 @@ veintitodos
    <e><p><l>esloveno</l><r>slowenisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>esmeralda</l><r>smaragdgrün<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>esotérico</l><r>esoterisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>espacial</l><r>Weltraum-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>espacial</l><r>Raum<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>espacial</l><r>räumlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>espacial</l><r>Raum-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>espacial</l><r>Weltraum-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>español</l><r>spanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>espantoso</l><r>schaurig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>espantoso</l><r>furchterregend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -23985,7 +23997,7 @@ veintitodos
    <e><p><l>espantoso</l><r>sehr hässlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>especial</l><r>besonders<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>especial</l><r>speziell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>especialista</l><r>Fach-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>especialista</l><r>Fach-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>específico</l><r>spezifisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>espectacular</l><r>spektakulär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>especulativo</l><r>spekulativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24014,7 +24026,7 @@ veintitodos
    <e><p><l>estable</l><r>dauerhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estable</l><r>stabil<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estable</l><r>standfest<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>estacional</l><r>Saison-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>estacional</l><r>Saison-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>estacional</l><r>jahreszeitlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estadístico</l><r>statistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estadounidense</l><r>US-amerikanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24025,12 +24037,12 @@ veintitodos
    <e><p><l>estancado</l><r>stagnierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estanco</l><r>dicht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estanco</l><r>undurchlässig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>estándar</l><r>Standard-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>estándar</l><r>Standard-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>estar involucrado en</l><r>verwickelt sein in<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estatal</l><r>staatlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estático</l><r>statisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estático</l><r>unbeweglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>estereofónico</l><r>Stereo-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>estereofónico</l><r>Stereo-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>estéril</l><r>steril<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estéril</l><r>keimfrei<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estéril</l><r>unfruchtbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24049,14 +24061,14 @@ veintitodos
    <e><p><l>estresante</l><r>stressig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estricto</l><r>streng<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estructural</l><r>strukturell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>estructural</l><r>Struktur-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>estructural</l><r>Struktur-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>estudiado</l><r>studiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estudioso</l><r>lernbegierig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estudioso</l><r>fleißig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estupendo</l><r>wunderbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estupendo</l><r>toll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>estúpido</l><r>dumm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>etarra</l><r>ETA-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>etarra</l><r>ETA-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>etíope</l><r>äthiopisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>étnico</l><r>ethnisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>eufórico</l><r>euphorisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24073,13 +24085,12 @@ veintitodos
    <e><p><l>excesivo</l><r>exzessiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>excitante</l><r>aufregend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>exclusivo</l><r>exklusiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>exclusivo</l><r>exklusiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>exclusivo</l><r>ausschließlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>exclusivo</l><r>Allein-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>exclusivo</l><r>Allein-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>exhaustivo</l><r>erschöpfend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>exhausto</l><r>erschöpft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>exigente</l><r>anspruchsvoll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>exiliado</l><r>im Exil<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>exiliado</l><r>im Exil lebend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- TODO DE keep PP as is, generate only last DE part -->
    <e><p><l>existencial</l><r>existentiell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>existente</l><r>existierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>exitoso</l><r>erfolgreich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24106,10 +24117,10 @@ veintitodos
    <e><p><l>extenso</l><r>ausführlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>extenso</l><r>ausgedehnt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>extenso</l><r>langatmig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>exterior</l><r>Auslands-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>exterior</l><r>Außen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>exterior</l><r>Auslands-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>exterior</l><r>Außen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>exterior</l><r>äußere<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>externo</l><r>Außen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>externo</l><r>Außen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>externo</l><r>äußerlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>extranjero</l><r>ausländisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>extraño</l><r>komisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24126,10 +24137,10 @@ veintitodos
    <e><p><l>extrovertido</l><r>extrovertiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>extrovertido</l><r>extravertiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>exuberante</l><r>üppig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>fabuloso</l><r>Fabel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>fabuloso</l><r>Fabel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>fabuloso</l><r>fabelhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fabuloso</l><r>toll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>facial</l><r>Gesichts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>facial</l><r>Gesichts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>fácil</l><r>einfach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fácil</l><r>leicht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>facultativo</l><r>ärztlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24142,7 +24153,7 @@ veintitodos
    <e><p><l>familiar</l><r>bekannt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>familiar</l><r>vertraut<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>familiar</l><r>familiär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>familiar</l><r>Familien-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>familiar</l><r>Familien-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>famoso</l><r>berühmt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fantástico</l><r>fantastisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fantástico</l><r>toll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24159,10 +24170,10 @@ veintitodos
    <e><p><l>fatigoso</l><r>ermüdend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>favorable</l><r>günstig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>favorable</l><r>vorteilhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>favorito</l><r>Lieblings-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>federal</l><r>Bundes-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>favorito</l><r>Lieblings-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>federal</l><r>Bundes-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>federal</l><r>föderativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>felino</l><r>Katzen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>felino</l><r>Katzen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>feliz</l><r>glücklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>feliz</l><r>froh<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>femenino</l><r>weiblich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24171,9 +24182,10 @@ veintitodos
    <e><p><l>feo</l><r>hässlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>feroz</l><r>wild<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>feroz</l><r>schrecklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ferroviario</l><r>Eisenbahn-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>festivo</l><r>Fest-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>festivo</l><r>Feier-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ferroviario</l><r>Eisenbahn-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>festivo</l><r>feierlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>festivo</l><r>festlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>festivo</l><r>Fest-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>fétido</l><r>stinkend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fétido</l><r>übel riechend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>feudal</l><r>feudal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24191,16 +24203,16 @@ veintitodos
    <e><p><l>fijo</l><r>fix<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>filipino</l><r>philippinisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>filosófico</l><r>philosophisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>final</l><r>End-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>final</l><r>Schluss-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>final</l><r>End-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>final</l><r>Schluss-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>fingido</l><r>vorgetäuscht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>finlandés</l><r>finnisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fino</l><r>dünn<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fino</l><r>fein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>firme</l><r>fest<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>fiscal</l><r>Finanz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>fiscal</l><r>Rechnungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>fiscal</l><r>Steuer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>fiscal</l><r>Finanz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>fiscal</l><r>Rechnungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>fiscal</l><r>Steuer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>fiscal</l><r>steuerlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>físico</l><r>physikalisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>físico</l><r>physisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24216,7 +24228,7 @@ veintitodos
    <e><p><l>flojo</l><r>lose<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>flojo</l><r>locker<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>flojo</l><r>faul<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>floral</l><r>Blumen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>floral</l><r>Blumen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>floreado</l><r>geblümt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>florido</l><r>blühend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>flotante</l><r>schwimmend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24225,20 +24237,21 @@ veintitodos
    <e><p><l>fluido</l><r>flüssig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fluorescente</l><r>fluoreszent<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>folclórico</l><r>folkloristisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>forense</l><r>Gerichts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>forense</l><r>forensisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>forense</l><r>Gerichts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>forense</l><r>gerichtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>forestal</l><r>Wald-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>forestal</l><r>Forst-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>forestal</l><r>Wald-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>forestal</l><r>Forst-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>formado</l><r>geformt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>formado</l><r>ausgebildet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>formal</l><r>Form-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>formal</l><r>Form-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>formal</l><r>formal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>formal</l><r>förmlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>forzado</l><r>erzwungen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>forzoso</l><r>unumgänglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>forzoso</l><r>notwendig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>forzoso</l><r>notgedrungen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>forzoso</l><r>Zwangs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>forzoso</l><r>Zwangs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>fotogénico</l><r>fotogen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>frágil</l><r>zerbrechlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>frágil</l><r>fragil<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24263,9 +24276,9 @@ veintitodos
    <e><p><l>frívolo</l><r>frivol<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>frontal</l><r>frontal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>frontal</l><r>vordere<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>frontal</l><r>Vorder-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>frontal</l><r>Vorder-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>fronterizo</l><r>angrenzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>fronterizo</l><r>Grenz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>fronterizo</l><r>Grenz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>frustrado</l><r>frustriert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>frustrante</l><r>frustrierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fucsia</l><r>pink<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24282,12 +24295,12 @@ veintitodos
    <e><p><l>funcional</l><r>funktionell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>funcional</l><r>zweckmäßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fundamental</l><r>fundamental<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>fundamental</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>fundamental</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>fundamental</l><r>grundlegend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fúnebre</l><r>düster<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fúnebre</l><r>finster<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>fúnebre</l><r>Trauer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>fúnebre</l><r>Leichen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>fúnebre</l><r>Trauer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>fúnebre</l><r>Leichen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>furioso</l><r>wütend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>furioso</l><r>zornig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>galáctico</l><r>galaktisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24310,8 +24323,8 @@ veintitodos
    <e><p><l>genético</l><r>genetisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>genial</l><r>cool<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>genial</l><r>genial<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>genital</l><r>Geschlechts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>genital</l><r>Genital-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>genital</l><r>Geschlechts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>genital</l><r>Genital-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>gentil</l><r>freundlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>gentil</l><r>nett<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>genuino</l><r>echt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24319,18 +24332,18 @@ veintitodos
    <e><p><l>geométrico</l><r>geometrisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>gigante</l><r>riesig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>gigantesco</l><r>gigantisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>giratorio</l><r>Dreh-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>giratorio</l><r>Dreh-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>giratorio</l><r>drehbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>gitano</l><r>Zigeuner-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>glacial</l><r>Eis-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>glacial</l><r>Gletscher-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>gitano</l><r>Zigeuner-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>glacial</l><r>Eis-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>glacial</l><r>Gletscher-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>glacial</l><r>eisig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>glacial</l><r>frostig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>global</l><r>gesamt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>global</l><r>Gesamt-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>global</l><r>Gesamt-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>global</l><r>global<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>global</l><r>pauschal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>global</l><r>Pauschal-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>global</l><r>Pauschal-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>glorioso</l><r>glorreich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>godo</l><r>gotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>goloso</l><r>gefräßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24390,7 +24403,7 @@ veintitodos
    <e><p><l>harto</l><r>überdrüssig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hebreo</l><r>hebräisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hechicero</l><r>bezaubernd<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>hechicero</l><r>Zauber-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>hechicero</l><r>Zauber-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>hediondo</l><r>stinkend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hediondo</l><r>übelriechend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hedonista</l><r>hedonistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24408,18 +24421,18 @@ veintitodos
    <e><p><l>hermoso</l><r>wunderschön<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>heroico</l><r>heldenhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>heterosexual</l><r>heterosexuell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>hidroeléctrico</l><r>Wasserkraft-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>hidroeléctrico</l><r>Wasserkraft-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>higiénico</l><r>hygienisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hinchado</l><r>geschwollen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hinchado</l><r>angeschwollen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hindú</l><r>hinduistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>hindú</l><r>Hindu-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>hindú</l><r>Hindu-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>hindú</l><r>indisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hiperactivo</l><r>hyperaktiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hiperbólico</l><r>hyperbolisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hipercalórico</l><r>kalorienreich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>hípico</l><r>Reit-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>hípico</l><r>Pferde-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>hípico</l><r>Reit-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>hípico</l><r>Pferde-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>hipnótico</l><r>hypnotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hipocalórico</l><r>kalorienarm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hipócrita</l><r>scheinheilig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24456,14 +24469,14 @@ veintitodos
    <e><p><l>hostigoso</l><r>lästig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hostil</l><r>feindselig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>hostil</l><r>feindlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>hotelero</l><r>Hotel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>hotelero</l><r>Hotel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>hueco</l><r>hohl<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>huesudo</l><r>knochig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>huido</l><r>flüchtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>humanitario</l><r>humanitär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>humano</l><r>menschlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>humectante</l><r>befeuchtend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>humectante</l><r>Feuchtigkeits-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>humectante</l><r>Feuchtigkeits-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>humilde</l><r>demütig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>humilde</l><r>bescheiden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>humillante</l><r>demütigend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24477,7 +24490,7 @@ veintitodos
    <e><p><l>húngaro</l><r>ungarisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>huraño</l><r>abweisend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>huraño</l><r>mürrisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ibérico</l><r>iberisch Geographie<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ibérico</l><r>iberisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ideal</l><r>ideal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ideal</l><r>perfekt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>idéntico</l><r>identisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24533,7 +24546,7 @@ veintitodos
    <e><p><l>imperdonable</l><r>unverzeihlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>imperfecto</l><r>mangelhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>imperfecto</l><r>unvollkommen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>imperial</l><r>Kaiser-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>imperial</l><r>Kaiser-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>imperial</l><r>kaiserlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>impermeable</l><r>wasserabweisend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>impersonal</l><r>unpersönlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24545,7 +24558,7 @@ veintitodos
    <e><p><l>implícito</l><r>inbegriffen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>imponente</l><r>imposant<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>imponente</l><r>eindrucksvoll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>importador</l><r>Import-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>importador</l><r>Import-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>importante</l><r>wichtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>importante</l><r>bedeutend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>impotente</l><r>impotent<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24603,7 +24616,7 @@ veintitodos
    <e><p><l>inarmónico</l><r>unharmonisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inasequible</l><r>unerreichbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inaudible</l><r>unhörbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>incaico</l><r>Inka-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>incaico</l><r>Inka-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>incansable</l><r>unermüdlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>incapacitado</l><r>arbeitsunfähig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>incapacitado</l><r>behindert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24679,7 +24692,7 @@ veintitodos
    <e><p><l>indefinible</l><r>undefinierbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>indefinido</l><r>unbestimmt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>indefinido</l><r>undefiniert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>independentista</l><r>Unabhängigkeits-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>independentista</l><r>Unabhängigkeits-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>independiente</l><r>unabhängig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>indescifrable</l><r>rätselhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>indescifrable</l><r>unentzifferbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24690,7 +24703,7 @@ veintitodos
    <e><p><l>indeterminado</l><r>unschlüssig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>indicado</l><r>angezeigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>indicado</l><r>geeignet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>indicativo</l><r>Hinweis-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>indicativo</l><r>Hinweis-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>indicativo</l><r>hinweisend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>indiferente</l><r>gleichgültig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>indiferente</l><r>teilnahmslos<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24750,19 +24763,19 @@ veintitodos
    <e><p><l>infantil</l><r>infantil<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infantil</l><r>kindisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infantil</l><r>kindlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>infantil</l><r>Kinder-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>infantil</l><r>Kinder-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>infeccioso</l><r>ansteckend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infeliz</l><r>unglücklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inferior</l><r>geringwertig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inferior</l><r>minderwertig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inferior</l><r>untere<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>inferior</l><r>Unter-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inferior</l><r>Unter-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>infernal</l><r>höllisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>infernal</l><r>Höllen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>infernal</l><r>Höllen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>infértil</l><r>unfruchtbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infiel</l><r>untreu<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infiltrado</l><r>eingesickert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>infiltrado</l><r>Sicker-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>infiltrado</l><r>Sicker-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>infinito</l><r>endlos<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infinito</l><r>unendlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infinito</l><r>zahllos<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24776,7 +24789,7 @@ veintitodos
    <e><p><l>informal</l><r>informell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>informal</l><r>zwanglos<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>informativo</l><r>informativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>informativo</l><r>Nachrichten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>informativo</l><r>Nachrichten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>infrarrojo</l><r>infrarot<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infrecuente</l><r>selten<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>infructuoso</l><r>fruchtlos<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24797,7 +24810,7 @@ veintitodos
    <e><p><l>inhumano</l><r>unmenschlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inhumano</l><r>inhuman<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inicial</l><r>anfänglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>inicial</l><r>Anfangs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inicial</l><r>Anfangs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>inicial</l><r>initial<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inigualable</l><r>unvergleichlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inimaginable</l><r>unvorstellbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24881,7 +24894,7 @@ veintitodos
    <e><p><l>insostenible</l><r>unhaltbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inspirado</l><r>angeregt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inspirado</l><r>inspiriert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>instantáneo</l><r>Instant-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>instantáneo</l><r>Instant-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>instantáneo</l><r>sofortig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>instantáneo</l><r>augenblicklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>instintivo</l><r>instinktiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24894,7 +24907,7 @@ veintitodos
    <e><p><l>instrumental</l><r>instrumental<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>insuficiente</l><r>mangelhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>insufrible</l><r>unerträglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>insular</l><r>Insel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>insular</l><r>Insel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>insultante</l><r>beleidigend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>insuperable</l><r>unübertreffbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>insurgente</l><r>aufständisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24907,7 +24920,7 @@ veintitodos
    <e><p><l>integral</l><r>ganz<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>integral</l><r>vollständig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>integral</l><r>ganzheitlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>integral</l><r>Vollkorn-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>integral</l><r>Vollkorn-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>íntegro</l><r>ganz<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>íntegro</l><r>integer<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>íntegro</l><r>vollständig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24916,7 +24929,8 @@ veintitodos
    <e><p><l>íntegro</l><r>unbescholten<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>íntegro</l><r>unversehrt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>intelectual</l><r>geistig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>intelectual</l><r>Kopf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>intelectual</l><r>intellektuell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>intelectual</l><r>Kopf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>inteligente</l><r>intelligent<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inteligente</l><r>klug<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>inteligente</l><r>gescheit<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24924,7 +24938,7 @@ veintitodos
    <e><p><l>intencionado</l><r>absichtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>intencional</l><r>absichtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>intensivo</l><r>intensiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>intensivo</l><r>Intensiv-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>intensivo</l><r>Intensiv-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>intensivo</l><r>massiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>intenso</l><r>heftig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>intenso</l><r>stark<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -24932,24 +24946,25 @@ veintitodos
    <e><p><l>interactivo</l><r>interaktiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>interactivo</l><r>wechselwirkend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>intercambiable</l><r>austauschbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>intercontinental</l><r>Interkontinental-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>intercontinental</l><r>interkontinental<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>intercontinental</l><r>Interkontinental-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>interesado</l><r>habgierig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>interesado</l><r>interessiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>interesado</l><r>opportunistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>interesante</l><r>interessant<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>interior</l><r>Innen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>interior</l><r>Innen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>interior</l><r>innere<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>interior</l><r>innerlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>intermediario</l><r>Mittel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>intermediario</l><r>Zwischen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>intermedio</l><r>Zwischen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>intermediario</l><r>Mittel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>intermediario</l><r>Zwischen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>intermedio</l><r>Zwischen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>intermedio</l><r>intermediär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>interminable</l><r>endlos<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>internacional</l><r>international<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>interno</l><r>Innen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>interno</l><r>Innen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>interno</l><r>innere<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>interno</l><r>intern<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>intestinal</l><r>Darm-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>intestinal</l><r>Darm-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>íntimo</l><r>eng<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!--  (Freundschaft, Beziehung) -->
    <e><p><l>íntimo</l><r>innig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>íntimo</l><r>vertraut<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25020,13 +25035,13 @@ veintitodos
    <e><p><l>italiano</l><r>italienisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>iterativo</l><r>iterativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>itinerante</l><r>wandernd<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>itinerante</l><r>Wander-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>itinerante</l><r>Wander-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>izquierdo</l><r>linker<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jabonoso</l><r>seifig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jadeante</l><r>keuchend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jamaicano</l><r>Jamaikanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>japonés</l><r>japanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>jardinero</l><r>Garten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>jardinero</l><r>Garten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>jerárquico</l><r>hierarchisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jeroglífico</l><r>hyroglyphisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jorobado</l><r>buckelig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25034,7 +25049,7 @@ veintitodos
    <e><p><l>jovial</l><r>heiter<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jovial</l><r>humorvoll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jubilado</l><r>pensioniert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>judicial</l><r>Gerichts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>judicial</l><r>Gerichts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>judicial</l><r>gerichtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>judicial</l><r>richterlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>judío</l><r>jüdisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25045,7 +25060,7 @@ veintitodos
    <e><p><l>jurado</l><r>eidesstattlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jurídico</l><r>juristisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>jurídico</l><r>rechtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>jurídico</l><r>Rechts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>jurídico</l><r>Rechts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>justificado</l><r>gerechtfertigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>justificativo</l><r>entschuldigend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>justo</l><r>fair<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25054,7 +25069,7 @@ veintitodos
    <e><p><l>justo</l><r>knapp<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- z.B. Kleider -->
    <e><p><l>justo</l><r>richtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>justo</l><r>zutreffend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>juvenil</l><r>Jugend-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>juvenil</l><r>Jugend-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>juvenil</l><r>jugendlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>laboral</l><r>Arbeits-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>laboral</l><r>Berufs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
@@ -25080,11 +25095,11 @@ veintitodos
    <e><p><l>lanzado</l><r>draufgängerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>lanzado</l><r>tatkräftig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>largo</l><r>lang<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>largo</l><r>Lang-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>largo</l><r>Lang-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>largo</l><r>weit<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- Entfernung -->
    <e><p><l>largo</l><r>lang<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>lateral</l><r>seitlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>lateral</l><r>Seiten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>lateral</l><r>Seiten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>latino</l><r>lateinisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>latinoamericano</l><r>lateinamerikanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>latoso</l><r>langweilig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25097,7 +25112,7 @@ veintitodos
    <e><p><l>leal</l><r>loyal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>leal</l><r>treu<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>leal</l><r>getreu<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>lechero</l><r>Milch-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>lechero</l><r>Milch-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>lechoso</l><r>milchig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>legado</l><r>anvertraut <s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>legal</l><r>gesetzlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25144,10 +25159,9 @@ veintitodos
    <e><p><l>ligero</l><r>leicht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- Gewicht -->
    <e><p><l>limitado</l><r>behindert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- geistig -->
    <e><p><l>limitado</l><r>beschränkt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>limite</l><r>Grenz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>limite</l><r>Grenz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>	<!-- TODO check ES adj? -->
    <e><p><l>limpiador</l><r>reinigend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>limpiador</l><r>Reinigungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>limpio</l><r>sauber<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>limpiador</l><r>Reinigungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>limpio</l><r>sauber<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>limpio</l><r>rein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>lindo</l><r>niedlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25169,7 +25183,7 @@ veintitodos
    <e><p><l>literal</l><r>wörtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>literario</l><r>literarisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>litográfico</l><r>lithographisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>litoral</l><r>Küsten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>litoral</l><r>Küsten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>lituano</l><r>litauisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>litúrgico</l><r>liturgisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>liviano</l><r>leicht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25183,12 +25197,12 @@ veintitodos
    <e><p><l>local</l><r>Lokal-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>local</l><r>Orts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>loco</l><r>verrückt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>locomotriz</l><r>Bewegungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>locomotriz</l><r>Bewegungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>lógico</l><r>logisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>longitudinal</l><r>longitudinal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>longitudinal</l><r>Längs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>longitudinal</l><r>Längs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>lubrificante</l><r>Schmier-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
-   <e><p><l>luchador</l><r>Kampf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>luchador</l><r>Kampf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>luchador</l><r>kämpferisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>lúcido</l><r>klar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>lúcido</l><r>deutlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25204,7 +25218,7 @@ veintitodos
    <e><p><l>luminoso</l><r>leuchtend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>luminoso</l><r>hell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>luminoso</l><r>licht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>lunar</l><r>Mond-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>lunar</l><r>Mond-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>lunático</l><r>mondsüchtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>lustroso</l><r>glänzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>luterano</l><r>lutheranisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25217,14 +25231,16 @@ veintitodos
    <e><p><l>macho</l><r>männlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>machote</l><r>sehr männlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>macizo</l><r>massiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>macroeconómico</l><r>makroökonomisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>macroeconómico</l><r>volkswirtschaftlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>macroscópico</l><r>makroskopisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>madre</l><r>Mutter-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>madre</l><r>Mutter-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>madre</l><r>toll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>maestral</l><r>Meister-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>maestral</l><r>Meister-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>maestral</l><r>meisterlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>maestro</l><r>Meister-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>maestro</l><r>Meister-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>mágico</l><r>magisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mágico</l><r>Zauber-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mágico</l><r>Zauber-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>magnético</l><r>magnetisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>magrebí</l><r>maghrebinisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>magro</l><r>mager<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25282,7 +25298,7 @@ veintitodos
    <e><p><l>manso</l><r>weich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>manso</l><r>sanft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mantecoso</l><r>fettig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>manual</l><r>Hand-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>manual</l><r>Hand-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>manual</l><r>manuell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>manuscrito</l><r>handschriftlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>maravilloso</l><r>wunderbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25291,27 +25307,26 @@ veintitodos
    <e><p><l>marchito</l><r>verwelkt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>marchoso</l><r>umtriebig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>marchoso</l><r>feierwütig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marcial</l><r>Kampf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marciano</l><r>Mars-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>marcial</l><r>Kampf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>marciano</l><r>Mars-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>marginado</l><r>ausgegrenzt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marginal</l><r>Neben-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>marginal</l><r>Neben-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>marginal</l><r>nebensächlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marginal</l><r>Rand-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>marginal</l><r>Rand-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>maricón</l><r>schwul<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>marina</l><r>Seefahrts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>marina</l><r>Schiffs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
-   <e><p><l>marinero</l><r>See-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marinero</l><r>Meer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marinero</l><r>Meeres-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marino</l><r>See-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marino</l><r>Seemanns-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marino</l><r>Matrosen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mariscar</l><r>Meeresfrüchte ernten<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marital</l><r>Ehe-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>marinero</l><r>See-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>marinero</l><r>Meer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>	<!-- TODO check Fugen S -->
+   <e><p><l>marinero</l><r>Meeres-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>marino</l><r>See-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>marino</l><r>Seemanns-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>marino</l><r>Matrosen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>marital</l><r>Ehe-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>marital</l><r>ehelich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>marítimo</l><r>maritim<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marítimo</l><r>Meer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>marítimo</l><r>See-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>marítimo</l><r>Meer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>marítimo</l><r>See-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>marroquí</l><r>marokkanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>masculino</l><r>maskulin<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>masculino</l><r>männlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25319,19 +25334,19 @@ veintitodos
    <e><p><l>masoquista</l><r>masochistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>matador</l><r>tödlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>matador</l><r>schrecklich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>maternal</l><r>Mutter-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>maternal</l><r>Mutter-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>maternal</l><r>mütterlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>materno</l><r>mütterlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>materno</l><r>mütterlicherseits<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>materno</l><r>mütterlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>matriculado</l><r>eingeschrieben<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>matrimonial</l><r>ehelich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>matrimonial</l><r>Ehe-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>matrimonial</l><r>Ehe-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>máximo</l><r>maximal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mayor</l><r>groß<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mayor</l><r>groß<s n="grad"/>Comp<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mayor</l><r>erwachsen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mayor</l><r>Haupt-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mayor</l><r>Haupt-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>mayor</l><r>hauptsächlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mayor de edad</l><r>volljährig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mayúsculo</l><r>groß<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25345,7 +25360,7 @@ veintitodos
    <e><p><l>mediano</l><r>mittlerer<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mediano</l><r>mittelgroß<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>medicinal</l><r>medizinisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>medicinal</l><r>Heil-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>medicinal</l><r>Heil-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>médico</l><r>ärztlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>medieval</l><r>mittelalterlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mediocre</l><r>mittelmäßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25353,14 +25368,14 @@ veintitodos
    <e><p><l>medio</l><r>halb<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <!-- <e><p><l>medio</l><r>mittle<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> mittlere ? -->
    <e><p><l>meditativo</l><r>meditativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mediterráneo</l><r>Mittelmeer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mediterráneo</l><r>Mittelmeer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>megalómano</l><r>größenwahnsinnig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mejicano</l><r>Mexikanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mejicano</l><r>mexikanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mejorable</l><r>verbesserungsfähig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mejor</l><r>besser<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>melancólico</l><r>melancholisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>melenudo</l><r>langhaarig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mellizo</l><r>Zwillings-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mellizo</l><r>Zwillings-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>melódico</l><r>melodisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>melodioso</l><r>melodisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>melodramático</l><r>melodramatisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25373,14 +25388,14 @@ veintitodos
    <e><p><l>menor</l><r>klein<s n="grad"/>Comp<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>menor</l><r>klein<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>mensual</l><r>monatlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mensual</l><r>Monats-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mensual</l><r>Monats-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>mental</l><r>geistig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mentiroso</l><r>lügnerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mentiroso</l><r>verlogen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>menudo</l><r>unbedeutend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>menudo</l><r>winzig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>meón</l><r>pinkelnd<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- [ugs.] -->
-   <e><p><l>mercante</l><r>Handels-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mercante</l><r>Handels-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>merecido</l><r>verdient<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>merecido</l><r>wohlverdient<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>meridional</l><r>mittäglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25389,13 +25404,13 @@ veintitodos
    <e><p><l>mero</l><r>rein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mesurado</l><r>gemäßigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mesurado</l><r>maßvoll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>metabólico</l><r>Stoffwechsel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>metabólico</l><r>Stoffwechsel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>metafísico</l><r>metaphysisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>metafórico</l><r>metaphorisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>metafórico</l><r>bildlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>metafórico</l><r>im übertragenen Sinn<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>metalúrgico</l><r>metallurgisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>metalúrgico</l><r>Hütten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>metalúrgico</l><r>Hütten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>metamórfico</l><r>metamorph<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>meteorológico</l><r>meteorologisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>metiche</l><r>aufdringlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25413,8 +25428,8 @@ veintitodos
    <e><p><l>microscópico</l><r>mikroskopisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>miedoso</l><r>ängstlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>miedoso</l><r>furchtsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>migratorio</l><r>Wander-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>milagroso</l><r>Wunder-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>migratorio</l><r>Wander-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>milagroso</l><r>Wunder-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>milagroso</l><r>wunderbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>milagroso</l><r>wundersam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>milagroso</l><r>wundertätig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25423,18 +25438,19 @@ veintitodos
    <e><p><l>milésimo</l><r>tausendst<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>milimétrico</l><r>millimeterklein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>militante</l><r>militant<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>militar</l><r>Militär-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>militar</l><r>Militär-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>militar</l><r>militärisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>millonario</l><r>Millionen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>millonario</l><r>Millionen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>mimado</l><r>verwöhnt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mimado</l><r>behätschelt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mímico</l><r>mimisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mineral</l><r>mineralisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mineral</l><r>Mineral-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mineral</l><r>Mineral-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>mínimo</l><r>minimal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>mínimo</l><r>Mindest-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>minoritario</l><r>Minderheiten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>minoritario</l><r>Minoritäts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mínimo</l><r>Mindest-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>minoritario</l><r>Minderheiten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>minoritario</l><r>minoritär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>minoritario</l><r>Minoritäts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>minucioso</l><r>minutiös<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>minucioso</l><r>penibel<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>minucioso</l><r>gründlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25453,7 +25469,8 @@ veintitodos
    <e><p><l>mísero</l><r>ärmlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mísero</l><r>armsehnlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mísero</l><r>elend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>misionero</l><r>Missions-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>misionero</l><r>missionarisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>misionero</l><r>Missions-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>mismísimo</l><r>selbst<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mismísimo</l><r>genau<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mismo</l><r>genau<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25471,7 +25488,8 @@ veintitodos
    <e><p><l>mixto</l><r>vermischt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mocoso</l><r>schleimig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>modal</l><r>modal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>modelo</l><r>Modell-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>modelo</l><r>modellartig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>modelo</l><r>Modell-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>moderado</l><r>gemäßigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>moderado</l><r>mäßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>moderado</l><r>moderat<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25486,11 +25504,11 @@ veintitodos
    <e><p><l>mojigato</l><r>heuchlerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mojigato</l><r>scheinheilig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mojigato</l><r>bigott<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>molecular</l><r>Molekular-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>molecular</l><r>Molekular-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>momentáneo</l><r>momentan<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>monárquico</l><r>monarchistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>monetario</l><r>Geld-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>monetario</l><r>Währungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>monetario</l><r>Geld-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>monetario</l><r>Währungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>mono</l><r>blond<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- Colombia -->
    <e><p><l>monógamo</l><r>monogam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mono</l><r>nett<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25503,14 +25521,14 @@ veintitodos
    <e><p><l>monstruoso</l><r>unnatürlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>montado</l><r>aufsitzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>montado</l><r>aufgestiegen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!--  (Pferd, Motorrad etc.) -->
-   <e><p><l>montañés</l><r>Gebirgs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>montañés</l><r>Berg-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>montañés</l><r>Gebirgs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>montañés</l><r>Berg-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>montañoso</l><r>gebirgig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>montañoso</l><r>bergig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>montés</l><r>wild<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>moral</l><r>moralisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>moral</l><r>sittlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>moratorio</l><r>Verzugs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>moratorio</l><r>Verzugs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>morboso</l><r>krankhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>morboso</l><r>pervers<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mordaz</l><r>ätzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25544,13 +25562,13 @@ veintitodos
    <e><p><l>mugriento</l><r>schmutzig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>multiple</l><r>mehrfach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>múltiple</l><r>mehrfach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>múltiple</l><r>Mehrfach-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>múltiple</l><r>Mehrfach-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>mundano</l><r>mondän<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mundial</l><r>weltweit<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>musculoso</l><r>muskulös<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>musgo</l><r>olivgrün<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>musgosa</l><r>moosig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>musical</l><r>Musik-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>musical</l><r>Musik-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>musical</l><r>musikalisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>musulmán</l><r>muslimisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mutilado</l><r>verstümmelt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25565,22 +25583,22 @@ veintitodos
    <!-- e><p><l>nariz respingada</l><r>Spitznase<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e-->
    <e><p><l>narrativo</l><r>erzählend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>narrativo</l><r>narrativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>nasal</l><r>Nasen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>natal</l><r>Geburts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nasal</l><r>Nasen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>natal</l><r>Geburts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>nativo</l><r>angeboren<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nativo</l><r>eingeboren<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>natural</l><r>natürlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>natural</l><r>unehelich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>natural de</l><r>gebürtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nauseabundo</l><r>übelkeitserregenderregend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>náutico</l><r>Seefahrts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>naval</l><r>Marine-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>naval</l><r>Schiffs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>naval</l><r>See-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>náutico</l><r>Seefahrts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>naval</l><r>Marine-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>naval</l><r>Schiffs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>naval</l><r>See-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>navarro</l><r>aus Navarra<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>navegable</l><r>schiffbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>navideño</l><r>weihnachtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>nazi</l><r>Nazi-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nazi</l><r>Nazi-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>nazi</l><r>nazistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nebuloso</l><r>neblig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nebuloso</l><r>nebulös <s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25602,7 +25620,7 @@ veintitodos
    <e><p><l>negro</l><r>düster<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nervioso</l><r>nervös<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nervoso</l><r>sehnig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>neto</l><r>Netto-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>neto</l><r>Netto-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>neto</l><r>rein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>neto</l><r>sauber<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>neurótico</l><r>neurotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25618,7 +25636,9 @@ veintitodos
    <e><p><l>noble</l><r>uneigennützig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>noble</l><r>vornehm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nocivo</l><r>schädlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>nocturno</l><r>Nacht-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nocturno</l><r>nachtaktiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nocturno</l><r>nächtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nocturno</l><r>Nacht-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>nómada</l><r>nomadisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nómade</l><r>nomadisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ñoño</l><r>albern<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25641,21 +25661,21 @@ veintitodos
    <e><p><l>notorio</l><r>offenkundig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>novedoso</l><r>neuartig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>novedoso</l><r>neugierig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>nuclear</l><r>Atom-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>nuclear</l><r>Kern-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nuclear</l><r>Atom-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>nuclear</l><r>Kern-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>nuclear</l><r>nuklear<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>nudista</l><r>FKK-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nudista</l><r>FKK-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>nudoso</l><r>astig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nudoso</l><r>knotig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nuevo</l><r>neu<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nulo</l><r>nichtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nulo</l><r>ungültig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>numeral</l><r>Zahl-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>numeral</l><r>Zahl-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>numérico</l><r>numerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>numérico</l><r>Zahlen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>numérico</l><r>Zahlen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>numeroso</l><r>kinderreich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>numeroso</l><r>zahlreich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>nupcial</l><r>Hochzeits-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nupcial</l><r>Hochzeits-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>nutrido</l><r>genährt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>nutritivo</l><r>nahrhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>obediente</l><r>gehorsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25668,7 +25688,7 @@ veintitodos
    <e><p><l>obligado</l><r>genötigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>obligado</l><r>gezwungen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>obligatorio</l><r>obligatorisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>obligatorio</l><r>Pflicht-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>obligatorio</l><r>Pflicht-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>obligatorio</l><r>verbindlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>obligatorio</l><r>obligatorisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oblongo</l><r>länglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25686,11 +25706,11 @@ veintitodos
    <e><p><l>obvio</l><r>offensichtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ocasional</l><r>gelegentlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ocasional</l><r>zufällig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>occidental</l><r>West-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>occidental</l><r>West-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>occidental</l><r>westlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ocioso</l><r>müßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ocioso</l><r>untätig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ocular</l><r>Augen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ocular</l><r>Augen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>oculto</l><r>geheim<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oculto</l><r>verborgen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ocupado</l><r>beschäftigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25701,20 +25721,20 @@ veintitodos
    <e><p><l>odioso</l><r>verhasst<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ofendido</l><r>beleidigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ofendido</l><r>gekränkt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ofensivo</l><r>Angriffs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ofensivo</l><r>Angriffs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ofensivo</l><r>angriffslustig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ofensivo</l><r>beleidigend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ofensivo</l><r>verletzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ofensivo</l><r>offensiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oficial</l><r>amtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oficial</l><r>behördlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>oficial</l><r>Amts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>oficial</l><r>Dienst-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>oficial</l><r>Amts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>oficial</l><r>Dienst-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>oficial</l><r>dienstlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oficial</l><r>offiziell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oficioso</l><r>geschäftig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ojeroso</l><r>mit Ringen unter den Augen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>olfatorio</l><r>Geruchs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>olfatorio</l><r>Geruchs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>olímpico</l><r>olympisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oloroso</l><r>wohlriechend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>olvidadizo</l><r>vergesslich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25743,16 +25763,16 @@ veintitodos
    <e><p><l>opresor</l><r>unterdrückerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>optativo</l><r>optativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>optativo</l><r>wählbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>optativo</l><r>Wahl-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>optativo</l><r>Wahl-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>óptico</l><r>optisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>óptico</l><r>Seh-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>óptico</l><r>Seh-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>optimista</l><r>optimistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>optimista</l><r>optimistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>optimista</l><r>zuversichtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>óptimo</l><r>beste<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>óptimo</l><r>optimal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>óptimo</l><r>ausgezeichnet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>opuesto</l><r>Gegen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>opuesto</l><r>Gegen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>opuesto</l><r>gegensätzlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>opuesto</l><r>gegenüberliegend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>opulento</l><r>ausgiebig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25765,12 +25785,12 @@ veintitodos
    <e><p><l>ordenado</l><r>geordnet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ordenado</l><r>ordentlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ordenado</l><r>sortiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ordinal</l><r>Ordnungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ordinal</l><r>Ordnungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ordinario</l><r>gemein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ordinario</l><r>gewöhnlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ordinario</l><r>ordinär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>orejón</l><r>mit großen Ohren<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>orgánico</l><r>Organ-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>orgánico</l><r>Organ-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>orgánico</l><r>organisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>organizado</l><r>organisiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>organizador</l><r>organisierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25780,11 +25800,11 @@ veintitodos
    <e><p><l>orgulloso</l><r>stolz<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>orientador</l><r>richtungsweisend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oriental</l><r>orientalisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>oriental</l><r>Ost-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>oriental</l><r>Ost-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>oriental</l><r>östlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>original</l><r>echt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>original</l><r>original<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>original</l><r>Original-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>original</l><r>Original-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>original</l><r>originell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>originario</l><r>gebürtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ortodoxo</l><r>orthodox<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25797,7 +25817,7 @@ veintitodos
    <e><p><l>oscuro</l><r>obskur<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oscuro</l><r>unbekannt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oscuro</l><r>unklar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>óseo</l><r>Knochen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>óseo</l><r>Knochen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ostensible</l><r>offensichtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ostensible</l><r>auffällig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ostentoso</l><r>auffällig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25813,9 +25833,9 @@ veintitodos
    <e><p><l>otro</l><r>weiterer<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>otro</l><r>weiteres<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ovalado</l><r>oval<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ovejero</l><r>Schaf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ovejero</l><r>Schafs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ovejero</l><r>Schäfer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ovejero</l><r>Schaf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>	<!-- TODO check Fugen S -->
+   <e><p><l>ovejero</l><r>Schafs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>ovejero</l><r>Schäfer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>oxidado</l><r>rostig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>oxidado</l><r>oxidiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>paciente</l><r>geduldig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25828,7 +25848,7 @@ veintitodos
    <e><p><l>pálido</l><r>blass<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pálido</l><r>bleich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pánico</l><r>panisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>panorámico</l><r>Panorama-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>panorámico</l><r>Panorama-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>pantanoso</l><r>sumpfig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>panzón</l><r>dickbäuchig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>parabólico</l><r>parabolisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25851,12 +25871,12 @@ veintitodos
    <e><p><l>parejo</l><r>gleichmäßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pariente</l><r>verwandt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>parlamentario</l><r>parlamentarisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>parlamentario</l><r>Parlaments-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>parlamentario</l><r>Parlaments-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>participante</l><r>teilnehmend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>particular</l><r>besonderer<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>particular</l><r>eigentümlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>particular</l><r>privat<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>particular</l><r>Privat-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>particular</l><r>Privat-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>parvo</l><r>klein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>parvo</l><r>gering<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pasable</l><r>passabel<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25928,7 +25948,7 @@ veintitodos
    <e><p><l>peludo</l><r>haarig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>peludo</l><r>pelzig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>penado</l><r>bestraft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>penal</l><r>Straf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>penal</l><r>Straf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>peñascoso</l><r>felsig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pendiente</l><r>ausstehend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pendiente</l><r>unerledigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -25960,14 +25980,14 @@ veintitodos
    <e><p><l>perceptible</l><r>erkennbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>perceptible</l><r>wahrnehmbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>perceptible</l><r>spürbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>perceptivo</l><r>Wahrnehmungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>perdedor</l><r>Verlierer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>perceptivo</l><r>Wahrnehmungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>perdedor</l><r>Verlierer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>perdedor</l><r>verlierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>perdido</l><r>verirrt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>perdido</l><r>verloren<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>perdonable</l><r>verzeihlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>perdurable</l><r>dauerhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>peregrino</l><r>Pilger-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>peregrino</l><r>Pilger-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>peregrino</l><r>seltsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>perenne</l><r>andauernd<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>perenne</l><r>dauerhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26092,9 +26112,9 @@ veintitodos
    <e><p><l>plácido</l><r>ruhig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>plagado</l><r>geplagt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>plagado</l><r>verseucht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>plaguicida</l><r>Pestizid-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>plaguicida</l><r>Pestizid-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>planchado</l><r>gebügelt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>planetario</l><r>Planeten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>planetario</l><r>Planeten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>plano</l><r>eben<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>plano</l><r>glatt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>plano</l><r>flach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26113,12 +26133,12 @@ veintitodos
    <e><p><l>plegable</l><r>klappbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>plegado</l><r>gefaltet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pleno</l><r>voll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>pleno</l><r>Voll-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>pleno</l><r>Voll-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>pleno</l><r>völlig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>plomizo</l><r>bleigrau<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>plumosa</l><r>flaumig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>plumoso</l><r>federig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>pluvial</l><r>Regen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>pluvial</l><r>Regen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>pobre</l><r>karg<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pocho</l><r>verfault<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>poco</l><r>wenig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26128,9 +26148,9 @@ veintitodos
    <e><p><l>podrido</l><r>morsch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>podrido</l><r>verdorben<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>poético</l><r>poetisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>poético</l><r>Dichter-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>poético</l><r>Dichter-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>polaco</l><r>polnisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>polar</l><r>Pol-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>polar</l><r>Pol-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>polar</l><r>polar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polarizado</l><r>getönt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- Glas -->
    <e><p><l>polarizado</l><r>polarisiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- TODO negated adjectives: no polarizado = unpolarisiert -->
@@ -26139,7 +26159,7 @@ veintitodos
    <e><p><l>policíaco</l><r>polizeilich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polígloto</l><r>mehrsprachig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polígloto</l><r>polyglott<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>político</l><r>Schwieger-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>político</l><r>Schwieger-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>político</l><r>politisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polvoriento</l><r>staubig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polvoroso</l><r>staubig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26156,13 +26176,13 @@ veintitodos
    <e><p><l>poroso</l><r>durchlässig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>portátil</l><r>tragbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>porteño</l><r>aus einer Hafenstadt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>portuario</l><r>Hafen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>portuario</l><r>Hafen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>portugués</l><r>portugiesisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>poseído de</l><r>besessen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>posesivo</l><r>possessiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>posesivo</l><r>besitzergreifend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>posible</l><r>möglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>postal</l><r>Post-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>postal</l><r>Post-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>postal</l><r>postalisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>posterior</l><r>hinter<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>posterior</l><r>nachträglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26186,13 +26206,13 @@ veintitodos
    <e><p><l>práctico</l><r>praxisnah<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pragmático</l><r>nüchtern<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pragmático</l><r>pragmatisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>prebélico</l><r>Vorkriegs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>prebélico</l><r>Vorkriegs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>prebélico</l><r>vor dem Krieg<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precario</l><r>heikel<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precario</l><r>prekär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precario</l><r>unsicher<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precautorio</l><r>vorbeugend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>precautorio</l><r>Vorsichts-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>precautorio</l><r>Vorsichts-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>precavido</l><r>behutsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precavido</l><r>vorsichtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precedente</l><r>vorangehend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26216,16 +26236,16 @@ veintitodos
    <e><p><l>preciso</l><r>exakt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precoz</l><r>frühreif<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precoz</l><r>frühzeitig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>precursor</l><r>Vorläufer-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>precursor</l><r>Pionier-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>precursor</l><r>Vorläufer-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>precursor</l><r>Pionier-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>predestinado</l><r>bestimmt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>predilecto</l><r>bevorzugt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>predilecto</l><r>Lieblings-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>predilecto</l><r>Lieblings-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>predominante</l><r>vorwiegend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>predominante</l><r>vorherrschend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>prefabricado</l><r>vorgefertigt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>preferible</l><r>bevorzugt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>preferido</l><r>Lieblings-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>preferido</l><r>Lieblings-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>prehistórico</l><r>prähistorisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>prehistórico</l><r>uralt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>preliminar</l><r>vorläufig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26251,7 +26271,7 @@ veintitodos
    <e><p><l>presente</l><r>gegenwärtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>presente</l><r>vorhanden<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>preservativo</l><r>schützend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>presidencial</l><r>Präsidenten-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>presidencial</l><r>Präsidenten-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>presidencial</l><r>präsidial<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>preso</l><r>gefangen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>prestado</l><r>geliehen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26271,26 +26291,26 @@ veintitodos
    <e><p><l>prevaleciente</l><r>vorherrschend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>preventivo</l><r>vorbeugend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>preventivo</l><r>präventiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>previo</l><r>Vor-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>previo</l><r>Vor-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>previo</l><r>vorherig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>previo</l><r>vorig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>previsible</l><r>absehbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>previsible</l><r>vorhersehbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>previsto</l><r>vorgesehen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>primario</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>primario</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>primario</l><r>primär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>primerizo</l><r>erster<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>primero</l><r>erster<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>primitivo</l><r>einfach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>primitivo</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>primitivo</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>primitivo</l><r>primitiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>primitivo</l><r>Stamm-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>primitivo</l><r>Ur-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>primitivo</l><r>Stamm-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>primitivo</l><r>Ur-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>primordial</l><r>erstrangig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>primordial</l><r>grundlegend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>primordial</l><r>ursprünglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>principal</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>principal</l><r>Haupt-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>principal</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>principal</l><r>Haupt-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>principal</l><r>hauptsächlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pringado</l><r>dreckig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pringado</l><r>schmutzig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26298,7 +26318,7 @@ veintitodos
    <e><p><l>privado</l><r>beraubt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>privado</l><r>persönlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>privado</l><r>privat<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>privado</l><r>Privat-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>privado</l><r>Privat-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>privado</l><r>vertraulich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>privilegiado</l><r>bevorzugt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>privilegiado</l><r>privilegiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26319,7 +26339,7 @@ veintitodos
    <e><p><l>profano</l><r>weltlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>profano</l><r>profan<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>profesional</l><r>beruflich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>profesional</l><r>Berufs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>profesional</l><r>Berufs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>profesional</l><r>fachmännisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>profesional</l><r>gewerblich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>profesional</l><r>professionell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26380,7 +26400,7 @@ veintitodos
    <e><p><l>próspero</l><r>reich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>próspero</l><r>wohlhabend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>protector</l><r>schützend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>protector</l><r>Schutz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>protector</l><r>Schutz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>protegido</l><r>beschützt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>protegido</l><r>geschützt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>protestante</l><r>protestantisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26395,7 +26415,7 @@ veintitodos
    <e><p><l>proverbial</l><r>sprichwörtlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>providente</l><r>umsichtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>provincial</l><r>provinziell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>provincial</l><r>Provinz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>provincial</l><r>Provinz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>provinciano</l><r>provinzlerisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>provisional</l><r>provisorisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>provisional</l><r>vorläufig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26415,11 +26435,11 @@ veintitodos
    <e><p><l>psicológico</l><r>psychologisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>psicopático</l><r>psychopathisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>psiquiátrico</l><r>psychiatrisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>psiquiátrico</l><r>Psychiatrie-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>psiquiátrico</l><r>Psychiatrie-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>psíquico</l><r>psychisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>psíquico</l><r>seelisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>publicitario</l><r>Werbe-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>publicitario</l><r>Reklame-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>publicitario</l><r>Werbe-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>publicitario</l><r>Reklame-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>público</l><r>gemein<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>público</l><r>öffentlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>pudibundo</l><r>prüde<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26470,7 +26490,7 @@ veintitodos
    <e><p><l>rabioso</l><r>tollwütig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rabioso</l><r>wütend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>racial</l><r>ethnisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>racial</l><r>Rassen-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>racial</l><r>Rassen-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>racional</l><r>rational<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>racional</l><r>vernünftig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>racional</l><r>zweckmäßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26481,12 +26501,10 @@ veintitodos
    <e><p><l>radial</l><r>strahlenförmig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>radiante</l><r>glänzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>radiante</l><r>strahlend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>radical</l><r>Grund-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>radical</l><r>radikal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>radical</l><r>gründlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>radical</l><r>radikal<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>radical</l><r>Stamm-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
-   <e><p><l>radical</l><r>Wurzel-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>radical</l><r>Wurzel-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>radioactivo</l><r>radioaktiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>raído</l><r>abgeschabt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rancio</l><r>altmodisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26494,7 +26512,7 @@ veintitodos
    <e><p><l>rancio</l><r>uralt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rapado</l><r>kahlgeschoren<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rapaz</l><r>räuberisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>rapaz</l><r>Raub-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>rapaz</l><r>Raub-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>rápido</l><r>rasch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rápido</l><r>schnell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>raquítico</l><r>rachitisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26532,7 +26550,7 @@ veintitodos
    <e><p><l>reactivo</l><r>reagierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>reactivo</l><r>reaktiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>real</l><r>königlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>real</l><r>Königs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>real</l><r>Königs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>real</l><r>real<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>real</l><r>reell<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>	<!-- Zahlen -->
    <e><p><l>real</l><r>tatsächlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26609,7 +26627,7 @@ veintitodos
    <e><p><l>reducido</l><r>verringert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>redundante</l><r>redundant<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>reemplazante</l><r>ersetzend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>reemplazante</l><r>Ersatz-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>reemplazante</l><r>Ersatz-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>reemplazante</l><r>vertretend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>referente</l><r>betreffend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>referente</l><r>bezogen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26673,9 +26691,9 @@ veintitodos
    <e><p><l>religioso</l><r>gläubig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>religioso</l><r>fromm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>religioso</l><r>religiös<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>religioso</l><r>Ordens-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>religioso</l><r>Ordens-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>religioso</l><r>religiös<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>religioso</l><r>Religions-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>religioso</l><r>Religions-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>relleno</l><r>gefüllt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>relleno</l><r>voll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>remarcable</l><r>bemerkenswert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26687,7 +26705,7 @@ veintitodos
    <e><p><l>remoto</l><r>fern<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>remoto</l><r>entlegen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>remoto</l><r>weit entfernt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>renal</l><r>Nieren-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>renal</l><r>Nieren-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>rencoroso</l><r>nachtragend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rencoroso</l><r>rachsüchtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rendido</l><r>ausgeliefert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26718,8 +26736,8 @@ veintitodos
    <e><p><l>representativo</l><r>repräsentativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>representativo</l><r>wichtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>represivo</l><r>repressiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>represivo</l><r>Unterdrückungs-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>represivo</l><r>Straf-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>represivo</l><r>Unterdrückungs-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>represivo</l><r>Straf-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>republicano</l><r>republikanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>repugnante</l><r>ekelhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>repugnante</l><r>widerlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26748,10 +26766,10 @@ veintitodos
    <e><p><l>reservado</l><r>geheim<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>reservado</l><r>zurückhaltend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>resfriado</l><r>erkältet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>residencial</l><r>Wohn-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>residencial</l><r>Wohn-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>residente</l><r>wohnhaft<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>residual</l><r>Abfall<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>residual</l><r>Rest-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>residual</l><r>Abfall-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>residual</l><r>Rest-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>residual</l><r>übrig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>residual</l><r>übrigbleibend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>resignado</l><r>resigniert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26783,8 +26801,8 @@ veintitodos
    <e><p><l>respetuosa</l><r>rücksichtsvoll<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>respingón</l><r>bockig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>respingón</l><r>rebellisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>respiratorio</l><r>Atem-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>restante</l><r>Rest-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>respiratorio</l><r>Atem-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>restante</l><r>Rest-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>restante</l><r>restlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>restante</l><r>übrigbleibend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>restante</l><r>übrig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26829,7 +26847,7 @@ veintitodos
    <e><p><l>reverendo</l><r>ehrwürdig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>reversible</l><r>reversibel<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>reversible</l><r>umdrehbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>reversible</l><r>Umkehr-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>reversible</l><r>Umkehr-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>revestida</l><r>bekleidet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>revestida</l><r>umwickelt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>revestido</l><r>überzogen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26854,7 +26872,7 @@ veintitodos
    <e><p><l>revuelto</l><r>drunter und drüber<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>revuelto</l><r>umgerührt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>revuelto</l><r>durchgerührt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>revuelto</l><r>Rühr-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>revuelto</l><r>Rühr-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>revuelto</l><r>wirr<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>revuelto</l><r>verworren<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rezador</l><r>fromm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26916,7 +26934,7 @@ veintitodos
    <e><p><l>rosado</l><r>rosa<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rosado</l><r>rosarot<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rosillo</l><r>hellrot<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>rotativo</l><r>Dreh-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>rotativo</l><r>Dreh-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>rotativo</l><r>drehbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rotatorio</l><r>drehbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rotatorio</l><r>drehend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26969,7 +26987,7 @@ veintitodos
    <e><p><l>rumboso</l><r>prächtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rumoroso</l><r>lärmend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rural</l><r>ländlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>rural</l><r>Land-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>rural</l><r>Land-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ruso</l><r>russisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rústico</l><r>einfach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rústico</l><r>derb<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26978,9 +26996,9 @@ veintitodos
    <e><p><l>rustico</l><r>ländlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rustico</l><r>dörflich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>rutinario</l><r>gewohnheitsmäßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>rutinario</l><r>Gewohntheits-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>rutinario</l><r>Gewohntheits-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>rutinario</l><r>routinemäßig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>rutinario</l><r>Routine-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>rutinario</l><r>Routine-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>rutinario</l><r>routiniert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>sagrado</l><r>heilig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>salado</l><r>salzig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -26996,7 +27014,7 @@ veintitodos
    <e><p><l>sencillo</l><r>einfach<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>sencillo</l><r>schlicht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>sencillo</l><r>unkompliziert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>sentimental</l><r>Gefühls-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sentimental</l><r>Gefühls-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>sentimental</l><r>sentimental<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>separado</l><r>getrennt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>serbio</l><r>serbisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -27086,10 +27104,10 @@ veintitodos
    <e><p><l>vasco</l><r>baskisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vecino</l><r>benachbart<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>venezolano</l><r>venezolanisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>ventral</l><r>Bauch-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ventral</l><r>Bauch-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>ventrudo</l><r>dickbäuchig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>veterinario</l><r>tierärztlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>veterinario</l><r>Veterinär-<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>veterinario</l><r>Veterinär-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>viejo</l><r>alt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>viril</l><r>männlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>viril</l><r>viril<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -27199,6 +27217,7 @@ aún_cuando	RG-->
    <e><p><l>encima</l><r>oben</r></p><par n='RG_ADV'/></e> 
    <e><p><l>entonces</l><r>damals</r></p><par n='RG_ADV'/></e> <!-- dann, da, alsdann, in diesem Fall -->
    <e><p><l>fuera</l><r>draussen</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>hacer_poco</l><r>kürzlich</r></p><par n='RG_ADV'/></e>
    <e><p><l>hasta</l><r>sogar</r></p><par n='RG_ADV'/></e> 
    <e><p><l>hoy</l><r>heute</r></p><par n='RG_ADV'/></e>
    <e><p><l>hoy_en_día</l><r>heutzutage</r></p><par n='RG_ADV'/></e>
@@ -28083,6 +28102,7 @@ gracias_a
    <e><p><l>lo<s n="parol"/>PP3MSA00</l><r>er<s n="pos"/>PPER<s n="mi"/>3.Sg.Masc<s n="cas"/>Akk</r></p></e>	<!-- lo = ihn/ihm -->
    <e><p><l>lo<s n="parol"/>PP3CNA00</l><r>es<s n="pos"/>PPER<s n="mi"/>3.Sg.Neut<s n="cas"/>Akk</r></p></e>	<!-- lo = es/ihm -->
    <e><p><l>lo<s n="parol"/>PP3MPA00</l><r>sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*<s n="cas"/>Akk</r></p></e>	<!-- los = sie/ihnen -->
+   <e><p><l>los<s n="parol"/>PP3MPA00</l><r>sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*<s n="cas"/>Akk</r></p></e>	<!-- los = sie/ihnen ; TODO lemma after split from non-finite verb form -->
    <e><p><l>le<s n="parol"/>PP30SD00</l><r>er<s n="pos"/>PPER<s n="mi"/>3.Sg.Masc<s n="cas"/>Dat</r></p></e>	<!-- le = ihm/ihr (/ihn/sie/es); Obl or Dat? 3.Sg.Masc/Fem/Neut-->
    <e><p><l>le<s n="parol"/>PP3CSD00</l><r>er<s n="pos"/>PPER<s n="mi"/>3.Sg.Masc<s n="cas"/>Dat</r></p></e>	<!-- le = ihm/ihr (/ihn/sie/es); Obl or Dat? 3.Sg.Masc/Fem/Neut-->
    <e><p><l>le<s n="parol"/>PP3CPD00</l><r>sie<s n="pos"/>PPER<s n="mi"/>3.Pl.*<s n="cas"/>Dat</r></p></e>	<!-- les = ihnen (/sie) -->
