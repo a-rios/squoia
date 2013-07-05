@@ -2,7 +2,7 @@
 # MATXIN_DIR=/opt/matxin/local/
 export ESDE_DIR="/home/clsquoia/de_squoia/MT_systems/esde"
 export ESDE_DICT="$ESDE_DIR/lexica/es-de"
-export ESDE_CHUNKTYPE="$ESDE_DIR/grammar/chunktype_es-de.cfg"
+export ESDE_CHUNKTYPE="$ESDE_DIR/grammar/mapchunktype_es-de.cfg"
 export FREELING_CONFIG="/home/clsquoia/de_squoia/FreeLingModules/FL_es_desr.cfg"
 export FREELING_PARAM="-f $FREELING_CONFIG"
 
@@ -69,7 +69,8 @@ fi
 
 perl -I$SQUOIAMATXIN -I$ESDEMATXIN $SQUOIAMATXIN/myoutputOrderChunk.pl < $TESTOUTPUT.xml 2>> ./junk > $TESTOUTPUT.stts
 
-flookup /home/clppmolif/molifde-anne2/fst/SttsGeneratorTool.fst < $TESTOUTPUT.stts > $TESTOUTPUT.fstout
+MOLIFDE=/home/clmolif/molifde
+flookup $MOLIFDE/fst/SttsGeneratorTool.fst < $TESTOUTPUT.stts > $TESTOUTPUT.fstout
 
 perl -I$SQUOIAMATXIN $ESDEMATXIN/cleanFstOutput.pl < $TESTOUTPUT.fstout > $TESTOUTPUT.gen
 cat $TESTOUTPUT.gen
