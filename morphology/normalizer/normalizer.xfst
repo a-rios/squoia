@@ -183,7 +183,7 @@
        #--------------------------------------------------------------------------------------------------------------------------#
        # -mu translocative --> as -m only before pu (might otherwise be confused wth -mpa, positional, -mpu can be written as npu #
        #--------------------------------------------------------------------------------------------------------------------------#
-       define mpuDIR [ {mu}"@MU" -> {m}"@MU"  ||  _ ?* "@PU" ];
+       define mpuDIR [ {mu}"@MU" -> [n|m]"@MU"  ||  _ ?* "@PU" ];
 
        #----------------------------------------------------------------------------------------------#
        # pu regressive --> pa only before ku and mu (might otherwise be confused with -pa repetitive) #
@@ -645,8 +645,8 @@ define HAKU  [{haku} "[" "VRoot" "+2.Sg.Subj.Imp" "]" "[" "=venir" "]"] : {haku}
 #define Wort [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. UpperCase;
 define Wort IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. AmbiRules .o. UpperCase;
 
-read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord] .o. Allophone .o. Cleanup1 .o. Accent;
-#read regex  [Wort|SpecialWord] .o. Allophone .o. Cleanup1 .o. Accent;
+read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord] .o. Cleanup1  .o. Allophone .o. Accent;
+#read regex Cleanup2 .o. [Wort|SpecialWord] .o. Cleanup1 .o. Allophone  .o. Accent;
 #read regex  FeatRestr .o. [Wort|SpecialWord]  .o. Cleanup1;
 #read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord];
 

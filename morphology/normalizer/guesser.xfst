@@ -270,7 +270,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
       #define VROOT  [ [VowelRoot|ConsRoot]* VowelRoot ConsRoot* VowelRoot ] [ ["[" "VRootG" "]"] :0 ] ;
       
       define vsyllable ConsRoot* VowelRoot ConsRoot*;
-      define VROOT  [ vsyllable+ [a|i|e] ] [ ["[" "VRootG" "]"] :0 ] ;
+      define VROOT  [ vsyllable+ [a|i|e|o|u] ] [ ["[" "VRootG" "]"] :0 ] ;
 
        define V=V=1 @re"v-v-1-guesser.regex" ;
        define V=V=2 @re"v-v-2.regex" ;
@@ -280,7 +280,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=6 DB @re"v-v-6.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
 
-    define VerbSuffixes  VerbRulesUpper  .o. [V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
+    define VerbSuffixes  VerbRulesUpper  .o. [V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
 
 
 #####################################################################################
@@ -308,8 +308,8 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define kamaDist [ "[" "^DB" "]" "[" "--" "]" {kama} "[" "Cas" "]" "[" "+Dist" "]" ] : {kama};
        #define kamaDist [ "Cas" ] : [{kama}];
 
-      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  .o. QuechuaOrtho .o. UpperCase;
-     #  define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff)  (kamaDist) (N=N=3) (HonAff) (N=N=4) (HonAff) ]  .o. QuechuaOrtho .o. UpperCase;
+      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
+     #  define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff)  (kamaDist) (N=N=3) (HonAff) (N=N=4) (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
      
 ######################################################################################
 
@@ -372,8 +372,8 @@ define NDERIVFINAL [NDeriv1final|NDeriv2final|NDeriv3final];
 define VDERIV [VDeriv1|VDeriv2];
 
 
-#define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3)  (N=N=5) (N=N=6) (N=N=7)] ;
-define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3) ] ;
+#define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3)  (N=N=5) (N=N=6) (N=N=7) (AS)] ;
+define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3) (AS)] ;
 define NounNormal  [[NROOT|NDERIV] NounSuffixes] ;
 define Noun [NounConverb|NounNormal];
 define Verb  [[VROOT|VDERIV] VerbSuffixes];
@@ -406,7 +406,7 @@ define WASUNCHIS [~$["+1.Obj"?*[{sunchi}|{nchi}][s|k|q]%["VPers"]];
 define SUNKICHIS [~$["+2.Obj"?*"+2.Pl.Subj"]];
 define SUNMAN [~$["+1.Pl.Incl.Subj.Imp"?*"+Pot"]];
 
-define WANKU [~$["+1.Obj"?*"+3.Pl.Subj"]];
+#define WANKU [~$["+1.Obj"?*"+3.Pl.Subj"]];
 define WASUN [~$["+1.Obj"?*{sun}%[]];
 define WANQAKU [~$["+1.Obj"?*{nqaku}%[]];
 define WAYKU [~$["+1.Obj"?*"+1.Pl.Excl.Subj"]];
@@ -457,8 +457,10 @@ define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
 define NAQ [~$[%["+Obl"%] %["^DB"%] %["--"%] {p} %["Cas"%] ]];
+define NAS [~$[%["+Obl"%] %["^DB"%] %["--"%] {s} %["Amb"%] ]];
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. NAQ];
+
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. NAQ .o. NAS];
 
 # only analyses with at least one suffix
 define MINSUFFIX  [~$[ ?*"--"?* ] ]; 
@@ -467,8 +469,8 @@ define MINSUFFIX  [~$[ ?*"--"?* ] ];
 ######################################################################################
 
 
-#define Wort [[Noun|Verb|Prn|Particles] (AS)] .o. NounRules .o. GENACC ;
-define Wort IGRules .o. [[Noun|Verb] (AS)] .o. NounRules .o. GENACC .o. AmbiRules ;
+#define Wort IGRules .o. [[Noun|Verb] (AS)] .o. NounRules .o. GENACC .o. AmbiRules ;
+define Wort IGRules .o. [Noun|Verb] .o. NounRules .o. GENACC .o. AmbiRules ;
 
 read regex Cleanup2 .o. ~MINSUFFIX .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent;
 #read regex Cleanup2 .o. ~MINSUFFIX .o. Wort  .o. Cleanup1 .o. Accent;
