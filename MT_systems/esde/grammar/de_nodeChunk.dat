@@ -60,7 +60,7 @@ my.pos=/VAFIN/ && lsibling.pos=/V.INF/ && chunkparent.type=/VP/			finVerb="no"	t
 	#            <NODE ref="5" alloc="" slem="que" smi="PR00C000" sform="que" UpCase="none" lem="d(er)" pos="PRELS"/>
 	#          </NODE>
 
-my.pos=/PRELS/ && parent.pos=/VV/ && chunkparent.type=/VP/		relPro="no"	type=NP-relpro,comment="relative pronoun"
+my.pos=/PRELS/ && parent.pos=/VV/ && chunkparent.type=/VP/		relat="yes"	type=NP-relpro,comment="relative pronoun"
 
 ###########
 # Article #

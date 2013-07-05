@@ -1119,6 +1119,7 @@
    <e><p><l>concebir</l><r>konzipieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>concretar</l><r>konkretisieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>consistir</l><r>bestehen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: prepositional object of verbs like here: consistir en = bestehen in/aus -->
+   <e><p><l>cooperar</l><r>kooperieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>cosechar</l><r>ernten</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>dar</l><r>geben</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>dar_las_gracias</l><r>danken</r></p><par n='VM_VV_MAIN'/></e>
@@ -5803,6 +5804,7 @@
    <e><p><l>afelio</l><r>Aphel</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>afeminado</l><r>weibisch</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>aféresis</l><r>Aphärese</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>afgano</l><r>Afghan</r></p><par n='NC_N_GENTRY_EIN'/></e>	<!-- gentry -->
    <e><p><l>aficionado</l><r>Amateur</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>aficionado</l><r>Fan</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>aficionado</l><r>Liebhaber</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -5823,7 +5825,6 @@
    <e><p><l>afonía</l><r>Heiserkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>aforismo</l><r>Aphorismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
    <e><p><l>afrenta</l><r>Beleidigung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>África</l><r>Afrika</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>africano</l><r>Afrikaner</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
    <e><p><l>afrodisíaco</l><r>Aphrodisiakum</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>afro</l><r>Afrolook</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -6703,6 +6704,7 @@
    <e><p><l>asesino en serie</l><r>Serienmörder</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asesino</l><r>Mörder</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>asesor</l><r>Berater</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>asesoramiento</l><r>Beratung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>asfalto</l><r>Asphalt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>asfixia</l><r>Ersticken</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>asiento</l><r>Sitz</r></p><par n='NC_N_676_PROZESS'/></e>
@@ -20493,6 +20495,10 @@
    <e><p><l>sermón</l><r>Predigt</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>serpentina</l><r>Band</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>serpiente</l><r>Schlange</r></p><par n='NC_N_76_FEDER'/></e>
+   <e><p><l>servicio</l><r>Bedienung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>servicio</l><r>Dienst</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>servicio</l><r>Dienstleistung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>servicio</l><r>Toilette</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>servicio divino</l><r>Gottesdienst</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>servicio militar</l><r>Militärdienst</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>servidor DNS</l><r>DNS-Server</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -20754,6 +20760,7 @@
    <e><p><l>tálamo</l><r>Thalamus</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>talento</l><r>Begabung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>talento</l><r>Talent</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>talibanes</l><r>Taliban</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- TODO ES,DE: plural -->
    <e><p><l>talio</l><r>Thallium</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>talla</l><r>Größe</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>talla</l><r>Konfektionsgröße</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -21959,6 +21966,7 @@ veintitodos
 <!-- Verb past participles as adjectives: VMP00[PS][FM] => ADJ  TODO: paradigm with VMPP|AQ ? not possible for all verbs because of lemma form: abrir/abierto; but abulta(r|do) -->
    <e><p><l>abrir</l><r>offen<s n="molif"/>90</r></p><par n='VMPP_ADJ'/></e> 
    <e><p><l>adecuar</l><r>geeignet<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
+   <e><p><l>alcanzar</l><r>erreicht<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
    <e><p><l>conocer</l><r>bekannt<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
    <e><p><l>desconocer</l><r>unbekannt<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
    <e><p><l>equilibrar</l><r>ausgeglichen<s n="molif"/>1</r></p><par n='VMPP_ADJ'/></e> 
@@ -22196,8 +22204,10 @@ veintitodos
    <e><p><l>significativo</l><r>signifikant<s n="molif"/>443</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>siguiente</l><r>nah<s n="grad"/>Sup<s n="molif"/>440</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>siguiente</l><r>folgend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>solidario</l><r>solidarisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>sostenible</l><r>nachhaltig<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
    <e><p><l>suficiente</l><r>ausreichend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
+   <e><p><l>técnico</l><r>technisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>tinto</l><r>Rot-</r></p><par n='AQ_TRUNC'/></e> 
    <e><p><l>tropical</l><r>tropisch<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>verde</l><r>grün<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
