@@ -206,6 +206,7 @@ elsif($mode eq '-xfst')
 		else
 		{	
 			my ($form, $analysis) = split(/\t/, $_, 2);
+			#print $analysis."\n";
 			my $allmorphs;
 			# remove roots for comparison
 			unless($analysis =~ /\+\?/){
@@ -305,6 +306,7 @@ elsif($mode eq '-xfst')
 	my $stillAmbigForms = 0;
 	my $totalAmbigForms  = retrieve('totalAmbigForms');
 	my $xfstFailures=0;
+	my $xfstFailuresGold=0;
 	my $punct =0;
 
 	for (my $i=0;$i<scalar(@words) or $i<scalar(@goldwords);$i++ ){
@@ -321,19 +323,24 @@ elsif($mode eq '-xfst')
 			#print @$analyses[0]."\n".@$g[1]."\n\n";
 			unless(@$g[1] =~ /#EOS/)
 			{
+				#print @$g[1]."\n";
 				# punctuation marks, don't count them
 				if(@$analyses[0] =~ /\$/){
 					#print @$analyses[0]."\n";
 					$punct++;
 				}
+				#xfst failures, count separately
+				elsif(@$analyses[0] =~ /\+\?$/){
+					$xfstFailures++;
+				}
+				#xfst failures in gold, count separately
+				elsif(@$g[1] =~ /\+\?$/){
+					$xfstFailuresGold++;
+				}
 				#elsif(lc(@$analyses[0]) eq lc(@$g[1])){
 				elsif(@$allmorphs[0] eq @$g[2]){
 					$correctAnalysis++;
 					#print @$analyses[0]; #."---".@$g[1]."\n";
-				}
-				#xfst failures, count separately
-				elsif(@$analyses[0] =~ /\+\?$/){
-					$xfstFailures++;
 				}
 				else{
 					$wrongAnalysis++;
@@ -361,6 +368,7 @@ elsif($mode eq '-xfst')
 		my $wrongOfAmb = ($wrongAnalysis/$$totalAmbigForms)*100;
 		my $stillAmb = ($stillAmbigForms/$$totalAmbigForms)*100;
 		my $xfstfailed = ($xfstFailures/$wordforms)*100;
+		my $xfstfailedGold = ($xfstFailuresGold/$wordforms)*100;
 		#my $truewrongPos = (($wrongClass-$unknownWords)/$wordsToDisamb)*100;
 		 
 		print "\n*************************************************\n\n";
@@ -375,6 +383,8 @@ elsif($mode eq '-xfst')
 		  printf("%.2f", $wrong); print "%\n";
 		print "   xfst failures: $xfstFailures: "; 
 		printf("%.2f", $xfstfailed); print "%\n";
+		print "   xfst failures in Gold: $xfstFailuresGold: "; 
+		printf("%.2f", $xfstfailedGold); print "%\n";
 		print "   total ambiguous words: $$totalAmbigForms\n";
 		print "   total still ambiguous: $stillAmbigForms:  ";
 		 printf("%.2f", $stillAmb); print "%\n";
