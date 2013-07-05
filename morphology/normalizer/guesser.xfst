@@ -256,6 +256,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
 
 ####################################################################################
 
+
 ######################################################################
 
        ##########
@@ -266,7 +267,10 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        
        # verb roots must end with a vowel, also in loan words!
       #define VROOT [ ["[" "VRootG" "]"] : [ [Vowel|Cons|Numbers|%_|%&|"-"]*? [a|e|i|o|u] ] ] ;
-      define VROOT  [ [VowelRoot|ConsRoot]* VowelRoot ConsRoot* VowelRoot ] [ ["[" "VRootG" "]"] :0 ] ;
+      #define VROOT  [ [VowelRoot|ConsRoot]* VowelRoot ConsRoot* VowelRoot ] [ ["[" "VRootG" "]"] :0 ] ;
+      
+      define vsyllable ConsRoot* VowelRoot ConsRoot*;
+      define VROOT  [ vsyllable+ [a|i|e] ] [ ["[" "VRootG" "]"] :0 ] ;
 
        define V=V=1 @re"v-v-1-guesser.regex" ;
        define V=V=2 @re"v-v-2.regex" ;
@@ -289,7 +293,9 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
 
        #define NROOT [ ["[" "NRootG" "]"] : [ [VowelRoot|ConsRoot|Numbers|%_|%&|"-"]+? ] ] ;
       # define NROOT  [ [VowelRoot|ConsRoot|Numbers|%_|%&|"-"]+?  [VowelRoot|ConsRoot]] [ ["[" "NRootG" "]"] :0 ] ;
-       define NROOT  [ [VowelRoot|ConsRoot|Numbers|%_|%&|"-"]+? VowelRoot ConsRoot* VowelRoot ConsRoot* ] [ ["[" "NRootG" "]"] :0 ] ;
+      # define NROOT  [ [VowelRoot|ConsRoot|Numbers|%_|%&|"-"]+? VowelRoot ConsRoot* VowelRoot ConsRoot* ] [ ["[" "NRootG" "]"] :0 ] ;
+      define nsyllable ConsRoot* VowelRoot [ConsRoot|%_|%&|"-"|Numbers]*;
+      define NROOT  [ nsyllable^>1  ] [ ["[" "NRootG" "]"] :0 ] ;
 
        define N=N=1 @re"n-n-1-guesser.regex" ;
        define N=N=2 DB @re"n-n-2.regex" ;
@@ -314,7 +320,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
       ######################
 
 
-       define NtoV @re"n-v.regex" ;
+       define NtoV @re"n-v-guesser.regex" ;
        define VtoN DB @re"v-n.regex" ; #mit diesen Suffixen nominalisierte Verben können nicht wieder verbalisiert werden
        define VtoNfinal DB @re"v-n-final.regex" ;
        define Relational [ "[" "--" "]" {n} "[" "NDeriv" "]" "[" "+Rel" "]" ] : {n};
@@ -450,7 +456,9 @@ define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
 
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT  ];
+define NAQ [~$[%["+Obl"%] %["^DB"%] %["--"%] {p} %["Cas"%] ]];
+
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. NAQ];
 
 # only analyses with at least one suffix
 define MINSUFFIX  [~$[ ?*"--"?* ] ]; 
