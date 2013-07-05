@@ -738,6 +738,7 @@
 | [ {palta} "[" "NRoot" "]" "[" "=aguacate,montón" "]" ] :  {palta}
 | [ {p'alta} "[" "NRoot" "]" "[" "=plano" "]" ] :  {p'alta}
 | [ {p'ampa} "[" "NRoot" "]" "[" "=entierro" "]" ] :  {p'ampa}
+| [ {pampa} "[" "NRoot" "]" "[" "=llanura,piso,suelo" "]" ] :  {pampa}
 | [ {pani} "[" "NRoot" "]" "[" "=hermana" "]" ] :  {pani}
 | [ {pankha} "[" "NRoot" "]" "[" "=cuerpo" "]" ] :  {pankha}
 | [ {p'anqa} "[" "NRoot" "]" "[" "=ala,hoja" "]" ] :  {p'anqa}

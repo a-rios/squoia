@@ -6,6 +6,7 @@
 | [ {achhi} "[" "VRoot" "]" "[" "=estornudar" "]" ] :  {achhi}
 | [ {achhura} "[" "VRoot" "]" "[" "=alejar" "]" ] :  {achhura}
 | [ {achhu} "[" "VRoot" "]" "[" "=acercarse" "]" ] :  {achhu}
+| [ {achhu} "[" "VRoot" "]" "[" "=acercarse" "]" ] :  {anchhu}
 | [ {achikya} "[" "VRoot" "]" "[" "=alumbrar,iluminar" "]" ] :  {achikya}
 | [ {achiusa} "[" "VRoot" "]" "[" "=estornudar" "]" ] :  {achiusa}
 | [ {achi} "[" "VRoot" "]" "[" "=disfrutar,estornudar" "]" ] :  {achi}
