@@ -16,8 +16,9 @@ MORPH3_MODEL=morph3/sicuani_greg_model_c0.5
 XFST_FILE=$1
 
 #perl splitSentences.pl  |
-#perl $TOKENIZER | lookup -flags cKv29TT  $XFST_BIN > tmp/test.xfst
+#perl $TOKENIZER | lookup -f ../normalizer/lookup.script -flags cKv29TT  > tmp/test.xfst
 
+#cat tmp/test.xfst | perl cleanGuessedRoots.pl > tmp/test_clean.xfst
 #cat tmp/test.xfst | perl xfstToCrf_pos.pl -test > tmp/pos.test
 
 cat $XFST_FILE | perl xfstToCrf_pos.pl -test > tmp/pos.test
