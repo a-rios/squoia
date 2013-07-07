@@ -317,7 +317,7 @@ elsif($mode eq '-xfst')
 		my $allmorphs = @$w[2];
 		# more than one analysis: word is still ambiguous (root lemma)
 		if(scalar(@$analyses)>1){
-			print @$analyses[0]."\n";
+			#print @$analyses[0]."\n";
 			$stillAmbigForms++;
 		}
 		else{
@@ -332,6 +332,7 @@ elsif($mode eq '-xfst')
 				}
 				#xfst failures, count separately
 				elsif(@$analyses[0] =~ /\+\?$/){
+					#print @$analyses[0]."\n";
 					$xfstFailures++;
 				}
 				#xfst failures in gold, count separately
