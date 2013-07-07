@@ -57,7 +57,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 				 $word2 =~ s/o/u/g;
 
 				if(lc($word) ne lc($word2)){
-					print "different words: crf: $word vs. gold: $word2, at line $lines\n";
+					#print "different words: crf: $word vs. gold: $word2, at line $lines\n";
 				}
 
 		#print "test: ".$crfLine;
@@ -317,6 +317,7 @@ elsif($mode eq '-xfst')
 		my $allmorphs = @$w[2];
 		# more than one analysis: word is still ambiguous (root lemma)
 		if(scalar(@$analyses)>1){
+			print @$analyses[0]."\n";
 			$stillAmbigForms++;
 		}
 		else{
@@ -335,6 +336,7 @@ elsif($mode eq '-xfst')
 				}
 				#xfst failures in gold, count separately
 				elsif(@$g[1] =~ /\+\?$/){
+					print @$g[1]."\n";
 					$xfstFailuresGold++;
 				}
 				#elsif(lc(@$analyses[0]) eq lc(@$g[1])){
@@ -344,8 +346,8 @@ elsif($mode eq '-xfst')
 				}
 				else{
 					$wrongAnalysis++;
-					print "word: @$g[0]\n";
-					print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
+					#print "word: @$g[0]\n";
+					#print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
 				}
 			}
 			

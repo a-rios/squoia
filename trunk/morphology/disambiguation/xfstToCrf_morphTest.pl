@@ -1214,7 +1214,8 @@ sub disambMorph3{
 				}
 				elsif($correctMorph eq 'Add' )
 				{
-					if($string !~ /\Qpis[Amb][+Add]\E/ && scalar(@$analyses) > 1){
+					if($string !~ /p[ai]\Qs[Amb][+Add]\E/ && scalar(@$analyses) > 1){
+						#print "delete: ".$string;
 						splice (@{$analyses},$j,1);	
 						$disambiguatedForms++;
 						$j--;
