@@ -343,7 +343,6 @@
 | [ {chinli} "[" "NRoot" "]" "["  "=pequeño" "]" ] : {chinli}
 | [ {chinlli} "[" "NRoot" "]" "["  "=desayuno" "]" ] : {chinlli}
 | [ {ch'in} "[" "NRoot" "]" "["  "=silencio" "]" ] : {ch'in}
-| [ {ch'in} "[" "NRoot" "]" "["  "=silencio" "]" ] : {chin}
 | [ {ch'inqu} "[" "NRoot" "]" "["  "=zig_zag,insignificante" "]" ] : {ch'inqu}
 | [ {ch'inqu} "[" "NRoot" "]" "["  "=zig_zag,insignificante" "]" ] : {chinqu}
 | [ {chinru} "[" "NRoot" "]" "["  "=lado,inclinado" "]" ] : {chinru}

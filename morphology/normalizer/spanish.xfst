@@ -397,7 +397,7 @@ define NAYA [NAYA1 .o. NAYA2 .o. NAYA3];
 
 define SUN1 [~$["+2.Obj"?*"+3.Sg.Subj"]]; # -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj
 define SUN2 [~$["+Aug"%] %["^DB"%] %["--"%] {n} %["NPers"%] %["+3.Sg.Poss"]];
-define SUN3 [~$["+Aug"%] %["^DB"%] %["--"%] {n} %["NPers"%] %["+DirE"]] ;
+define SUN3 [~$["+Aug"%] %["^DB"%] %["--"%] [n|m] %["NPers"%] %["+DirE"]] ;
 define SUN SUN1 .o. SUN2 .o. SUN3;
 
 define SUNKI [~$["+2.Obj"?*"+2.Sg.Subj"]]; # -sunki -> only as 2.Obj,3.Subj
@@ -407,7 +407,7 @@ define WASUNCHIS [~$["+1.Obj"?*[{sunchi}|{nchi}][s|k|q]%["VPers"]];
 define SUNKICHIS [~$["+2.Obj"?*"+2.Pl.Subj"]];
 define SUNMAN [~$["+1.Pl.Incl.Subj.Imp"?*"+Pot"]];
 
-#define WANKU [~$["+1.Obj"?*"+3.Pl.Subj"]];
+define WANKU [~$["+1.Obj"?*"+3.Pl.Subj"]];
 define WASUN [~$["+1.Obj"?*{sun}%[]];
 define WANQAKU [~$["+1.Obj"?*{nqaku}%[]];
 define WAYKU [~$["+1.Obj"?*"+1.Pl.Excl.Subj"]];
@@ -422,7 +422,7 @@ define NYARI [~$["+Cont"?*"+Inch"]];
 define QTI [~$["+Ag"?*"+Char"]] ;
 define SQAMA  [~$["+3.Sg.Subj.IPst"?*"+DirE_Emph"]]; #-sqa-má -> only as +Perf+DirE_Emph
 define SQAN [~$["+3.Sg.Subj.IPst"?*"+DirE"]];
-define RQAN [~$[%["+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%]{n}%["Amb"%] ]];
+define RQAN [~$[%["+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"%] ]];
 
 define PAKU  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku}]];
 define PAMU  [~$[%["+Rep"%] %["--"%]{mu}]];
@@ -432,6 +432,7 @@ define SQAMAN [~$["+IPst"?*["+1.Sg.Subj.Pot"|"+Pot"]]];
 define SQAFUT [~$[["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"]]];
 
 define YMAN [~$["+2.Sg.Subj.Imp"?*"+Pot"]];
+#define NKUMAN  [~$["+3.Pl.Subj"?*"+Pot"]]; #occurs in Gregorio -> nku -man as potential instead of -manku
 define YKACHA [~$["+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml"]];
 
 #define WAQ [~$["+1.Obj"%] %["^DB"%] %["--"%]{q}%["NS"%] %["+Ag"]]; #may occur
@@ -440,22 +441,21 @@ define YKACHA [~$["+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml"]];
 define PAS [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] [{si}|s] %["Amb"%] %["+IndE"]] ;
 define PAQ [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] [q|p] %["Cas"%] %["+Gen"]] ;
 
-define NTIN [~$[{nti}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] {n}]];
-define STIN [~$[{sti}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] {n}]]; # -stin, not as -sti -n (3.Sg.Subj, or DirE)
-define PTIN [~$[{pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] {n} %["Amb"%] ]]; #-pti -> Ayacuchano, but -n as DirE, only Cuzqueño
+define NTIN [~$[{ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m]]];
+define STIN [~$[{stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m]]]; # -stin, not as -sti -n (3.Sg.Subj, or DirE)
+define PTIN [~$[{pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb"%] ]]; #-pti -> Ayacuchano, but -n as DirE, only Cuzqueño
 define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%][q|p] %["NS"%]]];
 
 define TAQ  [~$[{ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] [q|p]%["Cas"%]]];
+define NIRAQ [~$[{nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] [q|p]%["Cas"%]]];
 
 define DISC [~$[%["Part+Disc"%] %["^DB"%] %["--"%] {ña} ]]; #ñaña = sister, not 2 times +Disc
+#define tripleGEN [~$["+Gen""@PA""+Gen""@PA""+Gen""@PA"]];
 
 define NTAWAN [~$[%["+Proloc"%] %["^DB"%] %["--"%] {wan}]];
 
-# forbid -llalla analized as +Lim+Lim -> if a word contains a sequence -llalla, the first -lla is probably part of the root
-# consider chukllalla -> good analysis: chuklla(=choza)-lla(+Lim), bad analysis: chuk(=silencio)-lla(+Lim)-lla(+Lim)
-define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
-
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
+
 
 define NAQ [~$[%["+Obl"%] %["^DB"%] %["--"%] {p} %["Cas"%] ]];
 define NAS [~$[%["+Obl"%] %["^DB"%] %["--"%] {s} %["Amb"%] ]];

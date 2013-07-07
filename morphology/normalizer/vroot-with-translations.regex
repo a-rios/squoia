@@ -236,7 +236,6 @@
 | [ {chichi} "[" "VRoot" "]" "[" "=lactar" "]" ] :  {chichi}
 | [ {chichu} "[" "VRoot" "]" "[" "=estar_embarazda,fecundar" "]" ] :  {chichu}
 | [ {ch'ika} "[" "VRoot" "]" "[" "=picar" "]" ] :  {ch'ika}
-| [ {ch'ika} "[" "VRoot" "]" "[" "=picar" "]" ] :  {chika}
 | [ {ch'ikchi} "[" "VRoot" "]" "[" "=brotar" "]" ] :  {ch'ikchi}
 | [ {chikchi} "[" "VRoot" "]" "[" "=granizar" "]" ] :  {chikchi}
 | [ {chiki} "[" "VRoot" "]" "[" "=odiar" "]" ] :  {chiki}

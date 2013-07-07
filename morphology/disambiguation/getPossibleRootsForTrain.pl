@@ -28,60 +28,61 @@ while(<STDIN>){
 		}
 		else
 		{	
-			my ($form, $analysis) = split(/\t/);
-		
-			my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
+			unless(/RootG/){
+				my ($form, $analysis) = split(/\t/);
 			
-			my ($root) = $analysis =~ m/^([^\[]+?)\[/ ;
-			#print "$root\n";
-			
-			if($pos eq ''){
-				if($form eq '#EOS'){
-					$pos = '#EOS';
+				my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
+				
+				my ($root) = $analysis =~ m/^([^\[]+?)\[/ ;
+				#print "$root\n";
+				
+				if($pos eq ''){
+					if($form eq '#EOS'){
+						$pos = '#EOS';
+					}
+					else{
+						$pos = "ZZZ";
+					}
 				}
-				else{
-					$pos = "ZZZ";
+				my ($lem) = ($_ =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
+				$lem = lc($lem);
+				#print $lem."\n";
+				
+				my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
+				
+				my $allmorphs='';
+				foreach my $morph (@morphtags){
+					$allmorphs = $allmorphs."#".$morph;
 				}
-			}
-			my ($lem) = ($_ =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
-			$lem = lc($lem);
-			#print $lem."\n";
 			
-			my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
+				#print "allmorphs: $allmorphs\n";
+				#print "morphs: @morphtags\n\n";
 			
-			my $allmorphs='';
-			foreach my $morph (@morphtags){
-				$allmorphs = $allmorphs."#".$morph;
-			}
-		
-			#print "allmorphs: $allmorphs\n";
-			#print "morphs: @morphtags\n\n";
-		
-			#print "$form: $root morphs: @morphtags\n";
-			my %hashAnalysis;
-			$hashAnalysis{'pos'} = $pos;
-			$hashAnalysis{'morph'} = \@morphtags;
-			$hashAnalysis{'string'} = $_;
-			$hashAnalysis{'root'} = $root;
-	    	$hashAnalysis{'allmorphs'} = $allmorphs;
-	    	$hashAnalysis{'lem'} = $lem;
-	    
-			if($newWord)
-			{
-				my @analyses = ( \%hashAnalysis ) ;
-				my @word = ($form, \@analyses);
-				push(@words,\@word);
-				$index++;
-			}
-			else
-			{
-				my $thisword = @words[-1];
-				my $analyses = @$thisword[1];
-				push(@$analyses, \%hashAnalysis);
-			}
-			$newWord=0;	
-	 }
-		
+				#print "$form: $root morphs: @morphtags\n";
+				my %hashAnalysis;
+				$hashAnalysis{'pos'} = $pos;
+				$hashAnalysis{'morph'} = \@morphtags;
+				$hashAnalysis{'string'} = $_;
+				$hashAnalysis{'root'} = $root;
+		    	$hashAnalysis{'allmorphs'} = $allmorphs;
+		    	$hashAnalysis{'lem'} = $lem;
+		    
+				if($newWord)
+				{
+					my @analyses = ( \%hashAnalysis ) ;
+					my @word = ($form, \@analyses);
+					push(@words,\@word);
+					$index++;
+				}
+				else
+				{
+					my $thisword = @words[-1];
+					my $analyses = @$thisword[1];
+					push(@$analyses, \%hashAnalysis);
+				}
+				$newWord=0;	
+		 }
+		}		
 }
 
 my %wordforms =();
