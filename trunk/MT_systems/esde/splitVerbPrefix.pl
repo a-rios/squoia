@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 
 # Split separable verb prefix from root lemma
-# finite forms (VVFIN) and past participles (VVPP) need to be split
+# only finite forms (VVFIN) need to be split
 # example: lem="an|fangen" pos="VVFIN" => lem="an" pos="PTKVZ" + lem="fangen" pos="VVFIN"
-# 	 lem="an|fangen" pos="VVPP" => lem="an" pos "PTKVZ" + lem="fangen" pos="VVPP" ==> an+gefangen
+#
 # Input: xml output from lexical transder module from Matxin/Apertium (LT)
 # Output: same xml, with additional chunk for separable verb prefix if verb is finite
 
@@ -15,7 +15,8 @@ my $dom    = XML::LibXML->load_xml(location => "-");
 
 my $maxChunkRef = &getMaxChunkRef($dom);
  
-my $xpathexpr = '//CHUNK[@type="VP"]/descendant-or-self::NODE[contains(@lem,"|") and (starts-with(@pos,"VVFIN") or starts-with(@pos,"VVPP"))]';
+#my $xpathexpr = '//CHUNK[@type="VP" or @type="CVP"]/descendant-or-self::NODE[contains(@lem,"|") and (starts-with(@pos,"VVFIN") or starts-with(@pos,"VVPP"))]';
+my $xpathexpr = '//CHUNK[@type="VP" or @type="CVP"]/descendant-or-self::NODE[contains(@lem,"|") and @pos="VVFIN"]';
 
 my @verbPrefNodes = $dom->findnodes($xpathexpr);
 foreach my $node (@verbPrefNodes) {
