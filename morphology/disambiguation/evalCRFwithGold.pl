@@ -338,6 +338,7 @@ elsif($mode eq '-xfst')
 				#xfst failures in gold, count separately
 				elsif(@$g[1] =~ /\+\?$/){
 					print @$g[1]."\n";
+					print @$analyses[0]."\n";
 					$xfstFailuresGold++;
 				}
 				#elsif(lc(@$analyses[0]) eq lc(@$g[1])){

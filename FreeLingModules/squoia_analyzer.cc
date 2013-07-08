@@ -5,6 +5,8 @@
  * echo "Vuestro servidor ya funciona con el nuevo formato de salida" | analyzer_client PORTNUMBER
  * or
  * analyzer_client PORTNUMBER < text.tok > text.conll
+ * 
+ * compile with: g++ -o squoia_analyzer squoia_analyzer.cc -lboost_filesystem-mt -lpcre -lcfg+ -ldb_cxx -lfreeling -lboost_program_options-mt -lboost_system -I/opt/matxin/local/include/ -L/opt/matxin/local/lib/
  */
 
 //------------------------------------------------------------------//
