@@ -267,6 +267,15 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
 ####################################################################################
 
 
+       ###########################
+       #                         #
+       # ADVERBS & CONJUNCTIONS  #
+       #                         #
+       ###########################
+      
+      define ADVERBS @re"spanish-adverbs.regex" .o. SpanOrtho;
+      define CONJUNCTIONS @re"spanish-conj.regex" .o. SpanOrtho;
+
 ######################################################################
 
        ##########
@@ -468,9 +477,9 @@ define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 
 
 
 #define Wort IGRules .o. [[Noun|Verb] (AS)] .o. NounRules .o. GENACC .o. AmbiRules ;
-define Wort IGRules .o. [Noun|Verb] .o. NounRules .o. GENACC .o. AmbiRules ;
+define Wort IGRules .o. [Noun|Verb|ADVERBS|CONJUNCTIONS] .o. NounRules .o. GENACC .o. AmbiRules ;
 
-read regex Cleanup2  .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent;
+read regex Cleanup2  .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent .o. UpperCase;
 #read regex Cleanup2 .o. Wort  .o. Cleanup1 .o. Accent;
 
 

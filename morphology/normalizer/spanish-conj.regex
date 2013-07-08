@@ -1,0 +1,20 @@
+ [ {ante} "["  "ConjES"  "]" ] : {ante}
+| [ {ápud} "["  "ConjES"  "]" ] : {ápud}
+| [ {bajo} "["  "ConjES"  "]" ] : {bajo}
+| [ {como} "["  "ConjES"  "]" ] : {como}
+| [ {contra} "["  "ConjES"  "]" ] : {contra}
+| [ {desde+que} "["  "ConjES"  "]" ] : {desde+que}
+| [ {desde} "["  "ConjES"  "]" ] : {desde}
+| [ {durante} "["  "ConjES"  "]" ] : {durante}
+| [ {entre} "["  "ConjES"  "]" ] : {entre}
+| [ {excepto} "["  "ConjES"  "]" ] : {excepto}
+| [ {hacia} "["  "ConjES"  "]" ] : {hacia}
+| [ {hasta} "["  "ConjES"  "]" ] : {hasta}
+| [ {mediante} "["  "ConjES"  "]" ] : {mediante}
+| [ {para} "["  "ConjES"  "]" ] : {para}
+| [ {salvo} "["  "ConjES"  "]" ] : {salvo}
+| [ {según} "["  "ConjES"  "]" ] : {según}
+| [ {sobre} "["  "ConjES"  "]" ] : {sobre}
+| [ {tras} "["  "ConjES"  "]" ] : {tras}
+| [ {versus} "["  "ConjES"  "]" ] : {versus}
+;
