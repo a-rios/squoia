@@ -397,13 +397,14 @@ void PrintNumber(wostream &sout, sentence::const_iterator &w, int c)
 		sout<<endl;
 }
 
-void PrintMorfo(wostream &sout, list<sentence> &ls, analyzer &anlz) {
+//void PrintMorfo(wostream &sout, list<sentence> &ls, analyzer &anlz) {
+void PrintMorfo(wostream &sout, list<sentence>::iterator &is, analyzer &anlz) {
   sentence::const_iterator w;
   sentence::const_iterator next_w;
   sentence::const_iterator prior_w;
-  list<sentence>::iterator is;
+  //list<sentence>::iterator is;
 
-  for (is=ls.begin(); is!=ls.end(); is++) {
+  //for (is=ls.begin(); is!=ls.end(); is++) {
 
     
     // for each word in sentence
@@ -445,9 +446,7 @@ void PrintMorfo(wostream &sout, list<sentence> &ls, analyzer &anlz) {
 	    //morfo2->analyze(s);
   	    //tagger->analyze(s);
 	    anlz.AnalyzeTokens(l, s, true);
-	    list<word>::iterator iw = s.begin()->words_begin();
 	    sout<<c;
-	    sout<<L"\t"<<iw->get_form();
 	    sout<<L"\t"<<s.begin()->words_begin()->get_form();
 	    sout<<L"\t"<<s.begin()->words_begin()->get_lemma();
 	    wstring eagletag2 = s.begin()->words_begin()->get_tag();
@@ -559,7 +558,7 @@ void PrintMorfo(wostream &sout, list<sentence> &ls, analyzer &anlz) {
 	c++;
       }
     }
-  }
+  //}
 }
 
 //---------------------------------------------
@@ -590,7 +589,8 @@ void output::PrintResults (wostream &sout, list<sentence > &ls, analyzer &anlz, 
         break;
    
         case DESRTAG: {
-          PrintMorfo (sout, ls, anlz);
+          //PrintMorfo (sout, ls, anlz);
+          PrintMorfo (sout, is, anlz);
         }
         break;
    
