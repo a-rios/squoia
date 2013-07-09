@@ -1,5 +1,9 @@
 # set char-encoding utf-8
 # -*- encoding: utf-8 -*-
+# TODOs: 
+# -sqas -> can only be perfect (?)
+# -scha as allomorph of ysi/schi (assistive)
+
 
        #derivation boundary
        define DB [[ "[" "^DB" "]"] :0];
