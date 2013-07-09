@@ -1,25 +1,41 @@
-/* start with:
- * squoia_analyzer -f path-to-freeling.conf --outf=desrtag --server --port=PORTNUMBER 2>logdesrtag &
- * 
- * analyse with anaylzer_client from FreeLing:
- * echo "Vuestro servidor ya funciona con el nuevo formato de salida" | analyzer_client PORTNUMBER
- * or
- * analyzer_client PORTNUMBER < text.tok > text.conll
- * 
- * compile with: g++ -o squoia_analyzer squoia_analyzer.cc -lboost_filesystem-mt -lpcre -lcfg+ -ldb_cxx -lfreeling -lboost_program_options-mt -lboost_system -I/opt/matxin/local/include/ -L/opt/matxin/local/lib/
- */
+//////////////////////////////////////////////////////////////////
+//
+//    FreeLing - Open Source Language Analyzers
+//
+//    Copyright (C) 2004   TALP Research Center
+//                         Universitat Politecnica de Catalunya
+//
+//    This library is free software; you can redistribute it and/or
+//    modify it under the terms of the GNU General Public
+//    License as published by the Free Software Foundation; either
+//    version 3 of the License, or (at your option) any later version.
+//
+//    This library is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+//    General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public
+//    License along with this library; if not, write to the Free Software
+//    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+//
+//    contact: Lluis Padro (padro@lsi.upc.es)
+//             TALP Research Center
+//             despatx C6.212 - Campus Nord UPC
+//             08034 Barcelona.  SPAIN
+//
+////////////////////////////////////////////////////////////////
+
 
 //------------------------------------------------------------------//
 //  adapted sample_analyzer.cc from FreeLing,
-// NOTE: FreeLing 3.0 must be installed on your system to use this!
 //  - output format is conll
 //  some changes:
 //  - proper nouns get pos=nc (common noun)
 //  -> easier for parser, but morph column 
 //    contains np=typeOfNp, so the original tag can 
 //    later be restored
-//  - numeral determiners: dn (FreeLing: Z)
-// IMPORTANT: input text should be one sentence per line
+// 
 //------------------------------------------------------------------//
 
 #include <sstream>
@@ -34,7 +50,7 @@
 /// config file/options handler for this particular sample application
 #include "config.h"
 /// functions to print results depending on configuration options
-#include "output.h"
+#include "output_squoia.h"
 
 // Semaphores and stuff to handle children count in server mode
 #ifdef WIN32
