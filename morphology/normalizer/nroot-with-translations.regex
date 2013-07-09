@@ -1133,8 +1133,8 @@
 | [ {llullimpa} "[" "NRoot" "]" "["  "=falda" "]" ] : {llullimpa}
 | [ {llullu} "[" "NRoot" "]" "["  "=tierno" "]" ] : {llullu}
 | [ {llumchuy} "[" "NRoot" "]" "["  "=nuera" "]" ] : {llumchuy}
-| [ {llump'aq} "[" "NRoot" "]" "["  "=virgen" "]" ] : {llump'aq}
-| [ {llump'aq} "[" "NRoot" "]" "["  "=virgen" "]" ] : {llumpaq}
+| [ {llump'aq} "[" "NRoot" "]" "["  "=puro,honesto,virgen" "]" ] : {llump'aq}
+| [ {llump'aq} "[" "NRoot" "]" "["  "=puro,honesto,virgen" "]" ] : {llumpaq}
 | [ {llunchu} "[" "NRoot" "]" "["  "=nuera" "]" ] : {llunchu}
 | [ {llunk'u} "[" "NRoot" "]" "["  "=adolador" "]" ] : {llunk'u}
 | [ {llunk'u} "[" "NRoot" "]" "["  "=adolador" "]" ] : {llunku}
