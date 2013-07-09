@@ -338,6 +338,8 @@ elsif($mode eq '-xfst')
 			unless(@$g[1] =~ /#EOS/)
 			{
 				#print @$g[1]."\n";
+				#print @$analyses[0]."\n";
+				#print @$allmorphs[0]."\n";
 				# punctuation marks, don't count them
 				if(@$analyses[0] =~ /\$/){
 					#print @$analyses[0]."\n";
@@ -350,8 +352,8 @@ elsif($mode eq '-xfst')
 				}
 				#xfst failures in gold, count separately
 				elsif(@$g[1] =~ /\+\?$/){
-					print @$g[1]."\n";
-					print @$analyses[0]."\n";
+					#print @$g[1]."\n";
+					#print @$analyses[0]."\n";
 					$xfstFailuresGold++;
 				}
 				#elsif(lc(@$analyses[0]) eq lc(@$g[1])){
@@ -359,14 +361,15 @@ elsif($mode eq '-xfst')
 					$correctAnalysis++;
 					#print @$analyses[0]; #."---".@$g[1]."\n";
 				}
-				# discount 'ima'
-#				elsif(@$analyses[0] =~ /[iI]ma\[(NRoot|Part)\]/){
+#				# discount 'mayqin'
+#				elsif(@$analyses[0] =~ /\Q[PrnInterr][=cuál]\E/ || @$analyses[0] =~ /\Q[NRoot][=algún]\E/){
 #					$correctAnalysis++;
+#					print "sfdsfdsfdsf: ".@$analyses[0]."\n";
 #				}
 				else{
 					$wrongAnalysis++;
-					#print "word: @$g[0]\n";
-					#print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
+					print "word: @$g[0]\n";
+					print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
 				}
 			}
 			

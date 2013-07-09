@@ -8,7 +8,7 @@ XFST_BIN=$XFST_DIR/normalizer.fst
 TOKENIZER=$XFST_DIR/tokenize.pl
 
 #POS_MODEL=pos/sicuani_greg_c_5
-POS_MODEL=pos/sicuani_greg_sp_c10
+POS_MODEL=pos/sicuani_greg_sp_c1
 
 MORPH1_MODEL=morph1/sicuani_greg_c20
 MORPH2_MODEL=morph2/sicuani_greg_sp_c5
