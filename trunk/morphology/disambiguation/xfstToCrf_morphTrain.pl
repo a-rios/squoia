@@ -286,7 +286,7 @@ if($mode eq '-3')
 		my $string = @$analyses[0]->{'string'};
 		
 			# -n: direct evidencial or 3.Sg.Poss
-			if( ($allmorphs =~ /\Q+3.Sg.Poss\E/ && $string !~ /3\.Sg\.Poss.*(Cas|Pl|Amb)/ ) || ($allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/ && $string !~ /(Cas|Num).+DirE/) )
+			if( ($allmorphs =~ /\Q+3.Sg.Poss\E/ && $string !~ /3\.Sg\.Poss.*(Cas|Pl|Amb)/ ) || ($allmorphs =~ /\Q+DirE\E/  && $string =~ /[n|m]\[Amb/ && $string !~ /(Cas|Num).+DirE/) )
 			#if( $allmorphs =~ /\Q+3.Sg.Poss\E/ || $allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/  )
 			{
 				push(@possibleClasses, "DirE");

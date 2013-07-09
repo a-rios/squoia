@@ -83,7 +83,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 			 
 			 unless(@rowsCRF[1] eq 'n'){
 			 	$wcount++;
-			}
+			 }
 			 
 			 # pos(morph) evaluation
 			 my $classCRF = @rowsCRF[-1];
@@ -112,8 +112,21 @@ if($mode eq '-pos' or $mode eq '-morph')
 	#		 		print "$classCRF : $classGOLD\n";
 					$wordsToDisamb++;
 			 	}
-			 	# with lc, index 4, without, 3
-				if($classCRF eq $classGOLD && @rowsCRF[3] ne 'ZZZ'){
+			 	# discount 'mayqin' (NRoot vs PrnInterr, not really ambiguos on morph level)
+				if( $rowsCRF[2] =~ /NRoot|Prn/ && @rowsCRF[3] =~ /NRoot|Prn/) 
+				{
+					$wordsToDisamb--;
+					print "not to disambiguate: ".$crfLine;
+					#print $goldLine;
+				}
+			 	# with lc, index 3, without, 2
+				elsif($classCRF eq $classGOLD && @rowsCRF[3] ne 'ZZZ'){
+					$correctClass++;
+				}
+				# proper nouns in gold -> nroot in crf
+				elsif($classCRF eq 'NRoot' &&  $classGOLD eq 'NP' && @rowsCRF[3] ne 'ZZZ'){
+					#print "NP: ".$crfLine;
+					#print $goldLine;
 					$correctClass++;
 				}
 				elsif($classCRF ne $classGOLD && @rowsCRF[3] ne 'ZZZ'){
@@ -346,6 +359,10 @@ elsif($mode eq '-xfst')
 					$correctAnalysis++;
 					#print @$analyses[0]; #."---".@$g[1]."\n";
 				}
+				# discount 'ima'
+#				elsif(@$analyses[0] =~ /[iI]ma\[(NRoot|Part)\]/){
+#					$correctAnalysis++;
+#				}
 				else{
 					$wrongAnalysis++;
 					#print "word: @$g[0]\n";
