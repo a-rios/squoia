@@ -53,7 +53,7 @@ if($mode eq '-1')
 		{	
 			my ($form, $analysis) = split(/\t/);
 		
-			my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
+			my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$|AdvES|PrepES|ConjES)/ ;
 			
 			if($pos eq 'NP'){
 					$pos = 'NRoot';

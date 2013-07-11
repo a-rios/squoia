@@ -1,23 +1,16 @@
  [ {adonde} "["  "ConjES"  "]" ] : {adonde}
 | [ {aunque} "["  "ConjES"  "]" ] : {aunque}
-| [ {bien} "["  "ConjES"  "]" ] : {bien}
-| [ {como} "["  "ConjES"  "]" ] : {como}
-| [ {conforme} "["  "ConjES"  "]" ] : {conforme}
 | [ {conque} "["  "ConjES"  "]" ] : {conque}
 | [ {cuando} "["  "ConjES"  "]" ] : {cuando}
 | [ {donde} "["  "ConjES"  "]" ] : {donde}
 | [ {empero} "["  "ConjES"  "]" ] : {empero}
-| [ {entonces} "["  "ConjES"  "]" ] : {entonces}
 | [ {ergo} "["  "ConjES"  "]" ] : {ergo}
-| [ {incluso} "["  "ConjES"  "]" ] : {incluso}
-| [ {luego} "["  "ConjES"  "]" ] : {luego}
 | [ {mientras} "["  "ConjES"  "]" ] : {mientras}
 | [ {pero} "["  "ConjES"  "]" ] : {pero}
 | [ {porque} "["  "ConjES"  "]" ] : {porque}
-| [ {pues} "["  "ConjES"  "]" ] : {pues}
-| [ {según} "["  "ConjES"  "]" ] : {según}
 | [ {sino} "["  "ConjES"  "]" ] : {sino}
+| [ {seno} "["  "test"  "]" ] : {seno}
+| [ {sinu} "["  "test"  "]" ] : {sinu}
 | [ {siquiera} "["  "ConjES"  "]" ] : {siquiera}
 | [ {siquier} "["  "ConjES"  "]" ] : {siquier}
-| [ {tanto} "["  "ConjES"  "]" ] : {tanto}
 ;
