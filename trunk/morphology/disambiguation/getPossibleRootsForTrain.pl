@@ -172,9 +172,9 @@ foreach my $word (@words){
 }
 
 foreach my $word (keys %Lemmas){
-	#print "$word: ";
+#	print "$word: ";
 	my $possibleLemmas = $Lemmas{$word};
-	#print "@$possibleLemmas\n";
+#	print "@$possibleLemmas\n";
 }
 
 store \%Lemmas, 'PossibleLemmasForTrain';

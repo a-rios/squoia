@@ -42,7 +42,7 @@
 | [ {bendicón} "["  "NRootES"  "]" ] :   {bindisyun}
 | [ {bicho} "["  "NRootES"  "]" ] :   {bicho}
 | [ {bola} "["  "NRootES"  "]" ] :   {bula}
-| [ {bolivia} "["  "NRootES"  "]" ] :   {bolivia}
+| [ {Bolivia} "["  "NP"  "]" ] :   {Bolivia}
 | [ {bolsa} "["  "NRootES"  "]" ] :   {bolsa}
 | [ {botica} "["  "NRootES"  "]" ] :   {botica}
 | [ {botón} "["  "NRootES"  "]" ] :   {botón}
@@ -81,12 +81,12 @@
 | [ {castellano} "["  "NRootES"  "]" ] :   {castellano}
 | [ {castigo} "["  "NRootES"  "]" ] :   {castigo}
 | [ {castilla} "["  "NRootES"  "]" ] :   {kastilla}
-| [ {católica} "["  "NRootES"  "]" ] :   {catholica}
+| [ {católica} "["  "NRootES"  "]" ] :   {catolica}
 | [ {catre} "["  "NRootES"  "]" ] :   {catre}
 | [ {cemento} "["  "NRootES"  "]" ] :   {cemento}
 | [ {central} "["  "NRootES"  "]" ] :   {central}
-| [ {Chachapoyas} "["  "NRootES"  "]" ] :   {chachapoyas}
-| [ {chiclayo} "["  "NRootES"  "]" ] :   {chiclayo}
+| [ {Chachapoyas} "["  "NP"  "]" ] :   {Chachapoyas}
+| [ {Chiclayo} "["  "NP"  "]" ] :   {Chiclayo}
 | [ {chicote} "["  "NRootES"  "]" ] :   {chicote}
 | [ {chiquito,chiquita} "["  "NRootES"  "]" ] :   {chikucha}
 | [ {chófer} "["  "NRootES"  "]" ] :   {chófer}
@@ -271,7 +271,7 @@
 | [ {jueves} "["  "NRootES"  "]" ] :   {jueves}
 | [ {juez} "["  "NRootES"  "]" ] :   {juez}
 | [ {juicio} "["  "NRootES"  "]" ] :   {juicio}
-| [ {juliaca} "["  "NRootES"  "]" ] :   {juliaca}
+| [ {Juliaca} "["  "NP"  "]" ] :   {Juliaca}
 | [ {julio} "["  "NRootES"  "]" ] :   {hulyu}
 | [ {julio} "["  "NRootES"  "]" ] :   {julio}
 | [ {junio} "["  "NRootES"  "]" ] :   {hunyu}
@@ -357,7 +357,7 @@
 | [ {primaria} "["  "NRootES"  "]" ] :   {primaria}
 | [ {procesado} "["  "NRootES"  "]" ] :   {procesado}
 | [ {protestante} "["  "NRootES"  "]" ] :   {protestante}
-| [ {puno} "["  "NRootES"  "]" ] :   {puno}
+| [ {Puno} "["  "NP"  "]" ] :   {Puno}
 | [ {puro} "["  "NRootES"  "]" ] :   {puro}
 | [ {quechua} "["  "NRootES"  "]" ] :   {qhishwa}
 | [ {quechua} "["  "NRootES"  "]" ] :   {qishwa}

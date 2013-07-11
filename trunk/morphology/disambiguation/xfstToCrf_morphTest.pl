@@ -22,7 +22,7 @@ if ($num_args > 2) {
 my $mode = $ARGV[0];
 unless($mode eq '-1' or $mode eq '-2' or $mode eq '-3' or $mode eq '-4' or !$mode){
 	print STDERR "\nUsage:  perl xfstToCrf.pl -1/-2/-3/-4\n";	
- 	print STDERR "-1: NS/VS, -2: nominal+verbal morph disamb, 3: independent suffixes disamb, 4: print disambiguated xfstn";	
+ 	print STDERR "-1: NS/VS, -2: nominal+verbal morph disamb, 3: independent suffixes disamb, 4: print disambiguated xfst\n";	
   	exit;
 }
 if($mode == '-1'){
@@ -54,6 +54,10 @@ if($mode eq '-1')
 			my ($form, $analysis) = split(/\t/);
 		
 			my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
+			
+			if($pos eq 'NP'){
+					$pos = 'NRoot';
+			}
 			
 			my ($root) = $analysis =~ m/^([^\[]+?)\[/ ;
 			#print "$root\n";
@@ -381,6 +385,13 @@ if($mode eq '-2')
 #			{
 #				push(@possibleClasses, "Sg");
 #				push(@possibleClasses, "Pl");
+#				@$word[3] = "amb2";
+#			}
+			# -wanku 
+#			elsif(&containedInOtherMorphs($analyses,"+1.Obj+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ))
+#			{
+#				push(@possibleClasses, "1Sg");
+#				push(@possibleClasses, "1Pl");
 #				@$word[3] = "amb2";
 #			}
 	
@@ -760,6 +771,7 @@ sub printXFST{
 sub disambMorph1{
 	my $wordsref = $_[0];
 	my @words = @$wordsref;
+	#&printXFST(\@words);
 	
 	#retrieve ambwords from disk
 	my @ambWords;
@@ -912,6 +924,7 @@ sub disambMorph2{
 	my $wordsref = $_[0];
 	my @words = @$wordsref;
 	#print "@words\n";
+	#&printXFST(\@words);
 	
 	#retrieve ambwords from disk
 	my @ambWords;
@@ -1086,6 +1099,8 @@ sub disambMorph2{
 sub disambMorph3{
 	my $wordsref = $_[0];
 	my @words = @$wordsref;
+	
+	#&printXFST(\@words);
 	
 	#retrieve ambwords from disk
 	my @ambWords;
