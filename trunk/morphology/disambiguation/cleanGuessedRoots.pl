@@ -25,7 +25,7 @@ while(<>)
 	{	
 		my ($form, $analysis) = split(/\t/);
 	
-		my ($root) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
+		my ($root) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$|AdvES|PrepES|ConjES)/ ;
 		#print "$analysis\n";
 		
 		if($root eq ''){

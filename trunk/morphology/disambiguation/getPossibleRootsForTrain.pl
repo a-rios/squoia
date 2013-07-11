@@ -31,7 +31,7 @@ while(<STDIN>){
 			unless(/RootG/){
 				my ($form, $analysis) = split(/\t/);
 			
-				my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
+				my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$|AdvES|PrepES|ConjES)/ ;
 				
 				my ($root) = $analysis =~ m/^([^\[]+?)\[/ ;
 				#print "$root\n";
