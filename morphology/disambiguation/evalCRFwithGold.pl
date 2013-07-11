@@ -110,6 +110,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 			 	# only pos: count ambiguos words
 			 	if(@rowsCRF[3] ne 'ZZZ'){
 	#		 		print "$classCRF : $classGOLD\n";
+					print $crfLine."\n";
 					$wordsToDisamb++;
 			 	}
 			 	# discount 'mayqin' (NRoot vs PrnInterr, not really ambiguos on morph level)

@@ -43,7 +43,12 @@ while(<STDIN>){
 	
 		my ($root) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$)/ ;
 		
-		if($root eq ''){
+		if($root eq 'NP'){
+			$root = 'NRoot';
+			#print $form."\n";
+		}
+		
+		elsif($root eq ''){
 			if($form eq '#EOS'){
 				$root = '#EOS';
 			}

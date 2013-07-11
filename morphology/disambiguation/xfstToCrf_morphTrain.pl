@@ -237,6 +237,14 @@ if($mode eq '-2')
 			if($allmorphs =~  /Top/){$actualClass = "Top";}
 			elsif($allmorphs =~ /Fut/ ){$actualClass = "Fut";}
 		}
+		# -wanku
+#		elsif($allmorphs =~ /\Q+1.Obj+3.Pl.Subj\E/ || $allmorphs =~ /\Q+3.Subj_1.Pl.Excl.Obj\E/ )
+#		{#print "@$word[0]: $allmorphs\n";
+#			push(@possibleClasses, "1Pl");
+#			push(@possibleClasses, "1Sg");
+#			if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
+#			elsif($allmorphs =~ /\Q+1.Obj+3.Pl.Subj\E/ ){$actualClass = "1Sg";}
+#		}
 		
 		# NOMINAL morphology, with possible VS
 #		# -nkuna

@@ -520,10 +520,11 @@ define Particles VerbRulesLower .o. [[Particle|ParticleBasic|ParticleVerb|Partic
        #                  #
        ####################
 
-       define Spanish  @re"lexikon-sp.regex" .o. SpanOrtho .o. UpperCase .o. LowerCase;
+      # define Spanish  @re"lexikon-sp.regex" .o. SpanOrtho .o. UpperCase .o. LowerCase;
 
 
-  define SpecialWord [Letters|Punctuation|Number|Spanish];
+ # define SpecialWord [Letters|Punctuation|Number|Spanish];
+ define SpecialWord [Letters|Punctuation|Number];
 
 #################################################################################
        
@@ -550,7 +551,8 @@ define WASUNCHIS [~$["+1.Obj"?*[{sunchi}|{nchi}][s|k|q]%["VPers"]];
 define SUNKICHIS [~$["+2.Obj"?*"+2.Pl.Subj"]];
 define SUNMAN [~$["+1.Pl.Incl.Subj.Imp"?*"+Pot"]];
 
-define WANKU [~$["+1.Obj"?*"+3.Pl.Subj"]];
+# can be both 3>1.pl.excl or 3.pl>1obj
+#define WANKU [~$["+1.Obj"?*"+3.Pl.Subj"]];
 define WASUN [~$["+1.Obj"?*{sun}%[]];
 define WANQAKU [~$["+1.Obj"?*{nqaku}%[]];
 define WAYKU [~$["+1.Obj"?*"+1.Pl.Excl.Subj"]];
@@ -582,16 +584,16 @@ define YKACHA [~$["+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml"]];
 #define WAQ [~$["+1.Obj"%] %["^DB"%] %["--"%]{q}%["NS"%] %["+Ag"]]; #may occur
 #define SAQ [~$["+Prog""+Ag"]]; #saq, if -sa is allowed as progressive allomorph (Bolivian Quechua)
 
-define PAS [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] [{si}|s] %["Amb"%] %["+IndE"]] ;
-define PAQ [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] [q|p] %["Cas"%] %["+Gen"]] ;
+define PAS [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %["+IndE"]] ;
+define PAQ [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] p %["Cas"%] %["+Gen"]] ;
 
 define NTIN [~$[{ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m]]];
 define STIN [~$[{stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m]]]; # -stin, not as -sti -n (3.Sg.Subj, or DirE)
 define PTIN [~$[{pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb"%] ]]; #-pti -> Ayacuchano, but -n as DirE, only Cuzqueño
-define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%][q|p] %["NS"%]]];
+define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"%]]];
 
-define TAQ  [~$[{ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] [q|p]%["Cas"%]]];
-define NIRAQ [~$[{nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] [q|p]%["Cas"%]]];
+define TAQ  [~$[{ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] p %["Cas"%]]];
+define NIRAQ [~$[{nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] p %["Cas"%]]];
 
 define DISC [~$[%["Part+Disc"%] %["^DB"%] %["--"%] {ña} ]]; #ñaña = sister, not 2 times +Disc
 #define tripleGEN [~$["+Gen""@PA""+Gen""@PA""+Gen""@PA"]];
@@ -640,7 +642,7 @@ define LLUMPAQ [~$[%["=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS"%]]];
 
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANKU .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. SQAS .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARI .o. TUKUY .o. LLUMPAQ];
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN  .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. SQAS .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARI .o. TUKUY .o. LLUMPAQ];
 
 ######################################################################################
 
