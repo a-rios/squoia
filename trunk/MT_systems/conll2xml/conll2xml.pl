@@ -1938,6 +1938,9 @@ sub splitCliticsFromVerb{
 			$vend = $1;
 			$vend =~ s/a/e/;
 		}
+		elsif ($vtag =~ /V.M01P0/) {
+			$vend = "mos";
+		}
 		print STDERR "$vtag verb $vlem form ends in $vend\n";
 		if ($word =~ /(.*?$vend)((me|te|nos|os|se|la|las|lo|los|le|les)+)$/)
 		{
