@@ -1,6 +1,8 @@
 # set char-encoding utf-8
 # -*- encoding: utf-8 -*-
 
+# recognizes quechua words with spanish roots, (almost) no relaxation on orthography, only accents
+
        #derivation boundary
        define DB [[ "[" "^DB" "]"] :0];
 
@@ -77,9 +79,9 @@
        #- e may be written as i, o as u in Spanish words #
        #-------------------------------------------------#
        define AccentES [ á (->) a,é (->) e,í (->) i, ó (->) o,ú (->) u, ü (->) u];
-       define spanLetras1 [ e (->) i, o (->) u || .#. ~$[e|o] _ ~$[e|o] .#. ];
-       define spanLetras2 [  c (->) k , v (->) w ];
-       define SpanOrtho AccentES .o. spanLetras;
+      # define spanLetras1 [ e (->) i, o (->) u || .#. ~$[e|o] _ ~$[e|o] .#. ];
+      # define spanLetras2 [  c (->) k , v (->) w ];
+       define SpanOrtho AccentES;
 
 ########################################################################
 ########################################################################
@@ -307,8 +309,8 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        #       #
        #########
 
-      #define NROOT @re"spanish-nouns.regex" .o. SpanOrtho;
-      define NROOT @re"spanish-conj.regex" .o. SpanOrtho;
+      define NROOT @re"spanish-nouns.regex" .o. SpanOrtho;
+      #define NROOT @re"test.regex" .o. SpanOrtho;
 
        define N=N=1 @re"n-n-1-guesser.regex" ;
        define N=N=2 DB @re"n-n-2.regex" ;
@@ -469,11 +471,11 @@ define NTAWAN [~$[%["+Proloc"%] %["^DB"%] %["--"%] {wan}]];
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
 
-define NAQ [~$[%["+Obl"%] %["^DB"%] %["--"%] {p} %["Cas"%] ]];
+#define NAQ [~$[%["+Obl"%] %["^DB"%] %["--"%] {p} %["Cas"%] ]];
 define NAS [~$[%["+Obl"%] %["^DB"%] %["--"%] {s} %["Amb"%] ]];
 
 
-#define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. NAQ .o. NAS];
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. NAS];
 
 
 ######################################################################################
@@ -482,8 +484,8 @@ define NAS [~$[%["+Obl"%] %["^DB"%] %["--"%] {s} %["Amb"%] ]];
 #define Wort IGRules .o. [[Noun|Verb] (AS)] .o. NounRules .o. GENACC .o. AmbiRules ;
 define Wort IGRules .o. [Noun|Verb|ADVERBS|CONJUNCTIONS|PREPOSITIONS] .o. NounRules .o. GENACC .o. AmbiRules ;
 
-#read regex Cleanup2  .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent .o. UpperCase;
-read regex Cleanup2  .o. Wort  .o. Cleanup1 .o. Accent .o. UpperCase;
+read regex Cleanup2  .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent .o. UpperCase;
+#read regex Cleanup2  .o. Wort  .o. Cleanup1 .o. Accent .o. UpperCase;
 #read regex Cleanup2 .o. Wort  .o. Cleanup1 .o. Accent;
 
 
