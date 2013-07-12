@@ -1117,6 +1117,7 @@
    <e><p><l>comer</l><r>essen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>compensar</l><r>kompensieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>concebir</l><r>konzipieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>concentrar</l><r>konzentrieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>concretar</l><r>konkretisieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>consistir</l><r>bestehen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: prepositional object of verbs like here: consistir en = bestehen in/aus -->
    <e><p><l>cooperar</l><r>kooperieren</r></p><par n='VM_VV_MAIN'/></e>
@@ -1174,6 +1175,7 @@
    <e><p><l>relacionar</l><r>verbinden</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>remarcar</l><r>betonen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>soñar</l><r>träumen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>superar</l><r>überwinden</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>tener_hambre</l><r>Hunger_haben<s n="split"/>yes<s n="complex_pos"/>NN_VV</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: split mwu -->
    <e><p><l>trabajar</l><r>arbeiten</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>utilizar</l><r>benutzen</r></p><par n='VM_VV_MAIN'/></e>
@@ -19946,12 +19948,9 @@
    <e><p><l>reuma</l><r>Rheuma</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>reumatismo</l><r>Rheuma</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>reunificación</l><r>Wiedervereinigung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>reunión</l><r>Konferenz</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>reunión</l><r>Sitzung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>reunión</l><r>Tagung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>reunión</l><r>Vereinigung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>reunión</l><r>Versammlung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>reunión</l><r>Zusammenschluss</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>reunión</l><r>Zusammensein</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>reutilización</l><r>Wiederverwendung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>reválida</l><r>Abschlussprüfung</r></p><par n='NC_N_NUM_FEM'/></e>

@@ -1,8 +1,9 @@
 # bilingual dictionary
 # MATXIN_DIR=/opt/matxin/local/
+export SQUOIAHOME="/home/clsquoia/de_squoia"
 export ESDE_DIR="/home/clsquoia/de_squoia/MT_systems/esde"
 export ESDE_DICT="$ESDE_DIR/lexica/es-de"
-export ESDE_CHUNKTYPE="$ESDE_DIR/grammar/mapchunktype_es-de.cfg"
+export ESDE_CHUNKTYPE="$ESDE_DIR/grammar/chunktype_es-de.cfg"
 export FREELING_CONFIG="/home/clsquoia/de_squoia/FreeLingModules/FL_es_desr.cfg"
 export FREELING_PARAM="-f $FREELING_CONFIG"
 
@@ -16,7 +17,7 @@ export DESR_DIR="/home/clsquoia/parser/desr-1.3.2"
 export DESR_CONFIG=$DESR_DIR/spanishv2.conf
 export DESR_MODEL=$DESR_DIR/spanish_es4.MLP
 #export DESR_MODEL=$DESR_DIR/spanish.MLP
-export DESR_PARAMS="-m $DESR_MODEL -c $DESR_CONFIG"
+export DESR_PARAMS="-m $DESR_MODEL" # -c $DESR_CONFIG"
 
 export TAGPORT=8866
 

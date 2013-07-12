@@ -65,8 +65,10 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 # get all prepositional complement chunks
 foreach my $prepchunk ( $dom->findnodes('//CHUNK[@si="'.$PREP_FUNC.'"]') ) {
 	my $prepnode = @{$prepchunk->findnodes('descendant::NODE[starts-with(@smi,"'.$SL_PREP_CPOS.'")]')}[0];
+	next if not $prepnode;
 	my $verbchunk = &getParentChunk($prepchunk);
 	my $verbnode = @{$verbchunk->findnodes('child::NODE')}[0];
+	next if not $verbnode;
 
 	my $SLverb = $verbnode->getAttribute('slem');
 	my $SLprep = $prepnode->getAttribute('slem');
