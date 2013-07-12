@@ -162,7 +162,7 @@ foreach my $word (@words){
 		
 		foreach my $analysis (@$analyses){
 				my $lem = $analysis->{'lem'};
-				unless (grep {$_ =~ /\Q$lem\E/} @possibleLemmas ){
+				unless (grep {$_ =~ /\Q$lem\E$/} @possibleLemmas ){
 					push(@possibleLemmas, $lem);
 			}
 		}
@@ -172,9 +172,9 @@ foreach my $word (@words){
 }
 
 foreach my $word (keys %Lemmas){
-#	print "$word: ";
+	#rint "$word: ";
 	my $possibleLemmas = $Lemmas{$word};
-#	print "@$possibleLemmas\n";
+	#print "@$possibleLemmas\n";
 }
 
 store \%Lemmas, 'PossibleLemmasForTrain';

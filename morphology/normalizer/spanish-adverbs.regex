@@ -46,7 +46,6 @@
 | [ {bien} "["  "AdvES"  "]" ] : {bien}
 | [ {caput} "["  "AdvES"  "]" ] : {caput}
 | [ {casi} "["  "AdvES"  "]" ] : {casi}
-| [ {cerca} "["  "AdvES"  "]" ] : {cerca}
 | [ {chano} "["  "AdvES"  "]" ] : {chano}
 | [ {chiticallando} "["  "AdvES"  "]" ] : {chiticallando}
 | [ {comoquiera} "["  "AdvES"  "]" ] : {comoquiera}

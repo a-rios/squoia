@@ -9,8 +9,6 @@
 | [ {pero} "["  "ConjES"  "]" ] : {pero}
 | [ {porque} "["  "ConjES"  "]" ] : {porque}
 | [ {sino} "["  "ConjES"  "]" ] : {sino}
-| [ {seno} "["  "test"  "]" ] : {seno}
-| [ {sinu} "["  "test"  "]" ] : {sinu}
 | [ {siquiera} "["  "ConjES"  "]" ] : {siquiera}
 | [ {siquier} "["  "ConjES"  "]" ] : {siquier}
 ;

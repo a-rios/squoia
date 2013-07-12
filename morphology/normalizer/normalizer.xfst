@@ -650,13 +650,19 @@ define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 
 
 define HAKU  [{haku} "[" "VRoot" "+2.Sg.Subj.Imp" "]" "[" "=venir" "]"] : {haku};
 
+# otaq/nitaq
+
+define OTAQ [ {o} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" "Amb" "]" "[" "+Con_Intr" "]" ] : {otaq};
+define NITAQ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" "Amb" "]" "[" "+Con_Intr" "]" ] : {nitaq};
+
+
 ######################################################################################
 
 #define Wort [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. UpperCase;
 define Wort IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. AmbiRules .o. UpperCase;
 
-read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex  SQAS .o. [Wort|SpecialWord] .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
+read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+#read regex Cleanup2 .o.  [Wort|SpecialWord|OTAQ|NITAQ]  .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
 #read regex  FeatRestr .o. [Wort|SpecialWord]  .o. Cleanup1;
 #read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord];
 
