@@ -201,19 +201,7 @@ foreach my $word (@words){
 		#possible morph tags, variant 1: take only those morph tags into account that are present in ALL analyses
 		my $printedmorphs='';
 		my $nbrOfMorph =0;
-		my $allmorphs;
-#		foreach my $analysis (@$analyses){
-#			my $morphsref = $analysis->{'morph'};
-#			foreach my $morph (@$morphsref){
-#				if(&isContainedInAllAnalyses($analyses,$morph) ){
-#					unless($printedmorphs =~ /\Q$morph\E/){
-#					print "$morph\t";
-#					$printedmorphs = $printedmorphs.$morph;
-#					$nbrOfMorph++;
-#					}
-#				}
-#			}	
-#		}	
+		my $allmorphs;	
 	
 		#possible morph tags, variant 2: take ALL morph tags into account 
 		foreach my $analysis (@$analyses){
