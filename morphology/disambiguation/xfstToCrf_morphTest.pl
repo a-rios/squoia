@@ -956,7 +956,7 @@ sub disambMorph2{
 		my $analyses = @$ambword[1];
 		my $form = @$ambword[0];
 		#print "$form $crfform\n";
-		if($form ne $crfform ){
+		if(lc($form) ne lc($crfform) ){
 			unless($crfform =~ /^\s*$/){
 			print STDERR "not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
 			exit;

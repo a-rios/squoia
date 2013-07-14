@@ -51,16 +51,33 @@ while(<>){
 		$needspace=1;
 	}
 	else{
-		my @morphs = ($_ =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
+		my ($form, $analysis) = split('\t');
+		my @morphs = ($analysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
 		unless($needspace==0){
 			print " ";}
 		#if(scalar(@morphs)>0){
 		#print " ";}
-		foreach my $m (@morphs){
-			print "$m";
+		
+		# check if first letter should be uppercase
+		my $upper = 0;
+		my $firstletter = substr($form,0,1);
+		if( $firstletter eq uc($firstletter)){
+			$upper = 1;
 		}
+		
+		for(my $i=0;$i<scalar(@morphs);$i++){
+			my $m = @morphs[$i];
+			if($upper ==1 && $i==0){
+				print ucfirst("$m");
+			}
+			else{
+				print "$m";
+			}
+		}
+		
+		
 		$needspace=1;
 		
-	}
+		}
 	}
 }
