@@ -181,6 +181,9 @@ foreach my $word (@words){
 		if($mode eq '-train'){
 			my $possiblePosRef = $xfstwordsPos{$form};
 			foreach my $possPos (@$possiblePosRef){
+				if($possPos eq 'NP'){
+					$possPos = 'NRoot';
+				}
 				unless($printedroots =~ /\Q$possPos\E/){
 					print "$possPos\t";
 					$printedroots = $printedroots.$possPos;

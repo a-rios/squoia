@@ -388,12 +388,12 @@ if($mode eq '-2')
 #				@$word[3] = "amb2";
 #			}
 			# -wanku 
-#			elsif(&containedInOtherMorphs($analyses,"+1.Obj+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ))
-#			{
-#				push(@possibleClasses, "1Sg");
-#				push(@possibleClasses, "1Pl");
-#				@$word[3] = "amb2";
-#			}
+			elsif(&containedInOtherMorphs($analyses,"+1.Obj+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ))
+			{
+				push(@possibleClasses, "1Sg");
+				push(@possibleClasses, "1Pl");
+				@$word[3] = "amb2";
+			}
 	
 			# else: other ambiguities, leave
 			else
@@ -904,6 +904,7 @@ sub disambMorph1{
 	# for testing: print xfst to STDERR
 	#&printXFST(\@words);
 	my $totalWords = scalar(@words);
+	#print "words: "$totalWords;
 	$ambigForms = $$prevdisamb + $ambigForms;
 	my $unamb = $unambigForms/$totalWords;
 	my $amb = ($$prevdisamb + $ambigForms)/$totalWords;

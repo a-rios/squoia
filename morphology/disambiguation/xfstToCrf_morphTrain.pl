@@ -47,6 +47,7 @@ while(<STDIN>){
 		else
 		{	
 			my ($form, $analysis) = split(/\t/);
+			#print $form."\n";
 		
 			my ($pos) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$|AdvES|PrepES|ConjES)/ ;
 			
@@ -238,13 +239,13 @@ if($mode eq '-2')
 			elsif($allmorphs =~ /Fut/ ){$actualClass = "Fut";}
 		}
 		# -wanku
-#		elsif($allmorphs =~ /\Q+1.Obj+3.Pl.Subj\E/ || $allmorphs =~ /\Q+3.Subj_1.Pl.Excl.Obj\E/ )
-#		{#print "@$word[0]: $allmorphs\n";
-#			push(@possibleClasses, "1Pl");
-#			push(@possibleClasses, "1Sg");
-#			if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
-#			elsif($allmorphs =~ /\Q+1.Obj+3.Pl.Subj\E/ ){$actualClass = "1Sg";}
-#		}
+		elsif($allmorphs =~ /\Q+1.Obj+3.Pl.Subj\E/ || $allmorphs =~ /\Q+3.Subj_1.Pl.Excl.Obj\E/ )
+		{#print "@$word[0]: $allmorphs\n";
+			push(@possibleClasses, "1Pl");
+			push(@possibleClasses, "1Sg");
+			if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
+			elsif($allmorphs =~ /\Q+1.Obj+3.Pl.Subj\E/ ){$actualClass = "1Sg";}
+		}
 		
 		# NOMINAL morphology, with possible VS
 #		# -nkuna
@@ -292,6 +293,7 @@ if($mode eq '-3')
 		my $actualClass;
 		my $allmorphs = @$analyses[0]->{'allmorphs'};
 		my $string = @$analyses[0]->{'string'};
+		#if($string =~ /animal/){print $string."\n";}
 		
 			# -n: direct evidencial or 3.Sg.Poss
 			if( ($allmorphs =~ /\Q+3.Sg.Poss\E/ && $string !~ /3\.Sg\.Poss.*(Cas|Pl|Amb)/ ) || ($allmorphs =~ /\Q+DirE\E/  && $string =~ /[n|m]\[Amb/ && $string !~ /(Cas|Num).+DirE/) )
@@ -337,7 +339,7 @@ if($mode eq '-3')
 				@$word[4] =  &sentenceHasEvid(\@words, $i);
 			}
 			# -s with Spanish roots: Plural or IndE (e.g. derechus)
-			elsif($allmorphs =~ /\QNRootES][^DB][--]s[Amb][+IndE]\E/ && $string =~ /s\[NRootES/ )
+			elsif($string =~ /\QNRootES][^DB][--]s\Ei?\Q[Amb][+IndE]\E/ || $string =~ /[^ái]\Qs[NRootES\E/ )
 			{
 				push(@possibleClasses, "Pl");
 				push(@possibleClasses, "IndE");
@@ -384,8 +386,10 @@ for (my $i=0;$i<scalar(@words);$i++){
    if(scalar(@$possibleClasses)>1){
 		print lc($form)."\t";
    
-
-		print @$analyses[0]->{'pos'}."\t";
+		my $pos = @$analyses[0]->{'pos'};
+		#if($pos =~ /ConjES|AdvES|PrepES/){$pos = 'SP';}
+		if($pos eq 'NP'){$pos = 'NRoot';}
+		print $pos."\t";
 
 		my $nbrOfClasses =0;
 		# possible classes
@@ -483,7 +487,11 @@ for (my $i=0;$i<scalar(@words);$i++){
 				if($bos!=1)
 				{
 					print "$form\t";
-					print @$analyses[0]->{'pos'}."\t";
+					#print @$analyses[0]->{'pos'}."\t";
+					my $pos = @$analyses[0]->{'pos'};
+					#if($pos =~ /ConjES|AdvES|PrepES/){$pos= 'SP';}
+					if($pos eq 'NP'){$pos = 'NRoot';}
+					print $pos."\t";
 					#print morphs of context words
 					my $printedmorphs='';
 					my $nbrOfMorphP =0;
@@ -544,7 +552,11 @@ for (my $i=0;$i<scalar(@words);$i++){
 				if($eos!=1)
 				{
 					print "$form\t";
-					print @$analyses[0]->{'pos'}."\t";
+					#print @$analyses[0]->{'pos'}."\t";
+					my $pos = @$analyses[0]->{'pos'};
+					#if($pos =~ /ConjES|AdvES|PrepES/){$pos= 'SP';}
+					if($pos eq 'NP'){$pos = 'NRoot';}
+					print $pos."\t";
 					#print morphs of context words
 					my $printedmorphs='';
 					my $nbrOfMorphF =0;

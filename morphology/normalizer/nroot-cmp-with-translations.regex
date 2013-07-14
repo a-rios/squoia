@@ -1103,7 +1103,6 @@
 | [ {siqha} "[" "NRoot" "]" "[" "=recio" "]" ] :  {siqha}
 | [ {siq'i} "[" "NRoot" "]" "[" "=línea,fila" "]" ] :  {siq'i}
 | [ {siq'i} "[" "NRoot" "]" "[" "=línea,fila" "]" ] :  {siqi}
-| [ {siqsi} "[" "NRoot" "]" "[" "=comezón" "]" ] :  {siqsi}
 | [ {siq'u} "[" "NRoot" "]" "[" "=látigo" "]" ] :  {siq'u}
 | [ {sirk'a} "[" "NRoot" "]" "[" "=vena" "]" ] :  {sirka}
 | [ {sirk'a} "[" "NRoot" "]" "[" "=vena" "]" ] :  {sirk'a}

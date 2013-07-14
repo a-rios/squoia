@@ -1428,7 +1428,6 @@
 | [ {suntu} "[" "VRoot" "]" "[" "=amontonar" "]" ] :  {suntu}
 | [ {supi} "[" "VRoot" "]" "[" "=copular_los_aves,tirarse_un_pedo" "]" ] :  {supi}
 | [ {suq'u} "[" "VRoot" "]" "[" "=chupar" "]" ] :  {suq'u}
-| [ {suq'u} "[" "VRoot" "]" "[" "=chupar" "]" ] :  {suqu}
 | [ {susuna} "[" "VRoot" "]" "[" "=adormecerse" "]" ] :  {susuna}
 | [ {susunka} "[" "VRoot" "]" "[" "=entumecer,adormecerse" "]" ] :  {susunka}
 | [ {susunka} "[" "VRoot" "]" "[" "=entumecer,adormecerse" "]" ] :  {susunkha}

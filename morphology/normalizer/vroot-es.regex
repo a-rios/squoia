@@ -56,7 +56,6 @@
 | [ {importa} "[" "VRootES" "]" ] :  {impurta}
 | [ {invita} "[" "VRootES" "]" ] :  {imbita}
 | [ {inyecta} "[" "VRootES" "]" ] :  {inyikta}
-| [ {junta} "[" "VRootES" "]" ] :  {hunta}
 | [ {juramenta} "[" "VRootES" "]" ] :  {huraminta}
 | [ {jura} "[" "VRootES" "]" ] :  {hura}
 | [ {lee} "[" "VRootES" "]" ] :  {liyi}
