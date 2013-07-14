@@ -1,7 +1,7 @@
 # set char-encoding utf-8
 # -*- encoding: utf-8 -*-
 # TODOs: 
-# -sqas -> can only be perfect (?)
+# -sqas -> can only be perfect (?) -> wrong
 # -scha as allomorph of ysi/schi (assistive)
 # -switches: allow -m as -n, -pas as -pis
 # -llump'aq
@@ -568,7 +568,7 @@ define QTI [~$["+Ag"?*"+Char"]] ;
 define SQAMA  [~$["+3.Sg.Subj.IPst"?*"+DirE_Emph"]]; #-sqa-má -> only as +Perf+DirE_Emph
 define SQAN [~$["+3.Sg.Subj.IPst"?*"+DirE"]];
 define RQAN [~$[%["+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"%] ]];
-define SQAS [~$[ "+3.Sg.Subj.IPst"%] %["^DB"%] %["--"%] s %["Amb" ]];
+#define SQAS [~$[ "+3.Sg.Subj.IPst"%] %["^DB"%] %["--"%] s %["Amb" ]];
 
 define PAKU  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku}]];
 define PAMU  [~$[%["+Rep"%] %["--"%]{mu}]];
@@ -640,9 +640,11 @@ define WIRAQUCHA [~$[ {wira}%["NRoot" ?* {qucha}%["NRoot" ]];
 
 define LLUMPAQ [~$[%["=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS"%]]];
 
+define IMANA [~$[{ima}%[?*"+Reub"]];
+
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN  .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. SQAS .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARI .o. TUKUY .o. LLUMPAQ];
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN  .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARI .o. TUKUY .o. LLUMPAQ .o. IMANA];
 
 ######################################################################################
 
