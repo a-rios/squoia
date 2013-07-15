@@ -74,3 +74,9 @@ my.type=VZUINF			xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=A
 
 # Verb is the head
 my.type=VP-inf		xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/		xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .head +xSC
+
+##########
+# ZU+INF #
+##########
+my.type=/VP/&&my.zu="yes"	xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/		xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .head +xSC
+

@@ -79,10 +79,9 @@ my.smi=/^D/&&(parent.pos=/NN/||parent.unknown="transfer"&&parent.smi=/^NC/) && c
 #################
 # Infinite Verb #
 #################
-	# VZ-inf
+	# deprecated: VZ-inf
 	# put embedded node with infinite verb into a separate chunk, so the verb+zu can be put at the end of the VZ-inf clause
-
-my.pos=/V[AMV]INF/ && parent.pos=APPR && chunkparent.type=VZ-inf	zuVerb="no"	type=VZUINF,comment="verb+zu clause"
+	# my.pos=/V[AMV]INF/ && parent.pos=APPR && chunkparent.type=VZ-inf	zuVerb="no"	type=VZUINF,comment="verb+zu clause"
 
 ##########
 # Clitic #

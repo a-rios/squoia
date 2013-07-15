@@ -5,7 +5,7 @@
 # example: lem="an|fangen" pos="VVFIN" => lem="an" pos="PTKVZ" + lem="fangen" pos="VVFIN"
 #
 # Input: xml output from lexical transder module from Matxin/Apertium (LT)
-# Output: same xml, with additional chunk for separable verb prefix if verb is finite
+# Output: same xml, with additional chunk for separable verb prefix if verb is finite or imperative
 
 use strict;
 use XML::LibXML;
@@ -16,7 +16,7 @@ my $dom    = XML::LibXML->load_xml(location => "-");
 my $maxChunkRef = &getMaxChunkRef($dom);
  
 #my $xpathexpr = '//CHUNK[@type="VP" or @type="CVP"]/descendant-or-self::NODE[contains(@lem,"|") and (starts-with(@pos,"VVFIN") or starts-with(@pos,"VVPP"))]';
-my $xpathexpr = '//CHUNK[@type="VP" or @type="CVP"]/descendant-or-self::NODE[contains(@lem,"|") and @pos="VVFIN"]';
+my $xpathexpr = '//CHUNK[@type="VP" or @type="CVP"]/descendant-or-self::NODE[contains(@lem,"|") and (@pos="VVFIN" or @pos="VVIMP")]';
 
 my @verbPrefNodes = $dom->findnodes($xpathexpr);
 foreach my $node (@verbPrefNodes) {

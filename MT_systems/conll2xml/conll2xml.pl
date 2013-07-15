@@ -24,11 +24,11 @@ my %mapCliticToEaglesTag =       (
 
 my %mapCliticFormToLemma =       (
         'la'		=> 'lo',
-        'las'		=> 'los',
+        'las'		=> 'lo',
         'lo'		=> 'lo',
-        'los'		=> 'los',
+        'los'		=> 'lo',
         'le'		=> 'le',
-        'les'		=> 'les',
+        'les'		=> 'le',
         'me'		=> 'me',
         'te'		=> 'te',
         'se'		=> 'se',
@@ -1929,14 +1929,21 @@ sub splitCliticsFromVerb{
 	{
 		my $vend = "";
 		# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
-		if ($vtag =~ /V.M02S0/ and $vlem =~ /([mst][ei])r$/)	# cómetelas => come-telas (comer) ; vístete => viste-te (vestir) TODO Spanish verb ending in "ler" (not "ller") ?
+		if ($vtag =~ /V.M02S0/ and $vlem =~ /([mst][ei]|la)r$/)	# cómetelas => come-telas (comer) ; vístete => viste-te (vestir) 
 		{
 			$vend = $1;
 		}
-		elsif ($vtag =~ /V.M03S/ and $vlem =~ /([mst]a)r$/)	# mátelo => mate-lo (matar)	TODO Spanish verb ending in "lar" (not "llar") ?
+		elsif ($vtag =~ /V.M03S/)
 		{
-			$vend = $1;
-			$vend =~ s/a/e/;
+			if ($vlem =~ /([mst]a)r$/)	# mátelo => mate-lo (matar)
+			{
+				$vend = $1;
+				$vend =~ s/a/e/;
+			}
+			elsif ($vlem =~ /ler$/)	# demuélala => demuela-la (demoler)
+			{
+				$vend = "la";
+			}
 		}
 		elsif ($vtag =~ /V.M01P0/) {
 			$vend = "mos";
