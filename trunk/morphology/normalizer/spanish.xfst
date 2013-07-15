@@ -1,6 +1,7 @@
 # set char-encoding utf-8
 # -*- encoding: utf-8 -*-
-
+# TODO: -koq (flags in rule context (allophones), doesn't work! ) 
+ 
 # recognizes quechua words with spanish roots, (almost) no relaxation on orthography, only accents
 
        #derivation boundary
