@@ -208,6 +208,7 @@
 | [ {chapi} "[" "NRoot" "]" "["  "=estaño" "]" ] : {chapi}
 | [ {chapla} "[" "NRoot" "]" "["  "=pan_de_trigo,aplastado" "]" ] : {chapla}
 | [ {chapra} "[" "NRoot" "]" "["  "=rama" "]" ] : {ch'apra}
+| [ {chapra} "[" "NRoot" "]" "["  "=rama" "]" ] : {ch'aphra}
 | [ {chapra} "[" "NRoot" "]" "["  "=rama" "]" ] : {chapra}
 | [ {chapra} "[" "NRoot" "]" "["  "=rama" "]" ] : {chapsa}
 | [ {chapu} "[" "NRoot" "]" "["  "=mezcla" "]" ] : {chapu}
@@ -2070,6 +2071,7 @@
 | [ {t'ampa} "[" "NRoot" "]" "["  "=despeinado,maraña" "]" ] : {t'ampa}
 | [ {t'ampa} "[" "NRoot" "]" "["  "=maraña" "]" ] : {tampa}
 | [ {thampi} "[" "NRoot" "]" "["  "=aturdido" "]" ] : {tampi}
+| [ {thamin} "[" "NRoot" "]" "["  "=placenta" "]" ] : {thamin}
 | [ {tampu} "[" "NRoot" "]" "["  "=tambo,albergue" "]" ] : {tampu}
 | [ {thani} "[" "NRoot" "]" "["  "=salud,sano" "]" ] : {tani}
 | [ {thani} "[" "NRoot" "]" "["  "=salud,sano" "]" ] : {tañi}
@@ -2112,6 +2114,7 @@
 | [ {thunku} "[" "NRoot" "]" "["  "=bastón" "]" ] : {thunku}
 | [ {thuqa} "[" "NRoot" "]" "["  "=baba" "]" ] : {thuqa}
 | [ {thuru} "[" "NRoot" "]" "["  "=duro" "]" ] : {thuru}
+| [ {thuta} "[" "NRoot" "]" "["  "=polilla" "]" ] : {thuta}
 | [ {t'ika} "[" "NRoot" "]" "["  "=flor" "]" ] : {t'ika}
 | [ {t'ika} "[" "NRoot" "]" "["  "=flor" "]" ] : {tika}
 | [ {t'ikra} "[" "NRoot" "]" "["  "=revés" "]" ] : {t'ikra}
@@ -2136,6 +2139,7 @@
 | [ {t'ipi} "[" "NRoot" "]" "["  "=división" "]" ] : {tipi}
 | [ {t'ipki} "[" "NRoot" "]" "["  "=alfiler" "]" ] : {t'ipki}
 | [ {t'ipki} "[" "NRoot" "]" "["  "=alfiler" "]" ] : {tipki}
+| [ {t'iqi} "[" "NRoot" "]" "["  "=apretado,ajustado,bulto" "]" ] : {t'iqi}
 | [ {tiqsi} "[" "NRoot" "]" "["  "=fundamento,base" "]" ] : {tiqsi}
 | [ {tiqti} "[" "NRoot" "]" "["  "=chicha_dulce" "]" ] : {tiqti}
 | [ {t'iski} "[" "NRoot" "]" "["  "=despeinado" "]" ] : {t'iski}

@@ -9,6 +9,8 @@
 # [+1.Sg.Subj_2.Sg.Obj.Fut][--]man[Mod][+Pot]
 # -nin -> nillan
 # allow yoq- ykuq
+# -sqa/na -suyki/-suykiku, qatipashasuptiyki , 
+# -upallarapuyku LLAra
 
        #derivation boundary
        define DB [[ "[" "^DB" "]"] :0];

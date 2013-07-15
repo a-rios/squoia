@@ -3,9 +3,11 @@
 #XFST_DIR=/home/clsquoia/google_squoia/morphology/analyzer_xfst
 #XFST_BIN=$XFST_DIR/quechua-web-db.fst
 
-XFST_DIR=/home/clsquoia/google_squoia/morphology/normalizer
-XFST_BIN=$XFST_DIR/normalizer.fst
-TOKENIZER=$XFST_DIR/tokenize.pl
+export XFST_DIR=/home/clsquoia/google_squoia/morphology/normalizer
+#XFST_BIN=$XFST_DIR/normalizer.fst
+export TOKENIZER=$XFST_DIR/tokenize.pl
+#export GUESS=$XFST_DIR/ 
+#export LOOKUP=$XFST_DIR/lookup.script
 
 #POS_MODEL=pos/sicuani_greg_c_5
 POS_MODEL=pos/sicuani_greg_c100_neu
@@ -16,13 +18,12 @@ MORPH3_MODEL=morph3/sicuani_greg_c10
 
 XFST_FILE=$1
 
-#perl splitSentences.pl  |
-#perl $TOKENIZER | lookup -f ../normalizer/lookup.script -flags cKv29TT  > tmp/test.xfst
+perl splitSentences.pl  | perl $TOKENIZER | lookup -f lookup.script -flags cKv29TT > tmp/test.xfst
 
-#cat tmp/test.xfst | perl cleanGuessedRoots.pl > tmp/test_clean.xfst
-#cat tmp/test.xfst | perl xfstToCrf_pos.pl -test > tmp/pos.test
+cat tmp/test.xfst | perl cleanGuessedRoots.pl > tmp/test_clean.xfst
+cat tmp/test_clean.xfst | perl xfstToCrf_pos.pl -test > tmp/pos.test
 
-cat $XFST_FILE | perl xfstToCrf_pos.pl -test > tmp/pos.test
+#cat $XFST_FILE | perl xfstToCrf_pos.pl -test > tmp/pos.test
 
 crf_test -m $POS_MODEL tmp/pos.test > tmp/pos.result
 
