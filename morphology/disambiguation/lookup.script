@@ -1,0 +1,9 @@
+main ../normalizer/normalizer.fst
+spanish ../normalizer/spanish.fst
+spanish2 ../normalizer/spanish-relax.fst
+guesser ../normalizer/guesser.fst
+
+main
+spanish
+spanish2
+guesser
