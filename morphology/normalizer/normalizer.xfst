@@ -5,7 +5,10 @@
 # -scha as allomorph of ysi/schi (assistive)
 # -switches: allow -m as -n, -pas as -pis
 # -llump'aq
-
+# -yku -> y if preceding -wa
+# [+1.Sg.Subj_2.Sg.Obj.Fut][--]man[Mod][+Pot]
+# -nin -> nillan
+# allow yoq- ykuq
 
        #derivation boundary
        define DB [[ "[" "^DB" "]"] :0];
@@ -43,7 +46,7 @@
       # Ersetze optional u durch o und i durch e, falls in Umgebung von q #
       #-------------------------------------------------------------------#
 
-      define Allophone1 [ u (->) o||  _ (s|t|n|r|l) q, q (s|t|n|r|h|l|') _  , _ (s|t|n|r|l){cc}, {cc}(s|t|n|r|h|l|') _ ] .o. [i (->) e || _ (s|t|n|r|h|l) q, q (s|t|n|r|l|ll|h|') _ , _ (s|t|n|r|h|l){cc}, {cc}(s|t|n|r|l|ll|') _  ];
+      define Allophone1 [ u (->) o||  _ (s|t|n|r|l|{ll}) q, q (s|t|n|r|h|l|'|{ll}) _  , _ (s|t|n|r|l|{ll}){cc}, {cc}(s|t|n|r|h|l|'|{ll}) _ ] .o. [i (->) e || _ (s|t|n|r|h|l|{ll}) q, q (s|t|n|r|l|{ll}|h|') _ , _ (s|t|n|r|h|l|{ll}){cc}, {cc}(s|t|n|r|l|{ll}|') _  ];
       define Allophone2 [ {ll} (->) l || _ q];
 
       define Allophone [Allophone1 .o. Allophone2 ] ;
@@ -654,8 +657,8 @@ define HAKU  [{haku} "[" "VRoot" "+2.Sg.Subj.Imp" "]" "[" "=venir" "]"] : {haku}
 
 # otaq/nitaq
 
-define OTAQ [ {o} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" "Amb" "]" "[" "+Con_Intr" "]" ] : {otaq};
-define NITAQ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" "Amb" "]" "[" "+Con_Intr" "]" ] : {nitaq};
+define OTAQ [ {o} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" "Amb" "]" "[" "+Con_Intr" "]" ] : [ [o|u|O|U]{taq} ];
+define NITAQ [ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" "Amb" "]" "[" "+Con_Intr" "]" ] : {nitaq} ] .o. UpperCase;
 
 
 ######################################################################################
