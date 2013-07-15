@@ -1096,6 +1096,7 @@
    <e><p><l>adaptar</l><r>an|passen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>ampliar</l><r>erweitern</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>andar</l><r>gehen</r></p><par n='VM_VV_MAIN_BE'/></e>		<!-- e.g. form="anda" lem="andar" mi="VMIP3S0" --> <!-- molifclass(geh) = 268; molifclass(an|geh) = 269; molifclass(begeh/entgeh/hintergeh) = 270; molifclass(wohl|geh) = 44 -->
+   <e><p><l>aportar</l><r>bei|tragen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>apropiar</l><r>an|passen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>asustar</l><r>erschrecken</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>atender</l><r>bedienen</r></p><par n='VM_VV_MAIN'/></e>
@@ -1115,6 +1116,7 @@
    <e><p><l>colgar</l><r>hängen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO: intransitive -->
    <e><p><l>colocar</l><r>setzen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>comer</l><r>essen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>cometer</l><r>begehen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>compensar</l><r>kompensieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>concebir</l><r>konzipieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>concentrar</l><r>konzentrieren</r></p><par n='VM_VV_MAIN'/></e>
@@ -10539,6 +10541,7 @@
    <e><p><l>demencia</l><r>Schwachsinn</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>demencia</l><r>Wahnsinn</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>democracia</l><r>Demokratie</r></p><par n='NC_N_76_FEDER'/></e>
+   <e><p><l>democratización</l><r>Demokratisierung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>demografía</l><r>Demographie</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>demonio</l><r>Dämon</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>demonio</l><r>Teufel</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -15042,35 +15045,28 @@
    <e><p><l>mantenimiento</l><r>Instandhaltung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mantenimiento</l><r>Wartung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mantequilla</l><r>Butter</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>mantequilla</l><r>Butter</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>manto</l><r>Umhang</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>manual</l><r>Gebrauchsanweisung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>manual</l><r>Handbuch</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>manual</l><r>manuell</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>manufactura</l><r>Fabrik</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>manufactura</l><r>Manufaktur</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>manuscrito</l><r>Handschrift</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>manuscrito</l><r>Manuskript</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>manuscrito</l><r>Manuskript</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>manutención</l><r>Unterhalt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>manutención</l><r>Unterhaltungskosten</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>manutención</l><r>Wartung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>manzana confitada</l><r>kandierter Apfel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>manzanal</l><r>Apfelplantage</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>manzana</l><r>Apfel</r></p><par n='NC_N_51_VATER'/></e>
-   <e><p><l>manzana</l><r>Apfel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>manzana</l><r>Block</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>manzana</l><r>Häuserblock</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>manzanilla</l><r>Kamillentee</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>manzanilla</l><r>Kamille</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>manzano</l><r>Apfelbaum</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>manzano</l><r>Apfelbaum</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>maoísmo</l><r>Maoismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
    <e><p><l>maorí</l><r>Maori</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>mapache</l><r>Waschbär</r></p><par n='NC_N_75_STUDENT'/></e>
-   <e><p><l>mapache</l><r>Waschbär</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>mapa</l><r>Karte</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>mapa</l><r>Karte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mapa</l><r>Landkarte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mapa</l><r>Straßenkarte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mapuche</l><r>Araukaner</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -15128,9 +15124,7 @@
    <e><p><l>marinera</l><r>Matrosenbluse</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>marinero</l><r>Matrose</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>marinero</l><r>Seemann</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>marinero</l><r>seemann</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>mariposa</l><r>Schmetterling</r></p><par n='NC_N_56_TISCH'/></e>
-   <e><p><l>mariposa</l><r>Schmetterling</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>mariposa</l><r>Schmetterlingsstil</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>mariquita</l><r>Marienkäfer</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>mariquita</l><r>Schwuchtel</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -15221,14 +15215,11 @@
    <e><p><l>matasellos</l><r>Poststempel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>mate</l><r>Mate</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>matemática</l><r>Mathematik</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>matemática</l><r>mathematik</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>matemático</l><r>Mathematiker</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>materialismo</l><r>Materialismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
    <e><p><l>materialismo</l><r>Materialismus</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>material</l><r>Material</r></p><par n='NC_N_103_MATERIAL'/></e>
-   <e><p><l>material</l><r>Material</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>materia</l><r>Materie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>materia</l><r>Materie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>materia</l><r>Stoff</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>materia</l><r>Thema</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>maternidad</l><r>Mutterschaft</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -20419,7 +20410,6 @@
    <e><p><l>seguimiento</l><r>Überwachung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>seguimiento</l><r>Verfolgung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>segundo</l><r>Sekunde</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>seguridad</l><r>Bürgschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>seguridad</l><r>Sicherheit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>seísmo</l><r>Erdbeben</r></p><par n='NC_N_54_ZEICHEN'/></e>
    <e><p><l>selacio</l><r>Haifisch</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -21049,6 +21039,7 @@
    <e><p><l>toscano</l><r>toskanisch</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>tos</l><r>Husten</r></p><par n='NC_N_100052_OSTEN'/></e>
    <e><p><l>tostador</l><r>Toaster</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>total</l><r>Summe</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>totalidad</l><r>Gesamtheit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>toxicidad</l><r>Toxizität</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>toxicología</l><r>Toxikologie</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -27183,6 +27174,7 @@ aún_cuando	RG-->
    <e><p><l>afuera</l><r>draussen</r></p><par n='RG_ADV'/></e> <!-- hinaus, heraus, aussen -->
    <e><p><l>ahí</l><r>da</r></p><par n='RG_ADV'/></e> 
    <e><p><l>ahora</l><r>jetzt</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>algo</l><r>etwas</r></p><par n='RG_ADV'/></e> 
    <e><p><l>allá</l><r>dort</r></p><par n='RG_ADV'/></e> 
    <e><p><l>allí</l><r>dort</r></p><par n='RG_ADV'/></e> 
    <e><p><l>alrededor</l><r>rundum</r></p><par n='RG_ADV'/></e> 
@@ -27768,6 +27760,7 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>pues</l><r>da</r></p><par n='CS_KOUS'/></e> <!-- pues = da/denn ?-->
    <e><p><l>que</l><r>dass</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>si</l><r>wenn</r></p><par n='CS_KOUS'/></e> <!-- falls, wenn + subjuntivo=>konditional???-->
+   <e><p><l>sin_que</l><r>ohne dass</r></p><par n='CS_KOUS'/></e>
    <e><p><l>tal_y_como</l><r>so</r></p><par n='CS_KOUS'/></e> <!-- TODO check CS? tal_y_como => so ?-->
    <e><p><l>una_vez_que</l><r>einmal dass</r></p><par n='CS_KOUS'/></e> <!-- einmal dass ?-->
    <e><p><l>ya_que</l><r>da</r></p><par n='CS_KOUS'/></e> <!-- ya_que => da ?-->
@@ -27902,7 +27895,6 @@ según	CS -> SP?
         <e><p><l>mediante</l><r>durch<s n='cas'/>Akk</r></p><par n='PREP'/></e>
         <e><p><l>mediante</l><r>mittels<s n='cas'/>Gen</r></p><par n='PREP'/></e>
         <e><p><l>para</l><r>für<s n='cas'/>Akk<s n='adpos'/>para</r></p><par n='PREP'/></e>
-        <e><p><l>para</l><r>zu<s n='cas'/>Dat<s n='adpos'/>para</r></p><par n='PREP'/></e>
         <e><p><l>per</l><r>pro<s n='cas'/>Akk</r></p><par n='PREP'/></e> <!-- per, pro -->
         <e><p><l>por</l><r><s n='adpos'/>por</r></p><par n='PREP'/></e>
         <e><p><l>pro</l><r>pro<s n='adpos'/>pro</r></p><par n='PREP'/></e>

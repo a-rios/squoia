@@ -95,9 +95,10 @@ AdjAdv = <claro>;
 
 CONSTRAINTS
 
-%% prefer indicative to imperative
-0.7 VMI*
-    (0 VMM*);
+%% prefer indicative to imperative, unless there is an exclamation mark on the right side
+10.0 VMI*
+    (0 VMM*)
+    (1* OUT_OF_BOUNDS barrier Fa*);
 
 %% after a preposision, better noun than verb
 4.0 NC*

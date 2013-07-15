@@ -132,8 +132,9 @@ por		lem=wegen,cas=Gen	chunkparent.type=PP && !(chunkgrandparent.type=V-pas)
 # = PARA =
 # ========
 # para (benefactor) => fuer
-para		lem=für,cas=Akk		!(chunkparent.type=VZ-inf)	+
+para		lem=für,cas=Akk		!(xpath{parent::CHUNK[@type="PP" and CHUNK[@type="VP"]]})	+
 # Flores para mi madre => Blumen fuer meine Mutter
 # para (finalidad) => um..zu
-para		lem=um			chunkparent.type=VZ-inf		-
+para		lem=um			xpath{parent::CHUNK[@type="PP" and CHUNK[@type="VP"]]}		-
 # TODO: servir para
+
