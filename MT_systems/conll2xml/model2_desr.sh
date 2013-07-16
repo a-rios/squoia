@@ -6,4 +6,6 @@ export DESR_MODEL=$DESR_DIR/spanish.MLP
 #export DESR_MODEL=$DESR_DIR/spanish_es4.MLP
 export DESR_PARAMS="-m $DESR_MODEL" # -c $DESR_CONFIG"
 
-$DESR_DIR/src/desr $DESR_PARAMS 
+#$DESR_DIR/src/desr $DESR_PARAMS 
+export DESR_PORT=1234	# model2 = spanish.MLP
+desr_client $DESR_PORT
