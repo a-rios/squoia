@@ -12,6 +12,7 @@
 | [ "[" "--" "]" {nya}"[" "VDeriv" "]" "[" "+Cont" "]" ] :  {nya}
 | [ "[" "--" "]" {miya}"[" "VDeriv" "]" "[" "+Cont" "]" ] :  {miya}
 | [ "[" "--" "]" {raya} "[" "VDeriv" "]" "[" "+Perdur" "]" ] : {raya}
+| [ "[" "--" "]" {raya} "[" "VDeriv" "]" "[" "+Perdur" "]" ] : {laya}
 | [ "[" "--" "]" {nraya} "[" "VDeriv" "]" "[" "+Perdur" "]" ] : {nraya}
 | [ "[" "--" "]" {yku}"+yku+" "[" "VDeriv" "]" "[" "+Aff" "]" ] : {yku}"@YKU"
 | [ "[" "--" "]" {yu}"+yu+" "[" "VDeriv" "]" "[" "+Aff" "]" ] : {yu}"@YKU"

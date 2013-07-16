@@ -11,6 +11,14 @@
 | [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {ñuqanchis}
 | [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {ñuqanchik}
 | [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" ] : {ñuqanchiq}
-| [ {ñuqayku} "[" "PrnPers+1.Pl.Excl" "]" ] : {ñuqayku}
-| [ {ñuqayku} "[" "PrnPers+1.Pl.Excl" "]" ] : {nuqayku}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {nuqallanchis}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {nuqallanchik}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {nuqallanchiq}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {ñuqallanchis}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {ñuqallanchik}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {ñuqallanchiq}
+| [ {ñuqayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" ] : {ñuqayku}
+| [ {ñuqayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" ] : {nuqayku}
+| [ {ñuqallayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" ] : {ñuqallayku}
+| [ {ñuqallayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" ] : {nuqallayku}
 ;

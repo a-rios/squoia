@@ -2,6 +2,7 @@
 
   [ {hina} "[" "Part_Sim" "]" ] : {hina}
 | [ {hina} "[" "Part_Sim" "]" ] : {jina}
+| [ {hina} "[" "Part_Sim" "]" ] : {sina}
 | [ {mana} "[" "Part_Neg" "]" ]: {mana}
 | [ {ama} "[" "Part_Neg_Imp" "]" ] : {ama}
 | [ {ima} "[" "Part_Conec" "]" ]: {ima}

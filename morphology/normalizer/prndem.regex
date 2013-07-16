@@ -14,6 +14,8 @@
 | [{kayna} "[" "PrnDem" "]"] : {kayna}
 | [{kay} "[" "PrnDem" "]"] : {khay}
 | [{kayna} "[" "PrnDem" "]"] : {khayna}
+| [{ankhayna} "[" "PrnDem" "]"] : {ankhayna}
+| [{ankhay} "[" "PrnDem" "]"] : {ankhay}
 | [{haqay} "[" "PrnDem" "]"] : {haqay}
 | [{haqay} "[" "PrnDem" "]"] : {haqhay}
 | [{haqay} "[" "PrnDem" "]"] : {haq'ay}
