@@ -1,0 +1,11 @@
+# nominalizing suffixes that do not allow for successive verbablization (converbs), may only be followed by possessive and amb. suffixes
+
+  [ "[" "--" "]" {pti}  "[" "NS" "]" "[" "+DS" "]" ] : {pti}"@PTI" 
+| [ "[" "--" "]" {pti}  "[" "NS" "]" "[" "+DS" "]" ] : {qti}"@PTI"
+| [ "[" "--" "]" {spa}  "[" "NS" "]" "[" "+SS" "]" ] : {spa}
+| [ "[" "--" "]" {spa}  "[" "NS" "]" "[" "+SS" "]" ] : {shpa}
+| [ "[" "--" "]" {sqa} "[" "NS" "]" "[" "+Perf" "]" ] : {sqa}
+| [ "[" "--" "]" {na} "[" "NS" "]" "[" "+Obl" "]" ] : {na}
+# not with -q ? (note: would need -ni)
+#| [ "[" "--" "]" {q} "[" "NS" "]" "[" "+Ag" "]" ] : {q}
+;

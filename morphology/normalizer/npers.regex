@@ -1,0 +1,18 @@
+# nominal transitive forms, only in nominalized transitive verbs with -su/-wa
+
+# -su -yki, +3.Subj_2.Sg.Obj
+  [ "@SU" "[" "--" "]" {yki} "[" "NPers" "]" "[" "+3.Subj_2.Sg.Obj" "]" ] :  {yki}
+# -su -ykichik: +3.Subj_2.Pl.Obj
+| [ "@SU" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {ykichik}
+| [ "@SU" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {ykichis}
+| [ "@SU" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {ykichiq}
+# -su -ykiku: +3.Pl.Subj_2.Sg.Obj
+| [ "@SU" "[" "--" "]" {ykiku} "[" "NPers" "]" "[" "+3.Pl.Subj_2.Sg.Obj" "]" ] : {ykiku}
+# -wa -ykiku: +2.Sg.Subj_1.Pl.Excl.Obj
+| [ "@WA" "[" "--" "]" {ykiku} "[" "NPers" "]" "[" "+2.Sg.Subj_1.Pl.Excl.Obj" "]" ] : {ykiku}
+# -wa -ychik:  +3.Subj_1.Pl.Incl.Obj
+| [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychik}
+| [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychis}
+| [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychiq}
+;
+
