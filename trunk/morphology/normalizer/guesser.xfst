@@ -10,8 +10,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@PLYUQ"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@SU"|"@TRAN"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@PLYUQ"|"@WA"|"@INTR"|"@SU"|"@TRAN"] ];
 
 ############################################################################### 
 
@@ -131,7 +131,10 @@
        # mu shortened to 'n' is only allowed preceding pu       #
        #--------------------------------------------------------#
        define naRzpr [  "+Rzpr"  => _ ?* ["+Rflx_Int"|"+Caus"|"+SS"] ];
-       #define mpuDIR3 [ "+nn+" =>   _ ?* "@PU" ];
+     
+       # transitive forms
+       define watrans [  "@WA"  => "+1.Obj" ?* _  ];
+       define sutrans [  "@SU"  => "+2.Obj" ?* _  ];
 
        #-----------------------------------------------------------------------------------------------------------------------------#
        # if in lower side {rqu} as {rqa}, {pu} as {pa} etc. -> we want those forms to appear on the upper side as well               #
@@ -142,14 +145,17 @@
        define rqurqa5 [ {rqa}"+rqu+" <- {rqu}"+rqu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa6 [ {rqu}"+ru+" <- {ru}"+ru+" \\ _ ?* ~$["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa7 [ {rqa}"+ru+" <- {ru}"+ru+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
+       
        define ykuyka3 [ {yka}"+yku+" <- {yku}"+yku+" \\ _   ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
-       define ykuyka4 [ {ya}"+yu+" <- {yu}"+yu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
+       define ykuyka4 [ {yku}"+yu+" <- {yu}"+yu+" \\ _ ?* ~$["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
+       define ykuyka5 [ {yka}"+yu+" <- {yu}"+yu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
+       
        define mpuDIR2 [ {m}"+mu+" <- {mu}"+mu+"  \\  _ ?* "@PU" ];
 
        define pupa2 [ {pa}"+pu+" <- {pu}"+pu+" \\  _  ?* ["@KU"|"@MU"] ];
        define kuka2 [ {ka}"+ku+" <- {ku}"+ku+" \\  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
 
-      define VerbRulesUpper  naRzpr  .o. rqurqa5 .o. rqurqa6 .o. rqurqa7 .o. ykuyka3 .o. ykuyka4 .o. mpuDIR2  .o. pupa2 .o. kuka2;
+      define VerbRulesUpper  naRzpr  .o. rqurqa5 .o. rqurqa6 .o. rqurqa7 .o. ykuyka3 .o. ykuyka4 .o. ykuyka5 .o. mpuDIR2  .o. pupa2 .o. kuka2;
 
        #-------------------------------------------------------------------------------------------#
        # rqu --> rqa before mu, pu , ri ,ysi (rqa can only be +Rptn in this position, everywhere   #
@@ -277,7 +283,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=3 DB @re"v-v-3.regex" ;
        define V=V=4 DB @re"v-v-4.regex" ;
        define V=V=5 DB @re"v-v-5.regex" ;
-       define V=V=6 DB @re"v-v-6.regex" ;
+       define V=V=6 DB @re"v-v-6-norm.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
 
     define VerbSuffixes  VerbRulesUpper  .o. [V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
@@ -458,8 +464,10 @@ define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 define NAQ [~$[%["+Obl"%] %["^DB"%] %["--"%] {p} %["Cas"%] ]];
 define NAS [~$[%["+Obl"%] %["^DB"%] %["--"%] {s} %["Amb"%] ]];
 
+define WATRANS  ~$["+1.Obj" ?* ["@INTR"|"@TRAN"] ] ;
+define SUTRANS  ~$["+2.Obj" ?* ["@INTR"|"@TRAN"] ] ;
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. NAQ .o. NAS];
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. WASUNCHIS .o. SUNCHIS2 .o. SUNKICHIS .o. SUNMAN .o. WANQAKU .o. WASUN .o. WAYKU .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ  .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. NAQ .o. NAS .o. WATRANS .o. SUTRANS];
 
 # only analyses with at least one suffix
 define MINSUFFIX  [~$[ ?*"--"?* ] ]; 

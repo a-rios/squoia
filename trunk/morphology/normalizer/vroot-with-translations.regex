@@ -167,6 +167,7 @@
 | [ {ch'ampa} "[" "VRoot" "]" "[" "=obstruir_curso_de_agua,colocar_césped" "]" ] :  {ch'ampa}
 | [ {ch'ampa} "[" "VRoot" "]" "[" "=obstruir_curso_de_agua,colocar_césped" "]" ] :  {champa}
 | [ {chamqa} "[" "VRoot" "]" "[" "=lanzar,triturar" "]" ] :  {chamqa}
+| [ {saqta} "[" "VRoot" "]" "[" "=desmenuzar" "]" ] :  {saqta}
 | [ {ch'ancha} "[" "VRoot" "]" "[" "=masticar" "]" ] :  {ch'ancha}
 | [ {ch'ancha} "[" "VRoot" "]" "[" "=masticar" "]" ] :  {chancha}
 | [ {chani} "[" "VRoot" "]" "[" "=valer,valorar" "]" ] :  {chani}
@@ -247,6 +248,7 @@
 | [ {chilla} "[" "VRoot" "]" "[" "=derramar,embutir" "]" ] :  {chilla}
 | [ {ch'illchi} "[" "VRoot" "]" "[" "=filtrar" "]" ] :  {ch'illchi}
 | [ {chillchi} "[" "VRoot" "]" "[" "=lloviznar" "]" ] :  {chillchi}
+| [ {chillchi} "[" "VRoot" "]" "[" "=lloviznar" "]" ] :  {chilchi}
 | [ {ch'illmi} "[" "VRoot" "]" "[" "=guiñar" "]" ] :  {ch'illmi}
 | [ {ch'illmi} "[" "VRoot" "]" "[" "=guiñar" "]" ] :  {chillmi}
 | [ {ch'illpi} "[" "VRoot" "]" "[" "=rajar" "]" ] :  {ch'illpi}
@@ -454,6 +456,8 @@
 | [ {huñu} "[" "VRoot" "]" "[" "=juntar" "]" ] :  {huñu}
 | [ {hupta} "[" "VRoot" "]" "[" "=fermentar" "]" ] :  {hupta}
 | [ {huqari} "[" "VRoot" "]" "[" "=levantar" "]" ] :  {huqari}
+| [ {huqari} "[" "VRoot" "]" "[" "=levantar" "]" ] :  {urqari}
+| [ {huqari} "[" "VRoot" "]" "[" "=levantar" "]" ] :  {uqari}
 | [ {huqnira} "[" "VRoot" "]" "[" "=cambiar" "]" ] :  {huqnira}
 | [ {huqu} "[" "VRoot" "]" "[" "=contagiar" "]" ] :  {huqu}
 | [ {huq'u} "[" "VRoot" "]" "[" "=mojar" "]" ] :  {huq'u}
@@ -556,6 +560,7 @@
 | [ {khasa} "[" "VRoot" "]" "[" "=eructar" "]" ] :  {kasa}
 | [ {k'aska} "[" "VRoot" "]" "[" "=pegar" "]" ] :  {k'aska}
 | [ {k'aska} "[" "VRoot" "]" "[" "=pegar" "]" ] :  {kaska}
+| [ {khaska} "[" "VRoot" "]" "[" "=roer" "]" ] :  {khaska}
 | [ {kaski} "[" "VRoot" "]" "[" "=engañar,roer" "]" ] :  {kaski}
 | [ {k'aspa} "[" "VRoot" "]" "[" "=chamuscar" "]" ] :  {k'aspa}
 | [ {khastu} "[" "VRoot" "]" "[" "=masticar" "]" ] :  {kastu}
@@ -1320,6 +1325,7 @@
 | [ {rawk'a} "[" "VRoot" "]" "[" "=escarbar" "]" ] :  {rawka}
 | [ {rawkha} "[" "VRoot" "]" "["  "=amontonar" "]" ] : {rawkha}
 | [ {rawra} "[" "VRoot" "]" "[" "=arder" "]" ] :  {rawra}
+| [ {rawra} "[" "VRoot" "]" "[" "=arder" "]" ] :  {yawra}
 | [ {richka} "[" "VRoot" "]" "[" "=despertarse" "]" ] :  {richka}
 | [ {rikch'a} "[" "VRoot" "]" "[" "=parecer" "]" ] :  {rikch'a}
 | [ {rikch'a} "[" "VRoot" "]" "[" "=parecer" "]" ] :  {rikcha}
