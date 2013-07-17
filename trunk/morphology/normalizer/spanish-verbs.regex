@@ -161,7 +161,6 @@
 | [ {acepa} "["  "VRootES"  "]" ] : {acepa}
 | [ {acepilla} "["  "VRootES"  "]" ] : {acepilla}
 | [ {acepta} "["  "VRootES"  "]" ] : {acepta}
-| [ {acequia} "["  "VRootES"  "]" ] : {acequia}
 | [ {acera} "["  "VRootES"  "]" ] : {acera}
 | [ {acerca} "["  "VRootES"  "]" ] : {acerca}
 | [ {acerroja} "["  "VRootES"  "]" ] : {acerroja}
@@ -342,7 +341,6 @@
 | [ {adscribi} "["  "VRootES"  "]" ] : {adscribi}
 | [ {adsorbe} "["  "VRootES"  "]" ] : {adsorbe}
 | [ {adstringi} "["  "VRootES"  "]" ] : {adstringi}
-| [ {aduana} "["  "VRootES"  "]" ] : {aduana}
 | [ {aduci} "["  "VRootES"  "]" ] : {aduci}
 | [ {adueña} "["  "VRootES"  "]" ] : {adueña}
 | [ {aduja} "["  "VRootES"  "]" ] : {aduja}
@@ -405,7 +403,6 @@
 | [ {agasaja} "["  "VRootES"  "]" ] : {agasaja}
 | [ {agavilla} "["  "VRootES"  "]" ] : {agavilla}
 | [ {agazapa} "["  "VRootES"  "]" ] : {agazapa}
-| [ {agencia} "["  "VRootES"  "]" ] : {agencia}
 | [ {agermana} "["  "VRootES"  "]" ] : {agermana}
 | [ {agiganta} "["  "VRootES"  "]" ] : {agiganta}
 | [ {agiliza} "["  "VRootES"  "]" ] : {agiliza}
@@ -441,7 +438,6 @@
 | [ {aguanta} "["  "VRootES"  "]" ] : {aguanta}
 | [ {aguarda} "["  "VRootES"  "]" ] : {aguarda}
 | [ {aguaza} "["  "VRootES"  "]" ] : {aguaza}
-| [ {agua} "["  "VRootES"  "]" ] : {agua}
 | [ {agudiza} "["  "VRootES"  "]" ] : {agudiza}
 | [ {aguerri} "["  "VRootES"  "]" ] : {aguerri}
 | [ {aguija} "["  "VRootES"  "]" ] : {aguija}
@@ -542,10 +538,8 @@
 | [ {aletarga} "["  "VRootES"  "]" ] : {aletarga}
 | [ {aletea} "["  "VRootES"  "]" ] : {aletea}
 | [ {alfabetiza} "["  "VRootES"  "]" ] : {alfabetiza}
-| [ {alfalfa} "["  "VRootES"  "]" ] : {alfalfa}
 | [ {alfarraza} "["  "VRootES"  "]" ] : {alfarraza}
 | [ {alfeñica} "["  "VRootES"  "]" ] : {alfeñica}
-| [ {alfombra} "["  "VRootES"  "]" ] : {alfombra}
 | [ {alforza} "["  "VRootES"  "]" ] : {alforza}
 | [ {algalia} "["  "VRootES"  "]" ] : {algalia}
 | [ {algodona} "["  "VRootES"  "]" ] : {algodona}
@@ -581,7 +575,6 @@
 | [ {almidona} "["  "VRootES"  "]" ] : {almidona}
 | [ {almizcla} "["  "VRootES"  "]" ] : {almizcla}
 | [ {almogavarea} "["  "VRootES"  "]" ] : {almogavarea}
-| [ {almohadilla} "["  "VRootES"  "]" ] : {almohadilla}
 | [ {almohaza} "["  "VRootES"  "]" ] : {almohaza}
 | [ {almorza} "["  "VRootES"  "]" ] : {almorza}
 | [ {aloja} "["  "VRootES"  "]" ] : {aloja}
@@ -590,7 +583,6 @@
 | [ {alquila} "["  "VRootES"  "]" ] : {alquila}
 | [ {alquitara} "["  "VRootES"  "]" ] : {alquitara}
 | [ {alquitrana} "["  "VRootES"  "]" ] : {alquitrana}
-| [ {altea} "["  "VRootES"  "]" ] : {altea}
 | [ {altera} "["  "VRootES"  "]" ] : {altera}
 | [ {alterca} "["  "VRootES"  "]" ] : {alterca}
 | [ {alterna} "["  "VRootES"  "]" ] : {alterna}
@@ -658,7 +650,6 @@
 | [ {ameriza} "["  "VRootES"  "]" ] : {ameriza}
 | [ {ametralla} "["  "VRootES"  "]" ] : {ametralla}
 | [ {amezquinda} "["  "VRootES"  "]" ] : {amezquinda}
-| [ {amiga} "["  "VRootES"  "]" ] : {amiga}
 | [ {amilana} "["  "VRootES"  "]" ] : {amilana}
 | [ {amillara} "["  "VRootES"  "]" ] : {amillara}
 | [ {aminora} "["  "VRootES"  "]" ] : {aminora}
@@ -726,7 +717,6 @@
 | [ {anexa} "["  "VRootES"  "]" ] : {anexa}
 | [ {anexiona} "["  "VRootES"  "]" ] : {anexiona}
 | [ {angosta} "["  "VRootES"  "]" ] : {angosta}
-| [ {angustia} "["  "VRootES"  "]" ] : {angustia}
 | [ {anhela} "["  "VRootES"  "]" ] : {anhela}
 | [ {anida} "["  "VRootES"  "]" ] : {anida}
 | [ {aniebla} "["  "VRootES"  "]" ] : {aniebla}
@@ -752,7 +742,6 @@
 | [ {anteve} "["  "VRootES"  "]" ] : {anteve}
 | [ {anticipa} "["  "VRootES"  "]" ] : {anticipa}
 | [ {anticua} "["  "VRootES"  "]" ] : {anticua}
-| [ {antigua} "["  "VRootES"  "]" ] : {antigua}
 | [ {antoja} "["  "VRootES"  "]" ] : {antoja}
 | [ {antrueja} "["  "VRootES"  "]" ] : {antrueja}
 | [ {anubla} "["  "VRootES"  "]" ] : {anubla}
@@ -916,10 +905,8 @@
 | [ {arcabucea} "["  "VRootES"  "]" ] : {arcabucea}
 | [ {arcaiza} "["  "VRootES"  "]" ] : {arcaiza}
 | [ {archiva} "["  "VRootES"  "]" ] : {archiva}
-| [ {arcilla} "["  "VRootES"  "]" ] : {arcilla}
 | [ {arde} "["  "VRootES"  "]" ] : {arde}
 | [ {arela} "["  "VRootES"  "]" ] : {arela}
-| [ {arena} "["  "VRootES"  "]" ] : {arena}
 | [ {arenca} "["  "VRootES"  "]" ] : {arenca}
 | [ {arenga} "["  "VRootES"  "]" ] : {arenga}
 | [ {arfa} "["  "VRootES"  "]" ] : {arfa}
@@ -933,7 +920,6 @@
 | [ {arma} "["  "VRootES"  "]" ] : {arma}
 | [ {armoniza} "["  "VRootES"  "]" ] : {armoniza}
 | [ {aromatiza} "["  "VRootES"  "]" ] : {aromatiza}
-| [ {aroma} "["  "VRootES"  "]" ] : {aroma}
 | [ {arpa} "["  "VRootES"  "]" ] : {arpa}
 | [ {arpegia} "["  "VRootES"  "]" ] : {arpegia}
 | [ {arpilla} "["  "VRootES"  "]" ] : {arpilla}
@@ -1064,7 +1050,6 @@
 | [ {asperja} "["  "VRootES"  "]" ] : {asperja}
 | [ {aspira} "["  "VRootES"  "]" ] : {aspira}
 | [ {asquea} "["  "VRootES"  "]" ] : {asquea}
-| [ {astilla} "["  "VRootES"  "]" ] : {astilla}
 | [ {astreñi} "["  "VRootES"  "]" ] : {astreñi}
 | [ {astringi} "["  "VRootES"  "]" ] : {astringi}
 | [ {astriñi} "["  "VRootES"  "]" ] : {astriñi}
@@ -1166,7 +1151,6 @@
 | [ {atrinca} "["  "VRootES"  "]" ] : {atrinca}
 | [ {atrinchera} "["  "VRootES"  "]" ] : {atrinchera}
 | [ {atrocha} "["  "VRootES"  "]" ] : {atrocha}
-| [ {atrofia} "["  "VRootES"  "]" ] : {atrofia}
 | [ {atroja} "["  "VRootES"  "]" ] : {atroja}
 | [ {atrona} "["  "VRootES"  "]" ] : {atrona}
 | [ {atronera} "["  "VRootES"  "]" ] : {atronera}
@@ -1214,11 +1198,9 @@
 | [ {avejenta} "["  "VRootES"  "]" ] : {avejenta}
 | [ {avejiga} "["  "VRootES"  "]" ] : {avejiga}
 | [ {avellana} "["  "VRootES"  "]" ] : {avellana}
-| [ {avena} "["  "VRootES"  "]" ] : {avena}
 | [ {aveni} "["  "VRootES"  "]" ] : {aveni}
 | [ {aventaja} "["  "VRootES"  "]" ] : {aventaja}
 | [ {aventa} "["  "VRootES"  "]" ] : {aventa}
-| [ {aventura} "["  "VRootES"  "]" ] : {aventura}
 | [ {avergonza} "["  "VRootES"  "]" ] : {avergonza}
 | [ {averia} "["  "VRootES"  "]" ] : {averia}
 | [ {averigua} "["  "VRootES"  "]" ] : {averigua}
@@ -1231,7 +1213,6 @@
 | [ {avillana} "["  "VRootES"  "]" ] : {avillana}
 | [ {avinagra} "["  "VRootES"  "]" ] : {avinagra}
 | [ {avisa} "["  "VRootES"  "]" ] : {avisa}
-| [ {avispa} "["  "VRootES"  "]" ] : {avispa}
 | [ {avista} "["  "VRootES"  "]" ] : {avista}
 | [ {avitualla} "["  "VRootES"  "]" ] : {avitualla}
 | [ {aviva} "["  "VRootES"  "]" ] : {aviva}
@@ -1275,7 +1256,6 @@
 | [ {baja} "["  "VRootES"  "]" ] : {baja}
 | [ {baladronea} "["  "VRootES"  "]" ] : {baladronea}
 | [ {balancea} "["  "VRootES"  "]" ] : {balancea}
-| [ {bala} "["  "VRootES"  "]" ] : {bala}
 | [ {balbucea} "["  "VRootES"  "]" ] : {balbucea}
 | [ {balbuci} "["  "VRootES"  "]" ] : {balbuci}
 | [ {balcaniza} "["  "VRootES"  "]" ] : {balcaniza}
@@ -1306,7 +1286,6 @@
 | [ {baratea} "["  "VRootES"  "]" ] : {baratea}
 | [ {barbarea} "["  "VRootES"  "]" ] : {barbarea}
 | [ {barbariza} "["  "VRootES"  "]" ] : {barbariza}
-| [ {barba} "["  "VRootES"  "]" ] : {barba}
 | [ {barbea} "["  "VRootES"  "]" ] : {barbea}
 | [ {barbecha} "["  "VRootES"  "]" ] : {barbecha}
 | [ {barbota} "["  "VRootES"  "]" ] : {barbota}
@@ -1316,7 +1295,6 @@
 | [ {barloventea} "["  "VRootES"  "]" ] : {barloventea}
 | [ {barniza} "["  "VRootES"  "]" ] : {barniza}
 | [ {barquea} "["  "VRootES"  "]" ] : {barquea}
-| [ {barra} "["  "VRootES"  "]" ] : {barra}
 | [ {barrea} "["  "VRootES"  "]" ] : {barrea}
 | [ {barrena} "["  "VRootES"  "]" ] : {barrena}
 | [ {barretea} "["  "VRootES"  "]" ] : {barretea}
@@ -1335,7 +1313,6 @@
 | [ {bastimenta} "["  "VRootES"  "]" ] : {bastimenta}
 | [ {bastonea} "["  "VRootES"  "]" ] : {bastonea}
 | [ {basurea} "["  "VRootES"  "]" ] : {basurea}
-| [ {batalla} "["  "VRootES"  "]" ] : {batalla}
 | [ {batana} "["  "VRootES"  "]" ] : {batana}
 | [ {batanea} "["  "VRootES"  "]" ] : {batanea}
 | [ {batea} "["  "VRootES"  "]" ] : {batea}
@@ -1350,7 +1327,6 @@
 | [ {beatifica} "["  "VRootES"  "]" ] : {beatifica}
 | [ {bebe} "["  "VRootES"  "]" ] : {bebe}
 | [ {beborrotea} "["  "VRootES"  "]" ] : {beborrotea}
-| [ {beca} "["  "VRootES"  "]" ] : {beca}
 | [ {befa} "["  "VRootES"  "]" ] : {befa}
 | [ {bejuquea} "["  "VRootES"  "]" ] : {bejuquea}
 | [ {belda} "["  "VRootES"  "]" ] : {belda}
@@ -1445,7 +1421,6 @@
 | [ {brinca} "["  "VRootES"  "]" ] : {brinca}
 | [ {brinda} "["  "VRootES"  "]" ] : {brinda}
 | [ {brocea} "["  "VRootES"  "]" ] : {brocea}
-| [ {broma} "["  "VRootES"  "]" ] : {broma}
 | [ {bromea} "["  "VRootES"  "]" ] : {bromea}
 | [ {broncea} "["  "VRootES"  "]" ] : {broncea}
 | [ {broquela} "["  "VRootES"  "]" ] : {broquela}
@@ -1510,7 +1485,6 @@
 | [ {caldea} "["  "VRootES"  "]" ] : {caldea}
 | [ {calece} "["  "VRootES"  "]" ] : {calece}
 | [ {calefacciona} "["  "VRootES"  "]" ] : {calefacciona}
-| [ {calenda} "["  "VRootES"  "]" ] : {calenda}
 | [ {calenta} "["  "VRootES"  "]" ] : {calenta}
 | [ {calibra} "["  "VRootES"  "]" ] : {calibra}
 | [ {califica} "["  "VRootES"  "]" ] : {califica}
@@ -1565,7 +1539,6 @@
 | [ {capona} "["  "VRootES"  "]" ] : {capona}
 | [ {capota} "["  "VRootES"  "]" ] : {capota}
 | [ {capotea} "["  "VRootES"  "]" ] : {capotea}
-| [ {capsula} "["  "VRootES"  "]" ] : {capsula}
 | [ {capta} "["  "VRootES"  "]" ] : {capta}
 | [ {captura} "["  "VRootES"  "]" ] : {captura}
 | [ {capuza} "["  "VRootES"  "]" ] : {capuza}
@@ -1625,7 +1598,6 @@
 | [ {cauciona} "["  "VRootES"  "]" ] : {cauciona}
 | [ {causa} "["  "VRootES"  "]" ] : {causa}
 | [ {causea} "["  "VRootES"  "]" ] : {causea}
-| [ {cautela} "["  "VRootES"  "]" ] : {cautela}
 | [ {cauteriza} "["  "VRootES"  "]" ] : {cauteriza}
 | [ {cautiva} "["  "VRootES"  "]" ] : {cautiva}
 | [ {cava} "["  "VRootES"  "]" ] : {cava}
@@ -1660,7 +1632,6 @@
 | [ {centrifuga} "["  "VRootES"  "]" ] : {centrifuga}
 | [ {centuplica} "["  "VRootES"  "]" ] : {centuplica}
 | [ {cepilla} "["  "VRootES"  "]" ] : {cepilla}
-| [ {cerca} "["  "VRootES"  "]" ] : {cerca}
 | [ {cercea} "["  "VRootES"  "]" ] : {cercea}
 | [ {cercena} "["  "VRootES"  "]" ] : {cercena}
 | [ {cercha} "["  "VRootES"  "]" ] : {cercha}
@@ -1758,7 +1729,6 @@
 | [ {cicatea} "["  "VRootES"  "]" ] : {cicatea}
 | [ {cicatriza} "["  "VRootES"  "]" ] : {cicatriza}
 | [ {cicla} "["  "VRootES"  "]" ] : {cicla}
-| [ {cifra} "["  "VRootES"  "]" ] : {cifra}
 | [ {ciguata} "["  "VRootES"  "]" ] : {ciguata}
 | [ {cilindra} "["  "VRootES"  "]" ] : {cilindra}
 | [ {cimbra} "["  "VRootES"  "]" ] : {cimbra}
@@ -1769,7 +1739,6 @@
 | [ {cincha} "["  "VRootES"  "]" ] : {cincha}
 | [ {cingla} "["  "VRootES"  "]" ] : {cingla}
 | [ {cintarea} "["  "VRootES"  "]" ] : {cintarea}
-| [ {cinta} "["  "VRootES"  "]" ] : {cinta}
 | [ {cintila} "["  "VRootES"  "]" ] : {cintila}
 | [ {circula} "["  "VRootES"  "]" ] : {circula}
 | [ {circuncida} "["  "VRootES"  "]" ] : {circuncida}
@@ -1814,7 +1783,6 @@
 | [ {cobra} "["  "VRootES"  "]" ] : {cobra}
 | [ {cobrea} "["  "VRootES"  "]" ] : {cobrea}
 | [ {cocara} "["  "VRootES"  "]" ] : {cocara}
-| [ {coca} "["  "VRootES"  "]" ] : {coca}
 | [ {cocea} "["  "VRootES"  "]" ] : {cocea}
 | [ {coce} "["  "VRootES"  "]" ] : {coce}
 | [ {cochea} "["  "VRootES"  "]" ] : {cochea}
@@ -1840,7 +1808,6 @@
 | [ {colaciona} "["  "VRootES"  "]" ] : {colaciona}
 | [ {colapsa} "["  "VRootES"  "]" ] : {colapsa}
 | [ {cola} "["  "VRootES"  "]" ] : {cola}
-| [ {colcha} "["  "VRootES"  "]" ] : {colcha}
 | [ {colea} "["  "VRootES"  "]" ] : {colea}
 | [ {colecciona} "["  "VRootES"  "]" ] : {colecciona}
 | [ {colecta} "["  "VRootES"  "]" ] : {colecta}
@@ -1868,7 +1835,6 @@
 | [ {combati} "["  "VRootES"  "]" ] : {combati}
 | [ {comba} "["  "VRootES"  "]" ] : {comba}
 | [ {combina} "["  "VRootES"  "]" ] : {combina}
-| [ {comedia} "["  "VRootES"  "]" ] : {comedia}
 | [ {comedi} "["  "VRootES"  "]" ] : {comedi}
 | [ {comenta} "["  "VRootES"  "]" ] : {comenta}
 | [ {comenza} "["  "VRootES"  "]" ] : {comenza}
@@ -1928,7 +1894,6 @@
 | [ {concerni} "["  "VRootES"  "]" ] : {concerni}
 | [ {concerta} "["  "VRootES"  "]" ] : {concerta}
 | [ {conchaba} "["  "VRootES"  "]" ] : {conchaba}
-| [ {conciencia} "["  "VRootES"  "]" ] : {conciencia}
 | [ {concilia} "["  "VRootES"  "]" ] : {concilia}
 | [ {concita} "["  "VRootES"  "]" ] : {concita}
 | [ {conclui} "["  "VRootES"  "]" ] : {conclui}
@@ -2018,7 +1983,6 @@
 | [ {constitui} "["  "VRootES"  "]" ] : {constitui}
 | [ {constreñi} "["  "VRootES"  "]" ] : {constreñi}
 | [ {construi} "["  "VRootES"  "]" ] : {construi}
-| [ {consuegra} "["  "VRootES"  "]" ] : {consuegra}
 | [ {consulta} "["  "VRootES"  "]" ] : {consulta}
 | [ {consuma} "["  "VRootES"  "]" ] : {consuma}
 | [ {consumi} "["  "VRootES"  "]" ] : {consumi}
@@ -2157,7 +2121,6 @@
 | [ {crimina} "["  "VRootES"  "]" ] : {crimina}
 | [ {crispa} "["  "VRootES"  "]" ] : {crispa}
 | [ {cristaliza} "["  "VRootES"  "]" ] : {cristaliza}
-| [ {cristiana} "["  "VRootES"  "]" ] : {cristiana}
 | [ {cristianiza} "["  "VRootES"  "]" ] : {cristianiza}
 | [ {critica} "["  "VRootES"  "]" ] : {critica}
 | [ {croa} "["  "VRootES"  "]" ] : {croa}
@@ -2169,7 +2132,6 @@
 | [ {crucifica} "["  "VRootES"  "]" ] : {crucifica}
 | [ {cruji} "["  "VRootES"  "]" ] : {cruji}
 | [ {cruza} "["  "VRootES"  "]" ] : {cruza}
-| [ {cuadra} "["  "VRootES"  "]" ] : {cuadra}
 | [ {cuadricula} "["  "VRootES"  "]" ] : {cuadricula}
 | [ {cuadriplica} "["  "VRootES"  "]" ] : {cuadriplica}
 | [ {cuadruplica} "["  "VRootES"  "]" ] : {cuadruplica}
@@ -2209,7 +2171,6 @@
 | [ {cursa} "["  "VRootES"  "]" ] : {cursa}
 | [ {curti} "["  "VRootES"  "]" ] : {curti}
 | [ {curva} "["  "VRootES"  "]" ] : {curva}
-| [ {custodia} "["  "VRootES"  "]" ] : {custodia}
 | [ {dactilografia} "["  "VRootES"  "]" ] : {dactilografia}
 | [ {dalla} "["  "VRootES"  "]" ] : {dalla}
 | [ {damasquina} "["  "VRootES"  "]" ] : {damasquina}
@@ -3214,7 +3175,6 @@
 | [ {dezma} "["  "VRootES"  "]" ] : {dezma}
 | [ {diablea} "["  "VRootES"  "]" ] : {diablea}
 | [ {diacona} "["  "VRootES"  "]" ] : {diacona}
-| [ {diafragma} "["  "VRootES"  "]" ] : {diafragma}
 | [ {diagnostica} "["  "VRootES"  "]" ] : {diagnostica}
 | [ {dializa} "["  "VRootES"  "]" ] : {dializa}
 | [ {dialoga} "["  "VRootES"  "]" ] : {dialoga}
@@ -3247,7 +3207,6 @@
 | [ {dimensiona} "["  "VRootES"  "]" ] : {dimensiona}
 | [ {diminui} "["  "VRootES"  "]" ] : {diminui}
 | [ {dimiti} "["  "VRootES"  "]" ] : {dimiti}
-| [ {dinamita} "["  "VRootES"  "]" ] : {dinamita}
 | [ {dinamiza} "["  "VRootES"  "]" ] : {dinamiza}
 | [ {diptonga} "["  "VRootES"  "]" ] : {diptonga}
 | [ {diputa} "["  "VRootES"  "]" ] : {diputa}
@@ -3319,9 +3278,7 @@
 | [ {dobla} "["  "VRootES"  "]" ] : {dobla}
 | [ {doblega} "["  "VRootES"  "]" ] : {doblega}
 | [ {docilita} "["  "VRootES"  "]" ] : {docilita}
-| [ {doctora} "["  "VRootES"  "]" ] : {doctora}
 | [ {doctorea} "["  "VRootES"  "]" ] : {doctorea}
-| [ {doctrina} "["  "VRootES"  "]" ] : {doctrina}
 | [ {documenta} "["  "VRootES"  "]" ] : {documenta}
 | [ {dogmatiza} "["  "VRootES"  "]" ] : {dogmatiza}
 | [ {dola} "["  "VRootES"  "]" ] : {dola}
@@ -4205,7 +4162,6 @@
 | [ {escosca} "["  "VRootES"  "]" ] : {escosca}
 | [ {escota} "["  "VRootES"  "]" ] : {escota}
 | [ {escribi} "["  "VRootES"  "]" ] : {escribi}
-| [ {escritura} "["  "VRootES"  "]" ] : {escritura}
 | [ {escruta} "["  "VRootES"  "]" ] : {escruta}
 | [ {escuadra} "["  "VRootES"  "]" ] : {escuadra}
 | [ {escuadrona} "["  "VRootES"  "]" ] : {escuadrona}
@@ -4234,7 +4190,6 @@
 | [ {espabila} "["  "VRootES"  "]" ] : {espabila}
 | [ {espachurra} "["  "VRootES"  "]" ] : {espachurra}
 | [ {espacia} "["  "VRootES"  "]" ] : {espacia}
-| [ {espada} "["  "VRootES"  "]" ] : {espada}
 | [ {espadilla} "["  "VRootES"  "]" ] : {espadilla}
 | [ {espala} "["  "VRootES"  "]" ] : {espala}
 | [ {espaldea} "["  "VRootES"  "]" ] : {espaldea}
@@ -4243,7 +4198,6 @@
 | [ {esparci} "["  "VRootES"  "]" ] : {esparci}
 | [ {esparranca} "["  "VRootES"  "]" ] : {esparranca}
 | [ {espatarra} "["  "VRootES"  "]" ] : {espatarra}
-| [ {española} "["  "VRootES"  "]" ] : {española}
 | [ {españoliza} "["  "VRootES"  "]" ] : {españoliza}
 | [ {especializa} "["  "VRootES"  "]" ] : {especializa}
 | [ {especifica} "["  "VRootES"  "]" ] : {especifica}
@@ -4252,14 +4206,12 @@
 | [ {espejea} "["  "VRootES"  "]" ] : {espejea}
 | [ {espeluza} "["  "VRootES"  "]" ] : {espeluza}
 | [ {espeluzna} "["  "VRootES"  "]" ] : {espeluzna}
-| [ {esperanza} "["  "VRootES"  "]" ] : {esperanza}
 | [ {espera} "["  "VRootES"  "]" ] : {espera}
 | [ {espernanca} "["  "VRootES"  "]" ] : {espernanca}
 | [ {espesa} "["  "VRootES"  "]" ] : {espesa}
 | [ {espeta} "["  "VRootES"  "]" ] : {espeta}
 | [ {espia} "["  "VRootES"  "]" ] : {espia}
 | [ {espicha} "["  "VRootES"  "]" ] : {espicha}
-| [ {espiga} "["  "VRootES"  "]" ] : {espiga}
 | [ {espina} "["  "VRootES"  "]" ] : {espina}
 | [ {espira} "["  "VRootES"  "]" ] : {espira}
 | [ {espiritualiza} "["  "VRootES"  "]" ] : {espiritualiza}
@@ -4268,10 +4220,8 @@
 | [ {espolea} "["  "VRootES"  "]" ] : {espolea}
 | [ {espolina} "["  "VRootES"  "]" ] : {espolina}
 | [ {espolvorea} "["  "VRootES"  "]" ] : {espolvorea}
-| [ {esponja} "["  "VRootES"  "]" ] : {esponja}
 | [ {espontanea} "["  "VRootES"  "]" ] : {espontanea}
 | [ {esportea} "["  "VRootES"  "]" ] : {esportea}
-| [ {esposa} "["  "VRootES"  "]" ] : {esposa}
 | [ {esprinta} "["  "VRootES"  "]" ] : {esprinta}
 | [ {espulga} "["  "VRootES"  "]" ] : {espulga}
 | [ {espumaja} "["  "VRootES"  "]" ] : {espumaja}
@@ -4284,7 +4234,6 @@
 | [ {esquia} "["  "VRootES"  "]" ] : {esquia}
 | [ {esquila} "["  "VRootES"  "]" ] : {esquila}
 | [ {esquilma} "["  "VRootES"  "]" ] : {esquilma}
-| [ {esquina} "["  "VRootES"  "]" ] : {esquina}
 | [ {esquinza} "["  "VRootES"  "]" ] : {esquinza}
 | [ {esquiva} "["  "VRootES"  "]" ] : {esquiva}
 | [ {estabiliza} "["  "VRootES"  "]" ] : {estabiliza}
@@ -4306,7 +4255,6 @@
 | [ {esta} "["  "VRootES"  "]" ] : {esta}
 | [ {estaña} "["  "VRootES"  "]" ] : {estaña}
 | [ {estenografia} "["  "VRootES"  "]" ] : {estenografia}
-| [ {estera} "["  "VRootES"  "]" ] : {estera}
 | [ {estercola} "["  "VRootES"  "]" ] : {estercola}
 | [ {estereotipa} "["  "VRootES"  "]" ] : {estereotipa}
 | [ {esterifica} "["  "VRootES"  "]" ] : {esterifica}
@@ -4450,7 +4398,6 @@
 | [ {extravena} "["  "VRootES"  "]" ] : {extravena}
 | [ {extravia} "["  "VRootES"  "]" ] : {extravia}
 | [ {extraña} "["  "VRootES"  "]" ] : {extraña}
-| [ {extrema} "["  "VRootES"  "]" ] : {extrema}
 | [ {extrudi} "["  "VRootES"  "]" ] : {extrudi}
 | [ {exuda} "["  "VRootES"  "]" ] : {exuda}
 | [ {exulcera} "["  "VRootES"  "]" ] : {exulcera}
@@ -4486,14 +4433,12 @@
 | [ {fastidia} "["  "VRootES"  "]" ] : {fastidia}
 | [ {fatiga} "["  "VRootES"  "]" ] : {fatiga}
 | [ {favorece} "["  "VRootES"  "]" ] : {favorece}
-| [ {fecha} "["  "VRootES"  "]" ] : {fecha}
 | [ {fecunda} "["  "VRootES"  "]" ] : {fecunda}
 | [ {fecundiza} "["  "VRootES"  "]" ] : {fecundiza}
 | [ {federa} "["  "VRootES"  "]" ] : {federa}
 | [ {felicita} "["  "VRootES"  "]" ] : {felicita}
 | [ {felpa} "["  "VRootES"  "]" ] : {felpa}
 | [ {fenece} "["  "VRootES"  "]" ] : {fenece}
-| [ {feria} "["  "VRootES"  "]" ] : {feria}
 | [ {fermenta} "["  "VRootES"  "]" ] : {fermenta}
 | [ {ferra} "["  "VRootES"  "]" ] : {ferra}
 | [ {fertiliza} "["  "VRootES"  "]" ] : {fertiliza}
@@ -4505,13 +4450,11 @@
 | [ {figura} "["  "VRootES"  "]" ] : {figura}
 | [ {fija} "["  "VRootES"  "]" ] : {fija}
 | [ {filetea} "["  "VRootES"  "]" ] : {filetea}
-| [ {filia} "["  "VRootES"  "]" ] : {filia}
 | [ {filma} "["  "VRootES"  "]" ] : {filma}
 | [ {filosofa} "["  "VRootES"  "]" ] : {filosofa}
 | [ {filtra} "["  "VRootES"  "]" ] : {filtra}
 | [ {finaliza} "["  "VRootES"  "]" ] : {finaliza}
 | [ {financia} "["  "VRootES"  "]" ] : {financia}
-| [ {fina} "["  "VRootES"  "]" ] : {fina}
 | [ {fingi} "["  "VRootES"  "]" ] : {fingi}
 | [ {finiquita} "["  "VRootES"  "]" ] : {finiquita}
 | [ {finta} "["  "VRootES"  "]" ] : {finta}
@@ -4560,7 +4503,6 @@
 | [ {fortalece} "["  "VRootES"  "]" ] : {fortalece}
 | [ {fortifica} "["  "VRootES"  "]" ] : {fortifica}
 | [ {forza} "["  "VRootES"  "]" ] : {forza}
-| [ {fosa} "["  "VRootES"  "]" ] : {fosa}
 | [ {fosfata} "["  "VRootES"  "]" ] : {fosfata}
 | [ {fosforece} "["  "VRootES"  "]" ] : {fosforece}
 | [ {fosforesce} "["  "VRootES"  "]" ] : {fosforesce}
@@ -4596,7 +4538,6 @@
 | [ {frunci} "["  "VRootES"  "]" ] : {frunci}
 | [ {frustra} "["  "VRootES"  "]" ] : {frustra}
 | [ {fucila} "["  "VRootES"  "]" ] : {fucila}
-| [ {fuga} "["  "VRootES"  "]" ] : {fuga}
 | [ {fulgi} "["  "VRootES"  "]" ] : {fulgi}
 | [ {fulgura} "["  "VRootES"  "]" ] : {fulgura}
 | [ {fulmina} "["  "VRootES"  "]" ] : {fulmina}
@@ -4678,7 +4619,6 @@
 | [ {gitanea} "["  "VRootES"  "]" ] : {gitanea}
 | [ {glasea} "["  "VRootES"  "]" ] : {glasea}
 | [ {globaliza} "["  "VRootES"  "]" ] : {globaliza}
-| [ {gloria} "["  "VRootES"  "]" ] : {gloria}
 | [ {glorifica} "["  "VRootES"  "]" ] : {glorifica}
 | [ {glosa} "["  "VRootES"  "]" ] : {glosa}
 | [ {glotonea} "["  "VRootES"  "]" ] : {glotonea}
@@ -4688,7 +4628,6 @@
 | [ {golea} "["  "VRootES"  "]" ] : {golea}
 | [ {golfea} "["  "VRootES"  "]" ] : {golfea}
 | [ {golosea} "["  "VRootES"  "]" ] : {golosea}
-| [ {golosina} "["  "VRootES"  "]" ] : {golosina}
 | [ {golosinea} "["  "VRootES"  "]" ] : {golosinea}
 | [ {golpea} "["  "VRootES"  "]" ] : {golpea}
 | [ {golpetea} "["  "VRootES"  "]" ] : {golpetea}
@@ -4759,7 +4698,6 @@
 | [ {habla} "["  "VRootES"  "]" ] : {habla}
 | [ {hacenda} "["  "VRootES"  "]" ] : {hacenda}
 | [ {hace} "["  "VRootES"  "]" ] : {hace}
-| [ {hacha} "["  "VRootES"  "]" ] : {hacha}
 | [ {hachea} "["  "VRootES"  "]" ] : {hachea}
 | [ {hacina} "["  "VRootES"  "]" ] : {hacina}
 | [ {halaga} "["  "VRootES"  "]" ] : {halaga}
@@ -4790,10 +4728,8 @@
 | [ {herboriza} "["  "VRootES"  "]" ] : {herboriza}
 | [ {hereda} "["  "VRootES"  "]" ] : {hereda}
 | [ {heri} "["  "VRootES"  "]" ] : {heri}
-| [ {hermana} "["  "VRootES"  "]" ] : {hermana}
 | [ {hermetiza} "["  "VRootES"  "]" ] : {hermetiza}
 | [ {hermosea} "["  "VRootES"  "]" ] : {hermosea}
-| [ {hernia} "["  "VRootES"  "]" ] : {hernia}
 | [ {herra} "["  "VRootES"  "]" ] : {herra}
 | [ {herretea} "["  "VRootES"  "]" ] : {herretea}
 | [ {herrumbra} "["  "VRootES"  "]" ] : {herrumbra}
@@ -4812,13 +4748,10 @@
 | [ {hinca} "["  "VRootES"  "]" ] : {hinca}
 | [ {hincha} "["  "VRootES"  "]" ] : {hincha}
 | [ {hipa} "["  "VRootES"  "]" ] : {hipa}
-| [ {hipertrofia} "["  "VRootES"  "]" ] : {hipertrofia}
 | [ {hipnotiza} "["  "VRootES"  "]" ] : {hipnotiza}
-| [ {hipoteca} "["  "VRootES"  "]" ] : {hipoteca}
 | [ {hisopa} "["  "VRootES"  "]" ] : {hisopa}
 | [ {hisopea} "["  "VRootES"  "]" ] : {hisopea}
 | [ {hispaniza} "["  "VRootES"  "]" ] : {hispaniza}
-| [ {historia} "["  "VRootES"  "]" ] : {historia}
 | [ {hita} "["  "VRootES"  "]" ] : {hita}
 | [ {hocica} "["  "VRootES"  "]" ] : {hocica}
 | [ {hojaldra} "["  "VRootES"  "]" ] : {hojaldra}
@@ -4852,7 +4785,6 @@
 | [ {huchea} "["  "VRootES"  "]" ] : {huchea}
 | [ {hueva} "["  "VRootES"  "]" ] : {hueva}
 | [ {hui} "["  "VRootES"  "]" ] : {hui}
-| [ {humana} "["  "VRootES"  "]" ] : {humana}
 | [ {humaniza} "["  "VRootES"  "]" ] : {humaniza}
 | [ {humea} "["  "VRootES"  "]" ] : {humea}
 | [ {humecta} "["  "VRootES"  "]" ] : {humecta}
@@ -4866,7 +4798,6 @@
 | [ {hurta} "["  "VRootES"  "]" ] : {hurta}
 | [ {husmea} "["  "VRootES"  "]" ] : {husmea}
 | [ {idealiza} "["  "VRootES"  "]" ] : {idealiza}
-| [ {idea} "["  "VRootES"  "]" ] : {idea}
 | [ {identifica} "["  "VRootES"  "]" ] : {identifica}
 | [ {ideologiza} "["  "VRootES"  "]" ] : {ideologiza}
 | [ {idiotiza} "["  "VRootES"  "]" ] : {idiotiza}
@@ -4963,7 +4894,6 @@
 | [ {indulta} "["  "VRootES"  "]" ] : {indulta}
 | [ {indura} "["  "VRootES"  "]" ] : {indura}
 | [ {industrializa} "["  "VRootES"  "]" ] : {industrializa}
-| [ {industria} "["  "VRootES"  "]" ] : {industria}
 | [ {inerva} "["  "VRootES"  "]" ] : {inerva}
 | [ {infama} "["  "VRootES"  "]" ] : {infama}
 | [ {infarta} "["  "VRootES"  "]" ] : {infarta}
@@ -5054,7 +4984,6 @@
 | [ {interferi} "["  "VRootES"  "]" ] : {interferi}
 | [ {interfolia} "["  "VRootES"  "]" ] : {interfolia}
 | [ {interlinea} "["  "VRootES"  "]" ] : {interlinea}
-| [ {intermedia} "["  "VRootES"  "]" ] : {intermedia}
 | [ {internacionaliza} "["  "VRootES"  "]" ] : {internacionaliza}
 | [ {interna} "["  "VRootES"  "]" ] : {interna}
 | [ {interpagina} "["  "VRootES"  "]" ] : {interpagina}
@@ -5192,7 +5121,6 @@
 | [ {lastima} "["  "VRootES"  "]" ] : {lastima}
 | [ {lastra} "["  "VRootES"  "]" ] : {lastra}
 | [ {latiguea} "["  "VRootES"  "]" ] : {latiguea}
-| [ {latina} "["  "VRootES"  "]" ] : {latina}
 | [ {latinea} "["  "VRootES"  "]" ] : {latinea}
 | [ {latiniza} "["  "VRootES"  "]" ] : {latiniza}
 | [ {lati} "["  "VRootES"  "]" ] : {lati}
@@ -5203,7 +5131,6 @@
 | [ {laxa} "["  "VRootES"  "]" ] : {laxa}
 | [ {laya} "["  "VRootES"  "]" ] : {laya}
 | [ {laza} "["  "VRootES"  "]" ] : {laza}
-| [ {laña} "["  "VRootES"  "]" ] : {laña}
 | [ {lee} "["  "VRootES"  "]" ] : {lee}
 | [ {legaliza} "["  "VRootES"  "]" ] : {legaliza}
 | [ {lega} "["  "VRootES"  "]" ] : {lega}
@@ -5241,13 +5168,11 @@
 | [ {limpia} "["  "VRootES"  "]" ] : {limpia}
 | [ {lincea} "["  "VRootES"  "]" ] : {lincea}
 | [ {lincha} "["  "VRootES"  "]" ] : {lincha}
-| [ {linda} "["  "VRootES"  "]" ] : {linda}
 | [ {linea} "["  "VRootES"  "]" ] : {linea}
 | [ {liofiliza} "["  "VRootES"  "]" ] : {liofiliza}
 | [ {liquida} "["  "VRootES"  "]" ] : {liquida}
 | [ {lisia} "["  "VRootES"  "]" ] : {lisia}
 | [ {lisonjea} "["  "VRootES"  "]" ] : {lisonjea}
-| [ {lista} "["  "VRootES"  "]" ] : {lista}
 | [ {listona} "["  "VRootES"  "]" ] : {listona}
 | [ {lita} "["  "VRootES"  "]" ] : {lita}
 | [ {litiga} "["  "VRootES"  "]" ] : {litiga}
@@ -5256,7 +5181,6 @@
 | [ {liuda} "["  "VRootES"  "]" ] : {liuda}
 | [ {lividece} "["  "VRootES"  "]" ] : {lividece}
 | [ {lixivia} "["  "VRootES"  "]" ] : {lixivia}
-| [ {llaga} "["  "VRootES"  "]" ] : {llaga}
 | [ {llama} "["  "VRootES"  "]" ] : {llama}
 | [ {llamea} "["  "VRootES"  "]" ] : {llamea}
 | [ {llega} "["  "VRootES"  "]" ] : {llega}
@@ -5300,7 +5224,6 @@
 | [ {maciza} "["  "VRootES"  "]" ] : {maciza}
 | [ {macolla} "["  "VRootES"  "]" ] : {macolla}
 | [ {macula} "["  "VRootES"  "]" ] : {macula}
-| [ {madera} "["  "VRootES"  "]" ] : {madera}
 | [ {madruga} "["  "VRootES"  "]" ] : {madruga}
 | [ {madura} "["  "VRootES"  "]" ] : {madura}
 | [ {maestrea} "["  "VRootES"  "]" ] : {maestrea}
@@ -5328,7 +5251,6 @@
 | [ {malhumora} "["  "VRootES"  "]" ] : {malhumora}
 | [ {malicia} "["  "VRootES"  "]" ] : {malicia}
 | [ {malinterpreta} "["  "VRootES"  "]" ] : {malinterpreta}
-| [ {malla} "["  "VRootES"  "]" ] : {malla}
 | [ {malogra} "["  "VRootES"  "]" ] : {malogra}
 | [ {maloquea} "["  "VRootES"  "]" ] : {maloquea}
 | [ {malpara} "["  "VRootES"  "]" ] : {malpara}
@@ -5341,7 +5263,6 @@
 | [ {malvende} "["  "VRootES"  "]" ] : {malvende}
 | [ {malversa} "["  "VRootES"  "]" ] : {malversa}
 | [ {malvivi} "["  "VRootES"  "]" ] : {malvivi}
-| [ {mama} "["  "VRootES"  "]" ] : {mama}
 | [ {mampostea} "["  "VRootES"  "]" ] : {mampostea}
 | [ {mampresa} "["  "VRootES"  "]" ] : {mampresa}
 | [ {mamulla} "["  "VRootES"  "]" ] : {mamulla}
@@ -5380,7 +5301,6 @@
 | [ {maquila} "["  "VRootES"  "]" ] : {maquila}
 | [ {maquilla} "["  "VRootES"  "]" ] : {maquilla}
 | [ {maquina} "["  "VRootES"  "]" ] : {maquina}
-| [ {maravilla} "["  "VRootES"  "]" ] : {maravilla}
 | [ {marca} "["  "VRootES"  "]" ] : {marca}
 | [ {marchama} "["  "VRootES"  "]" ] : {marchama}
 | [ {marcha} "["  "VRootES"  "]" ] : {marcha}
@@ -5416,7 +5336,6 @@
 | [ {matutea} "["  "VRootES"  "]" ] : {matutea}
 | [ {maulla} "["  "VRootES"  "]" ] : {maulla}
 | [ {maximiza} "["  "VRootES"  "]" ] : {maximiza}
-| [ {maya} "["  "VRootES"  "]" ] : {maya}
 | [ {maza} "["  "VRootES"  "]" ] : {maza}
 | [ {mazna} "["  "VRootES"  "]" ] : {mazna}
 | [ {mazonea} "["  "VRootES"  "]" ] : {mazonea}
@@ -5428,9 +5347,7 @@
 | [ {mece} "["  "VRootES"  "]" ] : {mece}
 | [ {mecha} "["  "VRootES"  "]" ] : {mecha}
 | [ {mediatiza} "["  "VRootES"  "]" ] : {mediatiza}
-| [ {media} "["  "VRootES"  "]" ] : {media}
 | [ {medica} "["  "VRootES"  "]" ] : {medica}
-| [ {medicina} "["  "VRootES"  "]" ] : {medicina}
 | [ {medita} "["  "VRootES"  "]" ] : {medita}
 | [ {medi} "["  "VRootES"  "]" ] : {medi}
 | [ {medra} "["  "VRootES"  "]" ] : {medra}
@@ -5453,7 +5370,6 @@
 | [ {menta} "["  "VRootES"  "]" ] : {menta}
 | [ {menti} "["  "VRootES"  "]" ] : {menti}
 | [ {menudea} "["  "VRootES"  "]" ] : {menudea}
-| [ {mera} "["  "VRootES"  "]" ] : {mera}
 | [ {mercadea} "["  "VRootES"  "]" ] : {mercadea}
 | [ {mercantiliza} "["  "VRootES"  "]" ] : {mercantiliza}
 | [ {merca} "["  "VRootES"  "]" ] : {merca}
@@ -5462,8 +5378,6 @@
 | [ {merenda} "["  "VRootES"  "]" ] : {merenda}
 | [ {merma} "["  "VRootES"  "]" ] : {merma}
 | [ {merodea} "["  "VRootES"  "]" ] : {merodea}
-| [ {mesa} "["  "VRootES"  "]" ] : {mesa}
-| [ {mestiza} "["  "VRootES"  "]" ] : {mestiza}
 | [ {mesura} "["  "VRootES"  "]" ] : {mesura}
 | [ {metaforiza} "["  "VRootES"  "]" ] : {metaforiza}
 | [ {metaliza} "["  "VRootES"  "]" ] : {metaliza}
@@ -5479,12 +5393,10 @@
 | [ {miga} "["  "VRootES"  "]" ] : {miga}
 | [ {migra} "["  "VRootES"  "]" ] : {migra}
 | [ {militariza} "["  "VRootES"  "]" ] : {militariza}
-| [ {milita} "["  "VRootES"  "]" ] : {milita}
 | [ {milpea} "["  "VRootES"  "]" ] : {milpea}
 | [ {mima} "["  "VRootES"  "]" ] : {mima}
 | [ {mimbrea} "["  "VRootES"  "]" ] : {mimbrea}
 | [ {mimetiza} "["  "VRootES"  "]" ] : {mimetiza}
-| [ {mina} "["  "VRootES"  "]" ] : {mina}
 | [ {mineraliza} "["  "VRootES"  "]" ] : {mineraliza}
 | [ {minia} "["  "VRootES"  "]" ] : {minia}
 | [ {minimaliza} "["  "VRootES"  "]" ] : {minimaliza}
@@ -5501,7 +5413,6 @@
 | [ {mitiga} "["  "VRootES"  "]" ] : {mitiga}
 | [ {mixtura} "["  "VRootES"  "]" ] : {mixtura}
 | [ {mobla} "["  "VRootES"  "]" ] : {mobla}
-| [ {moca} "["  "VRootES"  "]" ] : {moca}
 | [ {mocea} "["  "VRootES"  "]" ] : {mocea}
 | [ {mocha} "["  "VRootES"  "]" ] : {mocha}
 | [ {modela} "["  "VRootES"  "]" ] : {modela}
@@ -5540,7 +5451,6 @@
 | [ {moquea} "["  "VRootES"  "]" ] : {moquea}
 | [ {moquetea} "["  "VRootES"  "]" ] : {moquetea}
 | [ {moraliza} "["  "VRootES"  "]" ] : {moraliza}
-| [ {mora} "["  "VRootES"  "]" ] : {mora}
 | [ {morde} "["  "VRootES"  "]" ] : {morde}
 | [ {mordica} "["  "VRootES"  "]" ] : {mordica}
 | [ {mordisca} "["  "VRootES"  "]" ] : {mordisca}
@@ -5620,7 +5530,6 @@
 | [ {noticia} "["  "VRootES"  "]" ] : {noticia}
 | [ {notifica} "["  "VRootES"  "]" ] : {notifica}
 | [ {nova} "["  "VRootES"  "]" ] : {nova}
-| [ {novela} "["  "VRootES"  "]" ] : {novela}
 | [ {noveliza} "["  "VRootES"  "]" ] : {noveliza}
 | [ {nubla} "["  "VRootES"  "]" ] : {nubla}
 | [ {numera} "["  "VRootES"  "]" ] : {numera}
@@ -5658,7 +5567,6 @@
 | [ {ocurri} "["  "VRootES"  "]" ] : {ocurri}
 | [ {odia} "["  "VRootES"  "]" ] : {odia}
 | [ {ofende} "["  "VRootES"  "]" ] : {ofende}
-| [ {oferta} "["  "VRootES"  "]" ] : {oferta}
 | [ {oficializa} "["  "VRootES"  "]" ] : {oficializa}
 | [ {oficia} "["  "VRootES"  "]" ] : {oficia}
 | [ {ofrece} "["  "VRootES"  "]" ] : {ofrece}
@@ -5672,7 +5580,6 @@
 | [ {olfatea} "["  "VRootES"  "]" ] : {olfatea}
 | [ {olisca} "["  "VRootES"  "]" ] : {olisca}
 | [ {olisquea} "["  "VRootES"  "]" ] : {olisquea}
-| [ {oliva} "["  "VRootES"  "]" ] : {oliva}
 | [ {oloriza} "["  "VRootES"  "]" ] : {oloriza}
 | [ {olvida} "["  "VRootES"  "]" ] : {olvida}
 | [ {omina} "["  "VRootES"  "]" ] : {omina}
@@ -5758,7 +5665,6 @@
 | [ {pandea} "["  "VRootES"  "]" ] : {pandea}
 | [ {panderetea} "["  "VRootES"  "]" ] : {panderetea}
 | [ {panifica} "["  "VRootES"  "]" ] : {panifica}
-| [ {papa} "["  "VRootES"  "]" ] : {papa}
 | [ {papelea} "["  "VRootES"  "]" ] : {papelea}
 | [ {papeletea} "["  "VRootES"  "]" ] : {papeletea}
 | [ {papeletiza} "["  "VRootES"  "]" ] : {papeletiza}
@@ -5886,7 +5792,6 @@
 | [ {persigna} "["  "VRootES"  "]" ] : {persigna}
 | [ {persisti} "["  "VRootES"  "]" ] : {persisti}
 | [ {personaliza} "["  "VRootES"  "]" ] : {personaliza}
-| [ {persona} "["  "VRootES"  "]" ] : {persona}
 | [ {personifica} "["  "VRootES"  "]" ] : {personifica}
 | [ {persuadi} "["  "VRootES"  "]" ] : {persuadi}
 | [ {pertenece} "["  "VRootES"  "]" ] : {pertenece}
@@ -5907,7 +5812,6 @@
 | [ {petrolea} "["  "VRootES"  "]" ] : {petrolea}
 | [ {piafa} "["  "VRootES"  "]" ] : {piafa}
 | [ {piala} "["  "VRootES"  "]" ] : {piala}
-| [ {pia} "["  "VRootES"  "]" ] : {pia}
 | [ {picanea} "["  "VRootES"  "]" ] : {picanea}
 | [ {picardea} "["  "VRootES"  "]" ] : {picardea}
 | [ {pica} "["  "VRootES"  "]" ] : {pica}
@@ -5968,7 +5872,6 @@
 | [ {plastifica} "["  "VRootES"  "]" ] : {plastifica}
 | [ {platea} "["  "VRootES"  "]" ] : {platea}
 | [ {platica} "["  "VRootES"  "]" ] : {platica}
-| [ {platina} "["  "VRootES"  "]" ] : {platina}
 | [ {plañi} "["  "VRootES"  "]" ] : {plañi}
 | [ {plega} "["  "VRootES"  "]" ] : {plega}
 | [ {pleitea} "["  "VRootES"  "]" ] : {pleitea}
@@ -6021,7 +5924,6 @@
 | [ {postra} "["  "VRootES"  "]" ] : {postra}
 | [ {postula} "["  "VRootES"  "]" ] : {postula}
 | [ {potabiliza} "["  "VRootES"  "]" ] : {potabiliza}
-| [ {potencia} "["  "VRootES"  "]" ] : {potencia}
 | [ {potrea} "["  "VRootES"  "]" ] : {potrea}
 | [ {practica} "["  "VRootES"  "]" ] : {practica}
 | [ {prebenda} "["  "VRootES"  "]" ] : {prebenda}
@@ -6059,9 +5961,7 @@
 | [ {premedita} "["  "VRootES"  "]" ] : {premedita}
 | [ {premia} "["  "VRootES"  "]" ] : {premia}
 | [ {premori} "["  "VRootES"  "]" ] : {premori}
-| [ {prenda} "["  "VRootES"  "]" ] : {prenda}
 | [ {prende} "["  "VRootES"  "]" ] : {prende}
-| [ {prensa} "["  "VRootES"  "]" ] : {prensa}
 | [ {prenuncia} "["  "VRootES"  "]" ] : {prenuncia}
 | [ {preocupa} "["  "VRootES"  "]" ] : {preocupa}
 | [ {prepara} "["  "VRootES"  "]" ] : {prepara}
@@ -6081,7 +5981,6 @@
 | [ {prestigia} "["  "VRootES"  "]" ] : {prestigia}
 | [ {presumi} "["  "VRootES"  "]" ] : {presumi}
 | [ {presupone} "["  "VRootES"  "]" ] : {presupone}
-| [ {presupuesta} "["  "VRootES"  "]" ] : {presupuesta}
 | [ {presuriza} "["  "VRootES"  "]" ] : {presuriza}
 | [ {pretende} "["  "VRootES"  "]" ] : {pretende}
 | [ {pretensa} "["  "VRootES"  "]" ] : {pretensa}
@@ -6093,7 +5992,6 @@
 | [ {preveni} "["  "VRootES"  "]" ] : {preveni}
 | [ {preve} "["  "VRootES"  "]" ] : {preve}
 | [ {preña} "["  "VRootES"  "]" ] : {preña}
-| [ {prima} "["  "VRootES"  "]" ] : {prima}
 | [ {primorea} "["  "VRootES"  "]" ] : {primorea}
 | [ {principia} "["  "VRootES"  "]" ] : {principia}
 | [ {pringa} "["  "VRootES"  "]" ] : {pringa}
@@ -6115,7 +6013,6 @@
 | [ {profesa} "["  "VRootES"  "]" ] : {profesa}
 | [ {profesionaliza} "["  "VRootES"  "]" ] : {profesionaliza}
 | [ {profetiza} "["  "VRootES"  "]" ] : {profetiza}
-| [ {profunda} "["  "VRootES"  "]" ] : {profunda}
 | [ {profundiza} "["  "VRootES"  "]" ] : {profundiza}
 | [ {programa} "["  "VRootES"  "]" ] : {programa}
 | [ {progresa} "["  "VRootES"  "]" ] : {progresa}
@@ -6479,7 +6376,6 @@
 | [ {registra} "["  "VRootES"  "]" ] : {registra}
 | [ {regi} "["  "VRootES"  "]" ] : {regi}
 | [ {reglamenta} "["  "VRootES"  "]" ] : {reglamenta}
-| [ {regla} "["  "VRootES"  "]" ] : {regla}
 | [ {regletea} "["  "VRootES"  "]" ] : {regletea}
 | [ {regocija} "["  "VRootES"  "]" ] : {regocija}
 | [ {regodea} "["  "VRootES"  "]" ] : {regodea}
@@ -6644,7 +6540,6 @@
 | [ {requinta} "["  "VRootES"  "]" ] : {requinta}
 | [ {requisa} "["  "VRootES"  "]" ] : {requisa}
 | [ {resabia} "["  "VRootES"  "]" ] : {resabia}
-| [ {resaca} "["  "VRootES"  "]" ] : {resaca}
 | [ {resali} "["  "VRootES"  "]" ] : {resali}
 | [ {resalla} "["  "VRootES"  "]" ] : {resalla}
 | [ {resalta} "["  "VRootES"  "]" ] : {resalta}
@@ -6766,7 +6661,6 @@
 | [ {reve} "["  "VRootES"  "]" ] : {reve}
 | [ {revigoriza} "["  "VRootES"  "]" ] : {revigoriza}
 | [ {revisa} "["  "VRootES"  "]" ] : {revisa}
-| [ {revista} "["  "VRootES"  "]" ] : {revista}
 | [ {revitaliza} "["  "VRootES"  "]" ] : {revitaliza}
 | [ {revivifica} "["  "VRootES"  "]" ] : {revivifica}
 | [ {revivi} "["  "VRootES"  "]" ] : {revivi}
@@ -6850,12 +6744,10 @@
 | [ {sainetea} "["  "VRootES"  "]" ] : {sainetea}
 | [ {saja} "["  "VRootES"  "]" ] : {saja}
 | [ {salaria} "["  "VRootES"  "]" ] : {salaria}
-| [ {sala} "["  "VRootES"  "]" ] : {sala}
 | [ {salcocha} "["  "VRootES"  "]" ] : {salcocha}
 | [ {salda} "["  "VRootES"  "]" ] : {salda}
 | [ {salga} "["  "VRootES"  "]" ] : {salga}
 | [ {salifica} "["  "VRootES"  "]" ] : {salifica}
-| [ {saliva} "["  "VRootES"  "]" ] : {saliva}
 | [ {sali} "["  "VRootES"  "]" ] : {sali}
 | [ {salmea} "["  "VRootES"  "]" ] : {salmea}
 | [ {salmodia} "["  "VRootES"  "]" ] : {salmodia}
@@ -6901,7 +6793,6 @@
 | [ {segmenta} "["  "VRootES"  "]" ] : {segmenta}
 | [ {segrega} "["  "VRootES"  "]" ] : {segrega}
 | [ {segui} "["  "VRootES"  "]" ] : {segui}
-| [ {segunda} "["  "VRootES"  "]" ] : {segunda}
 | [ {selecciona} "["  "VRootES"  "]" ] : {selecciona}
 | [ {sella} "["  "VRootES"  "]" ] : {sella}
 | [ {sembra} "["  "VRootES"  "]" ] : {sembra}
@@ -7027,7 +6918,6 @@
 | [ {sojuzga} "["  "VRootES"  "]" ] : {sojuzga}
 | [ {solapa} "["  "VRootES"  "]" ] : {solapa}
 | [ {solaza} "["  "VRootES"  "]" ] : {solaza}
-| [ {sola} "["  "VRootES"  "]" ] : {sola}
 | [ {solda} "["  "VRootES"  "]" ] : {solda}
 | [ {solea} "["  "VRootES"  "]" ] : {solea}
 | [ {solemniza} "["  "VRootES"  "]" ] : {solemniza}
@@ -7063,7 +6953,6 @@
 | [ {sonrosea} "["  "VRootES"  "]" ] : {sonrosea}
 | [ {sonsaca} "["  "VRootES"  "]" ] : {sonsaca}
 | [ {sopapea} "["  "VRootES"  "]" ] : {sopapea}
-| [ {sopa} "["  "VRootES"  "]" ] : {sopa}
 | [ {sopesa} "["  "VRootES"  "]" ] : {sopesa}
 | [ {sopetea} "["  "VRootES"  "]" ] : {sopetea}
 | [ {sopla} "["  "VRootES"  "]" ] : {sopla}
@@ -7199,12 +7088,10 @@
 | [ {tara} "["  "VRootES"  "]" ] : {tara}
 | [ {tarda} "["  "VRootES"  "]" ] : {tarda}
 | [ {tardece} "["  "VRootES"  "]" ] : {tardece}
-| [ {tarifa} "["  "VRootES"  "]" ] : {tarifa}
 | [ {tarja} "["  "VRootES"  "]" ] : {tarja}
 | [ {tartajea} "["  "VRootES"  "]" ] : {tartajea}
 | [ {tartamudea} "["  "VRootES"  "]" ] : {tartamudea}
 | [ {tartariza} "["  "VRootES"  "]" ] : {tartariza}
-| [ {tasa} "["  "VRootES"  "]" ] : {tasa}
 | [ {tasca} "["  "VRootES"  "]" ] : {tasca}
 | [ {tatua} "["  "VRootES"  "]" ] : {tatua}
 | [ {tañe} "["  "VRootES"  "]" ] : {tañe}
@@ -7255,7 +7142,6 @@
 | [ {timbra} "["  "VRootES"  "]" ] : {timbra}
 | [ {timonea} "["  "VRootES"  "]" ] : {timonea}
 | [ {timpaniza} "["  "VRootES"  "]" ] : {timpaniza}
-| [ {tinta} "["  "VRootES"  "]" ] : {tinta}
 | [ {tinterilla} "["  "VRootES"  "]" ] : {tinterilla}
 | [ {tintinea} "["  "VRootES"  "]" ] : {tintinea}
 | [ {tipifica} "["  "VRootES"  "]" ] : {tipifica}
@@ -7417,7 +7303,6 @@
 | [ {trepa} "["  "VRootES"  "]" ] : {trepa}
 | [ {trepida} "["  "VRootES"  "]" ] : {trepida}
 | [ {tresdobla} "["  "VRootES"  "]" ] : {tresdobla}
-| [ {triangula} "["  "VRootES"  "]" ] : {triangula}
 | [ {tria} "["  "VRootES"  "]" ] : {tria}
 | [ {tribui} "["  "VRootES"  "]" ] : {tribui}
 | [ {tributa} "["  "VRootES"  "]" ] : {tributa}
@@ -7463,12 +7348,10 @@
 | [ {tumba} "["  "VRootES"  "]" ] : {tumba}
 | [ {tumultua} "["  "VRootES"  "]" ] : {tumultua}
 | [ {tunantea} "["  "VRootES"  "]" ] : {tunantea}
-| [ {tuna} "["  "VRootES"  "]" ] : {tuna}
 | [ {tundi} "["  "VRootES"  "]" ] : {tundi}
 | [ {tunea} "["  "VRootES"  "]" ] : {tunea}
 | [ {tupi} "["  "VRootES"  "]" ] : {tupi}
 | [ {turba} "["  "VRootES"  "]" ] : {turba}
-| [ {turbina} "["  "VRootES"  "]" ] : {turbina}
 | [ {turifica} "["  "VRootES"  "]" ] : {turifica}
 | [ {turna} "["  "VRootES"  "]" ] : {turna}
 | [ {turra} "["  "VRootES"  "]" ] : {turra}
@@ -7500,7 +7383,6 @@
 | [ {usufructua} "["  "VRootES"  "]" ] : {usufructua}
 | [ {usurpa} "["  "VRootES"  "]" ] : {usurpa}
 | [ {utiliza} "["  "VRootES"  "]" ] : {utiliza}
-| [ {vaca} "["  "VRootES"  "]" ] : {vaca}
 | [ {vacia} "["  "VRootES"  "]" ] : {vacia}
 | [ {vacila} "["  "VRootES"  "]" ] : {vacila}
 | [ {vacuna} "["  "VRootES"  "]" ] : {vacuna}
@@ -7522,7 +7404,6 @@
 | [ {vapora} "["  "VRootES"  "]" ] : {vapora}
 | [ {vaporiza} "["  "VRootES"  "]" ] : {vaporiza}
 | [ {vapulea} "["  "VRootES"  "]" ] : {vapulea}
-| [ {vara} "["  "VRootES"  "]" ] : {vara}
 | [ {varea} "["  "VRootES"  "]" ] : {varea}
 | [ {varia} "["  "VRootES"  "]" ] : {varia}
 | [ {vaticina} "["  "VRootES"  "]" ] : {vaticina}

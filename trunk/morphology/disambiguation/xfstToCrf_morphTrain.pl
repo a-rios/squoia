@@ -27,9 +27,6 @@ unless($mode eq '-1' or $mode eq '-2' or $mode eq '-3' or !$mode){
 }
 
 
-my @words;
-my $newWord=1;
-my $index=0;
 
 my @words;
 my $newWord=1;

@@ -1,7 +1,7 @@
 # verbal slot 6: person markers
 
    [ "[" "--" "]" {ni} "[" "VPers" "]" "[" "+1.Sg.Subj" "]" ] : {ni}
-|  [ "@INTR" "[" "--" "]" {nki} "[" "VPers" "]" "[" "+2.Sg.Subj" "]" ] : {nki}
+|  [ "@INTRsu" "[" "--" "]" {nki} "[" "VPers" "]" "[" "+2.Sg.Subj" "]" ] : {nki}
 |  [ "[" "--" "]" {n} "[" "VPers" "]" "[" "+3.Sg.Subj" "]" ] : {n}
 |  [ "@INTR" "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj" "]" ] : {nchis}
 |  [ "@INTR" "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj" "]" ] : {nchiq}

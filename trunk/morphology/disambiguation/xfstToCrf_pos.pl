@@ -43,8 +43,10 @@ while(<STDIN>){
 	
 		my ($root) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$|AdvES|PrepES|ConjES)/ ;
 		
+		my $isNP = 0;
 		if($root eq 'NP'){
 			$root = 'NRoot';
+			$isNP =1;
 			#print $form."\n";
 		}
 		
@@ -89,7 +91,7 @@ while(<STDIN>){
 		$hashAnalysis{'morph'} = \@morphtags;
 		$hashAnalysis{'allmorphs'} = $allmorphs;
 		$hashAnalysis{'lem'} = $lem;
-	
+		$hashAnalysis{'isNP'} = $isNP;
 #	   ALFS 
 #       CARD 
 #       NP NRoot NRootES NRootNUM
@@ -169,8 +171,10 @@ foreach my $word (@words){
 		# possible root pos
 		my $printedroots='';
 		my $nbrOfPos =0;
+		my $isNP;
 		foreach my $analysis (@$analyses){
 			my $pos = $analysis->{'pos'};
+			$isNP = $analysis->{'isNP'};
 			unless($printedroots =~ /\Q$pos\E/){
 				print "$pos\t";
 				$printedroots = $printedroots.$pos;
@@ -184,7 +188,7 @@ foreach my $word (@words){
 				if($possPos eq 'NP'){
 					$possPos = 'NRoot';
 				}
-				unless($printedroots =~ /\Q$possPos\E/){
+				unless($printedroots =~ /\Q$possPos\E/ or $isNP){
 					print "$possPos\t";
 					$printedroots = $printedroots.$possPos;
 					$nbrOfPos++;
@@ -224,7 +228,7 @@ foreach my $word (@words){
 			foreach my $possAllmorph (@$possibleMorphsRef){
 				my @morphs = split('#', $possAllmorph);
 				foreach my $morph (@morphs){
-					unless($printedmorphs =~ /\Q$morph\E/){
+					unless($printedmorphs =~ /\Q$morph\E/ or $isNP){
 						print "$morph\t";
 						$printedmorphs = $printedmorphs.$morph;
 						$nbrOfMorph++;
@@ -255,7 +259,7 @@ foreach my $word (@words){
 		if($mode eq '-train'){
 			my $possibleLemmasRef = $xfstwordsLem{$form};
 			foreach my $lem (@$possibleLemmasRef){
-				unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
+				unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2 or $isNP){
 					print "$lem\t";
 					$printedlems = $printedlems.'#'.$lem."#";
 					$nbrOfLems++;

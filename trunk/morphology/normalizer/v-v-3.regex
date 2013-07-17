@@ -1,4 +1,4 @@
 # verbal slot 3: object markers
 
-   [ "[" "--" "]" {wa} "[" "VPers" "]" "[" "+1.Obj" "]" ]: {wa}
+   [ "[" "--" "]" {wa} "[" "VPers" "]" "[" "+1.Obj" "]" ]: [{wa}"@1OBJ"]
 |  [ "[" "--" "]" {su} "[" "VPers" "]" "[" "+2.Obj" "]" ] : {su};
