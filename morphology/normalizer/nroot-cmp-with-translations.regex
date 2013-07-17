@@ -1288,7 +1288,6 @@
 | [ {watmu} "[" "NRoot" "]" "[" "=padrino" "]" ] :  {watmu}
 | [ {watu} "[" "NRoot" "]" "[" "=faja,hechizo" "]" ] :  {watu}
 | [ {watya} "[" "NRoot" "]" "[" "=papa_asada" "]" ] :  {watya}
-| [ {wawa} "[" "NRoot" "]" "[" "=niño" "]" ] :  {wawa}
 | [ {wawi} "[" "NRoot" "]" "[" "=bebé" "]" ] :  {wawi}
 | [ {wawku} "[" "NRoot" "]" "[" "=flauta" "]" ] :  {wawku}
 | [ {wayqi} "[" "NRoot" "]" "[" "=hermano" "]" ] :  {wawqi}

@@ -2,11 +2,7 @@
 # -*- encoding: utf-8 -*-
 # TODOs: 
 # -switches: allow -m as -n, -pas as -pis
-# -yku -> y if preceding -wa
-# sqayki[+1.Sg.Subj_2.Sg.Obj.Fut][--]man[Mod][+Pot]
-# -nin -> nillan
-# allow yoq- ykuq
-# -sqa/na -suyki/-suykiku, qatipashasuptiyki , yachachinasuykikupaq yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS][+Obl][^DB][--]suykiku[NPers][+1.Pl.Excl.Subj_2.Sg.Obj][^DB][--]paq[Cas][+Ben]
+# yachachinasuykikupaq yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS][+Obl][^DB][--]suykiku[NPers][+1.Pl.Excl.Subj_2.Sg.Obj]
 # -upallarapuyku LLAra
 
        #derivation boundary
@@ -18,8 +14,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@SU"|"@TRAN"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@SU"|"@TRAN"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"] ];
 
 ############################################################################### 
 
@@ -51,26 +47,7 @@
       define Allophone [Allophone1 .o. Allophone2 ] ;
       define AllophoneBeforeCleanUp [ m (->) n || \"@MPA" _ p ];
 
-       #---------------------------#
-       # alternative orthographies #
-       #---------------------------#
-
-       define Orthography1 [ {q} (->) {cc}, {Q} (->) {Cc}];
-       define Orthography2 [ {wi} (->) {hui}, {Wi} (->) {Hui}  ];
-       define Orthography3 [ {wa} (->) {hua}, {Wa} (->) {Hua} ];
-       define Orthography4 [ {wa} (->) {gua}, {Wa} (->) {Gua}];
-       define Orthography5 [ {w} (->) {u} || {a}_ ];
-       define Orthography6 [ {h} (->) {j}, {H} (->) {J} ];
-       define Orthography7 [ {k} (->) {j} || Vowel_];
-       define Orthography8 [ {ch} (->) {ts}, {Ch} (->) {Ts} ];
-       define Orthography9 [ {ph} (->) {f}];
-       define Orthography10 [ {w} (->) {u} || Vowel _ ];
-       define Orthography11 [ {q} (->) {j} || Vowel_];
-       
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11];
-
-
-       define QuechuaOrtho Allophone .o. Orthography;
+       define QuechuaOrtho Allophone;
 
        # apply after Cleanup
        define Accent1 [ a (->) á, u (->) ú ||  _ [w|y] .#.];
@@ -150,7 +127,7 @@
        # mu shortened to 'n' is only allowed preceding pu       #
        #--------------------------------------------------------#
        define naRzpr [  "+Rzpr"  => _ ?* ["+Rflx_Int"|"+Caus"|"+SS"] ];
-       #define mpuDIR3 [ "+nn+" =>   _ ?* "@PU" ];
+       define shortYKU [  "+y+"  => _ %["VDeriv"%] %["+Aff"%] %["^DB"%] %["--"%]{wa}%["VPers"%] ];
 
        # transitive forms
        define watrans [  "@WA"  => "+1.Obj" ?* _  ];
@@ -169,13 +146,13 @@
        define ykuyka3 [ {yka}"+yku+" <- {yku}"+yku+" \\ _   ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
        define ykuyka4 [ {yku}"+yu+" <- {yu}"+yu+" \\ _ ?* ~$["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
        define ykuyka5 [ {yka}"+yu+" <- {yu}"+yu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
-       
+
        define mpuDIR2 [ {m}"+mu+" <- {mu}"+mu+"  \\  _ ?* "@PU" ];
 
        define pupa2 [ {pa}"+pu+" <- {pu}"+pu+" \\  _  ?* ["@KU"|"@MU"] ];
        define kuka2 [ {ka}"+ku+" <- {ku}"+ku+" \\  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
 
-      define VerbRulesUpper  naRzpr  .o. rqurqa5 .o. rqurqa6 .o. rqurqa7 .o. ykuyka3 .o. ykuyka4 .o. ykuyka5 .o. mpuDIR2  .o. pupa2 .o. kuka2 .o. watrans .o. sutrans;
+      define VerbRulesUpper  naRzpr .o. shortYKU .o. rqurqa5 .o. rqurqa6 .o. rqurqa7 .o. ykuyka3 .o. ykuyka4 .o. ykuyka5 .o. mpuDIR2  .o. pupa2 .o. kuka2 .o. watrans .o. sutrans;
 
        #-------------------------------------------------------------------------------------------#
        # rqu --> rqa before mu, pu , ri ,ysi (rqa can only be +Rptn in this position, everywhere   #
@@ -192,7 +169,7 @@
        #--------------------------------------------------------------------------------------#
        define ykuyka1 [ {yku}"@YKU" (->) {yka}"@YKU" || _   ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"+Rzpr"]];
        define ykuyka2 [ {yu}"@YKU" (->) {ya}"@YKU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"+Rzpr"]];
-
+       
        #--------------------------------------------------------------------------------------------------------------------------#
        # -mu translocative --> as -m only before pu (might otherwise be confused wth -mpa, positional, -mpu can be written as npu #
        #--------------------------------------------------------------------------------------------------------------------------#
@@ -208,10 +185,7 @@
        #-----------------------------------------------------------------------#
        define kuka [ {ku}"@KU" -> {ka}"@KU" ||  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
 
-
-  
-
-   define VerbRulesLower rqurqa1 .o. rqurqa2  .o. rqurqa3 .o. rqurqa4 .o. ykuyka1 .o. ykuyka2 .o. mpuDIR .o. pupa .o. kuka ;
+   define VerbRulesLower rqurqa1 .o. rqurqa2  .o. rqurqa3 .o. rqurqa4 .o. ykuyka1 .o. ykuyka2  .o. mpuDIR .o. pupa .o. kuka ;
 
 
        ##############
@@ -305,7 +279,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=6 DB @re"v-v-6-norm.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
 
-    define VerbSuffixes  VerbRulesUpper  .o. [V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. QuechuaOrtho;
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. QuechuaOrtho;
 
 
 #####################################################################################
@@ -605,7 +579,7 @@ define PAQ [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] p %["Cas"%] %["
 define NTIN [~$[{ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m]]];
 define STIN [~$[{stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m]]]; # -stin, not as -sti -n (3.Sg.Subj, or DirE)
 define PTIN [~$[{pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb"%] ]]; #-pti -> Ayacuchano, but -n as DirE, only Cuzqueño
-#define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"%]]];
+define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"%]]];
 
 define TAQ  [~$[{ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] p %["Cas"%]]];
 define NIRAQ [~$[{nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] p %["Cas"%]]];
@@ -615,6 +589,7 @@ define DISC [~$[%["Part+Disc"%] %["^DB"%] %["--"%] {ña} ]]; #ñaña = sister, n
 
 define NTAWAN [~$[%["+Proloc"%] %["^DB"%] %["--"%] {wan}]];
 define ASWAN [~$["=poco"%] %["^DB"%] %["--"%] {wan}]];
+define ASNA [~$["=poco"%]  %["--"%] {na}]];
 #special case, aswan has its own entry in the lexicon, as otherwise there are problems with the suffix sequence, vgl. as-wan-ta!
 
 define ALLIN [~$["@ALLI" %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"|%["NDeriv"]]];
@@ -628,7 +603,8 @@ define CHIQA  [~$["@CHIQA" %["^DB"%] %["--"%] [q|n|m|p] %[]];
 define HATUN1 [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"]]];
 define HATUN2 [~$[{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha} %["NDeriv"%]]]; #hatu+Dim
 define HATUN3 [~$[{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS"%]]];
-define HATUN HATUN1 .o. HATUN2 .o. HATUN3 ;
+define HATUN4 [~$[{hatu} %["NRoot"%] %[?*"+Rel"]];
+define HATUN HATUN1 .o. HATUN2 .o. HATUN3 .o. HATUN4;
 #special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
 
 # kacha- should not be analyzed as ka (copula) and -cha (Vdim)!
@@ -638,7 +614,9 @@ define KACHA [~$[ {ka}%["VRoot"%] %["=ser"%] %["--"%] {cha}]];
 define RIKU [~$[ {ri}%["VRoot"%] %["=ir"%] %["^DB"%] %["--"%] {ku}]];
 
 # paqari- should not be analyzed es paqa -ri 
-define PAQARI [~$[ {paqa}%["VRoot"%] %["=lavar"%] %["--"%] {ri}]];
+define PAQARIN1 [~$[ {paqa}%["VRoot"%] %["=lavar"%] %["--"%] {ri}]];
+define PAQARIN2 [~$[{paqari} %["VRoot"%] %["=amanecer"%] %["^DB"%] %["--"%] {n}%[ ]];
+define PAQARIN PAQARIN1 .o. PAQARIN2;
 
 # tukuy- should not be analyzed es tuku -y 
 define TUKUY [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y}]];
@@ -657,14 +635,29 @@ define LLUMPAQ [~$[%["=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS"%]]];
 
 define IMANA [~$[{ima}%[?*"+Reub"]];
 
-define UTQHA [~$[ {utqha}%["NRoot"%] %["=rápido,apurado"%] %["^DB"%] %["--"%] {y}]];
+define UTQHA [~$[ {utqha}%["NRoot"%] %["=rápido,apurado"%] %["^DB"%] %["--"%] {y} %[ ]];
 
 define WATRANS  ~$["+1.Obj" ?* ["@INTR"|"@TRAN"] ] ;
-define SUTRANS  ~$["+2.Obj" ?* ["@INTR"|"@TRAN"] ] ;
+define SUTRANS  ~$["+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] ] ;
+
+define YWAN [~$[ "+y+" %["VDeriv"%] %["+Aff"%] %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] n %["VPers"%] ]];
+
+# filter out false double accusatives (contratatan -> not contra-ta-ta!)
+define TATA [~$["+Acc" ?* "+Acc"]];
+
+define CHUSAQ [~$[{ch'usa}%[?*["+Gen"|"+Ag"]]];
+
+define HUKUCHA [~$[{huk'u}%[?*"+Dim"]];
+
+define ILLAPA [~$[{illa}%[?*%]{pa}]];
+
+define PUPUTI [~$[{pupu}%[?*%]{ti}]];
+
+define WICHAY [~$[ {wicha} %["VRoot"%] %["=subir"%] %["^DB"%] %["--"%] {y}%[ ]];
 
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
-#define FeatRestr [NAYA .o. SUN .o.  SUNCHIS2 .o. SUNMAN  .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARI .o. TUKUY .o. LLUMPAQ .o. IMANA .o. UTQHA .o. WATRANS .o. SUTRANS];
+#define FeatRestr [NAYA .o. SUN .o.  SUNCHIS2 .o. SUNMAN  .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN  .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. ASNA.o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SQAYKIMAN .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARIN .o. TUKUY .o. LLUMPAQ .o. IMANA .o. UTQHA .o. WATRANS .o. SUTRANS .o. YWAN .o. TATA .o. CHUSAQ .o. HUKUCHA .o. ILLAPA .o. PUPUTI .o. WICHAY];
 
 ######################################################################################
 
@@ -677,14 +670,13 @@ define HAKU  [{haku} "[" "VRoot" "+2.Sg.Subj.Imp" "]" "[" "=venir" "]"] : {haku}
 define OTAQ [ {o} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" "Amb" "]" "[" "+Con_Intr" "]" ] : [ [o|u|O|U]{taq} ];
 define NITAQ [ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" "Amb" "]" "[" "+Con_Intr" "]" ] : {nitaq} ] .o. UpperCase;
 
-
 ######################################################################################
 
 #define Wort [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. UpperCase;
 define Wort IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. AmbiRules .o. UpperCase;
 
 #read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-read regex Cleanup2 .o. WATRANS .o. SUTRANS .o. SQAYKIMAN .o. [Wort|SpecialWord|OTAQ|NITAQ]  .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
+read regex  Cleanup2 .o. WICHAY.o. [Wort|SpecialWord|OTAQ|NITAQ]  .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
 #read regex  FeatRestr .o. [Wort|SpecialWord]  .o. Cleanup1;
 #read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord];
 

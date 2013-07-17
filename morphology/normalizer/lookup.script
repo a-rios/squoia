@@ -1,9 +1,11 @@
 main normalizer.fst
 spanish spanish.fst
+main2 normalizer-relax.fst
 spanish2 spanish-relax.fst
 guesser guesser.fst
 
 main
 spanish
+main2
 spanish2
 guesser
