@@ -117,7 +117,8 @@
 | [{hamk'a} "[" "VRoot" "]" "[" "=tostar" "]" ] :  {hamk'a} 
 | [{hamk'a} "[" "VRoot" "]" "[" "=tostar" "]" ] :  {hank'a} 
 | [{hampi} "[" "VRoot" "]" "[" "=curar" "]" ] :  {hampi} 
-| [{hanch'u} "[" "VRoot" "]" "[" "=masticar" "]" ] :  {hanch'u} 
+| [{hach'u} "[" "VRoot" "]" "[" "=masticar" "]" ] :  {hanch'u}
+| [{hach'u} "[" "VRoot" "]" "[" "=masticar" "]" ] :  {hach'u}
 | [{hap'i} "[" "VRoot" "]" "[" "=agarrar,entender" "]" ] :  {hap'i} 
 | [{hap'i} "[" "VRoot" "]" "[" "=agarrar,entender" "]" ] :  {hapi} 
 | [{hark'a} "[" "VRoot" "]" "[" "=retener,defender" "]" ] :  {hark'a} 
@@ -139,7 +140,7 @@
 | [{huñu} "[" "VRoot" "]" "[" "=juntar" "]" ] :  {huñu} 
 | [{huqari} "[" "VRoot" "]" "[" "=levantar" "]" ] :  {huqari} 
 | [{huqari} "[" "VRoot" "]" "[" "=levantar" "]" ] :  {uqari} 
-| [{huqu} "[" "VRoot" "]" "[" "=contagiar" "]" ] :  {huqu} 
+| [{huq'u} "[" "VRoot" "]" "[" "=mojar" "]" ] :  {huqu} 
 | [{huq'u} "[" "VRoot" "]" "[" "=mojar" "]" ] :  {huq'u} 
 | [{hutk'u} "[" "VRoot" "]" "[" "=perforar" "]" ] :  {hutk'u} 
 | [{hutu} "[" "VRoot" "]" "[" "=surtir" "]" ] :  {hutu} 
@@ -259,14 +260,12 @@
 | [{qati} "[" "VRoot" "]" "[" "=seguir,arrear" "]" ] :  {qati}
 | [{qichu} "[" "VRoot" "]" "[" "=quitar" "]" ] :  {qichu} 
 | [{qillqa} "[" "VRoot" "]" "[" "=escribir" "]" ] :  {qillqa}
-| [{qhachu} "[" "VRoot" "]" "[" "=remover" "]" ] :  {qhachu} 
 | [{qhasti} "[" "VRoot" "]" "[" "=descubrir" "]" ] :  {qhasti} 
 | [{qhasu} "[" "VRoot" "]" "[" "=romper" "]" ] :  {qhasu} 
 | [{qhatu} "[" "VRoot" "]" "[" "=negociar" "]" ] :  {qhatu} 
 | [{qhatu} "[" "VRoot" "]" "[" "=negociar" "]" ] :  {qatu} 
 | [{q'imi} "[" "VRoot" "]" "[" "=apoyar" "]" ] :  {q'imi} 
 | [{q'ipi} "[" "VRoot" "]" "[" "=llevar" "]" ] :  {q'ipi} 
-| [{q'ipi} "[" "VRoot" "]" "[" "=llevar" "]" ] :  {qipi} 
 | [{q'iwi} "[" "VRoot" "]" "[" "=torcer" "]" ] :  {q'iwi} 
 | [{ranqha} "[" "VRoot" "]" "[" "=vender" "]" ] :  {ranqha} 
 | [{ranti} "[" "VRoot" "]" "[" "=comprar" "]" ] :  {ranti} 
@@ -329,7 +328,7 @@
 | [{wikch'u} "[" "VRoot" "]" "[" "=echar" "]" ] :  {wischu} 
 | [{wikch'u} "[" "VRoot" "]" "[" "=echar" "]" ] :  {wisch'u} 
 | [{willu} "[" "VRoot" "]" "[" "=cortar" "]" ] :  {willu} 
-| [{wiq'i} "[" "VRoot" "]" "[" "=lagrimear" "]" ] :  {wiq'i} 
+| [{wiqi} "[" "VRoot" "]" "[" "=lagrimear" "]" ] :  {wiq'i} 
 | [{wiq'u} "[" "VRoot" "]" "[" "=vomitar" "]" ] :  {wiq'u} 
 | [{wist'u} "[" "VRoot" "]" "[" "=torcer" "]" ] :  {wist'u} 
 | [{wist'u} "[" "VRoot" "]" "[" "=torcer" "]" ] :  {wistu} 
