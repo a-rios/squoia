@@ -657,7 +657,7 @@ define WICHAY [~$[ {wicha} %["VRoot"%] %["=subir"%] %["^DB"%] %["--"%] {y}%[ ]];
 
 define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
 
-#define FeatRestr [NAYA .o. SUN .o.  SUNCHIS2 .o. SUNMAN  .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN  .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. ASNA.o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SQAYKIMAN .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARIN .o. TUKUY .o. LLUMPAQ .o. IMANA .o. UTQHA .o. WATRANS .o. SUTRANS .o. YWAN .o. TATA .o. CHUSAQ .o. HUKUCHA .o. ILLAPA .o. PUPUTI .o. WICHAY];
+define FeatRestr [NAYA .o. SUN .o.  SUNCHIS2 .o. SUNMAN  .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN  .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. ASNA.o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SQAYKIMAN .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARIN .o. TUKUY .o. LLUMPAQ .o. IMANA .o. UTQHA .o. WATRANS .o. SUTRANS .o. YWAN .o. TATA .o. CHUSAQ .o. HUKUCHA .o. ILLAPA .o. PUPUTI .o. WICHAY];
 
 ######################################################################################
 
@@ -675,8 +675,8 @@ define NITAQ [ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" 
 #define Wort [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. UpperCase;
 define Wort IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. AmbiRules .o. UpperCase;
 
-#read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-read regex  Cleanup2 .o. WICHAY.o. [Wort|SpecialWord|OTAQ|NITAQ]  .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
+read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+#read regex  Cleanup2 .o. WICHAY.o. [Wort|SpecialWord|OTAQ|NITAQ]  .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
 #read regex  FeatRestr .o. [Wort|SpecialWord]  .o. Cleanup1;
 #read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord];
 
