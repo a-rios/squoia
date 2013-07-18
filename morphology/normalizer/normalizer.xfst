@@ -522,120 +522,33 @@ define Particles VerbRulesLower .o. [[Particle|ParticleBasic|ParticleVerb|Partic
        #                       #
        #########################
 
-define NAYA1 [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs"]] ; # -naya -> +Des, nott +Obl+Trs
-define NAYA2 [~$["+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs"]] ;
-define NAYA3 [~$["+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff"]];
-define NAYA [NAYA1 .o. NAYA2 .o. NAYA3];
+# naya
+define NAYA [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" ]] ; 
 
-define SUN1 [~$["+2.Obj"?*"+3.Sg.Subj"]]; # -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj
-define SUN2 [~$["+Aug"%] %["^DB"%] %["--"%] {n} %["NPers"%] %["+3.Sg.Poss"]];
-define SUN3 [~$["+Aug"%] %["^DB"%] %["--"%] [n|m] %["NPers"%] %["+DirE"]] ;
-define SUN SUN1 .o. SUN2 .o. SUN3;
+# -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj
+define SUN [~$["+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] {n} %["NPers"%] %["+3.Sg.Poss" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %["NPers"%] %["+DirE" ]]; 
 
-#define SUNKI [~$["+2.Obj"?*"+2.Sg.Subj"]]; # -sunki -> only as 2.Obj,3.Subj
-#define SUNCHIS [~$["+2.Obj"?*"+1.Pl.Incl.Subj"]];
-#define WASUNCHIS [~$["+1.Obj"?*[{sunchi}|{nchi}][s|k|q]%["VPers"]]; 
-#define SUNKICHIS [~$["+2.Obj"?*"+2.Pl.Subj"]];
-define SUNMAN [~$["+1.Pl.Incl.Subj.Imp"?*"+Pot"]];
-define SUNCHIS2 [~$["+Aug"%] %["^DB"%] %["--"%] {nchi}[s|k|q] %["NPers"%] %["+1.Pl.Incl.Poss"]];
+# -su: sunman, sunchis
+define SUFORMS [~$["+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi}[s|k|q] %["NPers"%] %["+1.Pl.Incl.Poss"]];
 
-# can be both 3>1.pl.excl or 3.pl>1obj
-#define WANKU [~$["+1.Obj"?*"+3.Pl.Subj"]];
-#define WASUN [~$["+1.Obj"?*{sun}%[]];
-#define WANQAKU [~$["+1.Obj"?*{nqaku}%[]];
-#define WAYKU [~$["+1.Obj"?*"+1.Pl.Excl.Subj"]];
+# case suffixes:  tapi, pita, manta, tamanta, mantaq, ntin, paq
+define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"+Abl" | "+Abl"?*"+Gen" | {ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] | {pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] p %["Cas"%] %["+Gen"]];
 
-define TAPI [~$["+Acc"?*"+Loc"]];
-define PITA [~$["+Loc"?*"+Acc"]];
-define MANTA  [~$["+Dat_Ill"?*"+Acc"]];
-define TAMANTA [~$["+Acc"?*"+Abl"]];
-define MANTAQ [~$["+Abl"?*"+Gen"]];
+# verbal derivation, nyari, qti,  sqama, sqan, rqan (sqas ?), sqay, sqaman, sqa+fut, sqaykiman
+define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb" | "+IPst"?*["+2.Sg.Subj.Imp"|"+2.Pl.Subj.Imp"|"+1.Pl.Incl.Subj.Imp"|"+3.Sg.Subj.Imp"] | "+IPst"?*["+1.Sg.Subj.Pot"|"+Pot"] | "+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut" ?*"+Pot" ]];
 
-define NYARI [~$["+Cont"?*"+Inch"]];
-define QTI [~$["+Ag"?*"+Char"]] ;
-define SQAMA  [~$["+3.Sg.Subj.IPst"?*"+DirE_Emph"]]; #-sqa-má -> only as +Perf+DirE_Emph
-define SQAN [~$["+3.Sg.Subj.IPst"?*"+DirE"]];
-define RQAN [~$[%["+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"%] ]];
-#define SQAS [~$[ "+3.Sg.Subj.IPst"%] %["^DB"%] %["--"%] s %["Amb" ]];
+# verbal derivation 2: paku, pamu, yman, ykacha, saq (#saq, if -sa is allowed as progressive allomorph (Bolivian Quechua), ptin (#-pti -> Ayacuchano, but -n as DirE, only Cuzqueño), stin (-stin, not as -sti -n (3.Sg.Subj, or DirE))
+define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku} | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" | "+Prog""+Ag" | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
 
-define PAKU  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku}]];
-define PAMU  [~$[%["+Rep"%] %["--"%]{mu}]];
-
-define SQAY [~$["+IPst"?*["+2.Sg.Subj.Imp"|"+2.Pl.Subj.Imp"|"+1.Pl.Incl.Subj.Imp"|"+3.Sg.Subj.Imp"]]];
-define SQAMAN [~$["+IPst"?*["+1.Sg.Subj.Pot"|"+Pot"]]];
-define SQAFUT [~$[["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"]]];
-define SQAYKIMAN [~$[ "+1.Sg.Subj_2.Sg.Obj.Fut" ?*["+Pot"]]];
-
-define YMAN [~$["+2.Sg.Subj.Imp"?*"+Pot"]];
 #define NKUMAN  [~$["+3.Pl.Subj"?*"+Pot"]]; #occurs in Gregorio -> nku -man as potential instead of -manku
-define YKACHA [~$["+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml"]];
-
 #define WAQ [~$["+1.Obj"%] %["^DB"%] %["--"%]{q}%["NS"%] %["+Ag"]]; #may occur
-#define SAQ [~$["+Prog""+Ag"]]; #saq, if -sa is allowed as progressive allomorph (Bolivian Quechua)
 
-define PAS [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %["+IndE"]] ;
-define PAQ [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] p %["Cas"%] %["+Gen"]] ;
+# independent suffixes: pas, taq, niraq
+define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %["+IndE" | {ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] p %["Cas" | {nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] p %["Cas" | "Part+Disc"%] %["^DB"%] %["--"%] {ña}]] ;
 
-define NTIN [~$[{ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m]]];
-define STIN [~$[{stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m]]]; # -stin, not as -sti -n (3.Sg.Subj, or DirE)
-define PTIN [~$[{pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb"%] ]]; #-pti -> Ayacuchano, but -n as DirE, only Cuzqueño
 define YUQ  [~$[ "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"%]]];
 
-define TAQ  [~$[{ta}%["Cas"%] %["+Acc"%] "@TA" %["^DB"%] %["--"%] p %["Cas"%]]];
-define NIRAQ [~$[{nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] p %["Cas"%]]];
-
-define DISC [~$[%["Part+Disc"%] %["^DB"%] %["--"%] {ña} ]]; #ñaña = sister, not 2 times +Disc
-#define tripleGEN [~$["+Gen""@PA""+Gen""@PA""+Gen""@PA"]];
-
 define NTAWAN [~$[%["+Proloc"%] %["^DB"%] %["--"%] {wan}]];
-define ASWAN [~$["=poco"%] %["^DB"%] %["--"%] {wan}]];
-define ASNA [~$["=poco"%]  %["--"%] {na}]];
-#special case, aswan has its own entry in the lexicon, as otherwise there are problems with the suffix sequence, vgl. as-wan-ta!
-
-define ALLIN [~$["@ALLI" %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"|%["NDeriv"]]];
-define ALLIN2 [~$["@ALLI"  %["--"%] {n} %["NDeriv" ]];
-define ALLIN3 [~$["@ALLI"  %["--"%] {cha} %["NDeriv" ]];
-#special case, as allin and also alli are as roots in the lexicon!
-
-define NAWPA [~$["@NAWPA" %["^DB"%] %["--"%] q %[ ]]; #ñawpaq not as ñawpa+q (+Gen)
-define CHIQA  [~$["@CHIQA" %["^DB"%] %["--"%] [q|n|m|p] %[]];
-
-define HATUN1 [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"]]];
-define HATUN2 [~$[{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha} %["NDeriv"%]]]; #hatu+Dim
-define HATUN3 [~$[{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS"%]]];
-define HATUN4 [~$[{hatu} %["NRoot"%] %[?*"+Rel"]];
-define HATUN HATUN1 .o. HATUN2 .o. HATUN3 .o. HATUN4;
-#special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
-
-# kacha- should not be analyzed as ka (copula) and -cha (Vdim)!
-define KACHA [~$[ {ka}%["VRoot"%] %["=ser"%] %["--"%] {cha}]];
-
-# riku- should not be analyzed es ri -ku ('irse', this would be ripu-)
-define RIKU [~$[ {ri}%["VRoot"%] %["=ir"%] %["^DB"%] %["--"%] {ku}]];
-
-# paqari- should not be analyzed es paqa -ri 
-define PAQARIN1 [~$[ {paqa}%["VRoot"%] %["=lavar"%] %["--"%] {ri}]];
-define PAQARIN2 [~$[{paqari} %["VRoot"%] %["=amanecer"%] %["^DB"%] %["--"%] {n}%[ ]];
-define PAQARIN PAQARIN1 .o. PAQARIN2;
-
-# tukuy- should not be analyzed es tuku -y 
-define TUKUY [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y}]];
-
-# forbid -llalla analized as +Lim+Lim -> if a word contains a sequence -llalla, the first -lla is probably part of the root
-# consider chukllalla -> good analysis: chuklla(=choza)-lla(+Lim), bad analysis: chuk(=silencio)-lla(+Lim)-lla(+Lim)
-define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
-
-define SIPAS [~$[ [S|s]i %["Part_Cond"%] %["^DB"%] %["--"%] {pas}]];
-
-define PACHAMAMA [~$[ {pacha}%["NRoot" ?* {mama}%["NRoot" ]];
-
-define WIRAQUCHA [~$[ {wira}%["NRoot" ?* {qucha}%["NRoot" ]];
-
-define LLUMPAQ [~$[%["=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS"%]]];
-
-define IMANA [~$[{ima}%[?*"+Reub"]];
-
-define UTQHA [~$[ {utqha}%["NRoot"%] %["=rápido,apurado"%] %["^DB"%] %["--"%] {y} %[ ]];
 
 define WATRANS  ~$["+1.Obj" ?* ["@INTR"|"@TRAN"] ] ;
 define SUTRANS  ~$["+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] ] ;
@@ -645,7 +558,52 @@ define YWAN [~$[ "+y+" %["VDeriv"%] %["+Aff"%] %["^DB"%] %["--"%] {wa} %["VPers"
 # filter out false double accusatives (contratatan -> not contra-ta-ta!)
 define TATA [~$["+Acc" ?* "+Acc"]];
 
-define CHUSAQ [~$[{ch'usa}%[?*["+Gen"|"+Ag"]]];
+#define FeatRestr [NAYA .o. SUN .o.  SUNCHIS2 .o. SUNMAN  .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN  .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SQAYKIMAN .o. WATRANS .o. SUTRANS .o. YWAN .o. TATA];
+
+define FeatRestr [NAYA .o. SUN .o.  SUFORMS .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP.o. YUQ .o. NTAWAN .o. WATRANS .o. SUTRANS .o. YWAN .o. TATA];
+
+
+
+define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
+
+#################################################################################
+
+#### LEXICAL RESTRICTIONS ########
+
+#special case, aswan has its own entry in the lexicon, as otherwise there are problems with the suffix sequence, vgl. as-wan-ta!
+define ASWAN [~$[ ["=poco"%] %["^DB"%] %["--"%] {wan} | "=poco"%]  %["--"%] {na} ] ]];
+
+#special case, as allin and also alli are as roots in the lexicon!
+define ALLIN [~$[ ["@ALLI" %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"|%["NDeriv"] | "@ALLI"  %["--"%] {n} %["NDeriv" | "@ALLI"  %["--"%] {cha} %["NDeriv" ] ]];
+
+#special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
+define HATUN [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"] | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha} %["NDeriv" | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" |{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" ]];
+
+# kacha- should not be analyzed as ka (copula) and -cha (Vdim)!
+define KACHA [~$[ {ka}%["VRoot"%] %["=ser"%] %["--"%] {cha}]];
+
+# riku- should not be analyzed es ri -ku ('irse', this would be ripu-)
+define RIKU [~$[ {ri}%["VRoot"%] %["=ir"%] %["^DB"%] %["--"%] {ku}]];
+
+# paqari- should not be analyzed es paqa -ri 
+define PAQARIN [~$[ {paqa}%["VRoot"%] %["=lavar"%] %["--"%] {ri} | {paqari} %["VRoot"%] %["=amanecer"%] %["^DB"%] %["--"%] {n}%[ ]];
+
+# tukuy- should not be analyzed es tuku -y 
+define YROOTS [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y} | {wicha} %["VRoot"%] %["=subir"%] %["^DB"%] %["--"%] {y}%[ | {utqha}%["NRoot"%] %["=rápido,apurado"%] %["^DB"%] %["--"%] {y} %[  ]];
+
+# forbid -llalla analized as +Lim+Lim -> if a word contains a sequence -llalla, the first -lla is probably part of the root
+# consider chukllalla -> good analysis: chuklla(=choza)-lla(+Lim), bad analysis: chuk(=silencio)-lla(+Lim)-lla(+Lim)
+define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
+
+define SIPAS [~$[ [S|s]i %["Part_Cond"%] %["^DB"%] %["--"%] {pas}]];
+
+# compounds: pachmama, wiraqucha
+define COMPOUNDS [~$[ {pacha}%["NRoot" ?* {mama}%["NRoot" | {wira}%["NRoot" ?* {qucha}%["NRoot" ]];
+
+# ñawpaq, chiqap/chiqaq, llump'aq, ch'usaq
+define AQROOTS [~$["@NAWPA" %["^DB"%] %["--"%] [q|p] %[ | "@CHIQA" %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | {ch'usa}%[?*["+Gen"|"+Ag"] ]]; 
+
+define IMANA [~$[{ima}%[?*"+Reub"]];
 
 define HUKUCHA [~$[{huk'u}%[?*"+Dim"]];
 
@@ -653,11 +611,8 @@ define ILLAPA [~$[{illa}%[?*%]{pa}]];
 
 define PUPUTI [~$[{pupu}%[?*%]{ti}]];
 
-define WICHAY [~$[ {wicha} %["VRoot"%] %["=subir"%] %["^DB"%] %["--"%] {y}%[ ]];
 
-define GENACC [~$[[p|q]"@PA"{ta}"@TA"]]; # nach Genitiv-Regel anwenden!
-
-define FeatRestr [NAYA .o. SUN .o.  SUNCHIS2 .o. SUNMAN  .o. TAPI .o. PITA .o. MANTA .o. MANTAQ .o. NYARI .o.QTI .o. SQAN .o. RQAN .o. SQAMA .o. YMAN .o. TAMANTA .o. YKACHA .o. PAS .o. PAQ .o. NTIN .o. STIN .o. PTIN  .o. YUQ .o. TAQ .o. NIRAQ .o. DISC .o. NTAWAN .o. ASWAN .o. ASNA.o. HATUN .o. KACHA .o. ALLIN .o. ALLIN2 .o. ALLIN3 .o. NAWPA .o. CHIQA .o. SQAY .o. SQAMAN .o. PAKU .o. PAMU .o. SQAFUT .o. SQAYKIMAN .o. SIPAS .o. LLALLA .o. PACHAMAMA .o. WIRAQUCHA .o. RIKU .o. PAQARIN .o. TUKUY .o. LLUMPAQ .o. IMANA .o. UTQHA .o. WATRANS .o. SUTRANS .o. YWAN .o. TATA .o. CHUSAQ .o. HUKUCHA .o. ILLAPA .o. PUPUTI .o. WICHAY];
+define LexRestr [ASWAN .o. ALLIN .o. HATUN .o. KACHA  .o. RIKU .o. PAQARIN .o. YROOTS .o. LLALLA .o. SIPAS .o. COMPOUNDS .o. AQROOTS.o. IMANA .o. HUKUCHA .o. ILLAPA .o. PUPUTI ];
 
 ######################################################################################
 
@@ -675,8 +630,8 @@ define NITAQ [ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" 
 #define Wort [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. UpperCase;
 define Wort IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. GENACC .o. AmbiRules .o. UpperCase;
 
-read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex  Cleanup2 .o. WICHAY.o. [Wort|SpecialWord|OTAQ|NITAQ]  .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
+#read regex Cleanup2 .o. FeatRestr .o. LexRestr .o. [Wort|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+read regex  Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord|OTAQ|NITAQ]  .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
 #read regex  FeatRestr .o. [Wort|SpecialWord]  .o. Cleanup1;
 #read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord];
 
