@@ -113,21 +113,24 @@ en		lem=in,cas=Akk		chunkparent.type=PP&&chunkparent.si=sp-obj&&child.sem=[+Cont
 # por = a traves de => durch
 # Caminaron por el parque => Sie spazierten durch den Park
 # La empresa fue fundada en el siglo XIX => Die Firma wurde im 19. Jahrhundert gegruendet
-por		lem=durch,cas=Akk	chunkparent.type=PP&&(chunkgrandparent.type=V-pas||xpath{ancestor::CHUNK[@type="VZ-inf" and descendant::NODE[starts-with(@smi,"VS") and @voice="passive"]]})
-por		lem=durch,cas=Akk	chunkparent.type=PP&&chunkparent.si=cag
+por		lem=durch,cas=Akk	chunkparent.type=PP&&(chunkgrandparent.type=V-pas||xpath{ancestor::CHUNK[@type="VZ-inf" and descendant::NODE[starts-with(@smi,"VS") and @voice="passive"]]})	-
+por		lem=durch,cas=Akk	chunkparent.type=PP&&chunkparent.si=cag	-
 
 # por = pro
 # una vez por semana => ein Mal pro Woche
-por		lem=pro,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) && xpath{ancestor::CHUNK[@type="PP" and preceding-sibling::CHUNK[NODE[@slem="vez"]]]}
+por		lem=pro,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) && xpath{ancestor::CHUNK[@type="PP" and preceding-sibling::CHUNK[NODE[@slem="vez"]]]}	-
 
 # por = fuer
-#por		lem=für,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 
+#por		lem=für,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 		-
 
 # TODO verb periphrases with "por"
 # Acabamos por escribirle un mensaje => Wir schreiben ihm schliesslich eine Nachricht
 por		delete=yes		chunkparent.type=VZ-inf && chunkparent.lsibling.slem=/acabar/	-
 # wegen + Gen? or "meinetwegen/deinetwegen/seinetwegen/ihretwegen"
-por		lem=wegen,cas=Gen	chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 
+por		lem=wegen,cas=Gen	chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 		-
+
+# por = in (default?)
+por		lem=in,cas=Dat		chunkparent.type=PP && chunkparent.si=cc	+
 
 # = PARA =
 # ========
