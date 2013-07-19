@@ -38,13 +38,13 @@
 |  [ "@INTR" "[" "--" "]" {sunchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Fut" "]" ] : {sunchiq}
 |  [ "[" "--" "]" {saqku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj.Fut" "]" ] : {saqku}
 |  [ "@INTR" "[" "--" "]" {nqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.Fut" "]" ]  : {nqaku}
-|  [ "[" "--" "]" {y} "[" "VPers" "]" "[" "+2.Sg.Subj.Imp" "]" ] : {y}
-|  [ "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychik}
-|  [ "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychis}
-|  [ "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychiq}
-|  [ "@INTR" "[" "--" "]" {sun} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Imp" "]" ] : {sun}
-|  [ "[" "--" "]" {chun} "[" "VPers" "]" "[" "+3.Sg.Subj.Imp" "]" ] : {chun}
-|  [ "[" "--" "]" {chunku} "[" "VPers" "]" "[" "+3.Pl.Subj.Imp" "]" ] : {chunku}
+|  [ "@IMP" "[" "--" "]" {y} "[" "VPers" "]" "[" "+2.Sg.Subj.Imp" "]" ] : {y}
+|  [ "@IMP" "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychik}
+|  [ "@IMP" "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychis}
+|  [ "@IMP" "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychiq}
+|  [ "@INTR" "@IMP" "[" "--" "]" {sun} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Imp" "]" ] : {sun}
+|  [ "@IMP" "[" "--" "]" {chun} "[" "VPers" "]" "[" "+3.Sg.Subj.Imp" "]" ] : {chun}
+|  [ "@IMP" "[" "--" "]" {chunku} "[" "VPers" "]" "[" "+3.Pl.Subj.Imp" "]" ] : {chunku}
 # transitive forms with -wa
 |  [ "@WA" "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {nchik}
 |  [ "@WA" "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {nchis}
@@ -56,7 +56,7 @@
 |  [ "@WA" "[" "--" "]" {sunchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {sunchis}
 |  [ "@WA" "[" "--" "]" {sunchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {sunchiq}
 |  [ "@WA" "[" "--" "]" {nqaku} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Excl.Obj.Fut" "]" ] : {nqaku}
-|  [ "@WA" "[" "--" "]" {yku} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Pl.Obj.Imp" "]" ] : {yku}
+|  [ "@WA" "@IMP" "[" "--" "]" {yku} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Pl.Obj.Imp" "]" ] : {yku}
 |  [ "@TRAN" "[" "--" "]" {yki} "[" "VPers" "]" "[" "+1.Sg.Subj_2.Sg.Obj" "]" ] : {yki}
 |  [ "@TRAN" "[" "--" "]" {ykichik}"[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj" "]" ] :{ykichik}
 |  [ "@TRAN" "[" "--" "]" {ykichik}"[" "VPers" "]" "[" "+1.Sg.Subj_2.Pl.Obj" "]" ] :{ykichis}

@@ -741,7 +741,6 @@
 | [ {kanka} "[" "NRoot" "]" "["  "=asado" "]" ] : {kanka}
 | [ {k'anka} "[" "NRoot" "]" "["  "=gallo,arrogante,gringo" "]" ] : {k'anka}
 | [ {kankaray} "[" "NRoot" "]" "["  "=grande" "]" ] : {kankaray}
-| [ {kankiq} "[" "NRoot" "]" "["  "=cadera" "]" ] : {kankiq}
 | [ {kantaray} "[" "NRoot" "]" "["  "=octubre" "]" ] : {kantaray}
 | [ {kantu} "[" "NRoot" "]" "["  "=borde,margen" "]" ] : {kantu}
 | [ {k'apak} "[" "NRoot" "]" "["  "=exacto" "]" ] : {k'apak}
@@ -2347,7 +2346,6 @@
 | [ {warak'a} "[" "NRoot" "]" "["  "=arma_inkaica" "]" ] : {warak'a}
 | [ {wara} "[" "NRoot" "]" "["  "=pantalón" "]" ] : {wara}
 | [ {waranway} "[" "NRoot" "]" "["  "=huaranhuay" "]" ] : {waranway}
-| [ {waraq} "[" "NRoot" "]" "["  "=estrella" "]" ] : {waraq}
 | [ {warawa} "[" "NRoot" "]" "["  "=adorno" "]" ] : {warawa}
 | [ {wari} "[" "NRoot" "]" "["  "=vicuña" "]" ] : {wari}
 | [ {wark'a} "[" "NRoot" "]" "["  "=arma_inkaica" "]" ] : {wark'a}
@@ -2454,7 +2452,6 @@
 | [ {yanaqi} "[" "NRoot" "]" "["  "=amigo" "]" ] : {yanaqi}
 | [ {yanasu} "[" "NRoot" "]" "["  "=amigo" "]" ] : {yanasu}
 | [ {yanqa} "[" "NRoot" "]" "["  "=gratis,en_vano,mentira" "]" ] : {yanqa}
-| [ {yanqay} "[" "NRoot" "]" "["  "=infinidad" "]" ] : {yanqay}
 | [ {llant'a} "[" "NRoot" "]" "["  "=leña" "]" ] : {yanta}
 | [ {yapa} "[" "NRoot" "]" "["  "=demás,muy,de_nuevo" "]" ] : {yapa}
 | [ {yapita} "[" "NRoot" "]" "["  "=premio" "]" ] : {yapita}
