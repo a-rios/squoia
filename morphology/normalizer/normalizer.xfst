@@ -4,6 +4,7 @@
 # -switches: allow -m as -n, -pas as -pis
 # yachachinasuykikupaq yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS][+Obl][^DB][--]suykiku[NPers][+1.Pl.Excl.Subj_2.Sg.Obj]
 # -upallarapuyku LLAra
+# compile without -sa progressive! too ambiguous
 
        #derivation boundary
        define DB [[ "[" "^DB" "]"] :0];
@@ -14,8 +15,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"] ];
 
 ############################################################################### 
 
@@ -370,7 +371,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
 #define NDERIV [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
 define NDERIV [NDeriv1|NDeriv2|NDeriv3];
 define NDERIVFINAL [NDeriv1final|NDeriv2final|NDeriv3final];
-define VDERIV [VDeriv|VDeriv1|VDeriv2];
+define VDERIV [VDeriv1|VDeriv2];
 
        ###########################################
        #                                         #
@@ -561,7 +562,7 @@ define FeatRestr [NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. 
 define ASWAN [~$[ ["=poco"%] %["^DB"%] %["--"%] {wan} | "=poco"%]  %["--"%] {na} ] ]];
 
 #special case, as allin and also alli are as roots in the lexicon!
-define ALLIN [~$[ "@ALLI" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI"  %["--"%] [{n}|{cha}] %["NDeriv"  ]];
+define ALLIN [~$[ "@ALLI" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI"  %["--"%] [{n}|{cha}] %[ ["NDeriv"|"VDeriv"]  ]];
 
 #special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
 define HATUN [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"] | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha} %["NDeriv" | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" |{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" ]];

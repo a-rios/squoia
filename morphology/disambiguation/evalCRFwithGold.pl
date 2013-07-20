@@ -130,6 +130,11 @@ if($mode eq '-pos' or $mode eq '-morph')
 					#print $goldLine;
 					$correctClass++;
 				}
+				elsif($classCRF eq 'NP' &&  $classGOLD eq 'NRoot' ){
+					#print "NP: ".$crfLine;
+					#print $goldLine;
+					$correctClass++;
+				}
 				elsif($classCRF ne $classGOLD && @rowsCRF[3] ne 'ZZZ'){
 					$wrongClass++;
 					print "$classCRF : $classGOLD\n";

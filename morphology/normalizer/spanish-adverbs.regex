@@ -15,7 +15,6 @@
 | [ {allende} "["  "AdvES"  "]" ] : {allende}
 | [ {allá} "["  "AdvES"  "]" ] : {allá}
 | [ {allí} "["  "AdvES"  "]" ] : {allí}
-| [ {alrededor} "["  "AdvES"  "]" ] : {alrededor}
 | [ {anoche} "["  "AdvES"  "]" ] : {anoche}
 | [ {ansí} "["  "AdvES"  "]" ] : {ansí}
 | [ {antarca} "["  "AdvES"  "]" ] : {antarca}
@@ -40,17 +39,14 @@
 | [ {así} "["  "AdvES"  "]" ] : {así}
 | [ {atrás} "["  "AdvES"  "]" ] : {atrás}
 | [ {avante} "["  "AdvES"  "]" ] : {avante}
-| [ {ayer} "["  "AdvES"  "]" ] : {ayer}
 | [ {ayuso} "["  "AdvES"  "]" ] : {ayuso}
 | [ {bastante} "["  "AdvES"  "]" ] : {bastante}
 | [ {bien} "["  "AdvES"  "]" ] : {bien}
 | [ {caput} "["  "AdvES"  "]" ] : {caput}
 | [ {casi} "["  "AdvES"  "]" ] : {casi}
-| [ {chano} "["  "AdvES"  "]" ] : {chano}
 | [ {chiticallando} "["  "AdvES"  "]" ] : {chiticallando}
 | [ {comoquiera} "["  "AdvES"  "]" ] : {comoquiera}
 | [ {cuantimás} "["  "AdvES"  "]" ] : {cuantimás}
-| [ {cuanto} "["  "AdvES"  "]" ] : {cuanto}
 | [ {cuan} "["  "AdvES"  "]" ] : {cuan}
 | [ {cuasi} "["  "AdvES"  "]" ] : {cuasi}
 | [ {debajo} "["  "AdvES"  "]" ] : {debajo}
@@ -100,7 +96,6 @@
 | [ {online} "["  "AdvES"  "]" ] : {online}
 | [ {otraño} "["  "AdvES"  "]" ] : {otraño}
 | [ {otrora} "["  "AdvES"  "]" ] : {otrora}
-| [ {otrosí} "["  "AdvES"  "]" ] : {otrosí}
 | [ {poco} "["  "AdvES"  "]" ] : {poco}
 | [ {primeramente} "["  "AdvES"  "]" ] : {primeramente}
 | [ {pronto} "["  "AdvES"  "]" ] : {pronto}

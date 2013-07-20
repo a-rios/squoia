@@ -17,8 +17,8 @@
 | [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {ñuqallanchis}
 | [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {ñuqallanchik}
 | [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" ] : {ñuqallanchiq}
-| [ {ñuqayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" ] : {ñuqayku}
-| [ {ñuqayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" ] : {nuqayku}
+| [ {ñuqayku} "[" "PrnPers+1.Pl.Excl" "]" ] : {ñuqayku}
+| [ {ñuqayku} "[" "PrnPers+1.Pl.Excl" "]" ] : {nuqayku}
 | [ {ñuqallayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" ] : {ñuqallayku}
 | [ {ñuqallayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" ] : {nuqallayku}
 ;

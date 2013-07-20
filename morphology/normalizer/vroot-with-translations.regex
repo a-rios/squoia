@@ -42,7 +42,8 @@
 | [ {alla} "[" "VRoot" "]" "[" "=cosechar,escarbar" "]" ] :  {alla}
 | [ {allchha} "[" "VRoot" "]" "[" "=ordenar" "]" ] :  {allcha}
 | [ {allchha} "[" "VRoot" "]" "[" "=ordenar" "]" ] :  {allchha}
-| [ {alli} "[" "VRoot" "]" "[" "=mejorar" "]" ] :  {alli}"@ALLI"
+| [ {allichi} "[" "VRoot" "]" "[" "=mejorar" "]" ] :  {allichi}
+| [ {allipa} "[" "VRoot" "]" "[" "=mejorar" "]" ] :  {allipa}
 | [ {allikachi} "[" "VRoot" "]" "[" "=preferir" "]" ] :  {allikachi}
 | [ {allinchi} "[" "VRoot" "]" "[" "=mejorar" "]" ] :  {allinchi}
 | [ {allmi} "[" "VRoot" "]" "[" "=levantar" "]" ] :  {allmi}
@@ -1576,7 +1577,7 @@
 | [ {t'ustu} "[" "VRoot" "]" "[" "=reprender" "]" ] :  {t'ustu}
 | [ {t'ustu} "[" "VRoot" "]" "[" "=reprender" "]" ] :  {tustu}
 | [ {tusu} "[" "VRoot" "]" "[" "=bailar" "]" ] :  {tusu}
-| [ {tuta} "[" "VRoot" "]" "[" "=ser_de_noche" "]" ] :  {tuta}
+| [ {tutachi} "[" "VRoot" "]" "[" "=oscurecer" "]" ] :  {tutachi}
 | [ {tutu} "[" "VRoot" "]" "[" "=criticar,lactar" "]" ] :  {tutu}
 | [ {tuymi} "[" "VRoot" "]" "[" "=marcar,señalar,ejecutar" "]" ] :  {tuymi}
 | [ {tuytu} "[" "VRoot" "]" "[" "=flotar" "]" ] :  {tuytu}
