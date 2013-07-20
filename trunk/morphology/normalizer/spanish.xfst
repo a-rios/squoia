@@ -12,8 +12,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@PLYUQ"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"] ];
 
 ############################################################################### 
 
@@ -43,8 +43,7 @@
       # Ersetze optional u durch o und i durch e, falls in Umgebung von q #
       #-------------------------------------------------------------------#
 
-      define Allophone [ u (->) o||  _  (s|t|n|r|l|"@KU"|"@CHI"|"@YSI"|"@PU"|"@MU"|"@RQU"|"@PTI") q, q (s|t|n|r|h|l|') _  , _ (s|t|n|r|l){cc}, {cc}(s|t|n|r|h|l|') _ ] .o. [i (->) e || _ (s|t|n|r|h|l) q, q (s|t|n|r|l|ll|h|') _ , _ (s|t|n|r|h|l){cc}, {cc}(s|t|n|r|l|ll|') _  ];
-
+      define Allophone [ u (->) o||  _  (s|t|n|r|l|"@KU"|"@PU"|"@MU"|"@RQU") q, q (s|t|n|r|h|l|') _  , _ (s|t|n|r|l|"@KU"|"@PU"|"@MU"|"@RQU"){cc}, {cc}(s|t|n|r|h|l|') _ ] .o. [i (->) e || _ (s|t|n|r|h|l|"@PTI"|"@CHI"|"@YSI") q, q (s|t|n|r|l|ll|h|') _ , _ (s|t|n|r|h|l|"@PTI"|"@CHI"|"@YSI"){cc}, {cc}(s|t|n|r|l|ll|') _  ];
 
        #---------------------------#
        # alternative orthographies #

@@ -50,6 +50,12 @@ while(<STDIN>){
 			#print $form."\n";
 		}
 		
+		if($root =~ /AdvES|PrepES|ConjES/){
+			$root = 'SP';
+			$isNP =1;
+			#print $form."\n";
+		}
+		
 		elsif($root eq ''){
 			if($form eq '#EOS'){
 				$root = '#EOS';
