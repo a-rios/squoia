@@ -33,7 +33,8 @@ my $newWord=1;
 my $index=0;
 
 my $storedWords;
-
+my $xfstWordsRefLem = retrieve('PossibleLemmasForTrain');
+my %xfstwordsLem = %$xfstWordsRefLem;
 
 while(<STDIN>){
 		
@@ -67,6 +68,12 @@ while(<STDIN>){
 				$allmorphs = $allmorphs.$morph;
 			}
 		
+			my ($lem) = ($_ =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
+			$lem = lc($lem);
+			if($lem eq ''){
+				#$lem = $form;
+				$lem = 'ZZZ';
+			}
 			#print "allmorphs: $allmorphs\n";
 			#print "morphs: @morphtags\n\n";
 		
@@ -77,6 +84,7 @@ while(<STDIN>){
 			$hashAnalysis{'string'} = $_;
 			$hashAnalysis{'root'} = $root;
 	    	$hashAnalysis{'allmorphs'} = $allmorphs;
+	    	$hashAnalysis{'lem'} = $lem;
 	    
 			if($newWord)
 			{
@@ -388,6 +396,35 @@ for (my $i=0;$i<scalar(@words);$i++){
 		if($pos eq 'NP'){$pos = 'NRoot';}
 		print $pos."\t";
 
+		# print lemma(s)
+		my $printedlems='#';
+		my $nbrOfLems =0;
+		foreach my $analysis (@$analyses){
+			my $lem = $analysis->{'lem'};
+			unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
+				print "$lem\t";
+				$printedlems = $printedlems.'#'.$lem."#";
+				$nbrOfLems++;
+			}
+		}
+		
+		# get possible lemmas from stored hash (need xfst analysis to get those!)
+		if($mode eq '-train'){
+			my $possibleLemmasRef = $xfstwordsLem{$form};
+			foreach my $lem (@$possibleLemmasRef){
+				unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2 ){
+					print "$lem\t";
+					$printedlems = $printedlems.'#'.$lem."#";
+					$nbrOfLems++;
+				}
+			}
+		}
+		
+		while($nbrOfLems<2){
+			print "ZZZ\t";
+			$nbrOfLems++;
+		}
+		
 		my $nbrOfClasses =0;
 		# possible classes
 		foreach my $class (@$possibleClasses){
@@ -489,6 +526,34 @@ for (my $i=0;$i<scalar(@words);$i++){
 					#if($pos =~ /ConjES|AdvES|PrepES/){$pos= 'SP';}
 					if($pos eq 'NP'){$pos = 'NRoot';}
 					print $pos."\t";
+					# print lemma(s) of context words
+					my $printedlems='#';
+					my $nbrOfLems =0;
+					foreach my $analysis (@$analyses){
+						my $lem = $analysis->{'lem'};
+						unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
+							print "$lem\t";
+							$printedlems = $printedlems.'#'.$lem."#";
+							$nbrOfLems++;
+						}
+					}
+					
+					# get possible lemmas from stored hash (need xfst analysis to get those!)
+					if($mode eq '-train'){
+						my $possibleLemmasRef = $xfstwordsLem{$form};
+						foreach my $lem (@$possibleLemmasRef){
+							unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2 ){
+								print "$lem\t";
+								$printedlems = $printedlems.'#'.$lem."#";
+								$nbrOfLems++;
+							}
+						}
+					}
+					
+					while($nbrOfLems<2){
+						print "ZZZ\t";
+						$nbrOfLems++;
+					}
 					#print morphs of context words
 					my $printedmorphs='';
 					my $nbrOfMorphP =0;
@@ -526,7 +591,9 @@ for (my $i=0;$i<scalar(@words);$i++){
 				# else: if bos
 				else
 				{	my $nbrOfMorphP =0;
-					while($nbrOfMorphP<12){	
+					# without lems: 12, with lems: 14
+					#while($nbrOfMorphP<12){	
+					while($nbrOfMorphP<14){
 						print "ZZZ\t";
 						$nbrOfMorphP++;
 					}
@@ -554,6 +621,35 @@ for (my $i=0;$i<scalar(@words);$i++){
 					#if($pos =~ /ConjES|AdvES|PrepES/){$pos= 'SP';}
 					if($pos eq 'NP'){$pos = 'NRoot';}
 					print $pos."\t";
+					# print lemma(s) of context words
+					my $printedlems='#';
+					my $nbrOfLems =0;
+					foreach my $analysis (@$analyses){
+						my $lem = $analysis->{'lem'};
+						unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
+							print "$lem\t";
+							$printedlems = $printedlems.'#'.$lem."#";
+							$nbrOfLems++;
+						}
+					}
+					
+					# get possible lemmas from stored hash (need xfst analysis to get those!)
+					if($mode eq '-train'){
+						my $possibleLemmasRef = $xfstwordsLem{$form};
+						foreach my $lem (@$possibleLemmasRef){
+							unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2 ){
+								print "$lem\t";
+								$printedlems = $printedlems.'#'.$lem."#";
+								$nbrOfLems++;
+							}
+						}
+					}
+					
+					while($nbrOfLems<2){
+						print "ZZZ\t";
+						$nbrOfLems++;
+					}
+					
 					#print morphs of context words
 					my $printedmorphs='';
 					my $nbrOfMorphF =0;
@@ -590,7 +686,9 @@ for (my $i=0;$i<scalar(@words);$i++){
 				# else: if eos
 				else
 				{	my $nbrOfMorphF =0;
-					while($nbrOfMorphF<12){	
+					# without lems: 12, with lems: 14
+					#while($nbrOfMorphF<12){
+					while($nbrOfMorphF<14){
 						print "ZZZ\t";
 						$nbrOfMorphF++;
 					}
