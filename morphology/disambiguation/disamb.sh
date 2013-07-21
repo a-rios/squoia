@@ -10,20 +10,20 @@ export TOKENIZER=$XFST_DIR/tokenize.pl
 #export LOOKUP=$XFST_DIR/lookup.script
 
 #POS_MODEL=pos/sicuani_greg_c_5
-POS_MODEL=pos/sicuani_greg_c100_neu
+POS_MODEL=pos/sicuani_greg_c400
 
 MORPH1_MODEL=morph1/sicuani_greg_c10
-MORPH2_MODEL=morph2/sicuani_greg_c1
+MORPH2_MODEL=morph2/sicuani_greg_c400
 MORPH3_MODEL=morph3/sicuani_greg_c10
 
 XFST_FILE=$1
 
-perl splitSentences.pl  | perl $TOKENIZER | lookup -f lookup.script -flags cKv29TT > tmp/test.xfst
+#perl splitSentences.pl  | perl $TOKENIZER | lookup -f lookup.script -flags cKv29TT > tmp/test.xfst
 
-cat tmp/test.xfst | perl cleanGuessedRoots.pl > tmp/test_clean.xfst
-cat tmp/test_clean.xfst | perl xfstToCrf_pos.pl -test > tmp/pos.test
+#cat tmp/test.xfst | perl cleanGuessedRoots.pl > tmp/test_clean.xfst
+#cat tmp/test_clean.xfst | perl xfstToCrf_pos.pl -test > tmp/pos.test
 
-#cat $XFST_FILE | perl xfstToCrf_pos.pl -test > tmp/pos.test
+cat $XFST_FILE | perl xfstToCrf_pos.pl -test > tmp/pos.test
 
 crf_test -m $POS_MODEL tmp/pos.test > tmp/pos.result
 

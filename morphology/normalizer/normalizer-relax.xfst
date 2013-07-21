@@ -14,8 +14,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA" ] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"] ];
 ############################################################################### 
 
           #########################
@@ -599,7 +599,7 @@ define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
 define COMPOUNDS [~$[ {pacha}%["NRoot" ?* {mama}%["NRoot" | {wira}%["NRoot" ?* {qucha}%["NRoot" ]];
 
 # ñawpaq, chiqap/chiqaq, llump'aq, ch'usaq, ichuq, illaq, ñawraq, ariq, tupaq, yuraq
-define AQROOTS [~$["@NAWPA" %["^DB"%] %["--"%] [q|p] %[ | "@CHIQA" %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichhu}|{ch'usa}|{illa}|{ñawra}|{yura}] %[?* "@GENq" | [{ari}|{ichhu}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=segar_paja"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS"  ]]; 
+define AQROOTS [~$["@NAWPA" %["^DB"%] %["--"%] [q|p] %[ | "@CHIQA" %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichhu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"] %[?* "@GENq" | [{ari}|{ichhu}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=segar_paja"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS"  ]]; 
 
 define IMANA [~$[{ima}%[?*"+Reub"]];
 
