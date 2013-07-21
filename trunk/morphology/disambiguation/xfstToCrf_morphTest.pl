@@ -396,7 +396,14 @@ if($mode eq '-2')
 #				@$word[3] = "amb2";
 #			}
 			# -wanku 
-			elsif(&containedInOtherMorphs($analyses,"+1.Obj+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ))
+			elsif(&containedInOtherMorphs($analyses,"+1.Obj+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) or &containedInOtherMorphs($analyses,"+1.Obj+NPst+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) or &containedInOtherMorphs($analyses,"+1.Obj+IPst+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) &containedInOtherMorphs($analyses,"+1.Obj+Prog+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) )
+			{
+				push(@possibleClasses, "1Sg");
+				push(@possibleClasses, "1Pl");
+				@$word[3] = "amb2";
+			}
+			# -wanqaku 
+			elsif(&containedInOtherMorphs($analyses,"+1.Obj+3.Pl.Subj.Fut","+3.Subj_1.Pl.Excl.Obj.Fut" ) or &containedInOtherMorphs($analyses,"+1.Obj+Prog+3.Pl.Subj.Fut","+3.Subj_1.Pl.Excl.Obj.Fut" )  )
 			{
 				push(@possibleClasses, "1Sg");
 				push(@possibleClasses, "1Pl");
@@ -763,7 +770,7 @@ sub containedInOtherMorphs{
 	{
 		my $analysis = @$analyses[$j];
 		my $allmorphs = $analysis->{'allmorphs'};
-		#print "morphs: $allmorphs  string: $string1\n";
+		#print STDERR @$analyses[$j]->{'lem'}." morphs: $allmorphs  string: $string1\n";
 		if($allmorphs =~ /\Q$string1\E/)
 		{	
 			# check if later analysis has +Term
@@ -1033,6 +1040,18 @@ sub disambMorph2{
 		my $word = @words[$i];
 		my $analyses = @$word[1];
 		my $form = @$word[0];
+		
+		# not a real ambiguitiy: rqari vs. rqa-ri -> keep -rqari
+		if(&containedInOtherMorphs($analyses,"+Multi","+Rptn+Inch") ){
+			for(my $j=0;$j<scalar(@$analyses);$j++) {
+				my $analysis = @$analyses[$j];
+				if($analysis->{'allmorphs'} =~ /\+Rptn\+Inch/){
+					splice (@{$analyses},$j,1);	
+					$disambiguatedForms++;
+					$j--;
+				}
+			}
+		}
 		
 		if(scalar(@$analyses) > 1)
 		{

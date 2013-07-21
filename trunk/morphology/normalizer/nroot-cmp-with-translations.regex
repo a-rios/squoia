@@ -238,7 +238,6 @@
 | [ {ch'uqña} "[" "NRoot" "]" "[" "=verde" "]" ] :  {ch'uqña}
 | [ {ch'uqñi} "[" "NRoot" "]" "[" "=legaña" "]" ] :  {ch'uqñi}
 | [ {ch'uqri} "[" "NRoot" "]" "[" "=herida" "]" ] :  {ch'uqri}
-| [ {Chuquimamani} "[" "NRoot" "]" "[" "NP" "]" ] :  {Chuquimamani}
 | [ {chuqu} "[" "NRoot" "]" "[" "=pasto" "]" ] :  {chuqu}
 | [ {ch'ura} "[" "NRoot" "]" "[" "=pantano" "]" ] :  {ch'ura}
 | [ {ch'uru} "[" "NRoot" "]" "[" "=caracol" "]" ] :  {ch'uru}
@@ -725,7 +724,6 @@
 | [ {p'alta} "[" "NRoot" "]" "[" "=plano" "]" ] :  {p'alta}
 | [ {p'ampa} "[" "NRoot" "]" "[" "=entierro" "]" ] :  {p'ampa}
 | [ {pampa} "[" "NRoot" "]" "[" "=llanura,piso,suelo" "]" ] :  {pampa}
-| [ {pani} "[" "NRoot" "]" "[" "=hermana" "]" ] :  {pani}
 | [ {pankha} "[" "NRoot" "]" "[" "=cuerpo" "]" ] :  {pankha}
 | [ {p'anqa} "[" "NRoot" "]" "[" "=ala,hoja" "]" ] :  {p'anqa}
 | [ {panra} "[" "NRoot" "]" "[" "=perezoso" "]" ] :  {panra}

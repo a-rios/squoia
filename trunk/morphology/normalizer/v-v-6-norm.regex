@@ -37,7 +37,7 @@
 |  [ "@INTR" "[" "--" "]" {sunchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Fut" "]" ] : {sunchis}
 |  [ "@INTR" "[" "--" "]" {sunchik} "[" "VPers" "]" "[" "+1.Pl.Incl.Subj.Fut" "]" ] : {sunchiq}
 |  [ "[" "--" "]" {saqku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj.Fut" "]" ] : {saqku}
-|  [ "@INTR" "[" "--" "]" {nqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.Fut" "]" ]  : {nqaku}
+|  [ "[" "--" "]" {nqaku} "[" "VPers" "]" "[" "+3.Pl.Subj.Fut" "]" ]  : {nqaku}
 |  [ "@IMP" "[" "--" "]" {y} "[" "VPers" "]" "[" "+2.Sg.Subj.Imp" "]" ] : {y}
 |  [ "@IMP" "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychik}
 |  [ "@IMP" "[" "--" "]" {ychik} "[" "VPers" "]" "[" "+2.Pl.Subj.Imp" "]" ] : {ychis}
