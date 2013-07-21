@@ -80,6 +80,13 @@ if($mode eq '-1')
 		
 			#print "allmorphs: $allmorphs\n";
 			#print "morphs: @morphtags\n\n";
+			
+			my ($lem) = ($_ =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
+			$lem = lc($lem);
+			if($lem eq ''){
+				#$lem = $form;
+				$lem = 'ZZZ';
+			}
 		
 			#print "$form: $root morphs: @morphtags\n";
 			my %hashAnalysis;
@@ -88,6 +95,7 @@ if($mode eq '-1')
 			$hashAnalysis{'string'} = $_;
 			$hashAnalysis{'root'} = $root;
 	    	$hashAnalysis{'allmorphs'} = $allmorphs;
+	    	$hashAnalysis{'lem'} = $lem;
 	    
 			if($newWord)
 			{
@@ -553,6 +561,22 @@ sub printCrf{
 			print lc($form)."\t";
 			
 			print @$analyses[0]->{'pos'}."\t";
+			
+			# print lemma(s)
+			my $printedlems='#';
+			my $nbrOfLems =0;
+			foreach my $analysis (@$analyses){
+				my $lem = $analysis->{'lem'};
+				unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
+					print "$lem\t";
+					$printedlems = $printedlems.'#'.$lem."#";
+					$nbrOfLems++;
+				}
+			}
+			while($nbrOfLems<2){
+				print "ZZZ\t";
+				$nbrOfLems++;
+			}	
 	
 			my $nbrOfClasses =0;
 			# possible classes
@@ -601,6 +625,21 @@ sub printCrf{
 				{
 					print "$form\t";
 					print @$analyses[0]->{'pos'}."\t";
+					# print lemma(s) of context words
+					my $printedlems='#';
+					my $nbrOfLems =0;
+					foreach my $analysis (@$analyses){
+						my $lem = $analysis->{'lem'};
+						unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
+							print "$lem\t";
+							$printedlems = $printedlems.'#'.$lem."#";
+							$nbrOfLems++;
+						}
+					}
+					while($nbrOfLems<2){
+						print "ZZZ\t";
+						$nbrOfLems++;
+					}
 					#print morphs of context words
 					my $printedmorphs='';
 					my $nbrOfMorphP =0;
@@ -623,7 +662,8 @@ sub printCrf{
 				# else: if bos
 				else
 				{	my $nbrOfMorphP =0;
-					while($nbrOfMorphP<12){	
+					#while($nbrOfMorphP<12){
+					while($nbrOfMorphP<14){		
 						print "ZZZ\t";
 						$nbrOfMorphP++;
 					}
@@ -647,6 +687,22 @@ sub printCrf{
 				{
 					print "$form\t";
 					print @$analyses[0]->{'pos'}."\t";
+					# print lemma(s) of context words
+					my $printedlems='#';
+					my $nbrOfLems =0;
+					foreach my $analysis (@$analyses){
+						my $lem = $analysis->{'lem'};
+						unless($printedlems =~ /\Q#$lem#\E/ or $nbrOfLems >= 2){
+							print "$lem\t";
+							$printedlems = $printedlems.'#'.$lem."#";
+							$nbrOfLems++;
+						}
+					}
+					while($nbrOfLems<2){
+						print "ZZZ\t";
+						$nbrOfLems++;
+					}
+					
 					#print morphs of context words
 					my $printedmorphs='';
 					my $nbrOfMorphF =0;
@@ -669,7 +725,8 @@ sub printCrf{
 				# else: if eos
 				else
 				{	my $nbrOfMorphP =0;
-					while($nbrOfMorphP<12){	
+					#while($nbrOfMorphP<12){
+					while($nbrOfMorphP<14){	
 						print "ZZZ\t";
 						$nbrOfMorphP++;
 					}
