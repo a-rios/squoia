@@ -236,10 +236,10 @@ if($mode eq '-2')
 		my $string = @$analyses[0]->{'string'};
 		my $form = @$word[0];
 		my $xfstAnalyses =  $xfstWords{$form};
-		#print "$form ".$xfstWords{'tukunqa'}[0]->{'string'}."\n";
+		#print "$form ".$xfstWords{'qomuwanku'}[0]->{'string'}."\n";
 		
 		if(exists($xfstWords{$form}) && scalar(@$xfstAnalyses)>1)
-		{
+		{ 
 			# VERBAL morphology
 			# -sun
 			if(&containedInOtherMorphs($xfstAnalyses,"+1.Pl.Incl.Subj.Imp","+1.Pl.Incl.Subj.Fut"))
@@ -267,19 +267,20 @@ if($mode eq '-2')
 			} 
 			# -wanku 
 			elsif(&containedInOtherMorphs($xfstAnalyses,"+1.Obj+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) or &containedInOtherMorphs($xfstAnalyses,"+1.Obj+NPst+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) or &containedInOtherMorphs($analyses,"+1.Obj+IPst+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) &containedInOtherMorphs($analyses,"+1.Obj+Prog+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) )
-			{
+			{ 
 				push(@possibleClasses, "1Sg");
 				push(@possibleClasses, "1Pl");
 				if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
-				elsif($allmorphs =~ /\+1\.Obj.+\+3\.Pl\.Subj/ ){$actualClass = "1Sg";}
+				elsif($allmorphs =~ /\+1\.Obj.*\+3\.Pl\.Subj/ ){$actualClass = "1Sg";}
+				
 			}
-			# -wanqaku 
+			# -wanqaku 3.Subj_1.Pl.Excl.Obj 
 			elsif(&containedInOtherMorphs($xfstAnalyses,"+1.Obj+3.Pl.Subj.Fut","+3.Subj_1.Pl.Excl.Obj.Fut" ) or &containedInOtherMorphs($xfstAnalyses,"+1.Obj+Prog+3.Pl.Subj.Fut","+3.Subj_1.Pl.Excl.Obj.Fut" )  )
 			{
 				push(@possibleClasses, "1Sg");
 				push(@possibleClasses, "1Pl");
 				if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
-				elsif($allmorphs =~ /\+1\.Obj.+\+3\.Pl\.Subj\.Fut/ ){$actualClass = "1Sg";}
+				elsif($allmorphs =~ /\+1\.Obj.*\+3\.Pl\.Subj\.Fut/ ){$actualClass = "1Sg";}
 			}
 	
 			# else: other ambiguities, leave
@@ -818,8 +819,8 @@ sub containedInOtherMorphs{
 				#print "   prev: $premorphs\n";
 				if($premorphs =~ /\Q$string2\E/)
 				{
-					#print "3 found $allmorphs\n";
-					#print "3 compared with $premorphs\n";
+					#print "      3 found $allmorphs\n";
+					#print "      3 compared with $premorphs\n";
 					return 1;
 				}
 			}
@@ -835,6 +836,7 @@ sub notContainedInMorphs{
 	foreach my $analysis (@$analyses)
 	{
 		my $allmorphs = $analysis->{'allmorphs'};
+		$allmorphs =~ s/#//g;
 		if($allmorphs =~ /\Q$string\E/){
 			return 0;
 		}
