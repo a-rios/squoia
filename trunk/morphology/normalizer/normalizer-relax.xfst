@@ -14,8 +14,10 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA" ] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"] ];
+
+       
 ############################################################################### 
 
           #########################
@@ -61,6 +63,13 @@
        define Orthography9 [ {ph} (->) {f}];
        define Orthography10 [ {w} (->) {u} || Vowel _ ];
        define Orthography11 [ {q} (->) {j} || Vowel_];
+       define Orthography12 [ {k} (->) {qu} || _ [i|e];
+       define Orthography13 [ {k} (->) {c} || _ [a|o|u]];
+       define Orthography14 [ {ch'} (->) {chch} || _];
+       define Orthography15 [ {q'} (->) {qq} || _ , {q'i} (->) {qque}, ];
+       define Orthography14 [ {t'} (->) {tt} || _];
+       define Orthography14 [ {kh} (->) {cj} || _];
+       define Orthography16 [ {y} (->) {i} ||Vowel _ , {iy} (->) i];
        
        define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11];
 
@@ -570,11 +579,12 @@ define FeatRestr [NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. 
 
 #### LEXICAL RESTRICTIONS ######## hukucha, uray
 
+
 #special case, aswan has its own entry in the lexicon, as otherwise there are problems with the suffix sequence, vgl. as-wan-ta!
 define ASWAN [~$[ ["=poco"%] %["^DB"%] %["--"%] {wan} | "=poco"%]  %["--"%] {na} ] ]];
 
 #special case, as allin and also alli are as roots in the lexicon!
-define ALLIN [~$[ "@ALLI" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI"  %["--"%] [{n}|{cha}] %["NDeriv"  ]];
+define ALLIN [~$[ "@ALLI" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI"  %["--"%] [{n}|{cha}] %[ ["NDeriv"|"VDeriv"]  ]];
 
 #special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
 define HATUN [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"] | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha} %["NDeriv" | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" |{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" ]];
@@ -588,8 +598,8 @@ define RIKU [~$[ {ri}%["VRoot"%] %["=ir"%] %["^DB"%] %["--"%] {ku}]];
 # paqari- should not be analyzed es paqa -ri 
 define PAQARIN [~$[ {paqa}%["VRoot"%] %["=lavar"%] %["--"%] {ri} | {paqari} %["VRoot"%] %["=amanecer"%] %["^DB"%] %["--"%] {n}%[ ]];
 
-# tukuy- should not be analyzed es tuku -y 
-define YROOTS [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y} | [{wicha}|{ura}] %["VRoot"%] %[ ["=subir"|"=bajar"] %] %["^DB"%] %["--"%] {y}%[ | [{utqha}|{ñawra}|{hawa}|{milla}] %["NRoot"%] %[ ["=rápido,apurado"|"=diversidad"|"=fuera,arriba"|"=asco,feo"] %] %["^DB"%] %["--"%] {y} %[  ]];
+# tukuy- should not be analyzed es tuku -y , qayllay
+define YROOTS [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y} | [{wicha}|{ura}] %["VRoot"%] %[ ["=subir"|"=bajar"] %] %["^DB"%] %["--"%] {y}%[ | [{utqha}|{ñawra}|{hawa}|{milla}|{qaylla}|{unchuchuku}] %["NRoot"%] %[ ["=rápido,apurado"|"=diversidad"|"=fuera,arriba"|"=asco,feo"|"=presencia,cercano"|"=comadreja"] %] %["^DB"%] %["--"%] {y} %[  ]];
 
 # forbid -llalla analized as +Lim+Lim -> if a word contains a sequence -llalla, the first -lla is probably part of the root
 # consider chukllalla -> good analysis: chuklla(=choza)-lla(+Lim), bad analysis: chuk(=silencio)-lla(+Lim)-lla(+Lim)
@@ -599,13 +609,12 @@ define LLALLA [~$[%["+Lim_Aff"%] %["^DB"%] %["--"%] {lla}]];
 define COMPOUNDS [~$[ {pacha}%["NRoot" ?* {mama}%["NRoot" | {wira}%["NRoot" ?* {qucha}%["NRoot" ]];
 
 # ñawpaq, chiqap/chiqaq, llump'aq, ch'usaq, ichuq, illaq, ñawraq, ariq, tupaq, yuraq
-define AQROOTS [~$["@NAWPA" %["^DB"%] %["--"%] [q|p] %[ | "@CHIQA" %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichhu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"] %[?* "@GENq" | [{ari}|{ichhu}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=segar_paja"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS"  ]]; 
+define AQROOTS [~$["@NAWPA" %["^DB"%] %["--"%] [q|p] %[ | ["@CHIQA"|"@CHANI"] %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichhu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"|"@ALLI"] %[?* "@GENq" | [{ari}|{ichhu}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=segar_paja"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS"  ]]; 
 
 define IMANA [~$[{ima}%[?*"+Reub"]];
 
 # other ambiguous roots: illapa, hukucha/huk'ucha, puputi, kamayuq, sipas
-define AMBROOTS [~$[{illa}%[?*%]{pa} %[ | [{huk'u}|{huku}]%[?*"+Dim" | {pupu}%[?*%]{ti} %[ | [S|s]i %["Part_Cond"%] %["^DB"%] %["--"%] {pas} | {kama}%[?*{yku}"+yu+" %["VDeriv"%] %["+Aff"%] %["^DB"%] %["--"%] q %["NS" ]];
-
+define AMBROOTS [~$[{illa}%[?*%]{pa} %[ | [{huk'u}|{huku}]%[?*"+Dim" | ["@UKU"|"@WISKA"] ?* "+Dim" | {pupu}%[?*%]{ti} %[ | [S|s]i %["Part_Cond"%] %["^DB"%] %["--"%] {pas} | {kama}%[?*{yku}"+yu+" %["VDeriv"%] %["+Aff"%] %["^DB"%] %["--"%] q %["NS"| {tak}?*"=paz"%] %["^DB"%] %["--"%] {lla} %[ ]];
 
 define LexRestr [ASWAN .o. ALLIN .o. HATUN .o. KACHA  .o. RIKU .o. PAQARIN .o. YROOTS .o. LLALLA .o. COMPOUNDS .o. AQROOTS .o. IMANA .o. AMBROOTS];
 
@@ -628,9 +637,5 @@ define Word  FeatRestr  .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBefore
 
 read regex Cleanup2 .o. LexRestr .o. Word;
 
-#read regex Cleanup2 .o. FeatRestr .o. LexRestr .o. [Wort|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex VERBMORPHS  .o. [Wort|SpecialWord|OTAQ|NITAQ]  .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. Allophone .o. Accent;
-#read regex  FeatRestr .o. [Wort|SpecialWord]  .o. Cleanup1;
-#read regex Cleanup2 .o. FeatRestr .o. [Wort|SpecialWord];
 
 save stack normalizer-relax.fst

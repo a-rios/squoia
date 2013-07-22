@@ -451,8 +451,20 @@ if($mode eq '-3')
 		
 		if(scalar(@$analyses)>1)
 		{
+			# yku-n
+			if(&containedInOtherMorphs($analyses,"+1.Pl.Excl.Subj+DirE","+Aff+3.Sg.Subj") )
+			{
+				push(@possibleClasses, "DirEs");
+				push(@possibleClasses, "Subj");
+				@$word[3] = "amb3";
+				# check if sentence already contains an evidential suffix
+				@$word[5] = &sentenceHasEvid(\@words, $i);
+				#print "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
+				
+				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
+			}
 			# -n
-			if(&containedInOtherMorphs($analyses,"+DirE","+3.Sg.Poss") )
+			elsif(&containedInOtherMorphs($analyses,"+DirE","+3.Sg.Poss") )
 			{
 				push(@possibleClasses, "DirE");
 				push(@possibleClasses, "Poss");
@@ -471,18 +483,6 @@ if($mode eq '-3')
 						@$word[6] = 0;
 					}
 				}
-				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
-			}
-			# yku-n
-			if(&containedInOtherMorphs($analyses,"+1.Pl.Excl.Subj+DirE","+Aff+3.Sg.Subj") )
-			{
-				push(@possibleClasses, "DirEs");
-				push(@possibleClasses, "Subj");
-				@$word[3] = "amb3";
-				# check if sentence already contains an evidential suffix
-				@$word[5] = &sentenceHasEvid(\@words, $i);
-				#print "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
-				
 				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
 			}
 			# -pis

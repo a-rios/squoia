@@ -82,8 +82,33 @@ while(<STDIN>){
 				}
 				$newWord=0;	
 		 }
-		}		
+	}		
 }
+
+# store @words as hash to disk
+
+store \@words, 'WordsForTrain';
+my %xfstWords =();
+foreach my $word (@words){
+		my $form = @$word[0];
+		my $analyses = @$word[1];
+		
+		unless(exists $xfstWords{$form}){
+			$xfstWords{$form} = $analyses;
+		}
+		
+}
+
+#foreach my $w (keys %xfstWords){
+#	print "$w : \n";
+#	my $analyses = $xfstWords{$w};
+#	foreach my $a (@$analyses){
+#		print "a: ".$a->{'string'}."\n";
+#	}
+#	print "\n";
+#}
+
+store \%xfstWords, 'WordsForTrain';
 
 my %wordforms =();
 
