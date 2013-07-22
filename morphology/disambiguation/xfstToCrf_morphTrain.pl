@@ -35,6 +35,13 @@ my $index=0;
 my $storedWords;
 my $xfstWordsRefLem = retrieve('PossibleLemmasForTrain');
 my %xfstwordsLem = %$xfstWordsRefLem;
+my $xfstWordsRefMorph = retrieve('PossibleMorphsForTrain');
+my %xfstwordsMorph = %$xfstWordsRefMorph;
+my $xfstWordsRefPos = retrieve('PossibleRootsForTrain');
+my %xfstwordsPos = %$xfstWordsRefPos;
+my $xfstWordsRef = retrieve('WordsForTrain');
+my %xfstWords = %$xfstWordsRef;
+
 
 while(<STDIN>){
 		
@@ -106,92 +113,103 @@ while(<STDIN>){
 if($mode eq '-1')
 {
 	# get NS/ VS ambiguities
-	foreach my $word (@words){
+	foreach my $word (@words)
+	{
 		my $analyses = @$word[1];
 		my @possibleClasses = ();
 		my $actualClass;
 		my $allmorphs = @$analyses[0]->{'allmorphs'};
 		my $string = @$analyses[0]->{'string'};
+		my $form = @$word[0];
+		my $xfstAnalyses =  $xfstWords{$form};
 		
-		# VERBAL morphology, with possible NS, TODO: delete unambiguous cases (followed by Case/Number)?
-		# -sqayki
-		if($allmorphs =~ /\Q+Perf+2.Sg.Poss\E/ || $allmorphs =~ /\Q+1.Sg.Subj_2.Sg.Obj.Fut\E/ || $allmorphs =~ /\Q+IPst+1.Sg.Subj_2.Sg.Obj\E/ )
+		if(exists($xfstWords{$form}) && scalar(@$xfstAnalyses)>1)
 		{
+			# VERBAL morphology
+			# -sqayki
+			if(&containedInOtherMorphs($xfstAnalyses,"+Perf","+1.Sg.Subj_2.Sg.Obj.Fut"))
+			{
 				push(@possibleClasses, "Perf");
 				push(@possibleClasses, "Fut");
-				push(@possibleClasses, "IPst");
+				if(&containedInOtherMorphs($xfstAnalyses,"+Perf","+IPst+1.Sg.Subj_2.Sg.Obj")){
+					push(@possibleClasses, "IPst");
+				}
 				if($allmorphs =~ /Perf/){$actualClass = "Perf";}
 				elsif($allmorphs =~  /Fut/){$actualClass = "Fut";}
 				elsif($allmorphs =~ /IPst/ ){$actualClass = "IPst";}
-		}
-		# -sqaykichik
-		elsif($allmorphs =~ /\Q+Perf+2.Pl.Poss\E/ || $allmorphs =~ /\Q+1.Sg.Subj_2.Pl.Obj.Fut\E/ || $allmorphs =~ /\Q+IPst+1.Sg.Subj_2.Pl.Obj\E/ )
-		{
+			}
+			# -sqaykichik
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+Perf","+1.Sg.Subj_2.Pl.Obj.Fut"))
+			{
 				push(@possibleClasses, "Perf");
 				push(@possibleClasses, "Fut");
-				push(@possibleClasses, "IPst");
+				if(&containedInOtherMorphs($xfstAnalyses,"+Perf","+IPst+1.Sg.Subj_2.Pl.Obj")){
+					push(@possibleClasses, "IPst");
+				}
 				if($allmorphs =~ /Perf/){$actualClass = "Perf";}
 				elsif($allmorphs =~  /Fut/){$actualClass = "Fut";}
 				elsif($allmorphs =~ /IPst/ ){$actualClass = "IPst";}
-		}
-		# -sqa
-		elsif(($allmorphs =~ /Perf/ && $string !~ /Cas|Num/ )|| ($allmorphs =~ /\+IPst/ && $allmorphs !~ /1|2/ ) || $allmorphs =~ /\Q+3.Sg.Subj.IPst\E/)
-		#elsif( $allmorphs =~ /Perf/ || $allmorphs =~ /\+IPst/  || $allmorphs =~ /\Q+3.Sg.Subj.IPst\E/)
-		{
+			}
+			# -sqa
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+Perf","+IPst") || &containedInOtherMorphs($xfstAnalyses,"+Perf","+3.Sg.Subj.IPst") )
+			{
 				push(@possibleClasses, "IPst");
+				push(@possibleClasses, "Perf");
 				if($allmorphs =~ /IPst/  ){$actualClass = "IPst";}
-				
-				push(@possibleClasses, "Perf");
 				if($allmorphs =~ /Perf/  ){$actualClass = "Perf";}
-			
-		}
-		
-		# -yman
-		elsif($allmorphs =~ /\Q+1.Sg.Subj.Pot\E/ || $allmorphs =~ /\Q+Inf+Dat_Ill\E/)
-		{
-			push(@possibleClasses, "Pot");
-			push(@possibleClasses, "Inf");
-			if($allmorphs =~ /Inf/  ){$actualClass = "Inf";}
-			elsif($allmorphs =~ /Pot/  ){$actualClass = "Pot";}
-		}
-			
-		# -ykuna
-		elsif($allmorphs =~ /\Q+Inf+Pl\E/ || $allmorphs =~ /\Q+Aff+Obl\E/)
-		{
-			push(@possibleClasses, "Inf");
-			push(@possibleClasses, "Aff_Obl");
-			if($allmorphs =~ /\Q+Inf+Pl\E/ ){$actualClass = "Inf";}
-			elsif($allmorphs =~ /Aff\+Obl/  ){$actualClass = "Aff_Obl";}
-		}
-		# -kuna
-		elsif($allmorphs =~ /\Q+Pl\E/ || $allmorphs =~ /\Q+Rflx_Int+Obl\E/)
-		{
-			push(@possibleClasses, "Pl");
-			push(@possibleClasses, "Rflx_Obl");
-			if($allmorphs =~ /\Q+Pl\E/  ){$actualClass = "Pl";}
-			elsif($allmorphs =~ /\Q+Rflx_Int+Obl\E/ ){$actualClass = "Rflx_Obl";}
-		}
-		# NOMINAL morphology, with possible VS
-		# -cha(y/n), TODO: delete Vdim here? 
-		elsif($allmorphs =~ /\Q+Fact\E/ ||$allmorphs =~ /\Q+Dim\E/ || $string =~ /VS.+Vdim/)
-		{
-				push(@possibleClasses, "Fact");
-				push(@possibleClasses, "Dim");
-				if($allmorphs =~  /\Q+Fact\E/){$actualClass = "Fact";}
-				elsif($allmorphs =~ /\Q+Dim\E/){$actualClass = "Dim";}
-				elsif($allmorphs =~ /\Q+Vdim\E/){$actualClass = "Vdim";}
-		}
-		# -y
-		elsif($allmorphs =~ /\Q+2.Sg.Subj.Imp\Q/|| ($allmorphs =~ /Inf/ && $string !~ /Cas|Poss|Num/ ) )
-		#elsif($allmorphs =~ /\Q+2.Sg.Subj.Imp\Q/|| $allmorphs =~ /Inf/  )
-		{
+				#print "@$word[0]\n";
+			}
+			# -y
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+2.Sg.Subj.Imp","+Inf"))
+			{
 				push(@possibleClasses, "Imp");
 				push(@possibleClasses, "Inf");
 				if($allmorphs =~  /Imp/){$actualClass = "Imp";}
 				elsif($allmorphs =~ /Inf/ ){$actualClass = "Inf";}
+				#print "@$word[0]\n";
+			}
+			# -yman
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+1.Sg.Subj.Pot","+Inf+Dat_Ill"))
+			{
+				push(@possibleClasses, "Pot");
+				push(@possibleClasses, "Inf");
+				if($allmorphs =~ /Inf/  ){$actualClass = "Inf";}
+				elsif($allmorphs =~ /Pot/  ){$actualClass = "Pot";}
+				#print "@$word[0]\n";
+			}
+			# -ykuna
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+Inf+Pl","+Aff+Obl"))
+			{
+				push(@possibleClasses, "Inf");
+				push(@possibleClasses, "Aff_Obl");
+				if($allmorphs =~ /\Q+Inf+Pl\E/ ){$actualClass = "Inf";}
+				elsif($allmorphs =~ /Aff\+Obl/  ){$actualClass = "Aff_Obl";}
+				#print "@$word[0]\n";
+			}
+			# -kuna
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+Pl","+Rflx_Int+Obl"))
+			{
+				push(@possibleClasses, "Pl");
+				push(@possibleClasses, "Rflx_Obl");
+				if($allmorphs =~ /\Q+Pl\E/  ){$actualClass = "Pl";}
+				elsif($allmorphs =~ /\Q+Rflx_Int+Obl\E/ ){$actualClass = "Rflx_Obl";}
+				#print "@$word[0]\n";
+			}
+			# -cha
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+Fact","+Dim"))
+			{
+				push(@possibleClasses, "Fact");
+				push(@possibleClasses, "Dim");
+				# should not be a verb, but you never know..
+				if(&containedInOtherMorphs($xfstAnalyses,"+Dim","+Vdim+Rflx_Int+Obl") or &containedInOtherMorphs($xfstAnalyses,"+Fact","+Vdim") ){
+					push(@possibleClasses, "Vdim");
+				}
+				if($allmorphs =~  /\Q+Fact\E/){$actualClass = "Fact";}
+				elsif($allmorphs =~ /\Q+Dim\E/){$actualClass = "Dim";}
+				elsif($allmorphs =~ /\Q+Vdim\E/){$actualClass = "Vdim";}
+				#print "@$word[0]\n";
+			}
 		}
-	
-	
 		# else: other ambiguities, leave
 		else
 		{
@@ -203,95 +221,79 @@ if($mode eq '-1')
 	
 		push(@$word, \@possibleClasses);
 		push(@$word, $actualClass);
-		#print @$word[0].": @possibleClasses\n";
-		#print "actual: $actualClass\n\n";	
 	}
 }
 
 if($mode eq '-2')
 {
 	# get nominal/verbal ambiguities
-	foreach my $word (@words){
+	foreach my $word (@words)
+	{
 		my $analyses = @$word[1];
 		my @possibleClasses = ();
 		my $actualClass;
 		my $allmorphs = @$analyses[0]->{'allmorphs'};
 		my $string = @$analyses[0]->{'string'};
+		my $form = @$word[0];
+		my $xfstAnalyses =  $xfstWords{$form};
+		#print "$form ".$xfstWords{'tukunqa'}[0]->{'string'}."\n";
 		
-		# VERBAL morphology
-		# -sun
-		if($allmorphs =~ /\Q+1.Pl.Incl.Subj.Imp\E/ || $allmorphs =~ /\Q+1.Pl.Incl.Subj.Fut\E/ )
+		if(exists($xfstWords{$form}) && scalar(@$xfstAnalyses)>1)
 		{
-			push(@possibleClasses, "Imp");
-			push(@possibleClasses, "Fut");
-			if($allmorphs =~  /Imp/){$actualClass = "Imp";}
-			elsif($allmorphs =~ /Fut/ ){$actualClass = "Fut";}
-		}
-		# -sqaykiku
-		elsif($allmorphs =~ /\Q+IPst+1.Pl.Excl.Subj_2.Sg.Obj\E/ || $allmorphs =~ /\Q+1.Pl.Excl.Subj_2.Sg.Obj.Fut\E/)
-		{
+			# VERBAL morphology
+			# -sun
+			if(&containedInOtherMorphs($xfstAnalyses,"+1.Pl.Incl.Subj.Imp","+1.Pl.Incl.Subj.Fut"))
+			{
+				push(@possibleClasses, "Imp");
+				push(@possibleClasses, "Fut");
+				if($allmorphs =~  /Imp/){$actualClass = "Imp";}
+				elsif($allmorphs =~ /Fut/ ){$actualClass = "Fut";}
+			}
+			# -nqa
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+3.Sg.Subj+Top","+3.Sg.Subj.Fut"))
+			{
+				push(@possibleClasses, "Top");
+				push(@possibleClasses, "Fut");
+				if($allmorphs =~  /Top/){$actualClass = "Top";}
+				elsif($allmorphs =~ /Fut/ ){$actualClass = "Fut";}
+			}
+			# -sqaykiku
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+IPst+1.Pl.Excl.Subj_2.Sg.Obj","+1.Pl.Excl.Subj_2.Sg.Obj.Fut"))
+			{
 				push(@possibleClasses, "IPst");
 				push(@possibleClasses, "Fut");
 				if($allmorphs =~ /Fut/ ){$actualClass = "Fut";}
 				elsif($allmorphs =~ /IPst/  ){$actualClass = "IPst";}
-		}
-		# -nqa
-		elsif($allmorphs =~ /\Q+3.Sg.Subj+Top\E/ || $allmorphs =~ /\Q+3.Sg.Subj.Fut\E/ )
-		{#print "@$word[0]: $allmorphs\n";
-			push(@possibleClasses, "Top");
-			push(@possibleClasses, "Fut");
-			if($allmorphs =~  /Top/){$actualClass = "Top";}
-			elsif($allmorphs =~ /Fut/ ){$actualClass = "Fut";}
-		}
-		# -wanqaku
-		elsif($allmorphs =~ /\+1\.Obj.*\+3\.Pl\.Subj\.Fut/ || $allmorphs =~ /\Q+3.Subj_1.Pl.Excl.Obj.Fut\E/ )
-		{#print "@$word[0]: $allmorphs\n";
-			push(@possibleClasses, "1Pl");
-			push(@possibleClasses, "1Sg");
-			if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
-			elsif($allmorphs =~ /\+1\.Obj.+\+3\.Pl\.Subj\.Fut/ ){$actualClass = "1Sg";}
-		}
-		# -wanku
-		elsif($allmorphs =~ /\+1\.Obj.*\+3\.Pl\.Subj/ || $allmorphs =~ /\Q+3.Subj_1.Pl.Excl.Obj\E/ )
-		{#print "@$word[0]: $allmorphs\n";
-			push(@possibleClasses, "1Pl");
-			push(@possibleClasses, "1Sg");
-			if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
-			elsif($allmorphs =~ /\+1\.Obj.+\+3\.Pl\.Subj/ ){$actualClass = "1Sg";}
-		}
-		
-		# NOMINAL morphology, with possible VS
-#		# -nkuna
-#		elsif($allmorphs =~ /\Q+3.Pl.Poss+Pl\E/ || $allmorphs =~ /\Q+3.Sg.Poss+Pl\E/ )
-#		{
-#				push(@possibleClasses, "Sg");
-#				push(@possibleClasses, "Pl");
-#				if($allmorphs =~  /\Q+3.Pl.Poss+Pl\E/ ){$actualClass = "Pl";}
-#				elsif($allmorphs =~ /\Q+3.Sg.Poss+Pl\E/ ){$actualClass = "Sg";}
-#		}
-#		# -ykuna
-#		elsif($allmorphs =~ /\Q+1.Pl.Excl.Poss+Pl\E/ || $allmorphs =~ /\Q+1.Sg.Poss+Pl\E/ )
-#		{
-#			push(@possibleClasses, "Sg");
-#			push(@possibleClasses, "Pl");
-#			if($allmorphs =~  /\Q+1.Pl.Excl.Poss+Pl\E/ ){$actualClass = "Pl";}
-#			elsif($allmorphs =~ /\Q+1.Sg.Poss+Pl\E/ ){$actualClass = "Sg";}
-#		}
-		# else: other ambiguities, leave
-		else
-		{
+			} 
+			# -wanku 
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+1.Obj+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) or &containedInOtherMorphs($xfstAnalyses,"+1.Obj+NPst+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) or &containedInOtherMorphs($analyses,"+1.Obj+IPst+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) &containedInOtherMorphs($analyses,"+1.Obj+Prog+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) )
+			{
+				push(@possibleClasses, "1Sg");
+				push(@possibleClasses, "1Pl");
+				if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
+				elsif($allmorphs =~ /\+1\.Obj.+\+3\.Pl\.Subj/ ){$actualClass = "1Sg";}
+			}
+			# -wanqaku 
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+1.Obj+3.Pl.Subj.Fut","+3.Subj_1.Pl.Excl.Obj.Fut" ) or &containedInOtherMorphs($xfstAnalyses,"+1.Obj+Prog+3.Pl.Subj.Fut","+3.Subj_1.Pl.Excl.Obj.Fut" )  )
+			{
+				push(@possibleClasses, "1Sg");
+				push(@possibleClasses, "1Pl");
+				if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
+				elsif($allmorphs =~ /\+1\.Obj.+\+3\.Pl\.Subj\.Fut/ ){$actualClass = "1Sg";}
+			}
+	
+			# else: other ambiguities, leave
+			else
+			{
 				push(@possibleClasses, "ZZZ");
 				# TODO test what's better...
 				$actualClass = "none";
 				#$actualClass = @$analyses[0]->{'pos'};
+			}
 		}
-	
 		push(@$word, \@possibleClasses);
 		push(@$word, $actualClass);
-		#print @$word[0].": @possibleClasses\n";
-		#print "actual: $actualClass\n\n";
 	}
-
 }
 
 if($mode eq '-3')
@@ -299,25 +301,42 @@ if($mode eq '-3')
 	# @word: 0: $form (string), 1: $analyses (arrayref) , 2: $possibleClasses (arrayref), 3: $actualClass (string), 4: $sentenceHasEvid (boolean) 5: $precedingGenitive (boolean)
 	# check remaining ambiguities
 	# disambiguate indepenent suffixes 
-	for(my $i=0;$i<scalar(@words);$i++){
+	for(my $i=0;$i<scalar(@words);$i++)
+	{
 		my $word = @words[$i];
 		my $analyses = @$word[1];
 		my @possibleClasses = ();
 		my $actualClass;
 		my $allmorphs = @$analyses[0]->{'allmorphs'};
 		my $string = @$analyses[0]->{'string'};
-		#if($string =~ /animal/){print $string."\n";}
+		my $form = @$word[0];
+		my $xfstAnalyses =  $xfstWords{$form};
+		#print "$form morphs: $allmorphs\n";
 		
-			# -n: direct evidencial or 3.Sg.Poss
-			if( ($allmorphs =~ /\Q+3.Sg.Poss\E/ && $string !~ /3\.Sg\.Poss.*(Cas|Pl|Amb)/ ) || ($allmorphs =~ /\Q+DirE\E/  && $string =~ /[n|m]\[Amb/ && $string !~ /(Cas|Num).+DirE/) )
-			#if( $allmorphs =~ /\Q+3.Sg.Poss\E/ || $allmorphs =~ /\Q+DirE\E/  && $string =~ /n\[Amb/  )
+		if(exists($xfstWords{$form}) && scalar(@$xfstAnalyses)>1)
+		{
+			# yku-n
+			if(&containedInOtherMorphs($xfstAnalyses,"+1.Pl.Excl.Subj+DirE","+Aff+3.Sg.Subj") )
 			{
+				push(@possibleClasses, "DirEs");
+				push(@possibleClasses, "Subj");
+				if($allmorphs =~  /DirE/){$actualClass = "DirE";}
+				elsif($allmorphs =~ /\Q+3.Sg.Subj\E/ ){$actualClass = "Subj";}
+				# check if sentence already contains an evidential suffix
+				@$word[4] = &sentenceHasEvid(\@words, $i);
+				#print "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
+				
+				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
+			}
+			# -n
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+DirE","+3.Sg.Poss") )
+			{ 
 				push(@possibleClasses, "DirE");
 				push(@possibleClasses, "Poss");
-				if($allmorphs =~  /DirE/){$actualClass = "DirE";}
+				if($allmorphs =~ /DirE/){$actualClass = "DirE";}
 				elsif($allmorphs =~ /Poss/ ){$actualClass = "Poss";}
 				# check if sentence already contains an evidential suffix
-				@$word[4] =  &sentenceHasEvid(\@words, $i);
+				@$word[4] = &sentenceHasEvid(\@words, $i);
 				#print "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
 				# check if preceding word has a genitive suffix
 				unless($i==0){
@@ -331,52 +350,48 @@ if($mode eq '-3')
 					}
 				}
 				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
-			}
-			# yku-n: direct evidential or 3.Sg.Subj
-			elsif($allmorphs =~ /\Q+Aff+3.Sg.Subj\E/ || $string =~ /\Q+Aff][^DB][--]n[Amb\E/ ){
-				push(@possibleClasses, "DirEs");
-				push(@possibleClasses, "Subj");
-				if($allmorphs =~  /DirE/){$actualClass = "DirE";}
-				elsif($allmorphs =~ /\Q+3.Sg.Subj\E/ ){$actualClass = "Subj";}
-				# check if sentence already contains an evidential suffix
-				@$word[4] =  &sentenceHasEvid(\@words, $i);
+				#print "$form class $actualClass\n";
 			}
 			# -pis
-			elsif($allmorphs =~ /\Q+Loc+IndE\E/ || ($allmorphs =~ /\Q+Add\E/ && $string !~ /Add.*(IndE|DirE|Asmp)/) )
-			#elsif($allmorphs =~ /\Q+Loc+IndE\E/ || $allmorphs =~ /\Q+Add\E/  )
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+Loc+IndE","+Add"))
 			{
 				push(@possibleClasses, "Loc_IndE");
 				push(@possibleClasses, "Add");
 				if($allmorphs =~ /\Q+Loc+IndE\E/){$actualClass = "Loc_IndE";}
 				elsif($allmorphs =~ /Add/ ){$actualClass = "Add";}
-				@$word[4] =  &sentenceHasEvid(\@words, $i);
+				@$word[4] = &sentenceHasEvid(\@words, $i);
 			}
+	
 			# -s with Spanish roots: Plural or IndE (e.g. derechus)
-			elsif($string =~ /\QNRootES][^DB][--]s\Ei?\Q[Amb][+IndE]\E/ || $string =~ /[^ái]\Qs[NRootES\E/ )
+			elsif(!&notContainedInMorphs($xfstAnalyses, "+IndE"))
 			{
-				push(@possibleClasses, "Pl");
-				push(@possibleClasses, "IndE");
-				if($allmorphs =~ /\Q+IndE\E/){$actualClass = "IndE";}
-				else{$actualClass = "Pl";}
-				# check if sentence already contains an evidential suffix
-				@$word[4] =  &sentenceHasEvid(\@words, $i);
+				foreach my $analisis(@$xfstAnalyses)
+				{
+					my $string = $analisis->{'string'};
+					if($string =~ /s\[NRootES/  )
+					{
+						push(@possibleClasses, "Pl");
+						push(@possibleClasses, "IndE");
+						@$word[4] = &sentenceHasEvid(\@words, $i);
+						if($allmorphs =~ /\Q+IndE\E/){$actualClass = "IndE";}
+						else{$actualClass = "Pl";}
+					}
+				}
+				
 			}
 			# else: lexical ambiguities, leave
 			else
 			{
+				#print "$form, $actualClass\n";
 				push(@possibleClasses, "ZZZ");
 				# TODO test what's better...
 				$actualClass = "none";
 				#$actualClass = @$analyses[0]->{'pos'};
 			}
-	
-		#push(@$word, \@possibleClasses);
-		#push(@$word, $actualClass);
+
+		}
 		@$word[2] = \@possibleClasses;
 		@$word[3] = $actualClass;
-	
-		#print @$word[0].": @possibleClasses\n";
-		#print "actual: $actualClass\n\n";
 	}
 }
 
@@ -384,8 +399,8 @@ my $lastlineEmpty=0;
 
 #my $xfstWordsRefLem = retrieve('PossibleLemmasForTrain');
 #my %xfstwordsLem = %$xfstWordsRefLem;
-my $xfstWordsRefMorph = retrieve('PossibleMorphsForTrain');
-my %xfstwordsMorph = %$xfstWordsRefMorph;
+#my $xfstWordsRefMorph = retrieve('PossibleMorphsForTrain');
+#my %xfstwordsMorph = %$xfstWordsRefMorph;
 
 # print only ambiguous words, with context as features
 
@@ -396,7 +411,7 @@ for (my $i=0;$i<scalar(@words);$i++){
 	my $possibleClasses = @$word[2];
 	my $correctClass = @$word[3];
 	
-   if(scalar(@$possibleClasses)>1){
+   if(scalar(@$possibleClasses)>1 && $correctClass ne ''  && $correctClass ne 'none'){
 		print lc($form)."\t";
    
 		my $pos = @$analyses[0]->{'pos'};
@@ -767,130 +782,62 @@ sub sentenceHasEvid{
 }
 
 
-# print all words, unambiguous ones with class 'none'
-#foreach my $word (@words){
-#	my $analyses = @$word[1];
-#	my $form = @$word[0];
-#	my $possibleClasses = @$word[2];
-#	my $correctClass = @$word[3];
-#	
-#	if($form eq '#EOS' ){
-#		unless($lastlineEmpty == 1){
-#			print "\n";
-#			$lastlineEmpty =1;
-#			next;
-#		}
-#	}
-#	else
-#	{
-#		print "$form\t";
-#		$lastlineEmpty =0;
-#		# uppercase/lowercase?
-#
-##		elsif(substr($form,0,1) eq uc(substr($form,0,1))){
-##			print "uc\t";
-##		}
-##		# lowercase
-##		else{
-##			print "lc\t";
-##		}
-#		print @$analyses[0]->{'pos'}."\t";
-#
-#
-#		my $nbrOfClasses =0;
-#		# possible classes
-#		foreach my $class (@$possibleClasses){
-#			print "$class\t";
-#			$nbrOfClasses++;
-#		}
-#		
-#		while($nbrOfClasses<4){
-#			print "ZZZ\t";
-#			$nbrOfClasses++;
-#		}
-#
-#		#possible morph tags: take ALL morph tags into account 
-#		my $printedmorphs='';
-#		my $nbrOfMorph =0;
-#		foreach my $analysis (@$analyses){
-#			my $morphsref = $analysis->{'morph'};
-#			#print $morphsref;
-#			foreach my $morph (@$morphsref){
-#			unless($printedmorphs =~ /\Q$morph\E/){
-#			print "$morph\t";
-#				$printedmorphs = $printedmorphs.$morph;
-#				$nbrOfMorph++;
-#				}
-#			}
-#		}
-#		while($nbrOfMorph<10){
-#			print "ZZZ\t";
-#			$nbrOfMorph++;
-#		}
-#	
-#		
-#		print "$correctClass";
-#
-#	
-#		print "\n";
-#	}
-#}
+sub containedInOtherMorphs{
+	my $analyses = $_[0];
+	my $string1 = $_[1];
+	my $string2 = $_[2];
+	
+	for(my $j=0;$j<scalar(@$analyses);$j++) 
+	{
+		my $analysis = @$analyses[$j];
+		my $allmorphs = $analysis->{'allmorphs'};
+		$allmorphs =~ s/#//g;
+		#print STDERR @$analyses[$j]->{'lem'}." morphs: $allmorphs  string1: $string1  string2: $string2\n";
+		if($allmorphs =~ /\Q$string1\E/)
+		{	
+			# check if later analysis has +Term
+			for(my $k=$j+1;$j<$k;$k--) 
+			{
+				my $analysis2 = @$analyses[$k];
+				my $postmorphs = $analysis2->{'allmorphs'};
+				$postmorphs =~ s/#//g;
+				#print "  next: $postmorphs\n";
+				if($postmorphs =~ /\Q$string2\E/ )
+				{		
+					#print "2 found $allmorphs\n";
+					#print "2compared with $postmorphs\n";
+					return 1;
+				}
+			}
+			# check if previuous analysis has +Term
+			for(my $k=0;$k<$j;$k++) 
+			{
+				my $analysis3 = @$analyses[$k];
+				my $premorphs = $analysis3->{'allmorphs'};
+				$premorphs =~ s/#//g;
+				#print "   prev: $premorphs\n";
+				if($premorphs =~ /\Q$string2\E/)
+				{
+					#print "3 found $allmorphs\n";
+					#print "3 compared with $premorphs\n";
+					return 1;
+				}
+			}
+		}
+	}
+	return 0;
+}
 
-
-#	old version	
-#		# print context words (preceding)
-#		for (my $j=$i-1;$j>($i-3);$j--)
-#		{
-#			my $word = @words[$j];
-#			my $analyses = @$word[1];
-#			my $form = @$word[0];
-#			
-#			print "$form\t";
-#			print @$analyses[0]->{'pos'}."\t";
-#			#print morphs of context words
-#			my $printedmorphs='';
-#			my $nbrOfMorph =0;
-#			foreach my $analysis (@$analyses){
-#				my $morphsref = $analysis->{'morph'};
-#				#print $morphsref;
-#				foreach my $morph (@$morphsref){
-#				unless($printedmorphs =~ /\Q$morph\E/){
-#				print "$morph\t";
-#					$printedmorphs = $printedmorphs.$morph;
-#					$nbrOfMorph++;
-#					}
-#				}
-#			}
-#			while($nbrOfMorph<10){
-#				print "ZZZ\t";
-#				$nbrOfMorph++;
-#			}
-#		}
-#		
-#		# print context words (following)
-#		for (my $j=$i+1;$j<($i+3);$j++)
-#		{
-#			my $word = @words[$j];
-#			my $analyses = @$word[1];
-#			my $form = @$word[0];
-#			
-#			print "$form\t";
-#			print @$analyses[0]->{'pos'}."\t";
-#			#print morphs of context words
-#			my $printedmorphs='';
-#			my $nbrOfMorph =0;
-#			foreach my $analysis (@$analyses){
-#				my $morphsref = $analysis->{'morph'};
-#				#print $morphsref;
-#				foreach my $morph (@$morphsref){
-#				unless($printedmorphs =~ /\Q$morph\E/){
-#				print "$morph\t";
-#					$printedmorphs = $printedmorphs.$morph;
-#					$nbrOfMorph++;
-#					}
-#				}
-#			}
-#			while($nbrOfMorph<10){
-#				print "ZZZ\t";
-#				$nbrOfMorph++;
-#			}
+sub notContainedInMorphs{
+	my $analyses = $_[0];
+	my $string = $_[1];
+	
+	foreach my $analysis (@$analyses)
+	{
+		my $allmorphs = $analysis->{'allmorphs'};
+		if($allmorphs =~ /\Q$string\E/){
+			return 0;
+		}
+	}
+	return 1;
+}
