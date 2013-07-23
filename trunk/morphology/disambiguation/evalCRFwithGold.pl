@@ -81,9 +81,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 			 my @rowsCRF = split (/\t|\s/, $crfLine);	 
 			 my @rowsGOLD = split (/\t|\s/, $goldLine);	 
 			 
-			 unless(@rowsCRF[1] eq 'n'){
-			 	$wcount++;
-			 }
+			 
 			 
 			 # pos(morph) evaluation
 			 my $classCRF = @rowsCRF[-1];
@@ -91,6 +89,8 @@ if($mode eq '-pos' or $mode eq '-morph')
 			 
 			 if($mode eq '-morph')
 			 {
+			 	$wcount++;
+			 	print "@rowsCRF[0] @rowsGOLD[0]\n";
 				if($classCRF eq $classGOLD){
 					$correctClass++;
 				}
@@ -107,6 +107,9 @@ if($mode eq '-pos' or $mode eq '-morph')
 			 }
 			 elsif($mode eq '-pos')
 			 {
+			 	unless(@rowsCRF[1] eq 'n'){
+			 	$wcount++;
+			 	}
 			 	# only pos: count ambiguos words
 			 	if(@rowsCRF[3] ne 'ZZZ'){
 	#		 		print "$classCRF : $classGOLD\n";
@@ -353,7 +356,7 @@ elsif($mode eq '-xfst')
 				}
 				#xfst failures, count separately
 				elsif(@$analyses[0] =~ /\+\?$/){
-					#print @$analyses[0]."\n";
+					print @$analyses[0]."\n";
 					$xfstFailures++;
 				}
 				#xfst failures in gold, count separately
@@ -374,8 +377,8 @@ elsif($mode eq '-xfst')
 #				}
 				else{
 					$wrongAnalysis++;
-					print "word: @$g[0]\n";
-					print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
+					#print "word: @$g[0]\n";
+					#print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
 				}
 			}
 			

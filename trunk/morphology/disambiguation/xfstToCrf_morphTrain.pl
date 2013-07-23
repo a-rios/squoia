@@ -236,8 +236,17 @@ if($mode eq '-2')
 		my $string = @$analyses[0]->{'string'};
 		my $form = @$word[0];
 		my $xfstAnalyses =  $xfstWords{$form};
-		#print "$form ".$xfstWords{'qomuwanku'}[0]->{'string'}."\n";
+		#print "$form ".$xfstWords{'lluqsimpuni'}[0]->{'string'}."\n";
+		#print "$form $allmorphs:  ".($allmorphs =~ /\Q+3.Sg.Subj+Def\E/ || $allmorphs =~ /\Q+Cis_Trs+Rgr_Iprs+1.Sg.Subj\E/)."\n";
 		
+		# -npuni: -n -puni or -m -pu -ni (cannot use morph analysis, because n-pu is normalized to -mpu in training)
+		# note: ONLY 2 instances in training material!! :(
+		if($allmorphs =~ /\Q+3.Sg.Subj+Def\E/ || $allmorphs =~ /\Q+Cis_Trs+Rgr_Iprs+1.Sg.Subj\E/ ){
+				push(@possibleClasses, "1Sg");
+				push(@possibleClasses, "3Sg");
+				if($allmorphs =~  /\Q+1.Sg.Subj\E/){$actualClass = "1Sg";}
+				elsif($allmorphs =~ /\Q+3.Sg.Subj\E/ ){$actualClass = "3Sg";}
+		}	
 		if(exists($xfstWords{$form}) && scalar(@$xfstAnalyses)>1)
 		{ 
 			# VERBAL morphology
@@ -282,7 +291,6 @@ if($mode eq '-2')
 				if($allmorphs =~  /Excl/){$actualClass = "1Pl";}
 				elsif($allmorphs =~ /\+1\.Obj.*\+3\.Pl\.Subj\.Fut/ ){$actualClass = "1Sg";}
 			}
-	
 			# else: other ambiguities, leave
 			else
 			{
@@ -354,13 +362,22 @@ if($mode eq '-3')
 				#print "$form class $actualClass\n";
 			}
 			# -pis
-			elsif(&containedInOtherMorphs($xfstAnalyses,"+Loc+IndE","+Add"))
+#			elsif(&containedInOtherMorphs($xfstAnalyses,"+Loc+IndE","+Add"))
+#			{
+#				push(@possibleClasses, "Loc_IndE");
+#				push(@possibleClasses, "Add");
+#				if($allmorphs =~ /\Q+Loc+IndE\E/){$actualClass = "Loc_IndE";}
+#				elsif($allmorphs =~ /Add/ ){$actualClass = "Add";}
+#				@$word[4] = &sentenceHasEvid(\@words, $i);
+#			}
+			# get also the ones with -pas for training, otherwise we have only Loc_IndE in training (additive ocurrs only as -pas in trainig texts!)
+			elsif($allmorphs =~ /\Q+Loc+IndE\E/ || ($allmorphs =~ /\Q+Add\E/ && $string !~ /Add.*(IndE|DirE|Asmp)/) )
 			{
 				push(@possibleClasses, "Loc_IndE");
 				push(@possibleClasses, "Add");
 				if($allmorphs =~ /\Q+Loc+IndE\E/){$actualClass = "Loc_IndE";}
 				elsif($allmorphs =~ /Add/ ){$actualClass = "Add";}
-				@$word[4] = &sentenceHasEvid(\@words, $i);
+				@$word[4] =  &sentenceHasEvid(\@words, $i);
 			}
 	
 			# -s with Spanish roots: Plural or IndE (e.g. derechus)

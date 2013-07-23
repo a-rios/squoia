@@ -30,6 +30,8 @@ unless($mode eq '-test' or $mode eq '-train' or !$mode){
 my @words;
 my $newWord=1;
 my $index=0;
+my $hasPAS =0;
+my $hasMdirect =0;
 
 while(<STDIN>){
 	
@@ -48,6 +50,14 @@ while(<STDIN>){
 			$root = 'NRoot';
 			$isNP =1;
 			#print $form."\n";
+		}
+		
+		if($analysis =~ /\@PAS/){
+			$hasPAS =1;
+			#print STDERR "has pas\n";
+		}
+		if($analysis =~ /\@mMI/){
+			$hasMdirect =1;
 		}
 		
 		if($root =~ /AdvES|PrepES|ConjES/){
@@ -98,6 +108,7 @@ while(<STDIN>){
 		$hashAnalysis{'allmorphs'} = $allmorphs;
 		$hashAnalysis{'lem'} = $lem;
 		$hashAnalysis{'isNP'} = $isNP;
+		$hashAnalysis{'string'} = $analysis;
 #	   ALFS 
 #       CARD 
 #       NP NRoot NRootES NRootNUM
@@ -137,7 +148,43 @@ my %xfstwordsMorph = %$xfstWordsRefMorph;
 my $xfstWordsRefPos = retrieve('PossibleRootsForTrain');
 my %xfstwordsPos = %$xfstWordsRefPos;
 
+# check dialectal variations: 
+# -if direct evidential suffix occurs as -m -> delete all analyses of -n as DirE (can only be 3.Sg.Poss or 3.Sg.Subj)
+# -if additive suffix ocurrs as -pas -> delete all analyses of -pis as additive (must be Loc + IndE in this case)
 
+if($hasMdirect or $hasPAS)
+{
+	foreach my $word (@words)
+	{
+		my $analyses = @$word[1];
+		my $form = @$word[0];
+		for(my $j=0;$j<scalar(@$analyses);$j++) 
+		{
+				my $analysis = @$analyses[$j];
+				my $string = $analysis->{'string'};
+				
+				# keep only analysis with m@mMI[Amb][+DirE]
+				if($hasMdirect && $string =~ /\Qm[Amb][+DirE]\E/ && scalar(@$analyses) > 1)
+				{
+					#print STDERR "delete: $allmorphs\n";
+					splice (@{$analyses},$j,1);	
+					$j--;
+				}
+				# keep only analysis with pas@PAS[Amb][+Add]
+				if($hasPAS && $string =~ /\Qpas[Amb][+Add]\E/ && scalar(@$analyses) > 1)
+				{
+					print STDERR "$form: delete: $string\n";
+					#print STDERR "delete: $allmorphs\n";
+					splice (@{$analyses},$j,1);	
+					$j--;
+				}
+				# delete Flags "@mMI" and "@PAS"
+				$string =~ s/\@mMI//g;
+				$string =~ s/\@PAS//g;
+				$analysis->{'string'} = $string;
+		}
+	}
+}
 
 foreach my $word (@words){
 	my $analyses = @$word[1];
