@@ -409,7 +409,12 @@ if($mode eq '-2')
 				push(@possibleClasses, "1Pl");
 				@$word[3] = "amb2";
 			}
-	
+			# -npuni: -n -puni or -m -pu -ni (problem: occurs onyl as -n -puni in training material!)
+			elsif(&containedInOtherMorphs($analyses,"+3.Sg.Subj+Def","+Cis_Trs+Rgr_Iprs+1.Sg.Subj" )){
+				push(@possibleClasses, "1Sg");
+				push(@possibleClasses, "3Sg");
+				@$word[3] = "amb2";
+			}
 			# else: other ambiguities, leave
 			else
 			{
@@ -1076,51 +1081,65 @@ sub disambMorph2{
 				my $analysis = @$analyses[$j];
 				my $allmorphs = $analysis->{'allmorphs'};
 				
-#				# at this point, the classes/tags are NOT unique (Sg,Pl), so we cannot just check whether the class is contained in allmorphs		
-#				# -sun: Imp, Fut
-#				# -nqa: Top, Fut
-#				# -sqaykiku: Fut, IPst
-#				# -ykuna: Sg, Pl
-#				# -nkuna: Sg, Pl
-#				if($correctMorph eq 'Pl'  && $form =~ /ykuna/)
-#				{
-#					if($allmorphs !~ /\Q1.Pl.Excl.Poss\E/ && scalar(@$analyses) > 1){
-#						splice (@{$analyses},$j,1);	
-#						$disambiguatedForms++;
-#						$j--;
-#					}
-#					
-#				}
-#				elsif($correctMorph eq 'Sg'  && $form =~ /ykuna/)
-#				{
-#					if($allmorphs !~ /\Q1.Sg.Poss\E/ && scalar(@$analyses) > 1){
-#						splice (@{$analyses},$j,1);	
-#						$disambiguatedForms++;
-#						$j--;
-#					}
-#					
-#				}
-#				elsif($correctMorph eq 'Pl'  && $form =~ /nkuna/)
-#				{
-#					if($allmorphs !~ /\Q3.Pl.Poss\E/ && scalar(@$analyses) > 1){
-#						splice (@{$analyses},$j,1);	
-#						$disambiguatedForms++;
-#						$j--;
-#					}
-#					
-#				}
-#				elsif($correctMorph eq 'Sg'  && $form =~ /nkuna/)
-#				{
-#					if($allmorphs !~ /\Q3.Sg.Poss\E/ && scalar(@$analyses) > 1){
-#						splice (@{$analyses},$j,1);	
-#						$disambiguatedForms++;
-#						$j--;
-#					}
-#					
-#				}
+				# at this point, the classes/tags are NOT unique (Sg,Pl), so we cannot just check whether the class is contained in allmorphs		
+				# -wanku: 1Sg, 1Pl
+				# -wanqaku: 1Sg, 1Pl
+				# -npuni: 1Sg, 3Sg
+				if($correctMorph eq '1Pl'  && $form =~ /wa.*nqaku/)
+				{
+					if($allmorphs !~ /\Q1.Pl.Excl\E/ && scalar(@$analyses) > 1){
+						splice (@{$analyses},$j,1);	
+						$disambiguatedForms++;
+						$j--;
+					}					
+				}
+				elsif($correctMorph eq '1Sg'  && $form =~ /wa.*nqaku/)
+				{
+					if($allmorphs !~ /\Q3.Pl.Subj\E/ && scalar(@$analyses) > 1){
+						splice (@{$analyses},$j,1);	
+						$disambiguatedForms++;
+						$j--;
+					}
+					
+				}
+				elsif($correctMorph eq '1Pl'  && $form =~ /wa.*nku/)
+				{
+					if($allmorphs !~ /\Q1.Pl.Excl\E/ && scalar(@$analyses) > 1){
+						splice (@{$analyses},$j,1);	
+						$disambiguatedForms++;
+						$j--;
+					}					
+				}
+				elsif($correctMorph eq '1Sg'  && $form =~ /wa.*nku/)
+				{
+					if($allmorphs !~ /\Q3.Pl.Subj\E/ && scalar(@$analyses) > 1){
+						splice (@{$analyses},$j,1);	
+						$disambiguatedForms++;
+						$j--;
+					}
+					
+				}
+				elsif($correctMorph eq '1Sg'  && $form =~ /[nm]puni/)
+				{
+					if($allmorphs !~ /\Q1.Sg.Subj\E/ && scalar(@$analyses) > 1){
+						splice (@{$analyses},$j,1);	
+						$disambiguatedForms++;
+						$j--;
+					}
+					
+				}
+				elsif($correctMorph eq '3Sg'  && $form =~ /[nm]puni/)
+				{
+					if($allmorphs !~ /\Q3.Sg.Subj\E/ && scalar(@$analyses) > 1){
+						splice (@{$analyses},$j,1);	
+						$disambiguatedForms++;
+						$j--;
+					}
+					
+				}
 				# no confusion with other tags, just check whether allmorphs contains them
-				#else
-				#{
+				else
+				{
 					#print STDERR "$form: all: $allmorphs, correct: $correctMorph\n";
 					if($allmorphs !~ /$correctMorph/ && scalar(@$analyses) > 1){
 						#print STDERR "delete: $allmorphs\n";
@@ -1128,7 +1147,7 @@ sub disambMorph2{
 						$disambiguatedForms++;
 						$j--;		
 					}
-				#}
+				}
 				
 			}
 

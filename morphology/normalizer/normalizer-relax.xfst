@@ -63,15 +63,16 @@
        define Orthography9 [ {ph} (->) {f}];
        define Orthography10 [ {w} (->) {u} || Vowel _ ];
        define Orthography11 [ {q} (->) {j} || Vowel_];
-       define Orthography12 [ {k} (->) {qu} || _ [i|e];
+       define Orthography12 [ {k} (->) {qu} || _ [i|e] ];
        define Orthography13 [ {k} (->) {c} || _ [a|o|u]];
        define Orthography14 [ {ch'} (->) {chch} || _];
-       define Orthography15 [ {q'} (->) {qq} || _ , {q'i} (->) {qque}, ];
-       define Orthography14 [ {t'} (->) {tt} || _];
-       define Orthography14 [ {kh} (->) {cj} || _];
-       define Orthography16 [ {y} (->) {i} ||Vowel _ , {iy} (->) i];
+       define Orthography15 [ {q'} (->) {qq} , {q'i} (->) {qque} ];
+       define Orthography16 [ {t'} (->) {tt} ];
+       define Orthography17 [ {kh} (->) {cj} ];
+       define Orthography18 [ {y} (->) {i} ||Vowel _ ];
+       define Orthography19 [ {iy} (->) i];
        
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11];
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17.o. Orthography18.o. Orthography19 ];
 
 
        define QuechuaOrtho Allophone .o. Orthography;

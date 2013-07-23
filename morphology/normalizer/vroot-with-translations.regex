@@ -484,8 +484,8 @@
 | [ {kacha} "[" "VRoot" "]" "[" "=mandar,soltar" "]" ] :  {kacha}
 | [ {k'achi} "[" "VRoot" "]" "[" "=cortar" "]" ] :  {k'achi}
 | [ {kachu} "[" "VRoot" "]" "[" "=torcer" "]" ] :  {kachu}
-| [ {k'aha} "[" "VRoot" "]" "[" "=hacer_calor" "]" ] :  {k'aha}
-| [ {k'aha} "[" "VRoot" "]" "[" "=hacer_calor" "]" ] :  {kaha}
+| [ {k'aqa} "[" "VRoot" "]" "[" "=hacer_calor" "]" ] :  {k'aha}
+| [ {k'aqa} "[" "VRoot" "]" "[" "=hacer_calor" "]" ] :  {kaha}
 | [ {kaka} "[" "VRoot" "]" "[" "=cagar" "]" ] :  {kaka}
 | [ {k'aka} "[" "VRoot" "]" "[" "=agrietar" "]" ] :  {k'aka}
 | [ {k'akcha} "[" "VRoot" "]" "[" "=apretar_tejido" "]" ] :  {k'akcha}
