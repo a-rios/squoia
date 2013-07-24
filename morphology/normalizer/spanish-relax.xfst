@@ -38,30 +38,36 @@
 
       define UpperCase [ a (->) A,b (->) B,c (->) C,d (->) D,e (->) E,f (->) F,g (->) G,h (->) H,i (->) I,j (->) J,k (->) K,l (->) L,m (->) M,n (->) N,o (->) O,p (->) P,q (->) Q,r (->) R,s (->) S,t (->) T,u (->) U,v (->) V,w (->) W,x (->) X,y (->) Y,z (->) Z,ñ (->) Ñ];
 
-       #---------------------------#
+      #---------------------------#
        # alternative orthographies #
        #---------------------------#
 
-      #-------------------------------------------------------------------#
-      # Ersetze optional u durch o und i durch e, falls in Umgebung von q #
-      #-------------------------------------------------------------------#
-
-      define Allophone [ u (->) o||  _  (s|t|n|r|l|"@KU"|"@PU"|"@MU"|"@RQU") q, q (s|t|n|r|h|l|') _  , _ (s|t|n|r|l|"@KU"|"@PU"|"@MU"|"@RQU"){cc}, {cc}(s|t|n|r|h|l|') _ ] .o. [i (->) e || _ (s|t|n|r|h|l|"@PTI"|"@CHI"|"@YSI") q, q (s|t|n|r|l|ll|h|') _ , _ (s|t|n|r|h|l|"@PTI"|"@CHI"|"@YSI"){cc}, {cc}(s|t|n|r|l|ll|') _  ];
-
-
-       define Orthography1 [ {q} (->) {cc}, {Q} (->) {Cc}];
-       define Orthography2 [ {wi} (->) {hui}, {Wi} (->) {Hui}  ];
-       define Orthography3 [ {wa} (->) {hua}, {Wa} (->) {Hua} ];
-       define Orthography4 [ {wa} (->) {gua}, {Wa} (->) {Gua}];
-       define Orthography5 [ {w} (->) {u} || {a}_ ];
-       define Orthography6 [ {h} (->) {j}, {H} (->) {J} ];
-       define Orthography7 [ {k} (->) {j} || Vowel_];
-       define Orthography8 [ {ch} (->) {ts}, {Ch} (->) {Ts} ];
-       define Orthography9 [ {ph} (->) {f}];
-       define Orthography10 [ {w} (->) {u} || Vowel _ ];
-       define Orthography11 [ {q} (->) {j} || Vowel_];
+       # dialecatal variations
+       define Orthography1 [ {ch} (->) {ts}, {Ch} (->) {Ts} ];
        
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 ];
+       # spanish Orthographies
+       define Orthography2 [ {q} (->) {cc}, {Q} (->) {Cc}, q (->) {ck}];
+       define Orthography3 [ {wi} (->) {hui}, {Wi} (->) {Hui}  ];
+       define Orthography4 [ {wa} (->) {hua}, {Wa} (->) {Hua} ];
+       define Orthography5 [ {wa} (->) {gua}, {Wa} (->) {Gua}];
+       define Orthography6 [ {w} (->) {u} || Vowel _ ];
+       define Orthography7 [ {k} (->) {qu} || _ [i|e] ];
+       define Orthography8 [ {k} (->) {c} || _ ~$[i|e] ];
+       define Orthography9 [ {ch'} (->) {chch}, {ch'} (->) {chh}, s (->) {ss}, {chh} (->) {ch} , {chh} (->) {chch}];
+       define Orthography10 [ {q'} (->) {qq} , {q'} (->) {kc} , {qh} (->) {kc} , {q'i} (->) {qque}, {qi} (->) {qque} ];
+       define Orthography11 [ {t'} (->) {tt} , {k'} (->) {kc} , {th} (->) {tj}];
+       define Orthography12 [ {k'} (->) {kk} ,{kh} (->) {cj} ];
+       define Orthography13 [ {p'} (->) {pp} , {ph} (->) {pj}];
+       define Orthography14 [ {y} (->) {i} , {iy} (->) i, {yku} (->) {yqu}, {yki} (->) {iqui}];
+       define Orthography15 [ n (->) m || _ p];
+       
+       # fricatives in syllable coda
+       define Orthography16 [ {h} (->) {j}, {H} (->) {J} ];
+       define Orthography17 [ [{k}|{q}] (->) {j} || Vowel_ ];       
+       define Orthography18 [ {ph} (->) {f}];     
+       
+       
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 ];
 
 
        define QuechuaOrtho Allophone .o. Orthography;
