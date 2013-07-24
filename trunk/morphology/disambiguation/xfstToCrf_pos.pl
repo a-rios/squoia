@@ -30,7 +30,7 @@ unless($mode eq '-test' or $mode eq '-train' or !$mode){
 my @words;
 my $newWord=1;
 my $index=0;
-my $hasPAS =0;
+#my $hasPAS =0;
 my $hasMdirect =0;
 
 while(<STDIN>){
@@ -52,10 +52,10 @@ while(<STDIN>){
 			#print $form."\n";
 		}
 		
-		if($analysis =~ /\@PAS/){
-			$hasPAS =1;
-			#print STDERR "has pas\n";
-		}
+#		if($analysis =~ /\@PAS/){
+#			$hasPAS =1;
+#			#print STDERR "has pas\n";
+#		}
 		if($analysis =~ /\@mMI/){
 			$hasMdirect =1;
 		}
@@ -152,7 +152,7 @@ my %xfstwordsPos = %$xfstWordsRefPos;
 # -if direct evidential suffix occurs as -m -> delete all analyses of -n as DirE (can only be 3.Sg.Poss or 3.Sg.Subj)
 # -if additive suffix ocurrs as -pas -> delete all analyses of -pis as additive (must be Loc + IndE in this case)
 
-if($hasMdirect or $hasPAS)
+if($hasMdirect)
 {
 	foreach my $word (@words)
 	{
@@ -170,17 +170,17 @@ if($hasMdirect or $hasPAS)
 					splice (@{$analyses},$j,1);	
 					$j--;
 				}
-				# keep only analysis with pas@PAS[Amb][+Add]
-				if($hasPAS && $string =~ /\Qpas[Amb][+Add]\E/ && scalar(@$analyses) > 1)
-				{
-					print STDERR "$form: delete: $string\n";
-					#print STDERR "delete: $allmorphs\n";
-					splice (@{$analyses},$j,1);	
-					$j--;
-				}
+#				# keep only analysis with pas@PAS[Amb][+Add]
+#				if($hasPAS && $string =~ /\Qpas[Amb][+Add]\E/ && scalar(@$analyses) > 1)
+#				{
+#					print STDERR "$form: delete: $string\n";
+#					#print STDERR "delete: $allmorphs\n";
+#					splice (@{$analyses},$j,1);	
+#					$j--;
+#				}
 				# delete Flags "@mMI" and "@PAS"
 				$string =~ s/\@mMI//g;
-				$string =~ s/\@PAS//g;
+				#$string =~ s/\@PAS//g;
 				$analysis->{'string'} = $string;
 		}
 	}

@@ -52,28 +52,31 @@
        # alternative orthographies #
        #---------------------------#
 
-       define Orthography1 [ {q} (->) {cc}, {Q} (->) {Cc}];
-       define Orthography2 [ {wi} (->) {hui}, {Wi} (->) {Hui}  ];
-       define Orthography3 [ {wa} (->) {hua}, {Wa} (->) {Hua} ];
-       define Orthography4 [ {wa} (->) {gua}, {Wa} (->) {Gua}];
-       define Orthography5 [ {w} (->) {u} || {a}_ ];
-       define Orthography6 [ {h} (->) {j}, {H} (->) {J} ];
-       define Orthography7 [ {k} (->) {j} || Vowel_];
-       define Orthography8 [ {ch} (->) {ts}, {Ch} (->) {Ts} ];
-       define Orthography9 [ {ph} (->) {f}];
-       define Orthography10 [ {w} (->) {u} || Vowel _ ];
-       define Orthography11 [ {q} (->) {j} || Vowel_];
-       define Orthography12 [ {k} (->) {qu} || _ [i|e] ];
-       define Orthography13 [ {k} (->) {c} || _ [a|o|u]];
-       define Orthography14 [ {ch'} (->) {chch} || _];
-       define Orthography15 [ {q'} (->) {qq} , {q'i} (->) {qque} ];
-       define Orthography16 [ {t'} (->) {tt} ];
-       define Orthography17 [ {kh} (->) {cj} ];
-       define Orthography18 [ {y} (->) {i} ||Vowel _ ];
-       define Orthography19 [ {iy} (->) i];
+       # dialecatal variations
+       define Orthography1 [ {ch} (->) {ts}, {Ch} (->) {Ts} ];
        
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17.o. Orthography18.o. Orthography19 ];
-
+       # spanish Orthographies
+       define Orthography2 [ {q} (->) {cc}, {Q} (->) {Cc}, q (->) {ck}];
+       define Orthography3 [ {wi} (->) {hui}, {Wi} (->) {Hui}  ];
+       define Orthography4 [ {wa} (->) {hua}, {Wa} (->) {Hua} ];
+       define Orthography5 [ {wa} (->) {gua}, {Wa} (->) {Gua}];
+       define Orthography6 [ {w} (->) {u} || Vowel _ ];
+       define Orthography7 [ {k} (->) {qu} || _ [i|e] ];
+       define Orthography8 [ {k} (->) {c} || _ ~$[i|e] ];
+       define Orthography9 [ {ch'} (->) {chch}, {ch'} (->) {chh}, s (->) {ss}, {chh} (->) {ch} , {chh} (->) {chch}];
+       define Orthography10 [ {q'} (->) {qq} , {q'} (->) {kc} , {qh} (->) {kc} , {q'i} (->) {qque}, {qi} (->) {qque} ];
+       define Orthography11 [ {t'} (->) {tt} , {k'} (->) {kc} , {th} (->) {tj}];
+       define Orthography12 [ {k'} (->) {kk} ,{kh} (->) {cj} ];
+       define Orthography13 [ {p'} (->) {pp} , {ph} (->) {pj}];
+       define Orthography14 [ {y} (->) {i} , {iy} (->) i, {yku} (->) {yqu}, {yki} (->) {iqui}];
+       define Orthography15 [ n (->) m || _ p];
+       
+       # fricatives in syllable coda
+       define Orthography16 [ {h} (->) {j}, {H} (->) {J} ];
+       define Orthography17 [ [{k}|{q}] (->) {j} || Vowel_ ];       
+       define Orthography18 [ {ph} (->) {f}];     
+              
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 ];
 
        define QuechuaOrtho Allophone .o. Orthography;
 
@@ -207,10 +210,11 @@
        #----------------------------------------------------------------------------------------------#
        define pupa [ {pu}"@PU" -> {pa}"@PU" ||  _  ?* ["@KU"|"@MU"] ];
 
-       #-----------------------------------------------------------------------#
-       # ku reflexive --> ka before chi and mu and pu (possibley before na (?) #
-       #-----------------------------------------------------------------------#
-       define kuka [ {ku}"@KU" -> {ka}"@KU" ||  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
+       #--------------------------------------------------------------------------#
+       # ku reflexive --> ka before chi and mu and pu (possibley before na (?)    #
+       # this rule is optional in relax, sequences such as ku-chi appear in texts # 
+       #--------------------------------------------------------------------------#
+       define kuka [ {ku}"@KU" (->) {ka}"@KU" ||  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
 
    define VerbRulesLower rqurqa1 .o. rqurqa2  .o. rqurqa3 .o. rqurqa4 .o. ykuyka1 .o. ykuyka2  .o. mpuDIR .o. pupa .o. kuka ;
 
@@ -292,9 +296,9 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        #        #
        ##########
 
-       define VRootQ @re"vroot-with-translations.regex" .o. QuechuaOrtho;
+       define VRootQ @re"vroot-with-translations.regex" ;
        define VRootES @re"vroot-es.regex" .o. SpanOrtho;
-       define VRootTrans @re"vroot-trans-with-translations.regex" .o. QuechuaOrtho;  
+       define VRootTrans @re"vroot-trans-with-translations.regex" ;  
 
        define VROOT [VRootQ|VRootES];
 
@@ -306,7 +310,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=6 DB @re"v-v-6-norm.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
 
-    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. QuechuaOrtho;
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower ;
 
 
 #####################################################################################
@@ -317,11 +321,11 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        #       #
        #########
 
-       define NRootQ @re"nroot-with-translations.regex"  .o. QuechuaOrtho;
+       define NRootQ @re"nroot-with-translations.regex" ;
        define NRootES @re"nroot-es.regex" .o. SpanOrtho ;
-       define NRootNUM  @re"nroot-num.regex"   .o. QuechuaOrtho;
-       define NRootINDEF @re"nroot-indef-with-translations.regex" .o. QuechuaOrtho;
-       define NRootCMP @re"nroot-cmp-with-translations.regex" .o. QuechuaOrtho;
+       define NRootNUM  @re"nroot-num.regex"  ;
+       define NRootINDEF @re"nroot-indef-with-translations.regex" ;
+       define NRootCMP @re"nroot-cmp-with-translations.regex" ;
 
        define NROOT [NRootQ|NRootES|NRootNUM|NRootINDEF];
 
@@ -335,7 +339,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define N=N=7 DB @re"n-n-7.regex" ;
        define kamaDist [ "[" "^DB" "]" "[" "--" "]" {kama}  "[" "Cas" "]" "[" "+Dist" "]"] : {kama};
 
-      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  .o. QuechuaOrtho ;
+      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  ;
      
 ######################################################################################
 
@@ -453,7 +457,7 @@ define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
        define PrnInterrog @re"prninterrog.regex";
        define PrnInterrogInfl [PrnInterrog (N=N=1) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} (N=N=7)^{0,2}];
 
-define Prn [PrnPersInfl|PrnDemInfl|PrnInterrogInfl] .o. QuechuaOrtho;
+define Prn [PrnPersInfl|PrnDemInfl|PrnInterrogInfl] ;
 
 #########################################################################
 
@@ -487,7 +491,7 @@ define Prn [PrnPersInfl|PrnDemInfl|PrnInterrogInfl] .o. QuechuaOrtho;
        define ParticleVerbNoun [verbalizableParticle NtoV VerbalSuffixesBeforeNS [VtoN|VtoNfinal] (N=N=2) (N=N=3) (HonAff) (N=N=4) (N=N=5) (N=N=6)^{0,2} (N=N=7)];
      
 
-define Particles VerbRulesLower .o. [[Particle|ParticleBasic|ParticleVerb|ParticleVerbNoun]] .o. VerbRulesUpper .o. QuechuaOrtho;
+define Particles VerbRulesLower .o. [[Particle|ParticleBasic|ParticleVerb|ParticleVerbNoun]] .o. VerbRulesUpper ;
 
 #########################################################################
 
@@ -633,10 +637,10 @@ define NITAQ [ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" 
 ######################################################################################
 
 define preWord IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. AmbiRules .o. UpperCase;
-
 define Word  FeatRestr  .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-
 read regex Cleanup2 .o. LexRestr .o. Word;
 
+#define Word  [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. QuechuaOrtho .o. Accent .o. UpperCase;
+#read regex Cleanup2  .o. Word;
 
 save stack normalizer-relax.fst
