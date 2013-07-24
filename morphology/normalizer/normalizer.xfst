@@ -5,7 +5,7 @@
 # yachachinasuykikupaq yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS][+Obl][^DB][--]suykiku[NPers][+1.Pl.Excl.Subj_2.Sg.Obj]
 # -upallarapuyku LLAra
 # compile without -sa progressive! too ambiguous
-# -wanqaku: either 1.pl.incl.obj, 3.subj, or 1.sg.obj, 3.pl,subj
+# -rqakun -> rqaku -n / -rqa -ku -n
 
        #derivation boundary
        define DB [[ "[" "^DB" "]"] :0];
@@ -138,7 +138,8 @@
        #-----------------------------------------------------------------------------------------------------------------------------#
        # if in lower side {rqu} as {rqa}, {pu} as {pa} etc. -> we want those forms to appear on the upper side as well               #
        # (otherwise rqa/pa would appear as rqu/pu in the output, which would be wrong given the morphological context of these forms #
-       # for normalizer: rewrite ru as rqu and ra as rqa, respectivly (TODO: as well yu/yku, ya/yka?                                 #
+       # for normalizer: rewrite ru as rqu and ra as rqa, respectivly, same with  yu/yku, ya/yka                                     #
+       # NOTE: sequence -rqa-ku will be normalized to -rqu-ku !                                                                      #
        #-----------------------------------------------------------------------------------------------------------------------------#
 
        define rqurqa5 [ {rqa}"+rqu+" <- {rqu}"+rqu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
@@ -163,7 +164,7 @@
        define rqurqa1 [ {rqu}"@RQU"-> {rqa}"@RQU"  || _  ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa2 [ {ru}"@RQU"-> {ra}"@RQU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa3 [ {rqu}"@RQU" (->) {rqa}"@RQU"  || _  ?* "@KU"];
-       define rqurqa4 [ {ru}"@RQU" (->) {rqa}"@RQU" || _ ?* "@KU"];      
+       define rqurqa4 [ {ru}"@RQU" (->) {ra}"@RQU" || _ ?* "@KU"];      
 
        #--------------------------------------------------------------------------------------#
        # -yku becomes -yka before -mu, -pu, -ysi, -chi, -ri, -cha                             #
@@ -462,7 +463,7 @@ define Prn [PrnPersInfl|PrnDemInfl|PrnInterrogInfl] .o. QuechuaOrtho;
        define ParticleVerbNoun [verbalizableParticle NtoV VerbalSuffixesBeforeNS [VtoN|VtoNfinal] (N=N=2) (N=N=3) (HonAff) (N=N=4) (N=N=5) (N=N=6)^{0,2} (N=N=7)];
      
 
-define Particles VerbRulesLower .o. [[Particle|ParticleBasic|ParticleVerb|ParticleVerbNoun]] .o. VerbRulesUpper .o. QuechuaOrtho;
+define Particles VerbRulesUpper .o. [[Particle|ParticleBasic|ParticleVerb|ParticleVerbNoun]] .o. VerbRulesLower .o. QuechuaOrtho;
 
 #########################################################################
 
@@ -534,7 +535,7 @@ define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"
 define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" ]];
 
 # verbal derivation 2: paku, pamu, yman, ykacha, yuq, saq (#saq, if -sa is allowed as progressive allomorph (Bolivian Quechua) TODO: allow and disambiguate later??), ptin (#-pti -> Ayacuchano, but -n as DirE, only Cuzqueño), stin (-stin, not as -sti -n (3.Sg.Subj, or DirE))
-define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku} | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" |"+yu+" %["VDeriv"%] %["+Aff"%] %["^DB"%] %["--"%] q %["NS"  | "@SAPROG"?*"+Ag" | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
+define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku} | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" |"+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"  | "@SAPROG"?*"+Ag" | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
 
 # independent suffixes: pas, taq, niraq
 define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %["+IndE" | "@TA" ?* "@GENq"| {nira} %["NDeriv"%] ?* "@GENq" | "Part_Disc" ?* "+Disc"  ]] ;
@@ -613,9 +614,9 @@ define NITAQ [ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" 
 define preWord IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
 
 define Word  FeatRestr  .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#define Word   AMBROOTS .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-
 read regex Cleanup2 .o. LexRestr .o. Word;
+
+#define Word  VERBMORPHS2 .o.  [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 #read regex  Word;
 
 

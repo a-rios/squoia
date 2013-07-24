@@ -377,8 +377,8 @@ elsif($mode eq '-xfst')
 #				}
 				else{
 					$wrongAnalysis++;
-					#print "word: @$g[0]\n";
-					#print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
+					print "word: @$g[0]\n";
+					print "result: ".@$analyses[0]."gold: ".@$g[1]."\n";
 				}
 			}
 			

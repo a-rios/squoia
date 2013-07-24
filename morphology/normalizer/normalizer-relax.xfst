@@ -68,7 +68,7 @@
        define Orthography11 [ {t'} (->) {tt} , {k'} (->) {kc} , {th} (->) {tj}];
        define Orthography12 [ {k'} (->) {kk} ,{kh} (->) {cj} ];
        define Orthography13 [ {p'} (->) {pp} , {ph} (->) {pj}];
-       define Orthography14 [ {y} (->) {i} , {iy} (->) i, {yku} (->) {yqu}, {yki} (->) {iqui}];
+       define Orthography14 [ {y} (->) {i} , {yku} (->) {yqu}, {yki} (->) {iqui}];
        define Orthography15 [ n (->) m || _ p];
        
        # fricatives in syllable coda
@@ -76,7 +76,7 @@
        define Orthography17 [ [{k}|{q}] (->) {j} || Vowel_ ];       
        define Orthography18 [ {ph} (->) {f}];     
               
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 ];
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18];
 
        define QuechuaOrtho Allophone .o. Orthography;
 
@@ -143,9 +143,9 @@
 	define POSS1 [ "@POSS"  => Vowel _  ];
 	define POSS2 [ "@POSSni" => Cons _  ];
 
-      define POSSESSIV POSS1 .o. POSS2;
+        define POSSESSIV POSS1 .o. POSS2;
 
-       define NounRules GENITIV .o. POSSESSIV;
+        define NounRules GENITIV .o. POSSESSIV;
 
        ##########
        # VERBAL #
@@ -166,7 +166,8 @@
        #-----------------------------------------------------------------------------------------------------------------------------#
        # if in lower side {rqu} as {rqa}, {pu} as {pa} etc. -> we want those forms to appear on the upper side as well               #
        # (otherwise rqa/pa would appear as rqu/pu in the output, which would be wrong given the morphological context of these forms #
-       # for normalizer: rewrite ru as rqu and ra as rqa, respectivly (TODO: as well yu/yku, ya/yka?                                 #
+       # for normalizer: rewrite ru as rqu and ra as rqa, respectivly  same with  yu/yku, ya/yka                                     #
+       # NOTE: sequence -rqa-ku will be normalized to -rqu-ku !                                                                      #
        #-----------------------------------------------------------------------------------------------------------------------------#
 
        define rqurqa5 [ {rqa}"+rqu+" <- {rqu}"+rqu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
@@ -191,7 +192,7 @@
        define rqurqa1 [ {rqu}"@RQU"-> {rqa}"@RQU"  || _  ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa2 [ {ru}"@RQU"-> {ra}"@RQU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa3 [ {rqu}"@RQU" (->) {rqa}"@RQU"  || _  ?* "@KU"];
-       define rqurqa4 [ {ru}"@RQU" (->) {rqa}"@RQU" || _ ?* "@KU"];      
+       define rqurqa4 [ {ru}"@RQU" (->) {ra}"@RQU" || _ ?* "@KU"];      
 
        #--------------------------------------------------------------------------------------#
        # -yku becomes -yka before -mu, -pu, -ysi, -chi, -ri, -cha                             #
@@ -559,7 +560,7 @@ define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"
 define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" ]];
 
 # verbal derivation 2: paku, pamu, yman, ykacha, yuq, saq (#saq, if -sa is allowed as progressive allomorph (Bolivian Quechua) TODO: allow and disambiguate later??), ptin (#-pti -> Ayacuchano, but -n as DirE, only Cuzqueño), stin (-stin, not as -sti -n (3.Sg.Subj, or DirE))
-define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku} | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" |"+yu+" %["VDeriv"%] %["+Aff"%] %["^DB"%] %["--"%] q %["NS"  | "@SAPROG"?*"+Ag" | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
+define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku} | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" |"+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"  | "@SAPROG"?*"+Ag" | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
 
 # independent suffixes: pas, taq, niraq
 define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %["+IndE" | "@TA" ?* "@GENq"| {nira} %["NDeriv"%] ?* "@GENq" | "Part_Disc" ?* "+Disc"  ]] ;
@@ -637,7 +638,8 @@ define NITAQ [ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" 
 ######################################################################################
 
 define preWord IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules .o. AmbiRules .o. UpperCase;
-define Word  FeatRestr  .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+
+define Word  FeatRestr  .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1 .o. QuechuaOrtho  .o. Allophone .o. Accent .o. UpperCase;
 read regex Cleanup2 .o. LexRestr .o. Word;
 
 #define Word  [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. QuechuaOrtho .o. Accent .o. UpperCase;

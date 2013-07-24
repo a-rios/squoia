@@ -6,7 +6,7 @@ Sikuwani	Sikuwani[NP]
 
 runa	runa[NRoot][=ser_humano]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hak'upi	Hak'u[NRoot][=harina,suave][^DB][--]pi[Cas][+Loc]
 
@@ -22,7 +22,7 @@ kasqa	ka[VRoot][=ser][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaysi	Chay[PrnDem][^DB][--]si[Amb][+IndE]
 
@@ -44,7 +44,7 @@ kasqanrayku	ka[VRoot][=ser][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -86,7 +86,7 @@ qullqichananpaq	qullqi[NRoot][=plata][--]cha[VS][+Fact][^DB][--]na[NS][+Obl][^DB
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Huq	Huk[NRootNUM]
 
@@ -104,7 +104,7 @@ pusanakusqaku	pusa[VRoot][=llevar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Unaymantañas	Una[VRoot][=tardar][^DB][--]y[NS][+Inf][^DB][--]manta[Cas][+Abl][^DB][--]ña[Amb][+Disc][^DB][--]s[Amb][+IndE]
 
@@ -114,7 +114,7 @@ risqaku	ri[VRoot][=ir][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Kusqa	Kusqa	+?
 
@@ -138,7 +138,7 @@ rantikuqninpata	ranti[VRoot][=comprar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[N
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wak	Wak[PrnDem]
 
@@ -150,7 +150,7 @@ hak'uwan	hak'u[NRoot][=harina,suave][^DB][--]wan[Cas][+Con_Inst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -178,7 +178,7 @@ runataqa	runa[NRoot][=ser_humano][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Purisqankuppis	Puri[VRoot][=andar][^DB][--]sqa[NS][+Perf][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]q[Cas][+Gen][^DB][--]pi[Cas][+Loc][^DB][--]s[Amb][+IndE]
 
@@ -190,7 +190,7 @@ sukhayanña	sukha[NRoot][=en_la_tarde][--]ya[VS][+Trs][^DB][--]n[VPers][+3.Sg.Su
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sullka	Sullk'a[NRoot][=menor]
 
@@ -200,7 +200,7 @@ inti	inti[NRoot][=sol]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -230,7 +230,7 @@ runa	runa[NRoot][=ser_humano]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mayraqchá	May[PrnInterr][=dónde][^DB][--]raq[Amb][+Cont][^DB][--]chá[Amb][+Asmp_Emph]
 
@@ -246,7 +246,7 @@ nichkan	ni[VRoot][=decir][^DB][--]chka[Asp][+Prog][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -264,7 +264,7 @@ Manan	Mana[Part_Neg][^DB][--]n[Amb][+DirE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Kayllañan	Kay[PrnDem][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ña[Amb][+Disc][^DB][--]n[Amb][+DirE]
 
@@ -282,7 +282,7 @@ wasin	wasi[NRoot][=casa][^DB][--]n[NPers][+3.Sg.Poss]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Nispas	Ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -290,7 +290,7 @@ pusan	pusa[VRoot][=llevar][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Manas	Mana[Part_Neg][^DB][--]s[Amb][+IndE]
 
@@ -300,7 +300,7 @@ samakuyta	sama[VRoot][=descansar,respirar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Qhawariqtinpis	Qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pis[Amb][+Add]
 
@@ -316,7 +316,7 @@ wasi	wasi[NRoot][=casa]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -346,7 +346,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Manas	Mana[Part_Neg][^DB][--]s[Amb][+IndE]
 
@@ -364,7 +364,7 @@ hap'inchu	hap'i[VRoot][=agarrar,entender][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]c
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Yanqallapunis	Yanqa[NRoot][=gratis,en_vano,mentira][^DB][--]lla[Amb][+Lim_Aff][^DB][--]puni[Amb][+Def][^DB][--]s[Amb][+IndE]
 
@@ -374,7 +374,7 @@ qallarin	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -384,7 +384,7 @@ risunchu	ri[VRoot][=ir][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Imp][^DB][--]chu[Amb]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Kayllapiña	Kay[PrnDem][^DB][--]lla[Amb][+Lim_Aff][^DB][--]pi[Cas][+Loc][^DB][--]ña[Amb][+Disc]
 
@@ -398,7 +398,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -420,13 +420,13 @@ puñuchkaswan	puñu[VRoot][=dormir][^DB][--]chka[Asp][+Prog][--]swan[VPers][+1.P
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hakulla	Haku[VRoot+2.Sg.Subj.Imp][=venir][^DB][--]lla[Amb][+Lim_Aff]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayarqullasunmi	Chaya[VRoot][=llegar][--]rqu[VDeriv][+Rptn][^DB][--]lla[Amb][+Lim_Aff][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Fut][^DB][--]mi[Amb][+DirE]
 
@@ -442,7 +442,7 @@ hak'uyuq	hak'u[NRoot][=harina,suave][^DB][--]yuq[NDeriv][+Poss]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Anchayta	Ancha[NRoot][=muy,mucho][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
@@ -470,7 +470,7 @@ Hak'uyuqníííííy	Hak'uyuqníííííy	+?
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hak'uyuqníííííy	Hak'uyuqníííííy	+?
 
@@ -484,7 +484,7 @@ waqyakamusqa	waqya[VRoot][=llamar,ladrar][^DB][--]ka[VDeriv][+Rflx_Int][--]mu[VD
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -496,7 +496,7 @@ wañupusqa	wañu[VRoot][=morir][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[Tns_VPers][
 
 ,	,[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 hinaspas	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -514,7 +514,7 @@ haykuspa	hayku[VRoot][=entrar][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -530,7 +530,7 @@ waqyakamuchkanña	waqya[VRoot][=llamar,ladrar][^DB][--]ka[VDeriv][+Rflx_Int][--]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Kusallañan	Kusa[NRoot][=bueno][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ña[Amb][+Disc][^DB][--]n[Amb][+DirE]
 
@@ -546,7 +546,7 @@ hak'uyuq	hak'u[NRoot][=harina,suave][^DB][--]yuq[NDeriv][+Poss]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -560,7 +560,7 @@ mancharikun	mancha[VRoot][=tener_miedo][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sunqunpiqa	Sunqu[NRoot][=corazón][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 
@@ -574,7 +574,7 @@ nichkansi	ni[VRoot][=decir][^DB][--]chka[Asp][+Prog][--]n[VPers][+3.Sg.Subj][^DB
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -592,7 +592,7 @@ waqyakamun	waqya[VRoot][=llamar,ladrar][^DB][--]ka[VDeriv][+Rflx_Int][--]mu[VDer
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sanq'amantas	Sanq'a[NRoot][=nariz_de_animal][^DB][--]manta[Cas][+Abl][^DB][--]s[Amb][+IndE]
 
@@ -600,7 +600,7 @@ waqyakamuchkan	waqya[VRoot][=llamar,ladrar][^DB][--]ka[VDeriv][+Rflx_Int][--]mu[
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -616,7 +616,7 @@ runata	runa[NRoot][=ser_humano][^DB][--]ta[Cas][+Acc]
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -644,7 +644,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hina	Hina[Part_Sim]
 
@@ -658,7 +658,7 @@ Manan	Mana[Part_Neg][^DB][--]n[Amb][+DirE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Rantikuqniyqa	Ranti[VRoot][=comprar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][^DB][--]niy[NPers][+1.Sg.Poss][^DB][--]qa[Amb][+Top]
 
@@ -666,7 +666,7 @@ uywayuqmi	uywa[NRoot][=cría][^DB][--]yuq[NDeriv][+Poss][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -682,7 +682,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -706,7 +706,7 @@ waqyariyakamullantaq	waqya[VRoot][=llamar,ladrar][--]ri[VDeriv][+Inch][--]ya[VDe
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -722,7 +722,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -740,7 +740,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayashankuñaskanpis	Chayashankuñaskanpis	+?
 
@@ -752,7 +752,7 @@ wasinman	wasi[NRoot][=casa][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]man[Cas][+Dat_I
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Uraytas	Uray[NRoot][=bajo][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -786,7 +786,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Manchasqallañas	Mancha[VRoot][=tener_miedo][^DB][--]sqa[NS][+Perf][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ña[Amb][+Disc][^DB][--]s[Amb][+IndE]
 
@@ -812,7 +812,7 @@ hak'uyuqniyuqwanqa	hak'u[NRoot][=harina,suave][^DB][--]yuq[NDeriv][+Poss][^DB][-
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayaspa	Chaya[VRoot][=llegar][^DB][--]spa[NS][+SS]
 
@@ -824,7 +824,7 @@ paskarparikun	paska[VRoot][=soltar][--]rpari[VDeriv][+Int][^DB][--]ku[VDeriv][+R
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Q'ipinkutapis	Q'ipi[NRoot][=bulto][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]ta[Cas][+Acc][^DB][--]pis[Amb][+Add]
 
@@ -838,7 +838,7 @@ uywanta	uywa[NRoot][=cría][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -866,7 +866,7 @@ punkukuna	punku[NRoot][=puerta][--]kuna[Num][+Pl]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -890,7 +890,7 @@ rawkhararquspa	rawkhararquspa	+?
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaytas	Chay[PrnDem][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -898,7 +898,7 @@ pasaykun	pasa[VRootES][--]yku[VDeriv][+Aff][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaypis	Chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]s[Amb][+IndE]
 
@@ -908,7 +908,7 @@ puñuykun	puñu[VRoot][=dormir][--]yku[VDeriv][+Aff][^DB][--]n[VPers][+3.Sg.Subj
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -940,7 +940,7 @@ chaypi	chay[PrnDem][^DB][--]pi[Cas][+Loc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hina	Hina[Part_Sim]
 
@@ -958,7 +958,7 @@ Hak'uyuqniííííy	Hak'uyuqniííííy	+?
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Siminchiktaqa	Simi[NRoot][=boca][^DB][--]nchik[NPers][+1.Pl.Incl.Poss][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -978,7 +978,7 @@ aysariykuchkaqta	aysa[VRoot][=llevar_en_la_mano,pesar,tirar][--]ri[VDeriv][+Inch
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Runaqa	Runa[NRoot][=ser_humano][^DB][--]qa[Amb][+Top]
 
@@ -1010,7 +1010,7 @@ astarqakapun	asta[VRoot][=transportar,arrear][--]rqa[VDeriv][+Rptn][^DB][--]ka[V
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Punkullanta	Punku[NRoot][=puerta][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
@@ -1030,7 +1030,7 @@ saqiykapusqa	saqi[VRoot][=dejar][--]yka[VDeriv][+Aff][--]pu[VDeriv][+Rgr_Iprs][^
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -1056,7 +1056,7 @@ tiyasqa	tiya[VRoot][=haber,estar,habitar,estar_sentado][^DB][--]sqa[Tns_VPers][+
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -1082,7 +1082,7 @@ kukuchiqa	kukuchi[NRoot][=fantasma][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -1118,7 +1118,7 @@ thunirqun	thuni[VRoot][=destruir][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.S
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Haykuspa	Hayku[VRoot][=entrar][^DB][--]spa[NS][+SS]
 
@@ -1138,7 +1138,7 @@ hak'uyuqta	hak'u[NRoot][=harina,suave][^DB][--]yuq[NDeriv][+Poss][^DB][--]ta[Cas
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ch'ullallatas	Ch'ulla[NRoot][=impar,rocío][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -1160,7 +1160,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymantaqa	Chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -1202,7 +1202,7 @@ kukuchiqa	kukuchi[NRoot][=fantasma][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -1222,7 +1222,7 @@ tiyachkan	tiya[VRoot][=haber,estar,habitar,estar_sentado][^DB][--]chka[Asp][+Pro
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Khatatataspas	Khatatata[VRoot][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -1248,7 +1248,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Illariqmansi	Illa[VRoot][=amanecer,brillar][--]ri[VDeriv][+Inch][^DB][--]q[NS][+Ag][^DB][--]man[Cas][+Dat_Ill][^DB][--]si[Amb][+IndE]
 
@@ -1258,7 +1258,7 @@ kapun	ka[VRoot][=ser][--]pu[VDeriv][+Rgr_Iprs][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Manas	Mana[Part_Neg][^DB][--]s[Amb][+IndE]
 
@@ -1266,7 +1266,7 @@ hamunpaschu	hamu[VRoot][=venir][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]pas[Amb][+A
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -1302,7 +1302,7 @@ uyarikapunchu	uya[VRoot][=entender][--]ri[VDeriv][+Inch][^DB][--]ka[VDeriv][+Rfl
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tutamantaqa	Tuta[NRoot][=noche][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -1322,7 +1322,7 @@ runaqa	runa[NRoot][=ser_humano][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 "	"[$.]
 
@@ -1352,7 +1352,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -1366,7 +1366,7 @@ t'ukullamanta	t'uku[NRoot][=meditabundo,apoplejía][^DB][--]lla[Amb][+Lim_Aff][^
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -1386,7 +1386,7 @@ qhurquykuchkasqa	qhurqu[VRoot][=roncar][--]yku[VDeriv][+Aff][^DB][--]chka[Asp][+
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -1412,7 +1412,7 @@ kachkasqa	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][^DB][--]sqa[Tns_VPers][+3.Sg.
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -1438,7 +1438,7 @@ punkuta	punku[NRoot][=puerta][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaytas	Chay[PrnDem][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -1448,7 +1448,7 @@ kanaykusqa	kana[VRoot][=quemar][--]yku[VDeriv][+Aff][^DB][--]sqa[Tns_VPers][+3.S
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaypis	Chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]s[Amb][+IndE]
 
@@ -1458,7 +1458,7 @@ rawraykachisqa	rawra[VRoot][=arder][--]yka[VDeriv][+Aff][^DB][--]chi[VDeriv][+Ca
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymantas	Chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]s[Amb][+IndE]
 
@@ -1478,7 +1478,7 @@ Sikuwanikama	Sikuwani[NP][^DB][--]kama[Cas][+Term]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Kukuchis	kukuchi[NRoot][=fantasma][^DB][--]s[Amb][+IndE]
 
@@ -1534,19 +1534,19 @@ p'unchaykama	p'unchaw[NRoot][=día][^DB][--]kama[Cas][+Term]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Q'illu	Q'illu[NRoot][=amarillo]
 
 qaraywamanta	qaraywa[NRoot][=lagarto][^DB][--]manta[Cas][+Abl]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Huq	Huk[NRootNUM]
 
@@ -1568,7 +1568,7 @@ chay	chay[PrnDem]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sapa	Sapa[NRoot][=cada,solo]
 
@@ -1588,7 +1588,7 @@ urquta	urqu[NRoot][=cerro,macho][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -1608,7 +1608,7 @@ p'asñawan	p'asña[NRoot][=muchacha][^DB][--]wan[Cas][+Con_Inst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sapa	Sapa[NRoot][=cada,solo]
 
@@ -1618,7 +1618,7 @@ q'ipichikuq	q'ipi[VRoot][=llevar][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Qhutunkunamansi	Qhutu[NRoot][=esputo][^DB][--]n[NPers][+3.Poss][--]kuna[Num][+Pl][^DB][--]man[Cas][+Dat_Ill][^DB][--]si[Amb][+IndE]
 
@@ -1628,7 +1628,7 @@ yuyaq	yuya[VRoot][=recordar,pensar][^DB][--]q[NS][+Ag]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Huq	Huk[NRootNUM]
 
@@ -1654,7 +1654,7 @@ p'asñaman	p'asña[NRoot][=muchacha][^DB][--]man[Cas][+Dat_Ill]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sapa	Sapa[NRoot][=cada,solo]
 
@@ -1676,7 +1676,7 @@ aparqamusaq	apa[VRoot][=llevar][--]rqa[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^D
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Puskarqapuwankipuni	Puchka[VRoot][=hilar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Iprs][^DB][--]wa[VPers][+1.Obj][^DB][--]nki[VPers][+2.Sg.Subj][^DB][--]puni[Amb][+Def]
 
@@ -1686,7 +1686,7 @@ puskarqapuwankipuni	puchka[VRoot][=hilar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+R
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ñuqapis	Ñuqa[PrnPers+1.Sg][^DB][--]pis[Amb][+Add]
 
@@ -1698,7 +1698,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chirillaqtinsi	Chiri[VRoot][=estar_frío][^DB][--]lla[Amb][+Lim_Aff][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]si[Amb][+IndE]
 
@@ -1708,7 +1708,7 @@ rimaq	rima[VRoot][=hablar][^DB][--]q[NS][+Ag]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sapa	Sapa[NRoot][=cada,solo]
 
@@ -1720,7 +1720,7 @@ waturikuq	watu[VRoot][=adivinar,hechizar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sapa	Sapa[NRoot][=cada,solo]
 
@@ -1738,7 +1738,7 @@ kumparayaq	k'umpa[VRoot][=empujar,formar][--]raya[VDeriv][+Perdur][^DB][--]q[NS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -1764,7 +1764,7 @@ nillantaq	ni[VRoot][=decir][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Su
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -1782,7 +1782,7 @@ willarikuq	willa[VRoot][=contar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_I
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -1814,7 +1814,7 @@ qilla	qilla[NRoot][=perezoso]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Manan	Mana[Part_Neg][^DB][--]n[Amb][+DirE]
 
@@ -1830,7 +1830,7 @@ nispas	ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -1850,7 +1850,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -1864,7 +1864,7 @@ atiykichikmanchu	ati[VRoot][=poder,vencer][^DB][--]ykichik[VPers][+1.Sg.Subj_2.P
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Rumi	Rumi[NRoot][=piedra]
 
@@ -1886,7 +1886,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -1902,7 +1902,7 @@ yuyaykun	yuya[VRoot][=recordar,pensar][--]yku[VDeriv][+Aff][^DB][--]n[VPers][+3.
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -1922,7 +1922,7 @@ tiyachichkasaq	tiya[VRoot][=haber,estar,habitar,estar_sentado][^DB][--]chi[VDeri
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaqa	Hina[Part_Sim][^DB][--]qa[Amb][+Top]
 
@@ -1954,7 +1954,7 @@ masin	masi[NRoot][=compañero][^DB][--]n[NPers][+3.Sg.Poss]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -1982,7 +1982,7 @@ qaqallantas	qaqa[NRoot][=roca][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPers][+3.Sg
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -2004,7 +2004,7 @@ uyanpamanta	uya[NRoot][=cara][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pa[Cas][+Gen]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hamuq	Hamu[VRoot][=venir][^DB][--]q[NS][+Ag]
 
@@ -2038,7 +2038,7 @@ p'asñawan	p'asña[NRoot][=muchacha][^DB][--]wan[Cas][+Con_Inst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspa	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS]
 
@@ -2052,7 +2052,7 @@ p'asñaqa	p'asña[NRoot][=muchacha][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -2082,7 +2082,7 @@ nispas	ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -2100,7 +2100,7 @@ pakayniyllan	paka[VRoot][=ocultar][^DB][--]y[NS][+Inf][^DB][--]niy[NPers][+1.Sg.
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tariparquspaqa	Tari[VRoot][=encontrar][--]pa[VDeriv][+Rep][--]rqu[VDeriv][+Rptn][^DB][--]spa[NS][+SS][^DB][--]qa[Amb][+Top]
 
@@ -2112,7 +2112,7 @@ kutirirqakapusqanmanta	kuti[VRoot][=volver][--]ri[VDeriv][+Inch][--]rqa[VDeriv][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -2130,7 +2130,7 @@ Atakay	Ataka[NRoot][=pata][^DB][--]y[NPers][+1.Sg.Poss]
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Imaynataq	Imayna[PrnInterr][=cómo][^DB][--]taq[Amb][+Con_Intr]
 
@@ -2144,7 +2144,7 @@ kachkarqanki	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][--]rqa[Tns][+NPst][--]nki[
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Qaraywataq	Qaraywa[NRoot][=lagarto][^DB][--]taq[Amb][+Con_Intr]
 
@@ -2158,7 +2158,7 @@ nispas	ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mancharikullantaqsi	Mancha[VRoot][=tener_miedo][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]taq[Amb][+Con_Intr][^DB][--]si[Amb][+IndE]
 
@@ -2168,7 +2168,7 @@ p'asñaqa	p'asña[NRoot][=muchacha][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Qharitas	Qhari[NRoot][=macho,varón][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -2184,7 +2184,7 @@ qaraywatachu	qaraywa[NRoot][=lagarto][^DB][--]ta[Cas][+Acc][^DB][--]chu[Amb][+In
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Aknas	Akna[NRoot][=efecto][^DB][--]s[Amb][+IndE]
 
@@ -2208,7 +2208,7 @@ p'asñaqa	p'asña[NRoot][=muchacha][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -2222,7 +2222,7 @@ nillantaq	ni[VRoot][=decir][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Su
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Manachus	Mana[Part_Neg][^DB][--]chu[Amb][+Intr_Neg][^DB][--]s[Amb][+IndE]
 
@@ -2234,7 +2234,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -2260,7 +2260,7 @@ Sipirqusunmi	Sipi[VRoot][=romper_la_nuca][--]rqu[VDeriv][+Rptn][^DB][--]sun[VPer
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Paqarin	Paqarin[NRoot][=mañana]
 
@@ -2278,7 +2278,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -2300,7 +2300,7 @@ sipaskunaqa	sipas[NRoot][=muchacha][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Qhipantin	Qhipa[NRoot][=atrás][^DB][--]ntin[Cas][+Iclsv]
 
@@ -2316,7 +2316,7 @@ k'aspita	k'aspi[NRoot][=palo][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tariparqusqas	Tari[VRoot][=encontrar][--]pa[VDeriv][+Rep][--]rqu[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst][^DB][--]s[Amb][+IndE]
 
@@ -2328,7 +2328,7 @@ masinman	masi[NRoot][=compañero][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]man[Cas][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -2350,7 +2350,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ñawchi	Ñawch'i[NRoot][=agudo]
 
@@ -2366,7 +2366,7 @@ apamusqa	apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[Tns_VPers][+3.S
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -2380,7 +2380,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -2394,7 +2394,7 @@ k'aspita	k'aspi[NRoot][=palo][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ñuqa	Ñuqa[PrnPers+1.Sg]
 
@@ -2434,7 +2434,7 @@ hap'inki	hap'i[VRoot][=agarrar,entender][^DB][--]nki[VPers][+2.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayllapi	Chay[PrnDem][^DB][--]lla[Amb][+Lim_Aff][^DB][--]pi[Cas][+Loc]
 
@@ -2460,7 +2460,7 @@ yachachin	yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPer
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -2480,7 +2480,7 @@ qaraywaman	qaraywa[NRoot][=lagarto][^DB][--]man[Cas][+Dat_Ill]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Achkhatas	Achkha[NRoot][=mucho][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -2490,7 +2490,7 @@ sunturqusqa	suntu[VRoot][=amontonar][--]rqu[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayman	Chay[PrnDem][^DB][--]man[Cas][+Dat_Ill]
 
@@ -2500,7 +2500,7 @@ qaraywataqa	qaraywa[NRoot][=lagarto][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaypis	Chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]s[Amb][+IndE]
 
@@ -2512,7 +2512,7 @@ thallachin	thalla[VRoot][=tenderse][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -2538,7 +2538,7 @@ apayukuspa	apa[VRoot][=llevar][--]yu[VDeriv][+Aff][^DB][--]ku[VDeriv][+Rflx_Int]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -2566,7 +2566,7 @@ qaraywataqa	qaraywa[NRoot][=lagarto][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sat'iyurquspas	Sat'i[VRoot][=introducir][--]yu[VDeriv][+Aff][--]rqu[VDeriv][+Rptn][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -2578,7 +2578,7 @@ k'aspita	k'aspi[NRoot][=palo][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Aknataq	Akna[NRoot][=efecto][^DB][--]taq[Amb][+Con_Intr]
 
@@ -2602,7 +2602,7 @@ saqtay	saqta[VRoot][=desmenuzar][^DB][--]y[NS][+Inf]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Saqtay	Saqta[VRoot][=desmenuzar][^DB][--]y[NS][+Inf]
 
@@ -2610,7 +2610,7 @@ umanpi	uma[NRoot][=cabeza][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 P'asñaqa	P'asña[NRoot][=muchacha][^DB][--]qa[Amb][+Top]
 
@@ -2622,7 +2622,7 @@ umanpikama	uma[NRoot][=cabeza][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Nut'utas	Nut'utas	+?
 
@@ -2632,7 +2632,7 @@ ruwarparipunku	ruwa[VRoot][=hacer][--]rpari[VDeriv][+Int][--]pu[VDeriv][+Rgr_Ipr
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaywansi	Chay[PrnDem][^DB][--]wan[Cas][+Con_Inst][^DB][--]si[Amb][+IndE]
 
@@ -2644,7 +2644,7 @@ qispipun	qispi[VRoot][=aparecer,librarse][--]pu[VDeriv][+Rgr_Iprs][^DB][--]n[VPe
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Kunanqa	Kunan[NRoot][=ahora][^DB][--]qa[Amb][+Top]
 
@@ -2660,17 +2660,17 @@ tiyakapun	tiya[VRoot][=haber,estar,habitar,estar_sentado][^DB][--]ka[VDeriv][+Rf
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tilisitamanta	Tilisita[NP][^DB][--]manta[Cas][+Abl]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Huq	Huk[NRootNUM]
 
@@ -2696,7 +2696,7 @@ tiyapusqa	tiya[VRoot][=haber,estar,habitar,estar_sentado][--]pu[VDeriv][+Rgr_Ipr
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -2710,7 +2710,7 @@ kasqa	ka[VRoot][=ser][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -2730,7 +2730,7 @@ Tilisita	Tilisita[NP]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaqa	Hina[Part_Sim][^DB][--]qa[Amb][+Top]
 
@@ -2738,7 +2738,7 @@ wachakapusqa	wacha[VRoot][=parir][^DB][--]ka[VDeriv][+Rflx_Int][--]pu[VDeriv][+R
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wawankusyá	Wawa[NRoot][=niño][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]s[Amb][+IndE][--]yá[Amb][+Emph]
 
@@ -2756,7 +2756,7 @@ wawacha	wawa[NRoot][=niño][--]cha[NDeriv][+Dim]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaysi	Chay[PrnDem][^DB][--]si[Amb][+IndE]
 
@@ -2780,7 +2780,7 @@ p'unchay	p'unchaw[NRoot][=día]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -2796,7 +2796,7 @@ upaqa	upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Rikurquspas	Rikhu[VRoot][=ver,aparecer][--]rqu[VDeriv][+Rptn][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -2822,7 +2822,7 @@ qhawarimuy	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][--]mu[VDeriv][+Cis_Trs][^DB
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Waqaqtinqa	Waqa[VRoot][=llorar,guardar,proteger][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
 
@@ -2834,7 +2834,7 @@ puñuykipachinki	puñuykipachinki	+?
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Manapuni	Mana[Part_Neg][^DB][--]puni[Amb][+Def]
 
@@ -2848,7 +2848,7 @@ nispas	ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upaqa	Upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
@@ -2856,7 +2856,7 @@ pasasqas	pasa[VRootES][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst][^DB][--]s[Amb][+I
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayaspa	Chaya[VRoot][=llegar][^DB][--]spa[NS][+SS]
 
@@ -2870,7 +2870,7 @@ mullkhusqa	mullkhu[VRoot][=palpar,tocar][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mullkhuqtinqa	Mullkhu[VRoot][=palpar,tocar][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
 
@@ -2880,7 +2880,7 @@ tarirkusqa	tari[VRoot][=encontrar][--]rku[VDeriv][+Dir][^DB][--]sqa[Tns_VPers][+
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tarirquspaqa	Tari[VRoot][=encontrar][--]rqu[VDeriv][+Rptn][^DB][--]spa[NS][+SS][^DB][--]qa[Amb][+Top]
 
@@ -2912,7 +2912,7 @@ puñukuchkaqtin	puñu[VRoot][=dormir][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]chka
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspa	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS]
 
@@ -2924,7 +2924,7 @@ q'alata	q'ala[NRoot][=desnudo][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -2942,7 +2942,7 @@ wawacha	wawa[NRoot][=niño][--]cha[NDeriv][+Dim]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upaqa	Upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
@@ -2962,7 +2962,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -2976,7 +2976,7 @@ willaq	willa[VRoot][=contar][^DB][--]q[NS][+Ag]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Qhatutaqa	Qhatu[NRoot][=mercado][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -3006,7 +3006,7 @@ Tilisita	Tilisita[NP]
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 ¿	¿[$.]
 
@@ -3018,7 +3018,7 @@ uywarqanki	uywa[VRoot][=criar][^DB][--]rqa[Tns][+NPst][--]nki[VPers][+2.Sg.Subj]
 
 ?	?[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wawaq	Wawa[NRoot][=niño][^DB][--]q[Cas][+Gen]
 
@@ -3030,7 +3030,7 @@ q'iyachaykuchkasqa	q'iya[NRoot][=pus][--]cha[VS][+Fact][--]yku[VDeriv][+Aff][^DB
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Imatas	Ima[NRoot][=cosa][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -3046,7 +3046,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayta	Chay[PrnDem][^DB][--]ta[Cas][+Acc]
 
@@ -3060,7 +3060,7 @@ p'uqarqamuni	p'uqa[VRoot][=comprimir,ajustar][--]rqa[VDeriv][+Rptn][--]mu[VDeriv
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymi	Chay[PrnDem][^DB][--]mi[Amb][+DirE]
 
@@ -3080,7 +3080,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -3102,7 +3102,7 @@ Tilisitaqa	Tilisita[NP][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -3122,7 +3122,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -3154,7 +3154,7 @@ imanarqamuchkanmanpasñataqmi	imana[VRoot][=hacer_algo][--]rqa[VDeriv][+Rptn][--
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -3168,7 +3168,7 @@ saqirparispa	saqi[VRoot][=dejar][--]rpari[VDeriv][+Int][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayarkuspaqa	Chaya[VRoot][=llegar][--]rku[VDeriv][+Dir][^DB][--]spa[NS][+SS][^DB][--]qa[Amb][+Top]
 
@@ -3178,7 +3178,7 @@ wawanman	wawa[NRoot][=niño][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]man[Cas][+Dat_
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wawata	Wawa[NRoot][=niño][^DB][--]ta[Cas][+Acc]
 
@@ -3186,7 +3186,7 @@ aysarin	aysa[VRoot][=llevar_en_la_mano,pesar,tirar][--]ri[VDeriv][+Inch][^DB][--
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Khutu	Khutu[NRoot][=frío]
 
@@ -3198,7 +3198,7 @@ kapuchkasqa	ka[VRoot][=ser][--]pu[VDeriv][+Rgr_Iprs][^DB][--]chka[Asp][+Prog][^D
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Umachantas	Uma[NRoot][=cabeza][--]cha[NDeriv][+Dim][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -3216,7 +3216,7 @@ t'uqurayachkasqa	t'uqu[NRoot][=agujero][--]raya[VS][+Char][^DB][--]chka[Asp][+Pr
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mana	Mana[Part_Neg]
 
@@ -3226,7 +3226,7 @@ kapusqachu	ka[VRoot][=ser][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[Tns_VPers][+3.Sg
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -3240,7 +3240,7 @@ waq'ayakusqa	waq'a[NRoot][=loco][--]ya[VS][+Trs][^DB][--]ku[VDeriv][+Rflx_Int][^
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 P'anasqa	P'ana[VRoot][=golpear][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
@@ -3248,7 +3248,7 @@ upataqa	upa[NRoot][=tonto,sordo][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upaqa	Upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
@@ -3278,7 +3278,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -3304,7 +3304,7 @@ wawata	wawa[NRoot][=niño][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -3354,7 +3354,7 @@ Tilisitaqa	Tilisita[NP][^DB][--]qa[Amb][+Top]
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 "	"[$.]
 
@@ -3374,7 +3374,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 "	"[$.]
 
@@ -3388,7 +3388,7 @@ kanqa	ka[VRoot][=ser][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Pisi	Pisi[NRoot][=poco]
 
@@ -3400,7 +3400,7 @@ killaqa	killa[NRoot][=luna][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaypiña	Chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]ña[Amb][+Disc]
 
@@ -3422,7 +3422,7 @@ nispas	ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -3440,7 +3440,7 @@ Tilisita	Tilisita[NP]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upaqa	Upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
@@ -3454,7 +3454,7 @@ qhawananpaq	qhawa[VRoot][=mirar][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Pos
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymansi	Chay[PrnDem][^DB][--]man[Cas][+Dat_Ill][^DB][--]si[Amb][+IndE]
 
@@ -3474,7 +3474,7 @@ hamusqa	hamu[VRoot][=venir][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wasitas	Wasi[NRoot][=casa][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -3490,7 +3490,7 @@ quykuwaychik	qu[VRoot][=dar][--]yku[VDeriv][+Aff][^DB][--]wa[VPers][+1.Obj][^DB]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wakchan	Wakcha[NRoot][=pobre][^DB][--]n[Amb][+DirE]
 
@@ -3512,7 +3512,7 @@ mañakuq	maña[VRoot][=pedir][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -3538,7 +3538,7 @@ nisqa	ni[VRoot][=decir][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -3546,7 +3546,7 @@ Ari	Ari[Part_Affir]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ñuqan	Ñuqa[PrnPers+1.Sg][^DB][--]n[Amb][+DirE]
 
@@ -3564,7 +3564,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaqa	Hina[Part_Sim][^DB][--]qa[Amb][+Top]
 
@@ -3588,7 +3588,7 @@ llakisqa	llaki[VRoot][=estar_triste][^DB][--]sqa[NS][+Perf]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinata	Hina[Part_Sim][^DB][--]ta[Cas][+Acc]
 
@@ -3604,7 +3604,7 @@ watucharquspa	watu[NRoot][=faja,hechizo][--]cha[VS][+Fact][--]rqu[VDeriv][+Rptn]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sarata	Sara[NRoot][=maíz][^DB][--]ta[Cas][+Acc]
 
@@ -3624,7 +3624,7 @@ hurqurqamun	hurqu[VRoot][=sacar][--]rqa[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -3638,7 +3638,7 @@ aysaykachin	aysa[VRoot][=llevar_en_la_mano,pesar,tirar][--]yka[VDeriv][+Aff][^DB
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Machulaqa	Machula[NRoot][=abuelo][^DB][--]qa[Amb][+Top]
 
@@ -3656,7 +3656,7 @@ taytachay	tayta[NRoot][=padre][--]cha[NDeriv][+Dim][^DB][--]y[NPers][+1.Sg.Poss]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Kamaqanchis	Kamaqanchis[NP]
 
@@ -3672,7 +3672,7 @@ nispas	ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ña	Ña[Part_Disc]
 
@@ -3696,7 +3696,7 @@ sayk'usqa	sayk'u[VRoot][=cansarse][^DB][--]sqa[NS][+Perf]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -3724,7 +3724,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -3744,7 +3744,7 @@ Tilisita	Tilisita[NP]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinata	Hina[Part_Sim][^DB][--]ta[Cas][+Acc]
 
@@ -3762,7 +3762,7 @@ hamusqa	hamu[VRoot][=venir][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymanmi	Chay[PrnDem][^DB][--]man[Cas][+Dat_Ill][^DB][--]mi[Amb][+DirE]
 
@@ -3774,7 +3774,7 @@ waqaychapusqaykita	waqa[VRoot][=llorar,guardar,proteger][^DB][--]y[NS][+Inf][--]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Amañayá	Ama[Part_Neg_Imp][^DB][--]ña[Amb][+Disc][^DB][--]yá[Amb][+Emph]
 
@@ -3788,7 +3788,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -3808,7 +3808,7 @@ waturikun	watu[VRoot][=adivinar,hechizar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Waturikuqtinqa	Watu[VRoot][=adivinar,hechizar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
 
@@ -3828,7 +3828,7 @@ hak'u	hak'u[NRoot][=harina,suave]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymanta	Chay[PrnDem][^DB][--]manta[Cas][+Abl]
 
@@ -3842,7 +3842,7 @@ qhawaykun	qhawa[VRoot][=mirar][--]yku[VDeriv][+Aff][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Manas	Mana[Part_Neg][^DB][--]s[Amb][+IndE]
 
@@ -3852,7 +3852,7 @@ khuchi	khuchi[NRoot][=chancho]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaqa	Hina[Part_Sim][^DB][--]qa[Amb][+Top]
 
@@ -3880,7 +3880,7 @@ upataqa	upa[NRoot][=tonto,sordo][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upaqa	Upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
@@ -3904,7 +3904,7 @@ chaskikuchkan	chaski[VRoot][=recibir,aceptar][^DB][--]ku[VDeriv][+Rflx_Int][^DB]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -3914,7 +3914,7 @@ rirqan	ri[VRoot][=ir][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Maynintan	May[PrnInterr][=dónde][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc][^DB][--]n[Amb][+DirE]
 
@@ -3928,7 +3928,7 @@ tapun	tapu[VRoot][=preguntar][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -3944,7 +3944,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -3966,7 +3966,7 @@ upantaqa	upa[NRoot][=tonto,sordo][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Pasarsqas	Pasar[VRootES][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst][^DB][--]s[Amb][+IndE]
 
@@ -3974,7 +3974,7 @@ upaqa	upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Warminpis	Warmi[NRoot][=mujer][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pis[Amb][+Add]
 
@@ -3984,7 +3984,7 @@ pasallasqataqsi	pasa[VRootES][^DB][--]lla[Amb][+Lim_Aff][^DB][--]sqa[Tns_VPers][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -3998,7 +3998,7 @@ tutayaykuchkasqa	tuta[NRoot][=noche][--]ya[VS][+Trs][--]yku[VDeriv][+Aff][^DB][-
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -4022,7 +4022,7 @@ haykurqapunman	hayku[VRoot][=entrar][--]rqa[VDeriv][+Rptn][--]pu[VDeriv][+Rgr_Ip
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Phaway	Phawa[VRoot][=correr,volar][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 
@@ -4032,7 +4032,7 @@ riy	ri[VRoot][=ir][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wisq'amuy	wichq'a[VRoot][=cerrar][--]mu[VDeriv][+Cis_Trs][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 
@@ -4046,7 +4046,7 @@ kharumantaña	kharu[NRoot][=lejos][^DB][--]manta[Cas][+Abl][^DB][--]ña[Amb][+Di
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymantaqa	Chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -4070,7 +4070,7 @@ pacha	pacha[NRoot][=mundo,tiempo]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Haqayñiqpiña	haqay[PrnDem][^DB][--]niq[Cas][+Aprx][^DB][--]pi[Cas][+Loc][^DB][--]ña[Amb][+Disc]
 
@@ -4078,7 +4078,7 @@ suyachkasqayki	suya[VRoot][=esperar][^DB][--]chka[Asp][+Prog][--]sqayki[VPers][+
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ñawpachkasaqmi	Ñawpa[VRoot][=adelantar][^DB][--]chka[Asp][+Prog][--]saq[VPers][+1.Sg.Subj.Fut][^DB][--]mi[Amb][+DirE]
 
@@ -4090,7 +4090,7 @@ kacharparimun	kacha[VRoot][=mandar,soltar][--]rpari[VDeriv][+Int][--]mu[VDeriv][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ña	Ña[Part_Disc]
 
@@ -4106,7 +4106,7 @@ Tilisita	Tilisita[NP]
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -4124,7 +4124,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 T'uqyas	T'uqya[NRoot][=reventón,detonación][^DB][--]s[Amb][+IndE]
 
@@ -4134,7 +4134,7 @@ pasamusqa	pasa[VRootES][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[Tns_VPers][+3.Sg.Sub
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wasitaqa	Wasi[NRoot][=casa][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -4142,7 +4142,7 @@ chayarqunsi	chaya[VRoot][=llegar][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.S
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaypiñas	Chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]ña[Amb][+Disc][^DB][--]s[Amb][+IndE]
 
@@ -4150,7 +4150,7 @@ payqa	pay[PrnPers+3.Sg][^DB][--]qa[Amb][+Top]
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -4176,7 +4176,7 @@ nimuwachkarqan	ni[VRoot][=decir][--]mu[VDeriv][+Cis_Trs][^DB][--]wa[VPers][+1.Ob
 
 ?	?[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -4194,7 +4194,7 @@ An	An	+?
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wasi	Wasi[NRoot][=casa]
 
@@ -4220,7 +4220,7 @@ khakarquspa	khaka[VRoot][=incrustar][--]rqu[VDeriv][+Rptn][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -4234,7 +4234,7 @@ kutirkusqa	kuti[VRoot][=volver][--]rku[VDeriv][+Dir][^DB][--]sqa[Tns_VPers][+3.S
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tilisitaqa	Tilisita[NP][^DB][--]qa[Amb][+Top]
 
@@ -4244,7 +4244,7 @@ qhawarirqakamusqas	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][--]rqa[VDeriv][+Rpt
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -4266,7 +4266,7 @@ upa	upa[NRoot][=tonto,sordo]
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Imapaqmi	Ima[NRoot][=cosa][^DB][--]paq[Cas][+Ben][^DB][--]mi[Amb][+DirE]
 
@@ -4284,7 +4284,7 @@ upantaqa	upa[NRoot][=tonto,sordo][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -4298,7 +4298,7 @@ khakarquspa	khaka[VRoot][=incrustar][--]rqu[VDeriv][+Rptn][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Paqtañataq	Paqta[NRoot][=igual,juntos][^DB][--]ña[Amb][+Disc][^DB][--]taq[Amb][+Con_Intr]
 
@@ -4320,7 +4320,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -4344,7 +4344,7 @@ q'ipintinta	q'ipi[NRoot][=bulto][^DB][--]ntin[Cas][+Iclsv][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinatasyá	Hina[Part_Sim][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE][--]yá[Amb][+Emph]
 
@@ -4366,7 +4366,7 @@ kaqtinsi	ka[VRoot][=ser][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaysi	Chay[PrnDem][^DB][--]si[Amb][+IndE]
 
@@ -4388,7 +4388,7 @@ patapi	pata[NRoot][=al_lado,arriba][^DB][--]pi[Cas][+Loc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -4408,7 +4408,7 @@ pachanarqukuspa	pacha[NRoot][=mundo,tiempo][--]na[VS][+Reub][--]rqu[VDeriv][+Rpt
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upaqa	Upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
@@ -4426,7 +4426,7 @@ p'anaykamusqa	p'ana[VRoot][=golpear][--]yka[VDeriv][+Aff][--]mu[VDeriv][+Cis_Trs
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mankapi	Manka[NRoot][=olla][^DB][--]pi[Cas][+Loc]
 
@@ -4442,7 +4442,7 @@ mikhurqamusqa	mikhu[VRoot][=comer][--]rqa[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mikhuna	Mikhu[VRoot][=comer][^DB][--]na[NS][+Obl]
 
@@ -4458,7 +4458,7 @@ imas	ima[Part_Conec][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Achkhatas	Achkha[NRoot][=mucho][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -4468,7 +4468,7 @@ winakamusqa	wina[VRoot][=meter][^DB][--]ka[VDeriv][+Rflx_Int][--]mu[VDeriv][+Cis
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaqa	Hina[Part_Sim][^DB][--]qa[Amb][+Top]
 
@@ -4488,7 +4488,7 @@ hap'ichikusqa	hap'i[VRoot][=agarrar,entender][^DB][--]chi[VDeriv][+Caus][^DB][--
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -4522,7 +4522,7 @@ qaparisqa	qhapa[VRoot][=gritar][--]ri[VDeriv][+Inch][^DB][--]sqa[Tns_VPers][+3.S
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -4536,7 +4536,7 @@ Upallay	Upa[VRoot][=callarse][^DB][--]lla[Amb][+Lim_Aff][^DB][--]y[VPers][+2.Sg.
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ama	Ama[Part_Neg_Imp]
 
@@ -4546,7 +4546,7 @@ hinata	hina[Part_Sim][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Imapis	Ima[Part_Conec][^DB][--]pis[Amb][+Add]
 
@@ -4560,7 +4560,7 @@ tutapi	tuta[NRoot][=noche][^DB][--]pi[Cas][+Loc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Suwapis	Suwa[NRoot][=ladrón][^DB][--]pis[Amb][+Add]
 
@@ -4576,7 +4576,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Nichkaqtinpis	Ni[VRoot][=decir][^DB][--]chka[Asp][+Prog][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pis[Amb][+Add]
 
@@ -4592,7 +4592,7 @@ upaqa	upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -4604,7 +4604,7 @@ qaparisqa	qhapa[VRoot][=gritar][--]ri[VDeriv][+Inch][^DB][--]sqa[Tns_VPers][+3.S
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -4618,7 +4618,7 @@ wiksallay	wiksa[NRoot][=barriga][^DB][--]lla[Amb][+Lim_Aff][^DB][--]y[NPers][+1.
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 ¡	¡[$.]
 
@@ -4642,7 +4642,7 @@ upallakuspa	upa[VRoot][=callarse][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ku[VDeriv][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -4662,7 +4662,7 @@ nanaqtin	nana[VRoot][=doler][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -4678,7 +4678,7 @@ tiyasqa	tiya[VRoot][=haber,estar,habitar,estar_sentado][^DB][--]sqa[NS][+Perf]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -4708,7 +4708,7 @@ lawataq	lawa[NRoot][=mazamorra][^DB][--]taq[Amb][+Con_Intr]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Taytanchikpa	Tayta[NRoot][=padre][^DB][--]nchik[NPers][+1.Pl.Incl.Poss][^DB][--]pa[Cas][+Gen]
 
@@ -4722,7 +4722,7 @@ llaqwasqaku	llaqwa[VRoot][=lamer][^DB][--]sqaku[VPers][+3.Pl.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Astawansi	As[NRoot][=poco][^DB][--]ta[Cas][+Acc][^DB][--]wan[Cas][+Con_Inst][^DB][--]si[Amb][+IndE]
 
@@ -4746,7 +4746,7 @@ khuyayta	khuya[VRoot][=querer][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaywansi	Chay[PrnDem][^DB][--]wan[Cas][+Con_Inst][^DB][--]si[Amb][+IndE]
 
@@ -4760,7 +4760,7 @@ punkutaqa	punku[NRoot][=puerta][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Willkamayu	Willka[NRoot][=nieto,sagrado][^DB][--]mayu[NRoot][=río]
 
@@ -4776,7 +4776,7 @@ kasqa	ka[VRoot][=ser][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -4794,7 +4794,7 @@ kasqa	ka[VRoot][=ser][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaysi	Chay[PrnDem][^DB][--]si[Amb][+IndE]
 
@@ -4810,7 +4810,7 @@ suwakuna	suwa[NRoot][=ladrón][--]kuna[Num][+Pl]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Punku	Punku[NRoot][=puerta]
 
@@ -4836,7 +4836,7 @@ ayqirikusqa	ayqi[VRoot][=escapar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -4854,7 +4854,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Huqninkus	Huk[NRootNUM][^DB][--]ninku[NPers][+3.Pl.Poss][^DB][--]s[Amb][+IndE]
 
@@ -4872,7 +4872,7 @@ ayqikuskapuni	ayqi[NRoot][=huída][^DB][--]kuska[NRoot][=juntos][^DB][--]puni[Am
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tilisitawan	Tilisita[NP][^DB][--]wan[Cas][+Con_Inst]
 
@@ -4884,7 +4884,7 @@ pasaqta	pasa[VRootES][^DB][--]q[NS][+Ag][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tutamantaqa	Tuta[NRoot][=noche][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -4910,7 +4910,7 @@ wasita	wasi[NRoot][=casa][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -4940,7 +4940,7 @@ chaypi	chay[PrnDem][^DB][--]pi[Cas][+Loc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mistisa	Mestiza[NRootES]
 
@@ -4962,7 +4962,7 @@ achkhas	achkha[NRoot][=mucho][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ima	Ima[NRoot][=cosa]
 
@@ -4980,7 +4980,7 @@ kachkasqa	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][^DB][--]sqa[Tns_VPers][+3.Sg.
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayta	Chay[PrnDem][^DB][--]ta[Cas][+Acc]
 
@@ -5002,7 +5002,7 @@ qunqapusqa	qunqa[VRoot][=olvidar][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 "	"[$.]
 
@@ -5024,7 +5024,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chay	Chay[PrnDem]
 
@@ -5042,7 +5042,7 @@ q'ipichaykukunku	q'ipi[NRoot][=bulto][--]cha[VS][+Fact][--]yku[VDeriv][+Aff][^DB
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaytas	Chay[PrnDem][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -5052,7 +5052,7 @@ pasamunku	pasa[VRootES][--]mu[VDeriv][+Cis_Trs][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Pasamuspaqa	Pasa[VRootES][--]mu[VDeriv][+Cis_Trs][^DB][--]spa[NS][+SS][^DB][--]qa[Amb][+Top]
 
@@ -5066,7 +5066,7 @@ wasinkuta	wasi[NRoot][=casa][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]ta[Cas][+Acc
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upas	Upa[NRoot][=tonto,sordo][^DB][--]s[Amb][+IndE]
 
@@ -5078,7 +5078,7 @@ karanpun	ka[VRoot][=ser][--]rqa[VDeriv][+Rptn][--]m[VDeriv][+Cis_Trs][--]pu[VDer
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaysi	Chay[PrnDem][^DB][--]si[Amb][+IndE]
 
@@ -5088,7 +5088,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -5106,7 +5106,7 @@ hamuchkay	hamu[VRoot][=venir][^DB][--]chka[Asp][+Prog][--]y[VPers][+2.Sg.Subj.Im
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mikhunata	Mikhu[VRoot][=comer][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc]
 
@@ -5118,7 +5118,7 @@ nispas	ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hina	Hina[Part_Sim]
 
@@ -5132,7 +5132,7 @@ pasasqa	pasa[VRootES][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upataqa	Upa[NRoot][=tonto,sordo][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -5150,7 +5150,7 @@ llasarkusqa	llasa[VRoot][=pesar][--]rku[VDeriv][+Dir][^DB][--]sqa[NS][+Perf]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ñak'aysi	Ñak'a[VRoot][=sufrir][^DB][--]y[NS][+Inf][^DB][--]si[Amb][+IndE]
 
@@ -5162,7 +5162,7 @@ chayasqa	chaya[VRoot][=llegar][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mayu	Mayu[NRoot][=río]
 
@@ -5180,7 +5180,7 @@ nisqa	ni[VRoot][=decir][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 :	:[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -5194,7 +5194,7 @@ q'ipiriysiway	q'ipi[VRoot][=llevar][--]ri[VDeriv][+Inch][--]ysi[VDeriv][+Ass][^D
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tilisitaman	Tilisita[NP][^DB][--]man[Cas][+Dat_Ill]
 
@@ -5216,7 +5216,7 @@ wakinta	waki[NRoot][=parte,otro][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+A
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Wakillantas	Waki[NRoot][=parte,otro][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -5226,7 +5226,7 @@ payqa	pay[PrnPers+3.Sg][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinañas	Hina[Part_Sim][^DB][--]ña[Amb][+Disc][^DB][--]s[Amb][+IndE]
 
@@ -5240,7 +5240,7 @@ chayachisqa	chaya[VRoot][=llegar][^DB][--]chi[VDeriv][+Caus][^DB][--]sqa[Tns_VPe
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayachiqtinqa	Chaya[VRoot][=llegar][^DB][--]chi[VDeriv][+Caus][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
 
@@ -5264,7 +5264,7 @@ Tilisitaqa	Tilisita[NP][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -5286,7 +5286,7 @@ nin	ni[VRoot][=decir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -5298,7 +5298,7 @@ apamushawanchu	apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]chka[Asp][+Pr
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Musphachkankichu	Muspha[VRoot][=estar_confuso,perderse][^DB][--]chka[Asp][+Prog][--]nki[VPers][+2.Sg.Subj][^DB][--]chu[Amb][+Intr_Neg]
 
@@ -5326,7 +5326,7 @@ p'anan	p'ana[VRoot][=golpear][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 -	-[$.]
 
@@ -5338,7 +5338,7 @@ supay	supay[NRoot][=diablo]
 
 !	![$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 ¿	¿[$.]
 
@@ -5350,7 +5350,7 @@ apamun	apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]n[VPers][+3.Sg.Subj]
 
 ?	?[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Apay	Apa[VRoot][=llevar][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 
@@ -5380,7 +5380,7 @@ kutirin	kuti[VRoot][=volver][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tilisitataqsi	Tilisita[NP][^DB][--]taq[Amb][+Con_Intr][^DB][--]si[Amb][+IndE]
 
@@ -5390,7 +5390,7 @@ pasallantaq	pasa[VRootES][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mayu	Mayu[NRoot][=río]
 
@@ -5402,7 +5402,7 @@ chayan	chaya[VRoot][=llegar][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayaqtinqa	Chaya[VRoot][=llegar][^DB][--]qti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
 
@@ -5426,7 +5426,7 @@ kamachirqayki	kama[VRoot][=gobernar,mandar,crear][^DB][--]chi[VDeriv][+Caus][^DB
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Imaraykun	Ima[NRoot][=cosa][^DB][--]rayku[Cas][+Kaus][^DB][--]n[Amb][+DirE]
 
@@ -5462,7 +5462,7 @@ patarquspa	pata[VRoot][=morder,reventar][--]rqu[VDeriv][+Rptn][^DB][--]spa[NS][+
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaypis	Chay[PrnDem][^DB][--]pis[Amb][+Add]
 
@@ -5480,7 +5480,7 @@ chiqaspi	chiqas[NRoot][=sitio_indeterminado][^DB][--]pi[Cas][+Loc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Pampamansi	Pampa[NRoot][=suelo,tierra][^DB][--]man[Cas][+Dat_Ill][^DB][--]si[Amb][+IndE]
 
@@ -5490,7 +5490,7 @@ qullqi	qullqi[NRoot][=plata]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymantas	Chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]s[Amb][+IndE]
 
@@ -5504,7 +5504,7 @@ wakillantaña	waki[NRoot][=parte,otro][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPer
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Apamunkusyá	Apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]nku[VPers][+3.Pl.Subj][^DB][--]s[Amb][+IndE][--]yá[Amb][+Emph]
 
@@ -5526,7 +5526,7 @@ chimpachimuspa	chimpa[VRoot][=atravesar,trenzar][^DB][--]chi[VDeriv][+Caus][--]m
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaymanta	Chay[PrnDem][^DB][--]manta[Cas][+Abl]
 
@@ -5542,7 +5542,7 @@ wasinta	wasi[NRoot][=casa][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chaypi	Chay[PrnDem][^DB][--]pi[Cas][+Loc]
 
@@ -5554,7 +5554,7 @@ q'ipimusqaku	q'ipi[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]sqaku[VPers][
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Mayu	Mayu[NRoot][=río]
 
@@ -5572,7 +5572,7 @@ q'ipiyakapusqaku	q'ipi[VRoot][=llevar][--]ya[VDeriv][+Aff][^DB][--]ka[VDeriv][+R
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -5582,7 +5582,7 @@ chayapunku	chaya[VRoot][=llegar][--]pu[VDeriv][+Rgr_Iprs][^DB][--]nku[VPers][+3.
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaqa	Hina[Part_Sim][^DB][--]qa[Amb][+Top]
 
@@ -5608,7 +5608,7 @@ apakamusqankuwan	apa[VRoot][=llevar][^DB][--]ka[VDeriv][+Rflx_Int][--]mu[VDeriv]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Chayqa	Chay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -5624,7 +5624,7 @@ kapusqa	ka[VRoot][=ser][--]pu[VDeriv][+Rgr_Iprs][^DB][--]sqa[NS][+Perf]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Upaqa	Upa[NRoot][=tonto,sordo][^DB][--]qa[Amb][+Top]
 
@@ -5646,7 +5646,7 @@ kusikullasqataq	kusi[VRoot][=alegrar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]lla[
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinaspas	Hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]s[Amb][+IndE]
 
@@ -5666,7 +5666,7 @@ tiyarqunña	tiya[VRoot][=haber,estar,habitar,estar_sentado][--]rqu[VDeriv][+Rptn
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Tilisitaqa	Tilisita[NP][^DB][--]qa[Amb][+Top]
 
@@ -5678,7 +5678,7 @@ runtutaqa	runtu[NRoot][=huevo][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Sinqantaq	Sinq'a[VRoot][=respirar][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]taq[Amb][+Con_Intr]
 
@@ -5692,7 +5692,7 @@ nispa	ni[VRoot][=decir][^DB][--]spa[NS][+SS]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Hinas	Hina[Part_Sim][^DB][--]s[Amb][+IndE]
 
@@ -5706,7 +5706,7 @@ chayasqa	chaya[VRoot][=llegar][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Qucha	Qucha[NRoot][=lago]
 
@@ -5720,7 +5720,7 @@ ch'utirqukusqa	ch'uti[VRoot][=atacar][--]rqu[VDeriv][+Rptn][^DB][--]ku[VDeriv][+
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 P'achanta	P'acha[NRoot][=ropa][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
@@ -5740,7 +5740,7 @@ pallaq	palla[VRoot][=recoger][^DB][--]q[NS][+Ag]
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 Ch'ulluchallantas	Ch'ullu[NRoot][=gorro][--]cha[NDeriv][+Dim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc][^DB][--]s[Amb][+IndE]
 
@@ -5752,7 +5752,7 @@ pallamunanpaq	palla[VRoot][=recoger][--]mu[VDeriv][+Cis_Trs][^DB][--]na[NS][+Obl
 
 .	.[$.]
 
-#EOS		#EOS	+?
+#EOS	#EOS	+?
 
 I	I[ALFS]
 

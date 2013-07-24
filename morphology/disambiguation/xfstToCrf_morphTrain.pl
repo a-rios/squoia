@@ -324,6 +324,7 @@ if($mode eq '-3')
 		
 		if(exists($xfstWords{$form}) && scalar(@$xfstAnalyses)>1)
 		{
+			# TODO: missing in training material: rqakun -> rqa -ku -n/ -rqaku -m
 			# yku-n
 			if(&containedInOtherMorphs($xfstAnalyses,"+1.Pl.Excl.Subj+DirE","+Aff+3.Sg.Subj") )
 			{

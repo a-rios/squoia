@@ -166,7 +166,7 @@
        define rqurqa1 [ {rqu}"@RQU"-> {rqa}"@RQU"  || _  ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa2 [ {ru}"@RQU"-> {ra}"@RQU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
        define rqurqa3 [ {rqu}"@RQU" (->) {rqa}"@RQU"  || _  ?* "@KU"];
-       define rqurqa4 [ {ru}"@RQU" (->) {rqa}"@RQU" || _ ?* "@KU"];      
+       define rqurqa4 [ {ru}"@RQU" (->) {ra}"@RQU" || _ ?* "@KU"];      
 
        #--------------------------------------------------------------------------------------#
        # -yku becomes -yka before -mu, -pu, -ysi, -chi, -ri, -cha                             #
@@ -410,7 +410,7 @@ define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"
 define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" ]];
 
 # verbal derivation 2: paku, pamu, yman, ykacha, yuq, saq (#saq,  "@SAPROG"?*"+Ag" if -sa is allowed as progressive allomorph (Bolivian Quechua) TODO: allow and disambiguate later??), ptin (#-pti -> Ayacuchano, but -n as DirE, only Cuzqueño), stin (-stin, not as -sti -n (3.Sg.Subj, or DirE))
-define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku} | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" |"+yu+" %["VDeriv"%] %["+Aff"%] %["^DB"%] %["--"%] q %["NS"  | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
+define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%]{ku} | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" |"+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"  | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
 
 # independent suffixes: pas, taq, niraq
 define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %["+IndE" | "@TA" ?* "@GENq"| {nira} %["NDeriv"%] ?* "@GENq" | "Part_Disc" ?* "+Disc"  ]] ;
