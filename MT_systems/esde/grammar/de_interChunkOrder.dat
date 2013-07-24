@@ -12,7 +12,12 @@ my.type=/CNP/		xSPEC:my.type=nounSpec, xAP:my.type=/C?AP/, xCOCONJ:my.type=coCon
 
 my.type=/CPP/		xNP:my.type=/NP/, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTPP:xpath{//CHUNK[@type="CPP"]/CHUNK[@type="PP" and count(following-sibling::CHUNK[@type="PP"])=0]}	head +xNP +xCOMA .xCOCONJ +xLASTPP
 
-my.type=/CVP/		xSU:my.si=suj, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTVP:xpath{//CHUNK[@type="CVP"]/CHUNK[@type="VP" and count(following-sibling::CHUNK[@type="VP"])=0]}	xSU +head +xCOMA .xCOCONJ +xLASTVP
+# main clause order
+my.type=/CVP/&&!(my.finVerb=no)		xSU:my.si=suj, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTVP:xpath{//CHUNK[@type="CVP"]/CHUNK[@type="VP" and count(following-sibling::CHUNK[@type="VP"])=0]}, xEOS:my.type=/P-eos/&&child.slem="."		xSU +head +xCOMA .xCOCONJ +xLASTVP .xEOS
+
+my.type=/CVP/&&my.finVerb=no		xSU:my.si=suj, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTVP:xpath{//CHUNK[@type="CVP"]/CHUNK[@type="VP" and count(following-sibling::CHUNK[@type="VP"])=0]}, xVFIN:my.type=finVerb		xSU +xVFIN .head +xCOMA .xCOCONJ +xLASTVP
+
+# subord clause order
 
 #############
 # Adjective #

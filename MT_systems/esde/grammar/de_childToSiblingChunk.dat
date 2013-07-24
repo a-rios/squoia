@@ -14,3 +14,12 @@
 
 my.type=/coConj/&&chunkparent.type=/nounSpec/			comment="coordinating conjunction"
 
+
+my.type=/coConj/&&chunkparent.type=/finVerb/			comment="coConj from finVerb"
+
+
+############################
+# Subordinated Finite Verb #
+############################
+
+my.type=finVerb&&chunkparent.type=/subConj/			comment="finVerb from subConj"
