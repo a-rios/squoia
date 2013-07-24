@@ -32,7 +32,8 @@ my.pos=/KOUS/&& chunkparent.type=/VP/		subord="yes"	type=subConj,comment="subord
 	# gets transformed into:
 	# parent:CHUNK(type=VP) > NODE(pos=VVPP) & parent > target:CHUNK(type=finVerb comment="upgraded node") > NODE(pos=VAFIN)
 
-my.pos=/V[AM]FIN/ && parent.pos=/V[VMA]/ && chunkparent.type=/VP.*/		finVerb="no"	type=finVerb,comment="upgraded node"
+my.pos=/V[AM]FIN/ && parent.pos=/V[VMA]/ && chunkparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
+my.pos=/V[AM]FIN/ && chunkparent.type=/subConj/&&chunkgrandparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
 
 
 # verb periphrase #

@@ -17615,8 +17615,8 @@
    <e><p><l>persona</l><r>Person</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>personificación</l><r>Verkörperung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>perspectiva</l><r>Ausblick</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>perspectiva</l><r>Aussicht</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>perspectiva</l><r>Perspektive</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>perspectiva</l><r>Zukunftsperspektive</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>persuasión</l><r>Überredung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pertenencia</l><r>Eigentum</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pertenencia</l><r>Zugehörigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -28129,20 +28129,32 @@ frente_a
 gracias_a
 
 -->
-  <!-- Multitoken prepositions TODO paradigm with PREP/PREPART for _de/del resp. _a/al -->
+  <!-- Multitoken prepositions: one paradigm with PREP/PREPART for _de/del resp. _a/al not possible because of entry specific "cas" and "adpos" -->
    <e><p><l>abajo_de</l><r>unterhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- abajo_de = unterhalb + Gen -->
+   <e><p><l>abajo_del</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>abajo_de</l><r>unter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- abajo_de = unter + Dat (is movement also possible, i.e. Akk?) -->
+   <e><p><l>abajo_del</l><r>unter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_base_de</l><r>auf Grund von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- auf Grund von, auf der Grundlage von -->
+   <e><p><l>a_base_del</l><r>auf Grund von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_beneficio_de</l><r>zugunsten<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- a_beneficio_de = zugunsten + Gen ; also zugunsten von + Dat, esp. with plural -->
-   <e><p><l>a_cargo_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
+   <e><p><l>a_beneficio_del</l><r>zugunsten_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_cargo_de</l><r>zu Lasten von<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>a_cargo_del</l><r>zu Lasten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_causa_de</l><r>aufgrund<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- aufgrund + Gen -->
-   <e><p><l>acerca_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>a_consecuencia_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>además_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>a_diferencia_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>a_expensas_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>a_favor_de</l><r>zugunsten_von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- zugunsten von, zu Gunsten von + Dat -->
-   <e><p><l>a_fin_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
+   <e><p><l>a_causa_del</l><r>aufgrund_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>acerca_de</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- acerca de = bezüglich +Gen, in Bezug auf +Akk, hinsichtlich +Gen, über +Akk -->
+   <e><p><l>acerca_del</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_consecuencia_de</l><r>infolge<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>a_consecuencia_del</l><r>infolge<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>además_de</l><r>zusätzlich zu<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- ademas de = zusaetzlich zu? -->
+   <e><p><l>además_del</l><r>zusätzlich zu_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>a_diferencia_de</l><r>im Gegensatz zu<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- a diferencia de = im Gegensatz zu +Dat, im Unterschied zu +Dat -->
+   <e><p><l>a_diferencia_del</l><r>im Gegensatz zu_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>a_expensas_de</l><r>auf Kosten<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>a_expensas_del</l><r>auf Kosten_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_favor_de</l><r>zugunsten von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- zugunsten von, zu Gunsten von + Dat -->
+   <e><p><l>a_favor_del</l><r>zugunsten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>a_fin_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- prep or only conjunction "a fin de que" ? -->
    <e><p><l>a_fines_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>alrededor_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>antes_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
@@ -28158,28 +28170,45 @@ gracias_a
    <e><p><l>a_través_de</l><r>durch<s n="cas"/>Akk</r></p><par n='PREP'/></e>
    <e><p><l>a_través_del</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>con_respecto_a</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- bezüglich, hinsichtlich + Gen -->
-   <e><p><l>con_respecto_al</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- bezüglich, hinsichtlich + Gen -->
+   <e><p><l>con_respecto_al</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unterhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- debajo_de = unterhalb + Gen -->
+   <e><p><l>debajo_del</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- debajo_de = unter + Dat (is movement also possible, i.e. Akk?) -->
+   <e><p><l>debajo_del</l><r>unter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>debido_a</l><r>wegen<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- debido_a = wegen + Gen -->
+   <e><p><l>debido_al</l><r>wegen_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>delante_de</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
+   <e><p><l>delante_del</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>dentro_de</l><r>in<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
+   <e><p><l>dentro_del</l><r>in_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>dentro_de</l><r>innerhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- TODO only local not time -->
+   <e><p><l>dentro_del</l><r>innerhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>desde_hace</l><r>seit<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- desde hace/hacia = seit + Dat -->
    <e><p><l>detrás_de</l><r>hinter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
+   <e><p><l>detrás_del</l><r>hinter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>después_de</l><r>nach<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>después_del</l><r>nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>dirección_a</l><r>nach<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>dirección_al</l><r>nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>encima_de</l><r>auf<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- auf/ueber? TODO: by movement could be Akk -->
-   <e><p><l>en_medio_de</l><r>mitten_in<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>encima_del</l><r>auf_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_medio_de</l><r>mitten in<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- DE "multitoken" without "_" so that the whole prepositional expression is generated/printed; TODO change outputGerman/cleanup -->
+   <e><p><l>en_medio_del</l><r>mitten in_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>gracias_a</l><r>dank<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- gracias_a = dank + Dat (though also possible with Gen) -->
+   <e><p><l>gracias_al</l><r>dank_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>junto_a</l><r>bei<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_a = bei + Dat -->
+   <e><p><l>junto_al</l><r>bei_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>junto_a</l><r>neben<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_a = neben + Akk(mov)/Dat -->
+   <e><p><l>junto_al</l><r>neben_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>junto_con</l><r>mit<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_con = (zusammen?) mit + Dat -->
    <e><p><l>más_allá_de</l><r>jenseits<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- más_allá_de = jenseits + Gen; TODO expressions: mirar mas alla de = ueber X hinausschauen -->
-   <e><p><l>más_allá_del</l><r>jenseits_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>	<!-- más_allá_de = jenseits + Gen; TODO expressions: mirar mas alla de = ueber X hinausschauen -->
+   <e><p><l>más_allá_del</l><r>jenseits_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>por_medio_de</l><r>durch<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- por_medio_de = durch + Akk ; mittels + Gen -->
+   <e><p><l>por_medio_del</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>respecto_a</l><r>hinsichtlich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- hinsichtlich + Gen -->
+   <e><p><l>respecto_al</l><r>hinsichtlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>respecto_de</l><r>hinsichtlich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- respecto_de? = hinsichtlich + Gen -->
+   <e><p><l>respecto_del</l><r>hinsichtlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
 
 <!-- Pronouns -->
    <!-- Personal pronouns -->
