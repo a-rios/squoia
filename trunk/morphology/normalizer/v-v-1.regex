@@ -1,4 +1,5 @@
 # verbal slot 1: derivation, yqari und rqari, s.Itier parlons quechua: Multiplier, mehrere Subj oder Obj involviert yqari +Aktion statisch, ohne Bewegung
+# NOTE: Flags needed on BOTH sides, upper and lower!
 
   [ "[" "--" "]" {ymana} "[" "VDeriv" "]" "[" "+Rem" "]" ] : {ymana}
 | [ "[" "--" "]" {pasa} "[" "VDeriv" "]" "[" "+Desesp" "]" ] : {pasa}
@@ -14,21 +15,21 @@
 | [ "[" "--" "]" {raya} "[" "VDeriv" "]" "[" "+Perdur" "]" ] : {raya}
 | [ "[" "--" "]" {raya} "[" "VDeriv" "]" "[" "+Perdur" "]" ] : {laya}
 | [ "[" "--" "]" {nraya} "[" "VDeriv" "]" "[" "+Perdur" "]" ] : {nraya}
-| [ "[" "--" "]" {yku}"+yku+" "[" "VDeriv" "]" "[" "+Aff" "]" ] : [{yku}"@YKU"]
-| [ "[" "--" "]" {yu}"+yu+" "[" "VDeriv" "]" "[" "+Aff" "]" ] : [{yu}"@YKU"]
-| [ "[" "--" "]" {yku}"+y+" "[" "VDeriv" "]" "[" "+Aff" "]" ] : [{y}"@YKU"]
-| [ "[" "--" "]" {rqu}"+rqu+""[" "VDeriv" "]" "[" "+Rptn" "]" ] : [{rqu}"@RQU"]
-| [ "[" "--" "]" {ru}"+ru+" "[" "VDeriv" "]" "[" "+Rptn" "]" ] :  [{ru}"@RQU"]
-| [ "[" "--" "]" {ysi} "[" "VDeriv" "]" "[" "+Ass" "]"]  : [{ysi}"@YSI"]
-| [ "[" "--" "]" {schi} "[" "VDeriv" "]" "[" "+Ass" "]"]  : [{schi}"@YSI"]
-| [ "[" "--" "]" {scha} "[" "VDeriv" "]" "[" "+Ass" "]"]  : [{scha}"@YSI"]
+| [ "[" "--" "]" {yku}"+yku+" "[" "VDeriv" "]" "[" "+Aff" "]" ] : {yku}"@YKU"
+| [ "[" "--" "]" {yu}"+yu+" "[" "VDeriv" "]" "[" "+Aff" "]" ] : {yu}"@YKU"
+| [ "[" "--" "]" {yku}"+y+" "[" "VDeriv" "]" "[" "+Aff" "]" ] : {y}"@YKU"
+| [ "[" "--" "]" {rqu}"+rqu+""[" "VDeriv" "]" "[" "+Rptn" "]" ] : {rqu}"@RQU"
+| [ "[" "--" "]" {ru}"+ru+" "[" "VDeriv" "]" "[" "+Rptn" "]" ] :  {ru}"@RQU"
+| [ "[" "--" "]" {ysi} "[" "VDeriv" "]" "[" "+Ass" "]"]  : {ysi}"@YSI"
+| [ "[" "--" "]" {schi} "[" "VDeriv" "]" "[" "+Ass" "]"]  : {schi}"@YSI"
+| [ "[" "--" "]" {scha} "[" "VDeriv" "]" "[" "+Ass" "]"]  : {scha}"@YSI"
 | [ "[" "--" "]" {naya} "[" "VDeriv" "]" "[" "+Des" "]"] : {naya}
 | [ "[" "--" "]" {rku} "[" "VDeriv" "]" "[" "+Dir" "]"] : {rku}
-| [ "[" "--" "]" {cha} "[" "VDeriv" "]" "[" "+Vdim" "]" ] : [{cha}"@Vdim"]
+| [ "[" "--" "]" {cha} "[" "VDeriv" "]" "[" "+Vdim" "]" ] : {cha}"@Vdim"
 | [ "[" "--" "]"  {pa} "[" "VDeriv" "]" "[" "+Rep" "]" ] : {pa}
 | [ "[" "--" "]" {paya} "[" "VDeriv" "]" "[" "+MRep" "]" ] : {paya}
 | [ "[" "--" "]" {na} "[" "VDeriv" "]" "[" "+Rzpr" "]" ] : {na}
-| [ "[" "^DB" "]" "[" "--" "]"  {chi} "[" "VDeriv" "]" "[" "+Caus" "]" ] : [{chi}"@CHI"]
-| [ "[" "--" "]"  {ri} "[" "VDeriv" "]" "[" "+Inch" "]" ] : [{ri}"@RI"]
+| [ "[" "^DB" "]" "[" "--" "]"  {chi} "[" "VDeriv" "]" "[" "+Caus" "]" ] : {chi}"@CHI"
+| [ "[" "--" "]"  {ri} "[" "VDeriv" "]" "[" "+Inch" "]" ] : {ri}"@RI"
 | [ "[" "--" "]" {lli} "[" "VDeriv" "]" "[" "+Autotrs" "]" ] : {lli} 
 ;

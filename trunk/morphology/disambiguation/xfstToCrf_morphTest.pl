@@ -939,7 +939,7 @@ sub disambMorph1{
 				# -cha: Fact, Dim
 				#$correctMorph = s/\n//;
 				chomp($correctMorph);
-				#print STDERR "$form: all: $allmorphs, correct: $correctMorph\n";
+				#print STDERR "$form: all: $allmorphs, correct: $correctMorph"."ll\n";
 				if($allmorphs !~ /$correctMorph/ && scalar(@$analyses) > 1){
 					#print STDERR "delete: $allmorphs\n";
 					splice (@{$analyses},$j,1);	
@@ -1074,6 +1074,7 @@ sub disambMorph2{
 			$ambIndex++;
 			my (@rows) = split('\t',$crfline);
 			my $correctMorph = @rows[-1];
+			$correctMorph =~ s/\n//;
 			#print "@rows[0] : $correctMorph\n"; #----- ".@$word[0]."\n";
 			
 			# possible root pos
@@ -1140,7 +1141,7 @@ sub disambMorph2{
 				# no confusion with other tags, just check whether allmorphs contains them
 				else
 				{
-					#print STDERR "$form: all: $allmorphs, correct: $correctMorph\n";
+					#print STDERR "$form: all: $allmorphs, correct: $correctMorph"."ll\n";
 					if($allmorphs !~ /$correctMorph/ && scalar(@$analyses) > 1){
 						#print STDERR "delete: $allmorphs\n";
 						splice (@{$analyses},$j,1);	

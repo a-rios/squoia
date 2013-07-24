@@ -1,24 +1,24 @@
 # translations with "="	# translations with "="
 	
-  [ {achka} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {achka}
+  [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {achka}
 | [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {achkha}
-| [ {ashkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashkha}
-| [ {askha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {askha}
-| [ {ashka} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashka}
-| [ {ashkhas} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashkhas}
-| [ {achkaq} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {achkaq}
-| [ {achkhaq} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {achkhaq}
-| [ {ashkhaq} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {ashkhaq}
-| [ {askhaq} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {askhaq}
-| [ {ashkaq} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {ashkaq}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashkha}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {askha}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashka}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashkhas}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {achkaq}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {achkhaq}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {ashkhaq}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {askhaq}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {ashkaq}
 | [ {allapa} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {allapa}
 | [ {ancha} "[" "NRoot" "]" "["  "=muy,mucho" "]" ] :  {ancha}
 | [ {as} "[" "NRoot" "]" "["  "=poco" "]" ] :  {as}
 | [ {aswan} "[" "NRoot" "]" "["  "=más,mucho" "]" ] :  {aswan}
 | [ {chhika} "[" "NRoot" "]" "["  "=mucho,tanto" "]" ] :  {chhika}
-| [ {chika} "[" "NRoot" "]" "["  "=mucho,tanto" "]" ] :  {chika}
-| [ {hayka} "[" "NRoot" "]" "["  "=varios" "]" ] :  {hayka}
-| [ {jayka} "[" "NRoot" "]" "["  "=varios" "]" ] :  {jayka}
+| [ {chhika} "[" "NRoot" "]" "["  "=mucho,tanto" "]" ] :  {chika}
+| [ {hayk'a}"[" "NRoot" "]" "["  "=varios" "]" ] :  {hayka}
+| [ {hayk'a}"[" "NRoot" "]" "["  "=varios" "]" ] :  {jayka}
 | [ {hayk'a} "[" "NRoot" "]" "["  "=varios" "]" ] :  {hayk'a}
 | [ {jayk'a} "[" "NRoot" "]" "["  "=varios" "]" ] :  {jayk'a}
 | [ {k'ata} "[" "NRoot" "]" "["  "=único" "]" ] :  {k'ata}
@@ -35,7 +35,7 @@
 | [ {waki} "[" "NRoot" "]" "["  "=parte,otro" "]" ] :  {waki}
 | [ {wallka} "[" "NRoot" "]" "["  "=poco" "]" ] :  {wallka}
 | [ {wallku} "[" "NRoot" "]" "["  "=poco" "]" ] :  {wallku}
-| [ {yumpay} "[" "NRoot" "]" "["  "=todo" "]" ] :  {yumpay}
+| [ {llumpay} "[" "NRoot" "]" "["  "=todo" "]" ] :  {yumpay}
 | [ {yupa} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {yupa}
 | [ {menos} "[" "NRoot" "]" "["  "=menos" "]" ] :  {menos}
 

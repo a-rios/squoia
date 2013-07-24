@@ -89,7 +89,7 @@ foreach my $word (@words){
 		}
 		# word not recognized: print form
 		elsif($firstanalysis!~ /\[/) {
-			print "$form";
+			print " $form";
 			$needspace =1;
 		}
 		else
