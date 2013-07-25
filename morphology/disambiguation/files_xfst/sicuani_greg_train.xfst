@@ -6752,7 +6752,7 @@ nisqa	ni[VRoot][=decir][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 :	:[$,]
 
-Askha	Askha[NRoot][=mucho]
+Askha	Achkha[NRoot][=mucho]
 
 tajamalkunataqa	tajamal[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -7400,7 +7400,7 @@ kaychu	ka[VRoot][=ser][^DB][--]y[VPers][+2.Sg.Subj.Imp][^DB][--]chu[Amb][+Intr_N
 
 #EOS	#EOS+?
 
-Askhata	Askha[NRoot][=mucho][^DB][--]ta[Cas][+Acc]
+Askhata	Achkha[NRoot][=mucho][^DB][--]ta[Cas][+Acc]
 
 rit'ita	rit'i[NRoot][=nieve][^DB][--]ta[Cas][+Acc]
 
@@ -18283,7 +18283,7 @@ pasan	pasa[VRootES][^DB][--]n[VPers][+3.Sg.Subj]
 
 #EOS	#EOS+?
 
-Askha	Askha[NRoot][=mucho]
+Askha	Achkha[NRoot][=mucho]
 
 uywayuq	uywa[NRoot][=cría][^DB][--]yuq[NDeriv][+Poss]
 
@@ -25175,7 +25175,7 @@ hamunku	hamu[VRoot][=venir][^DB][--]nku[VPers][+3.Pl.Subj]
 
 #EOS	#EOS+?
 
-Askha	Askha[NRoot][=mucho]
+Askha	Achkha[NRoot][=mucho]
 
 kutin	kuti[NRoot][=vez][^DB][--]n[NPers][+3.Sg.Poss]
 
@@ -27513,7 +27513,7 @@ kimsata	kimsa[NRootNUM][^DB][--]ta[Cas][+Acc]
 
 #EOS	#EOS+?
 
-Askha	Askha[NRoot][=mucho]
+Askha	Achkha[NRoot][=mucho]
 
 llamapi	llama[NRoot][=llama][^DB][--]pi[Cas][+Loc]
 
@@ -29167,7 +29167,7 @@ vendesqayki	vende[VRootES][^DB][--]sqayki[VPers][+1.Sg.Subj_2.Sg.Obj.Fut]
 
 #EOS	#EOS+?
 
-Askhan	Askha[NRoot][=mucho][^DB][--]n[Amb][+DirE]
+Askhan	Achkha[NRoot][=mucho][^DB][--]n[Amb][+DirE]
 
 uyway	uywa[NRoot][=cría][^DB][--]y[NPers][+1.Sg.Poss]
 
@@ -30507,7 +30507,7 @@ llank'aqqa	llamk'a[VRoot][=trabajar][^DB][--]q[NS][+Ag][^DB][--]qa[Amb][+Top]
 
 #EOS	#EOS+?
 
-Askhata	Askha[NRoot][=mucho][^DB][--]ta[Cas][+Acc]
+Askhata	Achkha[NRoot][=mucho][^DB][--]ta[Cas][+Acc]
 
 qullqita	qullqi[NRoot][=plata][^DB][--]ta[Cas][+Acc]
 
@@ -34493,7 +34493,7 @@ rantirqani	ranti[VRoot][=comprar][^DB][--]rqa[Tns][+NPst][--]ni[VPers][+1.Sg.Sub
 
 #EOS	#EOS+?
 
-Askhan	Askha[NRoot][=mucho][^DB][--]n[Amb][+DirE]
+Askhan	Achkha[NRoot][=mucho][^DB][--]n[Amb][+DirE]
 
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
@@ -34813,7 +34813,7 @@ waqaqta	waqa[VRoot][=llorar,guardar,proteger][^DB][--]q[NS][+Ag][^DB][--]ta[Cas]
 
 #EOS	#EOS+?
 
-Askhataq	Askha[NRoot][=mucho][^DB][--]taq[Amb][+Con_Intr]
+Askhataq	Achkha[NRoot][=mucho][^DB][--]taq[Amb][+Con_Intr]
 
 karqanku	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]nku[VPers][+3.Pl.Subj]
 
@@ -35041,7 +35041,7 @@ carro	carro[NRootES]
 
 pasajerokunapaq	pasajero[NRootES][--]kuna[Num][+Pl][^DB][--]paq[Cas][+Ben]
 
-chayamusqanmanta	chaya[VRoot][=llegar][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl]
+Askha	Achkhamusqanmanta	chaya[VRoot][=llegar][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl]
 
 pacha	pacha[NRoot][=mundo,tiempo]
 
@@ -49573,7 +49573,7 @@ jodekuq	jode[VRootES][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
 #EOS	#EOS+?
 
-Askha	Askha[NRoot][=mucho]
+Askha	Achkha[NRoot][=mucho]
 
 mitintan	mitintan	+?
 
