@@ -326,7 +326,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define NRootES @re"nroot-es.regex" .o. SpanOrtho ;
        define NRootNUM  @re"nroot-num.regex"  ;
        define NRootINDEF @re"nroot-indef-with-translations.regex" ;
-       define NRootCMP @re"nroot-cmp-with-translations.regex" ;
+       #define NRootCMP @re"nroot-cmp-with-translations.regex" ;
 
        define NROOT [NRootQ|NRootES|NRootNUM|NRootINDEF];
 
@@ -421,12 +421,12 @@ define VDERIV [VDeriv1|VDeriv2];
        # nominal compounds  #
        #--------------------#
        
-       define Compounds [[NRootQ|NDeriv1] DB MB NRootCMP NounSuffixes];
+      # define Compounds [[NRootQ|NDeriv1] DB MB NRootCMP NounSuffixes];
 
 
 define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3) (N=N=5) (N=N=6) (N=N=7)] ;
 define NounConverbTrans watrans .o. sutrans .o. [[NDeriv1finalTrans] (HonAff) npers (N=N=5) (N=N=6) (N=N=7)] ;
-define NounNormal  [[NROOT|NDERIV|NRootInc|Compounds] NounSuffixes] ;
+define NounNormal  [[NROOT|NDERIV|NRootInc] NounSuffixes] ;
 define Noun [NounConverb|NounNormal|NounConverbTrans];
 define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
 

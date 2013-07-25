@@ -430,33 +430,3 @@ elsif($mode eq '-xfst')
 	
 }
 
-
-# old stuff
-#	unless($classGOLD eq 'none' && $classCRF eq 'none')
-#		{
-#			#print "$classCRF $classGOLD\n $crfLine $goldLine\n";
-#		}
-#
-#		if($classCRF eq $classGOLD && $classGOLD ne 'none')
-#		{
-#			$correctClass++;
-#			$wordsToDisamb++;
-#			#print "correct:  $classCRF  $classGOLD\n";
-#		}
-#		# morph eval: count unambiguous forms
-#		elsif($classGOLD eq 'none'){
-#				#print "unamb: $classCRF $classGOLD\n";
-#				$unamb++;
-#		}
-#		# pos eval: count xfst failures
-#		# check if first pos in results is ZZZ, in this case, xfst could not analyse the word
-#		# -> count those separately for evaluation
-#		elsif(@rowsCRF[2] eq 'ZZZ')
-#		{
-#			$unknownWords++;
-#		}
-#		elsif($classGOLD ne 'none'){
-#			$wordsToDisamb++;
-#			#print "false: $classCRF $classGOLD\n";
-#		}
-#
