@@ -3,6 +3,7 @@ use open ':utf8';
 binmode STDIN, ':utf8';
 binmode STDERR, ':utf8';
 binmode STDOUT, ':utf8';
+use utf8;
 use Storable;
 
 my $num_args = $#ARGV;
@@ -430,3 +431,55 @@ elsif($mode eq '-xfst')
 	
 }
 
+elsif($mode eq '-tok')
+{
+	my $tokFile = $ARGV[0];
+	my $goldFile = $ARGV[1];
+
+	open TOK, "< $tokFile" or die "Can't open $tokFile : $!";
+	open GOLD, "< $goldFile" or die "Can't open $goldFile : $!";
+	
+	my $token;
+	my $correct;
+	my $wrong;
+	my $punct;
+	
+	while (!eof(TOK) and !eof(GOLD)) 
+ 	{
+ 	  
+ 	  my $tokLine= <TOK>;
+      my $goldLine = <GOLD>;
+      $token++;
+  
+      
+      
+      chomp($tokLine);
+      chomp($goldLine);
+      if($tokLine =~ /^(,|\.|:|;|\-|\[|\]|\(|\)|\?|\"|¡|\–|¿|!|\/|%|…|“|”|«|»)$/){
+      	# print $tokLine."\n";
+      	 $punct++;
+      }
+      elsif($tokLine eq $goldLine){
+      	#print $tokLine."\n";
+      	 $correct++;
+      }
+      else{
+      	$wrong++;
+      	print "tok: $tokLine, gold: $goldLine\n";
+      }
+ 	}
+		my $words = ($token-$punct);
+		my $corrPerc = ($correct/$words)*100;
+		my $wrongPerc = ($wrong/$words)*100;
+		print "\n*************************************************\n\n";
+		print "NORMALIZATION EVAL:\n";
+		print "   total token: ".$token."\n";
+		print "   total word forms: ".$words."\n";
+		 print "   punctuation marks: $punct\n";  
+		print "   corrcect form: $correct : ";
+		 printf("%.2f", $corrPerc); print "%\n";
+		print "   wrong form: $wrong : ";
+		  printf("%.2f", $wrongPerc); print "%\n";
+		print "*************************************************\n\n";
+	
+}
