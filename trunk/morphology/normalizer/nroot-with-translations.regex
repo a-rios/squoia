@@ -2113,6 +2113,7 @@
 | [ {t'ipki} "[" "NRoot" "]" "["  "=alfiler" "]" ] : {tipki}
 | [ {t'iqi} "[" "NRoot" "]" "["  "=apretado,ajustado,bulto" "]" ] : {t'iqi}
 | [ {tiqsi} "[" "NRoot" "]" "["  "=fundamento,base" "]" ] : {tiqsi}
+| [ {tiqsimuyu} "[" "NRoot" "]" "["  "=globo,tierra,mundo" "]" ] : {tiqsimuyu}
 | [ {tiqti} "[" "NRoot" "]" "["  "=chicha_dulce" "]" ] : {tiqti}
 | [ {t'iski} "[" "NRoot" "]" "["  "=despeinado" "]" ] : {t'iski}
 | [ {titi} "[" "NRoot" "]" "["  "=plomo" "]" ] : {titi}
