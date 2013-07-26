@@ -873,7 +873,7 @@ sub disambMorph1{
 		#print "$form $crfform\n";
 		if(lc($form) ne lc($crfform) ){
 			unless($crfform =~ /^\s*$/){
-			print STDERR "not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
+			print STDERR "morph disamb 1: not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
 			exit;
 			}
 		}
@@ -1027,7 +1027,7 @@ sub disambMorph2{
 		#print "$form $crfform\n";
 		if(lc($form) ne lc($crfform) ){
 			unless($crfform =~ /^\s*$/){
-			print STDERR "not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
+			print STDERR "morph disamb 2: not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
 			exit;
 			}
 		}
@@ -1230,7 +1230,7 @@ sub disambMorph3{
 		#print "$form $crfform\n";
 		if(lc($form) ne lc($crfform) ){
 			unless($crfform =~ /^\s*$/){
-			print STDERR "not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
+			print STDERR "morph disamb 3: not the same word in line ".($i+1).": intern:$form, crf:$crfform\n";
 			exit;
 			}
 		}

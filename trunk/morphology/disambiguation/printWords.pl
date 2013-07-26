@@ -94,6 +94,8 @@ foreach my $word (@words){
 		}
 		else
 		{
+			$firstanalysis =~ s/\@mMI//g;
+			
 			my $outWordForm ="";
 			my @morphs = ($firstanalysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
 			unless($needspace==0){
@@ -129,6 +131,7 @@ foreach my $word (@words){
 				for(my $j=1;$j<scalar(@$analyses);$j++)
 				{
 					my $nextanalysis = @$analyses[$j];
+					$nextanalysis =~ s/\@mMI//g;
 					my @morphs = ($nextanalysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
 					# check if first letter should be uppercase
 					my $upper = 0;
