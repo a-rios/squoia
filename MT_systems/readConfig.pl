@@ -21,6 +21,7 @@ open CONFIG, "< $confFile" or die "Can't open $confFile : $!";
 my %Parameters = ();
 
 while (<CONFIG>) {
+	#print $_;
 	chomp;       # no newline
 	s/#.*//;     # no comments
 	s/^\s+//;    # no leading white
@@ -37,8 +38,8 @@ while (<CONFIG>) {
 	}
 	#print "$var=$value\n";
 	$Parameters{$var} = $value;
-	store \%Parameters, 'parameters';
-
 }
-
 close CONFIG;
+store \%Parameters, 'parameters';
+
+

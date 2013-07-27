@@ -33,10 +33,12 @@ while (<CHUNKORDERFILE>) {
 
 	# split childchunks into array and remove empty fields resulted from split
 	$childchunks =~ s/(xpath{[^}]+),([^}]+})/\1XPATHCOMMA\2/g;	#replace comma within xpath with special string so it will not get split
+	#print STDERR "escaped comma: $childchunks \n";
 	my @childsWithEmptyFields = split( /\s*,\s*/, $childchunks);
 	foreach my $ch (@childsWithEmptyFields) {
 		$ch =~ s/XPATHCOMMA/,/g;	#replace comma back
 	}
+	#print STDERR "back comma: @childsWithEmptyFields \n";
 	my @childs = grep {$_} @childsWithEmptyFields; 
 	
 	# fill hash, key is head condition(s)
@@ -113,7 +115,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 								$childChunkCondition =~ s/XPATHDOUBLECOLON/::/g;
 								#print STDERR "child chunk cond: $childChunkCondition \n";
 								my @singleChildChunkConditionsforEvaluation = &splitConditionsIntoArray($childChunkCondition);
-
+								#print STDERR "single child chunk cond: @singleChildChunkConditionsforEvaluation \n";
 								if(&evalConditions(\@singleChildChunkConditionsforEvaluation,$child))
 								{
 									#print STDERR "matched child $variable:".$child->toString()."\n";
