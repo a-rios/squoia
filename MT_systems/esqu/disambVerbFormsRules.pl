@@ -152,7 +152,7 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'main');
  				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aunque|porque|con_tal_que|el_hecho_de_que/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aunque|porque|con_tal_que|el_hecho_de_que|en_cuanto/ )
  				{
  					#check if same subject 
  					&compareSubjects($verbChunk);
