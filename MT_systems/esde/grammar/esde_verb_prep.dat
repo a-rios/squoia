@@ -1,6 +1,9 @@
 # 1		2	3		4	5
 # ESverb	ESprep	DEverb		DEprep	DEcas
 
+# TODO: allow alternatives, e.g. abogar por = plädieren	auf|für + Akk
+#abogar		por	plädieren	auf	Akk
+abogar		por	plädieren	für	Akk
 acabar		en	enden		auf	Akk
 acabar		en	enden		mit	Dat
 advertir	de	hin|weisen	auf	Akk

@@ -6,6 +6,7 @@
 
 # AP chunk modifies NP chunk: pass the morphological information from the NP down to the AP
 my.type=AP&&my.si=/adj-mod|s.a/	mi			my.type=NP&&my.mi=/./		mi			down		overwrite
+my.type=AP&&my.si=/s.a/		cas			my.type=NP&&my.cas=/./		cas			down		overwrite
 
 # NP with function 'cc': set accusative case [condOrigen: si=top or type=VP or ?]
 my.si=top			Akk			my.type=NP&&my.si=cc		cas			down		overwrite

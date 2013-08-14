@@ -225,7 +225,11 @@ my.pos=/V.FIN/		subjnum		xpath{//CHUNK[@type="VP" and CHUNK[@si="suj" and @type=
 #my.pos=/ADJ/				cas		my.type=/AP/&&chunkgrandparent.cas=Dat	Dat		down		no-overwrite
 my.pos=/NN|ART|PPOSAT|PDAT|PIAT|PPER/		cas		my.type=/NP/&&chunkparent.cas=/./	chunkparent.cas		down		no-overwrite
 #my.pos=/ADJ/				cas		my.type=/C?AP/&&chunkgrandparent.cas=/./	chunkparent.chunkparent.cas		down		no-overwrite
+
+# set case of adjective depending on its parent/ancestor's case
 my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Dat"]/descendant::CHUNK[(@type="CAP" or @type="AP") or NODE[@pos="ADJA"]]}	"Dat"		down	no-overwrite
+my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Gen"]/descendant::CHUNK[(@type="CAP" or @type="AP") or NODE[@pos="ADJA"]]}	"Gen"		down	no-overwrite
+my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Akk"]/descendant::CHUNK[(@type="CAP" or @type="AP") or NODE[@pos="ADJA"]]}	"Akk"		down	no-overwrite
 
 # set gender (and number) of ADJ if head noun is singular
 my.pos=/ADJ/			mi		my.type=/NP|PP/&&my.mi=/Sg/			mi				down		overwrite
