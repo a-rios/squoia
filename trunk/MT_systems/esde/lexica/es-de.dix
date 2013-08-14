@@ -28,6 +28,7 @@
     <sdef n="grad"	c="graduation for adjectives, e.g. Pos|Comp|Sup"/>
     <sdef n="cmdverb"	c="command verb marker, e.g. hoeren, lassen, sehen"/>
     <sdef n="compar"	c="comparative marker for adjectives and adverbs"/>
+    <sdef n="ling"	c="manually set (linguist) lexical preference"/>
   </sdefs>
 <!-- Paradigmas -->
   <pardefs>
@@ -1276,6 +1277,7 @@
    <e><p><l>yacer</l><r>liegen</r></p><par n='VM_VV_MAIN'/></e>
 <!-- 243 verbs from SQUOIA_ES automatically translated thru crawling wiktionary, manually checked (some changes, additions, separable verb prefix) -->
    <e><p><l>abandonar</l><r>verlassen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>abogar</l><r>plädieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abogar</l><r>verteidigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abordar</l><r>entern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>abortar</l><r>ab|treiben</r></p><par n="VM_VV_MAIN"/></e>
@@ -8433,7 +8435,7 @@
    <e><p><l>carpintero</l><r>Zimmerer</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>carpintero</l><r>Zimmermann</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>carrera</l><r>Beruf</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>carrera</l><r>Karriere</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>carrera</l><r>Karriere<s n='ling'/>1</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>carrera</l><r>Laufbahn</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>carrera</l><r>Lauf</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>carrera</l><r>Rennen</r></p><par n='NC_N_86_AUFBAUEN'/></e>
@@ -25222,7 +25224,7 @@ veintitodos
    <e><p><l>legislativo</l><r>gesetzgebend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>legislativo</l><r>legislativ<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>legítimo</l><r>legitim<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>lejano</l><r>fern<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>lejano</l><r>fern<s n="ling"/>1<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>lejano</l><r>weit entfernt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>lento</l><r>langsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>leproso</l><r>leprös<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>

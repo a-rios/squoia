@@ -15,6 +15,7 @@ my.type=P-eos&&child.smi=Fit	inter			my.type=VP&&my.si=top		senttype		parent		1t
 # --------------------------------------------------------------------------------------------------------------------------- #
 # AP chunk modifies NP chunk: pass the morphological information from the NP down to the AP
 my.type=AP&&my.si=adj-mod	mi			my.type=NP&&my.mi=/./		mi			parent		2to1		overwrite
+my.type=AP&&my.si=/s.a/		cas			my.type=NP&&my.cas=/./		cas			parent		2to1		overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 # NP with function 'cc': set accusative case [condOrigen: si=top or type=VP or ?]

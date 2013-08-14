@@ -13,6 +13,7 @@ use XML::LibXML;
 use strict;
 require "util.pl";
 
+my $opt_ling = 1;
 
 sub getParentSentence{
 	my $node = $_[0];
@@ -91,7 +92,13 @@ while ($dom->findnodes('//SYN')) {
 		# set sentence attribute "alt"
 		$sentnode->setAttribute('alt',"original");
 	}
-	my @synonyms = $cloneNode->getChildrenByLocalName('SYN');
+	my @synonyms; # = $cloneNode->getChildrenByLocalName('SYN');
+	if ($opt_ling) {
+		@synonyms = $cloneNode->findnodes('SYN[@ling]');
+	}
+	if (not @synonyms) {
+		@synonyms = $cloneNode->findnodes('SYN');
+	}
 	# duplicate sentence for all synonyms
 	foreach my $syn (@synonyms) {
 		$maxAlt++;
