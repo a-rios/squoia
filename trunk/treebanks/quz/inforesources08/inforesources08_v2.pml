@@ -13991,26 +13991,13 @@
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>18</order>
+              <order>22</order>
               <label>punc</label>
               <word>,</word>
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>32</order>
-              <label>punc</label>
-              <word>,</word>
-              <pos>$.</pos>
-            </terminal>
-            <terminal>
-              <order>51</order>
-              <label>punc</label>
-              <word>,</word>
-              <pos>$.</pos>
-            </terminal>
-            <terminal>
-              <order>73</order>
-              <label>sntc</label>
+              <order>35</order>
               <word>KAN</word>
               <secedges>
               </secedges>
@@ -14019,7 +14006,7 @@
               </morph>
               <children>
                 <terminal>
-                  <order>15</order>
+                  <order>18</order>
                   <label>subj</label>
                   <word>hamu</word>
                   <pos>Root</pos>
@@ -14071,67 +14058,106 @@
                       </children>
                     </terminal>
                     <terminal>
-                      <order>13</order>
-                      <label>subj</label>
-                      <word>ni</word>
-                      <pos>Root</pos>
-                      <translation>=decir</translation>
+                      <order>17</order>
+                      <label>s.poss</label>
+                      <word>-pa</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Cas</pos>
                       <morph>
-                        <tag>VRoot</tag>
+                        <tag>+Gen</tag>
                       </morph>
                       <children>
                         <terminal>
-                          <order>5</order>
-                          <label>flm</label>
-                          <word>dióxido</word>
+                          <order>15</order>
+                          <label>s.arg.claus</label>
+                          <word>wapsi</word>
                           <secedges>
                           </secedges>
                           <pos>Root</pos>
+                          <translation>=evaporar</translation>
                           <morph>
+                            <tag>VRoot</tag>
                           </morph>
                           <children>
                             <terminal>
-                              <order>6</order>
-                              <label>--</label>
-                              <word>de</word>
-                              <pos>SP</pos>
+                              <order>13</order>
+                              <label>mod</label>
+                              <word>ni</word>
+                              <pos>Root</pos>
+                              <translation>=decir</translation>
+                              <morph>
+                                <tag>VRoot</tag>
+                              </morph>
                               <children>
                                 <terminal>
-                                  <order>7</order>
-                                  <label>--</label>
-                                  <word>carbono</word>
+                                  <order>5</order>
+                                  <label>flm</label>
+                                  <word>dióxido</word>
                                   <secedges>
                                   </secedges>
-                                  <pos>Root</pos>
+                                  <pos>SP</pos>
                                   <morph>
+                                  </morph>
+                                  <children>
+                                    <terminal>
+                                      <order>6</order>
+                                      <label>--</label>
+                                      <word>de</word>
+                                      <pos>SP</pos>
+                                      <children>
+                                        <terminal>
+                                          <order>7</order>
+                                          <label>--</label>
+                                          <word>carbono</word>
+                                          <secedges>
+                                          </secedges>
+                                          <pos>SP</pos>
+                                          <morph>
+                                          </morph>
+                                        </terminal>
+                                      </children>
+                                    </terminal>
+                                    <terminal>
+                                      <order>9</order>
+                                      <label>abbrev</label>
+                                      <word>CO2</word>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>SP</pos>
+                                      <morph>
+                                      </morph>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                                <terminal>
+                                  <order>14</order>
+                                  <label>ns</label>
+                                  <word>-sqa</word>
+                                  <pos>NS</pos>
+                                  <morph>
+                                    <tag>+Perf</tag>
                                   </morph>
                                 </terminal>
                               </children>
                             </terminal>
                             <terminal>
-                              <order>9</order>
-                              <label>abbrev</label>
-                              <word>CO2</word>
+                              <order>16</order>
+                              <label>ns</label>
+                              <word>-y</word>
                               <secedges>
                               </secedges>
+                              <pos>NS</pos>
                               <morph>
+                                <tag>+Inf</tag>
                               </morph>
                             </terminal>
                           </children>
                         </terminal>
-                        <terminal>
-                          <order>14</order>
-                          <label>ns</label>
-                          <word>-sqa</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+Perf</tag>
-                          </morph>
-                        </terminal>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>17</order>
+                      <order>21</order>
                       <label>topic</label>
                       <word>-qa</word>
                       <pos>Amb</pos>
@@ -14140,178 +14166,170 @@
                       </morph>
                     </terminal>
                     <terminal>
-                      <order>16</order>
+                      <order>19</order>
                       <label>ns</label>
-                      <word>-q</word>
+                      <word>-sqa</word>
+                      <secedges>
+                      </secedges>
                       <pos>NS</pos>
                       <morph>
-                        <tag>+Ag</tag>
+                        <tag>+Perf</tag>
                       </morph>
+                      <children>
+                        <terminal>
+                          <order>20</order>
+                          <label>s.poss.subj</label>
+                          <word>-n</word>
+                          <secedges>
+                          </secedges>
+                          <pos>NPers</pos>
+                          <morph>
+                            <tag>+3.Sg.Poss</tag>
+                          </morph>
+                        </terminal>
+                      </children>
                     </terminal>
                   </children>
                 </terminal>
                 <terminal>
-                  <order>29</order>
-                  <label>ev</label>
-                  <word>-mi</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+DirE</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>71</order>
+                  <order>33</order>
                   <label>pred</label>
-                  <word>-rayku</word>
-                  <pos>Cas</pos>
+                  <word>chura</word>
+                  <secedges>
+                  </secedges>
+                  <pos>Root</pos>
+                  <translation>=poner</translation>
                   <morph>
-                    <tag>+Kaus</tag>
+                    <tag>VRoot</tag>
                   </morph>
                   <children>
                     <terminal>
-                      <order>25</order>
-                      <label>co</label>
-                      <word>hap'i</word>
+                      <order>28</order>
+                      <label>obj</label>
+                      <word>-ta</word>
                       <secedges>
                       </secedges>
-                      <pos>Root</pos>
-                      <translation>=agarrar,entender</translation>
+                      <pos>cas</pos>
                       <morph>
-                        <tag>VRoot</tag>
+                        <tag>+Acc</tag>
                       </morph>
-                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
-                          <order>24</order>
-                          <label>obj</label>
-                          <word>-ta</word>
+                          <order>27</order>
+                          <label>s.arg</label>
+                          <word>combustiblikuna</word>
                           <secedges>
                           </secedges>
-                          <pos>cas</pos>
+                          <pos>Root_Num</pos>
                           <morph>
-                            <tag>+Acc</tag>
+                            <tag>NRootES</tag>
+                            <tag>+Pl</tag>
                           </morph>
                           <children>
                             <terminal>
-                              <order>23</order>
-                              <label>s.arg</label>
-                              <word>combustiblikuna</word>
-                              <secedges>
-                              </secedges>
-                              <pos>Root_Num</pos>
+                              <order>25</order>
+                              <label>mod</label>
+                              <word>rumiya</word>
+                              <pos>Root_VS</pos>
+                              <translation>=piedra</translation>
                               <morph>
-                                <tag>NRootES</tag>
-                                <tag>+Pl</tag>
+                                <tag>NRoot</tag>
+                                <tag>+Trs</tag>
                               </morph>
                               <children>
                                 <terminal>
-                                  <order>21</order>
-                                  <label>mod</label>
-                                  <word>rumiya</word>
-                                  <pos>Root_VS</pos>
-                                  <translation>=piedra</translation>
+                                  <order>26</order>
+                                  <label>ns</label>
+                                  <word>-sqa</word>
+                                  <pos>NS</pos>
                                   <morph>
-                                    <tag>NRoot</tag>
-                                    <tag>+Trs</tag>
+                                    <tag>+Perf</tag>
                                   </morph>
-                                  <children>
-                                    <terminal>
-                                      <order>22</order>
-                                      <label>ns</label>
-                                      <word>-sqa</word>
-                                      <pos>NS</pos>
-                                      <morph>
-                                        <tag>+Perf</tag>
-                                      </morph>
-                                    </terminal>
-                                  </children>
                                 </terminal>
                               </children>
                             </terminal>
                           </children>
                         </terminal>
-                        <terminal>
-                          <order>27</order>
-                          <label>ns</label>
-                          <word>-pti</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+DS</tag>
-                          </morph>
-                          <children>
-                            <terminal>
-                              <order>28</order>
-                              <label>s.poss.subj</label>
-                              <word>-n</word>
-                              <pos>NPers</pos>
-                              <morph>
-                                <tag>+3.Sg.Poss</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal>
-                          <order>26</order>
-                          <label>mod</label>
-                          <word>-ku</word>
-                          <pos>VDeriv</pos>
-                          <morph>
-                            <tag>+Rflx_Int</tag>
-                          </morph>
-                        </terminal>
-                        <terminal>
-                          <order>30</order>
-                          <label>linker</label>
-                          <word>chayna</word>
-                          <pos>Root</pos>
-                          <morph>
-                            <tag>PrnDem</tag>
-                          </morph>
-                          <children>
-                            <terminal>
-                              <order>31</order>
-                              <label>topic</label>
-                              <word>-qa</word>
-                              <pos>Amb</pos>
-                              <morph>
-                                <tag>+Top</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>33</order>
-                      <label>linker</label>
-                      <word>hina</word>
-                      <pos>Root</pos>
+                      <order>32</order>
+                      <label>mod</label>
+                      <word>-pi</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Cas</pos>
                       <morph>
-                        <tag>Part_Sim</tag>
+                        <tag>+Loc</tag>
                       </morph>
                       <children>
                         <terminal>
-                          <order>34</order>
-                          <label>mod</label>
-                          <word>-lla</word>
-                          <pos>Amb</pos>
+                          <order>30</order>
+                          <label>s.arg.claus</label>
+                          <word>ruwa</word>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <translation>=hacer</translation>
                           <morph>
-                            <tag>+Lim_Aff</tag>
+                            <tag>VRoot</tag>
                           </morph>
-                        </terminal>
-                        <terminal>
-                          <order>35</order>
-                          <label>s.co</label>
-                          <word>-taq</word>
-                          <pos>Amb</pos>
-                          <morph>
-                            <tag>+Con_Intr</tag>
-                          </morph>
+                          <children>
+                            <terminal>
+                              <order>29</order>
+                              <label>obj</label>
+                              <word>chakra</word>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <translation>=chacra</translation>
+                              <morph>
+                                <tag>NRoot</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
+                              <order>31</order>
+                              <label>ns</label>
+                              <word>-ykuna</word>
+                              <secedges>
+                              </secedges>
+                              <pos>NS_Num</pos>
+                              <morph>
+                                <tag>+Inf</tag>
+                                <tag>+Pl</tag>
+                              </morph>
+                            </terminal>
+                          </children>
                         </terminal>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>50</order>
+                      <order>34</order>
+                      <label>ns</label>
+                      <word>-sqa</word>
+                      <secedges>
+                      </secedges>
+                      <pos>NS</pos>
+                      <morph>
+                        <tag>+Perf</tag>
+                      </morph>
+                    </terminal>
+                  </children>
+                </terminal>
+                <terminal>
+                  <order>76</order>
+                  <label>caus</label>
+                  <word>-rayku</word>
+                  <secedges>
+                  </secedges>
+                  <pos>Cas</pos>
+                  <morph>
+                    <tag>+Kaus</tag>
+                  </morph>
+                  <discourse>FOCUS</discourse>
+                  <children>
+                    <terminal>
+                      <order>54</order>
                       <label>co</label>
                       <word>-rayku</word>
                       <pos>Cas</pos>
@@ -14320,7 +14338,7 @@
                       </morph>
                       <children>
                         <terminal>
-                          <order>48</order>
+                          <order>52</order>
                           <label>s.arg.claus</label>
                           <word>kana</word>
                           <pos>Root</pos>
@@ -14330,8 +14348,37 @@
                           </morph>
                           <children>
                             <terminal>
-                              <order>38</order>
-                              <label>loc</label>
+                              <order>37</order>
+                              <label>linker</label>
+                              <word>hina</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>Part_Sim</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>38</order>
+                                  <label>mod</label>
+                                  <word>-lla</word>
+                                  <pos>Amb</pos>
+                                  <morph>
+                                    <tag>+Lim_Aff</tag>
+                                  </morph>
+                                </terminal>
+                                <terminal>
+                                  <order>39</order>
+                                  <label>s.co</label>
+                                  <word>-taq</word>
+                                  <pos>Amb</pos>
+                                  <morph>
+                                    <tag>+Con_Intr</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal>
+                              <order>42</order>
+                              <label>mod</label>
                               <word>-pi</word>
                               <pos>Cas</pos>
                               <morph>
@@ -14339,7 +14386,7 @@
                               </morph>
                               <children>
                                 <terminal>
-                                  <order>36</order>
+                                  <order>40</order>
                                   <label>s.arg.claus</label>
                                   <word>tarpu</word>
                                   <pos>Root</pos>
@@ -14349,7 +14396,7 @@
                                   </morph>
                                   <children>
                                     <terminal>
-                                      <order>37</order>
+                                      <order>41</order>
                                       <label>ns</label>
                                       <word>-ykuna</word>
                                       <pos>NS_Num</pos>
@@ -14363,7 +14410,7 @@
                               </children>
                             </terminal>
                             <terminal>
-                              <order>47</order>
+                              <order>51</order>
                               <label>obj</label>
                               <word>-ta</word>
                               <pos>Cas</pos>
@@ -14372,7 +14419,7 @@
                               </morph>
                               <children>
                                 <terminal>
-                                  <order>45</order>
+                                  <order>49</order>
                                   <label>s.arg</label>
                                   <word>puchu</word>
                                   <pos>Root</pos>
@@ -14382,7 +14429,7 @@
                                   </morph>
                                   <children>
                                     <terminal>
-                                      <order>46</order>
+                                      <order>50</order>
                                       <label>s.poss</label>
                                       <word>-nkuna</word>
                                       <pos>NPers_Num</pos>
@@ -14396,7 +14443,7 @@
                               </children>
                             </terminal>
                             <terminal>
-                              <order>49</order>
+                              <order>53</order>
                               <label>ns</label>
                               <word>-sqa</word>
                               <pos>NS</pos>
@@ -14409,82 +14456,19 @@
                       </children>
                     </terminal>
                     <terminal>
-                      <order>53</order>
-                      <label>linker</label>
-                      <word>-manta</word>
+                      <order>68</order>
+                      <label>co</label>
+                      <word>-rayku</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
-                        <tag>+Abl</tag>
+                        <tag>+Kaus</tag>
                       </morph>
                       <children>
                         <terminal>
-                          <order>52</order>
-                          <label>s.arg</label>
-                          <word>chay</word>
-                          <pos>Root</pos>
-                          <morph>
-                            <tag>PrnDem</tag>
-                          </morph>
-                          <children>
-                            <terminal>
-                              <order>54</order>
-                              <label>s.co</label>
-                              <word>-pas</word>
-                              <pos>Amb</pos>
-                              <morph>
-                                <tag>+Add</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                      </children>
-                    </terminal>
-                    <terminal>
-                      <order>67</order>
-                      <label>s.arg.claus</label>
-                      <word>kana</word>
-                      <pos>Root</pos>
-                      <translation>=quemar</translation>
-                      <morph>
-                        <tag>VRoot</tag>
-                      </morph>
-                      <children>
-                        <terminal>
-                          <order>57</order>
-                          <label>co:obj</label>
-                          <word>-ta</word>
-                          <pos>Cas</pos>
-                          <morph>
-                            <tag>+Acc</tag>
-                          </morph>
-                          <children>
-                            <terminal>
-                              <order>56</order>
-                              <label>s.arg</label>
-                              <word>-sach'akuna</word>
-                              <pos>Root_Num</pos>
-                              <morph>
-                                <tag>NRoot</tag>
-                                <tag>+Pl</tag>
-                              </morph>
-                              <children>
-                                <terminal>
-                                  <order>55</order>
-                                  <label>dupl</label>
-                                  <word>sach'a</word>
-                                  <pos>Root</pos>
-                                  <translation>=árbol</translation>
-                                  <morph>
-                                    <tag>NRoot</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal>
-                          <order>58</order>
-                          <label>co</label>
+                          <order>65</order>
+                          <label>s.arg.claus</label>
                           <word>wit'u</word>
                           <pos>Root</pos>
                           <translation>=amputar</translation>
@@ -14493,27 +14477,122 @@
                           </morph>
                           <children>
                             <terminal>
-                              <order>60</order>
-                              <label>ns</label>
-                              <word>-pti</word>
-                              <pos>NS</pos>
+                              <order>57</order>
+                              <label>linker</label>
+                              <word>-manta</word>
+                              <pos>Cas</pos>
                               <morph>
-                                <tag>+DS</tag>
+                                <tag>+Abl</tag>
                               </morph>
                               <children>
                                 <terminal>
-                                  <order>61</order>
-                                  <label>s.poss.subj</label>
-                                  <word>-n</word>
-                                  <pos>NPers</pos>
+                                  <order>56</order>
+                                  <label>s.arg</label>
+                                  <word>chay</word>
+                                  <pos>Root</pos>
                                   <morph>
-                                    <tag>+3.Sg.Poss</tag>
+                                    <tag>PrnDem</tag>
                                   </morph>
+                                  <children>
+                                    <terminal>
+                                      <order>58</order>
+                                      <label>s.co</label>
+                                      <word>-pas</word>
+                                      <pos>Amb</pos>
+                                      <morph>
+                                        <tag>+Add</tag>
+                                      </morph>
+                                    </terminal>
+                                  </children>
                                 </terminal>
                               </children>
                             </terminal>
                             <terminal>
-                              <order>59</order>
+                              <order>61</order>
+                              <label>co:obj</label>
+                              <word>-ta</word>
+                              <secedges>
+                              </secedges>
+                              <pos>Cas</pos>
+                              <morph>
+                                <tag>+Acc</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>60</order>
+                                  <label>s.arg</label>
+                                  <word>-sach'akuna</word>
+                                  <pos>Root_Num</pos>
+                                  <morph>
+                                    <tag>NRoot</tag>
+                                    <tag>+Pl</tag>
+                                  </morph>
+                                  <children>
+                                    <terminal>
+                                      <order>59</order>
+                                      <label>dupl</label>
+                                      <word>sach'a</word>
+                                      <pos>Root</pos>
+                                      <translation>=árbol</translation>
+                                      <morph>
+                                        <tag>NRoot</tag>
+                                      </morph>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal>
+                              <order>64</order>
+                              <label>adv</label>
+                              <word>-ta</word>
+                              <secedges>
+                              </secedges>
+                              <pos>Cas</pos>
+                              <morph>
+                                <tag>+Acc</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>63</order>
+                                  <label>mod</label>
+                                  <word>chanin</word>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <translation>=correcto</translation>
+                                  <morph>
+                                    <tag>NRoot</tag>
+                                  </morph>
+                                  <children>
+                                    <terminal>
+                                      <order>62</order>
+                                      <label>neg</label>
+                                      <word>mana</word>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>Part_Neg</tag>
+                                      </morph>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal>
+                              <order>67</order>
+                              <label>ns</label>
+                              <word>-sqa</word>
+                              <secedges>
+                              </secedges>
+                              <pos>NS</pos>
+                              <morph>
+                                <tag>+Perf</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
+                              <order>66</order>
                               <label>mod</label>
                               <word>-ku</word>
                               <pos>VDeriv</pos>
@@ -14523,41 +14602,39 @@
                             </terminal>
                           </children>
                         </terminal>
+                      </children>
+                    </terminal>
+                    <terminal id="s46_74">
+                      <order>74</order>
+                      <label>s.arg.claus</label>
+                      <word>kana</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <translation>=quemar</translation>
+                      <morph>
+                        <tag>VRoot</tag>
+                      </morph>
+                      <children>
                         <terminal>
-                          <order>69</order>
+                          <order>75</order>
                           <label>ns</label>
-                          <word>-pti</word>
+                          <word>-sqa</word>
+                          <secedges>
+                          </secedges>
                           <pos>NS</pos>
                           <morph>
-                            <tag>+DS</tag>
-                          </morph>
-                          <children>
-                            <terminal>
-                              <order>70</order>
-                              <label>s.poss.subj</label>
-                              <word>-n</word>
-                              <pos>NPers</pos>
-                              <morph>
-                                <tag>+3.Sg.Poss</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal>
-                          <order>68</order>
-                          <label>mod</label>
-                          <word>-ku</word>
-                          <pos>VDeriv</pos>
-                          <morph>
-                            <tag>+Rflx_Int</tag>
+                            <tag>+Perf</tag>
                           </morph>
                         </terminal>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>72</order>
+                      <order>77</order>
                       <label>linker</label>
                       <word>ima</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>Part_Conec</tag>
@@ -14565,10 +14642,32 @@
                     </terminal>
                   </children>
                 </terminal>
+                <terminal>
+                  <order>78</order>
+                  <label>ev</label>
+                  <word>-m</word>
+                  <secedges>
+                  </secedges>
+                  <pos>Amb</pos>
+                  <morph>
+                  </morph>
+                </terminal>
               </children>
             </terminal>
             <terminal>
-              <order>75</order>
+              <order>36</order>
+              <label>punc</label>
+              <word>,</word>
+              <pos>$.</pos>
+            </terminal>
+            <terminal>
+              <order>55</order>
+              <label>punc</label>
+              <word>,</word>
+              <pos>$.</pos>
+            </terminal>
+            <terminal>
+              <order>80</order>
               <label>punc</label>
               <word>.</word>
               <pos>$.</pos>
@@ -14614,153 +14713,97 @@
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>28</order>
+              <order>81</order>
               <label>punc</label>
-              <word>)</word>
+              <word>.</word>
+              <secedges>
+              </secedges>
               <pos>$.</pos>
-            </terminal>
-            <terminal>
-              <order>49</order>
-              <label>punc</label>
-              <word>,</word>
-              <pos>$.</pos>
-            </terminal>
-            <terminal>
-              <order>58</order>
-              <label>sntc</label>
-              <word>paqari</word>
-              <pos>Root</pos>
-              <translation>=amanecer</translation>
               <morph>
-                <tag>VRoot</tag>
+              </morph>
+            </terminal>
+            <terminal>
+              <order>80</order>
+              <label>sntc</label>
+              <word>KAN</word>
+              <secedges>
+              </secedges>
+              <pos>DUMMY</pos>
+              <morph>
               </morph>
               <children>
                 <terminal>
-                  <order>1</order>
-                  <label>linker</label>
-                  <word>Hina</word>
+                  <order>62</order>
+                  <label>co</label>
+                  <word>paqari</word>
                   <pos>Root</pos>
-                  <morph>
-                    <tag>Part_Sim</tag>
-                  </morph>
-                  <children>
-                    <terminal>
-                      <order>2</order>
-                      <label>mod</label>
-                      <word>-lla</word>
-                      <pos>Amb</pos>
-                      <morph>
-                        <tag>+Lim_Aff</tag>
-                      </morph>
-                    </terminal>
-                    <terminal>
-                      <order>3</order>
-                      <label>s.co</label>
-                      <word>-taq</word>
-                      <pos>Amb</pos>
-                      <morph>
-                        <tag>+Con_Intr</tag>
-                      </morph>
-                    </terminal>
-                  </children>
-                </terminal>
-                <terminal>
-                  <order>9</order>
-                  <label>subj</label>
-                  <word>tarpu</word>
-                  <pos>Root</pos>
-                  <translation>=sembrar</translation>
+                  <translation>=amanecer</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
                   <children>
                     <terminal>
-                      <order>5</order>
-                      <label>obj</label>
-                      <word>chakra</word>
+                      <order>1</order>
+                      <label>linker</label>
+                      <word>Hina</word>
                       <pos>Root</pos>
-                      <translation>=chacra</translation>
                       <morph>
-                        <tag>NRoot</tag>
-                      </morph>
-                    </terminal>
-                    <terminal>
-                      <order>11</order>
-                      <label>topic</label>
-                      <word>-qa</word>
-                      <pos>Amb</pos>
-                      <morph>
-                        <tag>+Top</tag>
-                      </morph>
-                    </terminal>
-                    <terminal>
-                      <order>10</order>
-                      <label>ns</label>
-                      <word>-y</word>
-                      <pos>NS</pos>
-                      <morph>
-                        <tag>+Inf</tag>
-                      </morph>
-                    </terminal>
-                  </children>
-                </terminal>
-                <terminal>
-                  <order>22</order>
-                  <label>obj</label>
-                  <word>-ta</word>
-                  <pos>Cas</pos>
-                  <morph>
-                    <tag>+Acc</tag>
-                  </morph>
-                  <children>
-                    <terminal>
-                      <order>20</order>
-                      <label>s.arg.claus</label>
-                      <word>wapsiri</word>
-                      <pos>Root_VDeriv</pos>
-                      <translation>=evaporar</translation>
-                      <morph>
-                        <tag>VRoot</tag>
-                        <tag>+Inch</tag>
+                        <tag>Part_Sim</tag>
                       </morph>
                       <children>
                         <terminal>
-                          <order>18</order>
-                          <label>obj</label>
-                          <word>ni</word>
-                          <pos>Root</pos>
-                          <translation>=decir</translation>
+                          <order>2</order>
+                          <label>mod</label>
+                          <word>-lla</word>
+                          <pos>Amb</pos>
                           <morph>
-                            <tag>VRoot</tag>
+                            <tag>+Lim_Aff</tag>
                           </morph>
-                          <children>
-                            <terminal>
-                              <order>12</order>
-                              <label>flm</label>
-                              <word>metano</word>
-                              <pos>UNKNOWN</pos>
-                              <children>
-                                <terminal>
-                                  <order>14</order>
-                                  <label>abbrev</label>
-                                  <word>CH4</word>
-                                  <pos>UNKNOWN</pos>
-                                </terminal>
-                              </children>
-                            </terminal>
-                            <terminal>
-                              <order>19</order>
-                              <label>ns</label>
-                              <word>-sqa</word>
-                              <pos>NS</pos>
-                              <morph>
-                                <tag>+Perf</tag>
-                              </morph>
-                            </terminal>
-                          </children>
                         </terminal>
                         <terminal>
-                          <order>21</order>
+                          <order>3</order>
+                          <label>s.co</label>
+                          <word>-taq</word>
+                          <pos>Amb</pos>
+                          <morph>
+                            <tag>+Con_Intr</tag>
+                          </morph>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal>
+                      <order>9</order>
+                      <label>subj</label>
+                      <word>llamk'a</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <translation>=trabajar</translation>
+                      <morph>
+                        <tag>VRoot</tag>
+                      </morph>
+                      <children>
+                        <terminal>
+                          <order>5</order>
+                          <label>obj</label>
+                          <word>chakra</word>
+                          <pos>Root</pos>
+                          <translation>=chacra</translation>
+                          <morph>
+                            <tag>NRoot</tag>
+                          </morph>
+                        </terminal>
+                        <terminal>
+                          <order>11</order>
+                          <label>topic</label>
+                          <word>-qa</word>
+                          <pos>Amb</pos>
+                          <morph>
+                            <tag>+Top</tag>
+                          </morph>
+                        </terminal>
+                        <terminal>
+                          <order>10</order>
                           <label>ns</label>
                           <word>-y</word>
                           <pos>NS</pos>
@@ -14771,129 +14814,255 @@
                       </children>
                     </terminal>
                     <terminal>
-                      <order>32</order>
-                      <label>co</label>
-                      <word>ni</word>
-                      <pos>Root</pos>
-                      <translation>=decir</translation>
+                      <order>48</order>
+                      <label>comp</label>
+                      <word>-manta</word>
+                      <pos>Cas</pos>
                       <morph>
-                        <tag>VRoot</tag>
+                        <tag>+Abl</tag>
                       </morph>
                       <children>
                         <terminal>
-                          <order>24</order>
-                          <label>flm</label>
-                          <word>óxido</word>
-                          <pos>UNKNOWN</pos>
-                          <children>
-                            <terminal>
-                              <order>25</order>
-                              <label>--</label>
-                              <word>nitroso</word>
-                              <pos>UNKNOWN</pos>
-                            </terminal>
-                            <terminal>
-                              <order>27</order>
-                              <label>abbrev</label>
-                              <word>N2O</word>
-                              <pos>UNKNOWN</pos>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal>
-                          <order>34</order>
-                          <label>s.co</label>
-                          <word>-pas</word>
-                          <pos>Amb</pos>
-                          <morph>
-                            <tag>+Add</tag>
-                          </morph>
-                        </terminal>
-                        <terminal>
-                          <order>33</order>
-                          <label>ns</label>
-                          <word>-sqa</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+Perf</tag>
-                          </morph>
-                        </terminal>
-                      </children>
-                    </terminal>
-                  </children>
-                </terminal>
-                <terminal>
-                  <order>47</order>
-                  <label>comp</label>
-                  <word>-manta</word>
-                  <pos>Cas</pos>
-                  <morph>
-                    <tag>+Abl</tag>
-                  </morph>
-                  <children>
-                    <terminal>
-                      <order>44</order>
-                      <label>s.arg.claus</label>
-                      <word>ka</word>
-                      <pos>Root</pos>
-                      <translation>=ser</translation>
-                      <morph>
-                        <tag>VRoot</tag>
-                      </morph>
-                      <children>
-                        <terminal>
-                          <order>36</order>
-                          <label>subj</label>
-                          <word>wapsi</word>
+                          <order>45</order>
+                          <label>s.arg.claus</label>
+                          <word>ka</word>
                           <pos>Root</pos>
-                          <translation>=evaporar</translation>
+                          <translation>=ser</translation>
                           <morph>
                             <tag>VRoot</tag>
                           </morph>
                           <children>
                             <terminal>
-                              <order>35</order>
-                              <label>mod</label>
-                              <word>llapa</word>
+                              <order>37</order>
+                              <label>subj</label>
+                              <word>wapsi</word>
                               <pos>Root</pos>
-                              <translation>=todo</translation>
+                              <translation>=evaporar</translation>
+                              <morph>
+                                <tag>VRoot</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>36</order>
+                                  <label>mod</label>
+                                  <word>llapa</word>
+                                  <pos>Root</pos>
+                                  <translation>=todo</translation>
+                                  <morph>
+                                    <tag>NRoot</tag>
+                                  </morph>
+                                </terminal>
+                                <terminal>
+                                  <order>38</order>
+                                  <label>ns</label>
+                                  <word>-ykuna</word>
+                                  <pos>NS_Num</pos>
+                                  <morph>
+                                    <tag>+Inf</tag>
+                                    <tag>+Pl</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal>
+                              <order>49</order>
+                              <label>topic</label>
+                              <word>-qa</word>
+                              <pos>Amb</pos>
+                              <morph>
+                                <tag>+Top</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
+                              <order>46</order>
+                              <label>ns</label>
+                              <word>-sqa</word>
+                              <pos>NS</pos>
+                              <morph>
+                                <tag>+Perf</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>47</order>
+                                  <label>s.poss.subj</label>
+                                  <word>-n</word>
+                                  <pos>NPers</pos>
+                                  <morph>
+                                    <tag>+3.Sg.Poss</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                          </children>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal>
+                      <order>54</order>
+                      <label>obj</label>
+                      <word>-ta</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Cas</pos>
+                      <morph>
+                        <tag>+Acc</tag>
+                      </morph>
+                      <discourse>FOCUS</discourse>
+                      <children>
+                        <terminal>
+                          <order>34</order>
+                          <label>app</label>
+                          <word>-ta</word>
+                          <secedges>
+                          </secedges>
+                          <pos>Cas</pos>
+                          <morph>
+                            <tag>+Acc</tag>
+                          </morph>
+                          <children>
+                            <terminal>
+                              <order>22</order>
+                              <label>co</label>
+                              <word>-ta</word>
+                              <pos>Cas</pos>
+                              <morph>
+                                <tag>+Acc</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>20</order>
+                                  <label>s.arg.claus</label>
+                                  <word>wapsiri</word>
+                                  <pos>Root_VDeriv</pos>
+                                  <translation>=evaporar</translation>
+                                  <morph>
+                                    <tag>VRoot</tag>
+                                    <tag>+Inch</tag>
+                                  </morph>
+                                  <children>
+                                    <terminal>
+                                      <order>18</order>
+                                      <label>obj</label>
+                                      <word>ni</word>
+                                      <pos>Root</pos>
+                                      <translation>=decir</translation>
+                                      <morph>
+                                        <tag>VRoot</tag>
+                                      </morph>
+                                      <children>
+                                        <terminal>
+                                          <order>12</order>
+                                          <label>flm</label>
+                                          <word>metano</word>
+                                          <pos>SP</pos>
+                                          <children>
+                                            <terminal>
+                                              <order>14</order>
+                                              <label>abbrev</label>
+                                              <word>CH4</word>
+                                              <pos>SP</pos>
+                                            </terminal>
+                                          </children>
+                                        </terminal>
+                                        <terminal>
+                                          <order>19</order>
+                                          <label>ns</label>
+                                          <word>-sqa</word>
+                                          <pos>NS</pos>
+                                          <morph>
+                                            <tag>+Perf</tag>
+                                          </morph>
+                                        </terminal>
+                                      </children>
+                                    </terminal>
+                                    <terminal>
+                                      <order>21</order>
+                                      <label>ns</label>
+                                      <word>-y</word>
+                                      <pos>NS</pos>
+                                      <morph>
+                                        <tag>+Inf</tag>
+                                      </morph>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal>
+                              <order>32</order>
+                              <label>s.arg</label>
+                              <word>ni</word>
+                              <pos>Root</pos>
+                              <translation>=decir</translation>
+                              <morph>
+                                <tag>VRoot</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>24</order>
+                                  <label>flm</label>
+                                  <word>óxido</word>
+                                  <pos>SP</pos>
+                                  <children>
+                                    <terminal>
+                                      <order>25</order>
+                                      <label>--</label>
+                                      <word>nitroso</word>
+                                      <pos>SP</pos>
+                                    </terminal>
+                                    <terminal>
+                                      <order>27</order>
+                                      <label>abbrev</label>
+                                      <word>N2O</word>
+                                      <pos>SP</pos>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                                <terminal>
+                                  <order>35</order>
+                                  <label>s.co</label>
+                                  <word>-pas</word>
+                                  <pos>Amb</pos>
+                                  <morph>
+                                    <tag>+Add</tag>
+                                  </morph>
+                                </terminal>
+                                <terminal>
+                                  <order>33</order>
+                                  <label>ns</label>
+                                  <word>-sqa</word>
+                                  <pos>NS</pos>
+                                  <morph>
+                                    <tag>+Perf</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                          </children>
+                        </terminal>
+                        <terminal>
+                          <order>52</order>
+                          <label>s.arg</label>
+                          <word>kuska</word>
+                          <pos>Root</pos>
+                          <translation>=juntos</translation>
+                          <morph>
+                            <tag>NRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal>
+                              <order>51</order>
+                              <label>adv</label>
+                              <word>yaqa</word>
+                              <pos>Root</pos>
+                              <translation>=casi</translation>
                               <morph>
                                 <tag>NRoot</tag>
                               </morph>
                             </terminal>
                             <terminal>
-                              <order>37</order>
-                              <label>ns</label>
-                              <word>-ykuna</word>
-                              <pos>NS_Num</pos>
-                              <morph>
-                                <tag>+Inf</tag>
-                                <tag>+Pl</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal>
-                          <order>48</order>
-                          <label>topic</label>
-                          <word>-qa</word>
-                          <pos>Amb</pos>
-                          <morph>
-                            <tag>+Top</tag>
-                          </morph>
-                        </terminal>
-                        <terminal>
-                          <order>45</order>
-                          <label>ns</label>
-                          <word>-sqa</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+Perf</tag>
-                          </morph>
-                          <children>
-                            <terminal>
-                              <order>46</order>
-                              <label>s.poss.subj</label>
+                              <order>53</order>
+                              <label>s.poss</label>
                               <word>-n</word>
                               <pos>NPers</pos>
                               <morph>
@@ -14904,111 +15073,41 @@
                         </terminal>
                       </children>
                     </terminal>
-                  </children>
-                </terminal>
-                <terminal>
-                  <order>53</order>
-                  <label>adv</label>
-                  <word>-ta</word>
-                  <secedges>
-                  </secedges>
-                  <pos>Cas</pos>
-                  <morph>
-                    <tag>+Acc</tag>
-                  </morph>
-                  <discourse>FOCUS</discourse>
-                  <children>
                     <terminal>
-                      <order>51</order>
-                      <label>s.arg</label>
-                      <word>kuska</word>
-                      <pos>Root</pos>
-                      <translation>=juntos</translation>
+                      <order>55</order>
+                      <label>ev</label>
+                      <word>-m</word>
+                      <pos>Amb</pos>
                       <morph>
-                        <tag>NRoot</tag>
+                        <tag>+DirE</tag>
                       </morph>
-                      <children>
-                        <terminal>
-                          <order>50</order>
-                          <label>adv</label>
-                          <word>yaqa</word>
-                          <pos>Root</pos>
-                          <translation>=casi</translation>
-                          <morph>
-                            <tag>NRoot</tag>
-                          </morph>
-                        </terminal>
-                        <terminal>
-                          <order>52</order>
-                          <label>s.poss</label>
-                          <word>-n</word>
-                          <pos>NPers</pos>
-                          <morph>
-                            <tag>+3.Sg.Poss</tag>
-                          </morph>
-                        </terminal>
-                      </children>
+                    </terminal>
+                    <terminal>
+                      <order>63</order>
+                      <label>mod</label>
+                      <word>-chi</word>
+                      <pos>VDeriv</pos>
+                      <morph>
+                        <tag>+Caus</tag>
+                      </morph>
+                    </terminal>
+                    <terminal>
+                      <order>64</order>
+                      <label>s.subj</label>
+                      <word>-n</word>
+                      <pos>VPers</pos>
+                      <morph>
+                        <tag>+3.Sg.Subj</tag>
+                      </morph>
                     </terminal>
                   </children>
                 </terminal>
                 <terminal>
-                  <order>54</order>
-                  <label>ev</label>
-                  <word>-m</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+DirE</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>59</order>
-                  <label>mod</label>
-                  <word>-chi</word>
-                  <pos>VDeriv</pos>
-                  <morph>
-                    <tag>+Caus</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>60</order>
-                  <label>s.subj</label>
-                  <word>-n</word>
-                  <pos>VPers</pos>
-                  <morph>
-                    <tag>+3.Sg.Subj</tag>
-                  </morph>
-                </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>61</order>
-              <label>punc</label>
-              <word>;</word>
-              <pos>$.</pos>
-            </terminal>
-          </children>
-        </nonterminal>
-      </root>
-    </s>
-    <s id="s56">
-      <root>
-        <nonterminal id="s56_VROOT">
-          <cat>VROOT</cat>
-          <children>
-            <terminal>
-              <order>27</order>
-              <label>sntc</label>
-              <word>KAN</word>
-              <secedges>
-              </secedges>
-              <pos>DUMMY</pos>
-              <morph>
-              </morph>
-              <children>
-                <terminal>
-                  <order>7</order>
+                  <order>66</order>
                   <label>subj</label>
                   <word>kaykuna</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_Num</pos>
                   <morph>
                     <tag>PrnDem</tag>
@@ -15016,9 +15115,11 @@
                   </morph>
                   <children>
                     <terminal>
-                      <order>8</order>
+                      <order>67</order>
                       <label>topic</label>
                       <word>-qa</word>
+                      <secedges>
+                      </secedges>
                       <pos>Amb</pos>
                       <morph>
                         <tag>+Top</tag>
@@ -15027,7 +15128,7 @@
                   </children>
                 </terminal>
                 <terminal>
-                  <order>25</order>
+                  <order>78</order>
                   <label>pred</label>
                   <word>-yuq</word>
                   <secedges>
@@ -15039,18 +15140,22 @@
                   <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
-                      <order>14</order>
+                      <order>73</order>
                       <label>comp</label>
                       <word>-manta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Abl</tag>
                       </morph>
                       <children>
                         <terminal>
-                          <order>12</order>
+                          <order>71</order>
                           <label>s.arg.claus</label>
                           <word>ni</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root</pos>
                           <translation>=decir</translation>
                           <morph>
@@ -15058,40 +15163,56 @@
                           </morph>
                           <children>
                             <terminal>
-                              <order>9</order>
+                              <order>68</order>
                               <label>flm</label>
                               <word>dióxido</word>
-                              <pos>UNKNOWN</pos>
+                              <secedges>
+                              </secedges>
+                              <pos>SP</pos>
+                              <morph>
+                              </morph>
                               <children>
                                 <terminal>
-                                  <order>10</order>
+                                  <order>69</order>
                                   <label>--</label>
                                   <word>de</word>
+                                  <secedges>
+                                  </secedges>
                                   <pos>SP</pos>
+                                  <morph>
+                                  </morph>
                                   <children>
                                     <terminal>
-                                      <order>11</order>
+                                      <order>70</order>
                                       <label>--</label>
                                       <word>carbono</word>
-                                      <pos>UNKNOWN</pos>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>SP</pos>
+                                      <morph>
+                                      </morph>
                                     </terminal>
                                   </children>
                                 </terminal>
                               </children>
                             </terminal>
                             <terminal>
-                              <order>15</order>
+                              <order>74</order>
                               <label>topic</label>
                               <word>-qa</word>
+                              <secedges>
+                              </secedges>
                               <pos>Amb</pos>
                               <morph>
                                 <tag>+Top</tag>
                               </morph>
                             </terminal>
                             <terminal>
-                              <order>13</order>
+                              <order>72</order>
                               <label>ns</label>
                               <word>-sqa</word>
+                              <secedges>
+                              </secedges>
                               <pos>NS</pos>
                               <morph>
                                 <tag>+Perf</tag>
@@ -15102,9 +15223,11 @@
                       </children>
                     </terminal>
                     <terminal>
-                      <order>24</order>
+                      <order>77</order>
                       <label>s.arg</label>
                       <word>kallpa</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=fuerte</translation>
                       <morph>
@@ -15112,9 +15235,11 @@
                       </morph>
                       <children>
                         <terminal>
-                          <order>16</order>
+                          <order>75</order>
                           <label>mod</label>
                           <word>aswan</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root</pos>
                           <translation>=más,mucho</translation>
                           <morph>
@@ -15122,9 +15247,11 @@
                           </morph>
                         </terminal>
                         <terminal>
-                          <order>23</order>
+                          <order>76</order>
                           <label>mod</label>
                           <word>millay</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root</pos>
                           <translation>=asco,feo</translation>
                           <morph>
@@ -15136,9 +15263,11 @@
                   </children>
                 </terminal>
                 <terminal>
-                  <order>26</order>
+                  <order>79</order>
                   <label>ev</label>
                   <word>-mi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Amb</pos>
                   <morph>
                     <tag>+DirE</tag>
@@ -15149,7 +15278,19 @@
             <terminal>
               <order>28</order>
               <label>punc</label>
-              <word>.</word>
+              <word>)</word>
+              <pos>$.</pos>
+            </terminal>
+            <terminal>
+              <order>50</order>
+              <label>punc</label>
+              <word>,</word>
+              <pos>$.</pos>
+            </terminal>
+            <terminal>
+              <order>65</order>
+              <label>punc</label>
+              <word>;</word>
               <pos>$.</pos>
             </terminal>
           </children>
@@ -15176,9 +15317,11 @@
             <terminal>
               <order>43</order>
               <label>sntc</label>
-              <word>yuri</word>
+              <word>paqari</word>
+              <secedges>
+              </secedges>
               <pos>Root</pos>
-              <translation>=aparecer</translation>
+              <translation>=aparecer,amanecer</translation>
               <morph>
                 <tag>VRoot</tag>
               </morph>
@@ -15337,7 +15480,7 @@
                   </children>
                 </terminal>
                 <terminal>
-                  <order>38</order>
+                  <order>39</order>
                   <label>obj</label>
                   <word>-ta</word>
                   <pos>Cas</pos>
@@ -15346,23 +15489,45 @@
                   </morph>
                   <children>
                     <terminal>
-                      <order>36</order>
-                      <label>s.arg.claus</label>
-                      <word>ni</word>
+                      <order>38</order>
+                      <word>wapsi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
-                      <translation>=decir</translation>
+                      <translation>=vapor</translation>
                       <morph>
-                        <tag>VRoot</tag>
+                        <tag>NRoot</tag>
                       </morph>
                       <children>
                         <terminal>
-                          <order>35</order>
-                          <label>flm</label>
-                          <word>CH4</word>
-                          <pos>UNKNOWN</pos>
+                          <order>36</order>
+                          <label>mod</label>
+                          <word>ni</word>
+                          <pos>Root</pos>
+                          <translation>=decir</translation>
+                          <morph>
+                            <tag>VRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal>
+                              <order>35</order>
+                              <label>flm</label>
+                              <word>CH4</word>
+                              <pos>SP</pos>
+                            </terminal>
+                            <terminal>
+                              <order>37</order>
+                              <label>ns</label>
+                              <word>-sqa</word>
+                              <pos>NS</pos>
+                              <morph>
+                                <tag>+Perf</tag>
+                              </morph>
+                            </terminal>
+                          </children>
                         </terminal>
                         <terminal>
-                          <order>39</order>
+                          <order>40</order>
                           <label>topic</label>
                           <word>-qa</word>
                           <pos>Amb</pos>
@@ -15370,50 +15535,34 @@
                             <tag>+Top</tag>
                           </morph>
                         </terminal>
-                        <terminal>
-                          <order>37</order>
-                          <label>ns</label>
-                          <word>-sqa</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+Perf</tag>
-                          </morph>
-                        </terminal>
                       </children>
                     </terminal>
                   </children>
                 </terminal>
                 <terminal>
-                  <order>41</order>
-                  <label>mod</label>
-                  <word>-manta</word>
+                  <order>42</order>
+                  <label>adv</label>
+                  <word>-ta</word>
                   <secedges>
                   </secedges>
                   <pos>Cas</pos>
                   <morph>
-                    <tag>+Abl</tag>
+                    <tag>+Acc</tag>
                   </morph>
                   <children>
                     <terminal>
-                      <order>40</order>
+                      <order>41</order>
                       <label>s.arg</label>
-                      <word>hatun</word>
+                      <word>sinchi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
-                      <translation>=grande</translation>
+                      <translation>=fuerte</translation>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
                     </terminal>
                   </children>
-                </terminal>
-                <terminal>
-                  <order>42</order>
-                  <label>ev</label>
-                  <word>-m</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+DirE</tag>
-                  </morph>
                 </terminal>
                 <terminal>
                   <order>44</order>
@@ -15427,10 +15576,12 @@
                 <terminal>
                   <order>45</order>
                   <label>s.subj</label>
-                  <word>-nku</word>
+                  <word>-n</word>
+                  <secedges>
+                  </secedges>
                   <pos>VPers</pos>
                   <morph>
-                    <tag>+3.Pl.Subj</tag>
+                    <tag>+3.Sg.Subj</tag>
                   </morph>
                 </terminal>
               </children>
@@ -15463,7 +15614,7 @@
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>37</order>
+              <order>36</order>
               <label>sntc</label>
               <word>kachari</word>
               <pos>Root_VDeriv</pos>
@@ -15540,7 +15691,7 @@
                           <children>
                             <terminal>
                               <order>6</order>
-                              <label>poss</label>
+                              <label>poss.subj</label>
                               <word>-p</word>
                               <pos>Cas</pos>
                               <morph>
@@ -15641,41 +15792,35 @@
                         <tag>+Rflx_Int</tag>
                       </morph>
                     </terminal>
+                    <terminal>
+                      <order>18</order>
+                      <label>ev</label>
+                      <word>-mi</word>
+                      <pos>Amb</pos>
+                      <morph>
+                        <tag>+DirE</tag>
+                      </morph>
+                    </terminal>
                   </children>
-                </terminal>
-                <terminal>
-                  <order>18</order>
-                  <label>ev</label>
-                  <word>-mi</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+DirE</tag>
-                  </morph>
                 </terminal>
                 <terminal>
                   <order>24</order>
                   <label>subj</label>
                   <word>ni</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=decir</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>20</order>
                       <label>flm</label>
                       <word>N2O</word>
-                      <pos>UNKNOWN</pos>
-                    </terminal>
-                    <terminal>
-                      <order>26</order>
-                      <label>topic</label>
-                      <word>-qa</word>
-                      <pos>Amb</pos>
-                      <morph>
-                        <tag>+Top</tag>
-                      </morph>
+                      <pos>SP</pos>
                     </terminal>
                     <terminal>
                       <order>25</order>
@@ -15689,14 +15834,25 @@
                   </children>
                 </terminal>
                 <terminal>
-                  <order>29</order>
-                  <label>mod</label>
-                  <word>-nta</word>
+                  <order>26</order>
+                  <label>ev</label>
+                  <word>-m</word>
+                  <secedges>
+                  </secedges>
+                  <pos>Amb</pos>
+                  <morph>
+                    <tag>+DirE</tag>
+                  </morph>
+                </terminal>
+                <terminal>
+                  <order>28</order>
+                  <label>src</label>
+                  <word>-manta</word>
                   <secedges>
                   </secedges>
                   <pos>Cas</pos>
                   <morph>
-                    <tag>+Proloc</tag>
+                    <tag>+Abl</tag>
                   </morph>
                   <children>
                     <terminal>
@@ -15708,22 +15864,11 @@
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
-                      <children>
-                        <terminal>
-                          <order>28</order>
-                          <label>s.poss</label>
-                          <word>-n</word>
-                          <pos>NPers</pos>
-                          <morph>
-                            <tag>+3.Sg.Poss</tag>
-                          </morph>
-                        </terminal>
-                      </children>
                     </terminal>
                   </children>
                 </terminal>
                 <terminal>
-                  <order>32</order>
+                  <order>31</order>
                   <label>mod</label>
                   <word>-kama</word>
                   <pos>Cas</pos>
@@ -15732,7 +15877,7 @@
                   </morph>
                   <children>
                     <terminal>
-                      <order>31</order>
+                      <order>30</order>
                       <label>s.arg</label>
                       <word>pacha</word>
                       <pos>Root</pos>
@@ -15742,7 +15887,7 @@
                       </morph>
                       <children>
                         <terminal>
-                          <order>30</order>
+                          <order>29</order>
                           <label>mod</label>
                           <word>hanaq</word>
                           <pos>Root</pos>
@@ -15756,7 +15901,7 @@
                   </children>
                 </terminal>
                 <terminal>
-                  <order>38</order>
+                  <order>37</order>
                   <label>mod</label>
                   <word>-ku</word>
                   <pos>VDeriv</pos>
@@ -15765,7 +15910,7 @@
                   </morph>
                 </terminal>
                 <terminal>
-                  <order>39</order>
+                  <order>38</order>
                   <label>s.subj</label>
                   <word>-n</word>
                   <pos>VPers</pos>
@@ -15776,7 +15921,7 @@
               </children>
             </terminal>
             <terminal>
-              <order>40</order>
+              <order>39</order>
               <label>punc</label>
               <word>.</word>
               <pos>$.</pos>
@@ -15810,7 +15955,7 @@
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>46</order>
+              <order>45</order>
               <label>sntc</label>
               <word>pisiya</word>
               <secedges>
@@ -16046,16 +16191,7 @@
                   </morph>
                 </terminal>
                 <terminal>
-                  <order>33</order>
-                  <label>ev</label>
-                  <word>-m</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+DirE</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>36</order>
+                  <order>35</order>
                   <label>sub</label>
                   <word>yanapari</word>
                   <pos>Root_VDeriv</pos>
@@ -16066,7 +16202,7 @@
                   </morph>
                   <children>
                     <terminal>
-                      <order>35</order>
+                      <order>34</order>
                       <label>adv</label>
                       <word>-ta</word>
                       <pos>Cas</pos>
@@ -16075,7 +16211,7 @@
                       </morph>
                       <children>
                         <terminal>
-                          <order>34</order>
+                          <order>33</order>
                           <label>s.arg</label>
                           <word>allin</word>
                           <pos>Root</pos>
@@ -16087,7 +16223,7 @@
                       </children>
                     </terminal>
                     <terminal>
-                      <order>38</order>
+                      <order>37</order>
                       <label>topic</label>
                       <word>-qa</word>
                       <pos>Amb</pos>
@@ -16096,7 +16232,7 @@
                       </morph>
                     </terminal>
                     <terminal>
-                      <order>37</order>
+                      <order>36</order>
                       <label>ns</label>
                       <word>-spa</word>
                       <pos>NS</pos>
@@ -16107,7 +16243,7 @@
                   </children>
                 </terminal>
                 <terminal>
-                  <order>42</order>
+                  <order>41</order>
                   <label>obj</label>
                   <word>-ta</word>
                   <pos>Cas</pos>
@@ -16116,7 +16252,7 @@
                   </morph>
                   <children>
                     <terminal>
-                      <order>40</order>
+                      <order>39</order>
                       <label>s.arg.claus</label>
                       <word>t'ikra</word>
                       <pos>Root</pos>
@@ -16126,7 +16262,7 @@
                       </morph>
                       <children>
                         <terminal>
-                          <order>39</order>
+                          <order>38</order>
                           <label>obj</label>
                           <word>llaphi</word>
                           <pos>Root</pos>
@@ -16136,7 +16272,7 @@
                           </morph>
                         </terminal>
                         <terminal>
-                          <order>41</order>
+                          <order>40</order>
                           <label>ns</label>
                           <word>-y</word>
                           <pos>NS</pos>
@@ -16149,7 +16285,7 @@
                   </children>
                 </terminal>
                 <terminal>
-                  <order>47</order>
+                  <order>46</order>
                   <label>mod</label>
                   <word>-chi</word>
                   <pos>VDeriv</pos>
@@ -16158,7 +16294,7 @@
                   </morph>
                 </terminal>
                 <terminal>
-                  <order>48</order>
+                  <order>47</order>
                   <label>s.subj</label>
                   <word>-nman</word>
                   <pos>VPers_Mod</pos>
@@ -16168,7 +16304,7 @@
                   </morph>
                 </terminal>
                 <terminal>
-                  <order>49</order>
+                  <order>48</order>
                   <label>ev</label>
                   <word>-mi</word>
                   <pos>Amb</pos>
@@ -16179,52 +16315,7 @@
               </children>
             </terminal>
             <terminal>
-              <order>54</order>
-              <label>punc</label>
-              <word>.</word>
-              <pos>$.</pos>
-            </terminal>
-          </children>
-        </nonterminal>
-      </root>
-    </s>
-    <s id="s60">
-      <root>
-        <nonterminal id="s60_VROOT">
-          <cat>VROOT</cat>
-          <children>
-            <terminal>
-              <order>1</order>
-              <label>punc</label>
-              <word>.</word>
-              <pos>$.</pos>
-            </terminal>
-          </children>
-        </nonterminal>
-      </root>
-    </s>
-    <s id="s61">
-      <root>
-        <nonterminal id="s61_VROOT">
-          <cat>VROOT</cat>
-          <children>
-            <terminal>
-              <order>1</order>
-              <label>punc</label>
-              <word>.</word>
-              <pos>$.</pos>
-            </terminal>
-          </children>
-        </nonterminal>
-      </root>
-    </s>
-    <s id="s62">
-      <root>
-        <nonterminal id="s62_VROOT">
-          <cat>VROOT</cat>
-          <children>
-            <terminal>
-              <order>1</order>
+              <order>53</order>
               <label>punc</label>
               <word>.</word>
               <pos>$.</pos>
@@ -16239,7 +16330,17 @@
           <cat>VROOT</cat>
           <children>
             <terminal>
-              <order>4</order>
+              <order>1</order>
+              <label>punc</label>
+              <word>...</word>
+              <secedges>
+              </secedges>
+              <pos>$.</pos>
+              <morph>
+              </morph>
+            </terminal>
+            <terminal>
+              <order>5</order>
               <label>sntc</label>
               <word>llamk'a</word>
               <pos>Root</pos>
@@ -16249,9 +16350,11 @@
               </morph>
               <children>
                 <terminal>
-                  <order>1</order>
+                  <order>2</order>
                   <label>obj</label>
                   <word>Chakra</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=chacra</translation>
                   <morph>
@@ -16259,7 +16362,7 @@
                   </morph>
                 </terminal>
                 <terminal>
-                  <order>5</order>
+                  <order>6</order>
                   <label>ns</label>
                   <word>-y</word>
                   <pos>NS</pos>
