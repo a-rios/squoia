@@ -40,7 +40,9 @@ use utf8;
 
 while (<>)
   {
-   if (/\+\?$/) #unknown word, continue
+# remove special flag @mMI
+s/\@mMI//g;
+  if (/\+\?$/) #unknown word, continue
       {
       print STDOUT "$_";
       }

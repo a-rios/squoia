@@ -383,30 +383,33 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	foreach my $gen (@genitives)
 	{
 		my $followingSibling = @{$gen->findnodes("following-sibling::*[1]")}[-1];
-		my $followingSiblingsChild = @{$followingSibling->findnodes("children/terminal[1]")}[-1];
-				
-		# check if folliwing word is a noun and bear a possessive suffix, if next word is a case suffix, check if the condition applies to its child (the noun)
-		if($followingSibling && $followingSibling->exists("(morph/tag[contains(.,'NRoot')] or children/terminal/pos[text()='NS']) and children/terminal/label[text()='s.poss']"))
+		if($followingSibling)
 		{
-			&insertNode($followingSibling,$gen);
-			&setLabel($gen,'poss');
-		}
-		elsif($followingSibling && $followingSiblingsChild && $followingSibling->exists("pos[text()='Cas']") && $followingSiblingsChild->exists("(morph/tag[contains(.,'NRoot')] or children/terminal/pos[text()='NS']) and children/terminal/label[text()='s.poss']"))
-		{
-			&insertNode($followingSiblingsChild,$gen);
-			&setLabel($gen,'poss');
-		}
-		
-		# same check, but if possessive suffix depends as 's.poss.subj', set label of possesive noun to 'poss.subj'
-		elsif($followingSibling && $followingSibling->exists("(morph/tag[contains(.,'NRoot')] or children/terminal/pos[text()='NS']) and children/terminal/label[text()='s.poss.subj']"))
-		{
-			&insertNode($followingSibling,$gen);
-			&setLabel($gen,'poss.subj');
-		}
-		elsif($followingSibling && $followingSiblingsChild && $followingSibling->exists("pos[text()='Cas']") && $followingSiblingsChild->exists("(morph/tag[contains(.,'NRoot')] or children/terminal/pos[text()='NS']) and children/terminal/children/terminal/label[text()='s.poss.subj']"))
-		{
-			&insertNode($followingSiblingsChild,$gen);
-			&setLabel($gen,'poss.subj');
+		    my $followingSiblingsChild = @{$followingSibling->findnodes("children/terminal[1]")}[-1];
+				    
+		    # check if folliwing word is a noun and bear a possessive suffix, if next word is a case suffix, check if the condition applies to its child (the noun)
+		    if($followingSibling && $followingSibling->exists("(morph/tag[contains(.,'NRoot')] or children/terminal/pos[text()='NS']) and children/terminal/label[text()='s.poss']"))
+		    {
+			    &insertNode($followingSibling,$gen);
+			    &setLabel($gen,'poss');
+		    }
+		    elsif($followingSibling && $followingSiblingsChild && $followingSibling->exists("pos[text()='Cas']") && $followingSiblingsChild->exists("(morph/tag[contains(.,'NRoot')] or children/terminal/pos[text()='NS']) and children/terminal/label[text()='s.poss']"))
+		    {
+			    &insertNode($followingSiblingsChild,$gen);
+			    &setLabel($gen,'poss');
+		    }
+		    
+		    # same check, but if possessive suffix depends as 's.poss.subj', set label of possesive noun to 'poss.subj'
+		    elsif($followingSibling && $followingSibling->exists("(morph/tag[contains(.,'NRoot')] or children/terminal/pos[text()='NS']) and children/terminal/label[text()='s.poss.subj']"))
+		    {
+			    &insertNode($followingSibling,$gen);
+			    &setLabel($gen,'poss.subj');
+		    }
+		    elsif($followingSibling && $followingSiblingsChild && $followingSibling->exists("pos[text()='Cas']") && $followingSiblingsChild->exists("(morph/tag[contains(.,'NRoot')] or children/terminal/pos[text()='NS']) and children/terminal/children/terminal/label[text()='s.poss.subj']"))
+		    {
+			    &insertNode($followingSiblingsChild,$gen);
+			    &setLabel($gen,'poss.subj');
+		    }
 		}
 		
 	}
