@@ -102,7 +102,7 @@ $in_sentence = 0;		# flag to avoid printing empty sentences!...
 $new_sent = "<s id=\"s1\"><root><nonterminal id=\"s1_VROOT\"><cat>VROOT</cat><children>\n";
 $end_sent = "</children></nonterminal></root></s>\n";
 my $header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<corpus id=\"inforesources_focus_08_qu\">
+<corpus id=\"ahk1968-2008_qu_disamb\">
   <head>
     <schema href=\"../qu_schema.xml\" />
   </head>
@@ -126,6 +126,7 @@ while (<>) {
    print STDOUT $new_sent;
    $new_sent = "";
   }
+  $a =~ s/&/&amp;/;
  # print STDOUT "<terminal id=\"s${sn}_$wn\"><order>$wn</order><label>\$</label><word>$a</word><pos>UNKNOWN</pos></terminal>\n";
   print STDOUT "<terminal><order>$wn</order><label>\$</label><word>$a</word><pos>UNKNOWN</pos></terminal>\n";
   $in_sentence = 1;
@@ -134,6 +135,7 @@ while (<>) {
  else {				# analysed word with root and IGs, a concatenation of "w[pos][morph]"
   chomp;
   s/\s+//g;					# remove blanks
+  s/&/&amp;/;					# escape sensitive stuff
   ($rootig,@igs) = split /\[\^DB\]\[--\]/;	# split root IG from following IGs at the delimiter [^DB][--]
   if (not $rootig) {				# empty line between original tokens
    $new_analysis = 1;				# reset the flag
