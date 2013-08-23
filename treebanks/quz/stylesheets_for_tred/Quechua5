@@ -1,21 +1,32 @@
-context: TredMacro
+context: 
+hint: 
 node: #{black}${word}
+
 node: #{black}${extHead}
+
 
 node: #{darkblue}${cat}#{purple}${pos}
 
+
 node: #{blue}${morph/Tags[1]/Tag}${morph/Tags[2]/Tag}${morph/Tags[3]/Tag}${morph/Tags[4]${morph/Tags[5]${morph/Tags/Tag}/Tag[6]}/Tag}
+
 node: #{blue}${morph/tag[1]}${morph/tag[2]}${morph/tag[3]}${morph/tag[4]}${morph/tag[5]}${morph/tag[6]}
+
 node: #{black}${translation}
+
 node: #{red}${discourse}
+
 edge: #{brown}${label} 
+
 style: #{EdgeLabel-yadj:-125}
+
 
 text: <?
   $${#name} eq 'terminal' ? 
     "#{-tag:".(join(",",$this,grep {$_->{'#name'} eq 'nonterminal'} $this->ancestors))."}"
     .$${word}
   : () ?>
+
 rootstyle: #{balance:1}
   #{skipHiddenLevels:1}
   #{CurrentTextBox-fill:red}
@@ -27,6 +38,7 @@ rootstyle: #{balance:1}
  #{Node-textalign:center}
   #{CurrentOval-outline:red}
   #{CurrentOval-width:3}
+
 
 style:
 <?
@@ -43,7 +55,7 @@ style:
    }
     my $coords = qq{n,n,p,p};
     if (length $${secedges/secedge/idref}) {
-      my $td=-10+8*$Tiger_Corpus::chld_pos->{ $${secedges/secedge/idref} };
+      my $td=-10+8*{ $${secedges/secedge/idref} };
       my $t='[? $node->{id} eq "'.$${secedges/secedge/idref}.'" ?]';
       my $xn=qq{xn};
       my $yn=qq{yn+$nd};
@@ -63,7 +75,7 @@ style:
     if ($is_nonterminal and $this->parent->parent) {
       $styles .= "#{Node-rellevel:-0.50}";
     } elsif (!$is_nonterminal) {
-      my $level = ($Tiger_Corpus::max_level - $Tiger_Corpus::levels->{$this}) - 1;
+      my $level =  - 1;
       $level/=10;
       $styles.= "#{Node-level:$level}";
     }
@@ -79,11 +91,12 @@ style:
 
 
 
+
 style: <? "#{Node-hide:1}" if FileUserData('hide')->{$this}; ?>
 
 
-style:<? "#{Oval-fill:lightgray}" if ($this->{'#name'} eq 'nonterminal' and FileUserData('fold')->{$this}) ?>
 
+style:<? "#{Oval-fill:lightgray}" if ($this->{'#name'} eq 'nonterminal' and FileUserData('fold')->{$this}) ?>
 
 
 
