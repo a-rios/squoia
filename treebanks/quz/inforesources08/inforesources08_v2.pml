@@ -92772,3 +92772,118 @@ tropicales".... </comment>
     </s>
   </body>
 </corpus>
+<?tred-pattern node: #{black}${word}
+
+?>
+<?tred-pattern node: #{black}${extHead}
+
+
+?>
+<?tred-pattern node: #{darkblue}${cat}#{purple}${pos}
+
+
+?>
+<?tred-pattern node: #{blue}${morph/Tags[1]/Tag}${morph/Tags[2]/Tag}${morph/Tags[3]/Tag}${morph/Tags[4]${morph/Tags[5]${morph/Tags/Tag}/Tag[6]}/Tag}
+
+?>
+<?tred-pattern node: #{blue}${morph/tag[1]}${morph/tag[2]}${morph/tag[3]}${morph/tag[4]}${morph/tag[5]}${morph/tag[6]}
+
+?>
+<?tred-pattern node: #{black}${translation}
+
+?>
+<?tred-pattern node: #{red}${discourse}
+
+?>
+<?tred-pattern edge: #{brown}${label} 
+
+?>
+<?tred-pattern style: #{EdgeLabel-yadj:-125}
+
+
+?>
+<?tred-pattern text: &lt;?
+  $${#name} eq 'terminal' ? 
+    "#{-tag:".(join(",",$this,grep {$_-&gt;{'#name'} eq 'nonterminal'} $this-&gt;ancestors))."}"
+    .$${word}
+  : () ?&gt;
+
+?>
+<?tred-pattern rootstyle: #{balance:1}
+  #{skipHiddenLevels:1}
+  #{CurrentTextBox-fill:red}
+  #{nodeXSkip:40}
+  #{nodeYSkip:50}
+  #{baseYPos:10}
+  #{NodeLabel-skipempty:1}
+  #{NodeLabel-halign:center}
+ #{Node-textalign:center}
+  #{CurrentOval-outline:red}
+  #{CurrentOval-width:3}
+
+
+?>
+<?tred-pattern style:
+&lt;?
+  if ( ! $this-&gt;parent ) {
+     '#{Node-hide:1}'
+  } else {
+    my $styles='';
+    my $is_nonterminal = $${#name} eq 'nonterminal' ? 1 : 0;
+   my $smooth='0';
+
+   my $nd=0;
+   if ($is_nonterminal) {
+    $styles .= "#{NodeLabel-yadj:$nd}";
+   }
+    my $coords = qq{n,n,p,p};
+    if (length $${secedges/secedge/idref}) {
+      my $td=-10+8;
+      my $t='[? $node-&gt;{id} eq "'.$${secedges/secedge/idref}.'" ?]';
+      my $xn=qq{xn};
+      my $yn=qq{yn+$nd};
+      my $xt=qq{x$t-10*sgn(x$t-$xn)};
+      my $yt=qq{y$t+$td};
+      my $X=qq{($xt-$xn)};
+      my $Y=qq{($yt-$yn)};
+      my $D=qq{sqrt($X**2+$Y**2)};
+      my $d=qq{(25/$D+0.12)};
+      $coords .= qq{&amp;$xn,$yn,($xt+$xn)/2 - $Y*$d,($yt+$yn)/2 + $X*$d,$xt,$yt};
+      my $labeltext .= $${secedges/secedge/secedgelabel};
+      $styles .= "#{Line-arrow:&amp;last}#{Line-fill:&amp;blue}#{Line-width:&amp;1}#{Line-dash:&amp;.}#{Line-decoration:&amp;shape=text;coords=1,-10;text=$labeltext;start=60}";
+      
+    }
+    $styles .= "#{Line-coords:$coords}#{Line-smooth:$smooth&amp;1}";
+
+    if ($is_nonterminal and $this-&gt;parent-&gt;parent) {
+      $styles .= "#{Node-rellevel:-0.50}";
+    } elsif (!$is_nonterminal) {
+      my $level =  - 1;
+      $level/=10;
+      $styles.= "#{Node-level:$level}";
+    }
+
+    $styles .= 
+    $is_nonterminal ? 
+       "#{Node-shape:oval}#{Oval-fill:lightgrey}#{Node-surroundtext:1}#{NodeLabel-valign:center}" 
+     :  "#{NodeLabel-yadj:-20}#{Line-fill#{black}:.}#{Line-width:2}#{Oval-fill:grey}";
+    $styles;
+  }
+?&gt;
+
+
+
+
+
+?>
+<?tred-pattern style: &lt;? "#{Node-hide:1}" if FileUserData('hide')-&gt;{$this}; ?&gt;
+
+
+
+?>
+<?tred-pattern style:&lt;? "#{Oval-fill:lightgray}" if ($this-&gt;{'#name'} eq 'nonterminal' and FileUserData('fold')-&gt;{$this}) ?&gt;
+
+
+
+
+?>
