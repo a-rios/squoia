@@ -2,23 +2,32 @@ context:
 hint: 
 node: #{black}${word}
 
+
 node: #{black}${extHead}
+
 
 
 node: #{darkblue}${cat}#{purple}${pos}
 
 
+
 node: #{blue}${morph/Tags[1]/Tag}${morph/Tags[2]/Tag}${morph/Tags[3]/Tag}${morph/Tags[4]${morph/Tags[5]${morph/Tags/Tag}/Tag[6]}/Tag}
+
 
 node: #{blue}${morph/tag[1]}${morph/tag[2]}${morph/tag[3]}${morph/tag[4]}${morph/tag[5]}${morph/tag[6]}
 
+
 node: #{black}${translation}
+
 
 node: #{red}${discourse}
 
+
 edge: #{brown}${label} 
 
+
 style: #{EdgeLabel-yadj:-125}
+
 
 
 text: <?
@@ -26,6 +35,7 @@ text: <?
     "#{-tag:".(join(",",$this,grep {$_->{'#name'} eq 'nonterminal'} $this->ancestors))."}"
     .$${word}
   : () ?>
+
 
 rootstyle: #{balance:1}
   #{skipHiddenLevels:1}
@@ -38,6 +48,7 @@ rootstyle: #{balance:1}
  #{Node-textalign:center}
   #{CurrentOval-outline:red}
   #{CurrentOval-width:3}
+
 
 
 style:
@@ -55,7 +66,7 @@ style:
    }
     my $coords = qq{n,n,p,p};
     if (length $${secedges/secedge/idref}) {
-      my $td=-10+8*{ $${secedges/secedge/idref} };
+      my $td=-10+8;
       my $t='[? $node->{id} eq "'.$${secedges/secedge/idref}.'" ?]';
       my $xn=qq{xn};
       my $yn=qq{yn+$nd};
@@ -92,12 +103,13 @@ style:
 
 
 
+
 style: <? "#{Node-hide:1}" if FileUserData('hide')->{$this}; ?>
 
 
 
-style:<? "#{Oval-fill:lightgray}" if ($this->{'#name'} eq 'nonterminal' and FileUserData('fold')->{$this}) ?>
 
+style:<? "#{Oval-fill:lightgray}" if ($this->{'#name'} eq 'nonterminal' and FileUserData('fold')->{$this}) ?>
 
 
 
