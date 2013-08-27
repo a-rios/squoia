@@ -107,8 +107,14 @@ svn co https://svn.code.sf.net/p/matxin/code/branches
     * copy the (adapted) lexical transfer module from squoia to matxin and compile 
 {{{
 cp $SQUOIAHOME/MT_systems/matxin-lex/matxin_xfer_lex.cc path-to-your-matxin-branches/matxin/src
+cd path-to-your-matxin-branches/matxin
 }}}
     * compile following the instructions in the matxin README
+      * if configure complains that it can't find lttoolbox, set MATXIN_CFLAGS and MATXIN_LIBS
+{{{
+export MATXIN_LIBS="-L/path-to-your-lttoolbox/lib -llttoolbox3 -lxml2 -lpcre"
+export MATXIN_CFLAGS="-I/path-to-your-lttoolbox/include/lttoolbox-3.2/ -I/path-to-your-lttoolbox/include/lttoolbox-3.2/include -I/usr/include/libxml2"
+}}}
   # install Perl modules (e.g. through cpan):
     * XML::LibXML
     * Storable
