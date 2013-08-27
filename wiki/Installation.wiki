@@ -241,13 +241,24 @@ $ echo 'la casa es bonita' | ./run_esqu_xml.sh
   </SENTENCE>
 </corpus>
 }}}
-  # in order to use run_esqu_full.sh, you need to compile the foma generator:
-
-
-
-= Details
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  # in order to use run_esqu_full.sh, you need to compile the xfst generator:
+    * get xfst from here: [http://www.stanford.edu/~laurik/.book2software/]
+    * compile the morphological generator:
+{{{
+$ cd path-to-your-squoia-repo/morphology/transfer_generator
+$ xfst -f unificadoTransfer.xfst
+}}}
+  # run the full MT system:
+{{{
+$ echo 'la casa es bonita' | ./run_esqu_full.sh
+}}}
+    * output should be:
+{{{
+Wasi sumaq kan
+}}}
+    * translate whole files: 
+      * IMPORTANT: the FreeLing tagger expects input as one sentence per line
+      * if you want to use automatic sentence splitting, there's a script you can use in /MT_systems:
+{{{
+$ cat your-text | perl splitSentences.pl > your-text.tok
+}}}
