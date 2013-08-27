@@ -184,12 +184,10 @@ $ cat *.xml > path-to-your-squoia-repo/MT_systems/allVerbs.xml
 }}}
     * read the semantic lexica into hashes:
 {{{
+$ cd path-to-your-squoia-repo/MT_systems
 $ perl readInSemanticDix.pl allVerbs.xml noun_semantics.txt
 }}}
-    * adapt the path in the config file: 
-{{{
-$ cd path-to-your-squoia-repo/MT_systems
-}}}
+    * adapt the path in the config file(s): 
       * open esqu/example-es-quz.cfg and esde/example-es-de.cfg
       * set GRAMMAR_DIR to your squoia installation
       * save as es-quz.cfg and es-de.cfg
