@@ -51,7 +51,7 @@ $ cp squoia_analyzer $FREELING/bin/
 {{{
 $ squoia_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
 }}}
-   # wait a bit and call the client to analyze some new text
+   # wait a bit and call the client to analyze some text
 {{{
 $ echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
 }}}
@@ -112,8 +112,8 @@ $ cp $SQUOIAHOME/MT_systems/matxin-lex/matxin_xfer_lex.cc src/
 }}}
     * open src/Makefile.am in an editor and comment out these two lines with a '#':
 {{{
-# matxin_destxt_SOURCES = txt-deformat.cc
-# matxin_deshtml_SOURCES = html-deformat.cc
+matxin_destxt_SOURCES = txt-deformat.cc
+matxin_deshtml_SOURCES = html-deformat.cc
 }}}
     * also, delete 'matxin-destxt matxin-deshtml' in this line (same Makefile.am):
 {{{
