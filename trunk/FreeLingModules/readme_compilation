@@ -1,8 +1,9 @@
 SQUOIA (freeling) analyzer server with "desr" output format option
-# supposing your FreeLing installation is at /opt/matxin
+$FREELING= path-to-your-freeling-installation
+$FREELING_SRC= path-to-your-freeling-sources ( from svn)
 
 # compilation and installation of FreeLing:
-cd /opt/matxin/freeling-3.0-trunk/
+cd $FREELING_SRC
 make
 make install
 
@@ -10,23 +11,26 @@ make install
 cd $SQUOIAHOME/FreeLingModules/
 
 # copy special "squoia" configuration file
-cp config_squoia/config.h /opt/matxin/local/include/.
+cp config_squoia/config.h $FREELING/include/
+
+# copy analyzer.h from freeling sources to $FREELING/include
+cp $FREELING_SRC/trunk/src/main/sample_analyzer/analyzer.h $FREELING/include
 
 # compile the output part (output_squoia):
-g++ -c -o output_squoia.o output_squoia.cc -I/opt/matxin/local/include/
+g++ -c -o output_squoia.o output_squoia.cc -I$FREELING/include/
 
 # compile the analyzer server (squoia_analyzer):
-g++ -c -o squoia_analyzer.o squoia_analyzer.cc -I/opt/matxin/local/include/
+g++ -c -o squoia_analyzer.o squoia_analyzer.cc -I$FREELING/include/
 
 # link the different parts to create the server executable:
-/bin/bash /opt/matxin/freeling-3.0-trunk/libtool --tag=CXX --mode=link g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o /opt/matxin/freeling-3.0-trunk/src/main/analyzer.o output_squoia.o -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
+/bin/bash $FREELING_SRC/libtool --tag=CXX --mode=link g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o $FREELING_SRC/src/main/analyzer.o output_squoia.o -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
 
 # install program
-cp squoia_analyzer /opt/matxin/local/bin/.
+cp squoia_analyzer $FREELING/bin/
 
 
 # start the server
-squoia_analyzer -f FL_es_desr.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
+squoia_analyzer -f path-to-config/conf.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
 
 # wait a bit and call the client to analyze some new text
 echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
