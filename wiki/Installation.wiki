@@ -96,20 +96,26 @@ g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so  $DESRHOME/i
 {{{
 echo "la madre se va. El padre se queda. El hijo duerme." | analyzer_client 8866 | ./desr_client 5678
 }}}
-  # download and install lttoolbox from Apertium:
+  # download and install lttoolbox from Apertium (see lttoolbox/README for installation instructions):
 {{{
 svn co https://svn.code.sf.net/p/apertium/svn/trunk/lttoolbox
 }}}
- # download branches from the matxin repo (do not compile yet):
+  # download branches from the matxin repo (do not compile yet):
 {{{
 svn co https://svn.code.sf.net/p/matxin/code/branches
 }}}
-   * copy the (adapted) lexical transfer module from squoia to matxin and compile 
+    * copy the (adapted) lexical transfer module from squoia to matxin and compile 
 {{{
 cp $SQUOIAHOME/MT_systems/matxin-lex/matxin_xfer_lex.cc path-to-your-matxin-branches/matxin/src
 }}}
-  * compile following the instructions in the matxin README
-
+    * compile following the instructions in the matxin README
+  # install Perl modules (e.g. through cpan):
+    * XML::LibXML
+    * Storable
+    * File::Basename
+    * File::Spec::Functions
+    * List::MoreUtils
+    * AI::NaiveBayes
 
 
 
