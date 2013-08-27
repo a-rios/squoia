@@ -41,11 +41,15 @@ my %mapClassToVerbform = (
 
 my $nb;
 #check if verbforms.yaml (naive bayes model) exists, if not, train on verbInstances.csv
-eval
-{
-	 $nb = AI::NaiveBayes1->import_from_YAML_file("$path/verbforms.yaml");
+# eval
+# {
+# 	 my $pathToModel = $path."/verbforms.yaml";
+# 	 print STDERR $pathToModel."\n";
+# 	 $nb = AI::NaiveBayes1->import_from_YAML_file($pathToModel);
+# 
+# } or print STDERR "no model found on disk, train Naive Bayes on verbInstances.csv first\n";
 
-} or print STDERR "no model found on disk, train Naive Bayes on verbInstances.csv first\n";
+$nb = AI::NaiveBayes1->import_from_YAML_file($path."/verbforms.yaml");
 
 if(!$nb)
 {
