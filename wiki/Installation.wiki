@@ -8,9 +8,11 @@ Installation:
    *[http://nlp.lsi.upc.edu/freeling]
    * for installation instructions, see: [http://nlp.lsi.upc.edu/freeling/doc/userman/html/node10.html]
   # Install compile the squoia analyzer server (it's a freeling analyzer server with "desr" output format option, i.e. prints out conll):
-   * assuming that:
-    * $FREELING= path-to-your-freeling-installation
-    * $FREELING_SRC= path-to-your-freeling-sources (trunk from svn)
+   * set paths:
+{{{
+export $FREELING= path-to-your-freeling-installation
+export $FREELING_SRC= path-to-your-freeling-sources (trunk from svn)
+}}}
   # compilation and installation of FreeLing:
 {{{
    cd $FREELING_SRC
@@ -20,7 +22,7 @@ Installation:
   # compile and link the squoia_analyzer server:
    # copy all headers from the sample analyzer in the freeling sources to 
 {{{   
-cp $FREELING_SRC/trunk/src/main/sample_analyzer/*.h $FREELING/include
+cp $FREELING_SRC/src/main/sample_analyzer/*.h $FREELING/include
 }}}
    # copy special "squoia" configuration file to freeling 
 {{{
@@ -53,6 +55,20 @@ squoia_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=desrtag --
 {{{
 echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
 }}}
+  # Download and install the dependency parser desr from:
+    *[http://sourceforge.net/projects/desr/?source=dlp]
+    * for installation instructions, see: [https://sites.google.com/site/desrparser/installation]
+    * note: desr looks for doxygen in /usr/local/bin, if your doxygen binary is in /usr/bin, create a symbolic link:
+{{{
+ln -s /usr/bin/doxygen /usr/local/bin/doxygen
+}}}
+  # get the spanish model and conf file from:
+    *[https://sites.google.com/site/desrparser/models]
+
+
+
+
+
 
 
 = Details =
