@@ -9,7 +9,19 @@ binmode STDOUT, ':utf8';
 
 my $num_args = $#ARGV;
 
+if ( $num_args != 0) {
+  print STDERR "\nUsage: perl cleanGuessedRoots.pl -aya/-cuz \n";
+  exit;
+  }
 
+
+my $evid = $ARGV[0];
+shift;
+
+if($evid ne '-aya' and $evid ne '-cuz'){
+	print STDERR "invalid option for evidential: $evid , possible options are -aya (-m) or cuz (-n) \n";
+	exit;
+}
 
 my @words;
 my $newWord=1;
@@ -77,11 +89,19 @@ foreach my $word (@words){
 	my $analyses = @$word[1];
 	my $form = @$word[0];
 
-
+	
 	#delete all VRootG's that are Spanish nouns (ending in something like -ito, ión etc)
 	for(my $j=0;$j<scalar(@$analyses);$j++) {
 			my $analysis = @$analyses[$j];
 			my $string = @$analyses[$j]->{'string'};
+			
+			# if evid=aya -> delete all analyses where -n has been analysed as DirE
+			if($evid eq '-aya' && $string =~ /\Q[^DB][--]m[Amb][+DirE\E/ && scalar(@$analyses)>1){
+				splice (@{$analyses},$j,1);	
+				$j--;
+				#print STDERR "deleted analysis: $string \n";
+			}
+			
 			my ($root) = ($string =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
 			my ($rootPos) = ($string =~ m/\[(.*?Root.*?)\]/ );
 #			if($root =~ /iento$/){
