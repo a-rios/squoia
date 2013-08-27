@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+# step-by-step installation instructions, including dependencies.
 
 
 Installation:
@@ -10,57 +10,57 @@ Installation:
   # Install compile the squoia analyzer server (it's a freeling analyzer server with "desr" output format option, i.e. prints out conll):
    * set paths:
 {{{
-export FREELING= path-to-your-freeling-installation
-export FREELING_SRC= path-to-your-freeling-sources (trunk from svn)
+$ export FREELING= path-to-your-freeling-installation
+$ export FREELING_SRC= path-to-your-freeling-sources (trunk from svn)
 }}}
   # compilation and installation of FreeLing:
 {{{
-   cd $FREELING_SRC
-   make
-   make install
+$ cd $FREELING_SRC
+$ make
+$ make install
 }}}
   # compile and link the squoia_analyzer server:
    # copy all headers from the sample analyzer in the freeling sources to 
 {{{   
-cp $FREELING_SRC/src/main/sample_analyzer/*.h $FREELING/include
+$ cp $FREELING_SRC/src/main/sample_analyzer/*.h $FREELING/include
 }}}
    # copy special "squoia" configuration file to freeling 
 {{{
-cp config_squoia/config.h $FREELING/include/
+$ cp config_squoia/config.h $FREELING/include/
 }}}
    # compile the output part (output_squoia):
 {{{
-g++ -c -o output_squoia.o output_squoia.cc -I$FREELING/include/
+$ g++ -c -o output_squoia.o output_squoia.cc -I$FREELING/include/
 }}}
    # compile the analyzer server (squoia_analyzer):
 {{{
-g++ -c -o squoia_analyzer.o squoia_analyzer.cc -I$FREELING/include/
+$ g++ -c -o squoia_analyzer.o squoia_analyzer.cc -I$FREELING/include/
 }}}
    # link the different parts to create the server executable:
 {{{
-/bin/bash $FREELING_SRC/libtool --tag=CXX --mode=link g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o $FREELING_SRC/src/main/analyzer.o output_squoia.o -L$FREELING/lib -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
+$ /bin/bash $FREELING_SRC/libtool --tag=CXX --mode=link g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o $FREELING_SRC/src/main/analyzer.o output_squoia.o -L$FREELING/lib -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
 }}}
    # install program
 {{{
-cp squoia_analyzer $FREELING/bin/
+$ cp squoia_analyzer $FREELING/bin/
 }}}
    # add Freeling binaries ($FREELING/bin) to PATH (in bash_profile or .bashrc)
    # note: you have to log into a new bash for this change to be effective
    # adjust the paths in $SQUOIAHOME/FreeLingModules/example.conf 
    # start the server
 {{{
-squoia_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
+$ squoia_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
 }}}
    # wait a bit and call the client to analyze some new text
 {{{
-echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
+$ echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
 }}}
   # Download and install the dependency parser desr from:
     *[http://sourceforge.net/projects/desr/?source=dlp]
     * for installation instructions, see: [https://sites.google.com/site/desrparser/installation]
     * note: desr looks for doxygen in /usr/local/bin, if your doxygen binary is in /usr/bin, create a symbolic link:
 {{{
-ln -s /usr/bin/doxygen /usr/local/bin/doxygen
+$ ln -s /usr/bin/doxygen /usr/local/bin/doxygen
 }}}
   # get the spanish model and conf file from:
     *[https://sites.google.com/site/desrparser/models]
@@ -68,65 +68,113 @@ ln -s /usr/bin/doxygen /usr/local/bin/doxygen
     * save them in the directory of your desr installation
   # compile desr server/client:
 {{{
-export FREELING= path-to-your-freeling-installation
-export FREELING_SRC= path-to-your-freeling-sources ( trunk from svn)
-export DESRHOME=path-to-your-desr-installation
+$ export FREELING= path-to-your-freeling-installation
+$ export FREELING_SRC= path-to-your-freeling-sources ( trunk from svn)
+$ export DESRHOME=path-to-your-desr-installation
 }}}
   # compile parser client: desr_client
 {{{
-g++ -c -o desr_client.o desr_client.cc -I$FREELING/include/
+$ g++ -c -o desr_client.o desr_client.cc -I$FREELING/include/
 }}}
   # link parser client:
 {{{
-g++ -O3 -Wall -o desr_client desr_client.o
+$ g++ -O3 -Wall -o desr_client desr_client.o
 }}}
   # compile parser server:
 {{{
-g++ -c -o desr_server.o desr_server.cc -std=gnu++0x -I$FREELING/include/ -I$DESRHOME/src/ -I/usr/include/python2.7/ -I$DESRHOME -I$DESRHOME/ixe/ -I$DESRHOME/classifier/
+$ g++ -c -o desr_server.o desr_server.cc -std=gnu++0x -I$FREELING/include/ -I$DESRHOME/src/ -I/usr/include/python2.7/ -I$DESRHOME -I$DESRHOME/ixe/ -I$DESRHOME/classifier/
 }}}
   # link parser server:
 {{{
-g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so  $DESRHOME/ixe/libixe.a
+$ g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so  $DESRHOME/ixe/libixe.a
 }}}
   # start the server:
 {{{
-./desr_server -m $DESRHOME/spanish_es4.MLP --port 5678 2> logdesr_es4 &
+$ ./desr_server -m $DESRHOME/spanish_es4.MLP --port 5678 2> logdesr_es4 &
 }}}
   # use the client to tag (FreeLing) and parse sentences:
 {{{
-echo "la madre se va. El padre se queda. El hijo duerme." | analyzer_client 8866 | ./desr_client 5678
+$ echo "la madre se va. El padre se queda. El hijo duerme." | analyzer_client 8866 | ./desr_client 5678
 }}}
   # download and install lttoolbox from Apertium (see lttoolbox/README for installation instructions):
 {{{
-svn co https://svn.code.sf.net/p/apertium/svn/trunk/lttoolbox
+$ svn co https://svn.code.sf.net/p/apertium/svn/trunk/lttoolbox
 }}}
   # download branches from the matxin repo (do not compile yet):
 {{{
-svn co https://svn.code.sf.net/p/matxin/code/branches
+$ svn co https://svn.code.sf.net/p/matxin/code/branches
 }}}
-    * copy the (adapted) lexical transfer module from squoia to matxin and compile 
+    * copy the (adapted) lexical transfer module from squoia to matxin:
 {{{
-cp $SQUOIAHOME/MT_systems/matxin-lex/matxin_xfer_lex.cc path-to-your-matxin-branches/matxin/src
-cd path-to-your-matxin-branches/matxin
+$ cd path-to-your-matxin-branches/matxin
+$ cp $SQUOIAHOME/MT_systems/matxin-lex/matxin_xfer_lex.cc src/
 }}}
-    * compile following the instructions in the matxin README
+    * open src/Makefile.am in an editor and comment out these two lines with a '#':
+{{{
+# matxin_destxt_SOURCES = txt-deformat.cc
+# matxin_deshtml_SOURCES = html-deformat.cc
+}}}
+    * also, delete 'matxin-destxt matxin-deshtml' in this line (same Makefile.am):
+{{{
+change
+bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-prep matxin-gen-inter matxin-gen-intra \
+	       matxin-gen-morph matxin-xfer-verb \
+               matxin-reformat matxin-destxt matxin-deshtml
+to
+bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-prep matxin-gen-inter matxin-gen-intra \
+	       matxin-gen-morph matxin-xfer-verb \
+               matxin-reformat
+}}}
+    * compile matxin following the instructions in the matxin README
+{{{
+$ ./autogen.sh --prefix=<path-to-install>
+$ make
+$ make install
+}}}
       * if configure complains that it can't find lttoolbox, set MATXIN_CFLAGS and MATXIN_LIBS
 {{{
-export MATXIN_LIBS="-L/path-to-your-lttoolbox/lib -llttoolbox3 -lxml2 -lpcre"
-export MATXIN_CFLAGS="-I/path-to-your-lttoolbox/include/lttoolbox-3.2/ -I/path-to-your-lttoolbox/include/lttoolbox-3.2/include -I/usr/include/libxml2"
+$ export MATXIN_LIBS="-L/path-to-your-lttoolbox/lib -llttoolbox3 -lxml2 -lpcre"
+$ export MATXIN_CFLAGS="-I/path-to-your-lttoolbox/include/lttoolbox-3.2/ -I/path-to-your-lttoolbox/include/lttoolbox-3.2/include -I/usr/include/libxml2"
 }}}
-  # install Perl modules (e.g. through cpan):
+  # install these Perl modules:
     * XML::LibXML
     * Storable
     * File::Basename
     * File::Spec::Functions
     * List::MoreUtils
     * AI::NaiveBayes
+      * e.g. with cpan:
+{{{
+$ cpan XML::LibXML
+}}}
+  # compile the bilingual dictionaries:
+{{{
+$ cd path-to-your-squoia-repo/MT_systems/esqu/lexica
+$ lt-comp lr es-quz.dix es-quz.bin
+$ cd path-to-your-squoia-repo/MT_systems/esde/lexica
+$ lt-comp lr es-de.dix es-de.bin
+}}}
+  # get the Spanish semantic resources (only necessary for the es-quz system, if you want to use only es-de, you don't need to install these resources)
+    * get the Ancora verb frames lexicon from: [http://clic.ub.edu/corpus/en/ancora-descarregues]
+     * note: you have to register in order to download this lexicon 
+    * write all single xml files into one xml file, e.g. like this:
+{{{
+$ cd path-to-your-AnCora-Lexicon/
+$ cat *.xml > path-to-your-squoia-repo/MT_systems/allVerbs.xml
+}}}
+    * read the semantic lexica into hashes:
+{{{
+$ perl readInSemanticDix.pl allVerbs.xml noun_semantics.txt
+}}}
+    * adapt the path in the config file: 
+{{{
+$ cd path-to-your-squoia-repo/MT_systems
+open esqu/example-es-quz.cfg and esde/example-es-de.cfg
+set GRAMMAR_DIR to your squoia installation
+}}}
 
 
-
-
-= Details =
+= Details
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
