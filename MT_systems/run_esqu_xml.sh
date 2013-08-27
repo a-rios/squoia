@@ -14,7 +14,7 @@ export FREELING_PARAM="-f $FREELING_CONFIG $*"
 #export FREELING_PORT="8866"
 export FREELING_PORT="8866"
 export MATXIN_DIX=$ESQU_DIR/lexica/es-quz.bin
-export MATXIN_CONFIG=$GRAMMAR_DIR/es-qu.cfg
+export MATXIN_CONFIG=$ESQU_DIR/es-qu.cfg
 
 # path to desr parser & its model
 #export DESR_DIR_OLD="/home/clsquoia/parser/desr-1.2.6"
