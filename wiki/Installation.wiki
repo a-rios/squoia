@@ -211,7 +211,7 @@ perl readConfig.pl esde/es-de.cfg
         * DESR_DIR
       * save this adapted shell script to run_esqu_xml.sh
     * do the same with run_esqu_full_example.sh, save as run_esqu_full.sh
-   * make all the shell scripts executable:
+    * make all the shell scripts executable:
 {{{
 $ chmod +x run_esqu_xml.sh
 $ chmod +x run_esqu_full.sh
@@ -262,3 +262,4 @@ Wasi sumaq kan
 {{{
 $ cat your-text | perl splitSentences.pl > your-text.tok
 }}}
+  # instruction for spanish-german: coming soon...
