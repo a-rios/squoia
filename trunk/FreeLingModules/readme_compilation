@@ -1,4 +1,5 @@
 SQUOIA (freeling) analyzer server with "desr" output format option
+# supposing your FreeLing installation is at /opt/matxin
 
 # compilation and installation of FreeLing:
 cd /opt/matxin/freeling-3.0-trunk/
