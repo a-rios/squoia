@@ -107,14 +107,14 @@ store \%lexEntriesWithFrames, 'VerbLex';
 
 
 #
-foreach my $key (sort keys %lexEntriesWithFrames)
-{
-	#print "$key: ";
-	foreach my $frame (@{ $lexEntriesWithFrames{$key} })
-	{
-		if($frame =~ /A32/)
-		{print "$key: $frame \n";}
-	}
-	#print @{ $lexEntriesWithFrames{$key} }[0];
-	#print "\n";
-}
+# foreach my $key (sort keys %lexEntriesWithFrames)
+# {
+# 	#print "$key: ";
+# 	foreach my $frame (@{ $lexEntriesWithFrames{$key} })
+# 	{
+# 		if($frame =~ /A32/)
+# 		{print "$key: $frame \n";}
+# 	}
+# 	#print @{ $lexEntriesWithFrames{$key} }[0];
+# 	#print "\n";
+# }
