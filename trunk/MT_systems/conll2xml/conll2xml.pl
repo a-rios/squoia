@@ -161,6 +161,7 @@ for(my $i = 0; $i < scalar(@sentences); $i++)
 		my $sentence = @sentences[$i];
 		my $sentenceId = $sentence->getAttribute('ord');
 		print STDERR "model2 in sentence: $sentenceId\n";
+		#print STDERR "1:".$sentence->toString."\n";
 		my @nodes = $sentence->getElementsByTagName('NODE');
 	
 		foreach my $node (@nodes)
@@ -182,6 +183,7 @@ for(my $i = 0; $i < scalar(@sentences); $i++)
 		my $sentence = @sentences[$i];
 		my $sentenceId = $sentence->getAttribute('ord');
 		print STDERR "adjusting dependencies in sentence: ".$sentence->getAttribute('ord')."\n";
+		#print STDERR "2: ".$sentence->toString."\n";
 		my @nodes = $sentence->getElementsByTagName('NODE');
 	
 		foreach my $node (@nodes)
@@ -229,8 +231,8 @@ for(my $i = 0; $i < scalar(@sentences); $i++)
 
 #my $docstring = $dom->toString(3);
 #print STDERR $docstring;
-#print "------------------------------------------------\n";
-#print "------------------------------------------------\n";
+#print STDERR "------------------------------------------------\n";
+#print STDERR "------------------------------------------------\n";
 
 # insert chunks
 
@@ -968,9 +970,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			}
 		}
 	}
-my $docstring = $dom->toString(3);
-print STDERR $docstring;
-print STDERR "\n------------------------\n";
+#my $docstring = $dom->toString(3);
+#print STDERR $docstring;
+#print STDERR "\n------------------------\n";
 	
  	# sentence complete: check if topnode is a CHUNK, if not, change this
  	# otherwise lexical transfer crashes!
@@ -1821,11 +1823,12 @@ sub model2{
 		my $shellscript = $path."/model2_desr.sh";
 		open (TMP, ">:encoding(UTF-8)", $tmp);
 		print TMP $conllHash{$sentenceId};
-		open(DESR,"-|" ,"cat $tmp |$shellscript 2>/dev/null") || die "desr failed: $!\n";
+		open(DESR,"-|" ,"cat $tmp |$shellscript 2>log") || die "desr failed: $!\n";
+		
 
 		while (<DESR>)
 		{
-			#print $_;
+			#print STDERR "bla".$_;
 			unless(/^\s*$/)
 			{
 	   			# create a new word node and attach it to sentence
@@ -1873,7 +1876,7 @@ sub model2{
 			}
 		close TMP;
 		close DESR;
-		unlink("tmp.conll");
+		#unlink("tmp.conll");
 	}
 	# this should not happen!
 	else
