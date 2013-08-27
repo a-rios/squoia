@@ -45,7 +45,7 @@ eval
 {
 	 $nb = AI::NaiveBayes1->import_from_YAML_file("$path/verbforms.yaml");
 
-} or print STDERR "no model found on disk, train Naive Bayes on verbInstances.csv first";
+} or print STDERR "no model found on disk, train Naive Bayes on verbInstances.csv first\n";
 
 if(!$nb)
 {
