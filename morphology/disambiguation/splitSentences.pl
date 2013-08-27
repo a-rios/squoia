@@ -10,6 +10,7 @@ use Lingua::Sentence;
 
 my $text;
 while(<>){
+	s/\n/ /g;
 	$text .= " ".$_;
 }
 
