@@ -88,9 +88,10 @@ $ g++ -c -o desr_server.o desr_server.cc -std=gnu++0x -I$FREELING/include/ -I$DE
 {{{
 $ g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so  $DESRHOME/ixe/libixe.a
 }}}
-  # start the server:
+  # start two servers (one for each model):
 {{{
 $ ./desr_server -m $DESRHOME/spanish_es4.MLP --port 5678 2> logdesr_es4 &
+$ ./desr_server -m $DESRHOME/spanish.MLP --port 1234 2> logdesr_model2 &
 }}}
   # use the client to tag (FreeLing) and parse sentences:
 {{{
@@ -142,10 +143,29 @@ $ export MATXIN_CFLAGS="-I/path-to-your-lttoolbox/include/lttoolbox-3.2/ -I/path
     * File::Basename
     * File::Spec::Functions
     * List::MoreUtils
-    * AI::NaiveBayes
+    * AI::NaiveBayes1
       * e.g. with cpan:
 {{{
 $ cpan XML::LibXML
+}}}
+    * one of the files needs a little change. Open AI::NaiveBayes1 and change the function import_from_YAML_file from:
+{{{
+sub import_from_YAML_file {
+    my $package = shift;
+    my $yamlf = shift;
+    my $self = YAML::LoadFile($yamlf);
+    return $self;
+}
+}}}
+   * to (insert 'require YAML;'):
+{{{
+sub import_from_YAML_file {
+    my $package = shift;
+    my $yamlf = shift;
+    require YAML;
+    my $self = YAML::LoadFile($yamlf);
+    return $self;
+}
 }}}
   # compile the bilingual dictionaries:
 {{{
@@ -169,9 +189,60 @@ $ perl readInSemanticDix.pl allVerbs.xml noun_semantics.txt
     * adapt the path in the config file: 
 {{{
 $ cd path-to-your-squoia-repo/MT_systems
-open esqu/example-es-quz.cfg and esde/example-es-de.cfg
-set GRAMMAR_DIR to your squoia installation
 }}}
+      * open esqu/example-es-quz.cfg and esde/example-es-de.cfg
+      * set GRAMMAR_DIR to your squoia installation
+      * save as es-quz.cfg and es-de.cfg
+
+    * read config parameters (either es-quz or es-de, can't use both at the same time):
+      * for spanish-quechua:
+{{{
+perl readConfig.pl esqu/es-quz.cfg
+}}}
+      * for spanish-german:
+{{{
+perl readConfig.pl esde/es-de.cfg
+}}}
+    * adapt the paths in the example shell scripts to use the MT system:
+      * open run_esqu_xml_example.sh (in the MT_systems folder of your squoia repo)
+      * adapt all the necessery paths to your installation. You should at least change:
+        * MATXIN_BIN
+        * PROJECT_DIR
+        * DESR_DIR
+      * save this adapted shell script to run_esqu_xml.sh
+    * do the same with run_esqu_full_example.sh, save as run_esqu_full.sh
+   * make all the shell scripts executable:
+{{{
+$ chmod +x run_esqu_xml.sh
+$ chmod +x run_esqu_full.sh
+$ chmod +x conll2xml/model2_desr.sh
+}}}
+  # you should now be able to use run_esqu_xml.sh:
+{{{
+$ echo 'la casa es bonita' | ./run_esqu_xml.sh 
+}}}
+    * output is xml and should look like this:
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<corpus evidentiality="direct">
+  <SENTENCE ref="1">
+    <CHUNK ref="3" type="grup-verb" si="top" verbform="main" lem="ka" verbmi="Copula+3.Sg.Subj" p_ord="2" ord="2">
+      <NODE ref="3" slem="ser" smi="VSIP3S0" UpCase="none" lem="ka" mi="present" verbmi="Copula+3.Sg.Subj">
+</NODE>
+      <CHUNK ref="2" type="sn" si="suj" p_ord="0" c_ord="0" ord="0">
+        <NODE ref="2" alloc="" slem="casa" smi="NCFS000" UpCase="none" lem="wasi" mi="NRoot" ord="1">
+          <NODE ref="1" alloc="" slem="el" smi="DA0FS0" UpCase="none" ord="0"/>
+        </NODE>
+      </CHUNK>
+      <CHUNK ref="4" type="sa" si="atr" func="attributive" p_ord="0" c_ord="1" ord="1">
+        <NODE ref="4" alloc="" slem="bonito" smi="AQ0FS0" UpCase="none" lem="sumaq" func="attributive" mi="NRoot"/>
+      </CHUNK>
+    </CHUNK>
+  </SENTENCE>
+</corpus>
+}}}
+  # in order to use run_esqu_full.sh, you need to compile the foma generator:
+
 
 
 = Details
