@@ -98,12 +98,17 @@ echo "la madre se va. El padre se queda. El hijo duerme." | analyzer_client 8866
 }}}
   # download and install lttoolbox from Apertium:
 {{{
-svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/lttoolbox
+svn co https://svn.code.sf.net/p/apertium/svn/trunk/lttoolbox
 }}}
- # download and install branches from the matxin repo:
+ # download branches from the matxin repo (do not compile yet):
 {{{
 svn co https://svn.code.sf.net/p/matxin/code/branches
 }}}
+   * copy the (adapted) lexical transfer module from squoia to matxin and compile 
+{{{
+cp $SQUOIAHOME/MT_systems/matxin-lex/matxin_xfer_lex.cc path-to-your-matxin-branches/matxin/src
+}}}
+  * compile following the instructions in the matxin README
 
 
 
