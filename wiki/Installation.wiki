@@ -96,8 +96,14 @@ g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so  $DESRHOME/i
 {{{
 echo "la madre se va. El padre se queda. El hijo duerme." | analyzer_client 8866 | ./desr_client 5678
 }}}
-  # 
-
+  # download and install lttoolbox from Apertium:
+{{{
+svn co https://apertium.svn.sourceforge.net/svnroot/apertium/trunk/lttoolbox
+}}}
+ # download and install branches from the matxin repo:
+{{{
+svn co https://svn.code.sf.net/p/matxin/code/branches
+}}}
 
 
 
