@@ -22,6 +22,8 @@ export DESR_DIR="/home/clsquoia/parser/desr-1.3.2"
 export DESR_CONFIG=$DESR_DIR/spanishv2.conf
 export DESR_MODEL=$DESR_DIR/spanish_es4.MLP
 #export DESR_MODEL=$DESR_DIR/spanish.MLP
+# squoia desr binaries:
+export DESR_BIN=$PROJECT_DIR/desrModules
 export DESR_PARAMS="-m $DESR_MODEL -c $DESR_CONFIG"
 # model1 = spanish_es4.MLP
 export DESR_PORT=5678
@@ -39,7 +41,7 @@ fi
 
 
 # server-client mode, new desr parser client
-$MATXIN_BIN/analyzer_client $FREELING_PORT |desr_client $DESR_PORT |perl conll2xml/conll2xml.pl |perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID  | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl esqu/disambVerbFormsML.pl | perl splitNodes.pl  | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl | perl childToSiblingChunk.pl  | perl recursiveNumberChunks.pl | perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | perl esqu/getSentencesForGeneration.pl | lookup -flags xcKv29TT $PROJECT_DIR/morphology/transfer_generator/unificadoTransfer.fst | perl esqu/outputSentences.pl 
+$MATXIN_BIN/analyzer_client $FREELING_PORT | $DESR_BIN/desr_client $DESR_PORT |perl conll2xml/conll2xml.pl |perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID  | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl esqu/disambVerbFormsML.pl | perl splitNodes.pl  | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl | perl childToSiblingChunk.pl  | perl recursiveNumberChunks.pl | perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | perl esqu/getSentencesForGeneration.pl | lookup -flags xcKv29TT $PROJECT_DIR/morphology/transfer_generator/unificadoTransfer.fst | perl esqu/outputSentences.pl 
 
 # lookup -flags xcKv29TT ../morphology/transfer_generator/unificadoTransfer.fst 
 #perl alternativeSentences.pl 
