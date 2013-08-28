@@ -8,7 +8,7 @@ use XML::LibXML;
 
 # IMPORTANT: delete xmlns="http://ufal.mff.cuni.cz/pdt/pml/" from pml before applying!!!
 #     <s id="s1">
-#       <root>
+#       <saphi>
 #         <nonterminal id="s1_VROOT">
 #           <cat>VROOT</cat>
 #read xml from STDIN
@@ -20,7 +20,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
 
 	print STDERR "inserting IDs in sentence: $counter\n";
-	my $nonterminal = @{$sentence->findnodes('child::root/nonterminal')}[0];
+	my $nonterminal = @{$sentence->findnodes('child::saphi/nonterminal')}[0];
 	#print $nonterminal;
 	$sentence->setAttribute('id', 's'.$counter);
 	$nonterminal->setAttribute('id', 's'.$counter."_VROOT");
