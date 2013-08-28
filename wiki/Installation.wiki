@@ -88,10 +88,20 @@ $ g++ -c -o desr_server.o desr_server.cc -std=gnu++0x -I$FREELING/include/ -I$DE
 {{{
 $ g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so  $DESRHOME/ixe/libixe.a
 }}}
+  # copy the executables desr_client and desr_server to some place in your PATH (e.g. /usr/local/bin), or add the desrModules directory to your PATH, e.g in your bashrc.
+     * either:
+{{{
+$ cp desr_client /usr/local/bin
+$ cp desr_server /usr/local/bin
+}}}
+     * or open .bashrc and add:
+{{{
+export PATH="path-to-your-squoia-repo/desrModules:$PATH";
+}}}
   # start two servers (one for each model):
 {{{
-$ ./desr_server -m $DESRHOME/spanish_es4.MLP --port 5678 2> logdesr_es4 &
-$ ./desr_server -m $DESRHOME/spanish.MLP --port 1234 2> logdesr_model2 &
+$ desr_server -m $DESRHOME/spanish_es4.MLP --port 5678 2> logdesr_es4 &
+$ desr_server -m $DESRHOME/spanish.MLP --port 1234 2> logdesr_model2 &
 }}}
   # use the client to tag (FreeLing) and parse sentences:
 {{{
@@ -148,24 +158,9 @@ $ export MATXIN_CFLAGS="-I/path-to-your-lttoolbox/include/lttoolbox-3.2/ -I/path
 {{{
 $ cpan XML::LibXML
 }}}
-    * one of the files needs a little change. Open AI::NaiveBayes1 and change the function import_from_YAML_file from:
+    * one of the files needs a little change. Open AI::NaiveBayes1 and insert at the beginning:
 {{{
-sub import_from_YAML_file {
-    my $package = shift;
-    my $yamlf = shift;
-    my $self = YAML::LoadFile($yamlf);
-    return $self;
-}
-}}}
-   * to (insert 'require YAML;'):
-{{{
-sub import_from_YAML_file {
-    my $package = shift;
-    my $yamlf = shift;
-    require YAML;
-    my $self = YAML::LoadFile($yamlf);
-    return $self;
-}
+require YAML;
 }}}
   # compile the bilingual dictionaries:
 {{{
