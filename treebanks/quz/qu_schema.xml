@@ -47,7 +47,7 @@
    <member name="id" role="#ID" as_attribute="1">
     <cdata format="ID" />
    </member>
-   <member name="root" role="#CHILDNODES">
+   <member name="saphi" role="#CHILDNODES">
     <sequence content_pattern="(nonterminal|terminal)">
      <element name="nonterminal" type="nonterminal.type" />
      <element name="terminal" type="terminal.type" />

@@ -4,7 +4,7 @@
     <schema href="../qu_schema.xml"/>
   </head>
   <body>
-<s id="s1"><root><nonterminal id="s1_VROOT"><cat>VROOT</cat><children>
+<s id="s1"><saphi><nonterminal id="s1_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>CÁMARA</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>DE</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>COMERCIO</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -12,20 +12,20 @@
 <terminal><order>5</order><label>$</label><word>ALEMÁN</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>6</order><label>mod</label><word>-YA</word><pos>Amb</pos><morph><tag>+Emph</tag></morph></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>-MANTA</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>7</order><label>s.arg.claus</label><word>NI</word><pos>Root</pos><translation>=decir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>8</order><label>ns</label><word>-SQA</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>10</order><label>ev</label><word>-S</word><pos>Amb</pos><morph><tag>+IndE</tag></morph></terminal>
-</children></nonterminal></root></s>
-<s id="s2"><root><nonterminal id="s2_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s2"><saphi><nonterminal id="s2_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
 
-</children></nonterminal></root></s>
-<s id="s3"><root><nonterminal id="s3_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s3"><saphi><nonterminal id="s3_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>40</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>hatun</word><pos>Root</pos><translation>=grande</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>napayku</word><pos>Root_VDeriv</pos><translation>=saludar</translation><morph><tag>VRoot</tag><tag>+Aff</tag></morph><children><terminal><order>6</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>7</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>#napayku</word><pos>Root_VDeriv</pos><translation>=saludar</translation><morph><tag>VRoot</tag><tag>+Aff</tag></morph><children><terminal><order>10</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>9</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s4"><root><nonterminal id="s4_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s4"><saphi><nonterminal id="s4_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -42,8 +42,8 @@
 <terminal><order>30</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>26</order><label>s.arg.claus</label><word>kusi</word><pos>Root</pos><translation>=alegrar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>31</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>28</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>29</order><label>s.poss.subj</label><word>-nchik</word><pos>NPers</pos><morph><tag>+1.Pl.Incl.Poss</tag></morph></terminal></children></terminal><terminal><order>27</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>32</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s5"><root><nonterminal id="s5_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s5"><saphi><nonterminal id="s5_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Una</word><pos>Root</pos><translation>=tardar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Una</word><pos>Root</pos><translation>=tardar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -75,8 +75,8 @@
 <terminal><order>46</order><label>$</label><word>Comercio</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>54</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>51</order><label>s.arg.claus</label><word>paqari</word><pos>Root</pos><translation>=amanecer,crearse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>52</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>53</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>50</order><label>poss.subj</label><word>-pa</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>47</order><label>s.arg.claus</label><word>ni</word><pos>Root</pos><translation>=decir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>48</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>49</order><label>s.poss.subj</label><word>-nchik</word><pos>NPers</pos><morph><tag>+1.Pl.Incl.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>55</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s6"><root><nonterminal id="s6_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s6"><saphi><nonterminal id="s6_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -97,8 +97,8 @@
 
 <terminal><order>26</order><label>$</label><word>puriyku</word><pos>Root_VDeriv</pos><translation>=andar</translation><morph><tag>VRoot</tag><tag>+Aff</tag></morph><children><terminal><order>27</order><label>mod</label><word>-chkalla</word><pos>Asp_Amb</pos><morph><tag>+Prog</tag><tag>+Lim_Aff</tag></morph></terminal><terminal><order>28</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>29</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s7"><root><nonterminal id="s7_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s7"><saphi><nonterminal id="s7_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kiki</word><pos>Root</pos><translation>=mismo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
@@ -108,8 +108,8 @@
 
 <terminal><order>10</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>11</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s8"><root><nonterminal id="s8_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s8"><saphi><nonterminal id="s8_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kunan</word><pos>Root</pos><translation>=ahora</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>p’unchawkunaqa</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
@@ -129,8 +129,8 @@
 
 <terminal><order>27</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s9"><root><nonterminal id="s9_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s9"><saphi><nonterminal id="s9_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>kunan</word><pos>Root</pos><translation>=ahora</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal></children></terminal>
@@ -164,8 +164,8 @@
 <terminal><order>56</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>57</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>58</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s10"><root><nonterminal id="s10_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s10"><saphi><nonterminal id="s10_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>“</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>DEinternational</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>”</word><pos>UNKNOWN</pos></terminal>
@@ -198,8 +198,8 @@
 <terminal><order>42</order><label>$</label><word>#yanapa</word><pos>Root</pos><translation>=ayuda</translation><morph><tag>NRoot</tag></morph><children><terminal><order>43</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s11"><root><nonterminal id="s11_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s11"><saphi><nonterminal id="s11_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -221,8 +221,8 @@
 <terminal><order>32</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>29</order><label>s.arg.claus</label><word>mast'ari</word><pos>Root_VDeriv</pos><translation>=tender,tumbar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>30</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>31</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>33</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s12"><root><nonterminal id="s12_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s12"><saphi><nonterminal id="s12_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Huk</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph><children><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -254,8 +254,8 @@
 <terminal><order>38</order><label>$</label><word>#yanapa</word><pos>Root</pos><translation>=ayuda</translation><morph><tag>NRoot</tag></morph><children><terminal><order>39</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>40</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s13"><root><nonterminal id="s13_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s13"><saphi><nonterminal id="s13_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -272,8 +272,8 @@
 <terminal><order>14</order><label>$</label><word>rura</word><pos>Root</pos><translation>=hacer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>15</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>16</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s14"><root><nonterminal id="s14_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s14"><saphi><nonterminal id="s14_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>ñan</word><pos>Root</pos><translation>=camino</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>Iskay</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>-niyuq</word><pos>NDeriv</pos><morph><tag>+Poss</tag></morph></terminal>
@@ -297,8 +297,8 @@
 <terminal><order>27</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>28</order><label>$</label><word>yupa</word><pos>Root</pos><translation>=contar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>29</order><label>ns</label><word>-ycha</word><pos>NS_VS</pos><morph><tag>+Inf</tag><tag>+Fact</tag></morph></terminal><terminal><order>30</order><label>s.obj</label><word>-wa</word><pos>VPers</pos><morph><tag>+1.Obj</tag></morph></terminal><terminal><order>31</order><label>s.subj_obj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+3.Subj_1.Pl.Incl.Obj</tag></morph></terminal></children></terminal>
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s15"><root><nonterminal id="s15_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s15"><saphi><nonterminal id="s15_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Alemán</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>2</order><label>mod</label><word>-ya</word><pos>Amb</pos><morph><tag>+Emph</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>yacha</word><pos>Root</pos><translation>=noticia</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal>
@@ -387,8 +387,8 @@
 <terminal><order>111</order><label>$</label><word>#asta</word><pos>Root</pos><translation>=transportar,arrear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>112</order><label>s.obj</label><word>-wa</word><pos>VPers</pos><morph><tag>+1.Obj</tag></morph></terminal><terminal><order>113</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>114</order><label>$</label><word>saya</word><pos>Root</pos><translation>=parar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>115</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>116</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>117</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s16"><root><nonterminal id="s16_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s16"><saphi><nonterminal id="s16_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>“</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>JobXchange</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>”</word><pos>UNKNOWN</pos></terminal>
@@ -412,8 +412,8 @@
 <terminal><order>33</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>32</order><label>s.arg</label><word>allin</word><pos>Root</pos><translation>=bueno</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>34</order><label>$</label><word>mast'ari</word><pos>Root_VDeriv</pos><translation>=tender,tumbar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>35</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>36</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>37</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s17"><root><nonterminal id="s17_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s17"><saphi><nonterminal id="s17_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>1</order><label>qnt</label><word>250</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>3</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>empresa</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>s.poss</label><word>-nchikkuna</word><pos>NPers_Num</pos><morph><tag>+1.Pl.Incl.Poss</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
@@ -451,8 +451,8 @@
 <terminal><order>52</order><label>$</label><word>chura</word><pos>Root</pos><translation>=poner</translation><morph><tag>VRoot</tag></morph><children><terminal><order>53</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>54</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s18"><root><nonterminal id="s18_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s18"><saphi><nonterminal id="s18_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Huñu</word><pos>Root</pos><translation>=juntar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>“</word><pos>UNKNOWN</pos></terminal>
@@ -490,8 +490,8 @@
 <terminal><order>50</order><label>$</label><word>hamu</word><pos>Root</pos><translation>=venir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>51</order><label>s.subj</label><word>-nkuman</word><pos>VPers_Mod</pos><morph><tag>+3.Pl.Subj</tag><tag>+Pot</tag></morph></terminal></children></terminal>
 
 <terminal><order>52</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s19"><root><nonterminal id="s19_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s19"><saphi><nonterminal id="s19_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -535,8 +535,8 @@
 <terminal><order>69</order><label>$</label><word>aypari</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>70</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>71</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s20"><root><nonterminal id="s20_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s20"><saphi><nonterminal id="s20_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 
@@ -583,8 +583,8 @@
 
 <terminal><order>52</order><label>$</label><word>pusa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>53</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>54</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>55</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s21"><root><nonterminal id="s21_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s21"><saphi><nonterminal id="s21_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -612,8 +612,8 @@
 <terminal><order>47</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>45</order><label>s.arg.claus</label><word>masi</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>48</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>46</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>49</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s22"><root><nonterminal id="s22_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s22"><saphi><nonterminal id="s22_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Paykuna</word><pos>Root_Num</pos><translation/><morph><tag>PrnPers+3.Sg</tag><tag>+Pl</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>sapa</word><pos>Root</pos><translation>=cada,solo</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -628,8 +628,8 @@
 <terminal><order>25</order><label>$</label><word>aña</word><pos>Root</pos><translation>=dar_gracias</translation><morph><tag>VRoot</tag></morph><children><terminal><order>27</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>29</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>26</order><label>ns</label><word>-ychayku</word><pos>NS_VS_VDeriv</pos><morph><tag>+Inf</tag><tag>+Fact</tag><tag>+Aff</tag></morph></terminal><terminal><order>28</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>30</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>31</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s23"><root><nonterminal id="s23_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s23"><saphi><nonterminal id="s23_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Alemán</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>2</order><label>mod</label><word>-ya</word><pos>Amb</pos><morph><tag>+Emph</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>Asociación</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -669,8 +669,8 @@
 <terminal><order>59</order><label>$</label><word>quwa</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>60</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>61</order><label>s.obj</label><word>-wa</word><pos>VPers</pos><morph><tag>+1.Obj</tag></morph></terminal><terminal><order>62</order><label>s.subj_obj</label><word>-rqanchik</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Subj_1.Pl.Incl.Obj</tag></morph></terminal></children></terminal>
 <terminal><order>63</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>64</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s24"><root><nonterminal id="s24_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s24"><saphi><nonterminal id="s24_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Alemán</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>2</order><label>mod</label><word>-ya</word><pos>Amb</pos><morph><tag>+Emph</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>Embajada</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>5</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -689,8 +689,8 @@
 
 <terminal><order>34</order><label>$</label><word>yanapa</word><pos>Root_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>35</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>36</order><label>s.obj</label><word>-wa</word><pos>VPers</pos><morph><tag>+1.Obj</tag></morph></terminal><terminal><order>37</order><label>s.subj_obj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+3.Subj_1.Pl.Incl.Obj</tag></morph></terminal></children></terminal>
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s25"><root><nonterminal id="s25_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s25"><saphi><nonterminal id="s25_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>yacha</word><pos>Root</pos><translation>=noticia</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal>
@@ -716,8 +716,8 @@
 <terminal><order>30</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>26</order><label>s.arg.claus</label><word>lluqsi</word><pos>Root</pos><translation>=salir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>28</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>29</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>27</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>31</order><label>$</label><word>aña</word><pos>Root</pos><translation>=dar_gracias</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>35</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>32</order><label>ns</label><word>-ychayku</word><pos>NS_VS_VDeriv</pos><morph><tag>+Inf</tag><tag>+Fact</tag><tag>+Aff</tag></morph></terminal><terminal><order>34</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s26"><root><nonterminal id="s26_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s26"><saphi><nonterminal id="s26_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>qnt</label><word>40</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>11</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>7</order><label>s.arg</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>12</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>9</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>10</order><label>s.poss.subj</label><word>-nchik</word><pos>NPers</pos><morph><tag>+1.Pl.Incl.Poss</tag></morph></terminal></children></terminal><terminal><order>8</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
@@ -735,8 +735,8 @@
 <terminal><order>29</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>26</order><label>s.arg.claus</label><word>aña</word><pos>Root</pos><translation>=dar_gracias</translation><morph><tag>VRoot</tag></morph><children><terminal><order>27</order><label>ns</label><word>-ycha</word><pos>NS_NDeriv</pos><morph><tag>+Inf</tag><tag>+Dim</tag></morph><children><terminal><order>28</order><label>s.poss.subj</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>33</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>30</order><label>s.arg.claus</label><word>#aña</word><pos>Root</pos><translation>=dar_gracias</translation><morph><tag>VRoot</tag></morph><children><terminal><order>31</order><label>ns</label><word>-ycha</word><pos>NS_VS</pos><morph><tag>+Inf</tag><tag>+Fact</tag></morph></terminal><terminal><order>32</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s27"><root><nonterminal id="s27_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s27"><saphi><nonterminal id="s27_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qhipa</word><pos>Root</pos><translation>=atrás</translation><morph><tag>NRoot</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pachakuna</word><pos>Root_Num</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal></children></terminal>
@@ -757,8 +757,8 @@
 <terminal><order>32</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>33</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>34</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>35</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>36</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>37</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s28"><root><nonterminal id="s28_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s28"><saphi><nonterminal id="s28_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Ñawpa</word><pos>Root</pos><translation>=antes</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>#Ñawpaq</word><pos>Root</pos><translation>=antes</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -770,8 +770,8 @@
 <terminal><order>16</order><label>$</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>17</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>18</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s29"><root><nonterminal id="s29_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s29"><saphi><nonterminal id="s29_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Paykuna</word><pos>Root_Num</pos><translation/><morph><tag>PrnPers+3.Sg</tag><tag>+Pl</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>mana</word><pos>Root</pos><translation/><morph><tag>Part_Neg</tag></morph></terminal>
@@ -787,8 +787,8 @@
 <terminal><order>19</order><label>$</label><word>haywari</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>20</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>21</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s30"><root><nonterminal id="s30_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s30"><saphi><nonterminal id="s30_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>-puni</word><pos>Amb</pos><morph><tag>+Def</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -809,8 +809,8 @@
 <terminal><order>32</order><label>$</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s31"><root><nonterminal id="s31_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s31"><saphi><nonterminal id="s31_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>-puni</word><pos>Amb</pos><morph><tag>+Def</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -828,8 +828,8 @@
 <terminal><order>21</order><label>$</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>22</order><label>s.subj</label><word>-nchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>23</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s32"><root><nonterminal id="s32_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s32"><saphi><nonterminal id="s32_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Paykuna</word><pos>Root_Num</pos><translation/><morph><tag>PrnPers+3.Sg</tag><tag>+Pl</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>3</order><label>qnt</label><word>40</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>allin</word><pos>Root</pos><translation>=bueno</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -842,8 +842,8 @@
 <terminal><order>19</order><label>$</label><word>#huqari</word><pos>Root</pos><translation>=elevación</translation><morph><tag>NRoot</tag></morph><children><terminal><order>20</order><label>s.poss</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>21</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s33"><root><nonterminal id="s33_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s33"><saphi><nonterminal id="s33_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hatun</word><pos>Root</pos><translation>=grande</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>2</order><label>s.arg.claus</label><word>aña</word><pos>Root</pos><translation>=dar_gracias</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>ns</label><word>-ychayku</word><pos>NS_VS_VDeriv</pos><morph><tag>+Inf</tag><tag>+Fact</tag><tag>+Aff</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -867,8 +867,8 @@
 <terminal><order>26</order><label>$</label><word>-rayku</word><pos>Cas</pos><morph><tag>+Kaus</tag></morph><children><terminal><order>25</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>27</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s34"><root><nonterminal id="s34_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s34"><saphi><nonterminal id="s34_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Tuku</word><pos>Root</pos><translation>=acabar,suceder,convertirse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>5</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>3</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>6</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -912,8 +912,8 @@
 
 <terminal><order>59</order><label>$</label><word>-niyuq</word><pos>NDeriv</pos><morph><tag>+Poss</tag></morph></terminal>
 <terminal><order>60</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s35"><root><nonterminal id="s35_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s35"><saphi><nonterminal id="s35_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>As</word><pos>Root</pos><translation>=poco</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>sub</label><word>kutiri</word><pos>Root_VDeriv</pos><translation>=volver</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>5</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal></children></terminal>
 <terminal><order>11</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>8</order><label>s.arg.claus</label><word>kinra</word><pos>Root</pos><translation>=cruzar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>9</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>10</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>7</order><label>poss.subj</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>6</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
@@ -953,8 +953,8 @@
 <terminal><order>60</order><label>$</label><word>#sayari</word><pos>Root_VDeriv</pos><translation>=parar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>61</order><label>s.subj</label><word>-sun</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj.Fut</tag></morph></terminal></children></terminal>
 
 <terminal><order>62</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s36"><root><nonterminal id="s36_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s36"><saphi><nonterminal id="s36_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>punc</label><word>-</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>-</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>3</order><label>punc</label><word>-</word><pos>$.</pos><translation/><morph/></terminal>
@@ -983,8 +983,8 @@
 <terminal><order>29</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>27</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>26</order><label>qnt</label><word>40</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>28</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>30</order><label>$</label><word>raymicha</word><pos>Root_VS</pos><translation>=fiesta</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>31</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>32</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s37"><root><nonterminal id="s37_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s37"><saphi><nonterminal id="s37_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -1022,8 +1022,8 @@
 <terminal><order>44</order><label>linker</label><word>chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>45</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s38"><root><nonterminal id="s38_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s38"><saphi><nonterminal id="s38_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Icha</word><pos>Root</pos><translation/><morph><tag>Part_Contr</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -1040,8 +1040,8 @@
 <terminal><order>25</order><label>$</label><word>qhawa</word><pos>Root</pos><translation>=mirar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>26</order><label>s.subj</label><word>-sunman</word><pos>VPers_Mod</pos><morph><tag>+1.Pl.Incl.Subj.Fut</tag><tag>+Pot</tag></morph></terminal></children></terminal>
 
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s39"><root><nonterminal id="s39_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s39"><saphi><nonterminal id="s39_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>ñak'ari</word><pos>Root_VDeriv</pos><translation>=maldecir,sufrir</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
@@ -1091,8 +1091,8 @@
 <terminal><order>75</order><label>$</label><word>-chu</word><pos>Amb</pos><morph><tag>+Intr_Neg</tag></morph></terminal>
 <terminal><order>76</order><label>$</label><word>#ati</word><pos>Root</pos><translation>=poder,vencer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>78</order><label>s.neg</label><word>-chu</word><pos>Amb</pos><morph><tag>+Intr_Neg</tag></morph></terminal><terminal><order>77</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>79</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s40"><root><nonterminal id="s40_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s40"><saphi><nonterminal id="s40_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Llapa</word><pos>Root</pos><translation>=todo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-nchik</word><pos>NPers</pos><morph><tag>+1.Pl.Incl.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>ch'ulla</word><pos>Root</pos><translation>=impar,rocío</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -1110,8 +1110,8 @@
 <terminal><order>25</order><label>$</label><word>wasapa</word><pos>Root_VDeriv</pos><translation>=culminar,concluir,defender</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>26</order><label>s.subj</label><word>-sunchik</word><pos>VPers</pos><morph><tag>+1.Pl.Incl.Subj.Fut</tag></morph></terminal></children></terminal>
 
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s41"><root><nonterminal id="s41_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s41"><saphi><nonterminal id="s41_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Sasa</word><pos>Root</pos><translation>=difícil</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>4</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>2</order><label>s.arg.claus</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>5</order><label>s.arg.claus</label><word>#kayku</word><pos>Root_VDeriv</pos><translation>=ser</translation><morph><tag>VRoot</tag><tag>+Aff</tag></morph><children><terminal><order>6</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal></children></terminal>
@@ -1162,8 +1162,8 @@
 <terminal><order>73</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>75</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>74</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>76</order><label>s.subj</label><word>-nman</word><pos>VPers_Mod</pos><morph><tag>+3.Sg.Subj</tag><tag>+Pot</tag></morph></terminal></children></terminal>
 <terminal><order>77</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>78</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s42"><root><nonterminal id="s42_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s42"><saphi><nonterminal id="s42_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>sub</label><word>Yacha</word><pos>Root</pos><translation>=saber,habitar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>Hawa</word><pos>Root</pos><translation>=fuera,arriba</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -1186,8 +1186,8 @@
 <terminal><order>41</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>38</order><label>s.arg.claus</label><word>hatari</word><pos>Root</pos><translation>=levantarse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>39</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>40</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>42</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>43</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s43"><root><nonterminal id="s43_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s43"><saphi><nonterminal id="s43_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Muchu</word><pos>Root</pos><translation>=sufrir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Muchu</word><pos>Root</pos><translation>=sufrir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -1240,8 +1240,8 @@
 <terminal><order>90</order><label>$</label><word>chanincha</word><pos>Root_NDeriv_VS</pos><translation>=valor</translation><morph><tag>NRoot</tag><tag>+Rel</tag><tag>+Fact</tag></morph><children><terminal><order>91</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>92</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>93</order><label>$</label><word>#chanincha</word><pos>Root_VS</pos><translation>=correcto</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>94</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>95</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>96</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s44"><root><nonterminal id="s44_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s44"><saphi><nonterminal id="s44_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>AHK</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
@@ -1266,8 +1266,8 @@
 <terminal><order>34</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>35</order><label>s.subj</label><word>-chkan</word><pos>Asp_VPers</pos><morph><tag>+Prog</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s45"><root><nonterminal id="s45_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s45"><saphi><nonterminal id="s45_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>40</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>10</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>7</order><label>s.arg.claus</label><word>haywari</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>11</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>8</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>9</order><label>s.poss.subj</label><word>-ninku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal><terminal><order>6</order><label>poss.subj</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>suyukuna</word><pos>Root_Num</pos><translation>=región</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>4</order><label>qnt</label><word>iskay</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal></children></terminal></children></terminal>
 
@@ -1310,8 +1310,8 @@
 <terminal><order>77</order><label>$</label><word>puriri</word><pos>Root_VDeriv</pos><translation>=andar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>78</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>79</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s46"><root><nonterminal id="s46_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s46"><saphi><nonterminal id="s46_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -1345,8 +1345,8 @@
 <terminal><order>62</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>61</order><label>s.arg</label><word>allin</word><pos>Root</pos><translation>=bueno</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>63</order><label>$</label><word>yuri</word><pos>Root</pos><translation>=aparecer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>64</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>65</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>66</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s47"><root><nonterminal id="s47_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s47"><saphi><nonterminal id="s47_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -1378,8 +1378,8 @@
 <terminal><order>54</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>55</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>56</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>57</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>58</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s48"><root><nonterminal id="s48_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s48"><saphi><nonterminal id="s48_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>iskay</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal>
@@ -1423,8 +1423,8 @@
 <terminal><order>68</order><label>$</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>69</order><label>s.subj</label><word>-nqaku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Fut</tag></morph></terminal></children></terminal>
 
 <terminal><order>70</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s49"><root><nonterminal id="s49_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s49"><saphi><nonterminal id="s49_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -1471,8 +1471,8 @@
 <terminal><order>69</order><label>$</label><word>wiñari</word><pos>Root_VDeriv</pos><translation>=desarollar,crecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>70</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>71</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s50"><root><nonterminal id="s50_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s50"><saphi><nonterminal id="s50_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
 
@@ -1509,8 +1509,8 @@
 
 <terminal><order>47</order><label>$</label><word>#rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>49</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>48</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>50</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s51"><root><nonterminal id="s51_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s51"><saphi><nonterminal id="s51_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2008</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
 
@@ -1543,8 +1543,8 @@
 <terminal><order>50</order><label>$</label><word>ima</word><pos>Root</pos><translation/><morph><tag>Part_Conec</tag></morph></terminal>
 <terminal><order>51</order><label>$</label><word>#ima</word><pos>Root</pos><translation>=cosa</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>52</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s52"><root><nonterminal id="s52_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s52"><saphi><nonterminal id="s52_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámaras</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>#Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-s</word><pos>Amb</pos><morph><tag>+IndE</tag></morph></terminal>
@@ -1593,8 +1593,8 @@
 
 <terminal><order>57</order><label>$</label><word>#pusari</word><pos>Root_VDeriv</pos><translation>=llevar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>59</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>58</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>60</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s53"><root><nonterminal id="s53_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s53"><saphi><nonterminal id="s53_VROOT"><cat>VROOT</cat><children>
 <terminal><order>5</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>4</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal><terminal><order>2</order><label>poss</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>6</order><label>s.arg</label><word>sunqu</word><pos>Root</pos><translation>=corazón</translation><morph><tag>NRoot</tag></morph><children><terminal><order>7</order><label>s.poss</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>10</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -1607,8 +1607,8 @@
 <terminal><order>22</order><label>$</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>23</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>24</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s54"><root><nonterminal id="s54_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s54"><saphi><nonterminal id="s54_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kallpacha</word><pos>Root_VS</pos><translation>=fuerte</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>s.subj</label><word>-sqanku</word><pos>Tns_VPers</pos><morph><tag>+IPst</tag><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#Kallpacha</word><pos>Root_VS</pos><translation>=fuerte</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>6</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>#Kallpacha</word><pos>Root_VDeriv</pos><translation>=esforzarse,correr</translation><morph><tag>VRoot</tag><tag>+Vdim</tag></morph><children><terminal><order>10</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>9</order><label>s.subj</label><word>-sqanku</word><pos>Tns_VPers</pos><morph><tag>+IPst</tag><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
@@ -1619,8 +1619,8 @@
 <terminal><order>19</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>20</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>21</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s55"><root><nonterminal id="s55_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s55"><saphi><nonterminal id="s55_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -1641,8 +1641,8 @@
 <terminal><order>43</order><label>$</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>44</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>45</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s56"><root><nonterminal id="s56_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s56"><saphi><nonterminal id="s56_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>6</order><label>s.arg.claus</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>9</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>7</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
@@ -1659,8 +1659,8 @@
 <terminal><order>29</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>27</order><label>s.arg</label><word>#huqari</word><pos>Root</pos><translation>=elevación</translation><morph><tag>NRoot</tag></morph><children><terminal><order>28</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>30</order><label>$</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>31</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s57"><root><nonterminal id="s57_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s57"><saphi><nonterminal id="s57_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Llapa</word><pos>Root</pos><translation>=todo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-ykichik</word><pos>NPers</pos><morph><tag>+2.Pl.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>allin</word><pos>Root</pos><translation>=bueno</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -1674,8 +1674,8 @@
 <terminal><order>24</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>25</order><label>$</label><word>mañari</word><pos>Root_VDeriv</pos><translation>=pedir</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>26</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>27</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s58"><root><nonterminal id="s58_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s58"><saphi><nonterminal id="s58_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>punc</label><word>-</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>-</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>3</order><label>punc</label><word>-</word><pos>$.</pos><translation/><morph/></terminal>
@@ -1719,8 +1719,8 @@
 <terminal><order>49</order><label>$</label><word>puri</word><pos>Root</pos><translation>=andar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>50</order><label>s.subj</label><word>-chkanku</word><pos>Asp_VPers</pos><morph><tag>+Prog</tag><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>51</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s59"><root><nonterminal id="s59_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s59"><saphi><nonterminal id="s59_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -1756,8 +1756,8 @@
 <terminal><order>46</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>45</order><label>s.arg</label><word>ancha</word><pos>Root</pos><translation>=muy,mucho</translation><morph><tag>NRoot</tag></morph><children><terminal><order>47</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>52</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>48</order><label>s.arg</label><word>qullqichana</word><pos>Root_VS_VDeriv</pos><translation>=plata</translation><morph><tag>NRoot</tag><tag>+Fact</tag><tag>+Rzpr</tag></morph><children><terminal><order>50</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>51</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal><terminal><order>49</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>53</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s60"><root><nonterminal id="s60_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s60"><saphi><nonterminal id="s60_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>AHK</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>punc</label><word>(</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>3</order><label>$</label><word>Auslandshandelskammer</word><pos>UNKNOWN</pos></terminal>
@@ -1791,8 +1791,8 @@
 <terminal><order>45</order><label>$</label><word>#yanapa</word><pos>Root</pos><translation>=ayuda</translation><morph><tag>NRoot</tag></morph><children><terminal><order>46</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>47</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s61"><root><nonterminal id="s61_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s61"><saphi><nonterminal id="s61_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-rayku</word><pos>Cas</pos><morph><tag>+Kaus</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -1811,8 +1811,8 @@
 <terminal><order>40</order><label>$</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>41</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>42</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s62"><root><nonterminal id="s62_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s62"><saphi><nonterminal id="s62_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qhipa</word><pos>Root</pos><translation>=atrás</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal></children></terminal>
@@ -1840,8 +1840,8 @@
 <terminal><order>33</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>34</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s63"><root><nonterminal id="s63_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s63"><saphi><nonterminal id="s63_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
@@ -1897,8 +1897,8 @@
 <terminal><order>87</order><label>$</label><word>#kallpacha</word><pos>Root_VDeriv</pos><translation>=esforzarse,correr</translation><morph><tag>VRoot</tag><tag>+Vdim</tag></morph><children><terminal><order>88</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>89</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s64"><root><nonterminal id="s64_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s64"><saphi><nonterminal id="s64_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -1943,8 +1943,8 @@
 <terminal><order>70</order><label>$</label><word>#aypanchi</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>71</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>72</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s65"><root><nonterminal id="s65_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s65"><saphi><nonterminal id="s65_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>linker</label><word>Hina</word><pos>Root</pos><translation>=hacer_así,ser_así</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
@@ -1959,8 +1959,8 @@
 
 <terminal><order>21</order><label>$</label><word>qhapaqcha</word><pos>Root_VS</pos><translation>=poderoso,rico</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>22</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>23</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>24</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s66"><root><nonterminal id="s66_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s66"><saphi><nonterminal id="s66_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>ns</label><word>-yniraq</word><pos>NS_NDeriv</pos><morph><tag>+Inf</tag><tag>+Sim</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>yupa</word><pos>Root</pos><translation>=mucho</translation><morph><tag>NRoot</tag></morph><children><terminal><order>3</order><label>det</label><word>#Kayniraq</word><pos>Root_NDeriv</pos><translation/><morph><tag>PrnDem</tag><tag>+Sim</tag></morph></terminal><terminal><order>5</order><label>s.poss</label><word>-ykuna</word><pos>NPers_Num</pos><morph><tag>+1.Poss</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>7</order><label>s.arg.claus</label><word>#yupa</word><pos>Root</pos><translation>=contar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>8</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
@@ -1978,8 +1978,8 @@
 <terminal><order>38</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>39</order><label>$</label><word>qunqa</word><pos>Root</pos><translation>=olvidar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>41</order><label>s.neg</label><word>-chu</word><pos>Amb</pos><morph><tag>+Intr_Neg</tag></morph></terminal><terminal><order>40</order><label>s.subj</label><word>-sunman</word><pos>VPers_Mod</pos><morph><tag>+1.Pl.Incl.Subj.Fut</tag><tag>+Pot</tag></morph></terminal></children></terminal>
 <terminal><order>42</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s67"><root><nonterminal id="s67_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s67"><saphi><nonterminal id="s67_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Gobierno</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>federal</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
@@ -2022,8 +2022,8 @@
 <terminal><order>58</order><label>$</label><word>#kallpacha</word><pos>Root_VDeriv</pos><translation>=esforzarse,correr</translation><morph><tag>VRoot</tag><tag>+Vdim</tag></morph><children><terminal><order>59</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>60</order><label>s.subj</label><word>-nqaku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Fut</tag></morph></terminal></children></terminal>
 <terminal><order>61</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>62</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s68"><root><nonterminal id="s68_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s68"><saphi><nonterminal id="s68_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Peruano</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>punc</label><word>-</word><pos>$.</pos><translation/><morph/></terminal>
@@ -2058,8 +2058,8 @@
 <terminal><order>50</order><label>$</label><word>haywari</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>51</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>52</order><label>s.subj</label><word>-nqa</word><pos>VPers</pos><morph><tag>+3.Sg.Subj.Fut</tag></morph></terminal></children></terminal>
 <terminal><order>53</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>54</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s69"><root><nonterminal id="s69_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s69"><saphi><nonterminal id="s69_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>12</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>3</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal></children></terminal>
 
@@ -2108,8 +2108,8 @@
 <terminal><order>72</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>69</order><label>s.arg</label><word>iskaya</word><pos>Root_VS</pos><translation/><morph><tag>NRootG</tag><tag>+Trs</tag></morph><children><terminal><order>73</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>70</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>71</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
 <terminal><order>74</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s70"><root><nonterminal id="s70_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s70"><saphi><nonterminal id="s70_VROOT"><cat>VROOT</cat><children>
 <terminal><order>5</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>1</order><label>$</label><word>Huk</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>3</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>sub</label><word>rima</word><pos>Root</pos><translation>=hablar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>7</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal></children></terminal>
 <terminal><order>9</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -2139,8 +2139,8 @@
 <terminal><order>49</order><label>$</label><word>aypa</word><pos>Root</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>50</order><label>s.subj</label><word>-chkanchik</word><pos>Asp_VPers</pos><morph><tag>+Prog</tag><tag>+1.Pl.Incl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>51</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s71"><root><nonterminal id="s71_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s71"><saphi><nonterminal id="s71_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>Unión</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 
@@ -2156,8 +2156,8 @@
 <terminal><order>19</order><label>$</label><word>rima</word><pos>Root</pos><translation>=hablar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>20</order><label>s.subj</label><word>-chkani</word><pos>Asp_VPers</pos><morph><tag>+Prog</tag><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>21</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s72"><root><nonterminal id="s72_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s72"><saphi><nonterminal id="s72_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Consejo</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Europeo</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
@@ -2184,8 +2184,8 @@
 <terminal><order>52</order><label>$</label><word>suya</word><pos>Root</pos><translation>=esperar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>53</order><label>s.subj</label><word>-chkan</word><pos>Asp_VPers</pos><morph><tag>+Prog</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>54</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s73"><root><nonterminal id="s73_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s73"><saphi><nonterminal id="s73_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Rimana</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>3</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#Rimana</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>7</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>9</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -2199,8 +2199,8 @@
 <terminal><order>20</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>21</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>22</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>23</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>24</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s74"><root><nonterminal id="s74_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s74"><saphi><nonterminal id="s74_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Ancha</word><pos>Root</pos><translation>=muy,mucho</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>-puni</word><pos>Amb</pos><morph><tag>+Def</tag></morph></terminal>
@@ -2217,8 +2217,8 @@
 <terminal><order>24</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>22</order><label>s.arg</label><word>#qullqicha</word><pos>Root_VS</pos><translation>=plata</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>25</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>23</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>30</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>26</order><label>s.arg</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>28</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>29</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal><terminal><order>27</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>31</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s75"><root><nonterminal id="s75_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s75"><saphi><nonterminal id="s75_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Llapa</word><pos>Root</pos><translation>=todo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>suyukuna</word><pos>Root_Num</pos><translation>=región</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal>
@@ -2242,8 +2242,8 @@
 
 <terminal><order>31</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>32</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>33</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>34</order><label>s.subj</label><word>-nqaku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Fut</tag></morph></terminal></children></terminal>
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s76"><root><nonterminal id="s76_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s76"><saphi><nonterminal id="s76_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Qhatucha</word><pos>Root_NDeriv</pos><translation>=mercado</translation><morph><tag>NRoot</tag><tag>+Dim</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>#Qhatucha</word><pos>Root_VS</pos><translation>=mercado</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>5</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>7</order><label>s.arg.claus</label><word>#Qhatucha</word><pos>Root_VDeriv</pos><translation>=negociar</translation><morph><tag>VRoot</tag><tag>+Vdim</tag></morph><children><terminal><order>8</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal></children></terminal>
@@ -2265,8 +2265,8 @@
 <terminal><order>32</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>33</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s77"><root><nonterminal id="s77_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s77"><saphi><nonterminal id="s77_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>comp</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>5</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>3</order><label>p.arg</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Samari</word><pos>Root_VDeriv</pos><translation>=descansar,respirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
 <terminal><order>6</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -2292,8 +2292,8 @@
 
 <terminal><order>32</order><label>$</label><word>waqa</word><pos>Root</pos><translation>=llorar,guardar,proteger</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>ns</label><word>-ycha</word><pos>NS_VS</pos><morph><tag>+Inf</tag><tag>+Fact</tag></morph></terminal><terminal><order>34</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>35</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s78"><root><nonterminal id="s78_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s78"><saphi><nonterminal id="s78_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>3</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -2318,8 +2318,8 @@
 <terminal><order>36</order><label>comp</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>35</order><label>p.arg</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>33</order><label>s.arg.claus</label><word>#kallpacha</word><pos>Root_VDeriv</pos><translation>=esforzarse,correr</translation><morph><tag>VRoot</tag><tag>+Vdim</tag></morph><children><terminal><order>34</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>37</order><label>$</label><word>lluqsi</word><pos>Root</pos><translation>=salir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>38</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>39</order><label>s.obj</label><word>-wa</word><pos>VPers</pos><morph><tag>+1.Obj</tag></morph></terminal><terminal><order>40</order><label>s.subj_obj</label><word>-sunchik</word><pos>VPers</pos><morph><tag>+3.Subj_1.Pl.Incl.Obj.Fut</tag></morph></terminal></children></terminal>
 <terminal><order>41</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s79"><root><nonterminal id="s79_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s79"><saphi><nonterminal id="s79_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Aypana</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>3</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#Aypana</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>7</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>mana</word><pos>Root</pos><translation/><morph><tag>Part_Neg</tag></morph></terminal>
@@ -2354,8 +2354,8 @@
 <terminal><order>57</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>55</order><label>s.arg.claus</label><word>#kicharaya</word><pos>Root_VDeriv</pos><translation>=abrir</translation><morph><tag>VRoot</tag><tag>+Perdur</tag></morph><children><terminal><order>56</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>58</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>59</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s80"><root><nonterminal id="s80_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s80"><saphi><nonterminal id="s80_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>comp</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>3</order><label>p.arg</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>5</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>6</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
@@ -2383,8 +2383,8 @@
 <terminal><order>35</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>36</order><label>$</label><word>k'ira</word><pos>Root</pos><translation>=recostar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>37</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>38</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>39</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s81"><root><nonterminal id="s81_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s81"><saphi><nonterminal id="s81_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -2399,8 +2399,8 @@
 <terminal><order>17</order><label>$</label><word>yuyari</word><pos>Root_VDeriv</pos><translation>=recordar,pensar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>18</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>19</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s82"><root><nonterminal id="s82_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s82"><saphi><nonterminal id="s82_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>República</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Federal</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>de</word><pos>UNKNOWN</pos></terminal>
@@ -2426,8 +2426,8 @@
 <terminal><order>34</order><label>$</label><word>yuyari</word><pos>Root_VDeriv</pos><translation>=recordar,pensar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>35</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>36</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>37</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s83"><root><nonterminal id="s83_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s83"><saphi><nonterminal id="s83_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>AHK</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>5</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>qnt</label><word>40</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>6</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal><terminal><order>3</order><label>poss</label><word>-pa</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -2443,8 +2443,8 @@
 <terminal><order>29</order><label>$</label><word>kuskancha</word><pos>Root_NDeriv_VS</pos><translation>=juntos</translation><morph><tag>NRoot</tag><tag>+Rel</tag><tag>+Fact</tag></morph><children><terminal><order>31</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>30</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>32</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>33</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s84"><root><nonterminal id="s84_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s84"><saphi><nonterminal id="s84_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Peruano</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>punc</label><word>-</word><pos>$.</pos><translation/><morph/></terminal>
@@ -2471,16 +2471,16 @@
 <terminal><order>42</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>40</order><label>s.arg</label><word>sunqu</word><pos>Root</pos><translation>=corazón</translation><morph><tag>NRoot</tag></morph><children><terminal><order>41</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>43</order><label>$</label><word>mañari</word><pos>Root_VDeriv</pos><translation>=pedir</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>44</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>45</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s85"><root><nonterminal id="s85_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s85"><saphi><nonterminal id="s85_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Qallariyku</word><pos>Root_VDeriv_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Aff</tag></morph><children><terminal><order>4</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>6</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>5</order><label>qnt</label><word>1968</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>paqari</word><pos>Root</pos><translation>=amanecer,crearse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>9</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>10</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>11</order><label>$</label><word>#paqari</word><pos>Root</pos><translation>=amanecer,crearse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>13</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>12</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s86"><root><nonterminal id="s86_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s86"><saphi><nonterminal id="s86_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1968</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
@@ -2517,8 +2517,8 @@
 <terminal><order>60</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>61</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>62</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s87"><root><nonterminal id="s87_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s87"><saphi><nonterminal id="s87_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Icha</word><pos>Root</pos><translation/><morph><tag>Part_Contr</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>peruano</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -2533,8 +2533,8 @@
 <terminal><order>17</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>18</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>19</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s88"><root><nonterminal id="s88_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s88"><saphi><nonterminal id="s88_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>28</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>punch'aw</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>Kantaray</word><pos>Root</pos><translation>=octubre</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -2563,8 +2563,8 @@
 <terminal><order>31</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>32</order><label>$</label><word>paqari</word><pos>Root</pos><translation>=amanecer,crearse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>34</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s89"><root><nonterminal id="s89_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s89"><saphi><nonterminal id="s89_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Segunda</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Guerra</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>Mundial</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -2597,8 +2597,8 @@
 <terminal><order>54</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>55</order><label>$</label><word>chinkarqa</word><pos>Root_VDeriv</pos><translation>=perder</translation><morph><tag>VRoot</tag><tag>+Rptn</tag></morph><children><terminal><order>56</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>57</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>58</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>59</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s90"><root><nonterminal id="s90_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s90"><saphi><nonterminal id="s90_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 
@@ -2627,8 +2627,8 @@
 <terminal><order>44</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>41</order><label>s.arg.claus</label><word>yuri</word><pos>Root</pos><translation>=aparecer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>45</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>43</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>42</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s91"><root><nonterminal id="s91_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s91"><saphi><nonterminal id="s91_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>peruano</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -2656,8 +2656,8 @@
 <terminal><order>37</order><label>$</label><word>haykuri</word><pos>Root_VDeriv</pos><translation>=entrar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>38</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>39</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s92"><root><nonterminal id="s92_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s92"><saphi><nonterminal id="s92_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>Embajada</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -2703,8 +2703,8 @@
 <terminal><order>62</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>63</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>64</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s93"><root><nonterminal id="s93_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s93"><saphi><nonterminal id="s93_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>p'unchaw</word><pos>Root</pos><translation>=día</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>28</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>Kantaray</word><pos>Root</pos><translation>=octubre</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -2728,8 +2728,8 @@
 <terminal><order>33</order><label>$</label><word>qillqa</word><pos>Root</pos><translation>=escribir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>34</order><label>s.subj</label><word>-rqanku</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s94"><root><nonterminal id="s94_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s94"><saphi><nonterminal id="s94_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>5</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
 
@@ -2747,30 +2747,30 @@
 <terminal><order>20</order><label>$</label><word>Peruana</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>21</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>22</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s95"><root><nonterminal id="s95_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s95"><saphi><nonterminal id="s95_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s96"><root><nonterminal id="s96_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s96"><saphi><nonterminal id="s96_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>suti</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>Clemens</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>6</order><label>$</label><word>Ostendorf</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>7</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s97"><root><nonterminal id="s97_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s97"><saphi><nonterminal id="s97_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Bayer</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Química</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>Unidas</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>4</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s98"><root><nonterminal id="s98_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s98"><saphi><nonterminal id="s98_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s99"><root><nonterminal id="s99_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s99"><saphi><nonterminal id="s99_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>suticha</word><pos>Root_VS</pos><translation>=nombre</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>Pío</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -2782,38 +2782,38 @@
 <terminal><order>11</order><label>$</label><word>Ernesto</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>12</order><label>$</label><word>Roedenbeck</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>13</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s100"><root><nonterminal id="s100_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s100"><saphi><nonterminal id="s100_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Consorcio</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Pesquero</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>del</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>4</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>6</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s101"><root><nonterminal id="s101_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s101"><saphi><nonterminal id="s101_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s102"><root><nonterminal id="s102_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s102"><saphi><nonterminal id="s102_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>suticha</word><pos>Root_VS</pos><translation>=nombre</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>Manuel</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>6</order><label>$</label><word>Elgue</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>7</order><label>s.subj</label><word>-rqa</word><pos>Tns_VPers</pos><morph><tag>+3.Sg.Subj.NPst</tag></morph></terminal></children></terminal>
 
 <terminal><order>8</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s103"><root><nonterminal id="s103_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s103"><saphi><nonterminal id="s103_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>La</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Hanseática</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>4</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s104"><root><nonterminal id="s104_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s104"><saphi><nonterminal id="s104_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s105"><root><nonterminal id="s105_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s105"><saphi><nonterminal id="s105_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>ni</word><pos>Root</pos><translation>=decir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>Hans</word><pos>UNKNOWN</pos></terminal>
@@ -2823,61 +2823,61 @@
 <terminal><order>9</order><label>$</label><word>#Appe</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>10</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>11</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s106"><root><nonterminal id="s106_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s106"><saphi><nonterminal id="s106_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cosma</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>2</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>4</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s107"><root><nonterminal id="s107_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s107"><saphi><nonterminal id="s107_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s108"><root><nonterminal id="s108_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s108"><saphi><nonterminal id="s108_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>ni</word><pos>Root</pos><translation>=decir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Fred</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>5</order><label>$</label><word>Samoje</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>6</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s109"><root><nonterminal id="s109_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s109"><saphi><nonterminal id="s109_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s110"><root><nonterminal id="s110_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s110"><saphi><nonterminal id="s110_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>F</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s111"><root><nonterminal id="s111_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s111"><saphi><nonterminal id="s111_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Wiese</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>3</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s112"><root><nonterminal id="s112_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s112"><saphi><nonterminal id="s112_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>4</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg.claus</label><word>ni</word><pos>Root</pos><translation>=decir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>5</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>3</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>6</order><label>$</label><word>Carlos</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>7</order><label>$</label><word>Maurer</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>8</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s113"><root><nonterminal id="s113_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s113"><saphi><nonterminal id="s113_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Citeco</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>3</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s114"><root><nonterminal id="s114_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s114"><saphi><nonterminal id="s114_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s115"><root><nonterminal id="s115_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s115"><saphi><nonterminal id="s115_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>ni</word><pos>Root</pos><translation>=decir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>Gerhard</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>6</order><label>$</label><word>Thulmann</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>7</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s116"><root><nonterminal id="s116_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s116"><saphi><nonterminal id="s116_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Banco</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>Continental</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -2886,8 +2886,8 @@
 <terminal><order>10</order><label>$</label><word>Hans</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>11</order><label>$</label><word>Heidmann</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>12</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s117"><root><nonterminal id="s117_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s117"><saphi><nonterminal id="s117_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>p'unchaw</word><pos>Root</pos><translation>=día</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>14</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>Aya</word><pos>Root</pos><translation>=muerto,alma</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -2927,8 +2927,8 @@
 <terminal><order>60</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>61</order><label>$</label><word>yupa</word><pos>Root</pos><translation>=contar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>62</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>63</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>64</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s118"><root><nonterminal id="s118_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s118"><saphi><nonterminal id="s118_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>p'unchaw</word><pos>Root</pos><translation>=día</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>4</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>Paraqa</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>5</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -2963,8 +2963,8 @@
 <terminal><order>44</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>45</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s119"><root><nonterminal id="s119_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s119"><saphi><nonterminal id="s119_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>huñu</word><pos>Root</pos><translation>=suma</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>qullqicha</word><pos>Root_VS</pos><translation>=plata</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>s.subj</label><word>-sqan</word><pos>Tns_VPers</pos><morph><tag>+IPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>#qullqicha</word><pos>Root_VS</pos><translation>=plata</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>10</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>8</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>9</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
@@ -3007,8 +3007,8 @@
 <terminal><order>71</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>72</order><label>$</label><word>kicha</word><pos>Root</pos><translation>=abrir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>73</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>74</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>75</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s120"><root><nonterminal id="s120_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s120"><saphi><nonterminal id="s120_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
@@ -3023,12 +3023,12 @@
 <terminal><order>15</order><label>$</label><word>Peruana</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>16</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>17</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s121"><root><nonterminal id="s121_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s121"><saphi><nonterminal id="s121_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s122"><root><nonterminal id="s122_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s122"><saphi><nonterminal id="s122_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>empresa</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>Clemens</word><pos>UNKNOWN</pos></terminal>
@@ -3039,8 +3039,8 @@
 <terminal><order>8</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>9</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>10</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s123"><root><nonterminal id="s123_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s123"><saphi><nonterminal id="s123_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>mana</word><pos>Root</pos><translation/><morph><tag>Part_Neg</tag></morph><children><terminal><order>3</order><label>mod</label><word>-raq</word><pos>Amb</pos><morph><tag>+Cont</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>sinchi</word><pos>Root</pos><translation>=fuerte</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
@@ -3050,8 +3050,8 @@
 <terminal><order>12</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>11</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>13</order><label>$</label><word>Dr</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>14</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s124"><root><nonterminal id="s124_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s124"><saphi><nonterminal id="s124_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Günter</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Metzger</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -3079,8 +3079,8 @@
 <terminal><order>27</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>28</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>29</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s125"><root><nonterminal id="s125_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s125"><saphi><nonterminal id="s125_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Musuq</word><pos>Root</pos><translation>=nuevo,reciente</translation><morph><tag>NRoot</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>oficina</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
@@ -3101,8 +3101,8 @@
 <terminal><order>32</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>33</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s126"><root><nonterminal id="s126_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s126"><saphi><nonterminal id="s126_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1969</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Aymura</word><pos>Root</pos><translation>=cosecha</translation><morph><tag>NRoot</tag></morph><children><terminal><order>5</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal>
 
@@ -3143,8 +3143,8 @@
 <terminal><order>66</order><label>$</label><word>tiya</word><pos>Root</pos><translation>=haber,estar,habitar,estar_sentado</translation><morph><tag>VRoot</tag></morph><children><terminal><order>67</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 
 <terminal><order>68</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s127"><root><nonterminal id="s127_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s127"><saphi><nonterminal id="s127_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -3179,12 +3179,12 @@
 <terminal><order>46</order><label>$</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>47</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>48</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s128"><root><nonterminal id="s128_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s128"><saphi><nonterminal id="s128_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Dr</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s129"><root><nonterminal id="s129_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s129"><saphi><nonterminal id="s129_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Metzger</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>5</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg.claus</label><word>chaya</word><pos>Root</pos><translation>=llegar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>3</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>4</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>7</order><label>s.arg</label><word>prensa</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
@@ -3213,8 +3213,8 @@
 <terminal><order>50</order><label>$</label><word>qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>51</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>52</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s130"><root><nonterminal id="s130_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s130"><saphi><nonterminal id="s130_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -3233,8 +3233,8 @@
 <terminal><order>23</order><label>$</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>24</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>25</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s131"><root><nonterminal id="s131_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s131"><saphi><nonterminal id="s131_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Alemán</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>6</order><label>mod</label><word>-ya</word><pos>Amb</pos><morph><tag>+Emph</tag></morph></terminal></children></terminal>
@@ -3264,8 +3264,8 @@
 
 <terminal><order>48</order><label>$</label><word>riqsi</word><pos>Root</pos><translation>=conocer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>51</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>53</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>49</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>50</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>52</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>54</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s132"><root><nonterminal id="s132_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s132"><saphi><nonterminal id="s132_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>6</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
@@ -3289,8 +3289,8 @@
 <terminal><order>36</order><label>$</label><word>rikhurpari</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Int</tag></morph><children><terminal><order>37</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s133"><root><nonterminal id="s133_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s133"><saphi><nonterminal id="s133_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1969</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Bayer</word><pos>UNKNOWN</pos></terminal>
@@ -3332,17 +3332,17 @@
 <terminal><order>59</order><label>$</label><word>Industrial</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>60</order><label>$</label><word>S</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>61</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s134"><root><nonterminal id="s134_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s134"><saphi><nonterminal id="s134_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>A</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s135"><root><nonterminal id="s135_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s135"><saphi><nonterminal id="s135_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>suticha</word><pos>Root_VS</pos><translation>=nombre</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>)</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s136"><root><nonterminal id="s136_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s136"><saphi><nonterminal id="s136_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>sub</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>3</order><label>mod</label><word>-chka</word><pos>Asp</pos><morph><tag>+Prog</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -3382,8 +3382,8 @@
 <terminal><order>60</order><label>$</label><word>ima</word><pos>Root</pos><translation/><morph><tag>Part_Conec</tag></morph></terminal>
 <terminal><order>61</order><label>$</label><word>#ima</word><pos>Root</pos><translation>=cosa</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>62</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s137"><root><nonterminal id="s137_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s137"><saphi><nonterminal id="s137_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>-puni</word><pos>Amb</pos><morph><tag>+Def</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -3414,8 +3414,8 @@
 <terminal><order>44</order><label>$</label><word>yanapari</word><pos>Root_VDeriv_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rep</tag><tag>+Inch</tag></morph><children><terminal><order>46</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>45</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>47</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>48</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>49</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s138"><root><nonterminal id="s138_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s138"><saphi><nonterminal id="s138_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1969</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Aya</word><pos>Root</pos><translation>=muerto,alma</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>-marq'a</word><pos>Root</pos><morph><tag>NRoot</tag></morph><translation>=brazo</translation><children><terminal><order>6</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal>
@@ -3454,12 +3454,12 @@
 <terminal><order>59</order><label>$</label><word>rimari</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>60</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>61</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s139"><root><nonterminal id="s139_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s139"><saphi><nonterminal id="s139_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>1</order><label>qnt</label><word>70</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>4</order><label>s.arg.claus</label><word>#wata</word><pos>Root</pos><translation>=atar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>5</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s140"><root><nonterminal id="s140_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s140"><saphi><nonterminal id="s140_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>1</order><label>qnt</label><word>70</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
@@ -3482,8 +3482,8 @@
 <terminal><order>27</order><label>$</label><word>huknira</word><pos>Root</pos><translation>=cambiar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>30</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>29</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal><terminal><order>28</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
 <terminal><order>31</order><label>$</label><word>ayparqa</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Rptn</tag></morph><children><terminal><order>32</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>33</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>34</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s141"><root><nonterminal id="s141_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s141"><saphi><nonterminal id="s141_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#Kayku</word><pos>Root_VDeriv</pos><translation>=ser</translation><morph><tag>VRoot</tag><tag>+Aff</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>#Kaykuna</word><pos>Root_Num</pos><translation/><morph><tag>PrnDem</tag><tag>+Pl</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
@@ -3505,8 +3505,8 @@
 <terminal><order>33</order><label>$</label><word>takarpari</word><pos>Root_VDeriv</pos><translation>=golpear</translation><morph><tag>VRoot</tag><tag>+Int</tag></morph><children><terminal><order>34</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s142"><root><nonterminal id="s142_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s142"><saphi><nonterminal id="s142_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Estado</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -3557,8 +3557,8 @@
 <terminal><order>78</order><label>$</label><word>qupu</word><pos>Root_VDeriv</pos><translation>=dar</translation><morph><tag>VRoot</tag><tag>+Rgr_Iprs</tag></morph><children><terminal><order>79</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>80</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s143"><root><nonterminal id="s143_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s143"><saphi><nonterminal id="s143_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>10</order><label>$</label><word>-man</word><pos>Cas</pos><morph><tag>+Dat_Ill</tag></morph><children><terminal><order>7</order><label>s.arg.claus</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>11</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>8</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>9</order><label>s.poss.subj</label><word>-ninku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal><terminal><order>6</order><label>poss.subj</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>empresakuna</word><pos>Root_Num</pos><translation/><morph><tag>NRootES</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
@@ -3586,8 +3586,8 @@
 
 <terminal><order>50</order><label>$</label><word>chapu</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>51</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>52</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>53</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s144"><root><nonterminal id="s144_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s144"><saphi><nonterminal id="s144_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Huknira</word><pos>Root</pos><translation>=cambiar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>3</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#Huknira</word><pos>Root</pos><translation>=cambiar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>7</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
 <terminal><order>9</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -3614,8 +3614,8 @@
 <terminal><order>40</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>38</order><label>s.arg.claus</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>41</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>39</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>42</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s145"><root><nonterminal id="s145_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s145"><saphi><nonterminal id="s145_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemána</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 
@@ -3640,8 +3640,8 @@
 <terminal><order>31</order><label>$</label><word>chura</word><pos>Root</pos><translation>=poner</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s146"><root><nonterminal id="s146_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s146"><saphi><nonterminal id="s146_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>suyukuna</word><pos>Root_Num</pos><translation>=región</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>4</order><label>qnt</label><word>iskay</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal>
@@ -3676,8 +3676,8 @@
 <terminal><order>50</order><label>$</label><word>karpari</word><pos>Root_VDeriv</pos><translation>=ser</translation><morph><tag>VRoot</tag><tag>+Int</tag></morph><children><terminal><order>51</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>52</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s147"><root><nonterminal id="s147_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s147"><saphi><nonterminal id="s147_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>imaymanakuna</word><pos>Root_Num</pos><translation>=toda_clase_de,todos</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal>
@@ -3694,8 +3694,8 @@
 <terminal><order>18</order><label>$</label><word>rana</word><pos>Root</pos><translation>=vender</translation><morph><tag>VRoot</tag></morph><children><terminal><order>19</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>20</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s148"><root><nonterminal id="s148_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s148"><saphi><nonterminal id="s148_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -3722,8 +3722,8 @@
 <terminal><order>39</order><label>$</label><word>ima</word><pos>Root</pos><translation/><morph><tag>Part_Conec</tag></morph></terminal>
 <terminal><order>40</order><label>$</label><word>#ima</word><pos>Root</pos><translation>=cosa</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>41</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s149"><root><nonterminal id="s149_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s149"><saphi><nonterminal id="s149_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Junta</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>directiva</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
@@ -3741,8 +3741,8 @@
 <terminal><order>25</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>26</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s150"><root><nonterminal id="s150_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s150"><saphi><nonterminal id="s150_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>1</order><label>qnt</label><word>70</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>5</order><label>s.arg.claus</label><word>#wata</word><pos>Root</pos><translation>=atar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>9</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>7</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -3755,16 +3755,16 @@
 <terminal><order>16</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>15</order><label>s.arg</label><word>wasi</word><pos>Root</pos><translation>=casa</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>17</order><label>$</label><word>Av</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>18</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s151"><root><nonterminal id="s151_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s151"><saphi><nonterminal id="s151_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Emancipación</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>k'ikllu</word><pos>Root</pos><translation>=estrecho</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>hap'i</word><pos>Root</pos><translation>=agarrar,entender</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal><terminal><order>5</order><label>s.subj</label><word>-sqa</word><pos>Tns_VPers</pos><morph><tag>+3.Sg.Subj.IPst</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>#hap'i</word><pos>Root</pos><translation>=agarrar,entender</translation><morph><tag>VRoot</tag></morph><children><terminal><order>9</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal><terminal><order>8</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal>
 <terminal><order>10</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s152"><root><nonterminal id="s152_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s152"><saphi><nonterminal id="s152_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1970</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>5</order><label>sub</label><word>kuku</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>6</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>7</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
@@ -3799,8 +3799,8 @@
 <terminal><order>44</order><label>$</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>45</order><label>$</label><word>qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>46</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>47</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>48</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s153"><root><nonterminal id="s153_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s153"><saphi><nonterminal id="s153_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hawa</word><pos>Root</pos><translation>=fuera,arriba</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>7</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>aynina</word><pos>Root_VS</pos><translation>=trabajo_comunal</translation><morph><tag>NRoot</tag><tag>+Reub</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>6</order><label>s.poss.subj</label><word>-niy</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>3</order><label>poss.subj</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>suyukuna</word><pos>Root_Num</pos><translation>=región</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
@@ -3822,8 +3822,8 @@
 <terminal><order>31</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>32</order><label>$</label><word>yanapa</word><pos>Root_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rgr_Iprs</tag></morph><children><terminal><order>33</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>34</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s154"><root><nonterminal id="s154_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s154"><saphi><nonterminal id="s154_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hawa</word><pos>Root</pos><translation>=fuera,arriba</translation><morph><tag>NRoot</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>suyukuna</word><pos>Root_Num</pos><translation>=región</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal></children></terminal>
@@ -3875,8 +3875,8 @@
 <terminal><order>83</order><label>$</label><word>wiñarirqu</word><pos>Root_VDeriv_VDeriv</pos><translation>=desarollar,crecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Rptn</tag></morph><children><terminal><order>84</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>85</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s155"><root><nonterminal id="s155_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s155"><saphi><nonterminal id="s155_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -3904,8 +3904,8 @@
 <terminal><order>47</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>48</order><label>$</label><word>huknirayka</word><pos>Root_VDeriv</pos><translation>=cambiar</translation><morph><tag>VRoot</tag><tag>+Aff</tag></morph><children><terminal><order>49</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>50</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>51</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s156"><root><nonterminal id="s156_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s156"><saphi><nonterminal id="s156_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Feria</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>del</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>Pacíﬁco</word><pos>UNKNOWN</pos></terminal>
@@ -3944,8 +3944,8 @@
 <terminal><order>58</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>55</order><label>s.arg.claus</label><word>kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>57</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal><terminal><order>56</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>59</order><label>$</label><word>riqsi</word><pos>Root</pos><translation>=conocer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>60</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>61</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>62</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>63</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s157"><root><nonterminal id="s157_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s157"><saphi><nonterminal id="s157_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>hawa</word><pos>Root</pos><translation>=fuera,arriba</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -3972,8 +3972,8 @@
 <terminal><order>41</order><label>$</label><word>-man</word><pos>Cas</pos><morph><tag>+Dat_Ill</tag></morph><children><terminal><order>40</order><label>s.arg</label><word>simi</word><pos>Root</pos><translation>=boca</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>42</order><label>$</label><word>t'ikra</word><pos>Root</pos><translation>=voltear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>43</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>44</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>45</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s158"><root><nonterminal id="s158_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s158"><saphi><nonterminal id="s158_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -3996,8 +3996,8 @@
 <terminal><order>24</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>25</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>26</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s159"><root><nonterminal id="s159_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s159"><saphi><nonterminal id="s159_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1979</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>#watapa</word><pos>Root_VDeriv</pos><translation>=atar</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -4027,12 +4027,12 @@
 <terminal><order>38</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>39</order><label>$</label><word>t'ikra</word><pos>Root</pos><translation>=voltear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>40</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>41</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>42</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>43</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s160"><root><nonterminal id="s160_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s160"><saphi><nonterminal id="s160_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>1</order><label>qnt</label><word>80</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>4</order><label>s.arg.claus</label><word>#wata</word><pos>Root</pos><translation>=atar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>5</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s161"><root><nonterminal id="s161_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s161"><saphi><nonterminal id="s161_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>1</order><label>qnt</label><word>80</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
@@ -4052,8 +4052,8 @@
 <terminal><order>33</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>34</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s162"><root><nonterminal id="s162_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s162"><saphi><nonterminal id="s162_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1980</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>yaqa</word><pos>Root</pos><translation>=casi</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -4088,8 +4088,8 @@
 <terminal><order>42</order><label>$</label><word>haykurqu</word><pos>Root_VDeriv</pos><translation>=entrar</translation><morph><tag>VRoot</tag><tag>+Rptn</tag></morph><children><terminal><order>43</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s163"><root><nonterminal id="s163_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s163"><saphi><nonterminal id="s163_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>mana</word><pos>Root</pos><translation/><morph><tag>Part_Neg</tag></morph></terminal>
@@ -4124,8 +4124,8 @@
 <terminal><order>40</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>37</order><label>s.arg.claus</label><word>rimarina</word><pos>Root_VDeriv_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Rzpr</tag></morph><children><terminal><order>39</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>38</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>41</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>42</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>43</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s164"><root><nonterminal id="s164_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s164"><saphi><nonterminal id="s164_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>#pachapa</word><pos>Root_VDeriv</pos><translation>=ambientarse</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -4136,14 +4136,14 @@
 <terminal><order>12</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>13</order><label>$</label><word>Dr</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>14</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s165"><root><nonterminal id="s165_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s165"><saphi><nonterminal id="s165_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Manuel</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Ulloa</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>Elías</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>4</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s166"><root><nonterminal id="s166_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s166"><saphi><nonterminal id="s166_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Partido</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Popular</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>Cristiano</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -4155,13 +4155,13 @@
 <terminal><order>11</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>12</order><label>$</label><word>Dr</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>13</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s167"><root><nonterminal id="s167_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s167"><saphi><nonterminal id="s167_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ernesto</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Alayza</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>punc</label><word>;</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s168"><root><nonterminal id="s168_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s168"><saphi><nonterminal id="s168_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>APRA</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>7</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>nisma</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph><children><terminal><order>8</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>6</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
@@ -4183,8 +4183,8 @@
 
 <terminal><order>31</order><label>$</label><word>riqsi</word><pos>Root</pos><translation>=conocer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>33</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s169"><root><nonterminal id="s169_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s169"><saphi><nonterminal id="s169_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -4217,14 +4217,14 @@
 <terminal><order>42</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>43</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s170"><root><nonterminal id="s170_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s170"><saphi><nonterminal id="s170_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>Dr</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>6</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s171"><root><nonterminal id="s171_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s171"><saphi><nonterminal id="s171_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Günter</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Metzger</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>6</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>3</order><label>s.arg.claus</label><word>pasapu</word><pos>Root_VDeriv</pos><translation/><morph><tag>VRootES</tag><tag>+Rgr_Iprs</tag></morph><children><terminal><order>4</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
@@ -4244,8 +4244,8 @@
 <terminal><order>32</order><label>$</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s172"><root><nonterminal id="s172_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s172"><saphi><nonterminal id="s172_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kantaray</word><pos>Root</pos><translation>=octubre</translation><morph><tag>NRoot</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>killa</word><pos>Root</pos><translation>=luna</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
@@ -4271,8 +4271,8 @@
 <terminal><order>27</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>28</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>29</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s173"><root><nonterminal id="s173_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s173"><saphi><nonterminal id="s173_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1981</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Energía</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -4301,8 +4301,8 @@
 <terminal><order>49</order><label>$</label><word>pusa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>50</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>51</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s174"><root><nonterminal id="s174_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s174"><saphi><nonterminal id="s174_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -4338,8 +4338,8 @@
 <terminal><order>50</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>51</order><label>$</label><word>qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>52</order><label>mod</label><word>-kamu</word><pos>VDeriv_VDeriv</pos><morph><tag>+Rflx_Int</tag><tag>+Cis_Trs</tag></morph></terminal><terminal><order>53</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>54</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s175"><root><nonterminal id="s175_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s175"><saphi><nonterminal id="s175_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>hatun</word><pos>Root</pos><translation>=grande</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -4361,8 +4361,8 @@
 <terminal><order>32</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>33</order><label>$</label><word>yapari</word><pos>Root_VDeriv</pos><translation>=añadir</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>34</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>35</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s176"><root><nonterminal id="s176_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s176"><saphi><nonterminal id="s176_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Phawa</word><pos>Root</pos><translation>=correr,volar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>Lufthansa</word><pos>UNKNOWN</pos></terminal>
@@ -4393,8 +4393,8 @@
 <terminal><order>49</order><label>$</label><word>qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>51</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>50</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>55</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>52</order><label>s.arg.claus</label><word>ri</word><pos>Root</pos><translation>=ir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>53</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>54</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>56</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s177"><root><nonterminal id="s177_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s177"><saphi><nonterminal id="s177_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>2</order><label>qnt</label><word>chunka</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#wata</word><pos>Root</pos><translation>=atar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>5</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>sub</label><word>tuku</word><pos>Root</pos><translation>=acabar,suceder,convertirse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>9</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>10</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>8</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
@@ -4417,8 +4417,8 @@
 <terminal><order>45</order><label>$</label><word>urmarpari</word><pos>Root_VDeriv</pos><translation>=caer</translation><morph><tag>VRoot</tag><tag>+Int</tag></morph><children><terminal><order>46</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>47</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s178"><root><nonterminal id="s178_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s178"><saphi><nonterminal id="s178_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hiperinﬂaciónrayku</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>3</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>terrorismo</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
@@ -4435,8 +4435,8 @@
 <terminal><order>24</order><label>$</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>28</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>26</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>27</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>25</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>29</order><label>$</label><word>sasacharpari</word><pos>Root_VS_VDeriv</pos><translation>=difícil</translation><morph><tag>NRoot</tag><tag>+Fact</tag><tag>+Int</tag></morph><children><terminal><order>30</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>31</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>32</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s179"><root><nonterminal id="s179_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s179"><saphi><nonterminal id="s179_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>3</order><label>qnt</label><word>1987</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
@@ -4457,8 +4457,8 @@
 <terminal><order>36</order><label>$</label><word>urmarpari</word><pos>Root_VDeriv</pos><translation>=caer</translation><morph><tag>VRoot</tag><tag>+Int</tag></morph><children><terminal><order>37</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s180"><root><nonterminal id="s180_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s180"><saphi><nonterminal id="s180_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -4480,8 +4480,8 @@
 <terminal><order>32</order><label>$</label><word>#ñawpaq</word><pos>Root</pos><translation>=antes</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>35</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>33</order><label>s.arg</label><word>killa</word><pos>Root</pos><translation>=luna</translation><morph><tag>NRoot</tag></morph><children><terminal><order>34</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s181"><root><nonterminal id="s181_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s181"><saphi><nonterminal id="s181_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>$</label><word>-man</word><pos>Cas</pos><morph><tag>+Dat_Ill</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Yacha</word><pos>Root</pos><translation>=saber,habitar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>5</order><label>s.arg.claus</label><word>yanapari</word><pos>Root_VDeriv_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rep</tag><tag>+Inch</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -4508,8 +4508,8 @@
 <terminal><order>35</order><label>$</label><word>yanapari</word><pos>Root_VDeriv_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rep</tag><tag>+Inch</tag></morph><children><terminal><order>36</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>37</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s182"><root><nonterminal id="s182_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s182"><saphi><nonterminal id="s182_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -4534,8 +4534,8 @@
 <terminal><order>38</order><label>comp</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>37</order><label>p.arg</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>34</order><label>s.arg.claus</label><word>rura</word><pos>Root</pos><translation>=hacer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>35</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>36</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>39</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>40</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s183"><root><nonterminal id="s183_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s183"><saphi><nonterminal id="s183_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>3</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>empresakuna</word><pos>Root_Num</pos><translation/><morph><tag>NRootES</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>yachaqikuna</word><pos>Root_Num</pos><translation/><morph><tag>NRootG</tag><tag>+Pl</tag></morph></terminal>
@@ -4583,12 +4583,12 @@
 <terminal><order>78</order><label>$</label><word>malli</word><pos>Root</pos><translation>=probar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>80</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal><terminal><order>79</order><label>s.subj</label><word>-chkanku</word><pos>Asp_VPers</pos><morph><tag>+Prog</tag><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>81</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>82</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s184"><root><nonterminal id="s184_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s184"><saphi><nonterminal id="s184_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>1</order><label>qnt</label><word>90</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>4</order><label>s.arg.claus</label><word>#wata</word><pos>Root</pos><translation>=atar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>5</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s185"><root><nonterminal id="s185_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s185"><saphi><nonterminal id="s185_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1990</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>llaqta</word><pos>Root</pos><translation>=pueblo</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -4607,8 +4607,8 @@
 <terminal><order>33</order><label>$</label><word>yarkurpari</word><pos>Root_VDeriv</pos><translation>=subir</translation><morph><tag>VRoot</tag><tag>+Int</tag></morph><children><terminal><order>34</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s186"><root><nonterminal id="s186_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s186"><saphi><nonterminal id="s186_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
@@ -4639,8 +4639,8 @@
 
 <terminal><order>46</order><label>$</label><word>waqa</word><pos>Root</pos><translation>=llorar,guardar,proteger</translation><morph><tag>VRoot</tag></morph><children><terminal><order>47</order><label>ns</label><word>-ycha</word><pos>NS_VS</pos><morph><tag>+Inf</tag><tag>+Fact</tag></morph></terminal><terminal><order>48</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 <terminal><order>49</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s187"><root><nonterminal id="s187_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s187"><saphi><nonterminal id="s187_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Chayna</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal>
 <terminal><order>2</order><label>sub</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>4</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>5</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -4658,8 +4658,8 @@
 <terminal><order>24</order><label>$</label><word>mast'arirqu</word><pos>Root_VDeriv_VDeriv</pos><translation>=tender,tumbar</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Rptn</tag></morph><children><terminal><order>25</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>26</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s188"><root><nonterminal id="s188_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s188"><saphi><nonterminal id="s188_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1991</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -4687,8 +4687,8 @@
 
 <terminal><order>42</order><label>$</label><word>chaskiri</word><pos>Root_VDeriv</pos><translation>=recibir,aceptar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>43</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>44</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>45</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s189"><root><nonterminal id="s189_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s189"><saphi><nonterminal id="s189_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1991</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>cólera</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -4722,8 +4722,8 @@
 
 <terminal><order>39</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>40</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s190"><root><nonterminal id="s190_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s190"><saphi><nonterminal id="s190_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Chayna</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal>
 <terminal><order>2</order><label>sub</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>4</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>5</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -4762,8 +4762,8 @@
 <terminal><order>69</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>66</order><label>s.arg.claus</label><word>kawsa</word><pos>Root</pos><translation>=vivir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>67</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>68</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>73</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>70</order><label>s.arg.claus</label><word>yacha</word><pos>Root</pos><translation>=saber,habitar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>71</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>72</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>74</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s191"><root><nonterminal id="s191_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s191"><saphi><nonterminal id="s191_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kiki</word><pos>Root</pos><translation>=mismo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -4779,8 +4779,8 @@
 <terminal><order>25</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>24</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>26</order><label>$</label><word>7</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal>
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s192"><root><nonterminal id="s192_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s192"><saphi><nonterminal id="s192_VROOT"><cat>VROOT</cat><children>
 <terminal><order>5</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>samilli</word><pos>Root_VS</pos><translation>=fortuna</translation><morph><tag>NRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>1</order><label>qnt</label><word>000</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>3</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>6</order><label>s.arg.claus</label><word>#samilli</word><pos>Root_VDeriv</pos><translation>=felicitar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>8</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>7</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>10</order><label>$</label><word>apamu</word><pos>Root_VDeriv</pos><translation>=llevar</translation><morph><tag>VRoot</tag><tag>+Cis_Trs</tag></morph><children><terminal><order>11</order><label>s.subj</label><word>-sqa</word><pos>Tns_VPers</pos><morph><tag>+3.Sg.Subj.IPst</tag></morph></terminal></children></terminal>
@@ -4788,8 +4788,8 @@
 <terminal><order>12</order><label>$</label><word>#apamu</word><pos>Root_VDeriv</pos><translation>=llevar</translation><morph><tag>VRoot</tag><tag>+Cis_Trs</tag></morph><children><terminal><order>13</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal>
 
 <terminal><order>14</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s193"><root><nonterminal id="s193_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s193"><saphi><nonterminal id="s193_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>RDA</word><pos>UNKNOWN</pos></terminal>
@@ -4813,8 +4813,8 @@
 <terminal><order>37</order><label>$</label><word>hamu</word><pos>Root</pos><translation>=venir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>38</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 
 <terminal><order>39</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s194"><root><nonterminal id="s194_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s194"><saphi><nonterminal id="s194_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>#pachapa</word><pos>Root_VDeriv</pos><translation>=ambientarse</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -4830,8 +4830,8 @@
 <terminal><order>19</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>20</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>21</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s195"><root><nonterminal id="s195_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s195"><saphi><nonterminal id="s195_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1992</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
@@ -4858,8 +4858,8 @@
 <terminal><order>33</order><label>$</label><word>ima</word><pos>Root</pos><translation/><morph><tag>Part_Conec</tag></morph></terminal>
 <terminal><order>34</order><label>$</label><word>#ima</word><pos>Root</pos><translation>=cosa</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s196"><root><nonterminal id="s196_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s196"><saphi><nonterminal id="s196_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Nisyu</word><pos>Root</pos><translation>=demasiado</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>-puni</word><pos>Amb</pos><morph><tag>+Def</tag></morph></terminal>
@@ -4879,8 +4879,8 @@
 <terminal><order>21</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>22</order><label>$</label><word>Av</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>23</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s197"><root><nonterminal id="s197_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s197"><saphi><nonterminal id="s197_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Camino</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Real</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
@@ -4894,8 +4894,8 @@
 <terminal><order>14</order><label>$</label><word>#ranti</word><pos>Root</pos><translation>=comprar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>15</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>16</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s198"><root><nonterminal id="s198_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s198"><saphi><nonterminal id="s198_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Waki</word><pos>Root</pos><translation>=parte,otro</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Waki</word><pos>Root</pos><translation>=negociar,comparar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
@@ -4914,8 +4914,8 @@
 
 <terminal><order>32</order><label>$</label><word>astari</word><pos>Root_VDeriv</pos><translation>=transportar,arrear</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>33</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>34</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s199"><root><nonterminal id="s199_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s199"><saphi><nonterminal id="s199_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>llaqta</word><pos>Root</pos><translation>=pueblo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chayna</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>4</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>5</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
@@ -4955,8 +4955,8 @@
 <terminal><order>66</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>63</order><label>s.arg.claus</label><word>chaya</word><pos>Root</pos><translation>=llegar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>67</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>64</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>65</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
 <terminal><order>68</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s200"><root><nonterminal id="s200_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s200"><saphi><nonterminal id="s200_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Berli</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>qhatu</word><pos>Root</pos><translation>=negociar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>5</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 
@@ -4984,15 +4984,15 @@
 <terminal><order>37</order><label>$</label><word>hamu</word><pos>Root</pos><translation>=venir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>38</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>39</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s201"><root><nonterminal id="s201_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s201"><saphi><nonterminal id="s201_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>4</order><label>$</label><word>Dr</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>5</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s202"><root><nonterminal id="s202_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s202"><saphi><nonterminal id="s202_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hans</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Joche</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -5005,8 +5005,8 @@
 <terminal><order>14</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>15</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>16</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s203"><root><nonterminal id="s203_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s203"><saphi><nonterminal id="s203_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1993</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-kama</word><pos>Cas</pos><morph><tag>+Term</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>qnt</label><word>1994</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>-kama</word><pos>Cas</pos><morph><tag>+Dist</tag></morph><children><terminal><order>8</order><label>s.arg</label><word>#wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>10</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
@@ -5036,8 +5036,8 @@
 <terminal><order>48</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>49</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>50</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s204"><root><nonterminal id="s204_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s204"><saphi><nonterminal id="s204_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Imayna</word><pos>Root</pos><translation>=cómo</translation><morph><tag>PrnInterr</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>6</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>allinyarqu</word><pos>Root_VS_VDeriv</pos><translation>=bueno</translation><morph><tag>NRoot</tag><tag>+Trs</tag><tag>+Rptn</tag></morph><children><terminal><order>4</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
@@ -5050,8 +5050,8 @@
 <terminal><order>16</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>17</order><label>$</label><word>suticha</word><pos>Root_VS</pos><translation>=nombre</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>18</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>19</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>20</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s205"><root><nonterminal id="s205_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s205"><saphi><nonterminal id="s205_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>hatun</word><pos>Root</pos><translation>=grande</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -5085,8 +5085,8 @@
 
 <terminal><order>45</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s206"><root><nonterminal id="s206_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s206"><saphi><nonterminal id="s206_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1996</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -5124,8 +5124,8 @@
 <terminal><order>56</order><label>$</label><word>kallpachari</word><pos>Root_VS_VDeriv</pos><translation>=fuerte</translation><morph><tag>NRoot</tag><tag>+Fact</tag><tag>+Inch</tag></morph><children><terminal><order>57</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>58</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>59</order><label>$</label><word>#kallpachari</word><pos>Root_VDeriv_VDeriv</pos><translation>=esforzarse,correr</translation><morph><tag>VRoot</tag><tag>+Vdim</tag><tag>+Inch</tag></morph><children><terminal><order>60</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>61</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>62</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s207"><root><nonterminal id="s207_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s207"><saphi><nonterminal id="s207_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -5167,8 +5167,8 @@
 <terminal><order>49</order><label>$</label><word>#siq'ichari</word><pos>Root_VS_VDeriv</pos><translation>=línea,fila</translation><morph><tag>NRoot</tag><tag>+Fact</tag><tag>+Inch</tag></morph><children><terminal><order>50</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>51</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s208"><root><nonterminal id="s208_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s208"><saphi><nonterminal id="s208_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kamari</word><pos>Root_VDeriv</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-sqa</word><pos>Tns_VPers</pos><morph><tag>+3.Sg.Subj.IPst</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Kamari</word><pos>Root_VDeriv</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal>
@@ -5187,8 +5187,8 @@
 <terminal><order>34</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>35</order><label>$</label><word>rurari</word><pos>Root_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>36</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>37</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s209"><root><nonterminal id="s209_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s209"><saphi><nonterminal id="s209_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1996</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -5216,8 +5216,8 @@
 <terminal><order>33</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>34</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s210"><root><nonterminal id="s210_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s210"><saphi><nonterminal id="s210_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>-pa</word><pos>Cas</pos><morph><tag>+Gen</tag></morph></terminal>
 <terminal><order>7</order><label>$</label><word>-pa</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>5</order><label>s.arg.claus</label><word>#pachapa</word><pos>Root_VDeriv</pos><translation>=ambientarse</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>6</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal></children></terminal>
@@ -5246,8 +5246,8 @@
 <terminal><order>44</order><label>$</label><word>huñuri</word><pos>Root_VDeriv</pos><translation>=juntar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>45</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s211"><root><nonterminal id="s211_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s211"><saphi><nonterminal id="s211_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1997</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>hatun</word><pos>Root</pos><translation>=grande</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -5274,8 +5274,8 @@
 <terminal><order>42</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>38</order><label>s.arg</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>43</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>40</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>41</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal><terminal><order>39</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s212"><root><nonterminal id="s212_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s212"><saphi><nonterminal id="s212_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>EV</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Conferencia</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>de</word><pos>UNKNOWN</pos></terminal>
@@ -5325,8 +5325,8 @@
 <terminal><order>62</order><label>$</label><word>chayamu</word><pos>Root_VDeriv</pos><translation>=llegar</translation><morph><tag>VRoot</tag><tag>+Cis_Trs</tag></morph><children><terminal><order>63</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 
 <terminal><order>64</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s213"><root><nonterminal id="s213_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s213"><saphi><nonterminal id="s213_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>linker</label><word>Hina</word><pos>Root</pos><translation>=hacer_así,ser_así</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 
@@ -5350,8 +5350,8 @@
 
 <terminal><order>27</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s214"><root><nonterminal id="s214_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s214"><saphi><nonterminal id="s214_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 
@@ -5370,8 +5370,8 @@
 <terminal><order>32</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>33</order><label>$</label><word>qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>34</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>35</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>36</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>37</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s215"><root><nonterminal id="s215_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s215"><saphi><nonterminal id="s215_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1997</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -5385,8 +5385,8 @@
 <terminal><order>13</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>14</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>15</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s216"><root><nonterminal id="s216_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s216"><saphi><nonterminal id="s216_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1998</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -5420,8 +5420,8 @@
 <terminal><order>64</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>65</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>66</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>67</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>68</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s217"><root><nonterminal id="s217_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s217"><saphi><nonterminal id="s217_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>linker</label><word>Hina</word><pos>Root</pos><translation>=hacer_así,ser_así</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Stuttgart</word><pos>UNKNOWN</pos></terminal>
@@ -5449,8 +5449,8 @@
 
 <terminal><order>28</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>29</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s218"><root><nonterminal id="s218_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s218"><saphi><nonterminal id="s218_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1999</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -5481,8 +5481,8 @@
 <terminal><order>34</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>35</order><label>$</label><word>chinka</word><pos>Root</pos><translation>=perder</translation><morph><tag>VRoot</tag></morph><children><terminal><order>36</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>37</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s219"><root><nonterminal id="s219_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s219"><saphi><nonterminal id="s219_VROOT"><cat>VROOT</cat><children>
 <terminal><order>6</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>3</order><label>s.arg.claus</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>2</order><label>poss.subj</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Revista</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
 <terminal><order>8</order><label>$</label><word>sapa</word><pos>Root</pos><translation>=cada,solo</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -5502,13 +5502,13 @@
 <terminal><order>24</order><label>sub</label><word>chaya</word><pos>Root</pos><translation>=llegar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>25</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal></children></terminal>
 
 <terminal><order>26</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s220"><root><nonterminal id="s220_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s220"><saphi><nonterminal id="s220_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Musuq</word><pos>Root</pos><translation>=nuevo,reciente</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>wara</word><pos>Root</pos><translation>=pantalón</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>3</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>5</order><label>qnt</label><word>#waranqa</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s221"><root><nonterminal id="s221_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s221"><saphi><nonterminal id="s221_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1980</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph></terminal>
 <terminal><order>7</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>6</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>5</order><label>qnt</label><word>1990</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>9</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal></children></terminal></children></terminal>
@@ -5536,8 +5536,8 @@
 <terminal><order>46</order><label>$</label><word>apamu</word><pos>Root_VDeriv</pos><translation>=llevar</translation><morph><tag>VRoot</tag><tag>+Cis_Trs</tag></morph><children><terminal><order>47</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>48</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s222"><root><nonterminal id="s222_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s222"><saphi><nonterminal id="s222_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>Chunka</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>3</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>4</order><label>s.arg.claus</label><word>hap'i</word><pos>Root</pos><translation>=agarrar,entender</translation><morph><tag>VRoot</tag></morph><children><terminal><order>9</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>7</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>5</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
@@ -5556,8 +5556,8 @@
 <terminal><order>26</order><label>$</label><word>saqirpari</word><pos>Root_VDeriv</pos><translation>=dejar</translation><morph><tag>VRoot</tag><tag>+Int</tag></morph><children><terminal><order>27</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s223"><root><nonterminal id="s223_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s223"><saphi><nonterminal id="s223_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Llaqta</word><pos>Root</pos><translation>=pueblo</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal><terminal><order>3</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>7</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-chiyku</word><pos>VDeriv_VDeriv</pos><morph><tag>+Caus</tag><tag>+Aff</tag></morph></terminal></children></terminal>
@@ -5602,8 +5602,8 @@
 <terminal><order>68</order><label>$</label><word>wiñarqu</word><pos>Root_VDeriv</pos><translation>=desarollar,crecer</translation><morph><tag>VRoot</tag><tag>+Rptn</tag></morph><children><terminal><order>69</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>70</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s224"><root><nonterminal id="s224_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s224"><saphi><nonterminal id="s224_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2001</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -5664,8 +5664,8 @@
 
 <terminal><order>91</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>93</order><label>s.neg</label><word>-chu</word><pos>Amb</pos><morph><tag>+Intr_Neg</tag></morph></terminal><terminal><order>92</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>94</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s225"><root><nonterminal id="s225_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s225"><saphi><nonterminal id="s225_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Westfalia</word><pos>UNKNOWN</pos></terminal>
@@ -5686,8 +5686,8 @@
 
 <terminal><order>26</order><label>$</label><word>munapa</word><pos>Root_VDeriv</pos><translation>=querer</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>27</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>28</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>29</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>30</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s226"><root><nonterminal id="s226_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s226"><saphi><nonterminal id="s226_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -5711,8 +5711,8 @@
 <terminal><order>25</order><label>$</label><word>puriykacha</word><pos>Root_VDeriv</pos><translation>=andar</translation><morph><tag>VRoot</tag><tag>+Intrup</tag></morph><children><terminal><order>26</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s227"><root><nonterminal id="s227_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s227"><saphi><nonterminal id="s227_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2002</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Puqu</word><pos>Root</pos><translation>=maduro</translation><morph><tag>NRoot</tag></morph><children><terminal><order>5</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal>
 
@@ -5756,8 +5756,8 @@
 <terminal><order>59</order><label>$</label><word>wayk’uchispa</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>60</order><label>$</label><word>huñu</word><pos>Root</pos><translation>=juntar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>61</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>62</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>63</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s228"><root><nonterminal id="s228_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s228"><saphi><nonterminal id="s228_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -5793,8 +5793,8 @@
 <terminal><order>42</order><label>$</label><word>chayamu</word><pos>Root_VDeriv</pos><translation>=llegar</translation><morph><tag>VRoot</tag><tag>+Cis_Trs</tag></morph><children><terminal><order>43</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s229"><root><nonterminal id="s229_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s229"><saphi><nonterminal id="s229_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>3</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -5815,8 +5815,8 @@
 <terminal><order>35</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>36</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>37</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s230"><root><nonterminal id="s230_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s230"><saphi><nonterminal id="s230_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>linker</label><word>Hina</word><pos>Root</pos><translation>=hacer_así,ser_así</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>9</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>8</order><label>comp</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>5</order><label>p.arg</label><word>musuqcha</word><pos>Root_VS</pos><translation>=nuevo,reciente</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>7</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
@@ -5831,8 +5831,8 @@
 <terminal><order>22</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>21</order><label>s.arg</label><word>suti</word><pos>Root</pos><translation>=nombre</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>23</order><label>$</label><word>sutincha</word><pos>Root_NDeriv_VS</pos><translation>=nombre</translation><morph><tag>NRoot</tag><tag>+Rel</tag><tag>+Fact</tag></morph><children><terminal><order>24</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>25</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>26</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s231"><root><nonterminal id="s231_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s231"><saphi><nonterminal id="s231_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
@@ -5863,8 +5863,8 @@
 <terminal><order>36</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>37</order><label>$</label><word>yuri</word><pos>Root</pos><translation>=aparecer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>38</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>39</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>40</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s232"><root><nonterminal id="s232_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s232"><saphi><nonterminal id="s232_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -5892,8 +5892,8 @@
 <terminal><order>51</order><label>$</label><word>ati</word><pos>Root</pos><translation>=poder,vencer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>52</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>53</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>54</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>55</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s233"><root><nonterminal id="s233_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s233"><saphi><nonterminal id="s233_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Huk</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph><children><terminal><order>2</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -5928,8 +5928,8 @@
 <terminal><order>36</order><label>$</label><word>haywari</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>37</order><label>s.subj</label><word>-chkan</word><pos>Asp_VPers</pos><morph><tag>+Prog</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s234"><root><nonterminal id="s234_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s234"><saphi><nonterminal id="s234_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2003</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Paraqa</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>6</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-llari</word><pos>Amb_VDeriv</pos><morph><tag>+Lim_Aff</tag><tag>+Inch</tag></morph></terminal>
@@ -5961,8 +5961,8 @@
 <terminal><order>48</order><label>$</label><word>rimari</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>49</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>50</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s235"><root><nonterminal id="s235_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s235"><saphi><nonterminal id="s235_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Perﬁles</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>5</order><label>$</label><word>suticha</word><pos>Root_VS</pos><translation>=nombre</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>6</order><label>s.subj</label><word>-sqa</word><pos>Tns_VPers</pos><morph><tag>+3.Sg.Subj.IPst</tag></morph></terminal></children></terminal>
@@ -5994,8 +5994,8 @@
 <terminal><order>40</order><label>$</label><word>ri</word><pos>Root</pos><translation>=ir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>41</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>42</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s236"><root><nonterminal id="s236_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s236"><saphi><nonterminal id="s236_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6035,8 +6035,8 @@
 <terminal><order>58</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>59</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>60</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s237"><root><nonterminal id="s237_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s237"><saphi><nonterminal id="s237_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2004</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>sub</label><word>tuku</word><pos>Root</pos><translation>=acabar,suceder,convertirse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>7</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>4</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>5</order><label>mod</label><word>-chka</word><pos>Asp</pos><morph><tag>+Prog</tag></morph></terminal></children></terminal>
@@ -6058,8 +6058,8 @@
 <terminal><order>27</order><label>$</label><word>rurapaysi</word><pos>Root_VDeriv_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Rep</tag><tag>+Ass</tag></morph><children><terminal><order>28</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>29</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s238"><root><nonterminal id="s238_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s238"><saphi><nonterminal id="s238_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Suti</word><pos>Root</pos><translation>=nombre</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>mikhu</word><pos>Root</pos><translation>=comer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>5</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>6</order><label>s.arg.claus</label><word>rura</word><pos>Root</pos><translation>=hacer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>8</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal><terminal><order>7</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
@@ -6077,8 +6077,8 @@
 <terminal><order>25</order><label>$</label><word>ima</word><pos>Root</pos><translation/><morph><tag>Part_Conec</tag></morph></terminal>
 <terminal><order>26</order><label>$</label><word>#ima</word><pos>Root</pos><translation>=cosa</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s239"><root><nonterminal id="s239_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s239"><saphi><nonterminal id="s239_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2005</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Aya</word><pos>Root</pos><translation>=muerto,alma</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>-marq'a</word><pos>Root</pos><morph><tag>NRoot</tag></morph><translation>=brazo</translation><children><terminal><order>6</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal>
@@ -6102,8 +6102,8 @@
 
 <terminal><order>31</order><label>$</label><word>yupa</word><pos>Root</pos><translation>=contar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>ns</label><word>-ycha</word><pos>NS_VS</pos><morph><tag>+Inf</tag><tag>+Fact</tag></morph></terminal><terminal><order>33</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>34</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s240"><root><nonterminal id="s240_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s240"><saphi><nonterminal id="s240_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Waki</word><pos>Root</pos><translation>=negociar,comparar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>3</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#Waki</word><pos>Root</pos><translation>=negociar,comparar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>7</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
 <terminal><order>9</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6122,8 +6122,8 @@
 <terminal><order>27</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>28</order><label>$</label><word>rura</word><pos>Root</pos><translation>=hacer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>29</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>30</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>31</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s241"><root><nonterminal id="s241_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s241"><saphi><nonterminal id="s241_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Asociación</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -6181,8 +6181,8 @@
 <terminal><order>85</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>82</order><label>s.arg.claus</label><word>#hap'i</word><pos>Root</pos><translation>=agarrar,entender</translation><morph><tag>VRoot</tag></morph><children><terminal><order>86</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>84</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>83</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>87</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s242"><root><nonterminal id="s242_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s242"><saphi><nonterminal id="s242_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -6201,8 +6201,8 @@
 
 <terminal><order>21</order><label>$</label><word>chura</word><pos>Root</pos><translation>=poner</translation><morph><tag>VRoot</tag></morph><children><terminal><order>22</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>23</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>24</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>25</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s243"><root><nonterminal id="s243_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s243"><saphi><nonterminal id="s243_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2005</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>qullqicha</word><pos>Root_NDeriv</pos><translation>=plata</translation><morph><tag>NRoot</tag><tag>+Dim</tag></morph><children><terminal><order>5</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal>
 
@@ -6227,8 +6227,8 @@
 <terminal><order>42</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>43</order><label>$</label><word>yapari</word><pos>Root_VDeriv</pos><translation>=añadir</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>44</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>45</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s244"><root><nonterminal id="s244_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s244"><saphi><nonterminal id="s244_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
@@ -6262,8 +6262,8 @@
 <terminal><order>45</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>42</order><label>s.arg.claus</label><word>standku</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>43</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>44</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>46</order><label>$</label><word>munapa</word><pos>Root_VDeriv</pos><translation>=querer</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>47</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>48</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>49</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s245"><root><nonterminal id="s245_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s245"><saphi><nonterminal id="s245_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2006</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6290,8 +6290,8 @@
 <terminal><order>39</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>35</order><label>s.arg</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>40</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>37</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>38</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal><terminal><order>36</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>41</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s246"><root><nonterminal id="s246_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s246"><saphi><nonterminal id="s246_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2006</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6326,8 +6326,8 @@
 
 <terminal><order>56</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>57</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>58</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>59</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s247"><root><nonterminal id="s247_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s247"><saphi><nonterminal id="s247_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2007</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6356,8 +6356,8 @@
 <terminal><order>50</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>51</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal><terminal><order>47</order><label>hab</label><word>chaya</word><pos>Root</pos><translation>=llegar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>49</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>48</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>52</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s248"><root><nonterminal id="s248_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s248"><saphi><nonterminal id="s248_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Hamu</word><pos>Root</pos><translation>=venir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6388,8 +6388,8 @@
 
 <terminal><order>40</order><label>$</label><word>qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>41</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>42</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>43</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s249"><root><nonterminal id="s249_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s249"><saphi><nonterminal id="s249_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2007</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6413,8 +6413,8 @@
 
 <terminal><order>32</order><label>$</label><word>yupa</word><pos>Root</pos><translation>=contar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>ns</label><word>-ycha</word><pos>NS_VS</pos><morph><tag>+Inf</tag><tag>+Fact</tag></morph></terminal><terminal><order>34</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>35</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s250"><root><nonterminal id="s250_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s250"><saphi><nonterminal id="s250_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2009</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>lliw</word><pos>Root</pos><translation>=todo</translation><morph><tag>NRoot</tag></morph></terminal>
 
@@ -6452,8 +6452,8 @@
 <terminal><order>47</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>44</order><label>s.arg.claus</label><word>rura</word><pos>Root</pos><translation>=hacer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>48</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>45</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>46</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
 <terminal><order>49</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s251"><root><nonterminal id="s251_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s251"><saphi><nonterminal id="s251_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>#Kay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
@@ -6470,8 +6470,8 @@
 <terminal><order>30</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>29</order><label>s.arg</label><word>allin</word><pos>Root</pos><translation>=bueno</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>31</order><label>$</label><word>mast'ari</word><pos>Root_VDeriv</pos><translation>=tender,tumbar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>32</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>33</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s252"><root><nonterminal id="s252_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s252"><saphi><nonterminal id="s252_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kunan</word><pos>Root</pos><translation>=ahora</translation><morph><tag>NRoot</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
@@ -6504,19 +6504,19 @@
 <terminal><order>44</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>45</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s253"><root><nonterminal id="s253_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s253"><saphi><nonterminal id="s253_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Haywari</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Haywariyku</word><pos>Root_VDeriv_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Aff</tag></morph><children><terminal><order>4</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 
-</children></nonterminal></root></s>
-<s id="s254"><root><nonterminal id="s254_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s254"><saphi><nonterminal id="s254_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Comercio</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>exterior</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s255"><root><nonterminal id="s255_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s255"><saphi><nonterminal id="s255_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Comercio</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Exterior</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
@@ -6544,8 +6544,8 @@
 <terminal><order>37</order><label>$</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>38</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>39</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s256"><root><nonterminal id="s256_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s256"><saphi><nonterminal id="s256_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Imayna</word><pos>Root</pos><translation>=cómo</translation><morph><tag>PrnInterr</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>chhalana</word><pos>Root_VDeriv</pos><translation>=trocar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>3</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#chhalana</word><pos>Root_VDeriv</pos><translation>=trocar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>7</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
@@ -6576,8 +6576,8 @@
 
 <terminal><order>60</order><label>$</label><word>yupa</word><pos>Root</pos><translation>=contar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>61</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>62</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>63</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s257"><root><nonterminal id="s257_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s257"><saphi><nonterminal id="s257_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>40</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6598,8 +6598,8 @@
 <terminal><order>26</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>25</order><label>s.arg</label><word>#Alemana</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>27</order><label>$</label><word>haywari</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>31</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>29</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>30</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>28</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>32</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s258"><root><nonterminal id="s258_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s258"><saphi><nonterminal id="s258_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2005</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6665,14 +6665,14 @@
 <terminal><order>97</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>98</order><label>$</label><word>rura</word><pos>Root</pos><translation>=hacer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>99</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>100</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>101</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s259"><root><nonterminal id="s259_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s259"><saphi><nonterminal id="s259_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qhatuna</word><pos>Root_VS</pos><translation>=mercado</translation><morph><tag>NRoot</tag><tag>+Reub</tag></morph><children><terminal><order>3</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#Qhatu</word><pos>Root</pos><translation>=negociar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>5</order><label>ns</label><word>-nakuna</word><pos>NS_Num</pos><morph><tag>+Obl</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 
 <terminal><order>6</order><label>$</label><word>#Qhatuna</word><pos>Root_VDeriv</pos><translation>=negociar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>8</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>7</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s260"><root><nonterminal id="s260_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s260"><saphi><nonterminal id="s260_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>Alemána</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
@@ -6688,8 +6688,8 @@
 <terminal><order>19</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>20</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>21</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s261"><root><nonterminal id="s261_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s261"><saphi><nonterminal id="s261_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>5</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>3</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
 <terminal><order>6</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6712,8 +6712,8 @@
 <terminal><order>26</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>27</order><label>$</label><word>puriyka</word><pos>Root_VDeriv</pos><translation>=andar</translation><morph><tag>VRoot</tag><tag>+Aff</tag></morph><children><terminal><order>29</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>28</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
 <terminal><order>30</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s262"><root><nonterminal id="s262_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s262"><saphi><nonterminal id="s262_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kiki</word><pos>Root</pos><translation>=mismo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -6744,8 +6744,8 @@
 <terminal><order>44</order><label>$</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph></terminal>
 <terminal><order>45</order><label>$</label><word>qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>46</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>47</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>48</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>49</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s263"><root><nonterminal id="s263_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s263"><saphi><nonterminal id="s263_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Kunan</word><pos>Root</pos><translation>=ahora</translation><morph><tag>NRoot</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pachakuna</word><pos>Root_Num</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
@@ -6783,8 +6783,8 @@
 <terminal><order>53</order><label>$</label><word>pusaysi</word><pos>Root_VDeriv</pos><translation>=llevar</translation><morph><tag>VRoot</tag><tag>+Ass</tag></morph><children><terminal><order>54</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>55</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s264"><root><nonterminal id="s264_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s264"><saphi><nonterminal id="s264_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qhatuna</word><pos>Root_VS</pos><translation>=mercado</translation><morph><tag>NRoot</tag><tag>+Reub</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>3</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#Qhatu</word><pos>Root</pos><translation>=negociar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-nakuna</word><pos>NS_Num</pos><morph><tag>+Obl</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>#Qhatuna</word><pos>Root_VDeriv</pos><translation>=negociar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>11</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>10</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>9</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
@@ -6820,8 +6820,8 @@
 <terminal><order>44</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>43</order><label>s.arg</label><word>huñukuna</word><pos>Root_Num</pos><translation>=suma</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 <terminal><order>52</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>49</order><label>s.arg.claus</label><word>yanapa</word><pos>Root_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>50</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>51</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>48</order><label>poss.subj</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>45</order><label>s.arg.claus</label><word>#huñu</word><pos>Root</pos><translation>=juntar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>47</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>46</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>53</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s265"><root><nonterminal id="s265_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s265"><saphi><nonterminal id="s265_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2008</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -6835,8 +6835,8 @@
 <terminal><order>25</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>26</order><label>s.subj</label><word>-rqanku</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s266"><root><nonterminal id="s266_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s266"><saphi><nonterminal id="s266_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 
@@ -6861,8 +6861,8 @@
 <terminal><order>34</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>33</order><label>s.arg</label><word>empresakuna</word><pos>Root_Num</pos><translation/><morph><tag>NRootES</tag><tag>+Pl</tag></morph><children><terminal><order>35</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s267"><root><nonterminal id="s267_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s267"><saphi><nonterminal id="s267_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Huk</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -6899,14 +6899,14 @@
 <terminal><order>51</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>49</order><label>s.arg.claus</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>52</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>50</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>53</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s268"><root><nonterminal id="s268_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s268"><saphi><nonterminal id="s268_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Rurari</word><pos>Root_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Rurariyku</word><pos>Root_VDeriv_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Aff</tag></morph><children><terminal><order>4</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
 
-</children></nonterminal></root></s>
-<s id="s269"><root><nonterminal id="s269_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s269"><saphi><nonterminal id="s269_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Rurari</word><pos>Root_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Rurariyku</word><pos>Root_VDeriv_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Aff</tag></morph><children><terminal><order>4</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
@@ -6926,8 +6926,8 @@
 <terminal><order>26</order><label>$</label><word>wiñarirqu</word><pos>Root_VDeriv_VDeriv</pos><translation>=desarollar,crecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Rptn</tag></morph><children><terminal><order>27</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s270"><root><nonterminal id="s270_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s270"><saphi><nonterminal id="s270_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Rurari</word><pos>Root_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Rurariyku</word><pos>Root_VDeriv_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Aff</tag></morph><children><terminal><order>4</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal>
@@ -6963,8 +6963,8 @@
 <terminal><order>51</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>52</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>53</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s271"><root><nonterminal id="s271_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s271"><saphi><nonterminal id="s271_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2002</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>rurari</word><pos>Root_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>6</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal>
@@ -7025,8 +7025,8 @@
 <terminal><order>101</order><label>$</label><word>rurari</word><pos>Root_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>103</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>102</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>104</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>105</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>106</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s272"><root><nonterminal id="s272_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s272"><saphi><nonterminal id="s272_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Rurari</word><pos>Root_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>4</order><label>s.arg.claus</label><word>#Rurariyku</word><pos>Root_VDeriv_VDeriv</pos><translation>=hacer</translation><morph><tag>VRoot</tag><tag>+Inch</tag><tag>+Aff</tag></morph><children><terminal><order>5</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>muna</word><pos>Root</pos><translation>=querer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>10</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>8</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>9</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
@@ -7054,8 +7054,8 @@
 <terminal><order>54</order><label>$</label><word>llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>55</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>56</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>57</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>58</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s273"><root><nonterminal id="s273_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s273"><saphi><nonterminal id="s273_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-ntin</word><pos>Cas</pos><morph><tag>+Iclsv</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2008</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -7070,13 +7070,13 @@
 
 <terminal><order>19</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>20</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>21</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>22</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s274"><root><nonterminal id="s274_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s274"><saphi><nonterminal id="s274_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Iskay</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>yacha</word><pos>Root</pos><translation>=saber,habitar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#yacha</word><pos>Root</pos><translation>=saber,habitar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>7</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s275"><root><nonterminal id="s275_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s275"><saphi><nonterminal id="s275_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1970</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -7103,8 +7103,8 @@
 <terminal><order>33</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>30</order><label>s.arg.claus</label><word>yacha</word><pos>Root</pos><translation>=saber,habitar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>31</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>34</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>35</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>36</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>37</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s276"><root><nonterminal id="s276_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s276"><saphi><nonterminal id="s276_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1976</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>#watapa</word><pos>Root_VDeriv</pos><translation>=atar</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -7138,12 +7138,12 @@
 <terminal><order>47</order><label>$</label><word>Profesional</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>48</order><label>$</label><word>E</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>49</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s277"><root><nonterminal id="s277_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s277"><saphi><nonterminal id="s277_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>W</word><pos>ALFS</pos><translation/><morph/></terminal>
 <terminal><order>2</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s278"><root><nonterminal id="s278_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s278"><saphi><nonterminal id="s278_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Middendorff</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>suticha</word><pos>Root_VS</pos><translation>=nombre</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>3</order><label>s.subj</label><word>-sqa</word><pos>Tns_VPers</pos><morph><tag>+3.Sg.Subj.IPst</tag></morph></terminal></children></terminal>
 
@@ -7152,8 +7152,8 @@
 <terminal><order>6</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>7</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>8</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s279"><root><nonterminal id="s279_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s279"><saphi><nonterminal id="s279_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qhipa</word><pos>Root</pos><translation>=atrás</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>4</order><label>$</label><word>-man</word><pos>Cas</pos><morph><tag>+Dat_Ill</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>3</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>#wata</word><pos>Root</pos><translation>=atar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>10</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>9</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>8</order><label>s.subj</label><word>-nman</word><pos>VPers_Mod</pos><morph><tag>+3.Sg.Subj</tag><tag>+Pot</tag></morph></terminal></children></terminal>
@@ -7212,8 +7212,8 @@
 <terminal><order>79</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>80</order><label>$</label><word>kamari</word><pos>Root_VDeriv</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>81</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>82</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>83</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s280"><root><nonterminal id="s280_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s280"><saphi><nonterminal id="s280_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1985</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>Yacha</word><pos>Root</pos><translation>=noticia</translation><morph><tag>NRoot</tag></morph><children><terminal><order>6</order><label>s.poss</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal>
@@ -7264,8 +7264,8 @@
 <terminal><order>74</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>73</order><label>s.arg</label><word>simi</word><pos>Root</pos><translation>=boca</translation><morph><tag>NRoot</tag></morph><children><terminal><order>72</order><label>qnt</label><word>iskay</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>75</order><label>$</label><word>yacha</word><pos>Root</pos><translation>=saber,habitar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>76</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>77</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>78</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>79</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s281"><root><nonterminal id="s281_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s281"><saphi><nonterminal id="s281_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ministerio</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>6</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>2</order><label>s.arg.claus</label><word>kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>3</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>sub</label><word>yanapari</word><pos>Root_VDeriv_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rep</tag><tag>+Inch</tag></morph><children><terminal><order>9</order><label>ns</label><word>-spa</word><pos>NS</pos><morph><tag>+SS</tag></morph></terminal><terminal><order>8</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
@@ -7287,8 +7287,8 @@
 <terminal><order>31</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>30</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>29</order><label>qnt</label><word>1995</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>32</order><label>$</label><word>chura</word><pos>Root</pos><translation>=poner</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>34</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>35</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s282"><root><nonterminal id="s282_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s282"><saphi><nonterminal id="s282_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>3</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-man</word><pos>Cas</pos><morph><tag>+Dat_Ill</tag></morph><children><terminal><order>4</order><label>s.arg</label><word>empresakuna</word><pos>Root_Num</pos><translation/><morph><tag>NRootES</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>yacha</word><pos>Root</pos><translation>=saber,habitar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>7</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal>
@@ -7308,15 +7308,15 @@
 
 <terminal><order>25</order><label>$</label><word>mast'ari</word><pos>Root_VDeriv</pos><translation>=tender,tumbar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>26</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>27</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s283"><root><nonterminal id="s283_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s283"><saphi><nonterminal id="s283_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Uyacha</word><pos>Root_VDeriv</pos><translation>=entender</translation><morph><tag>VRoot</tag><tag>+Vdim</tag></morph><children><terminal><order>2</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Uyacha</word><pos>Root_VS</pos><translation>=cara</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>4</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>#Uyachaqkuna</word><pos>Root_NDeriv_Num</pos><translation>=cara</translation><morph><tag>NRoot</tag><tag>+Aug</tag><tag>+Pl</tag></morph></terminal>
-</children></nonterminal></root></s>
-<s id="s284"><root><nonterminal id="s284_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s284"><saphi><nonterminal id="s284_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1969</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -7344,8 +7344,8 @@
 <terminal><order>31</order><label>$</label><word>#uyacha</word><pos>Root_VS</pos><translation>=cara</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>32</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s285"><root><nonterminal id="s285_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s285"><saphi><nonterminal id="s285_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>Chunka</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal><terminal><order>5</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>7</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
@@ -7365,8 +7365,8 @@
 <terminal><order>23</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>24</order><label>$</label><word>t'ikra</word><pos>Root</pos><translation>=voltear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>25</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>26</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>27</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s286"><root><nonterminal id="s286_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s286"><saphi><nonterminal id="s286_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1991</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>#watapa</word><pos>Root_VDeriv</pos><translation>=atar</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -7421,8 +7421,8 @@
 <terminal><order>78</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>79</order><label>$</label><word>t'aqa</word><pos>Root</pos><translation>=dividir,separar,distribuir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>81</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>80</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>82</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s287"><root><nonterminal id="s287_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s287"><saphi><nonterminal id="s287_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2001</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>#watapa</word><pos>Root_VDeriv</pos><translation>=atar</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>7</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -7460,8 +7460,8 @@
 <terminal><order>56</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>57</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>58</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>59</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>60</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>61</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s288"><root><nonterminal id="s288_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s288"><saphi><nonterminal id="s288_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>2005</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -7490,11 +7490,11 @@
 <terminal><order>28</order><label>$</label><word>killa</word><pos>Root</pos><translation>=luna</translation><morph><tag>NRoot</tag></morph><children><terminal><order>27</order><label>qnt</label><word>kimsa</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal>
 <terminal><order>29</order><label>$</label><word>qillqa</word><pos>Root</pos><translation>=escribir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>30</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>31</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>32</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s289"><root><nonterminal id="s289_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s289"><saphi><nonterminal id="s289_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Sullullkuna</word><pos>Root_Num</pos><translation>=testimonio,juramento</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal>
-</children></nonterminal></root></s>
-<s id="s290"><root><nonterminal id="s290_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s290"><saphi><nonterminal id="s290_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Eberhard</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Nolteniu</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-s</word><pos>Amb</pos><morph><tag>+IndE</tag></morph></terminal>
@@ -7509,8 +7509,8 @@
 <terminal><order>17</order><label>$</label><word>ñawpa</word><pos>Root</pos><translation>=antes</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>18</order><label>$</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>20</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>21</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>19</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>22</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s291"><root><nonterminal id="s291_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s291"><saphi><nonterminal id="s291_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 
@@ -7524,8 +7524,8 @@
 <terminal><order>14</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>15</order><label>$</label><word>Av</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>16</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s292"><root><nonterminal id="s292_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s292"><saphi><nonterminal id="s292_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Emancipación</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>k'ikllu</word><pos>Root</pos><translation>=estrecho</translation><morph><tag>NRoot</tag></morph></terminal>
 
@@ -7535,8 +7535,8 @@
 <terminal><order>10</order><label>$</label><word>#huñuri</word><pos>Root_VDeriv</pos><translation>=juntar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>13</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>12</order><label>ns</label><word>-ykuna</word><pos>NS_Num</pos><morph><tag>+Inf</tag><tag>+Pl</tag></morph></terminal><terminal><order>11</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>14</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>16</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>15</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>17</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s293"><root><nonterminal id="s293_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s293"><saphi><nonterminal id="s293_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>warakuna</word><pos>Root_Num</pos><translation>=pantalón</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>1</order><label>qnt</label><word>70</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
@@ -7559,8 +7559,8 @@
 <terminal><order>24</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>25</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>26</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s294"><root><nonterminal id="s294_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s294"><saphi><nonterminal id="s294_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Sapa</word><pos>Root</pos><translation>=cada,solo</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>paqari</word><pos>Root</pos><translation>=amanecer,crearse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
@@ -7594,8 +7594,8 @@
 
 <terminal><order>45</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>44</order><label>s.arg</label><word>chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>46</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s295"><root><nonterminal id="s295_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s295"><saphi><nonterminal id="s295_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Sapa</word><pos>Root</pos><translation>=cada,solo</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
@@ -7607,8 +7607,8 @@
 <terminal><order>17</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>18</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>19</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s296"><root><nonterminal id="s296_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s296"><saphi><nonterminal id="s296_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Directorio</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>puri</word><pos>Root</pos><translation>=andar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal><terminal><order>4</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
@@ -7625,8 +7625,8 @@
 <terminal><order>28</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>29</order><label>s.subj</label><word>-yku</word><pos>VPers</pos><morph><tag>+1.Pl.Excl.Subj</tag></morph></terminal><terminal><order>24</order><label>hab</label><word>#huñuri</word><pos>Root_VDeriv</pos><translation>=juntar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>27</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>26</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal><terminal><order>25</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>30</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s297"><root><nonterminal id="s297_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s297"><saphi><nonterminal id="s297_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
@@ -7644,8 +7644,8 @@
 <terminal><order>31</order><label>$</label><word>yuyari</word><pos>Root_VDeriv</pos><translation>=recordar,pensar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>32</order><label>s.subj</label><word>-chkani</word><pos>Asp_VPers</pos><morph><tag>+Prog</tag><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s298"><root><nonterminal id="s298_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s298"><saphi><nonterminal id="s298_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chayra</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-yku</word><pos>NPers</pos><morph><tag>+1.Pl.Excl.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -7670,8 +7670,8 @@
 <terminal><order>31</order><label>$</label><word>haywari</word><pos>Root_VDeriv</pos><translation>=alcanzar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>32</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s299"><root><nonterminal id="s299_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s299"><saphi><nonterminal id="s299_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Chayna</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal>
 <terminal><order>2</order><label>sub</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>4</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>5</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -7700,8 +7700,8 @@
 <terminal><order>30</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>31</order><label>$</label><word>hatari</word><pos>Root</pos><translation>=levantarse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>33</order><label>s.subj</label><word>-yku</word><pos>VPers</pos><morph><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s300"><root><nonterminal id="s300_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s300"><saphi><nonterminal id="s300_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>Alemána</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
@@ -7725,8 +7725,8 @@
 
 <terminal><order>25</order><label>$</label><word>yanapari</word><pos>Root_VDeriv_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rep</tag><tag>+Inch</tag></morph><children><terminal><order>26</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>27</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s301"><root><nonterminal id="s301_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s301"><saphi><nonterminal id="s301_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>comp</label><word>hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>3</order><label>p.arg</label><word>masicha</word><pos>Root_VS</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>5</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>6</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>4</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
@@ -7743,8 +7743,8 @@
 <terminal><order>30</order><label>$</label><word>chaski</word><pos>Root</pos><translation>=recibir,aceptar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>31</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>32</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s302"><root><nonterminal id="s302_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s302"><saphi><nonterminal id="s302_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hawa</word><pos>Root</pos><translation>=fuera,arriba</translation><morph><tag>NRoot</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>llaqtakuna</word><pos>Root_Num</pos><translation>=pueblo</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal></children></terminal>
@@ -7766,8 +7766,8 @@
 <terminal><order>31</order><label>$</label><word>qhawa</word><pos>Root</pos><translation>=mirar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s303"><root><nonterminal id="s303_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s303"><saphi><nonterminal id="s303_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
@@ -7791,8 +7791,8 @@
 <terminal><order>28</order><label>$</label><word>-chu</word><pos>Amb</pos><morph><tag>+Intr_Neg</tag></morph></terminal>
 <terminal><order>29</order><label>$</label><word>#hap'i</word><pos>Root</pos><translation>=agarrar,entender</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>s.neg</label><word>-chu</word><pos>Amb</pos><morph><tag>+Intr_Neg</tag></morph></terminal><terminal><order>31</order><label>mod</label><word>-raq</word><pos>Amb</pos><morph><tag>+Cont</tag></morph></terminal><terminal><order>30</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s304"><root><nonterminal id="s304_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s304"><saphi><nonterminal id="s304_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Alfred</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Schultz</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>|</word><pos>UNKNOWN</pos></terminal>
@@ -7804,8 +7804,8 @@
 <terminal><order>14</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>13</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>15</order><label>$</label><word>umalli</word><pos>Root_VS</pos><translation>=cabeza</translation><morph><tag>NRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>16</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>17</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>18</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>19</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>20</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s305"><root><nonterminal id="s305_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s305"><saphi><nonterminal id="s305_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>umalli</word><pos>Root_VS</pos><translation>=cabeza</translation><morph><tag>NRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>4</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -7842,8 +7842,8 @@
 <terminal><order>45</order><label>$</label><word>yuyari</word><pos>Root_VDeriv</pos><translation>=recordar,pensar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>46</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>47</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s306"><root><nonterminal id="s306_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s306"><saphi><nonterminal id="s306_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>det</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>achkha</word><pos>Root</pos><translation>=mucho</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -7855,8 +7855,8 @@
 <terminal><order>13</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>14</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 
 <terminal><order>15</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s307"><root><nonterminal id="s307_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s307"><saphi><nonterminal id="s307_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>3</order><label>s.arg.claus</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
@@ -7879,8 +7879,8 @@
 <terminal><order>22</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>23</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>24</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s308"><root><nonterminal id="s308_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s308"><saphi><nonterminal id="s308_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Seminario</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -7892,8 +7892,8 @@
 <terminal><order>13</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>14</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>15</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>16</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>17</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s309"><root><nonterminal id="s309_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s309"><saphi><nonterminal id="s309_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Rimari</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>5</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>3</order><label>s.poss.subj</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
 <terminal><order>6</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -7916,8 +7916,8 @@
 <terminal><order>31</order><label>$</label><word>chura</word><pos>Root</pos><translation>=poner</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>s.subj</label><word>-rqani</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s310"><root><nonterminal id="s310_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s310"><saphi><nonterminal id="s310_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal>
 <terminal><order>5</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg.claus</label><word>huñuri</word><pos>Root_VDeriv</pos><translation>=juntar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>3</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -7938,8 +7938,8 @@
 <terminal><order>27</order><label>$</label><word>#uyacha</word><pos>Root_VS</pos><translation>=cara</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>28</order><label>s.subj</label><word>-yku</word><pos>VPers</pos><morph><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>29</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s311"><root><nonterminal id="s311_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s311"><saphi><nonterminal id="s311_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>Morales</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -7987,8 +7987,8 @@
 <terminal><order>72</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>73</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>74</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>75</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>76</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s312"><root><nonterminal id="s312_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s312"><saphi><nonterminal id="s312_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>rimana</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>3</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#rimana</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>7</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
@@ -8015,8 +8015,8 @@
 
 <terminal><order>41</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>42</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s313"><root><nonterminal id="s313_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s313"><saphi><nonterminal id="s313_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Ñawiri</word><pos>Root_VDeriv</pos><translation>=leer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>5</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>3</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 
 <terminal><order>6</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -8037,8 +8037,8 @@
 <terminal><order>26</order><label>$</label><word>ni</word><pos>Root</pos><translation>=decir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>27</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>28</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s314"><root><nonterminal id="s314_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s314"><saphi><nonterminal id="s314_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Morales</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Bermúdez</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>6</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>3</order><label>s.arg.claus</label><word>kamacha</word><pos>Root_VDeriv</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag><tag>+Vdim</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
@@ -8069,8 +8069,8 @@
 
 <terminal><order>41</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>42</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s315"><root><nonterminal id="s315_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s315"><saphi><nonterminal id="s315_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>kuti</word><pos>Root</pos><translation>=vez</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>$</label><word>Huk</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -8123,8 +8123,8 @@
 <terminal><order>90</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>91</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>92</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s316"><root><nonterminal id="s316_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s316"><saphi><nonterminal id="s316_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>#kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>7</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal>
@@ -8177,8 +8177,8 @@
 <terminal><order>87</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>88</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>89</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s317"><root><nonterminal id="s317_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s317"><saphi><nonterminal id="s317_VROOT"><cat>VROOT</cat><children>
 <terminal><order>5</order><label>$</label><word>-man</word><pos>Cas</pos><morph><tag>+Dat_Ill</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Maña</word><pos>Root</pos><translation>=pedir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>3</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>4</order><label>s.poss.subj</label><word>-yku</word><pos>NPers</pos><morph><tag>+1.Pl.Excl.Poss</tag></morph></terminal></children></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>7</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
@@ -8216,8 +8216,8 @@
 <terminal><order>54</order><label>$</label><word>#ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>55</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph></terminal></children></terminal>
 
 <terminal><order>56</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s318"><root><nonterminal id="s318_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s318"><saphi><nonterminal id="s318_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>#Kay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
@@ -8241,8 +8241,8 @@
 <terminal><order>32</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s319"><root><nonterminal id="s319_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s319"><saphi><nonterminal id="s319_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Walter</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Anders</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>|</word><pos>UNKNOWN</pos></terminal>
@@ -8254,8 +8254,8 @@
 <terminal><order>14</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>13</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>15</order><label>$</label><word>umalli</word><pos>Root_VS</pos><translation>=cabeza</translation><morph><tag>NRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>16</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>17</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>18</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>19</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>20</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s320"><root><nonterminal id="s320_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s320"><saphi><nonterminal id="s320_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>2</order><label>qnt</label><word>chunka</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph><children><terminal><order>1</order><label>qnt</label><word>Isqun</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal><terminal><order>5</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>6</order><label>s.arg.claus</label><word>#wata</word><pos>Root</pos><translation>=atar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>10</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>8</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>7</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -8271,8 +8271,8 @@
 <terminal><order>20</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>21</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>22</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s321"><root><nonterminal id="s321_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s321"><saphi><nonterminal id="s321_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Pay</word><pos>Root</pos><translation/><morph><tag>PrnPers+3.Sg</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>tupa</word><pos>Root</pos><translation>=encontrarse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
@@ -8295,8 +8295,8 @@
 <terminal><order>36</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>37</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s322"><root><nonterminal id="s322_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s322"><saphi><nonterminal id="s322_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>sub</label><word>Llamk'a</word><pos>Root</pos><translation>=trabajar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>5</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>3</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>4</order><label>s.poss.subj</label><word>-y</word><pos>NPers</pos><morph><tag>+1.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>2</order><label>mod</label><word>-chka</word><pos>Asp</pos><morph><tag>+Prog</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>7</order><label>$</label><word>Junta</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -8326,8 +8326,8 @@
 <terminal><order>39</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>40</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>41</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s323"><root><nonterminal id="s323_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s323"><saphi><nonterminal id="s323_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Junta</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>Derectiva</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
@@ -8352,8 +8352,8 @@
 <terminal><order>40</order><label>$</label><word>#yanapa</word><pos>Root_VDeriv</pos><translation>=servir,ayudar</translation><morph><tag>VRoot</tag><tag>+Rep</tag></morph><children><terminal><order>41</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>42</order><label>s.subj</label><word>-waq</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Pot</tag></morph></terminal></children></terminal>
 <terminal><order>43</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s324"><root><nonterminal id="s324_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s324"><saphi><nonterminal id="s324_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hina</word><pos>Root</pos><translation/><morph><tag>Part_Sim</tag></morph><children><terminal><order>2</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>3</order><label>$</label><word>-taq</word><pos>Amb</pos><morph><tag>+Con_Intr</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 
@@ -8370,8 +8370,8 @@
 <terminal><order>23</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>24</order><label>$</label><word>apamu</word><pos>Root_VDeriv</pos><translation>=llevar</translation><morph><tag>VRoot</tag><tag>+Cis_Trs</tag></morph><children><terminal><order>25</order><label>s.obj</label><word>-wa</word><pos>VPers</pos><morph><tag>+1.Obj</tag></morph></terminal><terminal><order>26</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s325"><root><nonterminal id="s325_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s325"><saphi><nonterminal id="s325_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>3</order><label>s.arg.claus</label><word>kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>7</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>4</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
@@ -8389,8 +8389,8 @@
 <terminal><order>29</order><label>$</label><word>puri</word><pos>Root</pos><translation>=andar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>30</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>31</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s326"><root><nonterminal id="s326_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s326"><saphi><nonterminal id="s326_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chayna</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -8406,8 +8406,8 @@
 <terminal><order>21</order><label>$</label><word>kusi</word><pos>Root</pos><translation>=alegrar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>22</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>23</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>24</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>25</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s327"><root><nonterminal id="s327_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s327"><saphi><nonterminal id="s327_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Achkha</word><pos>Root</pos><translation>=mucho</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>masikuna</word><pos>Root_Num</pos><translation>=compañero</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -8425,8 +8425,8 @@
 <terminal><order>27</order><label>$</label><word>kallpachari</word><pos>Root_VS_VDeriv</pos><translation>=fuerte</translation><morph><tag>NRoot</tag><tag>+Fact</tag><tag>+Inch</tag></morph><children><terminal><order>28</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>29</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>30</order><label>$</label><word>#kallpachari</word><pos>Root_VDeriv_VDeriv</pos><translation>=esforzarse,correr</translation><morph><tag>VRoot</tag><tag>+Vdim</tag><tag>+Inch</tag></morph><children><terminal><order>31</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>32</order><label>s.subj</label><word>-nku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s328"><root><nonterminal id="s328_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s328"><saphi><nonterminal id="s328_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>imaymanku</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>4</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
@@ -8457,8 +8457,8 @@
 <terminal><order>42</order><label>$</label><word>hap'i</word><pos>Root</pos><translation>=agarrar,entender</translation><morph><tag>VRoot</tag></morph><children><terminal><order>43</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>44</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s329"><root><nonterminal id="s329_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s329"><saphi><nonterminal id="s329_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>ns</label><word>-sqa</word><pos>NS</pos><morph><tag>+Perf</tag></morph><children><terminal><order>3</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>6</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -8485,8 +8485,8 @@
 <terminal><order>36</order><label>$</label><word>llamk'ari</word><pos>Root_VDeriv</pos><translation>=trabajar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>37</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>38</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s330"><root><nonterminal id="s330_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s330"><saphi><nonterminal id="s330_VROOT"><cat>VROOT</cat><children>
 <terminal><order>4</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>1</order><label>s.arg.claus</label><word>Mallicha</word><pos>Root_VDeriv</pos><translation>=probar</translation><morph><tag>VRoot</tag><tag>+Vdim</tag></morph><children><terminal><order>5</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>3</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>9</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>6</order><label>s.arg</label><word>#Mallicha</word><pos>Root_VS</pos><translation>=bocado</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>10</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>8</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal><terminal><order>7</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -8505,8 +8505,8 @@
 
 <terminal><order>32</order><label>$</label><word>qhipa</word><pos>Root</pos><translation>=quedar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>34</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>33</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>35</order><label>s.subj</label><word>-qku</word><pos>VPers</pos><morph><tag>+3.Pl.Subj.Hab</tag></morph></terminal></children></terminal>
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s331"><root><nonterminal id="s331_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s331"><saphi><nonterminal id="s331_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chaykuna</word><pos>Root_Num</pos><translation/><morph><tag>PrnDem</tag><tag>+Pl</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -8525,8 +8525,8 @@
 <terminal><order>18</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>19</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>20</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s332"><root><nonterminal id="s332_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s332"><saphi><nonterminal id="s332_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Guillermo</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Cornejo</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>|</word><pos>UNKNOWN</pos></terminal>
@@ -8542,8 +8542,8 @@
 <terminal><order>18</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>17</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>19</order><label>$</label><word>umalli</word><pos>Root_VS</pos><translation>=cabeza</translation><morph><tag>NRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>20</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>21</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>22</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>23</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>24</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s333"><root><nonterminal id="s333_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s333"><saphi><nonterminal id="s333_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Pusa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>5</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>4</order><label>qnt</label><word>chunka</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph><children><terminal><order>3</order><label>qnt</label><word>#Pusaq</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>7</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -8573,8 +8573,8 @@
 <terminal><order>51</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>52</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>53</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s334"><root><nonterminal id="s334_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s334"><saphi><nonterminal id="s334_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
 
@@ -8601,8 +8601,8 @@
 
 <terminal><order>32</order><label>$</label><word>llamk'ari</word><pos>Root_VDeriv</pos><translation>=trabajar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>33</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>34</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>35</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s335"><root><nonterminal id="s335_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s335"><saphi><nonterminal id="s335_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Lliphiykupa</word><pos>Root_VDeriv_VDeriv</pos><translation>=brillar,concluir</translation><morph><tag>VRoot</tag><tag>+Aff</tag><tag>+Rep</tag></morph><children><terminal><order>2</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>#Llipi</word><pos>Root</pos><translation>=todo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>s.poss</label><word>-yku</word><pos>NPers</pos><morph><tag>+1.Pl.Excl.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>$</label><word>sinchi</word><pos>Root</pos><translation>=fuerte</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -8625,8 +8625,8 @@
 <terminal><order>31</order><label>$</label><word>#ni</word><pos>Root</pos><translation>=decir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>32</order><label>s.subj</label><word>-yman</word><pos>VPers</pos><morph><tag>+1.Sg.Subj.Pot</tag></morph></terminal></children></terminal>
 
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s336"><root><nonterminal id="s336_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s336"><saphi><nonterminal id="s336_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Junta</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>Directiva</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal></children></terminal>
@@ -8662,8 +8662,8 @@
 <terminal><order>46</order><label>$</label><word>kara</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>47</order><label>s.subj</label><word>-rqayku</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>48</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s337"><root><nonterminal id="s337_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s337"><saphi><nonterminal id="s337_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>5</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>wasicha</word><pos>Root_VS</pos><translation>=casa</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>4</order><label>ns</label><word>-qkuna</word><pos>NS_Num</pos><morph><tag>+Ag</tag><tag>+Pl</tag></morph></terminal></children></terminal></children></terminal>
@@ -8681,8 +8681,8 @@
 <terminal><order>22</order><label>$</label><word>yuyari</word><pos>Root_VDeriv</pos><translation>=recordar,pensar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>23</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>24</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s338"><root><nonterminal id="s338_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s338"><saphi><nonterminal id="s338_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>muchu</word><pos>Root</pos><translation>=sufrir</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
@@ -8714,8 +8714,8 @@
 <terminal><order>35</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>36</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>37</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s339"><root><nonterminal id="s339_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s339"><saphi><nonterminal id="s339_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-paq</word><pos>Cas</pos><morph><tag>+Ben</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Sami</word><pos>Root</pos><translation>=fortuna</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>s.poss</label><word>-yku</word><pos>NPers</pos><morph><tag>+1.Pl.Excl.Poss</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>5</order><label>$</label><word>#Samiykupa</word><pos>Root_VDeriv_VDeriv</pos><translation>=felicitar</translation><morph><tag>VRoot</tag><tag>+Aff</tag><tag>+Rep</tag></morph><children><terminal><order>7</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>6</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -8736,8 +8736,8 @@
 
 <terminal><order>32</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>33</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s340"><root><nonterminal id="s340_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s340"><saphi><nonterminal id="s340_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Jorge</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>von</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>Wedemeyer</word><pos>UNKNOWN</pos></terminal>
@@ -8758,8 +8758,8 @@
 <terminal><order>23</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>22</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>24</order><label>$</label><word>umalli</word><pos>Root_VS</pos><translation>=cabeza</translation><morph><tag>NRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>25</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>26</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>27</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>28</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>29</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s341"><root><nonterminal id="s341_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s341"><saphi><nonterminal id="s341_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>Junta</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -8775,8 +8775,8 @@
 <terminal><order>22</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>21</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>20</order><label>qnt</label><word>1987</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>23</order><label>$</label><word>mink'ari</word><pos>Root_VDeriv</pos><translation>=encargar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>24</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>25</order><label>s.obj</label><word>-wa</word><pos>VPers</pos><morph><tag>+1.Obj</tag></morph></terminal><terminal><order>26</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s342"><root><nonterminal id="s342_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s342"><saphi><nonterminal id="s342_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -8794,8 +8794,8 @@
 <terminal><order>25</order><label>$</label><word>#tukupu</word><pos>Root_VDeriv</pos><translation>=acabar,suceder,convertirse</translation><morph><tag>VRoot</tag><tag>+Rgr_Iprs</tag></morph><children><terminal><order>26</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s343"><root><nonterminal id="s343_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s343"><saphi><nonterminal id="s343_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -8809,8 +8809,8 @@
 
 <terminal><order>18</order><label>$</label><word>Dr</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>19</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s344"><root><nonterminal id="s344_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s344"><saphi><nonterminal id="s344_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Hans</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Joche</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal>
 <terminal><order>3</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -8823,8 +8823,8 @@
 <terminal><order>13</order><label>$</label><word>kallpachari</word><pos>Root_VS_VDeriv</pos><translation>=fuerte</translation><morph><tag>NRoot</tag><tag>+Fact</tag><tag>+Inch</tag></morph><children><terminal><order>14</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>15</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>16</order><label>$</label><word>#kallpachari</word><pos>Root_VDeriv_VDeriv</pos><translation>=esforzarse,correr</translation><morph><tag>VRoot</tag><tag>+Vdim</tag><tag>+Inch</tag></morph><children><terminal><order>17</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>18</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>19</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s345"><root><nonterminal id="s345_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s345"><saphi><nonterminal id="s345_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ala</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph><children><terminal><order>2</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ala</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>4</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
@@ -8853,8 +8853,8 @@
 <terminal><order>39</order><label>$</label><word>#tari</word><pos>Root</pos><translation>=encontrar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>40</order><label>s.subj</label><word>-yku</word><pos>VPers</pos><morph><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>41</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s346"><root><nonterminal id="s346_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s346"><saphi><nonterminal id="s346_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -8876,8 +8876,8 @@
 <terminal><order>32</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>34</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s347"><root><nonterminal id="s347_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s347"><saphi><nonterminal id="s347_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Iskayñiqi</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>5</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg.claus</label><word>kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>3</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>6</order><label>ev</label><word>-m</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
@@ -8890,8 +8890,8 @@
 <terminal><order>18</order><label>$</label><word>#rura</word><pos>Root</pos><translation>=hacer</translation><morph><tag>VRoot</tag></morph><children><terminal><order>21</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>20</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>19</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>22</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>23</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>24</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>25</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s348"><root><nonterminal id="s348_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s348"><saphi><nonterminal id="s348_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>EV</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Conferencia</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>de</word><pos>UNKNOWN</pos></terminal>
@@ -8943,8 +8943,8 @@
 <terminal><order>72</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>73</order><label>s.subj</label><word>-rqanku</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Pl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>74</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s349"><root><nonterminal id="s349_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s349"><saphi><nonterminal id="s349_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>Ministro</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -8960,8 +8960,8 @@
 <terminal><order>15</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>16</order><label>s.subj</label><word>-rqan</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>17</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s350"><root><nonterminal id="s350_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s350"><saphi><nonterminal id="s350_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>umalli</word><pos>Root_VS</pos><translation>=cabeza</translation><morph><tag>NRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>4</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
@@ -8997,8 +8997,8 @@
 <terminal><order>55</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>54</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>59</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>56</order><label>s.arg.claus</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>61</order><label>s.neg</label><word>-chu</word><pos>Amb</pos><morph><tag>+Intr_Neg</tag></morph></terminal><terminal><order>60</order><label>$</label><word>-pas</word><pos>Amb</pos><morph><tag>+Add</tag></morph></terminal><terminal><order>57</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph><children><terminal><order>58</order><label>s.poss.subj</label><word>-nku</word><pos>NPers</pos><morph><tag>+3.Pl.Poss</tag></morph></terminal></children></terminal></children></terminal></children></terminal>
 <terminal><order>62</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s351"><root><nonterminal id="s351_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s351"><saphi><nonterminal id="s351_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>4</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
@@ -9032,8 +9032,8 @@
 <terminal><order>48</order><label>$</label><word>hap'i</word><pos>Root</pos><translation>=agarrar,entender</translation><morph><tag>VRoot</tag></morph><children><terminal><order>49</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>50</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s352"><root><nonterminal id="s352_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s352"><saphi><nonterminal id="s352_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>3</order><label>sub</label><word>chayamu</word><pos>Root_VDeriv</pos><translation>=llegar</translation><morph><tag>VRoot</tag><tag>+Cis_Trs</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>4</order><label>ns</label><word>-pti</word><pos>NS</pos><morph><tag>+DS</tag></morph><children><terminal><order>5</order><label>s.poss.subj</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
@@ -9056,8 +9056,8 @@
 <terminal><order>25</order><label>$</label><word>puri</word><pos>Root</pos><translation>=andar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>26</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>27</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal>
 <terminal><order>28</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>29</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s353"><root><nonterminal id="s353_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s353"><saphi><nonterminal id="s353_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Perú</word><pos>Root</pos><translation/><morph><tag>NP</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-wan</word><pos>Cas</pos><morph><tag>+Con_Inst</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>suyu</word><pos>Root</pos><translation>=región</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
@@ -9105,8 +9105,8 @@
 <terminal><order>66</order><label>$</label><word>ima</word><pos>Root</pos><translation/><morph><tag>Part_Conec</tag></morph></terminal>
 <terminal><order>67</order><label>$</label><word>#ima</word><pos>Root</pos><translation>=cosa</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>68</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s354"><root><nonterminal id="s354_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s354"><saphi><nonterminal id="s354_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Bernd</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>Schmidt</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>|</word><pos>UNKNOWN</pos></terminal>
@@ -9133,8 +9133,8 @@
 <terminal><order>27</order><label>$</label><word>-p</word><pos>Cas</pos><morph><tag>+Gen</tag></morph><children><terminal><order>26</order><label>s.arg</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
 <terminal><order>28</order><label>$</label><word>umalli</word><pos>Root_VS</pos><translation>=cabeza</translation><morph><tag>NRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>29</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>30</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>31</order><label>$</label><word>#umalli</word><pos>Root_VDeriv</pos><translation>=engañar</translation><morph><tag>VRoot</tag><tag>+Autotrs</tag></morph><children><terminal><order>32</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph><children><terminal><order>33</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s355"><root><nonterminal id="s355_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s355"><saphi><nonterminal id="s355_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>Alemána</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal></children></terminal>
@@ -9168,8 +9168,8 @@
 <terminal><order>41</order><label>$</label><word>#siq'icha</word><pos>Root_VS</pos><translation>=línea,fila</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>42</order><label>s.subj</label><word>-yku</word><pos>VPers</pos><morph><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>43</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s356"><root><nonterminal id="s356_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s356"><saphi><nonterminal id="s356_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>3</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>2</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#Ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>6</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
 <terminal><order>7</order><label>$</label><word>#Kay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
@@ -9190,8 +9190,8 @@
 <terminal><order>34</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>35</order><label>s.subj</label><word>-rqayku</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+1.Pl.Excl.Subj</tag></morph></terminal><terminal><order>32</order><label>hab</label><word>puri</word><pos>Root</pos><translation>=andar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>33</order><label>ns</label><word>-q</word><pos>NS</pos><morph><tag>+Ag</tag></morph></terminal></children></terminal></children></terminal>
 
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s357"><root><nonterminal id="s357_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s357"><saphi><nonterminal id="s357_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Walla</word><pos>Root</pos><translation>=guerrero</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>Velasco</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>kiki</word><pos>Root</pos><translation>=mismo</translation><morph><tag>NRoot</tag></morph><children><terminal><order>4</order><label>s.poss</label><word>-n</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal>
@@ -9215,8 +9215,8 @@
 <terminal><order>41</order><label>$</label><word>qallari</word><pos>Root_VDeriv</pos><translation>=empezar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>42</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>43</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s358"><root><nonterminal id="s358_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s358"><saphi><nonterminal id="s358_VROOT"><cat>VROOT</cat><children>
 
 <terminal><order>2</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>1</order><label>s.arg</label><word>Alemania</word><pos>Root</pos><translation/><morph><tag>NRootG</tag></morph></terminal></children></terminal>
 <terminal><order>3</order><label>$</label><word>empresa</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -9230,8 +9230,8 @@
 <terminal><order>14</order><label>$</label><word>yuyari</word><pos>Root_VDeriv</pos><translation>=recordar,pensar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>15</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>16</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s359"><root><nonterminal id="s359_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s359"><saphi><nonterminal id="s359_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qhipa</word><pos>Root</pos><translation>=atrás</translation><morph><tag>NRoot</tag></morph></terminal>
 
 <terminal><order>3</order><label>$</label><word>-manta</word><pos>Cas</pos><morph><tag>+Abl</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>4</order><label>mod</label><word>-ña</word><pos>Amb</pos><morph><tag>+Disc</tag></morph></terminal></children></terminal></children></terminal>
@@ -9248,8 +9248,8 @@
 <terminal><order>21</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>17</order><label>s.arg.claus</label><word>qupu</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>20</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>18</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>19</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>22</order><label>$</label><word>chaski</word><pos>Root</pos><translation>=recibir,aceptar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>23</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal><terminal><order>24</order><label>s.subj</label><word>-yku</word><pos>VPers</pos><morph><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>25</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s360"><root><nonterminal id="s360_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s360"><saphi><nonterminal id="s360_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Velasco</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>2</order><label>$</label><word>pacha</word><pos>Root</pos><translation>=mundo,tiempo</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>7</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>3</order><label>s.arg.claus</label><word>kama</word><pos>Root</pos><translation>=gobernar,mandar,crear</translation><morph><tag>VRoot</tag></morph><children><terminal><order>8</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>5</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph><children><terminal><order>6</order><label>s.poss.subj</label><word>-nin</word><pos>NPers</pos><morph><tag>+3.Sg.Poss</tag></morph></terminal></children></terminal><terminal><order>4</order><label>mod</label><word>-chi</word><pos>VDeriv</pos><morph><tag>+Caus</tag></morph></terminal></children></terminal></children></terminal>
@@ -9273,8 +9273,8 @@
 <terminal><order>25</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>26</order><label>s.subj</label><word>-rqayku</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>27</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s361"><root><nonterminal id="s361_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s361"><saphi><nonterminal id="s361_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Icha</word><pos>Root</pos><translation/><morph><tag>Part_Contr</tag></morph><children><terminal><order>2</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal></children></terminal>
 
 <terminal><order>3</order><label>$</label><word>sapa</word><pos>Root</pos><translation>=cada,solo</translation><morph><tag>NRoot</tag></morph></terminal>
@@ -9286,8 +9286,8 @@
 <terminal><order>13</order><label>$</label><word>ka</word><pos>Root</pos><translation>=ser</translation><morph><tag>VRoot</tag></morph><children><terminal><order>14</order><label>s.subj</label><word>-rqayku</word><pos>Tns_VPers</pos><morph><tag>+NPst</tag><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>15</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s362"><root><nonterminal id="s362_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s362"><saphi><nonterminal id="s362_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Qhipa</word><pos>Root</pos><translation>=atrás</translation><morph><tag>NRoot</tag></morph></terminal>
 <terminal><order>4</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>3</order><label>s.arg</label><word>watakuna</word><pos>Root_Num</pos><translation>=año</translation><morph><tag>NRoot</tag><tag>+Pl</tag></morph><children><terminal><order>2</order><label>qnt</label><word>40</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>5</order><label>s.arg.claus</label><word>#wata</word><pos>Root</pos><translation>=atar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>7</order><label>ns</label><word>-na</word><pos>NS</pos><morph><tag>+Obl</tag></morph></terminal><terminal><order>6</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
@@ -9302,8 +9302,8 @@
 <terminal><order>24</order><label>$</label><word>yuyari</word><pos>Root_VDeriv</pos><translation>=recordar,pensar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>25</order><label>s.subj</label><word>-ni</word><pos>VPers</pos><morph><tag>+1.Sg.Subj</tag></morph></terminal></children></terminal>
 
 <terminal><order>26</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s363"><root><nonterminal id="s363_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s363"><saphi><nonterminal id="s363_VROOT"><cat>VROOT</cat><children>
 <terminal><order>3</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>2</order><label>s.arg</label><word>wata</word><pos>Root</pos><translation>=año</translation><morph><tag>NRoot</tag></morph><children><terminal><order>1</order><label>qnt</label><word>1998</word><pos>Root</pos><translation/><morph><tag>NRootNUM</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>4</order><label>punc</label><word>,</word><pos>$.</pos><translation/><morph/></terminal>
 <terminal><order>5</order><label>$</label><word>Stuttgart</word><pos>UNKNOWN</pos></terminal>
@@ -9353,8 +9353,8 @@
 <terminal><order>72</order><label>$</label><word>#qhawari</word><pos>Root_VDeriv</pos><translation>=mirar</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>74</order><label>topic</label><word>-qa</word><pos>Amb</pos><morph><tag>+Top</tag></morph></terminal><terminal><order>73</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal></children></terminal>
 <terminal><order>75</order><label>$</label><word>apa</word><pos>Root</pos><translation>=llevar</translation><morph><tag>VRoot</tag></morph><children><terminal><order>76</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>77</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>78</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s364"><root><nonterminal id="s364_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s364"><saphi><nonterminal id="s364_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Rimana</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>3</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#Rimana</word><pos>Root_VDeriv</pos><translation>=hablar</translation><morph><tag>VRoot</tag><tag>+Rzpr</tag></morph><children><terminal><order>6</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>5</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>8</order><label>$</label><word>-pi</word><pos>Cas</pos><morph><tag>+Loc</tag></morph><children><terminal><order>7</order><label>s.arg</label><word>wasi</word><pos>Root</pos><translation>=casa</translation><morph><tag>NRoot</tag></morph></terminal></children></terminal>
@@ -9379,8 +9379,8 @@
 
 <terminal><order>36</order><label>$</label><word>rikhuri</word><pos>Root_VDeriv</pos><translation>=ver,aparecer</translation><morph><tag>VRoot</tag><tag>+Inch</tag></morph><children><terminal><order>38</order><label>s.neg</label><word>-chu</word><pos>Amb</pos><morph><tag>+Intr_Neg</tag></morph></terminal><terminal><order>37</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>39</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s365"><root><nonterminal id="s365_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s365"><saphi><nonterminal id="s365_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Chay</word><pos>Root</pos><translation/><morph><tag>PrnDem</tag></morph></terminal>
 <terminal><order>2</order><label>ev</label><word>-mi</word><pos>Amb</pos><morph><tag>+DirE</tag></morph></terminal>
 <terminal><order>3</order><label>$</label><word>utqha</word><pos>Root</pos><translation>=apurarse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>5</order><label>mod</label><word>-lla</word><pos>Amb</pos><morph><tag>+Lim_Aff</tag></morph></terminal><terminal><order>4</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
@@ -9400,12 +9400,12 @@
 <terminal><order>33</order><label>$</label><word>-ta</word><pos>Cas</pos><morph><tag>+Acc</tag></morph><children><terminal><order>30</order><label>s.arg</label><word>#siq'icha</word><pos>Root_VS</pos><translation>=línea,fila</translation><morph><tag>NRoot</tag><tag>+Fact</tag></morph><children><terminal><order>32</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>31</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal></children></terminal>
 <terminal><order>34</order><label>$</label><word>tuku</word><pos>Root</pos><translation>=acabar,suceder,convertirse</translation><morph><tag>VRoot</tag></morph><children><terminal><order>35</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>36</order><label>s.subj</label><word>-n</word><pos>VPers</pos><morph><tag>+3.Sg.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>37</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
-<s id="s366"><root><nonterminal id="s366_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s366"><saphi><nonterminal id="s366_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Añancha</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>3</order><label>ns</label><word>-y</word><pos>NS</pos><morph><tag>+Inf</tag></morph></terminal><terminal><order>2</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal></children></terminal>
 <terminal><order>4</order><label>$</label><word>#Añancha</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>5</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>6</order><label>s.subj</label><word>-y</word><pos>VPers</pos><morph><tag>+2.Sg.Subj.Imp</tag></morph></terminal></children></terminal>
-</children></nonterminal></root></s>
-<s id="s367"><root><nonterminal id="s367_VROOT"><cat>VROOT</cat><children>
+</children></nonterminal></saphi></s>
+<s id="s367"><saphi><nonterminal id="s367_VROOT"><cat>VROOT</cat><children>
 <terminal><order>1</order><label>$</label><word>Cámara</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
 <terminal><order>2</order><label>$</label><word>de</word><pos>UNKNOWN</pos></terminal>
 <terminal><order>3</order><label>$</label><word>Comercio</word><pos>Root</pos><translation/><morph><tag>NRootES</tag></morph></terminal>
@@ -9429,6 +9429,6 @@
 
 <terminal><order>33</order><label>$</label><word>añancha</word><pos>Root</pos><translation/><morph><tag>VRootG</tag></morph><children><terminal><order>34</order><label>mod</label><word>-ku</word><pos>VDeriv</pos><morph><tag>+Rflx_Int</tag></morph></terminal><terminal><order>35</order><label>s.subj</label><word>-yku</word><pos>VPers</pos><morph><tag>+1.Pl.Excl.Subj</tag></morph></terminal></children></terminal>
 <terminal><order>36</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
-</children></nonterminal></root></s>
+</children></nonterminal></saphi></s>
 </body>
 </corpus>

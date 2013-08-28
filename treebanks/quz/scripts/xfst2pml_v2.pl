@@ -36,7 +36,7 @@
 # output_file: body part of the pml word file:
 #  <body>
 #    <s id="s1">
-#      <root>
+#      <saphi>
 #        <nonterminal id="s1_VROOT">
 #          <cat>VROOT</cat>
 #          <children>
@@ -66,7 +66,7 @@
 #            </terminal>
 #          </children>
 #        </nonterminal>
-#      </root>
+#      </saphi>
 #    </s>
 #  </body>
 
@@ -99,8 +99,8 @@
 $all=1;
 $new_analysis = 1;		# flag to take only the first analysis
 $in_sentence = 0;		# flag to avoid printing empty sentences!...
-$new_sent = "<s id=\"s1\"><root><nonterminal id=\"s1_VROOT\"><cat>VROOT</cat><children>\n";
-$end_sent = "</children></nonterminal></root></s>\n";
+$new_sent = "<s id=\"s1\"><saphi><nonterminal id=\"s1_VROOT\"><cat>VROOT</cat><children>\n";
+$end_sent = "</children></nonterminal></saphi></s>\n";
 my $header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <corpus id=\"ahk1968-2008_qu_disamb\">
   <head>
@@ -115,7 +115,7 @@ while (<>) {
   if ($in_sentence) {
    print STDOUT $end_sent;		# print EOS
    $sn++;			# and prepare new sentence
-   $new_sent = "<s id=\"s$sn\"><root><nonterminal id=\"s${sn}_VROOT\"><cat>VROOT</cat><children>\n";
+   $new_sent = "<s id=\"s$sn\"><saphi><nonterminal id=\"s${sn}_VROOT\"><cat>VROOT</cat><children>\n";
    $wn = 1;
    $in_sentence = 0;
   }
@@ -243,7 +243,7 @@ while (<>) {
     if ($in_sentence) {
      print STDOUT $end_sent;	# print EOS
      $sn++;			# and prepare new sentence
-     $new_sent = "<s id=\"s$sn\"><root><nonterminal id=\"s${sn}_VROOT\"><cat>VROOT</cat><children>\n";
+     $new_sent = "<s id=\"s$sn\"><saphi><nonterminal id=\"s${sn}_VROOT\"><cat>VROOT</cat><children>\n";
      $wn = 1;
      $in_sentence = 0;
     }

@@ -8,7 +8,7 @@ use XML::LibXML;
 
 # IMPORTANT: delete xmlns="http://ufal.mff.cuni.cz/pdt/pml/" from pml before applying!!!
 #     <s id="s1">
-#       <root>
+#       <saphi>
 #         <nonterminal id="s1_VROOT">
 #           <cat>VROOT</cat>
 #read xml from STDIN
