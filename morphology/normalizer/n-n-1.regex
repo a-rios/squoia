@@ -11,6 +11,9 @@
 | ["[" "--" "]" {niray} "[" "NDeriv" "]" "[" "+Sim" "]"] : {niray}
 | ["[" "--" "]" {niraq} "[" "NDeriv" "]" "[" "+Sim" "]"] : {niraq}
 | ["[" "--" "]" {nira} "[" "NDeriv" "]" "[" "+Sim" "]"] : {nira}
+| ["[" "--" "]" {niray} "[" "NDeriv" "]" "[" "+Sim" "]"] : {ñiray}
+| ["[" "--" "]" {niraq} "[" "NDeriv" "]" "[" "+Sim" "]"] : {ñiraq}
+| ["[" "--" "]" {nira} "[" "NDeriv" "]" "[" "+Sim" "]"] : {ñira}
 | ["[" "--" "]" {rikuq} "[" "NDeriv" "]" "[" "+Sim" "]"] : {rikuq}
 | ["[" "--" "]" {ti} "[" "NDeriv" "]" "[" "+Char" "]"] : {ti}
 | ["[" "--" "]" {li} "[" "NDeriv" "]" "[" "+Char" "]"] : {li}
