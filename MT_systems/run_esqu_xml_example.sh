@@ -27,6 +27,44 @@ export DESR_BIN=$PROJECT_DIR/desrModules
 export DESR_PARAMS="-m $DESR_MODEL -c $DESR_CONFIG"
 # model1 = spanish_es4.MLP
 export DESR_PORT=5678
+
+
+# test if server already started listening
+if ps ax | grep -v grep | grep squoia_analyzer > /dev/null
+then
+ echo "squoia_analyzer server already started"
+else
+ echo "squoia_analyzer server not yet started"
+ squoia_analyzer -f $FREELING_CONFIG --outf=desrtag --server --port=$FREELING_PORT 2> logdesrtag &
+ echo "squoia_analyzer started..."
+#while ! ps ax | grep -v grep | grep squoia_analyzer > /dev/null
+# do
+  echo "please wait..."
+  sleep 10
+# done
+ 
+ echo "squoia_analyzer now ready"
+fi
+
+# test if desr server already started listening
+if ps ax | grep -v grep | grep desr_server > /dev/null
+then
+ echo "desr_server server already started"
+else
+ echo "desr_server server not yet started"
+ desr_server -m $DESR_DIR/spanish_es4.MLP --port 5678 2> logdesr_es4 &
+ desr_server -m $DESR_DIR/spanish.MLP --port 1234 2> logdesr_MLP &
+ echo "desr_server started..."
+#while ! ps ax | grep -v grep | grep squoia_analyzer > /dev/null
+# do
+  echo "please wait..."
+  sleep 1
+# done
+ 
+ echo "desr_server now ready"
+fi
+
+
 export EVID=$1
 
 if [ -n "$EVID" ] && [ "$EVID" = "-indirect" ] ; then
