@@ -88,9 +88,26 @@ foreach my $word (@words){
 			print "\n";
 		}
 		# word not recognized: print form
-		elsif($firstanalysis!~ /\[/) {
+		elsif($firstanalysis !~ /\[/  ) {
 			print " $form";
 			$needspace =1;
+		}
+		# numbers
+		elsif($firstanalysis =~ /\[CARD/  ) {
+			$firstanalysis =~ s/\@mMI//g;
+			my ($lem) = ($firstanalysis =~ m/([0-9,\.]+?)\[/g );
+			my $outWordForm =$lem;
+			
+			my @morphs = ($firstanalysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
+			unless($needspace==0){
+				print " ";}
+				
+			for(my $i=0;$i<scalar(@morphs);$i++){
+				my $m = @morphs[$i];
+				$outWordForm = $outWordForm."$m";
+			}
+			print $outWordForm;
+			$needspace=1;	
 		}
 		else
 		{
