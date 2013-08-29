@@ -6,7 +6,13 @@ COMERCIO	comercio[NRootES]
 
 E	E[ALFS]
 
-ALEMANIA	alemán[NRootES][^DB][--]ya[Amb][+Emph]
+INDUSTRIA	industria[NRootES]
+
+PERUANO	peruano[NRootES]
+
+-	-[$.]
+
+ALEMANA	alemana[NRootES]
 
 NISQAMANTAS	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]s[Amb][+IndE]
 
@@ -185,9 +191,6 @@ mañarikullaqtaqmi	maña[VRoot][=pedir][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][
 allin	allin[NRoot][=bueno]
 
 ruranawanchikwanpas	ruranawa[NRootG][^DB][--]nchik[NPers][+1.Pl.Incl.Poss][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
-ruranawanchikwanpas	ruranawanchik[NRootG][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
-ruranawanchikwanpas	ruranawanchikwan[NRootG][^DB][--]pas[Amb][+Add]
-ruranawanchikwanpas	ruranawanchikwanpa[NRootG][^DB][--]s[Amb][+IndE]
 
 ,	,[$.]
 
@@ -290,7 +293,6 @@ Chaypaqqa	chay[PrnDem][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 ,	,[$.]
 
 Alemaniapim	Alemania[NRootG][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
-Alemaniapim	Alemaniapi[NRootG][^DB][--]m@mMI[Amb][+DirE]
 
 achka	achkha[NRoot][=mucho]
 
@@ -482,7 +484,7 @@ Huñuna	huñu[VRoot][=juntar][^DB][--]na[NS][+Obl]
 
 “	“	+?
 
-Wirtschaftsjunioren	Wirtschaftsjuniore[NRootG][^DB][--]m[Amb][+DirE]
+Wirtschaftsjunioren	Wirtschaftsjuniore[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 Peru	Perú[NP]
 
@@ -493,7 +495,6 @@ paqarichisqanchikwanqa	paqari[VRoot][=amanecer,crearse][^DB][--]chi[VDeriv][+Cau
 ,	,[$.]
 
 waynasipas	waynasi[NRootG][^DB][--]pas[Amb][+Add]
-waynasipas	waynasipa[NRootG][^DB][--]s[Amb][+IndE]
 
 umalliqkuna	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl]
 
@@ -511,7 +512,7 @@ sapan	sapa[NRoot][=cada,solo][^DB][--]n[NPers][+3.Sg.Poss]
 
 masichakuq	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
-empresanchikunamantan	empresanchikunamanta[NRootG][^DB][--]m[Amb][+DirE]
+empresanchikunamantan	empresanchikunamanta[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 hamunkuman	hamu[VRoot][=venir][^DB][--]nku[VPers][+3.Pl.Subj][--]man[Mod][+Pot]
 
@@ -568,7 +569,6 @@ Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 ,	,[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 qhatuchaqkuna	qhatu[NRoot][=mercado][--]cha[VS][+Fact][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl]
 qhatuchaqkuna	qhatu[NRoot][=mercado][--]chaq[NDeriv][+Aug][--]kuna[Num][+Pl]
@@ -605,7 +605,7 @@ utaq	o[Part_Contr][^DB][--]taq[Amb][+Con_Intr]
 
 Ministrokuna	ministro[NRootES][--]kuna[Num][+Pl]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 ch'usaqkunatapas	ch'usaq[NRoot][=nada,vacío,ausente][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
 
@@ -639,15 +639,12 @@ qhatuchaqkunatapas	qhatu[NRoot][=mercado][--]chaq[NDeriv][+Aug][--]kuna[Num][+Pl
 ,	,[$.]
 
 Promperutapas	Promperu[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
-Promperutapas	Promperuta[NRootG][^DB][--]pas[Amb][+Add]
-Promperutapas	Promperutapa[NRootG][^DB][--]s[Amb][+IndE]
 
 ,	,[$.]
 
 empresario	empresario[NRootES]
 
 masiqkunatapas	masi[VRootG][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
-masiqkunatapas	masiqku[VRootG][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
 
 .	.[$.]
 
@@ -724,9 +721,6 @@ sunqunkutapas	sunqu[NRoot][=corazón][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]ta[
 riqsiyninkutapas	riqsi[VRoot][=conocer][^DB][--]y[NS][+Inf][^DB][--]ninku[NPers][+3.Pl.Poss][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
 
 quwallawarqanchikmi	quwa[VRootG][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wa[VPers][+1.Obj][^DB][--]rqa[Tns][+NPst][--]nchik[VPers][+3.Subj_1.Pl.Incl.Obj][^DB][--]mi[Amb][+DirE]
-quwallawarqanchikmi	quwalla[VRootG][^DB][--]wa[VPers][+1.Obj][^DB][--]rqa[Tns][+NPst][--]nchik[VPers][+3.Subj_1.Pl.Incl.Obj][^DB][--]mi[Amb][+DirE]
-quwallawarqanchikmi	quwallawa[VRootG][^DB][--]rqa[Tns][+NPst][--]nchik[VPers][+1.Pl.Incl.Subj][^DB][--]mi[Amb][+DirE]
-quwallawarqanchikmi	quwallawarqa[VRootG][^DB][--]nchik[VPers][+1.Pl.Incl.Subj][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
 
@@ -799,7 +793,6 @@ masichakusqanchikmantapas	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[
 ,	,[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 llapan	llapa[NRoot][=todo][^DB][--]n[NPers][+3.Sg.Poss]
 
@@ -1235,8 +1228,7 @@ wasapanapaqqa	wasa[VRoot][=culminar,concluir,defender][--]pa[VDeriv][+Rep][^DB][
 
 suyu	suyu[NRoot][=región]
 
-saywankunam	saywan[NRootG][--]kuna[Num][+Pl][^DB][--]m@mMI[Amb][+DirE]
-saywankunam	saywankuna[NRootG][^DB][--]m@mMI[Amb][+DirE]
+saywankunam	saywa[NRootG][^DB][--]n[NPers][+3.Poss][--]kuna[Num][+Pl][^DB][--]m@mMI[Amb][+DirE]
 
 kicharayasqa	kicha[VRoot][=abrir][--]raya[VDeriv][+Perdur][^DB][--]sqa[NS][+Perf]
 
@@ -1448,7 +1440,6 @@ riqsichin	riqsi[VRoot][=conocer][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.
 astawanmi	as[NRoot][=poco][^DB][--]ta[Cas][+Acc][^DB][--]wan[Cas][+Con_Inst][^DB][--]mi[Amb][+DirE]
 
 Alemaniapaq	Alemania[NRootG][^DB][--]paq[Cas][+Ben]
-Alemaniapaq	Alemaniapa[NRootG][^DB][--]p[Cas][+Gen]
 
 Perú	Perú[NP]
 
@@ -1593,7 +1584,7 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
 
-German	Germa[NRootG][^DB][--]m[Amb][+DirE]
+German	Germa[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 Business	Business	+?
 
@@ -1689,7 +1680,7 @@ Perú	Perú[NP]
 
 suyuwan	suyu[NRoot][=región][^DB][--]wan[Cas][+Con_Inst]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 chhalanakuyninkupiqa	chhala[VRoot][=trocar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]ninku[NPers][+3.Pl.Poss][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 
@@ -1841,8 +1832,6 @@ wiraqucha	wiraqucha[NRoot][=señor]
 Jörg	Jörg	+?
 
 Zehnletapas	Zehnle[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
-Zehnletapas	Zehnleta[NRootG][^DB][--]pas[Amb][+Add]
-Zehnletapas	Zehnletapa[NRootG][^DB][--]s[Amb][+IndE]
 
 huqariyta	huqa[VRoot][=levantar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
 
@@ -1908,7 +1897,7 @@ watakunamantañam	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]manta[Cas][+Abl][
 
 ,	,[$.]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 Perú	Perú[NP]
 
@@ -2125,7 +2114,7 @@ masichakunanchiktaqa	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeri
 
 allintam	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 
-kallpachan	kallpa[NRoot][=fuerte][--]cha[NDeriv][+Dim][^DB][--]m[Amb][+DirE]
+kallpachan	kallpa[NRoot][=fuerte][--]cha[NDeriv][+Dim][^DB][--]n[NPers][+3.Sg.Poss]
 
 .	.[$.]
 
@@ -2317,7 +2306,7 @@ hunt'achinapaqqa	hunt'a[VRoot][=llenar][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS
 
 ,	,[$.]
 
-llapan	llapa[NRoot][=todo][^DB][--]m[Amb][+DirE]
+llapan	llapa[NRoot][=todo][^DB][--]n[NPers][+3.Sg.Poss]
 
 qullqichay	qullqi[NRoot][=plata][--]cha[VS][+Fact][^DB][--]y[NS][+Inf]
 
@@ -2348,8 +2337,6 @@ impuestokuna	impuesto[NRootES][--]kuna[Num][+Pl]
 mana	mana[Part_Neg]
 
 iskayananpaqqa	iska[NRootG][--]ya[VS][+Trs][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
-iskayananpaqqa	iskayanan[NRootG][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
-iskayananpaqqa	iskayananpaq[NRootG][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
@@ -2524,7 +2511,6 @@ muchuyaptinkuqa	muchu[NRoot][=semilla][--]ya[VS][+Trs][^DB][--]pti[NS][+DS][^DB]
 ,	,[$.]
 
 Alemaniapas	Alemania[NRootG][^DB][--]pas[Amb][+Add]
-Alemaniapas	Alemaniapa[NRootG][^DB][--]s[Amb][+IndE]
 
 Perú	Perú[NP]
 
@@ -2634,9 +2620,7 @@ hatun	hatun[NRoot][=grande]
 
 iskay	iskay[NRootNUM]
 
-imaymankunatam	imayman[NRootG][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
-imaymankunatam	imaymankuna[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
-imaymankunatam	imaymankunata[NRootG][^DB][--]m@mMI[Amb][+DirE]
+imaymankunatam	imayma[NRootG][^DB][--]n[NPers][+3.Poss][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 
 Alemaniaqa	Alemania[NRootG][^DB][--]qa[Amb][+Top]
 
@@ -2668,7 +2652,7 @@ Muro	muro[NRootES]
 
 de	de	+?
 
-Berlín	Berlí[NRootG][^DB][--]m[Amb][+DirE]
+Berlín	Berlí[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 nisqa	ni[VRoot][=decir][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
@@ -3089,7 +3073,7 @@ Bayer	Bayer	+?
 
 Química	química[NRootES]
 
-Unidas	Unida[NRootG][^DB][--]s[Amb][+IndE]
+Unidas	Unidas	+?
 
 S	S[ALFS]
 
@@ -3109,7 +3093,7 @@ Hartinger	Hartinger	+?
 
 Guido	Guido	+?
 
-Lucioni	Lucio[VRootG][^DB][--]ni[VPers][+1.Sg.Subj]
+Lucioni	Lucioni	+?
 
 ,	,[$.]
 
@@ -3161,7 +3145,7 @@ Hans	Hans	+?
 
 von	von	+?
 
-Appen	Appe[NRootG][^DB][--]m[Amb][+DirE]
+Appen	Appe[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 ;	;[$.]
 
@@ -3201,7 +3185,7 @@ A	A[ALFS]
 
 nisqamantataq	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]taq[Amb][+Con_Intr]
 
-Carlos	Carlo[NRootG][^DB][--]s[Amb][+IndE]
+Carlos	Carlos	+?
 
 Maurer	Maurer	+?
 
@@ -3271,7 +3255,7 @@ Perú	Perú[NP]
 
 suyuwan	suyu[NRoot][=región][^DB][--]wan[Cas][+Con_Inst]
 
-Alemawan	Alemawa[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemawan	Alema[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 qhatuchakuyninkuta	qhatu[NRoot][=mercado][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]ninku[NPers][+3.Pl.Poss][^DB][--]ta[Cas][+Acc]
 
@@ -3294,8 +3278,6 @@ yupakunku	yupa[VRoot][=contar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][
 p'unchaw	p'unchaw[NRoot][=día]
 
 Paraqallariy	Paraqa[VRootG][^DB][--]lla[Amb][+Lim_Aff][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf]
-Paraqallariy	Paraqalla[VRootG][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf]
-Paraqallariy	Paraqallari[VRootG][^DB][--]y[NS][+Inf]
 
 killapi	killa[NRoot][=luna][^DB][--]pi[Cas][+Loc]
 
@@ -3390,9 +3372,9 @@ Plaza	plaza[NRootES]
 
 San	San	+?
 
-Martinpa	Martin[NRootG][^DB][--]pa[Cas][+Gen]
+Martinpa	Marti[NRootG][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pa[Cas][+Gen]
 
-sispallanpim	sispallanpi[NRootG][^DB][--]m@mMI[Amb][+DirE]
+sispallanpim	sispa[NRootG][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
 
 kichakun	kicha[VRoot][=abrir][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -3439,7 +3421,6 @@ sinchita	sinchi[NRoot][=fuerte][^DB][--]ta[Cas][+Acc]
 kawsachkaptinmi	kawsa[VRoot][=vivir][^DB][--]chka[Asp][+Prog][^DB][--]pti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]mi[Amb][+DirE]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 Dr	Dr	+?
 
@@ -3612,7 +3593,7 @@ Perú	Perú[NP]
 
 suyuwan	suyu[NRoot][=región][^DB][--]wan[Cas][+Con_Inst]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 masichakuspa	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]spa[NS][+SS]
 
@@ -3695,7 +3676,6 @@ Perú	Perú[NP]
 empresakunapas	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]pas[Amb][+Add]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 maquinakunatawan	máquina[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]wan[Cas][+Con_Inst]
 
@@ -3802,7 +3782,6 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 ,	,[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 qhawachiq	qhawa[VRoot][=mirar][^DB][--]chi[VDeriv][+Caus][^DB][--]q[NS][+Ag]
 
@@ -3893,8 +3872,6 @@ Perú	Perú[NP]
 Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
 
 sutichikuspa	suti[VRootG][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]spa[NS][+SS]
-sutichikuspa	sutichi[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]spa[NS][+SS]
-sutichikuspa	sutichiku[VRootG][^DB][--]spa[NS][+SS]
 
 sapa	sapa[NRoot][=cada,solo]
 
@@ -3932,7 +3909,7 @@ watakunaqa	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
 
-Juan	Jua[NRootG][^DB][--]m[Amb][+DirE]
+Juan	Jua[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 Velasco	Velasco	+?
 
@@ -3962,7 +3939,7 @@ Perú	Perú[NP]
 
 suyuwan	suyu[NRoot][=región][^DB][--]wan[Cas][+Con_Inst]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 chhalanakuyninkumanmi	chhala[VRoot][=trocar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]ninku[NPers][+3.Pl.Poss][^DB][--]man[Cas][+Dat_Ill][^DB][--]mi[Amb][+DirE]
 
@@ -4065,7 +4042,6 @@ qullqi	qullqi[NRoot][=plata]
 hap'iyninpipas	hap'i[VRoot][=agarrar,entender][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+Add]
 
 chapukun	chapu[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
-chapukun	chapuku[VRootG][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
@@ -4109,7 +4085,6 @@ Alemanamanta	alemana[NRootES][^DB][--]manta[Cas][+Abl]
 qullqichayqa	qullqi[NRoot][=plata][--]cha[VS][+Fact][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
 
 pisiyarparqunmi	pisiyarpa[VRootG][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
-pisiyarparqunmi	pisiyarparqu[VRootG][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
 
 ,	,[$.]
 
@@ -4170,7 +4145,6 @@ karparin	ka[VRoot][=ser][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
 .	.[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 imaymanakuna	imaymana[NRoot][=toda_clase_de,todos][--]kuna[Num][+Pl]
 
@@ -4198,7 +4172,7 @@ pachapiqa	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top
 
 ,	,[$.]
 
-llapan	llapa[NRoot][=todo][^DB][--]m[Amb][+DirE]
+llapan	llapa[NRoot][=todo][^DB][--]n[NPers][+3.Sg.Poss]
 
 empresa	empresa[NRootES]
 
@@ -4274,7 +4248,7 @@ watapi	wata[NRoot][=año][^DB][--]pi[Cas][+Loc]
 
 pacha	pacha[NRoot][=mundo,tiempo]
 
-kukuptinmi	kukupti[VRootG][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
+kukuptinmi	kuku[VRootG][^DB][--]pti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]mi[Amb][+DirE]
 
 hatun	hatun[NRoot][=grande]
 
@@ -4319,7 +4293,6 @@ ayninayniypiqa	ayni[NRoot][=trabajo_comunal][--]na[VS][+Reub][^DB][--]y[NS][+Inf
 ,	,[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 yachayniy	yacha[VRoot][=saber,habitar][^DB][--]y[NS][+Inf][^DB][--]niy[NPers][+1.Sg.Poss]
 
@@ -4359,7 +4332,7 @@ Perú	Perú[NP]
 
 empresakuna	empresa[NRootES][--]kuna[Num][+Pl]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 qhatuchanankumantaqa	qhatu[NRoot][=mercado][--]cha[VS][+Fact][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -4370,7 +4343,6 @@ tapurillaqku	tapu[VRoot][=preguntar][--]ri[VDeriv][+Inch][^DB][--]lla[Amb][+Lim_
 hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 Alemaniapas	Alemania[NRootG][^DB][--]pas[Amb][+Add]
-Alemaniapas	Alemaniapa[NRootG][^DB][--]s[Amb][+IndE]
 
 imayna	imayna[PrnInterr][=cómo]
 
@@ -4390,7 +4362,7 @@ kay	kay[PrnDem]
 
 tapurikuykunaqa	tapu[VRoot][=preguntar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
-watan	wata[NRoot][=año][^DB][--]m[Amb][+DirE]
+watan	wata[NRoot][=año][^DB][--]n[NPers][+3.Sg.Poss]
 
 watantin	wata[NRoot][=año][^DB][--]ntin[Cas][+Iclsv]
 
@@ -4444,7 +4416,6 @@ apakuptinqa	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]pti[NS][+D
 Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 mirachiqkunataqa	mira[VRoot][=aumentar][^DB][--]chi[VDeriv][+Caus][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -4515,7 +4486,6 @@ tikrachikun	t'ikra[VRoot][=voltear][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv
 .	.[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 ,	,[$.]
 
@@ -4715,7 +4685,7 @@ Manuel	Manuel	+?
 
 Ulloa	Ulloa	+?
 
-Elías	Elía[NRootG][^DB][--]s[Amb][+IndE]
+Elías	Elías	+?
 
 ;	;[$.]
 
@@ -4749,9 +4719,7 @@ hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 APRA	APRA	+?
 
-nismantapas	nisman[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
-nismantapas	nismanta[NRootG][^DB][--]pas[Amb][+Add]
-nismantapas	nismantapa[NRootG][^DB][--]s[Amb][+IndE]
+nismantapas	nisma[NRootG][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
 
 Julio	julio[NRootES]
 
@@ -4871,7 +4839,7 @@ killapim	killa[NRoot][=luna][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
 
 Dieter	Dieter	+?
 
-Schierlohwan	Schierlohwa[NRootG][^DB][--]m[Amb][+DirE]
+Schierlohwan	Schierloh[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 tikrakun	t'ikra[VRoot][=voltear][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -4913,7 +4881,7 @@ Pedro	Pedro	+?
 
 Pablo	pablo[NRootES]
 
-Kuczynskitawan	Kuczynskitawa[NRootG][^DB][--]m[Amb][+DirE]
+Kuczynskitawan	Kuczynski[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]wan[Cas][+Con_Inst]
 
 mineriamanta	minería[NRootES][^DB][--]manta[Cas][+Abl]
 
@@ -4931,7 +4899,7 @@ Camarap	cámara[NRootES][^DB][--]p[Cas][+Gen]
 
 umalliqninwanpas	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]q[NS][+Ag][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 pusanku	pusa[VRoot][=llevar][^DB][--]nku[VPers][+3.Pl.Subj]
 
@@ -4968,7 +4936,6 @@ kichasqa	kicha[VRoot][=abrir][^DB][--]sqa[NS][+Perf]
 kaptinña	ka[VRoot][=ser][^DB][--]pti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ña[Amb][+Disc]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 empresakunaqa	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
@@ -5090,7 +5057,7 @@ Perú	Perú[NP]
 
 suyuwan	suyu[NRoot][=región][^DB][--]wan[Cas][+Con_Inst]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 qullqimanta	qullqi[NRoot][=plata][^DB][--]manta[Cas][+Abl]
 
@@ -5251,8 +5218,6 @@ imaymanakunata	imaymana[NRoot][=toda_clase_de,todos][--]kuna[Num][+Pl][^DB][--]t
 ruraspam	rura[VRoot][=hacer][^DB][--]spa[NS][+SS][^DB][--]m@mMI[Amb][+DirE]
 
 yachaqikunataqa	yachaqi[NRootG][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
-yachaqikunataqa	yachaqikuna[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
-yachaqikunataqa	yachaqikunata[NRootG][^DB][--]qa[Amb][+Top]
 
 yanapan	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -5391,8 +5356,6 @@ Perú	Perú[NP]
 suyupipas	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+Add]
 
 Alemaniapipas	Alemania[NRootG][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+Add]
-Alemaniapipas	Alemaniapi[NRootG][^DB][--]pas[Amb][+Add]
-Alemaniapipas	Alemaniapipa[NRootG][^DB][--]s[Amb][+IndE]
 
 chaskirikun	chaski[VRoot][=recibir,aceptar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -5409,8 +5372,6 @@ unquymi	unqu[VRoot][=estar_enfermo][^DB][--]y[NS][+Inf][^DB][--]mi[Amb][+DirE]
 suyupiqa	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 
 hatarparin	hata[VRootG][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
-hatarparin	hatarpa[VRootG][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
-hatarparin	hatarpari[VRootG][^DB][--]n[VPers][+3.Sg.Subj]
 
 ,	,[$.]
 
@@ -5429,7 +5390,6 @@ suyukunaman	suyu[NRoot][=región][--]kuna[Num][+Pl][^DB][--]man[Cas][+Dat_Ill]
 ranakuqqa	rana[VRoot][=vender][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][^DB][--]qa[Amb][+Top]
 
 pisiyarparqunmi	pisiyarpa[VRootG][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
-pisiyarparqunmi	pisiyarparqu[VRootG][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
 
@@ -5504,7 +5464,6 @@ qunanpaqmi	qu[VRoot][=dar][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB
 Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 7	7[CARD]
 
@@ -5682,7 +5641,7 @@ Máximo	máximo[NRootES]
 
 San	San	+?
 
-Román	Romá[NRootG][^DB][--]m[Amb][+DirE]
+Román	Romá[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 Alemaniap	Alemania[NRootG][^DB][--]p[Cas][+Gen]
 
@@ -5704,7 +5663,7 @@ chayananpaqqa	chaya[VRoot][=llegar][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.
 
 .	.[$.]
 
-Berlinpi	Berlin[NRootG][^DB][--]pi[Cas][+Loc]
+Berlinpi	Berli[NRootG][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 qhatuna	qhatu[VRoot][=negociar][^DB][--]na[NS][+Obl]
 
@@ -5804,7 +5763,7 @@ suyu	suyu[NRoot][=región]
 
 allinyarqusqanmanta	allin[NRoot][=bueno][--]ya[VS][+Trs][--]rqu[VDeriv][+Rptn][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 willananpaqqa	willa[VRoot][=contar][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 
@@ -5826,11 +5785,9 @@ apakuqkunapiqa	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+
 
 ,	,[$.]
 
-ADEXwan	ADEXwa[NRootG][^DB][--]m[Amb][+DirE]
+ADEXwan	ADEX[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 Promperuwan	Prompe[VRootG][--]rqu[VDeriv][+Rptn][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj]
-Promperuwan	Promperu[VRootG][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj]
-Promperuwan	Promperuwa[VRootG][^DB][--]n[VPers][+3.Sg.Subj]
 
 sispalla	sispa[NRootG][^DB][--]lla[Amb][+Lim_Aff]
 
@@ -5869,7 +5826,6 @@ masichakuqkunam	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+R
 umalliq	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]q[NS][+Ag]
 
 Fujimoritaqa	Fujimori[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
-Fujimoritaqa	Fujimorita[NRootG][^DB][--]qa[Amb][+Top]
 
 Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
 
@@ -5881,7 +5837,7 @@ pusaysinku	pusa[VRoot][=llevar][--]ysi[VDeriv][+Ass][^DB][--]nku[VPers][+3.Pl.Su
 
 chaywanqa	chay[PrnDem][^DB][--]wan[Cas][+Con_Inst][^DB][--]qa[Amb][+Top]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 Perú	Perú[NP]
 
@@ -5923,7 +5879,7 @@ Perú	Perú[NP]
 
 suyuntin	suyu[NRoot][=región][^DB][--]ntin[Cas][+Iclsv]
 
-Alemaniantin	Alemanianti[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniantin	Alemania[NRootG][^DB][--]ntin[Cas][+Iclsv]
 
 gobiernokunapaq	gobierno[NRootES][--]kuna[Num][+Pl][^DB][--]paq[Cas][+Ben]
 
@@ -6021,7 +5977,7 @@ pachapaqpa	pacha[NRoot][=mundo,tiempo][^DB][--]paq[Cas][+Ben][^DB][--]pa[Cas][+G
 
 Hotel	hotel[NRootES]
 
-Sheratonpi	Sheraton[NRootG][^DB][--]pi[Cas][+Loc]
+Sheratonpi	Sherato[NRootG][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 mikhunata	mikhu[VRoot][=comer][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc]
 
@@ -6075,7 +6031,7 @@ Perú	Perú[NP]
 
 suyuwan	suyu[NRoot][=región][^DB][--]wan[Cas][+Con_Inst]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 masichakunankupaqqa	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 
@@ -6128,10 +6084,9 @@ apakun	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.
 
 hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
-Alemaniamantawan	Alemaniamantawa[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniamantawan	Alemania[NRootG][^DB][--]manta[Cas][+Abl][^DB][--]wan[Cas][+Con_Inst]
 
 Latinoamenricamanta	Latinoamenrica[NRootG][^DB][--]manta[Cas][+Abl]
-Latinoamenricamanta	Latinoamenricaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 umalliqkunapas	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]pas[Amb][+Add]
 
@@ -6175,9 +6130,7 @@ Camarap	cámara[NRootES][^DB][--]p[Cas][+Gen]
 
 raphi	rap'i[NRoot][=hoja]
 
-webnintapas	webnin[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
-webnintapas	webninta[NRootG][^DB][--]pas[Amb][+Add]
-webnintapas	webnintapa[NRootG][^DB][--]s[Amb][+IndE]
+webnintapas	webni[NRootG][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
 
 rurarikunmi	rura[VRoot][=hacer][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
 
@@ -6243,7 +6196,7 @@ kallpacharinchin	kallpacharinchi[VRootG][^DB][--]n[VPers][+3.Sg.Subj]
 
 kayqa	kay[PrnDem][^DB][--]qa[Amb][+Top]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 ch'usaspa	ch'usa[VRoot][=faltar,ausentarse][^DB][--]spa[NS][+SS]
 
@@ -6633,7 +6586,6 @@ Perú	Perú[NP]
 suyumanta	suyu[NRoot][=región][^DB][--]manta[Cas][+Abl]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 llaqta	llaqta[NRoot][=pueblo]
 
@@ -6644,8 +6596,6 @@ mikukuspa	mikhu[VRoot][=comer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]spa[NS][+SS
 llamk'anamanta	llamk'a[VRoot][=trabajar][^DB][--]na[NS][+Obl][^DB][--]manta[Cas][+Abl]
 
 rimanakunkupaqmi	rimanaku[NRootG][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]paq[Cas][+Ben][^DB][--]mi[Amb][+DirE]
-rimanakunkupaqmi	rimanakunku[NRootG][^DB][--]paq[Cas][+Ben][^DB][--]mi[Amb][+DirE]
-rimanakunkupaqmi	rimanakunkupaq[NRootG][^DB][--]mi[Amb][+DirE]
 
 Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
@@ -6662,7 +6612,6 @@ Chaymantataq	chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]taq[Amb][+Con_Intr]
 ,	,[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 Asociación	asociación[NRootES]
 
@@ -6678,7 +6627,7 @@ Georg	Georg	+?
 
 Ludwig	Ludwig	+?
 
-Braunmi	Braun[NRootG][^DB][--]mi[Amb][+DirE]
+Braunmi	Brau[NRootG][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]mi[Amb][+DirE]
 
 Junta	junta[NRootES]
 
@@ -6844,8 +6793,6 @@ haywarichkan	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]chka[Asp][+Pro
 watapi	wata[NRoot][=año][^DB][--]pi[Cas][+Loc]
 
 Paraqallariy	Paraqa[VRootG][^DB][--]lla[Amb][+Lim_Aff][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf]
-Paraqallariy	Paraqalla[VRootG][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf]
-Paraqallariy	Paraqallari[VRootG][^DB][--]y[NS][+Inf]
 
 killa	killa[NRoot][=luna]
 
@@ -6867,9 +6814,9 @@ Alejandro	Alejandro	+?
 
 Toledoqa	Toledo[NRootG][^DB][--]qa[Amb][+Top]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
-Franciaman	Franciama[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Franciaman	Francia[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 ima	ima[NRoot][=cosa]
 
@@ -6944,7 +6891,6 @@ Alemanap	alemana[NRootES][^DB][--]p[Cas][+Gen]
 Camaranmanmi	cámara[NRootES][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]man[Cas][+Dat_Ill][^DB][--]mi[Amb][+DirE]
 
 astatakun	astata[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
-astatakun	astataku[VRootG][^DB][--]n[VPers][+3.Sg.Subj]
 
 ,	,[$.]
 
@@ -7042,7 +6988,6 @@ Alemanaspa	alemanas[NRootES][^DB][--]pa[Cas][+Gen]
 seminarionta	seminario[NRootES][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
 apachikpam	apachik[NRootG][^DB][--]pa[Cas][+Gen][^DB][--]m@mMI[Amb][+DirE]
-apachikpam	apachikpa[NRootG][^DB][--]m@mMI[Amb][+DirE]
 
 Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
@@ -7056,7 +7001,7 @@ Wakichiyqa	waki[VRoot][=negociar,comparar][^DB][--]chi[VDeriv][+Caus][^DB][--]y[
 
 ferias	ferias[NRootES]
 
-internionales	internionale[NRootG][^DB][--]s[Amb][+IndE]
+internionales	internionales	+?
 
 alemanas	alemánas[NRootES]
 alemanas	alemanas[NRootES]
@@ -7242,9 +7187,9 @@ Perú	Perú[NP]
 
 suyuwan	suyu[NRoot][=región][^DB][--]wan[Cas][+Con_Inst]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
-qullqichaypi	qullqi[NRoot][=plata][--]cha[VS][+Fact][^DB][--]y[NS][+Inf][^DB][--]pi[Cas][+Loc]
+qullqichaypi	qullqi[NRoot][=plata][--]cha[NDeriv][+Dim][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 masichakunankupaqqa	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 
@@ -7329,7 +7274,6 @@ riqsipachiqkunataqa	riqsi[VRoot][=conocer][--]pa[VDeriv][+Rep][^DB][--]chi[VDeri
 hinapunitaq	hina[VRoot][=hacer_así,ser_así][--]pu[VDeriv][+Rgr_Iprs][^DB][--]ni[VPers][+1.Sg.Subj][^DB][--]taq[Amb][+Con_Intr]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 hamuqkunapas	hamu[VRoot][=venir][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]pas[Amb][+Add]
 
@@ -7375,7 +7319,6 @@ Energíamantapas	energía[NRootES][^DB][--]manta[Cas][+Abl][^DB][--]pas[Amb][+Ad
 huñusqa	huñu[VRoot][=juntar][^DB][--]sqa[NS][+Perf]
 
 empreariokunam	empreario[NRootG][--]kuna[Num][+Pl][^DB][--]m@mMI[Amb][+DirE]
-empreariokunam	empreariokuna[NRootG][^DB][--]m@mMI[Amb][+DirE]
 
 anchataqa	ancha[NRoot][=muy,mucho][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -7480,18 +7423,12 @@ Perú	Perú[NP]
 suyuntin	suyu[NRoot][=región][^DB][--]ntin[Cas][+Iclsv]
 
 Alemaniantinpas	Alemania[NRootG][^DB][--]ntin[Cas][+Iclsv][^DB][--]pas[Amb][+Add]
-Alemaniantinpas	Alemaniantin[NRootG][^DB][--]pas[Amb][+Add]
-Alemaniantinpas	Alemaniantinpa[NRootG][^DB][--]s[Amb][+IndE]
 
 ,	,[$.]
 
 250	250[CARD]
 
 maschakuqkunawanmi	mascha[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]wan[Cas][+Con_Inst][^DB][--]mi[Amb][+DirE]
-maschakuqkunawanmi	maschaku[VRootG][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]wan[Cas][+Con_Inst][^DB][--]mi[Amb][+DirE]
-maschakuqkunawanmi	maschakuqku[VRootG][^DB][--]na[NS][+Obl][^DB][--]wan[Cas][+Con_Inst][^DB][--]mi[Amb][+DirE]
-maschakuqkunawanmi	maschakuqkuna[VRootG][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
-maschakuqkunawanmi	maschakuqkunawa[VRootG][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
 
 yupakun	yupa[VRoot][=contar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -7533,7 +7470,7 @@ wata	wata[NRoot][=año]
 
 watantinmi	wata[NRoot][=año][^DB][--]ntin[Cas][+Iclsv][^DB][--]mi[Amb][+DirE]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 Perú	Perú[NP]
 
@@ -7566,9 +7503,6 @@ Perú	Perú[NP]
 suyumantapas	suyu[NRoot][=región][^DB][--]manta[Cas][+Abl][^DB][--]pas[Amb][+Add]
 
 Alemaniamantapas	Alemania[NRootG][^DB][--]manta[Cas][+Abl][^DB][--]pas[Amb][+Add]
-Alemaniamantapas	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
-Alemaniamantapas	Alemaniamanta[NRootG][^DB][--]pas[Amb][+Add]
-Alemaniamantapas	Alemaniamantapa[NRootG][^DB][--]s[Amb][+IndE]
 
 willakuykuna	willa[VRoot][=contar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][--]kuna[Num][+Pl]
 
@@ -7729,7 +7663,6 @@ Pabellón	pabellón[NRootES]
 Alemán	alemán[NRootES]
 
 sutichaqatam	sutichaqa[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
-sutichaqatam	sutichaqata[NRootG][^DB][--]m@mMI[Amb][+DirE]
 
 puriykachiq	puri[VRoot][=andar][--]yka[VDeriv][+Aff][^DB][--]chi[VDeriv][+Caus][^DB][--]q[NS][+Ag]
 
@@ -7818,7 +7751,7 @@ suyumanta	suyu[NRoot][=región][^DB][--]manta[Cas][+Abl]
 
 empresariokunatam	empresario[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 pusaysin	pusa[VRoot][=llevar][--]ysi[VDeriv][+Ass][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -7920,7 +7853,7 @@ suyupi	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc]
 
 ferias	ferias[NRootES]
 
-indrustriales	indrustriale[NRootG][^DB][--]s[Amb][+IndE]
+indrustriales	indrustriales	+?
 
 sutichasqa	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]sqa[NS][+Perf]
 
@@ -8464,7 +8397,7 @@ lluqsiq	lluqsi[VRoot][=salir][^DB][--]q[NS][+Ag]
 
 revistatam	revista[NRootES][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 
-uyachan	uya[NRoot][=cara][--]cha[NDeriv][+Dim][^DB][--]m[Amb][+DirE]
+uyachan	uya[NRoot][=cara][--]cha[NDeriv][+Dim][^DB][--]n[NPers][+3.Sg.Poss]
 
 .	.[$.]
 
@@ -8791,8 +8724,6 @@ pachaqa	pacha[NRoot][=mundo,tiempo][^DB][--]qa[Amb][+Top]
 ,	,[$.]
 
 qichunawankumanta	qichunawa[NRootG][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]manta[Cas][+Abl]
-qichunawankumanta	qichunawanku[NRootG][^DB][--]manta[Cas][+Abl]
-qichunawankumanta	qichunawankuman[NRootG][^DB][--]ta[Cas][+Acc]
 
 hatun	hatun[NRoot][=grande]
 
@@ -8838,7 +8769,6 @@ llamk'arisqanmantapas	llamk'a[VRoot][=trabajar][--]ri[VDeriv][+Inch][^DB][--]sqa
 imayna	imayna[PrnInterr][=cómo]
 
 yachaqikunap	yachaqi[NRootG][--]kuna[Num][+Pl][^DB][--]p[Cas][+Gen]
-yachaqikunap	yachaqikuna[NRootG][^DB][--]p[Cas][+Gen]
 
 yachanankuta	yacha[VRoot][=saber,habitar][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]ta[Cas][+Acc]
 
@@ -8849,9 +8779,6 @@ yuyarichkani	yuya[VRoot][=recordar,pensar][--]ri[VDeriv][+Inch][^DB][--]chka[Asp
 .	.[$.]
 
 Chayraykumantam	Chayra[NRootG][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]manta[Cas][+Abl][^DB][--]m@mMI[Amb][+DirE]
-Chayraykumantam	Chayrayku[NRootG][^DB][--]manta[Cas][+Abl][^DB][--]m@mMI[Amb][+DirE]
-Chayraykumantam	Chayraykuman[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
-Chayraykumantam	Chayraykumanta[NRootG][^DB][--]m@mMI[Amb][+DirE]
 
 ,	,[$.]
 
@@ -8872,8 +8799,6 @@ sutichasqa	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]sqa[NS][+Perf]
 t'aqallatam	t'aqa[NRoot][=separación,división][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 
 yachaqikunamanqa	yachaqi[NRootG][--]kuna[Num][+Pl][^DB][--]man[Cas][+Dat_Ill][^DB][--]qa[Amb][+Top]
-yachaqikunamanqa	yachaqikuna[NRootG][^DB][--]man[Cas][+Dat_Ill][^DB][--]qa[Amb][+Top]
-yachaqikunamanqa	yachaqikunaman[NRootG][^DB][--]qa[Amb][+Top]
 
 haywarin	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -9052,7 +8977,7 @@ Fundación	fundación[NRootES]
 
 Konrad	Konrad	+?
 
-Adenauerwan	Adenauerwa[NRootG][^DB][--]m[Amb][+DirE]
+Adenauerwan	Adenauer[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 kuska	kuska[NRoot][=juntos]
 
@@ -9083,7 +9008,6 @@ Chay	chay[PrnDem]
 pachapiqa	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 achka	achkha[NRoot][=mucho]
 
@@ -9256,7 +9180,6 @@ tukukuptinmi	tuku[VRoot][=acabar,suceder,convertirse][^DB][--]ku[VDeriv][+Rflx_I
 ,	,[$.]
 
 APRAmanta	APRA[NRootG][^DB][--]manta[Cas][+Abl]
-APRAmanta	APRAman[NRootG][^DB][--]ta[Cas][+Acc]
 
 Luis	luis[NRootES]
 
@@ -9386,7 +9309,6 @@ Dolares	dólares[NRootES]
 qullqipi	qullqi[NRoot][=plata][^DB][--]pi[Cas][+Loc]
 
 cuentakunakuna	cuenta[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][--]kuna[Num][+Pl]
-cuentakunakuna	cuentaku[VRootG][^DB][--]na[NS][+Obl][--]kuna[Num][+Pl]
 
 aman	ama[Part_Neg_Imp][^DB][--]m[Amb][+DirE]
 
@@ -9473,8 +9395,6 @@ phiñarisqa	phiña[VRoot][=enfurecerse][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Pe
 hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
 hatarparin	hata[VRootG][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
-hatarparin	hatarpa[VRootG][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
-hatarparin	hatarpari[VRootG][^DB][--]n[VPers][+3.Sg.Subj]
 
 ,	,[$.]
 
@@ -9513,7 +9433,6 @@ suyupi	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc]
 ,	,[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 wampuqpi	wamp'u[NRoot][=barco,balsa][^DB][--]p[Cas][+Gen][^DB][--]pi[Cas][+Loc]
 
@@ -9610,9 +9529,8 @@ umalliq	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]q[NS][+Ag]
 Alberto	Alberto	+?
 
 Fujimoritam	Fujimori[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
-Fujimoritam	Fujimorita[NRootG][^DB][--]m@mMI[Amb][+DirE]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 pusasqaykum	pusa[VRoot][=llevar][^DB][--]sqa[NS][+Perf][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]m@mMI[Amb][+DirE]
 
@@ -9689,7 +9607,7 @@ runaqa	runa[NRoot][=ser_humano][^DB][--]qa[Amb][+Top]
 
 allin	allin[NRoot][=bueno]
 
-willarisqan	willa[VRoot][=contar][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Perf][^DB][--]m[Amb][+DirE]
+willarisqan	willa[VRoot][=contar][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss]
 
 purin	puri[VRoot][=andar][^DB][--]n[VPers][+3.Sg.Subj]
 
@@ -9730,7 +9648,6 @@ Perú	Perú[NP]
 suyupipas	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+Add]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 llamk'anakunaqa	llamk'a[VRoot][=trabajar][^DB][--]na[NS][+Obl][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
@@ -9822,7 +9739,6 @@ chaskillaykum	chaski[VRoot][=recibir,aceptar][^DB][--]lla[Amb][+Lim_Aff][^DB][--
 hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
 wakinkuqapas	wakinkuqa[NRootG][^DB][--]pas[Amb][+Add]
-wakinkuqapas	wakinkuqapa[NRootG][^DB][--]s[Amb][+IndE]
 
 ñuqaykuwanqa	ñuqayku[PrnPers+1.Pl.Excl][^DB][--]wan[Cas][+Con_Inst][^DB][--]qa[Amb][+Top]
 
@@ -9895,7 +9811,6 @@ llamk'ani	llamk'a[VRoot][=trabajar][^DB][--]ni[VPers][+1.Sg.Subj]
 kayqa	kay[PrnDem][^DB][--]qa[Amb][+Top]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 kutispa	kuti[VRoot][=volver][^DB][--]spa[NS][+SS]
 
@@ -9921,7 +9836,7 @@ sinchi	sinchi[NRoot][=fuerte]
 
 sasa	sasa[NRoot][=difícil]
 
-pachan	pacha[NRoot][=mundo,tiempo][^DB][--]m[Amb][+DirE]
+pachan	pacha[NRoot][=mundo,tiempo][^DB][--]n[NPers][+3.Sg.Poss]
 
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
@@ -10006,7 +9921,6 @@ chinkarinanmantam	chinka[VRoot][=perder][--]ri[VDeriv][+Inch][^DB][--]na[NS][+Ob
 llakisqalla	llaki[VRoot][=estar_triste][^DB][--]sqa[NS][+Perf][^DB][--]lla[Amb][+Lim_Aff]
 
 kararqayku	kara[VRootG][^DB][--]rqa[Tns][+NPst][--]yku[VPers][+1.Pl.Excl.Subj]
-kararqayku	kararqa[VRootG][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
 
@@ -10021,7 +9935,7 @@ kimsa	kimsa[NRootNUM]
 
 chusuna	chusu[VRootG][^DB][--]na[NS][+Obl]
 
-Alemaniaman	Alemaniama[NRootG][^DB][--]m[Amb][+DirE]
+Alemaniaman	Alemania[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 ch'usasqaykuta	ch'usa[VRoot][=faltar,ausentarse][^DB][--]sqa[NS][+Perf][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]ta[Cas][+Acc]
 
@@ -10060,7 +9974,6 @@ Samiykupaqqa	sami[VRoot][=felicitar][--]yku[VDeriv][+Aff][--]pa[VDeriv][+Rep][^D
 ,	,[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 yanapaytaqa	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -10176,7 +10089,7 @@ kallpacharikuni	kallpa[NRoot][=fuerte][--]cha[VS][+Fact][--]ri[VDeriv][+Inch][^D
 
 .	.[$.]
 
-Alan	Ala[NRootG][^DB][--]m[Amb][+DirE]
+Alan	Ala[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 Garcíap	garcía[NRootES][^DB][--]p[Cas][+Gen]
 
@@ -10292,7 +10205,6 @@ apakun	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.
 hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 Latinoamenricamanta	Latinoamenrica[NRootG][^DB][--]manta[Cas][+Abl]
-Latinoamenricamanta	Latinoamenricaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 qullqichaypi	qullqi[NRoot][=plata][--]cha[NDeriv][+Dim][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
@@ -10373,7 +10285,6 @@ nitaq	ni[Part_Contr][^DB][--]taq[Amb][+Con_Intr]
 kikin	kiki[NRoot][=mismo][^DB][--]n[NPers][+3.Sg.Poss]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 kanankutapaschu	ka[VRoot][=ser][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add][^DB][--]chu[Amb][+Intr_Neg]
 
@@ -10438,7 +10349,7 @@ Perú	Perú[NP]
 
 suyuwan	suyu[NRoot][=región][^DB][--]wan[Cas][+Con_Inst]
 
-Alemaniawan	Alemaniawa[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
+Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 asuykachaykuyninkumantaqa	achhu[VRoot][=retrasar,postergar,acercarse][--]ykacha[VDeriv][+Intrup][--]yku[VDeriv][+Aff][^DB][--]y[NS][+Inf][^DB][--]ninku[NPers][+3.Pl.Poss][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -10449,7 +10360,6 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 allinchakullanmi	allin[NRoot][=bueno][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 Perú	Perú[NP]
 
@@ -10613,7 +10523,6 @@ qallarin	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj
 .	.[$.]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
-Alemaniamanta	Alemaniaman[NRootG][^DB][--]ta[Cas][+Acc]
 
 empresa	empresa[NRootES]
 
@@ -10640,8 +10549,6 @@ Estadomantaqa	estado[NRootES][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 qullqi	qullqi[NRoot][=plata]
 
 qupuchikunata	qupu[VRootG][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc]
-qupuchikunata	qupuchi[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc]
-qupuchikunata	qupuchiku[VRootG][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc]
 
 chaskichiyku	chaski[VRoot][=recibir,aceptar][^DB][--]chi[VDeriv][+Caus][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
 
@@ -10742,7 +10649,7 @@ ukhunpi	ukhu[NRoot][=dentro][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 ,	,[$.]
 
-CONFIEPwan	CONFIEPwa[NRootG][^DB][--]m[Amb][+DirE]
+CONFIEPwan	CONFIE[NRootG][^DB][--]p[Cas][+Gen][^DB][--]wan[Cas][+Con_Inst]
 
 Asociación	asociación[NRootES]
 
@@ -10831,7 +10738,7 @@ tukukun	tuku[VRoot][=acabar,suceder,convertirse][^DB][--]ku[VDeriv][+Rflx_Int][^
 
 .	.[$.]
 
-Añanchakuy	Añanchaku[VRootG][^DB][--]y[VPers][+2.Sg.Subj.Imp]
+Añanchakuy	Añancha[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 
 #EOS	#EOS	+?
 
@@ -10865,7 +10772,6 @@ kay	kay[PrnDem]
 empresakunataqa	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 añanchakuyku	añancha[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
-añanchakuyku	añanchaku[VRootG][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
 
