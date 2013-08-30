@@ -32,46 +32,46 @@ export DESR_PORT=5678
 #test if squoia_analyzer is already listening
 if ps ax | grep -v grep | grep squoia_analyzer > /dev/null
 then
- echo "squoia_analyzer server already started"
+ echo "squoia_analyzer server already started" >&2
 else
- echo "squoia_analyzer server not yet started"
+ echo "squoia_analyzer server not yet started" >&2
  squoia_analyzer -f $FREELING_CONFIG --outf=desrtag --server --port=$FREELING_PORT 2> logdesrtag &
- echo "squoia_analyzer started..."
+ echo "squoia_analyzer started..." >&2
 
 while ! echo "" | analyzer_client $FREELING_PORT 2> /dev/null 
  do
-  echo "please wait..."
+  echo "please wait..." >&2
   sleep 10
  done
  
- echo "squoia_analyzer now ready"
+ echo "squoia_analyzer now ready" >&2
 fi
 
 # test if desr server already started listening, model 1
 if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish_es4.MLP --port 5678' > /dev/null
 then
- echo "desr_server server with model 1 already started"
+ echo "desr_server server with model 1 already started" >&2
 else
- echo "desr_server server with model 1 not yet started"
+ echo "desr_server server with model 1 not yet started" >&2
  desr_server -m $DESR_DIR/spanish_es4.MLP --port 5678 2> logdesr_es4 &
- echo "desr_server with model 1 started..."
- echo "please wait..."
+ echo "desr_server with model 1 started..." >&2
+ echo "please wait..." >&2
  sleep 1
  
- echo "desr_server with model 1 now ready"
+ echo "desr_server with model 1 now ready" >&2
 fi
 
 # test if desr server already started listening, model 2
 if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish.MLP --port 1234' > /dev/null
 then
- echo "desr_server server with model 2 already started"
+ echo "desr_server server with model 2 already started" >&2
 else
- echo "desr_server server with model 2 not yet started"
+ echo "desr_server server with model 2 not yet started" >&2
  desr_server -m $DESR_DIR/spanish.MLP --port 1234 2> logdesr_MLP &
- echo "desr_server with model 2 started..."
- echo "please wait..."
+ echo "desr_server with model 2 started..." >&2
+ echo "please wait..." >&2
  sleep 1
- echo "desr_server with model 2 now ready"
+ echo "desr_server with model 2 now ready" >&2
 fi
 
 
@@ -94,24 +94,3 @@ fi
 $MATXIN_BIN/analyzer_client $FREELING_PORT | $DESR_BIN/desr_client $DESR_PORT |perl conll2xml/conll2xml.pl |perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID  | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl esqu/disambVerbFormsML.pl | perl splitNodes.pl  | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl | perl childToSiblingChunk.pl  | perl recursiveNumberChunks.pl | perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | xmllint --format - 
 
 
-
-##### OLD VERSIONS #####
-
-# not server mode (slow!):
-#$MATXIN_BIN/tagFLdesr $FREELING_PARAM | $DESR_DIR/src/desr $DESR_PARAMS | perl conll2xml/conll2xml.pl | perl esqu/disambRelClauses_desr.pl | perl esqu/corefSubj_desr.pl
-
-# server-client mode
-#$MATXIN_BIN/analyzer_client $FREELING_PORT |$DESR_DIR/src/desr $DESR_PARAMS  | perl conll2xml/conll2xml.pl  | perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/subordVerbform_desr.pl  | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl splitNodes.pl | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl  | perl recursiveNumberChunks.pl| perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | xmllint --format - 
-#| perl esqu/getSentencesForGeneration.pl | xmllint --format - 
-
-
-
-#$MATXIN_BIN/analyzer_client $FREELING_PORT |$DESR_DIR/src/desr $DESR_PARAMS | perl conll2xml/conll2xml.pl  | perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/subordVerbform_desr.pl | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl splitNodes.pl | perl insertSemanticTags.pl | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl | perl synTransferIntraChunk.pl | perl STinterchunk.pl | perl recursiveNumberChunks.pl| perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl | perl esqu/getSentencesForGeneration.pl
-
-
-# start squoia_analyzer:
-#squoia_analyzer -f /home/clsquoia/google_squoia/FreeLingModules/es_desr.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
-
-# 8867 neue original FreeLing probabilitats.dat
-# 8866 unsere neue original FreeLing probabilitats.dat
-# 8868 alte original FreeLing probabilitats.dat

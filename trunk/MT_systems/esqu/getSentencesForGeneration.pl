@@ -701,10 +701,15 @@ sub mapEaglesTagToQuechuaMorph{
 		#person
 		if($eaglesTag =~ /SP/)
 		{
+			# multitoken names
 			my (@words) = split('_',$sform);
 			for(my $i=0;$i<scalar(@words)-1;$i++)
 			{
 				print STDOUT @words[$i]."\n";
+			}
+			if(scalar(@words)==0 )
+			{
+			  push(@words, $sform);
 			}
 			#print STDOUT @words[-1];
 			$EagleMorphs = $EagleMorphs.@words[-1].":";

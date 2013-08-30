@@ -31,49 +31,47 @@ export DESR_PORT=5678
 #test if squoia_analyzer is already listening
 if ps ax | grep -v grep | grep squoia_analyzer > /dev/null
 then
- echo "squoia_analyzer server already started"
+ echo "squoia_analyzer server already started" >&2
 else
- echo "squoia_analyzer server not yet started"
+ echo "squoia_analyzer server not yet started" >&2
  squoia_analyzer -f $FREELING_CONFIG --outf=desrtag --server --port=$FREELING_PORT 2> logdesrtag &
- echo "squoia_analyzer started..."
+ echo "squoia_analyzer started..." >&2
 
 while ! echo "" | analyzer_client $FREELING_PORT 2> /dev/null 
  do
-  echo "please wait..."
+  echo "please wait..." >&2
   sleep 10
  done
  
- echo "squoia_analyzer now ready"
+ echo "squoia_analyzer now ready" >&2
 fi
 
 # test if desr server already started listening, model 1
 if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish_es4.MLP --port 5678' > /dev/null
 then
- echo "desr_server server with model 1 already started"
+ echo "desr_server server with model 1 already started" >&2
 else
- echo "desr_server server with model 1 not yet started"
+ echo "desr_server server with model 1 not yet started" >&2
  desr_server -m $DESR_DIR/spanish_es4.MLP --port 5678 2> logdesr_es4 &
- echo "desr_server with model 1 started..."
- echo "please wait..."
+ echo "desr_server with model 1 started..." >&2
+ echo "please wait..." >&2
  sleep 1
  
- echo "desr_server with model 1 now ready"
+ echo "desr_server with model 1 now ready" >&2
 fi
 
 # test if desr server already started listening, model 2
 if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish.MLP --port 1234' > /dev/null
 then
- echo "desr_server server with model 2 already started"
+ echo "desr_server server with model 2 already started" >&2
 else
- echo "desr_server server with model 2 not yet started"
+ echo "desr_server server with model 2 not yet started" >&2
  desr_server -m $DESR_DIR/spanish.MLP --port 1234 2> logdesr_MLP &
- echo "desr_server with model 2 started..."
- echo "please wait..."
+ echo "desr_server with model 2 started..." >&2
+ echo "please wait..." >&2
  sleep 1
- echo "desr_server with model 2 now ready"
+ echo "desr_server with model 2 now ready" >&2
 fi
-
-
 
 
 #perl readConfig.pl $MATXIN_CONFIG;
@@ -81,7 +79,3 @@ fi
 
 # server-client mode, new desr parser client
 $MATXIN_BIN/analyzer_client $FREELING_PORT | $DESR_BIN/desr_client $DESR_PORT |perl conll2xml/conll2xml.pl |perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID  | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl esqu/disambVerbFormsML.pl | perl splitNodes.pl  | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl | perl childToSiblingChunk.pl  | perl recursiveNumberChunks.pl | perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | perl esqu/getSentencesForGeneration.pl | lookup -flags xcKv29TT $PROJECT_DIR/morphology/transfer_generator/unificadoTransfer.fst | perl esqu/outputSentences.pl 
-
-# lookup -flags xcKv29TT ../morphology/transfer_generator/unificadoTransfer.fst 
-#perl alternativeSentences.pl 
-#/opt/matxin/matxinFL3/squoia_analyzer -f /home/clsquoia/google_squoia/FreeLingModules/es_desr.cfg --outf=desrtag --server --port=8866 2>logdesrtag &
