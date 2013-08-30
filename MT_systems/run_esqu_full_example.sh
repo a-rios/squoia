@@ -28,7 +28,7 @@ export DESR_PARAMS="-m $DESR_MODEL -c $DESR_CONFIG"
 # model1 = spanish_es4.MLP
 export DESR_PORT=5678
 
-# test if analyzer server already started listening
+#test if squoia_analyzer is already listening
 if ps ax | grep -v grep | grep squoia_analyzer > /dev/null
 then
  echo "squoia_analyzer server already started"
@@ -36,41 +36,44 @@ else
  echo "squoia_analyzer server not yet started"
  squoia_analyzer -f $FREELING_CONFIG --outf=desrtag --server --port=$FREELING_PORT 2> logdesrtag &
  echo "squoia_analyzer started..."
-#while ! ps ax | grep -v grep | grep squoia_analyzer > /dev/null
-# do
+
+while ! echo "" | analyzer_client $FREELING_PORT 2> /dev/null 
+ do
   echo "please wait..."
   sleep 10
-# done
+ done
  
  echo "squoia_analyzer now ready"
 fi
 
-# test if desr server already started listening
-if ps ax | grep -v grep | grep desr_server > /dev/null
+# test if desr server already started listening, model 1
+if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish_es4.MLP --port 5678' > /dev/null
 then
- echo "desr_server server already started"
+ echo "desr_server server with model 1 already started"
 else
- echo "desr_server server not yet started"
+ echo "desr_server server with model 1 not yet started"
  desr_server -m $DESR_DIR/spanish_es4.MLP --port 5678 2> logdesr_es4 &
- desr_server -m $DESR_DIR/spanish.MLP --port 1234 2> logdesr_MLP &
- echo "desr_server started..."
-#while ! ps ax | grep -v grep | grep squoia_analyzer > /dev/null
-# do
-  echo "please wait..."
-  sleep 1
-# done
+ echo "desr_server with model 1 started..."
+ echo "please wait..."
+ sleep 1
  
- echo "desr_server now ready"
+ echo "desr_server with model 1 now ready"
 fi
 
-export EVID=$1
-
-if [ -n "$EVID" ] && [ "$EVID" = "-indirect" ] ; then
-        echo  "evidentiality set to $1" >&2
+# test if desr server already started listening, model 2
+if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish.MLP --port 1234' > /dev/null
+then
+ echo "desr_server server with model 2 already started"
 else
-    echo "evidential past: neutral form -rqa (default)" >&2
-
+ echo "desr_server server with model 2 not yet started"
+ desr_server -m $DESR_DIR/spanish.MLP --port 1234 2> logdesr_MLP &
+ echo "desr_server with model 2 started..."
+ echo "please wait..."
+ sleep 1
+ echo "desr_server with model 2 now ready"
 fi
+
+
 
 
 #perl readConfig.pl $MATXIN_CONFIG;
