@@ -2260,6 +2260,9 @@
 | [ {utqha} "[" "NRoot" "]" "["  "=rápido,apurado" "]" ] : {utqha}
 | [ {utqha} "[" "NRoot" "]" "["  "=rápido,apurado" "]" ] : {usqha}
 | [ {utqha} "[" "NRoot" "]" "["  "=rápido,apurado" "]" ] : {{isqha}
+| [ {utqhay} "[" "NRoot" "]" "["  "=rápido,apurado" "]" ] : {utqhay}
+| [ {utqhay} "[" "NRoot" "]" "["  "=rápido,apurado" "]" ] : {usqhay}
+| [ {utqhay} "[" "NRoot" "]" "["  "=rápido,apurado" "]" ] : {{isqhay}
 | [ {utulu} "[" "NRoot" "]" "["  "=gallo" "]" ] : {utulu}
 | [ {uya} "[" "NRoot" "]" "["  "=cara" "]" ] : {uya}
 | [ {uylu} "[" "NRoot" "]" "["  "=bautizo,redondo" "]" ] : {uylu}
