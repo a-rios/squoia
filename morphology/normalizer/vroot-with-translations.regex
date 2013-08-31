@@ -1644,7 +1644,8 @@
 | [ {wapsi} "[" "VRoot" "]" "[" "=evaporar" "]" ] :  {wapsi}
 | [ {wap'u} "[" "VRoot" "]" "["  "=tragar,devorar" "]" ] : {wap'u}
 | [ {wapya} "[" "VRoot" "]" "[" "=evaporar" "]" ] :  {wapya}
-| [ {waqa} "[" "VRoot" "]" "[" "=llorar,guardar,proteger" "]" ] :  {waqa}
+| [ {waqa} "[" "VRoot" "]" "[" "=llorar" "]" ] :  {waqa}
+| [ {waqaycha} "[" "VRoot" "]" "[" "=guardar" "]" ] :  {waqaycha}
 | [ {waqcha} "[" "VRoot" "]" "[" "=quebrar_madera" "]" ] :  {waqcha}
 | [ {waqi} "[" "VRoot" "]" "[" "=distribuir,colgar" "]" ] :  {waqi}
 | [ {waqlli} "[" "VRoot" "]" "[" "=descomponer" "]" ] :  {waqlli}
