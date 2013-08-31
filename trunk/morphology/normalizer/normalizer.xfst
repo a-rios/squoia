@@ -591,7 +591,8 @@ define COMPOUNDS [~$[ {pacha}%["NRoot" ?* {mama}%["NRoot" | {wira}%["NRoot" ?* {
 # ñawpaq, chiqap/chiqaq, llump'aq, ch'usaq, ichuq, illaq, ñawraq, ariq, tupaq, yuraq
 define AQROOTS [~$["@NAWPA" %["^DB"%] %["--"%] [q|p] %[ | ["@CHIQA"|"@CHANI"] %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichhu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"|"@ALLI"] %[?* "@GENq" | [{ari}|{ichhu}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=segar_paja"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS"  ]]; 
 
-define IMANA [~$[{ima}%[?*"+Reub"]];
+# imana & waqaycha
+define IMANA [~$[{ima}%[?*"+Reub" | {waqa} %["VRoot"%] %["=llorar"%] %["^DB"%] %["--"%] {y} %["NS"%] %["+Inf"%] %["--"%]{cha}%[ ]];
 
 # other ambiguous roots: illapa, hukucha/huk'ucha, puputi, kamayuq, sipas
 define AMBROOTS [~$[{illa}%[?*%]{pa} %[ | [{huk'u}|{huku}]%[?*"+Dim" | ["@UKU"|"@WISKA"] ?* "+Dim" | {pupu}%[?*%]{ti} %[ | [S|s]i %["Part_Cond"%] %["^DB"%] %["--"%] {pas} | {kama}%[?*{yku}"+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"| {tak}?*"=paz"%] %["^DB"%] %["--"%] {lla} %[ ]];
@@ -616,8 +617,8 @@ define preWord IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  
 define Word  FeatRestr  .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 read regex Cleanup2 .o. LexRestr .o. Word;
 
-#define Word  VERBMORPHS2 .o.  [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex  Word;
+#define Word  IMANA .o.  [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+#read regex Cleanup2 .o. Word;
 
 
 save stack normalizer.fst
