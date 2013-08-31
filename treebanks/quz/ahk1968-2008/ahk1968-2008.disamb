@@ -8,11 +8,7 @@ E	E[ALFS]
 
 INDUSTRIA	industria[NRootES]
 
-PERUANO	peruano[NRootES]
-
--	-[$.]
-
-ALEMANA	alemana[NRootES]
+PERUANO-ALEMANA	PERUANO-ALEMANA	+?
 
 NISQAMANTAS	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]s[Amb][+IndE]
 
@@ -54,6 +50,8 @@ kusikunanchikpaqqa	kusi[VRoot][=alegrar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Unay	una[VRoot][=tardar][^DB][--]y[NS][+Inf]
 
 watakunapi	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc]
@@ -80,7 +78,7 @@ Perú	Perú[NP]
 
 -	-[$.]
 
-Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
+Alemania	Alemania[NP]
 
 empresariokunam	empresario[NRootES][--]kuna[Num][+Pl][^DB][--]m@mMI[Amb][+DirE]
 
@@ -99,6 +97,8 @@ nisqanchikpa	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]nchik[NPers][+1.Pl
 paqariyninta	paqari[VRoot][=amanecer,crearse][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chaymanta	chay[PrnDem][^DB][--]manta[Cas][+Abl]
 
@@ -124,6 +124,8 @@ puriykuchkallan	puri[VRoot][=andar][--]yku[VDeriv][+Aff][^DB][--]chka[Asp][+Prog
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kikin	kiki[NRoot][=mismo][^DB][--]n[NPers][+3.Sg.Poss]
 
 pachataq	pacha[NRoot][=mundo,tiempo][^DB][--]taq[Amb][+Con_Intr]
@@ -134,9 +136,15 @@ wiñarinmi	wiña[VRoot][=desarollar,crecer][--]ri[VDeriv][+Inch][^DB][--]n[VPers
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kunan	kunan[NRoot][=ahora]
 
-p’unchawkunaqa	p’unchawkunaqa	+?
+p	p[ALFS]
+
+’	’	+?
+
+unchawkunaqa	unchaw[NRootG][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
 Perú	Perú[NP]
 
@@ -165,6 +173,8 @@ llamk'aqtaq	llamk'a[VRoot][=trabajar][^DB][--]q[NS][+Ag][^DB][--]taq[Amb][+Con_I
 kaqmi	ka[VRoot][=ser][^DB][--]q[NS][+Ag][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
@@ -212,6 +222,8 @@ kanchik	ka[VRoot][=ser][^DB][--]nchik[VPers][+1.Pl.Incl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 “	“	+?
 
 DEinternational	DEinternational	+?
@@ -241,6 +253,8 @@ qhatuchaqkunatawan	qhatu[NRoot][=mercado][--]chaq[NDeriv][+Aug][--]kuna[Num][+Pl
 yanapan	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kay	kay[PrnDem]
 
@@ -288,6 +302,8 @@ yanapan	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][^DB][--]n[VPers][+3.Sg.S
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chaypaqqa	chay[PrnDem][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -305,6 +321,8 @@ qhatuta	qhatu[NRoot][=mercado][^DB][--]ta[Cas][+Acc]
 ruwan	rura[VRoot][=hacer][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Iskay	iskay[NRootNUM]
 
@@ -335,6 +353,8 @@ chaymi	chay[PrnDem][^DB][--]mi[Amb][+DirE]
 yupaychawanchikpas	yupa[VRoot][=contar][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]wa[VPers][+1.Obj][^DB][--]nchik[VPers][+3.Subj_1.Pl.Incl.Obj][^DB][--]pas[Amb][+Add]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
 
@@ -424,6 +444,8 @@ sayachinku	saya[VRoot][=parar][^DB][--]chi[VDeriv][+Caus][^DB][--]nku[VPers][+3.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 “	“	+?
 
 JobXchange	JobXchange	+?
@@ -449,6 +471,8 @@ allinta	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc]
 mast'arikun	mast'a[VRoot][=tender,tumbar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 250	250[CARD]
 
@@ -479,6 +503,8 @@ llamk'anakunatam	llamk'a[VRoot][=trabajar][^DB][--]na[NS][+Obl][--]kuna[Num][+Pl
 churanchik	chura[VRoot][=poner][^DB][--]nchik[VPers][+1.Pl.Incl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Huñuna	huñu[VRoot][=juntar][^DB][--]na[NS][+Obl]
 
@@ -517,6 +543,8 @@ empresanchikunamantan	empresanchikunamanta[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 hamunkuman	hamu[VRoot][=venir][^DB][--]nku[VPers][+3.Pl.Subj][--]man[Mod][+Pot]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kay	kay[PrnDem]
 
@@ -563,6 +591,8 @@ allintam	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 ayparinchik	aypa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]nchik[VPers][+1.Pl.Incl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
@@ -613,6 +643,8 @@ pusallanchik	pusa[VRoot][=llevar][^DB][--]lla[Amb][+Lim_Aff][^DB][--]nchik[VPers
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 40	40[CARD]
@@ -648,6 +680,8 @@ masiqkunatapas	masi[VRootG][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]ta[Cas]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Paykunam	pay[PrnPers+3.Sg][--]kuna[Num][+Pl][^DB][--]m@mMI[Amb][+DirE]
 
 sapa	sapa[NRoot][=cada,solo]
@@ -661,6 +695,8 @@ ayninakuyninkutawanpas	ayni[VRoot][=ayudar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDer
 añaychaykullanchiktaqmi	aña[VRoot][=dar_gracias][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][--]yku[VDeriv][+Aff][^DB][--]lla[Amb][+Lim_Aff][^DB][--]nchik[VPers][+1.Pl.Incl.Subj][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
 
@@ -724,6 +760,8 @@ quwallawarqanchikmi	quwa[VRootG][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wa[VPers][+1
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
 
 Embajadatapas	embajada[NRootES][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
@@ -751,6 +789,8 @@ kamachiypiqa	kama[VRoot][=gobernar,mandar,crear][^DB][--]chi[VDeriv][+Caus][^DB]
 yanapallawanchik	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][^DB][--]lla[Amb][+Lim_Aff][^DB][--]wa[VPers][+1.Obj][^DB][--]nchik[VPers][+3.Subj_1.Pl.Incl.Obj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
@@ -782,6 +822,8 @@ añaychaykullanchiktaq	aña[VRoot][=dar_gracias][^DB][--]y[NS][+Inf][--]cha[VS][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 40	40[CARD]
@@ -806,6 +848,8 @@ añaychayta	aña[VRoot][=dar_gracias][^DB][--]y[NS][+Inf][--]cha[NDeriv][+Dim][^
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qhipa	qhipa[NRoot][=atrás]
 
 pachakunapi	pacha[NRoot][=mundo,tiempo][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc]
@@ -814,11 +858,7 @@ kay	kay[PrnDem]
 
 masichakuyqa	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
 
-Public	Public	+?
-
--	-[$.]
-
-Private	Private	+?
+Public-Private	Public-Private	+?
 
 Partnerships	Partnerships	+?
 
@@ -831,6 +871,8 @@ hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 rikurichikun	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Ñawpaq	ñawpaq[NRoot][=antes]
 
@@ -866,6 +908,8 @@ haywarinku	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]nku[VPers][+3.Pl
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinapunim	hina[Part_Sim][^DB][--]puni[Amb][+Def][^DB][--]m@mMI[Amb][+DirE]
 
 kusisqa	kusi[VRoot][=alegrar][^DB][--]sqa[NS][+Perf]
@@ -886,6 +930,8 @@ munanchik	muna[VRoot][=querer][^DB][--]nchik[VPers][+1.Pl.Incl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinapunim	hina[Part_Sim][^DB][--]puni[Amb][+Def][^DB][--]m@mMI[Amb][+DirE]
 
 Cámara	cámara[NRootES]
@@ -905,6 +951,8 @@ munanchik	muna[VRoot][=querer][^DB][--]nchik[VPers][+1.Pl.Incl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Paykunaqa	pay[PrnPers+3.Sg][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
 40	40[CARD]
@@ -920,6 +968,8 @@ puriynintaqa	puri[VRoot][=andar][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.Po
 huqarinku	huqa[VRoot][=levantar][--]ri[VDeriv][+Inch][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hatun	hatun[NRoot][=grande]
 
@@ -947,6 +997,8 @@ llamk'anku	llamk'a[VRoot][=trabajar][^DB][--]nku[VPers][+3.Pl.Subj]
 Cámararaykum	cámara[NRootES][^DB][--]rayku[Cas][+Kaus][^DB][--]m@mMI[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Tukuchinapaqtaq	tuku[VRoot][=acabar,suceder,convertirse][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS][+Obl][^DB][--]paq[Cas][+Ben][^DB][--]taq[Amb][+Con_Intr]
 
@@ -1003,6 +1055,8 @@ qhawayniyuq	qhawa[VRoot][=mirar][^DB][--]y[NS][+Inf][^DB][--]niyuq[NDeriv][+Poss
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Asllata	as[NRoot][=poco][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ta[Cas][+Acc]
 
 kutirispa	kuti[VRoot][=volver][--]ri[VDeriv][+Inch][^DB][--]spa[NS][+SS]
@@ -1047,31 +1101,7 @@ sayarisun	saya[VRoot][=parar][--]ri[VDeriv][+Inch][^DB][--]sun[VPers][+1.Pl.Incl
 
 .	.[$.]
 
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
+#EOS	#EOS	+?
 
 Cámara	cámara[NRootES]
 
@@ -1083,12 +1113,7 @@ e	e[ALFS]
 
 Industria	industria[NRootES]
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemana	alemána[NRootES]
-Alemana	alemana[NRootES]
+Peruano-Alemana	Peruano-Alemana	+?
 
 nisqam	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]m@mMI[Amb][+DirE]
 
@@ -1099,6 +1124,8 @@ watanta	wata[NRoot][=año][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
 raymichakun	raymi[NRoot][=fiesta][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kay	kay[PrnDem]
 
@@ -1136,6 +1163,8 @@ chayqa	chay[PrnDem][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Ichaqa	icha[Part_Contr][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -1157,6 +1186,8 @@ hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 qhawasunman	qhawa[VRoot][=mirar][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Fut][--]man[Mod][+Pot]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
@@ -1198,6 +1229,8 @@ atinchu	ati[VRoot][=poder,vencer][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]chu[Amb][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Llapanchik	llapa[NRoot][=todo][^DB][--]nchik[NPers][+1.Pl.Incl.Poss]
 
 chulla	ch'ulla[NRoot][=impar,rocío]
@@ -1217,6 +1250,8 @@ kaytaqa	ka[VRoot][=ser][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb
 wasapasunchik	wasa[VRoot][=culminar,concluir,defender][--]pa[VDeriv][+Rep][^DB][--]sunchik[VPers][+1.Pl.Incl.Subj.Fut]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Sasa	sasa[NRoot][=difícil]
 
@@ -1264,13 +1299,15 @@ kaqllataq	ka[VRoot][=ser][^DB][--]q[NS][+Ag][^DB][--]lla[Amb][+Lim_Aff][^DB][--]
 
 suyupi	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc]
 
-ima	ima[Part_Conec]
+ima	ima[NRoot][=cosa]
 
 qullqichaypas	qullqi[NRoot][=plata][--]cha[VS][+Fact][^DB][--]y[NS][+Inf][^DB][--]pas[Amb][+Add]
 
 apakullanmanmi	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Yachakuspam	yacha[VRoot][=saber,habitar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]spa[NS][+SS][^DB][--]m@mMI[Amb][+DirE]
 
@@ -1280,10 +1317,13 @@ suyukunaqa	suyu[NRoot][=región][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
 chay	chay[PrnDem]
 
-waqaychakuy	waqa[VRoot][=llorar,guardar,proteger][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[VPers][+2.Sg.Subj.Imp]
-waqaychakuy	waqa[VRoot][=llorar,guardar,proteger][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
+waqaychakuy	waqaycha[VRoot][=guardar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
 
-''proteccionismo''	''proteccionismo''	+?
+"	"[$.]
+
+proteccionismo	proteccionismo[NRootES]
+
+"	"[$.]
 
 nisqamantaqa	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -1304,6 +1344,8 @@ muchuy	muchu[VRoot][=sufrir][^DB][--]y[NS][+Inf]
 hatarisqanmantam	hatari[VRoot][=levantarse][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl][^DB][--]m@mMI[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Muchuy	muchu[VRoot][=sufrir][^DB][--]y[NS][+Inf]
 
@@ -1357,6 +1399,8 @@ chaninchakun	chanin[NRoot][=correcto][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 AHK	AHK	+?
 
 Perúqa	Perú[NP][^DB][--]qa[Amb][+Top]
@@ -1396,6 +1440,8 @@ suyukunapim	suyu[NRoot][=región][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc][^DB][-
 kachkan	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 40	40[CARD]
 
@@ -1457,6 +1503,8 @@ puririn	puri[VRoot][=andar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qhawarinapaqqa	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]na[NS][+Obl][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -1505,6 +1553,8 @@ yurichin	yuri[VRoot][=aparecer][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.S
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 qhatuchaykunaqa	qhatu[NRoot][=mercado][--]cha[VS][+Fact][^DB][--]y[NS][+Inf][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
@@ -1537,6 +1587,8 @@ rikurikun	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+R
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Camarap	cámara[NRootES][^DB][--]p[Cas][+Gen]
 
 iskay	iskay[NRootNUM]
@@ -1549,12 +1601,7 @@ qusqanqa	qu[VRoot][=dar][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB
 
 empresa	empresa[NRootES]
 
-peruano	peruano[NRootES]
-
--	-[$.]
-
-alemanakunatam	alemána[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
-alemanakunatam	alemana[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
+peruano-alemanakunatam	peruano-alemana[NRootG][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 
 allinta	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc]
 
@@ -1579,6 +1626,8 @@ qhatuchaykunapiqa	qhatu[NRoot][=mercado][--]cha[VS][+Fact][^DB][--]y[NS][+Inf][-
 llamk'anqaku	llamk'a[VRoot][=trabajar][^DB][--]nqaku[VPers][+3.Pl.Subj.Fut]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
@@ -1626,6 +1675,8 @@ wiñarinku	wiña[VRoot][=desarollar,crecer][--]ri[VDeriv][+Inch][^DB][--]nku[VPe
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 Perú	Perú[NP]
@@ -1652,11 +1703,7 @@ chayqa	chay[PrnDem][^DB][--]qa[Amb][+Top]
 
 marco	marco[NRootES]
 
-político	político[NRootES]
-
--	-[$.]
-
-económico	económico[NRootES]
+político-económico	político-económico	+?
 
 nisqam	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]m@mMI[Amb][+DirE]
 
@@ -1671,6 +1718,8 @@ pachakunapiqa	pacha[NRoot][=mundo,tiempo][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc
 rikurinqa	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]nqa[VPers][+3.Sg.Subj.Fut]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2008	2008[CARD]
 
@@ -1709,6 +1758,8 @@ yaparikullanman	yapa[VRoot][=añadir][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+R
 ima	ima[Part_Conec]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Cámaras	cámaras[NRootES]
 
@@ -1763,6 +1814,8 @@ pusarinqa	pusa[VRoot][=llevar][--]ri[VDeriv][+Inch][^DB][--]nqa[VPers][+3.Sg.Sub
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alemaniap	Alemania[NRootG][^DB][--]p[Cas][+Gen]
 
 Camaranpi	cámara[NRootES][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
@@ -1781,6 +1834,8 @@ munani	muna[VRoot][=querer][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kallpachasqankuqa	kallpa[NRoot][=fuerte][--]cha[VS][+Fact][^DB][--]sqa[NS][+Perf][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]qa[Amb][+Top]
 
 chaniyuqpunim	chani[NRoot][=valor][^DB][--]yuq[NDeriv][+Poss][^DB][--]puni[Amb][+Def][^DB][--]m@mMI[Amb][+DirE]
@@ -1788,6 +1843,8 @@ chaniyuqpunim	chani[NRoot][=valor][^DB][--]yuq[NDeriv][+Poss][^DB][--]puni[Amb][
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kay	kay[PrnDem]
 
@@ -1817,6 +1874,8 @@ munani	muna[VRoot][=querer][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 Camarapi	cámara[NRootES][^DB][--]pi[Cas][+Loc]
@@ -1839,6 +1898,8 @@ munanitaq	muna[VRoot][=querer][^DB][--]ni[VPers][+1.Sg.Subj][^DB][--]taq[Amb][+C
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Llapaykichik	llapa[NRoot][=todo][^DB][--]ykichik[NPers][+2.Pl.Poss]
 
 allin	allin[NRoot][=bueno]
@@ -1855,41 +1916,7 @@ mañarikuni	maña[VRoot][=pedir][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_I
 
 .	.[$.]
 
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
-
--	-[$.]
+#EOS	#EOS	+?
 
 Ñawpaq	ñawpaq[NRoot][=antes]
 
@@ -1915,6 +1942,8 @@ purichkanku	puri[VRoot][=andar][^DB][--]chka[Asp][+Prog][--]nku[VPers][+3.Pl.Sub
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 sumaq	sumaq[NRoot][=lindo]
@@ -1937,12 +1966,7 @@ e	e[ALFS]
 
 Industria	industria[NRootES]
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemanap	alemána[NRootES][^DB][--]p[Cas][+Gen]
-Alemanap	alemana[NRootES][^DB][--]p[Cas][+Gen]
+Peruano-Alemanap	Peruano-Alemana[NRootG][^DB][--]p[Cas][+Gen]
 
 tawa	tawa[NRootNUM]
 
@@ -1965,6 +1989,8 @@ anchatataq	ancha[NRoot][=muy,mucho][^DB][--]ta[Cas][+Acc][^DB][--]taq[Amb][+Con_
 qullqichanakusqankumanta	qullqi[NRoot][=plata][--]cha[VS][+Fact][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+Perf][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]manta[Cas][+Abl]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 AHK	AHK	+?
 
@@ -2004,6 +2030,8 @@ yanapan	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][^DB][--]n[VPers][+3.Sg.S
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chayraykum	chay[PrnDem][^DB][--]rayku[Cas][+Kaus][^DB][--]m@mMI[Amb][+DirE]
 
 llapanta	llapa[NRoot][=todo][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]ta[Cas][+Acc]
@@ -2029,6 +2057,8 @@ añaychakuyta	aña[VRoot][=dar_gracias][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^D
 munani	muna[VRoot][=querer][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Qhipa	qhipa[NRoot][=atrás]
 
@@ -2061,6 +2091,8 @@ hina	hina[Part_Sim]
 rikurin	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Perú	Perú[NP]
 
@@ -2118,6 +2150,8 @@ kallpachan	kallpa[NRoot][=fuerte][--]cha[NDeriv][+Dim][^DB][--]n[NPers][+3.Sg.Po
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 kusichikuq	kusi[VRoot][=alegrar][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
@@ -2160,6 +2194,8 @@ aypanchin	aypanchi[VRootG][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinaspapas	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]pas[Amb][+Add]
 
 ,	,[$.]
@@ -2177,6 +2213,8 @@ nisqawanqa	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]wan[Cas][+Con_Inst][
 qhapaqchakun	qhapaq[NRoot][=poderoso,rico][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kayniraq	kay[PrnDem][--]niraq[NDeriv][+Sim]
 
@@ -2202,6 +2240,8 @@ qunqasunmanchu	qunqa[VRoot][=olvidar][^DB][--]sun[VPers][+1.Pl.Incl.Subj.Fut][--
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Gobierno	gobierno[NRootES]
 
 federal	federal[NRootES]
@@ -2218,12 +2258,7 @@ e	e[ALFS]
 
 Industria	industria[NRootES]
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemanawanpas	alemána[NRootES][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
-Alemanawanpas	alemana[NRootES][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
+Peruano-Alemanawanpas	Peruano-Alemana[NRootG][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
 
 atisqanku	ati[VRoot][=poder,vencer][^DB][--]sqa[NS][+Perf][^DB][--]nku[NPers][+3.Pl.Poss]
 
@@ -2249,14 +2284,11 @@ kallpachakunqakum	kallpa[NRoot][=fuerte][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+R
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Cámara	cámara[NRootES]
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemanap	alemána[NRootES][^DB][--]p[Cas][+Gen]
-Alemanap	alemana[NRootES][^DB][--]p[Cas][+Gen]
+Peruano-Alemanap	Peruano-Alemana[NRootG][^DB][--]p[Cas][+Gen]
 
 ima	ima[NRoot][=cosa]
 
@@ -2283,6 +2315,8 @@ empresakunamanpas	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]man[Cas][+Dat_Ill][
 haywarikunqam	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nqa[VPers][+3.Sg.Subj.Fut][^DB][--]m@mMI[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 12	12[CARD]
 
@@ -2312,7 +2346,7 @@ qullqichay	qullqi[NRoot][=plata][--]cha[VS][+Fact][^DB][--]y[NS][+Inf]
 
 riqsichikunman	riqsi[VRoot][=conocer][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot]
 
-waqaychakunman	waqa[VRoot][=llorar,guardar,proteger][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot]
+waqaychakunman	waqaycha[VRoot][=guardar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot]
 
 ima	ima[Part_Conec]
 
@@ -2339,6 +2373,8 @@ mana	mana[Part_Neg]
 iskayananpaqqa	iska[NRootG][--]ya[VS][+Trs][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Huk	huk[NRootNUM]
 
@@ -2374,6 +2410,8 @@ aypachkanchik	aypa[VRoot][=alcanzar][^DB][--]chka[Asp][+Prog][--]nchik[VPers][+1
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 Unión	unión[NRootES]
@@ -2393,6 +2431,8 @@ masichakusqankumantam	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDer
 rimachkani	rima[VRoot][=hablar][^DB][--]chka[Asp][+Prog][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Consejo	consejo[NRootES]
 
@@ -2426,6 +2466,8 @@ suyachkan	suya[VRoot][=esperar][^DB][--]chka[Asp][+Prog][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Rimanakuyqa	rima[VRoot][=hablar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[VPers][+2.Sg.Subj.Imp][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -2445,6 +2487,8 @@ kasqantam	ka[VRoot][=ser][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^D
 rikurichin	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Anchatapunitaq	ancha[NRoot][=muy,mucho][^DB][--]ta[Cas][+Acc][^DB][--]puni[Amb][+Def][^DB][--]taq[Amb][+Con_Intr]
 
@@ -2467,6 +2511,8 @@ qullqichaypiqa	qullqi[NRoot][=plata][--]cha[NDeriv][+Dim][^DB][--]y[NPers][+1.Sg
 masichakusqankuta	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+Perf][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Llapan	llapa[NRoot][=todo][^DB][--]n[NPers][+3.Sg.Poss]
 
@@ -2502,6 +2548,8 @@ rikurichikunqaku	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]chi[VD
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qhatuchaywan	qhatu[NRoot][=mercado][--]cha[NDeriv][+Dim][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]wan[Cas][+Con_Inst]
 
 qullqichaywan	qullqi[NRoot][=plata][--]cha[NDeriv][+Dim][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]wan[Cas][+Con_Inst]
@@ -2524,6 +2572,8 @@ rikurinku	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]nku[VPers][+3
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Samarinapaq	sama[VRoot][=descansar,respirar][--]ri[VDeriv][+Inch][^DB][--]na[NS][+Obl][^DB][--]paq[Cas][+Ben]
 
 hinataq	hina[Part_Sim][^DB][--]taq[Amb][+Con_Intr]
@@ -2542,13 +2592,19 @@ manam	mana[Part_Neg][^DB][--]m@mMI[Amb][+DirE]
 
 Estadokunaqa	estado[NRootES][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
-''proteccionismo''	''proteccionismo''	+?
+"	"[$.]
+
+proteccionismo	proteccionismo[NRootES]
+
+"	"[$.]
 
 nisqawanchu	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]wan[Cas][+Con_Inst][^DB][--]chu[Amb][+Intr_Neg]
 
-waqaychakunku	waqa[VRoot][=llorar,guardar,proteger][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][+3.Pl.Subj]
+waqaychakunku	waqaycha[VRoot][=guardar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chaymi	chay[PrnDem][^DB][--]mi[Amb][+DirE]
 
@@ -2572,6 +2628,8 @@ lluqsichiwasunchik	lluqsi[VRoot][=salir][^DB][--]chi[VDeriv][+Caus][^DB][--]wa[V
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Aypanakuyqa	aypa[VRoot][=alcanzar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
 
 mana	mana[Part_Neg]
@@ -2592,6 +2650,8 @@ kicharayasqapim	kicha[VRoot][=abrir][--]raya[VDeriv][+Perdur][^DB][--]sqa[NS][+P
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qhawarinapaq	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]na[NS][+Obl][^DB][--]paq[Cas][+Ben]
 
 hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
@@ -2610,6 +2670,8 @@ k'irakun	k'ira[VRoot][=recostar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 wataqa	wata[NRoot][=año][^DB][--]qa[Amb][+Top]
@@ -2627,6 +2689,8 @@ Alemaniaqa	Alemania[NRootG][^DB][--]qa[Amb][+Top]
 yuyarin	yuya[VRoot][=recordar,pensar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 República	república[NRootES]
 
@@ -2666,6 +2730,8 @@ yuyarikunmi	yuya[VRoot][=recordar,pensar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 AHK	AHK	+?
 
 Perúpa	Perú[NP][^DB][--]pa[Cas][+Gen]
@@ -2686,14 +2752,11 @@ kuskanchakullanmi	kuska[NRoot][=juntos][--]n[NDeriv][+Rel][--]cha[VS][+Fact][^DB
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Cámara	cámara[NRootES]
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemanaman	alemána[NRootES][^DB][--]man[Cas][+Dat_Ill]
-Alemanaman	alemana[NRootES][^DB][--]man[Cas][+Dat_Ill]
+Peruano-Alemanaman	Peruano-Alemana[NRootG][^DB][--]man[Cas][+Dat_Ill]
 
 ,	,[$.]
 
@@ -2726,6 +2789,8 @@ sunquymanta	sunqu[NRoot][=corazón][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]manta[C
 mañarikuni	maña[VRoot][=pedir][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Qallariykuna	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][--]kuna[Num][+Pl]
 
@@ -2783,16 +2848,13 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Ichaqa	icha[Part_Contr][^DB][--]qa[Amb][+Top]
 
 suyupi	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc]
 
-peruano	peruano[NRootES]
-
--	-[$.]
-
-alemana	alemána[NRootES]
-alemana	alemana[NRootES]
+peruano-alemana	peruano-alemana	+?
 
 huñukupaqqa	huñu[VRoot][=juntar][^DB][--]ku[VDeriv][+Rflx_Int][--]pa[VDeriv][+Rep][^DB][--]q[NS][+Ag][^DB][--]qa[Amb][+Top]
 
@@ -2805,6 +2867,8 @@ watam	wata[NRoot][=año][^DB][--]m@mMI[Amb][+DirE]
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 28	28[CARD]
 
@@ -2832,12 +2896,7 @@ e	e[ALFS]
 
 Industria	industria[NRootES]
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemana	alemána[NRootES]
-Alemana	alemana[NRootES]
+Peruano-Alemana	Peruano-Alemana	+?
 
 sutichasqa	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]sqa[NS][+Perf]
 
@@ -2848,6 +2907,8 @@ empresariokunam	empresario[NRootES][--]kuna[Num][+Pl][^DB][--]m@mMI[Amb][+DirE]
 paqarichinku	paqari[VRoot][=amanecer,crearse][^DB][--]chi[VDeriv][+Caus][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Segunda	segunda[NRootES]
 
@@ -2881,6 +2942,8 @@ chinkarqachikun	chinka[VRoot][=perder][--]rqa[VDeriv][+Rptn][^DB][--]chi[VDeriv]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
 chaynamanta	chayna[PrnDem][^DB][--]manta[Cas][+Abl]
@@ -2891,12 +2954,7 @@ karunptinmi	karunpti[VRootG][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
 
 ,	,[$.]
 
-peruano	peruano[NRootES]
-
--	-[$.]
-
-alemanes	alemánes[NRootES]
-alemanes	alemanes[NRootES]
+peruano-alemanes	peruano-alemanes	+?
 
 qhatuchakuyninqa	qhatu[NRoot][=mercado][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
 
@@ -2912,14 +2970,11 @@ yurichiytaqa	yuri[VRoot][=aparecer][^DB][--]chi[VDeriv][+Caus][^DB][--]y[NS][+In
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
-peruano	peruano[NRootES]
-
--	-[$.]
-
-alemana	alemána[NRootES]
-alemana	alemana[NRootES]
+peruano-alemana	peruano-alemana	+?
 
 huñukuqkuna	huñu[VRoot][=juntar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl]
 
@@ -2940,6 +2995,8 @@ yurichinamanqa	yuri[VRoot][=aparecer][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS][
 yaykurinku	hayku[VRoot][=entrar][--]ri[VDeriv][+Inch][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
@@ -3003,6 +3060,8 @@ qallarinku	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]nku[VPers][+3.Pl.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 28	28[CARD]
 
 p'unchaw	p'unchaw[NRoot][=día]
@@ -3033,6 +3092,8 @@ qillqarqanku	qillqa[VRoot][=escribir][^DB][--]rqa[Tns][+NPst][--]nku[VPers][+3.P
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 pachapi	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc]
@@ -3053,13 +3114,7 @@ Hoechst	Hoechst	+?
 
 Peruana	peruana[NRootES]
 
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
-
-.	.[$.]
+S.A.	S.A.	+?
 
 sutisqamantaqa	suti[VRootG][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -3075,13 +3130,7 @@ Química	química[NRootES]
 
 Unidas	Unidas	+?
 
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
-
-.	.[$.]
+S.A.	S.A.	+?
 
 sutichasqamantataq	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]taq[Amb][+Con_Intr]
 
@@ -3111,13 +3160,7 @@ del	del	+?
 
 Perú	Perú[NP]
 
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
-
-.	.[$.]
+S.A.	S.A.	+?
 
 sutichasqamantataq	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]taq[Amb][+Con_Intr]
 
@@ -3131,13 +3174,7 @@ La	La	+?
 
 Hanseática	Hanseática	+?
 
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
-
-.	.[$.]
+S.A.	S.A.	+?
 
 nisqamantataq	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]taq[Amb][+Con_Intr]
 
@@ -3151,13 +3188,7 @@ Appen	Appe[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
 Cosmana	Cosma[VRootG][^DB][--]na[NS][+Obl]
 
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
-
-.	.[$.]
+S.A.	S.A.	+?
 
 nisqamanta	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl]
 
@@ -3167,21 +3198,9 @@ Samoje	Samoje	+?
 
 ;	;[$.]
 
-A	A[ALFS]
+A.F.Wiese	A.F.Wiese	+?
 
-.	.[$.]
-
-F	F[ALFS]
-
-.	.[$.]
-
-Wiese	Wiese	+?
-
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
+S.A	S.A	+?
 
 nisqamantataq	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]taq[Amb][+Con_Intr]
 
@@ -3193,13 +3212,7 @@ Maurer	Maurer	+?
 
 Citeco	Citeco	+?
 
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
-
-.	.[$.]
+S.A.	S.A.	+?
 
 nisqamantaqa	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -3222,6 +3235,8 @@ Hans	Hans	+?
 Heidmann	Heidmann	+?
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 14	14[CARD]
 
@@ -3273,6 +3288,8 @@ yupakunku	yupa[VRoot][=contar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 4	4[CARD]
 
 p'unchaw	p'unchaw[NRoot][=día]
@@ -3320,6 +3337,8 @@ riqsiyninwanña	riqsi[VRoot][=conocer][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chay	chay[PrnDem]
 
@@ -3380,6 +3399,8 @@ kichakun	kicha[VRoot][=abrir][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Camarap	cámara[NRootES][^DB][--]p[Cas][+Gen]
 
 qallariy	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf]
@@ -3394,13 +3415,7 @@ Hoechst	Hoechst	+?
 
 Peruana	peruana[NRootES]
 
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
-
-.	.[$.]
+S.A.	S.A.	+?
 
 empresamanta	empresa[NRootES][^DB][--]manta[Cas][+Abl]
 
@@ -3412,6 +3427,8 @@ umallirqan	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]rqa[Tns][+NPst][--]n
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Camara	cámara[NRootES]
 
 manaraq	mana[Part_Neg][^DB][--]raq[Amb][+Cont]
@@ -3422,9 +3439,7 @@ kawsachkaptinmi	kawsa[VRoot][=vivir][^DB][--]chka[Asp][+Prog][^DB][--]pti[NS][+D
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
 
-Dr	Dr	+?
-
-.	.[$.]
+Dr.	Dr.	+?
 
 Günter	Günter	+?
 
@@ -3444,13 +3459,15 @@ watantinmi	wata[NRoot][=año][^DB][--]ntin[Cas][+Iclsv][^DB][--]mi[Amb][+DirE]
 
 gerente	gerente[NRootES]
 
-niray	nira[VRootG][^DB][--]y[NS][+Inf]
+niray	niray[NRoot][=color,clase,especie]
 
 Camarataqa	cámara[NRootES][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 umallin	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Musuq	musuq[NRoot][=nuevo,reciente]
 
@@ -3477,6 +3494,8 @@ huñuriyta	huñu[VRoot][=juntar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][^DB][-
 qallarin	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1969	1969[CARD]
 
@@ -3534,6 +3553,8 @@ tiyaqku	tiya[VRoot][=haber,estar,habitar,estar_sentado][^DB][--]qku[VPers][+3.Pl
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qallariy	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf]
 
 pachapiqa	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
@@ -3573,9 +3594,9 @@ llamk'arqan	llamk'a[VRoot][=trabajar][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.
 
 .	.[$.]
 
-Dr	Dr	+?
+#EOS	#EOS	+?
 
-.	.[$.]
+Dr.	Dr.	+?
 
 Metzger	Metzger	+?
 
@@ -3615,6 +3636,8 @@ qhawarinku	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]nku[VPers][+3.Pl.Su
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qallariq	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]q[NS][+Ag]
 
 wata	wata[NRoot][=año]
@@ -3636,6 +3659,8 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 llamk'arqan	llamk'a[VRoot][=trabajar][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
@@ -3669,6 +3694,8 @@ riqsichikullantaq	riqsi[VRoot][=conocer][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[V
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kaqllataqmi	ka[VRoot][=ser][^DB][--]q[NS][+Ag][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr][^DB][--]mi[Amb][+DirE]
 
 Perú	Perú[NP]
@@ -3692,6 +3719,8 @@ munasqankum	muna[VRoot][=querer][^DB][--]sqa[NS][+Perf][^DB][--]nku[NPers][+3.Pl
 rikurparin	rikhu[VRoot][=ver,aparecer][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1969	1969[CARD]
 
@@ -3745,19 +3774,15 @@ Bayer	Bayer	+?
 
 Industrial	industrial[NRootES]
 
-S	S[ALFS]
-
-.	.[$.]
-
-A	A[ALFS]
-
-.	.[$.]
+S.A.	S.A.	+?
 
 sutichasqata	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]sqa[NS][+Perf][^DB][--]ta[Cas][+Acc]
 
 )	)[$.]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Wata	wata[NRoot][=año]
 
@@ -3813,6 +3838,8 @@ ima	ima[Part_Conec]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinapunim	hina[VRoot][=hacer_así,ser_así][--]pu[VDeriv][+Rgr_Iprs][^DB][--]ni[VPers][+1.Sg.Subj][^DB][--]m@mMI[Amb][+DirE]
 
 Feria	feria[NRootES]
@@ -3843,6 +3870,8 @@ yanaparikullanmi	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][--]ri[VDeriv][+
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 1969	1969[CARD]
 
 watapi	wata[NRoot][=año][^DB][--]pi[Cas][+Loc]
@@ -3865,11 +3894,7 @@ riqsichikun	riqsi[VRoot][=conocer][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv]
 
 kaytaq	kay[PrnDem][^DB][--]taq[Amb][+Con_Intr]
 
-Perú	Perú[NP]
-
--	-[$.]
-
-Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
+Perú-Alemania	Perú-Alemania	+?
 
 sutichikuspa	suti[VRootG][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]spa[NS][+SS]
 
@@ -3896,6 +3921,8 @@ automotrizmantas	automotriz[NRootES][^DB][--]manta[Cas][+Abl][^DB][--]s[Amb][+In
 rimarirqan	rima[VRoot][=hablar][--]ri[VDeriv][+Inch][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 70	70[CARD]
 
@@ -3931,6 +3958,8 @@ ayparqachikurqan	aypa[VRoot][=alcanzar][--]rqa[VDeriv][+Rptn][^DB][--]chi[VDeriv
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kaykunaqa	ka[VRoot][=ser][^DB][--]y[NS][+Inf][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -3948,6 +3977,8 @@ anchapuniqa	ancha[NRoot][=muy,mucho][^DB][--]puni[Amb][+Def][^DB][--]qa[Amb][+To
 takarparin	taka[VRoot][=golpear][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Estadoqa	estado[NRootES][^DB][--]qa[Amb][+Top]
 
@@ -4005,6 +4036,8 @@ qupun	qu[VRoot][=dar][--]pu[VDeriv][+Rgr_Iprs][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 ,	,[$.]
@@ -4045,6 +4078,8 @@ chapukun	chapu[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Huknirachiyqa	huknira[VRoot][=cambiar][^DB][--]chi[VDeriv][+Caus][^DB][--]y[VPers][+2.Sg.Subj.Imp][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -4079,6 +4114,8 @@ munaqkunatapas	muna[VRoot][=querer][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alemanamanta	alemána[NRootES][^DB][--]manta[Cas][+Abl]
 Alemanamanta	alemana[NRootES][^DB][--]manta[Cas][+Abl]
 
@@ -4103,6 +4140,8 @@ qullqitapas	qullqi[NRoot][=plata][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
 churaqku	chura[VRoot][=poner][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chay	chay[PrnDem]
 
@@ -4144,6 +4183,8 @@ karparin	ka[VRoot][=ser][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
 
 imaymanakuna	imaymana[NRoot][=toda_clase_de,todos][--]kuna[Num][+Pl]
@@ -4163,6 +4204,8 @@ hawakunamanqa	hawa[NRoot][=fuera,arriba][--]kuna[Num][+Pl][^DB][--]man[Cas][+Dat
 ranarqan	rana[VRoot][=vender][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kay	kay[PrnDem]
 
@@ -4194,6 +4237,8 @@ ima	ima[Part_Conec]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Junta	junta[NRootES]
 
 directivamanta	directiva[NRootES][^DB][--]manta[Cas][+Abl]
@@ -4216,6 +4261,8 @@ kaqku	ka[VRoot][=ser][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 70	70[CARD]
 
 watakunapaqqa	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
@@ -4230,9 +4277,7 @@ allin	allin[NRoot][=bueno]
 
 wasita	wasi[NRoot][=casa][^DB][--]ta[Cas][+Acc]
 
-Av	Av	+?
-
-.	.[$.]
+Av.	Av.	+?
 
 Emancipación	emancipación[NRootES]
 
@@ -4241,6 +4286,8 @@ k'ikllupi	k'ikllu[NRoot][=estrecho][^DB][--]pi[Cas][+Loc]
 hap'isqaña	hap'i[VRoot][=agarrar,entender][^DB][--]sqa[NS][+Perf][^DB][--]ña[Amb][+Disc]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1970	1970[CARD]
 
@@ -4284,6 +4331,8 @@ qhawarikun	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_In
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hawa	hawa[NRoot][=fuera,arriba]
 
 suyukunap	suyu[NRoot][=región][--]kuna[Num][+Pl][^DB][--]p[Cas][+Gen]
@@ -4315,6 +4364,8 @@ kaqkunapim	ka[VRoot][=ser][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]pi[Cas][
 yanapakuqku	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rgr_Iprs][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hawa	hawa[NRoot][=fuera,arriba]
 
@@ -4372,6 +4423,8 @@ wiñarirqun	wiña[VRoot][=desarollar,crecer][--]ri[VDeriv][+Inch][--]rqu[VDeriv]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -4398,6 +4451,8 @@ takyananpaqmi	takya[VRoot][=detenerse,ser_estable][^DB][--]na[NS][+Obl][^DB][--]
 huknirayachin	huknira[VRoot][=cambiar][--]yka[VDeriv][+Aff][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Feria	feria[NRootES]
 
@@ -4451,6 +4506,8 @@ riqsichikunku	riqsi[VRoot][=conocer][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeri
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 ,	,[$.]
@@ -4485,6 +4542,8 @@ tikrachikun	t'ikra[VRoot][=voltear][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
 
 ,	,[$.]
@@ -4511,6 +4570,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 1979	1979[CARD]
 
 watapaqqa	wata[NRoot][=año][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
@@ -4523,11 +4584,7 @@ kimsa	kimsa[NRootNUM]
 
 killa	killa[NRoot][=luna]
 
-Perú	Perú[NP]
-
--	-[$.]
-
-Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
+Perú-Alemania	Perú-Alemania	+?
 
 sutiyuq	suti[NRoot][=nombre][^DB][--]yuq[NDeriv][+Poss]
 
@@ -4555,6 +4612,8 @@ tikrachikun	t'ikra[VRoot][=voltear][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 80	80[CARD]
 
 watakunamanta	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]manta[Cas][+Abl]
@@ -4573,13 +4632,15 @@ hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 qullqichay	qullqi[NRoot][=plata][--]cha[VS][+Fact][^DB][--]y[NS][+Inf]
 
-muchuywanpas	muchu[VRoot][=sufrir][^DB][--]y[NS][+Inf][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
+muchuywanpas	muchu[NRoot][=semilla][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
 
 ñak'arichikuqmi	ñak'a[VRoot][=maldecir,sufrir][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][^DB][--]mi[Amb][+DirE]
 
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1980	1980[CARD]
 
@@ -4623,6 +4684,8 @@ yaykurqun	hayku[VRoot][=entrar][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Sub
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
 manam	mana[Part_Neg][^DB][--]m@mMI[Amb][+DirE]
@@ -4665,6 +4728,8 @@ apachin	apa[VRoot][=llevar][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Su
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 pachapaqqa	pacha[NRoot][=mundo,tiempo][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
@@ -4677,9 +4742,7 @@ Popularmanta	popular[NRootES][^DB][--]manta[Cas][+Abl]
 
 ,	,[$.]
 
-Dr	Dr	+?
-
-.	.[$.]
+Dr.	Dr.	+?
 
 Manuel	Manuel	+?
 
@@ -4705,9 +4768,7 @@ nisqamantataq	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]manta[Cas][+Abl][
 
 ,	,[$.]
 
-Dr	Dr	+?
-
-.	.[$.]
+Dr.	Dr.	+?
 
 Ernesto	Ernesto	+?
 
@@ -4746,6 +4807,8 @@ qullqichayninkumantaqa	qullqi[NRoot][=plata][--]cha[VS][+Fact][^DB][--]y[NS][+In
 riqsichinku	riqsi[VRoot][=conocer][^DB][--]chi[VDeriv][+Caus][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chaymantaqa	chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -4793,13 +4856,13 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 watapim	wata[NRoot][=año][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
 
-Dr	Dr	+?
-
-.	.[$.]
+Dr.	Dr.	+?
 
 Günter	Günter	+?
 
@@ -4833,6 +4896,8 @@ llamk'arqan	llamk'a[VRoot][=trabajar][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kantaray	kantaray[NRoot][=octubre]
 
 killapim	killa[NRoot][=luna][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
@@ -4860,6 +4925,8 @@ Camarataqa	cámara[NRootES][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 umallin	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1981	1981[CARD]
 
@@ -4905,6 +4972,8 @@ pusanku	pusa[VRoot][=llevar][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 rurayqa	rura[VRoot][=hacer][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
@@ -4949,6 +5018,8 @@ qhawarikamunku	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]ka[VDeriv][+Rfl
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alemaniapi	Alemania[NRootG][^DB][--]pi[Cas][+Loc]
 
 hatun	hatun[NRoot][=grande]
@@ -4976,6 +5047,8 @@ allintam	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 yaparikun	yapa[VRoot][=añadir][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Phawana	phawa[VRoot][=correr,volar][^DB][--]na[NS][+Obl]
 
@@ -5011,6 +5084,8 @@ rinankupaq	ri[VRoot][=ir][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^D
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 chunka	chunka[NRootNUM]
@@ -5043,6 +5118,8 @@ urmarparin	urma[VRoot][=caer][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hiperinﬂaciónrayku	Hiperinﬂaciónrayku	+?
 
 hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
@@ -5066,6 +5143,8 @@ masichakuyninqa	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+R
 sasacharparikun	sasa[NRoot][=difícil][--]cha[VS][+Fact][--]rpari[VDeriv][+Int][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
@@ -5096,6 +5175,8 @@ nisqakamanmi	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]kama[Cas][+Dist][^
 urmarparin	urma[VRoot][=caer][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chaymantaqa	chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -5135,6 +5216,8 @@ killanpi	killa[NRoot][=luna][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Yachachinaman	yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS][+Obl][^DB][--]man[Cas][+Dat_Ill]
 
 yanapariypiqa	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
@@ -5171,6 +5254,8 @@ yanaparirqan	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][--]ri[VDeriv][+Inch
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 munapachiy	muna[VRoot][=querer][--]pa[VDeriv][+Rep][^DB][--]chi[VDeriv][+Caus][^DB][--]y[NS][+Inf]
@@ -5181,7 +5266,7 @@ yachanaqa	yacha[VRoot][=saber,habitar][^DB][--]na[NS][+Obl][^DB][--]qa[Amb][+Top
 
 iskay	iskay[NRootNUM]
 
-niray	nira[NRootG][^DB][--]y[NPers][+1.Sg.Poss]
+niray	niray[NRoot][=color,clase,especie]
 
 yachachiytam	yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 
@@ -5196,6 +5281,8 @@ rurasqankuta	rura[VRoot][=hacer][^DB][--]sqa[NS][+Perf][^DB][--]nku[NPers][+3.Pl
 hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Masichakuq	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
@@ -5241,6 +5328,8 @@ mallichkankuñam	malli[VRoot][=probar][^DB][--]chka[Asp][+Prog][--]nku[VPers][+3
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 90	90[CARD]
 
 watakunamanta	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]manta[Cas][+Abl]
@@ -5273,6 +5362,8 @@ yarkurparin	yarku[VRoot][=subir][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.S
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Perú	Perú[NP]
 
 suyup	suyu[NRoot][=región][^DB][--]p[Cas][+Gen]
@@ -5301,9 +5392,11 @@ sinchitapuni	sinchi[NRoot][=fuerte][^DB][--]ta[Cas][+Acc][^DB][--]puni[Amb][+Def
 
 imachamantapas	ima[NRoot][=cosa][--]cha[NDeriv][+Dim][^DB][--]manta[Cas][+Abl][^DB][--]pas[Amb][+Add]
 
-waqaychaqku	waqa[VRoot][=llorar,guardar,proteger][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
+waqaychaqku	waqaycha[VRoot][=guardar][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chayna	chayna[PrnDem]
 
@@ -5322,6 +5415,8 @@ astawanmi	as[NRoot][=poco][^DB][--]ta[Cas][+Acc][^DB][--]wan[Cas][+Con_Inst][^DB
 mast'arirqun	mast'a[VRoot][=tender,tumbar][--]ri[VDeriv][+Inch][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1991	1991[CARD]
 
@@ -5361,6 +5456,8 @@ chaskirikun	chaski[VRoot][=recibir,aceptar][--]ri[VDeriv][+Inch][^DB][--]ku[VDer
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 1991	1991[CARD]
 
 watapipas	wata[NRoot][=año][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+Add]
@@ -5392,6 +5489,8 @@ ranakuqqa	rana[VRoot][=vender][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][
 pisiyarparqunmi	pisiyarpa[VRootG][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chayna	chayna[PrnDem]
 
@@ -5443,6 +5542,8 @@ yachanankupaq	yacha[VRoot][=saber,habitar][^DB][--]na[NS][+Obl][^DB][--]nku[NPer
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kikin	kiki[NRoot][=mismo][^DB][--]n[NPers][+3.Sg.Poss]
 
 wata	wata[NRoot][=año]
@@ -5465,17 +5566,15 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
 
-7	7[CARD]
-
-.	.[$.]
-
-000	000[CARD]
+7.000	7.000	+?
 
 samillikunata	sami[NRoot][=fortuna][--]lli[VS][+Autotrs][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc]
 
 apamusqa	apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
@@ -5511,6 +5610,8 @@ hamuqku	hamu[VRoot][=venir][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 pachapaqqa	pacha[NRoot][=mundo,tiempo][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
@@ -5530,6 +5631,8 @@ llamk'aqkunayuqña	llamk'a[VRoot][=trabajar][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1992	1992[CARD]
 
@@ -5555,6 +5658,8 @@ ima	ima[Part_Conec]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Nisyutapuni	nisyu[NRoot][=demasiado][^DB][--]ta[Cas][+Acc][^DB][--]puni[Amb][+Def]
 
 llaqta	llaqta[NRoot][=pueblo]
@@ -5573,9 +5678,7 @@ electrógeno	electrógeno[NRootES]
 
 nisqatam	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 
-Av	Av	+?
-
-.	.[$.]
+Av.	Av.	+?
 
 Camino	camino[NRootES]
 
@@ -5592,6 +5695,8 @@ kaqpaqqa	ka[VRoot][=ser][^DB][--]q[NS][+Ag][^DB][--]paq[Cas][+Ben][^DB][--]qa[Am
 rantin	ranti[VRoot][=comprar][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Wakin	waki[NRoot][=parte,otro][^DB][--]n[NPers][+3.Sg.Poss]
 
@@ -5614,6 +5719,8 @@ wasinkunamantaqa	wasi[NRoot][=casa][^DB][--]n[NPers][+3.Poss][--]kuna[Num][+Pl][
 astarikuqku	asta[VRoot][=transportar,arrear][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chayna	chayna[PrnDem]
 
@@ -5663,6 +5770,8 @@ chayananpaqqa	chaya[VRoot][=llegar][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Berlinpi	Berli[NRootG][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 qhatuna	qhatu[VRoot][=negociar][^DB][--]na[NS][+Obl]
@@ -5701,13 +5810,13 @@ hamun	hamu[VRoot][=venir][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 watam	wata[NRoot][=año][^DB][--]m@mMI[Amb][+DirE]
 
-Dr	Dr	+?
-
-.	.[$.]
+Dr.	Dr.	+?
 
 Hans	Hans	+?
 
@@ -5724,6 +5833,8 @@ umalliyta	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]y[NS][+Inf][^DB][--]t
 qallarin	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1993	1993[CARD]
 
@@ -5757,6 +5868,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Imayna	imayna[PrnInterr][=cómo]
 
 suyu	suyu[NRoot][=región]
@@ -5774,6 +5887,8 @@ Camaram	cámara[NRootES][^DB][--]m@mMI[Amb][+DirE]
 sutichakun	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Alemaniapi	Alemania[NRootG][^DB][--]pi[Cas][+Loc]
 
@@ -5806,6 +5921,8 @@ empresakunataqa	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--
 yanapankun	yanapa[NRoot][=ayuda][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]m[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1996	1996[CARD]
 
@@ -5850,6 +5967,8 @@ allintam	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 kallpacharikun	kallpa[NRoot][=fuerte][--]cha[VS][+Fact][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chay	chay[PrnDem]
 
@@ -5915,6 +6034,8 @@ siq'icharinku	siq'i[VRoot][=dibujar][--]cha[VDeriv][+Vdim][--]ri[VDeriv][+Inch][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kamarisqa	kama[VRoot][=gobernar,mandar,crear][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Perf]
 
 watukuypas	watu[VRoot][=adivinar,hechizar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]pas[Amb][+Add]
@@ -5932,6 +6053,8 @@ Camaram	cámara[NRootES][^DB][--]m@mMI[Amb][+DirE]
 ruwarichin	rura[VRoot][=hacer][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1996	1996[CARD]
 
@@ -5968,6 +6091,8 @@ qhawarisqapas	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Perf][^
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chay	chay[PrnDem]
 
@@ -6007,6 +6132,8 @@ huñurin	huñu[VRoot][=juntar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 1997	1997[CARD]
 
 watapim	wata[NRoot][=año][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
@@ -6036,6 +6163,8 @@ Alemaniawan	Alemania[NRootG][^DB][--]wan[Cas][+Con_Inst]
 masichakunankupaqqa	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 IV	eV[NRootES]
 
@@ -6094,6 +6223,8 @@ chayamuqku	chaya[VRoot][=llegar][--]mu[VDeriv][+Cis_Trs][^DB][--]qku[VPers][+3.P
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinaspapas	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]pas[Amb][+Add]
 
 ,	,[$.]
@@ -6121,6 +6252,8 @@ chayanantapas	chaya[VRoot][=llegar][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.
 wakichiqkunmi	wakichiqku[VRootG][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kaqllataq	ka[VRoot][=ser][^DB][--]q[NS][+Ag][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
@@ -6152,6 +6285,8 @@ qhawarichikun	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Cau
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 1997	1997[CARD]
 
 watapim	wata[NRoot][=año][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
@@ -6167,6 +6302,8 @@ Camarapiqa	cámara[NRootES][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 umallin	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1998	1998[CARD]
 
@@ -6210,6 +6347,8 @@ apakun	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinaspapas	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]pas[Amb][+Add]
 
 ,	,[$.]
@@ -6247,6 +6386,8 @@ puririnmi	puri[VRoot][=andar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 1999	1999[CARD]
 
 watapiqa	wata[NRoot][=año][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
@@ -6283,6 +6424,8 @@ chinkachin	chinka[VRoot][=perder][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Revistap	revista[NRootES][^DB][--]p[Cas][+Gen]
 
 qallariyninpiqa	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
@@ -6299,11 +6442,7 @@ lluqsirqan	lluqsi[VRoot][=salir][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 yaqapas	yaqa[NRoot][=casi][^DB][--]pas[Amb][+Add]
 
-5	5[CARD]
-
-,	,[$.]
-
-000	000[CARD]
+5,000	5,000	+?
 
 yupayuq	yupa[NRoot][=mucho][^DB][--]yuq[NDeriv][+Poss]
 
@@ -6312,6 +6451,8 @@ empresakunaman	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]man[Cas][+Dat_Ill]
 chayaspa	chaya[VRoot][=llegar][^DB][--]spa[NS][+SS]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Musuq	musuq[NRoot][=nuevo,reciente]
 
@@ -6355,6 +6496,8 @@ apamun	apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chunka	chunka[NRootNUM]
 
 wataña	wata[NRoot][=año][^DB][--]ña[Amb][+Disc]
@@ -6378,6 +6521,8 @@ kamachiyta	kama[VRoot][=gobernar,mandar,crear][^DB][--]chi[VDeriv][+Caus][^DB][-
 saqirparin	saqi[VRoot][=dejar][--]rpari[VDeriv][+Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Llaqta	llaqta[NRoot][=pueblo]
 
@@ -6428,6 +6573,8 @@ asllatawanmi	as[NRoot][=poco][^DB][--]lla[Amb][+Lim_Aff][^DB][--]ta[Cas][+Acc][^
 wiñarqun	wiña[VRoot][=desarollar,crecer][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2001	2001[CARD]
 
@@ -6497,6 +6644,8 @@ kanchu	ka[VRoot][=ser][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]chu[Amb][+Intr_Neg]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 ,	,[$.]
@@ -6523,6 +6672,8 @@ munapachikun	muna[VRoot][=querer][--]pa[VDeriv][+Rep][^DB][--]chi[VDeriv][+Caus]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chaymantam	chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]m@mMI[Amb][+DirE]
 
 Arequipa	Arequi[NRootG][^DB][--]pa[Cas][+Gen]
@@ -6548,6 +6699,8 @@ empresakunaqa	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 puriykachanku	puri[VRoot][=andar][--]ykacha[VDeriv][+Intrup][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2002	2002[CARD]
 
@@ -6601,11 +6754,17 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 
 mikunata	mikhu[VRoot][=comer][^DB][--]na[NS][+Obl][^DB][--]ta[Cas][+Acc]
 
-wayk’uchispa	wayk’uchispa	+?
+wayk	wayk	+?
+
+’	’	+?
+
+uchispa	uchi[VRootG][^DB][--]spa[NS][+SS]
 
 huñuchin	huñu[VRoot][=juntar][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chaymantataq	chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]taq[Amb][+Con_Intr]
 
@@ -6649,6 +6808,8 @@ chayamun	chaya[VRoot][=llegar][--]mu[VDeriv][+Cis_Trs][^DB][--]n[VPers][+3.Sg.Su
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chaymantañam	chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]ña[Amb][+Disc][^DB][--]m@mMI[Amb][+DirE]
 
 ,	,[$.]
@@ -6673,6 +6834,8 @@ apan	apa[VRoot][=llevar][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinaspapas	hina[VRoot][=hacer_así,ser_así][^DB][--]spa[NS][+SS][^DB][--]pas[Amb][+Add]
 
 ,	,[$.]
@@ -6695,6 +6858,8 @@ sutiwan	suti[NRoot][=nombre][^DB][--]wan[Cas][+Con_Inst]
 sutinchakun	suti[NRoot][=nombre][--]n[NDeriv][+Rel][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Perú	Perú[NP]
 
@@ -6732,6 +6897,8 @@ yurichin	yuri[VRoot][=aparecer][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.S
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 haywanakuyqa	haywa[VRoot][=alcanzar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
@@ -6757,6 +6924,8 @@ yaykunankupaqpas	hayku[VRoot][=entrar][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+
 atillankun	ati[VRoot][=poder,vencer][^DB][--]lla[Amb][+Lim_Aff][^DB][--]nku[VPers][+3.Pl.Subj][^DB][--]m[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Huktaq	huk[NRootNUM][^DB][--]taq[Amb][+Con_Intr]
 
@@ -6787,6 +6956,8 @@ allinta	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc]
 haywarichkan	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]chka[Asp][+Prog][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2003	2003[CARD]
 
@@ -6826,6 +6997,8 @@ rimarin	rima[VRoot][=hablar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 Perﬁles	Perﬁles	+?
@@ -6860,6 +7033,8 @@ rinku	ri[VRoot][=ir][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 watapim	wata[NRoot][=año][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
@@ -6881,12 +7056,7 @@ Jörkqa	Jörkqa	+?
 
 ,	,[$.]
 
-Noruego	noruego[NRootES]
-
--	-[$.]
-
-Alemanap	alemána[NRootES][^DB][--]p[Cas][+Gen]
-Alemanap	alemana[NRootES][^DB][--]p[Cas][+Gen]
+Noruego-Alemanap	Noruego-Alemana[NRootG][^DB][--]p[Cas][+Gen]
 
 Camaranmanmi	cámara[NRootES][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]man[Cas][+Dat_Ill][^DB][--]mi[Amb][+DirE]
 
@@ -6913,6 +7083,8 @@ Camarataqa	cámara[NRootES][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 umallin	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2004	2004[CARD]
 
@@ -6942,6 +7114,8 @@ ruwapaysin	rura[VRoot][=hacer][--]pa[VDeriv][+Rep][--]ysi[VDeriv][+Ass][^DB][--]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Sutinpi	suti[NRoot][=nombre][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
 
 mikhuna	mikhu[VRoot][=comer][^DB][--]na[NS][+Obl]
@@ -6965,6 +7139,8 @@ rimarinakun	rima[VRoot][=hablar][--]ri[VDeriv][+Inch][--]na[VDeriv][+Rzpr][^DB][
 ima	ima[Part_Conec]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2005	2005[CARD]
 
@@ -6995,6 +7171,8 @@ yupaychakun	yupa[VRoot][=contar][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]k
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Wakichiyqa	waki[VRoot][=negociar,comparar][^DB][--]chi[VDeriv][+Caus][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -7013,6 +7191,8 @@ munapachiqkunapaqmi	muna[VRoot][=querer][--]pa[VDeriv][+Rep][^DB][--]chi[VDeriv]
 ruwakun	rura[VRoot][=hacer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
@@ -7080,6 +7260,8 @@ hap'inallapaqpas	hap'i[VRoot][=agarrar,entender][^DB][--]na[NS][+Obl][^DB][--]ll
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 haywariyqa	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
@@ -7095,6 +7277,8 @@ suyupiqa	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 churachikun	chura[VRoot][=poner][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2005	2005[CARD]
 
@@ -7123,6 +7307,8 @@ aswantam	aswan[NRoot][=más,mucho][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+Dir
 yaparikunku	yapa[VRoot][=añadir][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
@@ -7163,6 +7349,8 @@ munapachinku	muna[VRoot][=querer][--]pa[VDeriv][+Rep][^DB][--]chi[VDeriv][+Caus]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 2006	2006[CARD]
 
 watamantam	wata[NRoot][=año][^DB][--]manta[Cas][+Abl][^DB][--]m@mMI[Amb][+DirE]
@@ -7195,6 +7383,8 @@ masichakunankupaqqa	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 2006	2006[CARD]
 
 watantinqa	wata[NRoot][=año][^DB][--]ntin[Cas][+Iclsv][^DB][--]qa[Amb][+Top]
@@ -7207,15 +7397,7 @@ PPP	PPP	+?
 
 (	([$.]
 
-Public	Public	+?
-
--	-[$.]
-
-Private	Private	+?
-
--	-[$.]
-
-Partnerships	Partnerships	+?
+Public-Private-Partnerships	Public-Private-Partnerships	+?
 
 )	)[$.]
 
@@ -7248,6 +7430,8 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 qallarichin	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2007	2007[CARD]
 
@@ -7286,6 +7470,8 @@ chayaqlla	chaya[VRoot][=llegar][^DB][--]q[NS][+Ag][^DB][--]lla[Amb][+Lim_Aff]
 kanku	ka[VRoot][=ser][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hamuqkunamantaqa	hamu[VRoot][=venir][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -7326,6 +7512,8 @@ qhawarichikunku	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+C
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 2007	2007[CARD]
 
 watantinqa	wata[NRoot][=año][^DB][--]ntin[Cas][+Iclsv][^DB][--]qa[Amb][+Top]
@@ -7352,6 +7540,8 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 yupaychakun	yupa[VRoot][=contar][^DB][--]y[NS][+Inf][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2009	2009[CARD]
 
@@ -7392,6 +7582,8 @@ rurayninpaqpas	rura[VRoot][=hacer][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kayqa	kay[PrnDem][^DB][--]qa[Amb][+Top]
 
 allintapunin	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc][^DB][--]puni[Amb][+Def][^DB][--]m[Amb][+DirE]
@@ -7411,6 +7603,8 @@ allinta	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc]
 mast'arichin	mast'a[VRoot][=tender,tumbar][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kunan	kunan[NRoot][=ahora]
 
@@ -7449,6 +7643,8 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 rikurin	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Haywariykuna	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][--]yku[VDeriv][+Aff][^DB][--]na[NS][+Obl]
 
@@ -7490,6 +7686,8 @@ llamk'an	llamk'a[VRoot][=trabajar][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Imayna	imayna[PrnInterr][=cómo]
 
 chhalanakuy	chhala[VRoot][=trocar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
@@ -7522,6 +7720,8 @@ yupachin	yupa[VRoot][=contar][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 40	40[CARD]
 
 watantinqa	wata[NRoot][=año][^DB][--]ntin[Cas][+Iclsv][^DB][--]qa[Amb][+Top]
@@ -7542,6 +7742,8 @@ Alemanap	alemana[NRootES][^DB][--]p[Cas][+Gen]
 haywarikuyninqa	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2005	2005[CARD]
 
@@ -7613,6 +7815,8 @@ rurakun	rura[VRoot][=hacer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qhatunakuna	qhatu[NRoot][=mercado][--]na[VS][+Reub][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl]
 
 #EOS	#EOS	+?
@@ -7637,6 +7841,8 @@ llamk'ariyta	llamk'a[VRoot][=trabajar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][
 qallarin	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Qallariyninpiqa	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 
@@ -7667,6 +7873,8 @@ sutichaqatam	sutichaqa[NRootG][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 puriykachiq	puri[VRoot][=andar][--]yka[VDeriv][+Aff][^DB][--]chi[VDeriv][+Caus][^DB][--]q[NS][+Ag]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kikin	kiki[NRoot][=mismo][^DB][--]n[NPers][+3.Sg.Poss]
 
@@ -7711,6 +7919,8 @@ hina	hina[Part_Sim]
 qhawarichikun	qhawa[VRoot][=mirar][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kunan	kunan[NRoot][=ahora]
 
@@ -7757,17 +7967,15 @@ pusaysin	pusa[VRoot][=llevar][--]ysi[VDeriv][+Ass][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qhatunakunaqa	qhatu[NRoot][=mercado][--]na[VS][+Reub][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]na[NS][+Obl][^DB][--]qa[Amb][+Top]
 
 apachiypiqa	apa[VRoot][=llevar][^DB][--]chi[VDeriv][+Caus][^DB][--]y[NS][+Inf][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
 
-co	co	+?
-
--	-[$.]
-
-organizadora	organizadora[NRootES]
+co-organizadora	co-organizadora	+?
 
 hina	hina[Part_Sim]
 
@@ -7799,6 +8007,8 @@ yanapayninwan	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][^DB][--]y[NS][+Inf
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 2008	2008[CARD]
 
 watantinqa	wata[NRoot][=año][^DB][--]ntin[Cas][+Iclsv][^DB][--]qa[Amb][+Top]
@@ -7816,6 +8026,8 @@ qhatunakunapi	qhatu[NRoot][=mercado][--]na[VS][+Reub][^DB][--]ku[VDeriv][+Rflx_I
 karqanku	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
@@ -7842,6 +8054,8 @@ suyumanta	suyu[NRoot][=región][^DB][--]manta[Cas][+Abl]
 empresakunataqa	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hukpiqa	huk[NRootNUM][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 
@@ -7875,6 +8089,8 @@ llamk'aqkunataqa	llamk'a[VRoot][=trabajar][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Ruwariykuna	rura[VRoot][=hacer][--]ri[VDeriv][+Inch][--]yku[VDeriv][+Aff][^DB][--]na[NS][+Obl]
 
 #EOS	#EOS	+?
@@ -7901,6 +8117,8 @@ allintam	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 wiñarirqun	wiña[VRoot][=desarollar,crecer][--]ri[VDeriv][+Inch][--]rqu[VDeriv][+Rptn][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Ruwariykuna	rura[VRoot][=hacer][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][--]kuna[Num][+Pl]
 
@@ -7937,6 +8155,8 @@ imam	ima[Part_Conec][^DB][--]m@mMI[Amb][+DirE]
 kanku	ka[VRoot][=ser][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2002	2002[CARD]
 
@@ -8014,6 +8234,8 @@ rurarikullankun	rura[VRoot][=hacer][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rfl
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Rurariykunap	rura[VRoot][=hacer][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][--]kuna[Num][+Pl][^DB][--]p[Cas][+Gen]
 
 munaqninqa	muna[VRoot][=querer][^DB][--]q[NS][+Ag][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]qa[Amb][+Top]
@@ -8050,6 +8272,8 @@ llamk'allanmi	llamk'a[VRoot][=trabajar][^DB][--]lla[Amb][+Lim_Aff][^DB][--]n[VPe
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 2008	2008[CARD]
 
 watantinqa	wata[NRoot][=año][^DB][--]ntin[Cas][+Iclsv][^DB][--]qa[Amb][+Top]
@@ -8067,6 +8291,8 @@ Camaraqa	cámara[NRootES][^DB][--]qa[Amb][+Top]
 apachin	apa[VRoot][=llevar][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Iskay	iskay[NRootNUM]
 
@@ -8112,6 +8338,8 @@ qallarichin	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Cau
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 1976	1976[CARD]
 
 watapaqqa	wata[NRoot][=año][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
@@ -8148,13 +8376,7 @@ Educación	educación[NRootES]
 
 Profesional	profesional[NRootES]
 
-E	E[ALFS]
-
-.	.[$.]
-
-W	W[ALFS]
-
-.	.[$.]
+E.W.	E.W.	+?
 
 Middendorff	Middendorff	+?
 
@@ -8164,9 +8386,11 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qhipa	qhipa[NRoot][=atrás]
 
-watanmantaqqa	wata[NRoot][=año][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]man[Cas][+Dat_Ill][^DB][--]taq[Amb][+Con_Intr][^DB][--]qa[Amb][+Top]
+watanmantaqqa	wata[VRoot][=atar][^DB][--]n[VPers][+3.Sg.Subj][--]man[Mod][+Pot][^DB][--]taq[Amb][+Con_Intr][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
 
@@ -8194,12 +8418,7 @@ de	de	+?
 
 Beneﬁciencia	Beneﬁciencia	+?
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemana	alemána[NRootES]
-Alemana	alemana[NRootES]
+Peruano-Alemana	Peruano-Alemana	+?
 
 huñuwanpas	huñu[NRoot][=suma][^DB][--]wan[Cas][+Con_Inst][^DB][--]pas[Amb][+Add]
 
@@ -8226,6 +8445,8 @@ kananpaqmi	ka[VRoot][=ser][^DB][--]na[NS][+Obl][^DB][--]n[NPers][+3.Sg.Poss][^DB
 kamarichin	kama[VRoot][=gobernar,mandar,crear][--]ri[VDeriv][+Inch][^DB][--]chi[VDeriv][+Caus][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1985	1985[CARD]
 
@@ -8299,13 +8520,19 @@ yachachikun	yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[V
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Ministerio	ministerio[NRootES]
 
 kamachisqanwan	kama[VRoot][=gobernar,mandar,crear][^DB][--]chi[VDeriv][+Caus][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]wan[Cas][+Con_Inst]
 
 yanaparikuspam	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]spa[NS][+SS][^DB][--]m@mMI[Amb][+DirE]
 
-''institución''	''institución''	+?
+"	"[$.]
+
+institución	institución[NRootES]
+
+"	"[$.]
 
 sutichasqataqa	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]sqa[NS][+Perf][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
@@ -8337,6 +8564,8 @@ churachikun	chura[VRoot][=poner][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Masichakuq	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
 empresakunaman	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]man[Cas][+Dat_Ill]
@@ -8361,6 +8590,8 @@ mast'arichin	mast'a[VRoot][=tender,tumbar][--]ri[VDeriv][+Inch][^DB][--]chi[VDer
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Uyachaqkuna	uya[NRoot][=cara][--]cha[VS][+Fact][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl]
 Uyachaqkuna	uya[NRoot][=cara][--]chaq[NDeriv][+Aug][--]kuna[Num][+Pl]
 
@@ -8377,11 +8608,7 @@ Cámara	cámara[NRootES]
 Alemana	alemána[NRootES]
 Alemana	alemana[NRootES]
 
-Perú	Perú[NP]
-
--	-[$.]
-
-Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
+Perú-Alemania	Perú-Alemania	+?
 
 sutichakuq	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
@@ -8401,17 +8628,15 @@ uyachan	uya[NRoot][=cara][--]cha[NDeriv][+Dim][^DB][--]n[NPers][+3.Sg.Poss]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chunka	chunka[NRootNUM]
 
 watamantañataq	wata[NRoot][=año][^DB][--]manta[Cas][+Abl][^DB][--]ña[Amb][+Disc][^DB][--]taq[Amb][+Con_Intr]
 
 ,	,[$.]
 
-Perú	Perú[NP]
-
--	-[$.]
-
-Alemania	alemán[NRootES][^DB][--]ya[Amb][+Emph]
+Perú-Alemania	Perú-Alemania	+?
 
 sutichakuq	suti[NRoot][=nombre][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
@@ -8430,6 +8655,8 @@ revistawanmi	revista[NRootES][^DB][--]wan[Cas][+Con_Inst][^DB][--]mi[Amb][+DirE]
 tikrachikun	t'ikra[VRoot][=voltear][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1991	1991[CARD]
 
@@ -8494,17 +8721,15 @@ lluqsiq	lluqsi[VRoot][=salir][^DB][--]q[NS][+Ag]
 
 hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
-5	5[CARD]
-
-,	,[$.]
-
-000	000[CARD]
+5,000	5,000	+?
 
 empresakunamanmi	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]man[Cas][+Dat_Ill][^DB][--]mi[Amb][+DirE]
 
 t'aqakuq	t'aqa[VRoot][=dividir,separar,distribuir][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2001	2001[CARD]
 
@@ -8536,11 +8761,7 @@ hinam	hina[Part_Sim][^DB][--]m@mMI[Amb][+DirE]
 
 kayqa	kay[PrnDem][^DB][--]qa[Amb][+Top]
 
-e	e[ALFS]
-
--	-[$.]
-
-chakipim	chaki[NRoot][=pie][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
+e-chakipim	e-chaki[NRootG][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
 
 sapa	sapa[NRoot][=cada,solo]
 
@@ -8551,6 +8772,8 @@ p'unchawmi	p'unchaw[NRoot][=día][^DB][--]mi[Amb][+DirE]
 apachikun	apa[VRoot][=llevar][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 2005	2005[CARD]
 
@@ -8578,12 +8801,7 @@ e	e[ALFS]
 
 Industria	industria[NRootES]
 
-Boliviano	boliviano[NRootES]
-
--	-[$.]
-
-Alemanawan	alemána[NRootES][^DB][--]wan[Cas][+Con_Inst]
-Alemanawan	alemana[NRootES][^DB][--]wan[Cas][+Con_Inst]
+Boliviano-Alemanawan	Boliviano-Alemana[NRootG][^DB][--]wan[Cas][+Con_Inst]
 
 kuskam	kuska[NRoot][=juntos][^DB][--]m@mMI[Amb][+DirE]
 
@@ -8597,6 +8815,8 @@ qillqachikun	qillqa[VRoot][=escribir][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDer
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Sullullkuna	sullull[NRoot][=testimonio,juramento][--]kuna[Num][+Pl]
 
 #EOS	#EOS	+?
@@ -8607,11 +8827,7 @@ Noltenius	Nolteniu[NRootG][^DB][--]s[Amb][+IndE]
 
 |	|	+?
 
-1973	1973[CARD]
-
--	-[$.]
-
-1978	1978[CARD]
+1973-1978	1973-1978	+?
 
 watakunapi	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc]
 
@@ -8624,6 +8840,8 @@ Directivap	directiva[NRootES][^DB][--]p[Cas][+Gen]
 masichakuqnin	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][^DB][--]nin[NPers][+3.Sg.Poss]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Camarap	cámara[NRootES][^DB][--]p[Cas][+Gen]
 
@@ -8641,9 +8859,7 @@ llaqtapi	llaqta[NRoot][=pueblo][^DB][--]pi[Cas][+Loc]
 
 ,	,[$.]
 
-Av	Av	+?
-
-.	.[$.]
+Av.	Av.	+?
 
 Emancipación	emancipación[NRootES]
 
@@ -8656,6 +8872,8 @@ huñurikuykunaqa	huñu[VRoot][=juntar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+
 apakuq	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 70	70[CARD]
 
@@ -8682,6 +8900,8 @@ pachapunim	pacha[NRoot][=mundo,tiempo][^DB][--]puni[Amb][+Def][^DB][--]m@mMI[Amb
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Sapa	sapa[NRoot][=cada,solo]
 
@@ -8717,6 +8937,8 @@ chayta	chay[PrnDem][^DB][--]ta[Cas][+Acc]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Sapa	sapa[NRoot][=cada,solo]
 
 pachaqa	pacha[NRoot][=mundo,tiempo][^DB][--]qa[Amb][+Top]
@@ -8732,6 +8954,8 @@ manchakuylla	mancha[VRoot][=tener_miedo][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Directoriota	directorio[NRootES][^DB][--]ta[Cas][+Acc]
 
@@ -8755,6 +8979,8 @@ kayku	ka[VRoot][=ser][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 pachapi	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc]
@@ -8777,6 +9003,8 @@ tikrachikusqatam	t'ikra[VRoot][=voltear][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[V
 yuyarichkani	yuya[VRoot][=recordar,pensar][--]ri[VDeriv][+Inch][^DB][--]chka[Asp][+Prog][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chayraykumantam	Chayra[NRootG][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]manta[Cas][+Abl][^DB][--]m@mMI[Amb][+DirE]
 
@@ -8804,6 +9032,8 @@ haywarin	haywa[VRoot][=alcanzar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Sub
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chayna	chayna[PrnDem]
 
 kaptinmi	ka[VRoot][=ser][^DB][--]pti[NS][+DS][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]mi[Amb][+DirE]
@@ -8814,12 +9044,7 @@ huch'uy	huch'uy[NRoot][=pequeño]
 
 wawayuq	wawa[NRoot][=niño][^DB][--]yuq[NDeriv][+Poss]
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemanes	alemánes[NRootES]
-Alemanes	alemanes[NRootES]
+Peruano-Alemanes	Peruano-Alemanes	+?
 
 taytamamakunaqa	tayta[NRoot][=padre][^DB][--]mama[NRoot][=madre,señora][--]kuna[Num][+Pl][^DB][--]qa[Amb][+Top]
 
@@ -8838,6 +9063,8 @@ wasitam	wasi[NRoot][=casa][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 hatarichiyku	hatari[VRoot][=levantarse][^DB][--]chi[VDeriv][+Caus][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Cámara	cámara[NRootES]
 
@@ -8861,6 +9088,8 @@ yanaparikunku	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][--]ri[VDeriv][+Inc
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Camarap	cámara[NRootES][^DB][--]p[Cas][+Gen]
 
 masichakuqnin	masi[NRoot][=compañero][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][^DB][--]nin[NPers][+3.Sg.Poss]
@@ -8882,6 +9111,8 @@ kasqakunatam	ka[VRoot][=ser][^DB][--]sqa[NS][+Perf][--]kuna[Num][+Pl][^DB][--]ta
 chaskini	chaski[VRoot][=recibir,aceptar][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Hawa	hawa[NRoot][=fuera,arriba]
 
@@ -8911,6 +9142,8 @@ qhawani	qhawa[VRoot][=mirar][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Perú	Perú[NP]
 
 suyupi	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc]
@@ -8935,17 +9168,15 @@ hap'inkuraqchu	hap'i[VRoot][=agarrar,entender][^DB][--]nku[VPers][+3.Pl.Subj][^D
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alfred	Alfred	+?
 
 Schultz	Schultz	+?
 
 |	|	+?
 
-1979	1979[CARD]
-
--	-[$.]
-
-1980	1980[CARD]
+1979-1980	1979-1980	+?
 
 watakunapi	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc]
 
@@ -9003,6 +9234,8 @@ yuyarini	yuya[VRoot][=recordar,pensar][--]ri[VDeriv][+Inch][^DB][--]ni[VPers][+1
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 pachapiqa	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
@@ -9018,6 +9251,8 @@ chaypiqa	chay[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
 kaqku	ka[VRoot][=ser][^DB][--]qku[VPers][+3.Pl.Subj.Hab]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chaypi	chay[PrnDem][^DB][--]pi[Cas][+Loc]
 
@@ -9047,6 +9282,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Seminarioqa	seminario[NRootES][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -9064,6 +9301,8 @@ kamachiyninpim	kama[VRoot][=gobernar,mandar,crear][^DB][--]chi[VDeriv][+Caus][^D
 apakuran	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Rimarisqaymantaqa	rima[VRoot][=hablar][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Perf][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
@@ -9091,6 +9330,8 @@ churarani	chura[VRoot][=poner][^DB][--]rqa[Tns][+NPst][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 huñurikuymantaqa	huñu[VRoot][=juntar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
@@ -9114,6 +9355,8 @@ willayta	willa[VRoot][=contar][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
 uyachayku	uya[NRoot][=cara][--]cha[NDeriv][+Dim][^DB][--]yku[NPers][+1.Pl.Excl.Poss]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chaymanta	chay[PrnDem][^DB][--]manta[Cas][+Abl]
 
@@ -9171,6 +9414,8 @@ apakun	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 rimanakuy	rima[VRoot][=hablar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
@@ -9205,6 +9450,8 @@ haymarinim	hayma[VRoot][=ayudar][--]ri[VDeriv][+Inch][^DB][--]ni[VPers][+1.Sg.Su
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Ñawirisqanmantaqa	ñawi[VRoot][=leer][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -9226,6 +9473,8 @@ nisqam	ni[VRoot][=decir][^DB][--]sqa[NS][+Perf][^DB][--]m@mMI[Amb][+DirE]
 nini	ni[VRoot][=decir][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Morales	morales[NRootES]
 
@@ -9261,6 +9510,8 @@ huñutapas	huñu[NRoot][=suma][^DB][--]ta[Cas][+Acc][^DB][--]pas[Amb][+Add]
 umalliranim	uma[VRoot][=engañar][--]lli[VDeriv][+Autotrs][^DB][--]rqa[Tns][+NPst][--]ni[VPers][+1.Sg.Subj][^DB][--]m@mMI[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Huk	huk[NRootNUM]
 
@@ -9322,6 +9573,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chay	chay[PrnDem]
 
 kamachiy	kama[VRoot][=gobernar,mandar,crear][^DB][--]chi[VDeriv][+Caus][^DB][--]y[NS][+Inf]
@@ -9382,6 +9635,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Mañakusqaykumanqa	maña[VRoot][=pedir][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+Perf][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]man[Cas][+Dat_Ill][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -9420,6 +9675,8 @@ kasqa	ka[VRoot][=ser][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kayqa	kay[PrnDem][^DB][--]qa[Amb][+Top]
 
 chay	chay[PrnDem]
@@ -9446,17 +9703,15 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Walter	Walter	+?
 
 Anders	Anders	+?
 
 |	|	+?
 
-1995	1995[CARD]
-
--	-[$.]
-
-1997	1997[CARD]
+1995-1997	1995-1997	+?
 
 watakunapi	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc]
 
@@ -9483,6 +9738,8 @@ Camarataqa	cámara[NRootES][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 umallini	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Paywan	pay[PrnPers+3.Sg][^DB][--]wan[Cas][+Con_Inst]
 
@@ -9511,6 +9768,8 @@ umalliqninmi	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]q[NS][+Ag][^DB][--
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Llamk'achkaptiyqa	llamk'a[VRoot][=trabajar][^DB][--]chka[Asp][+Prog][^DB][--]pti[NS][+DS][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]qa[Amb][+Top]
 
@@ -9544,6 +9803,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Junta	junta[NRootES]
 
 Derectivapi	Derectiva[NRootG][^DB][--]pi[Cas][+Loc]
@@ -9573,6 +9834,8 @@ yanapallawaqmi	yana[VRoot][=servir,ayudar][--]pa[VDeriv][+Rep][^DB][--]lla[Amb][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Hinallataq	hina[Part_Sim][^DB][--]lla[Amb][+Lim_Aff][^DB][--]taq[Amb][+Con_Intr]
 
 ,	,[$.]
@@ -9595,6 +9858,8 @@ apamuwan	apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]wa[VPers][+1.Obj][^
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Suyup	suyu[NRoot][=región][^DB][--]p[Cas][+Gen]
 
 kamachiymantapas	kama[VRoot][=gobernar,mandar,crear][^DB][--]chi[VDeriv][+Caus][^DB][--]y[NS][+Inf][^DB][--]manta[Cas][+Abl][^DB][--]pas[Amb][+Add]
@@ -9612,6 +9877,8 @@ willarisqan	willa[VRoot][=contar][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Perf][^D
 purin	puri[VRoot][=andar][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Chaynapim	chayna[PrnDem][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
 
@@ -9632,6 +9899,8 @@ qhawaspaqa	qhawa[VRoot][=mirar][^DB][--]spa[NS][+SS][^DB][--]qa[Amb][+Top]
 kusikunim	kusi[VRoot][=alegrar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]ni[VPers][+1.Sg.Subj][^DB][--]m@mMI[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Achka	achkha[NRoot][=mucho]
 
@@ -9656,6 +9925,8 @@ allintam	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc][^DB][--]m@mMI[Amb][+DirE]
 kallpacharikunku	kallpa[NRoot][=fuerte][--]cha[VS][+Fact][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Alemaniap	Alemania[NRootG][^DB][--]p[Cas][+Gen]
 
@@ -9693,6 +9964,8 @@ hap'ini	hap'i[VRoot][=agarrar,entender][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qallarisqanmanta	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]sqa[NS][+Perf][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]manta[Cas][+Abl]
 
 pacham	pacha[NRoot][=mundo,tiempo][^DB][--]m@mMI[Amb][+DirE]
@@ -9726,6 +9999,8 @@ llamk'arin	llamk'a[VRoot][=trabajar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Mallichakuqkunataqa	malli[NRoot][=bocado][--]cha[VS][+Fact][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -9746,6 +10021,8 @@ qhipakullaqku	qhipa[VRoot][=quedar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]lla[Am
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chaykunamantaqa	chay[PrnDem][--]kuna[Num][+Pl][^DB][--]manta[Cas][+Abl][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -9764,25 +10041,19 @@ rikurin	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Guillermo	Guillermo	+?
 
 Cornejo	cornejo[NRootES]
 
 |	|	+?
 
-1981	1981[CARD]
-
--	-[$.]
-
-1982	1982[CARD]
+1981-1982	1981-1982	+?
 
 &	&[$.]
 
-1985	1985[CARD]
-
--	-[$.]
-
-1991	1991[CARD]
+1985-1991	1985-1991	+?
 
 watakunapi	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc]
 
@@ -9828,6 +10099,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Suyupaqqa	suyu[NRoot][=región][^DB][--]paq[Cas][+Ben][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -9858,6 +10131,8 @@ llamk'arillani	llamk'a[VRoot][=trabajar][--]ri[VDeriv][+Inch][^DB][--]lla[Amb][+
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Llipiykupaq	llipi[NRoot][=todo][^DB][--]yku[NPers][+1.Pl.Excl.Poss][^DB][--]paq[Cas][+Ben]
 
 sinchi	sinchi[NRoot][=fuerte]
@@ -9887,6 +10162,8 @@ nispachá	ni[VRoot][=decir][^DB][--]spa[NS][+SS][^DB][--]chá[Amb][+Asmp_Emph]
 niyman	ni[VRoot][=decir][^DB][--]yman[VPers][+1.Sg.Subj.Pot]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Junta	junta[NRootES]
 
@@ -9924,6 +10201,8 @@ kararqayku	kara[VRootG][^DB][--]rqa[Tns][+NPst][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Camaramanta	cámara[NRootES][^DB][--]manta[Cas][+Abl]
 
 wasichaqkunawanmi	wasi[NRoot][=casa][--]cha[VS][+Fact][^DB][--]q[NS][+Ag][--]kuna[Num][+Pl][^DB][--]wan[Cas][+Con_Inst][^DB][--]mi[Amb][+DirE]
@@ -9942,6 +10221,8 @@ ch'usasqaykuta	ch'usa[VRoot][=faltar,ausentarse][^DB][--]sqa[NS][+Perf][^DB][--]
 yuyarini	yuya[VRoot][=recordar,pensar][--]ri[VDeriv][+Inch][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Suyupi	suyu[NRoot][=región][^DB][--]pi[Cas][+Loc]
 
@@ -9969,6 +10250,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Samiykupaqqa	sami[VRoot][=felicitar][--]yku[VDeriv][+Aff][--]pa[VDeriv][+Rep][^DB][--]q[NS][+Ag][^DB][--]qa[Amb][+Top]
 
 ,	,[$.]
@@ -9982,6 +10265,8 @@ chaskillaykupunim	chaski[VRoot][=recibir,aceptar][^DB][--]lla[Amb][+Lim_Aff][--]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Jorge	Jorge	+?
 
 von	von	+?
@@ -9990,27 +10275,15 @@ Wedemeyer	Wedemeyer	+?
 
 |	|	+?
 
-1992	1992[CARD]
-
--	-[$.]
-
-1993	1993[CARD]
+1992-1993	1992-1993	+?
 
 ,	,[$.]
 
-1997	1997[CARD]
-
--	-[$.]
-
-1999	1999[CARD]
+1997-1999	1997-1999	+?
 
 &	&[$.]
 
-2005	2005[CARD]
-
--	-[$.]
-
-2006	2006[CARD]
+2005-2006	2005-2006	+?
 
 watakunapi	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]pi[Cas][+Loc]
 
@@ -10042,6 +10315,8 @@ mink'arikuwan	mink'a[VRoot][=encargar][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chaymantam	chay[PrnDem][^DB][--]manta[Cas][+Abl][^DB][--]m@mMI[Amb][+DirE]
 
 1992	1992[CARD]
@@ -10059,6 +10334,8 @@ tukupuni	tuku[VRoot][=acabar,suceder,convertirse][--]pu[VDeriv][+Rgr_Iprs][^DB][
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qallariy	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf]
 
 llamk'ayninpiqa	llamk'a[VRoot][=trabajar][^DB][--]y[NS][+Inf][^DB][--]nin[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc][^DB][--]qa[Amb][+Top]
@@ -10071,9 +10348,7 @@ pachapi	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc]
 
 umalliq	uma[NRoot][=cabeza][--]lli[VS][+Autotrs][^DB][--]q[NS][+Ag]
 
-Dr	Dr	+?
-
-.	.[$.]
+Dr.	Dr.	+?
 
 Hans	Hans	+?
 
@@ -10088,6 +10363,8 @@ allintaqa	allin[NRoot][=bueno][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 kallpacharikuni	kallpa[NRoot][=fuerte][--]cha[VS][+Fact][--]ri[VDeriv][+Inch][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Alan	Ala[NRootG][^DB][--]n[NPers][+3.Sg.Poss]
 
@@ -10115,6 +10392,8 @@ tariyku	tari[VRoot][=encontrar][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qallariy	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf]
 
 pachapi	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc]
@@ -10139,6 +10418,8 @@ karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Iskayñiqi	Iskayñiqi	+?
 
 kamachiypim	kama[VRoot][=gobernar,mandar,crear][^DB][--]chi[VDeriv][+Caus][^DB][--]y[NS][+Inf][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
@@ -10152,6 +10433,8 @@ ruwakuyqa	rura[VRoot][=hacer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf][
 apakun	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 IV	eV[NRootES]
 
@@ -10218,6 +10501,8 @@ karqanku	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]nku[VPers][+3.Pl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alemaniap	Alemania[NRootG][^DB][--]p[Cas][+Gen]
 
 Ministro	ministro[NRootES]
@@ -10243,6 +10528,8 @@ pachapipas	pacha[NRoot][=mundo,tiempo][^DB][--]pi[Cas][+Loc][^DB][--]pas[Amb][+A
 karqan	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Camarapi	cámara[NRootES][^DB][--]pi[Cas][+Loc]
 
@@ -10290,6 +10577,8 @@ kanankutapaschu	ka[VRoot][=ser][^DB][--]na[NS][+Obl][^DB][--]nku[NPers][+3.Pl.Po
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Kay	kay[PrnDem]
 
 ruwayqa	rura[VRoot][=hacer][^DB][--]y[NS][+Inf][^DB][--]qa[Amb][+Top]
@@ -10320,6 +10609,8 @@ hap'ini	hap'i[VRoot][=agarrar,entender][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Wata	wata[NRoot][=año]
 
 wata	wata[NRoot][=año]
@@ -10344,6 +10635,8 @@ kaqwanpas	ka[VRoot][=ser][^DB][--]q[NS][+Ag][^DB][--]wan[Cas][+Con_Inst][^DB][--
 purillaqmi	puri[VRoot][=andar][^DB][--]lla[Amb][+Lim_Aff][^DB][--]q[NS][+Ag][^DB][--]mi[Amb][+DirE]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Perú	Perú[NP]
 
@@ -10397,31 +10690,23 @@ ima	ima[Part_Conec]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Bernd	Bernd	+?
 
 Schmidt	Schmidt	+?
 
 |	|	+?
 
-2000	2000[CARD]
-
--	-[$.]
-
-2001	2001[CARD]
+2000-2001	2000-2001	+?
 
 ,	,[$.]
 
-2002	2002[CARD]
-
--	-[$.]
-
-2004	2004[CARD]
+2002-2004	2002-2004	+?
 
 ,	,[$.]
 
-2007	2007[CARD]
-
--	-[$.]
+2007-	2007-	+?
 
 watakunamanta	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]manta[Cas][+Abl]
 
@@ -10460,9 +10745,11 @@ paqarichiy	paqari[VRoot][=amanecer,crearse][^DB][--]chi[VDeriv][+Caus][^DB][--]y
 
 raphitaqa	rap'i[NRoot][=hoja][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
 
-siq'ichayku	siq'i[VRoot][=dibujar][--]cha[VDeriv][+Vdim][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
+siq'ichayku	siq'i[NRoot][=línea,fila][--]cha[NDeriv][+Dim][^DB][--]yku[NPers][+1.Pl.Excl.Poss]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Kayqa	kay[PrnDem][^DB][--]qa[Amb][+Top]
 
@@ -10491,6 +10778,8 @@ puriq	puri[VRoot][=andar][^DB][--]q[NS][+Ag]
 karqayku	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Walla	walla[NRoot][=guerrero]
 
@@ -10522,6 +10811,8 @@ qallarin	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.Sg.Subj
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Alemaniamanta	Alemania[NRootG][^DB][--]manta[Cas][+Abl]
 
 empresa	empresa[NRootES]
@@ -10538,6 +10829,8 @@ yuyarini	yuya[VRoot][=recordar,pensar][--]ri[VDeriv][+Inch][^DB][--]ni[VPers][+1
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Qhipa	qhipa[NRoot][=atrás]
 
 watakunamantañam	wata[NRoot][=año][--]kuna[Num][+Pl][^DB][--]manta[Cas][+Abl][^DB][--]ña[Amb][+Disc][^DB][--]m@mMI[Amb][+DirE]
@@ -10553,6 +10846,8 @@ qupuchikunata	qupu[VRootG][^DB][--]chi[VDeriv][+Caus][^DB][--]ku[VDeriv][+Rflx_I
 chaskichiyku	chaski[VRoot][=recibir,aceptar][^DB][--]chi[VDeriv][+Caus][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Velasco	Velasco	+?
 
@@ -10580,6 +10875,8 @@ karqayku	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Ichaqa	icha[Part_Contr][^DB][--]qa[Amb][+Top]
 
 sapa	sapa[NRoot][=cada,solo]
@@ -10593,6 +10890,8 @@ sayachiqmi	saya[VRoot][=parar][^DB][--]chi[VDeriv][+Caus][^DB][--]q[NS][+Ag][^DB
 karqayku	ka[VRoot][=ser][^DB][--]rqa[Tns][+NPst][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 Qhipa	qhipa[NRoot][=atrás]
 
@@ -10613,6 +10912,8 @@ apakusqantam	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]sqa[NS][+
 yuyarini	yuya[VRoot][=recordar,pensar][--]ri[VDeriv][+Inch][^DB][--]ni[VPers][+1.Sg.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
 1998	1998[CARD]
 
@@ -10682,6 +10983,8 @@ apakun	apa[VRoot][=llevar][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]n[VPers][+3.Sg.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Rimanakuy	rima[VRoot][=hablar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[NS][+Inf]
 
 wasipim	wasi[NRoot][=casa][^DB][--]pi[Cas][+Loc][^DB][--]m@mMI[Amb][+DirE]
@@ -10712,9 +11015,11 @@ rikurinchu	rikhu[VRoot][=ver,aparecer][--]ri[VDeriv][+Inch][^DB][--]n[VPers][+3.
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Chaymi	chay[PrnDem][^DB][--]mi[Amb][+DirE]
 
-utqaylla	utqha[VRoot][=apurarse][^DB][--]y[NS][+Inf][^DB][--]lla[Amb][+Lim_Aff]
+utqaylla	utqhay[NRoot][=rápido,apurado][^DB][--]lla[Amb][+Lim_Aff]
 
 sapankuman	sapa[NRoot][=cada,solo][^DB][--]nku[NPers][+3.Pl.Poss][^DB][--]man[Cas][+Dat_Ill]
 
@@ -10738,6 +11043,8 @@ tukukun	tuku[VRoot][=acabar,suceder,convertirse][^DB][--]ku[VDeriv][+Rflx_Int][^
 
 .	.[$.]
 
+#EOS	#EOS	+?
+
 Añanchakuy	Añancha[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]y[VPers][+2.Sg.Subj.Imp]
 
 #EOS	#EOS	+?
@@ -10752,12 +11059,7 @@ e	e[ALFS]
 
 Industria	industria[NRootES]
 
-Peruano	peruano[NRootES]
-
--	-[$.]
-
-Alemanap	alemána[NRootES][^DB][--]p[Cas][+Gen]
-Alemanap	alemana[NRootES][^DB][--]p[Cas][+Gen]
+Peruano-Alemanap	Peruano-Alemana[NRootG][^DB][--]p[Cas][+Gen]
 
 40	40[CARD]
 
@@ -10774,4 +11076,6 @@ empresakunataqa	empresa[NRootES][--]kuna[Num][+Pl][^DB][--]ta[Cas][+Acc][^DB][--
 añanchakuyku	añancha[VRootG][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]yku[VPers][+1.Pl.Excl.Subj]
 
 .	.[$.]
+
+#EOS	#EOS	+?
 
