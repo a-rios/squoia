@@ -521,13 +521,12 @@ define NITAQ [ {nitaq} : {nitaq} ] .o. UpperCase;
 
 ######################################################################################
 
-define preWord [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
-
-#define Word  FeatRestr  .o. [preWord|OrdinalNbrs|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex Cleanup2 .o. LexRestr .o. Word;
-
-define Word  FeatRestr .o. LexRestr .o. [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+define preWord LexRestr .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
+define Word  FeatRestr .o. [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 read regex Cleanup2 .o. CleanSigma .o. Word;
+
+#define preWord LexRestr .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
+#define Word   [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 #read regex LexRestr .o. Word;
 
-save stack normalizer.bin
+save stack normalizerSpellcheck.bin
