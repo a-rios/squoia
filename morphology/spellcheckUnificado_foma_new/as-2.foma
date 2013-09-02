@@ -1,0 +1,5 @@
+# ambivalent suffixes slot 2
+
+define AS=2 [
+[  {puni}  "+Def" ] : {puni}
+];

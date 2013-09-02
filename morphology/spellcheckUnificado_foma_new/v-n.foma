@@ -1,0 +1,14 @@
+# nominalizing suffixes
+
+define VtoN [
+  [  {sqa}  "+Perf" ] : {sqa}
+| [  {y}  "+Inf" ] : {y}
+#| [  {ti}   "+Char" ] : {ti}
+#| [  {li}   "+Char" ] : {li}
+#| [  {yli}   "+Char" ] : {yli}
+| [  {liku}   "+Char" ] : {liku}
+#| [  {lu}   "+Char" ] : {lu}
+| [  {na}  "+Obl" ] : {na}
+| [  {q}  "+Ag" ] : {q}
+#| [  {mpa}  "+Posi" ] : ["@MPA"{mpa}]
+] ;

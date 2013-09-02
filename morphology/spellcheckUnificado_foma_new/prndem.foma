@@ -1,0 +1,34 @@
+# demonstrative pronouns
+
+define PrnDem [
+  {wak}  : {wak}
+| {wak}  : {waq}
+| {wak}  : {waj}
+| {wakna}  : {wakna}
+| {wakna}  : {waqna}
+| {wakna}  : {wajna}
+| {chay}  : {chay}
+| {chayna}  : {chayna}
+| {chay}  : {chhay}
+| {chayna}  : {chhayna}
+| {kay}  : {kay}
+| {kayna}  : {kayna}
+| {kay}  : {khay}
+| {kayna}  : {khayna}
+| {ankhayna}  : {ankhayna}
+| {ankhay}  : {ankhay}
+| {haqay}  : {haqay}
+| {haqay}  : {haqhay}
+| {haqay}  : {haq'ay}
+| {haqay}  : {jaqay}
+| {haqhay}  : {jaqhay}
+| {haqay}  : {jaq'ay}
+| {haqayna}  : {haqayna}
+| {haqayna}  : {haqhayna}
+| {haqayna}  : {haq'ayna}
+| {haqayna}  : {jaqayna}
+| {haqayna}  : {jaqhayna}
+| {haqayna}  : {jaq'ayna}
+| {chaqay}  : {chahay}
+| {chaqay}  : {chhaqay}
+] ;

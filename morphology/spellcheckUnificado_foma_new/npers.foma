@@ -1,0 +1,19 @@
+# nominal transitive forms, only in nominalized transitive verbs with -su/-wa
+
+define npers [
+# -su -yki, +3.Subj_2.Sg.Obj
+  [ "@SU"  {yki} "+3.Subj_2.Sg.Obj"  ] :  {yki}
+# -su -ykichik: +3.Subj_2.Pl.Obj
+| [ "@SU"  {ykichik} "+3.Subj_2.Pl.Obj"  ] : {ykichik}
+| [ "@SU"  {ykichik} "+3.Subj_2.Pl.Obj"  ] : {ykichis}
+| [ "@SU"  {ykichik} "+3.Subj_2.Pl.Obj"  ] : {ykichiq}
+# -su -ykiku: +3.Pl.Subj_2.Sg.Obj
+| [ "@SU"  {ykiku} "+3.Pl.Subj_2.Sg.Obj"  ] : {ykiku}
+# -wa -ykiku: +2.Sg.Subj_1.Pl.Excl.Obj
+| [ "@WA"  {ykiku} "+2.Sg.Subj_1.Pl.Excl.Obj"  ] : {ykiku}
+# -wa -ychik:  +3.Subj_1.Pl.Incl.Obj
+| [ "@WA"  {ychik} "+3.Subj_1.Pl.Incl.Obj"  ] : {ychik}
+| [ "@WA"  {ychik} "+3.Subj_1.Pl.Incl.Obj"  ] : {ychis}
+| [ "@WA"  {ychik} "+3.Subj_1.Pl.Incl.Obj"  ] : {ychiq}
+] ;
+

@@ -1,0 +1,6 @@
+# ambivalent suffixes slot 5
+
+define AS=5 [
+  [ {chu}  "+Intr_Neg" ] : {chu}
+| [ {chu}  "+Neg" ]: {tsu}
+];
