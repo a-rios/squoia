@@ -1,0 +1,12 @@
+# verbalizing suffixes
+
+define NtoV [
+  [  {lli}  "+Autotrs" ] : {lli}
+| [  {naya}  "+Des"  ] : {naya}
+| [  {na}   "+Reub"  ] : {na}
+| [  {cha}  "+Fact"  ] : {cha}
+| [   {raya}   "+Char" ] : {raya}
+| [  {ya}   "+Trs" ] : {ya}
+| [  {kacha}   "+Sml"  ] : {kacha}
+| [  {ykacha}   "+Sml"  ] : {ykacha}
+] ;

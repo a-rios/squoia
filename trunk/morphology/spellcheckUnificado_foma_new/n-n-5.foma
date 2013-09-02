@@ -1,0 +1,15 @@
+#nominal slot 5: case
+
+define N=N=5 [
+   [ {ntin}  "+Iclsv" ]:["@POSS"{ntin}]
+|  [  {ntin}  "+Iclsv" ]: ["@POSS"{nti}]
+|  [  {nintin}  "+Iclsv" ]:["@POSSni"{nintin}]
+|  [  {nintin}  "+Iclsv" ]: ["@POSSni"{ninti}]
+|  [  {nintin}  "+Iclsv" ]:["@POSSni"{ñintin}]
+|  [  {nintin}  "+Iclsv" ]: ["@POSSni"{ñinti}]
+|  [  {pura}  "+Intsoc" ] : {pura}
+|  [  {nka}   "+Distr" ] : {nka}
+|  [  {kama}   "+Term" ] : {kama}
+|  [  {niq}   "+Aprx" ] : {niq}
+|  [  {niq}   "+Aprx" ] : {ñiq}
+] ;

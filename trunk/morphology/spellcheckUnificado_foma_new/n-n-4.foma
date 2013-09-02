@@ -1,0 +1,6 @@
+# nominal slot 4: number
+
+define N=N=4 [
+  [ {kuna}  "+Pl" ] : {kuna}
+| [ {kuna} "+Pl"  {yuq}  "+Poss" "@PLYUQ" ]: {kunayuq}
+] ;

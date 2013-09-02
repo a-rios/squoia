@@ -1,0 +1,10 @@
+# verbalizable particles
+
+define verbalizableParticle [
+   {hina}  : {hina}
+|  {hina}  : {jina}
+|  {hina}  : {sina}
+|  {mana} : {mana}
+|  {ama}  : {ama}
+|  {ima} : {ima}
+] ;
