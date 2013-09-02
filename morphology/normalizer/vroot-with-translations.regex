@@ -926,7 +926,7 @@
 | [ {ñawch'i} "[" "VRoot" "]" "[" "=aguzar" "]" ] :  {ñawchi}
 | [ {ñawch'i} "[" "VRoot" "]" "[" "=aguzar" "]" ] :  {ñawch'i}
 | [ {ñawi} "[" "VRoot" "]" "[" "=leer" "]" ] :  {ñawi}
-| [ {ñawpa} "[" "VRoot" "]" "[" "=adelantar" "]" ] :  {nawpa}
+| [ {ñawpa} "[" "VRoot" "]" "[" "=adelantar" "]" "@NAWPA" ] :  {nawpa}
 | [ {ñawpa} "[" "VRoot" "]" "[" "=adelantar" "]" "@NAWPA" ] :  {ñawpa}
 | [ {ñawsa} "[" "VRoot" "]" "[" "=cegar" "]" ] :  {ñawsa}
 | [ {ñiktu} "[" "VRoot" "]" "[" "=arrugarse" "]" ] :  {ñiktu}
