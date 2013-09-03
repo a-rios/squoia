@@ -296,7 +296,7 @@
        source  n-n-3.foma
        #nominal transitive forms
        source  npers.foma 
-       source n-n-4.foma
+       source n-n-4-guesser.foma
        source  n-n-5.foma
        source  n-n-6.foma
        source  n-n-7.foma
@@ -389,7 +389,7 @@ define Verb  [[VROOT|VDERIV] VerbSuffixes];
 
 # case suffixes:  
 # -taq, -qta, -mantaq, -paq, -ntin, -npaq
-define CASE [~$[ "@TA" "@GENq"| "@GENq"{p}"+Gen" "@PA" {ta}"+Acc" | "+Abl" "@GENq" | "+Iclsv"{m} "+DirE" "@MI" | "@GENq" {p} "+Gen" ]];
+define CASE [~$[ "@TA" "@GENq"| "@GENq"{p}"+Gen" "@PA" {ta}"+Acc" | "+Abl" "@GENq" | "+Iclsv"{m} "+DirE" "@MI" | {pa}"+Gen" "@PA" "@GENq"]];
 
 # verbal derivation, qti, (sqan), rqan 
 define VERBMORPHS [~$[ "+Ag"{ti}"+Char" | "+3.Sg.Subj.NPst"{m}"+DirE" ]];

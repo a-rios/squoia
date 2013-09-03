@@ -11,8 +11,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@ICHU"|"@CHANI"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@ICHU"|"@CHANI"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@ICHU"|"@CHANI"|"@RI"|"@PLbol"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@ICHU"|"@CHANI"|"@RI"|"@PLbol"] ];
        
        
       define CleanSigma [ "" <- ["+1.Obj" | "+1.Pl.Excl.Poss" | "+1.Pl.Excl.Poss+Lim" | "+1.Pl.Excl.Subj" | "+1.Pl.Excl.Subj.Fut" | "+1.Pl.Excl.Subj_2.Sg.Obj" | "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" | "+1.Pl.Incl.Poss" | "+1.Pl.Incl.Poss+Lim" | "+1.Pl.Incl.Subj" | "+1.Pl.Incl.Subj.Fut" | "+1.Pl.Incl.Subj.Imp" | "+1.Pl.Incl.Subj.Pot" | "+1.Poss" | "+1.Sg.Poss" | "+1.Sg.Poss+Lim" | "+1.Sg.Subj" | "+1.Sg.Subj.Fut" | "+1.Sg.Subj.Pot" | "+1.Sg.Subj_2.Pl.Obj" | "+1.Sg.Subj_2.Pl.Obj.Fut" | "+1.Sg.Subj_2.Sg.Obj" | "+1.Sg.Subj_2.Sg.Obj.Fut" | "+2.Obj" | "+2.Pl.Poss" | "+2.Pl.Poss+Lim" | "+2.Pl.Subj" | "+2.Pl.Subj.Imp" | "+2.Pl.Subj.Pot" | "+2.Sg.Poss" | "+2.Sg.Poss+Lim" | "+2.Sg.Subj" | "+2.Sg.Subj.Imp" | "+2.Sg.Subj.Pot" | "+2.Sg.Subj_1.Pl.Excl.Obj" | "+2.Sg.Subj_1.Pl.Obj.Imp" | "+3.Pl.Poss" | "+3.Pl.Poss+Lim" | "+3.Pl.Subj" | "+3.Pl.Subj.Fut" | "+3.Pl.Subj.Hab" | "+3.Pl.Subj.IPst" | "+3.Pl.Subj.Imp" | "+3.Pl.Subj.NPst" | "+3.Pl.Subj.Pot" | "+3.Pl.Subj_2.Sg.Obj" | "+3.Poss" | "+3.Sg.Poss" | "+3.Sg.Poss+Lim" | "+3.Sg.Subj" | "+3.Sg.Subj.Fut" | "+3.Sg.Subj.IPst" | "+3.Sg.Subj.Imp" | "+3.Sg.Subj.NPst" | "+3.Subj_1.Pl.Excl.Obj" | "+3.Subj_1.Pl.Excl.Obj.Fut" | "+3.Subj_1.Pl.Incl.Obj" | "+3.Subj_1.Pl.Incl.Obj.Fut" | "+3.Subj_2.Pl.Obj" | "+3.Subj_2.Sg.Obj" | "+Abl" | "+Abtmp" | "+Acc" | "+Add" | "+Aff" | "+Ag" | "+Aprx" | "+Asmp" | "+Asmp_Emph" | "+Ass" | "+Aug" | "+Autotrs" | "+Ben" | "+Caus" | "+Char" | "+Cis_Trs" | "+Con_Inst" | "+Con_Intr" | "+Cont" | "+DS" | "+Dat_Ill" | "+Def" | "+Des" | "+Desesp" | "+Dim" | "+Dir" | "+DirE" | "+DirE_Emph" | "+Disc" | "+Dist" | "+Distr" | "+Dub" | "+Emph" | "+Fact" | "+Gen" | "+IPst" | "+Iclsv" | "+Inch" | "+IndE" | "+IndE_Emph" | "+Inf" | "+Int" | "+Intr_Neg" | "+Intrup" | "+Intsoc" | "+Kaus" | "+Lim_Aff" | "+Loc" | "+MPoss" | "+MRep" | "+Multi" | "+NPst" | "+Neg" | "+Obl" | "+Perdur" | "+Perf" | "+Pl" | "+Posi" | "+Poss" | "+Pot" | "+Priv" | "+Prog" | "+QTop" | "+Rem" | "+Rep" | "+Res" | "+Reub" | "+Rflx_Int" | "+Rgr_Iprs" | "+Rptn" | "+Rzpr" | "+SS" | "+SS_Sim" | "+Sim" | "+Sml" | "+Soc" | "+Stat_Multi" | "+Term" | "+Top" | "+Trs" | "+Vdim" | "PrnPers+1.Pl.Excl" | "PrnPers+1.Pl.Incl" | "PrnPers+1.Sg" | "PrnPers+2.Sg" | "PrnPers+3.Sg" | "PrnPers+Lim+1.Pl.Excl" | "PrnPers+Lim+1.Pl.Incl"]  ]; 
@@ -102,7 +102,14 @@
 
       define POSSESSIV POSS1 .o. POSS2;
 
+       #------------------------------------------------------------------------------------------------------#
+       # restrict plural -s to a position before case suffixes, otherwise assume it's the indirect evidential #
+       #------------------------------------------------------------------------------------------------------#
+       define BolPl [  "@PLbol"  =>  _ ?* ["+Iclsv"|"+Intsoc"|"+Distr"|"+Term"|"+Aprx"|"+Acc"|"+Gen"|"+Abl"|"+Dat_Ill"|"+Ben"|"+Loc"|"+Dist"|"+Con_Inst"|"+Soc"|"+Kaus"] ];
+       
        define NounRules GENITIV .o. POSSESSIV;
+       define NounRulesUpper BolPl;
+            
 
        ##########
        # VERBAL #
@@ -464,8 +471,8 @@ define Particles VerbRulesUpper .o. [[Particle|ParticleBasic|ParticleVerb|Partic
        #########################
 
 # case suffixes:  
-# -taq, -qta, -mantaq, -paq, -ntin, -npaq
-define CASE [~$[ "@TA" "@GENq"| "@GENq"{p}"+Gen" "@PA" {ta}"+Acc" | "+Abl" "@GENq" | "+Iclsv"{m} "+DirE" "@MI" | "@GENq" {p} "+Gen" ]];
+# -taq, -qta, -mantaq, -paq, -ntin, -npaq, -spaq
+define CASE [~$[ "@TA" "@GENq"| "@GENq"{p}"+Gen" "@PA" {ta}"+Acc" | "+Abl" "@GENq" | "+Iclsv"{m} "+DirE" "@MI" | {pa}"+Gen" "@PA" "@GENq" | "+SS" "@GENq"]];
 
 # verbal derivation, qti, (sqan), rqan 
 define VERBMORPHS [~$[ "+Ag"{ti}"+Char" | "+3.Sg.Subj.NPst"{m}"+DirE" ]];
@@ -497,14 +504,12 @@ define ALLIN [~$[ "@ALLI" {m} "+DirE" ]];
 #special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
 define HATUN [~$[ "@HATU" {m} "+DirE" "@MI" | "@HATU" {n} "+3.Sg.Poss"]];
 
-# ñawpaq, ichuq
-define AQROOTS [~$[ ["@NAWPA"|"@CHIQA"|"@ICHU" ] {q} "+Ag" | "@CHANI" {m} "+DirE" "@MI" ]];
+# ñawpaq, ichuq, ch'usaq,
+define AQROOTS [~$[ ["@NAWPA"|"@CHIQA"|"@ICHU" ] {q} "+Ag" | "@NAWPA" "@GENq" {p} "+Gen" "@PA" | "@CHANI" {m} "+DirE" "@MI" | {ch'usa} "@GENq" {p} "+Gen" "@PA" ]];
 
-# other ambiguous roots: illapa, hukucha/huk'ucha, puputi, kamayuq, sipas
-#define AMBROOTS [~$[{illa}%[?*%]{pa} %[ | [{huk'u}|{huku}]%[?*"+Dim" | ["@UKU"|"@WISKA"] ?* "+Dim" | {pupu}%[?*%]{ti} %[ | [S|s]i %["Part_Cond"%]   {pas} | {kama}%[?*{yku}"+yu+" %["VDeriv"%] %["+Aff"%] "@YKU"   q %["NS"| {tak}?*"=paz"%]   {lla} %[ ]];
 
-# other ambiguous roots: hukucha/huk'ucha,
-define AMBROOTS [~$[ {hukucha}"+Dim" ]];
+# other ambiguous roots: hukucha/huk'ucha, riku -> rikhu, no ri -ku
+define AMBROOTS [~$[ {hukucha}"+Dim" | {ri}"@RI" {ku} "+ku+" "+Rflx_Int"]];
 
 define LexRestr [ ALLIN .o. HATUN .o. AQROOTS .o. AMBROOTS];
 
@@ -522,11 +527,11 @@ define NITAQ [ {nitaq} : {nitaq} ] .o. UpperCase;
 ######################################################################################
 
 define preWord LexRestr .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
-define Word  FeatRestr .o. [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+define Word  FeatRestr .o. NounRulesUpper .o. [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+#define Word  [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 read regex Cleanup2 .o. CleanSigma .o. Word;
 
-#define preWord LexRestr .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
-#define Word   [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex LexRestr .o. Word;
+#read regex  AQROOTS .o.  AMBROOTS .o. Word;
+
 
 save stack normalizerSpellcheck.bin

@@ -1299,7 +1299,7 @@
 | {rirpu} :  {rirpu}
 | {rit'i} :  {rit'i}
 | {rit'i} :  {riti}
-| {ri} :  {ri}
+| [{ri} "@RI"] :  {ri}
 | {ruchi} :  {ruchi}
 | {ruk'a} :  {ruk'a}
 | {ruk'a} :  {ruka}
