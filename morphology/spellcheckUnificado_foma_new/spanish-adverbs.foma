@@ -1,124 +1,125 @@
- [ {abajo} "["  "AdvES"  "]" ] : {abajo}
-| [ {acaso} "["  "AdvES"  "]" ] : {acaso}
-| [ {acullá} "["  "AdvES"  "]" ] : {acullá}
-| [ {acá} "["  "AdvES"  "]" ] : {acá}
-| [ {adelante} "["  "AdvES"  "]" ] : {adelante}
-| [ {además} "["  "AdvES"  "]" ] : {además}
-| [ {adentro} "["  "AdvES"  "]" ] : {adentro}
-| [ {adondequiera} "["  "AdvES"  "]" ] : {adondequiera}
-| [ {adrede} "["  "AdvES"  "]" ] : {adrede}
-| [ {adunia} "["  "AdvES"  "]" ] : {adunia}
-| [ {afuera} "["  "AdvES"  "]" ] : {afuera}
-| [ {ahora} "["  "AdvES"  "]" ] : {ahora}
-| [ {ahí} "["  "AdvES"  "]" ] : {ahí}
-| [ {ajorro} "["  "AdvES"  "]" ] : {ajorro}
-| [ {allende} "["  "AdvES"  "]" ] : {allende}
-| [ {allá} "["  "AdvES"  "]" ] : {allá}
-| [ {allí} "["  "AdvES"  "]" ] : {allí}
-| [ {anoche} "["  "AdvES"  "]" ] : {anoche}
-| [ {ansí} "["  "AdvES"  "]" ] : {ansí}
-| [ {antarca} "["  "AdvES"  "]" ] : {antarca}
-| [ {antaño} "["  "AdvES"  "]" ] : {antaño}
-| [ {anteanoche} "["  "AdvES"  "]" ] : {anteanoche}
-| [ {anteanteanoche} "["  "AdvES"  "]" ] : {anteanteanoche}
-| [ {anteanteayer} "["  "AdvES"  "]" ] : {anteanteayer}
-| [ {anteayer} "["  "AdvES"  "]" ] : {anteayer}
-| [ {antedía} "["  "AdvES"  "]" ] : {antedía}
-| [ {antenoche} "["  "AdvES"  "]" ] : {antenoche}
-| [ {antes} "["  "AdvES"  "]" ] : {antes}
-| [ {antier} "["  "AdvES"  "]" ] : {antier}
-| [ {aparte} "["  "AdvES"  "]" ] : {aparte}
-| [ {apenas} "["  "AdvES"  "]" ] : {apenas}
-| [ {aposta} "["  "AdvES"  "]" ] : {aposta}
-| [ {aprisa} "["  "AdvES"  "]" ] : {aprisa}
-| [ {aquende} "["  "AdvES"  "]" ] : {aquende}
-| [ {aquí} "["  "AdvES"  "]" ] : {aquí}
-| [ {arredro} "["  "AdvES"  "]" ] : {arredro}
-| [ {arriba} "["  "AdvES"  "]" ] : {arriba}
-| [ {asimismo} "["  "AdvES"  "]" ] : {asimismo}
-| [ {así} "["  "AdvES"  "]" ] : {así}
-| [ {atrás} "["  "AdvES"  "]" ] : {atrás}
-| [ {avante} "["  "AdvES"  "]" ] : {avante}
-| [ {ayuso} "["  "AdvES"  "]" ] : {ayuso}
-| [ {bastante} "["  "AdvES"  "]" ] : {bastante}
-| [ {bien} "["  "AdvES"  "]" ] : {bien}
-| [ {caput} "["  "AdvES"  "]" ] : {caput}
-| [ {casi} "["  "AdvES"  "]" ] : {casi}
-| [ {chiticallando} "["  "AdvES"  "]" ] : {chiticallando}
-| [ {comoquiera} "["  "AdvES"  "]" ] : {comoquiera}
-| [ {cuantimás} "["  "AdvES"  "]" ] : {cuantimás}
-| [ {cuan} "["  "AdvES"  "]" ] : {cuan}
-| [ {cuasi} "["  "AdvES"  "]" ] : {cuasi}
-| [ {debajo} "["  "AdvES"  "]" ] : {debajo}
-| [ {defuera} "["  "AdvES"  "]" ] : {defuera}
-| [ {delante} "["  "AdvES"  "]" ] : {delante}
-| [ {demasiado} "["  "AdvES"  "]" ] : {demasiado}
-| [ {dentro} "["  "AdvES"  "]" ] : {dentro}
-| [ {deprisa} "["  "AdvES"  "]" ] : {deprisa}
-| [ {despacio} "["  "AdvES"  "]" ] : {despacio}
-| [ {después} "["  "AdvES"  "]" ] : {después}
-| [ {detrás} "["  "AdvES"  "]" ] : {detrás}
-| [ {dondequiera} "["  "AdvES"  "]" ] : {dondequiera}
-| [ {doquier} "["  "AdvES"  "]" ] : {doquier}
-| [ {encima} "["  "AdvES"  "]" ] : {encima}
-| [ {endenantes} "["  "AdvES"  "]" ] : {endenantes}
-| [ {enfrente} "["  "AdvES"  "]" ] : {enfrente}
-| [ {enhorabuena} "["  "AdvES"  "]" ] : {enhorabuena}
-| [ {enhoramala} "["  "AdvES"  "]" ] : {enhoramala}
-| [ {enmedio} "["  "AdvES"  "]" ] : {enmedio}
-| [ {enseguida} "["  "AdvES"  "]" ] : {enseguida}
-| [ {entonces} "["  "AdvES"  "]" ] : {entonces}
-| [ {entretanto} "["  "AdvES"  "]" ] : {entretanto}
-| [ {exclusive} "["  "AdvES"  "]" ] : {exclusive}
-| [ {exprofeso} "["  "AdvES"  "]" ] : {exprofeso}
-| [ {extramuros} "["  "AdvES"  "]" ] : {extramuros}
-| [ {fuera} "["  "AdvES"  "]" ] : {fuera}
-| [ {hogaño} "["  "AdvES"  "]" ] : {hogaño}
-| [ {ibidem} "["  "AdvES"  "]" ] : {ibidem}
-| [ {inclusive} "["  "AdvES"  "]" ] : {inclusive}
-| [ {incontinenti} "["  "AdvES"  "]" ] : {incontinenti}
-| [ {infraganti} "["  "AdvES"  "]" ] : {infraganti}
-| [ {intramuros} "["  "AdvES"  "]" ] : {intramuros}
-| [ {jamás} "["  "AdvES"  "]" ] : {jamás}
-| [ {lejos} "["  "AdvES"  "]" ] : {lejos}
-| [ {luego} "["  "AdvES"  "]" ] : {luego}
-| [ {menos} "["  "AdvES"  "]" ] : {menos}
-| [ {mere} "["  "AdvES"  "]" ] : {mere}
-| [ {mocosuena} "["  "AdvES"  "]" ] : {mocosuena}
-| [ {más} "["  "AdvES"  "]" ] : {más}
-| [ {máxime} "["  "AdvES"  "]" ] : {máxime}
-| [ {nequáquam} "["  "AdvES"  "]" ] : {nequáquam}
-| [ {nomás} "["  "AdvES"  "]" ] : {nomás}
-| [ {nunca} "["  "AdvES"  "]" ] : {nunca}
-| [ {offline} "["  "AdvES"  "]" ] : {offline}
-| [ {ogaño} "["  "AdvES"  "]" ] : {ogaño}
-| [ {ojalá} "["  "AdvES"  "]" ] : {ojalá}
-| [ {online} "["  "AdvES"  "]" ] : {online}
-| [ {otraño} "["  "AdvES"  "]" ] : {otraño}
-| [ {otrora} "["  "AdvES"  "]" ] : {otrora}
-| [ {poco} "["  "AdvES"  "]" ] : {poco}
-| [ {primeramente} "["  "AdvES"  "]" ] : {primeramente}
-| [ {pronto} "["  "AdvES"  "]" ] : {pronto}
-| [ {pues} "["  "AdvES"  "]" ] : {pues}
-| [ {pássim} "["  "AdvES"  "]" ] : {pássim}
-| [ {quizás} "["  "AdvES"  "]" ] : {quizás}
-| [ {quizá} "["  "AdvES"  "]" ] : {quizá}
-| [ {recién} "["  "AdvES"  "]" ] : {recién}
-| [ {requetebién} "["  "AdvES"  "]" ] : {requetebién}
-| [ {siempre} "["  "AdvES"  "]" ] : {siempre}
-| [ {sobremanera} "["  "AdvES"  "]" ] : {sobremanera}
-| [ {sobremodo} "["  "AdvES"  "]" ] : {sobremodo}
-| [ {supra} "["  "AdvES"  "]" ] : {supra}
-| [ {suso} "["  "AdvES"  "]" ] : {suso}
-| [ {sólo} "["  "AdvES"  "]" ] : {sólo}
-| [ {talvez} "["  "AdvES"  "]" ] : {talvez}
-| [ {también} "["  "AdvES"  "]" ] : {también}
-| [ {tampoco} "["  "AdvES"  "]" ] : {tampoco}
-| [ {todavía} "["  "AdvES"  "]" ] : {todavía}
-| [ {trasanteanoche} "["  "AdvES"  "]" ] : {trasanteanoche}
-| [ {trasanteayer} "["  "AdvES"  "]" ] : {trasanteayer}
-| [ {trasmañana} "["  "AdvES"  "]" ] : {trasmañana}
-| [ {verbigracia} "["  "AdvES"  "]" ] : {verbigracia}
-| [ {viceversa} "["  "AdvES"  "]" ] : {viceversa}
-| [ {ídem} "["  "AdvES"  "]" ] : {ídem}
-;
+define ADVERBSpre [
+   {abajo}  : {abajo}
+|  {acaso}  : {acaso}
+|  {acullá}  : {acullá}
+|  {acá}  : {acá}
+|  {adelante}  : {adelante}
+|  {además}  : {además}
+|  {adentro}  : {adentro}
+|  {adondequiera}  : {adondequiera}
+|  {adrede}  : {adrede}
+|  {adunia}  : {adunia}
+|  {afuera}  : {afuera}
+|  {ahora}  : {ahora}
+|  {ahí}  : {ahí}
+|  {ajorro}  : {ajorro}
+|  {allende}  : {allende}
+|  {allá}  : {allá}
+|  {allí}  : {allí}
+|  {anoche}  : {anoche}
+|  {ansí}  : {ansí}
+|  {antarca}  : {antarca}
+|  {antaño}  : {antaño}
+|  {anteanoche}  : {anteanoche}
+|  {anteanteanoche}  : {anteanteanoche}
+|  {anteanteayer}  : {anteanteayer}
+|  {anteayer}  : {anteayer}
+|  {antedía}  : {antedía}
+|  {antenoche}  : {antenoche}
+|  {antes}  : {antes}
+|  {antier}  : {antier}
+|  {aparte}  : {aparte}
+|  {apenas}  : {apenas}
+|  {aposta}  : {aposta}
+|  {aprisa}  : {aprisa}
+|  {aquende}  : {aquende}
+|  {aquí}  : {aquí}
+|  {arredro}  : {arredro}
+|  {arriba}  : {arriba}
+|  {asimismo}  : {asimismo}
+|  {así}  : {así}
+|  {atrás}  : {atrás}
+|  {avante}  : {avante}
+|  {ayuso}  : {ayuso}
+|  {bastante}  : {bastante}
+|  {bien}  : {bien}
+|  {caput}  : {caput}
+|  {casi}  : {casi}
+|  {chiticallando}  : {chiticallando}
+|  {comoquiera}  : {comoquiera}
+|  {cuantimás}  : {cuantimás}
+|  {cuan}  : {cuan}
+|  {cuasi}  : {cuasi}
+|  {debajo}  : {debajo}
+|  {defuera}  : {defuera}
+|  {delante}  : {delante}
+|  {demasiado}  : {demasiado}
+|  {dentro}  : {dentro}
+|  {deprisa}  : {deprisa}
+|  {despacio}  : {despacio}
+|  {después}  : {después}
+|  {detrás}  : {detrás}
+|  {dondequiera}  : {dondequiera}
+|  {doquier}  : {doquier}
+|  {encima}  : {encima}
+|  {endenantes}  : {endenantes}
+|  {enfrente}  : {enfrente}
+|  {enhorabuena}  : {enhorabuena}
+|  {enhoramala}  : {enhoramala}
+|  {enmedio}  : {enmedio}
+|  {enseguida}  : {enseguida}
+|  {entonces}  : {entonces}
+|  {entretanto}  : {entretanto}
+|  {exclusive}  : {exclusive}
+|  {exprofeso}  : {exprofeso}
+|  {extramuros}  : {extramuros}
+|  {fuera}  : {fuera}
+|  {hogaño}  : {hogaño}
+|  {ibidem}  : {ibidem}
+|  {inclusive}  : {inclusive}
+|  {incontinenti}  : {incontinenti}
+|  {infraganti}  : {infraganti}
+|  {intramuros}  : {intramuros}
+|  {jamás}  : {jamás}
+|  {lejos}  : {lejos}
+|  {luego}  : {luego}
+|  {menos}  : {menos}
+|  {mere}  : {mere}
+|  {mocosuena}  : {mocosuena}
+|  {más}  : {más}
+|  {máxime}  : {máxime}
+|  {nequáquam}  : {nequáquam}
+|  {nomás}  : {nomás}
+|  {nunca}  : {nunca}
+|  {offline}  : {offline}
+|  {ogaño}  : {ogaño}
+|  {ojalá}  : {ojalá}
+|  {online}  : {online}
+|  {otraño}  : {otraño}
+|  {otrora}  : {otrora}
+|  {poco}  : {poco}
+|  {primeramente}  : {primeramente}
+|  {pronto}  : {pronto}
+|  {pues}  : {pues}
+|  {pássim}  : {pássim}
+|  {quizás}  : {quizás}
+|  {quizá}  : {quizá}
+|  {recién}  : {recién}
+|  {requetebién}  : {requetebién}
+|  {siempre}  : {siempre}
+|  {sobremanera}  : {sobremanera}
+|  {sobremodo}  : {sobremodo}
+|  {supra}  : {supra}
+|  {suso}  : {suso}
+|  {sólo}  : {sólo}
+|  {talvez}  : {talvez}
+|  {también}  : {también}
+|  {tampoco}  : {tampoco}
+|  {todavía}  : {todavía}
+|  {trasanteanoche}  : {trasanteanoche}
+|  {trasanteayer}  : {trasanteayer}
+|  {trasmañana}  : {trasmañana}
+|  {verbigracia}  : {verbigracia}
+|  {viceversa}  : {viceversa}
+|  {ídem}  : {ídem}
+] ;

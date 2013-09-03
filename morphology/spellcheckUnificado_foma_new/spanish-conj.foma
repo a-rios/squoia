@@ -1,14 +1,15 @@
- [ {adonde} "["  "ConjES"  "]" ] : {adonde}
-| [ {aunque} "["  "ConjES"  "]" ] : {aunque}
-| [ {conque} "["  "ConjES"  "]" ] : {conque}
-| [ {cuando} "["  "ConjES"  "]" ] : {cuando}
-| [ {donde} "["  "ConjES"  "]" ] : {donde}
-| [ {empero} "["  "ConjES"  "]" ] : {empero}
-| [ {ergo} "["  "ConjES"  "]" ] : {ergo}
-| [ {mientras} "["  "ConjES"  "]" ] : {mientras}
-| [ {pero} "["  "ConjES"  "]" ] : {pero}
-| [ {porque} "["  "ConjES"  "]" ] : {porque}
-| [ {sino} "["  "ConjES"  "]" ] : {sino}
-| [ {siquiera} "["  "ConjES"  "]" ] : {siquiera}
-| [ {siquier} "["  "ConjES"  "]" ] : {siquier}
-;
+define CONJUNCTIONSpre [
+   {adonde}  : {adonde}
+|  {aunque}  : {aunque}
+|  {conque}  : {conque}
+|  {cuando}  : {cuando}
+|  {donde}  : {donde}
+|  {empero}  : {empero}
+|  {ergo}  : {ergo}
+|  {mientras}  : {mientras}
+|  {pero}  : {pero}
+|  {porque}  : {porque}
+|  {sino}  : {sino}
+|  {siquiera}  : {siquiera}
+|  {siquier}  : {siquier}
+];

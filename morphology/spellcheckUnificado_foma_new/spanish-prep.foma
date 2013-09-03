@@ -1,17 +1,18 @@
- [ {ante} "["  "PrepES"  "]" ] : {ante}
-| [ {cabe} "["  "PrepES"  "]" ] : {cabe}
-| [ {como} "["  "PrepES"  "]" ] : {como}
-| [ {desde} "["  "PrepES"  "]" ] : {desde}
-| [ {desque} "["  "PrepES"  "]" ] : {desque}
-| [ {durante} "["  "PrepES"  "]" ] : {durante}
-| [ {entre} "["  "PrepES"  "]" ] : {entre}
-| [ {excepto} "["  "PrepES"  "]" ] : {excepto}
-| [ {hacia} "["  "PrepES"  "]" ] : {hacia}
-| [ {hasta} "["  "PrepES"  "]" ] : {hasta}
-| [ {mediante} "["  "PrepES"  "]" ] : {mediante}
-| [ {para} "["  "PrepES"  "]" ] : {para}
-| [ {según} "["  "PrepES"  "]" ] : {según}
-| [ {sobre} "["  "PrepES"  "]" ] : {sobre}
-| [ {tras} "["  "PrepES"  "]" ] : {tras}
-| [ {versus} "["  "PrepES"  "]" ] : {versus}
-;
+define PREPOSITIONSpre [
+   {ante} : {ante}
+|  {cabe} : {cabe}
+|  {como} : {como}
+|  {desde} : {desde}
+|  {desque} : {desque}
+|  {durante} : {durante}
+|  {entre} : {entre}
+|  {excepto} : {excepto}
+|  {hacia} : {hacia}
+|  {hasta} : {hasta}
+|  {mediante} : {mediante}
+|  {para} : {para}
+|  {según} : {según}
+|  {sobre} : {sobre}
+|  {tras} : {tras}
+|  {versus} : {versus}
+] ;
