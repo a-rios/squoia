@@ -52,7 +52,7 @@ if($mode eq '-1')
 	}
 
 
-	store \@words, 'spellcheckedWords';
+	store \@words, 'tmp/spellcheckedWords';
 	
 	foreach my $word (@words)
 	{
@@ -112,27 +112,46 @@ if($mode eq '-2')
 #	}
 	
 	
-	my $wordsref = retrieve('spellcheckedWords');
+	my $wordsref = retrieve('tmp/spellcheckedWords');
 	@words = @$wordsref;
 	
 	foreach my $word (@words)
 	{
 			my $suggestions = @$word[1];
 			my $form = @$word[0];
-			print "$form:\n";
+			
 			if(grep {$_ =~ /\Q+?\E/} @$suggestions)
-			{
-				foreach my $corr (keys %{$spellings{$form}}) {
-				  print "\t$corr\n";
+			{	
+				# ignore forms where cutoff has been reached (no suggestions)
+				unless(scalar(keys %{$spellings{$form}})==0 ) 
+				{
+					print "$form:\n";
+					foreach my $corr (keys %{$spellings{$form}}) 
+					{
+					  unless($corr eq ''){
+				    	print "\t$corr\n";
+				  		}
+					}
 				}
+				
 			}
-			else{
+			else
+			{
+				my $outString='';
 				foreach my $s (@$suggestions)
 				{
-					print  "\t$s\n";
+					# ignore forms that have only case distinctions
+					unless(lc($form) eq lc($s)){
+							$outString= $outString."\t$s\n";
+					}
+				}
+				unless($outString eq ''){
+					print "$form:\n";
+					print "$outString";
 				}
 			}
 	}
+
 }
 #foreach my $word (@words)
 #{
