@@ -1,5 +1,0 @@
-# suffix -lla
-
-define HonAff [
-[ {lla}  "+Lim_Aff" ] : {lla}
-];
