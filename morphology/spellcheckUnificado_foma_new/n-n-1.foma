@@ -20,5 +20,5 @@ define N=N=1 [
 | [{liku} "+Char" ] : {liku}
 | [{yli} "+Char" ] : {yli}
 | [{lu} "+Char" ] : {lu}
-| [{mpa} "+Posi" ] : "@MPA"{mpa}
+| [{mpa} "+Posi" ] : ["@MPA"{mpa}]
 ] ;
