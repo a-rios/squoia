@@ -18,22 +18,22 @@
 # insert path to the text you want to analyse (test.txt contains the preamble of the Human Rights Declaration in Cuzco Quechua)
 TEXTS:=  test1.txt
 
-analyse:  analyzeUnificado.fst
-spellcheck: spellcheckUnificado.fst
+analyse:  analyzeUnificado.bin
+spellcheck: spellcheckUnificado.bin
 
 analysed.txt: analyse
-	cat $(TEXTS) | perl tokenize.pl | flookup analyzeUnificado.fst | tail -n+2  > $@
+	cat $(TEXTS) | perl ../tokenize.pl | flookup analyzeUnificado.bin | tail -n+2  > $@
 
 
 failures.txt: spellcheck
-	cat $(TEXTS) | perl tokenize.pl | flookup spellcheck.fst | perl listwrongspellings.pl > $@
+	cat $(TEXTS) | perl ../tokenize.pl | flookup spellcheck.bin | perl listwrongspellings.pl > $@
 
 
 spellcheck.txt: spellcheck
-	cat $(TEXTS) | perl tokenize.pl | flookup spellcheck.fst |  perl listwrongspellings.pl | fmed -l 5 spellcheckUnificado.fst | perl formatspellcheckoutput.pl > $@
+	cat $(TEXTS) | perl ../tokenize.pl | flookup spellcheck.bin |  perl ../listwrongspellings.pl | fmed -l 5 spellcheckUnificado.bin | perl ../formatspellcheckoutput.pl > $@
 	
 clean: 
-	rm *.att *.fst
+	rm *.att *.bin
 
-%.fst:%.foma
+%.bin:%.foma
 	foma -f $<
