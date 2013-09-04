@@ -1,0 +1,29 @@
+How to install the spell checker for Unified Southern Quechua
+
+
+ # download the spell checker from ...
+ # get foma:
+  * either the newest version from here:
+     [http://code.google.com/p/foma/downloads/list]
+  * or per svn checkout:
+{{{
+$ svn co http://foma.googlecode.com/svn/trunk/foma/ foma
+}}}
+ # copy fmed.c and the Makefile in /foma_files to the foma sources and compile foma:
+{{{
+$ cd path-to-your-foma-sources
+$ cp foma_files/* .
+$ make
+$ make install
+}}}
+ # compile the finite state transducers:
+{{{
+$ cd path-to-spellChecker/analyzer
+$ foma -f analyzeUnificado.foma 
+$ foma -f spellcheckUnificado.foma 
+$ cd ../normalizer
+$ foma -f normalizerSpellcheck.foma 
+$ foma -f normalizer-relaxSpellcheck.foma
+$ foma -f spanishSpellcheck.foma 
+$ foma -f spanish-relaxSpellcheck.foma 
+}}}
