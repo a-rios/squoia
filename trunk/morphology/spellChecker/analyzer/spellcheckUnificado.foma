@@ -513,5 +513,5 @@ read att spellcheckUnificado.att
 
 
 read cmatrix typo.matrix
-save stack spellcheckUnificado.fst
+save stack spellcheckUnificado.bin
 

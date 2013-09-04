@@ -539,5 +539,5 @@ clear
 read att analyzeUnificado.att
 #work around for foma bug, as directly stored .fst can not be loaded on stack (segmentation fault)
 
-save stack analyzeUnificado.fst
+save stack analyzeUnificado.bin
 
