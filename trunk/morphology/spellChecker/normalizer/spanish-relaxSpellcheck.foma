@@ -71,24 +71,20 @@
 
        define QuechuaOrtho Allophone .o. Orthography;
        
-       define SPOrthography1 [ {q} (->) {cc}, {Q} (->) {Cc} ];
-       define SPOrthography2 [ {hui} (->) {wi}, {Hui} (->) {Wi} ];
-       define SPOrthography3 [ {hua} (->) {wa}, {Hua} (->) {Wa} ];
-       define SPOrthography4 [ {gua} (->) {wa}, {Gua} (->) {Wa} ];
-       define SPOrthography5 [ {u} (->) {w} || _ Vowel ];
-       define SPOrthography6 [ {j} (->) {h}, {J} (->) {H} ];
-       define SPOrthography7 [ {f} (->) {ph}];
-       define SPOrthography8 [ {j} (->) {q} || Vowel _ Vowel];
-       define SPOrthography9 [ {o} (->) {u}];
-       define SPOrthography10 [ {e} (->) {i}];
-       define SPOrthography11 [ {z} (->) {s}];
-       define SPOrthography12 [ {c} (->) {k} || _ [o|u|a] ];
-       define SPOrthography13 [ {c} (->) {s} || _ [i|e] ];
-       define SPOrthography14 [ {ia} (->) {iya}];
-       define SPOrthography15 [ {io} (->) {iyu}];
-       define SPOrthography16 [ [v|b] (->) {w}];
+       define SPOrthography1 [ {u} (->) {w} || _ Vowel ];
+       define SPOrthography2 [ {j} (->) {h}, {J} (->) {H} ];
+       define SPOrthography3 [ {f} (->) {ph}];
+       define SPOrthography4 [ {j} (->) {q} || Vowel _ Vowel];
+       define SPOrthography5 [ {o} (->) {u}];
+       define SPOrthography6 [ {e} (->) {i}];
+       define SPOrthography7 [ {z} (->) {s}];
+       define SPOrthography8 [ {c} (->) {k} || _ [o|u|a] ];
+       define SPOrthography9 [ {c} (->) {s} || _ [i|e] ];
+       define SPOrthography10 [ {ia} (->) {iya}];
+       define SPOrthography11 [ {io} (->) {iyu}];
+       define SPOrthography12 [ [v|b] (->) {w}];
        
-       define SPOrthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 ];
+       define SPOrthography [SPOrthography1 .o. SPOrthography2 .o. SPOrthography3 .o. SPOrthography4 .o. SPOrthography5 .o.  SPOrthography6 .o. SPOrthography7 .o. SPOrthography8 .o. SPOrthography10 .o. SPOrthography11 .o. SPOrthography12 ];
 
        # apply after Cleanup
        define Accent1 [ a (->) á, u (->) ú ||  _ [w|y] .#.];
