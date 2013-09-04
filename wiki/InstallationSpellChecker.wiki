@@ -23,13 +23,19 @@ $ foma -f compile.foma
 $ cd ../normalizer
 $ foma -f chain.foma
 }}}
- your should now have the binary files 
+ # you should now have the binary files 
    * analyzer/analyzeUnificado.bin
    * analyzer/spellcheckUnificado.bin
    * normalizer/chain.bin
  # adapt the paths in spellcheck-example.sh, save the file as spellcheck.sh and make it executable like this:
 {{{
 $ chmod +x spellcheck.sh
+}}}
+ # the tokenizer needs the Uplug::PreProcess::Tokenizer perl module:
+   * get from [http://search.cpan.org/~tiedemann/uplug-main-0.3.8/lib/Uplug/PreProcess/Tokenizer.pm]
+   * or install it through cpan:
+{{{
+$ cpan Uplug::PreProcess::Tokenizer
 }}}
  # now you can run spellcheck.sh, pass the text you want to spell check as argument
 {{{
