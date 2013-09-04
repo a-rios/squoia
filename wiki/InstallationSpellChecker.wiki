@@ -16,15 +16,23 @@ $ cp foma_files/* .
 $ make
 $ make install
 }}}
- # compile the finite state transducers (compiling the spanish transducers will take a while):
+ # compile the finite state transducers (compiling the normalizers will take a while due to large lexica):
 {{{
 $ cd path-to-spellChecker/analyzer
-$ foma -f analyzeUnificado.foma 
-$ foma -f spellcheckUnificado.foma 
+$ foma -f compile.foma  
 $ cd ../normalizer
-$ foma -f normalizerSpellcheck.foma 
-$ foma -f normalizer-relaxSpellcheck.foma
-$ foma -f spanishSpellcheck.foma 
-$ foma -f spanish-relaxSpellcheck.foma 
+$ foma -f chain.foma
 }}}
- # adapt the paths in spellcheck.sh
+ your should now have the binary files 
+   * analyzer/analyzeUnificado.bin
+   * analyzer/spellcheckUnificado.bin
+   * normalizer/chain.bin
+ # adapt the paths in spellcheck-example.sh, save the file as spellcheck.sh and make it executable like this:
+{{{
+$ chmod +x spellcheck.sh
+}}}
+ # now you can run spellcheck.sh, pass the text you want to spell check as argument
+{{{
+$ ./spellcheck.sh file-you-want-to-spell-check
+}}}
+ the script will output a list of misspelled words with their corrections, or 'no spelling errors found' if the text is written according to the Unified Southern orthography. The list is also printed to tmp/text.out.
