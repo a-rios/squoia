@@ -1,7 +1,0 @@
-# verbalizing suffixes
-
-define NtoVrep [
-  "+Autotrs" : {lli}
-| "+Fact" : {cha}
-| "+Trs" : {ya}]
-;

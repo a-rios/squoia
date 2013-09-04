@@ -1,7 +1,0 @@
-
-define SPparticles [
-  ["SP""+Intr_Neg""+IndE"] : {sichus}
-| ["SP""+Con_Intr"] : {nitaq}
-| ["SP""+Con_Intr"] : {utaq} 
-| ["SP""+Con_Intr"] : {otaq} 
-| ["SP""+Add"] : {nipas}];
