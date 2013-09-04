@@ -1,5 +1,0 @@
-#Buchstaben
-
-define Letra [
-
- "ALFS" : {abcdefgjovxzüéóBCDEFGJOVXZÜÁÉÍÓÚ}];
