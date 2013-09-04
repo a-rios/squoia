@@ -1,0 +1,5 @@
+source normalizerSpellcheck.foma
+source normalizer-relaxSpellcheck.foma
+source spanishSpellcheck.foma
+source spanish-relaxSpellcheck.foma
+save stack chain.bin
