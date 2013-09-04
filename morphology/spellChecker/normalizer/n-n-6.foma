@@ -1,0 +1,14 @@
+#nominal slot6: case
+
+define N=N=6 [
+   [  {ta}  "+Acc" ] : {ta}"@TA"
+|  [  {pa}  "+Gen" ] : {pa}"@PA"
+|  [  {p}  "+Gen" ] : {p}"@PA"
+|  [ "@GENq"  {p}  "+Gen" ] : {q}"@PA"
+|  [  {manta}   "+Abl" ] : {manta}
+|  [  {man}   "+Dat_Ill" ] : {man}
+|  [  {paq}   "+Ben" ] : {paq}
+|  [  {pi}   "+Loc"  ]: {pi}
+|  [  {chaw}   "+Loc"  ]: {chaw}
+] ;
+

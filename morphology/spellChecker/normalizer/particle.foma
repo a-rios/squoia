@@ -1,0 +1,8 @@
+# non-verbalizable particles
+
+define Particle [
+   {ari} :  {ari}
+|  {ña}  :  {ña}
+|  {icha} :  {icha}
+|  {si}  :  {si}
+] ;

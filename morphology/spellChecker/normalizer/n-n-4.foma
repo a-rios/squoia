@@ -1,0 +1,8 @@
+# nominal slot 4: number
+# note: in Bolivian, plural may be marked with -s
+
+define N=N=4 [
+  [ {kuna}  "+Pl" ] : {kuna}
+| [ {kuna} "+Pl"  {yuq}  "+Poss" "@PLYUQ" ]: {kunayuq}
+| [ {kuna}  "+Pl" "@PLbol"] : {s}
+] ;
