@@ -16,7 +16,7 @@ $ cp foma_files/* .
 $ make
 $ make install
 }}}
- # compile the finite state transducers:
+ # compile the finite state transducers (compiling the spanish transducers will take a while):
 {{{
 $ cd path-to-spellChecker/analyzer
 $ foma -f analyzeUnificado.foma 
@@ -27,3 +27,4 @@ $ foma -f normalizer-relaxSpellcheck.foma
 $ foma -f spanishSpellcheck.foma 
 $ foma -f spanish-relaxSpellcheck.foma 
 }}}
+ # adapt the paths in spellcheck.sh
