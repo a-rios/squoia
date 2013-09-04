@@ -1,0 +1,537 @@
+# set char-encoding utf-8
+# -*- encoding: utf-8 -*-
+# TODOs: 
+# -switches: allow -m as -n, -pas as -pis
+# yachachinasuykikupaq yacha[VRoot][=saber,habitar][--]chi[VDeriv][+Caus][--]na[NS][+Obl][--]suykiku[NPers][+1.Pl.Excl.Subj_2.Sg.Obj]
+# -upallarapuyku LLAra
+# compile without -sa progressive! too ambiguous
+# -rqakun -> rqaku -n / -rqa -ku -n
+
+
+       #-------------------------------#
+       # Delete all flag on both sides #
+       #-------------------------------#
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@ICHU"|"@CHANI"|"@RI"|"@PLbol"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@ICHU"|"@CHANI"|"@RI"|"@PLbol"] ];
+       
+       
+      define CleanSigma [ "" <- ["+1.Obj" | "+1.Pl.Excl.Poss" | "+1.Pl.Excl.Poss+Lim" | "+1.Pl.Excl.Subj" | "+1.Pl.Excl.Subj.Fut" | "+1.Pl.Excl.Subj_2.Sg.Obj" | "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" | "+1.Pl.Incl.Poss" | "+1.Pl.Incl.Poss+Lim" | "+1.Pl.Incl.Subj" | "+1.Pl.Incl.Subj.Fut" | "+1.Pl.Incl.Subj.Imp" | "+1.Pl.Incl.Subj.Pot" | "+1.Poss" | "+1.Sg.Poss" | "+1.Sg.Poss+Lim" | "+1.Sg.Subj" | "+1.Sg.Subj.Fut" | "+1.Sg.Subj.Pot" | "+1.Sg.Subj_2.Pl.Obj" | "+1.Sg.Subj_2.Pl.Obj.Fut" | "+1.Sg.Subj_2.Sg.Obj" | "+1.Sg.Subj_2.Sg.Obj.Fut" | "+2.Obj" | "+2.Pl.Poss" | "+2.Pl.Poss+Lim" | "+2.Pl.Subj" | "+2.Pl.Subj.Imp" | "+2.Pl.Subj.Pot" | "+2.Sg.Poss" | "+2.Sg.Poss+Lim" | "+2.Sg.Subj" | "+2.Sg.Subj.Imp" | "+2.Sg.Subj.Pot" | "+2.Sg.Subj_1.Pl.Excl.Obj" | "+2.Sg.Subj_1.Pl.Obj.Imp" | "+3.Pl.Poss" | "+3.Pl.Poss+Lim" | "+3.Pl.Subj" | "+3.Pl.Subj.Fut" | "+3.Pl.Subj.Hab" | "+3.Pl.Subj.IPst" | "+3.Pl.Subj.Imp" | "+3.Pl.Subj.NPst" | "+3.Pl.Subj.Pot" | "+3.Pl.Subj_2.Sg.Obj" | "+3.Poss" | "+3.Sg.Poss" | "+3.Sg.Poss+Lim" | "+3.Sg.Subj" | "+3.Sg.Subj.Fut" | "+3.Sg.Subj.IPst" | "+3.Sg.Subj.Imp" | "+3.Sg.Subj.NPst" | "+3.Subj_1.Pl.Excl.Obj" | "+3.Subj_1.Pl.Excl.Obj.Fut" | "+3.Subj_1.Pl.Incl.Obj" | "+3.Subj_1.Pl.Incl.Obj.Fut" | "+3.Subj_2.Pl.Obj" | "+3.Subj_2.Sg.Obj" | "+Abl" | "+Abtmp" | "+Acc" | "+Add" | "+Aff" | "+Ag" | "+Aprx" | "+Asmp" | "+Asmp_Emph" | "+Ass" | "+Aug" | "+Autotrs" | "+Ben" | "+Caus" | "+Char" | "+Cis_Trs" | "+Con_Inst" | "+Con_Intr" | "+Cont" | "+DS" | "+Dat_Ill" | "+Def" | "+Des" | "+Desesp" | "+Dim" | "+Dir" | "+DirE" | "+DirE_Emph" | "+Disc" | "+Dist" | "+Distr" | "+Dub" | "+Emph" | "+Fact" | "+Gen" | "+IPst" | "+Iclsv" | "+Inch" | "+IndE" | "+IndE_Emph" | "+Inf" | "+Int" | "+Intr_Neg" | "+Intrup" | "+Intsoc" | "+Kaus" | "+Lim_Aff" | "+Loc" | "+MPoss" | "+MRep" | "+Multi" | "+NPst" | "+Neg" | "+Obl" | "+Perdur" | "+Perf" | "+Pl" | "+Posi" | "+Poss" | "+Pot" | "+Priv" | "+Prog" | "+QTop" | "+Rem" | "+Rep" | "+Res" | "+Reub" | "+Rflx_Int" | "+Rgr_Iprs" | "+Rptn" | "+Rzpr" | "+SS" | "+SS_Sim" | "+Sim" | "+Sml" | "+Soc" | "+Stat_Multi" | "+Term" | "+Top" | "+Trs" | "+Vdim" | "PrnPers+1.Pl.Excl" | "PrnPers+1.Pl.Incl" | "PrnPers+1.Sg" | "PrnPers+2.Sg" | "PrnPers+3.Sg" | "PrnPers+Lim+1.Pl.Excl" | "PrnPers+Lim+1.Pl.Incl"]  ]; 
+       
+
+       
+      
+############################################################################### 
+
+          #########################
+          #                       #
+          # PHONETIC VARIATIONS   #
+          #                       #
+          #########################
+
+      define Vowel [a|e|i|o|u|á|é|í|ó|ú|A|E|I|O|U|Á|É|Í|Ó|Ú|"@TA"|{pa}"@PA"|"@PTI"|"@STI"];
+      define Cons [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|'|{m}"@MU"|{m}"@MI"|{s}"@SI"|{ch}"@CHA"|{ntin}"@NTIN"|{p}"@PA"|{q}"@PA"];
+
+      #--------------------------#
+      # allow uppercase letters  #
+      #--------------------------#
+
+      define LowerCase [A (->) a, B (->) b, C (->) c,D (->) d,E (->) e,F (->) f,G (->) g,H (->) h,I (->) i,J (->) j,K (->) k,L (->) l,M (->) m,N (->) n,O (->) o,P (->) p,Q (->) q,R (->) r,S (->) s,T (->) t,U (->) u,V (->) v,W (->) w,X (->) x,Y (->) y,Z (->) z,Ñ (->) ñ];
+
+      define UpperCase [ a (->) A,b (->) B,c (->) C,d (->) D,e (->) E,f (->) F,g (->) G,h (->) H,i (->) I,j (->) J,k (->) K,l (->) L,m (->) M,n (->) N,o (->) O,p (->) P,q (->) Q,r (->) R,s (->) S,t (->) T,u (->) U,v (->) V,w (->) W,x (->) X,y (->) Y,z (->) Z,ñ (->) Ñ];
+
+
+      #-------------------------------------------------------------------#
+      # Ersetze optional u durch o und i durch e, falls in Umgebung von q #
+      #-------------------------------------------------------------------#
+
+      define Allophone1 [ u (->) o||  _ (s|t|n|r|l|{ll}) q, q (s|t|n|r|h|l|'|{ll}) _  , _ (s|t|n|r|l|{ll}){cc}, {cc}(s|t|n|r|h|l|'|{ll}) _ ] .o. [i (->) e || _ (s|t|n|r|h|l|{ll}) q, q (s|t|n|r|l|{ll}|h|') _ , _ (s|t|n|r|h|l|{ll}){cc}, {cc}(s|t|n|r|l|{ll}|') _  ];
+      define Allophone2 [ {ll} (->) l || _ q];
+
+      define Allophone [Allophone1 .o. Allophone2 ] ;
+      define AllophoneBeforeCleanUp [ m (->) n || \"@MPA" _ p ];
+
+       define QuechuaOrtho Allophone;
+
+       # apply after Cleanup
+       define Accent1 [ a (->) á, u (->) ú ||  _ [w|y] .#.];
+       define Accent2 [ {qa} (->) {qá}, {taq} (->) {táq}, {ri} (->) {rí}|| _  .#.];
+       define Accent Accent1 .o. Accent2;
+       
+       #-------------------------------------------------#
+       # Orthography of Spanish loan words:              #
+       #                                                 #
+       #- may be written with or without their accents   #
+       #- e may be written as i, o as u in Spanish words #
+       #-------------------------------------------------#
+       define AccentES [ á (->) a,é (->) [e|i],í (->) i, ó (->) [o|u],ú (->) u, ü (->) u];
+       define AccentES2 [ a (->) á,e (->) é, i (->) í,o (->) ó, u (->) ú, u (->) ü ];
+       define spanLetras [ e (->) i, i (->) e, o (->) u, u (->) o, c (->) k , d (->) t, g (->)j, w  (->) o, b (->) p, v (->) w, z (->) s , j (->) h];
+       define SpanOrtho AccentES .o. AccentES2 .o. spanLetras;
+
+########################################################################
+########################################################################
+##                                                                    ##
+##               MORPHOPHONOLOGICAL RULES                             ##
+##                                                                    ##
+########################################################################
+########################################################################
+
+      ###########
+      # NOMINAL #
+      ###########
+
+       #------------------------------------------------------------#
+       # Genitive -pa after Konsonant, -q/-p after Vowel (optional) #
+       #------------------------------------------------------------#
+      # define GENITIV [ {pa}"@PA" (->) [{p}|{q}]"@PA"  ||Vowel  _ ];
+	define PA1 [  {q}"@PA"  => Vowel _  ];
+	define PA2 [  {p}"@PA"  => Vowel _  ];
+	#define PA3 [  {pa}"@PA" => Cons _  ];
+      define GENITIV PA1 .o. PA2 ;
+
+       #--------------------------------------------------------#
+       # Possessive forms need euphon. -ni/-ñi after Consonants #
+       #--------------------------------------------------------#
+
+        #define POSSESSIV1 [ {@POSS} -> [{ni}|{ñi}]  || Cons _ ];
+        #define POSSESSIV2 [ {@POSS} ->  "" || Vowel _ ];
+	#define POSSESSIV POSSESSIV1 .o. POSSESSIV2;
+
+	define POSS1 [ "@POSS"  => Vowel _  ];
+	define POSS2 [ "@POSSni" => Cons _  ];
+
+      define POSSESSIV POSS1 .o. POSS2;
+
+       #------------------------------------------------------------------------------------------------------#
+       # restrict plural -s to a position before case suffixes, otherwise assume it's the indirect evidential #
+       #------------------------------------------------------------------------------------------------------#
+       define BolPl [  "@PLbol"  =>  _ ?* ["+Iclsv"|"+Intsoc"|"+Distr"|"+Term"|"+Aprx"|"+Acc"|"+Gen"|"+Abl"|"+Dat_Ill"|"+Ben"|"+Loc"|"+Dist"|"+Con_Inst"|"+Soc"|"+Kaus"] ];
+       
+       define NounRules GENITIV .o. POSSESSIV;
+       define NounRulesUpper BolPl;
+            
+
+       ##########
+       # VERBAL #
+       ##########
+
+       #--------------------------------------------------------#
+       # CONTEXT RESTRICTIONS:                                  #
+       # na as +Rzpr has be followed by ku, chi or spa          #
+       # mu shortened to 'n' is only allowed preceding pu       #
+       #--------------------------------------------------------#
+       define naRzpr [  "+Rzpr"  => _ ?* ["+Rflx_Int"|"+Caus"|"+SS"] ];
+       define shortYKU [  "+y+"  => _  "+Aff" "@YKU" {wa}"+1.Obj" ];
+
+       # transitive forms
+       define watrans [  "@WA"  => "+1.Obj" ?* _  ];
+       define sutrans [  "@SU"  => "+2.Obj" ?* _  ];
+       
+       #-----------------------------------------------------------------------------------------------------------------------------#
+       # if in lower side {rqu} as {rqa}, {pu} as {pa} etc. -> we want those forms to appear on the upper side as well               #
+       # (otherwise rqa/pa would appear as rqu/pu in the output, which would be wrong given the morphological context of these forms #
+       # for normalizer: rewrite ru as rqu and ra as rqa, respectivly, same with  yu/yku, ya/yka                                     #
+       # NOTE: sequence -rqa-ku will be normalized to -rqu-ku !                                                                      #
+       #-----------------------------------------------------------------------------------------------------------------------------#
+
+       define rqurqa5 [ {rqa}"+rqu+" <- {rqu}"+rqu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
+       define rqurqa6 [ {rqu}"+ru+" <- {ru}"+ru+" \\ _ ?* ~$["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
+       define rqurqa7 [ {rqa}"+ru+" <- {ru}"+ru+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
+       
+       define ykuyka3 [ {yka}"+yku+" <- {yku}"+yku+" \\ _   ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
+       define ykuyka4 [ {yku}"+yu+" <- {yu}"+yu+" \\ _ ?* ~$["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
+       define ykuyka5 [ {yka}"+yu+" <- {yu}"+yu+" \\ _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"@Vdim"|"+Rzpr"]];
+
+       define mpuDIR2 [ {m}"+mu+" <- {mu}"+mu+"  \\  _ ?* "@PU" ];
+
+       define pupa2 [ {pa}"+pu+" <- {pu}"+pu+" \\  _  ?* ["@KU"|"@MU"] ];
+       define kuka2 [ {ka}"+ku+" <- {ku}"+ku+" \\  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
+
+      define VerbRulesUpper  naRzpr .o. shortYKU .o. rqurqa5 .o. rqurqa6 .o. rqurqa7 .o. ykuyka3 .o. ykuyka4 .o. ykuyka5 .o. mpuDIR2  .o. pupa2 .o. kuka2 .o. watrans .o. sutrans;
+
+       #-------------------------------------------------------------------------------------------#
+       # rqu --> rqa before mu, pu , ri ,ysi (rqa can only be +Rptn in this position, everywhere   #
+       # else, it's supposed to be NPst                                                            #
+       #-------------------------------------------------------------------------------------------#
+       define rqurqa1 [ {rqu}"@RQU"-> {rqa}"@RQU"  || _  ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
+       define rqurqa2 [ {ru}"@RQU"-> {ra}"@RQU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"]];
+       define rqurqa3 [ {rqu}"@RQU" (->) {rqa}"@RQU"  || _  ?* "@KU"];
+       define rqurqa4 [ {ru}"@RQU" (->) {ra}"@RQU" || _ ?* "@KU"];      
+
+       #--------------------------------------------------------------------------------------#
+       # -yku becomes -yka before -mu, -pu, -ysi, -chi, -ri, -cha                             #
+       # and -na. Seems not always to be the case, therefore, this rule is optional (->)      #
+       #--------------------------------------------------------------------------------------#
+       define ykuyka1 [ {yku}"@YKU" (->) {yka}"@YKU" || _   ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"+Rzpr"]];
+       define ykuyka2 [ {yu}"@YKU" (->) {ya}"@YKU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"+Rzpr"]];
+       
+       #--------------------------------------------------------------------------------------------------------------------------#
+       # -mu translocative --> as -m only before pu (might otherwise be confused wth -mpa, positional, -mpu can be written as npu #
+       #--------------------------------------------------------------------------------------------------------------------------#
+       define mpuDIR [ {mu}"@MU" -> [n|m]"@MU"  ||  _ ?* "@PU" ];
+
+       #----------------------------------------------------------------------------------------------#
+       # pu regressive --> pa only before ku and mu (might otherwise be confused with -pa repetitive) #
+       #----------------------------------------------------------------------------------------------#
+       define pupa [ {pu}"@PU" -> {pa}"@PU" ||  _  ?* ["@KU"|"@MU"] ];
+
+       #-----------------------------------------------------------------------#
+       # ku reflexive --> ka before chi and mu and pu (possibley before na (?) #
+       #-----------------------------------------------------------------------#
+       define kuka [ {ku}"@KU" -> {ka}"@KU" ||  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
+
+   define VerbRulesLower rqurqa1 .o. rqurqa2  .o. rqurqa3 .o. rqurqa4 .o. ykuyka1 .o. ykuyka2  .o. mpuDIR .o. pupa .o. kuka ;
+
+
+       ##############
+       # AMBIVALENT #
+       ##############
+
+       #--------------------------------------------------------------------------------------------------------------#
+       # evidential suffixes mi,si,cha as -m,-s,-ch only after vowel. Apply rule to complete word form, after cleanup #
+       # of flags, otherwise the context might not be right                                                           #
+       #--------------------------------------------------------------------------------------------------------------#
+
+       #define EVID1 [ {mi}"@MI" -> [{m}|{n}]"@MI"  ||Vowel  _ ];
+       #define EVID2 [ {si}"@SI" -> {s}"@SIu" || Vowel  _ ];
+       #define EVID3 [ {chi}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
+       #define EVID4 [ {cha}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
+
+	define SI1 [  {s}"@SI"  => Vowel _  ];
+	define SI2 [  {si}"@SI" => Cons _  ];
+
+	define MI1 [  {m}"@MI"  => Vowel _  ];
+	define MI2 [  {n}"@MI"  => Vowel _  ];
+	define MI3 [  {mi}"@MI" => Cons _  ];
+
+	define CHA1 [  {ch}"@CHA"  => Vowel _  ];
+	define CHA2 [  {chi}"@CHA"  => Cons _  ];
+	define CHA3 [  {cha}"@CHA" => Cons _  ];
+
+       #define AmbiRules EVID1 .o. EVID2 .o. EVID3 .o. EVID4;
+	define AmbiRules SI1 .o. SI2 .o. MI1 .o. MI2 .o. MI3 .o. CHA1 .o. CHA2 .o. CHA3;
+
+
+
+#################################################################################
+
+      #######################
+      #                     #
+      # AMBIVALENT SUFFIXES #
+      #                     #
+      #######################
+
+      source  as-1.foma
+      source  as-2.foma
+      source  as-3.foma
+      source  as-4.foma
+      source  as-5.foma
+      source  as-6.foma
+      source  as-7.foma
+      define HonAff [ {lla}  "+Lim_Aff" ] : {lla} ;
+
+      define AS [(HonAff) (AS=1) (HonAff) (AS=2) (AS=3)^{0,2} (HonAff) (AS=4) (HonAff) (AS=5) (AS=6) (AS=7)] ;
+
+
+####################################################################################
+
+       ##########
+       #        #
+       # VERBS  #
+       #        #
+       ##########
+
+       source vroot.foma
+       source vroot-es.foma
+          define VRootES VRootESpre .o. SPanOrtho;
+       source vroot-trans.foma
+	  define VRootTrans VRootTranspre .o. QuechuaOrtho;
+
+       define VROOTpre [VRootQ] .o. QuechuaOrtho;
+       define VROOT [VROOTpre|VRootES];
+
+       source v-v-1.foma
+       source v-v-2.foma
+       source v-v-3.foma
+       source v-v-4.foma
+       source  v-v-5.foma
+       source  v-v-6-norm.foma
+       source v-v-7.foma
+
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. QuechuaOrtho;
+
+
+#####################################################################################
+
+       #########
+       #       #
+       # NOUNS #
+       #       #
+       #########
+
+       source nroot.foma 
+       source nroot-num.foma 
+       source nroot.foma
+       source nroot-indef.foma
+       source nroot-cmp.foma
+         define NRootCMP NRootCMPpre .o. QuechuaOrtho;
+       source nroot-es.foma
+         define NRootES NRootESpre .o. SpanOrtho;
+
+       define NROOTpre [NRootQ|NRootNUM|NRootINDEF] .o. QuechuaOrtho ; 
+       define NROOT [NROOTpre|NRootES];
+
+       source n-n-1.foma
+       source  n-n-2.foma
+       source  n-n-3.foma
+       #nominal transitive forms
+       source  npers.foma 
+       source n-n-4.foma
+       source  n-n-5.foma
+       source  n-n-6.foma
+       source  n-n-7.foma
+       define kamaDist [  {kama} "+Dist" ] : {kama};
+
+      define NounSuffixes  [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  .o. QuechuaOrtho ;
+     
+######################################################################################
+
+      ######################
+      #                    #
+      # DERIVED ROOTS      #
+      #                    #
+      ######################
+
+
+       source n-v.foma
+       source  v-n.foma 
+       #mit diesen Suffixen nominalisierte Verben können nicht wieder verbalisiert werden
+       source  v-n-final.foma
+       source  v-n-transitive.foma
+       define Relational [ {n} "+Rel" : {n} ];
+       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower;
+
+       #------------------------#
+       # nominalized verbs:     #
+       # VRoot + VtoN = NDeriv1 #
+       # "taki-qti", "taki-y"   #
+       #------------------------#
+       define NDeriv1 [VROOT  VerbalSuffixesBeforeNS VtoN];
+       define NDeriv1final [VROOT  VerbalSuffixesBeforeNS VtoNfinal];
+       define NDeriv1finalTrans [VROOT  VerbalSuffixesBeforeNS VtoNfinalTrans];
+
+       #----------------------------#
+       # verbalized nouns:          #
+       # NRoot + NtoV = VDeriv1     #
+       # "wasi-n-cha-", "hatun-ya-" #
+       # NtoV: -ykacha/kacha as     #
+       # verbalizing suffix         #
+       #----------------------------#
+       define VDeriv1 [NROOT (Relational) (HonAff) NtoV];
+
+       #--------------------------------#
+       # nominalized verb Nr.2:         #
+       # NRoot + NtoV + VtoN = NDeriv2  #
+       # "wasi-n-cha-y", "hatun-ya-sqa" #
+       #--------------------------------#
+       define NDeriv2 [VDeriv1  VerbalSuffixesBeforeNS VtoN];
+       define NDeriv2final [VDeriv1  VerbalSuffixesBeforeNS VtoNfinal];
+
+       #--------------------------------#
+       # verbalized noun Nr.2:          #
+       # VRoot + VtoN + NtoV = VDeriv1  #
+       # "yaku-naya-q"                  #
+       #--------------------------------#
+       define VDeriv2 [NDeriv1 NtoV];
+
+       #-------------------------------------#
+       # nominalized verbs Nr.3:             #
+       # VRoot + VtoN + NtoV +VtoN = NDeriv3 #
+       # "yuya-y-cha-ku-y"                   #
+       #-------------------------------------#
+       define NDeriv3 [VDeriv2  VerbalSuffixesBeforeNS VtoN];
+       define NDeriv3final [VDeriv2  VerbalSuffixesBeforeNS VtoNfinal];
+
+#define NDERIV [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
+define NDERIV [NDeriv1|NDeriv2|NDeriv3];
+define NDERIVFINAL [NDeriv1final|NDeriv2final|NDeriv3final];
+define VDERIV [VDeriv1|VDeriv2];
+
+       ###########################################
+       #                                         #
+       # verbs with incorporated nominal root    #
+       #                                         #
+       ###########################################
+       define VRootInc [NRootQ VRootTrans];
+       
+       #--------------------------------------------------------#
+       # nominalized verb with incorporated nominal root:       #
+       # "uywamichiy"                                           #
+       #--------------------------------------------------------#
+       define NRootInc [VRootInc  VerbalSuffixesBeforeNS [VtoN|VtoNfinal]];
+
+       #--------------------#
+       # nominal compounds  #
+       #--------------------#
+       
+       define Compounds [[NRootQ|NDeriv1] NRootCMP NounSuffixes];
+
+
+define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3) (N=N=5) (N=N=6) (N=N=7)] ;
+define NounConverbTrans watrans .o. sutrans .o. [[NDeriv1finalTrans] (HonAff) npers (N=N=5) (N=N=6) (N=N=7)] ;
+define NounNormal  [[NROOT|NDERIV|NRootInc|Compounds] NounSuffixes] ;
+define Noun [NounConverb|NounNormal|NounConverbTrans];
+define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
+
+
+#########################################################################
+#########################################################################
+
+       ############
+       #          #
+       # PRONOUNS #
+       #          #
+       ############
+
+       #-------------------#
+       # personal pronouns #
+       #-------------------#
+       source prnpers.foma
+       define PrnPersInfl [PrnPers  (HonAff) (N=N=1) (HonAff) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} (N=N=7)^{0,2}];
+
+       #------------------------#
+       # demonstrative pronouns #
+       #------------------------#
+       source prndem.foma
+       define PrnDemInfl [PrnDem (HonAff) (AS=1) (HonAff) (AS=2) (N=N=1) (N=N=2) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} N=N=7^{0,2}];
+
+       #------------------------#
+       # interrogative pronouns #
+       #------------------------#
+       source prninterrog.foma
+       define PrnInterrogInfl [PrnInterrog (N=N=1) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} (N=N=7)^{0,2}];
+
+define Prn [PrnPersInfl|PrnDemInfl|PrnInterrogInfl] .o. QuechuaOrtho;
+
+#########################################################################
+
+       #############
+       #           #
+       # PARTICLES #
+       #           #
+       #############
+       
+       #---------------------------#
+       # normal (nominal) and      #
+       # verbalizable particles    #
+       #---------------------------#
+       source particle.foma
+       source particle-verb.foma
+
+       define ParticleBasic [verbalizableParticle (HonAff)(N=N=5)(HonAff)(N=N=6)^{0,2} (N=N=7)]; 
+
+       #----------------------------#
+       # verbalized particles       #
+       # particle + NtoV = PartVerb #
+       # hina-cha-                  #
+       #----------------------------#
+       define ParticleVerb [verbalizableParticle NtoV] VerbSuffixes;
+
+       #--------------------------------------#
+       # nominalized PartVerb                 #
+       # Particle-NtoV + VtoN = PartVerbNoun #
+       # ama-cha-y                            #
+       #--------------------------------------#
+       define ParticleVerbNoun [verbalizableParticle NtoV VerbalSuffixesBeforeNS [VtoN|VtoNfinal] (N=N=2) (N=N=3) (HonAff) (N=N=4) (N=N=5) (N=N=6)^{0,2} (N=N=7)];
+     
+
+define Particles VerbRulesUpper .o. [[Particle|ParticleBasic|ParticleVerb|ParticleVerbNoun]] .o. VerbRulesLower .o. QuechuaOrtho;
+
+
+
+
+#########################################################################
+
+       
+       ###################
+       #                 #
+       # ORDINAL NUMBERS #
+       #                 #
+       ###################
+
+       source numord.foma
+
+
+#################################################################################
+       
+       #########################
+       #                       #
+       # FEATURE RESTRICTIONS  #
+       #                       # 
+       #########################
+
+# case suffixes:  
+# -taq, -qta, -mantaq, -paq, -ntin, -npaq, -spaq
+define CASE [~$[ "@TA" "@GENq"| "@GENq"{p}"+Gen" "@PA" {ta}"+Acc" | "+Abl" "@GENq" | "+Iclsv"{m} "+DirE" "@MI" | {pa}"+Gen" "@PA" "@GENq" | "+SS" "@GENq"]];
+
+# verbal derivation, qti, (sqan), rqan 
+define VERBMORPHS [~$[ "+Ag"{ti}"+Char" | "+3.Sg.Subj.NPst"{m}"+DirE" ]];
+
+# verbal derivation 2: yuq, (-saq), -ptin, stin
+define VERBMORPHS2  [~$[ "+yu+" "+Aff" "@YKU" {q} "+Ag" | "+DS" "@PTI" {m} "+DirE" "@MI" | "+SS_Sim"{m} "+DirE" "@MI" | "+SS_Sim"{n}"+3.Sg.Poss" ]];
+
+# independent suffixes: niraq, -sun
+define INDEP [~$[ "+Sim" "@GENq"{p}"+Gen""@PA" | {su}"+Aug"{m}"+DirE" "@MI"]];
+
+# restrict transitive combinations of object markers and subject markers, e.g. -sunki should not be 2.Obj and 2.Sg.Subj, but 2.Obj and 3.Subj
+# exclude combinations of -na, Reubicative and verb makers that are homophonous with transitional nominal person markers (only relevant for ambiguous roots!),
+# e.g. taki -na -yki should be Obl + 2.Sg.Poss and NOT +Reub and +1.Sg.Subj_2.Sg.Obj
+
+# -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers
+define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"  ["@TRAN"|"@INTR"|"@INTRsu"]  [{yki}|{yku}|{ykichik}] | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"  {nchik} | "+y+" "+Aff" "@YKU" {wa} "+1.Obj" {n} "+3.Sg.Subj" ]];
+
+define FeatRestr [ CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS  ];
+
+
+
+#################################################################################
+
+#### LEXICAL RESTRICTIONS ######## 
+
+#special case, as allin and also alli are as roots in the lexicon!
+define ALLIN [~$[ "@ALLI" {m} "+DirE" ]];
+
+#special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
+define HATUN [~$[ "@HATU" {m} "+DirE" "@MI" | "@HATU" {n} "+3.Sg.Poss"]];
+
+# ñawpaq, ichuq, ch'usaq,
+define AQROOTS [~$[ ["@NAWPA"|"@CHIQA"|"@ICHU" ] {q} "+Ag" | "@NAWPA" "@GENq" {p} "+Gen" "@PA" | "@CHANI" {m} "+DirE" "@MI" | {ch'usa} "@GENq" {p} "+Gen" "@PA" ]];
+
+
+# other ambiguous roots: hukucha/huk'ucha, riku -> rikhu, no ri -ku
+define AMBROOTS [~$[ {hukucha}"+Dim" | {ri}"@RI" {ku} "+ku+" "+Rflx_Int"]];
+
+define LexRestr [ ALLIN .o. HATUN .o. AQROOTS .o. AMBROOTS];
+
+######################################################################################
+
+# the only irregular verb form: haku - come!
+
+define HAKU  [{haku}  : {haku}] ;
+
+# otaq/nitaq
+
+define OTAQ [ {otaq}  : [ [o|u|O|U]{taq} ] ];
+define NITAQ [ {nitaq} : {nitaq} ] .o. UpperCase;
+
+######################################################################################
+
+define preWord LexRestr .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
+define Word  FeatRestr .o. NounRulesUpper .o. [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+#define Word  [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+read regex Cleanup2 .o. CleanSigma .o. Word;
+
+#read regex  AQROOTS .o.  AMBROOTS .o. Word;
+
+
+save stack normalizerSpellcheck.bin

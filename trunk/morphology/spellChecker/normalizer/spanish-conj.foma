@@ -1,0 +1,15 @@
+define CONJUNCTIONSpre [
+   {adonde}  : {adonde}
+|  {aunque}  : {aunque}
+|  {conque}  : {conque}
+|  {cuando}  : {cuando}
+|  {donde}  : {donde}
+|  {empero}  : {empero}
+|  {ergo}  : {ergo}
+|  {mientras}  : {mientras}
+|  {pero}  : {pero}
+|  {porque}  : {porque}
+|  {sino}  : {sino}
+|  {siquiera}  : {siquiera}
+|  {siquier}  : {siquier}
+];

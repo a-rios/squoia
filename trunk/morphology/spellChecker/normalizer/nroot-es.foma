@@ -1,0 +1,111 @@
+# some common Spanish loanwords	# some common Spanish loanwords
+
+define NRootESpre [
+  {abuela} :   {awila}
+|  {abuelo} :   {awilu}
+|  {adobe} :   {aruwi}
+|  {alcaldía} :   {alcaldyia}
+|  {arado} :   {araw}
+|  {arroz} :   {aros}
+|  {avión} :   {awiyun}
+|  {bautizo} :   {bawtisu}
+|  {bendicón} :   {bindisyun}
+|  {bueno} :   {wenu}
+|  {buenos_días} :   {nusdiyas}
+|  {buey} :   {buwis}
+|  {café} :   {kafiy}
+|  {chiquito} :   {chikucha}
+|  {colegio} :   {kuliqiyu}
+|  {compadre} :   {kumari}
+|  {condicional} :   {kundisiyunal}
+|  {cristiano} :   {kristiyanu}
+|  {dañado} :   {dañaw}
+|  {dedo} :   {riru}
+|  {delicado} :   {dilikaw}
+|  {de_repente} :   {diripinti}
+|  {de_repente} :   {ridipinti}
+|  {deuda} :   {diwda}
+|  {diciembre} :   {disimri}
+|  {dios} :   {diyus}
+|  {dios} :   {dyus}
+|  {disfraz} :   {disfrasi}
+|  {disgracia} :   {disgrasya}
+|  {doctor} :   {duktur}
+|  {dueño} :   {duwiñu}
+|  {envidia} :   {inwidiya}
+|  {escuela} :   {iskuyla}
+|  {esquina} :   {iskina}
+|  {estación} :   {istasyun}
+|  {estancia} :   {istansya}
+|  {feo} :   {fiyu}
+|  {feria} :   {firiya}
+|  {fiesta} :   {fiyista}
+|  {fiesta} :   {phista}
+|  {fuerte} :   {fuwirti}
+|  {gobierno} :   {gubyirnu}
+|  {gracias} :   {grasyas}
+|  {grave} :   {grabi}
+|  {habas} :   {habas}
+|  {habas} :   {hawas}
+|  {hacienda} :   {asinda}
+|  {herba_luisa} :   {irwaluysa}
+|  {hermana} :   {irmana}
+|  {hermano} :   {irmanu}
+|  {herrero} :   {irriru}
+|  {hierro} :   {hirru}
+|  {honrado} :   {unradu}
+|  {igualito} :   {igwalla}
+|  {iguana} :   {iwana}
+|  {inginiero} :   {injinyiru}
+|  {inglés} :   {inlis}
+|  {italiano} :   {italyanu}
+|  {jarra} :   {harra}
+|  {jeuz} :   {huwis}
+|  {jueves} :   {huybis}
+|  {jueves} :   {huyis}
+|  {julio} :   {hulyu}
+|  {junio} :   {hunyu} 
+|  {labio} :   {labyu}
+|  {lado} :   {laru}
+|  {lado} :   {law}
+|  {libro} :   {liwru}
+|  {mar} :   {lamar}
+|  {marzo} :   {marsu}
+|  {mejor} :   {mihur}
+|  {merienda} :   {mirinda}
+|  {miércoles} :   {mirkulis}
+|  {mío} :   {miyu}
+|  {nación} :   {nasyun}
+|  {naranja} :   {naranqa}
+|  {novia} :   {nubiya}
+|  {noviembre} :   {nubimbri}
+|  {novio} :   {nubiyu}
+|  {octobre} :   {utupri}
+|  {ojalá} :   {uhalá}
+|  {orto_lado} :   {hukláw}
+|  {oveja} :   {ubiha}
+|  {oveja} :   {uwiha}
+|  {raíz} :   {rayis}
+|  {reunión} :   {riyunyun}
+|  {rueda} :   {ruyda}
+|  {teléfono} :   {tiliwunu}
+|  {televisón} :   {tiliwisyun}
+|  {tiempo} :   {timpu}
+|  {velorio} :   {biluryu}
+|  {vieja} :   {biha}
+|  {viejo} :   {bihu}
+|  {viento} :   {bintu}
+|  {viento} :   {wintu}
+|  {viernes} :   {birnis}
+|  {viudo} :   {biyudu}
+] ;
+
+#|  {Asia} ""  "NP"  "]" ] :   {Asia}
+#|  {Bolivia} ""  "NP"  "]" ] :   {Bolivia}
+#|  {Chachapoyas} ""  "NP"  "]" ] :   {Chachapoyas}
+#|  {Chiclayo} ""  "NP"  "]" ] :   {Chiclayo}
+#|  {España} ""  "NP"  "]" ] :   {España}
+#|  {Europa} ""  "NP"  "]" ] :   {Europa}
+#|  {Juliaca} ""  "NP"  "]" ] :   {Juliaca}
+#|  {Perú} ""  "NP"  "]" ] :   {Piruw}
+#|  {Puno} ""  "NP"  "]" ] :   {Puno}

@@ -1,0 +1,41 @@
+# translations with "="	# translations with "="
+
+define NRootINDEF [
+  {achkha} :  {achka}
+|  {achkha} :  {achkha}
+|  {achkha} :  {ashkha}
+|  {achkha} :  {askha}
+|  {achkha}  :  {ashka}
+|  {achkhap}   :  {achkaq}
+|  {achkhap}  :  {achkhaq}
+|  {achkhap}  :  {ashkhaq}
+|  {achkhap}  :  {askhaq}
+|  {achkhap} :  {ashkaq}
+|  {allapa} :  {allapa}
+|  {ancha} :  {ancha}
+|  {as}  :  {as}
+|  {aswan}  :  {aswan}
+|  {chhika} :  {chhika}
+|  {chhika} :  {chika}
+|  {hayk'a} :  {hayka}
+|  {hayk'a} :  {jayka}
+|  {hayk'a}  :  {hayk'a}
+|  {jayk'a} :  {jayk'a}
+|  {k'ata} :  {k'ata}
+|  {limpu}  :  {limpu}
+|  {llapa}  :  {llapa}
+|  {llipi}  :  {llipi}
+|  {lliw}  :  {lliw}
+|  {lluy}  :  {lluy}
+|  {llumpay} :  {llumpay}
+|  {mayqin}  :  {mayqin}
+|  {pisi} :  {pisi}
+|  {tukuy} :  {tukuy}
+|  {tumpa} :  {tumpa}
+|  {waki}  :  {waki}
+|  {wallka} :  {wallka}
+|  {wallku}  :  {wallku}
+|  {llumpay}  :  {yumpay}
+|  {yupa}  :  {yupa}
+|  {menos}  :  {menos}
+] ;

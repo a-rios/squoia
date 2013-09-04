@@ -1,0 +1,6 @@
+# verbal slot 3: object markers
+
+define V=V=3 [
+   [  {wa}  "+1.Obj"  ]: [{wa}"@1OBJ"]
+|  [  {su}  "+2.Obj"  ] : {su}
+] ;

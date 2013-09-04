@@ -1,0 +1,8 @@
+# verbal slot 4: aspect
+
+define V=V=4 [
+  [  {chka} "+Prog" ] : {chka}
+| [  {chka}  "+Prog"  ] : {sha}
+| [  {chka}  "+Prog"  ] : {sya}
+#| [ "@SAPROG" "[" "--" "]" {chka} "[" "Asp" "]" "[" "+Prog" "]" ] : {sa}
+] ;
