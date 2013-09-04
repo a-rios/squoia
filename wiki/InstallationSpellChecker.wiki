@@ -1,7 +1,7 @@
 How to install the spell checker for Unified Southern Quechua
 
 
- # download spellChecker.tar from [Downloads]
+ # download spellChecker.tar from [http://code.google.com/p/squoia/downloads/list]
  # unpack the archive:
 {{{
 $ tar xfz spellChecker.tar
