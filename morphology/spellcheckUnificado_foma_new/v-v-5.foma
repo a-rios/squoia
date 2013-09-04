@@ -1,7 +1,0 @@
-# verbal slot 5: tense
-
-define V=V=5 [
-  [ {rqa}  "+NPst" ] : {rqa}
-|  [  {rqa}  "+NPst" ] : {ra}
-| [ {sqa} "+IPst" ] : {sqa}
-] ;

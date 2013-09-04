@@ -1,7 +1,0 @@
-# ambivalent suffixes slot 1
-define AS=1 [
-  [  {hina}  "+Sim" ] : {hina}
-| [ {hina}  "+Sim" ] : {jina}
-| [  {pacha}  "+Abtmp" ]: {pacha} 
-];
-

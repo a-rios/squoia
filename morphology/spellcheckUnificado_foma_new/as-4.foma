@@ -1,4 +1,0 @@
-# ambivalent suffixes slot 4
-define AS=4 [
-[  {taq}  "+Con_Intr" ] : {taq}
-];

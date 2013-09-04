@@ -1,9 +1,0 @@
-# ambivalent suffixes slot 7
-
-define AS=7 [
-  [ {iki}  "+Res" ] : {iki}
-| [ {riki}  "+Res" ] : {riki}
-| [ {ya}  "+Emph" ] : {ya}
-| [ {yá}  "+Emph" ] : {yá}
-| [ {wá}  "+Emph" ] : {wá}
-] ;

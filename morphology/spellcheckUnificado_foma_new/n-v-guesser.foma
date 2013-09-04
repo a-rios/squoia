@@ -1,9 +1,0 @@
-# verbalizing suffixes
-define NtoV [
-  [  {lli}  "+Autotrs" ] : {lli}
-| [  {naya}  "+Des"  ] : {naya}
-| [  {cha} "+Fact"  ] : {cha}
-| [  {raya}   "+Char" ] : {raya}
-| [  {ya}   "+Trs" ] : {ya}
-| [  {ykacha}  "+Sml" ] : {ykacha}
-] ;

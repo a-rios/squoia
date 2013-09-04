@@ -1,8 +1,0 @@
-# nominal slot 2: possessor derivation
-define N=N=2 [
-  [ {sapa}  "+MPoss" ] :{sapa}
-| [ {yuq}  "+Poss"  ]: ["@POSS"{yuq}]
-| [ {niyuq}  "+Poss"  ]: ["@POSSni"{niyuq}]
-| [ {niyuq}  "+Poss"  ]: ["@POSSni"{ñiyuq}]
-| [ {nnaq}  "+Priv"  ]: {nnaq}
-] ;

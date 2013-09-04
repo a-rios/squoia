@@ -1,8 +1,0 @@
-# ambivalent suffixes slot 3
-
-define AS=3 [
-  [  {pas} "+Add" ] : {pas}
-| [  {pas}  "+Add" ] : {pis}
-| [  {raq}   "+Cont" ] : {raq}
-| [  {ña}  "+Disc" ] : {ña} 
-];
