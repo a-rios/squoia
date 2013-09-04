@@ -104,7 +104,7 @@
        define AccentES [ á (->) a,é (->) e,í (->) i, ó (->) o,ú (->) u, ü (->) u];
        define spanLetras1 [ e (->) i, o (->) u || .#. ~$[e|o] _ ~$[e|o] .#. ];
        define spanLetras2 [  c (->) k , v (->) w , j (->) h];
-       define SpanOrtho AccentES .o. spanLetras1 .o. spanLetras2 ;
+       define SpanOrtho AccentES .o. spanLetras1 .o. spanLetras2 .o. SPOrthography;
 
 ########################################################################
 ########################################################################
