@@ -1,7 +1,11 @@
 How to install the spell checker for Unified Southern Quechua
 
 
- # download the spell checker from ...
+ # download spellChecker.tar from [Downloads]
+ # unpack the archive:
+{{{
+$ tar xfz spellChecker.tar
+}}}
  # get foma:
   * either the newest version from here:
      [http://code.google.com/p/foma/downloads/list]
