@@ -1,0 +1,9 @@
+# person pronouns
+
+define PrnPers [
+  "PrnPers+1.Sg" : {ñuqa}
+| "PrnPers+2.Sg" : {qam}
+| "PrnPers+3.Sg" : {pay}
+| "PrnPers+1.Pl.Incl" : {ñuqanchik}
+| "PrnPers+1.Pl.Excl" : {ñuqayku}]
+;
