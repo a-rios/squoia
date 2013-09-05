@@ -1,3 +1,10 @@
+##############################################################
+#                                                            #
+# Spanish lexicon based on dictionary from FreeLing,         #
+# see http://nlp.lsi.upc.edu/freeling/ for more information. #
+#                                                            #
+##############################################################
+
 define NROOT2pre [
   {gabacha} : {gabacha}
 | {gabachada} : {gabachada}

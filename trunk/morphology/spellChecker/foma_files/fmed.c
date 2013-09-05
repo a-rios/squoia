@@ -1,19 +1,8 @@
-/*     Foma: a finite-state toolkit and library.                             */
-/*     Copyright © 2008-2010 Mans Hulden                                     */
+/*     This file is part of the squoia spell checker.                        */
 
-/*     This file is part of foma.                                            */
-
-/*     Foma is free software: you can redistribute it and/or modify          */
-/*     it under the terms of the GNU General Public License version 2 as     */
-/*     published by the Free Software Foundation.                            */
-
-/*     Foma is distributed in the hope that it will be useful,               */
-/*     but WITHOUT ANY WARRANTY; without even the implied warranty of        */
-/*     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         */
-/*     GNU General Public License for more details.                          */
-
-/*     You should have received a copy of the GNU General Public License     */
-/*     along with foma.  If not, see <http://www.gnu.org/licenses/>.         */
+/*     foma needs to be installed in order to compile fmed.                  */
+/*     Please see http://code.google.com/p/foma/ for more information.       */
+/*                                                                           */
 
 #include <stdlib.h>
 #include <stdio.h>
