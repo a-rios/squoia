@@ -10,8 +10,15 @@ use Lingua::Sentence;
 
 my $text;
 while(<>){
+	#my $removed = chomp;
+	#chomp;
+	unless(/^[\t\s]*$/){
 	s/\n/ /g;
+	s/\r/ /g;
+	
 	$text .= " ".$_;
+	}
+	
 }
 
         my $splitter = Lingua::Sentence->new("es", "nonbreaking_prefix.es");
@@ -20,6 +27,8 @@ while(<>){
 
        # print $splitter->split($text);
         my @sentences = $splitter->split_array($text);
+       # print @sentences;
+        
         foreach my $s (@sentences){
         	unless($s =~ /^[\t\s]*$/){
         		print $s." #EOS\n";
