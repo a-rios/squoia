@@ -9,17 +9,21 @@ binmode STDOUT, ':utf8';
 
 my $num_args = $#ARGV;
 
-if ( $num_args != 0) {
-  print STDERR "\nUsage: perl cleanGuessedRoots.pl -aya/-cuz \n";
+if ( $num_args != 1) {
+  print STDERR "\nUsage: perl cleanGuessedRoots.pl -aya/-cuz -pis/-pas\n";
   exit;
   }
 
-
-my $evid = $ARGV[0];
-shift;
-
+my $evid = shift @ARGV;
 if($evid ne '-aya' and $evid ne '-cuz'){
 	print STDERR "invalid option for evidential: $evid , possible options are -aya (-m) or cuz (-n) \n";
+	exit;
+}
+
+my $add = shift @ARGV;
+
+if($add ne '-pis' and $add ne '-pas'){
+	print STDERR "invalid option for additive: $add , possible options are -pis or -pas \n";
 	exit;
 }
 
@@ -100,6 +104,14 @@ foreach my $word (@words){
 				splice (@{$analyses},$j,1);	
 				$j--;
 				#print STDERR "deleted analysis: $string \n";
+			}
+			# if add=pas -> delete all analyses where -pis has been analysed as +add
+			if($add eq '-pas' && $string =~ /\Q[--]pi[Cas][+Loc][^DB][--]s[Amb][+IndE]\E/ && scalar(@$analyses)>1){
+				# analysis of this word with pis=additive and remove it
+				# TODO, insert flag in xfst, -> denk dra z lösche bi de web analyse!
+				splice (@{$analyses},$j,1);	
+				$j--;
+				print STDERR "deleted analysis: $string \n";
 			}
 			
 			my ($root) = ($string =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
