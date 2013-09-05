@@ -1,4 +1,5 @@
-# step-by-step installation instructions, including dependencies.
+#labels Featured,Phase-Deploy
+Step-by-step installation instructions for the MT system, including dependencies.
 
 
 Installation:
