@@ -1,3 +1,11 @@
+##############################################################
+#                                                            #
+# Spanish lexicon based on dictionary from FreeLing,         #
+# see http://nlp.lsi.upc.edu/freeling/ for more information. #
+#                                                            #
+##############################################################
+
+
 define NROOT3pre [
   {p-clorofenol} : {p-clorofenol}
 | {p-clorofenoles} : {p-clorofenoles}

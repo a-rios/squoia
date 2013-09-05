@@ -1,3 +1,9 @@
+#############################################################################
+#     This file is part of the squoia spell checker.                        #
+#     foma needs to be installed in order to compile fmed.                  #
+#     Please see http://code.google.com/p/foma/ for more information.       #
+#############################################################################
+
 prefix = /usr/local
 exec_prefix = $(prefix)
 libdir = $(exec_prefix)/lib
