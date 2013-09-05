@@ -13,8 +13,10 @@ my $tokenizer = new Uplug::PreProcess::Tokenizer( lang => 'es' );
 my $inStr = do { local $/; <STDIN> };
 
 # escape glottalization, so words will be splitted at '
+$inStr =~ s/(\w)\'(\w)/\1GLOTTALIZE\2/g; 
 $inStr =~ s/(\w)\'(\w)/\1GLOTTALIZE\2/g;
-$inStr =~ s/(\w)\'(\w)/\1GLOTTALIZE\2/g;
+$inStr =~ s/(\w)\’(\w)/\1GLOTTALIZE\2/g;
+
 my @tokens = $tokenizer->tokenize( $inStr);
 
 for(my $i=0; $i<scalar(@tokens);$i++) {

@@ -977,8 +977,13 @@ sub disambMorph1{
 	$ambigForms = $$prevdisamb + $ambigForms;
 	my $unamb = $unambigForms/$totalWords;
 	my $amb = ($$prevdisamb + $ambigForms)/$totalWords;
-	my $disamb = ($$prevdisamb + $disambiguatedForms)/$ambigForms;
-	my $stillamb = $stillambigForms/$ambigForms;
+	my $disamb=0;
+	my $stillamb=0;
+	if($ambigForms > 0){
+	    $disamb = ($$prevdisamb + $disambiguatedForms)/$ambigForms;
+	    $stillamb = $stillambigForms/$ambigForms;
+	}
+
 	
 	print STDERR "number of words: $totalWords\n"; 
 	print STDERR "unambiguous forms: $unambigForms : "; printf STERR ("%.2f", $unamb); print STDERR "\n";
@@ -1180,8 +1185,12 @@ sub disambMorph2{
 	my $totalWords = scalar(@words);
 	my $unamb = $unambigForms/$totalWords;
 	my $amb = $ambigForms/$totalWords;
-	my $disamb = $disambiguatedForms/$ambigForms;
-	my $stillamb = $stillambigForms/$ambigForms;
+	my $disamb=0;
+	my $stillamb=0;
+	if($ambigForms > 0){
+	      $disamb = $disambiguatedForms/$ambigForms;
+	      $stillamb = $stillambigForms/$ambigForms;
+	}
 	
 	print STDERR "number of words: $totalWords\n"; 
 	print STDERR "unambiguous forms: $unambigForms : "; printf STERR ("%.2f", $unamb); print STDERR "\n";
@@ -1382,8 +1391,13 @@ sub disambMorph3{
 	$ambigForms = $$prevdisamb + $ambigForms;
 	my $unamb = $unambigForms/$totalWords;
 	my $amb = ($$prevdisamb + $ambigForms)/$totalWords;
-	my $disamb = ($$prevdisamb + $disambiguatedForms)/$ambigForms;
-	my $stillamb = $stillambigForms/$ambigForms;
+	my $disamb=0;
+	my $stillamb=0;
+	if($ambigForms > 0){
+	    $disamb = ($$prevdisamb + $disambiguatedForms)/$ambigForms;
+	    $stillamb = $stillambigForms/$ambigForms;
+	}
+	
 	
 	print STDERR "number of words: $totalWords\n"; 
 	print STDERR "unambiguous forms: $unambigForms : "; printf STERR ("%.2f", $unamb); print STDERR "\n";
@@ -1407,7 +1421,7 @@ sub sentenceHasEvid{
 	my $j = $i-1;
 	my $prestring = $form;
 	#print "word: $prestring\n";
-	while($prestring !~ /\[\$/){
+	while($prestring !~ /\[\$/ && $j>= 0){
 		my $preword = @words[$j];
 		my $preanalyses = @$preword[1];
 		# don't consider forms that are still ambiguous
@@ -1424,7 +1438,7 @@ sub sentenceHasEvid{
 	my $j = $i+1;
 	my $poststring = $form;
 	#print "word: $poststring\n";
-	while($poststring !~ /\[\$/){
+	while($poststring !~ /\[\$/ && $j< scalar(@words) ){
 		my $postword = @words[$j];
 		my $postanalyses = @$postword[1];
 		if(scalar(@$postanalyses)==1){

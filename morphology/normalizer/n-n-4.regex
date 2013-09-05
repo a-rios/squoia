@@ -1,5 +1,6 @@
-# nominal slot 4: number
+# nominal slot 4: number (bolivian quechua: plural sometimes -s)
 
   [ "[" "--" "]" {kuna} "[" "Num" "]" "[" "+Pl" "]"] : {kuna}
 | ["[" "--" "]" {kuna} "[" "Num" "]" "[" "+Pl" "]" "[" "^DB" "]" "[" "--" "]" {yuq} "[" "NDeriv" "]"  "[" "+Poss" "]" "@PLYUQ" ]: {kunayuq}
+| [ "[" "--" "]" {kuna} "[" "Num" "]" "[" "+Pl" "]" "@bolPl"] : {s}
 ;
