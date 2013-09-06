@@ -310,7 +310,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        #define N=N=3 DB @re"n-n-3-guesser.regex" ;
        define N=N=3 DB @re"n-n-3.regex" ;
        define npers DB @re"npers.regex" ; #nominal transitive forms
-       define N=N=4 @re"n-n-4.regex" ;
+       define N=N=4 @re"n-n-4-guesser.regex" ;
        define N=N=5 DB @re"n-n-5.regex" ;
        define N=N=6 DB @re"n-n-6.regex" ;
        define N=N=7 DB @re"n-n-7.regex" ;
