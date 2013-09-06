@@ -106,12 +106,12 @@ foreach my $word (@words){
 				#print STDERR "deleted analysis: $string \n";
 			}
 			# if add=pas -> delete all analyses where -pis has been analysed as +add
-			if($add eq '-pas' && $string =~ /\Q[--]pi[Cas][+Loc][^DB][--]s[Amb][+IndE]\E/ && scalar(@$analyses)>1){
+			if($add eq '-pas' && $string =~ /\@PISadd/ && scalar(@$analyses)>1){
 				# analysis of this word with pis=additive and remove it
 				# TODO, insert flag in xfst, -> denk dra z lösche bi de web analyse!
 				splice (@{$analyses},$j,1);	
 				$j--;
-				print STDERR "deleted analysis: $string \n";
+				#print STDERR "deleted analysis: $string \n";
 			}
 			
 			my ($root) = ($string =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
