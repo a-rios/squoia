@@ -1,4 +1,4 @@
-#labels Featured,Phase-Deploy
+#labels Phase-Deploy
 How to install the spell checker for Unified Southern Quechua
 
 
@@ -14,12 +14,21 @@ $ tar xf spellChecker.tar
 {{{
 $ svn co http://foma.googlecode.com/svn/trunk/foma/ foma
 }}}
- # copy fmed.c and the Makefile in /foma_files to the foma sources and compile foma:
+ # compile and install foma:
 {{{
 $ cd path-to-your-foma-sources
-$ cp foma_files/* .
 $ make
 $ make install
+}}}
+ # compile fmed.c and copy it to some place in your PATH, e.g. /usr/local/bin:
+{{{
+$ cd path-to-your-spellchecker-source/foma_files
+$ gcc -o fmed fmed.c -lfoma /usr/local/lib/libfoma.a  -lz 
+}}}
+   or do (depending on where your libfoma.a is):
+{{{
+$ gcc -o fmed fmed.c -lfoma /usr/lib/libfoma.a  -lz 
+$ cp fmed /usr/local/bin
 }}}
  # compile the finite state transducers (compiling the normalizers will take a while due to large lexica):
 {{{
