@@ -51,7 +51,7 @@ $ foma -f chain.foma
 {{{
 $ cpan Uplug::PreProcess::Tokenizer
 }}}
- # you can now call 'spellcheck', indicating the paths to analyzer.bin, chain.bin and spellcheckUnificado.bin (in this order!), remember, input has to be tokenized: 
+ # you can now call 'spellcheck', indicating the paths to analyzer.bin, chain.bin and spellcheckUnificado.bin (in this order!), and remember, input has to be tokenized: 
 {{{
 $ cat tokenized.txt | spellcheck path-to-your-spellChecker/analyzer/analyzer.bin path-to-your-spellChecker/normalizer/chain.bin path-to-your-spellChecker/analyzer/spellcheckUnificado.bin 
 }}}
