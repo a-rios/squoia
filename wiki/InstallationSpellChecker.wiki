@@ -46,7 +46,7 @@ $ foma -f chain.foma
    * normalizer/chain.bin
  # NOTE: 'spellcheck' expects the input text to be tokenized (one word per line), you can use the tokenizer included in this package: tokenizer/tokenize.pl. 
    * tokenize.pl needs the Uplug::PreProcess::Tokenizer perl module:
-   * get from [http://search.cpan.org/~tiedemann/uplug-main-0.3.8/lib/Uplug/PreProcess/Tokenizer.pm]
+   * get it from [http://search.cpan.org/~tiedemann/uplug-main-0.3.8/lib/Uplug/PreProcess/Tokenizer.pm]
    * or install it through cpan:
 {{{
 $ cpan Uplug::PreProcess::Tokenizer
