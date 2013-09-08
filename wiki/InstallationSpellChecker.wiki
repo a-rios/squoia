@@ -20,7 +20,7 @@ $ cd path-to-your-foma-sources
 $ make
 $ make install
 }}}
- # compile spellcheck.c and copy it to some place in your PATH, e.g. /usr/local/bin:
+ # compile spellcheck.c:
 {{{
 $ cd path-to-your-spellchecker-source/foma_files
 $ gcc -o spellcheck spellcheck.c  /usr/local/lib/libfoma.a  -lz 
