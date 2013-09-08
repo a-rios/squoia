@@ -20,15 +20,18 @@ $ cd path-to-your-foma-sources
 $ make
 $ make install
 }}}
- # compile fmed.c and copy it to some place in your PATH, e.g. /usr/local/bin:
+ # compile spellcheck.c and copy it to some place in your PATH, e.g. /usr/local/bin:
 {{{
 $ cd path-to-your-spellchecker-source/foma_files
-$ gcc -o fmed fmed.c -lfoma /usr/local/lib/libfoma.a  -lz 
+$ gcc -o spellcheck spellcheck.c  /usr/local/lib/libfoma.a  -lz 
 }}}
    or do (depending on where your libfoma.a is):
 {{{
-$ gcc -o fmed fmed.c -lfoma /usr/lib/libfoma.a  -lz 
-$ cp fmed /usr/local/bin
+$ gcc -o spellcheck spellcheck.c /usr/lib/libfoma.a  -lz 
+}}}
+ # copy spellcheck to some place in your PATH (note: you probably have to be root to do this. If that's not possible, adapt the PATH variable in your ~/.bashrc to include the folder /foma_files):
+{{{
+$ cp spellcheck /usr/local/bin
 }}}
  # compile the finite state transducers (compiling the normalizers will take a while due to large lexica):
 {{{
@@ -41,18 +44,78 @@ $ foma -f chain.foma
    * analyzer/analyzeUnificado.bin
    * analyzer/spellcheckUnificado.bin
    * normalizer/chain.bin
- # adapt the paths in spellcheck-example.sh, save the file as spellcheck.sh and make it executable like this:
-{{{
-$ chmod +x spellcheck.sh
-}}}
- # the tokenizer needs the Uplug::PreProcess::Tokenizer perl module:
+ # NOTE: 'spellcheck' expects the input text to be tokenized (one word per line), you can use the tokenizer included in this package: tokenizer/tokenize.pl. 
+   * tokenize.pl needs the Uplug::PreProcess::Tokenizer perl module:
    * get from [http://search.cpan.org/~tiedemann/uplug-main-0.3.8/lib/Uplug/PreProcess/Tokenizer.pm]
    * or install it through cpan:
 {{{
 $ cpan Uplug::PreProcess::Tokenizer
 }}}
- # now you can run spellcheck.sh, pass the text you want to spell check as argument
+ # you can now call 'spellcheck', indicating the paths to analyzer.bin, chain.bin and spellcheckUnificado.bin (in this order!), remember, input has to be tokenized: 
+{{{
+$ cat tokenized.txt | spellcheck path-to-your-spellChecker/analyzer/analyzer.bin path-to-your-spellChecker/normalizer/chain.bin path-to-your-spellChecker/analyzer/spellcheckUnificado.bin 
+}}}
+ # Example: for a file containing the the words:
+{{{
+wasita
+wasiyki
+wasitan
+wsaita
+wasiq
+takeqta
+}}}
+   * output will look like this:
+{{{
+wasita:
+        --
+wasiyki:
+        --
+wasitan:
+        wasitam
+wsaita
+        Usanta
+        wsaita
+        Cost[f]: 6
+
+        Usaqta
+        wsaita
+        Cost[f]: 6
+
+        Usapta
+        wsaita
+        Cost[f]: 6
+
+wasiq:
+        wasip
+takeqta:
+        takiqta
+
+}}}
+   * correctly written words are marked with '--' (wasita, wasiyki)
+   * for normalized words, the normalized form is printed out (wasitan: wasitam, wasiq: wasip, takeqta: takiqta)
+   * for words that need spell checking with minimun edit distance, the suggestions are listed and the edit distance is indicated ({{{Cost[f]}}}).
+
+
+ # alternatively, you can use the included shell script (but note that this is slower than calling 'spellcheck'!)
+  # you have to adapt the paths in spellcheck-axample.sh, save as spellcheck.sh, and make it executable:
+{{{
+$ chmod +x spellcheck.sh
+}}}
+  # you have to compile fmed.c (allows to call med (minimum edit distance search) from the shell:
+{{{
+$ cd path-to-your-spellchecker-source/foma_files
+$ gcc -o fmed fmed.c  /usr/local/lib/libfoma.a  -lz 
+}}}
+   or do (depending on where your libfoma.a is):
+{{{
+$ gcc -o fmed fmed.c /usr/lib/libfoma.a  -lz 
+}}}
+  # copy fmed to some place in your PATH (note: you probably have to be root to do this. If that's not possible, adapt the PATH variable in your ~/.bashrc to include the folder /foma_files):
+{{{
+$ cp fmed /usr/local/bin
+}}}
+  # then run spellcheck.sh, pass the text you want to spell check as argument
 {{{
 $ ./spellcheck.sh file-you-want-to-spell-check
 }}}
- the script will output a list of misspelled words with their corrections, or 'no spelling errors found' if the text is written according to the Unified Southern orthography. The list is also printed to tmp/text.out.
+ the script will output a list of misspelled words with their corrections, or 'no spelling errors found' if the text is written according to the Unified Southern orthography. The list is also printed to tmp/text.out. NOTE: this is slower than using the C executable 'spellcheck' as described above.
