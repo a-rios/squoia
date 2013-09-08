@@ -486,7 +486,7 @@
 | [ {kachu} "[" "VRoot" "]" "[" "=torcer" "]" ] :  {kachu}
 | [ {k'aqa} "[" "VRoot" "]" "[" "=hacer_calor" "]" ] :  {k'aha}
 | [ {k'aqa} "[" "VRoot" "]" "[" "=hacer_calor" "]" ] :  {kaha}
-| [ {kaka} "[" "VRoot" "]" "[" "=cagar" "]" ] :  {kaka}
+| [ {kaka} "[" "VRoot" "]" "[" "=desmoronar,pagar_tributo" "]" ] :  {kaka}
 | [ {k'aka} "[" "VRoot" "]" "[" "=agrietar" "]" ] :  {k'aka}
 | [ {k'akcha} "[" "VRoot" "]" "[" "=apretar_tejido" "]" ] :  {k'akcha}
 | [ {kakcha} "[" "VRoot" "]" "[" "=encender,roer" "]" ] :  {kakcha}
@@ -877,7 +877,6 @@
 | [ {muk'u} "[" "VRoot" "]" "[" "=mascar" "]" ] :  {muk'u}
 | [ {muk'u} "[" "VRoot" "]" "[" "=mascar" "]" ] :  {muku}
 | [ {mula} "[" "VRoot" "]" "[" "=afilar" "]" ] :  {mula}
-| [ {mulla} "[" "VRoot" "]" "[" "=necesitar" "]" ] :  {mulla}
 | [ {mullkhi} "[" "VRoot" "]" "[" "=rebuscar" "]" ] :  {mullkhi}
 | [ {mullkhu} "[" "VRoot" "]" "[" "=palpar,tocar" "]" ] :  {mullkhu}
 | [ {mullkhi} "[" "VRoot" "]" "[" "=rebuscar" "]" ] :  {mullki}

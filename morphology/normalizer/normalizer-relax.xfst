@@ -14,8 +14,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"] ];
 
        
 ############################################################################### 
@@ -557,11 +557,16 @@ define Particles VerbRulesLower .o. [[Particle|ParticleBasic|ParticleVerb|Partic
        #                       # 
        #########################
 
+
+# limit analysis of -qta as genitive-accusative to cases with human roots (e.g. mamaqta richkani - I'm going to my mother's)
+# otherwise: assume -qta as agentive+accusative
+define AccGen [  %["^DB"%] "@GENq" %["--"%]{p} %["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%]{ta}%["Cas"%]  => "@HUM" _  ];
+
 # naya/sun,  -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj
 define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] ]] ; 
 
 # case suffixes:  tapi, pita, manta, tamanta, mantaq, ntin, paq, tata (false double accusatives: contratatan -> not contra-ta-ta!), mpaq -> n-paq, not mpa -p
-define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"+Abl" | "+Abl"?*"+Gen" | {ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] %[ | {pa}%["Cas"%] %["+Gen"%] ?* "@GENq" |"+Acc" ?* "+Acc" | "@GENq" ?* "@TA" | "+Posi" ?* ["+Gen"|"+Acc"]]];
+define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"+Abl" | "+Abl"?*"+Gen" | {ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] %[ | {pa}%["Cas"%] %["+Gen"%] ?* "@GENq" |"+Acc" ?* "+Acc" | "+Posi" ?* ["+Gen"|"+Acc"]]];
 
 # verbal derivation, nyari, qti,  sqama, sqan, rqan (sqas ?), sqay, sqaman, sqa+fut, sqaykiman, rqa/sqa-Imp
 define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" ]];
@@ -579,7 +584,7 @@ define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %
 # -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers
 define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] n %["VPers" ]];
 
-define FeatRestr [NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS  ];
+define FeatRestr [AccGen .o. NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS  ];
 
 #define NKUMAN  [~$["+3.Pl.Subj"?*"+Pot"]]; #occurs in Gregorio -> nku -man as potential instead of -manku
 #define WAQ [~$["+1.Obj"%] %["^DB"%] %["--"%]{q}%["NS"%] %["+Ag"]]; #may occur
