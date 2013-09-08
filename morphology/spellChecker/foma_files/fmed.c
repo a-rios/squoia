@@ -1,8 +1,19 @@
-/*     This file is part of the squoia spell checker.                        */
+/*     Foma: a finite-state toolkit and library.                             */
+/*     Copyright © 2008-2010 Mans Hulden                                     */
 
-/*     foma needs to be installed in order to compile fmed.                  */
-/*     Please see http://code.google.com/p/foma/ for more information.       */
-/*                                                                           */
+/*     This file is part of foma.                                            */
+
+/*     Foma is free software: you can redistribute it and/or modify          */
+/*     it under the terms of the GNU General Public License version 2 as     */
+/*     published by the Free Software Foundation.                            */
+
+/*     Foma is distributed in the hope that it will be useful,               */
+/*     but WITHOUT ANY WARRANTY; without even the implied warranty of        */
+/*     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         */
+/*     GNU General Public License for more details.                          */
+
+/*     You should have received a copy of the GNU General Public License     */
+/*     along with foma.  If not, see <http://www.gnu.org/licenses/>.         */
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -58,30 +69,35 @@ int main(int argc, char *argv[]) {
     }
     medh = apply_med_init(net);
     INFILE = stdin;
+    apply_med_set_heap_max(medh,4194304+1);
+    apply_med_set_med_limit(medh,g_med_limit);
+    apply_med_set_med_cutoff(medh,g_med_cutoff);
+	    
     while (fgets(line, LINE_LIMIT, INFILE) != NULL) {
 	line[strcspn(line, "\n")] = '\0'; /* chomp */
-	//result = apply_med(medh, line);
-	    apply_med_set_heap_max(medh,4194304+1);
-	    apply_med_set_med_limit(medh,g_med_limit);
-	    apply_med_set_med_cutoff(medh,g_med_cutoff);
-
-	result = apply_med(medh, line);
-	    if (result == NULL) {
-		printf("???\n");
-		printf("%s\n\n", line);
-		} 
-	    else {
-	      printf("%s\n",result);
-	      printf("%s\n", apply_med_get_instring(medh));
-	      printf("Cost[f]: %i\n\n", apply_med_get_cost(medh));
-	    
+	    /* make sure string is not empty */
+	if(line[0] != '\0')
+	{
+	  //result = apply_med(medh, line);
+	  printf("%s\n", line);
+	  result = apply_med(medh, line);
+	  if (result == NULL) 
+	  {
+	      printf("\t???\n");
+	  } 
+	  else 
+	  {
+	      printf("\t%s\n",result);
+	      printf("\t%s\n", apply_med_get_instring(medh));
+	      printf("\tCost[f]: %i\n\n", apply_med_get_cost(medh));
+    
 	      while ((result = apply_med(medh,NULL)) != NULL) {
-		printf("%s\n",result);
-		printf("%s\n", apply_med_get_instring(medh));
-		printf("Cost[f]: %i\n\n", apply_med_get_cost(medh));
-		}
+		    printf("\t%s\n",result);
+		    printf("\t%s\n", apply_med_get_instring(medh));
+		    printf("\tCost[f]: %i\n\n", apply_med_get_cost(medh));
 	      }
-  
+	}
+      }
 
     }
     if (medh != NULL) {
