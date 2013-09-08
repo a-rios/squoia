@@ -1,4 +1,4 @@
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 How to install the spell checker for Unified Southern Quechua
 
 
