@@ -60,10 +60,14 @@ xmllint --format $TESTOUTPUT.desrparsed
 # new matxin pipe configuration
 perl  $SQUOIAMATXIN/readConfig.pl $CONFIGFILE
 
+# language model
+export LM="$ESDE_DIR/lm/dewac10M_3g_lemma.bin.lm"
+MAXALT=2
+
 ALTERNATIVES=$1
 if [ $ALTERNATIVES -eq 1 ]
 then
-cat $TESTOUTPUT.desrparsed | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/insertSemanticTags.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/semanticDisamb.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/alternativeSentences.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/prepositionDisamb.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/verbPrepDisamb.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/splitNodes.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/addPronouns.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/addFutureAux.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/splitVerbPrefix.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/synTransferIntraChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/STinterchunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/nodesToChunks.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/childToSiblingChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/recursiveNumberChunks.pl 2>> ./junk  2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/interChunkOrder.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/linearOrderChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/nodeOrderInChunk.pl 2>> ./junk > $TESTOUTPUT.xml 
+cat $TESTOUTPUT.desrparsed | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/insertSemanticTags.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/semanticDisamb.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/statisticLexDisamb.pl $LM $MAXALT 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/alternativeSentences.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/prepositionDisamb.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/verbPrepDisamb.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/splitNodes.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/addPronouns.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/addFutureAux.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/splitVerbPrefix.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/synTransferIntraChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/STinterchunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/nodesToChunks.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/childToSiblingChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/recursiveNumberChunks.pl 2>> ./junk  2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/interChunkOrder.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/linearOrderChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/nodeOrderInChunk.pl 2>> ./junk > $TESTOUTPUT.xml 
 else
 cat $TESTOUTPUT.desrparsed | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/insertSemanticTags.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/semanticDisamb.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/countAlternativeSentences.pl 2>> ./junk  | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/prepositionDisamb.pl  2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/verbPrepDisamb.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/splitNodes.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/addPronouns.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/addFutureAux.pl 2>> ./junk | perl -I$SQUOIAMATXIN -I$ESDEMATXIN $ESDEMATXIN/splitVerbPrefix.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/synTransferIntraChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/STinterchunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/nodesToChunks.pl 2>> ./junk |  perl -I$SQUOIAMATXIN $SQUOIAMATXIN/childToSiblingChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/recursiveNumberChunks.pl 2>> ./junk  2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/interChunkOrder.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/linearOrderChunk.pl 2>> ./junk | perl -I$SQUOIAMATXIN $SQUOIAMATXIN/nodeOrderInChunk.pl 2>> ./junk > $TESTOUTPUT.xml 
 fi
@@ -75,7 +79,7 @@ perl -I$SQUOIAMATXIN -I$ESDEMATXIN $SQUOIAMATXIN/myoutputOrderChunk.pl < $TESTOU
 MOLIFDE=/home/clmolif/molifde
 flookup $MOLIFDE/fst/SttsGeneratorTool.fst < $TESTOUTPUT.stts > $TESTOUTPUT.fstout
 
-perl -I$SQUOIAMATXIN $ESDEMATXIN/cleanFstOutput.pl < $TESTOUTPUT.fstout > $TESTOUTPUT.gen
+perl -I$SQUOIAMATXIN $ESDEMATXIN/cleanFstOutput.pl < $TESTOUTPUT.fstout > $TESTOUTPUT.gen 2>> ./junk
 cat $TESTOUTPUT.gen
 exit
 echo

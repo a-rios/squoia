@@ -1262,6 +1262,7 @@
    <e><p><l>tejer</l><r>weben</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>temblar</l><r>beben</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>temblar</l><r>zittern</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>tener_lugar</l><r>statt|finden</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>trabajar</l><r>arbeiten</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>tronar</l><r>donnern</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>tronar</l><r>sich_verkrachen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO tronar con alguien = sich mit jmdm verkrachen -->
@@ -3936,7 +3937,6 @@
    <e><p><l>pasar</l><r>herein|kommen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasar</l><r>ein|treten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasar</l><r>herüber|reichen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>pasar</l><r>passieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasar</l><r>sich ereignen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasar</l><r>pürieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasar</l><r>seihen</r></p><par n="VM_VV_MAIN"/></e>
@@ -6168,7 +6168,6 @@
    <e><p><l>almacén</l><r>Lager</r></p><par n='NC_N_83_MITTEL'/></e>
    <e><p><l>almádena</l><r>Vorschlaghammer</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>alma</l><r>Seele</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>alma</l><r>Seele</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>almagre</l><r>Ocker</r></p><par n='NC_N_100052_OSTEN'/></e>
    <e><p><l>almanaque</l><r>Almanach</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>almanaque</l><r>Jahrbuch</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -6221,16 +6220,13 @@
    <e><p><l>alta fidelidad</l><r>Hi-Fi</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>alta fidelidad</l><r>HiFi</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>altar</l><r>Altar</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>altar</l><r>Altar</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>altavoz</l><r>Lautsprecher</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>altavoz</l><r>Lautsprecher</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>alteración</l><r>Fälschung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>alteración</l><r>Veränderung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>alternativa</l><r>Alternative</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>alteza</l><r>Hoheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>altímetro</l><r>Höhenmesser</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>altiplano</l><r>Hochebene</r></p><par n='NC_N_76_FEDER'/></e>	<!-- compound not in molif -->
-   <e><p><l>altiplano</l><r>Hochebene</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>altitud</l><r>Höhe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>alto</l><r>Alt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- Alt = Altstimme -->
    <e><p><l>alto</l><r>Altstimme</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -14957,15 +14953,14 @@
    <e><p><l>madrugada</l><r>Frühaufstehen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>madrugada</l><r>Morgendämmerung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>madrugada</l><r>Morgengrauen</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>madurez</l><r>Erwachsensein</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>madurez</l><r>Erwachsensein</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>madurez</l><r>Reife</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>maestra</l><r>Handwerkerin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>maestranza</l><r>Meisterwerkstatt</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>maestro</l><r>Grundschullehrer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>maestro</l><r>Lehrer</r></p><par n='NC_N_52_SPLITTER'/></e>	<!-- gender -->
-   <e><p><l>maestro</l><r>Meister</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>maestro</l><r>Grundschullehrer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>maestro</l><r>Handwerker</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>maestro</l><r>Lehrer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>maestro</l><r>Meister</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>mafia</l><r>Mafia</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>maga</l><r>Zauberin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>magdalena</l><r>Madeleine</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>magdalena</l><r>Magdalena</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>magenta</l><r>Magenta</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -14982,15 +14977,13 @@
    <e><p><l>magnitud</l><r>Größe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>magnolia</l><r>Magnolie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mago</l><r>Magier</r></p><par n='NC_N_52_SPLITTER'/></e>
-   <e><p><l>mago</l><r>Zauberer</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>mago</l><r>Zauberer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>magro</l><r>mageres Schweinefleisch</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>magro</l><r>mager</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>mahonesa</l><r>Mayonnaise</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>mahonesa</l><r>Meerviole</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>mainel</l><r>Mittelsäule</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>maizal</l><r>Maisfeld</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>maíz</l><r>Mais</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>maíz</l><r>Mais</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>majestad</l><r>Majestät</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>majuelo</l><r>Hagedorn</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>majuelo</l><r>Schuhriemen</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -15007,7 +15000,6 @@
    <e><p><l>maldad</l><r>Bosheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>maldad</l><r>Übel</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>maldición</l><r>Fluch</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>maldición</l><r>Fluch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>malentendido</l><r>Missverständnis</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>maléolo</l><r>Knöchel</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>maleta</l><r>Kofferraum</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -28328,6 +28320,7 @@ gracias_a
    <e><p><l>quién<s n="parol"/>PT0CP000</l><r>wer<s n="pos"/>PWS<s n="mi"/>*.Sg</r></p></e> <!-- quiénes; in German only singular TODO: if subject, then set verb in 3.Sg -->
     <!-- exclamative -->
    <e><p><l>qué<s n="parol"/>PE000000</l><r>was_fuer_ein<s n="pos"/>PIAT<s n="mi"/>Sg</r></p></e> <!-- German? wie -->
+   <e><p><l>qué<s n="parol"/>PE0CN000</l><r>was<s n="pos"/>PIS</r></p></e> <!-- German? wie -->
     <!-- relative -->
    <e><p><l>como<s n="parol"/>PR000000</l><r>wie<s n="pos"/>PWAV</r></p></e>
    <e><p><l>donde<s n="parol"/>PR000000</l><r>wo<s n="pos"/>PWAV</r></p></e>

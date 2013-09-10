@@ -2,17 +2,8 @@
 						
 use strict;
 
-# example of FST output
-#die_ART_Def.Fem.Nom.Sg	die_ART
-#Mutter_NN_Fem.Nom.Sg.*	<CLASS><MUTTER/></CLASS>_Mutter_NN_Fem.Nom.Sg.*
-#essen_VVFIN_3.Sg.Pres.Ind	<CLASS><M1=/><3/><M2=/><2/><M3=/><12/><M4=/><12/><M5=/><1/><M6=/><2/><M7=/><0/></CLASS>_isst_VVFIN_3.Sg.Pres.Ind
-#nicht_ADV	+?
-#immer_ADV	+?
-#sehr_ADV	+?
-#reif_ADJD_Pos	<CLASS><OLIFC.90/></CLASS>_reif_ADJD_Pos
-#die_ART_Def.*.Akk.Pl	die_ART
-#Apfel_NN_Masc.Akk.Pl.*	<CLASS><VATER/></CLASS>_Äpfel_NN_Masc.Akk.Pl.*
-#	+?
+# List of POS tags to separate the word form from the tag
+my $POSre = "_(\\\$|ADJ[AD]_|ADV|APPR(ART)?|APPO|APZR|ART|CARD|ITJ|KOU[IS]|KON|KOKOM|NE_|NN_|PDS|PDAT|PIS|PIAT|PIDAT|PPER|PPOSS|PPOSAT|PRELS|PRELAT|PRF|PWS|PWAT|PWAV|PAV|PTK(ZU|NEG|VZ|ANT|A)|TRUNC|V[AMV](FIN|INF|IMP|IZU|PP)_)";
 
 # APPRART: contractions of preposition with definite article
 # compulsary for the following forms: am, beim, im, vom, zum und zur
@@ -37,22 +28,33 @@ sub getWordForm{
 sub printWordForms{
 	my $outarrayref = $_[0];
 
-	#my $index = 0;
+	my $sentence = "";
 	my $len = @$outarrayref;
 	for (my $i=0; $i < $len; $i++) {
 		my $wordform = $outarrayref->[$i]->[-1];
-		if ($apprart{$wordform} and $i+1 < $len) {
-			my $nextform = $outarrayref->[$i+1]->[0];
-			my $contractedform = $apprart{$wordform}{$nextform};
-			if ($apprart{$wordform}{$nextform}) {
-				print STDOUT "$contractedform ";
-				$i++;
-				next;
-			}
-		}
+		#print STDERR "$wordform\n";
+##		if ($apprart{$wordform} and $i+1 < $len) {
+##			my $nextform = $outarrayref->[$i+1]->[0];
+##			my $contractedform = $apprart{$wordform}{$nextform};
+##			if ($apprart{$wordform}{$nextform}) {
+##				print STDERR "$contractedform ";
+##				$sentence .= "$contractedform ";
+##				$i++;
+##				next;
+##			}
+##		}
 		# print the last word form alternative #TODO: have some probabilistic preferences?
-		print STDOUT "$wordform ";
+		print STDERR "$wordform ";
+		$sentence .= "$wordform ";
 	}
+	$sentence =~ s/\ban dem\b/am/g;
+	$sentence =~ s/\bbei dem\b/beim/g;
+	$sentence =~ s/\bin dem\b/im/g;
+	$sentence =~ s/\bvon dem\b/vom/g;
+	$sentence =~ s/\bzu der\b/zur/g;
+	$sentence =~ s/\bzu dem\b/zum/g;
+
+	print STDOUT $sentence;
 }
 
 my @outarray = ();
@@ -88,8 +90,10 @@ while(<>) {
 			push(@outarray,["$infst"]);
 		}
 		else {
-			#print STDERR "$infst ";
-			my ($lemma,$pos) = split(/_/,$infst); # TODO: Named entities have also underscores; check this before cutting only the first part of the NE!
+			print STDERR "$infst ";
+			my ($lemma,$rest) = split(/$POSre/,$infst);
+			print STDERR "with lemma $lemma\n";
+ 			#my ($lemma,$pos) = split(/_/,$infst); # TODO: Named entities have also underscores; check this before cutting only the first part of the NE!
 			$lemma =~ s/\|//g;	# eliminate the separable verb prefix mark "|" still present in infinitive forms
 			#print STDERR "$lemma\n";
 			push(@outarray,["$lemma"]);
