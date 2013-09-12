@@ -119,7 +119,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 												my @synattrlist = $node->attributes();
 												foreach my $synattr (@synattrlist)
 												{
-													unless($synattr =~ /ref|slem|smi|sform|UpCase/)
+													unless($synattr->nodeName =~ /ref|slem|smi|sform|UpCase/)
 													{
 														$node->removeAttribute($synattr->nodeName);
 													}
@@ -128,9 +128,8 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 												@SYNnodes = $node->getChildrenByLocalName('SYN');
 								    			foreach my $bestattr (@matchingtranslationAttributes)
 								    			{
-								    				my ($attr,$value) = split('=',$bestattr);
-								    				$value =~ s/"//g;
-								    				$attr =~ s/\s//g;
+								    				my $value = $bestattr->value;
+								    				my $attr = $bestattr->nodeName;
 								    				$node->setAttribute($attr, $value);
 								    				
 								    				
@@ -153,7 +152,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 													my @synattrlist = $node->attributes();
 													foreach my $synattr (@synattrlist)
 													{
-														unless($synattr =~ /ref|slem|smi|sform|UpCase/)
+														unless($synattr->nodeName =~ /ref|slem|smi|sform|UpCase/)
 														{
 															$node->removeAttribute($synattr->nodeName);
 														}
@@ -167,9 +166,8 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 								    						my @Attributes = $syn->attributes();
 								    						foreach my $synattr (@Attributes)
 								    						{
-								    							my ($attr,$value) = split('=',$synattr);
-								    							$value =~ s/"//g;
-								    							$attr =~ s/\s//g;
+								    							my $value = $synattr->value;
+								    							my $attr = $synattr->nodeName;
 								    							$node->setAttribute($attr, $value);
 								    						}
 								    						last;
