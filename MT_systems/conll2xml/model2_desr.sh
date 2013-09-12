@@ -9,5 +9,5 @@ export DESR_PARAMS="-m $DESR_MODEL" # -c $DESR_CONFIG"
 #$DESR_DIR/src/desr $DESR_PARAMS 
 export DESR_PORT=1234	# model2 = spanish.MLP
 # squoia desr binaries:
-export DESR_BIN=$PROJECT_DIR/desrModules
+export DESR_BIN=/home/ozli/squoia/google_squoia/desrModules
 $DESR_BIN/desr_client $DESR_PORT
