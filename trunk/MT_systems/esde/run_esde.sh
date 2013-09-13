@@ -83,6 +83,10 @@ flookup $MOLIFDE/fst/SttsGeneratorTool.fst < $TESTOUTPUT.stts > $TESTOUTPUT.fsto
 
 perl  $ESDEMATXIN/cleanFstOutput.pl < $TESTOUTPUT.fstout > $TESTOUTPUT.gen 2>> ./junk
 cat $TESTOUTPUT.gen
+
+export LMSENT="$ESDE_DIR/lm/dewac100M_4g_word.bin.lm"
+perl $ESDEMATXIN/queryBestSentences.pl $LMSENT < $TESTOUTPUT.gen 2>> ./junk
+
 exit
 echo
 echo "Spanish:"

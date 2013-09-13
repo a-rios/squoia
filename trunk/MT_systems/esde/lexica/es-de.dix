@@ -5653,6 +5653,7 @@
    <e><p><l>academia</l><r>Hochschule</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>académica</l><r>Akademikerin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>académico</l><r>Akademiker</r></p><par n='NC_N_52_SPLITTER'/></e>	<!-- gender -->
+   <e><p><l>acaecimiento</l><r>Ereignis</r></p><par n='NC_N_59_EREIGNIS'/></e>
    <e><p><l>acanalador</l><r>Nuthobel</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>acantilado</l><r>Felsenriff</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>acantilado</l><r>Kliff</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -19833,7 +19834,7 @@
    <e><p><l>residencia</l><r>Aufenthaltsort</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>residencia</l><r>Heim</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>residencia</l><r>Residenz</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>residencia</l><r>Sitz</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>residencia</l><r>Sitz</r></p><par n='NC_N_676_PROZESS'/></e>
    <e><p><l>residencia</l><r>Wohnheim</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>residencia</l><r>Wohnsitz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>residencia universitaria</l><r>Studentenwohnheim</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -20469,6 +20470,7 @@
    <e><p><l>secuestro</l><r>Entführung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>seda</l><r>Seide</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>sedante</l><r>Beruhigungsmittel</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>sede</l><r>Sitz</r></p><par n='NC_N_676_PROZESS'/></e>
    <e><p><l>sede</l><r>Stuhl</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>sed</l><r>Durst</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>seducción</l><r>Verführung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -20487,7 +20489,6 @@
    <e><p><l>selenio</l><r>Selen</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>sello</l><r>Briefmarke</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>sello</l><r>Postwertzeichen</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>sello</l><r>Seehund</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>sello</l><r>Siegel</r></p><par n='NC_N_83_MITTEL'/></e>
    <e><p><l>sello</l><r>Stempel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>selva</l><r>Wald</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -20752,8 +20753,10 @@
    <e><p><l>subsidio</l><r>Subvention</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>substantivación</l><r>Substantivierung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>subterfugio</l><r>Ausflucht</r></p><par n='NC_N_57_HAND'/></e>
+   <e><p><l>suceso</l><r>Geschehen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>suceso</l><r>Geschehnis</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>suceso</l><r>Vorfall</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>suceso</l><r>Vorkommnis</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>suciedad</l><r>Schmutz</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>sudadera</l><r>Sweatshirt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>sudor</l><r>Schweiß</r></p><par n='NC_N_NUM_MASC'/></e>

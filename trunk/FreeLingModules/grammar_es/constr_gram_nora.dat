@@ -96,7 +96,7 @@ AdjAdv = <claro>;
 CONSTRAINTS
 
 %% prefer indicative to imperative, unless there is an exclamation mark on the right side
-10.0 VMI*
+ 10.0 VMI*
     (0 VMM*)
     (1* OUT_OF_BOUNDS barrier Fa*);
 
