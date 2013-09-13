@@ -52,7 +52,9 @@ sub addClonedSentence{
 
 	my $newSent = $sentnode->cloneNode(1); # deep=true=1
 	$newSent->setAttribute('alt',$sentAlt);
-	$sentnode->addSibling($newSent);
+	#$sentnode->addSibling($newSent);
+	my $parent = $sentnode->parentNode;
+	$parent->insertAfter($newSent,$sentnode);
 	return $newSent;
 }
 
@@ -86,6 +88,7 @@ while ($dom->findnodes('//SYN')) {
 	
 
 	my $sentnode = &getParentSentence($node);
+	print STDERR "sent ". $sentnode->getAttribute('ref') ."\n";
 	my $maxAlt = &getSentMaxAlt($sentnode);
 
 	if ($maxAlt == 0) {	# there are no alternatives yet

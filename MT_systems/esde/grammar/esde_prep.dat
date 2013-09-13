@@ -9,6 +9,11 @@
 
 # = A =
 # =====
+# at a given time
+# A => UM
+# el partido empieza a las 9 y termina a medianoche => das Spiel faengt um 9 an und endet um Mitternacht
+a		cas=Akk,lem=um		xpath{self::NODE[parent::CHUNK[@si="cc" and CHUNK[@type="NP" and (NODE[@smi="Z" and NODE[@sform="las" or @sform="la"]] or NODE[@sform="medianoche" or @sform="mediodía"]) ] ] ]}	-
+
 # veo a Juan (dobj) => ich sehe Hans (without preposition)
 a		cas=Akk,delete=yes	chunkparent.si=dobj||chunkgrandparent.si=dobj		-
 # doy el libro a mi padre (iobj) => ich gebe meinem Vater das Buch
@@ -128,6 +133,10 @@ por		lem=pro,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) && x
 por		delete=yes		chunkparent.type=VZ-inf && chunkparent.lsibling.slem=/acabar/	-
 # wegen + Gen? or "meinetwegen/deinetwegen/seinetwegen/ihretwegen"
 por		lem=wegen,cas=Gen	chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 		-
+
+# TODO: certain period of the day
+# por la mañana; por la tarde => am Morgen, am Vormittag; am Nachmittag, am Abend
+# por la noche => am Abend, in der Nacht
 
 # por = in (default?)
 por		lem=in,cas=Dat		chunkparent.type=PP && chunkparent.si=cc	+
