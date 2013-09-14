@@ -126,21 +126,27 @@
               <order>11</order>
               <label>sntc</label>
               <word>riku</word>
+              <secedges>
+              </secedges>
               <pos>Root</pos>
               <translation>=ver,conocer,aparecer</translation>
               <morph>
                 <tag>VRoot</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>2</order>
                   <label>subj</label>
                   <word>ruru</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=fructificar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -214,10 +220,13 @@
                   <order>25</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>22</order>
@@ -336,6 +345,7 @@
                   <morph>
                     <tag>NP</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -365,10 +375,13 @@
                   <order>10</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>9</order>
@@ -433,10 +446,13 @@
                   <order>13</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>12</order>
@@ -516,11 +532,14 @@
                   <order>2</order>
                   <label>subj</label>
                   <word>wata</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=año</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -545,7 +564,7 @@
                 </terminal>
                 <terminal>
                   <order>9</order>
-                  <label>mod</label>
+                  <label>ben</label>
                   <word>-paq</word>
                   <pos>Cas</pos>
                   <morph>
@@ -921,10 +940,13 @@
                   <order>41</order>
                   <label>mod</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>40</order>
@@ -962,10 +984,13 @@
                   <order>50</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>47</order>
@@ -1098,11 +1123,14 @@
                       <order>4</order>
                       <label>subj</label>
                       <word>-q'uñi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=calor</translation>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -1159,10 +1187,13 @@
                       <order>8</order>
                       <label>adv</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>7</order>
@@ -1232,10 +1263,13 @@
                   <order>16</order>
                   <label>linker</label>
                   <word>hina</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Sim</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                 </terminal>
                 <terminal>
                   <order>17</order>
@@ -1278,7 +1312,7 @@
                 </terminal>
                 <terminal>
                   <order>30</order>
-                  <label>mod</label>
+                  <label>ben</label>
                   <word>-paq</word>
                   <pos>Cas</pos>
                   <morph>
@@ -1432,10 +1466,13 @@
                       <order>3</order>
                       <label>mod</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>1</order>
@@ -1474,10 +1511,13 @@
                       <order>20</order>
                       <label>loc</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>18</order>
@@ -1690,11 +1730,14 @@
                   <order>40</order>
                   <label>subj</label>
                   <word>chiri</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=frío</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>41</order>
@@ -1730,6 +1773,17 @@
                       </morph>
                       <children>
                         <terminal>
+                          <order>42</order>
+                          <label>qnt</label>
+                          <word>30</word>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootNUM</tag>
+                          </morph>
+                        </terminal>
+                        <terminal>
                           <order>43</order>
                           <label>flm</label>
                           <word>ºC</word>
@@ -1740,29 +1794,25 @@
                           </morph>
                           <children>
                             <terminal>
-                              <order>42</order>
-                              <word>30</word>
-                              <pos>Root</pos>
-                              <morph>
-                                <tag>NRootNUM</tag>
-                              </morph>
-                            </terminal>
-                            <terminal>
                               <order>44</order>
+                              <label>--</label>
                               <word>bajo</word>
                               <secedges>
                               </secedges>
-                              <pos>SP</pos>
+                              <pos>Root</pos>
                               <morph>
+                                <tag>NRootES</tag>
                               </morph>
                               <children>
                                 <terminal>
                                   <order>45</order>
+                                  <label>--</label>
                                   <word>cero</word>
                                   <secedges>
                                   </secedges>
-                                  <pos>SP</pos>
+                                  <pos>Root</pos>
                                   <morph>
+                                    <tag>NRootES</tag>
                                   </morph>
                                 </terminal>
                               </children>
@@ -1837,10 +1887,13 @@
                       <order>75</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>73</order>
@@ -1961,10 +2014,13 @@
                   <order>8</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>7</order>
@@ -2015,10 +2071,13 @@
                   <order>16</order>
                   <label>caus</label>
                   <word>-rayku</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Kaus</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>15</order>
@@ -2057,11 +2116,14 @@
                   <order>24</order>
                   <label>subj</label>
                   <word>aymura</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=cosechar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>26</order>
@@ -2427,10 +2489,13 @@
                   <order>24</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>23</order>
@@ -2573,10 +2638,13 @@
                       <order>1</order>
                       <label>linker</label>
                       <word>Icha</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>Part_Contr</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -2593,10 +2661,13 @@
                       <order>5</order>
                       <label>tmp</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>4</order>
@@ -2712,11 +2783,14 @@
                       <order>22</order>
                       <label>subj</label>
                       <word>llaphi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=temperatura</translation>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>24</order>
@@ -2783,11 +2857,14 @@
                   <order>29</order>
                   <label>subj</label>
                   <word>yacha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=saber,habitar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>31</order>
@@ -2920,11 +2997,14 @@
                   <order>16</order>
                   <label>co</label>
                   <word>yacha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=saber,habitar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>3</order>
@@ -2963,11 +3043,14 @@
                       <order>4</order>
                       <label>subj</label>
                       <word>tarpu</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=sembrar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>6</order>
@@ -2994,12 +3077,15 @@
                       <order>10</order>
                       <label>sub</label>
                       <word>hatari</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_VDeriv</pos>
                       <translation>=levantarse</translation>
                       <morph>
                         <tag>VRoot</tag>
                         <tag>+Inch</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>8</order>
@@ -3109,10 +3195,13 @@
                   <order>22</order>
                   <label>linker</label>
                   <word>icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>23</order>
@@ -3129,12 +3218,15 @@
                   <order>37</order>
                   <label>subj</label>
                   <word>hatari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=levantarse</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>25</order>
@@ -3469,11 +3561,14 @@
                   <order>26</order>
                   <label>s.arg.claus</label>
                   <word>qillqa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=escribir</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>21</order>
@@ -3851,11 +3946,14 @@
                   <order>1</order>
                   <label>subj</label>
                   <word>Papa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=patata</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -4007,11 +4105,14 @@
                       <order>21</order>
                       <label>subj</label>
                       <word>papa</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=patata</translation>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>4</order>
@@ -4284,10 +4385,13 @@
                       <order>47</order>
                       <label>purp</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>44</order>
@@ -4430,10 +4534,13 @@
                   <order>63</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>62</order>
@@ -4841,11 +4948,14 @@
                   <order>23</order>
                   <label>subj</label>
                   <word>papa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=patata</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>24</order>
@@ -4894,10 +5004,13 @@
                   <order>29</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>28</order>
@@ -5219,11 +5332,14 @@
                               <order>1</order>
                               <label>subj</label>
                               <word>Papa</word>
+                              <secedges>
+                              </secedges>
                               <pos>Root</pos>
                               <translation>=patata</translation>
                               <morph>
                                 <tag>NRoot</tag>
                               </morph>
+                              <discourse>TOPIC</discourse>
                               <children>
                                 <terminal>
                                   <order>2</order>
@@ -5308,10 +5424,13 @@
                       <order>19</order>
                       <label>iobj</label>
                       <word>-man</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Dat_Ill</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>16</order>
@@ -5454,11 +5573,14 @@
                       <order>29</order>
                       <label>subj</label>
                       <word>tarpu</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=sembrar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>31</order>
@@ -5580,10 +5702,13 @@
                   <order>45</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>44</order>
@@ -5787,6 +5912,7 @@
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>13</order>
@@ -5882,11 +6008,14 @@
                   <order>36</order>
                   <label>subj</label>
                   <word>tarpu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=sembrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>32</order>
@@ -6336,10 +6465,13 @@
                   <order>43</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>42</order>
@@ -6662,6 +6794,7 @@
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>23</order>
@@ -6719,10 +6852,13 @@
                       <order>34</order>
                       <label>linker</label>
                       <word>chay</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                     </terminal>
                     <terminal>
                       <order>35</order>
@@ -6737,11 +6873,14 @@
                       <order>36</order>
                       <label>subj</label>
                       <word>papa</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=patata</translation>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>37</order>
@@ -6869,10 +7008,13 @@
                   <order>3</order>
                   <label>tmp</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -7047,12 +7189,15 @@
                   <order>28</order>
                   <label>subj</label>
                   <word>suyukuna</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_Num</pos>
                   <translation>=región</translation>
                   <morph>
                     <tag>NRoot</tag>
                     <tag>+Pl</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>26</order>
@@ -7090,10 +7235,13 @@
                   <order>35</order>
                   <label>mod</label>
                   <word>-man</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Dat_Ill</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>34</order>
@@ -7344,10 +7492,13 @@
                   <order>22</order>
                   <label>comp</label>
                   <word>-hina</word>
+                  <secedges>
+                  </secedges>
                   <pos>Amb</pos>
                   <morph>
                     <tag>+Sim</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>19</order>
@@ -7439,6 +7590,7 @@
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                     </terminal>
                     <terminal>
                       <order>31</order>
@@ -7497,10 +7649,13 @@
                       <order>44</order>
                       <label>mod</label>
                       <word>-manta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Abl</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>41</order>
@@ -7566,21 +7721,24 @@
                           </morph>
                           <children>
                             <terminal>
+                              <order>46</order>
+                              <label>qnt</label>
+                              <word>20</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootNUM</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
                               <order>47</order>
                               <label>flm</label>
                               <word>%</word>
-                              <pos>$.</pos>
-                              <children>
-                                <terminal>
-                                  <order>46</order>
-                                  <label>qnt</label>
-                                  <word>20</word>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootNUM</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>49</order>
@@ -7660,6 +7818,7 @@
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>3</order>
@@ -7700,6 +7859,7 @@
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>6</order>
@@ -7784,11 +7944,14 @@
                   <order>1</order>
                   <label>subj</label>
                   <word>Papa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=patata</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -8031,10 +8194,13 @@
                       <order>13</order>
                       <label>comp</label>
                       <word>-hina</word>
+                      <secedges>
+                      </secedges>
                       <pos>Amb</pos>
                       <morph>
                         <tag>+Sim</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>11</order>
@@ -8147,10 +8313,13 @@
                       <order>33</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>31</order>
@@ -8231,10 +8400,13 @@
                   <order>49</order>
                   <label>subj</label>
                   <word>kay</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>PrnDem</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>50</order>
@@ -8251,11 +8423,14 @@
                   <order>51</order>
                   <label>pred</label>
                   <word>allin</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=bueno</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>52</order>
@@ -8281,10 +8456,13 @@
                   <order>58</order>
                   <label>ben</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>57</order>
@@ -8403,11 +8581,14 @@
                   <order>3</order>
                   <label>subj</label>
                   <word>papa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=patata</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>4</order>
@@ -8424,10 +8605,13 @@
                   <order>14</order>
                   <label>ben</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>13</order>
@@ -8596,11 +8780,14 @@
                   <order>9</order>
                   <label>mod</label>
                   <word>tarpu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=sembrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -8781,10 +8968,13 @@
                       <order>1</order>
                       <label>linker</label>
                       <word>Icha</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>Part_Contr</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -9242,47 +9432,99 @@
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>15</order>
+              <order>18</order>
               <label>sntc</label>
-              <word>qullqicha</word>
-              <pos>Root_VS</pos>
-              <translation>=plata</translation>
+              <word>KAN</word>
+              <secedges>
+              </secedges>
+              <pos>DUMMY</pos>
               <morph>
-                <tag>NRoot</tag>
-                <tag>+Fact</tag>
               </morph>
               <children>
                 <terminal>
-                  <order>4</order>
-                  <label>ben</label>
-                  <word>-paq</word>
-                  <pos>Cas</pos>
+                  <order>15</order>
+                  <label>hab</label>
+                  <word>qullqicha</word>
+                  <secedges>
+                  </secedges>
+                  <pos>Root_VS</pos>
+                  <translation>=plata</translation>
                   <morph>
-                    <tag>+Ben</tag>
+                    <tag>NRoot</tag>
+                    <tag>+Fact</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
-                      <order>2</order>
-                      <label>s.arg.claus</label>
-                      <word>tarpu</word>
-                      <pos>Root</pos>
-                      <translation>=sembrar</translation>
+                      <order>4</order>
+                      <label>ben</label>
+                      <word>-paq</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Cas</pos>
                       <morph>
-                        <tag>VRoot</tag>
+                        <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
-                          <order>1</order>
-                          <label>mod</label>
-                          <word>Achkha</word>
+                          <order>2</order>
+                          <label>s.arg.claus</label>
+                          <word>tarpu</word>
                           <pos>Root</pos>
-                          <translation>=mucho</translation>
+                          <translation>=sembrar</translation>
                           <morph>
-                            <tag>NRoot</tag>
+                            <tag>VRoot</tag>
                           </morph>
+                          <children>
+                            <terminal>
+                              <order>1</order>
+                              <label>mod</label>
+                              <word>Achkha</word>
+                              <pos>Root</pos>
+                              <translation>=mucho</translation>
+                              <morph>
+                                <tag>NRoot</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
+                              <order>5</order>
+                              <label>topic</label>
+                              <word>-qa</word>
+                              <pos>Amb</pos>
+                              <morph>
+                                <tag>+Top</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
+                              <order>3</order>
+                              <label>ns</label>
+                              <word>-qkuna</word>
+                              <pos>NS_Num</pos>
+                              <morph>
+                                <tag>+Ag</tag>
+                                <tag>+Pl</tag>
+                              </morph>
+                            </terminal>
+                          </children>
                         </terminal>
+                      </children>
+                    </terminal>
+                    <terminal>
+                      <order>7</order>
+                      <label>subj</label>
+                      <word>papa</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <translation>=patata</translation>
+                      <morph>
+                        <tag>NRoot</tag>
+                      </morph>
+                      <discourse>TOPIC</discourse>
+                      <children>
                         <terminal>
-                          <order>5</order>
+                          <order>8</order>
                           <label>topic</label>
                           <word>-qa</word>
                           <pos>Amb</pos>
@@ -9290,73 +9532,42 @@
                             <tag>+Top</tag>
                           </morph>
                         </terminal>
-                        <terminal>
-                          <order>3</order>
-                          <label>ns</label>
-                          <word>-qkuna</word>
-                          <pos>NS_Num</pos>
-                          <morph>
-                            <tag>+Ag</tag>
-                            <tag>+Pl</tag>
-                          </morph>
-                        </terminal>
                       </children>
                     </terminal>
-                  </children>
-                </terminal>
-                <terminal>
-                  <order>7</order>
-                  <label>subj</label>
-                  <word>papa</word>
-                  <pos>Root</pos>
-                  <translation>=patata</translation>
-                  <morph>
-                    <tag>NRoot</tag>
-                  </morph>
-                  <children>
                     <terminal>
-                      <order>8</order>
-                      <label>topic</label>
-                      <word>-qa</word>
+                      <order>9</order>
+                      <label>mod</label>
+                      <word>allin</word>
+                      <pos>Root</pos>
+                      <translation>=bueno</translation>
+                      <morph>
+                        <tag>NRoot</tag>
+                      </morph>
+                    </terminal>
+                    <terminal>
+                      <order>16</order>
+                      <label>ns</label>
+                      <word>-q</word>
+                      <pos>NS</pos>
+                      <morph>
+                        <tag>+Ag</tag>
+                      </morph>
+                    </terminal>
+                    <terminal>
+                      <order>17</order>
+                      <label>ev</label>
+                      <word>-mi</word>
                       <pos>Amb</pos>
                       <morph>
-                        <tag>+Top</tag>
+                        <tag>+DirE</tag>
                       </morph>
                     </terminal>
                   </children>
                 </terminal>
-                <terminal>
-                  <order>9</order>
-                  <label>mod</label>
-                  <word>allin</word>
-                  <pos>Root</pos>
-                  <translation>=bueno</translation>
-                  <morph>
-                    <tag>NRoot</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>16</order>
-                  <label>ns</label>
-                  <word>-q</word>
-                  <pos>NS</pos>
-                  <morph>
-                    <tag>+Ag</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>17</order>
-                  <label>ev</label>
-                  <word>-mi</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+DirE</tag>
-                  </morph>
-                </terminal>
               </children>
             </terminal>
             <terminal>
-              <order>18</order>
+              <order>19</order>
               <label>punc</label>
               <word>.</word>
               <pos>$.</pos>
@@ -9426,11 +9637,14 @@
                   <order>5</order>
                   <label>subj</label>
                   <word>tarpu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=sembrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>4</order>
@@ -9529,10 +9743,13 @@
                   <order>18</order>
                   <label>purp</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>15</order>
@@ -9796,11 +10013,14 @@
                   <order>24</order>
                   <label>sub</label>
                   <word>ka</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=ser</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>23</order>
@@ -9867,10 +10087,13 @@
                   <order>36</order>
                   <label>purp</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>34</order>
@@ -10090,11 +10313,14 @@
                   <order>17</order>
                   <label>subj</label>
                   <word>tarpu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=sembrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>16</order>
@@ -10223,10 +10449,13 @@
                   <order>25</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>24</order>
@@ -10337,6 +10566,7 @@
                         <tag>PrnDem</tag>
                         <tag>+Pl</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>8</order>
@@ -10418,10 +10648,13 @@
                       <order>16</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>15</order>
@@ -10597,11 +10830,14 @@
                       <order>41</order>
                       <label>subj</label>
                       <word>papa</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=patata</translation>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>42</order>
@@ -10661,10 +10897,13 @@
                   <order>51</order>
                   <label>linker</label>
                   <word>icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>52</order>
@@ -10723,6 +10962,7 @@
                   <morph>
                     <tag>+Abl</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>57</order>
@@ -11124,12 +11364,15 @@
                       <order>40</order>
                       <label>subj</label>
                       <word>sasacha</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_VS</pos>
                       <translation>=difícil</translation>
                       <morph>
                         <tag>NRoot</tag>
                         <tag>+Fact</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>43</order>
@@ -11184,11 +11427,14 @@
                   <order>48</order>
                   <label>subj</label>
                   <word>tarpu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=sembrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>50</order>
@@ -11437,12 +11683,15 @@
               <order>49</order>
               <label>sntc</label>
               <word>qhawari</word>
+              <secedges>
+              </secedges>
               <pos>Root_VDeriv</pos>
               <translation>=mirar</translation>
               <morph>
                 <tag>VRoot</tag>
                 <tag>+Inch</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>38</order>
@@ -11932,6 +12181,7 @@
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -12264,10 +12514,13 @@
                   <order>20</order>
                   <label>mod</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>17</order>
@@ -12393,7 +12646,12 @@
                                       <order>11</order>
                                       <label>abbrev</label>
                                       <word>IPCC</word>
-                                      <pos>SP</pos>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>NP</tag>
+                                      </morph>
                                     </terminal>
                                   </children>
                                 </terminal>
@@ -12457,10 +12715,13 @@
                   <order>28</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>24</order>
@@ -12691,11 +12952,14 @@
                       <order>9</order>
                       <label>subj</label>
                       <word>q'uñi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=calentar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>8</order>
@@ -12783,7 +13047,12 @@
                               <order>14</order>
                               <label>flm</label>
                               <word>ºC</word>
-                              <pos>SP</pos>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>16</order>
@@ -12833,7 +13102,12 @@
                               <order>19</order>
                               <label>flm</label>
                               <word>ºC</word>
-                              <pos>SP</pos>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>25</order>
@@ -12957,17 +13231,25 @@
                   <order>51</order>
                   <label>subj</label>
                   <word>ni</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=decir</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>47</order>
                       <label>flm</label>
                       <word>IPCC</word>
-                      <pos>SP</pos>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <morph>
+                        <tag>NP</tag>
+                      </morph>
                     </terminal>
                     <terminal>
                       <order>53</order>
@@ -13047,12 +13329,15 @@
                   <order>20</order>
                   <label>sub</label>
                   <word>yapapa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=añadir</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Rgr_Iprs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -13091,6 +13376,7 @@
                         <tag>VRoot</tag>
                         <tag>+Inch</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>4</order>
@@ -13136,21 +13422,24 @@
                           </morph>
                           <children>
                             <terminal>
+                              <order>6</order>
+                              <label>qnt</label>
+                              <word>2</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootNUM</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
                               <order>7</order>
                               <label>flm</label>
                               <word>ºC</word>
-                              <pos>SP</pos>
-                              <children>
-                                <terminal>
-                                  <order>6</order>
-                                  <label>mod</label>
-                                  <word>2</word>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootNUM</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>15</order>
@@ -13464,10 +13753,13 @@
                   <order>9</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>8</order>
@@ -13569,10 +13861,13 @@
                   <order>27</order>
                   <label>mod</label>
                   <word>-kama</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Term</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>25</order>
@@ -13585,21 +13880,24 @@
                       </morph>
                       <children>
                         <terminal>
+                          <order>19</order>
+                          <label>qnt</label>
+                          <word>15</word>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootNUM</tag>
+                          </morph>
+                        </terminal>
+                        <terminal>
                           <order>20</order>
                           <label>flm</label>
                           <word>%</word>
-                          <pos>SP</pos>
-                          <children>
-                            <terminal>
-                              <order>19</order>
-                              <label>mod</label>
-                              <word>15</word>
-                              <pos>Root</pos>
-                              <morph>
-                                <tag>NRootNUM</tag>
-                              </morph>
-                            </terminal>
-                          </children>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootES</tag>
+                          </morph>
                         </terminal>
                         <terminal>
                           <order>28</order>
@@ -13803,11 +14101,14 @@
                   <order>20</order>
                   <label>subj</label>
                   <word>wit'u</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=amputar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>13</order>
@@ -13860,21 +14161,24 @@
                       </morph>
                       <children>
                         <terminal>
+                          <order>26</order>
+                          <label>qnt</label>
+                          <word>11</word>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootNUM</tag>
+                          </morph>
+                        </terminal>
+                        <terminal>
                           <order>27</order>
                           <label>flm</label>
                           <word>%</word>
-                          <pos>SP</pos>
-                          <children>
-                            <terminal>
-                              <order>26</order>
-                              <label>qnt</label>
-                              <word>11</word>
-                              <pos>Root</pos>
-                              <morph>
-                                <tag>NRootNUM</tag>
-                              </morph>
-                            </terminal>
-                          </children>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootES</tag>
+                          </morph>
                         </terminal>
                         <terminal>
                           <order>32</order>
@@ -13893,10 +14197,13 @@
                   <order>40</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>38</order>
@@ -14007,11 +14314,14 @@
                   <order>18</order>
                   <label>subj</label>
                   <word>hamu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=venir</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>4</order>
@@ -14094,8 +14404,9 @@
                                   <word>dióxido</word>
                                   <secedges>
                                   </secedges>
-                                  <pos>SP</pos>
+                                  <pos>Root</pos>
                                   <morph>
+                                    <tag>NRootES</tag>
                                   </morph>
                                   <children>
                                     <terminal>
@@ -14110,8 +14421,9 @@
                                           <word>carbono</word>
                                           <secedges>
                                           </secedges>
-                                          <pos>SP</pos>
+                                          <pos>Root</pos>
                                           <morph>
+                                            <tag>NRootES</tag>
                                           </morph>
                                         </terminal>
                                       </children>
@@ -14122,8 +14434,9 @@
                                       <word>CO2</word>
                                       <secedges>
                                       </secedges>
-                                      <pos>SP</pos>
+                                      <pos>Root</pos>
                                       <morph>
+                                        <tag>NRootES</tag>
                                       </morph>
                                     </terminal>
                                   </children>
@@ -14780,6 +15093,7 @@
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>5</order>
@@ -14815,10 +15129,13 @@
                       <order>48</order>
                       <label>comp</label>
                       <word>-manta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Abl</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>45</order>
@@ -14952,13 +15269,23 @@
                                           <order>12</order>
                                           <label>flm</label>
                                           <word>metano</word>
-                                          <pos>SP</pos>
+                                          <secedges>
+                                          </secedges>
+                                          <pos>Root</pos>
+                                          <morph>
+                                            <tag>NRootES</tag>
+                                          </morph>
                                           <children>
                                             <terminal>
                                               <order>14</order>
                                               <label>abbrev</label>
                                               <word>CH4</word>
-                                              <pos>SP</pos>
+                                              <secedges>
+                                              </secedges>
+                                              <pos>Root</pos>
+                                              <morph>
+                                                <tag>NRootES</tag>
+                                              </morph>
                                             </terminal>
                                           </children>
                                         </terminal>
@@ -15000,19 +15327,34 @@
                                   <order>24</order>
                                   <label>flm</label>
                                   <word>óxido</word>
-                                  <pos>SP</pos>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootES</tag>
+                                  </morph>
                                   <children>
                                     <terminal>
                                       <order>25</order>
                                       <label>--</label>
                                       <word>nitroso</word>
-                                      <pos>SP</pos>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>NRootES</tag>
+                                      </morph>
                                     </terminal>
                                     <terminal>
                                       <order>27</order>
                                       <label>abbrev</label>
                                       <word>N2O</word>
-                                      <pos>SP</pos>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>NRootES</tag>
+                                      </morph>
                                     </terminal>
                                   </children>
                                 </terminal>
@@ -15111,6 +15453,7 @@
                     <tag>PrnDem</tag>
                     <tag>+Pl</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>67</order>
@@ -15147,6 +15490,7 @@
                       <morph>
                         <tag>+Abl</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>71</order>
@@ -15166,8 +15510,9 @@
                               <word>dióxido</word>
                               <secedges>
                               </secedges>
-                              <pos>SP</pos>
+                              <pos>Root</pos>
                               <morph>
+                                <tag>NRootES</tag>
                               </morph>
                               <children>
                                 <terminal>
@@ -15186,8 +15531,9 @@
                                       <word>carbono</word>
                                       <secedges>
                                       </secedges>
-                                      <pos>SP</pos>
+                                      <pos>Root</pos>
                                       <morph>
+                                        <tag>NRootES</tag>
                                       </morph>
                                     </terminal>
                                   </children>
@@ -15481,10 +15827,13 @@
                   <order>39</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>38</order>
@@ -15511,7 +15860,12 @@
                               <order>35</order>
                               <label>flm</label>
                               <word>CH4</word>
-                              <pos>SP</pos>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>37</order>
@@ -15818,7 +16172,12 @@
                       <order>20</order>
                       <label>flm</label>
                       <word>N2O</word>
-                      <pos>SP</pos>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <morph>
+                        <tag>NRootES</tag>
+                      </morph>
                     </terminal>
                     <terminal>
                       <order>25</order>
@@ -15984,11 +16343,14 @@
                       <order>12</order>
                       <label>sub</label>
                       <word>ka</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=ser</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>4</order>
@@ -16116,10 +16478,13 @@
                       <order>27</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>26</order>
@@ -16192,12 +16557,15 @@
                   <order>35</order>
                   <label>sub</label>
                   <word>yanapari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=ayudar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>34</order>
@@ -16617,10 +16985,9 @@
                               <word>factores</word>
                               <secedges>
                               </secedges>
-                              <pos>Root_Num</pos>
+                              <pos>Root</pos>
                               <morph>
                                 <tag>NRootES</tag>
-                                <tag>+Pl</tag>
                               </morph>
                               <children>
                                 <terminal>
@@ -16629,10 +16996,9 @@
                                   <word>meteorológicos</word>
                                   <secedges>
                                   </secedges>
-                                  <pos>Root_Num</pos>
+                                  <pos>Root</pos>
                                   <morph>
                                     <tag>NRootES</tag>
-                                    <tag>+Pl</tag>
                                   </morph>
                                 </terminal>
                               </children>
@@ -16665,11 +17031,14 @@
                   <order>31</order>
                   <label>subj</label>
                   <word>ruru</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=fructificar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>30</order>
@@ -16771,10 +17140,13 @@
                   <order>3</order>
                   <label>linker</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -16844,11 +17216,14 @@
                   <order>17</order>
                   <label>subj</label>
                   <word>ruwa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=hacer</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>14</order>
@@ -16976,10 +17351,13 @@
                   <order>27</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>25</order>
@@ -17086,10 +17464,13 @@
                       <order>8</order>
                       <label>loc</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>7</order>
@@ -17340,10 +17721,13 @@
                       <order>39</order>
                       <label>linker</label>
                       <word>icha</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>Part_Contr</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>40</order>
@@ -17360,10 +17744,13 @@
                       <order>47</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>45</order>
@@ -17508,10 +17895,13 @@
                   <order>62</order>
                   <label>linker</label>
                   <word>chay</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>PrnDem</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>61</order>
@@ -17671,11 +18061,14 @@
                   <order>9</order>
                   <label>subj</label>
                   <word>watu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=adivinar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -17780,6 +18173,7 @@
                           <morph>
                             <tag>+Kaus</tag>
                           </morph>
+                          <discourse>FOCUS</discourse>
                           <children>
                             <terminal>
                               <order>17</order>
@@ -17939,10 +18333,13 @@
                   <order>1</order>
                   <label>linker</label>
                   <word>Icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -18440,6 +18837,7 @@
                         <tag>VRoot</tag>
                         <tag>+Aff</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>3</order>
@@ -18578,6 +18976,7 @@
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                     </terminal>
                     <terminal>
                       <order>17</order>
@@ -18613,6 +19012,7 @@
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>35</order>
@@ -18762,6 +19162,7 @@
               <morph>
                 <tag>+Dat_Ill</tag>
               </morph>
+              <discourse>TOPIC</discourse>
               <children>
                 <terminal>
                   <order>14</order>
@@ -18926,6 +19327,7 @@
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>74</order>
@@ -19414,27 +19816,26 @@
                                       </morph>
                                       <children>
                                         <terminal>
+                                          <order>57</order>
+                                          <label>qnt</label>
+                                          <word>1</word>
+                                          <secedges>
+                                          </secedges>
+                                          <pos>Root</pos>
+                                          <morph>
+                                            <tag>NRootNUM</tag>
+                                          </morph>
+                                        </terminal>
+                                        <terminal>
                                           <order>58</order>
                                           <label>flm</label>
                                           <word>ºC</word>
                                           <secedges>
                                           </secedges>
-                                          <pos>SP</pos>
+                                          <pos>Root</pos>
                                           <morph>
+                                            <tag>NRootES</tag>
                                           </morph>
-                                          <children>
-                                            <terminal>
-                                              <order>57</order>
-                                              <label>qnt</label>
-                                              <word>1</word>
-                                              <secedges>
-                                              </secedges>
-                                              <pos>Root</pos>
-                                              <morph>
-                                                <tag>NRootNUM</tag>
-                                              </morph>
-                                            </terminal>
-                                          </children>
                                         </terminal>
                                         <terminal>
                                           <order>60</order>
@@ -19475,27 +19876,26 @@
                                       </morph>
                                       <children>
                                         <terminal>
+                                          <order>62</order>
+                                          <label>qnt</label>
+                                          <word>3</word>
+                                          <secedges>
+                                          </secedges>
+                                          <pos>Root</pos>
+                                          <morph>
+                                            <tag>NRootNUM</tag>
+                                          </morph>
+                                        </terminal>
+                                        <terminal>
                                           <order>63</order>
                                           <label>flm</label>
                                           <word>ºC</word>
                                           <secedges>
                                           </secedges>
-                                          <pos>SP</pos>
+                                          <pos>Root</pos>
                                           <morph>
+                                            <tag>NRootES</tag>
                                           </morph>
-                                          <children>
-                                            <terminal>
-                                              <order>62</order>
-                                              <label>qnt</label>
-                                              <word>3</word>
-                                              <secedges>
-                                              </secedges>
-                                              <pos>Root</pos>
-                                              <morph>
-                                                <tag>NRootNUM</tag>
-                                              </morph>
-                                            </terminal>
-                                          </children>
                                         </terminal>
                                         <terminal>
                                           <order>65</order>
@@ -20081,10 +20481,13 @@ tropicales".... </comment>
                           <order>30</order>
                           <label>co</label>
                           <word>-pi</word>
+                          <secedges>
+                          </secedges>
                           <pos>Cas</pos>
                           <morph>
                             <tag>+Loc</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>21</order>
@@ -20287,11 +20690,14 @@ tropicales".... </comment>
                       <order>51</order>
                       <label>subj</label>
                       <word>ruru</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=fructificar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>44</order>
@@ -20466,27 +20872,26 @@ tropicales".... </comment>
                           </morph>
                           <children>
                             <terminal>
+                              <order>73</order>
+                              <label>qnt</label>
+                              <word>1</word>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootNUM</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
                               <order>74</order>
                               <label>flm</label>
                               <word>ºC</word>
                               <secedges>
                               </secedges>
-                              <pos>SP</pos>
+                              <pos>Root</pos>
                               <morph>
+                                <tag>NRootES</tag>
                               </morph>
-                              <children>
-                                <terminal>
-                                  <order>73</order>
-                                  <label>qnt</label>
-                                  <word>1</word>
-                                  <secedges>
-                                  </secedges>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootNUM</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
                             </terminal>
                             <terminal>
                               <order>76</order>
@@ -20521,21 +20926,24 @@ tropicales".... </comment>
                           </morph>
                           <children>
                             <terminal>
+                              <order>78</order>
+                              <label>qnt</label>
+                              <word>2</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootNUM</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
                               <order>79</order>
                               <label>flm</label>
                               <word>ºC</word>
-                              <pos>SP</pos>
-                              <children>
-                                <terminal>
-                                  <order>78</order>
-                                  <label>qnt</label>
-                                  <word>2</word>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootNUM</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>84</order>
@@ -20755,6 +21163,7 @@ tropicales".... </comment>
               <morph>
                 <tag>VRoot</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>3</order>
@@ -20793,11 +21202,14 @@ tropicales".... </comment>
                   <order>8</order>
                   <label>subj</label>
                   <word>watu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=adivinar,hechizar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>11</order>
@@ -20839,6 +21251,15 @@ tropicales".... </comment>
                   </morph>
                 </terminal>
                 <terminal>
+                  <order>14</order>
+                  <label>ev</label>
+                  <word>-m</word>
+                  <pos>Amb</pos>
+                  <morph>
+                    <tag>+DirE</tag>
+                  </morph>
+                </terminal>
+                <terminal>
                   <order>92</order>
                   <label>quot</label>
                   <word>pisiyapu</word>
@@ -20871,12 +21292,15 @@ tropicales".... </comment>
                           <order>35</order>
                           <label>sub</label>
                           <word>yapari</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root_VDeriv</pos>
                           <translation>=añadir</translation>
                           <morph>
                             <tag>VRoot</tag>
                             <tag>+Inch</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>20</order>
@@ -20898,25 +21322,24 @@ tropicales".... </comment>
                                   </morph>
                                   <children>
                                     <terminal>
+                                      <order>16</order>
+                                      <label>qnt</label>
+                                      <word>1</word>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>NRootNUM</tag>
+                                      </morph>
+                                    </terminal>
+                                    <terminal>
                                       <order>17</order>
                                       <label>flm</label>
                                       <word>ºC</word>
                                       <secedges>
                                       </secedges>
-                                      <pos>SP</pos>
+                                      <pos>Root</pos>
                                       <morph>
+                                        <tag>NRootES</tag>
                                       </morph>
-                                      <children>
-                                        <terminal>
-                                          <order>16</order>
-                                          <label>qnt</label>
-                                          <word>1</word>
-                                          <pos>Root</pos>
-                                          <morph>
-                                            <tag>NRootNUM</tag>
-                                          </morph>
-                                        </terminal>
-                                      </children>
                                     </terminal>
                                     <terminal>
                                       <order>19</order>
@@ -20951,25 +21374,24 @@ tropicales".... </comment>
                                   </morph>
                                   <children>
                                     <terminal>
+                                      <order>21</order>
+                                      <label>qnt</label>
+                                      <word>3</word>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>NRootNUM</tag>
+                                      </morph>
+                                    </terminal>
+                                    <terminal>
                                       <order>22</order>
                                       <label>flm</label>
                                       <word>ºC</word>
                                       <secedges>
                                       </secedges>
-                                      <pos>SP</pos>
+                                      <pos>Root</pos>
                                       <morph>
+                                        <tag>NRootES</tag>
                                       </morph>
-                                      <children>
-                                        <terminal>
-                                          <order>21</order>
-                                          <label>qnt</label>
-                                          <word>3</word>
-                                          <pos>Root</pos>
-                                          <morph>
-                                            <tag>NRootNUM</tag>
-                                          </morph>
-                                        </terminal>
-                                      </children>
                                     </terminal>
                                     <terminal>
                                       <order>27</order>
@@ -21059,11 +21481,14 @@ tropicales".... </comment>
                           <order>47</order>
                           <label>subj</label>
                           <word>ruru</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root</pos>
                           <translation>=fructificar</translation>
                           <morph>
                             <tag>VRoot</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>41</order>
@@ -21148,10 +21573,13 @@ tropicales".... </comment>
                       <order>56</order>
                       <label>linker</label>
                       <word>icha</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>Part_Contr</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>57</order>
@@ -21263,6 +21691,7 @@ tropicales".... </comment>
                           <morph>
                             <tag>PrnDem</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>85</order>
@@ -21290,6 +21719,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>90</order>
@@ -21336,15 +21766,6 @@ tropicales".... </comment>
                   </children>
                 </terminal>
               </children>
-            </terminal>
-            <terminal>
-              <order>14</order>
-              <label>ev</label>
-              <word>-m</word>
-              <pos>Amb</pos>
-              <morph>
-                <tag>+DirE</tag>
-              </morph>
             </terminal>
             <terminal>
               <order>15</order>
@@ -21409,15 +21830,19 @@ tropicales".... </comment>
                 <tag>NRoot</tag>
                 <tag>+Trs</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>11</order>
                   <label>mod</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>7</order>
@@ -21571,10 +21996,13 @@ tropicales".... </comment>
                       <order>33</order>
                       <label>linker</label>
                       <word>chay</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>34</order>
@@ -22165,11 +22593,14 @@ tropicales".... </comment>
                   <order>5</order>
                   <label>subj</label>
                   <word>Watu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=adivinar,hechizar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>8</order>
@@ -22300,11 +22731,14 @@ tropicales".... </comment>
                               <order>24</order>
                               <label>mod</label>
                               <word>ka</word>
+                              <secedges>
+                              </secedges>
                               <pos>Root</pos>
                               <translation>=ser</translation>
                               <morph>
                                 <tag>VRoot</tag>
                               </morph>
+                              <discourse>TOPIC</discourse>
                               <children>
                                 <terminal>
                                   <order>22</order>
@@ -22451,10 +22885,13 @@ tropicales".... </comment>
                           <order>37</order>
                           <label>mod</label>
                           <word>-wan</word>
+                          <secedges>
+                          </secedges>
                           <pos>Cas</pos>
                           <morph>
                             <tag>+Con_Inst</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>35</order>
@@ -22859,6 +23296,7 @@ tropicales".... </comment>
               <morph>
                 <tag>VRoot</tag>
               </morph>
+              <discourse>TOPIC</discourse>
               <children>
                 <terminal>
                   <order>15</order>
@@ -22871,6 +23309,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>11</order>
@@ -23125,6 +23564,7 @@ tropicales".... </comment>
                           <morph>
                             <tag>VRoot</tag>
                           </morph>
+                          <discourse>FOCUS</discourse>
                           <children>
                             <terminal>
                               <order>35</order>
@@ -23223,7 +23663,7 @@ tropicales".... </comment>
                   <children>
                     <terminal>
                       <order>33</order>
-                      <label>ev</label>
+                      <label>co</label>
                       <word>-m</word>
                       <secedges>
                       </secedges>
@@ -23426,12 +23866,15 @@ tropicales".... </comment>
                   <order>19</order>
                   <label>subj</label>
                   <word>runakuna</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_Num</pos>
                   <translation>=ser_humano</translation>
                   <morph>
                     <tag>NRoot</tag>
                     <tag>+Pl</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>16</order>
@@ -23529,12 +23972,15 @@ tropicales".... </comment>
                   <order>28</order>
                   <label>sub</label>
                   <word>pisiya</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VS</pos>
                   <translation>=poco</translation>
                   <morph>
                     <tag>NRoot</tag>
                     <tag>+Trs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>26</order>
@@ -23688,11 +24134,14 @@ tropicales".... </comment>
                   <order>6</order>
                   <label>subj</label>
                   <word>waki</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=parte,otro</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -23881,10 +24330,13 @@ tropicales".... </comment>
                   <order>48</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>45</order>
@@ -23919,11 +24371,14 @@ tropicales".... </comment>
                                   <order>33</order>
                                   <label>mod</label>
                                   <word>hamu</word>
+                                  <secedges>
+                                  </secedges>
                                   <pos>Root</pos>
                                   <translation>=venir</translation>
                                   <morph>
                                     <tag>VRoot</tag>
                                   </morph>
+                                  <discourse>TOPIC</discourse>
                                   <children>
                                     <terminal>
                                       <order>24</order>
@@ -24152,6 +24607,7 @@ tropicales".... </comment>
                           <morph>
                             <tag>+Acc</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>23</order>
@@ -24535,11 +24991,14 @@ tropicales".... </comment>
                   <order>42</order>
                   <label>sub</label>
                   <word>ka</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=ser</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>29</order>
@@ -24682,7 +25141,7 @@ tropicales".... </comment>
                 </terminal>
                 <terminal>
                   <order>52</order>
-                  <label>mod</label>
+                  <label>ben</label>
                   <word>-paq</word>
                   <secedges>
                   </secedges>
@@ -24817,20 +25276,26 @@ tropicales".... </comment>
                   <order>20</order>
                   <label>sub</label>
                   <word>chinka</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=perder</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>4</order>
                       <label>tmp</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>3</order>
@@ -25026,10 +25491,13 @@ tropicales".... </comment>
                   <order>34</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>33</order>
@@ -25122,11 +25590,14 @@ tropicales".... </comment>
                   <order>44</order>
                   <label>subj</label>
                   <word>ruru</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=fructificar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>47</order>
@@ -25225,10 +25696,13 @@ tropicales".... </comment>
                   <order>1</order>
                   <label>linker</label>
                   <word>Icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -25245,11 +25719,14 @@ tropicales".... </comment>
                   <order>28</order>
                   <label>subj</label>
                   <word>tapu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=preguntar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>22</order>
@@ -25523,11 +26000,14 @@ tropicales".... </comment>
                   <order>5</order>
                   <label>sub</label>
                   <word>rima</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=hablar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>4</order>
@@ -25594,12 +26074,15 @@ tropicales".... </comment>
                   <order>13</order>
                   <label>subj</label>
                   <word>llaqtakuna</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_Num</pos>
                   <translation>=pueblo</translation>
                   <morph>
                     <tag>NRoot</tag>
                     <tag>+Pl</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>12</order>
@@ -25663,10 +26146,13 @@ tropicales".... </comment>
                           <order>32</order>
                           <label>s.arg.claus</label>
                           <word>-ta</word>
+                          <secedges>
+                          </secedges>
                           <pos>Cas</pos>
                           <morph>
                             <tag>+Acc</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>28</order>
@@ -25911,6 +26397,8 @@ tropicales".... </comment>
                       <order>31</order>
                       <label>sub</label>
                       <word>yapapari</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_VDeriv_VDeriv</pos>
                       <translation>=añadir</translation>
                       <morph>
@@ -25918,6 +26406,7 @@ tropicales".... </comment>
                         <tag>+Rep</tag>
                         <tag>+Inch</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>13</order>
@@ -25981,21 +26470,24 @@ tropicales".... </comment>
                               </morph>
                               <children>
                                 <terminal>
+                                  <order>20</order>
+                                  <label>qnt</label>
+                                  <word>3</word>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootNUM</tag>
+                                  </morph>
+                                </terminal>
+                                <terminal>
                                   <order>21</order>
                                   <label>flm</label>
                                   <word>ºC</word>
-                                  <pos>SP</pos>
-                                  <children>
-                                    <terminal>
-                                      <order>20</order>
-                                      <label>qnt</label>
-                                      <word>3</word>
-                                      <pos>Root</pos>
-                                      <morph>
-                                        <tag>NRootNUM</tag>
-                                      </morph>
-                                    </terminal>
-                                  </children>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootES</tag>
+                                  </morph>
                                 </terminal>
                                 <terminal>
                                   <order>26</order>
@@ -26225,6 +26717,7 @@ tropicales".... </comment>
               <morph>
                 <tag>VRoot</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>37</order>
@@ -26251,10 +26744,13 @@ tropicales".... </comment>
                           <order>1</order>
                           <label>linker</label>
                           <word>Icha</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root</pos>
                           <morph>
                             <tag>Part_Contr</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>2</order>
@@ -26368,10 +26864,13 @@ tropicales".... </comment>
                       <order>32</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>30</order>
@@ -27009,6 +27508,7 @@ tropicales".... </comment>
                                 <tag>NRoot</tag>
                                 <tag>+Pl</tag>
                               </morph>
+                              <discourse>FOCUS</discourse>
                               <children>
                                 <terminal>
                                   <order>21</order>
@@ -27421,12 +27921,15 @@ tropicales".... </comment>
                       <order>7</order>
                       <label>sub</label>
                       <word>yapari</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_VDeriv</pos>
                       <translation>=añadir</translation>
                       <morph>
                         <tag>VRoot</tag>
                         <tag>+Inch</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>5</order>
@@ -27738,10 +28241,13 @@ tropicales".... </comment>
                       <order>7</order>
                       <label>subj</label>
                       <word>Kay</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>8</order>
@@ -27777,11 +28283,14 @@ tropicales".... </comment>
                               <order>12</order>
                               <label>mod</label>
                               <word>ruru</word>
+                              <secedges>
+                              </secedges>
                               <pos>Root</pos>
                               <translation>=fructificar</translation>
                               <morph>
                                 <tag>VRoot</tag>
                               </morph>
+                              <discourse>TOPIC</discourse>
                               <children>
                                 <terminal>
                                   <order>11</order>
@@ -28040,11 +28549,14 @@ tropicales".... </comment>
                   <order>9</order>
                   <label>subj</label>
                   <word>ruwa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=hacer</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -28118,11 +28630,14 @@ tropicales".... </comment>
                   <order>34</order>
                   <label>sub</label>
                   <word>t'ikra</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=volver</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>23</order>
@@ -28301,10 +28816,13 @@ tropicales".... </comment>
                       <order>7</order>
                       <label>loc</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>6</order>
@@ -28469,10 +28987,13 @@ tropicales".... </comment>
                   <order>39</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>38</order>
@@ -28703,12 +29224,6 @@ tropicales".... </comment>
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>51</order>
-              <label>punc</label>
-              <word>-</word>
-              <pos>$.</pos>
-            </terminal>
-            <terminal>
               <order>67</order>
               <label>sntc</label>
               <word>chaya</word>
@@ -28925,6 +29440,7 @@ tropicales".... </comment>
                     <tag>NRoot</tag>
                     <tag>+Trs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>7</order>
@@ -29077,13 +29593,25 @@ tropicales".... </comment>
                   </children>
                 </terminal>
                 <terminal>
+                  <order>49</order>
+                  <label>subj</label>
+                  <word>kay</word>
+                  <pos>Root</pos>
+                  <morph>
+                    <tag>PrnDem</tag>
+                  </morph>
+                </terminal>
+                <terminal>
                   <order>59</order>
                   <label>mod</label>
                   <word>-kama</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Term</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>57</order>
@@ -29096,43 +29624,43 @@ tropicales".... </comment>
                       </morph>
                       <children>
                         <terminal>
-                          <order>53</order>
-                          <label>flm</label>
-                          <word>%</word>
-                          <pos>SP</pos>
+                          <order>52</order>
+                          <label>qnt</label>
+                          <word>30</word>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootNUM</tag>
+                          </morph>
                           <children>
                             <terminal>
-                              <order>52</order>
-                              <label>qnt</label>
-                              <word>30</word>
-                              <pos>Root</pos>
-                              <morph>
-                                <tag>NRootNUM</tag>
-                              </morph>
+                              <order>51</order>
+                              <label>--</label>
+                              <word>-</word>
+                              <pos>$.</pos>
                               <children>
                                 <terminal>
                                   <order>50</order>
-                                  <label>co</label>
+                                  <label>--</label>
                                   <word>20</word>
                                   <pos>Root</pos>
                                   <morph>
                                     <tag>NRootNUM</tag>
                                   </morph>
-                                  <children>
-                                    <terminal>
-                                      <order>49</order>
-                                      <label>det</label>
-                                      <word>kay</word>
-                                      <pos>Root</pos>
-                                      <morph>
-                                        <tag>PrnDem</tag>
-                                      </morph>
-                                    </terminal>
-                                  </children>
                                 </terminal>
                               </children>
                             </terminal>
                           </children>
+                        </terminal>
+                        <terminal>
+                          <order>53</order>
+                          <label>flm</label>
+                          <word>%</word>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootES</tag>
+                          </morph>
                         </terminal>
                         <terminal>
                           <order>58</order>
@@ -29212,6 +29740,7 @@ tropicales".... </comment>
                     <tag>VRoot</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -29597,13 +30126,23 @@ tropicales".... </comment>
                           <order>10</order>
                           <label>flm</label>
                           <word>ºC</word>
-                          <pos>SP</pos>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootES</tag>
+                          </morph>
                           <children>
                             <terminal>
                               <order>7</order>
                               <label>co</label>
                               <word>ºC</word>
-                              <pos>SP</pos>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                               <children>
                                 <terminal>
                                   <order>6</order>
@@ -29707,12 +30246,15 @@ tropicales".... </comment>
                   <order>13</order>
                   <label>sub</label>
                   <word>yapapa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=añadir</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Rgr_Iprs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -29744,21 +30286,24 @@ tropicales".... </comment>
                           </morph>
                           <children>
                             <terminal>
+                              <order>2</order>
+                              <label>qnt</label>
+                              <word>22</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootNUM</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
                               <order>3</order>
                               <label>flm</label>
                               <word>ºC</word>
-                              <pos>SP</pos>
-                              <children>
-                                <terminal>
-                                  <order>2</order>
-                                  <label>qnt</label>
-                                  <word>22</word>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootNUM</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>5</order>
@@ -30369,6 +30914,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>+Con_Inst</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>11</order>
@@ -30585,10 +31131,13 @@ tropicales".... </comment>
                       <order>7</order>
                       <label>subj</label>
                       <word>Kay</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>8</order>
@@ -30623,10 +31172,13 @@ tropicales".... </comment>
                       <order>16</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>13</order>
@@ -30682,6 +31234,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>20</order>
@@ -30722,10 +31275,13 @@ tropicales".... </comment>
                   <order>30</order>
                   <label>goal</label>
                   <word>-man</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Dat_Ill</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>29</order>
@@ -30859,20 +31415,26 @@ tropicales".... </comment>
               <order>26</order>
               <label>sntc</label>
               <word>ati</word>
+              <secedges>
+              </secedges>
               <pos>Root</pos>
               <translation>=poder,vencer</translation>
               <morph>
                 <tag>VRoot</tag>
               </morph>
+              <discourse>TOPIC</discourse>
               <children>
                 <terminal>
                   <order>8</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>7</order>
@@ -31015,11 +31577,14 @@ tropicales".... </comment>
                           <morph>
                             <tag>+Acc</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>19</order>
                               <label>s.arg</label>
                               <word>papa</word>
+                              <secedges>
+                              </secedges>
                               <pos>Root</pos>
                               <translation>=patata</translation>
                               <morph>
@@ -31218,10 +31783,13 @@ tropicales".... </comment>
                   <order>1</order>
                   <label>linker</label>
                   <word>Icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -31238,12 +31806,15 @@ tropicales".... </comment>
                   <order>15</order>
                   <label>subj</label>
                   <word>mast'ari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=tender,tumbar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>6</order>
@@ -31333,11 +31904,14 @@ tropicales".... </comment>
                   <order>25</order>
                   <label>sub</label>
                   <word>ka</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=ser</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>23</order>
@@ -31626,10 +32200,13 @@ tropicales".... </comment>
                   <order>13</order>
                   <label>adv</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>12</order>
@@ -31733,10 +32310,13 @@ tropicales".... </comment>
                   <order>2</order>
                   <label>linker</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -31773,11 +32353,14 @@ tropicales".... </comment>
                   <order>24</order>
                   <label>subj</label>
                   <word>yacha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=saber,habitar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>26</order>
@@ -31845,10 +32428,13 @@ tropicales".... </comment>
                       <order>21</order>
                       <label>mod</label>
                       <word>-manta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Abl</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>18</order>
@@ -31954,7 +32540,12 @@ tropicales".... </comment>
                                   <order>12</order>
                                   <label>flm</label>
                                   <word>radiación</word>
-                                  <pos>SP</pos>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootES</tag>
+                                  </morph>
                                   <children>
                                     <terminal>
                                       <order>13</order>
@@ -31962,8 +32553,9 @@ tropicales".... </comment>
                                       <word>ultravioleta</word>
                                       <secedges>
                                       </secedges>
-                                      <pos>SP</pos>
+                                      <pos>Root</pos>
                                       <morph>
+                                        <tag>NRootES</tag>
                                       </morph>
                                     </terminal>
                                   </children>
@@ -32007,10 +32599,13 @@ tropicales".... </comment>
                       <order>30</order>
                       <label>adv</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>29</order>
@@ -32104,8 +32699,9 @@ tropicales".... </comment>
                           <word>CO2</word>
                           <secedges>
                           </secedges>
-                          <pos>SP</pos>
+                          <pos>Root</pos>
                           <morph>
+                            <tag>NRootES</tag>
                           </morph>
                         </terminal>
                         <terminal>
@@ -32281,8 +32877,9 @@ tropicales".... </comment>
                               <word>CO2</word>
                               <secedges>
                               </secedges>
-                              <pos>SP</pos>
+                              <pos>Root</pos>
                               <morph>
+                                <tag>NRootES</tag>
                               </morph>
                             </terminal>
                             <terminal>
@@ -32377,12 +32974,15 @@ tropicales".... </comment>
                   <order>28</order>
                   <label>sub</label>
                   <word>qhawari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=mirar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>23</order>
@@ -32477,11 +33077,14 @@ tropicales".... </comment>
                   <order>34</order>
                   <label>pred</label>
                   <word>allin</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=bueno</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                 </terminal>
                 <terminal>
                   <order>35</order>
@@ -32496,10 +33099,13 @@ tropicales".... </comment>
                   <order>40</order>
                   <label>purp</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>37</order>
@@ -32601,12 +33207,15 @@ tropicales".... </comment>
                   <order>15</order>
                   <label>subj</label>
                   <word>qhawari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=mirar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -32727,7 +33336,7 @@ tropicales".... </comment>
                 </terminal>
                 <terminal>
                   <order>31</order>
-                  <label>purp</label>
+                  <label>ben</label>
                   <word>-paq</word>
                   <pos>Cas</pos>
                   <morph>
@@ -32906,10 +33515,13 @@ tropicales".... </comment>
                   <order>1</order>
                   <label>linker</label>
                   <word>Chay</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>PrnDem</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                 </terminal>
                 <terminal>
                   <order>2</order>
@@ -32924,11 +33536,14 @@ tropicales".... </comment>
                   <order>13</order>
                   <label>subj</label>
                   <word>t'aqwi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=indagar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>3</order>
@@ -33018,6 +33633,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>25</order>
@@ -33031,6 +33647,7 @@ tropicales".... </comment>
                             <tag>NRoot</tag>
                             <tag>+Fact</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>20</order>
@@ -33061,8 +33678,9 @@ tropicales".... </comment>
                                       <word>CO2</word>
                                       <secedges>
                                       </secedges>
-                                      <pos>SP</pos>
+                                      <pos>Root</pos>
                                       <morph>
+                                        <tag>NRootES</tag>
                                       </morph>
                                     </terminal>
                                     <terminal>
@@ -33405,10 +34023,13 @@ tropicales".... </comment>
                   <order>1</order>
                   <label>linker</label>
                   <word>Icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -33425,12 +34046,15 @@ tropicales".... </comment>
                   <order>20</order>
                   <label>subj</label>
                   <word>ruwapa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=hacer</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Rep</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>15</order>
@@ -34008,11 +34632,14 @@ tropicales".... </comment>
                   <order>10</order>
                   <label>subj</label>
                   <word>tari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=encontrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>8</order>
@@ -34114,11 +34741,14 @@ tropicales".... </comment>
                           <order>41</order>
                           <label>mod</label>
                           <word>imana</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root</pos>
                           <translation>=hacer_algo</translation>
                           <morph>
                             <tag>VRoot</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>14</order>
@@ -34227,6 +34857,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>61</order>
@@ -34594,10 +35225,13 @@ tropicales".... </comment>
                   <order>8</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>7</order>
@@ -34648,11 +35282,14 @@ tropicales".... </comment>
                   <order>15</order>
                   <label>subj</label>
                   <word>t'ikra</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=volver</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>11</order>
@@ -34782,10 +35419,13 @@ tropicales".... </comment>
                   <order>56</order>
                   <label>goal</label>
                   <word>-man</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Dat_Ill</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>54</order>
@@ -35258,11 +35898,14 @@ tropicales".... </comment>
                   <order>17</order>
                   <label>subj</label>
                   <word>p'iki</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=pulga</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>19</order>
@@ -35354,7 +35997,7 @@ tropicales".... </comment>
                   </morph>
                 </terminal>
                 <terminal>
-                  <order>56</order>
+                  <order>55</order>
                   <label>sub</label>
                   <word>ka</word>
                   <secedges>
@@ -35366,7 +36009,7 @@ tropicales".... </comment>
                   </morph>
                   <children>
                     <terminal>
-                      <order>52</order>
+                      <order>51</order>
                       <label>purp</label>
                       <word>-paq</word>
                       <secedges>
@@ -35377,7 +36020,7 @@ tropicales".... </comment>
                       </morph>
                       <children>
                         <terminal>
-                          <order>49</order>
+                          <order>48</order>
                           <label>s.arg.claus</label>
                           <word>kawsa</word>
                           <secedges>
@@ -35389,7 +36032,7 @@ tropicales".... </comment>
                           </morph>
                           <children>
                             <terminal>
-                              <order>44</order>
+                              <order>43</order>
                               <label>tmp</label>
                               <word>-pi</word>
                               <secedges>
@@ -35400,7 +36043,7 @@ tropicales".... </comment>
                               </morph>
                               <children>
                                 <terminal>
-                                  <order>43</order>
+                                  <order>42</order>
                                   <label>s.arg</label>
                                   <word>mit'akuna</word>
                                   <secedges>
@@ -35413,7 +36056,7 @@ tropicales".... </comment>
                                   </morph>
                                   <children>
                                     <terminal>
-                                      <order>41</order>
+                                      <order>40</order>
                                       <label>mod</label>
                                       <word>-kama</word>
                                       <secedges>
@@ -35426,31 +36069,19 @@ tropicales".... </comment>
                                         <terminal>
                                           <order>39</order>
                                           <label>s.arg</label>
-                                          <word>huk</word>
+                                          <word>hukniray</word>
                                           <secedges>
                                           </secedges>
                                           <pos>Root</pos>
+                                          <translation>=diferente,cambiado</translation>
                                           <morph>
-                                            <tag>NRootNUM</tag>
+                                            <tag>NRoot</tag>
                                           </morph>
-                                          <children>
-                                            <terminal>
-                                              <order>40</order>
-                                              <label>mod</label>
-                                              <word>-niray</word>
-                                              <secedges>
-                                              </secedges>
-                                              <pos>Amb</pos>
-                                              <morph>
-                                                <tag>+Sim</tag>
-                                              </morph>
-                                            </terminal>
-                                          </children>
                                         </terminal>
                                       </children>
                                     </terminal>
                                     <terminal>
-                                      <order>42</order>
+                                      <order>41</order>
                                       <label>mod</label>
                                       <word>pacha</word>
                                       <secedges>
@@ -35466,7 +36097,7 @@ tropicales".... </comment>
                               </children>
                             </terminal>
                             <terminal>
-                              <order>48</order>
+                              <order>47</order>
                               <label>poss.subj</label>
                               <word>-pa</word>
                               <secedges>
@@ -35477,7 +36108,7 @@ tropicales".... </comment>
                               </morph>
                               <children>
                                 <terminal>
-                                  <order>47</order>
+                                  <order>46</order>
                                   <label>s.arg</label>
                                   <word>p'ikikuna</word>
                                   <secedges>
@@ -35490,7 +36121,7 @@ tropicales".... </comment>
                                   </morph>
                                   <children>
                                     <terminal>
-                                      <order>46</order>
+                                      <order>45</order>
                                       <label>det</label>
                                       <word>chay</word>
                                       <secedges>
@@ -35505,7 +36136,7 @@ tropicales".... </comment>
                               </children>
                             </terminal>
                             <terminal>
-                              <order>50</order>
+                              <order>49</order>
                               <label>ns</label>
                               <word>-na</word>
                               <secedges>
@@ -35516,7 +36147,7 @@ tropicales".... </comment>
                               </morph>
                               <children>
                                 <terminal>
-                                  <order>51</order>
+                                  <order>50</order>
                                   <label>s.poss.subj</label>
                                   <word>-n</word>
                                   <secedges>
@@ -35531,7 +36162,7 @@ tropicales".... </comment>
                           </children>
                         </terminal>
                         <terminal>
-                          <order>53</order>
+                          <order>52</order>
                           <label>mod</label>
                           <word>hina</word>
                           <secedges>
@@ -35544,7 +36175,7 @@ tropicales".... </comment>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>55</order>
+                      <order>54</order>
                       <label>pred</label>
                       <word>pacha</word>
                       <secedges>
@@ -35556,7 +36187,7 @@ tropicales".... </comment>
                       </morph>
                       <children>
                         <terminal>
-                          <order>54</order>
+                          <order>53</order>
                           <label>mod</label>
                           <word>allin</word>
                           <secedges>
@@ -35570,7 +36201,7 @@ tropicales".... </comment>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>57</order>
+                      <order>56</order>
                       <label>ns</label>
                       <word>-pti</word>
                       <pos>NS</pos>
@@ -35579,7 +36210,7 @@ tropicales".... </comment>
                       </morph>
                       <children>
                         <terminal>
-                          <order>58</order>
+                          <order>57</order>
                           <label>s.poss.subj</label>
                           <word>-n</word>
                           <pos>NPers</pos>
@@ -35600,7 +36231,7 @@ tropicales".... </comment>
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>45</order>
+              <order>44</order>
               <label>punc</label>
               <word>,</word>
               <secedges>
@@ -35610,7 +36241,7 @@ tropicales".... </comment>
               </morph>
             </terminal>
             <terminal>
-              <order>74</order>
+              <order>73</order>
               <label>punc</label>
               <word>.</word>
               <pos>$.</pos>
@@ -35665,6 +36296,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -36046,10 +36678,13 @@ tropicales".... </comment>
                       <order>3</order>
                       <label>tmp</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -36088,10 +36723,13 @@ tropicales".... </comment>
                       <order>8</order>
                       <label>loc</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>7</order>
@@ -36139,6 +36777,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>14</order>
@@ -36502,12 +37141,15 @@ tropicales".... </comment>
                   <order>11</order>
                   <label>subj</label>
                   <word>yapari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=añadir</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -36765,10 +37407,13 @@ tropicales".... </comment>
                       <order>3</order>
                       <label>tmp</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -36822,35 +37467,38 @@ tropicales".... </comment>
                           </morph>
                           <children>
                             <terminal>
+                              <order>10</order>
+                              <label>qnt</label>
+                              <word>16</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootNUM</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>9</order>
+                                  <label>mod</label>
+                                  <word>yaqa</word>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <translation>=apróximadamente</translation>
+                                  <morph>
+                                    <tag>NRoot</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal>
                               <order>11</order>
                               <label>flm</label>
                               <word>%</word>
-                              <pos>$.</pos>
-                              <children>
-                                <terminal>
-                                  <order>10</order>
-                                  <label>qnt</label>
-                                  <word>16</word>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootNUM</tag>
-                                  </morph>
-                                  <children>
-                                    <terminal>
-                                      <order>9</order>
-                                      <label>mod</label>
-                                      <word>yaqa</word>
-                                      <secedges>
-                                      </secedges>
-                                      <pos>Root</pos>
-                                      <translation>=apróximadamente</translation>
-                                      <morph>
-                                        <tag>NRoot</tag>
-                                      </morph>
-                                    </terminal>
-                                  </children>
-                                </terminal>
-                              </children>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>13</order>
@@ -36888,21 +37536,24 @@ tropicales".... </comment>
                           </morph>
                           <children>
                             <terminal>
+                              <order>15</order>
+                              <label>qnt</label>
+                              <word>22</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootNUM</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
                               <order>16</order>
                               <label>punc</label>
                               <word>%</word>
-                              <pos>$.</pos>
-                              <children>
-                                <terminal>
-                                  <order>15</order>
-                                  <label>qnt</label>
-                                  <word>22</word>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootNUM</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                             </terminal>
                             <terminal>
                               <order>21</order>
@@ -36932,11 +37583,14 @@ tropicales".... </comment>
                       <order>33</order>
                       <label>subj</label>
                       <word>kaykuna</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_Num</pos>
                       <morph>
                         <tag>PrnDem</tag>
                         <tag>+Pl</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>34</order>
@@ -36971,6 +37625,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                 </terminal>
                 <terminal>
                   <order>39</order>
@@ -36993,6 +37648,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>PrnDem</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>41</order>
@@ -37642,6 +38298,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>43</order>
@@ -37969,15 +38626,6 @@ tropicales".... </comment>
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>22</order>
-              <label>ev</label>
-              <word>-m</word>
-              <pos>Amb</pos>
-              <morph>
-                <tag>+DirE</tag>
-              </morph>
-            </terminal>
-            <terminal>
               <order>37</order>
               <label>punc</label>
               <word>,</word>
@@ -38083,18 +38731,34 @@ tropicales".... </comment>
                           <order>15</order>
                           <label>flm</label>
                           <word>Protocolo</word>
-                          <pos>SP</pos>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootES</tag>
+                          </morph>
                           <children>
                             <terminal>
                               <order>8</order>
                               <label>mod</label>
                               <word>Convención</word>
-                              <pos>SP</pos>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NRootES</tag>
+                              </morph>
                               <children>
                                 <terminal>
                                   <order>9</order>
                                   <label>nme</label>
                                   <word>Marco</word>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootES</tag>
+                                  </morph>
                                   <children>
                                     <terminal>
                                       <order>10</order>
@@ -38112,13 +38776,23 @@ tropicales".... </comment>
                                               <order>12</order>
                                               <label>nme</label>
                                               <word>Naciones</word>
-                                              <pos>SP</pos>
+                                              <secedges>
+                                              </secedges>
+                                              <pos>Root</pos>
+                                              <morph>
+                                                <tag>NRootES</tag>
+                                              </morph>
                                               <children>
                                                 <terminal>
                                                   <order>13</order>
                                                   <label>nme</label>
                                                   <word>Unidas</word>
-                                                  <pos>SP</pos>
+                                                  <secedges>
+                                                  </secedges>
+                                                  <pos>Root</pos>
+                                                  <morph>
+                                                    <tag>NRootES</tag>
+                                                  </morph>
                                                 </terminal>
                                               </children>
                                             </terminal>
@@ -38140,7 +38814,12 @@ tropicales".... </comment>
                                   <order>17</order>
                                   <label>nme</label>
                                   <word>Kioto</word>
-                                  <pos>SP</pos>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NP</tag>
+                                  </morph>
                                 </terminal>
                               </children>
                             </terminal>
@@ -38158,6 +38837,15 @@ tropicales".... </comment>
                       </children>
                     </terminal>
                   </children>
+                </terminal>
+                <terminal>
+                  <order>22</order>
+                  <label>ev</label>
+                  <word>-m</word>
+                  <pos>Amb</pos>
+                  <morph>
+                    <tag>+DirE</tag>
+                  </morph>
                 </terminal>
                 <terminal>
                   <order>55</order>
@@ -38212,6 +38900,7 @@ tropicales".... </comment>
                               <morph>
                                 <tag>+Acc</tag>
                               </morph>
+                              <discourse>FOCUS</discourse>
                               <children>
                                 <terminal>
                                   <order>25</order>
@@ -38313,19 +39002,6 @@ tropicales".... </comment>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>38</order>
-                      <label>subj</label>
-                      <word>imakuna</word>
-                      <secedges>
-                      </secedges>
-                      <pos>Root_Num</pos>
-                      <translation>=cosa</translation>
-                      <morph>
-                        <tag>NRoot</tag>
-                        <tag>+Pl</tag>
-                      </morph>
-                    </terminal>
-                    <terminal>
                       <order>39</order>
                       <label>ev</label>
                       <word>-m</word>
@@ -38349,8 +39025,22 @@ tropicales".... </comment>
                       </morph>
                       <children>
                         <terminal>
+                          <order>38</order>
+                          <label>obj</label>
+                          <word>imakuna</word>
+                          <secedges>
+                          </secedges>
+                          <pos>Root_Num</pos>
+                          <translation>=cosa</translation>
+                          <morph>
+                            <tag>NRoot</tag>
+                            <tag>+Pl</tag>
+                          </morph>
+                          <discourse>FOCUS</discourse>
+                        </terminal>
+                        <terminal>
                           <order>46</order>
-                          <label>purp</label>
+                          <label>mod</label>
                           <word>-paq</word>
                           <secedges>
                           </secedges>
@@ -38474,6 +39164,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>59</order>
@@ -38600,10 +39291,13 @@ tropicales".... </comment>
                   <order>6</order>
                   <label>mod</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>4</order>
@@ -39215,6 +39909,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>68</order>
@@ -39326,11 +40021,14 @@ tropicales".... </comment>
                   <order>5</order>
                   <label>subj</label>
                   <word>t'ikra</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=volver</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -39584,11 +40282,14 @@ tropicales".... </comment>
                   <order>17</order>
                   <label>sub</label>
                   <word>ka</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=ser</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>6</order>
@@ -39812,10 +40513,13 @@ tropicales".... </comment>
                   <order>40</order>
                   <label>adv</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>39</order>
@@ -40383,6 +41087,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>PrnInterr</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                     </terminal>
                     <terminal>
                       <order>2</order>
@@ -40417,6 +41122,7 @@ tropicales".... </comment>
                           <morph>
                             <tag>VRoot</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>3</order>
@@ -40667,8 +41373,9 @@ tropicales".... </comment>
                       <word>mulching</word>
                       <secedges>
                       </secedges>
-                      <pos>SP</pos>
+                      <pos>Root</pos>
                       <morph>
+                        <tag>NRootES</tag>
                       </morph>
                     </terminal>
                     <terminal>
@@ -41380,6 +42087,7 @@ tropicales".... </comment>
                     <tag>NRootES</tag>
                     <tag>+Pl</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -41521,10 +42229,13 @@ tropicales".... </comment>
                   <order>4</order>
                   <label>purp</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -41572,10 +42283,13 @@ tropicales".... </comment>
                   <order>21</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>9</order>
@@ -41909,6 +42623,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>13</order>
@@ -42263,10 +42978,13 @@ tropicales".... </comment>
                   <order>59</order>
                   <label>mod</label>
                   <word>-wan</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Con_Inst</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>58</order>
@@ -42387,11 +43105,14 @@ tropicales".... </comment>
                   <order>71</order>
                   <label>subj</label>
                   <word>chakra</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=chacra</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>72</order>
@@ -42554,11 +43275,14 @@ tropicales".... </comment>
                   <order>15</order>
                   <label>subj</label>
                   <word>ni</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=decir</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>10</order>
@@ -42848,10 +43572,13 @@ tropicales".... </comment>
                       <order>3</order>
                       <label>mod</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -42890,11 +43617,14 @@ tropicales".... </comment>
                       <order>7</order>
                       <label>subj</label>
                       <word>llamk'a</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=trabajar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>6</order>
@@ -43117,10 +43847,13 @@ tropicales".... </comment>
                   <order>36</order>
                   <label>linker</label>
                   <word>hina</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Sim</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>35</order>
@@ -43382,11 +44115,14 @@ tropicales".... </comment>
                       <order>6</order>
                       <label>subj</label>
                       <word>ruwa</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=hacer</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>5</order>
@@ -43688,10 +44424,13 @@ tropicales".... </comment>
                   <order>27</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>20</order>
@@ -43899,15 +44638,6 @@ tropicales".... </comment>
           <comment>Considero que "waqaycha" debe ser tomado como 'raíz'. Acá funciona como nombre (derivación por ¿conversión?). (2) WAQA como 'app' ¿está bien? (3) ¿-man como 'mod' o 'goal'?</comment>
           <children>
             <terminal>
-              <order>4</order>
-              <label>ev</label>
-              <word>-mi</word>
-              <pos>Amb</pos>
-              <morph>
-                <tag>+DirE</tag>
-              </morph>
-            </terminal>
-            <terminal>
               <order>5</order>
               <label>punc</label>
               <word>,</word>
@@ -43960,6 +44690,15 @@ tropicales".... </comment>
                       </morph>
                     </terminal>
                   </children>
+                </terminal>
+                <terminal>
+                  <order>4</order>
+                  <label>ev</label>
+                  <word>-mi</word>
+                  <pos>Amb</pos>
+                  <morph>
+                    <tag>+DirE</tag>
+                  </morph>
                 </terminal>
                 <terminal>
                   <order>33</order>
@@ -44514,10 +45253,13 @@ tropicales".... </comment>
                       <order>11</order>
                       <label>purp</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>7</order>
@@ -44828,10 +45570,13 @@ tropicales".... </comment>
                   <order>48</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>46</order>
@@ -44924,10 +45669,13 @@ tropicales".... </comment>
                   <order>61</order>
                   <label>adv</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>60</order>
@@ -45058,6 +45806,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -45414,11 +46163,14 @@ tropicales".... </comment>
                   <order>14</order>
                   <label>subj</label>
                   <word>puri</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=andar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>10</order>
@@ -45494,10 +46246,13 @@ tropicales".... </comment>
                   <order>27</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>26</order>
@@ -45644,10 +46399,13 @@ tropicales".... </comment>
                       <order>19</order>
                       <label>purp</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>16</order>
@@ -45917,6 +46675,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -46028,6 +46787,7 @@ tropicales".... </comment>
                     <tag>NRootES</tag>
                     <tag>+Pl</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>4</order>
@@ -46077,10 +46837,13 @@ tropicales".... </comment>
                   <order>15</order>
                   <label>comp</label>
                   <word>-hina</word>
+                  <secedges>
+                  </secedges>
                   <pos>Amb</pos>
                   <morph>
                     <tag>+Sim</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>14</order>
@@ -46255,10 +47018,13 @@ tropicales".... </comment>
                       <order>9</order>
                       <label>loc</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>8</order>
@@ -46525,8 +47291,9 @@ tropicales".... </comment>
                       <word>CO2</word>
                       <secedges>
                       </secedges>
-                      <pos>SP</pos>
+                      <pos>Root</pos>
                       <morph>
+                        <tag>NRootES</tag>
                       </morph>
                     </terminal>
                     <terminal>
@@ -46617,12 +47384,15 @@ tropicales".... </comment>
               <order>54</order>
               <label>sntc</label>
               <word>pisiya</word>
+              <secedges>
+              </secedges>
               <pos>Root_VS</pos>
               <translation>=poco</translation>
               <morph>
                 <tag>NRoot</tag>
                 <tag>+Trs</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>4</order>
@@ -46693,6 +47463,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>11</order>
@@ -46897,8 +47668,9 @@ tropicales".... </comment>
                                   <word>CH4</word>
                                   <secedges>
                                   </secedges>
-                                  <pos>SP</pos>
+                                  <pos>Root</pos>
                                   <morph>
+                                    <tag>NRootES</tag>
                                   </morph>
                                 </terminal>
                                 <terminal>
@@ -47070,12 +47842,15 @@ tropicales".... </comment>
                   <order>18</order>
                   <label>subj</label>
                   <word>pisiya</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VS</pos>
                   <translation>=poco</translation>
                   <morph>
                     <tag>NRoot</tag>
                     <tag>+Trs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>17</order>
@@ -47258,8 +48033,9 @@ tropicales".... </comment>
                                   <word>N2O</word>
                                   <secedges>
                                   </secedges>
-                                  <pos>SP</pos>
+                                  <pos>Root</pos>
                                   <morph>
+                                    <tag>NRootES</tag>
                                   </morph>
                                 </terminal>
                                 <terminal>
@@ -47713,10 +48489,13 @@ tropicales".... </comment>
                           <order>22</order>
                           <label>adv</label>
                           <word>-ta</word>
+                          <secedges>
+                          </secedges>
                           <pos>Cas</pos>
                           <morph>
                             <tag>+Acc</tag>
                           </morph>
+                          <discourse>FOCUS</discourse>
                           <children>
                             <terminal>
                               <order>21</order>
@@ -48007,10 +48786,13 @@ tropicales".... </comment>
                                       <order>57</order>
                                       <label>obj</label>
                                       <word>-ta</word>
+                                      <secedges>
+                                      </secedges>
                                       <pos>Cas</pos>
                                       <morph>
                                         <tag>+Acc</tag>
                                       </morph>
+                                      <discourse>FOCUS</discourse>
                                       <children>
                                         <terminal>
                                           <order>56</order>
@@ -48207,10 +48989,13 @@ tropicales".... </comment>
                   <order>1</order>
                   <label>linker</label>
                   <word>Icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -48227,20 +49012,26 @@ tropicales".... </comment>
                   <order>15</order>
                   <label>oblg</label>
                   <word>ati</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=poder,vencer</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>10</order>
                       <label>subj</label>
                       <word>kay</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>11</order>
@@ -48410,6 +49201,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>4</order>
@@ -48827,6 +49619,7 @@ tropicales".... </comment>
                                   <morph>
                                     <tag>+Ben</tag>
                                   </morph>
+                                  <discourse>FOCUS</discourse>
                                   <children>
                                     <terminal>
                                       <order>66</order>
@@ -48840,7 +49633,6 @@ tropicales".... </comment>
                                         <tag>PrnInterr</tag>
                                         <tag>+Pl</tag>
                                       </morph>
-                                      <discourse>FOCUS</discourse>
                                     </terminal>
                                   </children>
                                 </terminal>
@@ -49093,7 +49885,7 @@ tropicales".... </comment>
               <children>
                 <terminal>
                   <order>2</order>
-                  <label>s.arg</label>
+                  <label>mod</label>
                   <word>Ñawpa</word>
                   <secedges>
                   </secedges>
@@ -49102,6 +49894,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>3</order>
@@ -49182,6 +49975,7 @@ tropicales".... </comment>
                                   <morph>
                                     <tag>+Acc</tag>
                                   </morph>
+                                  <discourse>FOCUS</discourse>
                                   <children>
                                     <terminal>
                                       <order>7</order>
@@ -49395,10 +50189,13 @@ tropicales".... </comment>
                           <order>40</order>
                           <label>purp</label>
                           <word>-paq</word>
+                          <secedges>
+                          </secedges>
                           <pos>Cas</pos>
                           <morph>
                             <tag>+Ben</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>38</order>
@@ -49612,10 +50409,13 @@ tropicales".... </comment>
                           <order>44</order>
                           <label>tmp</label>
                           <word>-ta</word>
+                          <secedges>
+                          </secedges>
                           <pos>Cas</pos>
                           <morph>
                             <tag>+Acc</tag>
                           </morph>
+                          <discourse>FOCUS</discourse>
                           <children>
                             <terminal>
                               <order>43</order>
@@ -49695,10 +50495,13 @@ tropicales".... </comment>
                       <order>89</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>88</order>
@@ -50364,11 +51167,14 @@ tropicales".... </comment>
                   <order>1</order>
                   <label>tmp</label>
                   <word>Kunan</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=ahora</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -50586,11 +51392,14 @@ tropicales".... </comment>
                   <order>7</order>
                   <label>subj</label>
                   <word>llamk'a</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=trabajar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -51209,11 +52018,14 @@ tropicales".... </comment>
                   <order>47</order>
                   <label>subj</label>
                   <word>llamk'a</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=trabajar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>46</order>
@@ -51312,11 +52124,14 @@ tropicales".... </comment>
                   <order>20</order>
                   <label>subj</label>
                   <word>llamk'a</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=trabajar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>18</order>
@@ -51332,7 +52147,12 @@ tropicales".... </comment>
                           <order>14</order>
                           <label>flm</label>
                           <word>ADAPT</word>
-                          <pos>SP</pos>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NP</tag>
+                          </morph>
                           <children>
                             <terminal>
                               <order>6</order>
@@ -51440,10 +52260,13 @@ tropicales".... </comment>
                   <order>53</order>
                   <label>pred</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>51</order>
@@ -51722,6 +52545,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>NRootES</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>5</order>
@@ -51749,10 +52573,13 @@ tropicales".... </comment>
                       <order>22</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>18</order>
@@ -51880,12 +52707,15 @@ tropicales".... </comment>
                 </terminal>
                 <terminal>
                   <order>29</order>
-                  <label>purp</label>
+                  <label>mod</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>28</order>
@@ -51967,11 +52797,14 @@ tropicales".... </comment>
                   <order>52</order>
                   <label>sub</label>
                   <word>tinku</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=encontrarse</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>47</order>
@@ -52084,7 +52917,9 @@ tropicales".... </comment>
                 <terminal>
                   <order>55</order>
                   <label>ev</label>
-                  <word>-n</word>
+                  <word>-m</word>
+                  <secedges>
+                  </secedges>
                   <pos>Amb</pos>
                   <morph>
                     <tag>+DirE</tag>
@@ -52158,11 +52993,14 @@ tropicales".... </comment>
                   <order>6</order>
                   <label>subj</label>
                   <word>llamk'a</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=trabajar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -52214,7 +53052,7 @@ tropicales".... </comment>
                   <children>
                     <terminal>
                       <order>34</order>
-                      <label>purp</label>
+                      <label>ben</label>
                       <word>-paq</word>
                       <secedges>
                       </secedges>
@@ -52471,23 +53309,36 @@ tropicales".... </comment>
                   <order>12</order>
                   <label>subj</label>
                   <word>ni</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=decir</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
                       <label>flm</label>
                       <word>Centro</word>
-                      <pos>SP</pos>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <morph>
+                        <tag>NRootES</tag>
+                      </morph>
                       <children>
                         <terminal>
                           <order>2</order>
                           <label>--</label>
                           <word>Internacional</word>
-                          <pos>SP</pos>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NRootES</tag>
+                          </morph>
                           <children>
                             <terminal>
                               <order>3</order>
@@ -52521,6 +53372,12 @@ tropicales".... </comment>
                           <order>7</order>
                           <label>abbrev</label>
                           <word>CIP</word>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>NP</tag>
+                          </morph>
                         </terminal>
                       </children>
                     </terminal>
@@ -52943,6 +53800,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>1</order>
@@ -53010,7 +53868,12 @@ tropicales".... </comment>
                                   <order>6</order>
                                   <label>flm</label>
                                   <word>Sistema</word>
-                                  <pos>SP</pos>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootES</tag>
+                                  </morph>
                                   <children>
                                     <terminal>
                                       <order>7</order>
@@ -53022,13 +53885,23 @@ tropicales".... </comment>
                                           <order>8</order>
                                           <label>--</label>
                                           <word>Informacion</word>
-                                          <pos>SP</pos>
+                                          <secedges>
+                                          </secedges>
+                                          <pos>Root</pos>
+                                          <morph>
+                                            <tag>NRootES</tag>
+                                          </morph>
                                           <children>
                                             <terminal>
                                               <order>9</order>
                                               <label>--</label>
                                               <word>Geografica</word>
-                                              <pos>SP</pos>
+                                              <secedges>
+                                              </secedges>
+                                              <pos>Root</pos>
+                                              <morph>
+                                                <tag>NRootES</tag>
+                                              </morph>
                                             </terminal>
                                           </children>
                                         </terminal>
@@ -53038,7 +53911,12 @@ tropicales".... </comment>
                                       <order>11</order>
                                       <label>abbrev</label>
                                       <word>GIS</word>
-                                      <pos>SP</pos>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>NP</tag>
+                                      </morph>
                                     </terminal>
                                   </children>
                                 </terminal>
@@ -53089,6 +53967,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>+Abl</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>21</order>
@@ -53930,6 +54809,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>19</order>
@@ -54285,6 +55165,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>61</order>
@@ -54469,21 +55350,27 @@ tropicales".... </comment>
                   <order>31</order>
                   <label>oblg</label>
                   <word>apaykacha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=llevar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Intrup</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
                       <label>caus</label>
                       <word>-rayku</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Kaus</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>1</order>
@@ -54509,10 +55396,13 @@ tropicales".... </comment>
                       <order>18</order>
                       <label>mod</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>17</order>
@@ -54738,6 +55628,8 @@ tropicales".... </comment>
                           <order>33</order>
                           <label>s.poss.subj</label>
                           <word>-nku</word>
+                          <secedges>
+                          </secedges>
                           <pos>NPers</pos>
                           <morph>
                             <tag>+3.Pl.Poss</tag>
@@ -54793,11 +55685,14 @@ tropicales".... </comment>
                   <order>2</order>
                   <label>subj</label>
                   <word>llamk'a</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=trabajar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -54834,10 +55729,13 @@ tropicales".... </comment>
                   <order>36</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>35</order>
@@ -55457,10 +56355,13 @@ tropicales".... </comment>
                       <order>3</order>
                       <label>mod</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>1</order>
@@ -55499,10 +56400,13 @@ tropicales".... </comment>
                       <order>12</order>
                       <label>mod</label>
                       <word>-wan</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Con_Inst</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>8</order>
@@ -55581,10 +56485,13 @@ tropicales".... </comment>
                       <order>18</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>16</order>
@@ -55631,11 +56538,14 @@ tropicales".... </comment>
                       <order>21</order>
                       <label>subj</label>
                       <word>ruru</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=fructificar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>20</order>
@@ -55968,10 +56878,13 @@ tropicales".... </comment>
                       <order>28</order>
                       <label>linker</label>
                       <word>chay</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>29</order>
@@ -56035,11 +56948,14 @@ tropicales".... </comment>
                   <order>39</order>
                   <label>subj</label>
                   <word>tarpu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=sembrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>41</order>
@@ -56233,10 +57149,13 @@ tropicales".... </comment>
                   <order>7</order>
                   <label>mod</label>
                   <word>-manta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Abl</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>6</order>
@@ -56274,11 +57193,14 @@ tropicales".... </comment>
                   <order>19</order>
                   <label>subj</label>
                   <word>suyu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=región</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>13</order>
@@ -56495,10 +57417,13 @@ tropicales".... </comment>
                   <order>3</order>
                   <label>tmp</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -56661,10 +57586,13 @@ tropicales".... </comment>
                   <order>31</order>
                   <label>adv</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>30</order>
@@ -56709,10 +57637,13 @@ tropicales".... </comment>
                       <order>38</order>
                       <label>co</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>35</order>
@@ -56876,11 +57807,14 @@ tropicales".... </comment>
                       <order>1</order>
                       <label>tmp</label>
                       <word>Kunan</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=ahora</translation>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -57324,11 +58258,14 @@ tropicales".... </comment>
                               <order>51</order>
                               <label>s.arg.claus</label>
                               <word>ruru</word>
+                              <secedges>
+                              </secedges>
                               <pos>Root</pos>
                               <translation>=fructificar</translation>
                               <morph>
                                 <tag>VRoot</tag>
                               </morph>
+                              <discourse>TOPIC</discourse>
                               <children>
                                 <terminal>
                                   <order>50</order>
@@ -57507,10 +58444,13 @@ tropicales".... </comment>
                   <order>8</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>7</order>
@@ -57578,6 +58518,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>15</order>
@@ -57654,11 +58595,14 @@ tropicales".... </comment>
                       <order>29</order>
                       <label>subj</label>
                       <word>tarpu</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=sembrar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>25</order>
@@ -57713,10 +58657,13 @@ tropicales".... </comment>
                       <order>35</order>
                       <label>linker</label>
                       <word>chay</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>36</order>
@@ -57816,12 +58763,15 @@ tropicales".... </comment>
               <children>
                 <terminal>
                   <order>3</order>
-                  <label>linker</label>
+                  <label>mod</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -58097,10 +59047,13 @@ tropicales".... </comment>
                       <order>1</order>
                       <label>linker</label>
                       <word>Icha</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>Part_Contr</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -58117,12 +59070,15 @@ tropicales".... </comment>
                       <order>16</order>
                       <label>sub</label>
                       <word>apamu</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_VDeriv</pos>
                       <translation>=llevar</translation>
                       <morph>
                         <tag>VRoot</tag>
                         <tag>+Cis_Trs</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>5</order>
@@ -58272,10 +59228,13 @@ tropicales".... </comment>
                       <order>35</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>32</order>
@@ -58568,10 +59527,13 @@ tropicales".... </comment>
                       <order>21</order>
                       <label>purp</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>17</order>
@@ -58674,10 +59636,13 @@ tropicales".... </comment>
                       <order>26</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>24</order>
@@ -58726,10 +59691,13 @@ tropicales".... </comment>
                       <order>33</order>
                       <label>tmp</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>32</order>
@@ -59000,10 +59968,13 @@ tropicales".... </comment>
                   <order>5</order>
                   <label>mod</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>3</order>
@@ -59322,12 +60293,15 @@ tropicales".... </comment>
                   <order>14</order>
                   <label>subj</label>
                   <word>watupa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=adivinar,hechizar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Rgr_Iprs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>9</order>
@@ -59559,11 +60533,14 @@ tropicales".... </comment>
                   <order>26</order>
                   <label>subj</label>
                   <word>yacha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=saber,habitar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>17</order>
@@ -59761,10 +60738,13 @@ tropicales".... </comment>
                   <order>46</order>
                   <label>ben</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>44</order>
@@ -59845,6 +60825,17 @@ tropicales".... </comment>
               </morph>
               <children>
                 <terminal>
+                  <order>2</order>
+                  <label>ev</label>
+                  <word>-m</word>
+                  <secedges>
+                  </secedges>
+                  <pos>Amb</pos>
+                  <morph>
+                    <tag>+DirE</tag>
+                  </morph>
+                </terminal>
+                <terminal>
                   <order>20</order>
                   <label>sub</label>
                   <word>yacha</word>
@@ -59855,6 +60846,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -59867,19 +60859,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>PrnInterr</tag>
                       </morph>
-                      <children>
-                        <terminal>
-                          <order>2</order>
-                          <label>ev</label>
-                          <word>-m</word>
-                          <secedges>
-                          </secedges>
-                          <pos>Amb</pos>
-                          <morph>
-                            <tag>+DirE</tag>
-                          </morph>
-                        </terminal>
-                      </children>
+                      <discourse>FOCUS</discourse>
                     </terminal>
                     <terminal>
                       <order>17</order>
@@ -60349,12 +61329,15 @@ tropicales".... </comment>
                   <order>12</order>
                   <label>subj</label>
                   <word>watupa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=adivinar,hechizar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Rgr_Iprs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>6</order>
@@ -60684,10 +61667,13 @@ tropicales".... </comment>
                   <order>8</order>
                   <label>loc</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>7</order>
@@ -60738,10 +61724,13 @@ tropicales".... </comment>
                   <order>23</order>
                   <label>purp</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>20</order>
@@ -60885,11 +61874,14 @@ tropicales".... </comment>
                   <order>26</order>
                   <label>subj</label>
                   <word>tarpu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=sembrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>28</order>
@@ -60916,10 +61908,13 @@ tropicales".... </comment>
                   <order>41</order>
                   <label>mod</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>33</order>
@@ -61123,12 +62118,15 @@ tropicales".... </comment>
                       <order>10</order>
                       <label>subj</label>
                       <word>watupa</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_VDeriv</pos>
                       <translation>=adivinar,hechizar</translation>
                       <morph>
                         <tag>VRoot</tag>
                         <tag>+Rgr_Iprs</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>5</order>
@@ -61361,12 +62359,15 @@ tropicales".... </comment>
                   <order>64</order>
                   <label>subj</label>
                   <word>watupa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=adivinar,hechizar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Rgr_Iprs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>56</order>
@@ -61621,12 +62622,15 @@ tropicales".... </comment>
                   <order>24</order>
                   <label>subj</label>
                   <word>watupa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=adivinar,hechizar</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Rgr_Iprs</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>9</order>
@@ -61870,10 +62874,13 @@ tropicales".... </comment>
                   <order>1</order>
                   <label>linker</label>
                   <word>Icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -61940,10 +62947,13 @@ tropicales".... </comment>
                   <order>13</order>
                   <label>mod</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>10</order>
@@ -62337,11 +63347,14 @@ tropicales".... </comment>
                       <order>11</order>
                       <label>subj</label>
                       <word>tarpu</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=sembrar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>10</order>
@@ -62684,10 +63697,13 @@ tropicales".... </comment>
                       <order>4</order>
                       <label>mod</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>2</order>
@@ -62736,11 +63752,14 @@ tropicales".... </comment>
                       <order>7</order>
                       <label>subj</label>
                       <word>paykuna</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_Num</pos>
                       <morph>
                         <tag>PrnPers+3.Sg</tag>
                         <tag>+Pl</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>8</order>
@@ -62757,10 +63776,13 @@ tropicales".... </comment>
                       <order>17</order>
                       <label>mod</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>14</order>
@@ -62864,10 +63886,13 @@ tropicales".... </comment>
                   <order>24</order>
                   <label>linker</label>
                   <word>icha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Contr</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>25</order>
@@ -62931,10 +63956,13 @@ tropicales".... </comment>
                   <order>46</order>
                   <label>mod</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>43</order>
@@ -63061,11 +64089,14 @@ tropicales".... </comment>
                   <order>6</order>
                   <label>subj</label>
                   <word>ruru</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=fructificar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -63110,10 +64141,13 @@ tropicales".... </comment>
                   <order>18</order>
                   <label>purp</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>14</order>
@@ -63462,10 +64496,13 @@ tropicales".... </comment>
                   <order>65</order>
                   <label>purp</label>
                   <word>-rayku</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Kaus</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>62</order>
@@ -63710,10 +64747,13 @@ tropicales".... </comment>
                       <order>17</order>
                       <label>purp</label>
                       <word>-paq</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Ben</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>14</order>
@@ -64359,11 +65399,14 @@ tropicales".... </comment>
                   <order>18</order>
                   <label>subj</label>
                   <word>paqari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=amanecer</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -64627,10 +65670,13 @@ tropicales".... </comment>
                   <order>38</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>35</order>
@@ -64782,10 +65828,13 @@ tropicales".... </comment>
                   <order>47</order>
                   <label>adv</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>44</order>
@@ -64901,21 +65950,27 @@ tropicales".... </comment>
               <order>7</order>
               <label>sntc</label>
               <word>kallpacha</word>
+              <secedges>
+              </secedges>
               <pos>Root_VS</pos>
               <translation>=fuerte</translation>
               <morph>
                 <tag>NRoot</tag>
                 <tag>+Fact</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>4</order>
                   <label>linker</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -65346,12 +66401,15 @@ tropicales".... </comment>
               <order>67</order>
               <label>sntc</label>
               <word>llallipa</word>
+              <secedges>
+              </secedges>
               <pos>Root_VDeriv</pos>
               <translation>=ganar</translation>
               <morph>
                 <tag>VRoot</tag>
                 <tag>+Rep</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>35</order>
@@ -65367,12 +66425,15 @@ tropicales".... </comment>
                       <order>6</order>
                       <label>subj</label>
                       <word>ñawrakuna</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_Num</pos>
                       <translation>=diversidad</translation>
                       <morph>
                         <tag>NRoot</tag>
                         <tag>+Pl</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>5</order>
@@ -65638,6 +66699,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>40</order>
@@ -66185,10 +67247,13 @@ tropicales".... </comment>
                   <order>65</order>
                   <label>sub</label>
                   <word>-kama</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Term</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>60</order>
@@ -66397,6 +67462,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>95</order>
@@ -67057,10 +68123,13 @@ tropicales".... </comment>
                   <order>40</order>
                   <label>mod</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>39</order>
@@ -67086,10 +68155,13 @@ tropicales".... </comment>
                               <order>4</order>
                               <label>poss</label>
                               <word>-pa</word>
+                              <secedges>
+                              </secedges>
                               <pos>Cas</pos>
                               <morph>
                                 <tag>+Gen</tag>
                               </morph>
+                              <discourse>TOPIC</discourse>
                               <children>
                                 <terminal>
                                   <order>2</order>
@@ -67265,10 +68337,13 @@ tropicales".... </comment>
                   <order>101</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>98</order>
@@ -67486,6 +68561,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>109</order>
@@ -67655,12 +68731,15 @@ tropicales".... </comment>
                       <order>4</order>
                       <label>subj</label>
                       <word>Akllari</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root_VDeriv</pos>
                       <translation>=escoger</translation>
                       <morph>
                         <tag>VRoot</tag>
                         <tag>+Inch</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>6</order>
@@ -67686,10 +68765,13 @@ tropicales".... </comment>
                       <order>13</order>
                       <label>obj</label>
                       <word>-ta</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Acc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>11</order>
@@ -67791,10 +68873,13 @@ tropicales".... </comment>
                           <order>36</order>
                           <label>obj</label>
                           <word>-ta</word>
+                          <secedges>
+                          </secedges>
                           <pos>Cas</pos>
                           <morph>
                             <tag>+Acc</tag>
                           </morph>
+                          <discourse>FOCUS</discourse>
                           <children>
                             <terminal>
                               <order>35</order>
@@ -67943,12 +69028,15 @@ tropicales".... </comment>
                   <order>53</order>
                   <label>subj</label>
                   <word>akllari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=escoger</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>49</order>
@@ -67983,10 +69071,13 @@ tropicales".... </comment>
                   <order>66</order>
                   <label>mod</label>
                   <word>-wan</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Con_Inst</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>64</order>
@@ -67999,6 +69090,67 @@ tropicales".... </comment>
                       </morph>
                       <children>
                         <terminal>
+                          <order>60</order>
+                          <label>mod</label>
+                          <word>t'uqsi</word>
+                          <pos>Root</pos>
+                          <translation>=hurgar</translation>
+                          <morph>
+                            <tag>VRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal>
+                              <order>57</order>
+                              <label>co</label>
+                              <word>akllari</word>
+                              <pos>Root_VDeriv</pos>
+                              <translation>=escoger</translation>
+                              <morph>
+                                <tag>VRoot</tag>
+                                <tag>+Inch</tag>
+                              </morph>
+                              <children>
+                                <terminal>
+                                  <order>56</order>
+                                  <label>co:mod</label>
+                                  <word>huk</word>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootNUM</tag>
+                                  </morph>
+                                </terminal>
+                                <terminal>
+                                  <order>58</order>
+                                  <label>ns</label>
+                                  <word>-q</word>
+                                  <pos>NS</pos>
+                                  <morph>
+                                    <tag>+Ag</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal>
+                              <order>62</order>
+                              <label>ns</label>
+                              <word>-q</word>
+                              <pos>NS</pos>
+                              <morph>
+                                <tag>+Ag</tag>
+                              </morph>
+                            </terminal>
+                            <terminal>
+                              <order>61</order>
+                              <label>mod</label>
+                              <word>-chi</word>
+                              <pos>VDeriv</pos>
+                              <morph>
+                                <tag>+Caus</tag>
+                              </morph>
+                            </terminal>
+                          </children>
+                        </terminal>
+                        <terminal>
                           <order>63</order>
                           <label>flm</label>
                           <word>sistema</word>
@@ -68008,69 +69160,6 @@ tropicales".... </comment>
                           <morph>
                             <tag>NRootES</tag>
                           </morph>
-                          <children>
-                            <terminal>
-                              <order>60</order>
-                              <label>mod</label>
-                              <word>t'uqsi</word>
-                              <pos>Root</pos>
-                              <translation>=hurgar</translation>
-                              <morph>
-                                <tag>VRoot</tag>
-                              </morph>
-                              <children>
-                                <terminal>
-                                  <order>57</order>
-                                  <label>co</label>
-                                  <word>akllari</word>
-                                  <pos>Root_VDeriv</pos>
-                                  <translation>=escoger</translation>
-                                  <morph>
-                                    <tag>VRoot</tag>
-                                    <tag>+Inch</tag>
-                                  </morph>
-                                  <children>
-                                    <terminal>
-                                      <order>56</order>
-                                      <label>co:mod</label>
-                                      <word>huk</word>
-                                      <pos>Root</pos>
-                                      <morph>
-                                        <tag>NRootNUM</tag>
-                                      </morph>
-                                    </terminal>
-                                    <terminal>
-                                      <order>58</order>
-                                      <label>ns</label>
-                                      <word>-q</word>
-                                      <pos>NS</pos>
-                                      <morph>
-                                        <tag>+Ag</tag>
-                                      </morph>
-                                    </terminal>
-                                  </children>
-                                </terminal>
-                                <terminal>
-                                  <order>62</order>
-                                  <label>ns</label>
-                                  <word>-q</word>
-                                  <pos>NS</pos>
-                                  <morph>
-                                    <tag>+Ag</tag>
-                                  </morph>
-                                </terminal>
-                                <terminal>
-                                  <order>61</order>
-                                  <label>mod</label>
-                                  <word>-chi</word>
-                                  <pos>VDeriv</pos>
-                                  <morph>
-                                    <tag>+Caus</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
-                            </terminal>
-                          </children>
                         </terminal>
                         <terminal>
                           <order>65</order>
@@ -69157,11 +70246,14 @@ tropicales".... </comment>
                   <order>1</order>
                   <label>tmp</label>
                   <word>Ñawpaq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=antes</translation>
                   <morph>
                     <tag>NRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>2</order>
@@ -69254,10 +70346,13 @@ tropicales".... </comment>
                   <order>15</order>
                   <label>tmp</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>14</order>
@@ -69647,10 +70742,13 @@ tropicales".... </comment>
                       <order>30</order>
                       <label>linker</label>
                       <word>icha</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>Part_Contr</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>31</order>
@@ -69674,6 +70772,7 @@ tropicales".... </comment>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>32</order>
@@ -69881,10 +70980,13 @@ tropicales".... </comment>
                   <order>7</order>
                   <label>subj</label>
                   <word>Kay</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>PrnDem</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>8</order>
@@ -70346,10 +71448,13 @@ tropicales".... </comment>
                   <order>37</order>
                   <label>caus</label>
                   <word>-rayku</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Kaus</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>36</order>
@@ -70486,6 +71591,8 @@ tropicales".... </comment>
                   <order>17</order>
                   <label>sub</label>
                   <word>hatunyari</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VS_VDeriv</pos>
                   <translation>=grande</translation>
                   <morph>
@@ -70493,6 +71600,7 @@ tropicales".... </comment>
                     <tag>+Trs</tag>
                     <tag>+Inch</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -70693,10 +71801,13 @@ tropicales".... </comment>
                   <order>40</order>
                   <label>mod</label>
                   <word>-kama</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Term</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>38</order>
@@ -70724,7 +71835,9 @@ tropicales".... </comment>
                 <terminal>
                   <order>41</order>
                   <label>ev</label>
-                  <word>-n</word>
+                  <word>-m</word>
+                  <secedges>
+                  </secedges>
                   <pos>Amb</pos>
                   <morph>
                     <tag>+DirE</tag>
@@ -70781,10 +71894,13 @@ tropicales".... </comment>
                   <order>2</order>
                   <label>tmp</label>
                   <word>-kama</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Term</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>1</order>
@@ -71742,6 +72858,7 @@ tropicales".... </comment>
                               <morph>
                                 <tag>NP</tag>
                               </morph>
+                              <discourse>TOPIC</discourse>
                               <children>
                                 <terminal>
                                   <order>2</order>
@@ -71972,11 +73089,14 @@ tropicales".... </comment>
                       <order>50</order>
                       <label>subj</label>
                       <word>tarpu</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=sembrar</translation>
                       <morph>
                         <tag>VRoot</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>49</order>
@@ -73877,10 +74997,13 @@ tropicales".... </comment>
                   <order>23</order>
                   <label>purp</label>
                   <word>-paq</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>20</order>
@@ -74738,6 +75861,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>+Ben</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>17</order>
@@ -75105,10 +76229,13 @@ tropicales".... </comment>
                       <order>19</order>
                       <label>linker</label>
                       <word>chay</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>20</order>
@@ -75274,15 +76401,6 @@ tropicales".... </comment>
           <cat>VROOT</cat>
           <children>
             <terminal>
-              <order>8</order>
-              <label>ev</label>
-              <word>-m</word>
-              <pos>Amb</pos>
-              <morph>
-                <tag>+DirE</tag>
-              </morph>
-            </terminal>
-            <terminal>
               <order>10</order>
               <label>punc</label>
               <word>"</word>
@@ -75382,6 +76500,15 @@ tropicales".... </comment>
                       </children>
                     </terminal>
                   </children>
+                </terminal>
+                <terminal>
+                  <order>8</order>
+                  <label>ev</label>
+                  <word>-m</word>
+                  <pos>Amb</pos>
+                  <morph>
+                    <tag>+DirE</tag>
+                  </morph>
                 </terminal>
                 <terminal>
                   <order>19</order>
@@ -75887,10 +77014,13 @@ tropicales".... </comment>
                       <order>15</order>
                       <label>loc</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>14</order>
@@ -76006,10 +77136,13 @@ tropicales".... </comment>
                       <order>22</order>
                       <label>linker</label>
                       <word>chayna</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <morph>
                         <tag>PrnDem</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>23</order>
@@ -76209,10 +77342,13 @@ tropicales".... </comment>
                   <order>6</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>5</order>
@@ -76452,11 +77588,14 @@ tropicales".... </comment>
                   <order>21</order>
                   <label>subj</label>
                   <word>yacha</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=saber,habitar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>23</order>
@@ -76502,7 +77641,7 @@ tropicales".... </comment>
                       <children>
                         <terminal>
                           <order>25</order>
-                          <label>mod</label>
+                          <label>purp</label>
                           <word>-paq</word>
                           <pos>Cas</pos>
                           <morph>
@@ -76935,11 +78074,14 @@ tropicales".... </comment>
                           <order>1</order>
                           <label>tmp</label>
                           <word>Kunan</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root</pos>
                           <translation>=ahora</translation>
                           <morph>
                             <tag>NRoot</tag>
                           </morph>
+                          <discourse>TOPIC</discourse>
                           <children>
                             <terminal>
                               <order>2</order>
@@ -77487,10 +78629,13 @@ tropicales".... </comment>
                   <order>4</order>
                   <label>tmp</label>
                   <word>-pi</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Loc</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>3</order>
@@ -77614,6 +78759,7 @@ tropicales".... </comment>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>14</order>
@@ -77699,10 +78845,13 @@ tropicales".... </comment>
                               <order>22</order>
                               <label>adv</label>
                               <word>-ta</word>
+                              <secedges>
+                              </secedges>
                               <pos>Cas</pos>
                               <morph>
                                 <tag>+Acc</tag>
                               </morph>
+                              <discourse>TOPIC</discourse>
                               <children>
                                 <terminal>
                                   <order>21</order>
@@ -79097,11 +80246,14 @@ tropicales".... </comment>
                   <order>4</order>
                   <label>subj</label>
                   <word>tarpu</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=sembrar</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>6</order>
@@ -79571,10 +80723,13 @@ tropicales".... </comment>
                           <order>3</order>
                           <label>pred</label>
                           <word>-hina</word>
+                          <secedges>
+                          </secedges>
                           <pos>Amb</pos>
                           <morph>
                             <tag>+Sim</tag>
                           </morph>
+                          <discourse>FOCUS</discourse>
                           <children>
                             <terminal>
                               <order>2</order>
@@ -79779,6 +80934,7 @@ tropicales".... </comment>
                           <morph>
                             <tag>+Acc</tag>
                           </morph>
+                          <discourse>FOCUS</discourse>
                           <children>
                             <terminal>
                               <order>29</order>
@@ -79792,7 +80948,6 @@ tropicales".... </comment>
                                 <tag>NRoot</tag>
                                 <tag>+Fact</tag>
                               </morph>
-                              <discourse>FOCUS</discourse>
                               <children>
                                 <terminal>
                                   <order>28</order>
@@ -79840,7 +80995,7 @@ tropicales".... </comment>
                         </terminal>
                         <terminal>
                           <order>37</order>
-                          <label>ben</label>
+                          <label>mod</label>
                           <word>-paq</word>
                           <pos>Cas</pos>
                           <morph>
@@ -79910,10 +81065,13 @@ tropicales".... </comment>
                   <order>48</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>46</order>
@@ -80342,11 +81500,14 @@ tropicales".... </comment>
                   <order>18</order>
                   <label>sub</label>
                   <word>tiya</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <translation>=haber,estar,habitar,estar_sentado</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>10</order>
@@ -80656,11 +81817,14 @@ tropicales".... </comment>
               <order>26</order>
               <label>sntc</label>
               <word>llamk'a</word>
+              <secedges>
+              </secedges>
               <pos>Root</pos>
               <translation>=trabajar</translation>
               <morph>
                 <tag>VRoot</tag>
               </morph>
+              <discourse>FOCUS</discourse>
               <children>
                 <terminal>
                   <order>14</order>
@@ -80825,10 +81989,13 @@ tropicales".... </comment>
                   <order>17</order>
                   <label>linker</label>
                   <word>chay</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>PrnDem</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>18</order>
@@ -81250,10 +82417,13 @@ tropicales".... </comment>
                   <order>29</order>
                   <label>linker</label>
                   <word>hina</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>Part_Sim</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>28</order>
@@ -81944,11 +83114,14 @@ tropicales".... </comment>
                       <order>26</order>
                       <label>pred</label>
                       <word>allin</word>
+                      <secedges>
+                      </secedges>
                       <pos>Root</pos>
                       <translation>=bueno</translation>
                       <morph>
                         <tag>NRoot</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                     </terminal>
                     <terminal>
                       <order>27</order>
@@ -82134,6 +83307,7 @@ tropicales".... </comment>
                         <tag>PrnInterr</tag>
                         <tag>+Pl</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                     </terminal>
                     <terminal>
                       <order>50</order>
@@ -82586,10 +83760,13 @@ tropicales".... </comment>
                           <order>12</order>
                           <label>mod</label>
                           <word>hina</word>
+                          <secedges>
+                          </secedges>
                           <pos>Root</pos>
                           <morph>
                             <tag>Part_Sim</tag>
                           </morph>
+                          <discourse>FOCUS</discourse>
                         </terminal>
                       </children>
                     </terminal>
@@ -82911,10 +84088,13 @@ tropicales".... </comment>
                       <order>33</order>
                       <label>iobj</label>
                       <word>-man</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Dat_Ill</tag>
                       </morph>
+                      <discourse>TOPIC</discourse>
                       <children>
                         <terminal>
                           <order>31</order>
@@ -83081,12 +84261,15 @@ tropicales".... </comment>
                   <order>41</order>
                   <label>subj</label>
                   <word>atipa</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root_VDeriv</pos>
                   <translation>=poder,vencer</translation>
                   <morph>
                     <tag>VRoot</tag>
                     <tag>+Rep</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>40</order>
@@ -84009,10 +85192,13 @@ tropicales".... </comment>
                   <order>26</order>
                   <label>linker</label>
                   <word>chay</word>
+                  <secedges>
+                  </secedges>
                   <pos>Root</pos>
                   <morph>
                     <tag>PrnDem</tag>
                   </morph>
+                  <discourse>TOPIC</discourse>
                   <children>
                     <terminal>
                       <order>27</order>
@@ -84946,15 +86132,6 @@ tropicales".... </comment>
           <cat>VROOT</cat>
           <children>
             <terminal>
-              <order>7</order>
-              <label>ev</label>
-              <word>-m</word>
-              <pos>Amb</pos>
-              <morph>
-                <tag>+DirE</tag>
-              </morph>
-            </terminal>
-            <terminal>
               <order>8</order>
               <label>punc</label>
               <word>,</word>
@@ -85002,10 +86179,13 @@ tropicales".... </comment>
                       <order>6</order>
                       <label>mod</label>
                       <word>-pi</word>
+                      <secedges>
+                      </secedges>
                       <pos>Cas</pos>
                       <morph>
                         <tag>+Loc</tag>
                       </morph>
+                      <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
                           <order>5</order>
@@ -85062,6 +86242,15 @@ tropicales".... </comment>
                           </children>
                         </terminal>
                       </children>
+                    </terminal>
+                    <terminal>
+                      <order>7</order>
+                      <label>ev</label>
+                      <word>-m</word>
+                      <pos>Amb</pos>
+                      <morph>
+                        <tag>+DirE</tag>
+                      </morph>
                     </terminal>
                     <terminal>
                       <order>9</order>
@@ -85590,10 +86779,13 @@ tropicales".... </comment>
                   <order>34</order>
                   <label>obj</label>
                   <word>-ta</word>
+                  <secedges>
+                  </secedges>
                   <pos>Cas</pos>
                   <morph>
                     <tag>+Acc</tag>
                   </morph>
+                  <discourse>FOCUS</discourse>
                   <children>
                     <terminal>
                       <order>31</order>
@@ -86768,10 +87960,105 @@ tropicales".... </comment>
                     <tag>+3.Sg.Subj</tag>
                   </morph>
                 </terminal>
+                <terminal>
+                  <order>135</order>
+                  <label>par</label>
+                  <word>rimari</word>
+                  <secedges>
+                  </secedges>
+                  <pos>Root_VDeriv</pos>
+                  <translation>=hablar</translation>
+                  <morph>
+                    <tag>VRoot</tag>
+                    <tag>+Inch</tag>
+                  </morph>
+                  <children>
+                    <terminal>
+                      <order>132</order>
+                      <label>subj</label>
+                      <word>CIP</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <morph>
+                        <tag>NRoot</tag>
+                      </morph>
+                    </terminal>
+                    <terminal>
+                      <order>133</order>
+                      <label>mod</label>
+                      <word>kiki</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <translation>=mismo</translation>
+                      <morph>
+                        <tag>NRoot</tag>
+                      </morph>
+                      <children>
+                        <terminal>
+                          <order>134</order>
+                          <label>s.poss</label>
+                          <word>-n</word>
+                          <secedges>
+                          </secedges>
+                          <pos>NPers</pos>
+                          <morph>
+                            <tag>+3.Sg.Poss</tag>
+                          </morph>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal>
+                      <order>136</order>
+                      <label>ns</label>
+                      <word>-sqa</word>
+                      <secedges>
+                      </secedges>
+                      <pos>NS</pos>
+                      <morph>
+                        <tag>+Perf</tag>
+                      </morph>
+                      <children>
+                        <terminal>
+                          <order>137</order>
+                          <label>s.poss.subj</label>
+                          <word>-n</word>
+                          <secedges>
+                          </secedges>
+                          <pos>NPers</pos>
+                          <morph>
+                            <tag>+3.Sg.Poss</tag>
+                          </morph>
+                        </terminal>
+                      </children>
+                    </terminal>
+                  </children>
+                </terminal>
               </children>
             </terminal>
             <terminal>
               <order>131</order>
+              <label>punc</label>
+              <word>(</word>
+              <secedges>
+              </secedges>
+              <pos>$.</pos>
+              <morph>
+              </morph>
+            </terminal>
+            <terminal>
+              <order>138</order>
+              <label>punc</label>
+              <word>)</word>
+              <secedges>
+              </secedges>
+              <pos>$.</pos>
+              <morph>
+              </morph>
+            </terminal>
+            <terminal>
+              <order>139</order>
               <label>punc</label>
               <word>.</word>
               <secedges>
