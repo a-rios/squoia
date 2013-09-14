@@ -1760,8 +1760,13 @@ Si una frase marcada por un sufijo de caso en una oraci\'on con copula represent
  \subsection{{\em -hina,-pacha}}\label{Sec:hinapachasufijos}
 En la mayor\'ia de los textos, {\em hina} y {\em pacha} no se escriben como sufijos, adjuntados a la palabra, sino como posposiciones. Pero, ya que algunos autores los escriben como sufijos, hay que definir c\'omo anotarlos en este uso.\\
 Los dos sufijos se tratan exactamente igual que las posposiciones {\em hina} y {\em pacha} (v\'ease p\'arrafos \ref{Sec:particulahina} y \ref{Sec:particulapacha}), la \'unica diferencia es que la frase nominal depende de ellos como 's.arg' (argumento de sufijo) en vez 'p.arg' (argumento de posposici\'on).\\ M\'as claro:
- Los sufijos {\em -hina} y {\em -pacha} se anotan como cabeza del elemento que modifican, \'este depende de ellos como 's.arg' (argumento de sufijo).\\
-El sufijo {\em -pacha} entonces recibe la etiqueta 'tmp', mientras que {\em -hina} recibe la etiqueta 'comp'.
+ Los sufijos {\em -hina} y {\em -pacha} se anotan como cabeza del elemento que modifican, si es que son ellas que determinan la relaci\'on con la cabeza del elemento (mayormente el verbo);  entonces \'este depende de ellos como 's.arg' (argumento de sufijo) y el sufijo {\em -pacha} recibe la etiqueta 'tmp', mientras que {\em -hina} recibe la etiqueta 'comp'.\\
+ PERO: si {\em-hina} se combina con un sufijo de caso, \'este determina la relaci\'on con el verbo, y entonces {\em -hina} depende del sufijo de caso con 'mod'.\\
+ TODO: ejemplo
+
+
+
+
 
 \subsection{{\em -suna/-sina}}
 Los sufijos {\em -suna/-sina} siempre dependen de la cabeza de la oraci\'on (mayormente el verbo) como 'epst'. Ya que seg\'un \citeauthor{Cusi2} el sufijo {\em -suna/-sina} tambi\'en marca el foco de la oraci\'on, el atributo 'discourse' el nodo de la cabeza de la palabra que lleva el sufijo {\em -suna/sina} recibe el valor de 'FOCUS', del mismo modo como con los sufijos evidenciales (v\'ease p\'arrafo \ref{Sec:evidenciales}). V\'ease la anotaci\'on del ejemplo \ref{Ex:suna} en Fig. \ref{Fig:suna}.
@@ -2118,7 +2123,10 @@ En preguntas que contienen una combinaci\'on de {\em -chu} y un sufijo evidencia
 La combinaci\'on de {\em -chu} y {\em -s} no tiene una funci\'on evidencial, sino epist\'emica, expresa duda. Por lo tanto, en este caso, el sufijo de evidencial {\em -s} depende de {\em -chu} como 'mod', y {\em -chu} depende de la cabeza de la oraci\'on como 'epst'.
 
    \subsection{{\em-qa/-ri}}
-Los marcadores de t\'opico {\em -qa} y {\em -ri} siempre dependen de 'su' ra\'iz como 'topic', v\'ease por ejemplo Fig. \ref{Fig:chucoord}.
+El marcador de t\'opico {\em -qa} siempre depende de 'su' ra\'iz como 'topic', v\'ease por ejemplo Fig. \ref{Fig:chucoord}.
+En cambio, el marcador {\em -ri} tiene dos funciones: marca el t\'opico, pero tambi\'en tiene una funci\'on interrogativa. Por lo tanto, {\em -ri} depende de la cabeza de la oraci\'on (el verbo finito) c\'omo 'intr'.
+Con los dos marcadores, el atributo 'discourse' de la cabeza cambia a 'TOPIC'. 
+
 
   \subsection{{\em -ya}}
 PROVISORIO (o depende del verbo?)\\
