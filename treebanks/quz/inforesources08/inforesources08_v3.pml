@@ -66163,7 +66163,7 @@ tropicales".... </comment>
                   </children>
                 </terminal>
                 <terminal>
-                  <order>77</order>
+                  <order>76</order>
                   <label>sub</label>
                   <word>ri</word>
                   <pos>Root</pos>
@@ -66257,7 +66257,7 @@ tropicales".... </comment>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>75</order>
+                      <order>74</order>
                       <label>goal</label>
                       <word>-man</word>
                       <secedges>
@@ -66269,7 +66269,7 @@ tropicales".... </comment>
                       <discourse>FOCUS</discourse>
                       <children>
                         <terminal>
-                          <order>72</order>
+                          <order>71</order>
                           <label>s.arg.claus</label>
                           <word>paqari</word>
                           <pos>Root</pos>
@@ -66279,7 +66279,7 @@ tropicales".... </comment>
                           </morph>
                           <children>
                             <terminal>
-                              <order>58</order>
+                              <order>57</order>
                               <label>obj</label>
                               <word>ñawraykuna</word>
                               <pos>Root_Num</pos>
@@ -66290,7 +66290,7 @@ tropicales".... </comment>
                               </morph>
                               <children>
                                 <terminal>
-                                  <order>53</order>
+                                  <order>52</order>
                                   <label>mod</label>
                                   <word>papa</word>
                                   <pos>Root</pos>
@@ -66300,7 +66300,7 @@ tropicales".... </comment>
                                   </morph>
                                   <children>
                                     <terminal>
-                                      <order>51</order>
+                                      <order>50</order>
                                       <label>mod</label>
                                       <word>wiña</word>
                                       <pos>Root</pos>
@@ -66312,15 +66312,17 @@ tropicales".... </comment>
                                         <terminal>
                                           <order>46</order>
                                           <label>mod</label>
-                                          <word>utqha</word>
+                                          <word>utqhay</word>
+                                          <secedges>
+                                          </secedges>
                                           <pos>Root</pos>
-                                          <translation>=apurarse</translation>
+                                          <translation>=rápido,apurado</translation>
                                           <morph>
-                                            <tag>VRoot</tag>
+                                            <tag>NRoot</tag>
                                           </morph>
                                           <children>
                                             <terminal>
-                                              <order>48</order>
+                                              <order>47</order>
                                               <label>mod</label>
                                               <word>-lla</word>
                                               <pos>Amb</pos>
@@ -66328,19 +66330,10 @@ tropicales".... </comment>
                                                 <tag>+Lim_Aff</tag>
                                               </morph>
                                             </terminal>
-                                            <terminal>
-                                              <order>47</order>
-                                              <label>ns</label>
-                                              <word>-y</word>
-                                              <pos>NS</pos>
-                                              <morph>
-                                                <tag>+Inf</tag>
-                                              </morph>
-                                            </terminal>
                                           </children>
                                         </terminal>
                                         <terminal>
-                                          <order>52</order>
+                                          <order>51</order>
                                           <label>ns</label>
                                           <word>-q</word>
                                           <pos>NS</pos>
@@ -66355,7 +66348,7 @@ tropicales".... </comment>
                               </children>
                             </terminal>
                             <terminal>
-                              <order>74</order>
+                              <order>73</order>
                               <label>ns</label>
                               <word>-y</word>
                               <pos>NS</pos>
@@ -66364,7 +66357,7 @@ tropicales".... </comment>
                               </morph>
                             </terminal>
                             <terminal>
-                              <order>73</order>
+                              <order>72</order>
                               <label>mod</label>
                               <word>-chi</word>
                               <pos>VDeriv</pos>
@@ -66377,7 +66370,7 @@ tropicales".... </comment>
                       </children>
                     </terminal>
                     <terminal>
-                      <order>76</order>
+                      <order>75</order>
                       <label>ev</label>
                       <word>-mi</word>
                       <pos>Amb</pos>
@@ -66386,7 +66379,7 @@ tropicales".... </comment>
                       </morph>
                     </terminal>
                     <terminal>
-                      <order>78</order>
+                      <order>77</order>
                       <label>s.subj</label>
                       <word>-chkan</word>
                       <pos>Asp_VPers</pos>
@@ -66412,7 +66405,7 @@ tropicales".... </comment>
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>81</order>
+              <order>80</order>
               <label>punc</label>
               <word>.</word>
               <pos>$.</pos>
