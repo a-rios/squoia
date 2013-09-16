@@ -18,7 +18,8 @@ my $maxChunkRef = &getMaxChunkRef($dom);
 my $subject = "suj";
 
 # get the nodes of VP chunks with no dependent "subject" chunks
-my $xpathexpr = '//CHUNK[(@type="VP" or @type="CVP") and count(CHUNK[@si="'.$subject.'"])=0]/NODE';
+#my $xpathexpr = '//CHUNK[(@type="VP" or @type="CVP") and count(CHUNK[@si="'.$subject.'"])=0]/NODE';
+my $xpathexpr = '//CHUNK[(@type="VP" or @type="CVP") and count(CHUNK[starts-with(@si,"'.$subject.'")])=0]/NODE';
 
 my @specialnodes = $dom->findnodes($xpathexpr);
 foreach my $node (@specialnodes) {
