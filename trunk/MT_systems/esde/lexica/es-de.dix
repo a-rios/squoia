@@ -1726,6 +1726,7 @@
    <e><p><l>flojear</l><r>schwach_werden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>flotar</l><r>schwimmen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>fluir</l><r>fließen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>formar_parte</l><r>gehören</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>fraguar</l><r>schmieden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>fregar</l><r>spülen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>freír</l><r>braten</r></p><par n="VM_VV_MAIN"/></e>
@@ -2249,16 +2250,15 @@
    <e><p><l>culebrear</l><r>sich schlängeln</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>culminar</l><r>vollenden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>culminar</l><r>den Höhepunkt erreichen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>cumplirse</l><r>in Erfüllung gehen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>cumplir</l><r>befriedigen</r></p><par n="VM_VV_MAIN"/></e>	<!-- cumplir (con) algo = etwas (Akk) befriedigen,erfuellen; etwas(Dat) nachkommen -->
    <e><p><l>cumplir</l><r>erfüllen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>cumplir</l><r>aus|führen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>cumplir</l><r>nach|kommen</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>cumplir</l><r>befolgen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cumplir</l><r>halten</r></p><par n="VM_VV_MAIN"/></e>	<!-- (Versprechen) -->
    <e><p><l>cumplir</l><r>ab|leisten</r></p><par n="VM_VV_MAIN"/></e>	<!-- (Dienst) -->
-   <e><p><l>cumplir</l><r>ab|laufen</r></p><par n="VM_VV_MAIN"/></e>	<!-- (Frist) -->
    <e><p><l>cundir</l><r>sich aus|breiten</r></p><par n="VM_VV_MAIN"/></e>	<!-- TODO cundir = sich ausbreiten, sich verbreiten -->
    <e><p><l>cundir</l><r>sich verbreiten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>currar</l><r>arbeiten</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>currar</l><r>hart arbeiten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>currar</l><r>malochen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dañar</l><r>schädigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dañar</l><r>schaden</r></p><par n="VM_VV_MAIN"/></e>
@@ -3522,12 +3522,9 @@
    <e><p><l>localizar</l><r>orten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>lograr</l><r>erhalten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>lograr</l><r>erreichen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>lograr</l><r>es fertig bringen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>lograr</l><r>schaffen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>lograr</l><r>erreichen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>lograr</l><r>gelingen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>lograr</l><r>schaffen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>lograr</l><r>zustande bringen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>lograr</l><r>zustande|bringen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>lograr</l><r>erzielen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>lubricar</l><r>schmieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>lubrificar</l><r>schmieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -3660,7 +3657,6 @@
    <e><p><l>mirar</l><r>an|schauen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mirar</l><r>an|sehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mirar</l><r>an|blicken</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>mirar</l><r>schauen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mirar</l><r>schauen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mirar</l><r>gucken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>misionar</l><r>missionieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -4102,8 +4098,10 @@
    <e><p><l>persistir</l><r>fort|bestehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>persuadir</l><r>überreden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>persuadir</l><r>überzeugen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>pertenecer</l><r>gehören</r></p><par n="VM_VV_MAIN"/></e> <!-- pertenecer a => gehören zu -->
-   <e><p><l>pertenecer</l><r>an|gehören</r></p><par n="VM_VV_MAIN"/></e> <!-- pertenecer a => angehören -->
+   <e><p><l>pertenecer</l><r>an|gehen</r></p><par n="VM_VV_MAIN_BE"/></e> <!-- pertenecer a => angehen + Akk -->
+   <e><p><l>pertenecer</l><r>an|gehören</r></p><par n="VM_VV_MAIN"/></e> <!-- pertenecer a => angehören +Dat -->
+   <e><p><l>pertenecer</l><r>gehören</r></p><par n="VM_VV_MAIN"/></e> <!-- pertenecer a => gehören (zu) +Dat -->
+   <e><p><l>pertenecer</l><r>zählen</r></p><par n="VM_VV_MAIN"/></e> <!-- pertenecer a => zählen zu +Dat -->
    <e><p><l>perturbar</l><r>stören</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>perturbar</l><r>verwirren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pervertir</l><r>pervertieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -4528,7 +4526,7 @@
    <e><p><l>quedar</l><r>ab|machen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>quedar</l><r>verbleiben</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>quejar</l><r>beschweren</r></p><par n="VM_VV_MAIN"/></e>	<!-- quejarse de = sich beschweren ueber -->
-   <e><p><l>quejar</l><r>jammern</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>quejar</l><r>jammern<s n='irrefl'/>yes</r></p><par n="VM_VV_MAIN"/></e>	<!-- quejarse de = jammern ueber+Akk -->
    <e><p><l>quemar</l><r>ab|brennen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>quemar</l><r>brennen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>quemar</l><r>sengen</r></p><par n="VM_VV_MAIN"/></e>
@@ -28140,9 +28138,9 @@ gracias_a
    <e><p><l>a_causa_de</l><r>aufgrund<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- aufgrund + Gen -->
    <e><p><l>a_causa_del</l><r>aufgrund_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>acerca_de</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- acerca de = bezüglich +Gen, in Bezug auf +Akk, hinsichtlich +Gen, über +Akk -->
-   <e><p><l>acerca_del</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>acerca_del</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>a_consecuencia_de</l><r>infolge<s n="cas"/>Gen</r></p><par n='PREP'/></e>
-   <e><p><l>a_consecuencia_del</l><r>infolge<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_consecuencia_del</l><r>infolge_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>además_de</l><r>zusätzlich zu<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- ademas de = zusaetzlich zu? -->
    <e><p><l>además_del</l><r>zusätzlich zu_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_diferencia_de</l><r>im Gegensatz zu<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- a diferencia de = im Gegensatz zu +Dat, im Unterschied zu +Dat -->
@@ -28162,12 +28160,13 @@ gracias_a
    <e><p><l>a_propósito_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>a_punto_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>a_raíz_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>arriba_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
+   <e><p><l>arriba_de</l><r>oberhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
+   <e><p><l>arriba_del</l><r>oberhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>	<!--  -->
 
    <e><p><l>a_través_de</l><r>durch<s n="cas"/>Akk</r></p><par n='PREP'/></e>
    <e><p><l>a_través_del</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>con_respecto_a</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- bezüglich, hinsichtlich + Gen -->
-   <e><p><l>con_respecto_al</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>con_respecto_al</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unterhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- debajo_de = unterhalb + Gen -->
    <e><p><l>debajo_del</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- debajo_de = unter + Dat (is movement also possible, i.e. Akk?) -->
