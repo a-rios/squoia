@@ -93,8 +93,8 @@ hijo		churi	k	rsibling.headsmi=/NCM/&&rsibling.type=sp-de
 # animals that have a feminine form in Spanish: zorro, zorrillo, perro, gato
 zorro		china_atuq	k	my.smi=/NCF/
 zorro		atuq		k	my.smi=/NCM/
-perro		china_allqu	k	my.smi=/NCF/
-zorro		allqu		k	my.smi=/NMF/
+perro		allqu		d	my.smi=/NCF/ && my.preform=/china/
+perro		allqu		d	my.smi=/NCM/ && !(my.preform=/china/)
 zorrillo	china_añas	k	my.smi=/NCF/
 zorrillo	añas		k	my.smi=/NCM/
 gato		china_misi	k	my.smi=/NCF/
@@ -114,14 +114,14 @@ gato		misi		k	my.smi=/NCM/
 #alto	hatun	k	-
 
 #edad, mita (era), wata (años),TODO: edad de hielo/piedra/etc -> XPath? wäre eleganter als informationen herumschieben
-edad	k	mit'a	rsibling.headslem=/hielo|bronce|piedra/||child.slem=/moderno|medio/
-edad	k	wata	!(rsibling.headslem=/hielo|bronce|piedra/||child.slem=/moderno|medio/)
+edad		mit'a	k	rsibling.headslem=/hielo|bronce|piedra/||child.slem=/moderno|medio/
+edad		wata	k	!(rsibling.headslem=/hielo|bronce|piedra/||child.slem=/moderno|medio/)
 
 # encontrar -> without reflexive: tari- (encontrar algo)
 # with se +locative: ka- (encontrarse en..), with con or nothing -> tinku (encontrarse con alguien)
-encontrar	k	tari	!(xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]})
-encontrar	k	ka	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]}	-
-encontrar	k	tinku	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && !(xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]})	
+encontrar		tari	k	!(xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]})
+encontrar		ka	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]}	-
+encontrar		tinku	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && !(xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]})	
 
 #falta: hucha (de respeto), pisiy (ausencia), panta (error), estar en falta -> separate entry in lexicon
 falta	hucha	k	my.smi=/NC/&&rsibling.headslem=respeto
