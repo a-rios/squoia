@@ -18,21 +18,21 @@
 #  --> it's not possible to have more than one rule with the same source lemma and the same target lemma!!
 
 #gender related ambiguities
-viejo		paya		k	(my.smi=/AQ0F/&&parent.sem=[+Fem])||my.smi=/NCF/
-viejo		machu		k	(my.smi=/AQ0M/&&parent.sem=[+Masc])||my.smi=/NCM/
-viejo		mawk'a		k	!((my.smi=/AQ0F/&&parent.sem=[+Fem])||my.smi=/NCF/) && !((my.smi=/AQ0M/&&parent.sem=[+Masc])||my.smi=/NCM/)
+viejo		paya		k	(my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]}) || my.smi=/NCF/
+viejo		machu		k	(my.smi=/AQ.M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/
+viejo		mawk'a		k	!( (my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} ) || my.smi=/NCF/) && !((my.smi=/AQ0M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/)
 
 #vejez: payayay (fem.), machuyay (masc.)
-vejez		paya		k	rsibling.headsmi=/NCF/&&rsibling.type=sp-de
-vejez		machu		k	rsibling.headsmi=/NCM/&&rsibling.type=sp-de
+#vejez		paya		k	rsibling.headsmi=/NCF/ && rsibling.type=sp-de
+#vejez		machu		k	rsibling.headsmi=/NCM/ && rsibling.type=sp-de
 
-anciano		paya		k	my.smi=/AQ.F/||parent.sem=[+Fem]
-anciano		machu		k	my.smi=/AQ.M/||parent.sem=[+Masc]
-anciano		yuyaq		k	!(my.smi=/AQ.M/||parent.sem=[+Masc]) && !(my.smi=/AQ.F/||parent.sem=[+Fem])
+anciano		paya		k	my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} 
+anciano		machu		k	my.smi=/AQ.M/|| xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}
+anciano		yuyaq		k	!(my.smi=/AQ.M/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}) && !(my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]})
 
 #adolescente-> smi=NCC, need to check if head noun is masc/fem or if used as noun, if fem/masc article present
-adolescente	t'asqi		k	chunkparent.headsem=[+Fem]||child.smi=/D..F../||rsibling.type=sadv&&chunkgrandparent.headsem=[+Fem]
-adolescente	maqta		k	chunkparent.headsem=[+Masc]||child.smi=/D..M../rsibling.type=sadv&&chunkgrandparent.headsem=[+Masc]
+adolescente	t'asqi		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} || child.smi=/D..F../
+adolescente	maqta		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}|| child.smi=/D..M../
 
 chico		wayna		k	my.smi=/NCM/
 chico		sipas		k	my.smi=/NCF/
@@ -44,8 +44,9 @@ mozo		wayna		k	my.smi=/NCM/
 señor		mama		k	my.smi=/NCF/
 señor		wiraqucha	k	my.smi=/NCM/
 
-joven		sipas		k	(my.smi=/AQ/&&(chunkparent.headsem=[+Fem]||(chunkgrandparent.headsem=[+Fem]&&rsibling.type=sadv)))||(my.smi=/NC/&&child.smi=/D..F../)
-joven		wayna		k	(my.smi=/AQ/&&(chunkparent.headsem=[+Masc]||(chunkgrandparent.headsem=[+Masc]&&rsibling.type=sadv)))||(my.smi=/NC/&&child.smi=/D..M../)
+joven		sipas			k	(my.smi=/AQ/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} ) || (my.smi=/NC/ && child.smi=/D..F../) || (my.smi=/AQ/ && parent.si=atr && xpath{parent::CHUNK/parent::CHUNK[NODE[contains(@verbmi,"Copula")]]/CHUNK[@si="suj"]/NODE[@sem="[+Fem]"]} )
+joven		maqt'a,wayna		k	(my.smi=/AQ/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]} ) || (my.smi=/NC/ && child.smi=/D..M../) || (my.smi=/AQ/ && parent.si=atr && xpath{parent::CHUNK/parent::CHUNK[NODE[contains(@verbmi,"Copula")]]/CHUNK[@si="suj"]/NODE[@sem="[+Masc]"]} )
+
 
 mozo		sipas		k	my.smi=/NCF/
 mozo		wayna		k	my.smi=/NCM/
@@ -60,40 +61,40 @@ mozo		wayna		k	my.smi=/NCM/
 #gender distinction in kinship terms
 #suegro: kaka, suegra: kisma (de hombre), kiwachi (de mujer): proper nouns..?
 suegro		kaka		k	my.smi=/NCM/
-suegro		kisma		k	my.smi=/NCF/&&(rsibling.headsmi=/NCM/&&rsibling.type=sp-de)
-suegro		kiwachi		k	my.smi=/NCF/&&(rsibling.headsmi=/NCF/&&rsibling.type=sp-de)
+suegro		kisma		k	my.smi=/NCF/ && xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or @slem="del"]]/CHUNK/NODE[starts-with(@smi,"NCM")]}
+suegro		kiwachi		k	my.smi=/NCF/ && xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[starts-with(@smi,"NCF")]}
 
 #cuñada: qhachun, cuñado: qatay
 cuñado		qhachun		k	my.smi=/NCF/
 cuñado		masa		k	my.smi=/NCM/
-concuñado	qhachun_masi	k	my.smi=/NCF/
-concuñado	qatay_masi	k	my.smi=/NCM/
+concuñado	qhachunmasi	k	my.smi=/NCF/
+concuñado	qataymasi	k	my.smi=/NCM/
 
 # hermana: ñaña (de mujer), pana (de hombre) / hermano: tura (de mujer), wawqi (de hombre) 
-#(lexicon has 2 separate entries for hermana and hermano, so we don't need disambiguate only the gender 
-# of the refering person, but not the gender of the sibling (only possible with de-pp (la hermana del general..))
+#(lexicon has 2 separate entries for hermana and hermano, so we need to disambiguate only the gender 
+# of the refering person here (only possible with de-pp (la hermana del general..)), but not the gender of the sibling (hermana/hermano))
 
-hermano		ñaña	k	rsibling.headsmi=/NCF/&&rsibling.type=sp-de
-hermano		pana	k	rsibling.headsmi=/NCM/&&rsibling.type=sp-de
+hermano		ñaña	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[starts-with(@smi,"NCF")]}
+hermano		pana	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or @slem="del"]]/CHUNK/NODE[starts-with(@smi,"NCM")]}
 
-hermano		tura	k	rsibling.headsmi=/NCF/&&rsibling.type=sp-de
-hermano		wawqi	k	rsibling.headsmi=/NCM/&&rsibling.type=sp-de
+hermano		tura	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[starts-with(@smi,"NCF")]}
+hermano		wawqi	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or @slem="del"]]/CHUNK/NODE[starts-with(@smi,"NCM")]}
 
 # hija: (warmi) wawa (de mujer), ususi (de hombre) / hijo: (qhari) wawa (de mujer), churi (de hombre) 
 #(lexicon has 2 separate entries for hijo and hija, so we don't need disambiguate only the gender 
 # of the refering person, but not the gender of the parent (only possible with de-pp (la hija del general..))
 
-hijo		wawa	k	rsibling.headsmi=/NCF/&&rsibling.type=sp-de
-hijo		ususi	k	rsibling.headsmi=/NCM/&&rsibling.type=sp-de
+hijo		wawa	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[starts-with(@smi,"NCF")]}
+hijo		ususi	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or @slem="del"]]/CHUNK/NODE[starts-with(@smi,"NCM")]}
 
-hijo		wawa	k	rsibling.headsmi=/NCF/&&rsibling.type=sp-de
-hijo		churi	k	rsibling.headsmi=/NCM/&&rsibling.type=sp-de
+hijo		wawa	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[starts-with(@smi,"NCF")]}
+hijo		churi	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or @slem="del"]]/CHUNK/NODE[starts-with(@smi,"NCM")]}
 
 
 # animals that have a feminine form in Spanish: zorro, zorrillo, perro, gato
 zorro		china_atuq	k	my.smi=/NCF/
 zorro		atuq		k	my.smi=/NCM/
-perro		allqu		d	my.smi=/NCF/ && my.preform=/china/
+perro		allqu		k	my.smi=/NCF/ && my.preform=/china/
 perro		allqu		d	my.smi=/NCM/ && !(my.preform=/china/)
 zorrillo	china_añas	k	my.smi=/NCF/
 zorrillo	añas		k	my.smi=/NCM/
@@ -113,20 +114,21 @@ gato		misi		k	my.smi=/NCM/
 #alto	suni	k	-
 #alto	hatun	k	-
 
-#edad, mita (era), wata (años),TODO: edad de hielo/piedra/etc -> XPath? wäre eleganter als informationen herumschieben
-edad		mit'a	k	rsibling.headslem=/hielo|bronce|piedra/||child.slem=/moderno|medio/
-edad		wata	k	!(rsibling.headslem=/hielo|bronce|piedra/||child.slem=/moderno|medio/)
+#edad, mita (era), wata (años),TODO: edad de hielo/piedra/etc 
+# TODO: add edad_media to lexicon
+edad		mit'a	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[@slem="hielo" or @slem="bronce" or @slem="piedra"]} || xpath{following-sibling::CHUNK/NODE[@slem="moderno" or @slem="medio"]}
+edad		wata	k	!(xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[@slem="hielo" or @slem="bronce" or @slem="piedra"]} || xpath{following-sibling::CHUNK/NODE[@slem="moderno" or @slem="medio"]})
 
 # encontrar -> without reflexive: tari- (encontrar algo)
 # with se +locative: ka- (encontrarse en..), with con or nothing -> tinku (encontrarse con alguien)
 encontrar		tari	k	!(xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]})
-encontrar		ka	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]}	-
-encontrar		tinku	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && !(xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]})	
+encontrar		ka	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]}
+encontrar		tinku	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && !(xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]})
 
 #falta: hucha (de respeto), pisiy (ausencia), panta (error), estar en falta -> separate entry in lexicon
-falta	hucha	k	my.smi=/NC/&&rsibling.headslem=respeto
-falta	pisi	k	my.smi=/NC/&&rsibling.type=sp-de
-falta	panta	k	my.smi=/NC/&&(child.smi=/DP/||rsibling.type=/PX/)
+falta	hucha	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[@slem="respeto"]}
+falta	pisiy	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[not(@slem="respeto")]}
+falta	panta	k	my.smi=/^NC/ && (child.smi=/^DP/ || xpath{descendant::NODE[starts-with(@smi,"PX")]}) && !(xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]})
 
 #feraz. Ruruq [-Anim], miraq.[+Anim]
 # leave for language model
@@ -134,9 +136,10 @@ falta	panta	k	my.smi=/NC/&&(child.smi=/DP/||rsibling.type=/PX/)
 #feraz	mira	k	-
 
 #hacer falta (hacer falta que-> separate entry in lexicon)
+# TODO: hacer_falta_que
 # le hace falta su mama -> watu-, hace falto trabajo -> pisi-, hace falta que hablemos -> na+kan
-hacer_falta	watu	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]}
-hacer_falta	pisi	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]}
+hacer_falta	watu	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="cd" or @si="suj")]/NODE[@smi="NP00SP0" or @sem="[+Fem]" or @sem="[+Masc]"]}
+hacer_falta	pisi	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC") and not(@sem="[+Fem]") and not(@sem="[+Masc]")]}
 hacer_falta	ka	k	!(xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]} || xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]})
 
 #lengua: qallu (de la boca), simi (idioma)
@@ -151,15 +154,15 @@ hacer_falta	ka	k	!(xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUN
 
 # propietario, kaqniyuq, but with sp-de: propietario de algo-> algoyuq
 propietario	+Poss		k	xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]}
-propietario	ka		k	!(xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]})
+propietario	kaqniyuq	k	!(xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]})
 
 # dueño
 dueño	unspecified	k		!(xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]})
 dueño	+Poss		k		xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]}
 
-#rico (dinero, poder): qhapaq, (comida) miski, hauptverb von clause -> XPath?? (nächst höherer chunk mit grup-verb..
-rico		qhapaq		k	chunkgrandparent.type=grup-verb&&chunkgrandparent.headslem=ser
-rico		miski		k	chunkgrandparent.type=grup-verb&&chunkgrandparent.headslem=estar
+#rico (dinero, poder): qhapaq, (comida) miski
+rico		qhapaq		k	!(xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.slem=qué )
+rico		miski		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.slem=qué
 
 # verbs
 
@@ -175,17 +178,17 @@ rico		miski		k	chunkgrandparent.type=grup-verb&&chunkgrandparent.headslem=estar
 
 # contar: yupa- (count), willa- (tell)
 # leave for language model
-#contar	k	yupa	-
-#contar	k	willa	-
+#contar		yupa	k	-
+#contar		willa	k	-
 
 #deber deuda/algo -> manuka-, deber hacer algo -> obligative
-deber	k	manuka		!(xpath{parent::NODE[starts-with(@smi,"V")]})
-deber	k	+Obl		xpath{parent::NODE[starts-with(@smi,"V")]}
+deber	manuka		k	!(xpath{parent::NODE[starts-with(@smi,"V")]})
+deber	+Obl		k	xpath{parent::NODE[starts-with(@smi,"V")]}
 
 # acordar: yuyari- (recordar) or kamachinaku- (llegar a un acuerdo)
 # if with reflexive + de-obj: yuyari, with direct object: kamachinaku
-acordar		yuya	k	xpath{parent::CHUNK/CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@slem="de"]}
-acordar		kama	k	xpath{parent::CHUNK/CHUNK[@type="sn" or @type="coor-n"]/NODE[starts-with(@smi,"N") and contains(@si,"cd")]}
+acordar		yuya	k	xpath{parent::CHUNK/CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@slem="de"]} || xpath{parent::CHUNK/CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]}
+acordar		kama	k	xpath{following-sibling::CHUNK[(@type="sn" or @type="coor-n") and (@si="cd" or @si="cd-a")]/NODE[starts-with(@smi,"N")]}
 
 ##### DAR ######
 

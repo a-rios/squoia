@@ -75,7 +75,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 					
 					# check if source lemma matches lemma in rule
 					if($actualsrclem eq $srclem)
-					{ 
+					{ #print STDERR "lem: $actualsrclem, $srclem\n";
 							# check for each target conditions if one of the matching rules applies
 							# if yes, check if k=keep or d=delete 
 							# -> if keep, keep all matching SYN nodes and delete all the other SYN nodes
@@ -95,9 +95,10 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 								{		
 										# create xpath string to find matching synonyms:
 										# NOTE: as this may not be the first rule to be applied, its possible that the values in $node belong to a SYN that has already been deleted,
-										# if this was a rule with 'k' -> check also node itself if if matches!
+										# if this was a rule with 'k' -> check also node itself if it matches!
 										my $xpathstring= 'child::SYN[@lem="'.$trgt.'"]';
 										my $selfXpathString = 'self::NODE[@lem="'.$trgt.'"]';
+										#print STDERR "xpath: $xpathstring\n";
 										
 										# find synnode with this 'slem', can be more than one
 										my @matchingSynsCand = $node->findnodes($xpathstring);
@@ -106,12 +107,12 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 										push(@matchingSyns,@matchingSynsCand2);
 										foreach my $m (@matchingSynsCand){print STDERR "match cand:".$m->toString()."\n";}
 								}
-									#print STDERR "xpath: $xpathstring\n";
+									
 									if(scalar(@matchingSyns)>0)
 									{
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
-											#foreach my $m (@matchingSyns){print STDERR "match:".$m->toString()."\n";}
+											foreach my $m (@matchingSyns){print STDERR "match:".$m->toString()."\n";}
 											if($keepOrDelete eq 'k')
 								   			{
 								    			# delete the attributes of the first SYN child that have been "copied" into the parent NODE
