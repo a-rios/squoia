@@ -105,7 +105,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 										my @matchingSynsCand2 = $node->findnodes($selfXpathString);
 										push(@matchingSyns,@matchingSynsCand);
 										push(@matchingSyns,@matchingSynsCand2);
-										foreach my $m (@matchingSynsCand){print STDERR "match cand:".$m->toString()."\n";}
+										#foreach my $m (@matchingSynsCand){print STDERR "match cand:".$m->toString()."\n";}
 								}
 									
 									if(scalar(@matchingSyns)>0)
