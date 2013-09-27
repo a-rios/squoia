@@ -1,5 +1,4 @@
-context: 
-hint: 
+context: .*
 node: #{black}${word}
 
 
@@ -68,15 +67,6 @@ style:
     if (length $${secedges/secedge/idref}) {
       my $td=-10+8;
       my $t='[? $node->{id} eq "'.$${secedges/secedge/idref}.'" ?]';
-      my $xn=qq{xn};
-      my $yn=qq{yn+$nd};
-      my $xt=qq{x$t-10*sgn(x$t-$xn)};
-      my $yt=qq{y$t+$td};
-      my $X=qq{($xt-$xn)};
-      my $Y=qq{($yt-$yn)};
-      my $D=qq{sqrt($X**2+$Y**2)};
-      my $d=qq{(25/$D+0.12)};
-      $coords .= qq{&$xn,$yn,($xt+$xn)/2 - $Y*$d,($yt+$yn)/2 + $X*$d,$xt,$yt};
       my $labeltext .= $${secedges/secedge/secedgelabel};
       $styles .= "#{Line-arrow:&last}#{Line-fill:&blue}#{Line-width:&1}#{Line-dash:&.}#{Line-decoration:&shape=text;coords=1,-10;text=$labeltext;start=60}";
       
