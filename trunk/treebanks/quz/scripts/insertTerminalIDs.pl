@@ -18,19 +18,27 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN);
 
 foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
-
+	my $count=1;
 	my $sID = $sentence->getAttribute('id');
+	# print "$sID\n";
 	
 	my @terminals = $sentence->findnodes('descendant::terminal');
+	my @terminals_sorted = sort { $a->findvalue('child::order') <=> $b->findvalue('child::order') } @terminals ;
 	#print $sID." ".scalar(@terminals)."\n";
+	# print $terminals[0]->findvalue('child::order')."\n";
 	
-	foreach my $terminal (@terminals)
+	foreach my $terminal (@terminals_sorted)
 	{
-	  my $ord = @{$terminal->findnodes('child::order/text()')}[0];
-	#  print $ord;
-	  my $id = $sID."_".$ord;
+	  my $ord = @{$terminal->findnodes('child::order') }[0];
+	  #print $terminal->findvalue('child::order/text')."\n";
+	  
+	 # print "\t$ord\n";
+	  my $id = $sID."_".$count;
 	#  print $id."\n";
 	  $terminal->setAttribute('id', $id);
+	  $ord->removeChildNodes();
+	  $ord->appendText($count);
+	  $count++;
 	}
 }
 
