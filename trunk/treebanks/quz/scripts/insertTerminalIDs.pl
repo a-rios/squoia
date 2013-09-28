@@ -20,14 +20,16 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
 
 	my $sID = $sentence->getAttribute('id');
+	
 	my @terminals = $sentence->findnodes('descendant::terminal');
-	#print $nonterminal;
+	#print $sID." ".scalar(@terminals)."\n";
 	
 	foreach my $terminal (@terminals)
 	{
 	  my $ord = @{$terminal->findnodes('child::order/text()')}[0];
 	#  print $ord;
 	  my $id = $sID."_".$ord;
+	#  print $id."\n";
 	  $terminal->setAttribute('id', $id);
 	}
 }
