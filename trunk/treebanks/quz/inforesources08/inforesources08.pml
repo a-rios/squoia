@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="inforesources_focus_08_qu">
   <head>
-    <schema href="../qu_schema.xml" />
+    <schema href="../qu_schema.xml"/>
   </head>
   <body>
     <s id="s1">
@@ -86686,13 +86686,13 @@
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal id="s244_21">
+            <terminal id="s244_20">
               <order>20</order>
               <label>punc</label>
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal id="s244_36">
+            <terminal id="s244_35">
               <order>35</order>
               <label>sntc</label>
               <word>qhawa</word>
@@ -86784,7 +86784,7 @@
                     </terminal>
                   </children>
                 </terminal>
-                <terminal id="s244_34">
+                <terminal id="s244_33">
                   <order>33</order>
                   <label>obj</label>
                   <word>-ta</word>
@@ -86796,7 +86796,7 @@
                   </morph>
                   <discourse>FOCUS</discourse>
                   <children>
-                    <terminal id="s244_31">
+                    <terminal id="s244_30">
                       <order>30</order>
                       <label>s.arg.claus</label>
                       <word>qu</word>
@@ -86849,7 +86849,7 @@
                             </terminal>
                           </children>
                         </terminal>
-                        <terminal id="s244_29">
+                        <terminal id="s244_28">
                           <order>28</order>
                           <label>obj</label>
                           <word>-ta</word>
@@ -86899,7 +86899,7 @@
                                 </terminal>
                               </children>
                             </terminal>
-                            <terminal id="s244_25">
+                            <terminal id="s244_24">
                               <order>24</order>
                               <label>s.arg</label>
                               <word>qullqicha</word>
@@ -86910,7 +86910,7 @@
                                 <tag>+Fact</tag>
                               </morph>
                               <children>
-                                <terminal id="s244_23">
+                                <terminal id="s244_22">
                                   <order>22</order>
                                   <label>obj</label>
                                   <word>llamk'a</word>
@@ -86920,7 +86920,7 @@
                                     <tag>VRoot</tag>
                                   </morph>
                                   <children>
-                                    <terminal id="s244_22">
+                                    <terminal id="s244_21">
                                       <order>21</order>
                                       <label>obj</label>
                                       <word>chakra</word>
@@ -86930,7 +86930,7 @@
                                         <tag>NRoot</tag>
                                       </morph>
                                     </terminal>
-                                    <terminal id="s244_24">
+                                    <terminal id="s244_23">
                                       <order>23</order>
                                       <label>ns</label>
                                       <word>-qkuna</word>
@@ -86942,7 +86942,7 @@
                                     </terminal>
                                   </children>
                                 </terminal>
-                                <terminal id="s244_30">
+                                <terminal id="s244_29">
                                   <order>29</order>
                                   <label>s.co</label>
                                   <word>-pas</word>
@@ -86951,7 +86951,7 @@
                                     <tag>+Add</tag>
                                   </morph>
                                 </terminal>
-                                <terminal id="s244_27">
+                                <terminal id="s244_26">
                                   <order>26</order>
                                   <label>ns</label>
                                   <word>-y</word>
@@ -86960,7 +86960,7 @@
                                     <tag>+Inf</tag>
                                   </morph>
                                   <children>
-                                    <terminal id="s244_28">
+                                    <terminal id="s244_27">
                                       <order>27</order>
                                       <label>s.poss.subj</label>
                                       <word>-nin</word>
@@ -86971,7 +86971,7 @@
                                     </terminal>
                                   </children>
                                 </terminal>
-                                <terminal id="s244_26">
+                                <terminal id="s244_25">
                                   <order>25</order>
                                   <label>mod</label>
                                   <word>-ku</word>
@@ -86984,7 +86984,7 @@
                             </terminal>
                           </children>
                         </terminal>
-                        <terminal id="s244_32">
+                        <terminal id="s244_31">
                           <order>31</order>
                           <label>ns</label>
                           <word>-na</word>
@@ -86993,7 +86993,7 @@
                             <tag>+Obl</tag>
                           </morph>
                           <children>
-                            <terminal id="s244_33">
+                            <terminal id="s244_32">
                               <order>32</order>
                               <label>s.poss.subj</label>
                               <word>-n</word>
@@ -87008,7 +87008,7 @@
                     </terminal>
                   </children>
                 </terminal>
-                <terminal id="s244_35">
+                <terminal id="s244_34">
                   <order>34</order>
                   <label>ev</label>
                   <word>-m</word>
@@ -87017,7 +87017,7 @@
                     <tag>+DirE</tag>
                   </morph>
                 </terminal>
-                <terminal id="s244_37">
+                <terminal id="s244_36">
                   <order>36</order>
                   <label>s.subj</label>
                   <word>-n</word>
@@ -87028,7 +87028,7 @@
                 </terminal>
               </children>
             </terminal>
-            <terminal id="s244_38">
+            <terminal id="s244_37">
               <order>37</order>
               <label>punc</label>
               <word>:</word>
