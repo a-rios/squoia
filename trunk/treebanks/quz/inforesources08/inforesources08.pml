@@ -54458,7 +54458,7 @@
                                             </secedge>
                                             <secedge>
                                               <idref>s153_28</idref>
-                                              <secedgelabel>poss</secedgelabel>
+                                              <secedgelabel>subj</secedgelabel>
                                             </secedge>
                                           </secedges>
                                           <pos>Root</pos>
@@ -88106,6 +88106,7 @@
   #{CurrentOval-width:3}
 
 # more than one secondary edge can only be displayed with adapted TreeView.pm
+# atm: only one secedgelabel per node is displayed.. don't think need more than one (?)
 ?>
 <?tred-pattern style:
 &lt;?
@@ -88129,7 +88130,7 @@ for (my $i=1; $i&lt;=$nbr_secedges;$i++)
     $nd=0;
    # print STDERR  $${secedges/secedge[2]/idref}."\n";
     my $idref;
-    # can't use variables in {{}}, arghh
+    # can't use variables in {{}}, need to find another way to get id
     if ($i == 2){$idref = $${secedges/secedge[2]/idref};}
     elsif ($i == 3){$idref = $${secedges/secedge[3]/idref};}
     else{ $idref = $${secedges/secedge/idref};}
@@ -88154,7 +88155,6 @@ for (my $i=1; $i&lt;=$nbr_secedges;$i++)
        elsif ($i == 3){$labeltext = $${secedges/secedge[3]/secedgelabel};}
        else{ $labeltext = $${secedges/secedge/secedgelabel};}
 
-    #  my $labeltext .= $${secedges/secedge/secedgelabel};
       $styles .= "#{Line-arrow:&amp;last}#{Line-fill:&amp;blue}#{Line-width:&amp;1}#{Line-dash:&amp;.}#{Line-decoration:&amp;shape=text;coords=1,-10;text=$labeltext;start=60}";
     
     $styles .= "#{Line-coords:$coords}#{Line-smooth:$smooth&amp;1}";
