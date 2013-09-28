@@ -1,8 +1,14 @@
-context: .*
+context: 
+hint: 
 node: #{black}${word}
 
 
+
+
 node: #{black}${extHead}
+
+
+
 
 
 
@@ -10,22 +16,38 @@ node: #{darkblue}${cat}#{purple}${pos}
 
 
 
+
+
+
 node: #{blue}${morph/Tags[1]/Tag}${morph/Tags[2]/Tag}${morph/Tags[3]/Tag}${morph/Tags[4]${morph/Tags[5]${morph/Tags/Tag}/Tag[6]}/Tag}
+
+
 
 
 node: #{blue}${morph/tag[1]}${morph/tag[2]}${morph/tag[3]}${morph/tag[4]}${morph/tag[5]}${morph/tag[6]}
 
 
+
+
 node: #{black}${translation}
+
+
 
 
 node: #{red}${discourse}
 
 
+
+
 edge: #{brown}${label} 
 
 
+
+
 style: #{EdgeLabel-yadj:-125}
+
+
+
 
 
 
@@ -34,6 +56,8 @@ text: <?
     "#{-tag:".(join(",",$this,grep {$_->{'#name'} eq 'nonterminal'} $this->ancestors))."}"
     .$${word}
   : () ?>
+
+
 
 
 rootstyle: #{balance:1}
@@ -50,6 +74,9 @@ rootstyle: #{balance:1}
 
 
 
+
+
+
 style:
 <?
   if ( ! $this->parent ) {
@@ -59,6 +86,7 @@ style:
     my $is_nonterminal = $${#name} eq 'nonterminal' ? 1 : 0;
    my $smooth='0';
 
+
    my $nd=0;
    if ($is_nonterminal) {
     $styles .= "#{NodeLabel-yadj:$nd}";
@@ -67,11 +95,21 @@ style:
     if (length $${secedges/secedge/idref}) {
       my $td=-10+8;
       my $t='[? $node->{id} eq "'.$${secedges/secedge/idref}.'" ?]';
+      my $xn=qq{xn};
+      my $yn=qq{yn+$nd};
+      my $xt=qq{x$t-10*sgn(x$t-$xn)};
+      my $yt=qq{y$t+$td};
+      my $X=qq{($xt-$xn)};
+      my $Y=qq{($yt-$yn)};
+      my $D=qq{sqrt($X**2+$Y**2)};
+      my $d=qq{(25/$D+0.12)};
+      $coords .= qq{&$xn,$yn,($xt+$xn)/2 - $Y*$d,($yt+$yn)/2 + $X*$d,$xt,$yt};
       my $labeltext .= $${secedges/secedge/secedgelabel};
       $styles .= "#{Line-arrow:&last}#{Line-fill:&blue}#{Line-width:&1}#{Line-dash:&.}#{Line-decoration:&shape=text;coords=1,-10;text=$labeltext;start=60}";
       
     }
     $styles .= "#{Line-coords:$coords}#{Line-smooth:$smooth&1}";
+
 
     if ($is_nonterminal and $this->parent->parent) {
       $styles .= "#{Node-rellevel:-0.50}";
@@ -80,6 +118,7 @@ style:
       $level/=10;
       $styles.= "#{Node-level:$level}";
     }
+
 
     $styles .= 
     $is_nonterminal ? 
@@ -94,12 +133,19 @@ style:
 
 
 
+
+
+
+
+
+
 style: <? "#{Node-hide:1}" if FileUserData('hide')->{$this}; ?>
 
 
 
 
+
+
+
+
 style:<? "#{Oval-fill:lightgray}" if ($this->{'#name'} eq 'nonterminal' and FileUserData('fold')->{$this}) ?>
-
-
-
