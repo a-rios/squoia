@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="ahk1968-2008_qu_disamb">
+<quechua_corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="ahk1968-2008_qu_disamb">
   <head>
     <schema href="../qu_schema.xml" />
   </head>
@@ -107511,4 +107511,4 @@
       </saphi>
     </s>
   </body>
-</corpus>
+</quechua_corpus>
