@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<pml_schema xmlns="http://ufal.mff.cuni.cz/pdt/pml/schema/" version="1.1">
+
+ <reference name="document_a" readas="trees"/>
+ <reference name="document_b" readas="trees"/>
+
+ <root name="squoia_alignment" type="tree-alignment.type" />
+ 
+ <type name="tree-alignment.type">
+  <structure>
+   <member name="meta" type="meta.type"/>
+   <member name="body" required="1" type="body.type"/>
+  </structure>
+ </type>
+ 
+ <type name="meta.type">
+     <structure>
+            <member name="name">
+              <cdata format="any"/>
+            </member>
+            <member name="author">
+              <cdata format="any"/>
+            </member>
+            <member name="date">
+              <cdata format="any"/>
+            </member>
+            <member name="description">
+              <cdata format="any"/>
+            </member>
+            <member name="format">
+              <cdata format="any"/>
+            </member>
+            <member name="history">
+              <cdata format="any"/>
+            </member>
+      </structure>
+  </type>
+
+ <type name="body.type">
+   <list ordered="1" role="#TREES" type="alignment-root.type"/>
+ </type>
+ <type name="alignment-root.type">
+  <structure role="#NODE">
+    <member as_attribute="1" name="id" required="0" role="#ID">
+      <cdata format="ID"/>
+    </member>
+    <member name="tree_a.rf" required="1">
+      <cdata format="PMLREF"/>
+    </member>
+    <member name="tree_b.rf" required="0">
+      <cdata format="PMLREF"/>
+    </member>
+    <member name="node_alignments" required="0" role="#CHILDNODES">
+      <list ordered="1" type="alignment-node.type"/>
+    </member>
+  </structure>
+ </type>
+ <type name="alignment-node.type">
+   <structure role="#NODE">
+     <member as_attribute="1" name="id" required="0" role="#ID">
+       <cdata format="ID"/>
+     </member>
+     <member name="a.rf" required="1">
+       <cdata format="PMLREF"/>
+     </member>
+     <member name="b.rf" required="1">
+       <cdata format="PMLREF"/>
+     </member>
+     <member name="quality" required="1">
+       <choice>
+            <value>exact</value>
+	    <value>fuzzy</value>
+	</choice>
+     </member>
+      <member name="annotator" required="1" as_attribute="1" >
+       <cdata format="any"/>
+     </member>
+   </structure>
+ </type>
+ 
+</pml_schema>
