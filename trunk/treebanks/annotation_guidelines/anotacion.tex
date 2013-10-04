@@ -2883,8 +2883,11 @@ En coordinaciones de dos sustantivos en yuxtaposici\'on, el primer elemento depe
 
 \subsubsection{Modificadores de Coordinaciones}\label{Sec:coordmod}
 
-Elementos dependientes de la cabeza de una coordinaci\'on son ambiguos en el sentido de que no queda claro si modifican s\'olo a la cabeza o la coordinac\'on entera si en los dos casos se usa la misma etiqueta. Para resolver esta ambig\"uedad en la anotaci\'on, usamos dos etiquetas distintas: 'co:+funci\'on' (p.e. 'co:mod') si el elemento modifica la coordinaci\'on entera, y la etiqueta simple si modifica s\'olo la cabeza.\\
-Considera los ejemplos \ref{Ex:coloc} y \ref{Ex:locco}: En ambos casos, en modificador locativo {\em kaypi} depende de la cabeza de la coordinaci\'on {\em pukllanku}, pero en \ref{Ex:coloc} modifica la coordinaci\'on entera, y por eso recibe la etiqueta 'co:loc'. En ejemplo \ref{Ex:locco}, en cambio, modifica s\'olo {\em pukllanku}, no la coordinaci\'on entera, por eso recibe la simple etiqueta 'loc'.
+(Soluci\'on antigua)
+\sout{Elementos dependientes de la cabeza de una coordinaci\'on son ambiguos en el sentido de que no queda claro si modifican s\'olo a la cabeza o la coordinac\'on entera si en los dos casos se usa la misma etiqueta. Para resolver esta ambig\"uedad en la anotaci\'on, usamos dos etiquetas distintas: 'co:+funci\'on' (p.e. 'co:mod') si el elemento modifica la coordinaci\'on entera, y la etiqueta simple si modifica s\'olo la cabeza.\\
+Considera los ejemplos \ref{Ex:coloc} y \ref{Ex:locco}: En ambos casos, en modificador locativo {\em kaypi} depende de la cabeza de la coordinaci\'on {\em pukllanku}, pero en \ref{Ex:coloc} modifica la coordinaci\'on entera, y por eso recibe la etiqueta 'co:loc'. En ejemplo \ref{Ex:locco}, en cambio, modifica s\'olo {\em pukllanku}, no la coordinaci\'on entera, por eso recibe la simple etiqueta 'loc'.}
+
+NUEVO: Si un modificador de una coordinaci\'on depende de m\'as que uno de los elementos coordinados, se anotan esas dependencias adicionales con 'secondary edges'. El modificador depende del elemento m\'as cerca, y se le agrega los 'secondary edges' para indicar las relaciones con los dem\'as elementos de la coordinaci\'on.
 \begin{center}
  \begin{minipage}{0.4\textwidth}
  \begin{examples}
@@ -2894,18 +2897,47 @@ Considera los ejemplos \ref{Ex:coloc} y \ref{Ex:locco}: En ambos casos, en modif
       trabajan (all\'a) y juegan aqu\'i
 \end{examples}
 \end{minipage}
+% \hfill
+% \begin{minipage}{0.5\textwidth}
+% \begin{center}\fbox{
+% \begin{tikzpicture}
+%       \draw (-4,0.5) node (1) {ejemplo \ref{Ex:coloc}:};
+%       \draw (0,0) node (pukllanku) {pukllanku};
+%   \draw (-1,-2) node (llank'anku) {llank'anku};
+%       \draw (1,-1) node (ima) {ima};
+%   \draw (-4,-2) node (kaypi) {\textcolor{blue}{kaypi}};
+%       \path[-] (llank'anku) edge  node[label=left:$co$]{} (pukllanku);
+%       \path[-,color=blue] (kaypi) edge  node[label=left:\textcolor{blue}{$co:loc$}]  {} (pukllanku);
+%       \path[-] (ima) edge  node[label=right:$linker$]  {} (pukllanku);
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        \draw (-4,-3) node (2) {ejemplo \ref{Ex:locco}:};    
+%       \draw (0,-3.5) node (pukllanku2) {pukllanku};
+%   \draw (-3,-5.5) node (llank'anku2) {llank'anku};
+%   \draw (0,-5.5) node (kaypi2) {\textcolor{blue}{kaypi}};
+%       \path[-] (llank'anku2) edge  node[label=left:$co$]{} (pukllanku2);
+%       \path[-,color=blue] (kaypi2) edge  node[label=left:\textcolor{blue}{$loc$}]  {} (pukllanku2);
+% 
+% \end{tikzpicture}}
+% % \caption{Ra\'iZ nominal compuesta}\label{Fig:NRootCMP}
+% \end{center}
+% \end{minipage}
+% \end{center}
 \hfill
 \begin{minipage}{0.5\textwidth}
 \begin{center}\fbox{
 \begin{tikzpicture}
       \draw (-4,0.5) node (1) {ejemplo \ref{Ex:coloc}:};
       \draw (0,0) node (pukllanku) {pukllanku};
-  \draw (-1,-2) node (llank'anku) {llank'anku};
+  \draw (-2,-1) node (llank'anku) {llank'anku};
       \draw (1,-1) node (ima) {ima};
-  \draw (-4,-2) node (kaypi) {\textcolor{blue}{kaypi}};
+  \draw (-2,-2.5) node (kaypi) {\textcolor{blue}{kaypi}};
       \path[-] (llank'anku) edge  node[label=left:$co$]{} (pukllanku);
-      \path[-,color=blue] (kaypi) edge  node[label=left:\textcolor{blue}{$co:loc$}]  {} (pukllanku);
+      \path[-] (kaypi) edge  node[label=left:\textcolor{blue}{$loc$}]  {} (llank'anku);
       \path[-] (ima) edge  node[label=right:$linker$]  {} (pukllanku);
+% \draw[color=blue,dashed] (kaypi) .. controls (-0.7,-2)
+%  and (-0.5,-1.5) .. (pukllanku);
+  \path[-,dashed,color=blue] (kaypi) edge [out=30,in=-90] node[label=below:\textcolor{blue}{$loc$}] {} (pukllanku);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
        \draw (-4,-3) node (2) {ejemplo \ref{Ex:locco}:};    
       \draw (0,-3.5) node (pukllanku2) {pukllanku};
@@ -2921,7 +2953,7 @@ Considera los ejemplos \ref{Ex:coloc} y \ref{Ex:locco}: En ambos casos, en modif
 \end{center}
 
 En caso de una coordinaci\'on con sufijos coordinativos (v\'ease \ref{Sec:coorddoble}), un modificador que modifica a la coordinaci\'on entera no depende del sufijo coordinativo que es la cabeza de la coordinaci\'on, sino de la ra\'iz que pertenece a este sufijo, ya que no modifica a los sufijos coordinativos sino a las ra\'ices. V\'ease el ejemplo \ref{Ex:comodSuffix} :\\
-La cuantificaci\'on {\em pachaq pachaq} modifica a la coordinaci\'on entera, por eso depende como 'co:qnt' de la \'ultima ra\'iz coordinada. V\'ease Fig. \ref{Fig:comodSuffix} para la anotaci\'on.
+La cuantificaci\'on {\em pachaq pachaq} modifica a la coordinaci\'on entera, \sout{por eso depende como 'co:qnt' de la \'ultima ra\'iz coordinada.}, depende del primer elemento coordinado ({\em llamakuna}), pero tiene secondary edges que indican su relaci\'on con {\em caballokuna} y {\em asnokuna}. V\'ease Fig. \ref{Fig:comodSuffix} para la anotaci\'on.
 
 \begin{examples}
  \item\label{Ex:comodSuffix} {\em Kunanqa manan ñawpaq hinañachu, gentepas Puno qucha wichay ladomantaraq \textbf{pachaq pachaq llamakunapi caballokunapi asnokunapi} hamuq.}\\
@@ -2933,10 +2965,11 @@ La cuantificaci\'on {\em pachaq pachaq} modifica a la coordinaci\'on entera, por
 
  \begin{center}
 \fbox{
-\parbox{12cm}{
+\parbox{7cm}{
 \centering \vspace{0.5cm}
 {\em \small ..Puno qucha wichay ladomantaraq pachaq pachaq llamakunapi caballokunapi asnokunapi hamuq.}\\ \vspace{0.5cm}
-\includegraphics[width=12cm]{tred41.png}
+%\includegraphics[width=12cm]{tred41.png}
+\includegraphics[width=7cm]{tred51.png}
 }}
 \end{center}
 \caption{Coordinaci\'on con sufijos coordinativos y modificador}\label{Fig:comodSuffix}
