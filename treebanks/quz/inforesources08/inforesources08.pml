@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quechua_corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="inforesources_focus_08_qu">
   <head>
-    <schema href="../qu_schema.xml"/>
+    <schema href="../qu_schema.xml" />
   </head>
   <body>
     <s id="s1">
       <saphi>
-        <nonterminal id="s1_VROOT">
+        <nonterminal id="s1_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s1_6">
@@ -11673,7 +11673,7 @@
     </s>
     <s id="s39">
       <saphi>
-        <nonterminal id="s39_VROOT">
+        <nonterminal id="s39_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s39_7">
@@ -11743,6 +11743,30 @@
                             <tag>+Trs</tag>
                           </morph>
                           <children>
+                            <terminal id="s39_1">
+                              <order>1</order>
+                              <label>mod</label>
+                              <word>Imayna</word>
+                              <secedges>
+                                <secedge>
+                                  <idref>s39_11</idref>
+                                  <secedgelabel>mod</secedgelabel>
+                                </secedge>
+                                <secedge>
+                                  <idref>s39_16</idref>
+                                  <secedgelabel>mod</secedgelabel>
+                                </secedge>
+                                <secedge>
+                                  <idref>s39_26</idref>
+                                  <secedgelabel>mod</secedgelabel>
+                                </secedge>
+                              </secedges>
+                              <pos>Root</pos>
+                              <translation>=cómo</translation>
+                              <morph>
+                                <tag>PrnInterr</tag>
+                              </morph>
+                            </terminal>
                             <terminal id="s39_2">
                               <order>2</order>
                               <label>subj</label>
@@ -11918,6 +11942,70 @@
                             <tag>VRoot</tag>
                           </morph>
                           <children>
+                            <terminal id="s39_22">
+                              <order>22</order>
+                              <label>loc</label>
+                              <word>-pi</word>
+                              <secedges>
+                                <secedge>
+                                  <idref>s39_30</idref>
+                                  <secedgelabel>loc</secedgelabel>
+                                </secedge>
+                              </secedges>
+                              <pos>Cas</pos>
+                              <morph>
+                                <tag>+Loc</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s39_21">
+                                  <order>21</order>
+                                  <label>s.arg</label>
+                                  <word>punakuna</word>
+                                  <pos>Root_Num</pos>
+                                  <translation>=puna</translation>
+                                  <morph>
+                                    <tag>NRoot</tag>
+                                    <tag>+Pl</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal id="s39_24">
+                              <order>24</order>
+                              <label>adv</label>
+                              <word>-ta</word>
+                              <secedges>
+                                <secedge>
+                                  <idref>s39_30</idref>
+                                  <secedgelabel>adv</secedgelabel>
+                                </secedge>
+                              </secedges>
+                              <pos>Cas</pos>
+                              <morph>
+                                <tag>+Acc</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s39_23">
+                                  <order>23</order>
+                                  <label>s.arg</label>
+                                  <word>as</word>
+                                  <pos>Root</pos>
+                                  <translation>=poco</translation>
+                                  <morph>
+                                    <tag>NRoot</tag>
+                                  </morph>
+                                </terminal>
+                                <terminal id="s39_25">
+                                  <order>25</order>
+                                  <label>mod</label>
+                                  <word>-wan</word>
+                                  <pos>Cas</pos>
+                                  <morph>
+                                    <tag>+Con_Inst</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
                             <terminal id="s39_27">
                               <order>27</order>
                               <label>ns</label>
@@ -11946,6 +12034,12 @@
                       <order>30</order>
                       <label>s.arg</label>
                       <word>rit'iya</word>
+                      <secedges>
+                        <secedge>
+                          <idref>s39_30</idref>
+                          <secedgelabel>mod</secedgelabel>
+                        </secedge>
+                      </secedges>
                       <pos>Root_VS</pos>
                       <translation>=nieve</translation>
                       <morph>
@@ -11953,68 +12047,6 @@
                         <tag>+Trs</tag>
                       </morph>
                       <children>
-                        <terminal id="s39_1">
-                          <order>1</order>
-                          <label>co:mod</label>
-                          <word>Imayna</word>
-                          <pos>Root</pos>
-                          <translation>=cómo</translation>
-                          <morph>
-                            <tag>PrnInterr</tag>
-                          </morph>
-                        </terminal>
-                        <terminal id="s39_22">
-                          <order>22</order>
-                          <label>co:loc</label>
-                          <word>-pi</word>
-                          <pos>Cas</pos>
-                          <morph>
-                            <tag>+Loc</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s39_21">
-                              <order>21</order>
-                              <label>s.arg</label>
-                              <word>punakuna</word>
-                              <pos>Root_Num</pos>
-                              <translation>=puna</translation>
-                              <morph>
-                                <tag>NRoot</tag>
-                                <tag>+Pl</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal id="s39_24">
-                          <order>24</order>
-                          <label>co:adv</label>
-                          <word>-ta</word>
-                          <pos>Cas</pos>
-                          <morph>
-                            <tag>+Acc</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s39_23">
-                              <order>23</order>
-                              <label>s.arg</label>
-                              <word>as</word>
-                              <pos>Root</pos>
-                              <translation>=poco</translation>
-                              <morph>
-                                <tag>NRoot</tag>
-                              </morph>
-                            </terminal>
-                            <terminal id="s39_25">
-                              <order>25</order>
-                              <label>mod</label>
-                              <word>-wan</word>
-                              <pos>Cas</pos>
-                              <morph>
-                                <tag>+Con_Inst</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
                         <terminal id="s39_34">
                           <order>34</order>
                           <label>s.co</label>
@@ -14836,9 +14868,13 @@
                             </terminal>
                             <terminal id="s46_51">
                               <order>51</order>
-                              <label>co:obj</label>
+                              <label>obj</label>
                               <word>-ta</word>
                               <secedges>
+                                <secedge>
+                                  <idref>s46_59</idref>
+                                  <secedgelabel>obj</secedgelabel>
+                                </secedge>
                               </secedges>
                               <pos>Cas</pos>
                               <morph>
@@ -32291,7 +32327,7 @@
     </s>
     <s id="s91">
       <saphi>
-        <nonterminal id="s91_VROOT">
+        <nonterminal id="s91_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s91_4">
@@ -32537,7 +32573,7 @@
                             </terminal>
                             <terminal id="s91_14">
                               <order>14</order>
-                              <label>co:obj</label>
+                              <label>obj</label>
                               <word>ni</word>
                               <pos>Root</pos>
                               <translation>=decir</translation>
@@ -38605,7 +38641,7 @@
     </s>
     <s id="s110">
       <saphi>
-        <nonterminal id="s110_VROOT">
+        <nonterminal id="s110_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s110_7">
@@ -38644,201 +38680,6 @@
                 <tag>VRoot</tag>
               </morph>
               <children>
-                <terminal id="s110_21">
-                  <order>21</order>
-                  <label>co:mod</label>
-                  <word>-pi</word>
-                  <secedges>
-                  </secedges>
-                  <pos>Cas</pos>
-                  <morph>
-                    <tag>+Loc</tag>
-                  </morph>
-                  <discourse>FOCUS</discourse>
-                  <children>
-                    <terminal id="s110_19">
-                      <order>19</order>
-                      <label>s.arg.claus</label>
-                      <word>ni</word>
-                      <pos>Root</pos>
-                      <translation>=decir</translation>
-                      <morph>
-                        <tag>VRoot</tag>
-                      </morph>
-                      <children>
-                        <terminal id="s110_6">
-                          <order>6</order>
-                          <label>mod</label>
-                          <word>-manta</word>
-                          <pos>Cas</pos>
-                          <morph>
-                            <tag>+Abl</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s110_2">
-                              <order>2</order>
-                              <label>s.arg.claus</label>
-                              <word>t'ikra</word>
-                              <pos>Root</pos>
-                              <translation>=volver</translation>
-                              <morph>
-                                <tag>VRoot</tag>
-                              </morph>
-                              <children>
-                                <terminal id="s110_1">
-                                  <order>1</order>
-                                  <label>obj</label>
-                                  <word>Llaphi</word>
-                                  <pos>Root</pos>
-                                  <translation>=temperatura</translation>
-                                  <morph>
-                                    <tag>NRoot</tag>
-                                  </morph>
-                                </terminal>
-                                <terminal id="s110_4">
-                                  <order>4</order>
-                                  <label>ns</label>
-                                  <word>-y</word>
-                                  <pos>NS</pos>
-                                  <morph>
-                                    <tag>+Inf</tag>
-                                  </morph>
-                                  <children>
-                                    <terminal id="s110_5">
-                                      <order>5</order>
-                                      <label>s.poss.subj</label>
-                                      <word>-nin</word>
-                                      <pos>NPers</pos>
-                                      <morph>
-                                        <tag>+3.Sg.Poss</tag>
-                                      </morph>
-                                    </terminal>
-                                  </children>
-                                </terminal>
-                                <terminal id="s110_3">
-                                  <order>3</order>
-                                  <label>mod</label>
-                                  <word>-ku</word>
-                                  <pos>VDeriv</pos>
-                                  <morph>
-                                    <tag>+Rflx_Int</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal id="s110_15">
-                          <order>15</order>
-                          <label>flm</label>
-                          <word>Protocolo</word>
-                          <secedges>
-                          </secedges>
-                          <pos>Root</pos>
-                          <morph>
-                            <tag>NRootES</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s110_8">
-                              <order>8</order>
-                              <label>nme</label>
-                              <word>Convención</word>
-                              <secedges>
-                              </secedges>
-                              <pos>Root</pos>
-                              <morph>
-                                <tag>NRootES</tag>
-                              </morph>
-                              <children>
-                                <terminal id="s110_9">
-                                  <order>9</order>
-                                  <label>nme</label>
-                                  <word>Marco</word>
-                                  <secedges>
-                                  </secedges>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootES</tag>
-                                  </morph>
-                                  <children>
-                                    <terminal id="s110_10">
-                                      <order>10</order>
-                                      <label>nme</label>
-                                      <word>de</word>
-                                      <pos>SP</pos>
-                                      <children>
-                                        <terminal id="s110_11">
-                                          <order>11</order>
-                                          <label>nme</label>
-                                          <word>las</word>
-                                          <pos>SP</pos>
-                                          <children>
-                                            <terminal id="s110_12">
-                                              <order>12</order>
-                                              <label>nme</label>
-                                              <word>Naciones</word>
-                                              <secedges>
-                                              </secedges>
-                                              <pos>Root</pos>
-                                              <morph>
-                                                <tag>NRootES</tag>
-                                              </morph>
-                                              <children>
-                                                <terminal id="s110_13">
-                                                  <order>13</order>
-                                                  <label>nme</label>
-                                                  <word>Unidas</word>
-                                                  <secedges>
-                                                  </secedges>
-                                                  <pos>Root</pos>
-                                                  <morph>
-                                                    <tag>NRootES</tag>
-                                                  </morph>
-                                                </terminal>
-                                              </children>
-                                            </terminal>
-                                          </children>
-                                        </terminal>
-                                      </children>
-                                    </terminal>
-                                  </children>
-                                </terminal>
-                              </children>
-                            </terminal>
-                            <terminal id="s110_16">
-                              <order>16</order>
-                              <label>nme</label>
-                              <word>de</word>
-                              <pos>SP</pos>
-                              <children>
-                                <terminal id="s110_17">
-                                  <order>17</order>
-                                  <label>nme</label>
-                                  <word>Kioto</word>
-                                  <secedges>
-                                  </secedges>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NP</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal id="s110_20">
-                          <order>20</order>
-                          <label>ns</label>
-                          <word>-sqa</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+Perf</tag>
-                          </morph>
-                        </terminal>
-                      </children>
-                    </terminal>
-                  </children>
-                </terminal>
                 <terminal id="s110_22">
                   <order>22</order>
                   <label>ev</label>
@@ -38868,6 +38709,205 @@
                         <tag>VRoot</tag>
                       </morph>
                       <children>
+                        <terminal id="s110_21">
+                          <order>21</order>
+                          <label>mod</label>
+                          <word>-pi</word>
+                          <secedges>
+                            <secedge>
+                              <idref>s110_48</idref>
+                              <secedgelabel>mod</secedgelabel>
+                            </secedge>
+                          </secedges>
+                          <pos>Cas</pos>
+                          <morph>
+                            <tag>+Loc</tag>
+                          </morph>
+                          <discourse>FOCUS</discourse>
+                          <children>
+                            <terminal id="s110_19">
+                              <order>19</order>
+                              <label>s.arg.claus</label>
+                              <word>ni</word>
+                              <pos>Root</pos>
+                              <translation>=decir</translation>
+                              <morph>
+                                <tag>VRoot</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s110_6">
+                                  <order>6</order>
+                                  <label>mod</label>
+                                  <word>-manta</word>
+                                  <pos>Cas</pos>
+                                  <morph>
+                                    <tag>+Abl</tag>
+                                  </morph>
+                                  <children>
+                                    <terminal id="s110_2">
+                                      <order>2</order>
+                                      <label>s.arg.claus</label>
+                                      <word>t'ikra</word>
+                                      <pos>Root</pos>
+                                      <translation>=volver</translation>
+                                      <morph>
+                                        <tag>VRoot</tag>
+                                      </morph>
+                                      <children>
+                                        <terminal id="s110_1">
+                                          <order>1</order>
+                                          <label>obj</label>
+                                          <word>Llaphi</word>
+                                          <pos>Root</pos>
+                                          <translation>=temperatura</translation>
+                                          <morph>
+                                            <tag>NRoot</tag>
+                                          </morph>
+                                        </terminal>
+                                        <terminal id="s110_4">
+                                          <order>4</order>
+                                          <label>ns</label>
+                                          <word>-y</word>
+                                          <pos>NS</pos>
+                                          <morph>
+                                            <tag>+Inf</tag>
+                                          </morph>
+                                          <children>
+                                            <terminal id="s110_5">
+                                              <order>5</order>
+                                              <label>s.poss.subj</label>
+                                              <word>-nin</word>
+                                              <pos>NPers</pos>
+                                              <morph>
+                                                <tag>+3.Sg.Poss</tag>
+                                              </morph>
+                                            </terminal>
+                                          </children>
+                                        </terminal>
+                                        <terminal id="s110_3">
+                                          <order>3</order>
+                                          <label>mod</label>
+                                          <word>-ku</word>
+                                          <pos>VDeriv</pos>
+                                          <morph>
+                                            <tag>+Rflx_Int</tag>
+                                          </morph>
+                                        </terminal>
+                                      </children>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                                <terminal id="s110_15">
+                                  <order>15</order>
+                                  <label>flm</label>
+                                  <word>Protocolo</word>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootES</tag>
+                                  </morph>
+                                  <children>
+                                    <terminal id="s110_8">
+                                      <order>8</order>
+                                      <label>nme</label>
+                                      <word>Convención</word>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>NRootES</tag>
+                                      </morph>
+                                      <children>
+                                        <terminal id="s110_9">
+                                          <order>9</order>
+                                          <label>nme</label>
+                                          <word>Marco</word>
+                                          <secedges>
+                                          </secedges>
+                                          <pos>Root</pos>
+                                          <morph>
+                                            <tag>NRootES</tag>
+                                          </morph>
+                                          <children>
+                                            <terminal id="s110_10">
+                                              <order>10</order>
+                                              <label>nme</label>
+                                              <word>de</word>
+                                              <pos>SP</pos>
+                                              <children>
+                                                <terminal id="s110_11">
+                                                  <order>11</order>
+                                                  <label>nme</label>
+                                                  <word>las</word>
+                                                  <pos>SP</pos>
+                                                  <children>
+                                                    <terminal id="s110_12">
+                                                      <order>12</order>
+                                                      <label>nme</label>
+                                                      <word>Naciones</word>
+                                                      <secedges>
+                                                      </secedges>
+                                                      <pos>Root</pos>
+                                                      <morph>
+                                                        <tag>NRootES</tag>
+                                                      </morph>
+                                                      <children>
+                                                        <terminal id="s110_13">
+                                                          <order>13</order>
+                                                          <label>nme</label>
+                                                          <word>Unidas</word>
+                                                          <secedges>
+                                                          </secedges>
+                                                          <pos>Root</pos>
+                                                          <morph>
+                                                            <tag>NRootES</tag>
+                                                          </morph>
+                                                        </terminal>
+                                                      </children>
+                                                    </terminal>
+                                                  </children>
+                                                </terminal>
+                                              </children>
+                                            </terminal>
+                                          </children>
+                                        </terminal>
+                                      </children>
+                                    </terminal>
+                                    <terminal id="s110_16">
+                                      <order>16</order>
+                                      <label>nme</label>
+                                      <word>de</word>
+                                      <pos>SP</pos>
+                                      <children>
+                                        <terminal id="s110_17">
+                                          <order>17</order>
+                                          <label>nme</label>
+                                          <word>Kioto</word>
+                                          <secedges>
+                                          </secedges>
+                                          <pos>Root</pos>
+                                          <morph>
+                                            <tag>NP</tag>
+                                          </morph>
+                                        </terminal>
+                                      </children>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                                <terminal id="s110_20">
+                                  <order>20</order>
+                                  <label>ns</label>
+                                  <word>-sqa</word>
+                                  <pos>NS</pos>
+                                  <morph>
+                                    <tag>+Perf</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                          </children>
+                        </terminal>
                         <terminal id="s110_25">
                           <order>25</order>
                           <label>ev</label>
@@ -68693,7 +68733,7 @@
     </s>
     <s id="s192">
       <saphi>
-        <nonterminal id="s192_VROOT">
+        <nonterminal id="s192_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s192_4">
@@ -69125,8 +69165,14 @@
                               <children>
                                 <terminal id="s192_36">
                                   <order>36</order>
-                                  <label>co:mod</label>
+                                  <label>mod</label>
                                   <word>huk</word>
+                                  <secedges>
+                                    <secedge>
+                                      <idref>s192_40</idref>
+                                      <secedgelabel>mod</secedgelabel>
+                                    </secedge>
+                                  </secedges>
                                   <pos>Root</pos>
                                   <morph>
                                     <tag>NRootNUM</tag>
@@ -76386,7 +76432,7 @@
     </s>
     <s id="s215">
       <saphi>
-        <nonterminal id="s215_VROOT">
+        <nonterminal id="s215_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s215_10">
@@ -76413,179 +76459,6 @@
                 <tag>VRoot</tag>
               </morph>
               <children>
-                <terminal id="s215_7">
-                  <order>7</order>
-                  <label>co:caus</label>
-                  <word>-rayku</word>
-                  <secedges>
-                  </secedges>
-                  <pos>Cas</pos>
-                  <morph>
-                    <tag>+Kaus</tag>
-                  </morph>
-                  <discourse>FOCUS</discourse>
-                  <children>
-                    <terminal id="s215_4">
-                      <order>4</order>
-                      <label>s.arg.claus</label>
-                      <word>chinka</word>
-                      <pos>Root</pos>
-                      <translation>=perder</translation>
-                      <morph>
-                        <tag>VRoot</tag>
-                      </morph>
-                      <children>
-                        <terminal id="s215_2">
-                          <order>2</order>
-                          <label>obj</label>
-                          <word>ñawraykuna</word>
-                          <pos>Root_Num</pos>
-                          <translation>=diversidad</translation>
-                          <morph>
-                            <tag>NRoot</tag>
-                            <tag>+Pl</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s215_1">
-                              <order>1</order>
-                              <label>det</label>
-                              <word>Kay</word>
-                              <pos>Root</pos>
-                              <morph>
-                                <tag>PrnDem</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal id="s215_3">
-                          <order>3</order>
-                          <label>neg</label>
-                          <word>mana</word>
-                          <pos>Root</pos>
-                          <morph>
-                            <tag>Part_Neg</tag>
-                          </morph>
-                        </terminal>
-                        <terminal id="s215_5">
-                          <order>5</order>
-                          <label>ns</label>
-                          <word>-na</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+Obl</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s215_6">
-                              <order>6</order>
-                              <label>s.poss.subj</label>
-                              <word>-n</word>
-                              <pos>NPers</pos>
-                              <morph>
-                                <tag>+3.Sg.Poss</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                      </children>
-                    </terminal>
-                  </children>
-                </terminal>
-                <terminal id="s215_8">
-                  <order>8</order>
-                  <label>ev</label>
-                  <word>-m</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+DirE</tag>
-                  </morph>
-                </terminal>
-                <terminal id="s215_18">
-                  <order>18</order>
-                  <label>co:obj</label>
-                  <word>-ta</word>
-                  <secedges>
-                  </secedges>
-                  <pos>Cas</pos>
-                  <morph>
-                    <tag>+Acc</tag>
-                  </morph>
-                  <children>
-                    <terminal id="s215_16">
-                      <order>16</order>
-                      <label>s.arg</label>
-                      <word>suticha</word>
-                      <pos>Root_VS</pos>
-                      <translation>=nombre</translation>
-                      <morph>
-                        <tag>NRoot</tag>
-                        <tag>+Fact</tag>
-                      </morph>
-                      <children>
-                        <terminal id="s215_14">
-                          <order>14</order>
-                          <label>sub</label>
-                          <word>ni</word>
-                          <pos>Root</pos>
-                          <translation>=decir</translation>
-                          <morph>
-                            <tag>VRoot</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s215_9">
-                              <order>9</order>
-                              <label>det</label>
-                              <word>kay</word>
-                              <pos>Root</pos>
-                              <morph>
-                                <tag>PrnDem</tag>
-                              </morph>
-                            </terminal>
-                            <terminal id="s215_11">
-                              <order>11</order>
-                              <label>flm</label>
-                              <word>bancos</word>
-                              <pos>Root</pos>
-                              <morph>
-                                <tag>NRootES</tag>
-                              </morph>
-                              <children>
-                                <terminal id="s215_12">
-                                  <order>12</order>
-                                  <label>--</label>
-                                  <word>genéticos</word>
-                                  <secedges>
-                                  </secedges>
-                                  <pos>Root</pos>
-                                  <morph>
-                                    <tag>NRootES</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
-                            </terminal>
-                            <terminal id="s215_15">
-                              <order>15</order>
-                              <label>ns</label>
-                              <word>-spa</word>
-                              <pos>NS</pos>
-                              <morph>
-                                <tag>+SS</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal id="s215_17">
-                          <order>17</order>
-                          <label>ns</label>
-                          <word>-sqa</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+Perf</tag>
-                          </morph>
-                        </terminal>
-                      </children>
-                    </terminal>
-                  </children>
-                </terminal>
                 <terminal id="s215_19">
                   <order>19</order>
                   <label>co</label>
@@ -76596,6 +76469,187 @@
                     <tag>VRoot</tag>
                   </morph>
                   <children>
+                    <terminal id="s215_7">
+                      <order>7</order>
+                      <label>caus</label>
+                      <word>-rayku</word>
+                      <secedges>
+                        <secedge>
+                          <idref>s215_21</idref>
+                          <secedgelabel>caus</secedgelabel>
+                        </secedge>
+                      </secedges>
+                      <pos>Cas</pos>
+                      <morph>
+                        <tag>+Kaus</tag>
+                      </morph>
+                      <discourse>FOCUS</discourse>
+                      <children>
+                        <terminal id="s215_4">
+                          <order>4</order>
+                          <label>s.arg.claus</label>
+                          <word>chinka</word>
+                          <pos>Root</pos>
+                          <translation>=perder</translation>
+                          <morph>
+                            <tag>VRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s215_2">
+                              <order>2</order>
+                              <label>obj</label>
+                              <word>ñawraykuna</word>
+                              <pos>Root_Num</pos>
+                              <translation>=diversidad</translation>
+                              <morph>
+                                <tag>NRoot</tag>
+                                <tag>+Pl</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s215_1">
+                                  <order>1</order>
+                                  <label>det</label>
+                                  <word>Kay</word>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>PrnDem</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal id="s215_3">
+                              <order>3</order>
+                              <label>neg</label>
+                              <word>mana</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>Part_Neg</tag>
+                              </morph>
+                            </terminal>
+                            <terminal id="s215_5">
+                              <order>5</order>
+                              <label>ns</label>
+                              <word>-na</word>
+                              <pos>NS</pos>
+                              <morph>
+                                <tag>+Obl</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s215_6">
+                                  <order>6</order>
+                                  <label>s.poss.subj</label>
+                                  <word>-n</word>
+                                  <pos>NPers</pos>
+                                  <morph>
+                                    <tag>+3.Sg.Poss</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                          </children>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal id="s215_8">
+                      <order>8</order>
+                      <label>ev</label>
+                      <word>-m</word>
+                      <pos>Amb</pos>
+                      <morph>
+                        <tag>+DirE</tag>
+                      </morph>
+                    </terminal>
+                    <terminal id="s215_18">
+                      <order>18</order>
+                      <label>obj</label>
+                      <word>-ta</word>
+                      <secedges>
+                        <secedge>
+                          <idref>s215_21</idref>
+                          <secedgelabel>obj</secedgelabel>
+                        </secedge>
+                      </secedges>
+                      <pos>Cas</pos>
+                      <morph>
+                        <tag>+Acc</tag>
+                      </morph>
+                      <children>
+                        <terminal id="s215_16">
+                          <order>16</order>
+                          <label>s.arg</label>
+                          <word>suticha</word>
+                          <pos>Root_VS</pos>
+                          <translation>=nombre</translation>
+                          <morph>
+                            <tag>NRoot</tag>
+                            <tag>+Fact</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s215_14">
+                              <order>14</order>
+                              <label>sub</label>
+                              <word>ni</word>
+                              <pos>Root</pos>
+                              <translation>=decir</translation>
+                              <morph>
+                                <tag>VRoot</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s215_9">
+                                  <order>9</order>
+                                  <label>det</label>
+                                  <word>kay</word>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>PrnDem</tag>
+                                  </morph>
+                                </terminal>
+                                <terminal id="s215_11">
+                                  <order>11</order>
+                                  <label>flm</label>
+                                  <word>bancos</word>
+                                  <pos>Root</pos>
+                                  <morph>
+                                    <tag>NRootES</tag>
+                                  </morph>
+                                  <children>
+                                    <terminal id="s215_12">
+                                      <order>12</order>
+                                      <label>--</label>
+                                      <word>genéticos</word>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>Root</pos>
+                                      <morph>
+                                        <tag>NRootES</tag>
+                                      </morph>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                                <terminal id="s215_15">
+                                  <order>15</order>
+                                  <label>ns</label>
+                                  <word>-spa</word>
+                                  <pos>NS</pos>
+                                  <morph>
+                                    <tag>+SS</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal id="s215_17">
+                              <order>17</order>
+                              <label>ns</label>
+                              <word>-sqa</word>
+                              <pos>NS</pos>
+                              <morph>
+                                <tag>+Perf</tag>
+                              </morph>
+                            </terminal>
+                          </children>
+                        </terminal>
+                      </children>
+                    </terminal>
                     <terminal id="s215_20">
                       <order>20</order>
                       <label>s.subj</label>
@@ -87040,7 +87094,7 @@
     </s>
     <s id="s245">
       <saphi>
-        <nonterminal id="s245_VROOT">
+        <nonterminal id="s245_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s245_12">
@@ -87118,7 +87172,7 @@
               <children>
                 <terminal id="s245_47">
                   <order>47</order>
-                  <label>co:mod</label>
+                  <label>co</label>
                   <word>waqaycha</word>
                   <secedges>
                   </secedges>
@@ -88064,3 +88118,118 @@
     </s>
   </body>
 </quechua_corpus>
+<?tred-pattern node: #{black}${word}
+
+?>
+<?tred-pattern node: #{black}${extHead}
+
+
+?>
+<?tred-pattern node: #{darkblue}${cat}#{purple}${pos}
+
+
+?>
+<?tred-pattern node: #{blue}${morph/Tags[1]/Tag}${morph/Tags[2]/Tag}${morph/Tags[3]/Tag}${morph/Tags[4]${morph/Tags[5]${morph/Tags/Tag}/Tag[6]}/Tag}
+
+
+?>
+<?tred-pattern node: #{blue}${morph/tag[1]}${morph/tag[2]}${morph/tag[3]}${morph/tag[4]}${morph/tag[5]}${morph/tag[6]}
+
+
+?>
+<?tred-pattern node: #{black}${translation}
+
+?>
+<?tred-pattern node: #{red}${discourse}
+
+?>
+<?tred-pattern edge: #{brown}${label} 
+
+?>
+<?tred-pattern style: #{EdgeLabel-yadj:-125}
+
+?>
+<?tred-pattern text: &lt;?
+  $${#name} eq 'terminal' ? 
+    "#{-tag:".(join(",",$this,grep {$_-&gt;{'#name'} eq 'nonterminal'} $this-&gt;ancestors))."}"
+    .$${word}
+  : () ?&gt;
+
+
+?>
+<?tred-pattern rootstyle: #{balance:1}
+  #{skipHiddenLevels:1}
+  #{CurrentTextBox-fill:red}
+  #{nodeXSkip:40}
+  #{nodeYSkip:50}
+  #{baseYPos:10}
+  #{NodeLabel-skipempty:1}
+  #{NodeLabel-halign:center}
+ #{Node-textalign:center}
+  #{CurrentOval-outline:red}
+  #{CurrentOval-width:3}
+
+?>
+<?tred-pattern style:
+&lt;?
+  if ( ! $this-&gt;parent ) {
+     '#{Node-hide:1}'
+  } else {
+    my $styles='';
+    my $is_nonterminal = $${#name} eq 'nonterminal' ? 1 : 0;
+   my $smooth='0';
+   my $nd=0;
+   if ($is_nonterminal) {
+    $styles .= "#{NodeLabel-yadj:$nd}";
+   }
+    my $coords = qq{n,n,p,p};
+    if (length $${secedges/secedge/idref}) {
+my $secedges =  $this-&gt;{'secedges'};
+foreach my $secedge (@{$secedges-&gt;values()}){
+ #   print STDERR "secedge: ".$secedge-&gt;{'idref'}."\n";
+    $coords = qq{n,n,p,p};
+    $nd=0;
+    my $idref = $secedge-&gt;{'idref'};
+    my $t='[? $node-&gt;{id} eq "'.$idref.'" ?]';
+      my $td=-10+8;
+      my $xn=qq{xn};
+      my $yn=qq{yn+$nd};
+      my $xt=qq{x$t-10*sgn(x$t-$xn)};
+      my $yt=qq{y$t+$td};
+      my $X=qq{($xt-$xn)};
+      my $Y=qq{($yt-$yn)};
+      my $D=qq{sqrt($X**2+$Y**2)};
+      my $d=qq{(25/$D+0.12)};
+      $coords .= qq{&amp;$xn,$yn,($xt+$xn)/2 - $Y*$d,($yt+$yn)/2 + $X*$d,$xt,$yt};
+      my $labeltext = $secedge-&gt;{'secedgelabel'};
+      $styles .= "#{Line-arrow:&amp;last}#{Line-fill:&amp;blue}#{Line-width:&amp;1}#{Line-dash:&amp;.}#{Line-decoration:&amp;shape=text;coords=1,-10;text=$labeltext;start=60}";
+    
+    $styles .= "#{Line-coords:$coords}#{Line-smooth:$smooth&amp;1}";
+  #  print STDERR "\n styles: $styles\n";
+  }
+}
+
+    if ($is_nonterminal and $this-&gt;parent-&gt;parent) {
+      $styles .= "#{Node-rellevel:-0.50}";
+    } elsif (!$is_nonterminal) {
+      my $level =  - 1;
+      $level/=10;
+      $styles.= "#{Node-level:$level}";
+    }
+
+
+    $styles .= 
+    $is_nonterminal ? 
+       "#{Node-shape:oval}#{Oval-fill:lightgrey}#{Node-surroundtext:1}#{NodeLabel-valign:center}" 
+     :  "#{NodeLabel-yadj:-20}#{Line-fill#{black}:.}#{Line-width:2}#{Oval-fill:grey}";
+    $styles;
+  }
+?&gt;
+
+
+?>
+<?tred-pattern style: &lt;? "#{Node-hide:1}" if FileUserData('hide')-&gt;{$this}; ?&gt;
+
+?>
+<?tred-pattern style:&lt;? "#{Oval-fill:lightgray}" if ($this-&gt;{'#name'} eq 'nonterminal' and FileUserData('fold')-&gt;{$this}) ?&gt;
+?>
