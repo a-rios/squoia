@@ -1,0 +1,8 @@
+# -*- cperl -*-
+
+#ifndef parallel_squoia
+#define parallel_squoia
+
+#include parallel_squoia.mak
+
+#endif parallel_squoia

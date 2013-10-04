@@ -1,0 +1,138 @@
+# -*- cperl -*-
+
+#ifndef quechua
+#define quechua
+
+{
+package Quechua;
+
+#binding-context Quechua
+
+BEGIN { import TredMacro; }
+
+use strict;
+use warnings;
+
+
+
+#include <contrib/support/arrows.inc>
+#include <contrib/pml/PML.mak>
+
+## detect files with the expected PML schema
+sub detect {
+  return (((PML::SchemaName()||'') eq 'quechua_corpus') ? 1 : 0);
+}
+
+
+push @TredMacro::AUTO_CONTEXT_GUESSING, sub {
+  my $current = CurrentContext();
+  return __PACKAGE__ if detect();
+  return;
+};
+sub allow_switch_context_hook {
+  return 'stop' unless detect();
+}
+
+
+sub root_style_hook {
+  my ($node,$styles,$opts)=@_;
+  DrawArrows_init();
+}
+sub after_redraw_hook {
+  DrawArrows_cleanup();
+}
+
+
+sub do_edit_node_hook{
+      my ($node) = @_;
+      my $order = $node->{'order'};
+      my $sentenceID = $root->{'id'};
+      $node->{'id'} = $sentenceID."_".$order;
+      
+}
+
+
+sub file_save_hook{
+    foreach my $node ($root->descendants){
+	my $order = $node->{'order'};
+	my $sentenceID = $root->{'id'};
+	$node->{'id'} = $sentenceID."_".$order;
+    }
+
+}
+
+sub node_style_hook {
+  my ($node,$styles) = @_;
+  my $fsfile = $grp->{FSFile}; 
+  
+  
+#  print STDERR "styles ".$styles."\n";
+  my $line_style = $$styles{Line};
+   my $secedges =  $$node{secedges};
+   if($secedges && $secedges->elements()>1)
+   {
+#         foreach my $key (keys %$line_style){
+# 	    print STDERR "key in styles: ".$key." ".$$line_style{$key}."\n";
+# 	    
+# 	  } 
+        # get coords: instantiated with last secedge
+        my $coords =  $$line_style{'-coords'};
+
+        # secedge = arrayRef
+        my $secedgeElements = $secedges->values();
+        my $idOfLastSecedge = @{$secedges->values()}[-1]->{'idref'};
+        my $LabelOfLastSecedge = @{$secedges->values()}[-1]->{'secedgelabel'};
+        
+        foreach my $secedge (@$secedgeElements)
+        {
+
+           unless($secedge == @$secedgeElements[-1])
+           {
+                  # replace id of target node in coords of last secedge with target id of this secedge
+                  my $idref = $secedge->{'idref'};
+		  $coords =~ s/\Q$idOfLastSecedge\E/\Q$idref\E/g ;
+		  
+		  # replace edgelabel of last secedge with label of this secedge
+		  my $label = $secedge->{'secedgelabel'};
+		  my $deco = $$line_style{'-decoration'};
+		  $deco =~ s/\Q$LabelOfLastSecedge\E/\Q$label\E/g;
+		  
+
+		  my ($a, $arrow) =  split('&', $$line_style{'-arrow'});
+		  my ($b, $dash) = split('&', $$line_style{'-dash'});
+		  my ($c, $fill) = split('&' ,$$line_style{'-fill'});
+		  my ($d, $smooth) = split('&' ,$$line_style{'-smooth'});
+		  my ($e, $decoration) = split('&' ,$deco);
+		  
+		  #print STDERR "arrow : $arrow\ndash: $dash\nfill: $fill\nsmooth: $smooth\ndecoration: $deco";
+		  
+		  my @targets = PML::GetNodeByID( $idref,$fsfile);
+		 	  
+		   DrawArrows($node,$styles,
+		    [ map {{
+		      -target => PML::GetNodeByID( $idref,$fsfile),
+		      -arrow => $arrow,
+		      -decoration => $decoration,
+		      -fill => $fill,
+		      -smooth => $smooth,
+		      -dash => $dash,
+		      -coords => $coords }} @targets],
+		      {
+		      # options common to all edges
+		      }
+		    );
+
+	    }
+	}
+	
+     }
+}
+
+
+
+
+
+}
+1;
+
+#endif quechua
