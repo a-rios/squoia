@@ -8086,7 +8086,7 @@
 <e><p><l>pretensar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>preterir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>pretextar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>prevalecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>prevalecer</l><r>llalliy</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>prevaler</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>prevaricar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>prevenir</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -9029,7 +9029,7 @@
 <e><p><l>sobrepintar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sobreponer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sobrepujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>sobresalir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>sobresalir</l><r>llalliy</r></p><par n="Verb_main"/></e>
 <e><p><l>sobresaltar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sobresaturar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sobreseer</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -15771,4 +15771,5 @@
 	    <e><p><l>descabezar</l><r>umanay</r></p><par n="Noun_ac"/></e>
     <e><p><l>descabezar</l><r>uma qhoroy</r></p><par n="Noun_ac"/></e>
     <e><p><l>descabezar</l><r>uma wit'uy</r></p><par n="Noun_ac"/></e>
-       
+         <e><p><l>prestigiar</l><r>sumaychay</r></p><par n="Noun_ac"/></e>
+	 <e><p><l>profundizar</l><r>utkhuyachiy</r></p><par n="Noun_ac"/></e>

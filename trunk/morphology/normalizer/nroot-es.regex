@@ -37,6 +37,8 @@
 | [ {dueño} "["  "NRootES"  "]" ] :   {duwiñu}
 | [ {envidia} "["  "NRootES"  "]" ] :   {inwidiya}
 | [ {escuela} "["  "NRootES"  "]" ] :   {iskuyla}
+| [ {escuela} "["  "NRootES"  "]" ] :   {iskwiyla}
+| [ {escuela} "["  "NRootES"  "]" ] :   {iskwila}
 | [ {España} "["  "NP"  "]" ] :   {España}
 | [ {esquina} "["  "NRootES"  "]" ] :   {iskina}
 | [ {estación} "["  "NRootES"  "]" ] :   {istasyun}
