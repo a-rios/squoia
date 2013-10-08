@@ -186,7 +186,7 @@
    <value>s.subj_obj</value>
    <value>s.subj_iobj</value>
    <value>voc</value>
-   <value>co:acmp</value>
+  <!-- <value>co:acmp</value>
    <value>co:adv</value>
    <value>co:arg</value>
    <value>co:aux</value>
@@ -214,7 +214,7 @@
    <value>co:sub</value>
    <value>co:subj</value>
    <value>co:tmp</value>
-   <value>co:topic</value>
+   <value>co:topic</value>-->
   </choice>
  </type>
  
