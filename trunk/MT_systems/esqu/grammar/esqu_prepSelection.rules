@@ -177,10 +177,12 @@ sino		lem=sinu	-
 
 # sin hacer ->mana ruwaspa, sin dientes -> kiruNNAQ, sin Pedro -> mana PedroWAN
 # default:  mana -wan (?)
+# TODO: check, better -nnaq or mana -yuq?
 # -> impossible to distinguish between commitative (sin la mujer mana -wan) and possessive (sin dientes -nnaq)
 sin		prepos=mana			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@smi="VMN0000" or @smi="VSN0000"]}				-
-sin		case=+Abss			xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="estar" or @slem="quedar"]} || xpath{parent::CHUNK/CHUNK[@type="sn" or @type="coor-n"]/NODE[@sem="[+Bpart]"]} || (xpath{parent::CHUNK/parent::CHUNK[@type="sn" or @type="coor-n"] } && xpath{parent::CHUNK/CHUNK[@type="sn" or @type="coor-n"]} )		-
-sin		prepos=mana,nouncase=+Instr	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn" or @type="coor-n"]} && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@smi="VMN0000" or @smi="VSN0000" or @slem="estar" or @slem="quedar"]}) && !(xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="sn" or @type="coor-n"]})	+
+#sin		case=+Abss			xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="estar" or @slem="quedar" or @slem="ser"]} || xpath{parent::CHUNK/CHUNK[@type="sn" or @type="coor-n"]/NODE[@sem="[+Bpart]"]} || (xpath{parent::CHUNK/parent::CHUNK[@type="sn" or @type="coor-n"] } && xpath{parent::CHUNK/CHUNK[@type="sn" or @type="coor-n"]} )		-
+sin		prepos=mana,nouncase=+Poss	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="estar" or @slem="quedar" or @slem="ser"]} || xpath{parent::CHUNK/CHUNK[@type="sn" or @type="coor-n"]/NODE[@sem="[+Bpart]"]} || (xpath{parent::CHUNK/parent::CHUNK[@type="sn" or @type="coor-n"] } && xpath{parent::CHUNK/CHUNK[@type="sn" or @type="coor-n"]} )		-
+sin		prepos=mana,nouncase=+Instr	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn" or @type="coor-n"]} && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@smi="VMN0000" or @smi="VSN0000" or @slem="estar" or @slem="quedar"]}) && !(xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="sn" or @type="coor-n"]}) && !(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="estar" or @slem="quedar" or @slem="ser"]} )	+
 
 # sobre -> locativo: el libro está sobre la mesa -> hawa
 # sobre -> tema: el libro sobre la selva, hablar sobre algo -> Ablativo
