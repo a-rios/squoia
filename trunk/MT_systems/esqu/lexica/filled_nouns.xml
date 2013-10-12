@@ -8,7 +8,7 @@
 <e><p><l>abandonado</l><r>qunqasqa</r></p><par n="Noun"/></e>
 <e><p><l>abandonado</l><r>willullu</r></p><par n="Noun_ac"/></e>
 <e><p><l>abandonar</l><r>wikch'u</r></p><par n="Noun_ac"/></e>
-<e><p><l>abandono_de_bienes</l><r>wikch'u<s n="preform"/>#kawsay<s n="add_mi"/>+Aff+Rflx</r></p><par n="Noun_ac"/></e>
+<e><p><l>abandono_de_bienes</l><r>wikch'uy<s n="preform"/>#kawsay</r></p><par n="Noun_ac"/></e>
 <e><p><l>abatido</l><r>chirli</r></p><par n="Noun_ac"/></e>
 <e><p><l>abatido</l><r>willp'usqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>abatimiento</l><r>q'anparmana</r></p><par n="Noun_ac"/></e>
@@ -60,7 +60,7 @@
 <e><p><l>abundancia</l><r>kay<s n="preform"/>#achkha</r></p><par n="Noun_ac"/></e>
 <e><p><l>abundante_comida</l><r>saksapa</r></p><par n="Noun_ac"/></e>
 <e><p><l>abundante</l><r>achkha</r></p><par n="Noun"/></e>
-<e><p><l>abundantísimo</l><r>achkhallaña<s n="add_mi"/>+Lim+Disc</r></p><par n="Noun_ac"/></e>
+<e><p><l>abundantísimo</l><r>achkha<s n="add_mi"/>+Lim+Disc</r></p><par n="Noun_ac"/></e>
 <e><p><l>abundoso</l><r>achkha</r></p><par n="Noun"/></e>
 <e><p><l>aburrimiento</l><r>ami</r></p><par n="Noun_ac"/></e>
 <e><p><l>abusivo</l><r>sarunchakuq</r></p><par n="Noun_ac"/></e>
@@ -198,6 +198,13 @@
 <e><p><l>escondido</l><r>paka</r></p><par n="Noun_ac"/></e>
 <e><p><l>arrancadura</l><r>p'iti</r></p><par n="Noun_ac"/></e>
 <e><p><l>desprendimiento</l><r>p'iti</r></p><par n="Noun_ac"/></e>
+<e><p><l>despreciable</l><r>qisachana<s n="add_mi"/>+Lim</r></p><par n="Noun_ac"/></e>
+<e><p><l>despreciable</l><r>pisinchana<s n="add_mi"/>+Lim</r></p><par n="Noun_ac"/></e>
+<e><p><l>despreciado</l><r>qisachasqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>despreciado</l><r>pisinchasqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>despreciador</l><r>pisinchaq</r></p><par n="Noun_ac"/></e>
+<e><p><l>despreciador</l><r>qisachaq</r></p><par n="Noun_ac"/></e>
+<e><p><l>desprecio</l><r>qisa</r></p><par n="Noun_ac"/></e>
 <e><p><l>pedregal</l><r>rumi<s n="preform"/>#rumi</r></p><par n="Noun_ac"/></e>
 <e><p><l>pedregoso</l><r>rumi<s n="preform"/>#rumi</r></p><par n="Noun_ac"/></e>
 <e><p><l>embriaguez</l><r>sinka</r></p><par n="Noun_cp"/></e>
@@ -406,7 +413,7 @@
 <e><p><l>albañil</l><r>pirqaq</r></p><par n="Noun"/></e>
 <e><p><l>albedrío</l><r>munay</r></p><par n="Noun"/></e>
 <e><p><l>albergue</l><r>qurpawasi</r></p><par n="Noun_ac"/></e>
-<e><p><l>albísimo</l><r>yuraq<s n="add_mi"/>+Lim+Aff</r></p><par n="Noun_ac"/></e>
+<e><p><l>albísimo</l><r>yuraq<s n="add_mi"/>+Lim+Disc</r></p><par n="Noun_ac"/></e>
 <e><p><l>albo</l><r>yuraq</r></p><par n="Noun_ac"/></e>
 <e><p><l>alborada</l><r>illariy</r></p><par n="Noun_ac"/></e>
 <e><p><l>alboreado</l><r>illarisqa</r></p><par n="Noun"/></e>
@@ -508,6 +515,7 @@
 <e><p><l>aluvión</l><r>lluqlla</r></p><par n="Noun"/></e>
 <e><p><l>amable</l><r>sunqu<s n="preform"/>#sumaq</r></p><par n="Noun"/></e>
 <e><p><l>amaca</l><r>sirina</r></p><par n="Noun_ac"/></e>
+<e><p><l>amado</l><r>munasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>amaestrado</l><r>yachaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>amancebamiento</l><r>uywanakuy</r></p><par n="Noun"/></e>
 <e><p><l>amante</l><r>khuyaq</r></p><par n="Noun"/></e>
@@ -823,6 +831,7 @@
 <e><p><l>arriba</l><r>hanaq</r></p><par n="Noun"/></e>
 <e><p><l>arriendo</l><r>k'uchunchay</r></p><par n="Noun_ac"/></e>
 <e><p><l>arriendo</l><r>arinsa</r></p><par n="Noun_ac"/></e>
+<e><p><l>arriero</l><r>qatiq</r></p><par n="Noun_ac"/></e>
 <e><p><l>arrodillado</l><r>qunqurchaki</r></p><par n="Noun_ac"/></e>
 <e><p><l>arrogante</l><r>k'anka</r></p><par n="Noun_ac"/></e>
 <e><p><l>arrojable</l><r>wikch'una</r></p><par n="Noun_ac"/></e>
@@ -928,6 +937,7 @@
 <e><p><l>atajo</l><r>hark'a</r></p><par n="Noun_new"/></e>
 <e><p><l>atalaya</l><r>qhawana</r></p><par n="Noun"/></e>
 <e><p><l>ataque</l><r>wayka</r></p><par n="Noun_ac"/></e>
+<e><p><l>atardecer</l><r>ch'isiyay</r></p><par n="Noun_ac"/></e>
 <e><p><l>ataviado</l><r>k'achata</r></p><par n="Noun_ac"/></e>
 <e><p><l>atemorizado</l><r>mancharisqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>atemorizador</l><r>manchachiq</r></p><par n="Noun_ac"/></e>
@@ -1228,7 +1238,7 @@
 <e><p><l>blanco</l><r>yuraq</r></p><par n="Noun"/></e>
 <e><p><l>blancura</l><r>kay<s n="preform"/>#yuraq</r></p><par n="Noun"/></e>
 <e><p><l>blandísimo</l><r>llamp'uy<s n="preform"/>#llamp'uy</r></p><par n="Noun_ac"/></e>
-<e><p><l>blandísimo</l><r>ñapullaña</r></p><par n="Noun_ac"/></e>
+<e><p><l>blandísimo</l><r>ñapu</r></p><par n="Noun_ac"/></e>
 <e><p><l>blando</l><r>llamp'u</r></p><par n="Noun_new"/></e>
 <e><p><l>blando</l><r>llullu</r></p><par n="Noun_ac"/></e>
 <e><p><l>blando</l><r>ñapu</r></p><par n="Noun_ac"/></e>
@@ -1476,7 +1486,7 @@
 <e><p><l>cadera</l><r>tiqni</r></p><par n="Noun_ac"/></e>
 <e><p><l>cadera</l><r>pata<s n="preform"/>#siki</r></p><par n="Noun"/></e>
 <e><p><l>caderudo</l><r>tiqnisapa</r></p><par n="Noun_ac"/></e>
-<e><p><l>caduco</l><r>machullaña<s n="add_mi"/>+Lim+Disc</r></p><par n="Noun_ac"/></e>
+<e><p><l>caduco</l><r>machu<s n="add_mi"/>+Lim+Disc</r></p><par n="Noun_ac"/></e>
 <e><p><l>caduco</l><r>yuyaq<s n="add_mi"/>+Lim+Disc</r></p><par n="Noun_ac"/></e>
 <e><p><l>caedizo</l><r>urmalu</r></p><par n="Noun_ac"/></e>
 <e><p><l>caedizo</l><r>urmanayaq</r></p><par n="Noun_ac"/></e>
@@ -1706,6 +1716,7 @@
 <e><p><l>cartílago</l><r>k'apallu</r></p><par n="Noun_new"/></e>
 <e><p><l>cartílago</l><r>k'utkulli</r></p><par n="Noun_ac"/></e>
 <e><p><l>casa</l><r>wasi</r></p><par n="Noun"/></e>
+<e><p><l>casado</l><r>sawasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>casamiento</l><r>sawa</r></p><par n="Noun_ac"/></e>
 <e><p><l>cascabel</l><r>ch'amara</r></p><par n="Noun_ac"/></e>
 <e><p><l>cascabel</l><r>chanrara</r></p><par n="Noun_new"/></e>
@@ -2087,6 +2098,7 @@
 <e><p><l>coceador</l><r>hayt'aq</r></p><par n="Noun_ac"/></e>
 <e><p><l>cochino</l><r>khuchi</r></p><par n="Noun_new"/></e>
 <e><p><l>cocido</l><r>wayk'usqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>cocinado</l><r>wayk'usqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>cocinero</l><r>wayk'uq</r></p><par n="Noun_ac"/></e>
 <e><p><l>codiciable</l><r>munapayana</r></p><par n="Noun_ac"/></e>
 <e><p><l>codiciado</l><r>munapayasqa</r></p><par n="Noun"/></e>
@@ -2304,6 +2316,7 @@
 <e><p><l>acuario</l><r>mikikiray</r></p><par n="Noun_ac"/></e>
 <e><p><l>leo</l><r>chukichinchay</r></p><par n="Noun_ac"/></e>
 <e><p><l>cruz_del_sur</l><r>katachillay</r></p><par n="Noun_ac"/></e>
+<e><p><l>cruz</l><r>chakata</r></p><par n="Noun_ac"/></e>
 <e><p><l>cáncer</l><r>mach'aqway</r></p><par n="Noun_ac"/></e>
 <e><p><l>virgo</l><r>mamana</r></p><par n="Noun_ac"/></e>
 <e><p><l>géminis</l><r>mirku</r></p><par n="Noun_ac"/></e>
@@ -2385,6 +2398,7 @@
 <e><p><l>convergente</l><r>huñukipayuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>convergente</l><r>huñuqhuchuyuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>conversador</l><r>rimaq</r></p><par n="Noun_ac"/></e>
+<e><p><l>conversación</l><r>rimanakuy</r></p><par n="Noun_ac"/></e>
 <e><p><l>conversión</l><r>tukuna</r></p><par n="Noun"/></e>
 <e><p><l>converso</l><r>t'ikrakuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>convincente</l><r>mach'ikmaq</r></p><par n="Noun_ac"/></e>
@@ -2571,6 +2585,7 @@
 <e><p><l>crudo</l><r>chawa</r></p><par n="Noun"/></e>
 <e><p><l>cruel</l><r>awcha</r></p><par n="Noun_new"/></e>
 <e><p><l>cuadrado</l><r>tawak'uchu</r></p><par n="Noun_new"/></e>
+<e><p><l>cuadrúpedo</l><r>chaki<s n="preform"/>#tawa</r></p><par n="Noun_ac"/></e>
 <e><p><l>cuantioso</l><r>yupa</r></p><par n="Noun_ac"/></e>
 <e><p><l>cuanto</l><r>chikan</r></p><par n="Noun_new"/></e>
 <e><p><l>cuarteado</l><r>phaspa</r></p><par n="Noun_new"/></e>
@@ -2832,6 +2847,9 @@
 <e><p><l>denigrador</l><r>map'achaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>denigrante</l><r>map'achaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>denigrativo</l><r>map'achaq</r></p><par n="Noun_ac"/></e>
+<e><p><l>denominación</l><r>sutinchay</r></p><par n="Noun_ac"/></e>
+<e><p><l>denominado</l><r>sutinchasqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>denominador</l><r>sutinchaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>denso</l><r>khaka</r></p><par n="Noun_ac"/></e>
 <e><p><l>denso</l><r>pipu</r></p><par n="Noun"/></e>
 <e><p><l>denso</l><r>sankhu</r></p><par n="Noun_ac"/></e>
@@ -2932,6 +2950,12 @@
 <e><p><l>descomposición</l><r>liqhiyay</r></p><par n="Noun_ac"/></e>
 <e><p><l>descompuesto</l><r>ismu</r></p><par n="Noun_ac"/></e>
 <e><p><l>descompuesto</l><r>ismusqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>desconocedor</l><r>riqsiq<s n="preform"/>#mana</r></p><par n="Noun_ac"/></e>
+<e><p><l>desconocedor</l><r>yachaq<s n="preform"/>#mana</r></p><par n="Noun_ac"/></e>
+<e><p><l>desconocido</l><r>riqsisqa<s n="preform"/>#mana</r></p><par n="Noun_ac"/></e>
+<e><p><l>desconocido</l><r>yachasqa<s n="preform"/>#mana</r></p><par n="Noun_ac"/></e>
+<e><p><l>desconocimiento</l><r>riqsiy<s n="preform"/>#mana</r></p><par n="Noun_ac"/></e>
+<e><p><l>desconocimiento</l><r>yachay<s n="preform"/>#mana</r></p><par n="Noun_ac"/></e>
 <e><p><l>desconcertado</l><r>rawi</r></p><par n="Noun_ac"/></e>
 <e><p><l>desconcertado</l><r>thanqusqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>desconcertador</l><r>rawiq</r></p><par n="Noun_ac"/></e>
@@ -3437,8 +3461,10 @@
 <e><p><l>diván</l><r>sirina</r></p><par n="Noun_ac"/></e>
 <e><p><l>divergencia</l><r>kay<s n="preform"/>#k'akcha</r></p><par n="Noun"/></e>
 <e><p><l>divergente</l><r>k'akcha</r></p><par n="Noun_ac"/></e>
-<e><p><l>diversidad</l><r>rikch'aq<s n="preform"/>#tukuy</r></p><par n="Noun"/></e>
-<e><p><l>diversificación</l><r>ñawra</r></p><par n="Noun_ac"/></e>
+<e><p><l>diverso</l><r>ñawra</r></p><par n="Noun"/></e>
+<e><p><l>diverso</l><r>rikch'aq<s n="preform"/>#tukuy</r></p><par n="Noun"/></e>
+<e><p><l>diversidad</l><r>kay<s n="preform"/>#tukuy#rikch'aq</r></p><par n="Noun"/></e>
+<e><p><l>diversificación</l><r>ñawray</r></p><par n="Noun_ac"/></e>
 <e><p><l>diversificado</l><r>ñawra</r></p><par n="Noun"/></e>
 <e><p><l>diversión</l><r>hawka</r></p><par n="Noun_ac"/></e>
 <e><p><l>diversión</l><r>kusikuy</r></p><par n="Noun_ac"/></e>
@@ -3480,6 +3506,7 @@
 <e><p><l>dócil</l><r>sunqu<s n="preform"/>#llamp'u</r></p><par n="Noun"/></e>
 <e><p><l>docto</l><r>hamawt'a</r></p><par n="Noun"/></e>
 <e><p><l>docto</l><r>yachayniyuq</r></p><par n="Noun_ac"/></e>
+<e><p><l>doctor</l><r>hampiq</r></p><par n="Noun_ac"/></e>
 <e><p><l>dolencia</l><r>nanay</r></p><par n="Noun_ac"/></e>
 <e><p><l>dolencia</l><r>unquy</r></p><par n="Noun_ac"/></e>
 <e><p><l>dolido</l><r>sintisqa</r></p><par n="Noun_ac"/></e>
@@ -3748,6 +3775,9 @@
 <e><p><l>encéfalo</l><r>ñutqhu</r></p><par n="Noun_ac"/></e>
 <e><p><l>encendedor</l><r>hap'ichina</r></p><par n="Noun_ac"/></e>
 <e><p><l>encendido</l><r>hap'ichisqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>encerrable</l><r>wichq'ana<s n="add_mi"/>+Lim</r></p><par n="Noun"/></e>
+<e><p><l>encerrado</l><r>wichq'asqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>encerramiento</l><r>wichq'ay</r></p><par n="Noun_ac"/></e>
 <e><p><l>encestado</l><r>sat'isqa</r></p><par n="Noun"/></e>
 <e><p><l>encestador</l><r>sat'iq</r></p><par n="Noun"/></e>
 <e><p><l>encestador</l><r>winaq</r></p><par n="Noun"/></e>
@@ -4197,6 +4227,7 @@
 <e><p><l>escribano</l><r>qillqakamayuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>escribiente</l><r>qillqaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>escritorio</l><r>hamp'ara<s n="preform"/>#qillqana</r></p><par n="Noun_ac"/></e>
+<e><p><l>escrito</l><r>qillqasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>escritor</l><r>qillqakamayuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>escritor</l><r>qillqaq</r></p><par n="Noun"/></e>
 <e><p><l>escritura</l><r>qillqa</r></p><par n="Noun_new"/></e>
@@ -5029,6 +5060,7 @@
 <e><p><l>gallina</l><r>wallpa</r></p><par n="Noun"/></e>
 <e><p><l>gallinazo</l><r>suyuntuy</r></p><par n="Noun"/></e>
 <e><p><l>gallinazo</l><r>suwaq'ara</r></p><par n="Noun_ac"/></e>
+<e><p><l>gallito</l><r>k'ankacha</r></p><par n="Noun_ac"/></e>
 <e><p><l>gallo</l><r>k'anka</r></p><par n="Noun"/></e>
 <e><p><l>galpón</l><r>raqay</r></p><par n="Noun_new"/></e>
 <e><p><l>ganado</l><r>uywa</r></p><par n="Noun"/></e>
@@ -5131,6 +5163,7 @@
 <e><p><l>glotón</l><r>rakraq</r></p><par n="Noun_ac"/></e>
 <e><p><l>glúteo</l><r>siki</r></p><par n="Noun_ac"/></e>
 <e><p><l>glutinoso</l><r>k'askakuq</r></p><par n="Noun_ac"/></e>
+<e><p><l>gobierno</l><r>kamachiy</r></p><par n="Noun_ac"/></e>
 <e><p><l>golondrina</l><r>khallwa</r></p><par n="Noun_new"/></e>
 <e><p><l>golondrina</l><r>wayanay</r></p><par n="Noun_ac"/></e>
 <e><p><l>golosina</l><r>añaka</r></p><par n="Noun_new"/></e>
@@ -5252,6 +5285,7 @@
 <e><p><l>guardián</l><r>kamayuq<s n="preform"/>#punku</r></p><par n="Noun_ac"/></e>
 <e><p><l>guarida</l><r>pakakuna</r></p><par n="Noun_ac"/></e>
 <e><p><l>guayaba</l><r>sawintu</r></p><par n="Noun_ac"/></e>
+<e><p><l>guerra</l><r>awqanakuy</r></p><par n="Noun_ac"/></e>
 <e><p><l>guerrera</l><r>awqalli</r></p><par n="Noun_ac"/></e>
 <e><p><l>guerrero</l><r>wallawisa</r></p><par n="Noun_new"/></e>
 <e><p><l>guerrero</l><r>awqalli</r></p><par n="Noun_ac"/></e>
@@ -5686,6 +5720,7 @@
 <e><p><l>implorado</l><r>mañasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>implorador</l><r>mañaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>implume</l><r>hallaka</r></p><par n="Noun_ac"/></e>
+<e><p><l>importante</l><r>chaniyuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>imposible</l><r>nipuni</r></p><par n="Noun_ac"/></e>
 <e><p><l>imposible</l><r>manapuni</r></p><par n="Noun_ac"/></e>
 <e><p><l>impotencia</l><r>kay<s n="preform"/>#qumi</r></p><par n="Noun_ac"/></e>
@@ -6423,7 +6458,7 @@
 <e><p><l>liviano</l><r>surq'a</r></p><par n="Noun_ac"/></e>
 <e><p><l>llaga</l><r>k'iri</r></p><par n="Noun"/></e>
 <e><p><l>llamada</l><r>waqya</r></p><par n="Noun_new"/></e>
-<e><p><l>llamado</l><r>sutichasqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>llamado</l><r>sutinchasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>llamador</l><r>waqyaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>llama</l><r>llama</r></p><par n="Noun"/></e>
 <e><p><l>llama</l><r>nina</r></p><par n="Noun"/></e>
@@ -6436,6 +6471,9 @@
 <e><p><l>llanura</l><r>pampa</r></p><par n="Noun"/></e>
 <e><p><l>llave</l><r>kichakuq</r></p><par n="Noun"/></e>
 <e><p><l>llave</l><r>kichana</r></p><par n="Noun_ac"/></e>
+<e><p><l>llegada</l><r>chayay</r></p><par n="Noun_ac"/></e>
+<e><p><l>llegado</l><r>chayasqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>llenado</l><r>hunt'asqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>lleno</l><r>hunt'a</r></p><par n="Noun_ac"/></e>
 <e><p><l>lleno</l><r>hunt'asqa</r></p><par n="Noun"/></e>
 <e><p><l>lleno</l><r>llimp'a</r></p><par n="Noun_ac"/></e>
@@ -6855,6 +6893,7 @@
 <e><p><l>mediador</l><r>chawpichaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>mediano</l><r>taksa</r></p><par n="Noun"/></e>
 <e><p><l>mediano</l><r>tinku</r></p><par n="Noun_ac"/></e>
+<e><p><l>medianoche</l><r>tuta<s n="preform"/>#chawpi</r></p><par n="Noun_ac"/></e>
 <e><p><l>medicamento</l><r>hampi</r></p><par n="Noun"/></e>
 <e><p><l>medicina</l><r>hampi</r></p><par n="Noun_new"/></e>
 <e><p><l>médico</l><r>hampiq</r></p><par n="Noun"/></e>
@@ -6884,7 +6923,7 @@
 <e><p><l>mellado</l><r>khankisqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>mellado</l><r>q'asasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>mella</l><r>q'asa</r></p><par n="Noun"/></e>
-<e><p><l>mellizo</l><r>awa<s n="add_mi"/>+Dim</r></p><par n="Noun_ac"/></e>
+<e><p><l>mellizo</l><r>awacha</r></p><par n="Noun_ac"/></e>
 <e><p><l>mellizo</l><r>wispa</r></p><par n="Noun_ac"/></e>
 <e><p><l>melodía</l><r>taki</r></p><par n="Noun_ac"/></e>
 <e><p><l>meloso</l><r>misk'i</r></p><par n="Noun"/></e>
@@ -7428,6 +7467,7 @@
 <e><p><l>oblongo</l><r>suyt'u</r></p><par n="Noun"/></e>
 <e><p><l>obrador</l><r>ruraq</r></p><par n="Noun_ac"/></e>
 <e><p><l>obra</l><r>rurana</r></p><par n="Noun"/></e>
+<e><p><l>obrero</l><r>llamk'aq</r></p><par n="Noun_ac"/></e>
 <e><p><l>obscurecimiento</l><r>tutayachiy</r></p><par n="Noun_ac"/></e>
 <e><p><l>obscuridad</l><r>tuta</r></p><par n="Noun"/></e>
 <e><p><l>obscuridad</l><r>laqha</r></p><par n="Noun"/></e>
@@ -7557,6 +7597,7 @@
 <e><p><l>origen</l><r>qallaykuy<s n="add_mi"/>+3.Sg.Poss</r></p><par n="Noun"/></e>
 <e><p><l>original</l><r>kaq<s n="preform"/>#kikin</r></p><par n="Noun_ac"/></e>
 <e><p><l>orilla</l><r>pata</r></p><par n="Noun"/></e>
+<e><p><l>orín</l><r>hisp'ay</r></p><par n="Noun_ac"/></e>
 <e><p><l>orina</l><r>hisp'ay</r></p><par n="Noun_new"/></e>
 <e><p><l>oro</l><r>quri</r></p><par n="Noun"/></e>
 <e><p><l>oropel</l><r>chuqillu</r></p><par n="Noun_ac"/></e>
@@ -7861,10 +7902,10 @@
 <e><p><l>pedaceado</l><r>q'alla-q'alla</r></p><par n="Noun_ac"/></e>
 <e><p><l>pedagogo</l><r>yachachiq</r></p><par n="Noun_ac"/></e>
 <e><p><l>pedante</l><r>tukuq<s n="preform"/>#yachay</r></p><par n="Noun_ac"/></e>
-<e><p><l>pedazo</l><r>as<s n="add_mi"/>+Lim+3.Sg.Subj</r></p><par n="Noun_ac"/></e>
-<e><p><l>pedazo</l><r>p'aki<s n="add_mi"/>+3.Sg.Subj</r></p><par n="Noun_ac"/></e>
+<e><p><l>pedazo</l><r>as<s n="add_mi"/>+Lim+3.Sg.Poss</r></p><par n="Noun_ac"/></e>
+<e><p><l>pedazo</l><r>p'aki<s n="add_mi"/>+3.Sg.Poss</r></p><par n="Noun_ac"/></e>
 <e><p><l>pedazo</l><r>phakma</r></p><par n="Noun_new"/></e>
-<e><p><l>pedazo</l><r>waki<s n="add_mi"/>+3.Sg.Subj</r></p><par n="Noun_ac"/></e>
+<e><p><l>pedazo</l><r>waki<s n="add_mi"/>+3.Sg.Poss</r></p><par n="Noun_ac"/></e>
 <e><p><l>pedernal</l><r>qhillay<s n="preform"/>#nina</r></p><par n="Noun_ac"/></e>
 <e><p><l>pedernal</l><r>rumi<s n="preform"/>#qhisqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>pediculosis</l><r>unquy<s n="preform"/>#usa</r></p><par n="Noun_ac"/></e>
@@ -8703,7 +8744,7 @@
 <e><p><l>querido</l><r>munasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>querido</l><r>wayllusqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>queso</l><r>masara</r></p><par n="Noun_ac"/></e>
-<e><p><l>quieto</l><r>qasi<s n="add_mi"/>+</r></p><par n="Noun"/></e>
+<e><p><l>quieto</l><r>qasi<s n="add_mi"/>+Lim</r></p><par n="Noun"/></e>
 <e><p><l>quieto</l><r>thak</r></p><par n="Noun_ac"/></e>
 <e><p><l>quietud</l><r>kay<s n="preform"/>#qasi</r></p><par n="Noun_ac"/></e>
 <e><p><l>quijada</l><r>k'aki</r></p><par n="Noun"/></e>
@@ -9142,8 +9183,10 @@
 <e><p><l>rezongador</l><r>thutupakuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>rezongo</l><r>thutupakuy</r></p><par n="Noun_ac"/></e>
 <e><p><l>rezongón</l><r>thutupakuq</r></p><par n="Noun_ac"/></e>
+<e><p><l>riachuelo</l><r>mayucha</r></p><par n="Noun"/></e>
 <e><p><l>ribete</l><r>killi</r></p><par n="Noun_ac"/></e>
 <e><p><l>ribete</l><r>q'impi</r></p><par n="Noun_ac"/></e>
+<e><p><l>ribera</l><r>quchapata</r></p><par n="Noun_ac"/></e>
 <e><p><l>rico</l><r>miski</r></p><par n="Noun"/></e>
 <e><p><l>rico</l><r>qhapaq</r></p><par n="Noun"/></e>
 <e><p><l>riego</l><r>qarpay</r></p><par n="Noun_ac"/></e>
@@ -9159,6 +9202,9 @@
 <e><p><l>riñón</l><r>rurun</r></p><par n="Noun_new"/></e>
 <e><p><l>riñon</l><r>rurun</r></p><par n="Noun"/></e>
 <e><p><l>río</l><r>mayu</r></p><par n="Noun"/></e>
+<e><p><l>riqueza</l><r>kay<s n="preform"/>#qhapaq</r></p><par n="Noun"/></e>
+<e><p><l>riquísimo</l><r>qhapaq<s n="add_mi"/>+Lim+Disc</r></p><par n="Noun"/></e>
+<e><p><l>riquísimo</l><r>miski<s n="add_mi"/>+Lim+Disc</r></p><par n="Noun"/></e>
 <e><p><l>risa</l><r>asiy</r></p><par n="Noun"/></e>
 <e><p><l>risueño</l><r>asi-asi</r></p><par n="Noun_ac"/></e>
 <e><p><l>risueño</l><r>thinti</r></p><par n="Noun_ac"/></e>
@@ -10212,6 +10258,7 @@
 <e><p><l>vesícula</l><r>hayaqi</r></p><par n="Noun_ac"/></e>
 <e><p><l>vestido</l><r>p'acha</r></p><par n="Noun"/></e>
 <e><p><l>vestigio</l><r>yupi</r></p><par n="Noun"/></e>
+<e><p><l>vestimenta</l><r>p'acha</r></p><par n="Noun"/></e>
 <e><p><l>veta</l><r>q'iqi</r></p><par n="Noun_ac"/></e>
 <e><p><l>vez</l><r>kuti</r></p><par n="Noun"/></e>
 <e><p><l>viajero</l><r>puriq</r></p><par n="Noun"/></e>
@@ -10264,17 +10311,27 @@
 <e><p><l>viscoso</l><r>thaka</r></p><par n="Noun_ac"/></e>
 <e><p><l>visible</l><r>rikuna<s n="add_mi"/>+Lim</r></p><par n="Noun"/></e>
 <e><p><l>visión</l><r>rikuy</r></p><par n="Noun_cp"/></e>
+<e><p><l>visitado</l><r>watukusqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>visitador</l><r>watukuq</r></p><par n="Noun_ac"/></e>
+<e><p><l>visita</l><r>watukuy</r></p><par n="Noun_ac"/></e>
+<e><p><l>visitante</l><r>watukuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>vista</l><r>rikuy</r></p><par n="Noun"/></e>
 <e><p><l>vivaz</l><r>k'uchi</r></p><par n="Noun_cp"/></e>
 <e><p><l>víveres</l><r>mikhunakuna</r></p><par n="Noun_ac"/></e>
 <e><p><l>viveza</l><r>kay<s n="preform"/>#k'uchi</r></p><par n="Noun_ac"/></e>
 <e><p><l>vivienda</l><r>wasi</r></p><par n="Noun"/></e>
 <e><p><l>viviente</l><r>kawsaq</r></p><par n="Noun"/></e>
+<e><p><l>vivo</l><r>kawsaq</r></p><par n="Noun_ac"/></e>
+<e><p><l>vivo</l><r>k'uchi</r></p><par n="Noun_ac"/></e>
+<e><p><l>vivo</l><r>yachaysapa</r></p><par n="Noun_ac"/></e>
 <e><p><l>vizcacha</l><r>wisk'acha</r></p><par n="Noun_new"/></e>
 <e><p><l>vocablo</l><r>simi</r></p><par n="Noun"/></e>
 <e><p><l>vocinglería</l><r>ruqyay</r></p><par n="Noun_ac"/></e>
 <e><p><l>vocinglería</l><r>ch'aqway</r></p><par n="Noun_ac"/></e>
+<e><p><l>volado</l><r>phawasqa</r></p><par n="Noun"/></e>
+<e><p><l>volador</l><r>phawaq</r></p><par n="Noun"/></e>
 <e><p><l>volante</l><r>phawaq</r></p><par n="Noun_ac"/></e>
+<e><p><l>volante</l><r>qalla</r></p><par n="Noun_ac"/></e>
 <e><p><l>volatinero</l><r>wayllunk'u</r></p><par n="Noun_ac"/></e>
 <e><p><l>volcán</l><r>ariq</r></p><par n="Noun_new"/></e>
 <e><p><l>volteado</l><r>t'ikrasqa</r></p><par n="Noun_ac"/></e>
