@@ -32,7 +32,8 @@
 <e><p><l>ablandador</l><r>llamp'uyachiq</r></p><par n="Noun_ac"/></e>
 <e><p><l>abobado</l><r>uliq</r></p><par n="Noun_ac"/></e>
 <e><p><l>abochornable</l><r>p'inqali</r></p><par n="Noun_ac"/></e>
-<e><p><l>abofeteador</l><r>ch'aqlaq</r></p><par n="Noun_ac"/></e>
+    <e><p><l>abochornado</l><r>p'inqarqachisqa</r></p><par n="Noun_ac"/></e>
+<e><p><l>abofeteador</l><r>ch'aqllaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>abogado</l><r>amachaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>abolengo</l><r>sana</r></p><par n="Noun_ac"/></e>
 <e><p><l>abollable</l><r>q'aphñukuq</r></p><par n="Noun_ac"/></e>
@@ -87,6 +88,7 @@
 <e><p><l>acechado</l><r>watiqasqa</r></p><par n="Noun"/></e>
 <e><p><l>acechar</l><r>watiqay</r></p><par n="Noun_cp"/></e>
 <e><p><l>acecho</l><r>watiqay</r></p><par n="Noun_cp"/></e>
+<e><p><l>aceitado</l><r>hawisqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>aceite</l><r>hawi</r></p><par n="Noun_new"/></e>
 <e><p><l>acelerador</l><r>utqhaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>aceptable</l><r>huñina</r></p><par n="Noun_ac"/></e>
@@ -882,6 +884,7 @@
 <e><p><l>asecha</l><r>tuqllaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>asentimiento</l><r>huñi</r></p><par n="Noun_ac"/></e>
 <e><p><l>aseo</l><r>maqchiy</r></p><par n="Noun_ac"/></e>
+<e><p><l>asequible</l><r>sumaqchakuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>aserrín</l><r>phunpachi</r></p><par n="Noun_ac"/></e>
 <e><p><l>asesinado</l><r>sipisqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>asesinato</l><r>sipi</r></p><par n="Noun_new"/></e>
@@ -1283,8 +1286,8 @@
 <e><p><l>boda</l><r>kuskanchakuy</r></p><par n="Noun_ac"/></e>
 <e><p><l>boda</l><r>sawa</r></p><par n="Noun_ac"/></e>
 <e><p><l>bofe</l><r>surq'an</r></p><par n="Noun"/></e>
-<e><p><l>bofetada</l><r>ch'aqla</r></p><par n="Noun_ac"/></e>
-<e><p><l>bofetón</l><r>ch'aqla</r></p><par n="Noun"/></e>
+<e><p><l>bofetada</l><r>ch'aqlla</r></p><par n="Noun_ac"/></e>
+<e><p><l>bofetón</l><r>ch'aqlla</r></p><par n="Noun"/></e>
 <e><p><l>bola_de_coca_masticada</l><r>aku</r></p><par n="Noun_new"/></e>
 <e><p><l>bola</l><r>sinku</r></p><par n="Noun_ac"/></e>
 <e><p><l>bola</l><r>rumpu</r></p><par n="Noun_ac"/></e>
@@ -1458,9 +1461,9 @@
 <e><p><l>caca</l><r>aka</r></p><par n="Noun"/></e>
 <e><p><l>cacao</l><r>wayupata</r></p><par n="Noun_ac"/></e>
 <e><p><l>cacería</l><r>chaku</r></p><par n="Noun_ac"/></e>
-<e><p><l>cachetada</l><r>ch'aqla</r></p><par n="Noun_new"/></e>
-<e><p><l>cacheteado</l><r>ch'aqlasqa</r></p><par n="Noun"/></e>
-<e><p><l>cacheteador</l><r>ch'aqlaq</r></p><par n="Noun_ac"/></e>
+<e><p><l>cachetada</l><r>ch'aqlla</r></p><par n="Noun_new"/></e>
+<e><p><l>cacheteado</l><r>ch'aqllasqa</r></p><par n="Noun"/></e>
+<e><p><l>cacheteador</l><r>ch'aqllaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>cachete</l><r>tullu<s n="preform"/>#uya</r></p><par n="Noun_ac"/></e>
 <e><p><l>cachete</l><r>urquqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>cacho</l><r>waqra</r></p><par n="Noun_ac"/></e>
