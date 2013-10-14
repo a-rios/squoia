@@ -449,6 +449,8 @@
 <e><p><l>alfombra</l><r>qumpi</r></p><par n="Noun_ac"/></e>
 <e><p><l>alforja</l><r>wayaqa</r></p><par n="Noun"/></e>
 <e><p><l>alga</l><r>llulluch'a</r></p><par n="Noun_ac"/></e>
+ <e><p><l>algarabía</l><r>ch'aqwa</r></p><par n="Noun_ac"/></e>
+    <e><p><l>algarabía</l><r>ruqya</r></p><par n="Noun_ac"/></e>
 <e><p><l>algodón</l><r>utkhu</r></p><par n="Noun"/></e>
 <e><p><l>algún</l><r>wakin</r></p><par n="Noun_ac"/></e>
 <e><p><l>algunos</l><r>wakin</r></p><par n="Noun_new"/></e>
@@ -515,7 +517,7 @@
 <e><p><l>alumbramiento</l><r>wacha</r></p><par n="Noun_ac"/></e>
 <e><p><l>alumno</l><r>yachakuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>aluvión</l><r>lluqlla</r></p><par n="Noun"/></e>
-<e><p><l>amable</l><r>sunqu<s n="preform"/>#sumaq</r></p><par n="Noun"/></e>
+<e><p><l>amable</l><r>sunqu<s n="preform"/>#sumaq</r></p><par n="Noun"/></e> 
 <e><p><l>amaca</l><r>sirina</r></p><par n="Noun_ac"/></e>
 <e><p><l>amado</l><r>munasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>amaestrado</l><r>yachaq</r></p><par n="Noun_ac"/></e>
