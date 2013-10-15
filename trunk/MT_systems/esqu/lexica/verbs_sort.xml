@@ -45,14 +45,14 @@
 <e><p><l>abismar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>abitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>abjurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>ablandar</l><r>llamp'uya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>ablandar</l><r>llulluya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>ablandar</l><r>llamp'uya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <e><p><l>ablandar</l><r>llulluya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
 <!-- intrans. variants     -->
-    <e><p><l>ablandar</l><r>llamp'uya<s n="intrans"/></r></p><par n="Verb_main"/></e>
-    <e><p><l>ablandar</l><r>llulluya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>abobar</l><r>upaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ablandar</l><r>llamp'uya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+    <e><p><l>ablandar</l><r>llulluya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>abobar</l><r>upaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se    -->
-    <e><p><l>abobar</l><r>upaya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>abobar</l><r>upaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>abocadear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>abocardar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>abocar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -176,10 +176,9 @@
 <e><p><l>acechar</l><r>watiqa</r></p><par n="Verb_main"/></e>
 <e><p><l>acecinar</l><r>ch'arki</r></p><par n="Verb_main_new"/></e>
 <e><p><l>acedar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>aceitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aceitar</l><r>wiswicha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>aceitar</l><r>wiswicha<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>aceitar</l><r>wiswiya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>aceitar</l><r>wiswiya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>acelerar</l><r>utqha</r></p><par n="Verb_main"/></e>
 <e><p><l>acendrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>acensar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -230,10 +229,10 @@
 <e><p><l>acicatear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>acidar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>acidificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>acidular</l><r>p'uchquya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>acidular</l><r>qhatqicha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>acidular</l><r>p'uchquya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>acidular</l><r>qhatqicha<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
  <!-- intrans. -se -->
-    <e><p><l>acidular</l><r>p'uchquya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>acidular</l><r>p'uchquya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aciguatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aclamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>aclarar</l><r>chiqancha</r></p><par n="Verb_main_ac"/></e>
@@ -308,10 +307,10 @@
 <e><p><l>acosar</l><r>qati<s n="add_mi"/>+Intrup</r></p><par n="Verb_main"/></e>
  <e><p><l>acosar</l><r>qati<s n="add_mi"/>+MRep</r></p><par n="Verb_main"/></e>
 <e><p><l>acosijar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>acostar</l><r>puñu<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>acostar</l><r>puñu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
    <!-- intrans. -se -->  
-  <e><p><l>acostar</l><r>siri<s n="intrans"/></r></p><par n="Verb_main"/></e>
-  <e><p><l>acostar</l><r>puñu<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+  <e><p><l>acostar</l><r>siri<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+  <e><p><l>acostar</l><r>puñu<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>acostumbrar</l><r>yacha<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
     <e><p><l>acotar</l><r>ch'iqu</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>acotar</l><r>saywa</r></p><par n="Verb_main_ac"/></e>
@@ -435,9 +434,9 @@
 <e><p><l>advertir</l><r>willa</r></p><par n="Verb_main"/></e>
 <e><p><l>afamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>afanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>afear</l><r>millaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>afear</l><r>millaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
-    <e><p><l>afear</l><r>millaya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>afear</l><r>millaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>afectar</l><r>chaya</r></p><par n="Verb_main"/></e>
     <e><p><l>afectar</l><r>llaklla</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>afeitar</l><r>mumi</r></p><par n="Verb_main_ac"/></e>
@@ -455,15 +454,14 @@
 <e><p><l>afincar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>afirmar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>afistular</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>afligir</l><r>llaki<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>afligir</l><r>phuti<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>afligir</l><r>llaki<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>afligir</l><r>phuti<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>afligir</l><r>llaki<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>afligir</l><r>phuti<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>aflojar</l><r>wayaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+    <e><p><l>afligir</l><r>llaki<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>afligir</l><r>phuti<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>aflojar</l><r>wayaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
  <!-- intrans. -se -->
-<e><p><l>aflojar</l><r>wayaya<s n="intrans"/></r></p><par n="Verb_main"/></e>
-<e><p><l>aflorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>aflojar</l><r>wayaya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>afluir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>afogarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>afollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -495,11 +493,11 @@
 <e><p><l>agenciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>agermanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>agigantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
- <e><p><l>agilizar</l><r>ch'itiya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
- <e><p><l>agilizar</l><r>k'uchiya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+ <e><p><l>agilizar</l><r>ch'itiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+ <e><p><l>agilizar</l><r>k'uchiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>agilizar</l><r>ch'itiya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>agilizar</l><r>k'uchiya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agilizar</l><r>ch'itiya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agilizar</l><r>k'uchiya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>agitar</l><r>ayti</r></p><par n="Verb_main"/></e>
     <e><p><l>agitar</l><r>taku<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>agitar</l><r>chhaphchi</r></p><par n="Verb_main_ac"/></e>
@@ -513,25 +511,25 @@
 <e><p><l>agorgojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>agostar</l><r>qarwa</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>agostar</l><r>ch'akiya</r></p><par n="Verb_main_ac"/></e>   
-    <e><p><l>agotar</l><r>pisi<s n="add_mi"/>+Rep+Caus</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>agotar</l><r>sayk'u<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agotar</l><r>pisi<s n="add_mi"/>+Rep+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agotar</l><r>sayk'u<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>agotar</l><r>sayk'u<s n="intrans"/></r></p><par n="Verb_main"/></e>
-    <e><p><l>agotar</l><r>pisi<s n="intrans"/><s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>agotar</l><r>tuku<s n="intrans"/><s n="add_mi"/>+Des</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agotar</l><r>sayk'u<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+    <e><p><l>agotar</l><r>pisi<s n="transitivity"/>intrans<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agotar</l><r>tuku<s n="transitivity"/>intrans<s n="add_mi"/>+Des</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>agraciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>agradar</l><r>kusi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>agradecer</l><r>añaycha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>agradecer</l><r>yupaycha</r></p><par n="Verb_main"/></e>
 <e><p><l>agramar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>agramilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>agrandar</l><r>hatunya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agrandar</l><r>hatunya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>agrandar</l><r>hatunya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agrandar</l><r>hatunya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>agranujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>agravar</l><r>allinya<s n="add_mi"/>+Caus<s n="preform"/>#mana</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agravar</l><r>allinya<s n="add_mi"/>+Caus<s n="preform"/>#mana<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>agravar</l><r>allinya <s n="intrans"/><s n="preform"/>#mana</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agravar</l><r>allinya <s n="transitivity"/>intrans<s n="preform"/>#mana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>agraviar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>agredir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>agregar</l><r>yapa</r></p><par n="Verb_main"/></e>
@@ -539,7 +537,7 @@
 <e><p><l>agriar</l><r>p'uchqu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>agrietar</l><r>k'aka</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>agrietar</l><r>raqra<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>agrietar</l><r>raqra<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>agrupar</l><r>huñu</r></p><par n="Verb_main"/></e>
     <e><p><l>agrupar</l><r>tanta</r></p><par n="Verb_main_ac"/></e>  
 <e><p><l>aguachar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -574,13 +572,13 @@
 <e><p><l>ahitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ahocicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ahocinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>ahogar</l><r>hiq'ipa<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>ahogar</l><r>hiq'ipa<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <!-- intrans. -se -->
-    <e><p><l>ahogar</l><r>hiq'ipa<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ahogar</l><r>hiq'ipa<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ahondar</l><r>p'ukrucha</r></p><par n="Verb_main"/></e>
-    <e><p><l>ahondar</l><r>ukhucha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ahondar</l><r>ukhucha<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>ahondar</l><r>ukhuya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ahondar</l><r>ukhuya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ahorcajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ahorcar</l><r>siq'u</r></p><par n="Verb_main"/></e>
 <e><p><l>ahormar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -595,22 +593,21 @@
 <e><p><l>ahumar</l><r>q'usñi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>ahusar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ahuyentar</l><r>ayqi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-<e><p><l>airar</l><r>sawch'u<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>airar</l><r>sawch'u<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
 <!-- intrans. -se -->
-<e><p><l>airar</l><r>sawch'u<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+<e><p><l>airar</l><r>sawch'u<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>airear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aislar</l><r>sapancha</r></p><par n="Verb_main"/></e>
     <e><p><l>aislar</l><r>sapaqcha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aislar</l><r>t'aqa<s n="add_mi"/>+Caus</r></p><par n="Noun_ac"/></e>
+    <e><p><l>aislar</l><r>t'aqa<s n="transitivity"/>trans<s n="add_mi"/>+Caus</r></p><par n="Noun_ac"/></e>
     <!-- intrans. -se --> 
-    <e><p><l>aislar</l><r>t'aqa<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aislar</l><r>sapaqcha<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>aislar</l><r>t'aqa<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ajamonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ajaquecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ajardinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>ajar</l><r>waqlli</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se (plantas)-->
-    <e><p><l>ajar</l><r>naq'i<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ajar</l><r>naq'i<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ajear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ajetrear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ajobar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -634,12 +631,12 @@
 <e><p><l>alampar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alancear</l><r>chuki</r></p><par n="Verb_main"/></e>
 <e><p><l>alardear</l><r>k'aski<s n="add_mi"/>+Intrup</r></p><par n="Verb_main"/></e>
-    <e><p><l>alargar</l><r>sunicha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>alargar</l><r>suyt'uya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>alargar</l><r>unaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+    <e><p><l>alargar</l><r>sunicha<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>alargar</l><r>suyt'uya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <e><p><l>alargar</l><r>unaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
    <!-- intrans. -se -->
-   <e><p><l>alargar</l><r>suyt'uya<s n="intrans"/></r></p><par n="Verb_main"/></e>
-   <e><p><l>alargar</l><r>unaya<s n="intrans"/></r></p><par n="Verb_main"/></e>
+   <e><p><l>alargar</l><r>suyt'uya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+   <e><p><l>alargar</l><r>unaya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>alarmar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alastrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>albardanear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -652,11 +649,11 @@
     <e><p><l>alborotar</l><r>ch'aqwa</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>alborotar</l><r>takuri</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>alborozar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>alborozar</l><r>chama<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>alborozar</l><r>kusi<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>alborozar</l><r>chama<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>alborozar</l><r>kusi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>alborozar</l><r>chama<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>alborozar</l><r>kusi<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>alborozar</l><r>chama<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>alborozar</l><r>kusi<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>alburear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alcahazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alcahuetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -680,11 +677,11 @@
 <e><p><l>alechugar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alegorizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>alegrar</l><r>kusi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-<e><p><l>alegrar</l><r>q'uchu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>alegrar</l><r>kusi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>alegrar</l><r>q'uchu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
  <!-- intrans. -se -->
- <e><p><l>alegrar</l><r>kusi<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
- <e><p><l>alegrar</l><r>q'uchu<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+ <e><p><l>alegrar</l><r>kusi<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+ <e><p><l>alegrar</l><r>q'uchu<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>alejar</l><r>karuncha</r></p><par n="Verb_main"/></e>
 <e><p><l>alelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alentar</l><r>kallpancha</r></p><par n="Verb_main"/></e>
@@ -705,31 +702,31 @@
 <e><p><l>alicatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alicortar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alienar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>aligerar</l><r>pisiya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>aligerar</l><r>pisiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
-  <e><p><l>aligerar</l><r>pisiya<s n="intrans"/></r></p><par n="Verb_main"/></e>
+  <e><p><l>aligerar</l><r>pisiya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>alijarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alijar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>alimentar</l><r>mikhu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>alimentar</l><r>mikhu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
  <!-- intrans. -se -->
- <e><p><l>alimentar</l><r>mikhu<s n="intrans"/></r></p><par n="Verb_main"/></e>
+ <e><p><l>alimentar</l><r>mikhu<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>alimonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aliñar</l><r>allicha</r></p><par n="Verb_main"/></e>
 <e><p><l>alindar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alinderar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>alinear</l><r>sinri</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>alinear</l><r>siq'i<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-<e><p><l>alisar</l><r>llamp'uya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>alisar</l><r>llamp'uya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
-<e><p><l>alisar</l><r>llamp'uya<s n="intrans"/></r></p><par n="Verb_main"/></e>
+<e><p><l>alisar</l><r>llamp'uya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
     <e><p><l>alistar</l><r>kamarana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>alistar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alivianar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>aliviar</l><r>allinya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-<e><p><l>aliviar</l><r>pisiya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>aliviar</l><r>allinya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>aliviar</l><r>pisiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
-   <e><p><l>aliviar</l><r>allinya<s n="intrans"/></r></p><par n="Verb_main"/></e>
-   <e><p><l>aliviar</l><r>pisiya<s n="intrans"/></r></p><par n="Verb_main"/></e>
+   <e><p><l>aliviar</l><r>allinya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+   <e><p><l>aliviar</l><r>pisiya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>aljofarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aljofifar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>allanar</l><r>pampacha</r></p><par n="Verb_main"/></e>
@@ -749,11 +746,11 @@
 <e><p><l>almohadillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>almohazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>almorzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
- <e><p><l>alocar</l><r>luqhiya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
- <e><p><l>alocar</l><r>waq'aya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+ <e><p><l>alocar</l><r>luqhiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+ <e><p><l>alocar</l><r>waq'aya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
 <!-- intrans. -se -->
-    <e><p><l>alocar</l><r>luqhiya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>alocar</l><r>waq'aya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>alocar</l><r>luqhiya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>alocar</l><r>waq'aya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>alojar</l><r>qurpacha</r></p><par n="Verb_main"/></e>
 <e><p><l>alomar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>alotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -803,18 +800,18 @@
 <e><p><l>amanecer</l><r>paqa<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>amanerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>amanojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>amansar</l><r>llamp'uya<s n="add_mi"/>+Caus<s n="preform"/>#sunqu</r></p><par n="Verb_main"/></e>
-<e><p><l>amansar</l><r>samp'aya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>amansar</l><r>llamp'uya<s n="add_mi"/>+Caus<s n="preform"/>#sunqu<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>amansar</l><r>samp'aya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
 <!-- intrans. -se -->
-<e><p><l>amansar</l><r>samp'aya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+<e><p><l>amansar</l><r>samp'aya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>amarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>amarchantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>amargar</l><r>qhatqicha</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>amargar</l><r>qhatqicha<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
 <!-- intrans. -se -->
-<e><p><l>amargar</l><r>qhatqiya<s n="intrans"/></r></p><par n="Verb_main"/></e>
-    <e><p><l>amarillear</l><r>q'illuya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>amargar</l><r>qhatqiya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+    <e><p><l>amarillear</l><r>q'illuya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>amarillear</l><r>q'illuya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>amarillear</l><r>q'illuya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>amarillecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>amarinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>amar</l><r>muna</r></p><par n="Verb_main"/></e>
@@ -835,8 +832,7 @@
 <e><p><l>amechar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>amedrentar</l><r>mancha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
-<e><p><l>amedrentar</l><r>mancha<s n="intrans"/><s n="add_mi"/>+Caus+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>amedrentar</l><r>q'aqcha<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>amedrentar</l><r>q'aqcha<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>amelgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>amenazar</l><r>mancha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>amenazar</l><r>q'aqcha</r></p><par n="Verb_main_ac"/></e>
@@ -853,11 +849,11 @@
     <e><p><l>amilanar</l><r>mancha<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>amilanar</l><r>q'aqcha</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>amilanar</l><r>ñuskhuya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>amilanar</l><r>ñuskhuya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>amillarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>aminorar</l><r>pisicha</r></p><par n="Verb_main"/></e>
+<e><p><l>aminorar</l><r>pisicha<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <!-- intrans. -se -->
-    <e><p><l>aminorar</l><r>pisiya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>aminorar</l><r>pisiya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>amistar</l><r>khuya<s n="add_mi"/>+Rzpr+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>amistar</l><r>riqsi<s n="add_mi"/>+Rzpr+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>amnistiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -880,9 +876,9 @@
     <e><p><l>amonestar</l><r>simincha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>amontonar</l><r>suntu</r></p><par n="Verb_main"/></e>
     <e><p><l>amontonar</l><r>tawqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>amoratar</l><r>q'uyu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+    <e><p><l>amoratar</l><r>q'uyu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <!-- intrans. -se -->
-<e><p><l>amoratar</l><r>q'uyu<s n="intrans"/></r></p><par n="Verb_main"/></e>
+<e><p><l>amoratar</l><r>q'uyu<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>amorcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>amordazar</l><r>chhipa<s n="preform"/>#qhallu</r></p><par n="Verb_main"/></e>
 <e><p><l>amorecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -898,10 +894,10 @@
 <e><p><l>amotinar</l><r>hata<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>amover</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>amparar</l><r>amacha</r></p><par n="Verb_main"/></e>
-    <e><p><l>ampliar</l><r>hatunya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ampliar</l><r>hatuncha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ampliar</l><r>hatunya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ampliar</l><r>hatuncha<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <!-- intrans. -se -->
-    <e><p><l>ampliar</l><r>hatunya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ampliar</l><r>hatunya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>amplificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ampollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>amputar</l><r>mut'u</r></p><par n="Verb_main_ac"/></e>
@@ -940,18 +936,18 @@
 <e><p><l>anestesiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>anexar</l><r>huklla</r></p><par n="Verb_main"/></e>
 <e><p><l>anexionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>angostar</l><r>k'iskicha</r></p><par n="Verb_main"/></e>
+<e><p><l>angostar</l><r>k'iskicha<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
-    <e><p><l>angostar</l><r>k'iski<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>angostar</l><r>k'iski<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>angustiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>anhelar</l><r>muna<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
 <e><p><l>anidar</l><r>q'isacha</r></p><par n="Verb_main"/></e>
 <e><p><l>anieblar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>anihilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>anillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>animalizar</l><r>uywaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>animalizar</l><r>uywaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
      <!-- intrans. -se -->
-    <e><p><l>animalizar</l><r>uywaya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>animalizar</l><r>uywaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>animar</l><r>kallpacha</r></p><par n="Verb_main"/></e>
     <e><p><l>aniñar</l><r>irqicha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aniquilar</l><r>chinka<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
@@ -977,9 +973,9 @@
     <e><p><l>anteponer</l><r>ñawpaqcha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>antevenir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>antever</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>anticipar</l><r>ñawpa<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>anticipar</l><r>ñawpa<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
-    <e><p><l>anticipar</l><r>ñawpaqcha<s n="intrans"/><s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>anticipar</l><r>ñawpaqcha<s n="transitivity"/>intrans<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>anticuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>antiguar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>antojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -999,15 +995,19 @@
 <e><p><l>apacentar</l><r>michi</r></p><par n="Verb_main"/></e>
 <e><p><l>apaciguar</l><r>ñañi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
       <!-- intrans. -se -->
-    <e><p><l>apaciguar</l><r>ni<s n="intrans"/><s n="preform"/>#thak</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apaciguar</l><r>llulluya<s n="intrans"/></r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apaciguar</l><r>ni<s n="transitivity"/>intrans<s n="preform"/>#thak</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apaciguar</l><r>llulluya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apadrinar</l><r>marq'a</r></p><par n="Verb_main"/></e>
 <e><p><l>apagar_fuego</l><r>thasnu</r></p><par n="Verb_main_new"/></e>
 <e><p><l>apagar</l><r>thasnu</r></p><par n="Verb_main"/></e>
-<e><p><l>apagar</l><r>wañu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>########
-    <e><p><l>apagarse</l><r>ch'inni</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apagarse</l><r>ch'inya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apagarse</l><r>upalla</r></p><par n="Verb_main_ac"/></e>
+<!-- apagar la luz?  -->
+<e><p><l>apagar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>apagar</l><r>wañu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+    <e><p><l>apagar</l><r>thasnu</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>apagar</l><r>wañu<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apagar</l><r>ch'inya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apagar</l><r>upalla</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apalabrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apalancar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apalear</l><r>maqa</r></p><par n="Verb_main"/></e>
@@ -1020,26 +1020,23 @@
 <e><p><l>apantallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apantanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apañuscar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>aparar</l><r>Kamariy,chaskiy</r></p><par n="Verb_main_new"/></e>
+<e><p><l>aparar</l><r>chaski</r></p><par n="Verb_main_new"/></e>
+<e><p><l>aparar</l><r>kama<s n="add_mi"/>+Inch</r></p><par n="Verb_main_new"/></e>
 <e><p><l>aparcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apareamiento de alpacas</l><r>zool. allpaqa chharqo</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aparear</l><r>kuskacha</r></p><par n="Verb_main"/></e>
-    <e><p><l>aparearse</l><r>sawa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aparearse</l><r>yananchaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aparecer</l><r>alarimu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aparecer</l><r>rikhuriy.       aparecimiento. s. rikhurimu</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>aparear</l><r>masacha</r></p><par n="Verb_main"/></e>
+    <e><p><l>aparear</l><r>yanancha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aparecer</l><r>rikhu<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>aparejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aparentar</l><r>tuku</r></p><par n="Verb_main"/></e>
+<e><p><l>aparentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aparrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aparroquiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apartar</l><r>achhurichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apartar</l><r>anchhuchiy.  aplanarse</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apartar</l><r>anchhu<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apartar</l><r>raki</r></p><par n="Verb_main"/></e>
     <e><p><l>apartar</l><r>sapaqcha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apartarse</l><r>achhuku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apartarse</l><r>anchhuriku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apartarse</l><r>anchhuri</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>apartar</l><r>anchhu<s n="add_mi"/>+Inch</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aparvar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apasionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apastar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -1051,12 +1048,8 @@
 <e><p><l>apechugar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apedazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apedrear</l><r>chamqa</r></p><par n="Verb_main"/></e>
-    <e><p><l>apedrearse</l><r>ch'aqenaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apedrear</l><r>chuqa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apegar</l><r>k'aska</r></p><par n="Verb_main"/></e>
-    <e><p><l>apegarse</l><r>k'askanaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apegarse</l><r>k'askapaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apegarse</l><r>qatiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apegarse</l><r>qatiriku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apegualar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apelambrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -1064,46 +1057,32 @@
 <e><p><l>apellar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apellidar</l><r>suticha</r></p><par n="Verb_main"/></e>
 <e><p><l>apelmazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apelotarse</l><r>punkilliku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apelotarse</l><r>punki</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apelotarse</l><r>p'unpuya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apelotonar</l><r>q'onpu</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apelotar</l><r>punki<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+     <!-- intrans. -se -->
+    <e><p><l>apelotar</l><r>punkilli<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apelotar</l><r>p'umpuya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apelotonar</l><r>q'umpu</r></p><par n="Verb_main_new"/></e>
-<e><p><l>apelotonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apelotonarse</l><r>q'onpuku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apenadamente</l><r>khuyapayanaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apenar</l><r>llachichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apenar</l><r>llakichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apenar</l><r>phutichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apenarse</l><r>llakiku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apenar</l><r>llaki<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apenar</l><r>phuti<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>apenar</l><r>llaki<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apencar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>apeñuscar</l><r>k'iski</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apeñuscar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apeñuscarse</l><r>ch'ichinachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apeñuscarse</l><r>ch'ischinaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apeñuscarse</l><r>k'iskiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apeñuscarse</l><r>k'iskinaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apeonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aperar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apercibir</l><r>musiyo</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apercibir</l><r>musi<s n="add_mi"/>+Aff</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apercibir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apercollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apergaminar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>apermazar</l><r>p'arpa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apermazar</l><r>p'arpina</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apermazar</l><r>p'arpi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apermazar</l><r>sinón</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>apermazar</l><r>t'aqta</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apernar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aperrear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apersonar</l><r>rikhu<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
     <e><p><l>apesadumbrar</l><r>phuti</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apesadumbrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apesarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apesgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apestar</l><r>asna</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apestar</l><r>asna</r></p><par n="Verb_main"/></e>
-    <e><p><l>apetecer</l><r>munaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apetecer</l><r>muna<s n="add_mi"/>+MRep</r></p><par n="Verb_main"/></e>
     <e><p><l>apetecer</l><r>p'itu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apiadar</l><r>llaki<s n="add_mi"/>+MRep</r></p><par n="Verb_main"/></e>
@@ -1111,80 +1090,53 @@
 <e><p><l>apicarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>apilar</l><r>suntu</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>apilar</l><r>tawqa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apilar</l><r>tawqa</r></p><par n="Verb_main_new"/></e>
-<e><p><l>apilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apilarse</l><r>tawqaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apilguar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apimpollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apiñamiento</l><r>ch'unkunachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apiñar</l><r>ñit'i<s n="add_mi"/>+Rzpr+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>apiñarse</l><r>ch'ichinaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apiñarse</l><r>ch'unkunaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apiñarse</l><r>kiskinaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apiñarse</l><r>ñit'inaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>apiñar</l><r>ñit'i</r></p><par n="Verb_main"/></e>
+    <e><p><l>apiñar</l><r>ch'unku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apiolar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apipar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apirgüinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apisonar</l><r>lasta</r></p><par n="Verb_main_new"/></e>
     <e><p><l>apisonar</l><r>p'arpa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apisonar</l><r>p'arpina</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apisonar</l><r>p'arpi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apisonar</l><r>sinón</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>apisonar</l><r>t'aqta</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apisonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apisonarse</l><r>t'aqtaku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>apitonar</l><r>rawkha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apitonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aplacar</l><r>thani<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>aplanar</l><r>pampacha</r></p><par n="Verb_main"/></e>
     <e><p><l>aplanar</l><r>p'arpa</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>aplanar</l><r>t'aqta</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplanarse</l><r>apiñamiento  786  p'altayay.    apiñamiento. s. ch'unkunaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplanarse</l><r>–da. adj. ch'unkusqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplanarse</l><r>k'iskinakuy. apiñado</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplanarse</l><r>k'iskisqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplanarse</l><r>llaphllaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplanarse</l><r>ñit'inaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplanarse</l><r>ñit'isqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplanarse</l><r>t'aslaya</r></p><par n="Verb_main_ac"/></e>
+   <!-- intrans. -se -->
+    <e><p><l>aplanar</l><r>p'altaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>aplanar</l><r>t'aslaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aplantillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aplastar</l><r>last'acha</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>aplastar</l><r>last'a</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aplastar</l><r>ñit'i</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aplastar</l><r>ñit'i</r></p><par n="Verb_main"/></e>
     <e><p><l>aplastar</l><r>ñup'u</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aplatanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>aplaudir</l><r>taqlla</r></p><par n="Verb_main"/></e>
+<e><p><l>aplaudir</l><r>t'aqlla</r></p><par n="Verb_main"/></e>
 <e><p><l>aplazar</l><r>suya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>aplebeyar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aplicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aplomar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apocamiento</l><r>ñuskhuykacha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apocar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apocarse</l><r>k'uytuykacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apocarse</l><r>ñuskhuya</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>apocar</l><r>pisicha</r></p><par n="Verb_main"/></e>
+ <!-- intrans. -se -->
+    <e><p><l>apocar</l><r>k'uytu<s n="add_mi"/>+Intrup<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apocar</l><r>ñuskhuya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apocopar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>apodar</l><r>sutiya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apodar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apodarse</l><r>sutiyaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apoderar</l><r>hap'i<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-<e><p><l>apolillar</l><r>thuta</r></p><par n="Verb_main"/></e>
-<e><p><l>apolillarse</l><r>mullpha</r></p><par n="Verb_main_new"/></e>
+<e><p><l>apolillar</l><r>thuta<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>apolillar</l><r>mullpha<s n="transitivity"/>intrans</r></p><par n="Verb_main_new"/></e>
 <e><p><l>apoltronar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apolvillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apomazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apontocar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apopar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apoquinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aporcar</l><r>agr. hallma</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aporcar</l><r>hallma</r></p><par n="Verb_main"/></e>
 <e><p><l>aporrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aporrear</l><r>p'ana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aporrear</l><r>p'ana</r></p><par n="Verb_main_new"/></e>
-<e><p><l>aporrear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aporrearse</l><r>–da. adj. k'irasqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aporrearse</l><r>p'ananakuy. apoyado</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aporrearse</l><r>tawnasqa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aportar</l><r>apa</r></p><par n="Verb_main"/></e>
 <e><p><l>aportillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aposentar</l><r>qurpacha</r></p><par n="Verb_main"/></e>
@@ -1195,36 +1147,25 @@
 <e><p><l>apostillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apostrofar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apotrerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apoyar</l><r>q'emicha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apoyar</l><r>q'emi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apoyar</l><r>q'imi</r></p><par n="Verb_main"/></e>
-    <e><p><l>apoyarse</l><r>k'iranaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>apoyar</l><r>q'imi<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+    <e><p><l>apoyar</l><r>k'ira<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apreciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aprehender</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>apremiar</l><r>qati</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apremiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aprender</l><r>yacha<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>aprender</l><r>yachay.  jun: yatraku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aprensar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aprensión</l><r>manchaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apresar</l><r>hap'i</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apresar</l><r>hap'i</r></p><par n="Verb_main"/></e>
-    <e><p><l>apresar</l><r>piñascha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apresar</l><r>watinkachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apresar</l><r>watinka</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aprestar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apresurar</l><r>usqhachiy.  aya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apresurar</l><r>utqha</r></p><par n="Verb_main"/></e>
-    <e><p><l>apretar</l><r>mat'ichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apretar</l><r>mat'ipaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apretar</l><r>mat'i</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>apresurar</l><r>utqha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>apresurar</l><r>utqha<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>apretar</l><r>mat'i</r></p><par n="Verb_main"/></e>
-    <e><p><l>apretar</l><r>noqa</r></p><par n="Verb_main_ac"/></e>
-       <e><p><l>apretar</l><r>wina</r></p><par n="Noun_cp"/></e>
-    <e><p><l>apretujamiento</l><r>ch'unkunachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apretujar</l><r>mat'iykacha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>apretujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apretujarse</l><r>k'iskiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apretujarse</l><r>mat'inaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>apretar</l><r>nuq'a</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>apretujar</l><r>mat'i<s n="add_mi"/>+Intrup</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>apretujar</l><r>k'iski</r></p><par n="Verb_main"/></e>
 <e><p><l>apriscar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aprisionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aproar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -1234,10 +1175,10 @@
 <e><p><l>apropincuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aprovechar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aprovisionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aproximar</l><r>achhuykachiy. aproximarse. v. achhuyku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>aproximar</l><r>achhuykunakuy: aproximarse el uno al otro</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>aproximar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aproximarse mutuamente</l><r>sispa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>aproximar</l><r>achhu<s n="add_mi"/>+Aff+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se --> 
+    <e><p><l>aproximar</l><r>achhu<s n="add_mi"/>+Aff<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>aproximar</l><r>hichpa<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>aptar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apulgarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apuñalar</l><r>t'urpu</r></p><par n="Verb_main"/></e>
@@ -1245,13 +1186,10 @@
 <e><p><l>apuñar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apuñear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apuñetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>apuntalar</l><r>q'emicha</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>apuntalar</l><r>q'emi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apuntalar</l><r>tankacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>apuntalar</l><r>tusa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>apuntalar</l><r>tusa</r></p><par n="Verb_main_new"/></e>
-<e><p><l>apuntalar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apuntar</l><r>t'uqsi</r></p><par n="Verb_main"/></e>
+<e><p><l>apuntar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apuntillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>apurar</l><r>utqha</r></p><par n="Verb_main_new"/></e>
@@ -1262,30 +1200,24 @@
 <e><p><l>arabizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>arañar</l><r>hallp'i</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arañar</l><r>hasp'i</r></p><par n="Verb_main"/></e>
-    <e><p><l>arañar</l><r>rachay.       rachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>arañar</l><r>rachi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>arañar</l><r>raskha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arañarse</l><r>hallp'iku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arañarse</l><r>rachikuy.  787</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arar</l><r>yapu</r></p><par n="Verb_main"/></e>
 <e><p><l>arbitrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arbolar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arbolecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arborecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>arborizar</l><r>mallkicha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arborizar</l><r>mallki</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arcabucear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arcaizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>archivar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arcillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arder</l><r>rawra</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arder</l><r>rupha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arder</l><r>rupha</r></p><par n="Verb_main"/></e>
     <e><p><l>arder</l><r>yawra</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arencar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arengar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>a reposar</l><r>samayku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arfar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>argamasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>argentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -1297,39 +1229,31 @@
 <e><p><l>armar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>armonizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aromar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aromatizar</l><r>q'aparichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>aromatizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>aromatizarse</l><r>q'apachiku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>aromatizar</l><r>q'apari<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arpar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arpegiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arpillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arponar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arponear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arquear</l><r>q'ewe</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>arquear</l><r>q'iwi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arracimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>arraigar</l><r>saphincha<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>arraigar</l><r>saphincha</r></p><par n="Verb_main"/></e>
 <e><p><l>arramblar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arramplar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrancar_desde_las_raíces</l><r>saq'a</r></p><par n="Verb_main_new"/></e>
 <e><p><l>arrancar_las_hierbas</l><r>llapch'i</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>arrancar</l><r>p'iriy.    arrancar de raíz las plantas. v. tira</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrancar</l><r>t'ira</r></p><par n="Verb_main"/></e>
 <e><p><l>arrancar_plantas</l><r>rachu</r></p><par n="Verb_main_new"/></e>
 <e><p><l>arranchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrasar</l><r>pampaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrastrar</l><r>arrastrar los pies: chhuchu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrastrar</l><r>aysa</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>arrasar</l><r>purunya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>arrastrar_los_pies</l><r>chhuchu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrastrar</l><r>aysa</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrear</l><r>qati</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrear</l><r>qati</r></p><par n="Verb_main"/></e>
 <e><p><l>arrebañar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrebatar instantáneamente</l><r>suwarpari</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrebatar</l><r>ch'utichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrebatar</l><r>ch'uti</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrebatar</l><r>qechu</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>arrebatar</l><r>ch'uti</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrebatar</l><r>qichu</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrebatar</l><r>saq'ay ch'uti</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrebolar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrebozar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrebujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -1337,38 +1261,34 @@
 <e><p><l>arredilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arredrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arregazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arreglar</l><r>allicha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arreglar</l><r>allicha</r></p><par n="Verb_main"/></e>
-    <e><p><l>arreglar</l><r>allinchay allcha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arreglar</l><r>t'arqena</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>arreglar_un_cultivo</l><r>alcha</r></p><par n="Verb_main_new"/></e>
+<e><p><l>arreglar_un_cultivo</l><r>allcha</r></p><par n="Verb_main_new"/></e>
 <e><p><l>arregostar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrejacar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrejerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrejuntar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrellanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arremangar</l><r>q'allpa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arremangar</l><r>q'allpa</r></p><par n="Verb_main"/></e>
-    <e><p><l>arremangarse</l><r>q'allpaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arremeter</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arremolinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrempujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrendar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrepanchigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrepentir</l><r>wana</r></p><par n="Verb_main"/></e>
+<e><p><l>arrepentir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrequesonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrestar</l><r>wichq'a</r></p><par n="Verb_main"/></e>
 <e><p><l>arrezagar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arriar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arribar</l><r>chaya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arribar</l><r>chaya</r></p><par n="Verb_main"/></e>
 <e><p><l>arridar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arriesgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>arrimar</l><r>asu<s n="add_mi"/>+Aff+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>arrimar</l><r>asu<s n="add_mi"/>+Aff+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>arrimar</l><r>q'imi<s n="add_mi"/>+Aff+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>arrimar</l><r>asu<s n="add_mi"/>+Aff<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+<e><p><l>arrimar</l><r>q'imi<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>arrinconar</l><r>k'uchucha</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrinconarse</l><r>–da arrodillado</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrinconarse</l><r>–da. qonqorchaki</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrinconarse</l><r>k'uchunakuy.  arrodillado</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arriostrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arriscar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -1377,53 +1297,34 @@
 <e><p><l>arrocinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrodajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrodillar</l><r>qunqu<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrodillarse</l><r>qonqoriku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrodrigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrodrigonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>arrogar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrojar</l><r>chanqanaku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>arrojar</l><r>chanqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrojar</l><r>choqanaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrojar</l><r>choqay. arrojarse. v. wikch'uykuku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrojar</l><r>qarqo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrojar</l><r>wikapaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrojar</l><r>wikapanaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>arrojar</l><r>chuqay</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>arrojar</l><r>wikapa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrojar</l><r>wikch'u</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrojar</l><r>wikch'u</r></p><par n="Verb_main"/></e>
 <e><p><l>arrollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arromanzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arromar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arromper</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arronzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arropar</l><r>p'achachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>arropar</l><r>p'acha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>arropar</l><r>p'istu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>arropar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>arropar</l><r>p'acha<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrostrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arroyar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arruar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>arrufar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>arrugar</l><r>ch'ipu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>arrugar</l><r>chip'u</r></p><par n="Verb_main_new"/></e>
     <e><p><l>arrugar</l><r>sip'u</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>arrugar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrugarse</l><r>ch'awiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrugarse</l><r>ch'ipuku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrugarse</l><r>ch'ipuya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrugarse</l><r>qawiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrugarse</l><r>sip'uchaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrugarse</l><r>sip'uku</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>arrugar</l><r>ch'awi<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>   
+    <e><p><l>arrugar</l><r>qawiya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arruinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>arrullar</l><r>chinu</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>arrullar</l><r>lulu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>arrullar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>arrullarse</l><r>chinunaku</r></p><par n="Verb_main_ac"/></e>
-       <e><p><l>arrullarse</l><r>lulunaku</r></p><par n="Noun_ac"/></e>
-    <e><p><l>arrullarse</l><r>lulunaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>arrullarse</l><r>uywanaku</r></p><par n="Noun_ac"/></e>
     <e><p><l>arrumar</l><r>pirwa</r></p><par n="Verb_main_ac"/></e>
-     <e><p><l>arrumar</l><r>tawqa</r></p><par n="Noun_ac"/></e>
-    <e><p><l>arrumar</l><r>tawqa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>arrumar</l><r>tawqa</r></p><par n="Verb_main"/></e>
 <e><p><l>arrumbar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>artesonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -1435,96 +1336,66 @@
 <e><p><l>asalariar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asalmerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>asaltar</l><r>ch'aspa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asaltar</l><r>q'apuja</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asaltar</l><r>suwarpari</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asaltar</l><r>suwa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>asaltar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asar</l><r>kanka</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>asaltar</l><r>suwa<s n="add_mi"/>+Int</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>asaltar</l><r>phawa<s n="add_mi"/>+Aff</r></p><par n="Verb_main"/></e>
 <e><p><l>asar</l><r>kanka</r></p><par n="Verb_main"/></e>
     <e><p><l>asar</l><r>q'aspa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asar</l><r>tubérculos: kusa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>a satisfacción</l><r>mihuku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>a satisfacción</l><r>mikhuku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ascender</l><r>siqa</r></p><par n="Verb_main"/></e>
-    <e><p><l>ascenlodiosamente</l><r>ch'awa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ascenlodiosamente</l><r>ch'ayñayku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asear</l><r>allicha</r></p><par n="Verb_main"/></e>
     <e><p><l>asear</l><r>maqchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asear</l><r>maqlli</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>asear</l><r>maylli</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asechar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asedar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asediar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aseglarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aseglarizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asegurar</l><r>takyachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>asegurar</l><r>takya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asegurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asegurar</l><r>waqaycha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asegurar</l><r>waqaycha</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>asegurarse</l><r>wataku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asemejar</l><r>rikch'a<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>asemejarse</l><r>rikch'aku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asenderear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asentar</l><r>tiya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>asentir</l><r>huñi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asentir</l><r>iñi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>asentir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asentir</l><r>uyaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asentir</l><r>uya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>asentir</l><r>uya</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>asentir</l><r>uya<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aserenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aseriar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>aserrar</l><r>wit'u</r></p><par n="Verb_main"/></e>
 <e><p><l>aserruchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asesar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asesinar</l><r>pirta</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>asesinar</l><r>sipi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asesinar</l><r>wañuchi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asesinar</l><r>wañu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-<e><p><l>asesorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>asesorar</l><r>yuyaycha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asesorar</l><r>yuyay qara</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asestar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asestar trompadas</l><r>saqma</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>aseverar</l><r>awni</r></p><par n="Verb_main"/></e>
 <e><p><l>asfaltar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-       <e><p><l>asfixiar</l><r>heq'epa</r></p><par n="Noun_ac"/></e>
+       <e><p><l>asfixiar</l><r>hiq'i<s n="add_mi"/>+Rep</r></p><par n="Noun_ac"/></e>
     <e><p><l>asfixiar</l><r>muki</r></p><par n="Noun_ac"/></e>
-<e><p><l>asfixiar</l><r>muki</r></p><par n="Verb_main_new"/></e>
-<e><p><l>asfixiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asfixiarse</l><r>med. mukiku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asibilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asignar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asimilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>asir</l><r>hap'i</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>asir</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>asistir</l><r>ri</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asistir</l><r>saya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asistir</l><r>unspecified</r></p><par n="Verb_main"/></e>
      <e><p><l>asistir</l><r>yanapa</r></p><par n="Noun_ac"/></e>
-    <e><p><l>askhayachi</l><r>asllayachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>askhayachi</l><r>pisiyachi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asobarcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asobinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asociar</l><r>ayllunakuy  789</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asociar</l><r>hayma</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asociar</l><r>hukllacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asociar</l><r>huklla</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asociar</l><r>masincha</r></p><par n="Verb_main"/></e>
     <e><p><l>asociar</l><r>wakicha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asociarse</l><r>huñuchaku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>asociarse</l><r>waki</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>asociar</l><r>huñucha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asolanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asolar</l><r>purunya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>asolear</l><r>q'ochachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>asolear</l><r>rupaycha</r></p><par n="Verb_main"/></e>
-    <e><p><l>asolearse</l><r>q'ochaku</r></p><par n="Verb_main_ac"/></e>
+
+<e><p><l>asolear</l><r>q'ucha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>asolear</l><r>rupaycha<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>asolear</l><r>q'ucha<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>asolear</l><r>quñu<s n="add_mi"/>+Inch<s n="preform"/>#intipi<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asomar</l><r>rikhu<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
-    <e><p><l>asombrado</l><r>utiya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>asombrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asombrarse</l><r>uti</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>asombro</l><r>utichi</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>asombrar</l><r>uti<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!--<e><p><l>asombrar</l><r>llanthu<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>-->
+<!-- intrans. -se -->
+<e><p><l>asombrar</l><r>uti<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>asonantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asorochar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -1532,7 +1403,7 @@
 <e><p><l>aspaventar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asperear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>asperger</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>asperjar</l><r>ch'alla</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>asperjar</l><r>ch'alla</r></p><par n="Verb_main_ac"/></e>########
     <e><p><l>asperjar</l><r>ch'allaykacha</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>asperjar</l><r>ch'aqchuku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>asperjar</l><r>ch'aqchuy. asperjarse. v. ch'allaku</r></p><par n="Verb_main_ac"/></e>
