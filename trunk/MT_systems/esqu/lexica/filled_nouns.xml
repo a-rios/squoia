@@ -2206,7 +2206,7 @@
 <e><p><l>compañero</l><r>masi</r></p><par n="Noun"/></e>
 <e><p><l>comparsa</l><r>q'achuri</r></p><par n="Noun_ac"/></e>
 <e><p><l>compasible</l><r>khuyachikuq</r></p><par n="Noun_ac"/></e>
-<e><p><l>compasión</l><r>khuyay</r></p><par n="Noun_ac"/></e>
+<e><p><l>compasión</l><r>khuyapayay</r></p><par n="Noun_ac"/></e>
 <e><p><l>compasivo</l><r>alawchaqi</r></p><par n="Noun_ac"/></e>
 <e><p><l>compatriota</l><r>masi<s n="preform"/>#llaqta</r></p><par n="Noun"/></e>
 <e><p><l>competencia_deportiva</l><r>pukllay</r></p><par n="Noun_ac"/></e>
@@ -2288,6 +2288,8 @@
 <e><p><l>conjuntivitis</l><r>unquy<s n="preform"/>#ñawi</r></p><par n="Noun_ac"/></e>
 <e><p><l>conjunto</l><r>huñu</r></p><par n="Noun_new"/></e>
 <e><p><l>conmemorativo</l><r>yuyaykuna</r></p><par n="Noun_ac"/></e>
+<e><p><l>conmisceración</l><r>llakipayay</r></p><par n="Noun_ac"/></e>
+<e><p><l>conmiseración</l><r>llakipayay</r></p><par n="Noun_ac"/></e>
 <e><p><l>conmoción</l><r>chukukuku</r></p><par n="Noun_ac"/></e>
 <e><p><l>conocedor</l><r>yachaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>conocedor</l><r>riqsiq</r></p><par n="Noun_ac"/></e>
@@ -2603,7 +2605,8 @@
 <e><p><l>cuchara</l><r>wisi</r></p><par n="Noun_new"/></e>
 <e><p><l>cucharón</l><r>wisina</r></p><par n="Noun_ac"/></e>
 <e><p><l>cucharón</l><r>wislla</r></p><par n="Noun"/></e>
-<e><p><l>cuchicheador</l><r>siphsiq</r></p><par n="Noun_ac"/></e>
+<e><p><l>cuchicheador</l><r>chiphchiq</r></p><par n="Noun_ac"/></e>
+<e><p><l>cuchicheo</l><r>chiphchi</r></p><par n="Noun_ac"/></e>
 <e><p><l>cuchillo</l><r>khallana</r></p><par n="Noun_ac"/></e>
 <e><p><l>cuchillo</l><r>kuchuna</r></p><par n="Noun_new"/></e>
 <e><p><l>cuchillo</l><r>lluch'una</r></p><par n="Noun_ac"/></e>
@@ -2663,6 +2666,7 @@
 <e><p><l>cultura</l><r>yachaytarpu</r></p><par n="Noun_ac"/></e>
 <e><p><l>cumbre</l><r>mukuku</r></p><par n="Noun_ac"/></e>
 <e><p><l>cumbre</l><r>uma</r></p><par n="Noun"/></e>
+<e><p><l>cumbrera</l><r>antacha</r></p><par n="Noun_ac"/></e>
 <e><p><l>cuna</l><r>k'iraw</r></p><par n="Noun"/></e>
 <e><p><l>cuna</l><r>tankana</r></p><par n="Noun_ac"/></e>
 <e><p><l>cuña</l><r>k'iru</r></p><par n="Noun_ac"/></e>
