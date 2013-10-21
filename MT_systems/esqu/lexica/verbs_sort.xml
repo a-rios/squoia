@@ -1976,7 +1976,7 @@
 <e><p><l>calificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>caligrafiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>calimbar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>callantar</l><r>unspecified</r></p><par n="Verb_main"/></e>#########   
+<e><p><l>callantar</l><r>unspecified</r></p><par n="Verb_main"/></e> 
     <e><p><l>callar</l><r>upa<s n="add_mi"/>+Lim+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>callar</l><r>ch'inya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
       <!-- intrans. -se -->
@@ -1990,7 +1990,6 @@
     <e><p><l>calmar</l><r>thani</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>calofriar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>calorizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>calumniar</l><r>lutitumpa</r></p><par n="Verb_main_new"/></e>
     <e><p><l>calumniar</l><r>tumpa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>calzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>camandulear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -2894,121 +2893,95 @@
     <e><p><l>dar_a_luz</l><r>wacha</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>dar_pellizcones</l><r>t'ipi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>dar_de_beber</l><r>upya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>dar_frutos</l><r>ruru</r></p><par n="Verb_main_ac"/></e>#########################
-<e><p><l>dar</l><r>mancha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>dar</l><r>qo</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>dar_frutos</l><r>ruru</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>dar_miedo</l><r>mancha<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>dar_susto</l><r>mancha<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main_ac"/></e>
+    <!--<e><p><l>dar</l><r>mancha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>-->
+    <e><p><l>dar_pasos</l><r>charqa</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>darse_cuenta</l><r>musya</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>darse_prisa</l><r>utqha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>dar_una_vuelta</l><r>muyu</r></p><par n="Verb_main"/></e>
+    <e><p><l>dar_vueltas</l><r>muyu<s n="add_mi"/>+Inch</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>dar</l><r>qu</r></p><par n="Verb_main"/></e>
-    <e><p><l>dar</l><r>susto: mancharichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>dar_pasos</l><r>charqa</r></p><par n="Verb_main_new"/></e>
-<e><p><l>darse_cuenta</l><r>musya</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>darse prisa</l><r>uskha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>dar_una_vuelta</l><r>muyu</r></p><par n="Verb_main"/></e>
-    <e><p><l>dar vueltas</l><r>muyuri</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>datar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deambular</l><r>puriku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>deambular</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>debatir</l><r>seqachinaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>deambular</l><r>puri<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>debatir</l><r>siqa<s n="add_mi"/>+Caus+Rzpr+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>debatir</l><r>rima<s n="add_mi"/>+Rzpr+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>debatir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>debelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deber</l><r>manuka</r></p><par n="Verb_main"/></e>
 <e><p><l>deber</l><r>+Obl</r></p><par n="Verb_main"/></e>
-    <e><p><l>debiendo hablar</l><r>upallaku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>debilitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>debilitarse</l><r>unphuya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>debilitar</l><r>umphuya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>debilitar</l><r>umphuya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>debitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>debutar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>decaer</l><r>qhesti</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>decaer</l><r>umphu</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>decaer</l><r>unphu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>decaer</l><r>unphuya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>decaer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>decaído</l><r>unphu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>decaído</l><r>unphuya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>decaer</l><r>qhisti</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>decaer</l><r>umphuya</r></p><par n="Verb_main_new"/></e>
 <e><p><l>decampar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decapar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>decapitar</l><r>kunka qhoru</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>decapitar</l><r>qhorucha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>decapitar</l><r>qhoru</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>decapitar</l><r>qhuru<s n="preform"/>#uma</r></p><par n="Verb_main"/></e>
     <e><p><l>decapitar</l><r>umana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>decentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decepcionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decidir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decir</l><r>ni</r></p><par n="Verb_main"/></e>
-    <e><p><l>decir</l><r>niy.   s.mar rima</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>decir</l><r/></p><par n="Verb_main_ac"/></e>
-    <e><p><l>decirse</l><r>decirse mutuamente: ninaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>decirse</l><r>niku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>decirse</l><r>niykunaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>declamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>declarar</l><r>rima<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>declarar</l><r>rima<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>declinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decodificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>decolorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>decolorarse</l><r>qhoqaya</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>decolorar</l><r>qhuqaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>decolorar</l><r>qhuqaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>decomisar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decrecer</l><r>huch'uya</r></p><par n="Verb_main"/></e>
+<e><p><l>decrecer</l><r>taksaya</r></p><par n="Verb_main"/></e>
 <e><p><l>decrementar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decrepitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decretar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>decuplicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>dedicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deducir</l><r>hurqu</r></p><par n="Verb_main"/></e>
-    <e><p><l>de enmarañarse</l><r>arwiku</r></p><par n="Verb_main_ac"/></e>
+  <e><p><l>deducir</l><r>raki</r></p><par n="Verb_main"/></e> 
 <e><p><l>defalcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>defecar</l><r>aka</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>defecar</l><r>aka</r></p><par n="Verb_main"/></e>
-    <e><p><l>defecar</l><r>isma</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>defecar</l><r>mostrarse de mal humor: akanayay. obs. es ofensivo utilizar en este último sentido</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>defender</l><r>amacha</r></p><par n="Verb_main"/></e>
-    <e><p><l>defender</l><r>juris. amacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>defender</l><r>sayapaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>defenderse</l><r>maqapaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>defender</l><r>saya<s n="add_mi"/>+Iprs+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>defenestrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deferir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>definir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deflagrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deflegmar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deforestar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>deformar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deformar</l><r>weqo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deformarse</l><r>ch'oqtaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>defraudar</l><r>pallqo</r></p><par n="Verb_main_ac"/></e>
+      <e><p><l>deformar</l><r>wiqu</r></p><par n="Verb_main_ac"/></e>
+       <e><p><l>deformar</l><r>ch'uqtaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+	<!-- intrans. -se -->
+        <e><p><l>deformar</l><r>ch'uqtaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>defraudar</l><r>pallqu</r></p><par n="Verb_main"/></e>
 <e><p><l>degenerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deglutir</l><r>–a  rusqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deglutir</l><r>–da. p. nak'asqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deglutir</l><r>millp'u</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deglutir</l><r>millp'u</r></p><par n="Verb_main"/></e>
-    <e><p><l>deglutir</l><r>oqo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deglutir</l><r>qho-  denso</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deglutir</l><r>rakray.  caj   degollado</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>degollar</l><r>nak'a</r></p><par n="Verb_main"/></e>
-    <e><p><l>degollar</l><r>nak'ay.  caj: pishta</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>degollar</l><r>qhoru</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>degradar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>degustar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>deificar</l><r>awkicha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>dejar</l><r>haywayku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>dejar</l><r>saqe</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>dejar</l><r>saqi</r></p><par n="Verb_main"/></e>
-<e><p><l>delatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<!--     <e><p><l>dejar</l><r>haywa<s n="add_mi"/>+Aff</r></p><par n="Verb_main_ac"/></e> -->
+    <e><p><l>dejar</l><r>saqi</r></p><par n="Verb_main"/></e>
+<e><p><l>delatar</l><r>ch'ata</r></p><par n="Verb_main"/></e>
     <e><p><l>delatar</l><r>willa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>delegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deleitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deletrear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-	      <e><p><l>deliberar</l><r>rimanaku</r></p><par n="Noun_ac"/></e>
-<e><p><l>deliberar</l><r>yuya</r></p><par n="Verb_main"/></e>
-    <e><p><l>delimitar</l><r>tiknucha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>delimitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+  <e><p><l>deliberar</l><r>rima<s n="add_mi"/>+Rzpr+Rflx</r></p><par n="Noun_ac"/></e>
+<e><p><l>deliberar</l><r>yuya<s n="add_mi"/>+Aff</r></p><par n="Verb_main"/></e>
+    <e><p><l>delimitar</l><r>suyuncha</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>delimitar</l><r>saywa</r></p><par n="Verb_main"/></e>
 <e><p><l>delinear</l><r>t'iktu</r></p><par n="Verb_main_new"/></e>
 <e><p><l>delinear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>delinquir</l><r>huchalli<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>delinquir</l><r>juris. q'omalli</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>delirar</l><r>med. psic. muspha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>delinquir</l><r>q'umalli</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>delirar</l><r>muspha</r></p><par n="Verb_main"/></e>
 <e><p><l>demacrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>demandar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3016,40 +2989,34 @@
 <e><p><l>demasiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>democratizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>demodular</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>demoler</l><r>thunichi</r></p><par n="Verb_main_ac"/></e>
-	        <e><p><l>demoler</l><r>thuni</r></p><par n="Noun_ac"/></e>
 <e><p><l>demoler</l><r>thuni<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>demorar</l><r>unaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>demorar</l><r>una</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>demorar</l><r>una<s n="add_mi"/>+Aff+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>demorar</l><r>unaycha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>demostrar</l><r>qhawachi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>demostrar</l><r>qhawa<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>demostrar</l><r>rikuchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>demostrar puerilidad</l><r>wawaykacha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>demudar</l><r>hukmanya</r></p><par n="Verb_main"/></e>
+    <e><p><l>demostrar</l><r>riku<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>demudar</l><r>tuku<s n="preform"/>#hukman</r></p><par n="Verb_main"/></e>
+<e><p><l>demudar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>denegar</l><r>muna<s n="preform"/>#mana</r></p><par n="Verb_main"/></e>
+<e><p><l>denegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>denegrecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>denguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>denigrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>denominado ramada</l><r>sach'acha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>denominar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>denostar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>denotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>densificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>densificarse</l><r>pipuya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>densificarse</l><r>thakaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>dentaduras</l><r>hallmuyachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>densificar</l><r>pipuya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>densificar</l><r>thakaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>densificar</l><r>pipuya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>densificar</l><r>thakaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>dentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>dentellar</l><r>hanch'u</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>dentellar</l><r>hanch'u</r></p><par n="Verb_main_new"/></e>
     <e><p><l>dentellar</l><r>p'ata</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>dentellar</l><r>qhamsa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>dentellar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>dentellear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>denudar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>denunciar</l><r>willa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>denunciar</l><r>willa</r></p><par n="Verb_main"/></e>
+<e><p><l>denunciar</l><r>ch'ata</r></p><par n="Verb_main"/></e>
 <e><p><l>deparar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>departir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>depauperar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3063,54 +3030,37 @@
 <e><p><l>deprecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>depreciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>depredar</l><r>suwa</r></p><par n="Verb_main"/></e>
-    <e><p><l>deprimido</l><r>unphu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deprimido</l><r>unphuya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deprimir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deprimirse</l><r>p'uktuya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>depurar</l><r>ch'uyanchachi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>depurar</l><r>ch'uyancha</r></p><par n="Verb_main"/></e>
-    <e><p><l>depurarse</l><r>ch'uyanchaku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>derivar</l><r>p'allqa</r></p><par n="Verb_main_new"/></e>
 <e><p><l>derivar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>derogar</l><r>chinka<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>derramar</l><r>hich'a</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>derramar</l><r>hich'a</r></p><par n="Verb_main"/></e>
+    <e><p><l>derramar</l><r>hich'a</r></p><par n="Verb_main"/></e>
     <e><p><l>derramar</l><r>t'aka</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derramar</l><r>usuchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derramar</l><r>wisñi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derramarse</l><r>líquido: phoqchiy. productos: usu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derramarse</l><r>t'akakuy. la paja: sikniku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>derramarse</l><r>usu</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>derramar</l><r>wisñi</r></p><par n="Verb_main_ac"/></e>    
+    <e><p><l>derramar</l><r>usu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>derramar</l><r>usu<s n="transitivity"/>intrans</r></p><par n="Verb_main_new"/></e>
 <e><p><l>derrapar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>derrelinquir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>derrengar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>derretir</l><r>unuyachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>derretir</l><r>unuya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>derretirse</l><r>chullu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derretirse</l><r>unuya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derribar</l><r>kunpa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derribar</l><r>thunichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>derribar</l><r>thuni<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>derretir</l><r>unuya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>$
+    <!-- intrans. -se -->
+    <e><p><l>derretirse</l><r>chullu<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>derretirse</l><r>unuya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    
+    <e><p><l>derribar</l><r>kumpa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>derribar</l><r>thuni<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <e><p><l>derribar</l><r>wikapa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derribarse</l><r>kunpaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derribarse</l><r>thuniku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derribarse</l><r>wikapaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derrocar</l><r>–da. adj. atipasqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derrocar</l><r>llallisqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derrocar</l><r>ranqhay. derrotado</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>derribar</l><r>thuni<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e> 
 <e><p><l>derrocar</l><r>urma<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-<e><p><l>derrochar</l><r>wischu</r></p><par n="Verb_main"/></e>
+<e><p><l>derrochar</l><r>wikch'u</r></p><par n="Verb_main"/></e>
+<e><p><l>derrochar</l><r>q'aru</r></p><par n="Verb_main"/></e>
+<e><p><l>derrochar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>derrotar</l><r>ati<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
 <e><p><l>derrubiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-		  <e><p><l>derruir</l><r>thuni</r></p><par n="Noun_ac"/></e>
-<e><p><l>derruir</l><r>thuñi</r></p><par n="Verb_main_new"/></e>
-<e><p><l>derruir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+  <e><p><l>derruir</l><r>thuni</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>derrumbar</l><r>thuni</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>derrumbar</l><r>thuni<s n="add_mi"/>+Iprs</r></p><par n="Verb_main"/></e>
-    <e><p><l>derrumbarse</l><r>chanqaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derrumbarse</l><r>thuniyku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derrumbarse</l><r>urmanaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>derrumbarse</l><r>wikch'uku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desabarrancar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desabastecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desabollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3143,7 +3093,6 @@
 <e><p><l>desafear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desaferrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desafiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desafiarse</l><r>churanaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desaficionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desafilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desafinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3155,9 +3104,8 @@
 <e><p><l>desagradecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desagraviar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desagregar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desaguar</l><r>chaki<s n="add_mi"/>+Caus<s n="preform"/>#unu</r></p><par n="Verb_main"/></e>
-    <e><p><l>desaguar</l><r>thara</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desaguar</l><r>unu kachari</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desaguar</l><r>ch'aki<s n="add_mi"/>+Caus<s n="preform"/>#unu</r></p><par n="Verb_main"/></e>
+    <e><p><l>desaguar</l><r>kacha<s n="add_mi"/>+Inch<s n="preform"/>#unu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desaguazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desaherrojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desahijar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3176,17 +3124,14 @@
 <e><p><l>desalhajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desalinear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desalinizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desalmado</l><r>hawchaya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desalmar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desalmidonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desalojar</l><r>qarqoysi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desalojar</l><r>qarqu</r></p><par n="Verb_main"/></e>
 <e><p><l>desalquilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desalquitranar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desalterar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desamarrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desamarrarse</l><r>paskaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>desamarrar</l><r>paska</r></p><par n="Verb_main"/></e>
 <e><p><l>desamelgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desamistar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desamoblar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3205,13 +3150,9 @@
 <e><p><l>desanudar</l><r>paska</r></p><par n="Verb_main"/></e>
 <e><p><l>desapadrinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desaparear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desaparecer</l><r>chinkapu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desaparecer</l><r>chinkari</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desaparecer</l><r>chinka</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desaparecer</l><r>chinka</r></p><par n="Verb_main"/></e>
     <e><p><l>desaparecer</l><r>ch'usaqya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desaparecer</l><r>qollu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desaparecer</l><r>tukukapu</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desaparecer</l><r>qullu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desaparejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desapasionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desapegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3236,12 +3177,11 @@
 <e><p><l>desarmar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarmonizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarollar</l><r>wiña</r></p><par n="Verb_main_new"/></e>
+<e><p><l>desarollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>desarraigar</l><r>saphina</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desarraigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarrebozar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desarreglar</l><r>rawichi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desarreglar</l><r>rawi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desarreglar</l><r>rawiysi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desarreglar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarremangar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarrendar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarrimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3251,30 +3191,27 @@
 <e><p><l>desarrugar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarrumar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarticular</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desarticular</l><r>willu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desartillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desarzonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desasear</l><r>qhillicha</r></p><par n="Verb_main"/></e>
+<e><p><l>desasear</l><r>qanracha</r></p><par n="Verb_main"/></e>
 <e><p><l>desasentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desasimilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desasir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desasistir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desasnar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desasocegar</l><r>takurichi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desasocegar</l><r>taku<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desasociar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desasosegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desastillar</l><r>chhillpana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desatacar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desatar</l><r>paska</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desatar</l><r>paska</r></p><par n="Verb_main"/></e>
-    <e><p><l>desatarse</l><r>paskakuy.   819</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desatascar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desataviar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desatender</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desatentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desaterrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desatinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desatinos</l><r>thawti</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desatollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desatolondrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desatontar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3289,7 +3226,6 @@
 <e><p><l>desautorizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desavenir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desaviar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desayunar</l><r>mati</r></p><par n="Verb_main_new"/></e>
 <e><p><l>desayunar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desazogar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desazonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3303,21 +3239,21 @@
 <e><p><l>desbarbillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desbardar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desbarnizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desbarrancarse</l><r>qaqapa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desbarrancar</l><r>qaqapa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desbarrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desbastar</l><r>llaqlla</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desbastar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desbecerrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desbloquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desbocar</l><r>llik'i</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desbocar</l><r>llik'i</r></p><par n="Verb_main_new"/></e>
     <e><p><l>desbocar</l><r>qhasu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desbocar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desboquillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desbordar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desbordarse</l><r>llinp'a</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desbordarse</l><r>lloqlla</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desbordarse</l><r>phoqchi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desbordar</l><r>llimp'a<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desbordar</l><r>lluqlla<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desbordar</l><r>phuqchi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+ <!-- intrans. -se -->
+    <e><p><l>desbordar</l><r>llimp'a<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desbordar</l><r>lluqlla<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desbordar</l><r>phuqchi<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desborrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desbotonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desbravar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3328,12 +3264,9 @@
 <e><p><l>descabalar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descabalgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>descabellar</l><r>chukchana</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>descabellar</l><r>chukchana</r></p><par n="Verb_main_new"/></e>
-<e><p><l>descabellar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descabezar</l><r>qhuru<s n="preform"/>#uma</r></p><par n="Verb_main"/></e>
-	    <e><p><l>descabezar</l><r>umana</r></p><par n="Noun_ac"/></e>
-    <e><p><l>descabezar</l><r>uma qhoro</r></p><par n="Noun_ac"/></e>
-    <e><p><l>descabezar</l><r>uma wit'u</r></p><par n="Noun_ac"/></e>
+  <e><p><l>descabezar</l><r>umana</r></p><par n="Noun_ac"/></e>
+    <e><p><l>descabezar</l><r>wit'u<s n="preform"/>#uma</r></p><par n="Noun_ac"/></e>
 <e><p><l>descabritar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descaderar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descadillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3350,7 +3283,6 @@
 <e><p><l>descamisar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descampar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descañonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>descansar</l><r>sama</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descansar</l><r>sama</r></p><par n="Verb_main"/></e>
 <e><p><l>descantillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descantonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3367,11 +3299,8 @@
 <e><p><l>descarrilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descartar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>descascarar</l><r>eqha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descascarar</l><r>hiphq'a</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>descascarar</l><r>teqwa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descascarar</l><r>t'ilpa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>descascarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>descascarar</l><r>t'iqwa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descascarillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descascar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descaspar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3379,7 +3308,6 @@
 <e><p><l>descatolizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descebar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descender</l><r>ura<s n="add_mi"/>+Aff</r></p><par n="Verb_main"/></e>
-    <e><p><l>descender</l><r>urayku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desceñir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descentralizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descentrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3388,6 +3316,8 @@
 <e><p><l>descerezar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descerrajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descifrar</l><r>yacha<s n="add_mi"/>+Rptn+Iprs</r></p><par n="Verb_main"/></e>
+<e><p><l>descifrar</l><r>musya</r></p><par n="Verb_main"/></e>
+<e><p><l>descifrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descimbrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descinchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desclavar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3400,7 +3330,6 @@
 <e><p><l>descogollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descogotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>descolar</l><r>k'askanna</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>descolar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descolchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descolgar</l><r>ura<s n="add_mi"/>+Aff+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>descollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3415,30 +3344,24 @@
 <e><p><l>descompaginar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descompasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descompensar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>descomponer</l><r>thullmichi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descomponer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>descomponerse</l><r>ismu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descomponerse</l><r>leqheya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descomprimir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desconceptuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desconcertar algo</l><r>rawiysi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desconcertar</l><r>rawichi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desconcertar</l><r>rawi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desconcertar</l><r>thanqu</r></p><par n="Verb_main_new"/></e>
-<e><p><l>desconcertar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desconcertarse</l><r>thanqoku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desconchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desconectar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desconfiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desconfiarse</l><r>manchapaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>desconfiar</l><r>mancha<s n="add_mi"/>+Iprs+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>desconformar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descongelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descongestionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desconocer</l><r>riqsi<s n="preform"/>#mana</r></p><par n="Verb_main"/></e>
 <e><p><l>desconsiderar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desconsolar</l><r>llaki<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-		    <e><p><l>desconsolarse</l><r>llakiku</r></p><par n="Noun_ac"/></e>
-    <e><p><l>desconsolarse</l><r>phutiku</r></p><par n="Noun_ac"/></e>
+<e><p><l>desconsolar</l><r>llaki<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>desconsolar</l><r>phuti<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desconsolar</l><r>llaki<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Noun_ac"/></e>
+    <e><p><l>desconsolar</l><r>phuti<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Noun_ac"/></e>
 <e><p><l>descontaminar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descontar</l><r>hurqu</r></p><par n="Verb_main"/></e>
     <e><p><l>descontar</l><r>yupara</r></p><par n="Verb_main_ac"/></e>
@@ -3451,25 +3374,15 @@
 <e><p><l>descorchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descordar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descoritar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>descornar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>descornar</l><r>waqrana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descoronar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descorrer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>descortezar</l><r>ephra</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descortezar</l><r>eqha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descortezar</l><r>hephq'a</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>descortezar</l><r>sinkha</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>descortezar</l><r>t'aphqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descortezar</l><r>t'eqwachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descortezar</l><r>t'eqwa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>descortezar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>descoser</l><r>mayt'uya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descoser</l><r>paska</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>descortezar</l><r>hiphq'a</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>descortezar</l><r>sinkha</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>descortezar</l><r>t'iqwa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descoser</l><r>paska</r></p><par n="Verb_main"/></e>
     <e><p><l>descoser</l><r>sirana</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descoserse</l><r>paskaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descostar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>descostillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>descostillar</l><r>waqtana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descostrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3488,14 +3401,11 @@
 <e><p><l>descuajaringar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descuajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descuartizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>descubierto</l><r>tarichiku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>descubrir</l><r>achini</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descubrir</l><r>tari</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>descubrir</l><r>tari</r></p><par n="Verb_main"/></e>
+    <e><p><l>descubrir</l><r>tari</r></p><par n="Verb_main"/></e>
     <e><p><l>descubrir</l><r>watu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descubrirse</l><r>paqari</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descubrirse</l><r>rikhuripu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>descubrirse</l><r>rikhuri</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>descubrir</l><r>rikhu<s n="add_mi"/>+Inch<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>descuerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descuidar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>descular</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3503,16 +3413,12 @@
 <e><p><l>desdeñar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desdibujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desdoblar</l><r>masta</r></p><par n="Verb_main"/></e>
-     <e><p><l>desdoblar</l><r>taparachiq</r></p><par n="Noun_ac"/></e>
 <e><p><l>desdorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desdramatizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desear</l><r>muna</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desear</l><r>muna</r></p><par n="Verb_main"/></e>
-    <e><p><l>desecar</l><r>ch'akichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desecar</l><r>ch'alqe</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>desecar</l><r>ch'aki<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desecar</l><r>ch'allqi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desechar</l><r>t'aqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desechar</l><r>wikch'u</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desechar</l><r>wikch'u</r></p><par n="Verb_main"/></e>
     <e><p><l>desechar</l><r>yanqacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deselectrizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3520,15 +3426,11 @@
 <e><p><l>desembalar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desembaldosar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desembanastar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desembarazar</l><r>med. wacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desembarazar</l><r>onqoku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desembarazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desembarazar</l><r>wachaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desembarcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desembargar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desembarrancar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desembarrar</l><r>turuna</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desembarrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desembaular</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desembelesar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desembocar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3574,10 +3476,7 @@
 <e><p><l>desencajonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desencallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desencaminar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desencantar</l><r>llakichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desencantar</l><r>phutichi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desencantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-      <e><p><l>desencantillarse</l><r>tharakuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>desencapillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desencapotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desencaprichar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3609,7 +3508,8 @@
 <e><p><l>desenfilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desenfocar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desenfrenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desenfrenarse</l><r>tuki</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desenfrenar</l><r>tuki<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desenfundar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desenfurecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desengañar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3619,8 +3519,6 @@
 <e><p><l>desengomar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desengoznar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desengranar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desengrasar</l><r>k'uyura</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desengrasar</l><r>tikanay. desenrollar. y. k'uyunna</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desengrasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desengrosar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desenguantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3640,8 +3538,8 @@
 <e><p><l>desenmudecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desenojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desenredar</l><r>paska</r></p><par n="Verb_main"/></e>
-    <e><p><l>desenrollar</l><r>k'uyunya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desenrollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>desenrollar</l><r>k'uyunna</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>desenrollar</l><r>paska</r></p><par n="Verb_main"/></e>
 <e><p><l>desenroscar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desensamblar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desensañar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3655,8 +3553,6 @@
 <e><p><l>desentarimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desentender</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desenterrar</l><r>alla</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desenterrar</l><r>haphch'i</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desenterrar</l><r>haphq'e</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desenterrar</l><r>hasp'i</r></p><par n="Verb_main"/></e>
 <e><p><l>desentoldar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desentonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3681,14 +3577,14 @@
 <e><p><l>desestabilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desestañar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desesterar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desestimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>desestimar</l><r>pisicha</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desestimar</l><r>yanqacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desfacer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desfajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desfalcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desfallecer</l><r>mana atipa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desfallecer</l><r>pisipa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desfallecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>desfallecer</l><r>ati<s n="add_mi"/>+Rep<s n="preform"/>#mana</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desfallecer</l><r>pisi<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>desfallecer</l><r>qhisti</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desfasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desfavorecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desfibrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3704,26 +3600,22 @@
 <e><p><l>desformar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desfrenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desfruncir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desgajamiento</l><r>wakwa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desgajar</l><r>k'allma</r></p><par n="Verb_main"/></e>
-    <e><p><l>desgajar</l><r>q'aqwa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desganado</l><r>usphuya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgajar</l><r>k'aklla</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desganar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desgañitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desgargantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desgaritar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desgarrar</l><r>eqha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgarrar</l><r>qhasu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desgarrar</l><r>llik'i</r></p><par n="Verb_main"/></e>
 <e><p><l>desgasificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desgastar</l><r>khanki</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desgastar</l><r>khaska</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desgastar</l><r>khusku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desgastar</l><r>k'utuykacha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desgastar</l><r>llaqlla</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>desgastar</l><r>mawk'ayachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desgastar</l><r>mullphachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desgastar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desgastarse</l><r>mawk'aya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgastar</l><r>mawk'aya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgastar</l><r>mullpha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desgastar</l><r>mawk'aya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgastar</l><r>mullpha<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desgaznatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desglosar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desgobernar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3731,19 +3623,18 @@
 <e><p><l>desgomar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desgonzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desgoznar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desgraciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desgraciarse</l><r>qhenchachaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgraciar</l><r>qhinchacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desgramar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desgranable</l><r>muchhachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desgranar</l><r>agr. muchha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desgranar</l><r>muchha</r></p><par n="Verb_main"/></e>
-    <e><p><l>desgranarse</l><r>agr. muchhaku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desgranular</l><r>chharqana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desgranzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desgrasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desgrasar</l><r>wirana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desgravar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desgreñarse</l><r>t'iskiya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgreñar</l><r>t'iskiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgreñar</l><r>t'ampaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+     <!-- intrans. -se -->
+    <e><p><l>desgreñar</l><r>t'iskiya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desgreñar</l><r>t'ampaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desguarnecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desguazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desguindar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3751,11 +3642,11 @@
 <e><p><l>deshabitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshabituar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshacer</l><r>paska</r></p><par n="Verb_main_new"/></e>
-       <e><p><l>deshacer</l><r>taparachiq</r></p><par n="Noun_ac"/></e>
-    <e><p><l>deshacer</l><r>thullmichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>deshacer</l><r>unspecified</r></p><par n="Verb_main"/></e>
+       <e><p><l>deshacer</l><r>tapara<s n="add_mi"/>+Caus</r></p><par n="Noun_ac"/></e>
+    <e><p><l>deshacer</l><r>phanchi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>deshacer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshebillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>deshebrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>deshebrar</l><r>khichu</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>deshebrar</l><r>uywina</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deshechizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3764,49 +3655,35 @@
 <e><p><l>deshermanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desherrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desherrumbrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deshidratar</l><r>ch'uñuchay. deshidratar la papa</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>deshidratar</l><r>qacha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>deshidratar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deshidratarse</l><r>ch'aki</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>deshidratar</l><r>ch'aki<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+      <!-- intrans. -se -->
+    <e><p><l>deshidratarse</l><r>ch'aki<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deshidrogenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshierbar</l><r>qura</r></p><par n="Verb_main_new"/></e>
 <e><p><l>deshijar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>deshilachar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deshilacharse</l><r>chhachuku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshilacharse</l><r>chhachuya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>deshilacharse</l><r>khichu</r></p><par n="Verb_main_ac"/></e> 
 <e><p><l>deshilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshilvanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshincar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshinchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshipotecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deshojar</l><r>agr. raphina</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshojar</l><r>ephra</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshojar</l><r>eqha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshojar</l><r>hephq'a</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshojar</l><r>t'aphqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshojar</l><r>t'eqwachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshojar</l><r>t'eqwa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshojar</l><r>tipi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>deshojar</l><r>raphina</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deshojar</l><r>tipi</r></p><par n="Verb_main"/></e>
-    <e><p><l>deshollejar</l><r>siwika</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>deshollejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>deshollejar</l><r>t'iqwa</r></p><par n="Verb_main"/></e>
 <e><p><l>deshollinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshomologar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshonorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deshonrar</l><r>alqocha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>deshonrar</l><r>allqucha</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>deshonrar</l><r>map'acha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>deshonrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>deshonrar</l><r>yanqayachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>deshonrarse</l><r>map'achaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>deshonrar</l><r>yanqaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deshornar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshuesar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshumanizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deshumedecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>designar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desigualar</l><r>ch'ullachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desigualar</l><r>ch'ullachi</r></p><par n="Verb_main_new"/></e>
-<e><p><l>desigualar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desigualar</l><r>wist'uchi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desigualar</l><r>ch'ullaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desigualar</l><r>wist'u<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desilusionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desimanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desimantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3814,15 +3691,12 @@
 <e><p><l>desincrustar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desinfectar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desinflamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desinflar</l><r>chhasachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desinflar</l><r>chhusu</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>desinflar</l><r>chhasa<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desinflar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desinsacular</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desinsectar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desintegrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desintegrarse</l><r>hak'uku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desintegrarse</l><r>ñut'uku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desintegrarse</l><r>t'aqaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desintegrar</l><r>t'aqa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desinteresar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desintoxicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desistir</l><r>saqi</r></p><par n="Verb_main"/></e>
@@ -3842,16 +3716,13 @@
 <e><p><l>desleír</l><r>chullu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>deslendrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deslenguar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desliar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desliarse</l><r>paskaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desliendrarse</l><r>ch'iyaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>desliar</l><r>paska</r></p><par n="Verb_main"/></e>
+    <e><p><l>desliendrar</l><r>ch'iyana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desligar</l><r>paska</r></p><par n="Verb_main"/></e>
 <e><p><l>desliñar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deslindar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deslizar</l><r>lluchkha</r></p><par n="Verb_main"/></e>
     <e><p><l>deslizar</l><r>suchu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>deslizarse</l><r>llusp'i</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>deslizarse</l><r>suchuykacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>deslomar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deslucir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>deslumbrar</l><r>uti<s n="add_mi"/>+Caus<s n="preform"/>#ñawi</r></p><par n="Verb_main"/></e>
@@ -3867,8 +3738,7 @@
 <e><p><l>desmandar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmanear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmangar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desmaniatar</l><r>chaqnana</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desmaniatar</l><r>chaqna paska</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desmaniatar</l><r>paska<s n="preform"/>#chaqna</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmantecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmantelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmaquillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3876,24 +3746,18 @@
 <e><p><l>desmarcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmayar</l><r>chinka<s n="preform"/>#yuyay</r></p><par n="Verb_main"/></e>
-    <e><p><l>desmayar</l><r>urna muyu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desmayar</l><r>yuyay chinka</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmedir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmedrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmejorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmelenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desmembrar</l><r>hukllana</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desmembrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>desmembrar</l><r>t'aqa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmemoriar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmenguar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desmentir</l><r>manancha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmentir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desmenuzar</l><r>lliphch'iy. desmenuzarse. s. hak'ukuq</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desmenuzar</l><r>ñut'ukuq</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmenuzar</l><r>ñut'u</r></p><par n="Verb_main"/></e>
-    <e><p><l>desmenuzar</l><r>t'iphsi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmeollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desmerecer</l><r>alqocha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmerecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmesurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmigajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3902,18 +3766,16 @@
 <e><p><l>desmineralizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmitificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmochar</l><r>qhuru</r></p><par n="Verb_main"/></e>
+<e><p><l>desmochar</l><r>mut'u</r></p><par n="Verb_main"/></e>
 <e><p><l>desmogar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmoldar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmoler</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmoñar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmonetizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desmontar</l><r>chaku</r></p><par n="Verb_main_new"/></e>
 <e><p><l>desmontar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmoralizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desmorecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desmoronar</l><r>thullki</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desmoronar</l><r>thullkiykacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desmoronar</l><r>thuni</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmoronar</l><r>thuni</r></p><par n="Verb_main"/></e>
     <e><p><l>desmoronar</l><r>wakha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desmotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3928,50 +3790,34 @@
 <e><p><l>desnevar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desnivelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desnucar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desnudar</l><r>llat'ana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desnudar</l><r>llat'ana</r></p><par n="Verb_main"/></e>
-    <e><p><l>desnudar</l><r>llat'a</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desnudar</l><r>q'ala</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desnudar</l><r>q'ara</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desnudarse</l><r>ch'ustiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desnudarse</l><r>ch'utiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desnudarse</l><r>llat'aku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desnudarse</l><r>q'alaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desnudarse</l><r>q'araya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desnutrir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desobedecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desobligar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desobstruir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desocupar</l><r>qasichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desocupar</l><r>qasi<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>desocupar</l><r>talli</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desocuparse</l><r>qasi</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>desocupar</l><r>qasi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desocupar</l><r>qasi<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desodorizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desoír</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desoldar</l><r>chapina</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desoldar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desolidarizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desollar</l><r>ch'utichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desollar</l><r>lluch'i</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desollar</l><r>llust'i</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desollar</l><r>lluch'u</r></p><par n="Verb_main"/></e>
-    <e><p><l>desollar</l><r/></p><par n="Verb_main_ac"/></e>
 <e><p><l>desopilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desoprimir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desorbitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desordenar</l><r>ch'arwi</r></p><par n="Verb_main_ac"/></e>
-        <e><p><l>desordenar</l><r>chharqoku</r></p><par n="Noun_ac"/></e>
-    <e><p><l>desordenar</l><r>mich'u mich'u</r></p><par n="Noun_ac"/></e>
-    <e><p><l>desordenar</l><r>rawi</r></p><par n="Verb_main_ac"/></e>
+        <e><p><l>desordenar</l><r>chharqu</r></p><par n="Noun_ac"/></e>
 <e><p><l>desordenar</l><r>rawi</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>desordenar</l><r>taqruku</r></p><par n="Noun_ac"/></e>
-<e><p><l>desordenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desorejar</l><r>mus. ninrina</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desorejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>desorejar</l><r>ninrina</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desorganizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desorientar</l><r>panta</r></p><par n="Verb_main"/></e>
-    <e><p><l>desorientarse</l><r>panta</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desorientarse</l><r>payu</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>desorientar</l><r>panta<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desorientar</l><r>panta<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desorillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desortijar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desosar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -3980,11 +3826,9 @@
 <e><p><l>desoxidar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desoxigenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despabilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despachar algo</l><r>apachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despachar</l><r>allillamanta</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despachar</l><r>apachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>despachar</l><r>apa<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despachar</l><r>kacha</r></p><par n="Verb_main"/></e>
-    <e><p><l>despachar</l><r>suchiy. despacio. adv. allimanta</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>despachar</l><r>suchi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despachurrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despaldar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4016,154 +3860,101 @@
 <e><p><l>despedazar</l><r>llik'i</r></p><par n="Verb_main"/></e>
     <e><p><l>despedazar</l><r>ñut'u</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>despedazar</l><r>witha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despedazarse</l><r>khullpiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despedazarse</l><r>ñut'uku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despedazarse</l><r>withaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despedir</l><r>hatarichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despedir</l><r>hat'a</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despedir</l><r>kacharpari</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despedir</l><r>qarqochiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despedir</l><r>qarqo</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>despedir</l><r>wikch'u</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>despedir</l><r>kacha<s n="add_mi"/>+Int</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despedir</l><r>qarqu</r></p><par n="Verb_main_new"/></e>
 <e><p><l>despedir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despedir</l><r>wikch'u</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despedrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despedregar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>despegar</l><r>k'askanna</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>despegar</l><r>q'aqwa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>despegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despegarse</l><r>q'anpaku</r></p><par n="Verb_main_ac"/></e>
-       <e><p><l>despegarse</l><r>q'aqwakuq</r></p><par n="Noun_ac"/></e>
-    <e><p><l>despegarse</l><r>q'aqwaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despegarse</l><r>seqraku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despeinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>despelar</l><r>raphina</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despelar</l><r>rap'ina</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>despellejar</l><r>lluch'i</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>despellejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despellejarse</l><r>q'alaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despellejarse</l><r>q'araku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>despellejar</l><r>q'arana</r></p><par n="Verb_main"/></e>
 <e><p><l>despelotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despeluzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despeluznar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despeñar</l><r>qaqapa</r></p><par n="Verb_main"/></e>
-<e><p><l>despenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despeñarse</l><r>qaqapa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despepitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desperdiciar</l><r>usuchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desperdiciar</l><r>usu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desperdiciar</l><r>usu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>desperdiciarse</l><r>usu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desperdiciarse</l><r>usu</r></p><par n="Verb_main_new"/></e>
-<e><p><l>desperdigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>desperdiciar</l><r>usu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desperdiciar</l><r>usu<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desperdigar</l><r>wisñi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desperecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desperezar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desperezarse</l><r>chutaykachaku</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desperezar</l><r>chuta<s n="add_mi"/>+Intrup+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desperfilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despernancar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despernar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despersonalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despertar</l><r>rikch'ariy ; rikch'arichiy </r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despertar</l><r>rikch'a<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>despestañar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despezonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despezuñar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despiadado</l><r>hawchaya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despichar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despilarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despilfarrar</l><r>ch'usaqyachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despilfarrar</l><r>ciar</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>despilfarrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>despilfarrar</l><r>ch'usaqya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despimpollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despinochar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despintar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despinzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>despiojar</l><r>usacha</r></p><par n="Verb_main"/></e>
-    <e><p><l>despiojar</l><r>usanay.   jun usacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despiojar</l><r>usa palla</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despiojar</l><r>usa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despistar</l><r>laq'ochi</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>despiojar</l><r>usana</r></p><par n="Verb_main"/></e>
+<e><p><l>despistar</l><r>laq'u<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>despistar</l><r>panta<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despistar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desplacer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desplantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desplatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desplazar</l><r>purichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desplazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desplazarse</l><r>puri</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desplazar</l><r>puri<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desplazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desplazar</l><r>puri<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desplegar</l><r>mast'a<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
-    <e><p><l>desplegarse espontáneamente</l><r>taparaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despleguetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desplomar</l><r>thunichi</r></p><par n="Verb_main_ac"/></e>
-           <e><p><l>desplomar</l><r>thuñi</r></p><par n="Noun_ac"/></e>
-    <e><p><l>desplomar</l><r>thuni</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desplomar</l><r>thuni</r></p><par n="Verb_main"/></e>
-    <e><p><l>desplomarse</l><r>chanqaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desplomarse</l><r>choqaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desplomarse</l><r>desplumar kunpaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desplomarse</l><r>thuniku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desplomarse</l><r>urmanaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desplomarse</l><r>urma</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desplomarse</l><r>wikch'uku</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desplomar</l><r>urma<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desplumar</l><r>phuruna</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desplumar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despoblarse</l><r>q'alaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>despoblarse</l><r>q'araku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l> despojar</l><r>ch'utichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>despojar</l><r>llaqsa</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>despojar</l><r>qechu</r></p><par n="Verb_main_ac"/></e>
-	   <e><p><l>despojar</l><r>qichu</r></p><par n="Noun_new"/></e>
+    <e><p><l>despojar</l><r>ch'uti</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>despojar</l><r>qichu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despolarizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despolvar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despolvorear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desportillar</l><r>ch'anaku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desportillar</l><r>ch'aña</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>desportillar</l><r>ch'añay. desportillarse. v. khallpaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desportillar</l><r>k'aphti</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desportillar</l><r>ch'aña</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desportillar</l><r>khallpa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desportillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desposar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desposeer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despostar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despostillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despotizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despotricar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-	   <e><p><l>despreciar intencionalmente</l><r>saruchaku</r></p><par n="Noun_ac"/></e>
     <e><p><l>despreciar</l><r>pisincha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>despreciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>despreciar</l><r>yanqacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desprecintar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desprender</l><r>khaka</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desprender</l><r>khaka</r></p><par n="Verb_main_new"/></e>
     <e><p><l>desprender</l><r>khaku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desprender</l><r>q'aqwa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desprender</l><r>sakha</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>desprender</l><r>t'ipara</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desprender</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>desprender</l><r>wakha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desprender</l><r>wikha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desprenderse</l><r>khakukuq</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desprenderse</l><r>urmanaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desprenderse</l><r>wikhakuq. desprendible. adj. q'aqwakuq</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>desprendimiento</l><r>wakwa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>despreocupar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desprestigiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despresurizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desprogramar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desproporcionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>despropósitos</l><r>thawtiyku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desproteger</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desproveer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despulpar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despumar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>despuntar</l><r>mut'u</r></p><par n="Verb_main_new"/></e>
+<e><p><l>despuntar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desquebrajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desquejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desquerer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desquiciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desquiciar</l><r>waq'ayachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>desquiciar</l><r>waq'aya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desquijarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desquijerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desquilatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4181,7 +3972,6 @@
 <e><p><l>destajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destalonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>destapar</l><r>kicha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>destapar</l><r>kicha</r></p><par n="Verb_main"/></e>
 <e><p><l>destapiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destaponar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4191,10 +3981,10 @@
 <e><p><l>destejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destejer</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>destellar</l><r>k'achachacha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>destellar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destemplar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>desteñir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>desteñirse</l><r>qhoqaya</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>desteñir</l><r>qhuqaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>desteñir</l><r>qhuqaya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>destensar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>desternerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4202,9 +3992,6 @@
     <e><p><l>desterrar</l><r>mitma</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>desterrar</l><r>qarqu</r></p><par n="Verb_main"/></e>
     <e><p><l>desterronar</l><r>maruna</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>desterronar</l><r>maru</r></p><par n="Verb_main_new"/></e>
-<e><p><l>desterronar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>destetar</l><r>hanuk'a</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>destetar</l><r>hanuk'a</r></p><par n="Verb_main"/></e>
 <e><p><l>destetillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destilar</l><r>sut'u<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
@@ -4215,9 +4002,8 @@
 <e><p><l>destornillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destrabar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>destramar</l><r>mininna</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>destramar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>destrenzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>destripar</l><r>ch'unchulcha</r></p><par n="Verb_main"/></e>
+<e><p><l>destrenzar</l><r>paska</r></p><par n="Verb_main"/></e>
+<e><p><l>destripar</l><r>ch'unchulcha</r></p><par n="Verb_main"/></e>#########
 <e><p><l>destriunfar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destrizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>destrocar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -12723,7 +12509,6 @@
     <e><p><l>velar</l><r>arariwa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>velar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>velicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vencer</l><r>atipa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vencer</l><r>ati<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
     <e><p><l>vencer</l><r>inta</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>vencer</l><r>ista</r></p><par n="Verb_main_ac"/></e>
