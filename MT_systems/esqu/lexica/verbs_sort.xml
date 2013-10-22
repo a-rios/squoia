@@ -4863,19 +4863,8 @@
 <e><p><l>engalanar</l><r>achhala</r></p><par n="Verb_main"/></e>
 <e><p><l>engalgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-   #######
-    <e><p><l>engañar</l><r>chawka</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engañar</l><r>llachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engañar</l><r>llullaku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>engañar</l><r>llulla<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>engañar</l><r>q'enqo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engañar</l><r>qeqo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engañar</l><r>qhamatia</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>engañar</l><r>chawka</r></p><par n="Verb_main_ac"/></e>  
     <e><p><l>engañar</l><r>yuka</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engañarse</l><r>laq'ochiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engañarse</l><r>panta</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engañarse</l><r>q'olma</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engañarse</l><r>yukanaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enganchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engarabatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engarabitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4887,19 +4876,10 @@
 <e><p><l>engarzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engastar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engatillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>engatusar</l><r>ch'achu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engatusar</l><r>llachichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engatusar</l><r>llachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engatusar</l><r>llulla</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engatusar</l><r>q'otu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engatusar</l><r>q'oturqo</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>engatusar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>engatusar</l><r>yuka</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engatusar</l><r>yukarqo</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>engavillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>engendrar</l><r>churiya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engendrar</l><r>yuma</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>engendrar</l><r>yuma</r></p><par n="Verb_main"/></e>
 <e><p><l>engerir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engibar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4907,40 +4887,26 @@
 <e><p><l>engolfar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engolosinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engomar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>engordar</l><r>hatunyachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engordar</l><r>q'eqeriy. engrandecer. v. hatunya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engordar</l><r>wirayachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engordar</l><r>wiraya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>engordar</l><r>wiraya</r></p><par n="Verb_main"/></e>
+<e><p><l>engordar</l><r>wiraya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>engordar</l><r>wiraya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>engoznar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>engranar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>engrandecer</l><r>hathunyachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engrandecer</l><r>hatuncha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engrandecer</l><r>hatunyachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>engrandecer</l><r>hatunya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>engrandecer</l><r>qellpu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engrandecer</l><r>samincha</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>engranar</l><r>unspecified</r></p><par n="Verb_main"/></e>  
+<e><p><l>engrandecer</l><r>hatunya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>engrandecer</l><r>hatunya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>engranerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engranujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engrapar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>engrasar</l><r>wiracha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>engrasar</l><r>wiracha</r></p><par n="Verb_main"/></e>
-    <e><p><l>engrasarse</l><r>wirachaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engrasarse</l><r>wiswiya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engreír</l><r>chaqlli</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>engreir</l><r>ñukña</r></p><par n="Verb_main_new"/></e>
-<e><p><l>engreír</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>engreír</l><r>chaqlli</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>engrescar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engrifar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engrillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engringar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>engrosar</l><r>kurku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engrosar</l><r>kurkuya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engrosar</l><r>q'eqeriy. aya rakuya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engrosar</l><r>rakhucha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>engrosar</l><r>rakhuya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>engrosar</l><r>rakucha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engrosar</l><r>ratkhayachi</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>engrosar</l><r>rakhuya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+ <!-- intrans. -se -->
+ <e><p><l>engrosar</l><r>rakhuya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>engrudar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engruesar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>engrumecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4953,18 +4919,10 @@
 <e><p><l>enguirnaldar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enguizgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>engullir</l><r>millp'u</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engullir</l><r>oqo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engullir</l><r>q'olti</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engullir</l><r>rakra</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>engullir</l><r>rakra</r></p><par n="Verb_main"/></e>
-    <e><p><l>engullir</l><r>rakray. aya rakray. caj: jun: millpu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engullir</l><r>sinón:</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engullir</l><r>soqsu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>engullir</l><r>wap'u</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>engurruñar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enhacinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>enharinar</l><r>hak'ucha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>enharinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enhastiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enhebillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enhebrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4987,9 +4945,7 @@
     <e><p><l>enjoyar</l><r>ch'anta</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enjoyar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enjuagar_la_boca</l><r>muqch'i</r></p><par n="Verb_main"/></e>
-    <e><p><l>enjuagar</l><r>ch'uyana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enjuagar</l><r>ch'uyancha</r></p><par n="Verb_main"/></e>
-    <e><p><l>enjuagar</l><r>enjua garse la boca moqch'ikuy. anc  enjuagatorio  830  awiy. aya mujchiy. caj loqyachiy. jun aywiy. s.mar chuyancha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enjuagarse_la_boca</l><r>muqch'i</r></p><par n="Verb_main_new"/></e>
 <e><p><l>enjugar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enjuiciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -5000,20 +4956,12 @@
 <e><p><l>enlamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enlatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>enlazar</l><r>ch'ata</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enlazar</l><r>t'inkichi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>enlazar</l><r>t'inki</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enlazar</l><r>t'inkiysi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>enlazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>enlazar</l><r>wata</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enlazarse</l><r>t'inkiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enlazarse</l><r>t'inkinaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enlazarse</l><r>wataku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enlechar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enlegajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enlegamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enlejiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>enliendrar</l><r>ch'iyacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enliendrarse</l><r>ch'iyachaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enligar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enlistonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enllantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -5021,42 +4969,36 @@
 <e><p><l>enlodar</l><r>t'urucha</r></p><par n="Verb_main"/></e>
 <e><p><l>enlodazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enlomar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>enloquecer</l><r>utiqya</r></p><par n="Verb_main"/></e>
-    <e><p><l>enloquecer</l><r>waq'aya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>enloquecer</l><r>waq'aya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>enloquecer</l><r>utiqya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>enloquecer</l><r>utiqya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+    <e><p><l>enloquecer</l><r>waq'aya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>enlosar</l><r>kallki</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>enlosar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>enlosetar</l><r>khallki</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>enlosetar</l><r>kallki</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enlucir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enlustrecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>enlutar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>enlutarse</l><r>yanalliku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enlutarse</l><r>yanawan p'achalliku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>enlutar</l><r>yanalli</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>enlutar</l><r>p'achalli<s n="preform"/>#yanawan</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>enmaderar</l><r>k'ullucha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>enmaderar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmadrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmagrecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmalecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmangar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>enmantillarse</l><r>arwisqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enmantillarse</l><r>–da. adj. ch'arwi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enmantillarse</l><r>llikllakuy. enmarañado</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enmantillarse</l><r>t'anpa </r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enmarañar</l><r>arwichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>enmarañar</l><r>arwi</r></p><par n="Verb_main_ac"/></e>
+   <e><p><l>enmantillar</l><r>lliklla<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+   <!-- intrans. -se -->
+    <e><p><l>enmantillar</l><r>lliklla<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enmarañar</l><r>arwi</r></p><par n="Verb_main"/></e>
-    <e><p><l>enmarañar</l><r>ch'arwi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enmarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmarcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmaridar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmarillecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>enmascarar</l><r>saynata</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>enmascarar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>enmascararse</l><r>saynataku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>enmasillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>enmelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>enmendar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>enmendar</l><r>unspecified</r></p><par n="Verb_main"/></e>###################
     <e><p><l>enmendar</l><r>wanachi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>enmendarse</l><r>wana</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>enmocharse</l><r>morq'aya</r></p><par n="Verb_main_ac"/></e>
