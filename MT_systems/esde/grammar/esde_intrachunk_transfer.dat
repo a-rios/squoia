@@ -199,6 +199,9 @@ my.pos=[Z]		St			my.type=/C?NP/			flex			up		no-overwrite	# TODO: die drei klein
 my.flex=/./		flex			my.type=/C?NP/			flex			up		overwrite
 my.pos=/ADJ/		flex			my.type=/C?NP/&&my.flex=/./	flex			down		overwrite	# TODO: no article => St; default?
 
+my.flex=/./&&my.slem=del	flex		my.type=/C?PP/			flex			up		overwrite	# special case: PP(del)
+my.type=/C?NP/		flex			my.type=/C?PP/&&my.flex=/./	flex			down		overwrite	# pass from PP to NP
+
 # NP with flex: pass the info down thru the AP to the ADJ
 my.pos=/ADJ/		flex			my.type=/C?AP/&&chunkparent.flex=/./	chunkparent.flex		down		no-overwrite
 my.pos=/ADJ/		flex			my.type=/C?AP/&&chunkgrandparent.flex=/./	chunkparent.chunkparent.flex		down		no-overwrite
