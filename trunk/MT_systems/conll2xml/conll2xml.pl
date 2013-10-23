@@ -105,7 +105,7 @@ while (<>)
      
      my $eaglesTag = &toEaglesTag($pos, $info);
      # if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
-     if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/ and $word !~ /parte|frente|adelante|base|menos$/ and $word !~ /_/)
+     if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|[^l](la|las|lo|los|le|les))$/ and $word !~ /parte|frente|adelante|base|menos$/ and $word !~ /_/)
      {
 	print STDERR "clitics in verb $lem: $word\n";
 	my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
@@ -126,6 +126,16 @@ while (<>)
      # Numbers: FreeLing uses their form as lemma (may be uppercased) -> change lem to lowercase for numbers!
      if($pos eq 'Z')
      {
+	# HACK!!! TODO check why FL tags it as a number Z and DeSR parses it as a circunstancial complement cc...
+	if ($word eq 'un' and $lem eq 'un' and $rel eq 'cc')
+	{
+		$lem = 'uno';
+		$rel = 'spec';
+		$pos = 'di';
+		$cpos = 'd';
+		$head = "". int($id)+1 . "";
+		$eaglesTag = 'DI0MS0';
+	}
      	$lem = lc($lem);
      }
      $wordNode->setAttribute( 'ord', $id );
@@ -1845,7 +1855,7 @@ sub model2{
  			 	my $eaglesTag = &toEaglesTag($pos, $info);
 				# if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
 				# exclude certain words that may occur at the end of the lemma in locutions (e.g. echar_de_menos) -> we don't want to split -os in this case!
-				if($eaglesTag =~ /^V.[GNM]/ and $word !~ /parte|frente|adelante|base|menos$/ and $word =~ /(me|te|nos|os|se|la|las|lo|los|le|les)$/ and $word != /_/)
+				if($eaglesTag =~ /^V.[GNM]/ and $word !~ /parte|frente|adelante|base|menos$/ and $word =~ /(me|te|nos|os|se|[^l](la|las|lo|los|le|les))$/ and $word != /_/)
 				{
 					print STDERR "clitics in verb $lem: $word\n";
 					my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);

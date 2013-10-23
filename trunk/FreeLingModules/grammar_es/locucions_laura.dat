@@ -883,6 +883,7 @@ cada_dos_por_tres cada_dos_por_tres RG I
 <cadena>_de_producción cadena_de_producción $1:NC I
 <cadena>_de_tiendas cadena_de_tiendas $1:NC I
 <caja>_de_herramientas caja_de_herramientas $1:NC I
+<caja>_<fuerte> caja_fuerte $1:NC I
 cálamo_currente cálamo_currente RG I
 calidad_asistencial calidad_asistencial NCFS000 I
 calidad_del_agua calidad_del_agua NCFS000 I
@@ -1864,6 +1865,7 @@ en_gracia_a en_gracia_a SPS00 I
 en_gracia_al en_gracia_al SPCMS I
 en_gran_manera en_gran_manera RG I
 en_gran_medida en_gran_medida RG I
+en_gran_parte en_gran_parte RG I
 en_guisa_de en_guisa_de SPS00 I
 en_guisa_del en_guisa_del SPCMS I
 en_honor_a_la_verdad en_honor_a_la_verdad RG I
@@ -2544,6 +2546,7 @@ mobiliario_urbano mobiliario_urbano NCFS000 I
 moneda_nacional moneda_nacional NCFS000 I
 moneda_única moneda_única NCFS000 I
 monóxido_de_carbono monóxido_de_carbono NCFS000 I
+<montar>_a_caballo montar_a_caballo $1:VM I
 mortalidad_infantil mortalidad_infantil NCFS000 I
 mortis_causa mortis_causa RG I
 <motor>_de_búsqueda motor_de_búsqueda $1:NC I
@@ -2951,6 +2954,7 @@ punto_de_cruz punto_de_cruz NCMS000 I
 punto_de_equilibrio punto_de_equilibrio NCMS000 I
 punto_de_partida punto_de_partida NCMS000 I
 punto_de_referencia punto_de_referencia NCMS000 I
+<punto>_de_vista punto_de_vista $1:NC I
 punto_focal punto_focal NCMS000 I
 puntuación_media puntuación_media NCMS000 I
 que_ni_hecho_de_encargo que_ni_hecho_de_encargo RG I
@@ -3265,6 +3269,7 @@ té_verde té_verde NCMS000 I
 <texto>_<original> texto_original $1:NC I
 tiempo_de_exposición tiempo_de_exposición NCMS000 I
 tiempo_de_servicio tiempo_de_servicio NCMS000 I
+tiempo_libre tiempo_libre NCMS000 I
 <tienda>_<especializar> tienda_especializada $1:NC I
 tierra_adentro tierra_adentro RG I
 <tipo>_de_cambio tipo_de_cambio $1:NC I
@@ -3380,6 +3385,7 @@ vida_en_sociedad vida_en_sociedad NCFS000 I
 vida_profesional vida_profesional NCFS000 I
 vídeo_vhs vídeo_vhs NCMS000 I
 villa_olímpica villa_olímpica NCFS000 I
+<vino>_<tinto> vino_tinto $1:NC I
 violencia_doméstica violencia_doméstica NCFS000 I
 violencia_familiar violencia_familiar NCFS000 I
 virus_de_la_inmunodeficiencia_humana virus_de_la_inmunodeficiencia_humana NCMN000 I

@@ -28,7 +28,9 @@ my.type=AP		xPP:my.type=/PP/, xAVP:my.type=AVP	xPP .xAVP .head
 # Noun #
 ########
 
-my.type=NP		xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/,xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="S-rel"]]}, xVAP:xpath{//CHUNK[@type="VP" and @si="S" and NODE[starts-with(@smi,"VMP")]]} , xSREL:my.type=/S-rel/,xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="S-rel"]]}			xSPEC .xAP .xVAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
+## TODO: should be able to put something between head noun and relative clause : xSPEC .xAP .xVAP .xATRUNC +head +xPP <PLACEHOLDER_VERBPREFIX> .xCOMA +xSREL +xCOMB
+
+my.type=NP		xSPEC:my.type=nounSpec,xATRUNC:xpath{//CHUNK[@type="AP" and NODE[@pos="TRUNC"]]}, xAP:my.type=/C?AP/,xPP:my.type=/PP.*/, xCOMA:xpath{//CHUNK[@type="P-com" and following-sibling::CHUNK[@type="VP" and @si="S" and @relat="yes"]]}, xVAP:xpath{//CHUNK[@type="VP" and @si="S" and not(@relat="yes") and NODE[starts-with(@smi,"VMP")]]} , xSREL:my.type=VP&&my.si=S&&my.relat=yes, xCOMB:xpath{//CHUNK[@type="P-com" and preceding-sibling::CHUNK[@type="VP" and @si="S" and @relat="yes"]]}			xSPEC .xAP .xVAP .xATRUNC +head +xPP .xCOMA +xSREL +xCOMB
 
 ###############
 # Preposition #
@@ -60,9 +62,12 @@ my.type=VP&&my.finVerb=no&&!(my.subord=yes||my.relat=yes)&&my.senttype=inter&&!(
 # exception: modal/"command" verb past participle => auxilliary(finite), main verb (infinite), modal/command verb (past participle)
 #my.type=VP&&my.finVerb=no&&!(my.si=vsubord)&&my.senttype=inter&&my.ppexcep=yes			xVPR:my.type=VerbPrefix,xSU:my.si=suj&&!(xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]}),xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/&&!(xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]}),xNIO:my.si=ci&&my.type=/NP|PP/,xWH:xpath{//CHUNK[descendant::NODE[@pos[starts-with(.,"PW")]]]},xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xCOM:my.type=/P-com/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb		xWH +xVFIN +xSU .xPDO .xPIO .xNIO .xNDO .xDATE .xAVP .xNEG .xATT .xVPR .xPP .head +xCOM +xSC +xEOS
 
-# Subordinated clauses: SOV
+#######
+# SOV #
+#######
+# Subordinated and relative clauses: SOV
 # finite verb in subordinated clause at the very end; adverbs before the verb
-my.type=VP&&!(my.finVerb=no)&&(my.subord=yes||my.relat=yes)			xPREL:my.type=/NP-relpro/, xSCJ:my.type=subConj, xVPR:my.type=VerbPrefix, xSU:my.si=suj, xATT:my.si=atr&&my.type=NP, xPDO:my.type=cliticPRON&&child.cas=Akk, xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat), xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/, xNEG:my.type=AVP&&my.neg=yes, xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/), xPP:my.type=/PP.*/, xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/, xEOS:my.type=/P-eos/		xPREL .xSCJ +xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +head +xEOS
+my.type=VP&&!(my.finVerb=no)&&(my.subord=yes||my.relat=yes)			xPREL:my.type=/NP-relpro/, xSCJ:my.type=subConj, xVPR:my.type=VerbPrefix, xSU:my.si=suj, xATT:my.si=atr&&my.type=NP, xPDO:my.type=cliticPRON&&child.cas=Akk, xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat), xNDO:my.si=/cd|cd-a/&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/, xNEG:my.type=AVP&&my.neg=yes, xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/), xPP:my.type=/PP.*/, xDATE:my.type=data, xSC:my.type=/S-sub|VZ-inf/, xEOS:my.type=/P-eos/		xPREL .xSCJ +xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +head +xEOS
 
 # finite verb in subordinated clause at the very end, the non-finite verb (head) just before the finite
 my.type=VP&&my.finVerb=no&&(my.subord=yes||my.relat=yes)&&!(my.ppexcep=/./)		xSCJ:my.type=subConj,xVPR:my.type=VerbPrefix,xSU:my.si=suj,xATT:my.si=atr&&my.type=NP,xPDO:my.type=cliticPRON&&child.cas=Akk,xPIO:my.type=cliticPRON&&(child.pos=/PRF/ || child.cas=Dat),xNDO:my.si=cd&&my.type=/NP|PP/,xNIO:my.si=ci&&my.type=/NP|PP/,xNEG:my.type=AVP&&my.neg=yes,xAVP:my.type=/AVP|AP/&&!(my.neg=/yes/),xPP:my.type=/PP.*/,xDATE:my.type=data,xSC:my.type=/S-sub|VZ-inf/,xEOS:my.type=/P-eos/,xVFIN:my.type=finVerb	xSCJ .xSU .xPDO .xPIO .xNIO .xNDO .xPP .xDATE .xNEG .xAVP .xATT .xVPR +head +xVFIN +xEOS

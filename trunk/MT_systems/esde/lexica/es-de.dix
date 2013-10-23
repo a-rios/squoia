@@ -1755,6 +1755,8 @@
    <e><p><l>largar</l><r>los|lassen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>lavar</l><r>spülen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>leudar</l><r>säuern</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>limpiar</l><r>putzen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>limpiar</l><r>reinigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>limpiar</l><r>wischen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>linchar</l><r>lynchen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llover</l><r>regnen</r></p><par n="VM_VV_MAIN"/></e>
@@ -3375,9 +3377,6 @@
    <e><p><l>ir</l><r>laufen</r></p><par n="VM_VV_MAIN"/></e> <!-- ir bien/mal => gut/schlecht laufen [ugs.] -->
    <e><p><l>irradiar</l><r>bestrahlen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>irradiar</l><r>strahlen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>irregular</l><r>ungeregelt</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>irregular</l><r>ungleichmäßig</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>irregular</l><r>unregelmäßig</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>irritar</l><r>auf|regen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>irritar</l><r>verärgern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>irritar</l><r>reizen</r></p><par n="VM_VV_MAIN"/></e>
@@ -22145,7 +22144,6 @@ veintitodos
    <e><p><l>pegado</l><r>anhänglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>pretendido</l><r>angeblich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>pretendido</l><r>behauptet<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
-   <e><p><l>privado</l><r>privat<s n="molif"/>443</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>prohibido</l><r>verboten<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>pronunciado</l><r>ausgesprochen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>pronunciado</l><r>markant<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
@@ -22250,6 +22248,9 @@ veintitodos
    <e><p><l>insidioso</l><r>hinterhältig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>insidioso</l><r>hinterlistig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>intercultural</l><r>interkulturell</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>irregular</l><r>ungeregelt</r></p><par n="AQ_ADJ"/></e>
+   <e><p><l>irregular</l><r>ungleichmäßig</r></p><par n="AQ_ADJ"/></e>
+   <e><p><l>irregular</l><r>unregelmäßig</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>italiano</l><r>italienisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
    <e><p><l>junto</l><r>zusammen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
    <e><p><l>lego</l><r>säkular</r></p><par n='AQ_ADJ'/></e>
@@ -22273,6 +22274,7 @@ veintitodos
    <e><p><l>pecuario</l><r>Vieh-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e> 
    <e><p><l>pecuario</l><r>viehwirtschaftlich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>pendenciero</l><r>streitsüchtig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>per_cápita</l><r>Pro-Kopf-</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>periodístico</l><r>journalistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>periodístico</l><r>Presse-</r></p><par n='AQ_TRUNC'/></e> 
    <e><p><l>periodístico</l><r>Zeitungs-</r></p><par n='AQ_TRUNC'/></e> 
@@ -27911,8 +27913,9 @@ según	CS -> SP?
    <e><p><l>todo</l><r>all</r></p><par n='DI_PIAT'/></e> <!-- todos/todas => alle; but todo/toda => ganz -->
    <e><p><l>uno<s n="parol"/>DI0FS0</l><r>ein</r></p><par n='DI_ART'/></e> <!-- una -->
    <e><p><l>uno<s n="parol"/>DI0MS0</l><r>ein</r></p><par n='DI_ART'/></e> <!-- un -->
-   <e><p><l>uno<s n='parol'/>DI0FP0</l><r></r></p></e> <!-- unas => nothing on the target side -->
-   <e><p><l>uno<s n='parol'/>DI0MP0</l><r></r></p></e> <!-- unos => nothing on the target side -->
+   <e><p><l>un<s n="parol"/>Z</l><r>ein</r></p><par n='DI_ART'/></e> <!-- HACK TODO change the analysis!!! or change the PoS somehow! un -->
+   <e><p><l>uno<s n='parol'/>DI0FP0</l><r><s n='delete'/>yes</r></p></e> <!-- unas => nothing on the target side -->
+   <e><p><l>uno<s n='parol'/>DI0MP0</l><r><s n='delete'/>yes</r></p></e> <!-- unos => nothing on the target side -->
    <e><p><l>varios</l><r>verschiedene</r></p><par n='DI_PIAT'/></e> <!-- only plural: varios/varias => verschiedene TODO check molif -->
 
    <!-- numeral TODO remove paradigm DN_PIAT ? TODO general rule for numbers given in digits: slem="5" smi="DN0CP0" ?-->

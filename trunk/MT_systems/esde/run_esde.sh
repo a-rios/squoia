@@ -64,7 +64,7 @@ perl  $SQUOIAMATXIN/readConfig.pl $CONFIGFILE
 
 # language model
 export LM="$ESDE_DIR/lm/dewac10M_3g_lemma.bin.lm"
-MAXALT=3
+MAXALT=2
 
 ALTERNATIVES=$1
 if [ $ALTERNATIVES -eq 1 ]
