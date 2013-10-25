@@ -2231,6 +2231,7 @@
 | [ {uqsa} "[" "NRoot" "]" "["  "=paja" "]" ] : {uqsa}
 | [ {uqu} "[" "NRoot" "]" "["  "=gordo" "]" ] : {uqu}
 | [ {urin} "[" "NRoot" "]" "["  "=bajo" "]" ] : {uran}
+#| [ {urin} "[" "NRoot" "]" "["  "=bajo" "]" ] : {ura}
 | [ {uray} "[" "NRoot" "]" "["  "=bajo" "]" ] : {uray}
 | [ {urin} "[" "NRoot" "]" "["  "=bajo" "]" ] : {urin}
 | [ {urku} "[" "NRoot" "]" "["  "=frente" "]" ] : {urku}

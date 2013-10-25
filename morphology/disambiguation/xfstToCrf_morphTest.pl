@@ -464,9 +464,10 @@ if($mode eq '-3')
 				@$word[3] = "amb3";
 				# check if sentence already contains an evidential suffix
 				@$word[5] = &sentenceHasEvid(\@words, $i);
-				#print "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
+				#print STDERR "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
 				
 				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
+				print STDERR "-ykun \n";
 			}
 			# -n
 			elsif(&containedInOtherMorphs($analyses,"+DirE","+3.Sg.Poss") )
@@ -488,7 +489,8 @@ if($mode eq '-3')
 						@$word[6] = 0;
 					}
 				}
-				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
+				print STDERR "-n \n";
+				#print STDERR "@$word[0]: evid @$word[4], gen: @$word[5] \n";
 			}
 			# -pis
 			elsif(&containedInOtherMorphs($analyses,"+Loc+IndE","+Add"))
@@ -497,6 +499,7 @@ if($mode eq '-3')
 				push(@possibleClasses, "Add");
 				@$word[3] = "amb3";
 				@$word[5] = &sentenceHasEvid(\@words, $i);
+				print STDERR "-pis \n";
 			}
 	
 			# -s with Spanish roots: Plural or IndE (e.g. derechus)
@@ -513,7 +516,7 @@ if($mode eq '-3')
 						@$word[5] = &sentenceHasEvid(\@words, $i);
 					}
 				}
-				
+				print STDERR "-s \n";
 			}
 			# else: lexical ambiguities, leave
 			else
@@ -939,8 +942,10 @@ sub disambMorph1{
 				# -cha: Fact, Dim
 				#$correctMorph = s/\n//;
 				chomp($correctMorph);
+				if($correctMorph eq 'Aff_Obl'){$correctMorph = 'Aff+Obl';}
+				if($correctMorph eq 'Rflx_Obl'){$correctMorph = 'Rflx+Obl';}
 				#print STDERR "$form: all: $allmorphs, correct: $correctMorph"."ll\n";
-				if($allmorphs !~ /$correctMorph/ && scalar(@$analyses) > 1){
+				if($allmorphs !~ /\Q$correctMorph\E/ && scalar(@$analyses) > 1){
 					#print STDERR "delete: $allmorphs\n";
 					splice (@{$analyses},$j,1);	
 					$disambiguatedForms++;

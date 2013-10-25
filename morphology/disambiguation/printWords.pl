@@ -53,7 +53,9 @@ while(<STDIN>){
 my $openquot=1;
 my $needspace=1;
 
-foreach my $word (@words){
+for (my $i=0; $i < scalar(@words); $i++){
+#foreach my $word (@words){
+	    my $word = @words[$i];
 		my $form = @$word[0];
 		my $analyses = @$word[1];
 		my $firstanalysis = @$analyses[0];
@@ -63,14 +65,47 @@ foreach my $word (@words){
 		if($firstanalysis =~ /\$/)
 		{
 			my ($punc,$rest) = split(/\[/, $firstanalysis);
+			# check if reduplication with '-' or '—' -> no spaces
+			# -> check if preceding word is contained in following word
+			if($punc =~ m/\-|—/ && $i>0 && $i<scalar(@words)-1){
+				#unless($i==0 || $i==scalar(@words)-1){
+					my $preword = @words[$i-1];
+					my $postword = @words[$i+1];
+					if (@$postword[0] =~ /\Q@$preword[0]\E/){
+						#print STDERR "pre @$preword[0] $form post: @$postword[0]\n";
+						print "$punc";
+						$openquot =0;
+						$needspace=0;
+					}
+					# opening punctuation
+					elsif($openquot ){
+						print " $punc";
+						#print STDERR "hieeeer: $punc\n";
+						$openquot =0;
+						$needspace=0;
+					} 
+					# closing punctuation
+					elsif(!$openquot){
+						print "$punc";
+						$openquot =1;
+						$needspace=1;
+					}
+				
+			}
 			# opening punctuation
-			if($openquot && $punc =~ m/\"|\'|\-|—/) {
+			elsif($openquot && $punc =~ m/\"|\'|\-|—/) {
 				print " $punc";
 				$openquot =0;
 				$needspace=0;
 			}
 			elsif($punc =~ /„|¿|¡|\(|\[|«/){
+				if($needspace){
 				print " $punc";
+				}
+				else{
+				print "$punc";
+				}
+				#print " $punc";
 				$needspace=0;
 			}
 			# closing punctuation
@@ -89,7 +124,12 @@ foreach my $word (@words){
 		}
 		# word not recognized: print form
 		elsif($firstanalysis !~ /\[/  ) {
-			print " $form";
+			if($needspace){
+				print " $form";
+			}
+			else{
+				print "$form";
+			}
 			$needspace =1;
 		}
 		# numbers
@@ -181,6 +221,8 @@ foreach my $word (@words){
 			
 		}
 }
+
+print "\n";
 #while(<>){
 #	
 #	s/\n//g;

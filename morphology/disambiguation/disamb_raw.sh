@@ -18,12 +18,13 @@ MORPH3_MODEL=morph3/sicuani_greg_c0.5
 
 TMP_DIR=tmp3
 EVID="cuz"
+PISPAS="pis"
 #XFST_FILE=$1
 RAW_FILE=$1
 
 cat $RAW_FILE | perl splitSentences.pl | perl $TOKENIZER | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/test.xfst
 #cat $TOK_FILE | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/test.xfst
-cat $TMP_DIR/test.xfst | perl cleanGuessedRoots.pl -$EVID > $TMP_DIR/test_clean.xfst
+cat $TMP_DIR/test.xfst | perl cleanGuessedRoots.pl -$EVID -$PISPAS > $TMP_DIR/test_clean.xfst
 cat $TMP_DIR/test_clean.xfst | perl xfstToCrf_pos.pl -test > $TMP_DIR/pos.test
 
 #cat $XFST_FILE | perl xfstToCrf_pos.pl -test > $TMP_DIR/pos.test

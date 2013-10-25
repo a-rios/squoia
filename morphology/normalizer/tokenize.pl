@@ -27,6 +27,15 @@ for(my $i=0; $i<scalar(@tokens);$i++) {
 	}
 	else{
 		$t =~ s/GLOTTALIZE/'/g;
-		print $t."\n";
+		# split at '-'
+		if($t =~ /-|–/){
+		    my @ts = split(/(-|–)/, $t);
+		    foreach my $tok (@ts){
+		       print "$tok\n";
+		    }
+		}
+		else{
+		  print $t."\n";
+		}
 	}
 }

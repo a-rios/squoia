@@ -540,8 +540,8 @@ define AccGen [  %["^DB"%] "@GENq" %["--"%]{p} %["Cas"%] %["+Gen"%] "@PA" %["^DB
 # naya/sun,  -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj
 define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] ]] ; 
 
-# case suffixes:  tapi, pita, manta, tamanta, mantaq, ntin, paq, tata (false double accusatives: contratatan -> not contra-ta-ta!)
-define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"+Abl" | "+Abl"?*"+Gen" | {ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] %[ | {pa}%["Cas"%] %["+Gen"%] ?* "@GENq" |"+Acc" ?* "+Acc" | "+Posi" ?* ["+Gen"|"+Acc"]]];
+# case suffixes:  tapi, pita, manta, tamanta, mantaq, ntin, paq, tata (false double accusatives: contratatan -> not contra-ta-ta!), -spa: only as SS, not as -s plural + genitive
+define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"+Abl" | "+Abl"?*"+Gen" | {ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] %[ | {pa}%["Cas"%] %["+Gen"%] ?* "@GENq" |"+Acc" ?* "+Acc" | "+Posi" ?* ["+Gen"|"+Acc"] | "@PLbol" ?* "@PA" ] ];
 
 # verbal derivation, nyari, qti,  sqama, sqan, rqan (sqas ?), sqay, sqaman, sqa+fut, sqaykiman, rqa/sqa-Imp
 define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" ]];
@@ -579,7 +579,7 @@ define ASWAN [~$[ ["=poco"%] %["^DB"%] %["--"%] {wan} | "=poco"%]  %["--"%] {na}
 define ALLIN [~$[ "@ALLI" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI"  %["--"%] [{n}|{cha}] %[ ["NDeriv"|"VDeriv"]  ]];
 
 #special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
-define HATUN [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"] | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha} %["NDeriv" | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" |{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" ]];
+define HATUN [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"] | {hatu} %["NRoot"%] %["=grande"%] %["--"%][{cha}|{n}] %["NDeriv" |{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" ]];
 
 # kacha- should not be analyzed as ka (copula) and -cha (Vdim)!
 define KACHA [~$[ {ka}%["VRoot"%] %["=ser"%] %["--"%] {cha}]];
@@ -630,7 +630,7 @@ define preWord IGRules .o. [[Noun|Verb|Prn|Particles|HAKU] (AS)] .o. NounRules  
 define Word  FeatRestr  .o. NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 read regex Cleanup2 .o. LexRestr .o. Word;
 
-#define Word NounRulesUpper .o. FeatRestr .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+#define Word NounRulesUpper .o. CASE .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 #read regex  Word;
 
 

@@ -9,7 +9,7 @@ use Storable;
 my $num_args = $#ARGV;
 
 if ( $num_args != 2) {
-  print "\nUsage: perl evalCRFwithGold.pl results.crf/results.xfst gold.crf/gold.xfst -pos/-morph/-xfst \n";
+  print "\nUsage: perl evalCRFwithGold.pl results.crf/results.xfst gold.crf/gold.xfst -pos/-morph/-xfst/-baseline \n";
   exit;
   }
 
@@ -201,6 +201,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 	close CRF;
 	close GOLD;
 }
+
 
 elsif($mode eq '-xfst')
 {
