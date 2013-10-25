@@ -40,9 +40,10 @@
 
       #-------------------------------------------------------------------#
       # Ersetze optional u durch o und i durch e, falls in Umgebung von q #
+      # relax: also with -m in between                                    #
       #-------------------------------------------------------------------#
 
-      define Allophone1 [ u (->) o||  _ (s|t|n|r|l|{ll}) q, q (s|t|n|r|h|l|'|{ll}) _  , _ (s|t|n|r|l|{ll}){cc}, {cc}(s|t|n|r|h|l|'|{ll}) _ ] .o. [i (->) e || _ (s|t|n|r|h|l|{ll}) q, q (s|t|n|r|l|{ll}|h|') _ , _ (s|t|n|r|h|l|{ll}){cc}, {cc}(s|t|n|r|l|{ll}|') _  ];
+      define Allophone1 [ u (->) o||  _ ((s|t|n|r|l|{ll}|m) (a|e|i|o|u))* q, q ((a|e|i|o|u) (s|t|n|r|h|l|'|{ll}|m))*  _  , _ ((s|t|n|r|l|m|{ll}) (a|e|i|o|u))* {cc}, {cc} ((a|e|i|o|u) (s|t|n|r|h|l|'|{ll}|m))* _ ] .o. [i (->) e || _ ((s|t|n|r|h|l|{ll}|m) (a|e|i|o|u))* q, q ((a|e|i|o|u) (s|t|n|r|l|{ll}|h|'|m))* _ , _ ((s|t|n|r|h|l|m|{ll}) (a|e|i|o|u))* {cc}, {cc} ((a|e|i|o|u) (s|t|n|r|l|m|{ll}|'))* _  ];
       define Allophone2 [ {ll} (->) l || _ q];
 
       define Allophone [Allophone1 .o. Allophone2 ] ;
@@ -70,13 +71,15 @@
        define Orthography13 [ {w} (->) {u} || Vowel _ ];
        define Orthography14 [ {k} (->) {qu} || _ [i|e] ];
        define Orthography15 [ {k} (->) {c} || _ [a|l|m|n|ñ|o|p|r|s|t|u|y]];
+       define Orthography16 [ {w} (->) {v}];  
        
        # fricatives in syllable coda
-       define Orthography16 [ {h} (->) {j}, {H} (->) {J} ||  [a|i|l|m|n|r|u] _ Vowel ];
-       define Orthography17 [ [{k}|{q}] (->) {j} || Vowel_ ];       
-       define Orthography18 [ {ph} (->) {f}];     
+       define Orthography17 [ {h} (->) {j}, {H} (->) {J} ||  [a|i|l|m|n|r|u] _ Vowel ];
+       define Orthography18 [ [{k}|{q}] (->) {j} || Vowel_ ];       
+       define Orthography19 [ {ph} (->) {f}];    
+  
               
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18];
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18 .o. Orthography19];
 
        define QuechuaOrtho Allophone .o. Orthography;
 
@@ -566,7 +569,7 @@ define AccGen [  %["^DB"%] "@GENq" %["--"%]{p} %["Cas"%] %["+Gen"%] "@PA" %["^DB
 define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] ]] ; 
 
 # case suffixes:  tapi, pita, manta, tamanta, mantaq, ntin, paq, tata (false double accusatives: contratatan -> not contra-ta-ta!), mpaq -> n-paq, not mpa -p
-define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"+Abl" | "+Abl"?*"+Gen" | {ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] %[ | {pa}%["Cas"%] %["+Gen"%] ?* "@GENq" |"+Acc" ?* "+Acc" | "+Posi" ?* ["+Gen"|"+Acc"]]];
+define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"+Abl" | "+Abl"?*"+Gen" | {ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] %[ | {pa}%["Cas"%] %["+Gen"%] ?* "@GENq" |"+Acc" ?* "+Acc" | "+Posi" ?* ["+Gen"|"+Acc"] | "@PLbol" ?* "@PA"]];
 
 # verbal derivation, nyari, qti,  sqama, sqan, rqan (sqas ?), sqay, sqaman, sqa+fut, sqaykiman, rqa/sqa-Imp
 define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" ]];
@@ -605,7 +608,7 @@ define ASWAN [~$[ ["=poco"%] %["^DB"%] %["--"%] {wan} | "=poco"%]  %["--"%] {na}
 define ALLIN [~$[ "@ALLI" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI"  %["--"%] [{n}|{cha}] %[ ["NDeriv"|"VDeriv"]  ]];
 
 #special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
-define HATUN [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"] | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha} %["NDeriv" | {hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" |{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" ]];
+define HATUN [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m] [%["NPers"|%["Amb"] | {hatu} %["NRoot"%] %["=grande"%] %["--"%][{cha}|{n}] %["NDeriv" |{hatu} %["NRoot"%] %["=grande"%] %["--"%]{cha}%["VS" ]];
 
 # kacha- should not be analyzed as ka (copula) and -cha (Vdim)!
 define KACHA [~$[ {ka}%["VRoot"%] %["=ser"%] %["--"%] {cha}]];

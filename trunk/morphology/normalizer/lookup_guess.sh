@@ -1,1 +1,1 @@
-perl tokenize.pl #| lookup -f lookup.script -flags cKv29TT 
+perl tokenize.pl | lookup -f lookup.script -flags cKv29TT 
