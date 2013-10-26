@@ -15,8 +15,8 @@ quechua
 
  == Description of parallel_squoia macro ==
  * displays parallel trees annotated with Tiger phrase structures
- * n-n sentence alignment possible
- * two types of alignments: 'fuzzy' vs. 'exact'
+ * n-n sentence alignments possible
+ * two types of node alignments: 'fuzzy' vs. 'exact'
 
  files needed:
  * two files containing the monolingual treebanks
