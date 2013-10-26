@@ -192,9 +192,6 @@
 <e><p><l>adivinanza</l><r>watuchina</r></p><par n="Noun"/></e>
 <e><p><l>adivinatorio</l><r>watuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>adivino</l><r>watuq</r></p><par n="Noun_ac"/></e>
-<e><p><l>duro</l><r>anaku</r></p><par n="Noun_cp"/></e>
-<e><p><l>irresolución</l><r>chankallpa</r></p><par n="Noun_ac"/></e>
-<e><p><l>indecisión</l><r>chankallpa</r></p><par n="Noun_ac"/></e>
 <e><p><l>hollín</l><r>ch'illu</r></p><par n="Noun_cp"/></e>
 <e><p><l>agusanado</l><r>kuru</r></p><par n="Noun_cp"/></e>
 <e><p><l>escondido</l><r>paka</r></p><par n="Noun_ac"/></e>
@@ -5555,6 +5552,7 @@
 <e><p><l>hornacina</l><r>churarina</r></p><par n="Noun_ac"/></e>
 <e><p><l>horquilla</l><r>p'allqa</r></p><par n="Noun_cp"/></e>
 <e><p><l>horquilla</l><r>tanka<s n="preform"/>#raka</r></p><par n="Noun"/></e>
+<e><p><l>horripilante</l><r>millapayay</r></p><par n="Noun_ac"/></e>
 <e><p><l>horrorizado</l><r>q'aqchasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>horror</l><r>q'aqcha</r></p><par n="Noun_ac"/></e>
 <e><p><l>horroroso</l><r>q'aqchakuq</r></p><par n="Noun_ac"/></e>
@@ -5866,7 +5864,7 @@
 <e><p><l>indagador</l><r>maskhaq</r></p><par n="Noun_ac"/></e>
 <e><p><l>indecible</l><r>rimana<s n="preform"/>#mana</r></p><par n="Noun"/></e>
 <e><p><l>indecisión</l><r>kay<s n="preform"/>#chankalla</r></p><par n="Noun_ac"/></e>
-<e><p><l>indecisión</l><r>iskaya</r></p><par n="Noun_ac"/></e>
+<e><p><l>indecisión</l><r>iskayay</r></p><par n="Noun_ac"/></e>
 <e><p><l>indeciso</l><r>sunqu<s n="preform"/>#iskay</r></p><par n="Noun"/></e>
 <e><p><l>indeciso</l><r>chankallpa</r></p><par n="Noun_ac"/></e>
 <e><p><l>indeleble</l><r>pichakuq<s n="preform"/>#mana</r></p><par n="Noun"/></e>
@@ -6145,6 +6143,7 @@
 <e><p><l>irracionalidad</l><r>kay<s n="preform"/>#uywa</r></p><par n="Noun_ac"/></e>
 <e><p><l>irracional</l><r>uywa</r></p><par n="Noun_ac"/></e>
 <e><p><l>irreconciliable</l><r>awqaphiña</r></p><par n="Noun_ac"/></e>
+<e><p><l>irresolución</l><r>chankallpa</r></p><par n="Noun_ac"/></e>
 <e><p><l>irrigado</l><r>qarpasqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>irrigador</l><r>qarpana</r></p><par n="Noun_ac"/></e>
 <e><p><l>isla</l><r>wat'a</r></p><par n="Noun_new"/></e>
