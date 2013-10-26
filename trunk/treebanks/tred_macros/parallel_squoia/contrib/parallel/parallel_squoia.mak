@@ -227,14 +227,13 @@ sub file_save_hook{
 }
 
 
+## change sentence alignment with Control+l
 sub event_hook{
   my ($TkXEvent,$Tkwin,@shortcut) = @_;
-  
-  if(@shortcut[1] =~ /Control_L/){
+ # print STDERR  "shortcut1 used: ".@shortcut[1]."\n";
+  if(@shortcut[1] eq 'CTRL+l'){
        EditAttribute($root);
   }
-  
-  
 }
 
 ## let TrEd's stylesheet editor offer attributes of nodes in document_a and _b instead
