@@ -1,0 +1,16 @@
+In order to use the annotation mode for Quechua and/or parallel treebanks in the Tiger format (phrase structures) in TrEd, you have to install the macros in treebanks/tred_macros. 
+
+ # install TrEd from here:
+   [http://ufal.mff.cuni.cz/tred/]
+ # copy the content of tred_macros in the squoia sources to the TrEd extensions directory:
+{{{
+$ cp -R your-squoia-repo/treebanks/tred_macro/* ~/.tred.d/extensions
+}}}
+ # add these lines to the file ~/.tred.d/extensions/extensions.lst
+{{{
+squoia_parallel
+quechua
+}}}
+
+ == Description of parallel_squoia ==
+   follows...
