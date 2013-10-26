@@ -5816,60 +5816,47 @@
 <e><p><l>flaquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>flechar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fletar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>flexibilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>################
-    <e><p><l>flexionar</l><r>q'echu</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>flexibilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>flexionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>flexionarse</l><r>q'echuku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>flirtear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>flocular</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>flojear</l><r>qellaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>flojear</l><r>qellaykachaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>flojear</l><r>qellaykacha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>flojear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>flojo</l><r>haraya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>flojear</l><r>qella<s n="add_mi"/>+Intrup</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>flordelisar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>florear</l><r>ayna</r></p><par n="Noun_ac"/></e>
 <e><p><l>florear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>florecer</l><r>t'ika</r></p><par n="Verb_main"/></e>
-    <e><p><l>flores</l><r>sikñi</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>florecer</l><r>sisa</r></p><par n="Verb_main"/></e>
 <e><p><l>floretear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>flotar</l><r>la grasa: llukllu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>flotar</l><r>tuytu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>flotar</l><r>tuytu</r></p><par n="Verb_main"/></e>
 <e><p><l>fluctuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fluidificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>fluir</l><r>sutu</r></p><par n="Verb_main"/></e>
+<e><p><l>fluir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>focalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>foguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>foliar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>follar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>fomentar</l><r>t'ikachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>fomentar</l><r>mira<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>fomentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fondear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>forcejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>forcejear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>forestar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>forestarse</l><r>ch'aphrachaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>forestar</l><r>ch'aphracha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>forjar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>formalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>formar</l><r>kamari</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>formar</l><r>kama</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>formar</l><r>paqarichi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>formar</l><r>paqari<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>formar</l><r>rura</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>formar</l><r>ruwa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>formar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>formar_pacotillas</l><r>haña</r></p><par n="Verb_main_new"/></e>
 <e><p><l>formatear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>formular</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>fornicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>fornicar</l><r>urwa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fornicar</l><r>wach'uy. tener cópula fuera de matrimonio</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>fornicar</l><r>sakwa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>forrajear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>forrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>fortalecer</l><r>kallpacha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>fortalecer</l><r>sinchiya</r></p><par n="Verb_main"/></e>
-    <e><p><l>fortificar</l><r>pukarako</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>fortificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>fortalecer</l><r>sinchiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>fortalecer</l><r>sinchiya<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+<e><p><l>fortificar</l><r>kallpacha</r></p><par n="Verb_main"/></e>
 <e><p><l>forzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fosar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fosfatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -5880,25 +5867,13 @@
 <e><p><l>fotograbar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fotografiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fotolitografiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>fracasar</l><r>qollupu</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>fracasar</l><r>qullu<s n="add_mi"/>+Iprs</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>fracasar</l><r>ch'uli</r></p><par n="Verb_main"/></e>
 <e><p><l>fracasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>fraccionar</l><r>romper p'akiy.  aya jun</r></p><par n="Verb_main_ac"/></e>
-      <e><p><l>fraccionar</l><r>t'aqachiq</r></p><par n="Noun_ac"/></e>
     <e><p><l>fraccionar</l><r>t'aqa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>fraccionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>fracturar</l><r>p'aki</r></p><par n="Verb_main"/></e>
-    <e><p><l>fracturarse</l><r>p'akiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fragmentar</l><r>dividir</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fragmentar</l><r>nut'u</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>fracturar</l><r>p'aki</r></p><par n="Verb_main"/></e> 
     <e><p><l>fragmentar</l><r>p'aki</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>fragmentar</l><r>phakmacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fragmentar</l><r>pisiyachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fragmentar</l><r>raki</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fragmentar</l><r>separar t'aqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fragmentar</l><r>t'aqa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>fragmentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>fragmentarse</l><r>ñut'uku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fragmentarse</l><r>p'akiku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>fraguar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>frangollar</l><r>chhamqa</r></p><par n="Verb_main"/></e>
 <e><p><l>franjear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -5907,69 +5882,56 @@
 <e><p><l>fraternizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>frecuentar</l><r>hamupaya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>frecuentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>fregar</l><r>picha</r></p><par n="Verb_main"/></e>
+<e><p><l>fregar</l><r>qaqu</r></p><par n="Verb_main"/></e>
 <e><p><l>fregotear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>freír</l><r>theqtichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>freír</l><r>theqti</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>freír</l><r>thiqti<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>freír</l><r>thiqti<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>freír</l><r>thiqti<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>frenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fresar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>frezar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fricar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>friccionar</l><r>; khiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>friccionar</l><r>llaqlla</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>friccionar</l><r>qhetu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>friccionar</l><r>qhetuykacha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>friccionar</l><r>khitu</r></p><par n="Verb_main_ac"/></e>
+   <e><p><l>friccionar</l><r>qaqu</r></p><par n="Verb_main_new"/></e>
 <e><p><l>friccionar</l><r>qhitu</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>friccionar</l><r>thupa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>friccionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>frisar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>frivolizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>frotar</l><r>khitu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>frotar</l><r>qaqu</r></p><par n="Verb_main"/></e>
     <e><p><l>fructificar</l><r>ruru</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>fructificar</l><r>ruru</r></p><par n="Verb_main_new"/></e>
-<e><p><l>fructificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fruir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fruncir_el_ceño</l><r>qiwsu</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>fruncir</l><r>ch'awiyachi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>fruncir</l><r>ch'ipu</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>fruncir</l><r>ch'uku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fruncir</l><r>qawichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fruncir</l><r>sip'u</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>fruncir</l><r>qawi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>fruncir</l><r>sip'u</r></p><par n="Verb_main"/></e>
-    <e><p><l>fruncirse</l><r>ch'ipuku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fruncirse</l><r>ch'ukuku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>fruncirse</l><r>sip'uku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>frustrar</l><r>waqlli<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>frutales</l><r>sisa</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>frustrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fucilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>fugar</l><r>mitika</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>fugar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>fugarse</l><r>chinkaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>fugar</l><r>ayqi</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>fugar</l><r>chinka<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>fulgir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fulgurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fulminar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>fumar</l><r>neol. pita</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>fumar</l><r>pita</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>fumar</l><r>sayri</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>fumar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>fumar</l><r>pita</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>fumigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>funcionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fundamentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fundar</l><r>tiqsi</r></p><par n="Verb_main"/></e>
-<e><p><l>fundir</l><r>chullu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>fundar</l><r>qalla<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>fundir</l><r>chullu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>fundir</l><r>chullu<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>fungir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fusilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fusionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fustigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gafar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>gaguear</l><r>k'aku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>gaguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>galantear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>galantearse</l><r>sallallaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>galantearse</l><r>sallalla</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>galardonar</l><r>kusincha</r></p><par n="Verb_main"/></e>
+<e><p><l>galantear</l><r>waylla<s n="add_mi"/>+Intrup</r></p><par n="Verb_main"/></e>
+<e><p><l>galardonar</l><r>samincha</r></p><par n="Verb_main"/></e>
 <e><p><l>galibar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gallardear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -5981,16 +5943,13 @@
 <e><p><l>galuchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>galvanizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gambetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>ganar</l><r>atipa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ganar</l><r>llalli</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ganar</l><r>ati<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ganar</l><r>llalli</r></p><par n="Verb_main"/></e>
 <e><p><l>gandulear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gangrenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ganguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gañir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gañote</l><r>aqni</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gansear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>garabatear</l><r>seq'e</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>garabatear</l><r>siq'i</r></p><par n="Verb_main"/></e>
 <e><p><l>garantir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>garantizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -6001,11 +5960,6 @@
 <e><p><l>gargajear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gargantear</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>gargarizar</l><r>aqni</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gargarizar</l><r>moqch'iku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gargarizar</l><r>moqchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gargarizar</l><r>oqyaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gargarizar</l><r>oqya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>gargarizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>garlar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>garrafiñar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>garrapatear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -6014,66 +5968,38 @@
 <e><p><l>garrear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>garrochar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>garrochear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>garrotear</l><r>p'anachi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>garrotear</l><r>p'ana</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>garrotear</l><r>p'ana</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>garrotear</l><r>q'asuchi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>garrotear</l><r>q'asu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>garrotear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>garrotearse</l><r>p'ananaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>garrotearse</l><r>q'asunaku</r></p><par n="Verb_main_ac"/></e>
+    <!-- rezipr. -se -->
+    <e><p><l>garrotearse</l><r>p'ana<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>garrotearse</l><r>q'asu<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>garuar</l><r>iphu</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>garuar</l><r>meteor. iphu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>garuar</l><r>siphsi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>garuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>garzonear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gasear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gasificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gastar</l><r>llaqlla</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gastar</l><r>qhetu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>gastar</l><r>Tukuy,p'uchukay</r></p><par n="Verb_main_new"/></e>
-<e><p><l>gatear</l><r>lluqaykacha</r></p><par n="Verb_main"/></e>
+<e><p><l>gastar</l><r>gastar</r></p><par n="Verb_main"/></e>  
+<e><p><l>gastar</l><r>tuku</r></p><par n="Verb_main_new"/></e>
 <e><p><l>gavillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gavillas</l><r>turucha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gayar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gazmiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gelatinizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gelificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>geminar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gemiquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gemir</l><r>anchi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gemir</l><r>anchi</r></p><par n="Verb_main"/></e>
-    <e><p><l>gemir</l><r>hik hikya</r></p><par n="Verb_main_ac"/></e>
-      <e><p><l>gemir</l><r>waqa</r></p><par n="Noun_ac"/></e>
 <e><p><l>generalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>generalmente</l><r>ichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>generalmente</l><r>khapa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>generalmente medicinal</l><r>amulli</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>generalmente medicinal</l><r>moqch'i</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>generalmente recipientes</l><r>tharachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>generalmente ropa</l><r>mik'iya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>generar</l><r>churiya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>generar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>generar</l><r>wawacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>germanizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>germinar</l><r>armuthu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>germinar</l><r>bot. armuthu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>germinar</l><r>ch'iklliri</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>germinar</l><r>mukmu</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>germinar</l><r>phutu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>germinar</l><r>wach'i</r></p><par n="Verb_main"/></e>
-    <e><p><l>gésima quinta letra del abecedario y vigésima de sus consonantes</l><r>oclusiva en posición inicial absoluta o después de nasal y fricativa en los demás casos</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gésima quinta letra del abecedario y vigésima de sus consonantes</l><r>su nombre es «ve». actualmente representa el mismo sonido que la «b» en todos los países de la lengua española. su articulación es bilabial y sonora</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gestar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gestear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gesticular</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gestionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gestos</l><r>yachapayachi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gibar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gimotear</l><r>inqhi</r></p><par n="Verb_main_new"/></e>
 <e><p><l>gimotear</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>girar</l><r>maywi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>girar</l><r>muyu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>girar</l><r>muyu</r></p><par n="Verb_main"/></e>
 <e><p><l>gitanear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>glasear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -6090,11 +6016,8 @@
 <e><p><l>golosear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>golosinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>golosinear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>golpear</l><r>maqapaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>golpear</l><r>maqa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>golpear</l><r>maqa</r></p><par n="Verb_main"/></e>
     <e><p><l>golpear</l><r>taka</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>golpear</l><r>takay. takayku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>golpetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gorgojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gorgojear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -6102,40 +6025,24 @@
 <e><p><l>gorgotear</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>gorjear</l><r>taki</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gorjear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gorjear</l><r>waqa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gorjear</l><r>wich'ichichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>gorrear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gorrear</l><r>uskaku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>gorrear</l><r>uska</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gorro</l><r>chukuchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gorro</l><r>chuku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gorronear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gotear</l><r>sut'u</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gotear</l><r>sut'u</r></p><par n="Verb_main"/></e>
-    <e><p><l>gozar</l><r>del mal ajeno: kusipaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gozar</l><r>kusiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>gozar</l><r>kusipayaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gozar</l><r>kusi<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>gozar</l><r>qochuku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>gozar</l><r>qochu<s n="add_mi"/>+Rflx</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>grabar</l><r>tumi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>grabar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gracejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gradar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>graduar</l><r>ñiqincha</r></p><par n="Verb_main_new"/></e>
 <e><p><l>graduar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>graficar</l><r>qelqa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>graficar</l><r>qillqa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>grajear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>granar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>granear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>granizar</l><r>chikchi</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>granizar</l><r>meteor. chikchi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>granizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>granjear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>granos</l><r>hich'achi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>granos</l><r>hich'aykacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>granular</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>grapar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>grasas</l><r>t'eqo</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gratar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gratificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gratinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -6145,17 +6052,12 @@
 <e><p><l>grecizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>grietar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>grillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gritar</l><r>qapari</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gritar</l><r>qapa<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
        <e><p><l>gritar</l><r>waqa</r></p><par n="Noun_ac"/></e>
-    <e><p><l>grosor</l><r>phatuya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>grosor</l><r>rakthaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>grosor</l><r>ratkhaya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>gruir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>grujir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gruñir</l><r>qotototo</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>gruñir</l><r>qotototo</r></p><par n="Verb_main_ac"/></e>#######
            <e><p><l>gruñir</l><r>rimapaku</r></p><par n="Noun_ac"/></e>
-    <e><p><l>gruñir</l><r>sinón:</r></p><par n="Noun_ac"/></e>
     <e><p><l>gruñir</l><r>thutupaku</r></p><par n="Noun_ac"/></e>
     <e><p><l>gruñir</l><r>thutupa</r></p><par n="Noun_ac"/></e>
 <e><p><l>gruñir</l><r>unspecified</r></p><par n="Verb_main"/></e>
