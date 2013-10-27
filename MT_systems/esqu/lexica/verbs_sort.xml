@@ -6503,11 +6503,12 @@
 <e><p><l>intensificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interactuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>intercalar</l><r>chawpicha</r></p><par n="Verb_main"/></e>###############
-<e><p><l>intercambiar</l><r>chala</r></p><par n="Verb_main_new"/></e>
+<e><p><l>intercalar</l><r>chawpicha</r></p><par n="Verb_main"/></e>
+<e><p><l>intercalar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>intercambiar</l><r>chhala</r></p><par n="Verb_main_new"/></e>
+<e><p><l>intercambiar</l><r>yanki</r></p><par n="Verb_main"/></e>
 <e><p><l>intercambiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intercambiar_productos</l><r>yanki</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>interceder</l><r>juris. rimapuy. uyllapu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>interceder</l><r>rima<s n="add_mi"/>+Iprs</r></p><par n="Verb_main"/></e>
     <e><p><l>interceder</l><r>uylla</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>interceptar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -6519,57 +6520,43 @@
 <e><p><l>intermediar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>internacionalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>internar</l><r>hayku<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>internar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interpaginar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interpelar</l><r>tapu<s n="add_mi"/>+MRep</r></p><par n="Verb_main"/></e>
 <e><p><l>interpolar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interponer</l><r>chawpincha</r></p><par n="Verb_main_new"/></e>
-<e><p><l>interponer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>interponerse</l><r>chawpinaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>interponerse</l><r>chawpinchaku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>interpretar</l><r>umancha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>interpretar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interrelacionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>interrogarle confidencialmente</l><r>tapuyku</r></p><par n="Verb_main_ac"/></e>
-	   <e><p><l>interrogar</l><r>tapu</r></p><par n="Noun_ac"/></e>
-    <e><p><l>interrogar</l><r>tapu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>interrogar</l><r>tapu</r></p><par n="Verb_main"/></e>
 <e><p><l>interrumpir</l><r>hark'a</r></p><par n="Verb_main"/></e>
-    <e><p><l>interrumpir</l><r>p'itichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>interrumpir</l><r>tatichi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>interrumpirse</l><r>tati</r></p><par n="Verb_main_new"/></e>
+<e><p><l>interrumpir</l><r>tati<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>interrumpir</l><r>tati<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>intersecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intervenir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interviuvar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intestar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intimar</l><r>qati<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
-<e><p><l>intimidar</l><r>mancha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>intimidarse</l><r>llaklla</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>intimidarse</l><r>manchaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>intimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>intimidar</l><r>llaklla</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>intimidar</l><r>mancha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+<e><p><l>intimidar</l><r>mancha<s n="add_mi"/>+Rflx<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
 <e><p><l>intitular</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>intoxicar</l><r>miyu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>intoxicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>intranquilizar</l><r>ch'eqmi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>intranquilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>intranquilizarse mutuamente</l><r>ch'eqminaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>intrépido</l><r>sinchicha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>intranquilizar</l><r>ch'iqmi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>intrigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intrincar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>introducir</l><r>haykuchi</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>introducir</l><r>yayku<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>introducir</l><r>riqsi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>introducir</l><r>sat'i</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>introducir</l><r>sat'i</r></p><par n="Verb_main"/></e>
-    <e><p><l>introducir</l><r>winapaya</r></p><par n="Verb_main_ac"/></e>
-	       <e><p><l>introducir</l><r>wina</r></p><par n="Noun_cp"/></e>
-    <e><p><l>introducir</l><r>wina</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>introducirse</l><r>sat'iku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>introducirse</l><r>winaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>introducir</l><r>wina</r></p><par n="Verb_main_ac"/></e>   
 <e><p><l>intubar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>intuir</l><r>musiyo</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>intuir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>inundar</l><r>lluqlla</r></p><par n="Verb_main"/></e>
-    <e><p><l>inutilizar</l><r>–da</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>inutilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>inutilizar</l><r>yanqayachiy.  izquierdo</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>inutilizar</l><r>yanqaya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>##############
     <e><p><l>inutilizarse</l><r>ñuskhuya</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>invadir</l><r>awqa hayku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>invadir</l><r>awqa intu</r></p><par n="Verb_main_ac"/></e>
