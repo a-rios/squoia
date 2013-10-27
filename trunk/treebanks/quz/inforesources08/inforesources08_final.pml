@@ -6,7 +6,7 @@
   <body>
     <s id="s1">
       <saphi>
-        <nonterminal id="s1_">
+        <nonterminal id="s1">
           <cat>VROOT</cat>
           <children>
             <terminal id="s1_6">
@@ -121,7 +121,7 @@
     </s>
     <s id="s3">
       <saphi>
-        <nonterminal id="s3_VROOT">
+        <nonterminal id="s3_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s3_6">
