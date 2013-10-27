@@ -6,7 +6,7 @@
   <body>
     <s id="s1">
       <saphi>
-        <nonterminal id="s1">
+        <nonterminal id="s1_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s1_6">
@@ -78,7 +78,7 @@
     </s>
     <s id="s2">
       <saphi>
-        <nonterminal id="s2_">
+        <nonterminal id="s2_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s2_2">
@@ -121,7 +121,7 @@
     </s>
     <s id="s3">
       <saphi>
-        <nonterminal id="s3_">
+        <nonterminal id="s3_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s3_6">
@@ -11675,7 +11675,7 @@
     </s>
     <s id="s39">
       <saphi>
-        <nonterminal id="s39_">
+        <nonterminal id="s39_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s39_7">
@@ -19208,7 +19208,7 @@
     </s>
     <s id="s58">
       <saphi>
-        <nonterminal id="s58_">
+        <nonterminal id="s58_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s58_14">
@@ -23329,7 +23329,7 @@
     </s>
     <s id="s64">
       <saphi>
-        <nonterminal id="s64_">
+        <nonterminal id="s64_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s64_13">
@@ -32328,7 +32328,7 @@
     </s>
     <s id="s91">
       <saphi>
-        <nonterminal id="s91_">
+        <nonterminal id="s91_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s91_4">
@@ -38633,7 +38633,7 @@
     </s>
     <s id="s110">
       <saphi>
-        <nonterminal id="s110_">
+        <nonterminal id="s110_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s110_7">
@@ -42593,7 +42593,7 @@
     </s>
     <s id="s121">
       <saphi>
-        <nonterminal id="s121_">
+        <nonterminal id="s121_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s121_6">
@@ -44672,7 +44672,7 @@
     </s>
     <s id="s126">
       <saphi>
-        <nonterminal id="s126_">
+        <nonterminal id="s126_VROOT">
           <cat>VROOT</cat>
           <comment>falta el verbo prinicipal ?</comment>
           <children>
@@ -54366,7 +54366,7 @@
     </s>
     <s id="s153">
       <saphi>
-        <nonterminal id="s153_">
+        <nonterminal id="s153_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s153_6">
@@ -55428,7 +55428,7 @@
     </s>
     <s id="s155">
       <saphi>
-        <nonterminal id="s155_">
+        <nonterminal id="s155_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s155_4">
@@ -68784,7 +68784,7 @@
     </s>
     <s id="s192">
       <saphi>
-        <nonterminal id="s192_">
+        <nonterminal id="s192_VROOT">
           <cat>VROOT</cat>
           <comment>'case float' kaynin-ta, ñawpaq-ta</comment>
           <children>
@@ -74555,7 +74555,7 @@
     </s>
     <s id="s209">
       <saphi>
-        <nonterminal id="s209_">
+        <nonterminal id="s209_VROOT">
           <cat>VROOT</cat>
           <comment>??</comment>
           <children>
@@ -76498,7 +76498,7 @@
     </s>
     <s id="s215">
       <saphi>
-        <nonterminal id="s215_">
+        <nonterminal id="s215_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s215_10">
@@ -84682,7 +84682,7 @@
     </s>
     <s id="s239">
       <saphi>
-        <nonterminal id="s239_">
+        <nonterminal id="s239_VROOT">
           <cat>VROOT</cat>
           <comment>A: falta el verbo, la idea de 'depender'?? cambiado a ancha chaniyuqmi (KAN) allin kananpaq</comment>
           <children>
@@ -87135,7 +87135,7 @@
     </s>
     <s id="s245">
       <saphi>
-        <nonterminal id="s245_">
+        <nonterminal id="s245_VROOT">
           <cat>VROOT</cat>
           <children>
             <terminal id="s245_12">
