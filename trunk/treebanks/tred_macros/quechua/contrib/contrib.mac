@@ -47,8 +47,12 @@ sub do_edit_node_hook{
       my ($node) = @_;
       my $order = $node->{'order'};
       my $sentenceID = $root->{'id'};
-      $node->{'id'} = $sentenceID."_".$order;
-      
+      if($order ne ''){
+	$node->{'id'} = $sentenceID."_".$order;
+      }
+      else{
+	$node->{'id'} = $sentenceID;
+      }
 }
 
 

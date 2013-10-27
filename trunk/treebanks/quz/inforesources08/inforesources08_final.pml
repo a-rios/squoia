@@ -78,7 +78,7 @@
     </s>
     <s id="s2">
       <saphi>
-        <nonterminal id="s2_VROOT">
+        <nonterminal id="s2_">
           <cat>VROOT</cat>
           <children>
             <terminal id="s2_2">
@@ -106,6 +106,8 @@
                   <order>3</order>
                   <label>ns</label>
                   <word>-na</word>
+                  <secedges>
+                  </secedges>
                   <pos>NS</pos>
                   <morph>
                     <tag>+Obl</tag>
