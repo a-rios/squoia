@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<quechua_corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="inforesources_focus_08_qu">
+<quechua_corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="focus_qu">
   <head>
     <schema href="../qu_schema.xml" />
   </head>
