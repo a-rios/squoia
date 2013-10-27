@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <squoia_alignment xmlns="http://ufal.mff.cuni.cz/pdt/pml/">
   <head>
-    <schema href="sample_align_schema.xml" />
+   <schema href="alignment_squoia_schema.xml" />
     <references>
       <reffile id="a" name="document_a" href="AHK_SQUOIA_DE.pml" />
       <reffile id="b" name="document_b" href="AHK_SQUOIA_ES.pml" />
