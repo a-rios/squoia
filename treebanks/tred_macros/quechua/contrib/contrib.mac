@@ -16,7 +16,6 @@ use warnings;
 
 
 #include <contrib/support/arrows.inc>
-#include <contrib/pml/PML.mak>
 
 ## detect files with the expected PML schema
 sub detect {
