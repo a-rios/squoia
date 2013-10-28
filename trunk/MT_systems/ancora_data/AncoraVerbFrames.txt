@@ -1,7 +1,7 @@
 transitive:
 
 lss="A11.transitive-causative" 			(old_type=transitive oder causative, args: subj,obj (pp) )
-lss="A12.diransitive-causative-state" 		(old_type=transitive, args: subj,obj, pp)
+lss="A12.ditransitive-causative-state" 		(old_type=transitive, args: subj,obj, pp)
 lss="A13.ditransitive-causative-instrumental"	(old_type=transitive, args: subj,obj, pp)
 
 lss="A21.transitive-agentive-patient"		(old_type=transitive, args: subj,obj (pp))
@@ -20,6 +20,7 @@ intransitive:
 
 lss="B11.unaccusative-motion"
 lss="B12.unaccusative-passive-ditransitive"
+
 lss="B21.unaccusative-state"
 lss="B22.unaccusative-passive-transitive"
 lss="B23.unaccusative-cotheme"
