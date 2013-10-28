@@ -733,8 +733,8 @@ sub getVerbMainClause{
 		#get sentence id
 		my $sentenceID = $subordVerbChunk->findvalue('ancestor::SENTENCE/@ord');
 		print STDERR "head verb chunk not found in sentence nr. $sentenceID: \n ";
-		print $subordVerbChunk->toString();
-		print "\n";
+		print STDERR $subordVerbChunk->toString();
+		print STDERR "\n";
 		return 0;
 	}
 	return $headVerbChunk;
