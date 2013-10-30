@@ -87,7 +87,7 @@ foreach my $lem (keys %VerbSem){
 }
 
 # verbs: 15 classes, 29-43
-store \%lemClasses, 'verbLemClasses';
+store \%verbLemClasses, 'verbLemClasses';
 
 # max number of synsets per verb = 35 
 # my $maxlength=1;
