@@ -28,7 +28,7 @@ my %verbLexWithFrames   = %{ retrieve("VerbLex") };
 while(<>){
 	if($_ !~ /^\%/ and $_ !~ /^\s*$/ ){ 
 		chomp;
-		my ($main,$sub,$linker,$form) = split(',');		
+		my ($main,$sub,$linker,$form) = split(',');
 		my $mainFrames = $verbLexWithFrames{$main};
 		my $subFrames = $verbLexWithFrames{$sub};
 		#print "$main   ";
