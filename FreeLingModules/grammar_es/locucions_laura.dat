@@ -880,6 +880,7 @@ bolsa_de_comercio bolsa_de_comercio NCFS000 I
 <buzón>_de_correo_electrónico buzón_de_correo_electrónico $1:NC I
 cada_cosa_por_su_lado cada_cosa_por_su_lado RG I
 cada_dos_por_tres cada_dos_por_tres RG I
+cada_vez_que cada_vez_que CS I
 <cadena>_de_producción cadena_de_producción $1:NC I
 <cadena>_de_tiendas cadena_de_tiendas $1:NC I
 <caja>_de_herramientas caja_de_herramientas $1:NC I
@@ -1874,6 +1875,7 @@ en_interés en_interés RG I
 en_junto en_junto RG I
 en_la_línea_de en_la_línea_de SPS00 I
 en_la_línea_del en_la_línea_del SPCMS I
+en_la_medida_que en_la_medida_que CS I
 en_la_necesidad_de en_la_necesidad_de SPS00 I
 en_la_necesidad_del en_la_necesidad_del SPCMS I
 en_las_cercanías_de en_las_cercanías_de SPS00 I
@@ -2258,6 +2260,7 @@ hacia_mediados_del hacia_mediados_del SPCMS I
 hacienda_pública hacienda_pública NCFS000 I
 hasta_cierto_punto hasta_cierto_punto RG I
 hasta_más_ver hasta_más_ver RG I
+hasta_tal_punto_que hasta_tal_punto_que CS I
 hasta_tanto_que hasta_tanto_que CS I
 hecho_imponible hecho_imponible NCMS000 I
 hechos_de_los_apóstoles hechos_de_los_apóstoles NCMP000 I
@@ -2574,6 +2577,7 @@ mutatis_mutandis mutatis_mutandis RG I
 muy_de_mañana muy_de_mañana RG I
 naciones_unidas naciones_unidas NCFP000 I
 nada_más_y_nada_menos nada_más_y_nada_menos RG I
+nada_menos_que nada_menos_que CS I
 naturaleza_humana naturaleza_humana NCFS000 I
 naturaleza_jurídica naturaleza_jurídica NCFS000 I
 navegación_aérea navegación_aérea NCFS000 I
