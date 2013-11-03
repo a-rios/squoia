@@ -643,7 +643,7 @@ print STDERR "\n****************************************************************
 # print new xml to stdout
 my $docstring = $dom->toString(1);
 #print STDERR $dom->actualEncoding();
-#print STDOUT $docstring;
+print STDOUT $docstring;
 
 sub compareSubjects{
 	my $verbChunk = $_[0];
@@ -777,12 +777,17 @@ sub isSingular{
 sub isFuture{
 	my $verbChunk = $_[0];
 	my $finiteVerb = &getFiniteVerb($verbChunk);
-	if($finiteVerb)
+	# if 'ir a +inf' -> 1
+	if($verbChunk->exists('child::NODE[@mi="VMN0000"]'))
+	{
+		return ($verbChunk->exists('child::NODE/NODE[@lem="ir"]') && $verbChunk->exists('child::NODE/NODE[@lem="a" and @pos="sp"]') );
+	}
+	elsif($finiteVerb)
 	{
 		return substr($finiteVerb->getAttribute('mi'), 3, 1) eq 'F';
 	}
 	else
-	{
+	{   
 		return 0;
 	}
 }
