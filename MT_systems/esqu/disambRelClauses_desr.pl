@@ -57,7 +57,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 		if($verbchunk)
 		{
 			my $firstverb = @{$verbchunk->findnodes('child::NODE[@pos="vm" or @pos="vs"][1]')}[-1];	
-			my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and @si="S"]/NODE[@pos="vm" or @pos="vs"]');
+			my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and (@si="S" or @si="cn")]/NODE[@pos="vm" or @pos="vs"]');
 			if($firstverb && scalar(@coordVerbs)>0)
 			{
 				@verbforms = ($firstverb, @coordVerbs);
@@ -86,17 +86,17 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 	
 	# correct analysis with preposition, grup-verb, rel=S, child chunk grup-sp with preposition+relprn
 	# -> never agentive form in quz -> set to head.not.agent
-	my @relprnWithPP2 = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[(@type="grup-verb" or @type="coor-v") and @si="S"]/CHUNK[@type="grup-sp"]/NODE[@pos="sp"]/descendant::NODE[@pos="pr"]');
+	my @relprnWithPP2 = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[(@type="grup-verb" or @type="coor-v") and (@si="S" or @si="cn")]/CHUNK[@type="grup-sp"]/NODE[@pos="sp"]/descendant::NODE[@pos="pr"]');
 	foreach my $relprnWithPP2 (@relprnWithPP2)
 	{
-		my $verbchunk = @{$relprnWithPP2->findnodes('ancestor::CHUNK[(@type="grup-verb" or @type="coor-v") and @si="S"][1]')}[-1];
+		my $verbchunk = @{$relprnWithPP2->findnodes('ancestor::CHUNK[(@type="grup-verb" or @type="coor-v") and (@si="S" or @si="cn")][1]')}[-1];
 		#my @verbforms = $verbchunk->findnodes('descendant::NODE[@pos="vs" or @pos="vm"]');
 		my @verbforms =();
 		
 		if($verbchunk)
 		{
 			my $firstverb = @{$verbchunk->findnodes('child::NODE[@pos="vm" or @pos="vs"][1]')}[-1];	
-			my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and @si="S"]/NODE[@pos="vm" or @pos="vs"]');
+			my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and (@si="S" or @si="cn")]/NODE[@pos="vm" or @pos="vs"]');
 			if($firstverb && scalar(@coordVerbs)>0)
 			{
 				@verbforms = ($firstverb, @coordVerbs);
@@ -137,7 +137,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 		# check if there's really no head or prepositinal phrase ('diferencia fuertemente de lo que conocen')
 		# el que, la que -> agentive (else a la que, al que..), but 'lo que' -> ambigous
 		# Lo que me molesta es tu actitud -> subj (but not agentive?)// Lo que dicen, me molesta -> cd
-		unless($subjOfheadlessRelclause->exists('ancestor::CHUNK[@type="sn" or @type="grup-sp"]'))
+		if(!$subjOfheadlessRelclause->exists('ancestor::CHUNK[@type="sn" or @type="grup-sp"]'))
 		{
 			my $verbform = $subjOfheadlessRelclause->parentNode();
 			my $verbchunk = @{$verbform->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
@@ -171,18 +171,27 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 				}
 			}	
 		}
+		# headless, within prep-phrase ->depende de lo que dicen, en lo que respecta la siniestralidad, etc -> perfect+Top
+		else{
+			my $verbform = $subjOfheadlessRelclause->parentNode();
+			my $verbchunk = @{$verbform->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
+			$verbform->setAttribute('verbform', 'rel:not.agentive');
+			$verbchunk->setAttribute('chunkmi', '+Top');
+			$verbchunk->setAttribute('HLRC', 'yes');
+		}
 	}
 
 	# relclauses without preposition:
-	my @relprnNoPP = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[(@type="grup-verb" or @type="coor-v") and @si="S"]/NODE[@cpos="v"]/NODE[@pos="pr"]');
+	my @relprnNoPP = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[(@type="grup-verb" or @type="coor-v") and (@si="S" or @si="cn")]/NODE[@cpos="v"]/NODE[@pos="pr"]');
 
 	foreach my $relprn (@relprnNoPP)
 	{
 	#my $relprn = @{$relClause->findnodes('descendant::NODE[@pos="pr"][1]')}[-1];
-	my $relClause = @{$relprn->findnodes('ancestor::CHUNK[(@type="grup-verb" or @type="coor-v") and @si="S"][1]')}[-1];
+	my $relClause = @{$relprn->findnodes('ancestor::CHUNK[(@type="grup-verb" or @type="coor-v") and (@si="S" or @si="cn")][1]')}[-1];
 	if($relClause)
 	{
-		#print "\n relpron:"; print $relprn->getAttribute('lem'); print "\n";
+		#print STDERR "\n relclause:"; print $relClause->toString; print STDERR "\n";
+		#print STDERR "\n relpron:"; print $relprn->getAttribute('lem'); print STDERR "\n";
 		# if relative pronoun is something else than 'que' or 'quien', head noun is not subject
 		if($relprn->getAttribute('lem') !~ /que|quien|cual/)
 		{
@@ -251,7 +260,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 					}
 				}
 				else # if not preceded by preposition nor local person
-				{
+				{ 
 					# if no congruence, head noun is not subject of relative clause -> attributive, not applicable for proper names (those don't indicate number), so if lemma was splitted from a complex name -> ignore number
 					if(!&isCongruentHeadRelClause($headNoun, $finiteVerb) && $headNounLem !~ /_/)
 					{
@@ -266,7 +275,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 					if($mainVerb)
 					{
 						my $lem = $mainVerb->getAttribute('lem');
-						#print STDERR "verb:$lem ";
+					#	print STDERR "verb:$lem ";
 								
 						if(exists $lexEntriesWithFrames{$lem})
 						{
@@ -458,7 +467,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 											if(!grep {$_ =~ /##tem/} @frameTypes)
 											{
 												# check if creg/obj in rel-clause, in this case, assume head is subject-> according to frame->agentive
-												if(!&hasSubj($relClause) and (&hasDorSPobj($relClause) or &hasIobj($relClause) ))
+												if(!&hasSubjRel($relClause) and (&hasDorSPobj($relClause) or &hasIobj($relClause) ))
 												{
 													&setVerbform($relClause,1);
 												}
@@ -595,7 +604,7 @@ sub setVerbform {
 	{
 		my @verbforms =();
 		my $firstverb = @{$verbchunk->findnodes('child::NODE[@pos="vm"][1]')}[-1];	
-		my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and @si="S"]/NODE[@pos="vm"]');
+		my @coordVerbs = $verbchunk->findnodes('child::NODE[@rel="coord"]/following-sibling::CHUNK[@type="grup-verb" and (@si="S" or @si="cn")]/NODE[@pos="vm"]');
 		if($firstverb && scalar(@coordVerbs)>0)
 		{
 			@verbforms = ($firstverb, @coordVerbs);
@@ -635,10 +644,10 @@ sub setVerbform {
 	}
 	elsif($verbchunk &&$isSubj == 2)
 	{
-		my @verbforms = $verbchunk->findnodes('descendant::NODE[@pos="vs"]');
+		my @verbforms = $verbchunk->findnodes('child::CHUNK/NODE[@pos="vs"]');
 		foreach my $verbform (@verbforms)
 		{
-			$verbform->setAttribute('verbform', 'rel:agentive');
+				$verbform->setAttribute('verbform', 'rel:agentive');
 		}
 	}
 }
@@ -726,7 +735,7 @@ sub evaluateSingleFrame{
 					&setVerbform($relClause,0);
 				}
 			}
-			elsif(&hasSubj($relClause))
+			elsif(&hasSubjRel($relClause))
 			{
 				&setVerbform($relClause,0);
 			}
@@ -746,14 +755,14 @@ sub evaluateSingleFrame{
 	#"A35.ditransitive-theme-cotheme"
 	elsif($frame =~ /A3.+default/)
 		{
-			if(&hasSubj($relClause))
+			if(&hasSubjRel($relClause))
 			{
 				&setVerbform($relClause, 0);
 			}
 			# ditransitive: if head noun is iobj, rel-prn with 'a' (la casa A LA que pusieron una techa, no *la casa que pusieron techa) 
 			#-> we only need to disambiguate between the cases where the head noun is obj or subj (e.g. la casa que dieron a Jośe vs. el hombre que dio la casa a José)		
 			# if rel-clause has overt subj but no obj -> head noun is obj
-			elsif(!&hasSubj($relClause) && $relClause->exists('CHUNK[@si="ci" or @si="creg" or @si="cd-a" or @si="cd" or @si="cd/ci"]'))
+			elsif(!&hasSubjRel($relClause) && $relClause->exists('CHUNK[@si="ci" or @si="creg" or @si="cd-a" or @si="cd" or @si="cd/ci"]'))
 			{
 				# if agentive
 				if($thematicRoleOfSubj =~ /agt|cau|exp|src|ins|loc/)
@@ -852,7 +861,8 @@ sub guess{
 	
 	if($relClause)
 	{
-		if(&hasSubj($relClause))
+		#$relClause->setAttribute('guess','1');
+		if(&hasSubjRel($relClause))
 		{
 			&setVerbform($relClause,0);
 		}
@@ -890,9 +900,9 @@ sub guess{
 }
 
 
-sub hasSubj{
+sub hasSubjRel{
 	my $relClauseNode = $_[0];
-	
+	#print STDERR "rel clause: \n".$relClauseNode->toString."\n";
 	return ($relClauseNode->exists('CHUNK[@si="suj"]'));
 
 }

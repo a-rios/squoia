@@ -137,9 +137,10 @@ sub getFiniteVerb{
 	}
 	else
 	{
-		print STDERR "finite verb not found in: \n ";
-		print STDERR $verbchunk->toString();
-		print STDERR "\n";
+		print STDERR "finite verb not found in chunk: ";
+		print STDERR $verbchunk->getAttribute('ord')."\n";
+		#print STDERR $verbchunk->toString();
+		#print STDERR "\n";
 		return 0;
 	}	
 	
@@ -147,7 +148,6 @@ sub getFiniteVerb{
 
 sub hasSubj{
 	my $relClauseNode = $_[0];
-	
 	return ($relClauseNode->exists('CHUNK[@type="grup-verb" and @si="vsubord"]/CHUNK[@si="subj"]'));
 }
 
