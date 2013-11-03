@@ -83,11 +83,11 @@ foreach my $sentence (@sentenceList)
  		if(&getFiniteVerb($verbChunk))
  		{
  			# disambiguation needed only if not relative clause (those are handled separately)
- 			if( !&isRelClause($verbChunk) )
- 			{
+ 			if( !&isRelClause($verbChunk) && !$verbChunk->hasAttribute('verbform'))
+ 			{  
  				my $conjunction;
  				# get conjunction, if present:
- 				#  for a coordinated, get the conjunction from head of coordination, unless this verb has its own conjunction 
+ 				#  if coordinated, get the conjunction from head of coordination, unless this verb has its own conjunction 
  				# -> in this case, the parser messed up, take the conjunction of this verb, not the head (but we don't really know which one is right)
  				if($verbChunk->exists('parent::CHUNK[@type="coor-v"]') && !$verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs" or @pos="cc"]') )
  				{ 
@@ -99,8 +99,16 @@ foreach my $sentence (@sentenceList)
  				}
  				if($conjunction){print STDERR "conj in ".$verbChunk->getAttribute('ord').": ".$conjunction->toString();}
  				
+ 				#if this is a coordinated verb to a relative clause, just copy verbform from head to this chunk
+ 				if($verbChunk->exists('parent::CHUNK[@type="coor-v"]/NODE[starts-with(@verbform,"rel")]'))
+ 				{
+ 					my $parent = $verbChunk->parentNode();
+ 					if($parent){
+ 						$verbChunk->setAttribute('verbform', $parent->getAttribute('verbform'));
+ 					}	
+ 				}
  				# if this verb has a 'tener que' part or deber +inf -> obligative, TODO: hay que?
- 				if($verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || ($verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="tener"]') && $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="deber"]')  )
+ 				elsif($verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || ($verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="tener"]') && $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="deber"]')  )
  				{
  					$nbrOfFinalClauses++;
  					$verbChunk->setAttribute('verbform', 'obligative');
@@ -152,7 +160,7 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'main');
  				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aunque|porque|con_tal_que|el_hecho_de_que|en_cuanto/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aunque|porque|con_tal_que|en_cuanto/ )
  				{
  					#check if same subject 
  					&compareSubjects($verbChunk);
@@ -189,72 +197,103 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'DS');
  					$verbChunk->setAttribute('conj', 'mana');
  				}
- 				# antes de hacer -> manaraq + finite verb -> DS (if SS -> verb would be infinitive)
+ 				# antes de que haga -> manaraq + finite verb -> DS (if SS -> verb would be infinitive)
  				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /antes_de_que/ )
  				{
  					$nbrOfSwitchForms++;
  					$verbChunk->setAttribute('verbform', 'DS');
  					$verbChunk->setAttribute('conj', 'manaraq');
  				}
- 				# if this a subordinated clause with a finite verb (in Quechua)
+ 				# if this a subordinated  clause with a finite verb (in Quechua) (TODO: ni_siquiera -> Adverbio??)
  				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|y_cuando|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|por_eso|ya_que|aun|aún|aun_no|aún_no/ )
- 				{
- 					$nbrOfFiniteForms;
- 					$verbChunk->setAttribute('verbform', 'main');
- 					if($conjunction->getAttribute('lem') eq 'pero_cuando' )
+ 				{	
+ 					# if coordinated chunk: take verbform from head
+ 				    my $parent = $verbChunk->parentNode();
+ 					if($parent && $conjunction && $conjunction->getAttribute('lem') =~ /^o$|^y$|^e$|^u$|sino|^ni$/ && $verbChunk->exists('parent::CHUNK[@type="coor-v"]'))
  					{
- 						$verbChunk->setAttribute('conj', 'chaytaq');
+ 						#print STDERR"\nsfhshfsjhfksh ".$verbChunk->getAttribute('ord')."\n";
+ 						my $parentForm = $parent->getAttribute('verbform');
+ 						if($parentForm ne ''){
+ 							$verbChunk->setAttribute('verbform',$parentForm);
+ 						}
+ 						else{
+ 							$verbChunk->setAttribute('verbform', 'main');
+ 						}
+ 						# -taq
+	 					if($conjunction->getAttribute('lem') =~ /^o$|^y$|^e$|^u$/ )
+	 					{
+	 						$verbChunk->setAttribute('verbmi', '+Intr');
+	 					}
+	 					#ni, ni_siquera: nitaq
+	 					elsif($conjunction->getAttribute('lem') =~ /^ni$/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'nitaq');
+	 					}
+	 					#sino: aswanpas
+	 					elsif($conjunction->getAttribute('lem') =~ /sino/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'aswanpas');
+	 					}
  					}
- 					elsif($conjunction->getAttribute('lem') =~ /pero|empero/ )
+ 					else
  					{
- 						$verbChunk->setAttribute('conj', 'ichaqa');
- 					}
- 					# -taq
- 					elsif($conjunction->getAttribute('lem') =~ /^o$|^y$|^e$|^u$/ )
- 					{
- 						$verbChunk->setAttribute('verbmi', '+Intr');
- 					}
- 					#sino: aswanpas
- 					elsif($conjunction->getAttribute('lem') =~ /sino/ )
- 					{
- 						$verbChunk->setAttribute('conj', 'aswanpas');
- 					}
- 					#ni, ni_siquera: nitaq
- 					elsif($conjunction->getAttribute('lem') =~ /^ni$|ni_siquiera/ )
- 					{
- 						$verbChunk->setAttribute('conj', 'nitaq');
- 					}
- 					elsif($conjunction->getAttribute('lem') =~ /por_tanto|por_lo_tanto/ )
- 					{
- 						$verbChunk->setAttribute('conj', 'chaymi');
- 					}
- 					elsif($conjunction->getAttribute('lem') =~ /tanto_como/ )
- 					{
- 						$verbChunk->setAttribute('postpos', 'ima');
- 					}
- 					elsif($conjunction->getAttribute('lem') =~ /entonces|pues/ )
- 					{
- 						$verbChunk->setAttribute('conj', 'hinaspaqa');
- 					}
- 					elsif($conjunction->getAttribute('lem') =~ /por_eso/ )
- 					{
- 						$verbChunk->setAttribute('conj', 'chayrayku');
- 					}
- 					elsif($conjunction->getAttribute('lem') =~ /ya_que/ )
- 					{
- 						$verbChunk->setAttribute('conj', 'chayqa');
- 					}
- 					elsif($conjunction->getAttribute('lem') =~ /aún|aun$/ )
- 					{
- 						$verbChunk->setAttribute('conj', 'chayraq');
- 					}
- 					elsif($conjunction->getAttribute('lem') =~ /aún_no|aun_no/ )
- 					{
- 						$verbChunk->setAttribute('conj', 'manaraq');
+	 					$nbrOfFiniteForms;
+	 					$verbChunk->setAttribute('verbform', 'main');
+	 					if($conjunction->getAttribute('lem') eq 'pero_cuando' )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'chaytaq');
+	 					}
+	 					elsif($conjunction->getAttribute('lem') =~ /pero|empero/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'ichaqa');
+	 					}
+	 					# -taq
+	 					elsif($conjunction->getAttribute('lem') =~ /^o$|^y$|^e$|^u$/ )
+	 					{
+	 						$verbChunk->setAttribute('verbmi', '+Intr');
+	 					}
+	 					#sino: aswanpas
+	 					elsif($conjunction->getAttribute('lem') =~ /sino/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'aswanpas');
+	 					}
+	 					#ni, ni_siquera: nitaq
+	 					elsif($conjunction->getAttribute('lem') =~ /^ni$|ni_siquiera/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'nitaq');
+	 					}
+	 					elsif($conjunction->getAttribute('lem') =~ /por_tanto|por_lo_tanto/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'chaymi');
+	 					}
+	 					elsif($conjunction->getAttribute('lem') =~ /tanto_como/ )
+	 					{
+	 						$verbChunk->setAttribute('postpos', 'ima');
+	 					}
+	 					elsif($conjunction->getAttribute('lem') =~ /entonces|pues/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'hinaspaqa');
+	 					}
+	 					elsif($conjunction->getAttribute('lem') =~ /por_eso/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'chayrayku');
+	 					}
+	 					elsif($conjunction->getAttribute('lem') =~ /ya_que/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'chayqa');
+	 					}
+	 					elsif($conjunction->getAttribute('lem') =~ /aún|aun$/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'chayraq');
+	 					}
+	 					elsif($conjunction->getAttribute('lem') =~ /aún_no|aun_no/ )
+	 					{
+	 						$verbChunk->setAttribute('conj', 'manaraq');
+	 					}
  					}
  				}
  				# nominal subordinated clauses (no complement clauses, those are treated below!)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /como/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^como$/ )
  				{
  					$nbrOfNominalForms;
  					if(&isSubjunctive($verbChunk) or &isFuture($verbChunk))
@@ -272,12 +311,11 @@ foreach my $sentence (@sentenceList)
  					}
  				}
  				# if this is a final clause,  -na?
-				
-				elsif($conjunction && $conjunction->getAttribute('lem') =~ /con_fin_de_que|a_fin_de_que|con_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
-				{
+				elsif($conjunction && $conjunction->getAttribute('lem') =~ /al_tiempo_que|con_fin_de_que|a_fin_de_que|con_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
+				{ 
 					$nbrOfFinalClauses++;
 					$verbChunk->setAttribute('verbform', 'obligative');
-					if($conjunction->getAttribute('lem') =~ /mientras|hasta_que/)
+					if($conjunction->getAttribute('lem') =~ /mientras|hasta_que|al_tiempo_que/)
 					{
 						$verbChunk->setAttribute('case', '+Term');
 					}
@@ -287,99 +325,145 @@ foreach my $sentence (@sentenceList)
 					}
 				}
 				# mientras, mientras que -> na -kama/ -spa/-pti?
-				elsif($conjunction && $conjunction->getAttribute('lem') =~ /mientras/ )
+				elsif($conjunction && $conjunction->getAttribute('lem') =~ /mientras|al_tiempo_que/ )
 				{
 					$nbrOfFinalClauses++;
 					$verbChunk->setAttribute('verbform', 'obligative');
 					$verbChunk->setAttribute('case', '+Term');
 				}
  				# if this is a complement clause (-> nominal form), TODO: already ++Acc?
- 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]/child::NODE[@pos="cs" and (@lem="que" or @lem="si") or NODE[@pos="cs" and (@lem="que" or @lem="si") ]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
+ 				elsif($verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]/child::NODE[@pos="cs" and (@lem="que" or @lem="si" or @lem="el_hecho_de_que") or NODE[@pos="cs" and (@lem="que" or @lem="si") ]]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
  				{
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
+ 					my @coordVerbChunks = $verbChunk->findnodes('self::CHUNK[@type="coor-v"]/CHUNK[@type="grup-verb"]');
+ 					#print STDERR "\ncoords: ".scalar(@coordVerbChunks)." in ".$verbChunk->getAttribute('ord')."\n";
+ 					
  					if($headVerbCHunk)
  					{
  						my $headVerb = &getMainVerb($headVerbCHunk);
- 						#print STDERR "head verb: \n".$headVerb->toString."\n";
+ 						push(@coordVerbChunks,$verbChunk);
+ 						#print STDERR "\nhead verb: \n".$headVerb->toString."\n";
+ 						#print STDERR "this verb: ".$verbChunk->getAttribute('ord')."\n";
  						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
- 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|sostener|señalar|testificar|testimoniar/)
+ 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|señalar|sostener|subrayar|testificar|testimoniar/)
  						{
  							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
 							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
 							# note: if compareSubjects gives 'switch', this means that both verbs are 3rd persons and have the same number, but at least
 							#  one of the clauses has no overt subject. It is safe to assume that in this case the subjects are coreferential with a say verb in the main clause
-							&compareSubjects($verbChunk);
-							#print $verbChunk->toString."\n";
-							if(($verbChunk->getAttribute('verbform') eq 'SS' || $verbChunk->getAttribute('verbform') eq 'switch') && &isSingular($verbChunk))
+							# do this also for coordinated verb forms!
+							foreach my $vChunk (@coordVerbChunks)
 							{
-								$verbChunk->setAttribute('verbprs', '+1.Sg.Subj')
+								&compareSubjects($vChunk);
+								#print STDERR "\ncoords: ".$vChunk->getAttribute('ord')."\n";
+								if(($vChunk->getAttribute('verbform') eq 'SS' || $vChunk->getAttribute('verbform') eq 'switch') && &isSingular($vChunk))
+								{
+									$vChunk->setAttribute('verbprs', '+1.Sg.Subj')
+								}
+								elsif($vChunk->getAttribute('verbform') eq 'SS' && !&isSingular($vChunk))
+								{
+									$vChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
+								}
+								# set both this verb and the head verb to 'main'
+								$vChunk->setAttribute('verbform', 'main');
+								#print STDERR $vChunk->toString."\n";
+								
+								# indirect question with 'si' -> add -chu to (now direct speech) verbchunk
+								if($conjunction->getAttribute('lem') eq 'si')
+								{
+									$vChunk->setAttribute('verbmi', '+Neg');
+								}
+								$nbrOfFiniteForms++;
+								$nbrOfSwitchForms--;
 							}
-							elsif($verbChunk->getAttribute('verbform') eq 'SS' && !&isSingular($verbChunk))
-							{
-								$verbChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
-							}
-							# set both this verb and the head verb to 'main'
-							$verbChunk->setAttribute('verbform', 'main');
 							$headVerbCHunk->setAttribute('lem1', 'ni');
 							$headVerbCHunk->setAttribute('verbmi1', '+SS');
-							# indirect question with 'si' -> add -chu to (now direct speech) verbchunk
-							if($conjunction->getAttribute('lem') eq 'si')
+ 						}
+ 						# titular: finite verb form, like direct speech, but no co-reference resolution needed
+ 						elsif($headVerb && $headVerb->getAttribute('lem') =~ /titular/)
+ 						{
+ 							foreach my $vChunk (@coordVerbChunks)
 							{
-								$verbChunk->setAttribute('verbmi', '+Neg');
+								$vChunk->setAttribute('verbform', 'main');
+								$nbrOfFiniteForms++;
 							}
-							$nbrOfFiniteForms++;
-							$nbrOfSwitchForms--;
-							
  						}
  						else
  						{	
- 							$nbrOfNominalForms++;
- 							if(&isSubjunctive($verbChunk) || &isFuture($verbChunk) || &isConditional($verbChunk))
- 							{
- 								$verbChunk->setAttribute('verbform', 'obligative');
- 								$verbChunk->setAttribute('case', '+Acc');
- 							}
- 							else
- 							{
- 								$verbChunk->setAttribute('verbform', 'perfect');
- 								$verbChunk->setAttribute('case', '+Acc');
+ 							foreach my $vChunk (@coordVerbChunks)
+ 							{ 
+	 							$nbrOfNominalForms++;
+	 							if(&isSubjunctive($vChunk) || &isFuture($vChunk) || &isConditional($vChunk))
+	 							{
+	 								$vChunk->setAttribute('verbform', 'obligative');
+	 								$vChunk->setAttribute('case', '+Acc');
+	 							}
+	 							else
+	 							{
+	 								$vChunk->setAttribute('verbform', 'perfect');
+	 								$vChunk->setAttribute('case', '+Acc');
+	 							}
+	 							# if linker = el_hecho_de_que -> add +Top
+	 							if($vChunk->exists('NODE/NODE[@lem="el_hecho_de_que" or NODE[@lem="el_hecho_de_que"] ]')){
+	 								$vChunk->setAttribute('chunkmi','+Top');
+	 							}
  							}
  						}
  					}
  				}
- 					# if this is a complement clause of a speech verb, no linker needed!
+ 			    # if this is a complement clause of a speech verb, no linker needed!
  				elsif(!$conjunction && $verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
- 				{
+ 				{ 
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
+ 					my @coordVerbChunks = $verbChunk->findnodes('self::CHUNK[@type="coor-v"]/CHUNK[@type="grup-verb"]');
+ 					
  					if($headVerbCHunk)
- 					{
+ 					{ 
  						my $headVerb = &getMainVerb($headVerbCHunk);
+ 						push(@coordVerbChunks,$verbChunk);
  						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
- 						#if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|manifestar|mencionar|oficiar|opinar|proclamar|proponer|razonar|recalcar|revelar|responder|sostener|señalar|testificar|testimoniar/)
- 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|sostener|señalar|testificar|testimoniar/)
+ 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|decir|declarar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|señalar|sostener|subrayar|testificar|testimoniar/)
  						{
  							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
 							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
 							# note: if compareSubjects gives 'switch', this means that both verbs are 3rd persons and have the same number, but at least
 							#  one of the clauses has no overt subject. It is safe to assume that in this case the subjects are coreferential with a say verb in the main clause
 							# NOTE: only with indirect speech, do not alter direct speech (when there's no 'que')
-							&compareSubjects($verbChunk);
-							#print $verbChunk->toString."\n";
-							if( ($verbChunk->getAttribute('verbform') eq 'SS' || $verbChunk->getAttribute('verbform') eq 'switch') && &isSingular($verbChunk) && $verbChunk->exists('descendant::NODE[(@lem="que" or @lem="si") and @mi="CS"]') )
+							# do this also for coordinated verb forms!
+							foreach my $vChunk (@coordVerbChunks)
 							{
-								$verbChunk->setAttribute('verbprs', '+1.Sg.Subj')
+								&compareSubjects($vChunk);
+								#print "\ncoords: ".$vChunk->getAttribute('ord')."\n";
+								if(($vChunk->getAttribute('verbform') eq 'SS' || $vChunk->getAttribute('verbform') eq 'switch') && &isSingular($vChunk))
+								{
+									$vChunk->setAttribute('verbprs', '+1.Sg.Subj')
+								}
+								elsif($vChunk->getAttribute('verbform') eq 'SS' && !&isSingular($vChunk))
+								{
+									$vChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
+								}
+								# set both this verb and the head verb to 'main'
+								$vChunk->setAttribute('verbform', 'main');
+								
+								# indirect question with 'si' -> add -chu to (now direct speech) verbchunk
+								if($conjunction && $conjunction->getAttribute('lem') eq 'si')
+								{
+									$vChunk->setAttribute('verbmi', '+Neg');
+								}
+								$nbrOfFiniteForms++;
+								$nbrOfSwitchForms--;
 							}
-							elsif($verbChunk->getAttribute('verbform') eq 'SS' && !&isSingular($verbChunk) && $verbChunk->exists('descendant::NODE[@lem="que" and @mi="CS"]') )
-							{
-								$verbChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
-							}
-							# set both this verb and the head verb to 'main'
-							$verbChunk->setAttribute('verbform', 'main');
-							$headVerbCHunk->setAttribute('lem1', 'ni');
-							$headVerbCHunk->setAttribute('verbmi1', '+SS');
 							$nbrOfFiniteForms++;
 							$nbrOfSwitchForms--;
-							
+ 						}
+ 						# titular: finite verb form, like direct speech, but no co-reference resolution needed
+ 						elsif($headVerb && $headVerb->getAttribute('lem') =~ /titular/)
+ 						{ 
+ 							foreach my $vChunk (@coordVerbChunks)
+							{ 
+								$vChunk->setAttribute('verbform', 'main');
+								$nbrOfFiniteForms++;
+							}
  						}
  						else
  						{
@@ -387,6 +471,46 @@ foreach my $sentence (@sentenceList)
 							$verbChunk->setAttribute('verbform', 'ambiguous');
  						}
  					}
+ 				}
+ 				# if this is a complement clause with preposition (creg)-> nominal+case TODO: set proper case suffix! (probably best in prep-disamb)
+ 				elsif($verbChunk->exists('parent::CHUNK[(@type="grup-sp" or @type="coor-sp") and @si="creg"]') && $verbChunk->exists('child::NODE/NODE[(@pos="cs" and @lem="que") or NODE[@pos="cs" and @lem="que" ]]')  && $verbChunk->exists('parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
+ 				{	
+ 						$nbrOfNominalForms++;
+ 						if(&isSubjunctive($verbChunk) || &isFuture($verbChunk) || &isConditional($verbChunk))
+ 						{
+ 							$verbChunk->setAttribute('verbform', 'obligative');
+ 							#$verbChunk->setAttribute('case', '--');
+ 						}
+ 						else
+ 						{
+ 							$verbChunk->setAttribute('verbform', 'perfect');
+ 							#$verbChunk->setAttribute('case', '--');
+ 						}
+ 				}
+ 				# if this is a subject clause -> infinitive
+ 				# que vengas tarde, me molesta 
+ 				elsif($verbChunk->getAttribute('si') eq 'suj' )
+ 				{
+ 					$verbChunk->setAttribute('verbform', 'infinitive');
+ 					my $finiteVerb = &getFiniteVerb($verbChunk);
+ 					if($finiteVerb)
+ 					{
+ 						my $mi = $finiteVerb->getAttribute('mi');
+ 						if($mi =~ '1S'){$verbChunk->setAttribute('verbmi','+1.Sg.Poss')};
+ 						if($mi =~ '2S'){$verbChunk->setAttribute('verbmi','+2.Sg.Poss')};
+ 						if($mi =~ '3S'){$verbChunk->setAttribute('verbmi','+3.Sg.Poss')};
+ 						if($mi =~ '1P'){$verbChunk->setAttribute('verbmi','+1.Incl.Pl.Poss')};
+ 						if($mi =~ '2P'){$verbChunk->setAttribute('verbmi','+2.Pl.Poss')};
+ 						if($mi =~ '3P'){$verbChunk->setAttribute('verbmi','+3.Pl.Poss')};
+ 					}
+ 				}
+ 				# el_hecho_de_que -> perfect +Top
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /el_hecho_de_que/ )
+ 				{
+ 					$nbrOfNominalForms;
+ 					$verbChunk->setAttribute('verbform', 'perfect');
+ 					$verbChunk->setAttribute('verbmi', '+Top');
+ 					
  				}
 				# special case: hace falta que + subjuntivo -> 'hace falta que' -> kan, subj.-verb: +-na 
 				# hace falta que te vayas -> ripunayki kan
@@ -445,8 +569,8 @@ foreach my $sentence (@sentenceList)
 					$verbChunk->setAttribute('verbform', 'ambiguous');
 				}
  			}
-			else
-			{ 
+			elsif(&isRelClause($verbChunk))
+			{
 				#this is a relative clause, copy verbform value to chunk (otherwise, it will get lost during the lexical transfer)
 				my $reltype = $verbChunk->findvalue('child::NODE/descendant-or-self::NODE/@verbform');
 				$verbChunk->setAttribute('verbform',$reltype);
@@ -477,8 +601,6 @@ foreach my $sentence (@sentenceList)
  						$infinitiveWithoutQUE->setAttribute('addverbmi', '+3.Sg.Poss');
  					}
  				}
-
- 				
 			}
  		}
  		# if this is an infinitive chunk with 'sin' or 'antes de' -> set verbform to -spa (SS)
@@ -504,7 +626,6 @@ foreach my $sentence (@sentenceList)
  			$nbrOfNonFiniteChunks++;
  		}
  	}
- 	
 }
 
 print STDERR "\n****************************************************************************************\n";
@@ -522,12 +643,12 @@ print STDERR "\n****************************************************************
 # print new xml to stdout
 my $docstring = $dom->toString(1);
 #print STDERR $dom->actualEncoding();
-print STDOUT $docstring;
+#print STDOUT $docstring;
 
 sub compareSubjects{
 	my $verbChunk = $_[0];
 	my $finiteVerb = &getFiniteVerb($verbChunk);
-	print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n";
+#	print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n";
 	#subject of main clause
 	my $mainverb = &getVerbMainClause($verbChunk);
 	if($mainverb && $finiteVerb)
@@ -545,8 +666,8 @@ sub compareSubjects{
 			my $verbPersonMain = substr ($verbMIMain, 4, 1);
 			my $verbNumberMain = substr ($verbMIMain, 5, 1);
 		
-			print STDERR $finiteMainVerb ->getAttribute('lem').": $verbMIMain\n";
-			print STDERR $finiteVerb->getAttribute('lem').": $verbMI\n";
+			#print STDERR $finiteMainVerb ->getAttribute('lem').": $verbMIMain\n";
+			#print STDERR $finiteVerb->getAttribute('lem').": $verbMI\n";
 		
 			if($verbPerson eq $verbPersonMain && $verbNumber eq $verbNumberMain)
 			{
@@ -574,8 +695,8 @@ sub compareSubjects{
 		  		my $verbNumberMain = substr ($finiteMainVerb->getAttribute('mi'), 5, 1);
 		  		my $verbNumber = substr ($finiteVerb->getAttribute('mi'), 5, 1);
 		  	
-		 	 	print STDERR $finiteMainVerb ->getAttribute('lem').": ".$finiteMainVerb->getAttribute('mi')."\n";
-				print STDERR $finiteVerb->getAttribute('lem').": ".$finiteVerb->getAttribute('mi')."\n";
+		 	 	#print STDERR $finiteMainVerb ->getAttribute('lem').": ".$finiteMainVerb->getAttribute('mi')."\n";
+				#print STDERR $finiteVerb->getAttribute('lem').": ".$finiteVerb->getAttribute('mi')."\n";
 		  	
 			  	if($verbNumber ne $verbNumberMain)
 			  	{

@@ -25,7 +25,13 @@ RELATIVE CLAUSES:
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
 
-# TODO: aunque sea -> maskipas (adverb)
+# TODO: aunque sea -> maskipas (adverb):
+
+TODO: coordinated complements of speech verbs -> coref-resolution: subj of relclause is either in the clause, or it's the head
+-> allg. koreferenz bei direct speech -> miserabel
+
+- Coordination of participle and relative clause 
+'Una de las empresas tomaría posesión de los sistemas Windows, CREADO por esta firma y QUE USAN el 95_por_ciento de los ordenadores de todo el mundo..'
 
 LEXICON:
 - participles vs. adjectives: e.g. adinerado
