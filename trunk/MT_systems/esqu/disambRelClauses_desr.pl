@@ -36,7 +36,8 @@ my %nounLexicon = %{ retrieve("NounLex") };
 #	print "\n";
 #}
 
-
+# TODO: quedarse/acabar de + adjetivo -> resultativo -> not.agentive
+# (done--TODO: coordinated relclauses -> not always the same! one might be agentive, the other not.. disambiguate seperately!)
 
 my $dom2    = XML::LibXML->load_xml( IO => *STDIN );
 
@@ -133,7 +134,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 	# also: lo que, el que -> insert topic suffix in this chunk! 
 	my @headlessRelClauses = $sentence->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v")]/NODE[@cpos="v"]/NODE[(@lem="quien" and @rel="suj") or (@pos="da" and @rel="spec")]');
 	foreach my $subjOfheadlessRelclause (@headlessRelClauses)
-	{ 
+	{  
 		# check if there's really no head or prepositinal phrase ('diferencia fuertemente de lo que conocen')
 		# el que, la que -> agentive (else a la que, al que..), but 'lo que' -> ambigous
 		# Lo que me molesta es tu actitud -> subj (but not agentive?)// Lo que dicen, me molesta -> cd
@@ -172,7 +173,8 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 			}	
 		}
 		# headless, within prep-phrase ->depende de lo que dicen, en lo que respecta la siniestralidad, etc -> perfect+Top
-		else{
+		elsif($subjOfheadlessRelclause->exists('ancestor::CHUNK[1]/parent::CHUNK[@type="grup-sp" or @type="coor-sp"]') )
+		{ 
 			my $verbform = $subjOfheadlessRelclause->parentNode();
 			my $verbchunk = @{$verbform->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
 			$verbform->setAttribute('verbform', 'rel:not.agentive');
@@ -183,6 +185,8 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 
 	# relclauses without preposition:
 	my @relprnNoPP = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[(@type="grup-verb" or @type="coor-v") and (@si="S" or @si="cn")]/NODE[@cpos="v"]/NODE[@pos="pr"]');
+	my @coorRelprnNoPP = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[@type="coor-v" and (@si="S" or @si="cn") and NODE[@pos="pr" or NODE[@pos="pr"] ] ]/CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v"]/NODE[@pos="pr"]');
+	push (@relprnNoPP, @coorRelprnNoPP);
 
 	foreach my $relprn (@relprnNoPP)
 	{
@@ -190,10 +194,17 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 	my $relClause = @{$relprn->findnodes('ancestor::CHUNK[(@type="grup-verb" or @type="coor-v") and (@si="S" or @si="cn")][1]')}[-1];
 	if($relClause)
 	{
-		#print STDERR "\n relclause:"; print $relClause->toString; print STDERR "\n";
-		#print STDERR "\n relpron:"; print $relprn->getAttribute('lem'); print STDERR "\n";
+		# just for ML with Ancora: if there's a chunk with si=suj -> not.agentive
+		# --> can't rely on this with during translation, because the parser often messes up subject and object
+#		if(&hasSubj($relClause)){
+#			&setVerbform($relClause,0);
+#		}
+		
+		#print STDERR "\n relclause: ".$relClause->toString."\n";
+		#print STDERR "\n relpron:".$relprn->getAttribute('lem')."\n";
 		# if relative pronoun is something else than 'que' or 'quien', head noun is not subject
 		if($relprn->getAttribute('lem') !~ /que|quien|cual/)
+		#elsif($relprn->getAttribute('lem') !~ /que|quien|cual/)
 		{
 			&setVerbform($relClause,0);
 			# if relative pronoun is 'donde' -> this has to be translated as an internally headed RC:
@@ -205,7 +216,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 		}
 		#if main verb in rel clause is 'ser' -> always attributive, never agentive head noun (passive or attributive)
 		elsif($relClause->exists('child::NODE[@lem="ser"]'))
-		{ 
+		{
 			#set to 'delete' (no copula in Quechua in this case)
 			&setVerbform($relClause,2);
 		}
@@ -232,306 +243,307 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 			# if getHeadNoun return 1, this is no relative clause, but something wrongly analysed -> ingnore this chunk
 			unless($headNoun == -1)
 			{
-			#print STDERR $headNoun->getAttribute('lem');
-			my $headNounMI = $headNoun->getAttribute('mi');
-			#get lemma of head noun
-			my $headNounLem = $headNoun->getAttribute('lem');
-			#print STDERR "head lem: $headNounLem\n";
-			#print STDERR "mi: $headNounMI\n";
-		
-			my $finiteVerb = &getFiniteVerb($relClause);
-			if($finiteVerb)
-			{
-				my $verbMI = $finiteVerb->getAttribute('mi');
-				#print STDERR $finiteVerb->toString;
-
-				# relative clauses where head noun is personal pronoun of local person (1/2)
-				# if verb agrees-> subj, (check frame), if not -> not agent
-				# e.g. 'yo que soy tan floja'
-				if($headNounMI =~ /^PP/)
+				#print STDERR $headNoun->getAttribute('lem');
+				my $headNounMI = $headNoun->getAttribute('mi');
+				#get lemma of head noun
+				my $headNounLem = $headNoun->getAttribute('lem');
+				#print STDERR "head lem: $headNounLem\n";
+				#print STDERR "mi: $headNounMI\n";
+			
+				my $finiteVerb = &getFiniteVerb($relClause);
+				if($finiteVerb)
 				{
-					if(!&isCongruentPronoun($headNoun, $finiteVerb))
+					my $verbMI = $finiteVerb->getAttribute('mi');
+					#print STDERR $finiteVerb->toString;
+	
+					# relative clauses where head noun is personal pronoun of local person (1/2)
+					# if verb agrees-> subj, (check frame), if not -> not agent
+					# e.g. 'yo que soy tan floja'
+					if($headNounMI =~ /^PP/)
 					{
-						&setVerbform($relClause,0);
-					}
-					else
-					{
-						&setVerbform($relClause,1);
-					}
-				}
-				else # if not preceded by preposition nor local person
-				{ 
-					# if no congruence, head noun is not subject of relative clause -> attributive, not applicable for proper names (those don't indicate number), so if lemma was splitted from a complex name -> ignore number
-					if(!&isCongruentHeadRelClause($headNoun, $finiteVerb) && $headNounLem !~ /_/)
-					{
-						&setVerbform($relClause,0);
-					}
-					# else, if person is non-local & number of head noun and verb are the same, 
-					# check verb frame from lexicon
-					else
-					{
-					#get verb lemma
-					my $mainVerb = &getMainVerb($relClause);
-					if($mainVerb)
-					{
-						my $lem = $mainVerb->getAttribute('lem');
-					#	print STDERR "verb:$lem ";
-								
-						if(exists $lexEntriesWithFrames{$lem})
+						if(!&isCongruentPronoun($headNoun, $finiteVerb))
 						{
-							my @frameTypes = @{$lexEntriesWithFrames{$lem}};
-							#print STDERR @frameTypes;
-							#print STDERR "\n\n";
-							# if there is only one verb frame in the lexicon, assume this is the actual verb frame in this relative clause
-							if(scalar(@frameTypes) == 1)
+							&setVerbform($relClause,0);
+						}
+						else
+						{
+							&setVerbform($relClause,1);
+						}
+					}
+					else # if not preceded by preposition nor local person
+					{ 
+						# if no congruence, head noun is not subject of relative clause -> attributive, not applicable for proper names (those don't indicate number), so if lemma was splitted from a complex name -> ignore number
+						if(!&isCongruentHeadRelClause($headNoun, $finiteVerb) && $headNounLem !~ /_/)
+						{
+							&setVerbform($relClause,0);
+						}
+						# else, if person is non-local & number of head noun and verb are the same, 
+						# check verb frame from lexicon
+						else
+						{
+						#get verb lemma
+						my $mainVerb = &getMainVerb($relClause);
+						if($mainVerb)
+						{
+							my $lem = $mainVerb->getAttribute('lem');
+						#	print STDERR "verb:$lem ";
+									
+							if(exists $lexEntriesWithFrames{$lem})
 							{
-								my $frame = @frameTypes[0];
-								&evaluateSingleFrame($relClause, $frame, $lem, $headNounLem);
-							}
-							elsif(scalar(@frameTypes) > 1)
-							{
-#								print STDERR "$lem:\n";
-#								foreach my $frame (@frameTypes)
-#								{
-#									print STDERR "$frame\n";	
-#								}
-#								print STDERR "\n";
-
-								for (my $i=0;$i<scalar(@frameTypes);$i++)
-							 	{
-						 			my $frame = @frameTypes[$i];
-						 			
-						 			#if d-obj or iobj present, delete all intransitive frames
-						 			if($frame =~ /[BCD].+default|A.+#(anticausative|resultative|intransitive|passive)/ && (&hasDobj($relClause) || &hasIobj($relClause)) )
-						 			{# print "delete $frame\n";
-						 				splice(@frameTypes,$i,1);
-						 				$i--;
-						 			}
-						 		
-						 			# disambiguate cases with type='object-extension', only 3 lemmas: caminar, correr, navegar
-						 			elsif($frame =~ /object_extension/)
-						 			{
-						 				if($lem =~ /caminar|correr/ && ($headNounLem =~ /paso|camino|metros|legua|milla/))
-						 				{
-						 					&setVerbform($relClause,0);
-						 					undef(@frameTypes);
-						 					last;
-						 				}
-						 				elsif($lem =~ /navegar/ && $headNounLem =~ /espacio/)
-						 				{
-						 					&setVerbform($relClause,0);
-						 					undef(@frameTypes);
-						 					last;
-						 				}
-						 				else
-						 				{
-						 					splice(@frameTypes,$i,1);
-						 					$i--;
-						 				}
-						 			}
-						 		
-						 			elsif($frame =~ /#(anticausative|passive|impersonal)/)
-						 			{
-						 				# if no 'se', delete frames 'inergative', 'anticausative', 'passive' and 'impersonal'
-						 				# note that passives with ser+participles are handled above, so we have to consider only medio-passives with 'se' here
-						 				# 'la casa que se vendió..'
-						 				if(!&hasRflx($relClause))
-						 				{
-						 					splice(@frameTypes,$i,1);
-						 					$i--;
-						 				}
-						 				# if rel-clause contains a verbform with 'se', head noun is subject if anticausative
-										# -el hombre que se afeita
-										# else if se + impersonal -> head noun is NOT subject
-						 				# BUT passive: las casas que se venden (verb matches number of casas), yet casa is not agent
-										# so verbform should be attributive (rantinan wasikuna, not rantiq wasikuna)
-										# -> some verbs have anticausative AND passive frames, but in those cases, the passive is NOT a 'se' form (e.g. dañarse (antic) vs ser dañado)
-						 				else
-						 				{
-						 					# if 'se' and no impersonal or passive frame: either anticausative or reflexive -> head noun is agent
-						 					# NOTE: 6 verbs have anticausative AND impersonal frames (cambiar, despreciar, esperar, hacer, reconstruir, retirar)
-						 					# in those cases: take anticausative as default
-						 					
-						 					#check if parser has labeled 'se' as 'impers' -> in this case: not agentive
-						 					if($relClause->exists('NODE/NODE[@lem="se" and @rel="impers"]'))
-						 					{
-						 						&setVerbform($relClause,0);
-						 						undef(@frameTypes);
-						 						last;						 						
-						 					}	
-						 					
-						 					# if no passive/impersonal frames-> anticausative or reflexive ('el hombre que se afeita'): agentive
-						 					elsif(!grep {$_ =~ /impersonal|passive/} @frameTypes)
-						 					{
-						 						&setVerbform($relClause,1);
-						 						undef(@frameTypes);
-						 						last;
-						 					}
-						 					#else, if se+impersonal or se+passive
-						 					# -> head noun is not agent, unless there's a sp-obj..then it's probably a reflexive use and head noun is agent (?)
-						 					else
-						 					{
-						 						if(&hasDorSPobj($relClause))
-						 						{
-						 							&setVerbform($relClause,1);
-						 						}
-						 						else
-						 						{
-						 							&setVerbform($relClause,0);
-						 						}
-						 						undef(@frameTypes);
-						 						last;
-						 					}
-						 				}
-						 			}
-						 			
-						 			# if transitive frame and d-obj present but no iobj, evaluate as transitive
-						 			elsif($frame =~ /A(1|2).+default|[BCD].+#causative|D.+(cognate_object|object_extension)/ && &hasDobj($relClause) && !&hasIobj($relClause))
-						 			{
-						 				&evaluateSingleFrame($relClause, $frame);
-						 				undef(@frameTypes);
-						 				last;
-						 			}
-						 		
-						 			# ditransitive verbs (A31-35): if iobj is head noun, rel. prn is 'a que', 'a quien'
-						 			# -> only disambiguation needed for subj/obj -> if 'que/quien' rel-clause and no iobj
-						 			# -> not ditransitive
-						 			# if iobj present: select ditransitive frame for this clause & evaluate
-						 			elsif($frame =~ /A3.+default/)
-						 			{
-							 			if(&hasIobj($relClause))
-						 				{
-						 					&evaluateSingleFrame($relClause, $frame);
-						 					undef(@frameTypes);
-						 					last;
-						 				}
-						 				#if no iobj, but dobj, and no transitive frame present: evaluate this frame (can happen with e.g. decir, mostrar: those have only transitive
-						 				# frame, yet they can occur onyl with a complement clause (no iobj))
-						 				elsif(&hasDorSPobj($relClause) && !grep {$_ =~ /A1|A2/} @frameTypes )
-						 				{
-						 					&evaluateSingleFrame($relClause, $frame);
-						 					undef(@frameTypes);
-						 					last;
-						 				}
-						 				# else, delete frame, unless it's the only frame left
-						 				else
-						 				{
-						 					if(scalar(@frameTypes) > 1)
-						 					{
-						 						splice(@frameTypes,$i,1);
-						 						$i--;
-						 					}
-						 				}
-						 			}
-						 		
-						 		}
-						 
-								# cases, where verb has more than 1 frame and neither subj nor obj are present as np in rel-clause	
-								if(@frameTypes)
-								{ 
-#									print STDERR "frames left for $lem:\n";
-#									foreach my $frame (@frameTypes)
-#									{
-#										print STDERR "$frame\n";	
-#									}
-#									print STDERR "\n";
-									if(scalar(@frameTypes) == 1)
+								my @frameTypes = @{$lexEntriesWithFrames{$lem}};
+								#print STDERR @frameTypes;
+								#print STDERR "\n\n";
+								# if there is only one verb frame in the lexicon, assume this is the actual verb frame in this relative clause
+								if(scalar(@frameTypes) == 1)
+								{
+									my $frame = @frameTypes[0];
+									&evaluateSingleFrame($relClause, $frame, $lem, $headNounLem);
+								}
+								elsif(scalar(@frameTypes) > 1)
+								{
+	#								print STDERR "$lem:\n";
+	#								foreach my $frame (@frameTypes)
+	#								{
+	#									print STDERR "$frame\n";	
+	#								}
+	#								print STDERR "\n";
+	
+									for (my $i=0;$i<scalar(@frameTypes);$i++)
+								 	{
+							 			my $frame = @frameTypes[$i];
+							 			
+							 			#if d-obj or iobj present, delete all intransitive frames
+							 			if($frame =~ /[BCD].+default|A.+#(anticausative|resultative|intransitive|passive)/ && (&hasDobj($relClause) || &hasIobj($relClause)) )
+							 			{# print "delete $frame\n";
+							 				splice(@frameTypes,$i,1);
+							 				$i--;
+							 			}
+							 		
+							 			# disambiguate cases with type='object-extension', only 3 lemmas: caminar, correr, navegar
+							 			elsif($frame =~ /object_extension/)
+							 			{
+							 				if($lem =~ /caminar|correr/ && ($headNounLem =~ /paso|camino|metros|legua|milla/))
+							 				{
+							 					&setVerbform($relClause,0);
+							 					undef(@frameTypes);
+							 					last;
+							 				}
+							 				elsif($lem =~ /navegar/ && $headNounLem =~ /espacio/)
+							 				{
+							 					&setVerbform($relClause,0);
+							 					undef(@frameTypes);
+							 					last;
+							 				}
+							 				else
+							 				{
+							 					splice(@frameTypes,$i,1);
+							 					$i--;
+							 				}
+							 			}
+							 		
+							 			elsif($frame =~ /#(anticausative|passive|impersonal)/)
+							 			{
+							 				# if no 'se', delete frames 'inergative', 'anticausative', 'passive' and 'impersonal'
+							 				# note that passives with ser+participles are handled above, so we have to consider only medio-passives with 'se' here
+							 				# 'la casa que se vendió..'
+							 				if(!&hasRflx($relClause))
+							 				{
+							 					splice(@frameTypes,$i,1);
+							 					$i--;
+							 				}
+							 				# if rel-clause contains a verbform with 'se', head noun is subject if anticausative
+											# -el hombre que se afeita
+											# else if se + impersonal -> head noun is NOT subject
+							 				# BUT passive: las casas que se venden (verb matches number of casas), yet casa is not agent
+											# so verbform should be attributive (rantinan wasikuna, not rantiq wasikuna)
+											# -> some verbs have anticausative AND passive frames, but in those cases, the passive is NOT a 'se' form (e.g. dañarse (antic) vs ser dañado)
+							 				else
+							 				{
+							 					# if 'se' and no impersonal or passive frame: either anticausative or reflexive -> head noun is agent
+							 					# NOTE: 6 verbs have anticausative AND impersonal frames (cambiar, despreciar, esperar, hacer, reconstruir, retirar)
+							 					# in those cases: take anticausative as default
+							 					
+							 					#check if parser has labeled 'se' as 'impers' -> in this case: not agentive
+							 					if($relClause->exists('NODE/NODE[@lem="se" and @rel="impers"]'))
+							 					{
+							 						&setVerbform($relClause,0);
+							 						undef(@frameTypes);
+							 						last;						 						
+							 					}	
+							 					
+							 					# if no passive/impersonal frames-> anticausative or reflexive ('el hombre que se afeita'): agentive
+							 					elsif(!grep {$_ =~ /impersonal|passive/} @frameTypes)
+							 					{
+							 						&setVerbform($relClause,1);
+							 						undef(@frameTypes);
+							 						last;
+							 					}
+							 					#else, if se+impersonal or se+passive
+							 					# -> head noun is not agent, unless there's a sp-obj..then it's probably a reflexive use and head noun is agent (?)
+							 					else
+							 					{
+							 						if(&hasDorSPobj($relClause))
+							 						{
+							 							&setVerbform($relClause,1);
+							 						}
+							 						else
+							 						{
+							 							&setVerbform($relClause,0);
+							 						}
+							 						undef(@frameTypes);
+							 						last;
+							 					}
+							 				}
+							 			}
+							 			
+							 			# if transitive frame and d-obj present but no iobj, evaluate as transitive
+							 			elsif($frame =~ /A(1|2).+default|[BCD].+#causative|D.+(cognate_object|object_extension)/ && &hasDobj($relClause) && !&hasIobj($relClause))
+							 			{
+							 				&evaluateSingleFrame($relClause, $frame);
+							 				undef(@frameTypes);
+							 				last;
+							 			}
+							 		
+							 			# ditransitive verbs (A31-35): if iobj is head noun, rel. prn is 'a que', 'a quien'
+							 			# -> only disambiguation needed for subj/obj -> if 'que/quien' rel-clause and no iobj
+							 			# -> not ditransitive
+							 			# if iobj present: select ditransitive frame for this clause & evaluate
+							 			elsif($frame =~ /A3.+default/)
+							 			{
+								 			if(&hasIobj($relClause))
+							 				{
+							 					&evaluateSingleFrame($relClause, $frame);
+							 					undef(@frameTypes);
+							 					last;
+							 				}
+							 				#if no iobj, but dobj, and no transitive frame present: evaluate this frame (can happen with e.g. decir, mostrar: those have only transitive
+							 				# frame, yet they can occur onyl with a complement clause (no iobj))
+							 				elsif(&hasDorSPobj($relClause) && !grep {$_ =~ /A1|A2/} @frameTypes )
+							 				{
+							 					&evaluateSingleFrame($relClause, $frame);
+							 					undef(@frameTypes);
+							 					last;
+							 				}
+							 				# else, delete frame, unless it's the only frame left
+							 				else
+							 				{
+							 					if(scalar(@frameTypes) > 1)
+							 					{
+							 						splice(@frameTypes,$i,1);
+							 						$i--;
+							 					}
+							 				}
+							 			}
+							 		
+							 		}
+							 
+									# cases, where verb has more than 1 frame and neither subj nor obj are present as np in rel-clause	
+									if(@frameTypes)
 									{ 
-										my $frame = @frameTypes[0];
-										#print "single frame: $frame\n";
-										&evaluateSingleFrame($relClause, $frame);
-									}
-									elsif(scalar(@frameTypes) > 1)
-									{ 
-										my $semTag;
-										# get semantic tag of head noun, assume it's the first word in the name (except for articles). 
-										# Note that in this case, we have only the word form, so e.g. plural won't be found in noun lexicon
-										if($headNounLem =~ /_/)
-										{
-											my @firstLem = split ( '_', $headNounLem);
-											#print STDERR "$firstLem[0]\n";
-											$semTag = $nounLexicon{$firstLem[0]};
-										}
-										else
-										{
-											 $semTag = $nounLexicon{$headNounLem};
-										}
-										#print STDERR "semtag: $semTag\n";
-										# if subject thematic roles of all frames are agt/cau
-										# -> check if semantics of noun matches thematic roles of agent/causer
-										# one exception: C11 with 'tem' should be agentive as well
-										#print "$lem: @frameTypes\n";
-										if($semTag && !grep {$_ =~ /##(exp|src|ins|loc|pat)/} @frameTypes)
+	#									print STDERR "frames left for $lem:\n";
+	#									foreach my $frame (@frameTypes)
+	#									{
+	#										print STDERR "$frame\n";	
+	#									}
+	#									print STDERR "\n";
+										if(scalar(@frameTypes) == 1)
 										{ 
-											# no 'tem' in frameTypes: check if head noun matches for agentive semantics
-											if(!grep {$_ =~ /##tem/} @frameTypes)
+											my $frame = @frameTypes[0];
+											#print "single frame: $frame\n";
+											&evaluateSingleFrame($relClause, $frame);
+										}
+										elsif(scalar(@frameTypes) > 1)
+										{ 
+											my $semTag;
+											# get semantic tag of head noun, assume it's the first word in the name (except for articles). 
+											# Note that in this case, we have only the word form, so e.g. plural won't be found in noun lexicon
+											if($headNounLem =~ /_/)
 											{
-												# check if creg/obj in rel-clause, in this case, assume head is subject-> according to frame->agentive
-												if(!&hasSubjRel($relClause) and (&hasDorSPobj($relClause) or &hasIobj($relClause) ))
-												{
-													&setVerbform($relClause,1);
-												}
-												elsif($semTag =~ /ani|soc|hum|pot/)
-												{
-													&setVerbform($relClause,1);
-												}
-												else
-												{
-													&setVerbform($relClause,0);
-												}
+												my @firstLem = split ( '_', $headNounLem);
+												#print STDERR "$firstLem[0]\n";
+												$semTag = $nounLexicon{$firstLem[0]};
 											}
-											#if 'tem' is in a C11 frame, assume agentive
-											elsif(grep {$_ =~ /##tem/} @frameTypes)
+											else
 											{
-												#if only with C11
-												if(!grep {$_ =~ /([BD]|C[234]).+##tem/} @frameTypes)
+												 $semTag = $nounLexicon{$headNounLem};
+											}
+											#print STDERR "semtag: $semTag\n";
+											# if subject thematic roles of all frames are agt/cau
+											# -> check if semantics of noun matches thematic roles of agent/causer
+											# one exception: C11 with 'tem' should be agentive as well
+											#print "$lem: @frameTypes\n";
+											if($semTag && !grep {$_ =~ /##(exp|src|ins|loc|pat)/} @frameTypes)
+											{ 
+												# no 'tem' in frameTypes: check if head noun matches for agentive semantics
+												if(!grep {$_ =~ /##tem/} @frameTypes)
 												{
-													if(&hasRflx($relClause))
-													{
-														&setVerbform($relClause,0);
-													}
-													else
+													# check if creg/obj in rel-clause, in this case, assume head is subject-> according to frame->agentive
+													if(!&hasSubjRel($relClause) and (&hasDorSPobj($relClause) or &hasIobj($relClause) ))
 													{
 														&setVerbform($relClause,1);
 													}
+													elsif($semTag =~ /ani|soc|hum|pot/)
+													{
+														&setVerbform($relClause,1);
+													}
+													else
+													{
+														&setVerbform($relClause,0);
+													}
 												}
-												else
+												#if 'tem' is in a C11 frame, assume agentive
+												elsif(grep {$_ =~ /##tem/} @frameTypes)
 												{
-													&guess($relClause,\@frameTypes,$semTag);
+													#if only with C11
+													if(!grep {$_ =~ /([BD]|C[234]).+##tem/} @frameTypes)
+													{
+														if(&hasRflx($relClause))
+														{
+															&setVerbform($relClause,0);
+														}
+														else
+														{
+															&setVerbform($relClause,1);
+														}
+													}
+													else
+													{
+														&guess($relClause,\@frameTypes,$semTag);
+													}
 												}
 											}
-										}
-										# if only pat/tem and tem not with C11 -> not agentive
-										elsif($semTag && !grep {$_ =~ /##(exp|src|ins|loc|agt|cau)/} @frameTypes && !grep {$_ =~ /C11.+##tem/} @frameTypes)
-										{
-											&setVerbform($relClause,0);
-										}
-								
-										# else: not really resolvable, take a guess:
-										# TODO: or is better to this unresolved, generate all possibilities and let the language model decide which one's best?
-										else
-										{
-											if($semTag)
+											# if only pat/tem and tem not with C11 -> not agentive
+											elsif($semTag && !grep {$_ =~ /##(exp|src|ins|loc|agt|cau)/} @frameTypes && !grep {$_ =~ /C11.+##tem/} @frameTypes)
 											{
-												&guess($relClause,\@frameTypes,$semTag);
+												&setVerbform($relClause,0);
 											}
-											#noun not in lexicon, if NP00SP0 -> hum, else: guess its a unanimated common noun (cnc)
+									
+											# else: not really resolvable, take a guess:
+											# TODO: or is better to this unresolved, generate all possibilities and let the language model decide which one's best?
 											else
-											{ 
-												if($headNounMI eq 'NP00SP0')
+											{
+												if($semTag)
 												{
-													$semTag = 'hum';
 													&guess($relClause,\@frameTypes,$semTag);
 												}
-												elsif($headNounMI eq 'NP00O00')
-												{
-													$semTag = 'soc';
-													&guess($relClause,\@frameTypes,$semTag);
-												}
+												#noun not in lexicon, if NP00SP0 -> hum, else: guess its a unanimated common noun (cnc)
 												else
 												{ 
-													$semTag = 'cnc';
-													&guess($relClause,\@frameTypes,$semTag);
+													if($headNounMI eq 'NP00SP0')
+													{
+														$semTag = 'hum';
+														&guess($relClause,\@frameTypes,$semTag);
+													}
+													elsif($headNounMI eq 'NP00O00')
+													{
+														$semTag = 'soc';
+														&guess($relClause,\@frameTypes,$semTag);
+													}
+													else
+													{ 
+														$semTag = 'cnc';
+														&guess($relClause,\@frameTypes,$semTag);
+													}
 												}
 											}
 										}
@@ -539,10 +551,9 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 								}
 							}
 						}
-					}
+						}
 					}
 				}
-			}
 			}
 		}
 	}
@@ -642,9 +653,12 @@ sub setVerbform {
 			}
 		}
 	}
-	elsif($verbchunk &&$isSubj == 2)
-	{
-		my @verbforms = $verbchunk->findnodes('child::CHUNK/NODE[@pos="vs"]');
+	elsif($verbchunk && $isSubj == 2)
+	{ 
+		my @verbforms = $verbchunk->findnodes('self::CHUNK/NODE[@pos="vs"]');
+		my @verbforms2 = $verbchunk->findnodes('child::CHUNK/NODE[@pos="vs"]');
+		push(@verbforms,@verbforms2);
+		
 		foreach my $verbform (@verbforms)
 		{
 				$verbform->setAttribute('verbform', 'rel:agentive');
@@ -662,7 +676,7 @@ sub evaluateSingleFrame{
 	$frame =~ /##(.+)/;
 	my $thematicRoleOfSubj = $1;
 	
-	my $semTag = $nounLexicon{$headNounLem};			
+	my $semTag = $nounLexicon{$headNounLem};		
 	
 	if($relClause)
 	{
@@ -851,6 +865,8 @@ sub	evaluateSemTags{
 		{
 			&setVerbform($relClause,0);
 		}
+		# for training ML: mark guessed forms
+		$relClause->setAttribute('guessed', '1');
 	}
 }			
 
@@ -896,13 +912,17 @@ sub guess{
 		{
 			&setVerbform($relClause,0);
 		}
+		# for training ML: mark guessed forms
+		$relClause->setAttribute('guessed', '1');
 	}
 }
 
 
 sub hasSubjRel{
 	my $relClauseNode = $_[0];
-	#print STDERR "rel clause: \n".$relClauseNode->toString."\n";
+#	print STDERR "rel clause: \n".$relClauseNode->toString."\n";
+#	my $r = $relClauseNode->exists('CHUNK[@si="suj"]');
+#	print STDERR "returned: $r\n";
 	return ($relClauseNode->exists('CHUNK[@si="suj"]'));
 
 }

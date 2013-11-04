@@ -741,12 +741,18 @@ sub getHeadNoun($;$){
 		#$headNoun = @{$parentchunk->findnodes('descendant::NODE[starts-with(@mi,"N") or starts-with(@mi,"PP")][1]')}[-1];
 		$headNoun = @{$parentchunk->findnodes('descendant::NODE[starts-with(@mi,"N") or starts-with(@mi,"PP")][1]')}[-1];
 	}
+	# if this is a coordinated relclause -> look for head noun one level higher up
+	elsif($parentchunk->exists('self::CHUNK[@type="coor-v"]/NODE/NODE[@pos="pr" or NODE[@pos="pr"] ]'))
+	{
+		($headNoun) = $parentchunk->findnodes('parent::CHUNK[@type="sn" or @type="coor-n"]/descendant::NODE[starts-with(@mi,"N") or starts-with(@mi,"PP")][1]');
+		#print STDERR $headNoun->toString()."\n";
+	}
 
 	#assure that head noun is above rel-clause (in cases of wrong analysis)
 	if($headNoun && &isAncestor($relClause,$headNoun))
-		{
+	{
 			undef($headNoun);
-		}
+	}
 	#if head noun is defined, return 
 	if($headNoun)
 	{
@@ -755,7 +761,7 @@ sub getHeadNoun($;$){
 	else
 	{   #get sentence id
 		my $sentenceID = $relClause->findvalue('ancestor::SENTENCE/@ord');
-		print STDERR "Wrong analysis in sentence nr. $sentenceID? head chunk is: ";
+		print STDERR "Wrong analysis in sentence nr. $sentenceID? no head noun found, head chunk is: ";
 		print STDERR $parentchunk->toString();
 		return -1;
 	}
