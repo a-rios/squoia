@@ -99,12 +99,14 @@ foreach my $sentence (@sentenceList)
  				}
  				if($conjunction){print STDERR "conj in ".$verbChunk->getAttribute('ord').": ".$conjunction->toString();}
  				
- 				#if this is a coordinated verb to a relative clause, just copy verbform from head to this chunk
- 				if($verbChunk->exists('parent::CHUNK[@type="coor-v"]/NODE[starts-with(@verbform,"rel")]'))
+ 				#if this is a coordinated verb to a relative clause that somehow has no verbform yet, just copy verbform from head to this chunk
+ 				if($verbChunk->exists('parent::CHUNK[@type="coor-v"]/NODE[starts-with(@verbform,"rel")]') && $verbChunk->exists('descendant::NODE[@pos="pr"]') )
  				{
  					my $parent = $verbChunk->parentNode();
  					if($parent){
  						$verbChunk->setAttribute('verbform', $parent->getAttribute('verbform'));
+ 						my $guessed = $parent->hasAttribute('guessed');
+						if($guessed){$verbChunk->setAttribute('guessed', '1');}
  					}	
  				}
  				# if this verb has a 'tener que' part or deber +inf -> obligative, TODO: hay que?
@@ -115,8 +117,8 @@ foreach my $sentence (@sentenceList)
  				}
  				# if this is hay/había/habrá que + infinitive -nan kan
  				# note that parser can attach 'que' to 'hay' but also to infinitive! 
- 				elsif(( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || ( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/NODE[@lem="que"]]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]') ) )
- 				{
+ 				elsif(( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que" or @lem="de"]') ) || ( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/NODE[@lem="que"]]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]') ) )
+ 				{ 
  					$nbrOfFiniteForms++;
  					$verbChunk->setAttribute('verbform','main');
  					#$verbChunk->setAttribute('delete','yes');
