@@ -36,7 +36,13 @@ my %nounLexicon = %{ retrieve("NounLex") };
 #	print "\n";
 #}
 
-# TODO: quedarse/acabar de + adjetivo -> resultativo -> not.agentive
+# TODO: quedarse/acabar de + adjetivo -> resultativo -> not.agentive  (kasqa)
+# TODO: con haber de, deber, tener/hay que  +inf -> obligative (?) -> -na kaq (?) (excepción: tener que ver con algo)
+# TODO: verse +adj -> resultative -> not.agentive, que resulta en/+adj ->  (adj-yasqa) oder adj kaq, acabar +adj -> adj-yasqa, pred tukukuq
+# encontrarse de/en -> kaq
+# contar con -> agentive
+# morir(se) -> not.agentive
+# que sigue sin -> mana(raq) --spa kaq
 # (done--TODO: coordinated relclauses -> not always the same! one might be agentive, the other not.. disambiguate seperately!)
 
 my $dom2    = XML::LibXML->load_xml( IO => *STDIN );
