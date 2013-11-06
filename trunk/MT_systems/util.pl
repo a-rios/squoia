@@ -761,8 +761,8 @@ sub getHeadNoun($;$){
 	else
 	{   #get sentence id
 		my $sentenceID = $relClause->findvalue('ancestor::SENTENCE/@ord');
-		print STDERR "Wrong analysis in sentence nr. $sentenceID? no head noun found, head chunk is: ";
-		print STDERR $parentchunk->toString();
+		#print STDERR "Wrong analysis in sentence nr. $sentenceID? no head noun found, head chunk is: ";
+		#print STDERR $parentchunk->toString();
 		return -1;
 	}
 }
