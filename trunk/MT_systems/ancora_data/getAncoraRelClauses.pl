@@ -84,12 +84,12 @@ my %mapMorphsToClasses = (
 #	unit
 
 		# head noun lemma and semantic classes
-		print STDOUT "headLem,abs,ani,bpart,cnc,hum,loc,mat,mea,plant,pot,sem,soc,tmp,unit,";
+		print STDOUT "headLem,abs,ani,bpart,cnc,hum,nloc,mat,mea,plant,pot,sem,soc,tmp,unit,";
 		
 		# head noun: pos
 		# type of proper noun not given in Ancora!
 		#print STDOUT "Num,cat,properType";
-		print STDOUT "Num,cat,";
+		print STDOUT "nNum,nCat,";
 		
  		# print verb lemma and senses (wordnet)
         print STDOUT "Lem,Sem29,Sem30,Sem31,Sem32,Sem33,Sem34,Sem35,Sem36,Sem37,Sem38,Sem39,Sem40,Sem41,Sem42,Sem43,";
@@ -97,10 +97,10 @@ my %mapMorphsToClasses = (
 		print STDOUT "A11,A12,A13,A21,A22,A23,A31,A32,A33,A34,A35,B11,B12,B21,B22,B23,C11,C21,C31,C41,C42,D11,D21,D31,";
 		
 		# verb: thematic roles of subject
-		print STDOUT "agt,cau,exp,ins,loc,pat,src,tem,";
+		print STDOUT "agt,cau,exp,ins,vloc,pat,src,tem,";
 		
 		# verb morphology
-		print STDOUT "Tense,Mod,Pers,Num,hasSE,";
+		print STDOUT "vTense,vMod,vPers,vNum,hasSE,";
 		
 		# last row: class
 		print STDOUT "relpron,agentive\n";;

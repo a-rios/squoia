@@ -39,11 +39,12 @@ my %nounLexicon = %{ retrieve("NounLex") };
 # TODO: quedarse/acabar de + adjetivo -> resultativo -> not.agentive  (kasqa)
 # TODO: con haber de, deber, tener/hay que  +inf -> obligative (?) -> -na kaq (?) (excepción: tener que ver con algo)
 # TODO: verse +adj -> resultative -> not.agentive, que resulta en/+adj ->  (adj-yasqa) oder adj kaq, acabar +adj -> adj-yasqa, pred tukukuq
-# encontrarse de/en -> kaq
+# TODO: llamarse/titularse -> sutichasqa -> never agentive
 # contar con -> agentive
 # morir(se) -> not.agentive
 # que sigue sin -> mana(raq) --spa kaq
 # (done--TODO: coordinated relclauses -> not always the same! one might be agentive, the other not.. disambiguate seperately!)
+# (done) encontrarse de/en -> kaq
 
 my $dom2    = XML::LibXML->load_xml( IO => *STDIN );
 
@@ -221,9 +222,10 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 			}
 		}
 		#if main verb in rel clause is 'ser' -> always attributive, never agentive head noun (passive or attributive)
-		elsif($relClause->exists('child::NODE[@lem="ser"]'))
+		# same with encontrarse en/adj
+		elsif($relClause->exists('child::NODE[@lem="ser"]') or ($relClause->exists('child::NODE[@lem="encontrar"]') and $relClause->exists('descendant::NODE[@form="se" or @form="Se"]') ) )
 		{
-			#set to 'delete' (no copula in Quechua in this case)
+			#set to 'agentive' -> kaq
 			&setVerbform($relClause,2);
 		}
 		# with 'lo que', lo cual, (el que, la que..?) -> head is pronoun, else 'a la/el cual'
@@ -660,9 +662,9 @@ sub setVerbform {
 		}
 	}
 	elsif($verbchunk && $isSubj == 2)
-	{ 
-		my @verbforms = $verbchunk->findnodes('self::CHUNK/NODE[@pos="vs"]');
-		my @verbforms2 = $verbchunk->findnodes('child::CHUNK/NODE[@pos="vs"]');
+	{
+		my @verbforms = $verbchunk->findnodes('self::CHUNK/NODE[@lem="ser" or @lem="encontrar"]');
+		my @verbforms2 = $verbchunk->findnodes('child::CHUNK/NODE[@lem="ser" or @lem="encontrar"]');
 		push(@verbforms,@verbforms2);
 		
 		foreach my $verbform (@verbforms)
