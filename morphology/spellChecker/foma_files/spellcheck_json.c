@@ -1,4 +1,13 @@
-/*                             */
+/*
+This document has been modified to fit the requirements from the 
+Online Quechua spellchecking service at hinantin.com, its use locates
+at the server side.
+
+Consider modify this program to be used through a UDP service.
+This new version of the program does not contain a high maintainability rate, consider
+modification.
+
+*/
 
 
 #include <stdlib.h>
@@ -158,7 +167,13 @@ int main(int argc, char *argv[]) {
                 }
             }
      */
-    /* JUST READ ONE LINE, WHICH WILL BE SPLITTED WITH COMMAS */
+
+    /* 
+    Just read one line (words) which has the following structure:
+    Kuraq,runaqa,erqekunan,karanku,chaypaspisillan,yuyarinku
+    , each word will be obtain using the comma pattern as a separator
+    */
+    
     if (get_next_line() != NULL) {
         char* token = strtok(line, ",");
         while (token != NULL) {
@@ -172,7 +187,7 @@ int main(int argc, char *argv[]) {
     }
     printf("]");
     printf("%s]", corr);
-    printf(", o: {lang: \"qu_SPA\"}");
+    printf(", o: {lang: \"qu_SPA\"}");//CONSIDER MODIFYING TO AVOID EMBEDDED CODE
     printf("})");
 	if ( indexCorrectWords == 0 ) {    // correct = 0
 		if ( indexIncorrectWords == 0 ) { }    // incorrect = 0
@@ -230,7 +245,12 @@ char *get_next_line() {
     }
     return r;
 }
-
+/*LAST MODIFIED ON 28/10/2013 (dd/mm/YYYY)
+s : single word to be analyzed, e.g. waio
+(different from the original version which analyzed a complete line with multiple words
+"kaypi kashani")
+NOTE: Consider modifying the method name to "handle_entry"/"hand_word"
+*/
 void handle_line(char *s) {
     char *result, *tempstr;
     int normalized = 0;
@@ -317,7 +337,7 @@ void handle_line(char *s) {
                     if (firstIncorrWord == 0) {
                         printf(",");
                     }
-                    printf("[\"%s\",[\" \"", s);
+                    printf("[\"%s\",[\"???\"]]", s);
                     firstIncorrWord = 0;
                 } else {
                     if (firstIncorrWord == 0) {
