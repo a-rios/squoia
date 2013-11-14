@@ -221,12 +221,19 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 				$relClause->setAttribute('IHRC', 'yes');
 			}
 		}
-		#if main verb in rel clause is 'ser' -> always attributive, never agentive head noun (passive or attributive)
+		#if main verb in rel clause is 'ser' -> set to agentive 'kaq'
 		# same with encontrarse en/adj
 		elsif($relClause->exists('child::NODE[@lem="ser"]') or ($relClause->exists('child::NODE[@lem="encontrar"]') and $relClause->exists('descendant::NODE[@form="se" or @form="Se"]') ) )
 		{
 			#set to 'agentive' -> kaq
 			&setVerbform($relClause,2);
+		}
+		#if main verb in rel clause is 'llamar/titular' + se -> always attributive, never agentive 
+		# set to sutinchasqa
+		elsif($relClause->exists('child::NODE[@lem="titular" or @lem="llamar"]') and $relClause->exists('descendant::NODE[@form="se" or @form="Se"]')  )
+		{
+			#set to 'agentive' -> kaq
+			&setVerbform($relClause,0);
 		}
 		# with 'lo que', lo cual, (el que, la que..?) -> head is pronoun, else 'a la/el cual'
 		# la cual, el cual -> subj
@@ -299,8 +306,8 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 							if(exists $lexEntriesWithFrames{$lem})
 							{
 								my @frameTypes = @{$lexEntriesWithFrames{$lem}};
-								#print STDERR @frameTypes;
-								#print STDERR "\n\n";
+								print STDERR @frameTypes;
+								print STDERR "\n\n";
 								# if there is only one verb frame in the lexicon, assume this is the actual verb frame in this relative clause
 								if(scalar(@frameTypes) == 1)
 								{
@@ -321,8 +328,8 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 							 			my $frame = @frameTypes[$i];
 							 			
 							 			#if d-obj or iobj present, delete all intransitive frames
-							 			if($frame =~ /[BCD].+default|A.+#(anticausative|resultative|intransitive|passive)/ && (&hasDobj($relClause) || &hasIobj($relClause)) )
-							 			{# print "delete $frame\n";
+							 			if($frame =~ /[BCD].+default|A.+#(anticausative|resultative|intransitive|passive)/ && (&hasDobj($relClause) || &hasIobj($relClause)) && scalar(@frameTypes)>1)
+							 			{# print STDERR "delete $frame\n";
 							 				splice(@frameTypes,$i,1);
 							 				$i--;
 							 			}
@@ -342,7 +349,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 							 					undef(@frameTypes);
 							 					last;
 							 				}
-							 				else
+							 				elsif(scalar(@frameTypes)>1)
 							 				{
 							 					splice(@frameTypes,$i,1);
 							 					$i--;
@@ -354,7 +361,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 							 				# if no 'se', delete frames 'inergative', 'anticausative', 'passive' and 'impersonal'
 							 				# note that passives with ser+participles are handled above, so we have to consider only medio-passives with 'se' here
 							 				# 'la casa que se vendió..'
-							 				if(!&hasRflx($relClause))
+							 				if(!&hasRflx($relClause) && scalar(@frameTypes)>1)
 							 				{
 							 					splice(@frameTypes,$i,1);
 							 					$i--;
