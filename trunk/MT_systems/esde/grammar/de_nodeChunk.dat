@@ -34,6 +34,7 @@ my.pos=/KOUS/&& chunkparent.type=/VP/		subord="yes"	type=subConj,comment="subord
 
 my.pos=/V[AM]FIN/ && parent.pos=/V[VMA]/ && chunkparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
 my.pos=/V[AM]FIN/ && chunkparent.type=/subConj/&&chunkgrandparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
+my.pos=/V[AM]FIN/ && chunkparent.type=/NP-relpro/&&chunkgrandparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
 
 
 # verb periphrase #

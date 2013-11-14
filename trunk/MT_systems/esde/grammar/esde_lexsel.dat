@@ -93,6 +93,9 @@ capital	Kapital		k	my.smi=/NCM/
 colaborador	Mitarbeiterin	k	my.smi=/NCF/
 colaborador	Mitarbeiter	k	my.smi=/NCM/
 
+gracia	Dank		d	my.smi=/NCFS/
+
+
 hermano	Schwester	k	my.smi=/NCF/
 hermano	Bruder		k	my.smi=/NCM/
 

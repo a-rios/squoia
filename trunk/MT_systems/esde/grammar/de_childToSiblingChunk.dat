@@ -23,3 +23,9 @@ my.type=/coConj/&&chunkparent.type=/finVerb/			comment="coConj from finVerb"
 ############################
 
 my.type=finVerb&&chunkparent.type=/subConj/			comment="finVerb from subConj"
+
+###############################
+# Relative Clause Finite Verb #
+###############################
+
+my.type=finVerb&&chunkparent.type=/NP-relpro/			comment="finVerb from NP-relpro"
