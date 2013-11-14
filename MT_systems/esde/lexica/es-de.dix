@@ -2290,9 +2290,10 @@
    <e><p><l>declararse</l><r>sich bekennen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>declarar</l><r>aussagen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>declarar</l><r>bezeugen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>declarar</l><r>bekannt geben</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>declarar</l><r>bekannt|geben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>declarar</l><r>bekunden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>declarar</l><r>deklarieren</r></p><par n="VM_VV_MAIN"/></e>	<!-- Zoll -->
+   <e><p><l>declarar</l><r>erklären</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>declarar</l><r>fest|stellen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>declinar</l><r>ab|lehnen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>declinar</l><r>beugen</r></p><par n="VM_VV_MAIN"/></e>
@@ -12916,6 +12917,7 @@
    <e><p><l>grabación</l><r>Aufnahme</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>grabadora</l><r>Aufnahmegerät</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>grabadora</l><r>Rekorder</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>gracia</l><r>Dank</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>gracia</l><r>Gnade</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gracia</l><r>Grazie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gracia</l><r>Gunst</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -28124,7 +28126,6 @@ sin_contar_con	SPS00
 a_mediados_de
 a_principios_de
 frente_a
-gracias_a
 
 -->
   <!-- Multitoken prepositions: one paradigm with PREP/PREPART for _de/del resp. _a/al not possible because of entry specific "cas" and "adpos" -->
