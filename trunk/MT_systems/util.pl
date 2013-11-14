@@ -123,6 +123,7 @@ sub getFiniteVerb{
 	my $verb = @{$verbchunk->findnodes('child::NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
 	my $verb2Cand = @{$verbchunk->findnodes('child::NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
 	my $verb3Cand = @{$verbchunk->findnodes('child::NODE/NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
+	
 	if($verb)
 	{
 		return $verb;
