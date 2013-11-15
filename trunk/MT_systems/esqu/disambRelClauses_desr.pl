@@ -647,19 +647,21 @@ sub setVerbform {
 			{
 				my $headnoun = &getHeadNoun($verbchunk);
 				my $verbMI = $verbform->getAttribute('mi');
-
-				if($verbMI =~ /1|2|3/ && $headnoun &&&isCongruentHeadRelClause($headnoun, $verbform))
+				unless($headnoun== -1)
 				{
-					$verbform->setAttribute('verbform', 'rel:agentive');
-				}
-				# if main verb is non-finite
-				else
-				{
-					my $finiteVerb = &getFiniteVerb($verbchunk);
-					if($finiteVerb && $headnoun &&  $finiteVerb->getAttribute('mi') =~ /1|2|3/ &isCongruentHeadRelClause($headnoun, $finiteVerb))
+					if($verbMI =~ /1|2|3/ && $headnoun &&&isCongruentHeadRelClause($headnoun, $verbform))
 					{
 						$verbform->setAttribute('verbform', 'rel:agentive');
-					}	
+					}
+					# if main verb is non-finite
+					else
+					{
+						my $finiteVerb = &getFiniteVerb($verbchunk);
+						if($finiteVerb && $headnoun &&  $finiteVerb->getAttribute('mi') =~ /1|2|3/ &isCongruentHeadRelClause($headnoun, $finiteVerb))
+						{
+							$verbform->setAttribute('verbform', 'rel:agentive');
+						}	
+					}
 				}
 			}
 			else

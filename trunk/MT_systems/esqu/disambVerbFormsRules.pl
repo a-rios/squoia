@@ -84,7 +84,7 @@ foreach my $sentence (@sentenceList)
  		{
  			# disambiguation needed only if not relative clause (those are handled separately)
  			if( !&isRelClause($verbChunk) && !$verbChunk->hasAttribute('verbform'))
- 			{  
+ 			{ 
  				my $conjunction;
  				# get conjunction, if present:
  				#  if coordinated, get the conjunction from head of coordination, unless this verb has its own conjunction 
@@ -96,6 +96,10 @@ foreach my $sentence (@sentenceList)
  				elsif($verbChunk->getAttribute('si') ne 'top' || $verbChunk->exists('parent::CHUNK[@type="coor-v"]') && $verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs" or @pos="cc"]'))
  				{
  					$conjunction = @{$verbChunk->findnodes('child::NODE[@cpos="v"]/NODE[@pos="cs" or @pos="cc"]')}[0];
+ 				}
+ 				# mientras, aún no -> might be RG
+ 				if(!$conjunction && $verbChunk->exists('child::CHUNK/NODE[@lem="mientras" or @lem="aun_no" or @lem="aún_no"]')){
+ 					($conjunction) = $verbChunk->findnodes('child::CHUNK/NODE[@lem="mientras" or @lem="aun_no" or @lem="aún_no"][1]');
  				}
  				if($conjunction){print STDERR "conj in ".$verbChunk->getAttribute('ord').": ".$conjunction->toString();}
  				
@@ -144,7 +148,7 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'passive');
  				}
  				# if this is a topicalization with 'ser' -> delete verb, but insert a topic marker
- 				# -> es ahí donde viven -> kaypiQA kaswanku
+ 				# -> es ahí donde viven -> kaypiQA kawsanku
  				elsif($verbChunk->exists('child::NODE[@lem="ser"]') && $verbChunk->findvalue('child::CHUNK[@type="sadv"]/NODE/@lem') =~ /ahí|allá|aquí/ && $verbChunk->exists('descendant::NODE[@lem="donde"]') )
  				{
  					$verbChunk->setAttribute('delete', 'yes');
@@ -162,7 +166,7 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'main');
  				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aunque|porque|con_tal_que|en_cuanto/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aunque|porque|con_tal_que|en_cuanto|después_de_que/ )
  				{
  					#check if same subject 
  					&compareSubjects($verbChunk);
@@ -528,12 +532,17 @@ foreach my $sentence (@sentenceList)
  					}
  					
  				}
- 				# el_hecho_de_que -> perfect +Top
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /el_hecho_de_que/ )
+ 				# el_hecho_de_que, desde que -> perfect +Top
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /el_hecho_de_que|desde_que/ )
  				{
  					$nbrOfNominalForms;
  					$verbChunk->setAttribute('verbform', 'perfect');
- 					$verbChunk->setAttribute('verbmi', '+Top');
+ 					if($conjunction->getAttribute('lem') =~ /el_hecho_de_que/){
+ 						$verbChunk->setAttribute('verbmi', '+Top');
+ 					}
+ 					if($conjunction->getAttribute('lem') =~ /desde_que/){
+ 						$verbChunk->setAttribute('verbmi', '+Abl');
+ 					}
  					
  				}
 				# special case: hace falta que + subjuntivo -> 'hace falta que' -> kan, subj.-verb: +-na 
