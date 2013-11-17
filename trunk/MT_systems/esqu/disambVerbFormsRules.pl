@@ -64,7 +64,8 @@ my $nbrOfVerbChunks=0;
 my $nbrOfNonFiniteChunks=0;
 
 ## TODO: indirect questions with PT -> preguntan cuán efectivo será.., preguntan cómo será..
-## TODO: verbchunks as arguments of nouns: la esperanza de que se sane, el esterotipo de que las mujeres hablan mucho, etc
+## TODO: verbchunks as arguments of nouns: la esperanza de que se sane, el esterotipo de que las mujeres hablan mucho,
+##    la necesidad de que se registren, la prueba de que existen, etc
 ## querer saber -> indirect question
 ## verse +adj/participio -> 'kan', 
 ## resultar +adj, participio -> -sqa, but 'resulta claro que eso afecta a la población..' -> infinitive?
