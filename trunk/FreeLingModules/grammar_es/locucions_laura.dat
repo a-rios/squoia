@@ -809,6 +809,8 @@ a_ultranza a_ultranza RG I
 aún_así aún_así RG I
 aún_con_eso aún_con_eso RG I
 aún_cuando aún_cuando RG I
+aún_no aún_no RG I
+aun_no aun_no RG I
 a_un_lado_y_otro a_un_lado_y_otro RG I
 a_uno_y_otro_lado a_uno_y_otro_lado RG I
 a_un_solo_efecto a_un_solo_efecto RG I
@@ -1568,6 +1570,7 @@ desde_hace desde_hace SPS00 I
 desde_hacía desde_hace SPS00 I
 desde_luego desde_luego RG I
 desde_niño desde_niño RG I
+desde_que desde_que CS I
 desde_que_el_mundo_es_mundo desde_que_el_mundo_es_mundo RG I
 de_seguida de_seguida RG I
 de_segunda_mano de_segunda_mano RG I
@@ -1579,6 +1582,7 @@ de_sol_a_sol de_sol_a_sol RG I
 de_soslayo de_soslayo RG I
 después_de después_de SPS00 I
 después_del después_del SPCMS I
+después_de_que después_de_que CS I
 de_suerte_que de_suerte_que CS I
 de_tal_manera_que de_tal_manera_que CS I
 de_tapadillo de_tapadillo RG I
@@ -2259,6 +2263,7 @@ hacia_mediados_de hacia_mediados_de SPS00 I
 hacia_mediados_del hacia_mediados_del SPCMS I
 hacienda_pública hacienda_pública NCFS000 I
 hasta_cierto_punto hasta_cierto_punto RG I
+hasta_que hasta_que CS I
 hasta_más_ver hasta_más_ver RG I
 hasta_tal_punto_que hasta_tal_punto_que CS I
 hasta_tanto_que hasta_tanto_que CS I
@@ -2577,7 +2582,7 @@ mutatis_mutandis mutatis_mutandis RG I
 muy_de_mañana muy_de_mañana RG I
 naciones_unidas naciones_unidas NCFP000 I
 nada_más_y_nada_menos nada_más_y_nada_menos RG I
-nada_menos_que nada_menos_que CS I
+nada_menos_que nada_menos_que SPS00 I
 naturaleza_humana naturaleza_humana NCFS000 I
 naturaleza_jurídica naturaleza_jurídica NCFS000 I
 navegación_aérea navegación_aérea NCFS000 I
@@ -2599,6 +2604,7 @@ ni_que ni_que CS I
 ni_remotamente ni_remotamente RG I
 ni_rey_ni_roque ni_rey_ni_roque RG I
 ni_suena_ni_truena ni_suena_ni_truena RG I
+ni_siquiera ni_siquiera CC I
 ni_tan_sólo ni_tan_sólo RG I
 ni_tanto_así ni_tanto_así RG I
 ni_tanto_ni_tan_calvo ni_tanto_ni_tan_calvo RG I
@@ -2816,6 +2822,7 @@ por_ende por_ende RG I
 por_en_medio por_en_medio RG I
 por_ensalmo por_ensalmo RG I
 por_entonces por_entonces RG I
+por_eso por_eso CC I
 por_esos_mundos_de_Dios por_esos_mundos_de_Dios RG I
 por_este_lado_de por_este_lado_de SPS00 I
 por_este_lado_del por_este_lado_del SPCMS I
@@ -3143,7 +3150,6 @@ sin_necesidad_del sin_necesidad_del SPCMS I
 sin_ninguna_duda sin_ninguna_duda RG I
 si_no_es_por si_no_es_por SPS00 I
 si_no_es_que si_no_es_que CC I
-sino_que sino_que CC I
 sin_pena_ni_gloria sin_pena_ni_gloria RG I
 sin_perjuicio_de sin_perjuicio_de SPS00 I
 sin_perjuicio_del sin_perjuicio_del SPCMS I
@@ -3435,6 +3441,7 @@ al_tanto al_tanto SPS00 I
 al_tanto_de al_tanto_de SPS00 I
 al_tanto_del al_tanto_del SPCMS I
 con_el_fin_de con_el_fin_de SPS00 I
+con_el_fin_de_que con_el_fin_de_que CS I
 con_el_fin_del con_el_fin_del SPCMS I
 <dar>_igual dar_igual $1:V I
 de_ahora_en_adelante de_ahora_en_adelante RG I

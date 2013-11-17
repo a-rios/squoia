@@ -63,6 +63,13 @@ my $nbrOfAmbigousClauses=0;
 my $nbrOfVerbChunks=0;
 my $nbrOfNonFiniteChunks=0;
 
+## TODO: indirect questions with PT -> preguntan cuán efectivo será.., preguntan cómo será..
+## TODO: verbchunks as arguments of nouns: la esperanza de que se sane, el esterotipo de que las mujeres hablan mucho, etc
+## querer saber -> indirect question
+## verse +adj/participio -> 'kan', 
+## resultar +adj, participio -> -sqa, but 'resulta claro que eso afecta a la población..' -> infinitive?
+## subject clauses -> es posible que no pueden seguir produciendo
+
 foreach my $sentence (@sentenceList)
 {
 	# get all verb chunks and check if they have an overt subject, 
@@ -166,21 +173,21 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('verbform', 'main');
  				}
  				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aunque|porque|con_tal_que|en_cuanto|después_de_que/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aún_cuando|aun_cuando|aunque|porque|con_tal_que|con_tal_de_que|en_cuanto|una_vez_que|después_de_que/ )
  				{
  					#check if same subject 
  					&compareSubjects($verbChunk);
- 					if($conjunction->getAttribute('lem') =~ /porque|con_tal_que/ )
+ 					if($conjunction->getAttribute('lem') =~ /porque|con_tal_que|con_tal_de_que/ )
  					{
  						$nbrOfSwitchForms++;
- 						if($sentence->getAttribute('evidentiality') eq 'indirect'){
+ 						if($sentence->getAttribute('evidentiality') eq 'indirect'){z
  							$verbChunk->setAttribute('chunkmi', '+IndE');
  						}
  						else{
  							$verbChunk->setAttribute('chunkmi', '+DirE');
  						}
  					}
- 					elsif($conjunction->getAttribute('lem') =~ /aunque|bien|bien_si/ )
+ 					elsif($conjunction->getAttribute('lem') =~ /aunque|bien|bien_si|si_bien/ )
  					{
  						$nbrOfSwitchForms++;
  						$verbChunk->setAttribute('verbmi', '+Add');
@@ -211,7 +218,7 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('conj', 'manaraq');
  				}
  				# if this a subordinated  clause with a finite verb (in Quechua) (TODO: ni_siquiera -> Adverbio??)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|y_cuando|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|por_eso|ya_que|aun|aún|aun_no|aún_no/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|y_cuando|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|puesto_que|por_eso|ya_que|aun$|aún$|aun_no|aún_no/ )
  				{	
  					# if coordinated chunk: take verbform from head
  				    my $parent = $verbChunk->parentNode();
@@ -276,7 +283,7 @@ foreach my $sentence (@sentenceList)
 	 					{
 	 						$verbChunk->setAttribute('postpos', 'ima');
 	 					}
-	 					elsif($conjunction->getAttribute('lem') =~ /entonces|pues/ )
+	 					elsif($conjunction->getAttribute('lem') =~ /entonces|pues|puesto_que/ )
 	 					{
 	 						$verbChunk->setAttribute('conj', 'hinaspaqa');
 	 					}
