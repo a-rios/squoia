@@ -8,7 +8,7 @@
 # --------------------------------------------------------------------------------------------------------------------------- #
 ## Interrogative clause
 # mark the main clause if it contains an interrogative punctuation sign
-my.type=P-eos&&child.smi=Fit	inter			my.type=VP&&my.si=top		senttype		parent		1to2		overwrite
+my.type=P-eos&&child.smi=/Fit|FIT/	inter		my.type=VP&&my.si=top		senttype		parent		1to2		overwrite
 #xpath{//CHUNK[@type="P-eos" and NODE[@smi="Fit"]]}	inter	xpath{//CHUNK[@type="VP" and @si="top"}		senttype	parent	1to2	overwrite
 
 

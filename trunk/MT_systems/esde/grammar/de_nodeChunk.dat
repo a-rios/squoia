@@ -35,7 +35,7 @@ my.pos=/KOUS/&& chunkparent.type=/VP/		subord="yes"	type=subConj,comment="subord
 my.pos=/V[AM]FIN/ && parent.pos=/V[VMA]/ && chunkparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
 my.pos=/V[AM]FIN/ && chunkparent.type=/subConj/&&chunkgrandparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
 my.pos=/V[AM]FIN/ && chunkparent.type=/NP-relpro/&&chunkgrandparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
-
+my.pos=/V[AM]FIN/ && parent.pos=ART && chunkparent.type=/VP/	finVerb="no"	type=finVerb,comment="upgraded oblique node"
 
 # verb periphrase #
 #-----------------#
@@ -63,6 +63,8 @@ my.pos=/VAFIN/ && lsibling.pos=/V.INF/ && chunkparent.type=/VP/			finVerb="no"	t
 	#          </NODE>
 
 my.pos=/PRELS/ && parent.pos=/VV/ && chunkparent.type=/VP/		relat="yes"	type=NP-relpro,comment="relative pronoun"
+#my.pos=/PRELS/ && parent.parent.pos=/VV/ && chunkparent.type=/VP/		relat="yes"	type=NP-relpro,comment="oblique relative pronoun"
+xpath{//CHUNK[contains(@type,"VP")]/NODE[starts-with(@pos,"V")]/NODE[@pos="ART"]/NODE[@pos="PRELS"]}	relat="yes"	type=NP-relpro,comment="oblique relative pronoun"
 
 ###########
 # Article #

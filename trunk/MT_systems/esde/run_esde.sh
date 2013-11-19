@@ -89,8 +89,11 @@ flookup $MOLIFDE/fst/SttsGeneratorTool.fst < $TESTOUTPUT.stts > $TESTOUTPUT.fsto
 perl  $ESDEMATXIN/cleanFstOutput.pl < $TESTOUTPUT.fstout > $TESTOUTPUT.gen 2>> ./junk
 cat $TESTOUTPUT.gen
 
+if [ $ALTERNATIVES -eq 1 ]
+then
 export LMSENT="$ESDE_DIR/lm/dewac100M_4g_word.bin.lm"
 perl $ESDEMATXIN/queryBestSentences.pl $LMSENT < $TESTOUTPUT.gen 2>> ./junk
+fi
 
 exit
 echo

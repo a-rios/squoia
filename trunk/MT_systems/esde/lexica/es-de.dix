@@ -3489,7 +3489,7 @@
    <e><p><l>liquidar</l><r>liquidieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>liquidar</l><r>umlegen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>liquidar</l><r>verflüssigen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>llamarse</l><r>heißen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>llamar</l><r>heißen<s n='irrefl'/>yes</r></p><par n="VM_VV_MAIN"/></e>	<!-- llamarse = heissen -->
    <e><p><l>llamar</l><r>berufen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llamar</l><r>nennen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llamar</l><r>rufen</r></p><par n="VM_VV_MAIN"/></e>
@@ -6969,7 +6969,7 @@
    <e><p><l>autogestión</l><r>Selbstverwaltung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>autogiro</l><r>Tragschrauber</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>autógrafo</l><r>Autogramm</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>auto</l><r>Wagen</r></p><par n='NC_N_54_ZEICHEN'/></e>
+   <e><p><l>auto</l><r>Wagen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>autómata</l><r>Automat</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>autómata</l><r>Roboter</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>automatización</l><r>Automatisierung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -9296,6 +9296,7 @@
    <e><p><l>coche grúa</l><r>Abschleppwagen</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>coche</l><r>Automobil</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>coche</l><r>Auto</r></p><par n='NC_N_71_AUTO'/></e>
+   <e><p><l>coche</l><r>Wagen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>cochera</l><r>Garage</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>cochero</l><r>Fuhrmann</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>cochero</l><r>Kutscher</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -11517,6 +11518,7 @@
    <e><p><l>escote</l><r>Ausschnitt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- Kleidung -->
    <e><p><l>escote</l><r>Dekolletee</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>escriba</l><r>Kopist</r></p><par n='NC_N_75_STUDENT'/></e>
+   <e><p><l>escrito</l><r>Geschriebene</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- TODO add nominalized past participles analyzed as nouns? -->
    <e><p><l>escritorio</l><r>Arbeitszimmer</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>escritorio</l><r>Schreibtisch</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>escritor</l><r>Autor</r></p><par n='NC_N_GENTRY_ORIN'/></e>	<!-- gender -->
@@ -27895,7 +27897,10 @@ según	CS -> SP?
    <e><p><l>qué</l><r>welch</r></p><par n='DT_PWAT'/></e> <!-- TODO check molif welch? was fuer ein?-->
 
     <!-- indefinite -->
-   <e><p><l>alguno</l><r>ein</r></p><par n='DI_PIAT'/></e> <!-- algun => irgendein; algunos => einige ? -->
+   <e><p><l>alguno<s n="parol"/>DI0FS0</l><r>ein</r></p><par n='DI_ART'/></e> <!-- alguno=>irgendein ? -->
+   <e><p><l>alguno<s n="parol"/>DI0MS0</l><r>ein</r></p><par n='DI_ART'/></e>
+   <e><p><l>alguno<s n="parol"/>DI0FP0</l><r>einige</r></p><par n='DI_ART'/></e> <!-- algunas => einige -->
+   <e><p><l>alguno<s n="parol"/>DI0MP0</l><r>einige</r></p><par n='DI_ART'/></e> <!-- algunas => einige -->
    <e><p><l>ambos</l><r>beide</r></p><par n='DI_PIAT'/></e> <!-- only plural ambos/ambas => beide -->
    <e><p><l>bastante</l><r>genuegend</r></p><par n='DI_ADV'/></e> <!-- bastante => genuegend? ADV/ADJ? -->
    <e><p><l>cada</l><r>jeder</r></p><par n='DI_PIAT'/></e> <!-- cada DI0CS0 => jeder/jede/jedes DI_PIAT -->
@@ -28316,9 +28321,9 @@ frente_a
    <e><p><l>cuándo<s n="parol"/>PT000000</l><r>wann<s n="pos"/>PWAV</r></p></e>
    <e><p><l>cuál<s n="parol"/>PT0CS000</l><r>welcher<s n="pos"/>PWS<s n="mi"/>Sg</r></p></e> <!-- cuál : welche(r/s); German pos? PWS/PWAV? -->
    <e><p><l>cuál<s n="parol"/>PT0CP000</l><r>welche<s n="pos"/>PWS<s n="mi"/>Pl</r></p></e> <!-- cuáles : welche -->
-   <e><p><l>cuánto<s n="parol"/>PT0FS000</l><r>wieviele<s n="pos"/>PWAV<s n="mi"/>Sg</r></p></e> <!-- cuánta ; singular possible in German? pos?-->
+   <e><p><l>cuánto<s n="parol"/>PT0FS000</l><r>wieviel<s n="pos"/>PWAV<s n="mi"/>Sg</r></p></e> <!-- cuánta ; singular possible in German? pos?-->
    <e><p><l>cuánto<s n="parol"/>PT0FP000</l><r>wieviele<s n="pos"/>PWAV<s n="mi"/>Pl</r></p></e> <!-- cuántas : wieviele -->
-   <e><p><l>cuánto<s n="parol"/>PT0MS000</l><r>wieviele<s n="pos"/>PWAV<s n="mi"/>Sg</r></p></e> <!-- cuánto -->
+   <e><p><l>cuánto<s n="parol"/>PT0MS000</l><r>wieviel<s n="pos"/>PWAV<s n="mi"/>Sg</r></p></e> <!-- cuánto -->
    <e><p><l>cuánto<s n="parol"/>PT0MP000</l><r>wieviele<s n="pos"/>PWAV<s n="mi"/>Pl</r></p></e> <!-- cuántos -->
    <e><p><l>por_qué<s n="parol"/>PT0CN000</l><r>warum<s n="pos"/>PWS</r></p></e>
    <e><p><l>qué<s n="parol"/>PT0CN000</l><r>was<s n="pos"/>PWS</r></p></e>
@@ -28357,7 +28362,7 @@ frente_a
    <e><p><l>quien<s n="parol"/>PR0CP000</l><r>die<s n="pos"/>PRELS<s n="mi"/>Pl</r></p></e>
    <e><p><l>quien<s n="parol"/>PR00P000</l><r>die<s n="pos"/>PRELS<s n="mi"/>Pl</r></p></e>
 
-<!-- Punctuation signs -->
+<!-- Punctuation signs ; parol tag can be capital or not, the lexical transfer both recognizes e.g. Fia and FIA -->
    <e><p><l>,<s n="parol"/>Fc</l><r>,<s n="pos"/>$,</r></p></e>
    <e><p><l>;<s n="parol"/>Fx</l><r>;<s n="pos"/>$.</r></p></e>
    <e><p><l>:<s n="parol"/>Fd</l><r>:<s n="pos"/>$.</r></p></e>
@@ -28377,7 +28382,7 @@ frente_a
    <e><p><l>?<s n="parol"/>Fit</l><r>?<s n="pos"/>$.</r></p></e>
    <e><p><l>!<s n="parol"/>Fat</l><r>!<s n="pos"/>$.</r></p></e>
    <e><p><l>¿<s n="parol"/>Fia</l><r><s n="delete"/>yes</r></p></e>	<!-- remove inverse question mark -->
-   <e><p><l>¡<s n="parol"/>Faa</l><r></r></p></e>	<!-- remove inverse exclamation mark -->
+   <e><p><l>¡<s n="parol"/>Faa</l><r><s n="delete"/>yes</r></p></e>	<!-- remove inverse exclamation mark -->
    <e><p><l>/<s n="parol"/>Fh</l><r>/<s n="pos"/>$(</r></p></e>
    <e><p><l>«<s n="parol"/>Fra</l><r>«<s n="pos"/>$(</r></p></e>
    <e><p><l>»<s n="parol"/>Frc</l><r>»<s n="pos"/>$(</r></p></e>
