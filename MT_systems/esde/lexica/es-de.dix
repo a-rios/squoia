@@ -1709,6 +1709,7 @@
    <e><p><l>escardar</l><r>jäten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>esconder</l><r>verstecken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>escupir</l><r>spucken</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>especificar</l><r>spezifizieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>espulgar</l><r>lausen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>esquilar</l><r>scheren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>esquivar</l><r>aus|weichen</r></p><par n="VM_VV_MAIN"/></e>
@@ -3943,7 +3944,8 @@
    <e><p><l>pasearse</l><r>herumspazieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasear</l><r>ausführen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasear</l><r>reisen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>pasear</l><r>spazieren gehen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>pasear</l><r>spazieren</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>pasear</l><r>spazieren gehen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>pasmarse</l><r>erstarren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasmarse</l><r>verblüfft sein</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pasmarse</l><r>staunen</r></p><par n="VM_VV_MAIN"/></e>
@@ -21171,6 +21173,7 @@
    <e><p><l>trastero</l><r>Abstellkammer</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>trastero</l><r>Abstellraum</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>trastero</l><r>Rumpelkammer</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>trastorno</l><r>Störung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>tratamiento</l><r>Behandlung</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>trato</l><r>Behandlung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>trébol</l><r>Klee</r></p><par n='NC_N_100052_OSTEN'/></e>
@@ -26530,6 +26533,7 @@ veintitodos
    <e><p><l>prudente</l><r>umsichtig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>prudente</l><r>besonnen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>prudente</l><r>behutsam<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>psicoactivo</l><r>psychoaktiv<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>psicodélico</l><r>psychedelisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>psicológico</l><r>psychologisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>psicopático</l><r>psychopathisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>

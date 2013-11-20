@@ -28,15 +28,17 @@ foreach my $node (@specialnodes) {
 	#my $grandparentChunk = &getParentChunk($parentChunk);
 	#if ($grandparentChunk and $grandparentChunk->getAttribute('type') =~ m/S\-rel/) {	# si=subord-mod ?
 	# new: desr/conll2xml
-	if ($parentChunk->getAttribute('si') =~ /^S/) {	# TODO other possibilities?
+	if ($parentChunk->getAttribute('si') =~ /^S|sn/) {	# TODO other possibilities?
 		# do not add any pronoun in a relative clause TODO if it is the subject, but it could be the object!!!
 		print STDERR "relative clause does not need any extra pronoun\n";
 		# get person of finite verb
 		my $finverb = @{$node->findnodes('descendant-or-self::NODE[contains(@pos,"FIN") or contains(@spos,"FIN")]')}[0];
 		if ($finverb and $finverb->getAttribute('mi') =~ /^3\./) {
 			# TODO: the verb is in 3rd person; relative could be the object...
+			print STDERR "verb in 3rd person; relpronoun could still be the object...\n";
 			next;
 		} # else the finite verb has no explicit subject but has the form of a 1st or 2nd person => add pronoun
+		print STDERR "add subject pronoun anyway!\n";
 	}
 	my $pronounChunk = XML::LibXML::Element->new('CHUNK');
 	$maxChunkRef++;
@@ -52,7 +54,7 @@ foreach my $node (@specialnodes) {
 		$finVerb = $node;
 	}
 	else {
-		my @children = $node->findnodes('child::NODE');
+		my @children = $node->findnodes('descendant::NODE');
 		foreach my $child (@children) {
 			if ($child->getAttribute('pos') =~ m/V.FIN/ or $child->getAttribute('spos') =~ m/V.FIN/) {
 			# "spos" for verbs from periphrase whose pos tag has been switched; example: seguir|estar +gerund, where seguir|estar becomes an adverb
@@ -62,6 +64,7 @@ foreach my $node (@specialnodes) {
 		}
 	}
 	if ($finVerb) {
+		print STDERR "finite verb form " . $finVerb->getAttribute('sform') ."\n";
 		my $verbMorph = "3.Sg.Pres.Ind";		# arbitrary default value
 		if ($finVerb->hasAttribute('mi')) {
 			$verbMorph = $finVerb->getAttribute('mi');
