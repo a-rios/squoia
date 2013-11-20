@@ -117,9 +117,10 @@ en		lem=in,cas=Akk		chunkparent.type=PP&&chunkparent.si=sp-obj&&child.sem=[+Cont
 # =======
 # por = a traves de => durch
 # Caminaron por el parque => Sie spazierten durch den Park
-# La empresa fue fundada en el siglo XIX => Die Firma wurde im 19. Jahrhundert gegruendet
-por		lem=durch,cas=Akk	chunkparent.type=PP&&(chunkgrandparent.type=V-pas||xpath{ancestor::CHUNK[@type="VZ-inf" and descendant::NODE[starts-with(@smi,"VS") and @voice="passive"]]})	-
+# La empresa fue fundada en el siglo XIX => Die Firma wurde im 19. Jahrhundert gegruendet [in dix: ser => werden(voice=passive)]
+por		lem=durch,cas=Akk	chunkparent.type=PP&&(chunkgrandparent.type=/V-pas/||xpath{ancestor::CHUNK[@type="VZ-inf" and descendant::NODE[starts-with(@smi,"VS") and @voice="passive"]]})	-
 por		lem=durch,cas=Akk	chunkparent.type=PP&&chunkparent.si=cag	-
+por		lem=durch,cas=Akk	xpath{//CHUNK[contains(@type,"VP") and NODE[@pos="VVPP" and count(NODE[@pos="VAFIN"])=0]]/CHUNK[@type="PP"]/NODE}	-
 
 # por = pro
 # una vez por semana => ein Mal pro Woche
@@ -132,14 +133,14 @@ por		lem=pro,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) && x
 # Acabamos por escribirle un mensaje => Wir schreiben ihm schliesslich eine Nachricht
 por		delete=yes		chunkparent.type=VZ-inf && chunkparent.lsibling.slem=/acabar/	-
 # wegen + Gen? or "meinetwegen/deinetwegen/seinetwegen/ihretwegen"
-por		lem=wegen,cas=Gen	chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 		-
+#por		lem=wegen,cas=Gen	chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 		-
 
 # TODO: certain period of the day
 # por la mañana; por la tarde => am Morgen, am Vormittag; am Nachmittag, am Abend
 # por la noche => am Abend, in der Nacht
 
 # por = in (default?)
-por		lem=in,cas=Dat		chunkparent.type=PP && chunkparent.si=cc	+
+por		lem=in,cas=Dat		chunkparent.type=PP && chunkparent.si=cc && !(xpath{//CHUNK[@type="PP" and parent::CHUNK[contains(@type,"VP") and NODE[@pos="VVPP" and count(NODE[@pos="VAFIN"])=0]]]/NODE})	+
 
 # = PARA =
 # ========

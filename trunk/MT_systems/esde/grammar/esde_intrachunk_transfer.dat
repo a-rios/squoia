@@ -267,8 +267,8 @@ my.pos=PPER&&my.smi=/PP...D../	delete		my.type=VP&&chunkchild.si=ci		yes			down	
 # ES relative pronoun "que" without gender/number information
 my.pos=/PRELS/&&my.slem=que	mi		my.type=/VP/&&my.si=/S/&&chunkparent.type=/NP/	chunkparent.mi			down		overwrite
 my.pos=/PRELS/&&my.slem=que	mi		my.type=/VP/&&my.si=/sn/&&chunkparent.type=/PP/&&chunkgrandparent.type=/NP/	chunkparent.chunkparent.mi			down		overwrite
-my.pos=/PRELS/&&my.slem=que	cas		my.type=/VP/&&my.si=/sn/&&chunkparent.type=/PP/		chunkparent.cas		down	overwrite
-
+my.pos=/PRELS/&&my.slem=que	cas		my.type=/VP/&&my.si=/sn/&&chunkparent.type=/PP/			chunkparent.cas		down	overwrite
+my.pos=/PRELS/&&my.slem=que	cas		my.type=/VP/&&my.si=S&&chunkparent.type=/NP/&&chunkchild.si=suj	"Akk"		down	overwrite
 my.pos=/PRELAT/&&my.slem=cuyo	mi		my.type=/NP/&&chunkparent.type=/NP/	chunkparent.mi			down		overwrite
 
 # delete the additional definite article by relative pronouns "la/el/las/los que"; special case "lo que"?

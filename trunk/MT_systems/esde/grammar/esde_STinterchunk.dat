@@ -31,3 +31,11 @@ my.type=AP			flex			my.type=NP&&my.flex=/./		flex			parent		2to1		no-overwrite
 # ES reflexive verbs => DE irreflexive verbs: delete reflexive pronoun
 xpath{//CHUNK[@type="NP" and NODE[@pos="PRF"]]}		delete		xpath{//CHUNK[@type="VP" and NODE[@irrefl="yes"]]}	yes	parent		2to1		overwrite
 
+# --------------------------------------------------------------------------------------------------------------------------- #
+#################
+# Passive voice # but that's too late to be useful for the preposition disambiguation!!!... and the chunk2Cond is too simple, there shouldn't be any auxiliary like in "hemos caminado por el pasillo" ;-)
+#################
+#my.type=/PP/&&child.slem=por	agent			my.type=/VP/&&child.pos=/V.PP/		yes		parent		2to1		no-overwrite
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+
