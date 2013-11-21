@@ -2464,7 +2464,6 @@ literatura_juvenil literatura_juvenil NCFS000 I
 <local>_<comercial> local_comercial $1:NC I
 loco_citato loco_citato RG I
 lo_de_menos lo_de_menos RG I
-lo_malo_es_que lo_malo_es_que CS I
 lo_uno_por_lo_otro lo_uno_por_lo_otro RG I
 lucha_armada lucha_armada NCFS000 I
 lucha_por_el_poder lucha_por_el_poder NCFS000 I
@@ -2871,7 +2870,8 @@ por_si_acaso por_si_acaso RG I
 por_siempre_jamás por_siempre_jamás RG I
 por_si_las_moscas por_si_las_moscas RG I
 por_supuesto por_supuesto RG I
-por_tanto por_tanto CS I por_tanto RG A
+por_tanto por_tanto RG I
+por_tanto_que por_tanto_que CS I
 por_testa por_testa RG I
 por_todo_lo_alto por_todo_lo_alto RG I
 por_un_tris por_un_tris RG I
@@ -3216,7 +3216,7 @@ súper_8 súper_8 NCFS000 I
 superficie_útil superficie_útil NCFS000 I
 supuesto_que supuesto_que CS I
 <sustancia>_<química> sustancia_química $1:NC I
-tal_como tal_y_como CS I
+tal_como tal_como CS I
 tal_cual tal_cual RG I
 <taller>_<mecánico> taller_mecánico $1:NC I
 <tal>_o_<cual> tal_o_cual $1:DD I
@@ -3415,7 +3415,7 @@ vox_populi vox_populi RG I
 ya_es_mucho_decir ya_es_mucho_decir RG I
 ya_que ya_que CS I
 ya_será_menos ya_será_menos RG I
-y_cuando y_cuando CC I
+% y_cuando y_cuando CC I
 <zona>_<arqueológico> zona_arqueológica $1:NC I
 <zona>_<comercial> zona_comercial $1:NC I
 <zona>_de_descanso zona_de_descanso $1:NC I
@@ -3467,7 +3467,7 @@ en_voz_alta en_voz_alta RG I
 <estar>_en_contra estar_en_contra $1:V I
 <estar>_en_contra_de estar_en_contra_de $1:V I
 <estar>_en_contra_del estar_en_contra_de $1:V I
-<fin>_de_semana $1:NC I
+fin_de_semana fin_de_semana $1:NC I
 <hacer>_público hacer_público $1:VM I
 hasta_entonces hasta_entonces RG I
 <hombre>_rana hombre_rana $1:NC I
