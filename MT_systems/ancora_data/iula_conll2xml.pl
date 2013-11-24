@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+#TODO: missing linkers: para_que, después_de_que, al_tiempo_que, puesto_que, hasta_que, aunque, cuando, desde_que, antes_de_que, sin_que, aun_cuando
+# según, a_pesar_de_que, en_cuanto, si_bien, tan_pronto, aún_como, por_eso, tal_y_como, a_fin_de_que, siempre_y_cuando
+
 # iula_conll2xml
 # possible syntactical categories
 # ROOT: Root 
@@ -164,9 +167,9 @@ while (<>)
      }
   }
 
-my $docstring = $dom->toString(3);
-print STDERR $docstring;
-print STDERR "------------------------------------------------\n";
+#my $docstring = $dom->toString(3);
+#print STDERR $docstring;
+#print STDERR "------------------------------------------------\n";
 #exit;
 
 ## adjust dependencies (word level), 
@@ -204,10 +207,10 @@ for(my $i = 0; $i < scalar(@sentences); $i++)
 			}
 	}
 }
-
-my $docstring = $dom->toString(3);
-print STDERR $docstring;
-print STDERR "------------------------------------------------\n";
+#
+#my $docstring = $dom->toString(3);
+#print STDERR $docstring;
+#print STDERR "------------------------------------------------\n";
 #exit;
 
 #insert chunks
@@ -280,22 +283,22 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 
 			}
 			# if this is a subordinating conjunction, switch the dependencies
-#			elsif($node->getAttribute('mi') eq "CS") {
-#			elsif($node->exists('self::NODE[@mi="CS"] and not(self::NODE[@lem="como"])')) {
-#				print STDERR "subord conjunction $currlem\n";
-#				my @children = $node->childNodes();
-#				print STDERR scalar(@children) . " children\n";
-#				foreach my $child (@children) {
-#					$parent->appendChild($child);
-#					$child->setAttribute('head',$node->getAttribute('head'));
-#				}
-#				$parent->removeChild($node);
-#				my $grandchild = $children[0]->firstChild;
-#				print STDERR "\n";
-#				$children[0]->insertBefore($node,$grandchild);
-#				$node->removeAttribute('head');
-#				$node->setAttribute('rel','conj');			
-#			}
+			elsif($node->getAttribute('mi') eq "CS") {
+			#elsif($node->exists('self::NODE[@mi="CS"] and not(self::NODE[@lem="como"])')) {
+				print STDERR "subord conjunction $currlem\n";
+				my @children = $node->childNodes();
+				print STDERR scalar(@children) . " children\n";
+				foreach my $child (@children) {
+					$parent->appendChild($child);
+					$child->setAttribute('head',$node->getAttribute('head'));
+				}
+				$parent->removeChild($node);
+				my $grandchild = $children[0]->firstChild;
+				print STDERR "\n";
+				$children[0]->insertBefore($node,$grandchild);
+				$node->removeAttribute('head');
+				$node->setAttribute('rel','conj');			
+			}
 # Ancora special case?
 #		        elsif($node->getAttribute('mi') =~ /elliptic/)
 #			{
@@ -507,6 +510,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	}
 }
 
+
 # try to switch the main verb and the modal verb
 
 my @modals = $dom->findnodes('//CHUNK/NODE[(@lem="poder" or @lem="deber") and @cpos="v" and ../CHUNK/NODE[@mi="VMN0000" and @rel="cd"]]');
@@ -526,6 +530,9 @@ foreach my $modv (@modals) {
 	}
 	$parentChunk->removeChild($vmparent);
 }
+
+
+
 # add a dummy chunk between SENTENCE and NODE
 my @chunklessnodes = $dom->findnodes('//SENTENCE/NODE');
 print STDERR scalar(@chunklessnodes) ." nodes directly under SENTENCE\n";
@@ -556,6 +563,132 @@ foreach my $uchunk (@underchunks) {
 		print STDERR "\n" . $uchunk->nodePath() . "\n";
 	}
 }
+
+#TODO: missing linkers: 
+# para_que, sin que, desde que, hasta que
+# según, aunque, por_eso
+# si_bien -> in iula -> subordination with 'si' -> same form as si bien, leave as is
+# puesto_que, en_cuanto, tal_y_como (only 2 times in iula)
+# aun_cuando (only once in iula)
+# no occurence in IULA: antes_de_que, después_de_que, al_tiempo_que, aún_como, a_pesar_de_que, a_fin_de_que, siempre_y_cuando,tan_pronto,
+
+#my $docstring = $dom->toString(3);
+#print STDERR $docstring;
+#print STDERR "------------------------------------------------\n";
+
+
+# para que, sin que, desde que, hasta que
+my @ques = $dom->findnodes('descendant::CHUNK[@type="grup-sp" and NODE[@lem="para" or @lem="sin" or @lem="desde" or @lem="hasta"]]/CHUNK[@type="grup-verb" or @type="coor-v"]/NODE/NODE[@lem="que" and @mi="CS"]');
+foreach my $que (@ques)
+{
+	my ($vchunk) = $que->findnodes('parent::NODE/parent::CHUNK[@type="grup-verb" or @type="coor-v"][1]');
+	my ($pp) = $que->findnodes('ancestor::CHUNK[@type="grup-sp"][1]/NODE[@pos="sp"][1]');
+	if($vchunk && $pp){
+		my $pplem = $pp->getAttribute('lem');
+		my $ppform = $pp->getAttribute('form');
+		$que->setAttribute('lem', $pplem."_que");
+		$que->setAttribute('form', $ppform."_que");
+
+		#remove pp and subVerb and then attach verb to main clause
+		my $ppchunk = $pp->parentNode();
+		$ppchunk->removeChild($pp);
+		$ppchunk->removeChild($vchunk);
+		# get other children of pp chunk (there shouldn't be any..?) and attach them to the verb
+		my @ppchunkchildren = $ppchunk->childNodes();
+		foreach my $child (@ppchunkchildren){
+			$vchunk->appendChild($child);
+		}
+		my $mainclause = $ppchunk->parentNode();
+		$mainclause->removeChild($ppchunk);
+		$mainclause->appendChild($vchunk);
+	}
+	#print STDERR "found para que: ".$que->toString."\n";
+	#print STDERR "preposition ".$pp->toString()."\n";
+}
+
+# según 
+my @VerbWithseguns = $dom->findnodes('descendant::CHUNK[@type="grup-sp" and NODE[@lem="según"]]/CHUNK[@type="grup-verb" or @type="coor-v"]');
+foreach my $vchunk (@VerbWithseguns)
+{
+	my ($ppchunk) = $vchunk-> findnodes('parent::CHUNK[@type="grup-sp"][1]');
+	my ($pp) = $ppchunk->findnodes('child::NODE[@lem="según"]');
+	my $head = $ppchunk->parentNode();
+	if($pp && $ppchunk && $head){
+		$head->appendChild($vchunk);
+		$vchunk->appendChild($pp);
+		$pp->setAttribute('mi', 'CS');
+		$pp->setAttribute('pos', 'cs');
+		$pp->setAttribute('cpos', 'c');
+		$pp->setAttribute('rel', 'conj');
+		$head->removeChild($ppchunk);
+	}
+}
+# aunque, top node
+my @aunquesTop = $dom->findnodes('descendant::CHUNK[contains(@comment,"dummy") and NODE[@lem="aunque"]]');
+
+foreach my $aunquechunk (@aunquesTop)
+{
+	my ($vchunk) = $aunquechunk->findnodes('CHUNK[@type="grup-verb" or @type="coor-v"][1]');
+	my ($aunque) = $aunquechunk->findnodes('child::NODE[@lem="aunque"][1]');
+	if($aunque && $vchunk){
+		$vchunk->appendChild($aunque);
+		$aunque->setAttribute('pos', 'cs');
+		$aunque->setAttribute('cpos', 'c');
+		$aunque->setAttribute('mi', 'CS');
+		$aunque->setAttribute('rel', 'conj');
+		
+		my $head = $aunquechunk->parentNode();
+		if($head){
+			my ($realMainVchunk) = $vchunk->findnodes('descendant::CHUNK[@type="grup-verb"][1]');
+			if($realMainVchunk){
+				$head->appendChild($realMainVchunk);
+				$head->removeChild($aunquechunk);
+				$realMainVchunk->appendChild($vchunk);
+				$realMainVchunk->setAttribute('si', 'top');
+			}
+		    else{
+				$head->appendChild($vchunk);
+				$head->removeChild($aunquechunk);
+				$vchunk->setAttribute('si', 'top');
+		    }
+		}
+	}
+}
+# aunque, not top node:
+my @topverbchunkwithAunque = $dom->findnodes('descendant::SENTENCE/CHUNK[@type="grup-verb" or @type="coor-v" and NODE[NODE[@lem="aunque"]]]');
+foreach my $topvchunkWithAunque (@topverbchunkwithAunque){
+	
+	my ($realSub) = $topvchunkWithAunque->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v" and not(child::NODE[@pos="cs"])][1]');
+	if($realSub){
+		#print STDERR "real sub verb: ".$realSub->toString();
+		my ($aunque) = $topvchunkWithAunque->findnodes('descendant::NODE[@lem="aunque"][1]');
+		if($aunque){
+		$realSub->appendChild($aunque);
+			$aunque->setAttribute('pos', 'cs');
+			$aunque->setAttribute('rel', 'conj');
+			$aunque->setAttribute('mi', 'CS');
+		}
+	}
+}
+
+# por eso 
+my @pors = $dom->findnodes('descendant::CHUNK[@type="grup-sp" and NODE[@lem="por"] and CHUNK[@type="sn" and NODE[@form="eso"] ] ] ');
+foreach my $porchunk(@pors){
+	my ($esochunk) = $porchunk->findnodes('child::CHUNK[@type="sn" and NODE[@form="eso"]][1]');
+	$porchunk->removeChild($esochunk);
+	my ($por) = $porchunk->findnodes('child::NODE[@lem="por"]');
+	$por->setAttribute('lem','por_eso');
+	$por->setAttribute('form',$por->getAttribute('form')."_eso");
+	$por->setAttribute('pos', 'cs');
+	$por->setAttribute('cpos', 'c');
+	$por->setAttribute('rel', 'conj');
+	$por->setAttribute('mi', 'CS');
+}
+
+
+#my $docstring = $dom->toString(3);
+#print STDERR $docstring;
+#print STDERR "------------------------------------------------\n";
 
 my $docstring = $dom->toString(3);
 print STDOUT $docstring;
