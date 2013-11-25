@@ -64,6 +64,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE') ) {
 			my $result = &evalConditions(\@nodeConditions,$node);
 			if ($result) {
 				# "upgrade" the NODE node to a CHUNK node
+				print STDERR "upgrade " . $node->nodePath() . "(" . $node->getAttribute('slem') .") to a CHUNK\n";
 				$node->unbindNode();
 				my $newChunk = XML::LibXML::Element->new('CHUNK');
 				$newChunk->appendChild($node);
