@@ -70,6 +70,7 @@ my $nbrOfNonFiniteChunks=0;
 ## verse +adj/participio -> 'kan', 
 ## resultar +adj, participio -> -sqa, but 'resulta claro que eso afecta a la población..' -> infinitive?
 ## subject clauses -> es posible que no pueden seguir produciendo
+## según + verbo -> cómo se traduce?
 
 foreach my $sentence (@sentenceList)
 {
@@ -219,7 +220,7 @@ foreach my $sentence (@sentenceList)
  					$verbChunk->setAttribute('conj', 'manaraq');
  				}
  				# if this a subordinated  clause with a finite verb (in Quechua) (TODO: ni_siquiera -> Adverbio??)
- 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|y_cuando|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|puesto_que|por_eso|ya_que|aun$|aún$|aun_no|aún_no/ )
+ 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /pero|empero|^o$|^y$|y_cuando|^e$|^u$|sino|^ni$|ni_siquiera|por_tanto|por_lo_tanto|tanto_como|entonces|pues|puesto_que|por_eso|ya_que|aun$|aún$|aun_no|aún_no|de_modo_que|así_que/ )
  				{	
  					# if coordinated chunk: take verbform from head
  				    my $parent = $verbChunk->parentNode();
@@ -292,9 +293,9 @@ foreach my $sentence (@sentenceList)
 	 					{
 	 						$verbChunk->setAttribute('conj', 'chayrayku');
 	 					}
-	 					elsif($conjunction->getAttribute('lem') =~ /ya_que/ )
+	 					elsif($conjunction->getAttribute('lem') =~ /ya_que|de_modo_que|así_que/ )
 	 					{
-	 						$verbChunk->setAttribute('conj', 'chayqa');
+	 						$verbChunk->setAttribute('conj', 'hinaqa');
 	 					}
 	 					elsif($conjunction->getAttribute('lem') =~ /aún|aun$/ )
 	 					{
