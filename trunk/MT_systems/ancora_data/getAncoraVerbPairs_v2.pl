@@ -110,7 +110,9 @@ foreach my $sentence (@sentenceList)
  	{
  	  # print STDERR "verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n";	
 	   if($verbChunk->findvalue('child::CHUNK[@type="grup-verb" or @type="coor-v"]/@verbform') ne 'ambiguous' && $verbChunk->findvalue('child::CHUNK[@type="grup-verb" or @type="coor-v"]/@verbform') ne '')
-	   {
+	   { 
+	   		my $sentenceID = $verbChunk->findvalue('ancestor::SENTENCE/@ord');
+			print STDERR "disambiguating verb sentence nr. $sentenceID: \n ";
 			my $mainV = &getMainVerb2($verbChunk);
 			my $mLem = $mainV->getAttribute('lem');
 			my $mainFrames = $verbLexWithFrames{$mLem};

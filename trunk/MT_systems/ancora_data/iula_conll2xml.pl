@@ -615,7 +615,9 @@ foreach my $vchunk (@VerbWithseguns)
 	my $head = $ppchunk->parentNode();
 	if($pp && $ppchunk && $head){
 		$head->appendChild($vchunk);
-		$vchunk->appendChild($pp);
+		my ($v) = $vchunk->findnodes('child::NODE[@cpos="v"][1]');
+		if($v){$v->appendChild($pp);}
+		else{$vchunk->appendChild($pp);}
 		$pp->setAttribute('mi', 'CS');
 		$pp->setAttribute('pos', 'cs');
 		$pp->setAttribute('cpos', 'c');
@@ -631,7 +633,9 @@ foreach my $aunquechunk (@aunquesTop)
 	my ($vchunk) = $aunquechunk->findnodes('CHUNK[@type="grup-verb" or @type="coor-v"][1]');
 	my ($aunque) = $aunquechunk->findnodes('child::NODE[@lem="aunque"][1]');
 	if($aunque && $vchunk){
-		$vchunk->appendChild($aunque);
+		my ($v) = $vchunk->findnodes('child::NODE[@cpos="v"][1]');
+		if($v){$v->appendChild($aunque);}
+		else{$vchunk->appendChild($aunque);}
 		$aunque->setAttribute('pos', 'cs');
 		$aunque->setAttribute('cpos', 'c');
 		$aunque->setAttribute('mi', 'CS');
@@ -663,7 +667,9 @@ foreach my $topvchunkWithAunque (@topverbchunkwithAunque){
 		#print STDERR "real sub verb: ".$realSub->toString();
 		my ($aunque) = $topvchunkWithAunque->findnodes('descendant::NODE[@lem="aunque"][1]');
 		if($aunque){
-		$realSub->appendChild($aunque);
+			my ($v) = $realSub->findnodes('child::NODE[@cpos="v"][1]');
+			if($v){$v->appendChild($aunque);}
+			else{$realSub->appendChild($aunque);}
 			$aunque->setAttribute('pos', 'cs');
 			$aunque->setAttribute('rel', 'conj');
 			$aunque->setAttribute('mi', 'CS');
@@ -679,10 +685,20 @@ foreach my $porchunk(@pors){
 	my ($por) = $porchunk->findnodes('child::NODE[@lem="por"]');
 	$por->setAttribute('lem','por_eso');
 	$por->setAttribute('form',$por->getAttribute('form')."_eso");
-	$por->setAttribute('pos', 'cs');
+	$por->setAttribute('pos', 'cc');
 	$por->setAttribute('cpos', 'c');
 	$por->setAttribute('rel', 'conj');
-	$por->setAttribute('mi', 'CS');
+	$por->setAttribute('mi', 'CC');
+	my $head = $porchunk->parentNode();
+	if($head){
+		$head->appendChild($por);
+	    my @porchunkChildren = $porchunk->childNodes();
+	    foreach my $porCh (@porchunkChildren){
+	    	$head->appendChild($porCh);
+	    }
+	    $head->removeChild($porchunk);
+	}
+	
 }
 
 
