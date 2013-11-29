@@ -35,5 +35,13 @@ Vase		[+Cont]		my.pos=/NN/
 Fussball	[-Art]	my.pos=/NN/
 Tennis		[-Art]	my.pos=/NN/
 
+## languages do not have article
+# el español => Spanisch
+Chinesisch	[-Art]	my.pos=/NN/ && my.mi=/Neut.Sg/
+Deutsch		[-Art]	my.pos=/NN/ && my.mi=/Neut.Sg/
+Hochchinesisch	[-Art]	my.pos=/NN/ && my.mi=/Neut.Sg/
+Mandarin	[-Art]	my.pos=/NN/ && my.mi=/Neut.Sg/
+Spanisch	[-Art]	my.pos=/NN/ && my.mi=/Neut.Sg/
+
 ## some countries have article in Spanish but not in German
 Peru		[-Art]	my.pos=/NE/

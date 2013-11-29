@@ -10,6 +10,7 @@ export FREELING_PARAM="-f $FREELING_CONFIG"
 export SQUOIAMATXIN="$PROJECT_DIR/MT_systems"
 export ESDEMATXIN=$SQUOIAMATXIN/esde
 export TESTOUTPUT="$ESDEMATXIN/tests/esdeout"
+#export TESTOUTPUT="$ESDEMATXIN/tests/eval/aligned.lai.squoia20131128"
 export CONFIGFILE="$ESDEMATXIN/es-de.cfg"
 
 #export DESR_DIR="/home/clsquoia/parser/desr-1.2.6"
@@ -17,7 +18,7 @@ export DESR_DIR="/home/clsquoia/parser/desr-1.3.2"
 export DESR_CONFIG=$DESR_DIR/spanishv2.conf
 export DESR_MODEL=$DESR_DIR/spanish_es4.MLP
 #export DESR_MODEL=$DESR_DIR/spanish.MLP
-export DESR_PARAMS="-m $DESR_MODEL" # -c $DESR_CONFIG"
+#export DESR_PARAMS="-m $DESR_MODEL" # -c $DESR_CONFIG"
 
 export TAGPORT=8866
 
@@ -62,18 +63,18 @@ export PERL5LIB="$SQUOIAMATXIN:$ESDEMATXIN"
 # new matxin pipe configuration
 perl  $SQUOIAMATXIN/readConfig.pl $CONFIGFILE
 
+ALTERNATIVES=$1
+
+
+if [ $ALTERNATIVES -eq 1 ]
+then
 # language model
 export LM="$ESDE_DIR/lm/dewac10M_3g_lemma.bin.lm"
 MAXALT=2
-
-ALTERNATIVES=$1
 if [[ $2 ]]
 then 
 MAXALT=$2
 fi
-
-if [ $ALTERNATIVES -eq 1 ]
-then
 cat $TESTOUTPUT.desrparsed | perl $SQUOIAMATXIN/insertSemanticTags.pl 2>> ./junk | perl $SQUOIAMATXIN/semanticDisamb.pl 2>> ./junk | perl $SQUOIAMATXIN/statisticBilexDisamb.pl $LM $MAXALT 2>> ./junk | perl $SQUOIAMATXIN/alternativeSentences.pl 2>> ./junk | perl $SQUOIAMATXIN/prepositionDisamb.pl 2>> ./junk | perl $SQUOIAMATXIN/verbPrepDisamb.pl 2>> ./junk | perl $SQUOIAMATXIN/splitNodes.pl 2>> ./junk | perl $ESDEMATXIN/addPronouns.pl 2>> ./junk | perl $ESDEMATXIN/addFutureAux.pl 2>> ./junk | perl $ESDEMATXIN/splitVerbPrefix.pl 2>> ./junk | perl $SQUOIAMATXIN/synTransferIntraChunk.pl 2>> ./junk | perl $SQUOIAMATXIN/STinterchunk.pl 2>> ./junk | perl $SQUOIAMATXIN/nodesToChunks.pl 2>> ./junk | perl $SQUOIAMATXIN/childToSiblingChunk.pl 2>> ./junk | perl $SQUOIAMATXIN/recursiveNumberChunks.pl 2>> ./junk | perl $SQUOIAMATXIN/interChunkOrder.pl 2>> ./junk | perl $SQUOIAMATXIN/linearOrderChunk.pl 2>> ./junk | perl $SQUOIAMATXIN/nodeOrderInChunk.pl 2>> ./junk > $TESTOUTPUT.xml
 else
 cat $TESTOUTPUT.desrparsed | perl $SQUOIAMATXIN/insertSemanticTags.pl 2>> ./junk | perl $SQUOIAMATXIN/semanticDisamb.pl 2>> ./junk | perl $SQUOIAMATXIN/countAlternativeSentences.pl 2>> ./junk  | perl $SQUOIAMATXIN/prepositionDisamb.pl  2>> ./junk | perl $SQUOIAMATXIN/verbPrepDisamb.pl 2>> ./junk | perl $SQUOIAMATXIN/splitNodes.pl 2>> ./junk | perl $ESDEMATXIN/addPronouns.pl 2>> ./junk | perl $ESDEMATXIN/addFutureAux.pl 2>> ./junk | perl $ESDEMATXIN/splitVerbPrefix.pl 2>> ./junk | perl $SQUOIAMATXIN/synTransferIntraChunk.pl 2>> ./junk | perl $SQUOIAMATXIN/STinterchunk.pl 2>> ./junk | perl $SQUOIAMATXIN/nodesToChunks.pl 2>> ./junk | perl $SQUOIAMATXIN/childToSiblingChunk.pl 2>> ./junk | perl $SQUOIAMATXIN/recursiveNumberChunks.pl 2>> ./junk| perl $SQUOIAMATXIN/interChunkOrder.pl 2>> ./junk | perl $SQUOIAMATXIN/linearOrderChunk.pl 2>> ./junk | perl $SQUOIAMATXIN/nodeOrderInChunk.pl 2>> ./junk > $TESTOUTPUT.xml 
@@ -91,8 +92,11 @@ cat $TESTOUTPUT.gen
 
 if [ $ALTERNATIVES -eq 1 ]
 then
+if [ $MAXALT -gt 1 ]
+then
 export LMSENT="$ESDE_DIR/lm/dewac100M_4g_word.bin.lm"
 perl $ESDEMATXIN/queryBestSentences.pl $LMSENT < $TESTOUTPUT.gen 2>> ./junk
+fi
 fi
 
 exit

@@ -8,7 +8,7 @@
 
 my.type=CAP		xAVP:my.type=/AVP/, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xCOCONJ: my.type=coConj, xLASTAP:xpath{//CHUNK[@type="AP" and count(following-sibling::CHUNK[@type="AP"])=0]}	xAVP +head +xCOMA .xCOCONJ +xLASTAP
 
-my.type=/CNP/		xSPEC:my.type=nounSpec, xAP:my.type=/C?AP/, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTNP:xpath{//CHUNK[@type="CNP"]/CHUNK[@type="NP" and count(following-sibling::CHUNK[@type="NP"])=0]}		xSPEC .xAP .head +xCOMA .xCOCONJ +xLASTNP
+my.type=/CNP/		xSPEC:my.type=nounSpec, xAP:my.type=/C?AP/&&!(my.si=/sn/), xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTNP:xpath{//CHUNK[@type="CNP"]/CHUNK[(@type="NP" or @type="AP") and count(following-sibling::CHUNK[(@type="NP" or @type="AP")])=0]}		xSPEC .xAP .head +xCOMA .xCOCONJ +xLASTNP
 
 my.type=/CPP/		xNP:my.type=/NP/, xCOCONJ:my.type=coConj, xCOMA:xpath{//CHUNK[NODE[@slem=","]]}, xLASTPP:xpath{//CHUNK[@type="CPP"]/CHUNK[@type="PP" and count(following-sibling::CHUNK[@type="PP"])=0]}	head +xNP +xCOMA .xCOCONJ +xLASTPP
 

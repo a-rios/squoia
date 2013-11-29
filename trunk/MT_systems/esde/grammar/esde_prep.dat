@@ -97,7 +97,7 @@ del 		lem=von_d(er),cas=Dat		chunkgrandparent.type=VP				-
 # Juan acaba de comer => Juan hat soeben gegessen
 de		delete=yes		chunkparent.type=VP&&lsibling.slem=/acabar/		-
 
-de 		lem=von(def),cas=Dat		chunkparent.type=//				+
+de 		lem=von,cas=Dat		chunkparent.type=//				+
 
 
 # = EN =
