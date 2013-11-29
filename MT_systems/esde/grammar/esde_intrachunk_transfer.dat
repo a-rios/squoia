@@ -33,7 +33,9 @@ my.smi=RG&&my.slem=más		delete		my.type=/AVP/		yes		down		overwrite
 ## VERBS ##
 # --------------------------------------------------------------------------------------------------------------------------- #
 # Auxiliary: haben|sein
-my.lem=haben&&my.slem=haber&&my.smi=/VA.+/	lem	my.pos=/V.PP/&&my.aux=sein	aux	down	overwrite
+my.lem=haben&&my.slem=haber&&my.smi=/VA.+/	lem	my.pos=/V.PP/&&my.aux=sein			aux	down	overwrite
+# ha sido desarrollado NODEdesarrollado(NODEha(NODEsido))): copy the "sein" auxiliary from the past participle "sido" to the lemma of the finite auxiliary
+my.pos=/VAPP/&&my.aux=sein			aux	my.lem=haben&&my.slem=haber&&my.smi=/VA.+/	lem	up	overwrite
 
 # modal/command verbs: special word order for past participle form (that looks like infinite form)
 my.pos=/VMPP/||(my.pos=/VVPP/&&my.cmdverb=yes)	yes		my.type=/VP/		ppexcep		up	overwrite
@@ -200,7 +202,7 @@ my.flex=/./		flex			my.type=/C?NP/			flex			up		overwrite
 my.pos=/ADJ/		flex			my.type=/C?NP/&&my.flex=/./	flex			down		overwrite	# TODO: no article => St; default?
 
 my.flex=/./&&my.slem=del	flex		my.type=/C?PP/			flex			up		overwrite	# special case: PP(del)
-my.type=/C?NP/		flex			my.type=/C?PP/&&my.flex=/./	flex			down		overwrite	# pass from PP to NP
+# not a node! #my.type=/C?NP/		flex			my.type=/C?PP/&&my.flex=/./	flex			down		overwrite	# pass from PP to NP
 
 # NP with flex: pass the info down thru the AP to the ADJ
 my.pos=/ADJ/		flex			my.type=/C?AP/&&chunkparent.flex=/./	chunkparent.flex		down		no-overwrite
@@ -227,6 +229,7 @@ my.pos=/V.FIN/		subjnum		xpath{//CHUNK[@type="VP" and CHUNK[@si="suj" and @type=
 #my.pos=/NN|ART|PPOSAT|PIAT/		cas		my.type=/NP/&&chunkparent.cas=Dat	Dat		down		no-overwrite
 #my.pos=/ADJ/				cas		my.type=/AP/&&chunkgrandparent.cas=Dat	Dat		down		no-overwrite
 my.pos=/NN|ART|PPOSAT|PDAT|PIAT|PPER/		cas		my.type=/NP/&&chunkparent.cas=/./	chunkparent.cas		down		no-overwrite
+my.pos=/NN/&&my.cas=/./				cas		my.type=/C?NP/				cas			up		no-overwrite
 #my.pos=/ADJ/				cas		my.type=/C?AP/&&chunkgrandparent.cas=/./	chunkparent.chunkparent.cas		down		no-overwrite
 
 # set case of adjective depending on its parent/ancestor's case

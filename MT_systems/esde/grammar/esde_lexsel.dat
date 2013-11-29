@@ -82,6 +82,13 @@ político	Schwieger-	d	!(xpath{//NODE[parent::CHUNK[preceding-sibling::NODE[@sle
 # Nouns #
 #########
 
+# gentry vs language # TODO: other languages resp. mark the entries in dix?
+#--------------------#
+alemán	Deutsch		k	my.smi=/NCMS/&&child.smi=/DA/
+chino	Chinesisch	k	my.smi=/NCMS/&&child.smi=/DA/
+español	Spanisch	k	my.smi=/NCMS/&&child.smi=/DA/
+#--------------------#
+
 abuelo	Grossmutter,Großmutter	d	my.smi=/NCM/
 abuelo	Grossvater,Großvater	d	my.smi=/NCF/
 abuelo	Grosseltern,Großeltern	d	my.smi=/NCMS|NCF/	# "Grosseltern" never corresponds to singular form "el abuelo" nor feminine forms
@@ -93,8 +100,10 @@ capital	Kapital		k	my.smi=/NCM/
 colaborador	Mitarbeiterin	k	my.smi=/NCF/
 colaborador	Mitarbeiter	k	my.smi=/NCM/
 
-gracia	Dank		d	my.smi=/NCFS/
+editorial	Leitartikel	k	my.smi=/NCM/
+editorial	Verlag		k	my.smi=/NCF/
 
+gracia	Dank		d	my.smi=/NCFS/
 
 hermano	Schwester	k	my.smi=/NCF/
 hermano	Bruder		k	my.smi=/NCM/
@@ -155,8 +164,8 @@ apropiar	an|passen	k	my.smi=/VMP00/&&chunkparent.type=/VP/
 #haber	haben	my.smi=/VA.+/ && !(parent.aux=[be+])	#prob=0.8
 
 # Passive auxiliary
-ser	sein	k	my.smi=/VS.+/ && !(parent.smi=/VMP00[PS][FM]/&& chunkparent.type=/VP/)
-ser	werden	k	my.smi=/VS.+/ && parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/VP/
+ser	sein	k	my.smi=/VS.+/ && !(parent.smi=/VMP00[PS][FM]/&& chunkparent.type=/VP/) && !(grandparent.smi=/VMP00[PS][FM]/ && chunkgrandparent.type=/VP/)
+ser	werden	k	my.smi=/VS.+/ && ((parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/VP/) || (grandparent.smi=/VMP00[PS][FM]/ && chunkgrandparent.type=/VP/))
 
 # estar = sein: "El libro estaba en la mesa" => "Das Buch war auf dem Tisch"
 # estar + GERUND = gerade + FIN: "Estamos bebiendo vino" => "Wir trinken gerade Wein"

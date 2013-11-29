@@ -1120,6 +1120,7 @@
    <e><p><l>arrear</l><r>an|treiben</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>arrear</l><r>beschmücken</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>arrojar</l><r>werfen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>asegurar</l><r>versichern</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>asustar</l><r>erschrecken</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>atajar</l><r>ab|kürzen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>atajar</l><r>ab|trennen</r></p><par n='VM_VV_MAIN'/></e>
@@ -1205,6 +1206,8 @@
    <e><p><l>estrellar</l><r>zerschmettern</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>evitar</l><r>umfahren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>existir</l><r>existieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>florecer</l><r>blühen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>florecer</l><r>gedeihen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>funcionar</l><r>funktionieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>hacer</l><r>machen</r></p><par n='VM_VV_MAIN'/></e>		<!-- molifclass(mach) = 8 -->
    <e><p><l>hartar</l><r>belästigen</r></p><par n='VM_VV_MAIN'/></e>	<!-- hartar a alguien con algo = jmdn mit etwas+Dat belaestigen -->
@@ -1245,6 +1248,8 @@
    <e><p><l>sangrar</l><r>schröpfen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>sanar</l><r>heilen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>sanar</l><r>genesen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>significar</l><r>bedeuten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>significar</l><r>dar|stellen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>soltar</l><r>los|lassen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>soñar</l><r>träumen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>soplar</l><r>blasen</r></p><par n='VM_VV_MAIN'/></e>
@@ -2149,8 +2154,7 @@
    <e><p><l>alzar</l><r>hochheben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>anclar</l><r>verankern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>andar lento</l><r>langsam gehen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>andar</l><r>gehen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>andar</l><r>wandern</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>andar</l><r>wandern</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>apagar</l><r>ausschalten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>aparecerse</l><r>erscheinen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>aparecerse</l><r>sich zeigen</r></p><par n="VM_VV_MAIN"/></e>
@@ -2242,7 +2246,7 @@
    <e><p><l>contribuir</l><r>bei|steuern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>controlar</l><r>kontrollieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>controlar</l><r>überwachen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>convencer de</l><r>überzeugen von</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>convencer</l><r>überzeugen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>convivir</l><r>zusammen|leben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>correr</l><r>schnell fahren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>correr</l><r>laufen</r></p><par n="VM_VV_MAIN"/></e>
@@ -2423,9 +2427,8 @@
    <e><p><l>descubrir</l><r>entdecken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>descubrir</l><r>entdecken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>descubrir</l><r>heraus|finden</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>descuidar</l><r>nachlässig sein</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>descuidar</l><r>unbesorgt sein</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>descuidar</l><r>sorglos sein</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>descuidar</l><r>vernachlässigen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>descuidar</l><r>sorglos_sein</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>desear</l><r>wünschen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>desechar</l><r>wegwerfen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>desembarcar</l><r>von Bord gehen</r></p><par n="VM_VV_MAIN"/></e>
@@ -2635,7 +2638,7 @@
    <e><p><l>elevar</l><r>an|heben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>elevar</l><r>steigern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>eludir</l><r>umgehen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>eludir</l><r>ausweichen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>eludir</l><r>aus|weichen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>eludir</l><r>vermeiden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>embarazarse</l><r>schwanger werden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>embarazar</l><r>behindern</r></p><par n="VM_VV_MAIN"/></e>
@@ -2647,7 +2650,7 @@
    <e><p><l>embrujar</l><r>verhexen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>embrujar</l><r>verzaubern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>emerger</l><r>auf|tauchen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>emigrar</l><r>aus|wandern</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>emigrar</l><r>aus|wandern</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>emitir</l><r>aus|geben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>emitir</l><r>geben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>emitir</l><r>emittieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -2760,7 +2763,7 @@
    <e><p><l>exhibirse</l><r>sich zur Schau stellen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>exhibir</l><r>ausstellen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>exigir</l><r>fordern</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>existir</l><r>vorkommen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>existir</l><r>vor|kommen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>expandirse</l><r>sich ausdehnen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>expedir</l><r>ausstellen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>expedir</l><r>verschicken</r></p><par n="VM_VV_MAIN"/></e>
@@ -3237,7 +3240,7 @@
    <e><p><l>injertar</l><r>pfropfen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>injertar</l><r>veredeln</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>injertar</l><r>transplantieren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>inmigrar</l><r>ein|wandern</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>inmigrar</l><r>ein|wandern</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>inmortalizar</l><r>verewigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>inmovilizar</l><r>fest|halten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>inmovilizar</l><r>fixieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -3498,7 +3501,8 @@
    <e><p><l>llenarse</l><r>voll werden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llenar</l><r>füllen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llenar</l><r>aus|füllen</r></p><par n="VM_VV_MAIN"/></e>	<!-- Formular -->
-   <e><p><l>llevar acabo</l><r>beenden</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>llevar_a_cabo</l><r>um|setzen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>llevar_a_cabo</l><r>verwirklichen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llevar en sí</l><r>in sich tragen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llevar puesto</l><r>an|haben</r></p><par n="VM_VV_MAIN"/></e>	<!-- Kleidung --><!-- TODO locuciones?: llevar puesto -->
    <e><p><l>llevarse</l><r>sich vertragen</r></p><par n="VM_VV_MAIN"/></e>
@@ -3648,7 +3652,7 @@
    <e><p><l>mezclar</l><r>mischen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mezclar</l><r>mischen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mezclar</l><r>vermischen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>migrar</l><r>wandern</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>migrar</l><r>wandern</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>migrar</l><r>migrieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mimar</l><r>verwöhnen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mimar</l><r>bemuttern</r></p><par n="VM_VV_MAIN"/></e>
@@ -3787,7 +3791,7 @@
    <e><p><l>ocurrir</l><r>geschehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>ocurrir</l><r>geschehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>ocurrir</l><r>sich ereignen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>ocurrir</l><r>vorkommen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>ocurrir</l><r>vor|kommen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>odiar</l><r>hassen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>ofender</l><r>beleidigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>ofender</l><r>kränken</r></p><par n="VM_VV_MAIN"/></e>
@@ -4058,7 +4062,7 @@
    <e><p><l>perecer</l><r>umkommen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>perecer</l><r>zugrunde gehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>peregrinar</l><r>pilgern</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>peregrinar</l><r>wandern</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>peregrinar</l><r>wandern</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>perfeccionar</l><r>perfektionieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>perfeccionar</l><r>weiter|entwickeln</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>perfilar</l><r>profilieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -4340,7 +4344,7 @@
    <e><p><l>prevenir</l><r>verhüten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>prevenir</l><r>vorbeugen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>prevenir</l><r>vorsorgen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>prevenir</l><r>zuvorkommen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>prevenir</l><r>zuvor|kommen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>prever</l><r>vor|sehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>prever</l><r>erahnen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>prever</l><r>voraus|sehen</r></p><par n="VM_VV_MAIN"/></e>
@@ -5625,6 +5629,7 @@
    <e><p><l>absolutismo</l><r>Absolutismus</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>absoluto</l><r>Absolute</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>absoluto</l><r>Absolutheit</r></p><par n='NC_N_64_FRAU'/></e>
+   <e><p><l>absolvente</l><r>Absolvent</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>abstemio</l><r>Antialkoholiker</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>abstinencia</l><r>Abstinenz</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>abstinencia</l><r>Enthaltsamkeit</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -5796,6 +5801,7 @@
    <e><p><l>acuerdo</l><r>Vertrag</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>acuicultura</l><r>Aquakultur</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>aculturación</l><r>Akkulturation</r></p><par n='NC_N_64_FRAU'/></e>
+   <e><p><l>acumulación</l><r>Ansammlung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>acumulador</l><r>Akkumulator</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>acumulador</l><r>Akku</r></p><par n='NC_N_84_CODE'/></e>
    <e><p><l>acupuntura</l><r>Akupunktur</r></p><par n='NC_N_64_FRAU'/></e>
@@ -10455,6 +10461,9 @@
    <e><p><l>curioso</l><r>Gafferin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>curioso</l><r>Gaffer</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>curioso</l><r>neugierig</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>currículo</l><r>Curriculum</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>currículo</l><r>Lebenslauf</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>currículum</l><r>Curriculum</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>curro</l><r>Ente</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>curry</l><r>Curry</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cursillo</l><r>Kurs</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -11116,6 +11125,8 @@
    <e><p><l>edición</l><r>Edition</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>edicto</l><r>Edikt</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>edificio</l><r>Gebäude</r></p><par n='NC_N_83_MITTEL'/></e>
+   <e><p><l>editorial</l><r>Leitartikel</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- el editorial = der Leitartikel -->
+   <e><p><l>editorial</l><r>Verlag</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- la editorial = der Verlag -->
    <e><p><l>educación de adultos</l><r>Erwachsenenbildung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>educación</l><r>Bildung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>educación</l><r>Erziehung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -11593,6 +11604,7 @@
    <e><p><l>espectáculo</l><r>Veranstaltung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>espectáculo</l><r>Vorführung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>espectador</l><r>Zuschauer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
+   <e><p><l>espectro</l><r>Gespenst</r></p><par n="NC_N_NUM_NEUT"/></e>
    <e><p><l>espectro</l><r>Spektrum</r></p><par n="NC_N_79_KRITERIUM"/></e>
    <e><p><l>especulación</l><r>Spekulation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>especulador</l><r>Spekulant</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -12324,6 +12336,7 @@
    <e><p><l>folio</l><r>Blatt</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>folleto</l><r>Broschüre</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>folleto</l><r>Prospekt</r></p><par n='NC_N_56_TISCH'/></e>
+   <e><p><l>fomento</l><r>Förderung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>fondeadero</l><r>Ankerplatz</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>fondo</l><r>Boden</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>fondo</l><r>Grund</r></p><par n='NC_N_55_WUNSCH'/></e>
@@ -12362,6 +12375,7 @@
    <e><p><l>forraje</l><r>Viehfutter</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>forro</l><r>Futter</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- Kleidung -->
    <e><p><l>forro</l><r>Umschlag</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>fortalecimiento</l><r>Stärkung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>fortaleza</l><r>Burg</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>fortaleza</l><r>Festung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>fortaleza</l><r>Kraft</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -14958,6 +14972,7 @@
    <e><p><l>mandamiento</l><r>Gebot</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>mandarina</l><r>Mandarine</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>mandarín</l><r>Hochchinesisch</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- ling -->
+   <e><p><l>mandarín</l><r>Mandarin</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- ling -->
    <e><p><l>mandato</l><r>Befehl</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>mandato</l><r>Mandat</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>mandíbula</l><r>Kiefer</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -16686,6 +16701,7 @@
    <e><p><l>pagaré</l><r>Schuldschein</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>página</l><r>Blatt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>página</l><r>Seite</r></p><par n='NC_N_76_FEDER'/></e>
+   <e><p><l>página_web</l><r>Internetseite</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>pág.</l><r>Seite</r></p><par n='NC_N_76_FEDER'/></e> <!-- TODO abbreviations -->
    <e><p><l>pago</l><r>Zahlung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paila</l><r>Pfanne</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -20375,6 +20391,7 @@
    <e><p><l>semejanza</l><r>Ähnlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>semen</l><r>Samen</r></p><par n='NC_N_73_WAGEN'/></e>
    <e><p><l>semental</l><r>Hengst</r></p><par n='NC_N_56_TISCH'/></e>
+   <e><p><l>semestre</l><r>Semester</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>semicirculo</l><r>Halbkreis</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>semifusa</l><r>Vierundsechzigstelnote</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>semilla</l><r>Samenkorn</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -20512,6 +20529,7 @@
    <e><p><l>singladura</l><r>Tagereise</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>sínodo</l><r>Synode</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>sinónimo</l><r>Synonym</r></p><par n='NC_N_68_ZIEL'/></e>
+   <e><p><l>sinopsis</l><r>Sinopsis</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>sinovia</l><r>Synovia</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>sintagma</l><r>Syntagma</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>sintaxis</l><r>Syntax</r></p><par n='NC_N_64_FRAU'/></e>
@@ -20573,6 +20591,7 @@
    <e><p><l>solecismo</l><r>Solözismus</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>solemnidad</l><r>Feierlichkeit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>solicitud</l><r>Antrag</r></p><par n='NC_N_55_WUNSCH'/></e>
+   <e><p><l>solidaridad</l><r>Solidarität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>sólido</l><r>Körper</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>solipsismo</l><r>Solipsismus</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>solitón</l><r>Soliton</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -20628,6 +20647,7 @@
    <e><p><l>subsidio</l><r>Subvention</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>substantivación</l><r>Substantivierung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>subterfugio</l><r>Ausflucht</r></p><par n='NC_N_57_HAND'/></e>
+   <e><p><l>subvención</l><r>Subvention</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>suceso</l><r>Geschehen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>suceso</l><r>Geschehnis</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>suceso</l><r>Vorfall</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -20654,6 +20674,7 @@
    <e><p><l>sufijo</l><r>Nachsilbe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>sufijo</l><r>Suffix</r></p><par n='NC_N_108_SALZ'/></e>
    <e><p><l>sufrimiento</l><r>Leiden</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>sugerencia</l><r>Vorschlag</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>suite</l><r>Office-Paket</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>suizo</l><r>Schweizer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
    <e><p><l>suma</l><r>Summe</r></p><par n='NC_N_76_FEDER'/></e>
@@ -21009,6 +21030,8 @@
    <e><p><l>tracto</l><r>Strecke</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>tradición</l><r>Tradition</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>traducción</l><r>Übersetzung</r></p><par n='NC_N_64_FRAU'/></e>
+   <e><p><l>traducción_automática</l><r>maschinelle-Übersetzung</r></p><par n='NC_N_64_FRAU'/></e>
+   <e><p><l>traducción_automática</l><r>MÜ</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>traductor</l><r>Übersetzer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>tráfago</l><r>Hektik</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>tráfico</l><r>Verkehr</r></p><par n='NC_N_100052_OSTEN'/></e>
@@ -21035,6 +21058,8 @@
    <e><p><l>transporte</l><r>Transporter</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>transporte</l><r>Transport</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>transporte</l><r>Transportschiff</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>tranvía</l><r>Strassenbahn</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>tranvía</l><r>Tram</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>trapecio</l><r>Trapez</r></p><par n='NC_N_108_SALZ'/></e>
    <e><p><l>trapero</l><r>Lumpensammler</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>tráquea</l><r>Gefäß</r></p><par n='NC_N_108_SALZ'/></e>
@@ -22087,6 +22112,8 @@ veintitodos
    <e><p><l>climático</l><r>klimatisch<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>conciliar</l><r>konziliar</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>continuo</l><r>kontinuierlich<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>controverso</l><r>kontrovers</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cultivado</l><r>kultiviert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>danés</l><r>dänisch</r></p><par n='AQ_ADJ'/></e>	<!-- geog -->
    <e><p><l>desalmado</l><r>herzlos</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>didáctico</l><r>didaktisch</r></p><par n='AQ_ADJ'/></e>
@@ -22124,9 +22151,12 @@ veintitodos
    <e><p><l>híbrido</l><r>hybrid</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>homólogo</l><r>homolog</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>imposible</l><r>unmöglich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
+   <e><p><l>innovador</l><r>innovativ</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>innovativo</l><r>innovativ</r></p><par n='AQ_ADJ'/></e>	<!-- innovativo? no existe en el DRAE! -->
    <e><p><l>insidioso</l><r>hinterhältig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>insidioso</l><r>hinterlistig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>intercultural</l><r>interkulturell</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>interdisciplinario</l><r>interdisziplinär</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>irregular</l><r>ungeregelt</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>irregular</l><r>ungleichmäßig</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>irregular</l><r>unregelmäßig</r></p><par n="AQ_ADJ"/></e>
@@ -22146,6 +22176,8 @@ veintitodos
    <e><p><l>multicolor</l><r>bunt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>multicolor</l><r>mehrfarbig<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>multicolor</l><r>vielfarbig<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>multilateral</l><r>mehrseitig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>multilateral</l><r>multilateral</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>mundial</l><r>Welt-</r></p><par n='AQ_TRUNC'/></e> 	<!-- TODO: Spanish adjective => German compound element; here: mundial => Welt... -->
    <e><p><l>niño</l><r>klein</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>numeroso</l><r>zahlreich<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> 
@@ -22166,13 +22198,20 @@ veintitodos
    <e><p><l>significativo</l><r>signifikant<s n="molif"/>443</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>siguiente</l><r>nah<s n="grad"/>Sup<s n="molif"/>440</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>siguiente</l><r>folgend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sistemático</l><r>systematisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sobresaliente</l><r>überragend</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>solidario</l><r>solidarisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>sostenible</l><r>nachhaltig<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
    <e><p><l>suficiente</l><r>ausreichend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> <!-- molif? -->
    <e><p><l>tacaño</l><r>geizig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>técnico</l><r>technisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>tinto</l><r>Rot-</r></p><par n='AQ_TRUNC'/></e> 
+   <e><p><l>transcontinental</l><r>transkontinental</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>tropical</l><r>tropisch<s n="molif"/>90</r></p><par n='AQ_ADJ'/></e> 
+   <e><p><l>universitario</l><r>akademisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>universitario</l><r>universitär</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>valioso</l><r>kostbar</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>valioso</l><r>wertvoll</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>verde</l><r>grün<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>viejo</l><r>alt<s n="molif"/>434</r></p><par n='AQ_ADJ'/></e> 
 
@@ -27200,6 +27239,7 @@ aún_cuando	RG-->
    <e><p><l>fuera</l><r>draussen</r></p><par n='RG_ADV'/></e> 
    <e><p><l>hacer_poco</l><r>kürzlich</r></p><par n='RG_ADV'/></e>
    <e><p><l>hasta</l><r>sogar</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>hasta_entonces</l><r>bis dahin</r></p><par n='RG_ADV'/></e> 
    <e><p><l>hoy</l><r>heute</r></p><par n='RG_ADV'/></e>
    <e><p><l>hoy_en_día</l><r>heutzutage</r></p><par n='RG_ADV'/></e>
    <e><p><l>igual</l><r>vielleicht</r></p><par n='RG_ADV'/></e>
@@ -28248,6 +28288,7 @@ frente_a
    <e><p><l>'<s n="parol"/>Fe</l><r>'<s n="pos"/>$(</r></p></e>
    <e><p><l>``<s n="parol"/>Fe</l><r>"<s n="pos"/>$(</r></p></e>
    <e><p><l>-<s n="parol"/>Fg</l><r>-<s n="pos"/>$(</r></p></e>
+   <e><p><l>-<s n="parol"/>Fga</l><r>-<s n="pos"/>$(</r></p></e>
    <e><p><l>(<s n="parol"/>Fpa</l><r>(<s n="pos"/>$(</r></p></e>
    <e><p><l>)<s n="parol"/>Fpt</l><r>)<s n="pos"/>$(</r></p></e>
    <e><p><l>[<s n="parol"/>Fca</l><r>[<s n="pos"/>$(</r></p></e>
