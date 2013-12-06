@@ -2,7 +2,7 @@
 
 define AS=6 [
   [  {mi}   "+DirE"  ] :{mi}"@MI"
-| [  {m} "@mMI"   "+DirE"  ] : {m}"@MI"
+| [  {m}   "+DirE"  ] : {m}"@MI"
 | [  {m}   "+DirE"  ] : {n}"@MI"
 | [  {si}   "+IndE"  ] :{si}"@SI"
 | [  {s}   "+IndE"  ] : {s}"@SI"
