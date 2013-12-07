@@ -8555,36 +8555,32 @@
 <e><p><l>regentear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>regimentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>regionalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>regir</l><r>kama<s n="add_mi"/>+Caus+Rflx</r></p><par n="Verb_main"/></e>#########
-     <e><p><l>registrar</l><r>k'uski</r></p><par n="Noun_ac"/></e>
-    <e><p><l>registrar</l><r>qhamiya</r></p><par n="Noun_ac"/></e>
-<e><p><l>registrar</l><r>Qhaway,qhawapayay</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>registrar</l><r>t'aqwiri</r></p><par n="Noun_ac"/></e>
-    <e><p><l>registrar</l><r>t'aqwi</r></p><par n="Noun_ac"/></e>
-    <e><p><l>registrar</l><r>thawi</r></p><par n="Noun_ac"/></e>
+<e><p><l>regir</l><r>kama<s n="add_mi"/>+Caus+Rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>regir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+     <e><p><l>registrar</l><r>k'uski</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>registrar</l><r>qhawa</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>registrar</l><r>t'aqwi</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>registrar</l><r>unspecified</r></p><par n="Verb_main"/></e>   
 <e><p><l>reglamentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reglar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>regletear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>regocijar</l><r>kusichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>regocijar</l><r>q'ochuchi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>regocijar</l><r>quchu<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>regocijarse</l><r>kusiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>regocijarse</l><r>q'ochuku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>regocijar</l><r>kusi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>regocijar</l><r>q'uchu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>regocijar</l><r>q'uchu<s n="add_mi"/>+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+     <e><p><l>regocijar</l><r>kusi<s n="add_mi"/>+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>regodear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>regoldar</l><r>khakya</r></p><par n="Verb_main"/></e>
-    <e><p><l>regresar</l><r>kuti</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>regresar</l><r>kuti</r></p><par n="Verb_main"/></e>
-    <e><p><l>regresar</l><r/></p><par n="Verb_main_ac"/></e>
-    <e><p><l>regresar</l><r>regresar</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>regresar</l><r>volverá venir: kutimuy. obs. evolución: wiña</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>regoldar</l><r>kakya</r></p><par n="Verb_main"/></e>
+<e><p><l>regoldar</l><r>hap'a</r></p><par n="Verb_main"/></e>
+<e><p><l>regresar</l><r>kuti</r></p><par n="Verb_main"/></e>  
+<e><p><l>regresar</l><r>kuti<s n="add_mi"/>+Cis</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>regruñir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>regularizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>regular</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>regurgitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rehabilitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>rehacer</l><r>kutipa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>rehacer</l><r>kuti<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>rehacer</l><r>rura<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
-    <e><p><l>rehacer</l><r>ruwapa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>rehenchir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rehervir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rehilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -8595,116 +8591,82 @@
 <e><p><l>rehundir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rehusar</l><r>muna<s n="preform"/>#mana</r></p><par n="Verb_main"/></e>
 <e><p><l>reimportar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>reimprimir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>reina</l><r>pilluchi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>reinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>reimprimir</l><r>unspecified</r></p><par n="Verb_main"/></e> 
+<e><p><l>reinar</l><r>kama<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>reincidir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reincorporar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>reingresar</l><r>kutiyku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>reingresar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>reingresar</l><r>kuti<s n="add_mi"/>+Aff</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reinsertar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reinstalar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reinstaurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>reintegrar</l><r>kutichi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reintegrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reinventar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>reír coqueteando</l><r>thintipaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>reír</l><r>asi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reír</l><r>asi</r></p><par n="Verb_main"/></e>
-    <e><p><l>reírse</l><r>asiku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>reiterar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>reiterar</l><r>ni<s n="add_mi"/>+MRep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reivindicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rejacar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rejonear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rejuntar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>rejuvenecer</l><r>sipasya</r></p><par n="Verb_main"/></e>
-        <e><p><l>rejuvenecer</l><r>waynaya</r></p><par n="Noun_ac"/></e>
-<e><p><l>rejuvenecer</l><r>waynaya</r></p><par n="Verb_main"/></e>
+<e><p><l>rejuvenecer</l><r>sipasya<s n="add_mi"/>+Caus<s n="subj"/>[+Fem]<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>rejuvenecer</l><r>waynaya<s n="add_mi"/>+Caus<s n="subj"/>[+Masc]<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+ <!-- intrans. -se --> 
+<e><p><l>rejuvenecer</l><r>sipasya<s n="subj"/>[+Fem]<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>rejuvenecer</l><r>waynaya<s n="subj"/>[+Masc]<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>relacionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>relajar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>relamer</l><r>llunk'upa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>relamer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>relampaguear</l><r>lliphlli</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>relámpaguear</l><r>llipipi</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>relamer</l><r>llunk'u<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>relampaguear</l><r>illapa</r></p><par n="Verb_main"/></e>
 <e><p><l>relampaguear</l><r>llipya</r></p><par n="Verb_main"/></e>
 <e><p><l>relanzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>relatar</l><r>hawari</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>relatar</l><r>lit. willaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>relatar</l><r>willachiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>relatar</l><r>willachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>relatar</l><r>willaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>relatar</l><r>willa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>relatar</l><r>willa</r></p><par n="Verb_main"/></e>
-    <e><p><l>relatar</l><r>willaykacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>relativizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>releer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>relegar</l><r>qhepancha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>relegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>relegarse</l><r>qhepari</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>relevar</l><r>ch'ullana</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>relevar</l><r>mit'a</r></p><par n="Verb_main_ac"/></e>
+  <e><p><l>relegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+  <e><p><l>relegar</l><r>qhipancha</r></p><par n="Verb_main_ac"/></e>
+  <e><p><l>relegar</l><r>qhipa<s n="add_mi"/>+Inch<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>relevar</l><r>ch'ullana</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>relevar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>relevarse</l><r>ch'ullanaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>religar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>relinchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>relinchar</l><r>wihihi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>relingar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rellanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>rellenar</l><r>hunt'achi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>rellenar</l><r>hunt'a<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>rellenar</l><r>llinp'achi</r></p><par n="Verb_main_ac"/></e>
-	 <e><p><l>rellenar</l><r>sat'i</r></p><par n="Noun_ac"/></e>
-    <e><p><l>rellenar</l><r>wina</r></p><par n="Noun_ac"/></e>
-    <e><p><l>rellenar rápidamente</l><r>winarqo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>rellenarse</l><r>winarqoku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>rellenar</l><r>hunt'a<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>rellenar</l><r>llimp'a<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>rellenar</l><r>sat'i</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>rellenar</l><r>wina</r></p><par n="Verb_main_ac"/></e> 
     <e><p><l>relucir</l><r>chiphchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>relucir</l><r>chiphchiy.  aya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>relucir</l><r>llipipi</r></p><par n="Verb_main"/></e>
-    <e><p><l>relucir</l><r>siphsi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>relumbrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>remachar</l><r>chipa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>remachar</l><r>chipa</r></p><par n="Verb_main_new"/></e>
-<e><p><l>remachar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>remangar</l><r>q'allpa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>remangar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>remangarse</l><r>q'allpaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>remansar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remarcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>remar</l><r>t'uyu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>remar</l><r>tuyu</r></p><par n="Verb_main_new"/></e>
-<e><p><l>remar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rematar</l><r>tuku</r></p><par n="Verb_main"/></e>
+<e><p><l>rematar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rembolsar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>remedar</l><r>yachapaya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>remedar</l><r>yacha<s n="add_mi"/>+MRep</r></p><par n="Verb_main"/></e>
 <e><p><l>remediar</l><r>allicha</r></p><par n="Verb_main"/></e>
 <e><p><l>remedir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remellar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>rememorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>rememorar</l><r>yuyapa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>remendar</l><r>ratapa</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>rememorar</l><r>yuya<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>remendar</l><r>rata<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
     <e><p><l>remesar</l><r>suchi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>remesar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remeter</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remilgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remirar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>remitir</l><r>apachi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>remitir</l><r>apa<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>remitir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remodelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>remojar</l><r>chulluchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>remojar</l><r>chullu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>remojar</l><r>chullu</r></p><par n="Verb_main_new"/></e>
-<e><p><l>remojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>remojarse</l><r>apiyachiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>remojarse</l><r>ch'arancha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>remojarse</l><r>ch'aranya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>remojarse</l><r>chulluchiku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>remojar</l><r>chullu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>remojar</l><r>ch'arancha<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+ <!-- intrans. -se -->
+<e><p><l>remojar</l><r>chullu<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>remojar</l><r>ch'aranya<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>remolcar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>remoler</l><r>kutapa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>remoler</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>remoler</l><r>kuta<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>remolinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remolinear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remolonear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -8713,10 +8675,10 @@
 <e><p><l>remosquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remostar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remover</l><r>kuyu<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>remover</l><r>chinka<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>remover</l><r>qachi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>remover</l><r>qaywi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>remozar</l><r>mosoqcha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>remozar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>remozar</l><r>musuqcha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>remplazar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rempujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remudar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -8724,104 +8686,99 @@
 <e><p><l>remunerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>remusgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>renacer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>rendir homenaje</l><r>apucha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>rendir honor</l><r>apuskacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>rendir honor</l><r>sumaycha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>rendir_homenaje</l><r>apucha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>rendir_honor</l><r>apuskacha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>rendir_honor</l><r>sumaycha</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>rendir</l><r>ati<s n="add_mi"/>+Rep<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>rendir</l><r>willka<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>rendir</l><r>k'umu<s n="add_mi"/>+Aff<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>rendir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>renegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>renegociar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>renguear</l><r>hank'a</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>renguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>renguear</l><r>uytu</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>renguear</l><r>wist'u</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reñir</l><r>anya</r></p><par n="Verb_main"/></e>
-      <e><p><l>reñir</l><r>maqanaku</r></p><par n="Noun_ac"/></e>
-    <e><p><l>reñir</l><r>phiñaku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>renovar</l><r>musuqya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>renovarse</l><r>mosoqya</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>reñir</l><r>k'ami</r></p><par n="Verb_main"/></e>
+<e><p><l>renovar</l><r>musuqya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>renovar</l><r>musuqya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>renquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rentabilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>renunciar</l><r>saqi<s n="add_mi"/>+Iprs</r></p><par n="Verb_main"/></e>
-    <e><p><l>renunciar</l><r>wasqe</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>renunciar</l><r>wasqi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>renvalsar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>reojear</l><r>q'ensu</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>reojear</l><r>q'insu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reordenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reorganizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reorientar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>repajar</l><r>sat'ipay. arreglar la paja de los techos</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>repajar</l><r>sat'i<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>repanchigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repantigar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reparar</l><r>allinya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-    <e><p><l>reparar</l><r>musiyo</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>reparar</l><r>rikhu</r></p><par n="Verb_main_ac"/></e> 
+<e><p><l>reparar</l><r>musiya</r></p><par n="Verb_main_ac"/></e> 
 <e><p><l>repartir</l><r>raki</r></p><par n="Verb_main"/></e>
-    <e><p><l>repartirse</l><r>taqanaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>repasar</l><r>kutipa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>repartir</l><r>achura</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>repasar</l><r>kuti<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
 <e><p><l>repastar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>repatear</l><r>hayt'apa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>repatear</l><r>hayt'a<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>repatriar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repechar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>repegar</l><r>k'askapa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>repegar</l><r>k'aska<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>repeinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>repelar</l><r>khuslu</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>repelar</l><r>kuchu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>repelar</l><r>paqlachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>repelar</l><r>p'aqla</r></p><par n="Verb_main_ac"/></e>
-       <e><p><l>repelar</l><r>rutu</r></p><par n="Noun_cp"/></e>
-    <e><p><l>repelar</l><r>rutu</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>repelar</l><r>p'aqlla</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>repelar</l><r>rutu</r></p><par n="Verb_main"/></e>
 <e><p><l>repeler</l><r>chuqa</r></p><par n="Verb_main"/></e>
+<e><p><l>repeler</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repellar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repensar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repentizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repercutir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repesar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repescar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>repetidas veces</l><r>llunk'upa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>repetir</l><r>kuti<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
+<e><p><l>repetir</l><r>rura<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
+<e><p><l>repetir</l><r>ni<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
 <e><p><l>repicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repintar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repiquetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>replantar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>replantear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>replegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>replegarse</l><r>ch'awiya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>replegarse</l><r>qawiya</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>replegar</l><r>qawiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>replegar</l><r>q'inticha<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- intrans. -se -->
+    <e><p><l>replegarse</l><r>ch'awiya<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>replegarse</l><r>qawiya<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>replicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repoblar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repodar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repodrir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repollar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>reponer</l><r>churapu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reponer</l><r>chura<s n="add_mi"/>+Iprs</r></p><par n="Verb_main"/></e>
 <e><p><l>reportar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>reposar</l><r>samachi</r></p><par n="Verb_main_ac"/></e>
-          <e><p><l>reposar</l><r>sama</r></p><par n="Noun_cp"/></e>
-<e><p><l>reposar</l><r>sama<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>reposo</l><r>samaykuku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>reposar</l><r>sama</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>repostar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reprender</l><r>anya</r></p><par n="Verb_main"/></e>
-    <e><p><l>reprender</l><r>phiñakuy. pe aya piña</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>reprender</l><r>phiña</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>represar</l><r>p'onqocha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>represar</l><r>qochacha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>reprender</l><r>k'ami</r></p><par n="Verb_main_ac"/></e>  
+    <e><p><l>represar</l><r>p'unqucha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>represar</l><r>quchacha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>represar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>representar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>reprimir</l><r>mirara</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reprimir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reprobar</l><r>chiqni</r></p><par n="Verb_main"/></e>
-    <e><p><l>reprochar</l><r>kutipaku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>reprochar</l><r>uyancha</r></p><par n="Verb_main"/></e>
+<e><p><l>reprochar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reproducir</l><r>mira</r></p><par n="Verb_main"/></e>
-    <e><p><l>reproducir</l><r>miray. reproductor</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>reproducir</l><r>–ra. adj. zool. miracheq</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>reproducir</l><r>unspecified</r></p><par n="Verb_main"/></e>  
 <e><p><l>reptar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repudiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repudrir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>repugnar</l><r>millachiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>repugnar</l><r>millapaku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>repugnar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>repugnar</l><r>milla<s n="add_mi"/>+Caus+Rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>repugnar</l><r>milla<s n="add_mi"/>+Iprs+Rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>repujar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repulgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>repulir</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -8843,22 +8800,21 @@
 <e><p><l>resanar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>resarcir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>resbalar</l><r>lluchk'a</r></p><par n="Verb_main"/></e>
-    <e><p><l>resbalar</l><r>llusk'a</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>resbalar</l><r>suskha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>resbalarse</l><r>suchkha</r></p><par n="Verb_main_new"/></e>
 <e><p><l>rescaldar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rescatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rescindir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>rescribir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>resecar</l><r>ch'akiyku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>resecar</l><r>ch'olqeya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>resecar</l><r>chuchu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>resecar</l><r>k'irku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>resecar</l><r>k'irku</r></p><par n="Verb_main_new"/></e>
-<e><p><l>resecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>resecarse</l><r>ch'oqro</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>resecarse</l><r>ch'oqroya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>resecarse</l><r>chuchu</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>resecar</l><r>ch'aki<s n="add_mi"/>+Aff+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>resecar</l><r>ch'ullqiya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>resecar</l><r>chuchu<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>resecar</l><r>k'irku<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+<!-- intrans. -se -->
+    <e><p><l>resecar</l><r>ch'uqruya<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+     <e><p><l>resecar</l><r>ch'aki<s n="add_mi"/>+Aff<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>resecar</l><r>ch'ullqiya<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>resecar</l><r>chuchu<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>resecar</l><r>k'irku<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+##################################
 <e><p><l>resegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>reseguir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>resellar</l><r>unspecified</r></p><par n="Verb_main"/></e>
