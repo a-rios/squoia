@@ -9079,29 +9079,20 @@
 <e><p><l>sabotear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sacarificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sacar_líquido</l><r>wisi</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>sacar</l><r>hapht'a</r></p><par n="Verb_main_ac"/></e>##############################
 <e><p><l>sacar</l><r>hurqu</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>sacar</l><r>sik'i</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sacar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>sacar</l><r>wisi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sacar lustre</l><r>k'ancharichi</r></p><par n="Verb_main_ac"/></e>
+<!--    <e><p><l>sacar</l><r>sik'i</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>sacar</l><r>wisi</r></p><par n="Verb_main_ac"/></e>-->
 <e><p><l>sacar_pizca_de_carne</l><r>lliphch'i</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>sacar punta</l><r>ñawch'icha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sachar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>saciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-     <e><p><l>saciarse</l><r>saksa</r></p><par n="Noun_ac"/></e>
+<e><p><l>saciar</l><r>saksa<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>saciar</l><r>saksa<s n="transitivity"/>rflx</r></p><par n="Noun_ac"/></e>
 <e><p><l>sacralizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sacramentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>sacrificar</l><r>arpa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sacrificar</l><r>pirta</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sacrificar</l><r>sipi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sacrificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>sacrificar</l><r>wañuchi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sacudir</l><r>chhapchi</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>sacudir</l><r>chhaphchi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sacudir</l><r/></p><par n="Verb_main_ac"/></e>
-<e><p><l>sacudir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>sacudirse</l><r>chhaphchiku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>sacudir</l><r>taspi</r></p><par n="Verb_main_cp"/></e>
 <e><p><l>saetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sahornar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sainar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -9113,52 +9104,38 @@
 <e><p><l>saldar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>salgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>salificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>salir</l><r>lloqsi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>salir</l><r>lluqsi</r></p><par n="Verb_main"/></e>
-    <e><p><l>salirse</l><r>lloqsipu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>salivar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>salmear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>salmodiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>salpicar</l><r>ch'eqe</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>salpicar</l><r>ch'iqi</r></p><par n="Verb_main"/></e>
 <e><p><l>salpimentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>salpresar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>saltar</l><r>p'ita</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>saltar</l><r>p'ita</r></p><par n="Verb_main"/></e>
 <e><p><l>saltear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>saludar</l><r>napa<s n="add_mi"/>+Aff</r></p><par n="Verb_main"/></e>
-    <e><p><l>saludar</l><r>napayku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>saludarse</l><r>napaykunaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>saludar</l><r>napa<s n="add_mi"/>+Aff+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>salvaguardar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-      <e><p><l>salvar</l><r>llusp'ichi</r></p><par n="Noun_ac"/></e>
-    <e><p><l>salvar</l><r>qespichi</r></p><par n="Noun_ac"/></e>
-    <e><p><l>salvar</l><r>qespi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>salvar</l><r>qispi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>salvar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>salvarse</l><r>qespiku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>sanar</l><r>allicha</r></p><par n="Verb_main"/></e>
-    <e><p><l>sanar</l><r>alliya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sanar</l><r>qhaliya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sanar</l><r>thani</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>sanar</l><r>allinya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>sanar</l><r>qhaliya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>sanar</l><r>allinya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>sanar</l><r>qhaliya<s n="transitivity"/>intrans</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sancionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sancochar_al_vapor</l><r>phasi</r></p><par n="Verb_main_new"/></e>
 <e><p><l>sancochar</l><r>wayk'u</r></p><par n="Verb_main"/></e>
-    <e><p><l>sandeces</l><r>thawti</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sanear</l><r>llunp'a</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sanear</l><r>llunpa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>sanear</l><r>llump'a</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sanear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>sangrar</l><r>sirk'a</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sangrar</l><r>sirk'a</r></p><par n="Verb_main"/></e>
-    <e><p><l>sangre</l><r>horqoku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sanguificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>santificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>santificar</l><r>willkacha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>santificar</l><r>willkachi</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>santiguar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>saponificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>saquear</l><r>suwa</r></p><par n="Verb_main"/></e>
 <e><p><l>sargentear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>sarmentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>satelizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>satelizar</l><r>unspecified</r></p><par n="Verb_main"/></e>#############
     <e><p><l>satifacerse</l><r>aqoqtakiku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>satifacerse</l><r>–cha. adj. saksa</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>satifacerse</l><r>saksasqa</r></p><par n="Verb_main_ac"/></e>
@@ -9174,18 +9151,8 @@
     <e><p><l>satisfacerse</l><r>saksa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>saturar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>saunarse</l><r>waksichiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>saxo</l><r>qallucha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>saxo</l><r>qalluncha</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>sazonar</l><r>uchucha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>sazonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>sebo</l><r>ciar el contenido de un recipiente</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sebo</l><r>derramar algo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sebo</l><r>echar</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sebo</l><r>hich'a</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sebo</l><r>rter</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sebo</l><r>si-  159 non:  talli</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sebo</l><r>trasegar</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>sebo</l><r>va</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>secar_al_sol</l><r>qacha</r></p><par n="Verb_main_new"/></e>
     <e><p><l>secar</l><r>ch'akichi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>secar</l><r>ch'aki</r></p><par n="Verb_main_ac"/></e>
@@ -9209,10 +9176,6 @@
 <e><p><l>seducir</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>seducir</l><r>wateqa</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>seducir</l><r>yuka</r></p><par n="Verb_main_ac"/></e>
-        <e><p><l>se empreña</l><r>chichuyakuq</r></p><par n="Noun_ac"/></e>
-    <e><p><l>se empreña</l><r>wiksayakuq</r></p><par n="Noun_ac"/></e>
-    <e><p><l>se enseba</l><r>wirachakuq</r></p><par n="Noun_ac"/></e>
-    <e><p><l>se familiariza</l><r>wayqechakuq</r></p><par n="Noun_ac"/></e>
 <e><p><l>segar_el_maíz</l><r>kallcha</r></p><par n="Verb_main"/></e>
     <e><p><l>segar</l><r>agr: kallcha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>segar</l><r>rutu</r></p><par n="Verb_main"/></e>
