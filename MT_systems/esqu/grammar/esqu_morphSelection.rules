@@ -98,6 +98,16 @@ my.smi=VMN0000		SS				 k	chunkparent.verbform=SS
 my.smi=VMN0000		agentive			 k	chunkparent.verbform=agentive
 my.smi=VMN0000		infinitive			 k	!(chunkparent.verbform=/obligative|SS|agentive/)
 
+
+  #--------------#
+  # transitivity #
+  #--------------#
+  
+my.smi=/^VM/	transitivity=trans		d	!(xpath{parent::CHUNK/CHUNK[contains(@si,"cd")]})
+my.smi=/^VM/	transitivity=rflx		d	!(xpath{parent::CHUNK/descendant::NODE[@slem="se"]})
+my.smi=/^VM/	transitivity=rzpr		d	!(xpath{parent::CHUNK/descendant::NODE[@slem="se"]} && (my.smi=/V....P./ || parent.smi=/V....P./ || child.smi=/V....P./  ) )
+my.smi=/^VM/	transitivity=intrans		d	xpath{parent::CHUNK/CHUNK[contains(@si,"cd") or contains(@si,"ci")]}
+
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 # MAIN VERBS

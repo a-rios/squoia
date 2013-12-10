@@ -41,8 +41,9 @@ while (<MORPHSELFILE>) {
 	my ( $srcNodeConds, $trgtMI, $keepOrDelete, $conditions, $prob ) = split( /\s*\t+\s*/, $_, 5 );
 
 	$conditions =~ s/\s//g;	# no whitespace within condition
-	# assure key is unique, use srclemma:trgtlemma as key
+	# assure key is unique, use srcConds:trgts as key
 	my $key = "$srcNodeConds---$trgtMI";
+	#print STDERR "key: $key\n";
 	my @value = ( $conditions, $keepOrDelete, $prob );
 	$morphSel{$key} = \@value;
 
@@ -80,6 +81,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 							# get target conditions
 							my $trgtConds = @{ $morphSel{$ruleskey}}[0];
 							my @trgtConditions = &splitConditionsIntoArray($trgtConds);
+							#print STDERR "target conds: @trgtConditions\n";
 							
 							if(&evalConditions(\@trgtConditions,$node))
 							{
@@ -91,17 +93,17 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								{
 										# create xpath string to find matching synonyms:
 										# NOTE: as this may not be the first rule to be applied, its possible that the values in $node belong to a SYN that has already been deleted,
-										# if this was a rule with 'k' -> check also node itself  matches!
+										# if this was a rule with 'k' -> check also if node itself matches!
 										my $xpathstring;
 										my $selfXpathString;
 										if($trgt !~ /=/)
-										{
+										{ 
 											$xpathstring= 'child::SYN[@mi="'.$trgt.'"]';
 											$selfXpathString = 'self::NODE[@mi="'.$trgt.'"]';
 										}
 										#if other attribute than mi should be used for disambiguation
 										else
-										{
+										{ 
 											my ($attr,$value) = split('=',$trgt);
 											$xpathstring= 'child::SYN[@'.$attr.'="'.$value.'"]';
 											$selfXpathString= 'self::NODE[@'.$attr.'="'.$value.'"]';
@@ -146,11 +148,12 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								    			foreach my $syn (@SYNnodes)
 								    			{
 								    				unless( grep( $_ == $syn, @matchingSyns ))
-								    				{
-								    					$node->removeChild($syn);}
+								    				{   
+								    					$node->removeChild($syn);
+								    				}
 								    			}
 								    			#delete SYN node whose attributes have been copied to node
-								    			$node->removeChild($matchingtranslation);
+								    			#$node->removeChild($matchingtranslation);
 								   			}
 								   			elsif($keepOrDelete eq 'd')
 								   			{
@@ -185,6 +188,8 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   				#remove all matching translations:
 								   				foreach my $matchingtranslation (@matchingSyns)
 								   				{	#print STDERR "delete: ".$matchingtranslation->toString()."\n";
+								   					#my $docstring = $dom->toString;
+													#print STDERR $docstring;
 								   					$node->removeChild($matchingtranslation);
 								   				}
 								    		}
@@ -202,6 +207,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 			}
 			# if this node has only one SYN child left (when all other SYNs have been deleted)
 			# -> delete, as SYN is already contained in NODE
+			# TODO: check if there's a SYN that is already in NODE -> delete
 			my @remainingSYNs = $node->findnodes('child::SYN');
 			if(scalar(@remainingSYNs) == 1 && @remainingSYNs[0]->getAttribute('lem') eq $node->getAttribute('lem') && @remainingSYNs[0]->getAttribute('mi') eq $node->getAttribute('mi') )
 			{
