@@ -105,10 +105,6 @@ gato		misi		k	my.smi=/NCM/
 
 # other ambiguities
 
-#abochornar, calor-> rupha-, avergonzarse -> p'inqa-
-#abochornar	rupha	k	-
-#abochornar	p'inqa	k	-
-
 #alto, suni (altitude), hatun -> height
 # leave for language model
 #alto	suni	k	-
@@ -118,12 +114,6 @@ gato		misi		k	my.smi=/NCM/
 # TODO: add edad_media to lexicon
 edad		mit'a	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[@slem="hielo" or @slem="bronce" or @slem="piedra"]} || xpath{following-sibling::CHUNK/NODE[@slem="moderno" or @slem="medio"]}
 edad		wata	k	!(xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[@slem="hielo" or @slem="bronce" or @slem="piedra"]} || xpath{following-sibling::CHUNK/NODE[@slem="moderno" or @slem="medio"]})
-
-# encontrar -> without reflexive: tari- (encontrar algo)
-# with se +locative: ka- (encontrarse en..), with con or nothing -> tinku (encontrarse con alguien)
-encontrar		tari	k	!(xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]})
-encontrar		ka	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]}
-encontrar		tinku	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && !(xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]})
 
 #falta: hucha (de respeto), pisiy (ausencia), panta (error), estar en falta -> separate entry in lexicon
 falta	hucha	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[@slem="respeto"]}
@@ -135,12 +125,6 @@ falta	panta	k	my.smi=/^NC/ && (child.smi=/^DP/ || xpath{descendant::NODE[starts-
 #feraz	ruru	k	-
 #feraz	mira	k	-
 
-#hacer falta (hacer falta que-> separate entry in lexicon)
-# TODO: hacer_falta_que
-# le hace falta su mama -> watu-, hace falto trabajo -> pisi-, hace falta que hablemos -> na+kan
-hacer_falta	watu	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="cd" or @si="suj")]/NODE[@smi="NP00SP0" or @sem="[+Fem]" or @sem="[+Masc]"]}
-hacer_falta	pisi	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC") and not(@sem="[+Fem]") and not(@sem="[+Masc]")]}
-hacer_falta	ka	k	!(xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]} || xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]})
 
 #lengua: qallu (de la boca), simi (idioma)
 # leave for language model
@@ -164,12 +148,23 @@ dueño	+Poss		k		xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"
 rico		qhapaq		k	!(xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.slem=qué )
 rico		miski		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.slem=qué
 
-# verbs
+   ##########
+   # VEBRS  #
+   ##########
+   
+#abochornar, calor-> rupha-, avergonzarse -> p'inqa-
+#abochornar	rupha	k	-
+#abochornar	p'inqa	k	-
 
 #acertar: watu- (adivinar), chayachi- (el blanco)
 # leave for language model
 #acertar		watu		k	-
 #acertar		chaya		k	-
+
+# acordar: yuyari- (recordar) or kamachinaku- (llegar a un acuerdo)
+# if with reflexive + de-obj: yuyari, with direct object: kamachinaku
+acordar		yuya	k	xpath{parent::CHUNK/CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@slem="de"]} || xpath{parent::CHUNK/CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]}
+acordar		kama	k	xpath{following-sibling::CHUNK[(@type="sn" or @type="coor-n") and (@si="cd" or @si="cd-a")]/NODE[starts-with(@smi,"N")]}
 
 # conducir pusa- (+Anim), apa- (-Anim)
 # leave for language model
@@ -185,10 +180,19 @@ rico		miski		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.s
 deber	manuka		k	!(xpath{parent::NODE[starts-with(@smi,"V")]})
 deber	+Obl		k	xpath{parent::NODE[starts-with(@smi,"V")]}
 
-# acordar: yuyari- (recordar) or kamachinaku- (llegar a un acuerdo)
-# if with reflexive + de-obj: yuyari, with direct object: kamachinaku
-acordar		yuya	k	xpath{parent::CHUNK/CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@slem="de"]} || xpath{parent::CHUNK/CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]}
-acordar		kama	k	xpath{following-sibling::CHUNK[(@type="sn" or @type="coor-n") and (@si="cd" or @si="cd-a")]/NODE[starts-with(@smi,"N")]}
+# encontrar -> without reflexive: tari- (encontrar algo)
+# with se +locative: ka- (encontrarse en..), with con or nothing -> tinku (encontrarse con alguien)
+encontrar		tari	k	!(xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]})
+encontrar		ka	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]}
+encontrar		tinku	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && !(xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]})
+
+#hacer falta (hacer falta que-> separate entry in lexicon)
+# TODO: hacer_falta_que
+# le hace falta su mama -> watu-, hace falto trabajo -> pisi-, hace falta que hablemos -> na+kan
+hacer_falta	watu	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="cd" or @si="suj")]/NODE[@smi="NP00SP0" or @sem="[+Fem]" or @sem="[+Masc]"]}
+hacer_falta	pisi	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC") and not(@sem="[+Fem]") and not(@sem="[+Masc]")]}
+hacer_falta	ka	k	!(xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]} || xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]})
+
 
 ##### DAR ######
 
@@ -241,6 +245,8 @@ tener	q'apa		k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="fr
 
 # tener: default, use tene-
 tener	unspecified	k	!(xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="fragancia" or @slem="olor" or @slem="compasión" or @slem="piedad" or @slem="vergüenza" or @slem="sueño" or @slem="sed" or @slem="pena" or @slem="pareja" or @slem="miedo" or @slem="hipo" or @slem="hambre" or @slem="flojera" or @slem="pereza" or @slem="enemistad" or @slem="año"]})
+
+
 
   #####################
   # PERSONAL PRONOUNS #
