@@ -10049,25 +10049,22 @@
   <!--  <e><p><l>utilizar</l><r>kamachiku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>utilizar</l><r>allincha</r></p><par n="Verb_main_ac"/></e>-->
 <e><p><l>utilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>vacar</l><r>unspecified</r></p><par n="Verb_main"/></e>###############################
-    <e><p><l>vaciar</l><r>ch'usaqyachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vaciar</l><r>desocupar: qasichi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vaciar</l><r>líquidos: hich'a</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vaciar</l><r/></p><par n="Verb_main_ac"/></e>
+<e><p><l>vacar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>vaciar</l><r>ch'usaqya<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vaciar</l><r>qasi<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
+    <!--  [+Liq] -> líquidos    -->
+    <e><p><l>vaciar</l><r>hich'a<s n="obj"/>[+Liq]</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vaciar</l><r>talli</r></p><par n="Verb_main"/></e>
-    <e><p><l>vacilar</l><r>chankallpa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vacilar</l><r>iskaya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vacilar</l><r>chankall<s n="add_mi"/>+Rep</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vacilar</l><r>iskaya</r></p><par n="Verb_main"/></e>
     <e><p><l>vacilar</l><r>thuki</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vacilar</l><r>yanqanmana</r></p><par n="Verb_main_ac"/></e>
+<!--     <e><p><l>vacilar</l><r>yanqanmana</r></p><par n="Verb_main_ac"/></e> -->
 <e><p><l>vacunar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vadear</l><r>chimpa</r></p><par n="Verb_main"/></e>
-    <e><p><l>vadear</l><r>chinpa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vagabundear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vagamundear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>vagar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vagar</l><r>usupa puri</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vagar</l><r>usu</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>vagar</l><r>puri<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+    <e><p><l>vagar</l><r>thama<s n="add_mi"/>+Intrup</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vaguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vahear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>valer</l><r>chani</r></p><par n="Verb_main_new"/></e>
@@ -10075,102 +10072,80 @@
 <e><p><l>validar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>valorar</l><r>chanincha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>valorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>valorizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>valsar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>valuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vanagloriar</l><r>qellpu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vanagloriar</l><r>samincha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>vanagloriar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vanagloriarse</l><r>k'askiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vanagloriarse</l><r>sumaykuku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vanagloriar</l><r>qillpu<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vanagloriar</l><r>samincha<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <!-- intrans. -se -->
+    <e><p><l>vanagloriar</l><r>k'aski<s n="add_mi"/>+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vanagloriar</l><r>suma<s n="add_mi"/>+Aff+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vanear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vaporar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vaporizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vaporizar</l><r>waksichi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vaporizar</l><r>wapsi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vaporizar</l><r>wapsi<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vapulear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>varar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>varear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>variar</l><r>rikch'a<s n="add_mi"/>+Caus<s n="preform"/>#hukman</r></p><par n="Verb_main"/></e>
+<e><p><l>variar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>vaticinar</l><r>umulli</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>vaticinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>vaticinar</l><r>watu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vedar</l><r>hark'a</r></p><par n="Verb_main"/></e>
+<!-- <e><p><l>vedar</l><r>amani</r></p><par n="Verb_main"/></e> -->
 <e><p><l>vegetar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vehicular</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vehiculizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>velando</l><r>rikch'aysi</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>velar</l><r>arariwa</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>velar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>velar</l><r>rikch'a</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>velicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vencer</l><r>ati<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
-    <e><p><l>vencer</l><r>inta</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vencer</l><r>ista</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vencer</l><r>llallichiku</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>vencer</l><r>llalli</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vencer</l><r>qayllachiku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>vendar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vendar</l><r>wanku</r></p><par n="Verb_main_new"/></e>
-<e><p><l>vender</l><r>ranti</r></p><par n="Verb_main"/></e>
+<!-- TODO: rantikuy -> vender? (aya. yes, but cuzco?) -->
+<!-- <e><p><l>vender</l><r>ranti<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e> -->
+<e><p><l>vender</l><r>rana</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>vender</l><r>qhatu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vendimiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>venerar</l><r>apucha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>venerar</l><r>yupaycha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>venerar</l><r>yupaycha</r></p><par n="Verb_main"/></e>
-    <e><p><l>venerarse</l><r>yupaychanaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>venga</l><r>hanpuchinpu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vengar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>venia</l><r>k'umupaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>venir</l><r>hamu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>venir</l><r>hamu</r></p><par n="Verb_main"/></e>
-    <e><p><l>venir</l><r>qanpu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ventanear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>ventear</l><r>wayra</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ventear</l><r>wayra</r></p><par n="Verb_main"/></e>
-    <e><p><l>ventearse</l><r>wayrachiku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ventilar</l><r>expeler gases sin ruido. fisiol. chhakcha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ventilar</l><r>khakchay.  923</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ventilar</l><r>los animales</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ventilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>ventilar</l><r>wayrachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ventilar</l><r>wayrachiy. ventosear</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ventilar</l><r>wayra<s n="add_mi"/>+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ventiscar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ventisquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>ventosear</l><r>chakcha</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ventosear</l><r>chiwa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ventosear</l><r>sinón:</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ventosear</l><r>supi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>ventosear</l><r>chhakcha</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ventosear</l><r>supi</r></p><par n="Verb_main"/></e>
-    <e><p><l>ventosear</l><r>supiti</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>veranear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>verbalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>verdear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>verdecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>verguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>verificar</l><r>cheqaqcha</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>verificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>verificarse</l><r>cheqaqchaku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>verificar</l><r>chiqaqcha</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>verificar</l><r>sullullcha</r></p><par n="Verb_main"/></e>
 <e><p><l>verilear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>ver</l><r>riku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>ver</l><r>riku</r></p><par n="Verb_main"/></e>
+<e><p><l>ver</l><r>riku<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main"/></e>
 <e><p><l>verraquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>versar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>verse</l><r>rikuku</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>versificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>versionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vertebrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>verter</l><r>hich'aykachi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>verter</l><r>hich'aykapu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>verter</l><r>hich'ayku</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>verter</l><r>hich'a<s n="add_mi"/>+Aff</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>verter</l><r>talli</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>verter</l><r>hillp'u</r></p><par n="Verb_main"/></e>
-    <e><p><l>vestir</l><r>p'achachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>vestir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vestirse</l><r>p'achaku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>vestirse</l><r>p'acha</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>vestir</l><r>p'acha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vestir</l><r>p'acha<s n="add_mi"/>+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vetar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>viabilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>viajar</l><r>puri</r></p><par n="Verb_main"/></e>
+ <e><p><l>viajar</l><r>illa</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>viajar</l><r>ri</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>viaticar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>viborear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -10179,8 +10154,6 @@
 <e><p><l>viciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>victimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vidriar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vigilar</l><r>qhawapaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vigilar</l><r>qhawa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vigilar</l><r>qhawa<s n="add_mi"/>+MRep</r></p><par n="Verb_main"/></e>
 <e><p><l>vigorar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vigorizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -10189,82 +10162,62 @@
 <e><p><l>vincular</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vindicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>violar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-		    <e><p><l>violar</l><r>yoqo</r></p><par n="Noun_ac"/></e>
-    <e><p><l>violentamente</l><r>hasp'irqo</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>violentar</l><r>qhapchi</r></p><par n="Verb_main_new"/></e>
+<e><p><l>violar</l><r>yuqu</r></p><par n="Noun_ac"/></e>
 <e><p><l>violentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>virar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>visar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>visionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>visitar</l><r>watuku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>visitar</l><r>watu<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-    <e><p><l>visitarse</l><r>watunaku</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>visitar</l><r>watu<s n="add_mi"/>+Rflx<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>visitar</l><r>watu<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main"/></e>
 <e><p><l>vislumbrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>visualizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vitalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vitorear</l><r>haylliku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vitorear</l><r>haylli</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vitorear</l><r>haylli</r></p><par n="Verb_main_new"/></e>
 <e><p><l>vitorear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vitrificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vituallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vituperar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vivaquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vivificar</l><r>kawsarichi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vivificar</l><r>kawsa<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vivificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vivir</l><r>kawsa</r></p><par n="Verb_main"/></e>
     <e><p><l>vivir</l><r>tiya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vocalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>vocear</l><r>waqyaykacha</r></p><par n="Verb_main"/></e>
+<e><p><l>vocear</l><r>waqya<s n="add_mi"/>+Intrup</r></p><par n="Verb_main"/></e>
+<e><p><l>vocear</l><r>qaya<s n="add_mi"/>+Intrup</r></p><par n="Verb_main"/></e>
     <e><p><l>vociferar</l><r>ch'aqwa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vociferar</l><r>ch'aqwayku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vociferar</l><r>roqwa</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vociferar</l><r>roqwaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>vociferar</l><r>roqya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>vociferar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vociferar</l><r>waqwa</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>vociferar</l><r>ruqwa</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>vocinglear</l><r>laqla</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>volar</l><r>phawa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>volar</l><r>phawa</r></p><par n="Verb_main"/></e>
 <e><p><l>volatilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>volcar</l><r>t'ikra</r></p><par n="Verb_main"/></e>
 <e><p><l>volear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>volitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>voltear</l><r>muyu</r></p><par n="Verb_main"/></e>
-    <e><p><l>voltear</l><r/></p><par n="Verb_main_ac"/></e>
-    <e><p><l>voltear</l><r>q'enpi</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>voltear</l><r>tikra</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>voltear</l><r>t'ikra</r></p><par n="Verb_main"/></e>
-    <e><p><l>voltearse</l><r>t'ikraku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>voltejear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>volver a ir</l><r>a venir: kutimu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>volver a ir</l><r>retornar: kuti</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>volverlo morado</l><r>kulliyachi</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>volver</l><r>kuti</r></p><par n="Verb_main"/></e>
-    <e><p><l>volver</l><r>muyumu</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>volverse_ciego</l><r>ñawsaya</r></p><par n="Verb_main_new"/></e>
-    <e><p><l>volverse diablo</l><r>saqrachaku</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>volverse loco</l><r>waq'aya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>volverse nuevo</l><r>mosoqya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>volverse ronco</l><r>ch'akaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>volverse ronco</l><r>ch'arqaya</r></p><par n="Verb_main_ac"/></e>
-		        <e><p><l>vomitar</l><r>fisiol. aqtu</r></p><par n="Noun_ac"/></e>
-    <e><p><l>vomitar</l><r>q'ena</r></p><par n="Noun_ac"/></e>
-<e><p><l>vomitar</l><r>wikch'u<s n="add_mi"/>+Iprs+Rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>voltejear</l><r>unspecified</r></p><par n="Verb_main"/></e>  
+<e><p><l>volver</l><r>kuti<s n="transitivity"/>intrans</r></p><par n="Verb_main"/></e>
+<!-- volver a hacer -> -pa  -->
+<e><p><l>volver</l><r>++Rep<s n="moveToHead_mi"/>++Rep</r></p><par n="Verb_main_ac"/></e>
+<!-- intrans. -se  -> nouns: tuku -man -->
+<e><p><l>volver</l><r>tuku<s n="transitivity"/>rflx<s n="moveToCpred_mi"/>++Dat</r></p><par n="Verb_main_ac"/></e>
+<!-- intrans. -se -> adjetives: adj-ya- -->
+<e><p><l>volver</l><r>++Autotrs<s n="moveToCpred_mi"/>++Autotrs<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>volverse_ciego</l><r>ñawsaya<s n="transitivity"/>rflx</r></p><par n="Verb_main_new"/></e>
+    <e><p><l>volverse_diablo</l><r>saqracha<s n="add_mi"/>+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>volverse_loco</l><r>waq'aya<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>volverse_nuevo</l><r>mosoqya<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>volverse_ronco</l><r>ch'akaya<s n="transitivity"/>rflx</r></p><par n="Verb_main_ac"/></e>    
+<e><p><l>vomitar</l><r>aqtu</r></p><par n="Verb_main_ac"/></e>
+<e><p><l>vomitar</l><r>qipna</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vosear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>votar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>vuelva</l><r>hanpuchinpu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>vulcanizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vulgarizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vulnerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>yacer</l><r>chutaraya</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>yacer</l><r>chuta<s n="add_mi"/>+Perdur</r></p><par n="Verb_main"/></e>
-    <e><p><l>yacer</l><r>siriraya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>yacer</l><r>siri</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>yacer</l><r>wikch'uraya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>ya</l><r>lluyllaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>yantar</l><r>mihu</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>yantar</l><r>mikhuna</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>yacer</l><r>siri<s n="add_mi"/>+Perdur</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>yacer</l><r>wikch'u<s n="add_mi"/>+Perdur</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>yantar</l><r>mikhu</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>yerbear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>yodar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -10292,38 +10245,35 @@
 <e><p><l>zapar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zaparrastrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>zapatear</l><r>t'aqtaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>zapatear</l><r>t'aqtipiyay. ejem. tususpa t'aqtayay: zapatea al bailar</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>zapatear</l><r>t'aqtiya</r></p><par n="Verb_main"/></e>
+<e><p><l>zapatear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zapear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zaquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>zarandear</l><r>suysuysi</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>zarandear</l><r>suysu</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>zarandear</l><r>qachi<s n="add_mi"/>+Intrup</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>zarandear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zarcear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zarpar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zarpear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zascandilear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>zigzagear</l><r>q'enqo</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>zigzagear</l><r>q'enqoykacha</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>zigzagear</l><r>q'inqu<s n="add_mi"/>+Intrup</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>zigzagear</l><r>t'inqu</r></p><par n="Verb_main"/> </e>
-<e><p><l>zigzaguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zollipar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>zonzear</l><r>oqaraya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>zonzear</l><r>uparaya</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>zonzear</l><r>utiraya</r></p><par n="Verb_main_ac"/></e>
+  <e><p><l>zoncear</l><r>upa<s n="add_mi"/>+Intrup</r></p><par n="Verb_main_ac"/></e>
+   <e><p><l>zonzear</l><r>upa<s n="add_mi"/>+Intrup</r></p><par n="Verb_main_ac"/></e>
+   <!-- <e><p><l>zonzear</l><r>uparaya</r></p><par n="Verb_main_ac"/></e>
+    <e><p><l>zonzear</l><r>utiraya</r></p><par n="Verb_main_ac"/></e>-->
 <e><p><l>zozobrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zulacar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zullar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>zumbar</l><r>hunya</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>zumbar</l><r>hunya</r></p><par n="Verb_main_new"/></e>
     <e><p><l>zumbar</l><r>rukhukuku</r></p><par n="Verb_main_ac"/></e>
-<e><p><l>zumbar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>zumbar</l><r>wanwa</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>zunchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>zurcir</l><r>qeqo</r></p><par n="Verb_main_ac"/></e>
     <e><p><l>zurcir</l><r>sira</r></p><par n="Verb_main_ac"/></e>
-    <e><p><l>zurcir</l><r>t'iri</r></p><par n="Verb_main_ac"/></e>
 <e><p><l>zurcir</l><r>t'iri</r></p><par n="Verb_main_new"/></e>
-<e><p><l>zurcir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zurear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>zurrar</l><r>waqta</r></p><par n="Verb_main"/> </e>
+<e><p><l>zurrar</l><r>hasut'i</r></p><par n="Verb_main_ac"/> </e>
+<e><p><l>zurrar</l><r>p'ana</r></p><par n="Verb_main_ac"/> </e>
+<e><p><l>zurrar</l><r>unspecified</r></p><par n="Verb_main"/> </e>
 <e><p><l>zurriagar</l><r>unspecified</r></p><par n="Verb_main"/></e>
