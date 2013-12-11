@@ -47,7 +47,7 @@ while ! echo "" | analyzer_client $FREELING_PORT 2> /dev/null
  echo "squoia_analyzer now ready" >&2
 fi
 
-# test if desr server already started listening, model 1
+# test if desr server already started listening, model 1, NOTE:adjust path to your model!
 if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish_es4.MLP --port 5678' > /dev/null
 then
  echo "desr_server server with model 1 already started" >&2
@@ -61,7 +61,7 @@ else
  echo "desr_server with model 1 now ready" >&2
 fi
 
-# test if desr server already started listening, model 2
+# test if desr server already started listening, model 2, NOTE:adjust path to your model!
 if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish.MLP --port 1234' > /dev/null
 then
  echo "desr_server server with model 2 already started" >&2

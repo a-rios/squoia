@@ -700,7 +700,8 @@ foreach my $porchunk(@pors){
 	}
 	
 }
-
+# linkers that need to be switched to another place in the tree
+# in iula head of clause: pero
 
 #my $docstring = $dom->toString(3);
 #print STDERR $docstring;
