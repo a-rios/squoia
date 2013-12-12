@@ -362,7 +362,7 @@ foreach my $sentence (@sentenceList)
  						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
  						#if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|confiar|confesar|contestar|comentar|decir|declarar|enfatizar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|señalar|sostener|subrayar|testificar|testimoniar/)
  						## TODO: 'querer saber si..'-> indirect question -> translate as tapuy?
- 						if($headVerb && $headVerb->getAttribute('lem') =~ /comentar|decir|mencionar|responder/ or ($headVerb->getAttribute('lem') =~ /preguntar|interrogar/ and $conjunction->getAttribute('lem') eq 'si' ) )
+ 						if($headVerb && $headVerb->getAttribute('lem') =~ /afirmar|alegar|argumentar|aseverar|comentar|decir|declarar|enfatizar|mencionar|responder|sostener|subrayar/ or ($headVerb->getAttribute('lem') =~ /preguntar|interrogar/ and $conjunction->getAttribute('lem') eq 'si' ) )
  						{
  							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
 							# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
