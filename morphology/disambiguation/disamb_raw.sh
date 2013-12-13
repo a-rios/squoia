@@ -17,8 +17,8 @@ MORPH2_MODEL=morph2/sicuani_greg_c1
 MORPH3_MODEL=morph3/sicuani_greg_c0.5
 
 TMP_DIR=tmp3
-EVID="cuz"
-PISPAS="pis"
+EVID="aya"
+PISPAS="pas"
 #XFST_FILE=$1
 RAW_FILE=$1
 
