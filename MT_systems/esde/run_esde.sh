@@ -10,7 +10,7 @@ export FREELING_PARAM="-f $FREELING_CONFIG"
 export SQUOIAMATXIN="$PROJECT_DIR/MT_systems"
 export ESDEMATXIN=$SQUOIAMATXIN/esde
 export TESTOUTPUT="$ESDEMATXIN/tests/esdeout"
-#export TESTOUTPUT="$ESDEMATXIN/tests/eval/aligned.lai.squoia20131128"
+#export TESTOUTPUT="$ESDEMATXIN/tests/eval/aligned.lai.squoia20131204"
 export CONFIGFILE="$ESDEMATXIN/es-de.cfg"
 
 #export DESR_DIR="/home/clsquoia/parser/desr-1.2.6"

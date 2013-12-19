@@ -151,3 +151,10 @@ para		lem=für,cas=Akk		!(xpath{parent::CHUNK[@type="PP" and CHUNK[@type="VP"]]}
 para		lem=um			xpath{parent::CHUNK[@type="PP" and CHUNK[@type="VP"]]}		-
 # TODO: servir para
 
+
+# = SOBRE =
+# =========
+# sobre (todo) => vor (allem)
+
+sobre		lem=vor,cas=Dat		xpath{parent::CHUNK[@type="PP" and @si="sadv" and CHUNK[@type="NP"]/NODE[@sform="todo"]]}	-
+sobre		comment=auf;ueber	!(xpath{parent::CHUNK[@type="PP" and @si="sadv" and CHUNK[@type="NP"]/NODE[@sform="todo"]]})	+

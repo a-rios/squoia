@@ -44,7 +44,7 @@ while (<BILEXPROBFILE>) {
 }
 print STDERR "bilingual lexical probabilities\n";
 foreach my $stlem (keys %bilexProb) {
-	print STDERR "$stlem has prob ".$bilexProb{$stlem}."\n";
+#	print STDERR "$stlem has prob ".$bilexProb{$stlem}."\n";
 }
 #exit;
 
@@ -79,6 +79,7 @@ foreach my $sent (@sentences) {
 		my $selsynnode = $node;
 		foreach my $syn (@synonyms) {
 			my $tlem = $syn->getAttribute('lem');
+			$tlem =~ s/\|//;		# get rid of the "|" in the verbs with separable prefix
 			my $stlem = "$slem\t$tlem";
 			my $prob = $bilexProb{$stlem};
 			if ($prob and $prob > $bestprob) {
@@ -114,7 +115,7 @@ foreach my $sent (@sentences) {
 				}
 				else {
 					my $lem = $syn->getAttribute('lem');
-					print STDERR "syn $lem removed\n";
+					print STDERR "syn $lem with prob ". $bilexProb{"$slem\t$lem"}." removed\n";
 					$node->removeChild($syn);
 				}
 			}
@@ -151,39 +152,55 @@ foreach my $sent (@sentences) {
 			#}
 			# select the first "maxalt" alternatives
 			my %selsyn = ();
-			for (my $i;$i<$maxalt;$i++) {
-				print STDERR $i+1 ." $selectedalts[$i]\n";
-				$selsyn{$selectedalts[$i]} = $i+1;
-			}
-			# delete the attributes of the first SYN child that have been "copied" into the parent NODE
-			my $firstsyn = $synonyms[0];
-			my @synattrlist = $firstsyn->attributes();
-			foreach my $synattr (@synattrlist)
-			{
-				$node->removeAttribute($synattr->nodeName);
-			}
-			# remove the other synonyms
-			foreach my $syn (@synonyms) {
-				my $lem = $syn->getAttribute('lem');
-				$lem =~ s/\|//;
-				if (exists($selsyn{$lem})) {
-					print STDERR "+ $lem\n";
-					# set the node to the first choice
-					if ($lem eq $selectedalts[0]) {
-						print STDERR "************\n";
-						my @attributelist = $syn->attributes();
-						foreach my $attribute (@attributelist)
-						{
-							my $val = $attribute->getValue();
-							my $attr = $attribute->nodeName;
-							$node->setAttribute($attr,$val);
-						}						
+			if (scalar(@selectedalts)) {
+				print STDERR "keep only the selected alternatives\n";
+				for (my $i;$i<$maxalt;$i++) {
+					print STDERR $i+1 ." $selectedalts[$i]\n";
+					$selsyn{$selectedalts[$i]} = $i+1;
+				}
+				# delete the attributes of the first SYN child that have been "copied" into the parent NODE
+				my $firstsyn = $synonyms[0];
+				my @synattrlist = $firstsyn->attributes();
+				foreach my $synattr (@synattrlist)
+				{
+					$node->removeAttribute($synattr->nodeName);
+				}
+				# remove the other synonyms
+				foreach my $syn (@synonyms) {
+					my $lem = $syn->getAttribute('lem');
+					$lem =~ s/\|//;
+					if (exists($selsyn{$lem})) {
+						print STDERR "+ $lem\n";
+						# set the node to the first choice
+						if ($lem eq $selectedalts[0]) {
+							print STDERR "************\n";
+							my @attributelist = $syn->attributes();
+							foreach my $attribute (@attributelist)
+							{
+								my $val = $attribute->getValue();
+								my $attr = $attribute->nodeName;
+								$node->setAttribute($attr,$val);
+							}						
+						}
+					}
+					else {
+						print STDERR "- $lem\n";
+						$node->removeChild($syn);
 					}
 				}
-				else {
-					print STDERR "- $lem\n";
-					$node->removeChild($syn);
+			}
+			else {
+				# back-off: take the first "random" synonyms
+				print STDERR "back-off: take the first random synonyms\n";
+				for (my $i;$i<$maxalt;$i++) {
+					print STDERR "++ " . $i+1 ." " . $synonyms[$i]->getAttribute('lem') ."\n";
+					$selsyn{$synonyms[$i]} = $i+1;
 				}
+				# remove the other synonyms
+				for (my $i=$maxalt;$i<scalar(@synonyms);$i++) {
+					print STDERR "- ".$synonyms[$i]->getAttribute('lem')."\n";
+					$node->removeChild($synonyms[$i]);
+				}			
 			}
 		}
 	}
