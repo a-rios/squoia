@@ -30,6 +30,7 @@ Schublade	[+Cont]		my.pos=/NN/
 Schule		[+Cont]		my.pos=/NN/
 Tisch		[-Cont]		my.pos=/NN/
 Vase		[+Cont]		my.pos=/NN/
+Wohnung		[+Cont]		my.pos=/NN/
 
 ## sports do not have article
 Fussball	[-Art]	my.pos=/NN/
