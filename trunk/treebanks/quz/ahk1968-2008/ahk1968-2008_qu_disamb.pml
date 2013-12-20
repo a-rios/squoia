@@ -39691,16 +39691,6 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
               <pos>$.</pos>
             </terminal>
             <terminal>
-              <order>4</order>
-              <label>$</label>
-              <word>hawa</word>
-              <pos>Root</pos>
-              <translation>=fuera,arriba</translation>
-              <morph>
-                <tag>NRoot</tag>
-              </morph>
-            </terminal>
-            <terminal>
               <order>5</order>
               <label>$</label>
               <word>suyukuna</word>
@@ -39710,6 +39700,18 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>NRoot</tag>
                 <tag>+Pl</tag>
               </morph>
+              <children>
+                <terminal>
+                  <order>4</order>
+                  <label>mod</label>
+                  <word>hawa</word>
+                  <pos>Root</pos>
+                  <translation>=fuera,arriba</translation>
+                  <morph>
+                    <tag>NRoot</tag>
+                  </morph>
+                </terminal>
+              </children>
             </terminal>
             <terminal>
               <order>9</order>
