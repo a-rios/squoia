@@ -83,6 +83,7 @@ a_comisión a_comisión RG I
 a_como_de_lugar a_como_de_lugar RG I
 a_condición_de a_condición_de SPS00 I
 a_condición_del a_condición_del SPCMS I
+a_condición_de_que a_condición_de_que CS I
 a_consecuencia_de a_consecuencia_de SPS00 I
 a_consecuencia_del a_consecuencia_del SPCMS I
 a_continuación_de a_continuación_de SPS00 I
@@ -1189,6 +1190,7 @@ construcción_naval construcción_naval NCFS000 I
 contabilidad_financiera contabilidad_financiera NCFS000 I
 con_tal_de con_tal_de SPS00 I
 con_tal_del con_tal_del SPCMS I
+con_tal_de_que con_tal_de_que CS I
 con_tal_que con_tal_que CS I
 contaminación_acústica contaminación_acústica NCFS000 I
 contaminación_ambiental contaminación_ambiental NCFS000 I
@@ -1793,6 +1795,7 @@ en_cambio_de en_cambio_de SPS00 I
 en_cambio_del en_cambio_del SPCMS I
 en_caso_de en_caso_de SPS00 I
 en_caso_del en_caso_del SPCMS I
+en_caso_de_que en_caso_de_que CS I
 encefalopatía_espongiforme_bovina encefalopatía_espongiforme_bovina NCFS000 I
 en_cierto_modo en_cierto_modo RG I
 encima_de encima_de SPS00 I
