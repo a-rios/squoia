@@ -992,8 +992,9 @@
       <e><p><l><s n="parol"/>DI0CP0</l><r><s n="pos"/>ADV</r></p></e>
     </pardef> 
       
-    <pardef n="DN_CARD"> <!-- Spanish numeral determiners => German indefinite attributive pronouns -->
+    <pardef n="DN_CARD"> <!-- Spanish numeral determiners => German cardinal numbers -->
       <e><p><l><s n="parol"/>DN0CP0</l><r><s n="pos"/>CARD<s n="mi"/>*.Pl</r></p></e> <!-- dos, tres, cuatro, cinco, ... -->
+      <e><p><l><s n="parol"/>Z</l><r><s n="pos"/>CARD<s n="mi"/>*.Pl</r></p></e> <!-- dos, tres, cuatro, cinco, ... -->
     </pardef> 
 
     <pardef n="DN_PIAT"> <!-- Spanish numeral determiners => German indefinite attributive pronouns -->
@@ -1584,8 +1585,7 @@
    <e><p><l>cabecear</l><r>den_Kopf_schütteln</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cabrear</l><r>ärgern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cacarear</l><r>gackern</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>caer</l><r>fallen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>caerse</l><r>fallen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>caer</l><r>fallen<s n='irrefl'/>yes</r></p><par n="VM_VV_MAIN"/></e>	<!-- caer = fallen, and also caerse = fallen -->
    <e><p><l>cagar</l><r>scheißen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>calafatear</l><r>kalfatern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>calar</l><r>durch|dringen</r></p><par n="VM_VV_MAIN"/></e>
@@ -1618,6 +1618,7 @@
    <e><p><l>casar</l><r>trauen</r></p><par n="VM_VV_MAIN"/></e>		<!-- casar [transitiv,irreflexiv] => vermaehlen/trauen/verheiraten -->
    <e><p><l>cavar</l><r>graben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cazar</l><r>jagen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>celebrar</l><r>feiern</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>centrar</l><r>konzentrieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>cerrar</l><r>schließen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cesar</l><r>auf|hören</r></p><par n='VM_VV_MAIN'/></e>
@@ -1691,6 +1692,7 @@
    <e><p><l>concurrir</l><r>sich versammeln</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>concurrir</l><r>zusammen|kommen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>conducir</l><r>fahren</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>confiar</l><r>trauen</r></p><par n="VM_VV_MAIN"/></e>	<!-- TODO confiar en = jmdn trauen -->
    <e><p><l>confirmar</l><r>bestätigen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>confitar</l><r>ein|legen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>confitar</l><r>ein|machen</r></p><par n="VM_VV_MAIN"/></e>
@@ -2268,6 +2270,8 @@
    <e><p><l>encharcar</l><r>unter_Wasser_setzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>encontrar</l><r>finden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>encontrar</l><r>treffen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>enfadar</l><r>verärgern<s n='irrefl'/>yes</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>enfadar</l><r>ärgern</r></p><par n="VM_VV_MAIN"/></e>	<!-- enfadarse = sich aergern -->
    <e><p><l>enfermar</l><r>erkranken</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO enfermar de algo = an etwas+Dat erkranken -->
    <e><p><l>enfocar</l><r>fokussieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>enfocar</l><r>ins Auge fassen</r></p><par n="VM_VV_MAIN"/></e>
@@ -5293,6 +5297,7 @@
    <e><p><l>vencer</l><r>besiegen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>vencer</l><r>überwinden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>vender</l><r>verkaufen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>vengar</l><r>rächen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>venir a ver</l><r>besuchen kommen</r></p><par n="VM_VV_MAIN"/></e>	<!-- TODO locuciones? -->
    <e><p><l>venir</l><r>kommen</r></p><par n='VM_VV_MAIN_BE'/></e>
    <e><p><l>ventosear</l><r>furzen</r></p><par n="VM_VV_MAIN"/></e>
@@ -21473,6 +21478,7 @@
    <e><p><l>ee.uu.</l><r>USA</r></p><par n='NPgeo_NE'/></e> <!-- los EE.UU. = die USA/Vereinigten Staaten $$$ seems to be tagged as Organization?!?! NP00O00-->
    <e><p><l>berlin</l><r>Berlin</r></p><par n='NPgeo_NE'/></e>
    <e><p><l>madrid</l><r>Madrid</r></p><par n='NPgeo_NE'/></e>
+   <e><p><l>munich</l><r>München</r></p><par n='NPgeo_NE'/></e>
    <e><p><l>nueva_york</l><r>New York</r></p><par n='NPgeo_NE'/></e>
    <e><p><l>rio</l><r>Rio</r></p><par n='NPgeo_NE'/></e>
    <e><p><l>viena</l><r>Wien</r></p><par n='NPgeo_NE'/></e>
@@ -21742,8 +21748,17 @@
    <e><p><l>zimbabue</l><r>Simbabwe</r></p><par n='NPgeo_NE'/></e>
 
 <!-- Named entities: persons that are translated -->
+   <e><p><l>ana</l><r>Ana</r></p><par n='NPper_NE'/></e> 
+   <e><p><l>antonio</l><r>Antonio</r></p><par n='NPper_NE'/></e> 
+   <e><p><l>cristina</l><r>Cristina</r></p><par n='NPper_NE'/></e> 
    <e><p><l>juan</l><r>Hans</r></p><par n='NPper_NE'/></e> 
+   <e><p><l>luis</l><r>Luis</r></p><par n='NPper_NE'/></e> 
+   <e><p><l>marta</l><r>Marta</r></p><par n='NPper_NE'/></e> 
+   <e><p><l>pedro</l><r>Pedro</r></p><par n='NPper_NE'/></e> 
+   <e><p><l>ramiro</l><r>Ramiro</r></p><par n='NPper_NE'/></e> 
+   <e><p><l>rita</l><r>Rita</r></p><par n='NPper_NE'/></e> 
    <e><p><l>señor</l><r>Herr</r></p><par n='NPper_NE'/></e> 
+   <e><p><l>vicente</l><r>Vicente</r></p><par n='NPper_NE'/></e> 
 
 <!-- Named entities: organizations that are translated -->
    <e><p><l>bolsas</l><r>Börsen</r></p><par n='NPorg_NE'/></e> 
@@ -21905,6 +21920,7 @@ veintitodos
    <e><p><l>moderado</l><r>moderat<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>modulado</l><r>moduliert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>mostrado</l><r>aufgewiesen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
+   <e><p><l>nacido</l><r>geboren<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>optimizado</l><r>optimiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>organizado</l><r>organisiert<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>pasado</l><r>vergangen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
@@ -21934,6 +21950,7 @@ veintitodos
    <e><p><l>sentado</l><r>sitzend</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>teñido</l><r>gefärbt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>tomado</l><r>genommen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
+   <e><p><l>traducido</l><r>übersetzt</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>transmitido</l><r>übermittelt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>utilizado</l><r>gebraucht<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
    <e><p><l>variado</l><r>abwechslungsreich<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e> 
@@ -27089,6 +27106,7 @@ aún_cuando	RG-->
    <e><p><l>cerca</l><r>nah</r></p><par n='RG_ADV'/></e> 
    <e><p><l>con_creces</l><r>reichlich</r></p><par n='RG_ADV'/></e>  <!-- bei weitem -->
    <e><p><l>cuan</l><r>wie</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>cuanto</l><r>wie</r></p><par n='RG_ADV'/></e> 
    <e><p><l>de_buen_grado</l><r>gern</r></p><par n='RG_ADV'/></e> <!-- freiwillig, gutwillig, aus freiem Willen -->
    <e><p><l>de_facto</l><r>de facto</r></p><par n='RG_ADV'/></e>
    <e><p><l>de_hecho</l><r>tatsächlich</r></p><par n='RG_ADV'/></e>
@@ -27101,6 +27119,7 @@ aún_cuando	RG-->
    <e><p><l>dentro</l><r>drinnen</r></p><par n='RG_ADV'/></e> 
    <e><p><l>después</l><r>nachher</r></p><par n='RG_ADV'/></e> 
    <e><p><l>detrás</l><r>hinten</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>dondequiera</l><r>wo immer</r></p><par n='RG_ADV'/></e> 
    <e><p><l>en_aquel_entonces</l><r>damals</r></p><par n='RG_ADV'/></e> 
    <e><p><l>en_detalle</l><r>ausführlich</r></p><par n='RG_ADV'/></e> 
    <e><p><l>en_detalle</l><r>genau</r></p><par n='RG_ADV'/></e> 
@@ -27181,7 +27200,6 @@ aún_cuando	RG-->
 como_mínimo	RG
 cuan	RG
 cuanto_antes	RG
-cuanto	RG
 de_lo_contrario	RG
 de_pies_a_cabeza	RG
 de_reserva	RG
@@ -27642,6 +27660,8 @@ tanto ... como : sowohl ... als auch?
 y/o => here the tokenization is the issue: analysed as two separate words "y" and "o"
 -->
    <!-- subordinating -->
+   <e><p><l>a_condición_de_que</l><r>wenn</r></p><par n='CS_KOUS'/></e>	<!-- a condicion de que = vorausgesetzt dass? -->
+   <e><p><l>a_fin_de_que</l><r>damit</r></p><par n='CS_KOUS'/></e>
    <e><p><l>a_medida_que</l><r>während</r></p><par n='CS_KOUS'/></e> <!-- in dem Masse, wie...; je nachdem, sowie -->
    <e><p><l>a_menos_que</l><r>ausser</r></p><par n='CS_KOUS'/></e> <!-- ausser? es sei denn, sofern nicht -->
    <e><p><l>adonde</l><r>wohin</r></p><par n='CS_KOUS'/></e>
@@ -27652,6 +27672,7 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>como</l><r>da</r></p><par n='CS_KOUS'/></e> <!-- como = da/weil ?-->
    <e><p><l>conforme</l><r>gemaess</r></p><par n='CS_KOUS'/></e> <!-- ??? -->
    <e><p><l>conque</l><r>folglich</r></p><par n='CS_KOUS'/></e> <!-- also, daher, nun -->
+   <e><p><l>con_tal_de_que</l><r>wenn</r></p><par n='CS_KOUS'/></e> <!-- con tal de que = vorausgesetzt dass ??? -->
    <e><p><l>cuando</l><r>als</r></p><par n='CS_KOUS'/></e>
    <e><p><l>cuando</l><r>wenn</r></p><par n='CS_KOUS'/></e>
    <e><p><l>dado_que</l><r>weil</r></p><par n='CS_KOUS'/></e> <!-- dado que => da? weil? -->
@@ -27660,6 +27681,7 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>desde_el_momento_en_que</l><r>seitdem</r></p><par n='CS_KOUS'/></e>
    <e><p><l>desde_que</l><r>seitdem</r></p><par n='CS_KOUS'/></e>
    <e><p><l>donde</l><r>wo</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>en_caso_de_que</l><r>falls</r></p><par n='CS_KOUS'/></e>
    <e><p><l>en_tanto_que</l><r>während</r></p><par n='CS_KOUS'/></e>
    <e><p><l>entonces</l><r>also</r></p><par n='CS_KOUS'/></e>
    <e><p><l>ergo</l><r>also</r></p><par n='CS_KOUS'/></e>
@@ -27677,6 +27699,8 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>que</l><r>dass</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>si</l><r>wenn</r></p><par n='CS_KOUS'/></e> <!-- falls, wenn + subjuntivo=>konditional???-->
    <e><p><l>sin_que</l><r>ohne dass</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>supuesto_que</l><r>angenommen dass</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>tal_como</l><r>wie</r></p><par n='CS_KOUS'/></e>
    <e><p><l>tal_y_como</l><r>so</r></p><par n='CS_KOUS'/></e> <!-- TODO check CS? tal_y_como => so ?-->
    <e><p><l>una_vez_que</l><r>einmal dass</r></p><par n='CS_KOUS'/></e> <!-- einmal dass ?-->
    <e><p><l>ya_que</l><r>da</r></p><par n='CS_KOUS'/></e> <!-- ya_que => da ?-->
@@ -28123,12 +28147,13 @@ frente_a
    <e><p><l>todo</l><r>alles</r></p><par n='PI_PIS'/></e>
    <e><p><l>uno</l><r>einer</r></p><par n='PI_PIS'/></e> <!-- TODO uno/una => einer/eine/eins? check molif; unos/unas => einige?-->
 
-   <!-- interrogative -->
+   <!-- interrogative TODO paradigm PT_PWAV? and others? -->
    <e><p><l>cómo<s n="parol"/>PT000000</l><r>wie<s n="pos"/>PWAV</r></p></e>
    <e><p><l>cómo<s n="parol"/>PT0CN000</l><r>wie<s n="pos"/>PWAV</r></p></e>
    <e><p><l>dónde<s n="parol"/>PT000000</l><r>wo<s n="pos"/>PWAV</r></p></e>
    <e><p><l>dónde<s n="parol"/>PT0CN000</l><r>wo<s n="pos"/>PWAV</r></p></e>
    <e><p><l>adónde<s n="parol"/>PT000000</l><r>wohin<s n="pos"/>PWAV</r></p></e>
+   <e><p><l>adónde<s n="parol"/>PT0CN000</l><r>wohin<s n="pos"/>PWAV</r></p></e>
    <e><p><l>cuándo<s n="parol"/>PT000000</l><r>wann<s n="pos"/>PWAV</r></p></e>
    <e><p><l>cuál<s n="parol"/>PT0CS000</l><r>welcher<s n="pos"/>PWS<s n="mi"/>Sg</r></p></e> <!-- cuál : welche(r/s); German pos? PWS/PWAV? -->
    <e><p><l>cuál<s n="parol"/>PT0CP000</l><r>welche<s n="pos"/>PWS<s n="mi"/>Pl</r></p></e> <!-- cuáles : welche -->
@@ -28155,6 +28180,8 @@ frente_a
    <e><p><l>cual<s n="parol"/>PR00P000</l><r>welche<s n="pos"/>PRELS<s n="mi"/>Pl</r></p></e> <!-- German? welche/die? -->
    <e><p><l>cuanto<s n="parol"/>PR0FS000</l><r>wieviele<s n="pos"/>PRELS<s n="mi"/>Sg</r></p></e> <!-- cuanta ??? -->
    <e><p><l>cuanto<s n="parol"/>PR0FP000</l><r>wieviele<s n="pos"/>PRELS<s n="mi"/>Pl</r></p></e> <!-- cuantas ??? -->
+   <e><p><l>cuanto<s n="parol"/>PR00P000</l><r>wieviele<s n="pos"/>PRELS<s n="mi"/>Pl</r></p></e> <!-- cuantas/cuantos: why without gender ??? -->
+   <e><p><l>cuanto<s n="parol"/>PR00S000</l><r>wieviele<s n="pos"/>PRELS<s n="mi"/>Pl</r></p></e> <!-- cuanta/cuanto: why without gender ??? -->
    <e><p><l>cuanto<s n="parol"/>PR0MS000</l><r>wieviele<s n="pos"/>PRELS<s n="mi"/>Sg</r></p></e> <!-- cuanto ??? -->
    <e><p><l>cuanto<s n="parol"/>PR0MP000</l><r>wieviele<s n="pos"/>PRELS<s n="mi"/>Pl</r></p></e> <!-- cuantos ??? -->
    <e><p><l>cuyo<s n="parol"/>PR0FS000</l><r>d(er)<s n="pos"/>PRELAT<s n="flex"/>St</r></p></e> <!-- cuya; TODO: Problem/bug? shouldn't it be PRELAT? but "dessen" forms only as PRELS in /home/anne/onkitt/home/clppmolif/molifde-anne/roots/other/stts/Other-stts.lexc -->
