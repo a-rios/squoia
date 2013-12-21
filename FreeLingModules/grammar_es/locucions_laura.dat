@@ -544,6 +544,7 @@ a_peón a_peón RG I
 a_pesar_de a_pesar_de SPS00 I
 a_pesar_del a_pesar_del SPCMS I
 a_pesar_de_todo a_pesar_de_todo RG I
+a_pesar_de_que a_pesar_de_que CS I
 a_peso_de_oro a_peso_de_oro RG I
 a_petición_de a_petición_de SPS00 I
 a_petición_del a_petición_del SPCMS I
@@ -690,8 +691,8 @@ a_semejanza_del a_semejanza_del SPCMS I
 <asesor>_<legal> asesor_legal $1:NC I
 <asesor>_<técnico> asesor_técnico $1:NC I
 así_como así_como CC I
-así_como_también así_como_también RG I
-así_como_tampoco así_como_tampoco RG I
+así_como_también así_como_también CC I
+así_como_tampoco así_como_tampoco CC I
 asilo_político asilo_político NCMS000 I
 así_pues así_pues RG I
 <asistencia>_<legal> asistencia_legal $1:NC I
@@ -1646,8 +1647,8 @@ diente_de_leche diente_de_leche NCMS000 I
 diente_permanente diente_permanente NCMS000 I
 diente_torcido diente_torcido NCMS000 I
 dignidad_humana dignidad_humana NCFS000 I
-dióxido_de_azufre dióxido_de_azufre NCFS000 I
-dióxido_de_carbono dióxido_de_carbono NCFS000 I
+dióxido_de_azufre dióxido_de_azufre NCMS000 I
+dióxido_de_carbono dióxido_de_carbono NCMS000 I
 dirección_a dirección_a SPS00 I
 dirección_al dirección_al SPCMS I
 dirección_administrativa dirección_administrativa NCFS000 I
@@ -2627,7 +2628,6 @@ no_ha_lugar no_ha_lugar RG I
 <nombre>_<comercial> nombre_comercial $1:NC I
 <nombre>_del_<archivo> nombre_del_archivo $1:NC I
 <nombre>_de_<usuario> nombre_de_usuario $1:NC I
-no_obstante no_obstante CC I
 <norma>_<básico> norma_básica $1:NC I
 <norma>_<jurídico> norma_jurídica $1:NC I
 normalización_lingüística normalización_lingüística NCFS000 I
@@ -2638,7 +2638,7 @@ normativa_vigente normativa_vigente NCFS000 I
 no_sea_que no_sea_que CS I
 no_<ser>_cosa_de no_ser_cosa_de $2:VS I
 no_<ser>_cosa_del no_ser_cosa_de $2:VS I
-no_sólo no_sólo CC I
+no_sólo no_sólo RG I
 <nota>_<media> nota_media $1:NC I
 nota_simple nota_simple NCFS000 I
 <núcleo>_<familiar> núcleo_familiar $1:NC I
@@ -2845,7 +2845,6 @@ por_lo_menos por_lo_menos RG I
 por_lo_presente por_lo_presente RG I
 por_lo_pronto por_lo_pronto RG I
 por_lo_tanto por_lo_tanto RG I
-por_más_que_digas por_más_que_digas RG I
 por_medio_de por_medio_de SPS00 I
 por_medio_del por_medio_del SPCMS I
 por_minutos por_minutos RG I
@@ -3436,12 +3435,12 @@ zona_horaria zona_horaria NCFS000 I
 
 %%%%%%%%%%%%%
 %%% Añadidas por Laura
-a_continuación a_continuación SPS00 I 
+% a_continuación a_continuación SPS00 I 
 a_corto_plazo a_corto_plazo RG I
 a_largo_plazo a_largo_plazo RG I
 a_medio_plazo a_medio_plazo RG I
 a_menudo a_menudo RG I
-al_tanto al_tanto SPS00 I
+%al_tanto al_tanto SPS00 I
 al_tanto_de al_tanto_de SPS00 I
 al_tanto_del al_tanto_del SPCMS I
 con_el_fin_de con_el_fin_de SPS00 I
@@ -3449,59 +3448,107 @@ con_el_fin_de_que con_el_fin_de_que CS I
 con_el_fin_del con_el_fin_del SPCMS I
 <dar>_igual dar_igual $1:V I
 de_ahora_en_adelante de_ahora_en_adelante RG I
-de_cabeza de_cabeza RG I
+%de_cabeza de_cabeza RG I
 de_maravilla de_maravilla RG I
 de_milagro de_milagro RG I
 de_principio_a_fin de_principio_a_fin RG I
 día_a_día día_a_día RG I
 día_tras_día día_tras_día RG I
 el_día_a_día el_día_a_día NC I
-<el>_<llamado> el_llamado $2:AQ A
+<el>_<llamado> el_llamado $2:AQ I
 en_balde en_balde RG I
 en_<condición>_de en_condición_de RG I
 en_<condición>_del en_condición_de RG I
 en_condición_de en_condición_de SPS00 I
 en_condición_del en_condición_del SPCMS I
-en_directo en_directo RG en_directo $2:AQ A
-en_general en_general RG A
+%en_directo en_directo RG en_directo $2:AQ A
+en_directo en_directo RG I
+en_general en_general RG I
 en_particular en_particular RG I
 en_vano en_vano RG I
 en_vivo en_vivo RG I
 en_voz_alta en_voz_alta RG I
 <estar>_en_contra estar_en_contra $1:V I
-<estar>_en_contra_de estar_en_contra_de $1:V I
-<estar>_en_contra_del estar_en_contra_de $1:V I
+%<estar>_en_contra_de estar_en_contra_de $1:V I
+%<estar>_en_contra_del estar_en_contra_de $1:V I
 fin_de_semana fin_de_semana $1:NC I
 <hacer>_público hacer_público $1:VM I
 hasta_entonces hasta_entonces RG I
 <hombre>_rana hombre_rana $1:NC I
 hoy_en_día hoy_en_día RG I
-manos_a_la_obra manos_a_la_obra RG A
+manos_a_la_obra manos_a_la_obra RG I
 <mantener>_al_tanto mantener_al_tanto $1:VM I
 <mantener>_al_tanto_de mantener_al_tanto_de $1:VM I
 <mantener>_al_tanto_del mantener_al_tanto_de $1:VM I
 <mercado>_<financiero> mercado_financiero $1:NC I
-mientras_tanto mientras_tanto RG A
+mientras_tanto mientras_tanto RG I
 <organización>_sin_ánimo_de_lucro organización_sin_ánimo_de_lucro $1:NC I
-<pendiente>_de pendiente_de $1:AQ I
-<pendiente>_del pendiente_de $1:AQ I
+%<pendiente>_de pendiente_de $1:AQ I
+%<pendiente>_del pendiente_del $1:AQ I
 <poner>_manos_a_la_obra poner_manos_a_la_obra $1:VM I
-<ser>_<vivo> ser_vivo $1:NC I
+%<ser>_<vivo> ser_vivo $1:NC I
 <servir>_como_base servir_como_base $1:VM I
-<servir>_como_base_a servir_como_base_a $1:VM I
-<servir>_como_base_al servir_como_base_a $1:VM I
-<servir>_como_base_al servir_como_base_al $1:VM I
+%<servir>_como_base_a servir_como_base_a $1:VM I
+%<servir>_como_base_al servir_como_base_a $1:VM I
+%<servir>_como_base_al servir_como_base_al $1:VM I
 <servir>_de_base servir_de_base $1:VM I
-<servir>_de_base_a servir_de_base_a $1:VM I
-<servir>_de_base_al servir_de_base_a $1:VM I
-si_bien si_bien CC I
-sin_embargo sin_embargo CC A
+%<servir>_de_base_a servir_de_base_a $1:VM I
+%<servir>_de_base_al servir_de_base_a $1:VM I
+si_bien si_bien CS I
+sin_embargo sin_embargo CC I
 <tener>_como_<objetivo> tener_como_objetivo $1:VM I
 <tratar>_como_<igual> tratar_como_igual $1:VM I
 
-
-
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% añadidas por Annette (de Ancora
+%%%%%%%%%%%%%%%%%%%%%%%
+<llevar>_a_efecto llevar_a_efecto $1:VM I
+<hacer>_hincapié hacer_hincapié $1:VM I
+a_lo_largo_de a_lo_largo_de SPS00 I
+cerca_de cerca_de SPS00 I
+cerca_del cerca_del SPCMS I
+puesto_que puesto_que CS I
+por_parte_de por_parte_de SPS00 I
+por_parte_del por_parte_del SPCMS I
+lo_mismo_que lo_mismo_que CC I
+pese_a_que pese_a_que CS I
+sino_también sino_también CC I
+<dar>_lugar dar_lugar $1:VM I
+en_especial en_especial RG I
+por_debajo_de por_debajo_de SPS00 I
+por_debajo_del por_debajo_del SPCMS I
+por_encima_de por_encima_de SPS00 I
+por_encima_del por_encima_del SPCMS I
+después_que después_que CS I
+sino_que sino_que CC I
+%al_respecto al_respecto RG I
+al_respecto_de al_respecto_de SPS00 I
+al_respecto_del al_respecto_del SPCMS I
+no_obstante no_obstante RG I
+a_la_ligera a_la_ligera RG I
+por_más_que por_más_que CS I
+<dar>_a_luz dar_a_luz $1:VM I
+a_comienzo_de a_comienzo_de SPS00 I
+a_comienzo_del a_comienzo_del SPCMS I
+a_comienzos_de a_comienzos_de SPS00 I
+a_comienzos_del a_comienzos_del SPCMS I
+a_condición_de_que a_condición_de_que CS I
+a_continuación a_continuación RG I
+a_continuación_de a_continuación_de SPS00 I
+a_continuación_de_que a_continuación_de_que CS I
+a_costo_de a_costo_de SPS00 I
+a_costo_del a_costo_del SPCMS I
+a_dedo a_dedo RG I
+a_diestro_y_siniestro a_diestro_y_siniestro RG I
+a_final_de a_final_de SPS00 I
+a_final_del a_final_del SPCMS I
+a_finales_de a_finales_de SPS00 I
+a_finales_del a_finales_del SPCMS I
+al_lado_de al_lado_de SPS00 I
+al_lado_del al_lado_del SPCMS I
+al_margen_de al_margen_de SPS00 I
+al_margen_del al_margen_del SPCMS I
+así_que así_que CS I
+a_dónde a_dónde PT000000 I
+a_falta_de a_falta_de SPS00 I
+a_falta_del a_falta_del SPCMS I
