@@ -3500,34 +3500,9 @@ sin_embargo sin_embargo CC I
 <tratar>_como_<igual> tratar_como_igual $1:VM I
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% añadidas por Annette (de Ancora
+% añadidas por Annette (de Ancora)
 %%%%%%%%%%%%%%%%%%%%%%%
-<llevar>_a_efecto llevar_a_efecto $1:VM I
-<hacer>_hincapié hacer_hincapié $1:VM I
-a_lo_largo_de a_lo_largo_de SPS00 I
-cerca_de cerca_de SPS00 I
-cerca_del cerca_del SPCMS I
-puesto_que puesto_que CS I
-por_parte_de por_parte_de SPS00 I
-por_parte_del por_parte_del SPCMS I
-lo_mismo_que lo_mismo_que CC I
-pese_a_que pese_a_que CS I
-sino_también sino_también CC I
-<dar>_lugar dar_lugar $1:VM I
-en_especial en_especial RG I
-por_debajo_de por_debajo_de SPS00 I
-por_debajo_del por_debajo_del SPCMS I
-por_encima_de por_encima_de SPS00 I
-por_encima_del por_encima_del SPCMS I
-después_que después_que CS I
-sino_que sino_que CC I
-%al_respecto al_respecto RG I
-al_respecto_de al_respecto_de SPS00 I
-al_respecto_del al_respecto_del SPCMS I
-no_obstante no_obstante RG I
-a_la_ligera a_la_ligera RG I
-por_más_que por_más_que CS I
-<dar>_a_luz dar_a_luz $1:VM I
+
 a_comienzo_de a_comienzo_de SPS00 I
 a_comienzo_del a_comienzo_del SPCMS I
 a_comienzos_de a_comienzos_de SPS00 I
@@ -3540,15 +3515,85 @@ a_costo_de a_costo_de SPS00 I
 a_costo_del a_costo_del SPCMS I
 a_dedo a_dedo RG I
 a_diestro_y_siniestro a_diestro_y_siniestro RG I
+a_dónde a_dónde PT000000 I
+a_falta_de a_falta_de SPS00 I
+a_falta_del a_falta_del SPCMS I
 a_final_de a_final_de SPS00 I
 a_final_del a_final_del SPCMS I
 a_finales_de a_finales_de SPS00 I
 a_finales_del a_finales_del SPCMS I
+a_gritos a_gritos RG I
+a_instancias_de a_instancias_de SPS00 I
+a_instancias_del a_instancias_del SPCMS I
+a_juicio_de a_juicio_de SPS00 I
+a_juicio_del a_juicio_del SPCMS I
+a_la_ligera a_la_ligera RG I
+a_la_vez_que a_la_vez_que CC I
+a_lo_largo_de a_lo_largo_de SPS00 I
+a_que a_que CS I
+al_azar al_azar RG I
+al_borde_de al_borde_de SPS00 I
+al_borde_del al_borde_del SPCMS I
+al_contrario_de al_contrario_de SPS00 I
+al_contrario_del al_contrario_del SPCMS I
+al_inicio_de al_inicio_de SPS00 I
+al_inicio_del al_inicio_del SPCMS I
 al_lado_de al_lado_de SPS00 I
 al_lado_del al_lado_del SPCMS I
 al_margen_de al_margen_de SPS00 I
 al_margen_del al_margen_del SPCMS I
+a_merced_de a_merced_de SPS00 I
+a_merced_del a_merced_del SPCMS I
+al_mismo_tiempo_que al_mismo_tiempo_que CS I
+%al_respecto al_respecto RG I
+al_respecto_de al_respecto_de SPS00 I
+al_respecto_del al_respecto_del SPCMS I
 así_que así_que CS I
-a_dónde a_dónde PT000000 I
-a_falta_de a_falta_de SPS00 I
-a_falta_del a_falta_del SPCMS I
+cadena_perpetua cadena_perpetua NCFS000 I
+cerca_de cerca_de SPS00 I
+cerca_del cerca_del SPCMS I
+con_el_objetivo_de con_el_objetivo_de SPS00 I
+con_el_objetivo_del con_el_objetivo_del SPCMS I
+<dar>_a_luz dar_a_luz $1:VM I
+<dar>_comienzo dar_comienzo $1:VM I
+<dar>_crédito dar_crédito $1:VM I
+<dar>_la_gana dar_la_gana $1:VM I
+<dar>_las_ganas dar_las_ganas $1:VM I
+<dar>_lugar dar_lugar $1:VM I
+<dar>_respuesta dar_respuesta $1:VM I
+de_ahí_que de_ahí_que CS I
+de_espaldas de_espaldas RG I
+de_forma_que de_forma_que CS I
+de_manera_que de_manera_que CS I
+de_parte_de de_parte_de SPS00 I
+de_parte_del de_parte_del SPCMS I
+de_sobras de_sobras RG I
+debido_a_que debido_a_que CS I
+después_que después_que CS I
+en_especial en_especial RG I
+en_caso_de_que en_caso_de_que CS I
+<hacer>_hincapié hacer_hincapié $1:VM I
+<hacer>_cargo hacer_cargo $1:VM I
+lo_mismo_que lo_mismo_que CC I
+<llevar>_a_efecto llevar_a_efecto $1:VM I
+no_obstante no_obstante RG I
+pese_a_que pese_a_que CS I
+<poner>_fin poner_fin $1:VM I
+por_debajo_de por_debajo_de SPS00 I
+por_debajo_del por_debajo_del SPCMS I
+por_encima_de por_encima_de SPS00 I
+por_encima_del por_encima_del SPCMS I
+por_más_que por_más_que CS I
+por_parte_de por_parte_de SPS00 I
+por_parte_del por_parte_del SPCMS I
+puesto_que puesto_que CS I
+sino_que sino_que CC I
+sino_también sino_también CC I
+<tomar>_en_cuenta tomar_en_cuenta $1:VM I
+<tomar>_partido tomar_partido $1:VM I
+<valer>_la_pena valer_la_pena $1:VM I
+
+
+
+
+
