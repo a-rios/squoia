@@ -1,0 +1,6 @@
+The fmed.c file is a modification of the original file found in 
+the folder $PATH/spellcheckCuzco_foma/foma_files, this file was modified 
+for the plugin needs and it is better that it remains in this folder to avoid 
+future confusions.
+
+
