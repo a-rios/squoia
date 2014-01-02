@@ -3495,7 +3495,7 @@ mientras_tanto mientras_tanto RG I
 %<servir>_de_base_a servir_de_base_a $1:VM I
 %<servir>_de_base_al servir_de_base_a $1:VM I
 si_bien si_bien CS I
-sin_embargo sin_embargo CC I
+sin_embargo sin_embargo RG I
 <tener>_como_<objetivo> tener_como_objetivo $1:VM I
 <tratar>_como_<igual> tratar_como_igual $1:VM I
 

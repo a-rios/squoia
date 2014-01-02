@@ -13,6 +13,12 @@ use File::Basename;
 my $path = dirname(rel2abs($0));
 require "$path/../util.pl";
 
+eval {
+	my $hashref = retrieve("NounLex");
+} or die "No NounLex found! Use readInSemanticDix.pl first!";
+
+my %nounLexicon = %{ retrieve("NounLex") };
+
 # check if paramenter evidentialty (-indirect) was given
 # if not, default is NPst (-rqa)
 my $num_args = $#ARGV + 1;
@@ -793,7 +799,7 @@ sub compareSubjects{
 sub compareSubjectsDirectSpeech{
 	my $verbChunk = $_[0];
 	my $finiteVerb = &getFiniteVerb($verbChunk);
-#	print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n";
+	print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n";
 	#subject of main clause
 	my $mainverb = &getVerbMainClause($verbChunk);
 	if($mainverb && $finiteVerb)
@@ -848,8 +854,9 @@ sub compareSubjectsDirectSpeech{
 		  		else
 		  		{
 					# subject of this (subordinate) clause
-					my ($subjNoun, $subjMI ) = &getSubjectNoun($verbChunk);
-					my ($subjNounMain,$subjMIMain ) =  &getSubjectNoun($mainverb);
+					my ($subjNoun, $subjMI ) = &getSubjectNounSpeech($verbChunk);
+					my ($subjNounMain,$subjMIMain ) =  &getSubjectNounSpeech($mainverb);
+					print STDERR "main suj: $subjNounMain, sub suj: $subjNoun\n";
 		
 				# if subjects of main and subord clause found, check if they're the same
 				if($subjNounMain && $subjNoun && $subjMIMain && $subjMI)
@@ -944,7 +951,7 @@ sub isConditional{
 sub getSubjectNoun{
 	my $verbChunk = $_[0];
 	my ($subjectNoun,$subjectNounMI);
-	my $subjectChunk = @{$verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]')}[-1];
+	my ($subjectChunk) = $verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]');
 	
 	if($subjectChunk)
 	{
@@ -956,6 +963,41 @@ sub getSubjectNoun{
 	{
 		$subjectNoun = $verbChunk->getAttribute('coref');
 		$subjectNounMI = $verbChunk->getAttribute('corefmi');
+	}
+	else
+	{
+		print STDERR "no subject, no coref in: ";
+		print STDERR $verbChunk->getAttribute('ord');
+		print STDERR "\n";
+	}
+
+	my @subj = ($subjectNoun, $subjectNounMI);
+	print STDERR "$subjectNoun:$subjectNounMI\n";
+	return @subj;
+}
+
+sub getSubjectNounSpeech{
+	my $verbChunk = $_[0];
+	my ($subjectNoun,$subjectNounMI);
+	my ($subjectChunk) = $verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]');
+	
+	if($subjectChunk)
+	{
+			$subjectNoun = $subjectChunk->findvalue('NODE[@cpos="n" or @pos="pp"][1]/@lem');
+			$subjectNounMI = $subjectChunk->findvalue('NODE[@cpos="n" or @pos="pp"][1]/@mi');
+	}
+	# else if no overt subject, but coref
+	elsif($verbChunk->exists('self::CHUNK/@coref'))
+	{
+		$subjectNoun = $verbChunk->getAttribute('coref');
+		$subjectNounMI = $verbChunk->getAttribute('corefmi');
+		my $semTag = $nounLexicon{$subjectNoun};
+		# unless suposed subject is human, a social group or a proper name -> no congruence (indirect speech should not made direct with 1st person, but 3rd)
+		unless($semTag =~ /hum|soc/ or $subjectNounMI =~ /^NP/){
+			$subjectNoun = "none";
+			$subjectNounMI="none";
+		}
+		#print STDERR "sem: $semTag\n";
 	}
 	else
 	{

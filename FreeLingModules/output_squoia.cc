@@ -364,11 +364,9 @@ wstring MapEagleTagMorphoFeat(wstring s) { // s: eagletag already in lowercase
   else if (cpos == L"s")	// Prepositions => 4:gen,5:num,3:for
   {
     gen = s.substr(3,1);
+    if (gen == L"0")
     {
-      if (gen == L"0")
-      {
 	gen = L"c";
-      }
     }
     num = s.substr(4,1);
     if (num == L"0")

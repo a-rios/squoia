@@ -990,9 +990,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		&moveTopNodeUnderChunk($sentence);
 	}
+	# if verbchunk attached to noun but no rel-prn -> 
+	
 	# check if main verb is in fact a subordinated clause, if so, make second grup-verb head
 	# if coordinated vp: don't take first child grup-verb (this is the coordinated vp), take the last
+	# note: if parser made something else head of sentence, the top verb might not have si=top
 	my $topverbchunk = @{$sentence->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v") and @si="top"][1]')}[0];
+	#my $topverbchunk = @{$sentence->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v")][1]')}[0];
 	if($topverbchunk && $topverbchunk->exists('child::NODE[@cpos="v"]/descendant::NODE[@pos="cs"]'))
 	{ print STDERR "top chunk".$topverbchunk->getAttribute('ord')."\n";
 			my $realMain = @{$topverbchunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v" and not(child::NODE[@pos="cs"])]')}[-1];

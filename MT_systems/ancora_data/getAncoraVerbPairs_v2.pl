@@ -98,7 +98,7 @@ foreach my $sentence (@sentenceList)
 	# if they don't have an overt subject and precede the main clause -> look for subject in preceding sentence
 	# if they don't have an overt subject and follow the main clause, and the main clause has an overt subject, this is the subject of the subordinated chunk
 	#print STDERR "Looking for verb pairs in sentence:";
-	#print STDERR $sentence->getAttribute('ord')."\n";
+	#print STDERR "sent.".$sentence->getAttribute('ord').",";
 	
  	
  	# consider linear sequence in sentence; in xml the verb of the main clause comes always first, but in this case the subject of a preceding subordinated clause is probably coreferent with the subject of the preceding clause
@@ -113,6 +113,7 @@ foreach my $sentence (@sentenceList)
 	   { 
 	   		my $sentenceID = $verbChunk->findvalue('ancestor::SENTENCE/@ord');
 			print STDERR "disambiguating verb sentence nr. $sentenceID: \n ";
+			print "sent.".$sentenceID.", ";
 			my $mainV = &getMainVerb2($verbChunk);
 			my $mLem = $mainV->getAttribute('lem');
 			my $mainFrames = $verbLexWithFrames{$mLem};
