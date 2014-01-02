@@ -142,42 +142,46 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 	my @headlessRelClauses = $sentence->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v")]/NODE[@cpos="v"]/NODE[(@lem="quien" and @rel="suj") or (@pos="da" and @rel="spec")]');
 	foreach my $subjOfheadlessRelclause (@headlessRelClauses)
 	{  
-		# check if there's really no head or prepositinal phrase ('diferencia fuertemente de lo que conocen')
-		# el que, la que -> agentive (else a la que, al que..), but 'lo que' -> ambigous
-		# Lo que me molesta es tu actitud -> subj (but not agentive?)// Lo que dicen, me molesta -> cd
-		if(!$subjOfheadlessRelclause->exists('ancestor::CHUNK[@type="sn" or @type="grup-sp"]'))
+		# check if parent of potential subject has a relative pronoun in chunk: otherwise, not a rel clause
+		if($subjOfheadlessRelclause->exists('parent::NODE/descendant::NODE[@pos="pr"]'))
 		{
-			my $verbform = $subjOfheadlessRelclause->parentNode();
-			my $verbchunk = @{$verbform->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
-			if ($verbform)
+			# check if there's really no head or prepositinal phrase ('diferencia fuertemente de lo que conocen')
+			# el que, la que -> agentive (else a la que, al que..), but 'lo que' -> ambigous
+			# Lo que me molesta es tu actitud -> subj (but not agentive?)// Lo que dicen, me molesta -> cd
+			if(!$subjOfheadlessRelclause->exists('ancestor::CHUNK[@type="sn" or @type="grup-sp"]'))
 			{
-				if(($verbform->exists('child::NODE[(not(@form="lo") and not(@form="Lo")) and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3S/) || ($verbform->exists('child::NODE[(not(@form="los") and not(@form="Los")) and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3P/) || ($subjOfheadlessRelclause->getAttribute('lem') eq 'quien' && $verbform->getAttribute('lem') !~ /estar|ser/))
+				my $verbform = $subjOfheadlessRelclause->parentNode();
+				my $verbchunk = @{$verbform->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
+				if ($verbform)
 				{
-					$verbform->setAttribute('verbform', 'rel:agentive');
-					$verbchunk->setAttribute('chunkmi', '+Top');
-					# set HLRC (headless relative clause)
-					$verbchunk->setAttribute('HLRC', 'yes');
-				}
-				else
-				{ 	# if lo que, los que-> check if verb is congruent, if so, check if rel-clause contains an object
-					if( ($verbform->exists('child::NODE[(@form="lo" or @form="Lo") and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3S/) || ($verbform->exists('child::NODE[(@form="los" or @form="Los") and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3P/) )
+					if(($verbform->exists('child::NODE[(not(@form="lo") and not(@form="Lo")) and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3S/) || ($verbform->exists('child::NODE[(not(@form="los") and not(@form="Los")) and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3P/) || ($subjOfheadlessRelclause->getAttribute('lem') eq 'quien' && $verbform->getAttribute('lem') !~ /estar|ser/))
 					{
-						#my $verbchunk = @{$verbform->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
-						if($verbchunk && hasDorSPobj($verbchunk))
+						$verbform->setAttribute('verbform', 'rel:agentive');
+						$verbchunk->setAttribute('chunkmi', '+Top');
+						# set HLRC (headless relative clause)
+						$verbchunk->setAttribute('HLRC', 'yes');
+					}
+					else
+					{ 	# if lo que, los que-> check if verb is congruent, if so, check if rel-clause contains an object
+						if( ($verbform->exists('child::NODE[(@form="lo" or @form="Lo") and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3S/) || ($verbform->exists('child::NODE[(@form="los" or @form="Los") and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3P/) )
 						{
-							$verbform->setAttribute('verbform', 'rel:agentive');
+							#my $verbchunk = @{$verbform->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
+							if($verbchunk && hasDorSPobj($verbchunk))
+							{
+								$verbform->setAttribute('verbform', 'rel:agentive');
+								$verbchunk->setAttribute('chunkmi', '+Top');
+								$verbchunk->setAttribute('HLRC', 'yes');
+							}
+						}
+						else
+						{
+							$verbform->setAttribute('verbform', 'rel:not.agentive');
 							$verbchunk->setAttribute('chunkmi', '+Top');
 							$verbchunk->setAttribute('HLRC', 'yes');
 						}
 					}
-					else
-					{
-						$verbform->setAttribute('verbform', 'rel:not.agentive');
-						$verbchunk->setAttribute('chunkmi', '+Top');
-						$verbchunk->setAttribute('HLRC', 'yes');
-					}
-				}
-			}	
+				}	
+			}
 		}
 		# headless, within prep-phrase ->depende de lo que dicen, en lo que respecta la siniestralidad, etc -> perfect+Top
 		elsif($subjOfheadlessRelclause->exists('ancestor::CHUNK[1]/parent::CHUNK[@type="grup-sp" or @type="coor-sp"]') )

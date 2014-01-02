@@ -247,7 +247,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 						
 						}
 					}
-					elsif ($prevsmi =~ /^PR/ or $node->exists('child::NODE[starts-with(@mi,"PR") or NODE[NODE[starts-with(@mi,"PR")]] ]')) {
+					elsif (($prevsmi =~ /^PR/ && $prevnode->getAttribute('lem') ne 'cuyo' ) or $node->exists('child::NODE[ (starts-with(@mi,"PR") and not(@lem="cuyo"))  or NODE[NODE[starts-with(@mi,"PR") and not(@lem="cuyo") ]] ]')) {
 						print STDERR "relative clause\n";
 						$newverbform = "rel:";
 						$node->parentNode->setAttribute('verbformMLrule',$newverbform);

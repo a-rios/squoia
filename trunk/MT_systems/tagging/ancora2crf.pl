@@ -10,8 +10,8 @@ binmode(STDOUT, ":utf8");
 binmode(STDERR, ":utf8");
 
 
-my %FLdix = %{retrieve('../FLdix')};
-my %Morfodix = %{retrieve('../Morfodix')};
+my %FLdix = %{retrieve('FLdix')};
+my %Morfodix = %{retrieve('Morfodix')};
 # columns:
 # 0:word form 1: lc/uc 2-6: lemmas, 7-14: tags, 15: class
 
