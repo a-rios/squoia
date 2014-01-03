@@ -41,11 +41,14 @@ while(<>){
 		  		foreach my $token (@tokens)
 		  		{
 		  			if($token eq @tokens[0]){
-		  				print "$token\tFILL_IN\n";
+		  				#print "$token\tFILL_IN\n";
+		  				&printDateToken($token);
 		  			}
 		  			else{
 		  				$wordCount++;
-		  				print "$wordCount\t$token\tFILL_IN\n";
+		  				#print "$wordCount\t$token\tFILL_IN\n";
+		  				print "$wordCount\t";
+		  				&printDateToken($token);
 		  			}
 		  		}
 	  		}
@@ -272,4 +275,21 @@ while(<>){
 	        print "\n";
 	     } 
     }
+}
+
+sub printDateToken{
+	my $date = $_[0];
+	
+	if($date =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo|día|mes|año/){
+		print "$date\t$date\tn\tnc\gen=m|num=s\t_\t_\t_\t_\n";
+	}
+	elsif($date eq 'de'){
+		print "de\tde\ts\tsp\tgen=c|num=c|for=s\t_\t_\t_\t_\n";
+	}
+	elsif($date =~ /^\d+$/){
+		print "$date\t$date\tw\tw\t_\t_\t_\t_\t_\n";
+	}
+	else{
+		print "$date\tFILL_IN\n";
+	}
 }

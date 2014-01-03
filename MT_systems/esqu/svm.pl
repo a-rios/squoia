@@ -73,7 +73,7 @@ my %mapLinkerToVec = (
 	
 my %mapUnknownLinkerToKnowns = (
 	'una_vez_que'	=> 'en_cuanto', 'con_tal_que'	=> 'si', 'con_tal_de_que'	=> 'si','conque'	=> 'si', 'si_bien'	=> 'aunque', 'empero'	=> 'pero', 'puesto_que'	=> 'pues', 
-	'dado_que'	=> 'ya_que', 'con_fin_de_que'	=> 'para_que', 'con_objeto_de_que'	=> 'para_que', 'al_tiempo_que'	=> 'mientras_que'
+	'dado_que'	=> 'ya_que', 'con_fin_de_que'	=> 'para_que', 'con_objeto_de_que'	=> 'para_que', 'al_tiempo_que'	=> 'mientras_que', 'a_que' => 'para_que'
 );
 	
 ## in svm model:
@@ -104,6 +104,7 @@ my %verbLemClasses =  %{ retrieve($verbLemPath) };
 #my $modelPath = "$path/svm_allClasses.model_opt";
 #my $modelPath = "$path/svm_allClasses.model_bestTest";
 my $modelPath = "$path/ancoraAndiula_svm.model";
+#print STDERR "modelpath: $modelPath\n";
 my $svm =  new Algorithm::SVM(Model => $modelPath);
 #my $svm1 =  new Algorithm::SVM(Model => 'svm_model_class7');
 #my $svm2 =  new Algorithm::SVM(Model => 'svm_model_class6');
@@ -352,13 +353,15 @@ sub predictVerbform{
 		#print STDERR "linker $linker at pos: ".$mapLinkerToVec{'none'}."\n";
 	}
 	
-	print STDERR "vec: @vec\n";
 	
-	my $ds =  new Algorithm::SVM::DataSet(Label => 1,
-											 Data => \@vec);
+	## NOTE, need an extra element!!
+	unshift(@vec,0);
+	print STDERR "vec: @vec\n";
+	my $ds =  new Algorithm::SVM::DataSet(Label => 1, Data => \@vec);
+									 
 	my $svmClass = $svm->predict($ds);
 	
-	print STDERR "predicted $svmClass, in xml: $mapSVMClassToXmlClass{$svmClass}\n";
+	print STDERR "predicted $svmClass, in xml: $mapSVMClassToXmlClass{$svmClass}, verb form: $mapClassToVerbform{$mapSVMClassToXmlClass{$svmClass}}\n";
 	
 	return $mapSVMClassToXmlClass{$svmClass};
 #	my  @test  = 	$ds->asArray();						 
