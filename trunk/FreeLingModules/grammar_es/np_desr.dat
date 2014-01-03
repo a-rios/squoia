@@ -21,6 +21,8 @@ por
 para
 &
 d'
+von
+zu
 </FunctionWords>
 ## Punctuation mark tags after which a capitalized word
 ## may be indicating just a sentence (or clause) beginning
@@ -57,6 +59,8 @@ sres. PRE
 srs.  PRE
 srta. PRE
 jr. SUF
+Mr. PRE
+Mrs. PRE
 </Affixes>
 <Ignore>
 </Ignore>
