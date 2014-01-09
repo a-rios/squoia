@@ -144,7 +144,7 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 	{  
 		# check if parent of potential subject has a relative pronoun in chunk: otherwise, not a rel clause
 		if($subjOfheadlessRelclause->exists('parent::NODE/descendant::NODE[@pos="pr"]'))
-		{
+		{ 
 			# check if there's really no head or prepositinal phrase ('diferencia fuertemente de lo que conocen')
 			# el que, la que -> agentive (else a la que, al que..), but 'lo que' -> ambigous
 			# Lo que me molesta es tu actitud -> subj (but not agentive?)// Lo que dicen, me molesta -> cd
@@ -197,7 +197,10 @@ foreach my $sentence  ( $dom2->getElementsByTagName('SENTENCE'))
 	# relclauses without preposition:
 	my @relprnNoPP = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[(@type="grup-verb" or @type="coor-v") and (@si="S" or @si="cn")]/NODE[@cpos="v"]/NODE[@pos="pr"]');
 	my @coorRelprnNoPP = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[@type="coor-v" and (@si="S" or @si="cn") and NODE[@pos="pr" or NODE[@pos="pr"] ] ]/CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v"]/NODE[@pos="pr"]');
+	#my @cualprnNoPP = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[(@type="grup-verb" or @type="coor-v") and (@si="S" or @si="cn")]/NODE[@cpos="v"]/NODE[@lem="el" and @rel="spec"]/NODE[@lem="cual"]');
+	
 	push (@relprnNoPP, @coorRelprnNoPP);
+	#push (@relprnNoPP, @cualprnNoPP);
 
 	foreach my $relprn (@relprnNoPP)
 	{

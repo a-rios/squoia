@@ -5,7 +5,7 @@
 use strict;
 use XML::LibXML;
 binmode STDIN, ':utf8';
-
+binmode STDERR, ':utf8';
 
 # read conll file and create xml (still flat)
 my $scount=1; #sentence ord
@@ -133,7 +133,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			$parent = $sentence;
 		}
 		
-#print STDERR $node->getAttribute('lem')."\n";
+ #print STDERR $node->getAttribute('lem')."\n";
 			#if this is a main verb or auxiliary used as main verb 
 			# (as auxiliary rel=v, auxilaries don't get their own chunk, they should live inside the main verbs' chunk)
 			if ($node->exists('self::NODE[@cpos="v"] and not(self::NODE[@rel="v"])'))
@@ -372,6 +372,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			}
 		}
 	}
+#	
+#	#print STDERR $sentence->toString()."\n";
 }
 
 my $docstring = $dom->toString(3);
