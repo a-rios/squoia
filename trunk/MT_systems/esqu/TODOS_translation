@@ -1,50 +1,43 @@
 TODOS translation:
 
-things to ask Roger:
-RELATIVE CLAUSES:
-- not agentive relative clauses in conditional: la casa que podría comprar -> verbform in quechua?? potential, kein rel-satz
-- continuar + gerund -> -raya? -nya, -miya? -chka-lla ( -ykacha?)
-
-- relative clauses with 'cuyo/a'?  la señora cuya hija se fue -> ususin ripurqan chay mama
-- check missing verb forms involving 2 participants (missing in grammar books)
-
-- quedarse + Adj -> resultativo, como traducir? -> adj+cha+ku
-- En cuanto + finite verb (as soon as) -> spa/pti + wan ?, -spa/pti (evt. mit -wan)
-
+GENERALLY:
 - watayuq kay (tener años)
  (-raya -> sostener, quedarse suspendido, SUSPENSOR)
  -> permanece cantando -> taki-chka -lla -n
  -> permanece tranquilo/callado:  quedó tranquilo  = Tranquilo-m quada-ku-n./amulla-cha-ku-n/Tranquilo-cha-ku-n, tranquilo-lla-m chura-ku-n 
- 
-- indirect questions with 'si' -> != conditional clauses!! 'quisiera saber si vienes mañana' -> translate how? infinitive? 
- 
+ - quedarse + Adj -> resultativo, como traducir? -> adj+cha+ku
 - IMPORTANT: split sentences at ';', otherwise parser does weird things!!! 
 - distributive -nka ( cada uno)
 - numbers and dates -> horas (months ok)
-
 ( IMPOSSIBLE DISTINCTION (?) - evidential 'dice(n) que' in Andean Spanish -> don't treat as direct speech! also: según dice(n))
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
+- (de) color + 'color' es -> delete color (casa de color azul -> anqas wasi) 
+# TODO: aunque_sea -> maskipas (adverb)
+- verse +AQ, resultar +AQ -> ka- .. adj, 
 
-# TODO: aunque sea -> maskipas (adverb):
-
-TODO: coordinated complements of speech verbs -> coref-resolution: subj of relclause is either in the clause, or it's the head
--> allg. koreferenz bei direct speech -> miserabel
-
+RELATIVE CLAUSES:
+- not agentive relative clauses in conditional: la casa que podría comprar -> verbform in quechua?? potential, kein rel-satz
+- continuar + gerund -> -raya? -nya, -miya? -chka-lla ( -ykacha?)
+- relative clauses with 'cuyo/a'?  la señora cuya hija se fue -> ususin ripurqan chay mama
+- check missing verb forms involving 2 participants (missing in grammar books)
 - Coordination of participle and relative clause 
 'Una de las empresas tomaría posesión de los sistemas Windows, CREADO por esta firma y QUE USAN el 95_por_ciento de los ordenadores de todo el mundo..'
+- headless RC's with preposition -> por lo que he visto -> rikusqayrayku -> add case!
+- headless RC's with cual/cuales
 
 LEXICON:
-- participles vs. adjectives: e.g. adinerado
-  (done -> add paradigm Noun to all Particple-N/V forms)
-  -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong)
 - construir + Noun -> -cha
 
 SUBORDINATED CLAUSES:
 (- if verb chunk contains only participle: use -sqa form)
 - more than one infinitive in verb chunk: tenemos que aprender a vivir, hay que saber cocinar etc.
+- CS: a medida que ? a pesar de que?
+- often: still main and sub-clause switched from parsing!!
+- indirect questions with 'si' -> != conditional clauses!! 'quisiera saber si vienes mañana' -> translate how? infinitive? 
+- coordinated complements of speech verbs -> coref-resolution: subj of relclause is either in the clause, or it's the head
+- En cuanto + finite verb (as soon as) -> spa/pti + wan ?, -spa/pti (evt. mit -wan)
 
-CONSTRUCTIONS WITH INFINITIVE:
 
 TOPIC/FOCUS:
 - topicalized nouns with relative clauses: fueron ellos quienes dejaron,
@@ -56,8 +49,6 @@ PREPOSITIONS/ PREP-OBJECTS:
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
 
-- (de) color + 'color' es -> delete color (casa de color azul -> anqas wasi) 
-
 GENARATION
 - generate synonyms
 
@@ -65,6 +56,10 @@ after more testing:
  - words that cannot be generated: just print lemma
  - word nodes where lem contains '+(+)' -> don't print
 
+SVM:
+- 3x a pesar de que -> aunque
+- delete 1 instance of a medida que
+ 
 --------------------------------------------------------------------------------------------------------------------------
 ( done - hace tiempo, atm: pacha ruran -> changed to ñawpaq pacha/ unay pacha or something like that)
 ( done - use finite verb forms if even if verb chunk is has not si=top, but there's no verb chunk above (parser error) )
@@ -143,4 +138,7 @@ after more testing:
       --  Nuqaq  ̃llaqta tiyasqayqa hatun.
 	  ’La ciudad donde vivo es grande.’ (hastings)  )
 (done - no accusative in relative clauses (el hombre que hace una casa -> wasi ruwaq runa)
+(done - participles vs. adjectives: e.g. adinerado
+  (done -> add paradigm Noun to all Particple-N/V forms)
+  -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong) -> done, new tagger is better at this)
 
