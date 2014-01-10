@@ -61,20 +61,43 @@ my %mapModToVec = (
 	'I'	=> 45, 'S'	=> 46, 'P'	=> 47, 'N'	=> 48, 'G'	=> 49, 'M'	=> 50
 );
 
+# version comoCorr
+#my %mapLinkerToVec = (
+#	'none'	=> 51, 'que'	=> 52, 'ya_que'	=> 53, 'para_que'	=> 54, 'el_hecho_de_que'	=> 55, 'pues'	=> 56,
+#	'como'	=> 57, 'mientras_que'	=> 58, 'después_de_que'	=> 59,  'al_tiempo_que'	=> 60, 'puesto_que'	=> 61, 'si'	=> 62, 
+#	'hasta_que'	=> 63, 'mientras'	=> 64,
+#	'aunque'	=> 65, 'cuando'	=> 66, 'desde_que'	=> 67, 'porque'	=> 68, 'antes_de_que'	=> 69, 'sin_que'	=> 70, 'y_cuando'	=> 71,
+#	'según'	=> 72, 'una_vez_que'	=> 73, 'en_cuanto'	=> 74, 'aun_cuando'	=> 75, 'de_modo_que'	=> 76, 'así_que'	=> 77, 'a_pesar_de_que'	=> 78, 'en_caso_de_que'	=> 79,
+#	'si_bien'	=> 80, 'tan_pronto'	=> 81, 'por_eso'	=> 82, 'aún_cuando'	=> 83, 'tal_y_como'	=> 84, 'siempre_y_cuando'	=> 85, 'a_fin_de_que'	=> 86, 'siempre_que'	=> 87,
+#	'a_medida_que'	=> 88, 'en_cuanto_que'	=> 89
+#	);
+#	
+
+# version 4
 my %mapLinkerToVec = (
 	'none'	=> 51, 'que'	=> 52, 'ya_que'	=> 53, 'para_que'	=> 54, 'el_hecho_de_que'	=> 55, 'pues'	=> 56,
-	'como'	=> 57, 'mientras_que'	=> 58, 'después_de_que'	=> 59,  'al_tiempo_que'	=> 60, 'puesto_que'	=> 61, 'si'	=> 62, 
-	'hasta_que'	=> 63, 'mientras'	=> 64,
-	'aunque'	=> 65, 'cuando'	=> 66, 'desde_que'	=> 67, 'porque'	=> 68, 'antes_de_que'	=> 69, 'sin_que'	=> 70, 'y_cuando'	=> 71,
-	'según'	=> 72, 'una_vez_que'	=> 73, 'en_cuanto'	=> 74, 'aun_cuando'	=> 75, 'de_modo_que'	=> 76, 'así_que'	=> 77, 'a_pesar_de_que'	=> 78, 'en_caso_de_que'	=> 79,
-	'si_bien'	=> 80, 'tan_pronto'	=> 81, 'por_eso'	=> 82, 'aún_cuando'	=> 83, 'tal_y_como'	=> 84, 'siempre_y_cuando'	=> 85, 'a_fin_de_que'	=> 86, 'siempre_que'	=> 87,
-	'a_medida_que'	=> 88, 'en_cuanto_que'	=> 89
+	'como'	=> 57, 'mientras_que'	=> 58, 'después_de_que'	=> 59,  'al_tiempo_que'	=> 60, 'puesto_que'	=> 61, 
+	'si'	=> 62, 'hasta_que'	=> 63, 'mientras'	=> 64, 'aunque'	=> 65, 'cuando'	=> 66, 'desde_que'	=> 67, 
+	'porque'	=> 68, 'antes_de_que'	=> 69, 'sin_que'	=> 70, 'a_pesar_de_que'	=> 71, 'y_cuando'	=> 72,
+	'según'	=> 73, 'una_vez_que'	=> 74, 'en_cuanto'	=> 75, 'debido_a_que'	=> 76, 'dado_que'	=> 77,
+	 'de_modo_que'	=> 78, 'así_que'	=> 79,  'en_caso_de_que'	=> 80,
+	'si_bien'	=> 81, 'tan_pronto'	=> 82, 'por_eso'	=> 83, 'aún_cuando'	=> 84, 'tal_y_como'	=> 85, 
+	'siempre_y_cuando'	=> 86, 'a_fin_de_que'	=> 87, 'siempre_que'	=> 88,
+	'a_medida_que'	=> 89, 'en_cuanto_que'	=> 90
 	);
-	
+
+# comoCorr
+#my %mapUnknownLinkerToKnowns = (
+#	'una_vez_que'	=> 'en_cuanto', 'con_tal_que'	=> 'si', 'con_tal_de_que'	=> 'si','conque'	=> 'si', 'si_bien'	=> 'aunque', 'empero'	=> 'pero', 
+#	'puesto_que'	=> 'pues', 'dado_que'	=> 'ya_que', 'con_fin_de_que'	=> 'para_que', 'con_objeto_de_que'	=> 'para_que', 
+#	'al_tiempo_que'	=> 'mientras_que', 'a_que' => 'para_que', 'debido_a_que' => 'por_eso', 'por_lo_tanto' => 'por_eso'
+#);
+
+#version 4
 my %mapUnknownLinkerToKnowns = (
-	'una_vez_que'	=> 'en_cuanto', 'con_tal_que'	=> 'si', 'con_tal_de_que'	=> 'si','conque'	=> 'si', 'si_bien'	=> 'aunque', 'empero'	=> 'pero', 
-	'puesto_que'	=> 'pues', 'dado_que'	=> 'ya_que', 'con_fin_de_que'	=> 'para_que', 'con_objeto_de_que'	=> 'para_que', 
-	'al_tiempo_que'	=> 'mientras_que', 'a_que' => 'para_que', 'debido_a_que' => 'por_eso', 'por_lo_tanto' => 'por_eso'
+	'con_tal_que'	=> 'si', 'con_tal_de_que'	=> 'si','conque'	=> 'si', 'empero'	=> 'pero', 
+	'puesto_que'	=> 'pues', 'con_fin_de_que'	=> 'para_que', 'con_objeto_de_que'	=> 'para_que', 
+	'al_tiempo_que'	=> 'mientras_que', 'a_que' => 'para_que', 'por_lo_tanto' => 'por_eso'
 );
 	
 ## in svm model:
@@ -88,47 +111,17 @@ my %mapSVMClassToXmlClass = ( 3.0 => 7, 1.0 => 3, 0.0 => 2, 2.0 => 6);
 #	print STDERR "$k: ".$mapSemsToVec{$k}."\n";
 #}
 
-#check if verbforms.yaml (naive bayes model) exists, if not, train on verbInstances.csv
-# eval
-# {
-# 	 my $pathToModel = $path."/verbforms.yaml";
-# 	 print STDERR $pathToModel."\n";
-# 	 $nb = AI::NaiveBayes1->import_from_YAML_file($pathToModel);
-# 
-# } or print STDERR "no model found on disk, train Naive Bayes on verbInstances.csv first\n";
- 
 my $verblexPath = "$path/../VerbLex";
 my $verbLemPath = "$path/verbLemClasses";
 my %verbLexWithFrames   = %{ retrieve($verblexPath) };
 my %verbLemClasses =  %{ retrieve($verbLemPath) };
 
-#my $modelPath = "$path/svm_allClasses.model_opt";
-#my $modelPath = "$path/svm_allClasses.model_bestTest";
-my $modelPath = "$path/ancoraAndiula_svm.model";
+#my $modelPath = "$path/ancoraAndiula_svm.model";
+# testing
+my $modelPath = "$path/ancoraAndiula_v4_preliminary.model";
 #print STDERR "modelpath: $modelPath\n";
 my $svm =  new Algorithm::SVM(Model => $modelPath);
-#my $svm1 =  new Algorithm::SVM(Model => 'svm_model_class7');
-#my $svm2 =  new Algorithm::SVM(Model => 'svm_model_class6');
-#my $svm2 =  new Algorithm::SVM(Model => 'svm_model_class6_nomPos_not_optimized');
-#my $svm3 =  new Algorithm::SVM(Model => 'svm_model_class23');
-# Classify a dataset.
-#my $ds1 =  new Algorithm::SVM::DataSet(Label => 1);
-#my $ds2 =  new Algorithm::SVM::DataSet(Label => 2);
-#my $ds3 =  new Algorithm::SVM::DataSet(Label => 3);
-## test case
-#0 4:1 10:1 27:1 37:1 40:1 46:1 52:1 58:1 77:1 
-#$ds->attribute(4,1);
-#$ds->attribute(10,1);
-#$ds->attribute(27,1);
-#$ds->attribute(37,1);
-#$ds->attribute(40,1);
-#$ds->attribute(46,1);
-#$ds->attribute(52,1);
-#$ds->attribute(58,1);
-#$ds->attribute(77,1);
-#my  $result = $svm->predict($ds);
-#my @a = $ds->asArray(94);
-#print "result: $result @a\n";
+
 my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 
 my $sno;
@@ -306,7 +299,7 @@ print STDOUT $docstring;
 sub predictVerbform{
 	my ($headV,$subV,$smi,$linker) = @_;
 
-	my @vec = map { 0 } 0..89;
+	my @vec = map { 0 } 0..90;
 
 	#get semantic class main verb
 	if($verbLemClasses{$headV})
@@ -358,6 +351,7 @@ sub predictVerbform{
 	## NOTE, need an extra element!!
 	unshift(@vec,0);
 	print STDERR "vec: @vec\n";
+	print STDERR "length: ".scalar(@vec)."\n";
 	my $ds =  new Algorithm::SVM::DataSet(Label => 1, Data => \@vec);
 									 
 	my $svmClass = $svm->predict($ds);

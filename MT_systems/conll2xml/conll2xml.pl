@@ -990,8 +990,6 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		&moveTopNodeUnderChunk($sentence);
 	}
-	# if verbchunk attached to noun but no rel-prn -> 
-	
 	# check if main verb is in fact a subordinated clause, if so, make second grup-verb head
 	# if coordinated vp: don't take first child grup-verb (this is the coordinated vp), take the last
 	# note: if parser made something else head of sentence, the top verb might not have si=top
@@ -1715,16 +1713,26 @@ sub attachCSToCorrectHead{
 		
 			my @sequence = sort {$a<=>$b} keys %nodeHash;
 			#print STDERR "@sequence\n length ".scalar(@sequence)."\n";
-		
+			my $isRelClause=0;
+			
 			for (my $i=$csord+1; $i<=scalar(@sequence);$i++)
 			{
 				my $node = $nodeHash{$i};
 				#print STDERR "i: $i ".$node->getAttribute('form')."\n";
+				if($node && $node->getAttribute('pos') eq 'pr'){
+					$isRelClause =1;
+				}
 				if($node && $node->getAttribute('pos') eq 'vm' && (!$nodeHash{$i+1} ||  $nodeHash{$i+1}->getAttribute('pos') ne 'vm' ) )
 				#if($node && $nodeHash{$i+1} && $node->getAttribute('pos') eq 'vm'  && $nodeHash{$i+1}->getAttribute('pos') ne 'vm' )
 				{ 
-					$followingMainVerb = $node;
-					last;
+					if($isRelClause){
+						# if this is a relative Clause, skip, but set isRelClause to 0
+						$isRelClause =0;
+					}
+					else{
+						$followingMainVerb = $node;
+						last;
+					}
 				}
 			}
 			#print STDERR  "foll verb: ".$followingMainVerb->getAttribute('form')."\n";
@@ -1742,9 +1750,14 @@ sub attachCSToCorrectHead{
 				}
 				$followingMainVerb->appendChild($cs);
 				$cs->setAttribute('head', $followingMainVerb->getAttribute('ord'));
+				# if cs has child nodes -> attach them to head of cs
+#				my @csChildren = $cs->childNodes();
+#				foreach my $child (@csChildren){
+#					$followingMainVerb->appendChild($child);
+#					$child->setAttribute('head', $followingMainVerb->getAttribute('ord'));
+#				}
 			}
-		
-			#TODO: check linear sequence, subjunction belong to next following verb chunk (no verb in between!)
+			#TODO: check linear sequence, subjunction belongs to next following verb chunk (no verb in between!)
 		}
 		# if parent is not a verb, subjunction is probably the head of the clause.. look for verb in children!
 #    <NODE ord="6" form="para_que" lem="para_que" pos="cs" cpos="c" head="5" rel="CONCAT" mi="CS">

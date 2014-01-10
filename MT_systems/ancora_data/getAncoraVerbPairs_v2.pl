@@ -113,7 +113,7 @@ foreach my $sentence (@sentenceList)
 	   { 
 	   		my $sentenceID = $verbChunk->findvalue('ancestor::SENTENCE/@ord');
 			print STDERR "disambiguating verb sentence nr. $sentenceID: \n ";
-			print "sent.".$sentenceID.", ";
+			#print "sent.".$sentenceID.", ";
 			my $mainV = &getMainVerb2($verbChunk);
 			my $mLem = $mainV->getAttribute('lem');
 			my $mainFrames = $verbLexWithFrames{$mLem};
@@ -141,6 +141,10 @@ foreach my $sentence (@sentenceList)
 				    # set linker (only necessary for desr output, in ancora, linker depends always on subordinated verb)
 				    if ($linker eq '' )
 				    { $linker = '0';}
+				    # set aun_cuando to aún_cuando
+				    elsif($linker eq 'aun_cuando'){
+				    	$linker = 'aún_cuando';
+				    }
 				    
 				    if($subV && $formnominal ne '' && $linker ne '')
 				    {
