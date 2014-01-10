@@ -7,9 +7,10 @@ use Storable;
 
 binmode STDIN, ':utf8';
 binmode STDOUT, ':utf8';
+binmode STDERR, ':utf8';
 use open ':utf8';
 
-my %VerbSem;
+my %NounSem;
 my %synsets;
 
 my $spa2ilimap = "/home/ozli/squoia/mcr30/spaWN/wei_spa-30_to_ili.tsv";
@@ -19,7 +20,7 @@ my $variant = "/home/ozli/squoia/mcr30/spaWN/wei_spa-30_variant.tsv";
 
 open SPA2ILI, "< $spa2ilimap" or die "Can't open $spa2ilimap : $!";
 open ILIREC, "< $ilirecord" or die "Can't open $ilirecord : $!";
-#open LEXNAMES, "< $lexnames" or die "Can't open $lexnames : $!";
+open LEXNAMES, "< $lexnames" or die "Can't open $lexnames : $!";
 open VARIANT, "< $variant" or die "Can't open $variant : $!";
 
 my %spa2ili;
@@ -37,16 +38,16 @@ while(<ILIREC>){
     my ($ili,$pos,$bla,$bli,$class,$rest) = split('\t');
     if($pos eq 'n'){
 	$ilirecs{$ili} = $class;
-	#print "$ili : $class\n";
+	#print STDERR "$ili : $class\n";
      }
 }
 
-# my %lexnames;
-# while(<LEXNAMES>){
-#     my ($class,$name) = split('\t');
-# 	$lexnames{$class} = $name;
-# 	#print "$ili : $class\n";
-# }
+my %lexnames;
+while(<LEXNAMES>){
+    my ($class,$name) = split('\t');
+	$lexnames{$class} = $name;
+	#print STDERR "$class : $name\n";
+}
 
 
 
@@ -58,9 +59,9 @@ while(<VARIANT>){
 	$lem =~ s/se$//;
 	
 	if($pos eq 'n'){
-	    unless( grep {$_ =~ /\Q$synset\E/} @{$VerbSem{$lem}} ){
-		push(@{$VerbSem{$lem}},$synset);
-		print STDERR "pushed $lem :  $synset\n";
+	    unless( grep {$_ =~ /\Q$synset\E/} @{$NounSem{$lem}} ){
+		push(@{$NounSem{$lem}},$synset);
+		#print STDERR "pushed $lem :  $synset\n";
 	    }
 	   $synsets{$synset}=1;
 	}
@@ -68,33 +69,33 @@ while(<VARIANT>){
     }
 }
 
-my %verbLemClasses=();
-# get classes for each verb
-foreach my $lem (keys %VerbSem){
-      foreach my $spa (@{${VerbSem}{$lem}}){
+my %nounLemClasses=();
+# get classes for each noun
+foreach my $lem (keys %NounSem){
+      foreach my $spa (@{${NounSem}{$lem}}){
             my $ili = $spa2ili{$spa};
             my $class = $ilirecs{$ili};
-            if( $verbLemClasses{$lem}{$class} > 0 )
+            if( $nounLemClasses{$lem}{$class} > 0 )
             {
-		$verbLemClasses{$lem}{$class}++;
-		#print "$lem $class ".$verbLemClasses{$lem}{$class}."\n";
+		$nounLemClasses{$lem}{$class}++;
+		print STDERR "$lem $class ".$nounLemClasses{$lem}{$class}."--".$lexnames{$class}." \n";
 		# print "$class\n";
 	    }
 	    else{
-		$verbLemClasses{$lem}{$class} = 1;
+		$nounLemClasses{$lem}{$class} = 1;
 	    }
       }
 }
 
-# verbs: 15 classes, 29-43
+# nouns: 
 store \%nounLemClasses, 'nounLemClasses';
 
-# max number of synsets per verb = 35 
+# max number of synsets per noun ?
 # my $maxlength=1;
-# foreach my $lem (keys %VerbSem){
+# foreach my $lem (keys %NounSem){
 # 
-#     if(scalar( @{$VerbSem{$lem}}) > $maxlength){
-#        $maxlength = scalar( @{$VerbSem{$lem}} );
+#     if(scalar( @{$NounSem{$lem}}) > $maxlength){
+#        $maxlength = scalar( @{$NounSem{$lem}} );
 #     }
 # }
 # 
@@ -103,14 +104,14 @@ store \%nounLemClasses, 'nounLemClasses';
 
 # my %nbrOfSynsets;
 # #sort by nbr of synsets
-# foreach my $lem (keys %VerbSem){  
-#     $nbrOfSynsets{$lem} = scalar( @{$VerbSem{$lem}}) ;
+# foreach my $lem (keys %NounSem){  
+#     $nbrOfSynsets{$lem} = scalar( @{$NounSem{$lem}}) ;
 # }
 # 
 # foreach my $key (  sort { $nbrOfSynsets{$b} <=> $nbrOfSynsets{$a} } keys %nbrOfSynsets  ){
 #    # print "$key: ".$nbrOfSynsets{$key}.":\t";
 #     print $nbrOfSynsets{$key}.":\t";
-#     my @sorted = sort @{$VerbSem{$key}};
+#     my @sorted = sort @{$NounSem{$key}};
 #     print  "@sorted \n";
 # }
 
