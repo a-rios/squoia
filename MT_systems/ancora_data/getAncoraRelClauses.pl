@@ -102,7 +102,7 @@ my %mapMorphsToClasses = (
 		
 		# verb morphology
 		#print STDOUT "vTense,vMod,vPers,vNum,hasSE,";
-		print STDOUT "vTense,vMod,vNum,hasSE,";
+		print STDOUT "vTense,vMod,vNum,hasSE,hasCreg,hasCC,hasCI,hasCag,hasCpred,";
 		
 		# last row: class
 		print STDOUT "relpron,agentive\n";;
@@ -300,6 +300,14 @@ foreach my $sentence (@sentenceList)
 						else{
 							print "0,";
 						}
+						# hasCreg,hasCC,hasCI,hasCag,hasCpred"
+						my $hasCreg = ($verbChunk->exists('descendant::CHUNK[@si="creg"]')) ? 1 : 0;
+						my $hasCC = ($verbChunk->exists('descendant::CHUNK[@si="cc"]')) ? 1 : 0;
+						my $hasCI = ($verbChunk->exists('descendant::CHUNK[@si="ci"]')) ? 1 : 0;
+						my $hasCag = ($verbChunk->exists('descendant::CHUNK[@si="cag"]')) ? 1 : 0;
+						my $hasCpred = ($verbChunk->exists('descendant::CHUNK[@si="cpred"]')) ? 1 : 0;
+						
+						print "$hasCreg,$hasCC,$hasCI,$hasCag,$hasCpred,";
 						
 						# print relative pronoun
 						if($relpron){
