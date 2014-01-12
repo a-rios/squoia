@@ -283,13 +283,28 @@ sub printDateToken{
 	if($date =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo|día|mes|año|siglo/){
 		print "$date\t$date\tn\tnc\tgen=m|num=s\t_\t_\t_\t_\n";
 	}
-	elsif($date eq 'de'){
+	elsif($date =~ /^de$|^a$/){
 		print "de\tde\ts\tsp\tgen=c|num=c|for=s\t_\t_\t_\t_\n";
 	}
 	elsif($date eq 'del'){
 		print "de\tde\ts\tsp\tgen=m|num=s|for=c\t_\t_\t_\t_\n";
 	}
-	elsif($date =~ /^\d+$|^[xivXIV]+$/){
+	elsif($date =~ /mañana|tarde|noche/){
+		print "$date\t$date\tn\tnc\tgen=f|num=s\t_\t_\t_\t_\n";
+	}
+	elsif($date =~ /^el$/){
+		print "$date\tel\td\tda\tgen=m|num=s\t_\t_\t_\t_\n";
+	}
+	elsif($date =~ /^los$/){
+		print "$date\tel\td\tda\tgen=m|num=s\t_\t_\t_\t_\n";
+	}
+	elsif($date =~ /^la$/){
+		print "$date\tel\td\tda\tgen=f|num=s\t_\t_\t_\t_\n";
+	}
+	elsif($date =~ /^las$/){
+		print "$date\tel\td\tda\tgen=f|num=p\t_\t_\t_\t_\n";
+	}
+	elsif($date =~ /^\d+$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta/){
 		print "$date\t$date\tw\tw\t_\t_\t_\t_\t_\n";
 	}
 	else{
