@@ -85,6 +85,7 @@ my %mapMorphsToClasses = (
 
 		# head noun lemma and semantic classes
 		print STDOUT "headLem,abs,ani,bpart,cnc,hum,nloc,mat,mea,plant,pot,sem,soc,tmp,unit,";
+		print STDOUT "nSem03,nSem04,nSem05,nSem06,nSem07,nSem08,nSem09,nSem10,nSem11,nSem12,nSem13,nSem14,nSem15,nSem16,nSem17,nSem18,nSem19,nSem20,nSem21,nSem22,nSem23,nSem24,nSem25,nSem26,nSem27,nSem28,";
 		
 		# head noun: pos
 		# type of proper noun not given in Ancora!
@@ -105,10 +106,13 @@ my %mapMorphsToClasses = (
 		
 		# last row: class
 		print STDOUT "relpron,agentive\n";;
-
+# ancora ver frames
 my %verbLexWithFrames   = %{ retrieve("VerbLex") };
+# Spanish Resource Grammar lexicon
 my %nounLex   = %{ retrieve("NounLex") };
+# Spanish wordnet
 my %verbLemClasses =  %{ retrieve("verbLemClasses") };
+my %nounLemClasses =  %{ retrieve("nounLemClasses") };
 
 #print STDERR $nounLex{'amor'}."\n";
 
@@ -129,7 +133,7 @@ foreach my $sentence (@sentenceList)
  	
  	# consider linear sequence in sentence; in xml the verb of the main clause comes always first, but in this case the subject of a preceding subordinated clause is probably coreferent with the subject of the preceding clause
  	# all relclauses
- 	my @verbChunks = $sentence->findnodes('descendant::CHUNK[starts-with(@verbform, "rel") or NODE[starts-with(@verbform, "rel")]]');
+ 	my @verbChunks = $sentence->findnodes('descendant::CHUNK[( starts-with(@verbform, "rel") or NODE[starts-with(@verbform, "rel")] ) and (not(@HLRC) and not(@IHRC))]');
  	#only guessed rel clauses:
 	#my @verbChunks = $sentence->findnodes('descendant::CHUNK[@guessed and (starts-with(@verbform, "rel") or NODE[starts-with(@verbform, "rel")]) ]');
 
@@ -153,6 +157,8 @@ foreach my $sentence (@sentenceList)
 					chomp($headSem);
 					my @headSems = split('_',$headSem);
 					my %headSemLabels = map { $_ => 0; } qw(abs ani bpart cnc hum loc mat mea plant pot sem soc tmp unit);
+					
+					my %nounSemClassWN = map { $_ => 0; } qw(nSem03 nSem04 nSem05 nSem06 nSem07 nSem08 nSem09 nSem10 nSem11 nSem12 nSem13 nSem14 nSem15 nSem16 nSem17 nSem18 nSem19 nSem20 nSem21 nSem22 nSem23 nSem24 nSem25 nSem26 nSem27 nSem28);
 					
 					# remove ',' and ' in lemma (in proper names) -> conflicts with csv format
 					$headlem =~ s/,|'//g;
@@ -193,6 +199,27 @@ foreach my $sentence (@sentenceList)
 						foreach my $key (sort keys %headSemLabels){
 							#print STDOUT "key $key:".$headSemLabels{$key}.",";
 							print STDOUT $headSemLabels{$key}.",";
+						}
+						
+						# print semantic class(es)
+						if($nounLemClasses{$headlem})
+						{
+								foreach my $class (keys %{$nounLemClasses{$headlem}}){
+								#print STDERR "$mainV: $class ".$verbLemClasses{$mainV}{$class}."\n";
+									my $nclass = "nSem".$class;
+									$nounSemClassWN{$nclass}= $nounLemClasses{$headlem}{$class};
+								}
+						}
+						foreach my $key ( sort keys %nounSemClassWN) 
+						{
+							#print STDERR "$key: ".$mainClasses{$key}."\n";
+							#print "$mainClasses{$key},";
+							if($nounSemClassWN{$key}>0){
+											print "1,";
+							}
+							else{
+								print "0,";
+							}
 						}
 						
 						# print pos info of head noun
