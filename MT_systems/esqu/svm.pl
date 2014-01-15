@@ -176,7 +176,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				# before trying to find the main verb and linker: check if this is a passive form
 				# (smv cannot classify passives!)
 				if($node->getAttribute('mi') =~ /VMP00S[MF]/ && $node->exists('child::NODE[@lem="ser" or NODE[@lem="ser"] ]')){
-					$node->parentNode->setAttribute('verbformMLrule', 'passive');
+					$node->parentNode->setAttribute('verbform', 'passive');
+					# for evaluation
+					#$node->parentNode->setAttribute('verbformMLrule', 'passive');
 				}
 				
 				# search left for linker or relative pronoun
@@ -201,7 +203,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 								my $class = &predictVerbform($candverb,$subordverb,$smi,$linker);
 								$newverbform = $mapClassToVerbform{$class};
 								#$node->parentNode->setAttribute('verbform', "ML1:".$newverbform);
-								$node->parentNode->setAttribute('verbformMLsvm', $newverbform);
+								$node->parentNode->setAttribute('verbform', $newverbform);
+								# for evaluation
+								#$node->parentNode->setAttribute('verbformMLsvm', $newverbform);
 								$found = 1;
 								last;
 							}
@@ -223,8 +227,10 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 									#print STDOUT "$candverb,$subordverb,$linker\n";
 									my $class = &predictVerbform($candverb,$subordverb,$smi,$linker);
 									$newverbform = $mapClassToVerbform{$class};
-									#$node->parentNode->setAttribute('verbform', "ML2:".$newverbform);
-									$node->parentNode->setAttribute('verbformMLsvm', $newverbform);
+									
+									$node->parentNode->setAttribute('verbform', $newverbform);
+									# for evaluation
+									#$node->parentNode->setAttribute('verbformMLsvm', $newverbform);
 									$found = 1;
 									last;
 								}
@@ -234,8 +240,10 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 							{
 								my $class = &predictVerbform('0',$subordverb,$smi,$linker);
 								$newverbform = $mapClassToVerbform{$class};
-								#$node->parentNode->setAttribute('verbform', "ML3:".$newverbform);
-								$node->parentNode->setAttribute('verbformMLsvm', $newverbform);
+								$node->parentNode->setAttribute('verbform', $newverbform);
+								# for evaluation
+								#$node->parentNode->setAttribute('verbformMLsvm', $newverbform);
+								
 								print STDERR "no main verb but linker\n";
 								print STDERR "classify: 0,$subordverb,$linker\n";
 							}
@@ -245,8 +253,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 					elsif (($prevsmi =~ /^PR/ && $prevnode->getAttribute('lem') ne 'cuyo' ) or $node->exists('child::NODE[ (starts-with(@mi,"PR") and not(@lem="cuyo"))  or NODE[NODE[starts-with(@mi,"PR") and not(@lem="cuyo") ]] ]')) {
 						print STDERR "relative clause\n";
 						$newverbform = "rel:";
-						$node->parentNode->setAttribute('verbformMLrule',$newverbform);
-						#$node->parentNode->setAttribute('verbform',"MLr:".$newverbform);
+						$node->parentNode->setAttribute('verbform',$newverbform);
+						# for evaluation
+						#$node->parentNode->setAttribute('verbformMLrule',$newverbform);
 						print STDERR "verb form of $subordverb set to 'rel:'\n";
 						# try to find head noun
 						my $headnoun = &getHeadNoun($node->parentNode());
@@ -264,8 +273,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 						$newverbform = $prevnode->parentNode->getAttribute('verbform');
 						
 						print STDERR "verb form of $subordverb set to 'main' (coordination would be $newverbform)\n";
-						$node->parentNode->setAttribute('verbformMLrule','main');
-						#$node->parentNode->setAttribute('verbform',"MLr:".'main')
+						$node->parentNode->setAttribute('verbform','main');
+						# for evaluation
+						#$node->parentNode->setAttribute('verbformMLrule','main');
 						
 #						print STDERR "verb form passed to ML without linker\n";
 #						my $class = &predictVerbform($headverb,$subordverb,'0');
@@ -277,8 +287,10 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				else {
 					print STDERR "no previous verb, no linker, not in relative clause\n";
 					print STDERR "verb form of $subordverb set to 'main'\n";
-					$node->parentNode->setAttribute('verbformMLrule','main');
-					#$node->parentNode->setAttribute('verbform',"MLr:".'main')
+					$node->parentNode->setAttribute('verbform','main');
+					# for evaluation
+					#$node->parentNode->setAttribute('verbformMLrule','main');
+					
 				}
 			}
 			else {
