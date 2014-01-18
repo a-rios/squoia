@@ -12,6 +12,7 @@ s11: R: Decía "hay qhatucha -qkuna Perú suyu -man"; corregí por "Chay Perú s
 
 s12: R: He agregado -ta a "qhatuchaqkuna".
 
+TODO:
 s15: R: La primera frase es bien rara. Bueno, muy rara toda la traduccion.
 - no comprendo esta frase en quechua. quizás hubo dudas acerca del significado de 'formación dual'? significa que los alumnos van a la escuela para aprender la teoria, pero al mismo tiempo ya trabajan en la empresa y asi adquieren tambien los conocimientos practicos, p.e. 3 dias trabajan en la empresa, dos dias van a la escuela.
 
@@ -22,17 +23,25 @@ nuestro nuevo producto de gestión de personal " JobXchange " , pero
 “ JobXchange ” sutichasqa musuq rurasqanchikqa
 -> cambiado
 
-s17: R: Borré -m lde taqyasqam.
+s17: R: Borré -m de taqyasqam.
 
 s18: R: Decía 'empresanchikunan', ahora dice 'empresanchikkunam'
 
+TODO:
 s19: R: Tengo dudas para anotar 'hina'
+- no entiendo la segunda parte de la oración, cual es la función de 'pi'? se usa aqui como pronombre relativo, me parece muy español.. es rara esa oración.
 
 s20: R: (1) Genial... Nunca pensè que habìa en quechua como 'mana chayqa' como 'sino'... yo pensè que solo pasaba con el aimara 'jani ukaxa'... aunque en el aimara de Huancané es 'ukaya'.  (2) Pero 'Perúmanta' también modifica a 'Ministrokuna' = No sè como anotar; antes habìa algo como co:mod /(3) He agregado -ta a 'umalliqkuna' y 'Ministrokuna' 
+- co:mod -> ahora con secondary edges
 
 s21: R: Parece que  -'wasqanchik' (3S>1Incl) es de dificil análisis... Yo analizaría así: -wa-sqa-n-chik (1Obj-NOM-3Suj-PL) // (2) Por favor, dime què significa VRootG. (3) Decía 'masiqkuna', hora dice 'masikuna'. (4) ¡Hay que crear un MUNA 'dummy'?
+- VRootG -> VRoot 'guessed', o sea, el analizador no encontró la raíz en el lexicon, pero reconoció los sufijos y por eso asuma que eso es una raíz verbal
+- necesitaría dos dummies, MUNA y AÑA.. anotado como 'par' del primer objeto
 
+TODO:
 s22: R: (1) ¿No es mejor analizar el sufijo recìproco como -naku?  (2) Còmo anoto 'sapa kuti' por que modifica a los dos  -ta  'obj'
+- 1.  queremos alinear después 'se' con 'ku', 2. con un 'secondary edge'
+- paykuna no puede ser el sujeto de añaychaykullanchik, es el sujeto de los verbos nominalizados. falta un genitivo o no se necesita con infinitivo?
 
 s26: R: Muy buena: el hecho que  'añaychayta' vaya lejos de su 'obj'  wasikunata, es interesante. ¿Està bien anotado?
 
