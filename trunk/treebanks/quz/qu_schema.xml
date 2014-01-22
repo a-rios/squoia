@@ -328,6 +328,7 @@
      <value>+Trs</value>
      <value>+Vdim</value>
      <value>+1.Obj</value>
+     <value>+1.Poss</value>
      <value>+1.Pl.Excl.Poss</value>
      <value>+1.Pl.Excl.Subj</value>
      <value>+1.Pl.Excl.Subj.Fut</value>
@@ -358,6 +359,7 @@
      <value>+2.Sg.Subj.Pot</value>
      <value>+2.Sg.Subj_1.Pl.Excl.Obj</value>
      <value>+2.Sg.Subj_1.Pl.Obj.Imp</value>
+     <value>+3.Poss</value>
      <value>+3.Pl.Subj.IPst</value>
      <value>+3.Pl.Poss</value>
      <value>+3.Pl.Subj</value>
@@ -412,6 +414,7 @@
      <value>VPers</value>
      <value>VS</value>
      <value>SP</value>
+     <value>FLM</value>
      <value>$.</value>
      <value>Root_VDeriv</value>
      <value>Root_VDeriv_VDeriv</value>
@@ -419,6 +422,7 @@
      <value>VDeriv_VDeriv_VDeriv</value>
      <value>VDeriv_VDeriv</value>
      <value>Asp</value>
+     <value>Asp_Amb</value>
      <value>Asp_VPers</value>
      <value>Asp_Tns_VPers</value>
      <value>Asp_Tns_VPers_Mod</value>
