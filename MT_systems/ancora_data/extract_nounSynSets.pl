@@ -78,7 +78,7 @@ foreach my $lem (keys %NounSem){
             if( $nounLemClasses{$lem}{$class} > 0 )
             {
 		$nounLemClasses{$lem}{$class}++;
-		print STDERR "$lem $class ".$nounLemClasses{$lem}{$class}."--".$lexnames{$class}." \n";
+		#print STDERR "$lem $class ".$nounLemClasses{$lem}{$class}."--".$lexnames{$class}." \n";
 		# print "$class\n";
 	    }
 	    else{
@@ -89,6 +89,19 @@ foreach my $lem (keys %NounSem){
 
 # nouns: 
 store \%nounLemClasses, 'nounLemClasses';
+
+print "cambio: ";
+foreach my $class (keys $nounLemClasses{'cambio'}){
+    print $class.",";
+}
+print "\n";
+#print keys($nounLemClasses{'falta'})."\n";
+# foreach my $lem (keys %nounLemClasses){
+#     foreach my $class (keys $nounLemClasses{$lem}){
+#         print $class."\n";
+#     }
+# }
+# -> classes: 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
 
 # max number of synsets per noun ?
 # my $maxlength=1;
