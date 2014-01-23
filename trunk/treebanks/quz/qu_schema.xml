@@ -442,6 +442,8 @@
      <value>Root_VS_VDeriv</value>
      <value>Root_VS_VDeriv_VDeriv</value>
      <value>Root_VS_VDeriv_VDeriv_VDeriv</value>
+     <value>Root_NS_VS</value>
+     <value>Root_NS_VS_VDeriv</value>
      <value>Root_NDeriv_VS</value>
      <value>Root_NDeriv_VS_VDeriv</value>
      <value>Root_NDeriv_VS_VDeriv_VDeriv</value>
