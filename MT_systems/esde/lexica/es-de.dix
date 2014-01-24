@@ -1059,6 +1059,7 @@
 
 <!-- Main section -->
   <section id="main" type="standard">
+  <!-- subsection id="verb" -->
 <!-- Verbs -->
 <!-- Auxiliary verbs -->
    <!--e><p><l>haber</l><r>sein</r></p><par n='VA_VA_HABEN'/></e-->		<!-- the Spanish auxiliary "haber" is either "haben" or "sein" depending on the German main verb  -->
@@ -5329,6 +5330,7 @@
    <e><p><l>zurear</l><r>gurren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>zurrar</l><r>schlagen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>zurrar</l><r>verprügeln</r></p><par n="VM_VV_MAIN"/></e>
+   <!--/subsection-->
 
 <!-- Nouns -->
    <e><p><l>ababa</l><r>Mohn</r></p><par n='NC_N_56_TISCH'/></e>
@@ -10530,6 +10532,9 @@
    <e><p><l>descendente</l><r>Deszendent</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender DE fem? -->
    <e><p><l>descendiente</l><r>Abkömmling</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender DE fem? -->
    <e><p><l>descendiente</l><r>Nachkomme</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender DE fem? -->
+   <e><p><l>descenso</l><r>Abstieg</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>descenso</l><r>Anflug</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>descenso</l><r>Rückgang</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>descomposición</l><r>Fäulnis</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>descomposición</l><r>Verwesung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>descomposición</l><r>Zerfall</r></p><par n='NC_N_NUM_MASC'/></e>

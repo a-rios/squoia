@@ -34,7 +34,7 @@ else
  #echo "Please start server to tag for desr parser with the following command:"
  #echo "/opt/matxin/matxinFL3/squoia_analyzer $FREELING_PARAM --outf=desrtag --server --port=$TAGPORT 2> /opt/matxin/matxinFL3/logdesrtag &"
  #exit
- squoia_analyzer $FREELING_PARAM --outf=desrtag --server --port=$TAGPORT 2> logdesrtag &
+ squoia_analyzer $FREELING_PARAM --noloc --outf=desrtag --server --port=$TAGPORT 2> logdesrtag &
  echo "squoia_analyzer started..."
  while ! echo "" | analyzer_client $TAGPORT 2> /dev/null
  do

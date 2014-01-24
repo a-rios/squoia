@@ -2106,7 +2106,8 @@ extrema_derecha extrema_derecha NCFS000 I
 facultad_de_bellas_artes facultad_de_bellas_artes NCFS000 I
 facultad_de_derecho facultad_de_derecho NCFS000 I
 facultad_de_psicología facultad_de_psicología NCFS000 I
-<falso>_<testimonio> falso_testimonio $1:NC I
+%%<falso>_<testimonio> falso_testimonio $1:NC I
+<falso>_<testimonio> falso_testimonio $2:NC I
 farmacología_clínica farmacología_clínica NCFS000 I
 fauna_marina fauna_marina NCFS000 I
 <fecha>_de_cierre fecha_de_cierre $1:NC I
@@ -2124,7 +2125,7 @@ filosofía_del_derecho filosofía_del_derecho NCFS000 I
 filosofía_de_la_ciencia filosofía_de_la_ciencia NCFS000 I
 filosofía_política filosofía_política NCFS000 I
 <final>_<feliz> final_feliz $1:NC I
-<fiscal>_jefe fiscal_jefe $1:NC I
+%%<fiscal>_jefe fiscal_jefe $1:NC I %% problem with fiscal, not analysed as noun
 física_aplicada física_aplicada NCFS000 I
 física_nuclear física_nuclear NCFS000 I
 física_teórica física_teórica NCFS000 I
@@ -2677,7 +2678,7 @@ operador_y operador_y NCFS000 I
 ordenación_general_del_sistema_educativo ordenación_general_del_sistema_educativo NCFS000 I
 ordenación_urbana ordenación_urbana NCFS000 I
 ordenamiento_jurídico ordenamiento_jurídico NCMS000 I
-<ordenanza>_fiscal> ordenanza_fiscal $1:NC I
+<ordenanza>_<fiscal> ordenanza_fiscal $1:NC I
 <ordenanza>_<municipal> ordenanza_municipal $1:NC I
 orden_constitucional orden_constitucional NCFS000 I
 orden_de_prioridad orden_de_prioridad NCFS000 I
@@ -2689,7 +2690,7 @@ orden_ministerial orden_ministerial NCFS000 I
 <organización>_de_empresas organización_de_empresas $1:NC I
 organización_de_las_naciones_unidas organización_de_las_naciones_unidas NCFS000 I
 organización_de_las_naciones_unidas_para_la_agricultura_y_la_alimentación organización_de_las_naciones_unidas_para_la_agricultura_y_la_alimentación NCFS000 I
-organización_de_las_naciones_unidas_para_la_educación,_la_ciencia_y_la_cultura organización_de_las_naciones_unidas_para_la_educación,_la_ciencia_y_la_cultura NCFS000 I
+organización_de_las_naciones_unidas_para_la_educación_,_la_ciencia_y_la_cultura organización_de_las_naciones_unidas_para_la_educación_,_la_ciencia_y_la_cultura NCFS000 I
 organización_de_los_estados_americanos organización_de_los_estados_americanos NCFS000 I
 <organización>_sin_fines_de_lucro organización_sin_fines_de_lucro $1:NC I
 <organización>_<social> organización_social $1:NC I
@@ -2742,7 +2743,8 @@ pasión_de_cristo pasión_de_cristo NCFS000 I
 <patata>_<frita> patata_frita $1:NC I
 <patrimonio>_<artístico> patrimonio_artístico $1:NC I
 <patrimonio>_<cultural> patrimonio_cultural $1:NC I
-<patrimonio>_histórico-<artístico> patrimonio_histórico-artístico $1:NC I
+<patrimonio>_histórico-artístico patrimonio_histórico-artístico $1:NC I
+<patrimonio>_histórico-artísticos patrimonio_histórico-artístico $1:NC I
 peccata_minuta peccata_minuta AQ0CN0 I
 pensamiento_filosófico pensamiento_filosófico NCMS000 I
 <pensión>_de_jubilación pensión_de_jubilación $1:NC I
@@ -2949,6 +2951,7 @@ prosperidad_económica prosperidad_económica NCFS000 I
 protocolo_de_kioto protocolo_de_kioto NCMS000 I
 protocolo_tcp-ip protocolo_tcp-ip NCFS000 I
 protocolo_tcp/ip protocolo_tcp/ip NCFS000 I
+protocolo_tcp_/_ip protocolo_tcp/ip NCFS000 I	% depends on tokenization, here "/" is split
 <proyecto>_de_ley proyecto_de_ley $1:NC I
 <proyecto>_<empresarial> proyecto_empresarial $1:NC I
 <prueba>_<documental> prueba_documental $1:NC I
@@ -3454,7 +3457,7 @@ de_milagro de_milagro RG I
 de_principio_a_fin de_principio_a_fin RG I
 día_a_día día_a_día RG I
 día_tras_día día_tras_día RG I
-el_día_a_día el_día_a_día NC I
+día_a_día día_a_día NCMS000 I
 <el>_<llamado> el_llamado $2:AQ I
 en_balde en_balde RG I
 en_<condición>_de en_condición_de RG I
