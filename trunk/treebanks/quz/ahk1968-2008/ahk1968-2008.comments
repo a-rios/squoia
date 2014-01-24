@@ -1,5 +1,15 @@
-TODO: update manual: FLM, 3.Poss/1.Poss,  -ycha
+TODO: update manual: FLM, 3.Poss/1.Poss,  -ycha, rikhu- ..hina -> ver como > hina=mod, generalmente: hina = mod, unless en comparacion (-> requiere un adjetivo)
+     ademas: diferencia entre .. sutichasqa vs. .. nisqa -> nisqa sólo va con 'extranjerismos' ->flm, pero sutichasqa = nombrado, puede ser un nombre quechua tambien -> mod
+TODO: check annotation of hina
+TODO: en muchas frases, mala integracion de nombres propios complejos, sin nisqa, p.e. Junta Directivanman -> Junta es la cabeza, pero los sufijos están en Directiva. sería mejor usar nisqa..
+      tambien: Cámara Peruano-Alemanaman etc
+TODO: morph: huñu = grupo
 
+TODO: split s85
+      join 94-101
+
+Roger: notas generales: números en fechas se anotan con 'mod', NO con 'qnt'
+      
 s5: R: Borrè un -m.
 
 s6: R: (1) He borrado el -qa de economia-mantaqa.
@@ -70,6 +80,9 @@ s43: R: (1) AKH nisqa  no se deja anotar ¿mala traducción?
 s45: R: Hay dos -mi porque hay dos negaciones coordinadas... ¿Dónde van esos dos -chu? ¿Hay que crear un  RIQSI 'DUMMY'?
 - no necesita dummy, ya que son objetos coordinados que comparten el sujeto
 
+s46: TODO:
+-qhatuchankuman -> con diminutivo, de veras? no deberia ser qhatuchayninkuman?
+
 s48: R: (1) Dice 'empresa peruano-alemanakuna'; mejor hubiera sido: peruano-alemana empresakuna...
 
 s50: R: Anotè bien el 'allinpuni'?
@@ -100,15 +113,31 @@ s72: R: Puse -ta a 'consejo Europeo'  y Alemania se convirtió en sujeto. En la 
 
 s74: R: ¿Hay disloque de obj?
 
-s75-------
+s75
+-hina aqui es mod, no comp, 'verán a los Andes 'como' socios'
+
+s76 y otros:
+OJO: qhatuchay/qullqichay -> factitivo+infinitivo, NO diminutivo+1.Sg.Poss!
+
 s79: R: hay que mejorar la traducción.  Dos -mi?  Y el verbo?
+- dummy + secedges, acerca de los 2 -mi, no sé, 'aswanmi' aqui es la traducción de 'sino' o 'más bien'.. -> es 'linker'
+
+s85: split, son dos frases!
 
 s86: R: 'runa' y 'kama' no se dejan anotar.
+- llaqta kamachiy -> llaqtap kamachiynin = democracia? pero llaqta kamachiy -> llaqta es objeto.. (?)
+1968 wata -pi -m Perú suyu -qa , llaqta kama -chi -y kiki -n runa llaqta kama -chi -ku -sqa -nku tukurqari -sqa -n -ta qhawa -n , hina -m walla wallakuna kama -chi -y -nin -pi hamu -q kimsa wata -ntin -qa ka -rqan .
+cambiado a:
+1968 wata -pi -m Perú suyu -qa , kiki -n runap llaqta kama -chi -ku -sqa -nku tukurqari -sqa -n -ta qhawa -n , hina -m walla wallakuna kama -chi -y -nin -pi hamu -q kimsa wata -ntin -qa ka -rqan . 
+
+s87:
+- error, 'huñukupaqqa' -> huñuku- verbal, seguido por un sufijo de caso. huñukuypaqqa? huñupaqqa? (cambiado a huñupaqqa..)
 
 s91: R: Está bien la anotación de 'huñu'  y  'llipi'?
+- no, llipinku es sujeto de haykurinku, y huñukuqkuna es sujeto de rimachkaptinku -> por eso -pti y no -spa. si huñukuqkuna fuera el sujeto de todas las frases, la oración subordinada deberia tener el sufijo -spa.
 
 s103: R: -paq luego de -pti?  Esto me parece recontra extraño que quisiera ir yo mismo para recoger estas formas.
-
+-----------------------
 s104: R: Ya veo en otros lugares tambien que el 'obj' es marcado con -ta al interior de las subordinadas marcasa con -paq 'purp'. Pero Gregorio Condori no me enseñó así. 
 
 s106: R: Gerente niray? 
