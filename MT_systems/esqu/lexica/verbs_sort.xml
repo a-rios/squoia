@@ -2411,7 +2411,8 @@
 <e><p><l>cizallar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>cizañar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>cizañear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>clamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>clamar</l><r>qaparqacha</r></p><par n="Verb_main"/></e>
+<e><p><l>clamar</l><r>maña<s n="add_mi"/>+Rflx<s n="preform"/>#qaparispa</r></p><par n="Verb_main"/></e>
 <e><p><l>clamorear</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>clarear</l><r>sut'iya</r></p><par n="Verb_main"/></e>
     <e><p><l>clarear</l><r>yuri</r></p><par n="Verb_main"/></e>
@@ -2421,7 +2422,10 @@
     <e><p><l>clarificar</l><r>ch'uyaya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>clasificar</l><r>aklla</r></p><par n="Verb_main"/></e>
 <e><p><l>clasificar</l><r>raki</r></p><par n="Verb_main"/></e>
-<e><p><l>claudicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<!-- claudicar: abandonar -->
+<e><p><l>claudicar</l><r>saqi<s n="add_mi"/>+Iprs</r></p><par n="Verb_main"/></e>
+<!-- claudicar: cojear -->
+<e><p><l>claudicar</l><r>hank'u</r></p><par n="Verb_main"/></e>
 <e><p><l>clausular</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>clausurar</l><r>wichq'a</r></p><par n="Verb_main"/></e>
     <e><p><l>clavar</l><r>ch'anti</r></p><par n="Verb_main"/></e>
@@ -2462,7 +2466,8 @@
 <e><p><l>codificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>codirigir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>coercer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>coexistir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>coexistir</l><r>kawsa<s n="preform"/>#kuska</r></p><par n="Verb_main"/></e>
+<e><p><l>coexistir</l><r>kawsa<s n="preform"/>#hukman</r></p><par n="Verb_main"/></e>
 <e><p><l>coger</l><r>hap'i</r></p><par n="Verb_main"/></e>
 <e><p><l>cogitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>cogobernar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -2477,7 +2482,9 @@
 <e><p><l>colaborar</l><r>rura<s n="add_mi"/>+Ass</r></p><par n="Verb_main"/></e>
     <e><p><l>colaborar</l><r>yanapa</r></p><par n="Verb_main"/></e>
 <e><p><l>colacionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>colapsar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>colapsar</l><r>urma<s n="add_mi"/>+Aff</r></p><par n="Verb_main"/></e>
+<e><p><l>colapsar</l><r>thuñi<s n="add_mi"/>+Aff</r></p><par n="Verb_main"/></e>
+<e><p><l>colapsar</l><r>muyu<s n="preform"/>#sunqu</r></p><par n="Verb_main"/></e>
 <e><p><l>colar</l><r>suysu</r></p><par n="Verb_main"/></e>
 <e><p><l>colchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>colear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -2492,7 +2499,8 @@
 <e><p><l>coligar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>colimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>colindar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>colisionar</l><r>unspecified</r></p><par n="Verb_main"/></e> 
+<e><p><l>colisionar</l><r>ñiqa</r></p><par n="Verb_main"/></e> 
+<e><p><l>colisionar</l><r>taka<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main"/></e>
 <e><p><l>colmar</l><r>hunt'a<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <e><p><l>colmar</l><r>llimp'a<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
@@ -2520,14 +2528,16 @@
 <e><p><l>comedir</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>comentar</l><r>rima<s n="add_mi"/>+Intrup</r></p><par n="Verb_main"/></e>
 <e><p><l>comenzar</l><r>qalla<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
-<e><p><l>comercializar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>comercializar</l><r>qhatu</r></p><par n="Verb_main"/></e>
 <e><p><l>comerciar</l><r>qhatu</r></p><par n="Verb_main"/></e>
 <e><p><l>comer_coca</l><r>akulli</r></p><par n="Verb_main"/></e>
 <e><p><l>comer_harina</l><r>hak'u</r></p><par n="Verb_main"/></e>
 <e><p><l>comer</l><r>mikhu</r></p><par n="Verb_main"/></e>
 <e><p><l>cometer_errores</l><r>panta</r></p><par n="Verb_main"/></e>
 <e><p><l>cometer_faltas</l><r>panta</r></p><par n="Verb_main"/></e>
-<e><p><l>cometer</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>cometer</l><r>huchalli<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>cometer</l><r>huchacha<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>cometer</l><r>rura</r></p><par n="Verb_main"/></e>
 <e><p><l>cometer_una_falta</l><r>panta</r></p><par n="Verb_main"/></e>
 <e><p><l>cometer_un_error</l><r>panta</r></p><par n="Verb_main"/></e>
 <e><p><l>cominear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -2541,20 +2551,23 @@
 <e><p><l>compadrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>compadrear</l><r>laqla</r></p><par n="Verb_main"/></e>
 <e><p><l>compadrear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>compaginar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>compaginar</l><r>sinri</r></p><par n="Verb_main"/></e>
+<e><p><l>compaginar</l><r>qayllancha</r></p><par n="Verb_main"/></e>
     <e><p><l>comparar</l><r>kuskacha</r></p><par n="Verb_main"/></e>
     <e><p><l>comparar</l><r>tinku<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>comparecer</l><r>qaylla<s n="add_mi"/>+Aff</r></p><par n="Verb_main"/></e>
 <e><p><l>comparecer</l><r>rikhu<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>compartimentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>compartir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>compartir</l><r>qu<s n="add_mi"/>+Rzpr+Obl</r></p><par n="Verb_main"/></e>
+<e><p><l>compartir</l><r>hawa<s n="add_mi"/>+Inch+Rzpr+Obl</r></p><par n="Verb_main"/></e>
 <e><p><l>compasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>compatibilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>compatibilizar</l><r>kuskancha</r></p><par n="Verb_main"/></e>
+<e><p><l>compatibilizar</l><r>kikincha</r></p><par n="Verb_main"/></e>
 <e><p><l>compeler</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>compendiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>compendizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>compenetrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>compensar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>compensar</l><r>qu<s n="add_mi"/>+Iprs</r></p><par n="Verb_main"/></e>
 <e><p><l>competer</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>competir</l><r>ati<s n="add_mi"/>+Rep+Rzpr+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>competir</l><r>llalli<s n="add_mi"/>+Rzpr+Rflx</r></p><par n="Verb_main"/></e>
@@ -2563,30 +2576,37 @@
 <e><p><l>compilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>complacer</l><r>kusi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>complacer</l><r>q'uchu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-<e><p><l>complementar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>complementar</l><r>hunt'a<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
     <e><p><l>completar</l><r>hunt'a</r></p><par n="Verb_main"/></e>
     <e><p><l>completar</l><r>llimp'a</r></p><par n="Verb_main"/></e>
     <e><p><l>completar</l><r>pallwa</r></p><par n="Verb_main"/></e>
 <e><p><l>completar</l><r>tuku</r></p><par n="Verb_main"/></e>
-<e><p><l>complicar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>complicar</l><r>sasacha</r></p><par n="Verb_main"/></e>
 <e><p><l>complotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>componer</l><r>allicha</r></p><par n="Verb_main"/></e>
     <e><p><l>componer</l><r>tupa<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>comportar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>comportar</l><r>ka</r></p><par n="Verb_main"/></e>
 <e><p><l>comprar</l><r>ranti</r></p><par n="Verb_main"/></e>
 <e><p><l>comprender</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>comprender</l><r>umancha</r></p><par n="Verb_main"/></e>
 <e><p><l>comprender</l><r>yacha</r></p><par n="Verb_main"/></e>
+<e><p><l>comprender</l><r>yuya<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>comprender</l><r>hamut'a</r></p><par n="Verb_main"/></e>
   <e><p><l>comprimir</l><r>ñit'i</r></p><par n="Verb_main"/></e>
     <e><p><l>comprimir</l><r>mat'i</r></p><par n="Verb_main"/></e>
-<e><p><l>comprobar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>comprobar</l><r>sut'incha</r></p><par n="Verb_main"/></e>
+<e><p><l>comprobar</l><r>chiqancha</r></p><par n="Verb_main"/></e>
 <e><p><l>comprometer_con_indiscreción</l><r>haña</r></p><par n="Verb_main"/></e>
 <e><p><l>comprometer</l><r>huñi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>comprometer</l><r>haña</r></p><par n="Verb_main"/></e>
 <e><p><l>compulsar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>compungir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>compungir</l><r>llaki<s n="add_mi"/>+Iprs+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>compungir</l><r>huchalli<s n="add_mi"/>+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>computar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>comulgar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>comulgar</l><r>chaski<s n="preform"/>#taytacha</r></p><par n="Verb_main"/></e>
 <e><p><l>comunicar</l><r>willa</r></p><par n="Verb_main"/></e>
  <!-- rezipr. -se -->
     <e><p><l>comunicar</l><r>rima<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main"/></e>
@@ -2603,14 +2623,16 @@
     <e><p><l>concentrar</l><r>huñu</r></p><par n="Verb_main"/></e>
     <e><p><l>concentrar</l><r>tanta</r></p><par n="Verb_main"/></e>
     <e><p><l>concentrar</l><r>yuya<s n="preform"/>#sunqu#hunt'a</r></p><par n="Verb_main"/></e>
-<e><p><l>concentrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>conceptualizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>conceptuar</l><r>yuya<s n="add_mi"/>+Rem</r></p><par n="Verb_main"/></e>
 <e><p><l>concernir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>concertar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>concernir</l><r>qu<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>concertar</l><r>huñicha</r></p><par n="Verb_main"/></e>
 <e><p><l>conchabar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>concienciar</l><r>riqsi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>concienciar</l><r>yacha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>concienciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>conciliar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>conciliar</l><r>alli<s n="add_mi"/>+Iprs+Rzpr+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>concitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>concluir</l><r>pallwa</r></p><par n="Verb_main"/></e>
 <e><p><l>concluir</l><r>tuku</r></p><par n="Verb_main"/></e>
@@ -2647,23 +2669,32 @@
 <e><p><l>confeccionar</l><r>rura</r></p><par n="Verb_main"/></e>
 <e><p><l>confederar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>conferenciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>conferir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>conferir</l><r>qu</r></p><par n="Verb_main"/></e>
     <e><p><l>confesar</l><r>rima<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>confesar</l><r>willa<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
-<e><p><l>confiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>confiar</l><r>chura<s n="preform"/>#sunqu</r></p><par n="Verb_main"/></e>
+<e><p><l>confiar</l><r>iñi</r></p><par n="Verb_main"/></e>
 <e><p><l>configurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<!-- configurar -> formar: tukuchiy -->
+<e><p><l>configurar</l><r>tuku<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>confinar</l><r>tinku</r></p><par n="Verb_main"/></e>
 <e><p><l>confinar</l><r>tupa</r></p><par n="Verb_main"/></e>
-<e><p><l>confirmar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>confiscar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>confirmar</l><r>sut'incha</r></p><par n="Verb_main"/></e>
+<e><p><l>confirmar</l><r>chiqancha</r></p><par n="Verb_main"/></e>
+<e><p><l>confiscar</l><r>qichu</r></p><par n="Verb_main"/></e>
 <e><p><l>confitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>conflagrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>confluir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<!-- confluir caminos,ríos, hombres -> tinkuy -->
+<e><p><l>confluir</l><r>tinku</r></p><par n="Verb_main"/></e>
+<!-- conformar -> configurar/formar : tukuchiy -->
+<e><p><l>conformar</l><r>tuku<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>  
+  <!-- conformar -> convenir con alguien : huk yuyaylla kawsay -->
+<e><p><l>conformar</l><r>kawsa<s n="preform"/>#huk#yuyaylla</r></p><par n="Verb_main"/></e>
 <e><p><l>conformar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>confortar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>confraternar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>confraternizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>confrontar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>confrontar</l><r>tinku</r></p><par n="Verb_main"/></e>
     <e><p><l>confundir</l><r>mich'u</r></p><par n="Verb_main"/></e>
     <e><p><l>confundir</l><r>panta<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <e><p><l>confundir</l><r>taqru</r></p><par n="Verb_main"/></e>
@@ -2684,7 +2715,7 @@
 <e><p><l>conglutinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>congojar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>congraciar</l><r>muna<s n="add_mi"/>+Caus+Rflx</r></p><par n="Verb_main"/></e>
-<e><p><l>congratular</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>congratular</l><r>qillpucha</r></p><par n="Verb_main"/></e>
 <e><p><l>congregar</l><r>huñu</r></p><par n="Verb_main"/></e>
     <e><p><l>congregar</l><r>tanta</r></p><par n="Verb_main"/></e>
     <!-- rezipr. -se --> 
@@ -2696,7 +2727,17 @@
     <e><p><l>conjuncionar</l><r>hukllacha</r></p><par n="Verb_main"/></e>
 <e><p><l>conjuntar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>conjuramentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>conjurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<!--  conjurar: convivir en juramiento (?)-->
+<!-- <e><p><l>conjurar</l><r>kawsa<s n="preform"/>#Taytachap#sutinpi#hukwan</r></p><par n="Verb_main"/></e> -->
+<!-- conjurar: conspirar -->
+<e><p><l>conjurar</l><r>llaki<s n="add_mi"/>+Caus<s n="preform"/>#huñunakuspa</r></p><par n="Verb_main"/></e>
+<!-- conjurar: invocar espíritus -> (nunakunata) waqapayay-->
+<e><p><l>conjurar</l><r>waqa<s n="add_mi"/>+MRep</r></p><par n="Verb_main"/></e>
+<!-- conllevar : ayudar -->
+<e><p><l>conllevar</l><r>yana<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
+<!--  conllevar: soportar-->
+<e><p><l>conllevar</l><r>apa<s n="preform"/>#</r></p><par n="Verb_main"/></e>
+<!--  conllevar : implicar ?-->
 <e><p><l>conllevar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>conmemorar</l><r>yuya<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>conmensurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -2707,11 +2748,13 @@
 <e><p><l>connaturalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>connotar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>conocer</l><r>riqsi</r></p><par n="Verb_main"/></e>
-<e><p><l>conquistar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>consagrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>conquistar</l><r>llalli<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
+<e><p><l>conquistar</l><r>tari<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
+<e><p><l>consagrar</l><r>willkacha</r></p><par n="Verb_main"/></e>
+<e><p><l>consagrar</l><r>kawsa<s n="preform"/>#Taytachapaq</r></p><par n="Verb_main"/></e>
 <e><p><l>conseguir</l><r>aypa</r></p><par n="Verb_main"/></e>
     <e><p><l>conseguir</l><r>hat'alli</r></p><par n="Verb_main"/></e>
-<e><p><l>consensuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>consensuar</l><r>yuya<s n="add_mi"/>+Rflx<s n="preform"/>#hukhina</r></p><par n="Verb_main"/></e>
 <e><p><l>consentir</l><r>awni</r></p><par n="Verb_main"/></e>
     <e><p><l>consentir</l><r>huñi</r></p><par n="Verb_main"/></e>
     <e><p><l>consentir</l><r>uya<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
@@ -2720,19 +2763,26 @@
 <e><p><l>considerar</l><r>hamut'a</r></p><par n="Verb_main"/></e>
 <e><p><l>considerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>consignar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<!-- consistir en (radicar) -->
+<e><p><l>consistir</l><r>tawna<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>consistir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>consolar</l><r>tiya<s n="add_mi"/>+Caus<s n="preform"/>#sunqu</r></p><par n="Verb_main"/></e>
     <e><p><l>consolidar</l><r>hukllacha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>consolidar</l><r>takya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>conspirar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>constar</l><r>ka<s n="preform"/>#chanin</r></p><par n="Verb_main"/></e>
+<e><p><l>constar</l><r>ka<s n="preform"/>#sut'in</r></p><par n="Verb_main"/></e>
 <e><p><l>constar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>constatar</l><r>mach'ikma</r></p><par n="Verb_main"/></e>
-<e><p><l>constatar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>constatar</l><r>riku</r></p><par n="Verb_main"/></e>
 <e><p><l>constelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>consternar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>constipar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>constitucionalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>constituir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>constituir</l><r>hata<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>constituir</l><r>saya<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>constituir</l><r>wasicha<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>constituir</l><r>ka</r></p><par n="Verb_main"/></e>
 <e><p><l>constreñir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>construir</l><r>rura</r></p><par n="Verb_main"/></e>
 <e><p><l>construir_pared</l><r>qincha</r></p><par n="Verb_main"/></e>
@@ -2741,13 +2791,15 @@
 <e><p><l>consumar</l><r>tuku</r></p><par n="Verb_main"/></e>
 <e><p><l>consumar</l><r>p'uchuka</r></p><par n="Verb_main"/></e>
 <e><p><l>consumir</l><r>unspecified<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>consumir</l><r>mikhu<s n="obj"/>[+Food]<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>consumir</l><r>upya<s n="obj"/>[+Liquid]<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se --> 
     <e><p><l>consumir</l><r>hiwi<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
     <e><p><l>consumir</l><r>p'uchuka<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
     <e><p><l>consumir</l><r>tuku<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
-<e><p><l>contabilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>contabilizar</l><r>yupa</r></p><par n="Verb_main"/></e>
-<e><p><l>contactar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>contabilizar</l><r>yupa</r></p><par n="Verb_main"/></e>
+<e><p><l>contactar</l><r>tupa</r></p><par n="Verb_main"/></e>
+<e><p><l>contactar</l><r>llami</r></p><par n="Verb_main"/></e>
 <e><p><l>contagiar</l><r>rata<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>contaminar</l><r>kharkacha</r></p><par n="Verb_main"/></e>
 <e><p><l>contaminar</l><r>miyu</r></p><par n="Verb_main"/></e>
@@ -2760,25 +2812,32 @@
     <e><p><l>contemplar</l><r>qhawa<s n="add_mi"/>+Aff</r></p><par n="Verb_main"/></e>
 <e><p><l>contemporizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contender</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>contener</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>contentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>contener</l><r>hayku<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>contener</l><r>hunt'a<s n="obj"/>[+Liquid]<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>contener</l><r>hark'a<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>contener</l><r>unspecified<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>contentar</l><r>saksa<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>contentar</l><r>kusi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- contentarse con algo? -->
+<e><p><l>contentar</l><r>unspecified<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>contestar</l><r>kuti<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>contextualizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contextuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>continuar</l><r>qati</r></p><par n="Verb_main"/></e>
-<e><p><l>continuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>continuar</l><r>qalla<s n="add_mi"/>+Inch<s n="preform"/>#hukmanta</r></p><par n="Verb_main"/></e>
+<e><p><l>continuar</l><r>tuku<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
 <e><p><l>contonear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contornar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>contornear</l><r>muyu<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>contorsionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>contraatacar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>contraatacar</l><r>armacha<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>contrabalancear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrabandear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrabatir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrachapar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrachapear</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>contradecir</l><r>ayñi</r></p><par n="Verb_main"/></e>
-<e><p><l>contradecir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>contradecir</l><r>manancha</r></p><par n="Verb_main"/></e>
 <e><p><l>contraendosar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contraer</l><r>q'inticha<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <!-- intrans. -se -->
@@ -2797,15 +2856,19 @@
 <e><p><l>contrapasar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrapear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrapesar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<!--  contraponer: contrastar -->
+<e><p><l>contraponer</l><r>kuskancha</r></p><par n="Verb_main"/></e>
 <e><p><l>contraponer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrapuntar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrapuntear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrapunzar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contrariar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>contrarrestar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>contrarrestar</l><r>hark'a</r></p><par n="Verb_main"/></e>
+<e><p><l>contrarrestar</l><r>pisiya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>contrasellar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>contrastar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>contrastar</l><r>tinku<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>contratar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>contratar</l><r>mink'a</r></p><par n="Verb_main"/></e>
 <e><p><l>contravalar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contravenir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>contribuir</l><r>unspecified</r></p><par n="Verb_main"/></e>
