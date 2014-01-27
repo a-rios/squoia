@@ -6,7 +6,7 @@ TODO: en muchas frases, mala integracion de nombres propios complejos, sin nisqa
       tambien: Cámara Peruano-Alemanaman etc
 TODO: morph: huñu = grupo, done
 TODO: check all imperatives (probably infinitives)
-
+TODO: traducciones: uso de apa- para llevar en el sentido de 'realizar' algo -> 'evento apay', posible en Quechua??
 
 TODO: split s85
       join 94-101
@@ -341,9 +341,29 @@ s191:
 TODO: check translation
 s195: R: Los elementos de kallpacha- son confusos, desordenados, sin sentido.
 - si, falta un sujeto...
-----------------------------------------------------------
-s199: R: (a) He modificado chayamusqa agregando -n y he borrado chay-paq-qa  (b) He borrado wayk'uspa y sus participantes. (c) He modificado mikhukusqa por mikhuchi- y he agregado -paq.  (d) Me parece que falta obj marcado por -ta.
 
+TODO: check translation
+s196:
+- licitación nisqa apakuchkarqan ?? 
+- Aeropuerto Internacional Jorge Chávezpi -> Aeropuerto Internacional Jorge Chávez nisqapi
+
+s197
+- Westfalia wichaymanta Renania suyu ministroman -> cambiado a: Westfalia del Norte nisqap Renania suyup ministroman
+
+s198:
+- Arequipa llaqtapi Extemin 2001 suticha -sqa qhatu -na apa -ku -q -pi
+-> mala traduccion, es una oracion relativa con cabeza interna. pero qhatuna (la cabeza) deberia ir al final, y apakuq?? llevar a cabo??
+-> cambiado a 'Arequipa llaqtapi Extemin 2001 sutichasqa qhatunaTA (puri-)'
+
+
+TODO: check translation
+s199: R: (a) He modificado chayamusqa agregando -n y he borrado chay-paq-qa  (b) He borrado wayk'uspa y sus participantes. (c) He modificado mikhukusqa por mikhuchi- y he agregado -paq.  (d) Me parece que falta obj marcado por -ta.
+- puquy killa kachkaptinmi? pti+mi -> causal, 'porque era marzo'? -> cambiado a 'puquy killapi'
+- Relaciones Exterioresmanta Alemaniap ministron Joschka Fischer -> -manta?? cambiado a 'Alemaniap Ministro de Relaciones Exteriores nisqan Joschka Fischer'
+- y otra vez -manta: Perú suyu -manta Alemania -manta llaqta kama -chi -qkuna -> cambiado por genitivo!
+-> queda rara la traduccion, check
+
+----------------------------
 s201: R: He modificado unaycha-  por unancha-
 
 s210: R: Uuuuuuuuuy   Irma es bien rara, y encima Virginia no corrige.... ¿-pi despues de -spa? !!!  (en Mikhuna rurakuspapim...!!!) Voy a borrar -pi y voy a agregar -ta a mikhuna.... Sin embargo esta parte se puede mejorar  para seguir usando -pi pero la estructura a la que afecta debe tener una gramática distinta.
