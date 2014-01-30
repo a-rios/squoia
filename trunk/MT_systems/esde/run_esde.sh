@@ -34,7 +34,8 @@ else
  #echo "Please start server to tag for desr parser with the following command:"
  #echo "/opt/matxin/matxinFL3/squoia_analyzer $FREELING_PARAM --outf=desrtag --server --port=$TAGPORT 2> /opt/matxin/matxinFL3/logdesrtag &"
  #exit
- squoia_analyzer $FREELING_PARAM --noloc --outf=desrtag --server --port=$TAGPORT 2> logdesrtag &
+# squoia_analyzer $FREELING_PARAM --noloc --outf=desrtag --server --port=$TAGPORT 2> logdesrtag &
+ squoia_analyzer $FREELING_PARAM  --outf=desrtag --server --port=$TAGPORT 2> logdesrtag &
  echo "squoia_analyzer started..."
  while ! echo "" | analyzer_client $TAGPORT 2> /dev/null
  do
@@ -55,7 +56,7 @@ export DESR_PORT=5678	# model1 = spanish_es4.MLP
 # tag, parse and convert to "matxin" xml
 #analyzer_client $TAGPORT | $DESR_DIR/src/desr $DESR_PARAMS 2>./junk | perl $CONLL_BIN  2>> ./junk | matxin-xfer-lex -c $ESDE_CHUNKTYPE $ESDE_DICT.bin > $TESTOUTPUT.desrparsed
 analyzer_client $TAGPORT | desr_client $DESR_PORT 2>./junk | perl $CONLL_BIN 2> /dev/null | matxin-xfer-lex -c $ESDE_CHUNKTYPE $ESDE_DICT.bin > $TESTOUTPUT.desrparsed
-#exit
+exit
 xmllint --format $TESTOUTPUT.desrparsed
 
 export PERL5LIB="$SQUOIAMATXIN:$ESDEMATXIN"
