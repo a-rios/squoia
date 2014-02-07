@@ -2094,7 +2094,7 @@
 <e><p><l>calzar</l><r>q'imi<s n="obj"/>cuña</r></p><par n="Verb_main"/></e>
 <e><p><l>camandulear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>cambalachear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>cambiar</l><r>chhala</r></p><par n="Verb_main"/></e>
+    <e><p><l>cambiar</l><r>chala</r></p><par n="Verb_main"/></e>
 <e><p><l>cambiar</l><r>tuku<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>cambiar</l><r>yanki</r></p><par n="Verb_main"/></e>
 <e><p><l>camelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -2115,7 +2115,7 @@
 <e><p><l>candar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>candonguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>cangrenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>canjear</l><r>chhala</r></p><par n="Verb_main"/></e>
+    <e><p><l>canjear</l><r>chala</r></p><par n="Verb_main"/></e>
 <e><p><l>canjear</l><r>yanki</r></p><par n="Verb_main"/></e>
 <e><p><l>cañonear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>canonizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -6755,7 +6755,7 @@
 <e><p><l>imperar</l><r>umalli</r></p><par n="Verb_main"/></e>
 <e><p><l>impermeabilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>impersonalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>impetrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>impetrar</l><r>maña</r></p><par n="Verb_main"/></e>
 <e><p><l>implantar</l><r>mallki</r></p><par n="Verb_main"/></e>
 <e><p><l>implantar</l><r>yura</r></p><par n="Verb_main"/></e>
 <!-- implantar en sentido medico? churay? -->
@@ -6765,10 +6765,12 @@
 <e><p><l>implorar</l><r>maña</r></p><par n="Verb_main"/></e>
 <e><p><l>imponer</l><r>kama<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>importar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>importunar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>importar</l><r>ka<s n="preform"/>#chaniyuq</r></p><par n="Verb_main"/></e>
+<e><p><l>importunar</l><r>phiña<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>importunar</l><r>k'uchi<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>imposibilitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>impostar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>imprecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>imprecar</l><r>ñak'a</r></p><par n="Verb_main"/></e>
 <e><p><l>impregnar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>impresionar</l><r>mancha<s n="add_mi"/>+Inch+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <e><p><l>impresionar</l><r>mancha<s n="add_mi"/>+Inch+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
@@ -6905,8 +6907,8 @@
 <e><p><l>injerir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>injertar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>injuriar</l><r>allqucha</r></p><par n="Verb_main"/></e>
-<e><p><l>inmergir</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>inmigrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>inmergir</l><r>challpu</r></p><par n="Verb_main"/></e>
+<e><p><l>inmigrar</l><r>llaqtacha<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>inmiscuir</l><r>chhaqru</r></p><par n="Verb_main"/></e>
 <e><p><l>inmolar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>inmortalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -6931,18 +6933,26 @@
 <e><p><l>inserir</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>insertar</l><r>sat'i</r></p><par n="Verb_main"/></e>
 <e><p><l>insidiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>insinuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>insinuar</l><r>apa<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>insinuar</l><r>pusa<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<!-- insinuarse: engatusarse? -->
+<e><p><l>insinuar</l><r>unspecified<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>insistir</l><r>ati<s n="add_mi"/>+Rep+Rflx</r></p><par n="Verb_main"/></e>
     <e><p><l>insolar</l><r>q'ucha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <!-- intrans. -se -->
     <e><p><l>insolar</l><r>q'ucha<s n="add_mi"/>+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>insolentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>insonorizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>inspeccionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>inspirar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>instalar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>instar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>instaurar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>inspeccionar</l><r>qhawa</r></p><par n="Verb_main"/></e>
+<e><p><l>inspirar</l><r>hich'a</r></p><par n="Verb_main"/></e>
+<e><p><l>inspirar</l><r>rura<s n="add_mi"/>+Des+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>inspirar</l><r>rura<s n="add_mi"/>+Des<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>instalar</l><r>chura</r></p><par n="Verb_main"/></e>
+<e><p><l>instalar</l><r>tiya</r></p><par n="Verb_main"/></e>
+<e><p><l>instar</l><r>maña<s n="add_mi"/>+Rflx<s n="preform"/>#hukmanta</r></p><par n="Verb_main"/></e>
+<e><p><l>instar</l><r>utqha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>instaurar</l><r>hata<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>instaurar</l><r>musuqya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <!-- instigar a +Inf -> Caus    -->
     <e><p><l>instigar</l><r>++Caus<s n="moveToHead_mi"/>++Caus</r></p><par n="Verb_main"/></e>
 <!--  instigar (a) + Noun    -->
@@ -6952,42 +6962,49 @@
 <e><p><l>instituir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>instruir</l><r>yacha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>instrumentalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>instrumentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>instrumentar</l><r>chura<s n="preform"/>#llamk'anata</r></p><par n="Verb_main"/></e>
 <e><p><l>insubordinar</l><r>wananqa<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
 <e><p><l>insubordinar</l><r>wananqa<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>insuflar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>insultar</l><r>k'ami</r></p><par n="Verb_main"/></e>
 <e><p><l>insurreccionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>integrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>integrar</l><r>huñu</r></p><par n="Verb_main"/></e>
 <e><p><l>intensar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>intensificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>intentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>intensificar</l><r>kallpacha</r></p><par n="Verb_main"/></e>
+<e><p><l>intentar</l><r>p'itwi</r></p><par n="Verb_main"/></e>
 <e><p><l>interactuar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intercalar</l><r>chawpicha</r></p><par n="Verb_main"/></e>
 <e><p><l>intercalar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>intercambiar</l><r>chhala</r></p><par n="Verb_main"/></e>
-<e><p><l>intercambiar</l><r>yanki</r></p><par n="Verb_main"/></e>
-<e><p><l>intercambiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>intercambiar</l><r>chala</r></p><par n="Verb_main"/></e>
 <e><p><l>intercambiar_productos</l><r>yanki</r></p><par n="Verb_main"/></e>
 <e><p><l>interceder</l><r>rima<s n="add_mi"/>+Iprs</r></p><par n="Verb_main"/></e>
     <e><p><l>interceder</l><r>uylla</r></p><par n="Verb_main"/></e>
 <e><p><l>interceptar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interconectar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>interesar</l><r>muna<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>interesar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>interferir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>interferir</l><r>hark'a</r></p><par n="Verb_main"/></e>
+<e><p><l>interferir</l><r>chura<s n="add_mi"/>+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>interfoliar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interlinear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intermediar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>internacionalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>internar</l><r>hayku<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
-<e><p><l>internar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>internar</l><r>hayku<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>internar</l><r>hayku<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>interpaginar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interpelar</l><r>tapu<s n="add_mi"/>+MRep</r></p><par n="Verb_main"/></e>
 <e><p><l>interpolar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interponer</l><r>chawpincha</r></p><par n="Verb_main"/></e>
-    <e><p><l>interpretar</l><r>umancha</r></p><par n="Verb_main"/></e>
-<e><p><l>interpretar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<!-- interpretar: comprender -->
+<e><p><l>interpretar</l><r>umancha</r></p><par n="Verb_main"/></e>
+<e><p><l>interpretar</l><r>willa</r></p><par n="Verb_main"/></e>
+<!-- interpretar: idioma  -->
+<e><p><l>interpretar</l><r>t'ikra</r></p><par n="Verb_main"/></e>
+<!-- interpretar: canción  -->
+<e><p><l>interpretar</l><r>taki</r></p><par n="Verb_main"/></e>
+<!-- interpretar: teatro  -->
+<e><p><l>interpretar</l><r>aranwa</r></p><par n="Verb_main"/></e>
 <e><p><l>interrelacionar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>interrogar</l><r>tapu</r></p><par n="Verb_main"/></e>
 <e><p><l>interrumpir</l><r>hark'a</r></p><par n="Verb_main"/></e>
@@ -6995,11 +7012,11 @@
     <!-- intrans. -se -->
     <e><p><l>interrumpir</l><r>tati<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>intersecar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>intervenir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>intervenir</l><r>hayku</r></p><par n="Verb_main"/></e>
 <e><p><l>interviuvar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intestar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>intimar</l><r>qati<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
-<e><p><l>intimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>intimar</l><r>yacha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>intimidar</l><r>llaklla</r></p><par n="Verb_main"/></e>
 <e><p><l>intimidar</l><r>mancha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
@@ -7014,7 +7031,7 @@
 <e><p><l>introducir</l><r>sat'i</r></p><par n="Verb_main"/></e>
 <e><p><l>introducir</l><r>wina</r></p><par n="Verb_main"/></e>   
 <e><p><l>intubar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>intuir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>intuir</l><r>watu<s n="add_mi"/>+Iprs+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>inundar</l><r>lluqlla</r></p><par n="Verb_main"/></e>
     <e><p><l>inutilizar</l><r>yanqaya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <!-- intrans. -se -->
@@ -7022,7 +7039,8 @@
     <e><p><l>inutilizar</l><r>ñuskhuya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>invadir</l><r>hayku</r></p><par n="Verb_main"/></e>
 <e><p><l>invaginar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>invalidar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>invalidar</l><r>ni<s n="preform"/>#manam#chaninchu</r></p><par n="Verb_main"/></e>
+<e><p><l>invalidar</l><r>ni<s n="preform"/>#manam#allinchu</r></p><par n="Verb_main"/></e>
 <e><p><l>inventariar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>inventar</l><r>kama</r></p><par n="Verb_main"/></e>
 <e><p><l>inventar</l><r>paqa<s n="add_mi"/>+Inch+Caus</r></p><par n="Verb_main"/></e>
@@ -7034,15 +7052,19 @@
     <e><p><l>investigar</l><r>t'aqwi</r></p><par n="Verb_main"/></e>
 <e><p><l>investir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>invitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>invitar</l><r>mink'a</r></p><par n="Verb_main"/></e>
+<e><p><l>invitar</l><r>aypu<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
+<!-- TODO: invitar a hacer algo -> rogar/instar -->
+<e><p><l>invitar</l><r>maña<s n="add_mi"/>+Rflx<s n="obj"/>infinitive_a</r></p><par n="Verb_main"/></e>
 <e><p><l>invocar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>invocar</l><r>waqya</r></p><par n="Verb_main"/></e>
     <e><p><l>invocar</l><r>maña</r></p><par n="Verb_main"/></e>
 <e><p><l>involucrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>inyectar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>inyectar</l><r>chura<s n="preform"/>#inyección</r></p><par n="Verb_main"/></e>
 <e><p><l>ionizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>irisar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>ir</l><r>ri</r></p><par n="Verb_main"/></e>
-<e><p><l>ironizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>ironizar</l><r>sawka</r></p><par n="Verb_main"/></e>
 <e><p><l>irradiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>irrigar</l><r>qarpa</r></p><par n="Verb_main"/></e>
 <e><p><l>irritar</l><r>phiña<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
@@ -7050,7 +7072,7 @@
       <!-- intrans. -se -->
     <e><p><l>irritar</l><r>k'ara<s n="add_mi"/>+Autotrs+Rflx<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>irrogar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>irrumpir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>irrumpir</l><r>hayku<s n="add_mi"/>+Int</r></p><par n="Verb_main"/></e>
 <e><p><l>islamizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>italianizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>iterar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -7061,13 +7083,13 @@
 <e><p><l>jabonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jacarear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jactar</l><r>apuskacha</r></p><par n="Verb_main"/></e>
-<e><p><l>jadear</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>jadear</l><r>sayk'u</r></p><par n="Verb_main"/></e>
 <e><p><l>jaezar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jaharrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>jalar</l><r>aysa</r></p><par n="Verb_main"/></e>
 <e><p><l>jalar</l><r>chuta</r></p><par n="Verb_main"/></e>
 <e><p><l>jalbegar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>jalear</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>jalear</l><r>t'aqlla<s n="preform"/>#maki</r></p><par n="Verb_main"/></e>
 <e><p><l>jalonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jamar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jaquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -7083,10 +7105,12 @@
 <e><p><l>jeringar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jesusear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jinetear</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>jinglar</l><r>waylluncha</r></p><par n="Verb_main"/></e>
 <e><p><l>jonjabar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jorobar</l><r>qhupucha</r></p><par n="Verb_main"/></e>
 <e><p><l>jorrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>jubilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>jubilar</l><r>tati</r></p><par n="Verb_main"/></e>
+<e><p><l>jubilar</l><r>sama<s n="add_mi"/>+Iprs</r></p><par n="Verb_main"/></e>
 <e><p><l>judaizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>juerguear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>jugar</l><r>puklla</r></p><par n="Verb_main"/></e>
@@ -7104,7 +7128,8 @@
     <e><p><l>juramentar</l><r>sullu<s n="add_mi"/>+Autotrs</r></p><par n="Verb_main"/></e>
 <e><p><l>jurar</l><r>sullu<s n="add_mi"/>+Autotrs</r></p><par n="Verb_main"/></e>
 <e><p><l>justar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>justificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>justificar</l><r>chanincha</r></p><par n="Verb_main"/></e>
+<e><p><l>justificar</l><r>ni<s n="preform"/>#allinmi</r></p><par n="Verb_main"/></e>
     <e><p><l>justipreciar</l><r>chanincha</r></p><par n="Verb_main"/></e>
     <e><p><l>juzgar</l><r>mirara</r></p><par n="Verb_main"/></e>
     <e><p><l>juzgar</l><r>paqtacha</r></p><par n="Verb_main"/></e>
@@ -7118,7 +7143,8 @@
 <e><p><l>labrar_madera</l><r>llaqlla</r></p><par n="Verb_main"/></e>
 <e><p><l>labrar_tierra</l><r>yapu</r></p><par n="Verb_main"/></e>
 <e><p><l>lacear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>lacerar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>lacerar</l><r>k'iri</r></p><par n="Verb_main"/></e>
+<e><p><l>lacerar</l><r>llik'i<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
 <e><p><l>lacrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>lacrar</l><r>ch'uqri</r></p><par n="Verb_main"/></e>
 <e><p><l>lactar</l><r>ñuñu</r></p><par n="Verb_main"/></e>
@@ -7127,14 +7153,14 @@
 <e><p><l>ladear</l><r>waqlli</r></p><par n="Verb_main"/></e>
 <e><p><l>ladrar</l><r>anya</r></p><par n="Verb_main"/></e>
 <e><p><l>ladrillar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>ladronear</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>ladronear</l><r>suwa<s n="add_mi"/>+Intrup+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>lagartear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lagotear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lagrimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lagrimear</l><r>wiqi</r></p><par n="Verb_main"/></e>
 <e><p><l>laicizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lamber</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>lamentar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>lamentar</l><r>anchi</r></p><par n="Verb_main"/></e>
 <e><p><l>lamer</l><r>llaqwa</r></p><par n="Verb_main"/></e>
 <e><p><l>lamer_residuos_de_comida</l><r>lluspi</r></p><par n="Verb_main"/></e>
     <e><p><l>laminar</l><r>last'a</r></p><par n="Verb_main"/></e>
@@ -7145,8 +7171,8 @@
 <e><p><l>lampacear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lamprear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lañar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>lancear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>lancinar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>lancear</l><r>chuki</r></p><par n="Verb_main"/></e>
+<e><p><l>lancinar</l><r>qhasu</r></p><par n="Verb_main"/></e>
     <e><p><l>languidecer</l><r>chirliya</r></p><par n="Verb_main"/></e>
     <e><p><l>languidecer</l><r>umphuya</r></p><par n="Verb_main"/></e>
     <e><p><l>lanzar</l><r>chamqa</r></p><par n="Verb_main"/></e>
@@ -7193,8 +7219,9 @@
     <e><p><l>leer</l><r>rima<s n="preform"/>#qillqa</r></p><par n="Verb_main"/></e>
 <e><p><l>legalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>legar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>legislar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>legitimar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>legislar</l><r>kama<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>legitimar</l><r>ka<s n="preform"/>#kamachiymanhina</r></p><par n="Verb_main"/></e>
+<e><p><l>legitimar</l><r>sut'incha</r></p><par n="Verb_main"/></e>
 <e><p><l>legrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>leñar</l><r>llant'acha</r></p><par n="Verb_main"/></e>
 <e><p><l>lenificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -7218,9 +7245,9 @@
     <e><p><l>liar</l><r>waltha</r></p><par n="Verb_main"/></e>
     <e><p><l>liar</l><r>wanku</r></p><par n="Verb_main"/></e>
 <e><p><l>liar</l><r>wata</r></p><par n="Verb_main"/></e>
-<e><p><l>libar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>libar</l><r>suqu</r></p><par n="Verb_main"/></e>
 <e><p><l>libelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>liberalizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>liberalizar</l><r>paka<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>liberar</l><r>qispi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <e><p><l>liberar</l><r>qispi<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>  
 <e><p><l>libertar</l><r>qispi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
@@ -7228,11 +7255,11 @@
 <e><p><l>librar</l><r>qispi<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <e><p><l>librar</l><r>qispi<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>licenciar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>licitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>licitar</l><r>chura<s n="preform"/>#chaninta</r></p><par n="Verb_main"/></e>
 <e><p><l>licuar</l><r>unuya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <e><p><l>licuar</l><r>unuya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>licuefacer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>liderar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>liderar</l><r>umalli</r></p><par n="Verb_main"/></e>
 <e><p><l>lidiar</l><r>maqa<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- rezipr. -se -->
 <e><p><l>lidiar</l><r>maqa<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main"/></e>
@@ -7241,7 +7268,7 @@
 <e><p><l>lignificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>lijar</l><r>thupa</r></p><par n="Verb_main"/></e>
 <e><p><l>limar</l><r>thupa</r></p><par n="Verb_main"/></e>
-<e><p><l>limitar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>limitar</l><r>saywa</r></p><par n="Verb_main"/></e>
 <e><p><l>limosnear</l><r>maña<s n="add_mi"/>+Iprs+Rflx</r></p><par n="Verb_main"/></e>
     <e><p><l>limosnear</l><r>uska</r></p><par n="Verb_main"/></e>
     <e><p><l>limpiar</l><r>maylli</r></p><par n="Verb_main"/></e>
@@ -7252,7 +7279,10 @@
 <e><p><l>lindar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>linear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>liofilizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>liquidar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>liquidar</l><r>unuya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>liquidar</l><r>unuya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>liquidar</l><r>tuku</r></p><par n="Verb_main"/></e>
+<e><p><l>liquidar</l><r>sipi</r></p><par n="Verb_main"/></e>
 <e><p><l>lisiar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lisonjear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>listar</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -7264,7 +7294,7 @@
 <e><p><l>liudar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lividecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lixiviar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>llagar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>llagar</l><r>k'iricha</r></p><par n="Verb_main"/></e>
 <e><p><l>llamar</l><r>qaya<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <e><p><l>llamar</l><r>waqya<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <!-- intrans. -se -->
@@ -7306,17 +7336,17 @@
 <e><p><l>lloviznar</l><r>sipsi</r></p><par n="Verb_main"/></e>
 <e><p><l>loar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lobreguecer</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>localizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>lograr</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>localizar</l><r>tari</r></p><par n="Verb_main"/></e>
+<e><p><l>lograr</l><r>aypa</r></p><par n="Verb_main"/></e>
+<e><p><l>lograr</l><r>tari<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
 <e><p><l>logrear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>lomear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>loquear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>losar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>lubricar</l><r>hawicha</r></p><par n="Verb_main"/></e>
 <e><p><l>lubrificar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<!-- luchar por algo? -->
+<!-- TODO: luchar por algo? -->
     <e><p><l>luchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>luchar</l><r>awqa</r></p><par n="Verb_main"/></e>
     <!-- rezipr. -se -->
 <e><p><l>luchar</l><r>maqa<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main"/></e>
 <e><p><l>luchar</l><r>awqa<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main"/></e>
@@ -10402,7 +10432,7 @@
 <e><p><l>triunfar</l><r>ati<s n="add_mi"/>+Rep</r></p><par n="Verb_main"/></e>
     <e><p><l>triunfar</l><r>llalli</r></p><par n="Verb_main"/></e>
 <e><p><l>trizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>trocar</l><r>chhala</r></p><par n="Verb_main"/></e>
+<e><p><l>trocar</l><r>chala</r></p><par n="Verb_main"/></e>
     <e><p><l>trocar</l><r>yanki</r></p><par n="Verb_main"/></e>
 <e><p><l>trocear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>trompear</l><r>saqma</r></p><par n="Verb_main"/></e>
@@ -10422,7 +10452,7 @@
 <e><p><l>trozar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>trucar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>trucidar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>truequear</l><r>chhala</r></p><par n="Verb_main"/></e>
+    <e><p><l>truequear</l><r>chala</r></p><par n="Verb_main"/></e>
     <e><p><l>truequear</l><r>yanki</r></p><par n="Verb_main"/></e>
 <e><p><l>trufar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>truhanear</l><r>unspecified</r></p><par n="Verb_main"/></e>
