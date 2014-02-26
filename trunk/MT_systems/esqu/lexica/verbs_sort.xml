@@ -98,7 +98,8 @@
 <!-- rezipr. -se -->
 <e><p><l>abrazar</l><r>marq'a<s n="add_mi"/>+Rzpr+Rflx<s n="transitivity"/>rzpr</r></p><par n="Verb_main"/></e>
 <e><p><l>abrevar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>abreviar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>abreviar</l><r>utqha<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
+<e><p><l>abreviar</l><r>huch'uyya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
 <e><p><l>abribonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>abrigar</l><r>p'istu</r></p><par n="Verb_main"/></e>
 <e><p><l>abrigar</l><r>qata</r></p><par n="Verb_main"/></e>
@@ -121,7 +122,7 @@
 <e><p><l>absortar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>abstener</l><r>sasi</r></p><par n="Verb_main"/></e>
 <e><p><l>absterger</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>abstraer</l><r>haqi</r></p><par n="Verb_main"/></e>
+<e><p><l>abstraer</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>abuchear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>abullonar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>abultar</l><r>punki</r></p><par n="Verb_main"/></e>
@@ -190,7 +191,8 @@
     <e><p><l>acechar</l><r>suyapaku</r></p><par n="Verb_main"/></e> 
 <e><p><l>acechar</l><r>watiqa</r></p><par n="Verb_main"/></e>
 <e><p><l>acecinar</l><r>ch'arki</r></p><par n="Verb_main"/></e>
-<e><p><l>acedar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>acedar</l><r>p'uchquya<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>acedar</l><r>p'uchquya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
     <e><p><l>aceitar</l><r>wiswicha<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
     <!-- intrans. -se -->
     <e><p><l>aceitar</l><r>wiswiya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
@@ -3077,7 +3079,7 @@
 <e><p><l>currelar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>cursar</l><r>kuti<s n="add_mi"/>+Intrup</r></p><par n="Verb_main"/></e>
 <e><p><l>cursar</l><r>yacha</r></p><par n="Verb_main"/></e>
-<e><p><l>curtir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>curtir</l><r>qhaqu<s n="preform"/>#qara</r></p><par n="Verb_main"/></e>
     <e><p><l>curvar</l><r>q'inqu</r></p><par n="Verb_main"/></e>
     <e><p><l>curvar</l><r>wiqu</r></p><par n="Verb_main"/></e>
 <e><p><l>custodiar</l><r>waqaycha</r></p><par n="Verb_main"/></e>
