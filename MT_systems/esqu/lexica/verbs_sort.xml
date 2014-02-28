@@ -4144,7 +4144,6 @@
     <e><p><l>despedir</l><r>wikch'u</r></p><par n="Verb_main"/></e>
     <e><p><l>despedir</l><r>kacha<s n="add_mi"/>+Int</r></p><par n="Verb_main"/></e>
 <e><p><l>despedir</l><r>qarqu</r></p><par n="Verb_main"/></e>
-<e><p><l>despedir</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despedrar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>despedregar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>despegar</l><r>k'askanna</r></p><par n="Verb_main"/></e>
@@ -4372,6 +4371,7 @@
     <e><p><l>deteriorar</l><r>mawk'aya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
     <e><p><l>deteriorar</l><r>thantaya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>determinar</l><r>unancha</r></p><par n="Verb_main"/></e>
+<e><p><l>determinar</l><r>riqsiy</r></p><par n="Verb_main"/></e>
 <e><p><l>detestar</l><r>ami</r></p><par n="Verb_main"/></e>
     <e><p><l>detestar</l><r>chiqni</r></p><par n="Verb_main"/></e>
 <e><p><l>detonar</l><r>t'uqya</r></p><par n="Verb_main"/></e>
@@ -4411,7 +4411,7 @@
     <e><p><l>diezmar</l><r>pisicha</r></p><par n="Verb_main"/></e>
     <e><p><l>difamar</l><r>map'acha</r></p><par n="Verb_main"/></e>
 <e><p><l>difamar</l><r>rima<s n="preform"/>#wasanpi</r></p><par n="Verb_main"/></e>
-<e><p><l>diferenciar</l><r>huqniraqcha</r></p><par n="Verb_main"/></e>
+<e><p><l>diferenciar</l><r>hukniraqcha</r></p><par n="Verb_main"/></e>
 <e><p><l>diferir</l><r>suya<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>dificultar</l><r>sasacha</r></p><par n="Verb_main"/></e>
 <e><p><l>difluir</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -4461,7 +4461,13 @@
 <e><p><l>dirigir</l><r>pusa</r></p><par n="Verb_main"/></e>
 <e><p><l>dirigir</l><r>apa</r></p><par n="Verb_main"/></e>
 <e><p><l>dirigir</l><r>rampa</r></p><par n="Verb_main"/></e>
-<e><p><l>dirigir</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>dirigir</l><r>pusa<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>dirigir</l><r>yacha<s n="add_mi"/>+Caus<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
+<e><p><l>dirigir</l><r>umalli</r></p><par n="Verb_main"/></e>
+<!-- dirgirse a una persona: niy, dirigirse a un lugar: riy -->
+<e><p><l>dirigir</l><r>ri<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>dirigir</l><r>ni<s n="transitivity"/>rflx<s n="obj"/>[+Anim]</r></p><par n="Verb_main"/></e>
+<e><p><l>dirigir_la_palabra</l><r>ni</r></p><par n="Verb_main"/></e>
 <e><p><l>dirimir</l><r>paska</r></p><par n="Verb_main"/></e>
 <e><p><l>dirimir</l><r>chullu<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
     <e><p><l>discernir</l><r>hamut'a</r></p><par n="Verb_main"/></e>
@@ -4603,7 +4609,7 @@
 <e><p><l>drenar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>driblar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>drizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>drogar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>drogar</l><r>miyu</r></p><par n="Verb_main"/></e>
 <e><p><l>duchar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>dudar</l><r>iskaya</r></p><par n="Verb_main"/></e>
     <e><p><l>dudar</l><r>thuki</r></p><par n="Verb_main"/></e>
@@ -8420,7 +8426,7 @@
     <e><p><l>porfiar</l><r>kuti<s n="add_mi"/>+Iprs+Rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>porfiar</l><r>ñarña</r></p><par n="Verb_main"/></e>
 <e><p><l>porfirizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>pormenorizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>pormenorizar</l><r>qhaway<s n="preform"/>#tukuy</r></p><par n="Verb_main"/></e>
     <e><p><l>portarse_bien</l><r>kawsa<s n="preform"/>#allin</r></p><par n="Verb_main"/></e>
     <e><p><l>portarse_mal</l><r>kawsa<s n="preform"/>#mana#allin</r></p><par n="Verb_main"/></e>
 <e><p><l>portar</l><r>apa</r></p><par n="Verb_main"/></e>
