@@ -350,6 +350,7 @@
 | [ {hamut'a} "[" "VRoot" "]" "[" "=reflexionar,pensar" "]" ] :  {hamut'a}
 | [ {hamut'a} "[" "VRoot" "]" "[" "=reflexionar,pensar" "]" ] :  {hamuta}
 | [ {hamu} "[" "VRoot" "]" "[" "=venir" "]" ] :  {hamu}
+| [ {hamu} "[" "VRoot" "]" "[" "=venir" "]" ] :  {qamu}
 | [ {haña} "[" "VRoot" "]" "[" "=comprometer_con_indiscreción,formar_pacotillas" "]" ] :  {haña}
 | [ {hanch'a} "[" "VRoot" "]" "[" "=gritar" "]" ] :  {hanch'a}
 | [ {hach'u} "[" "VRoot" "]" "[" "=masticar" "]" ] :  {hanchu}
@@ -364,6 +365,7 @@
 | [ {hapka} "[" "VRoot" "]" "[" "=respirar" "]" ] :  {hapka}
 | [ {haqchiswa} "[" "VRoot" "]" "[" "=estornudar" "]" ] :  {haqchiswa}
 | [ {harawi} "[" "VRoot" "]" "[" "=cantar" "]" ] :  {harawi}
+| [ {harawi} "[" "VRoot" "]" "[" "=cantar" "]" ] :  {qarawi}
 | [ {hark'a} "[" "VRoot" "]" "[" "=retener,defender" "]" ] :  {hark'a}
 | [ {hark'a} "[" "VRoot" "]" "[" "=retener,defender" "]" ] :  {harka}
 | [ {harku} "[" "VRoot" "]" "[" "=desocupar" "]" ] :  {harku}
@@ -1241,6 +1243,7 @@
 | [ {qunchi} "[" "VRoot" "]" "[" "=oler" "]" ] :  {qunchi}
 | [ {q'uñi} "[" "VRoot" "]" "[" "=calentar" "]" ] :  {q'uñi}
 | [ {q'uñi} "[" "VRoot" "]" "[" "=calentar" "]" ] :  {quñi}
+| [ {q'uñi} "[" "VRoot" "]" "[" "=calentar" "]" ] :  {quñu}
 | [ {qunqa} "[" "VRoot" "]" "[" "=olvidar" "]" ] :  {qunqa}
 | [ {qunquri} "[" "VRoot" "]" "[" "=arrodillarse" "]" ] :  {qunquri}
 | [ {qunta} "[" "VRoot" "]" "[" "=empujar" "]" ] :  {qunta}
