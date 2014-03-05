@@ -541,6 +541,7 @@ define NRootQ [
 | {haqi} : {haqi}
 | {haqras} : {haqras}
 | {harawi} : {harawi}
+| {harawi} : {qarawi}
 | {hark'a} : {hark'a}
 | {hark'a} : {harka}
 | {harq'i} : {harq'i}
@@ -1791,6 +1792,7 @@ define NRootQ [
 | {qunchu} : {qunchu}
 | {q'uñi} : {q'uñi}
 | {q'uñi} : {quñi}
+| {q'uñi} : {quñu}
 | {qunqur} : {qunquri}
 | {qunqur} : {qunqur}
 | {q'unta} : {q'unta}
