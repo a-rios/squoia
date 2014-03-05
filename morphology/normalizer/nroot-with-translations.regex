@@ -1701,7 +1701,7 @@
 | [ {qhumpu} "[" "NRoot" "]" "["  "=colina" "]" ] : {qhumpu}
 | [ {qhuña} "[" "NRoot" "]" "["  "=moco" "]" ] : {qhuña}
 | [ {qunchu} "[" "NRoot" "]" "["  "=turbio,fermento" "]" ] : {qhunchu}
-| [ {qhuñi} "[" "NRoot" "]" "["  "=calor" "]" ] : {qhuñi}
+| [ {q'uñi} "[" "NRoot" "]" "["  "=calor" "]" ] : {qhuñi}
 | [ {qhupu} "[" "NRoot" "]" "["  "=joroba,nudo,tumor" "]" ] : {qhupu}
 | [ {qhurqu} "[" "NRoot" "]" "["  "=ronco" "]" ] : {qhurqu}
 | [ {qhuru} "[" "NRoot" "]" "["  "=tronchado,mutilado" "]" ] : {qhuru}
@@ -1792,6 +1792,7 @@
 | [ {qunchu} "[" "NRoot" "]" "["  "=turbio,fermento" "]" ] : {qunchu}
 | [ {q'uñi} "[" "NRoot" "]" "["  "=calor" "]" ] : {q'uñi}
 | [ {q'uñi} "[" "NRoot" "]" "["  "=calor" "]" ] : {quñi}
+| [ {q'uñi} "[" "NRoot" "]" "["  "=calor" "]" ] : {quñu}
 | [ {qunqur} "[" "NRoot" "]" "["  "=rodilla" "]" ] : {qunquri}
 | [ {qunqur} "[" "NRoot" "]" "["  "=rodilla" "]" ] : {qunqur}
 | [ {q'unta} "[" "NRoot" "]" "["  "=humo" "]" ] : {q'unta}
