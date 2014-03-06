@@ -76,8 +76,11 @@
        define Orthography16 [ {h} (->) {j}, {H} (->) {J} ||  [a|i|l|m|n|r|u] _ Vowel ];
        define Orthography17 [ [{k}|{q}] (->) {j} || Vowel_ ];       
        define Orthography18 [ {ph} (->) {f}];     
-              
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18];
+       
+       # alternation h/q at the beginning of a word
+       define Orthography19 [ {h} (->) {q} || .#. _ ];  
+       
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18 .o. Orthography19 ];
 
        define QuechuaOrtho Allophone .o. Orthography;
 
