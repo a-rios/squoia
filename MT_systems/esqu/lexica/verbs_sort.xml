@@ -6196,9 +6196,10 @@
 <e><p><l>festonear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>fiar</l><r>manu</r></p><par n="Verb_main"/></e>
 <e><p><l>fichar</l><r>unspecified</r></p><par n="Verb_main"/></e>
-<e><p><l>figurar</l><r>siqi</r></p><par n="Verb_main"/></e>
+<e><p><l>figurar</l><r>rikhu<s n="add_mi"/>+Inch</r></p><par n="Verb_main"/></e>
 <e><p><l>figurar</l><r>ka</r></p><par n="Verb_main"/></e>
-<e><p><l>figurar</l><r>llalli</r></p><par n="Verb_main"/></e>
+<e><p><l>figurar</l><r>siqi</r></p><par n="Verb_main"/></e>
+<e><p><l>figurar</l><r>yuya<s n="add_mi"/>+Aff<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
 <e><p><l>fijar</l><r>qhawa<s n="preform"/>#utispa</r></p><par n="Verb_main"/></e>
 <e><p><l>fijar</l><r>t'ipa</r></p><par n="Verb_main"/></e>
 <e><p><l>fijar</l><r>k'aska<s n="add_mi"/>+Caus</r></p><par n="Verb_main"/></e>
@@ -6464,8 +6465,7 @@
 <e><p><l>gorgojear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gorgoritear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gorgotear</l><r>unspecified</r></p><par n="Verb_main"/></e>
-    <e><p><l>gorjear</l><r>taki</r></p><par n="Verb_main"/></e>
-<e><p><l>gorjear</l><r>unspecified</r></p><par n="Verb_main"/></e>
+    <e><p><l>gorjear</l><r>ch'allallalla</r></p><par n="Verb_main"/></e>
     <e><p><l>gorrear</l><r>uska</r></p><par n="Verb_main"/></e>
 <e><p><l>gorronear</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>gotear</l><r>sut'u</r></p><par n="Verb_main"/></e>
@@ -10380,7 +10380,9 @@
 <e><p><l>titilar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>titiritar</l><r>unspecified</r></p><par n="Verb_main"/></e>
     <e><p><l>titubear</l><r>thuki</r></p><par n="Verb_main"/></e>
-<e><p><l>titular</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>titular</l><r>sutiya<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>titular</l><r>ka<s n="preform"/>#sutiyuq<s n="transitivity"/>rflx</r></p><par n="Verb_main"/></e>
+<e><p><l>titular</l><r>suticha<s n="transitivity"/>trans</r></p><par n="Verb_main"/></e>
 <e><p><l>tiznar</l><r>yanacha</r></p><par n="Verb_main"/></e>
     <e><p><l>tiznar</l><r>qhichincha</r></p><par n="Verb_main"/></e>
 <e><p><l>tizonear</l><r>unspecified</r></p><par n="Verb_main"/></e>
@@ -10776,6 +10778,7 @@
 <e><p><l>vedar</l><r>hark'a</r></p><par n="Verb_main"/></e>
 <!-- <e><p><l>vedar</l><r>amani</r></p><par n="Verb_main"/></e> -->
 <e><p><l>vegetar</l><r>unspecified</r></p><par n="Verb_main"/></e>
+<e><p><l>vegetar</l><r>ch'ichi<s n="subj"/>[+Plant]</r></p><par n="Verb_main"/></e>
 <e><p><l>vehicular</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vehiculizar</l><r>unspecified</r></p><par n="Verb_main"/></e>
 <e><p><l>vejar</l><r>unspecified</r></p><par n="Verb_main"/></e>
