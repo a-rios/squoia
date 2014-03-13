@@ -118,7 +118,7 @@ my %verbLemClasses =  %{ retrieve($verbLemPath) };
 
 #my $modelPath = "$path/ancoraAndiula_svm.model";
 # testing
-my $modelPath = "$path/ancoraAndiula_v4_preliminary.model";
+my $modelPath = "$path/ancoraAndiula_svm.model";
 #print STDERR "modelpath: $modelPath\n";
 my $svm =  new Algorithm::SVM(Model => $modelPath);
 
