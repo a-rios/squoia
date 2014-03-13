@@ -2,7 +2,7 @@
 # Rules to solve morphological ambiguity (e.g. es: borracho, de: betrunken/Betrunkener (adj vs noun)
 #
 # Format:
-# nodeSRC        morphTRGT     k/d     condition            ## comment
+# nodeSRC        morphTRGT(no explicit feature -> assumed mi, other target than mi -> indicate explicitely (e.g. transitivity=rflx))     k/d     condition            ## comment
 #
 # condition: if the condition evaluates to true
 # -> k=keep (keep only this option), d=delete  (delete this tranlsation option from output)
@@ -23,6 +23,10 @@
 #ebrio, machaq (ser), machasqa (estar), leave for language model
 my.slem=ebrio	VRoot+Ag	k	my.smi=/NC/
 my.slem=ebrio	VRoot+Perf	k	my.smi=/AQ/
+
+# nouns/adjectives that have different meanings in Spanish (e.g. 'el general' vs. 'general') -> marked in lexicon with 's_pos'
+my.smi=/^N/	s_pos=adj	d	-
+my.smi=/^A/	s_pos=noun	d	-
 
 # aqui, ahí, allá: kay, chay, haqay +Loc if static, +Dat with movement verbs
 my.slem=aquí		PrnDem+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
