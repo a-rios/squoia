@@ -68,8 +68,13 @@ my.slem=se				"yes"				my.type=/sn|coor-n/		delete		up		overwrite
 # another special case: nominal head of internally headed relative clause: will be moved into rel-clause, don't insert case markers!
 parent.type=sn					"+Acc"				my.si=/cd/ && !(chunkparent.verbform=/perfect|obligative|^rel/) && !(chunkchild.IHRC=yes)			case			up		concat
 
+# TODO: check: if lexical entry of verb defines a case, insert case to child cd/ci
+# TODO: pobjCase -> prep-disamb
+parent.type=sn					case		  		objCase=/.+/					objCase					down				overwrite
+parent.type=sn					case		  		iobjCase=/.+/					iobjCase				down				overwrite
+
 # if sn chunk and si=ci -> set mi=+Dat
-parent.type=sn					"+Dat"				my.si=ci					case			up		concat
+parent.type=sn					"+Dat"				my.si=ci && !(my.iobjCase=/.+/)					case			up		concat
 
 # if plural noun with a child node that is a number: delete plural suffix (kimsa runa, not *kimsa runakuna)
 my.smi=/^DN|^Z$/				"+Pl"				my.type=/sn|coor-n/				deleteMorph		up		concat

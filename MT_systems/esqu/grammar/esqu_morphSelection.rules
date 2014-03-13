@@ -25,8 +25,8 @@ my.slem=ebrio	VRoot+Ag	k	my.smi=/NC/
 my.slem=ebrio	VRoot+Perf	k	my.smi=/AQ/
 
 # nouns/adjectives that have different meanings in Spanish (e.g. 'el general' vs. 'general') -> marked in lexicon with 's_pos'
-my.smi=/^N/	s_pos=adj	d	-
-my.smi=/^A/	s_pos=noun	d	-
+my.smi=/^N/	s_pos=adj	d	my.smi=/^N/
+my.smi=/^A/	s_pos=noun	d	my.smi=/^A/
 
 # aqui, ahí, allá: kay, chay, haqay +Loc if static, +Dat with movement verbs
 my.slem=aquí		PrnDem+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
