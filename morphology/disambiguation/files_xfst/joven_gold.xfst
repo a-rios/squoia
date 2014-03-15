@@ -592,7 +592,7 @@ hanaq	hanaq[NRoot][=arriba,superior]
 
 pachamanta	pacha[NRoot][=mundo,tiempo][^DB][--]manta[Cas][+Abl]
 
-urayamuchkasqa	ura[VRoot][=bajar][--]yka[VDeriv][+Aff][--]mu[VDeriv][+Cis_Trs][^DB][--]chka[Asp][+Prog][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+uraykamuchkasqa	ura[VRoot][=bajar][--]yka[VDeriv][+Aff][--]mu[VDeriv][+Cis_Trs][^DB][--]chka[Asp][+Prog][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 chakrantinta	chakra[NRoot][=chacra][^DB][--]ntin[Cas][+Iclsv][^DB][--]ta[Cas][+Acc]
 
@@ -3404,7 +3404,7 @@ kachkaqtinsi	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][^DB][--]pti[NS][+DS][^DB][
 
 ñust'a	ñust'a[NRoot][=doncella]
 
-kutiyurqusqa	kuti[VRoot][=volver][--]yku[VDeriv][+Aff][--]rqu[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+kutiykurqusqa	kuti[VRoot][=volver][--]yku[VDeriv][+Aff][--]rqu[VDeriv][+Rptn][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 ,	,[$.]
 
@@ -3716,7 +3716,7 @@ wakmanta	wak[PrnDem][^DB][--]manta[Cas][+Abl]
 
 Mallkuqa	Mallku[NRoot][=jefe][^DB][--]qa[Amb][+Top]
 
-rikhuririrqamusqa	rikhuri[VRoot][=aparecer,ver][--]ri[VDeriv][+Inch][--]rqa[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
+rikhurirqamusqa	rikhuri[VRoot][=aparecer,ver][--]ri[VDeriv][+Inch][--]rqa[VDeriv][+Rptn][--]mu[VDeriv][+Cis_Trs][^DB][--]sqa[Tns_VPers][+3.Sg.Subj.IPst]
 
 .	.[$.]
 
