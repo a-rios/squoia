@@ -335,6 +335,7 @@ elsif($mode eq '-xfst')
 	my $wrongAnalysis = 0;
 	my $stillAmbigForms = 0;
 	my $totalAmbigForms  = retrieve('totalAmbigForms');
+	print STDERR "total amb: ".$$totalAmbigForms."\n";
 	my $xfstFailures=0;
 	my $xfstFailuresGold=0;
 	my $punct =0;
