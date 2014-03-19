@@ -223,71 +223,112 @@ for (my $i=0; $i < scalar(@words); $i++){
 }
 
 print "\n";
-#while(<>){
-#	
-#	s/\n//g;
-#	unless(/^$/){
-#	if(/\$/){
-#		my ($punc,$rest) = split('\t');
-#		# opening punctuation
-#		if($openquot && $punc =~ m/\"|\'|\-|—/) {
-#			print " $punc";
-#			$openquot =0;
-#			$needspace=0;
-#		}
-#		elsif($punc =~ /„|¿|¡|\(|\[|«/){
-#			print " $punc";
-#			$needspace=0;
-#		}
-#		# closing punctuation
-#		elsif(!$openquot && $punc =~ /\"|\'|-|—|/){
-#			print "$punc";
-#			$openquot =1;
-#			$needspace=1;
-#		}
-#		else{# other closing punctuation
-#			print "$punc";
-#			$needspace=1;
-#		}
-#	}
-#	elsif($_=~ /#EOS.*\+\?$/) {
-#		print "\n";
-#	}
-#	elsif($_=~ /\+\?$/) {
-#		my ($word, $rest)  = split('\t');
-#		unless($needspace==0){
-#			print " ";}
-#		print "$word";
-#		$needspace=1;
-#	}
-#	else{
-#		my ($form, $analysis) = split('\t');
-#		my @morphs = ($analysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
-#		unless($needspace==0){
-#			print " ";}
-#		#if(scalar(@morphs)>0){
-#		#print " ";}
+
+## tokenized output:
+#for (my $i=0; $i < scalar(@words); $i++){
+#	    my $word = @words[$i];
+#		my $form = @$word[0];
+#		my $analyses = @$word[1];
+#		my $firstanalysis = @$analyses[0];
+#		$firstanalysis =~ s/\n//g;
 #		
-#		# check if first letter should be uppercase
-#		my $upper = 0;
-#		my $firstletter = substr($form,0,1);
-#		if( $firstletter eq uc($firstletter)){
-#			$upper = 1;
+#		if($firstanalysis =~ /\$/)
+#		{
+#			my ($punc,$rest) = split(/\[/, $firstanalysis);
+#			print "$punc\n";
 #		}
-#		
-#		for(my $i=0;$i<scalar(@morphs);$i++){
-#			my $m = @morphs[$i];
-#			if($upper ==1 && $i==0){
-#				print ucfirst("$m");
+#		elsif($firstanalysis=~ /#EOS/) {
+#			#print "\n";
+#		}
+#		# word not recognized: print form
+#		elsif($firstanalysis !~ /\[/  ) {
+#				print "$form\n";
+#		}
+#		# numbers
+#		elsif($firstanalysis =~ /\[CARD/  ) 
+#		{
+#			$firstanalysis =~ s/\@mMI//g;
+#			my ($lem) = ($firstanalysis =~ m/([0-9,\.]+?)\[/g );
+#			my $outWordForm =$lem;
+#			
+#			my @morphs = ($firstanalysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
+#				
+#			for(my $i=0;$i<scalar(@morphs);$i++){
+#				my $m = @morphs[$i];
+#				$outWordForm = $outWordForm."$m";
 #			}
-#			else{
-#				print "$m";
+#			print $outWordForm."\n";
+#		}
+#		else
+#		{
+#			$firstanalysis =~ s/\@mMI//g;
+#			
+#			my $outWordForm ="";
+#			my @morphs = ($firstanalysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
+#			
+#			# check if first letter should be uppercase
+#			my $upper = 0;
+#			my $firstletter = substr($form,0,1);
+#			if( $firstletter eq uc($firstletter)){
+#				$upper = 1;
 #			}
+#			
+#			for(my $i=0;$i<scalar(@morphs);$i++){
+#				my $m = @morphs[$i];
+#				if($upper ==1 && $i==0){
+#					#print ucfirst("$m");
+#					$outWordForm = ucfirst("$m");
+#				}
+#				else{
+#					#print "$m";
+#					$outWordForm = $outWordForm."$m";
+#				}
+#			}
+#			print $outWordForm."\n";
+#			
+#			#if still ambiguous, more than one analysis
+#			if(scalar(@$analyses)>1)
+#			{ 
+#				my $moreOutWordForms = $outWordForm."##";
+#				for(my $j=1;$j<scalar(@$analyses);$j++)
+#				{
+#					my $nextanalysis = @$analyses[$j];
+#					$nextanalysis =~ s/\@mMI//g;
+#					my @morphs = ($nextanalysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
+#					# check if first letter should be uppercase
+#					my $upper = 0;
+#					my $firstletter = substr($form,0,1);
+#					if( $firstletter eq uc($firstletter)){
+#						$upper = 1;
+#					}
+#					my $nextOutWordForm ="";
+#					for(my $i=0;$i<scalar(@morphs);$i++){
+#						my $m = @morphs[$i];
+#						if($upper ==1 && $i==0){
+#							#print ucfirst("$m");
+#							$nextOutWordForm = ucfirst("$m");
+#						}
+#						else{
+#							#print "$m";
+#							$nextOutWordForm = $nextOutWordForm."$m";
+#						}
+#					}
+#					# don't print if this is exactly the same as before
+#					unless($moreOutWordForms =~ /\Q$nextOutWordForm\E##/){
+#						print "/".$nextOutWordForm;
+#						$moreOutWordForms = $nextOutWordForm."##";
+#						
+#					}
+#					#print "/".$nextOutWordForm;
+#					
+#				}
+#				print "\n";
+#			}
+#			
 #		}
-#		
-#		
-#		$needspace=1;
-#		
-#		}
-#	}
 #}
+#
+#print "\n";
+#
+
+
