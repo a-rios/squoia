@@ -10,6 +10,7 @@ my $num_args = $#ARGV;
 
 if ( $num_args != 1) {
   print STDERR "\nUsage: perl disambiguate.pl disambiguated.crf ambiguous.xfst \n";
+  print STDERR "numargs: $num_args @ARGV\n";
   exit;
   }
 

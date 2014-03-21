@@ -14,14 +14,14 @@ use Storable;
 
 my $num_args = $#ARGV + 1;
 if ($num_args != 2) {
-  print STDERR "\nUsage:  perl xfstToCrf.pl -1/-2/-3/-4 xfst_file (only with -1)\n";	
+  print STDERR "\nUsage:  perl xfst2wapiti_morphTest.pl -1/-2/-3/-4 xfst_file (only with -1)\n";	
   print STDERR "-1: NS/VS, -2: nominal+verbal morph disamb, 3: independent suffixes disamb, 4: print disambiguated xfst\n";	
   exit;
 }
 
 my $mode = $ARGV[0];
 unless($mode eq '-1' or $mode eq '-2' or $mode eq '-3' or $mode eq '-4' or !$mode){
-	print STDERR "\nUsage:  perl xfstToCrf.pl -1/-2/-3/-4\n";	
+	print STDERR "\nUsage:  perl xfst2wapiti_morphTest.pl -1/-2/-3/-4\n";	
  	print STDERR "-1: NS/VS, -2: nominal+verbal morph disamb, 3: independent suffixes disamb, 4: print disambiguated xfst\n";	
   	exit;
 }
