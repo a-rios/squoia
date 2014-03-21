@@ -7,6 +7,9 @@ binmode STDERR, ':utf8';
 binmode STDOUT, ':utf8';
 use strict;
 use Storable;
+use File::Spec::Functions qw(rel2abs);
+use File::Basename;
+my $path = dirname(rel2abs($0));
 
 
 # check if paramenter was given, either:
@@ -15,14 +18,14 @@ use Storable;
 
 my $num_args = $#ARGV + 1;
 if ($num_args > 1) {
-  print STDERR "\nUsage:  perl xfstToCrf.pl -test/-train\n";	
+  print STDERR "\nUsage:  perl xfst2wapiti_pos.pl -test/-train\n";	
   print STDERR "-test/-train is optional, default is -test\n";	
   exit;
 }
 
 my $mode = $ARGV[0];
 unless($mode eq '-test' or $mode eq '-train' or !$mode){
-	print STDERR "\nUsage:  perl xfstToCrf.pl -test/-train\n";	
+	print STDERR "\nUsage:  perl xfst2wapiti_pos.pl -test/-train\n";	
   	print STDERR "-test/-train is optional, default is -test\n";	
   	exit;
 }
@@ -141,11 +144,11 @@ my $ambigPos =0;
 my $ambigForms=0;
 
 
-my $xfstWordsRefLem = retrieve('../PossibleLemmasForTrain');
+my $xfstWordsRefLem = retrieve($path.'/../PossibleLemmasForTrain');
 my %xfstwordsLem = %$xfstWordsRefLem;
-my $xfstWordsRefMorph = retrieve('../PossibleMorphsForTrain');
+my $xfstWordsRefMorph = retrieve($path.'/../PossibleMorphsForTrain');
 my %xfstwordsMorph = %$xfstWordsRefMorph;
-my $xfstWordsRefPos = retrieve('../PossibleRootsForTrain');
+my $xfstWordsRefPos = retrieve($path.'/../PossibleRootsForTrain');
 my %xfstwordsPos = %$xfstWordsRefPos;
 
 # check dialectal variations: 
