@@ -3603,7 +3603,10 @@
                           <word>ni</word>
                           <secedges>
                           </secedges>
+                          <pos>Root</pos>
+                          <translation>=decir</translation>
                           <morph>
+                            <tag>VRoot</tag>
                           </morph>
                           <children>
                             <terminal id="s14_12">
