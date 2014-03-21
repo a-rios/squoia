@@ -18115,6 +18115,7 @@
               <word>KAN</word>
               <secedges>
               </secedges>
+              <pos>DUMMY</pos>
               <morph>
               </morph>
               <children>
