@@ -19035,7 +19035,7 @@
                       <word>chanin</word>
                       <secedges>
                       </secedges>
-                      <pos>Root_VDeriv</pos>
+                      <pos>Root</pos>
                       <translation>=valor,correcto</translation>
                       <morph>
                         <tag>NRoot</tag>
