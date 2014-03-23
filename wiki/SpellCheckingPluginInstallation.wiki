@@ -1,49 +1,43 @@
 #labels installation,guide,plugin,openoffice,libreoffice,quechua,qhichwa
-<h3>
-<table>
-<tbody>
-<tr><td>Quechua Spell Checking Plugin
-Installation Guide for <br /> <a href="http://www.openoffice.org/download/" target="_blank"><img src="http://hinantin.com/sc/images/openoff_logo.png"></a> or <a href="http://www.libreoffice.org/download" target="_blank"><img src="http://hinantin.com/sc/images/libreo_logo.png"></a></td></tr>
-</tbody></table>
-</h3>
+===Quechua Spell Checking Plugin Installation Guide for [http://www.openoffice.org/download/ OpenOffice] or [http://www.libreoffice.org/download LibreOffice]===
 
 <table id="insTable">
-<tbody><tr><td><span class="highlight">1. Go to the <a href="http://hinantin.com/sc/download.php">download page</a>, choose the plugin you want and download it.</span></td><td><span class="highlight">2. Go to the download location and double click on the oxt file.</span></td></tr>
+<tbody><tr><td><span>1. Go to the <a href="http://hinantin.com/sc/download.php">download page</a>, choose the plugin you want and download it.</span></td><td><span>2. Go to the download location and double click on the oxt file.</span></td></tr>
 <tr><td><img src="http://hinantin.com/sc/images/installation/001_download.png"></td><td><img src="http://hinantin.com/sc/images/installation/002_navigate.png"></td></tr>
 
-<tr><td><span class="highlight">3. The Plugin Manager will prompt you if you want to install it, click the "OK" button.</span></td><td><span class="highlight">4. Check if the plugin was correctly installed, search for our logo in the plugin list.</span></td></tr>
+<tr><td><span>3. The Plugin Manager will prompt you if you want to install it, click the "OK" button.</span></td><td><span>4. Check if the plugin was correctly installed, search for our logo in the plugin list.</span></td></tr>
 <tr><td><img src="http://hinantin.com/sc/images/installation/003_clic_ok.png"></td><td><img src="http://hinantin.com/sc/images/installation/004_check_installation.png"></td></tr>
 
-<tr><td><span class="highlight">5. Close and reopen the application (OpenOffice/LibreOffice).</span></td><td></td></tr>
+<tr><td><span>5. Close and reopen the application (OpenOffice/LibreOffice).</span></td><td></td></tr>
 <tr><td><img src="http://hinantin.com/sc/images/installation/005_close_reopen.png"></td><td></td></tr>
 </tbody></table>
 
 
-<h3 class="title">Using the Spell Checking Plugin</h3>
+<h3>Using the Spell Checking Plugin</h3>
 
 
-<table id="insTable">
-<tbody><tr><td colspan="2"><span class="highlight">6. Create a new "Writer document".</span></td></tr>
+<table>
+<tbody><tr><td colspan="2"><span>6. Create a new "Writer document".</span></td></tr>
 <tr><td colspan="2"><img src="http://hinantin.com/sc/images/installation/006_new_document.png"></td></tr>
 
-<tr><td colspan="2"><span class="highlight">7. Write a text and select it.</span></td></tr>
+<tr><td colspan="2"><span>7. Write a text and select it.</span></td></tr>
 <tr><td colspan="2"><img src="http://hinantin.com/sc/images/installation/007_write_select.png"></td></tr>
 
-<tr><td colspan="2"><h4 class="title">If you are using Windows follow steps 8-9 and skip step 10 otherwise go to step 10.</h4></td></tr>
-<tr><td><span class="highlight">8. Go to the bottom of the application and click on the language option.</span></td><td><span class="highlight">9. Select the "More ..." option.</span></td></tr>
+<tr><td colspan="2"><h4>If you are using Windows follow steps 8-9 and skip step 10 otherwise go to step 10.</h4></td></tr>
+<tr><td><span>8. Go to the bottom of the application and click on the language option.</span></td><td><span>9. Select the "More ..." option.</span></td></tr>
 <tr><td><img src="http://hinantin.com/sc/images/installation/008_language_clic.png"></td><td><img src="http://hinantin.com/sc/images/installation/009_more_language.png"></td></tr>
 
-<tr><td colspan="2"><h4 class="title">If you are not using Windows:</h4></td></tr>
-<tr><td colspan="2"><span class="highlight">10. Go to the application menu and click on Tools-&gt;Language-&gt;For Selection-&gt;More... option.</span></td></tr>
+<tr><td colspan="2"><h4>If you are not using Windows:</h4></td></tr>
+<tr><td colspan="2"><span>10. Go to the application menu and click on Tools-&gt;Language-&gt;For Selection-&gt;More... option.</span></td></tr>
 <tr><td colspan="2"><img src="http://hinantin.com/sc/images/installation/013_menu_language.png"></td></tr>
 
 
-<tr><td colspan="2"><span class="highlight">11. Select "Quechua (Bolivia - South)" from the language combobox.</span></td></tr>
+<tr><td colspan="2"><span>11. Select "Quechua (Bolivia - South)" from the language combobox.</span></td></tr>
 <tr><td colspan="2"><img src="http://hinantin.com/sc/images/installation/010_select_language.png"></td></tr>
 
-<tr><td colspan="2"><span class="highlight">12. After selecting "Quechua (Bolivia - South)" as language, click the "OK" button.</span></td></tr>
+<tr><td colspan="2"><span>12. After selecting "Quechua (Bolivia - South)" as language, click the "OK" button.</span></td></tr>
 <tr><td colspan="2"><img src="http://hinantin.com/sc/images/installation/011_select_language_ok.png"></td></tr>
 
-<tr><td rowspan="2"><span class="highlight">13. Right-click on a word to get a list of suggested corrections (none if the word is correctly spelled).</span></td><td rowspan="2"><img src="http://hinantin.com/sc/images/installation/012_right_clic.png"></td></tr>
+<tr><td rowspan="2"><span>13. Right-click on a word to get a list of suggested corrections (none if the word is correctly spelled).</span></td><td rowspan="2"><img src="http://hinantin.com/sc/images/installation/012_right_clic.png"></td></tr>
 
 </tbody></table>
