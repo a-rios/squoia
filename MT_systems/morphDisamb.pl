@@ -43,7 +43,7 @@ while (<MORPHSELFILE>) {
 	$conditions =~ s/\s//g;	# no whitespace within condition
 	# assure key is unique, use srcConds:trgts as key
 	my $key = "$srcNodeConds---$trgtMI";
-	#print STDERR "key: $key\n";
+	print STDERR "key: $key\n";
 	my @value = ( $conditions, $keepOrDelete, $prob );
 	$morphSel{$key} = \@value;
 
@@ -81,7 +81,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 							# get target conditions
 							my $trgtConds = @{ $morphSel{$ruleskey}}[0];
 							my @trgtConditions = &splitConditionsIntoArray($trgtConds);
-							#print STDERR "target conds: @trgtConditions\n";
+							print STDERR "target conds: @trgtConditions\n";
 							
 							if(&evalConditions(\@trgtConditions,$node))
 							{

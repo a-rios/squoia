@@ -75,6 +75,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 					
 					# check if source lemma matches lemma in rule
 					if($actualsrclem eq $srclem)
+					#if($actualsrclem =~ /^$srclem$/)
 					{ #print STDERR "lem: $actualsrclem, $srclem\n";
 							# check for each target conditions if one of the matching rules applies
 							# if yes, check if k=keep or d=delete 
