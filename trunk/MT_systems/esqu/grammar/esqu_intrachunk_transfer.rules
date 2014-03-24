@@ -114,14 +114,19 @@ my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwr
 # also:
 # subordinated participle -> subieron ascendiendo, se fue riendo, entra flotando, etc.
 # -> finite verb: verbmi2, lem2; gerund: lem, verbmi (+SS)
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|comenzar|soler/) 				verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (xpath{ancestor::NODE[@mi="infinitive"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|llegar|comenzar/) && !(my.lem=unspecified)							lem				my.type=/grup-verb|coor-v/		lem2			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{ancestor::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)  && !(my.slem=/poner|empezar|ir|comenzar|llegar|soler/) 				"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|comenzar|soler/) && !(my.lem=/\+\+/) 				verbmi				my.type=/grup-verb|coor-v/		verbmi2			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(my.smi=/^VA/) && (parent.mi=infinitive || (xpath{ancestor::NODE[@mi="infinitive"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|llegar|comenzar/) && !(my.lem=unspecified) && !(my.lem=/\+\+/) 							lem				my.type=/grup-verb|coor-v/		lem2			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{ancestor::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)  && !(my.slem=/poner|empezar|ir|comenzar|llegar|soler/) && !(my.lem=/\+\+/)  				"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
 
 # llegar/empezar/poner(se)/comenzar a +Inf:
 # lem = lem of infinitive, verbmi = mi of finite verb +Inch
 my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitive && my.verbmi=/.+/ 				verbmi		my.type=/grup-verb|coor-v/			verbmi			up	concat
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			verbmi			up	concat
+
+# if Infinitive+second verb as a "++" lemma and moveToHead_mi -> insert moveToHead_mi in addverbmi
+# in this case: second verb will not be printed, first verb needs mi from second verb for generation!
+my.smi=/^V/ && my.moveToHead_mi=/.+/	moveToHead_mi	my.type=/grup-verb|coor-v/	addverbmi	up	concat
+my.mi=infinitive && xpath{child::NODE[starts-with(@lem,"++")]}		"yes"	my.type=/grup-verb|coor-v/	finiteMiInAux		up		concat
 
 # if infinitive in own chunk, add +Inf and +Acc to morphology
 xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]})  && parent.si=cd 			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat

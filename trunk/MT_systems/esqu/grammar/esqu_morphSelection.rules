@@ -107,10 +107,11 @@ my.smi=VMN0000		infinitive			 k	!(chunkparent.verbform=/obligative|SS|agentive/)
   # transitivity #
   #--------------#
   
-my.smi=/^VM/	transitivity=trans		d	!(xpath{parent::CHUNK/CHUNK[contains(@si,"cd")]})
-my.smi=/^VM/	transitivity=rflx		d	!(xpath{parent::CHUNK/descendant::NODE[@slem="se"]})
-my.smi=/^VM/	transitivity=rzpr		d	!(xpath{parent::CHUNK/descendant::NODE[@slem="se"]} && (my.smi=/V....P./ || parent.smi=/V....P./ || child.smi=/V....P./  ) )
-my.smi=/^VM/	transitivity=intrans		d	xpath{parent::CHUNK/CHUNK[contains(@si,"cd") or contains(@si,"ci")]}
+my.smi=/^VM/	transitivity=trans		d	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]})
+my.smi=/^VM/	transitivity=rflx		d	!(xpath{ancestor::CHUNK[1]/descendant::NODE[@slem="se"]})
+my.smi=/^VM/	transitivity=rzpr		d	!(xpath{ancestor::CHUNK[1]/descendant::NODE[@slem="se"]} && (my.smi=/V....P./ || parent.smi=/V....P./ || child.smi=/V....P./  ) )
+my.smi=/^VM/	transitivity=intrans		d	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd") or contains(@si,"ci")]}
+my.smi=/^VM/	transitivity=intrans,rflx	d	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd") or contains(@si,"ci")]} && !(xpath{parent::CHUNK/descendant::NODE[@slem="se"]})
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
@@ -165,7 +166,7 @@ my.smi=/^VMSP/		obligative			k	chunkparent.verbform=/obligative|rel:not\.agentiv
 my.smi=/^VMSP/		imperative			k	chunkparent.verbform=main && xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]}
 
 # main clause: potential or imperative (TODO: other options?)
-my.smi=/^VMSP/	d	obligative,perfect,SS,DS	d	chunkparent.verbform=main
+my.smi=/^VMSP/		obligative,perfect,SS,DS	d	chunkparent.verbform=main
 
 # imperative forms: ambiguous forms might be wrongly tagged
 my.smi=/^VMM/		imperative			k	chunkparent.verbform=main
