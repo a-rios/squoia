@@ -98,11 +98,6 @@ my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="p
 
 # morphological information inserted during transfer that is needed by all synonyms for generation goes to addverbmi, all information that is needed only by primary node goes to verbmi! 
     
-# copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
-#my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) )  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) 		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) )  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) 		"yes"				my.type=/grup-verb|coor-v/		finiteMiInAux			up		concat
-
-
 # copy lemma and morphology of auxiliary to head chunk (only relevant with habitual past forms)
 my.auxlem=/.+/				auxlem				my.type=/grup-verb|coor-v/		auxlem			up	overwrite
 my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwrite
@@ -140,6 +135,14 @@ xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(
 # if verb chunk with only infinitive: copy verbmi to chunk
 # note: in passive verb chunks, infinitive might not be top node in chunk! check for ancestor nodes too
 #my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && my.verbmi=/.+/ 			verbmi				my.type=/grup-verb|coor-v/ && !(xpath{self::CHUNK/NODE[count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
+
+# if infinitive of participle: get finite mi from aux 
+# gerunds: see below
+#my.smi=/1|2|3/  && my.smi=/^VA/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) ) && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]}))	"yes"	my.type=/grup-verb|coor-v/	finiteMiInAux	up	concat
+#my.smi=/1|2|3/ && my.smi=/^VA/  my.smi=/^V.N|^V.P/ && !(child.slem=/^ir$|marchar/ && child.mi=imperative && child.smi=/1P/ ) && !(xpath{descendant::NODE[@slem="tener"]} && xpath{descendant::NODE[@slem="que"]} ) && !(xpath{descendant::NODE[@slem="deber"]})  && ( xpath{descendant::NODE[@slem="estar"]} || !(my.smi="VMG0000" ))  	"yes"				my.type=/grup-verb|coor-v/		finiteMiInAux			up		concat
+
+my.smi=/1|2|3/  && my.smi=/^VA/  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]}))	"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	concat
+my.smi=/1|2|3/ && my.slem=/poner|empezar|llegar|comenzar|ir/ ) && xpath{ancestor::NODE[@mi="infinitive"]} ) )		"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	concat
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk

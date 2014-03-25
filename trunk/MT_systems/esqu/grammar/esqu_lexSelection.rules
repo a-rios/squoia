@@ -148,6 +148,12 @@ dueño	+Poss		k		xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"
 rico		qhapaq		k	!(xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.slem=qué )
 rico		miski		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.slem=qué
 
+#titular de casa -> wasiyuq, titular
+#titular		++Poss			d	
+#titular		unspecified		k	
+
+
+
    ##########
    # VEBRS  #
    ##########
@@ -193,9 +199,20 @@ hacer_falta	watu	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUN
 hacer_falta	pisi	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC") and not(@sem="[+Fem]") and not(@sem="[+Masc]")]}
 hacer_falta	ka	k	!(xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]} || xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]})
 
+# volver: tukuy/kutiy -> default, ++Autotrs -> with adjective + se (volverse rojo: pukayay), volver a + noun -> kutiy, volver a +infinitive -> ++Rep
+# TODO: urgent, löscht alles!!
+volver		++Autotrs	d	!(xpath{ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")] } && xpath{ancestor::CHUNK[1]/child::CHUNK/NODE[@slem="se"]} )
+volver		++Rep		k	xpath{parent::NODE[@mi="infinitive"]/descendant::NODE[@slem="a"] }
+volver		kuti,tuku,++Autotrs		k	!(xpath{parent::NODE[@mi="infinitive"]/descendant::NODE[@slem="a"]} )
+
+
+#### HACER/PERMITIR; causative ######
+
 hacer		++Caus	k	xpath{parent::NODE[@mi="infinitive"]}
 hacer		rura	k	!(xpath{parent::NODE[@mi="infinitive"]})
 
+permitir		++Caus	k	xpath{parent::NODE[@mi="infinitive"]}
+permitir		huñi	k	!(xpath{parent::NODE[@mi="infinitive"]})
 
 ##### DAR ######
 
