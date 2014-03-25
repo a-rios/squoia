@@ -225,6 +225,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			
  			# iterate through all SYN nodes and print:
  			my @SYNnodes = $chunk->findnodes('child::NODE/SYN');
+ 			# if no syn nodes: push node to @SYNnodes
+ 			if(scalar(@SYNnodes)==0){
+ 				my ($vnode) = $chunk->findnodes('child::NODE[1][starts-with(@smi, "V")]');
+ 				push(@SYNnodes, $vnode);
+ 			}
  			my $auxOrLem2toprint = 0;
  			
  			for (my $i=0; $i<scalar(@SYNnodes);$i++)
@@ -238,6 +243,17 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				my @verbmis;
  				if($chunk->getAttribute('finiteMiInAux') eq 'yes'){
  					my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
+ 					# if no syns in aux node, take aux node itself
+ 					if(scalar(@auxSYNs)==0){
+ 						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
+ 						unless($vnode){
+ 							# if there's a conjunction in between
+ 							($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"C")]/NODE[starts-with(@smi,"V")][1]');
+ 						}
+ 						if($vnode){
+ 							push(@auxSYNs, $vnode);	
+ 						}
+ 					}
  					foreach my $auxsyn (@auxSYNs){
  						my $synmi = $auxsyn->getAttribute('verbmi');
  						my $verbmi = $synmi.$add_mi.$addverbmi;
@@ -246,6 +262,19 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				}
  				else{
  					my $verbmi = $syn->getAttribute('verbmi');
+ 					# clear conflicting mi's (addverbmi prevails)
+ 					if($addverbmi =~ /Subj/ and $verbmi =~ /Subj/){
+ 						$verbmi =~ s/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)//g;
+ 					}
+ 					if($addverbmi =~ /Obl|Perf|DS|SS|Ag/ and $verbmi =~ /Inf/){
+ 						$verbmi =~ s/\+Inf//g;
+ 					}
+ 					if($addverbmi =~ /Inf/  and $verbmi =~ /Obl|Perf|DS|SS|Ag/ ){
+ 						$verbmi =~ s/\+Obl|Perf|DS|SS|Ag//g;
+ 					}
+ 					if($addverbmi =~ /\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss/ and $verbmi =~ /\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss/){
+ 						$verbmi =~ s/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss)//g;
+ 					}
  					$verbmi = $verbmi.$add_mi.$addverbmi;
  					push(@verbmis, $verbmi);
  				}
@@ -253,10 +282,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				{
 	 				# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
 		 			my $lemma = $syn->getAttribute('lem');
-		 			if($syn->getAttribute('lem') eq 'unspecified')
+		 			if($syn->getAttribute('lem') eq 'unspecified' or $syn->getAttribute('unknown') eq 'transfer')
 		 			{
 		 				$lemma = $chunk->findvalue('child::NODE/@slem');
-		 				$lemma =~ s/r$//;
+		 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
+		 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
+		 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+		 				
 		 				if(!$syn->hasAttribute('verbmi'))
 		 				{
 		 					# if this a participle without finite verb, use -sqa form
@@ -310,7 +342,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 					#print STDERR "new verbmi: $verbmi\n";
 		 				}
 		 			}
-		 			 			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
+		 			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
 		 			if($verbmi eq '' && $syn->getAttribute('mi') eq 'infinitive')
 		 			{
 		 					$verbmi=$verbmi."+Inf";
@@ -326,36 +358,51 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 				$verbmi =~ s/Rflx/Iprs/g;
 		 			}
 		 			# if transitivity = rflx and verbmi contains +Rflx -> delete +Rflx
-		 			if($syn->getAttribute('transitivity') eq 'rflx' && $verbmi =~ /Rflx/ && !$syn->getAttribute('add_mi') eq '+Rflx')
-		 			{
+		 			if($syn->getAttribute('transitivity') eq 'rflx' && $verbmi =~ /Rflx/ && $syn->getAttribute('add_mi') ne '+Rflx')
+		 			{	
 		 				$verbmi =~ s/\+(\+)?Rflx//g;
 		 			}
 		 			# clean up and adjust morphology tags
 		 			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
 		 			if($lemma2 eq '' && $auxlem eq '' && $verbmi ne '')
 		 			{ 
-		 				#print STDERR "chunkmi: $chunkmi\n";
+		 				# if there's a preform: print that first!
+						my @preformsWithEmptyFields = split('#', $syn->getAttribute('preform') );
+						my @preforms = grep {$_} @preformsWithEmptyFields; 
 		 				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
 		 				if($i==0){
+			 				foreach my $p (@preforms){
+		 						print "$p ";
+		 					}
 		 					print STDOUT "$lemma:$sortedVerbmi\n";
 		 				}
 		 				else{
-		 					print STDOUT "/$lemma:$sortedVerbmi\n";
+		 					print STDOUT "/";
+		 					foreach my $p (@preforms){
+		 						print "$p ";
+		 					}
+		 					print "$lemma:$sortedVerbmi\n";
 		 				}
 		 			}
 		 			else
 		 			{
 		 				my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
+		 				# if there's a preform: print that first!
+						my @preformsWithEmptyFields = split('#', $syn->getAttribute('preform'));
+						my @preforms = grep {$_} @preformsWithEmptyFields; 
 		 				# first syn: no '/'
 		 				if($i==0){
+		 					foreach my $p (@preforms){
+		 						print "$p ";
+		 					}
 		 					print STDOUT "$lemma:$sortedVerbmi\n";
 		 				}
-		 				# last syn with aux/lem2: don't print newline 
-		 				elsif($i == scalar(@SYNnodes)-1){
-		 					print STDOUT "/$lemma:$sortedVerbmi";
-		 				}
 		 				else{
-		 					print STDOUT "/$lemma:$sortedVerbmi\n";
+		 					print STDOUT "/";
+		 					foreach my $p (@preforms){
+		 						print "$p ";
+		 					}
+		 					print "$lemma:$sortedVerbmi\n";
 		 				}
 		 				$auxOrLem2toprint =1;
 		 			}
@@ -367,11 +414,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				# TODO: if more than one syn in lemma2..print all?
  				if($lemma2 && $verbmi2)
 		 		{
-		 			print STDOUT "\n$lemma2:".&adjustMorph($verbmi2,\%mapTagsToSlots);
+		 			print STDOUT "$lemma2:".&adjustMorph($verbmi2,\%mapTagsToSlots);
 		 		}
 			 	if($auxlem && $auxverbmi)
 			 	{
-			 		print STDOUT "\n$auxlem:".&adjustMorph($auxverbmi,\%mapTagsToSlots);
+			 		print STDOUT "$auxlem:".&adjustMorph($auxverbmi,\%mapTagsToSlots);
 			 	}
 			 	if($chunkmi ne '')
 			 	{
@@ -391,8 +438,28 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			# find the noun (should be only one per chunk), ignore definite articles (and indefinite articles?), and also possessive pronouns (those are realized as suffixes) TODO
  			my $noun = @{$chunk->findnodes('child::NODE[not(starts-with(@smi,"DA") and not(starts-with(@smi,"DP")))]')}[0];
- 			&printNode($noun,$chunk);
- 			print STDOUT "\n";	 
+ 			if($noun->exists('child::SYN'))
+ 			{
+	 			# get its syn nodes:
+	 			my @syns = $noun->findnodes('child::SYN');
+	 			for (my $i=0; $i< scalar(@syns);$i++)
+	 			{
+	 				my $syn = @syns[$i];
+	 				if($i==0){
+			 			&printNode($syn,$chunk);
+			 			print STDOUT "\n";
+			 		}
+			 		else{
+			 			print "/";
+			 			&printNode($syn,$chunk);
+			 			print STDOUT "\n";
+			 		}
+	 			}
+ 			}
+ 			else{
+ 				&printNode($noun,$chunk);
+ 				print STDOUT "\n";	
+ 			} 
  		}
  		# pp-chunks:
  		# if the chunk contains an attribute spform: this contains the whole pp, just print this
@@ -405,7 +472,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			print STDOUT $chunk->getAttribute('spform')."\n";
  			
- 		} 
+ 		}
+ 		# no syns in prepositinal chunks (all prep's have a 'default' translation, maybe change? TODO) 
  		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]') && !$chunk->exists('child::CHUNK[@type="sn"]/@verbmi') && $chunk->exists('child::NODE/@postpos') && !$chunk->hasAttribute('case') && !$chunk->hasAttribute('delete')  )
  		{
  			# if there's a conjunction to be inserted and this is the first node in the clause
@@ -447,9 +515,30 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			{
  				print STDOUT $chunk->getAttribute('conj')."\n";
  			}
+ 			# find the adverb
  			my $adverb = @{$chunk->findnodes('child::NODE[@smi="RG" or @smi="RN" ]')}[0];
- 			&printNode($adverb,$chunk);
- 			print STDOUT "\n";
+ 			if($adverb->exists('child::SYN'))
+ 			{
+	 			# get its syn nodes:
+	 			my @syns = $adverb->findnodes('child::SYN');
+	 			for (my $i=0; $i< scalar(@syns);$i++)
+	 			{
+	 				my $syn = @syns[$i];
+	 				if($i==0){
+			 			&printNode($syn,$chunk);
+			 			print STDOUT "\n";
+			 		}
+			 		else{
+			 			print "/";
+			 			&printNode($syn,$chunk);
+			 			print STDOUT "\n";
+			 		}
+	 			}
+ 			}
+ 			else{
+ 				&printNode($adverb,$chunk);
+ 				print STDOUT "\n";	
+ 			} 
  		}
  		# adjectives: print as is
  		elsif($chunk->exists('self::CHUNK[@type="sa" or @type="coor-sa"]') && !$chunk->hasAttribute('delete'))
@@ -460,9 +549,30 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			{
  				print STDOUT $chunk->getAttribute('conj')."\n";
  			}
+ 			# find the adjective
  			my $adjective = @{$chunk->findnodes('child::NODE[starts-with(@smi,"A")]')}[0];
- 			&printNode($adjective,$chunk);
- 			print STDOUT "\n";
+ 			if($adjective->exists('child::SYN'))
+ 			{
+	 			# get its syn nodes:
+	 			my @syns = $adjective->findnodes('child::SYN');
+	 			for (my $i=0; $i< scalar(@syns);$i++)
+	 			{
+	 				my $syn = @syns[$i];
+	 				if($i==0){
+			 			&printNode($syn,$chunk);
+			 			print STDOUT "\n";
+			 		}
+			 		else{
+			 			print "/";
+			 			&printNode($syn,$chunk);
+			 			print STDOUT "\n";
+			 		}
+	 			}
+ 			}
+ 			else{
+ 				&printNode($adjective,$chunk);
+ 				print STDOUT "\n";	
+ 			} 
  		}
  		# dates: print as is (only numbers are in a date-chunk)
  		elsif($chunk->exists('self::CHUNK[@type="date"]') && !$chunk->hasAttribute('delete') )
@@ -518,7 +628,13 @@ sub printNode{
  	if($node->getAttribute('lem') eq 'unspecified')
  	{
  		#print STDOUT  $node->getAttribute('slem').":".$node->getAttribute('mi');
- 		$lemma = $node->getAttribute('slem');
+ 		if($node->hasAttribute('slem')){
+ 			$lemma = $node->getAttribute('slem');
+ 		}
+ 		# if this is a syn node -> take slem from parent node
+ 		else{
+ 			$lemma = $node->findvalue('parent::NODE/@slem');
+ 		}
  		$nodeString = $node->getAttribute('mi');
  		$nodeString = $nodeString.&getMorphFromChunk($node,$chunk);
  		print STDOUT "$lemma:".&adjustMorph($nodeString,\%mapTagsToSlots) ;
@@ -541,13 +657,13 @@ sub printNode{
  		my $add_mi = $node->getAttribute('add_mi');
  		
  		# preforms and postforms are full forms, don't need to be generated -> print them directly to STDOUT
- 		if($firstform ne '') {print STDOUT "$firstform\n";}
+ 		if($firstform ne '') {print STDOUT "$firstform ";}
  		if($preform ne '')
  		{
  			my @pfsWithEmtpyFields = split('#',$preform);
  			# remove empty fields resulted from split
  			my @pfs = grep {$_} @pfsWithEmtpyFields; 
- 			for my $preword (@pfs){print STDOUT "$preword\n";}
+ 			for my $preword (@pfs){print STDOUT "$preword ";}
  		}
 
  		# retrieve morphology:
@@ -929,3 +1045,5 @@ sub printPrePunctuation{
  			print STDOUT $chunk->getAttribute('PrePunc')."\n";}
  			}
 }
+
+
