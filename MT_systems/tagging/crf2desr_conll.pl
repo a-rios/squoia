@@ -28,7 +28,7 @@ while(<>){
     	print "$wordCount\t";
     	my @rows = split('\t');
     	
-    	   	#print dates:
+    	#print dates:
     	if (@rows[-1] =~ /^W/)
     	{	#   dates: 24_de_junio     [??:24/6/??:??.??:??] -> 
 			# 6	24	24	w	w	_	3	cc	_	_
@@ -81,13 +81,35 @@ while(<>){
 	    		}
 	    	}
 	    	elsif(scalar(@indexes)>1){
+	    		# if more than one lemma associated with this tag: write lemma1/lemma2 (but check if they're the same!)
+	    		my $printedLems = '';
 	    		foreach my $i (@indexes){
-	    			if($i == @indexes[-1]){
-	    				print @rows[$i-1]."\t";
-	    			}
-	    			else{
-	    				print @rows[$i-1]."/"; 
-	    			}
+	    			#last lemma
+			    	if($i == @indexes[-1])
+			    	{
+			    		my $lem = @rows[$i-1];
+			    		if($printedLems =~ /#\Q$lem\E#/){
+	    					print "\t";
+			    		}
+			    		else{
+			    			print "/".$lem."\t";
+			    		}
+			    	}
+			    	#first lemma
+			    	elsif($i == @indexes[0]){
+			    		my $lem = @rows[$i-1];
+	    				unless($printedLems =~ /#\Q$lem\E#/){
+	    					$printedLems .= "#$lem#";
+	    					print $lem;
+	    				}
+			    	}
+			    	else{
+			    		my $lem = @rows[$i-1];
+	    				unless($printedLems =~ /#\Q$lem\E#/){
+	    					$printedLems .= "#$lem#";
+	    					print "/".$lem;
+	    				}
+			    	}
 	    		}
 	    	}
 	    	# if no index -> wapiti assigned a tag that wasn't suggested by freeling -> number or proper name, should only have one lemma
@@ -115,13 +137,37 @@ while(<>){
 			    	if(scalar(@indexes) == 1){
 			    		print $rows[@indexes[0]-1]."\t";
 			    	}
-			    	elsif(scalar(@indexes)>1){
-			    		foreach my $i (@indexes){
-			    			if($i == @indexes[-1]){
-			    				print @rows[$i-1]."\t";
+			    	elsif(scalar(@indexes)>1)
+			    	{
+			    		# if more than one lemma associated with this tag: write lemma1/lemma2 (but check if they're the same!)
+	    				my $printedLems = '';
+			    		foreach my $i (@indexes)
+			    		{  
+			    			#last lemma
+			    			if($i == @indexes[-1])
+			    			{
+			    				my $lem = @rows[$i-1];
+			    				if($printedLems =~ /#\Q$lem\E#/){
+	    							print "\t";
+			    				}
+			    				else{
+			    					print "/".$lem."\t";
+			    				}
+			    			}
+			    			#first lemma
+			    			elsif($i == @indexes[0]){
+			    				my $lem = @rows[$i-1];
+	    						unless($printedLems =~ /#\Q$lem\E#/){
+	    							$printedLems .= "#$lem#";
+	    							print $lem;
+	    						}
 			    			}
 			    			else{
-			    				print @rows[$i-1]."/"; 
+			    				my $lem = @rows[$i-1];
+	    						unless($printedLems =~ /#\Q$lem\E#/){
+	    							$printedLems .= "#$lem#";
+	    							print "/".$lem;
+	    						}
 			    			}
 			    		}
 			    	}

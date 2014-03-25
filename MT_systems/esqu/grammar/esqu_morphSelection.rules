@@ -166,12 +166,13 @@ my.smi=/^VMSI/		obligative			k	chunkparent.verbform=obligative
 
 # subjuntivo present, TODO: relative clauses?
 my.smi=/^VMSP/		perfect				k	chunkparent.verbform=perfect	 # complement clause
+my.smi=/^VMSP/		agentive			k	chunkparent.verbform=rel:agentive	 
 my.smi=/^VMSP/		obligative			k	chunkparent.verbform=/obligative|rel:not\.agentive/
 # if there's a '!' present: imperative 
 my.smi=/^VMSP/		imperative			k	chunkparent.verbform=main && xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]}
 
 # main clause: potential or imperative (TODO: other options?)
-my.smi=/^VMSP/		obligative,perfect,SS,DS	d	chunkparent.verbform=main
+my.smi=/^VMSP/		obligative,perfect,SS,DS,agentive	d	chunkparent.verbform=main
 
 # imperative forms: ambiguous forms might be wrongly tagged
 my.smi=/^VMM/		imperative			k	chunkparent.verbform=main
