@@ -173,6 +173,9 @@ por		case=+Proloc	xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="grup
 por		case=+Kaus	-
 por		case=+Instr	-
 por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}
+por_el_motivo_de		case=+Kaus	-
+por_el_motivo_del		case=+Kaus	-
+
 sino		lem=sinu	-
 
 # sin hacer ->mana ruwaspa, sin dientes -> kiruNNAQ, sin Pedro -> mana PedroWAN

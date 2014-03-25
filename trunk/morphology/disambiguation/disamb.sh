@@ -10,10 +10,15 @@ export TOKENIZER=$XFST_DIR/tokenize.pl
 #export LOOKUP=$XFST_DIR/lookup.script
 
 POS_MODEL=wapiti/model1/model_lbfgs_nowordforms
-
 MORPH1_MODEL=wapiti/model2/model_lbfgs_lc
 MORPH2_MODEL=wapiti/model3/model_lc_bigrammLemmas
 MORPH3_MODEL=wapiti/model4/model_lc_bigrammLemmas
+
+# with inforesources
+# POS_MODEL=wapiti/model1/model_wInfo_lc_LemmaBigramms
+# MORPH1_MODEL=wapiti/model2/model_wInfo_lc_LemmaBigramms
+# MORPH2_MODEL=wapiti/model3/model_wInfo_lc_LemmaBigramms
+# MORPH3_MODEL=wapiti/model4/model_wInfo_lc_LemmaBigramms
 
 XFST_FILE=$1
 

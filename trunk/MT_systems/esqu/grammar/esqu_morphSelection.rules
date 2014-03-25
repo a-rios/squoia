@@ -19,11 +19,6 @@
 #  --> it's not possible to have more than one rule with the same node condition and the same morphology attribute!!
 
 
-#TODO: funktioniert nicht
-#ebrio, machaq (ser), machasqa (estar), leave for language model
-my.slem=ebrio	VRoot+Ag	k	my.smi=/NC/
-my.slem=ebrio	VRoot+Perf	k	my.smi=/AQ/
-
 # nouns/adjectives that have different meanings in Spanish (e.g. 'el general' vs. 'general') -> marked in lexicon with 's_pos'
 my.smi=/^N/	s_pos=adj	d	my.smi=/^N/
 my.smi=/^A/	s_pos=noun	d	my.smi=/^A/
@@ -113,6 +108,15 @@ my.smi=/^VM/	transitivity=rzpr		d	!(xpath{ancestor::CHUNK[1]/descendant::NODE[@s
 my.smi=/^VM/	transitivity=intrans		d	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd") or contains(@si,"ci")]}
 my.smi=/^VM/	transitivity=intrans,rflx	d	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd") or contains(@si,"ci")]} && !(xpath{parent::CHUNK/descendant::NODE[@slem="se"]})
 
+
+ #--------------------#
+ #  specific          #
+ # subcategorization  #
+ #--------------------#
+ # TODO: SAME variable needed!!!
+my.smi=/^VM/	subj=/.+/		d	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"suj")]/descendant::NODE[@lem="SAME" or @sem="SAME"] })
+my.smi=/^VM/	obj=/.+/		d	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/descendant::NODE[@lem="SAME" or @sem="SAME"] })
+ 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 # MAIN VERBS
@@ -141,9 +145,10 @@ my.smi=/^VMII/		habitualpast		k	 	my.slem=soler
 my.smi=/^VMII/		agentive,perfect,SS,DS,obligative,habitualpast		d	chunkparent.verbform=main && !(my.slem=soler)
 
 # indicative past simple
-my.smi=/^VMIS/		perfect			 	k	chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VMIS/		perfect			 		k	chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VMIS/		obligative				k	chunkparent.verbform=obligative
 #if main clause: keep options  direct, indirect past
-my.smi=/^VMIS/		agentive,perfect,SS,DS		d	chunkparent.verbform=main
+my.smi=/^VMIS/		agentive,perfect,SS,DS,obligative	d	chunkparent.verbform=main
 
 # indicative future
 my.smi=/^VMIF/		future				k	chunkparent.verbform=main
@@ -237,20 +242,24 @@ my.smi=/^VAIF/ && my.slem=estar		progressive_obligative		k		chunkparent.verbform
 
 # past imperfect, estaba haciendo
 my.smi=/^VAII/ && my.slem=estar		progressive_perfect		k		chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAII/ && my.slem=estar		progressive_obligative		k		chunkparent.verbform=obligative
 # main verb: progressive_directpast or progressive_indirectpast, delete everything else
-my.smi=/^VAII/ && my.slem=estar		progressive_agentive,progressive_perfect,progressive_DS,progressive_SS		d	chunkparent.verbform=main
+my.smi=/^VAII/ && my.slem=estar		progressive_agentive,progressive_perfect,progressive_DS,progressive_SS,progressive_obligative		d	chunkparent.verbform=main
 
 # indicative past simple, estuve haciendo
 my.smi=/^VAIS/ && my.slem=estar		progressive_perfect		k		chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAIS/ && my.slem=estar		progressive_obligative		k		chunkparent.verbform=obligative
 # main verb: progressive_directpast or progressive_indirectpast, delete everything else
-my.smi=/^VAIS/ && my.slem=estar		progressive_agentive,progressive_perfect,progressive_DS,progressive_SS		d	chunkparent.verbform=main 
+my.smi=/^VAIS/ && my.slem=estar		progressive_agentive,progressive_perfect,progressive_DS,progressive_SS,progressive_obligative		d	chunkparent.verbform=main 
 
 # indicative present
 my.smi=/^VAIP/ && my.slem=estar		progressive_present		k		chunkparent.verbform=main
+my.smi=/^VAIP/ && my.slem=estar		progressive_obligative		k		chunkparent.verbform=obligative
 my.smi=/^VAIP/ && my.slem=estar		progressive_perfect		k		chunkparent.verbform=/rel:not\.agentive|perfect/
 
 # subjuntive past, estuvieramos haciendo, TODO: relative clauses?
 my.smi=/^VASI/ && my.slem=estar		progressive_potential		k		chunkparent.verbform=main
+my.smi=/^VASI/ && my.slem=estar		progressive_obligative		k		chunkparent.verbform=obligative
 
 # subjuntive present, estemos haciendo, TODO: relative clauses?
 my.smi=/^VASP/ && my.slem=estar		progressive_potential		k		chunkparent.verbform=main
@@ -278,6 +287,7 @@ my.smi=/^VSIF/ && my.slem=ser		obligative		k	chunkparent.verbform=/obligative|re
 
 # past imperfect
 my.smi=/^VSII/ && my.slem=ser		perfect			k	chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VSII/ && my.slem=ser		obligative		k	chunkparent.verbform=obligative
 # if this is 'soler' and past tense -> habitual
 my.smi=/^VSII/				habitualpast		k	 my.slem=soler && chunkparent.verbform=main
 # main verb: directpast, indirectpast or (habitual past), delete everything else
@@ -285,6 +295,7 @@ my.smi=/^VSII/ && my.slem=ser		indirectpast,directpast	k	chunkparent.verbform=ma
 
 # present
 my.smi=/^VSIP/ && my.slem=ser		present			k	chunkparent.verbform=main
+my.smi=/^VSIP/ && my.slem=ser		obligative		k	chunkparent.verbform=obligative
 my.smi=/^VSIP/ && my.slem=ser		perfect			k	chunkparent.verbform=/rel:not\.agentive|perfect/
 
 # subjuntive present
@@ -295,6 +306,7 @@ my.smi=/^VSSP/&& my.slem=ser		imperative		k	chunkparent.verbform=main  && xpath{
      
 # simple past
 my.smi=/^VSIS/ && my.slem=ser		perfect			k	chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VSIS/ && my.slem=ser		obligative		k	chunkparent.verbform=obligative
 my.smi=/^VSIS/&& my.slem=ser		directpast,indirectpast	k	chunkparent.verbform=main
 
 # subjuntive past

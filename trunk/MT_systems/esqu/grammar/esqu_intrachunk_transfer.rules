@@ -99,7 +99,9 @@ my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="p
 # morphological information inserted during transfer that is needed by all synonyms for generation goes to addverbmi, all information that is needed only by primary node goes to verbmi! 
     
 # copy attribute 'verbmi' to next first ancestor verb chunk: finite verbs
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) )  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) 		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
+#my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) )  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) 		verbmi				my.type=/grup-verb|coor-v/		verbmi			up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) )  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) 		"yes"				my.type=/grup-verb|coor-v/		finiteMiInAux			up		concat
+
 
 # copy lemma and morphology of auxiliary to head chunk (only relevant with habitual past forms)
 my.auxlem=/.+/				auxlem				my.type=/grup-verb|coor-v/		auxlem			up	overwrite
@@ -120,8 +122,8 @@ my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(m
 
 # llegar/empezar/poner(se)/comenzar a +Inf:
 # lem = lem of infinitive, verbmi = mi of finite verb +Inch
-my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitive && my.verbmi=/.+/ 				verbmi		my.type=/grup-verb|coor-v/			verbmi			up	concat
-my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			verbmi			up	concat
+my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitive && my.verbmi=/.+/ 				"yes"		my.type=/grup-verb|coor-v/			finiteMiInAux			up	concat
+my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			addverbmi			up	concat
 
 # if Infinitive+second verb as a "++" lemma and moveToHead_mi -> insert moveToHead_mi in addverbmi
 # in this case: second verb will not be printed, first verb needs mi from second verb for generation!
@@ -137,18 +139,18 @@ xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(
 # Infinitive:
 # if verb chunk with only infinitive: copy verbmi to chunk
 # note: in passive verb chunks, infinitive might not be top node in chunk! check for ancestor nodes too
-my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && my.verbmi=/.+/ 			verbmi				my.type=/grup-verb|coor-v/ && !(xpath{self::CHUNK/NODE[count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
+#my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && my.verbmi=/.+/ 			verbmi				my.type=/grup-verb|coor-v/ && !(xpath{self::CHUNK/NODE[count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk
-my.smi=/VMG0000|VSG0000/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" ]})  					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
+my.smi=/VMG0000|VSG0000/ && my.mi=/.+/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" ]})  					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
 #----------------------------------------------
 
 #----------------------------------------------
 # HABER DE + INFINITIVE (has de pensarlo bien)
 # -> write "+Obl" to verbmi (tense of haber needs to be copied to auxlem and auxverbmi, but pers is always 3.Sg)
 # -> write subj person from haber as possessive suffix to verbmi
-my.mi=infinitive && xpath{descendant::NODE[@slem="haber"]} && xpath{descendant::NODE[@slem="de"]}				"+Obl"			my.type=/grup-verb|coor-v/		verbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber"]} && xpath{descendant::NODE[@slem="de"]}				"+Obl"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
 my.mi=infinitive && xpath{descendant::NODE[@slem="de"]} && xpath{descendant::NODE[@slem="haber"]} 				"ka"			my.type=/grup-verb|coor-v/		auxlem		up		concat
 xpath{descendant::NODE[@slem="de"]} && my.mi=infinitive && xpath{descendant::NODE[@slem="haber"]} 				"+3.Sg.Subj"		my.type=/grup-verb|coor-v/		auxverbmi	up		concat
 
@@ -157,19 +159,19 @@ my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@verbmi,"P
 my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@verbmi,"NPst")]} && xpath{descendant::NODE[@slem="de"]}	"+NPst"			my.type=/grup-verb|coor-v/		auxverbmi	up		concat
 my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@verbmi,"IPst")]} && xpath{descendant::NODE[@slem="de"]}	"+IPst"			my.type=/grup-verb|coor-v/		auxverbmi	up		concat
 
-my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"1S")]} && xpath{descendant::NODE[@slem="de"]}	"+1.Sg.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
-my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"1P")]} && xpath{descendant::NODE[@slem="de"]}	"+1.Pl.Incl.Poss"	my.type=/grup-verb|coor-v/		verbmi		up		concat
-my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"2S")]} && xpath{descendant::NODE[@slem="de"]}	"+2.Sg.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
-my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"2P")]} && xpath{descendant::NODE[@slem="de"]}	"+2.Pl.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
-my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"3S")]} && xpath{descendant::NODE[@slem="de"]}	"+3.Sg.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
-my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"3P")]} && xpath{descendant::NODE[@slem="de"]}	"+3.Pl.Poss"		my.type=/grup-verb|coor-v/		verbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"1S")]} && xpath{descendant::NODE[@slem="de"]}	"+1.Sg.Poss"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"1P")]} && xpath{descendant::NODE[@slem="de"]}	"+1.Pl.Incl.Poss"	my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"2S")]} && xpath{descendant::NODE[@slem="de"]}	"+2.Sg.Poss"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"2P")]} && xpath{descendant::NODE[@slem="de"]}	"+2.Pl.Poss"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"3S")]} && xpath{descendant::NODE[@slem="de"]}	"+3.Sg.Poss"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.mi=infinitive && xpath{descendant::NODE[@slem="haber" and contains(@smi,"3P")]} && xpath{descendant::NODE[@slem="de"]}	"+3.Pl.Poss"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
 #-------------------------------------------------
 
 #-------------------------------------------------
 # IR A + INFINITIVE
 # copy attribute 'verbmi' from 'ir' (if finite) to verbmi in chunk
 # and insert +Fut in verbmi of chunk
-my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && parent.smi=VMN0000		verbmi			my.type=/grup-verb|coor-v/		verbmi		up	concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && parent.smi=VMN0000		"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up	concat
 my.slem=ir && parent.smi=VMN0000		"+Fut"				my.type=/grup-verb|coor-v/			addverbmi			up 		concat
 #-------------------------------------------------
 
@@ -191,7 +193,7 @@ my.smi=/^V/ && !(xpath{ancestor::NODE[starts-with(@smi,"V")]}) && !(my.lem=unspe
 my.smi=/^V/ && !(xpath{ancestor::NODE[starts-with(@smi,"V")]}) && (my.lem=unspecified || my.unknown=transfer)		slem			my.type=/grup-verb|coor-v/		lem			up		concat
 
 # copy all information from add_mi in verbs to verbmi (concat)
-my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi				up		concat
+#my.add_mi=/.+/ && my.smi=/^VM/			add_mi				my.type=/grup-verb|coor-v/			verbmi				up		concat
 
 # in verb chunks with verbform=ambiguous that contain a relative pronoun, all but obligative, perfect and agentive SYN nodes have been deleted
 # -> set verbform=rel
@@ -207,6 +209,7 @@ my.lem=ka && my.verbmi=/Copula\+3\.Sg\.Subj/ && my.mi=present 				"yes"			my.typ
 
 # special case: imperative 1.pl of 'ir/marchar' -> irregular form 'haku'
 my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/	"haku"		my.type=/grup-verb|coor-v/	lem		up	overwrite
+# TODO
 my.mi=imperative && my.slem=/^ir$|marchar/ && my.smi=/VMM01P0|VMSP1P0/	""		my.type=/grup-verb|coor-v/	verbmi		up	overwrite
 my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/ && my.slem=/^ir$|marchar/ 	""		my.type=/grup-verb|coor-v/	addverbmi	up	overwrite
 
@@ -218,13 +221,13 @@ my.slem=continuar && xpath{ancestor::NODE[starts-with(@smi,"VSG") or starts-with
 # subject of a relative clause with IHRC=yes (internally headed relative clause)
 # -> add possessive suffix of subject person to (nominal) verbform if the rel.clause is not.agentive
 # also: -> add genitive suffix to subject (in STinterchunk.rules!)
-my.verbmi=/.+/ && my.smi=/1S/		"+1.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
-my.verbmi=/.+/ && my.smi=/1P/		"+1.Incl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
-#my.verbmi=/.+/ && my.smi=/1P/		"+1.Excl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
-my.verbmi=/.+/ && my.smi=/2S/		"+2.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
-my.verbmi=/.+/ && my.smi=/2P/		"+2.Pl.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
-my.verbmi=/.+/ && my.smi=/3S/		"+3.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
-my.verbmi=/.+/ && my.smi=/3P/		"+3.Pl.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		verbmi		up		concat
+my.verbmi=/.+/ && my.smi=/1S/		"+1.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/1P/		"+1.Incl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
+#my.verbmi=/.+/ && my.smi=/1P/		"+1.Excl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/2S/		"+2.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/2P/		"+2.Pl.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/3S/		"+3.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/3P/		"+3.Pl.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
     ###########################
@@ -254,13 +257,13 @@ my.slem=también 				"yes"				my.type=/.+/					delete			up		concat
 # NOTE: do not add lem2 and verbmi2 if this is a complement or relative clause, in these cases, only nominal form of main verb is needed
 # alternatives marked with '#'
 # rules I:
-my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1S/	"+Obl+1.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1P/	"#+1.Pl.Incl.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1P/	"#+1.Pl.Excl.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/2S/	"+Obl+2.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/2P/	"+Obl+2.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3S/	"+Obl+3.Sg.Poss"			my.type=/grup-verb/			verbmi			up		concat
-my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3P/	"+Obl+3.Pl.Poss"			my.type=/grup-verb/			verbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1S/		"+Obl+1.Sg.Poss"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1P/		"#+1.Pl.Incl.Poss"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1P/		"#+1.Pl.Excl.Poss"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/2S/		"+Obl+2.Sg.Poss"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/2P/		"+Obl+2.Pl.Poss"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3S/		"+Obl+3.Sg.Poss"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3P/		"+Obl+3.Pl.Poss"			my.type=/grup-verb/			addverbmi			up		concat
 
 # rules II:
 my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]}		 	"ka"				my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			lem2			up		concat
@@ -303,8 +306,8 @@ xpath{self::NODE[@lem="puñunaya" and @slem="tener"]}		"yes"	my.type=/grup-verb|
 # me acuerdo de ti -> qamta yuyarisayki
 # TODO: any difference here between 1.Pl.Incl vs. Excl?
 # any difference between 2 Sg vs. Pl?
-my.smi=/^PP1.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		"++1.Sg.Obj"			my.type=/sn|coor-n/		verbmi		up	concat
-my.smi=/^PP2.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		"++2.Sg.Obj"			my.type=/sn|coor-n/		verbmi		up	concat
+my.smi=/^PP1.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		"++1.Sg.Obj"			my.type=/sn|coor-n/		addverbmi		up	concat
+my.smi=/^PP2.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		"++2.Sg.Obj"			my.type=/sn|coor-n/		addverbmi		up	concat
 
 
   # Negation
@@ -320,22 +323,22 @@ my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
 
 
 # 1.Sg:
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="yo"]} || xpath{ancestor::CHUNK[contains(@verbmi,"1.Sg.Subj") or contains(@verbmi2,"1.Sg.Subj")]} )				add_mi		my.type=/.+/		"1.Sg.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="yo"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"1.Sg.Subj") or contains(@verbmi2,"1.Sg.Subj")]} )				add_mi		my.type=/.+/		"1.Sg.Poss"	down	overwrite
 # 1.Pl (preliminary solution: incl/excl not disambiguated yet!!):
-#my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"1.Pl.Excl.Subj")]} ||  xpath{ancestor::CHUNK[contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi2,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Excl.Poss#1.Pl.Incl.Poss"	down	overwrite
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"1.Pl.Excl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Excl.Poss"	down	overwrite
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi2,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Incl.Poss"	down	overwrite
+#my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"1.Pl.Excl.Subj")]} ||  xpath{ancestor::CHUNK[contains(@addverbmi,"1.Pl.Incl.Subj") or contains(@verbmi2,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Excl.Poss#1.Pl.Incl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"1.Pl.Excl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Excl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"1.Pl.Incl.Subj") or contains(@verbmi2,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Incl.Poss"	down	overwrite
 
 #2.Sg:
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="tú"]} || xpath{ancestor::CHUNK[contains(@verbmi,"2.Sg.Subj") or contains(@verbmi2,"2.Sg.Subj")]} )				add_mi		my.type=/.+/		"2.Sg.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="tú"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"2.Sg.Subj") or contains(@verbmi2,"2.Sg.Subj")]} )				add_mi		my.type=/.+/		"2.Sg.Poss"	down	overwrite
 # 2.Pl:
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="vosotros" or @sform="ustedes"]} || xpath{ancestor::CHUNK[contains(@verbmi,"2.Pl.Subj") or contains(@verbmi2,"2.Pl.Subj")]} )			add_mi		my.type=/.+/		"2.Pl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="vosotros" or @sform="ustedes"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"2.Pl.Subj") or contains(@verbmi2,"2.Pl.Subj")]} )			add_mi		my.type=/.+/		"2.Pl.Poss"	down	overwrite
 
 #3.Pl:
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="ellos" ]} || xpath{ancestor::CHUNK[contains(@verbmi,"3.Pl.Subj") or contains(@verbmi2,"3.Pl.Subj")]} )			add_mi		my.type=/.+/		"3.Pl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="ellos" ]} || xpath{ancestor::CHUNK[contains(@addverbmi,"3.Pl.Subj") or contains(@verbmi2,"3.Pl.Subj")]} )			add_mi		my.type=/.+/		"3.Pl.Poss"	down	overwrite
 
 #default: 3.Sg.Poss (-n)
-my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@smi,"PP1") or starts-with(@smi,"PP2") or @lem="paykuna"]}) && !(xpath{ancestor::CHUNK[contains(@verbmi,"1.Sg.Subj") or contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"2.Sg.Subj") or contains(@verbmi,"2.Pl.Subj") or contains(@verbmi2,"3.Pl") ]}) )			add_mi		my.type=/.+/		"3.Sg.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@smi,"PP1") or starts-with(@smi,"PP2") or @lem="paykuna"]}) && !(xpath{ancestor::CHUNK[contains(@addverbmi,"1.Sg.Subj") or contains(@addverbmi,"1.Pl.Incl.Subj") or contains(@addverbmi,"1.Pl.Excl.Subj") or contains(@addverbmi2,"2.Sg.Subj") or contains(@addverbmi,"2.Pl.Subj") or contains(@addverbmi2,"3.Pl") ]}) )			add_mi		my.type=/.+/		"3.Sg.Poss"	down	overwrite
 
 
     ######################################################################

@@ -317,8 +317,8 @@ define AS [(HonAff) (AS=1) (HonAff) (AS=2) (AS=3)^{0,2} (HonAff) (AS=4)(HonAff) 
        #        #
        ##########
        
-       
-       define Root [  [VocRoot|ConsRoot|Numbers|UPPER|%_|"-"]* (":"):0];
+       # alternatives: '/'
+       define Root [ ("/") [VocRoot|ConsRoot|Numbers|UPPER|%_|"-"|" "|"&"]* (":"):0];
 
 ######################################################################
 ######################################################################
