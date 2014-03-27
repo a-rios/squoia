@@ -199,6 +199,12 @@ hacer_falta	watu	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUN
 hacer_falta	pisi	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC") and not(@sem="[+Fem]") and not(@sem="[+Masc]")]}
 hacer_falta	ka	k	!(xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]} || xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]})
 
+permanecer	ka		d	xpath{parent::NODE[starts-with(@smi, "VMG")]}
+permanecer	++Perdur	d	!(xpath{parent::NODE[starts-with(@smi, "VMG")]})	
+
+seguir		qati		d	xpath{parent::NODE[starts-with(@smi, "VMG")]}
+seguir		++Perdur	d	!(xpath{parent::NODE[starts-with(@smi, "VMG")]})
+
 # volver: tukuy/kutiy -> default, ++Autotrs -> with adjective + se (volverse rojo: pukayay), volver a + noun -> kutiy, volver a +infinitive -> ++Rep
 # TODO: urgent, löscht alles!!
 volver		++Autotrs	d	!(xpath{ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")] } && xpath{ancestor::CHUNK[1]/child::CHUNK/NODE[@slem="se"]} )

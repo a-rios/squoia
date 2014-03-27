@@ -146,7 +146,13 @@ my.smi=/1|2|3/ && my.slem=/poner|empezar|llegar|comenzar|ir/ ) && xpath{ancestor
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk
-my.smi=/VMG0000|VSG0000/ && my.mi=/.+/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" ]})  					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
+my.smi=/VMG0000|VSG0000/ && my.mi=/.+/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer"]})  					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
+my.smi=/VMG0000|VSG0000/ && xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer"]}	"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up		overwrite
+
+# additional rule for 'estar', should be disambiguated by morphSelection, based on tag (VA as progressive, VM otherwise), but tagger gets it wrong quite often
+# -> if parent node of estar, assume it's a progressive -> add +Prog to addverbmi 
+my.smi=/VMG0000|VSG0000/ && xpath{descendant::NODE[@slem="estar"]}	"+Prog"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
+
 #----------------------------------------------
 
 #----------------------------------------------
@@ -350,4 +356,3 @@ my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@
 
 my.slem=/incluso|sólo/ && my.mi=/^\+\+/		mi			my.type=/.+/		chunkmi		up	concat
 my.mi=/^\+\+/ && my.slem=/incluso|sólo/ 	"yes"			my.type=/.+/		delete		up	concat
-# permanecer

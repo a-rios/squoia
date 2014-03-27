@@ -169,6 +169,12 @@ junto_a		postpos=qayllan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUN
 mediante	case=+Instr	-
 para		case=+Ben	-
 para		case=+Dat # para allá
+
+perteneciente_a		case=+Gen
+perteneciente_al	case=+Gen
+perteneciencia_a	case=+Gen,postpos=kaq
+perteneciencia_al	case=+Gen,postpos=kaq
+
 por		case=+Proloc	xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}	-
 por		case=+Kaus	-
 por		case=+Instr	-
