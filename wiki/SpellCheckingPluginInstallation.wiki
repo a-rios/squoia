@@ -1,4 +1,4 @@
-#labels installation,guide,plugin,openoffice,libreoffice,quechua,qhichwa
+#labels installation,guide,plugin,openoffice,libreoffice,quechua,qhichwa,Featured
 ==Quechua Spell Checking Plugin Installation Guide for [http://www.openoffice.org/download/ OpenOffice] or [http://www.libreoffice.org/download LibreOffice]==
 
 ===1. Go to the [http://hinantin.com/sc/download.php download page], choose the plugin you want and download it.===
