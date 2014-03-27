@@ -37,8 +37,8 @@ my.smi=PP1CSO00		++1.Sg.Obj		k	my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/
 my.smi=PP1CSO00		PrnPers			k	my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
 my.smi=PP1CSO00		PrnPers+Instr		k	my.slem=conmigo
 
-my.smi=PP2CSO00		++2.Sg.Obj		k	my.slem=tí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
-my.smi=PP2CSO00		PrnPers			k	my.slem=tí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
+my.smi=PP2CSO00		++2.Sg.Obj		k	my.slem=/tí|ti/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
+my.smi=PP2CSO00		PrnPers			k	my.slem=/tí|ti/ && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
 my.smi=PP2CSO00		PrnPers+Instr		k	my.slem=contigo
 
 my.smi=PP2CP000		++2.Pl.Obj		k	my.sform=os || xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}

@@ -3613,6 +3613,10 @@ hasta_el_punto_que hasta_el_punto_que CS I
 %lo_mismo_que lo_mismo_que CC I
 <llevar>_a_efecto llevar_a_efecto $1:VM I
 no_obstante no_obstante RG I
+perteneciente_a perteneciente_a SPS00 I
+perteneciente_al perteneciente_al SPCMS I
+perteneciencia_a perteneciencia_a SPS00 I
+perteneciencia_al perteneciencia_al SPCMS I
 pese_a_que pese_a_que CS I
 <poner>_en_acción poner_en_acción $1:VM I
 <poner>_en_cuestión poner_en_cuestión $1:VM I
