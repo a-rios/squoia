@@ -119,6 +119,7 @@ my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(m
 # lem = lem of infinitive, verbmi = mi of finite verb +Inch
 my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitive && my.verbmi=/.+/ 				"yes"		my.type=/grup-verb|coor-v/			finiteMiInAux			up	concat
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			addverbmi			up	concat
+my.smi=/1|2|3/ && my.slem=/poner|empezar|llegar|comenzar|ir/ ) && xpath{ancestor::NODE[@mi="infinitive"]} ) )		"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	concat
 
 # if Infinitive+second verb as a "++" lemma and moveToHead_mi -> insert moveToHead_mi in addverbmi
 # in this case: second verb will not be printed, first verb needs mi from second verb for generation!
@@ -127,27 +128,15 @@ my.mi=infinitive && xpath{child::NODE[starts-with(@lem,"++")]}		"yes"	my.type=/g
 
 # if infinitive in own chunk, add +Inf and +Acc to morphology
 xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]})  && parent.si=cd 			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat
-#---------------------------------------------
 
-#---------------------------------------------
-# NON-FINITE CHUNKS:
-# Infinitive:
-# if verb chunk with only infinitive: copy verbmi to chunk
-# note: in passive verb chunks, infinitive might not be top node in chunk! check for ancestor nodes too
-#my.mi=/infinitive|SS|obligative|agentive/ && !(xpath{following-sibling::NODE})  && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && my.verbmi=/.+/ 			verbmi				my.type=/grup-verb|coor-v/ && !(xpath{self::CHUNK/NODE[count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]}) 				verbmi			up		concat
-
-# if infinitive of participle: get finite mi from aux 
+# if infinitive or participle with VA (aux): get finite mi from aux 
 # gerunds: see below
-#my.smi=/1|2|3/  && my.smi=/^VA/ && !(my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/1P/ ) && !(my.slem=tener && rsibling.slem=que) && !(my.slem=deber) && ( !(xpath{ancestor::NODE[@mi="infinitive"]}) || ( xpath{ancestor::NODE[@mi="infinitive"]} && my.slem=/poner|empezar|llegar|comenzar|ir/ ) || (child.slem=/empezar|poner|ir|llegar|comenzar/ && xpath{ancestor::NODE[@mi="infinitive"]} ) ) && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]}))	"yes"	my.type=/grup-verb|coor-v/	finiteMiInAux	up	concat
-#my.smi=/1|2|3/ && my.smi=/^VA/  my.smi=/^V.N|^V.P/ && !(child.slem=/^ir$|marchar/ && child.mi=imperative && child.smi=/1P/ ) && !(xpath{descendant::NODE[@slem="tener"]} && xpath{descendant::NODE[@slem="que"]} ) && !(xpath{descendant::NODE[@slem="deber"]})  && ( xpath{descendant::NODE[@slem="estar"]} || !(my.smi="VMG0000" ))  	"yes"				my.type=/grup-verb|coor-v/		finiteMiInAux			up		concat
-
 my.smi=/1|2|3/  && my.smi=/^VA/  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]}))	"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	concat
-my.smi=/1|2|3/ && my.slem=/poner|empezar|llegar|comenzar|ir/ ) && xpath{ancestor::NODE[@mi="infinitive"]} ) )		"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	concat
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk
-my.smi=/VMG0000|VSG0000/ && my.mi=/.+/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer"]})  					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
-my.smi=/VMG0000|VSG0000/ && xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer"]}	"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up		overwrite
+my.smi=/VMG0000|VSG0000/ && my.mi=/.+/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer" ]})  					mi				my.type=/grup-verb|coor-v/			addverbmi			up		concat
+my.smi=/VMG0000|VSG0000/ && xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer" ]}	"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up		overwrite
 
 # additional rule for 'estar', should be disambiguated by morphSelection, based on tag (VA as progressive, VM otherwise), but tagger gets it wrong quite often
 # -> if parent node of estar, assume it's a progressive -> add +Prog to addverbmi 
