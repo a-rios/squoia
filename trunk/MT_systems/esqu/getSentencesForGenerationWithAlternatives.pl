@@ -95,6 +95,7 @@ my %mapTagsToSlots = (
 	'+3.Pl.Subj.Hab'			=> 22,
 	'+Fut'						=> 23,
 	'+Pot'						=> 23,
+	'+Hab'						=> 23,
 	# nominal suffixes
 	'+Aug'				=> 30,
 	'+Dim'				=> 30,
@@ -213,6 +214,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			my $auxlem = $chunk->getAttribute('auxlem');
  			my $auxverbmi = $chunk->getAttribute('auxverbmi');
  			my $chunkmi = $chunk->getAttribute('chunkmi');
+ 			
  			
  			#print STDERR "verbmi: $verbmi .......... poss subj: $subjprsPoss\n";
  			#print STDERR "verbmi: $verbmi .......... subj obj: $subjprs, $objprs\n";
@@ -333,13 +335,34 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 			}
 		 			# if original subject is an object in Quechua, change that (e.g. tengo hambre -> yarqanaya-wa-n)
 		 			# and introduce a 3rd person subject marker to the verb
-		 			if($chunk->hasAttribute('subjToObj'))
+		 			if($syn->getAttribute('subjToObj') eq '1')
 		 			{
 		 				$verbmi =~ s/\Q$verbprs\E/\+3.Sg.Subj/g;
 		 				if($subjprs =~ /1|2/)
 		 				{
 		 					$verbmi = $verbmi."+".$subjprs.$inclExcl.".Obj";
 		 					#print STDERR "new verbmi: $verbmi\n";
+		 				}
+		 			}
+		 			# second type of subjToObj: se me antoja un helado -> heladota munapakuni
+		 			if($syn->getAttribute('subjToObj') eq '2')
+		 			{
+		 				my ($cd) = $chunk->findnodes('child::CHUNK[contains(@si,"cd")][1]/NODE');
+		 				if($cd && $cd->getAttribute('slem') eq 'me'){
+		 						$verbmi =~ s/\Q$verbprs\E/\+1.Sg.Subj/g;
+		 						$verbmi =~ s/(\+)\+1(\.Sg)?\.Obj//;
+		 				}
+		 				elsif($cd && $cd->getAttribute('slem') eq 'te'){
+		 						$verbmi =~ s/\Q$verbprs\E/\+2.Sg.Subj/g;
+		 						$verbmi =~ s/(\+)\+2(\.Sg)?\.Obj//;
+		 				}
+		 				elsif($cd && $cd->getAttribute('slem') eq 'nos'){
+		 						$verbmi =~ s/\Q$verbprs\E/\+1.Pl.Incl.Subj/g;
+		 						$verbmi =~ s/(\+)\+1\.Pl\.(Incl|Excl)\.Obj//;
+		 				}
+		 				elsif($cd && $cd->getAttribute('slem') eq 'vos'){
+		 						$verbmi =~ s/\Q$verbprs\E/\+2.Pl.Subj/g;
+		 						$verbmi =~ s/(\+)\+2(\.Pl)?\.Obj//;
 		 				}
 		 			}
 		 			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
@@ -362,6 +385,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 			{	
 		 				$verbmi =~ s/\+(\+)?Rflx//g;
 		 			}
+		 			
 		 			# clean up and adjust morphology tags
 		 			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
 		 			if($lemma2 eq '' && $auxlem eq '' && $verbmi ne '')

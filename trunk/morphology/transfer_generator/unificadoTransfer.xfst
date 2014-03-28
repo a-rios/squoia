@@ -126,7 +126,8 @@ define PHON [KACHA .o. KACHA2 .o. YKU .o. YKU2 .o. RQU .o. RQU2 .o. KU .o. KU2 .
            define PST [{rqa}|{sqa}];
            define 3SGPST [ "+3.Sg.Subj" -> "" || PST _ ];
            define 3PLPST [ "+3.Pl.Subj" -> {ku} || PST _ ];
-           define PAST [3SGPST .o. 3PLPST];
+           define 3PLhab [ "+3.Pl.Subj" -> {qku} || _ "@HAB" ] .o. ["@HAB" -> "" ];
+           define PAST [3SGPST .o. 3PLPST .o. 3PLhab];
 
        #---------------------------------------------------#
        # forms with 2 participants (only irregular forms): #
@@ -224,6 +225,7 @@ define PHON [KACHA .o. KACHA2 .o. YKU .o. YKU2 .o. RQU .o. RQU2 .o. KU .o. KU2 .
            define 3PLon1SGfut ["+3.Pl.Subj.Fut" -> {nqa} || $["+1.Sg.Obj"] _ ];
            define 3PLon1SGpot ["+3.Pl.Subj.Pot" -> {nkuman} || $["+1.Sg.Obj"] _ ];
            
+
    define 3on1 [3on1PLinc .o. 3on1PLincFUT .o. 3on1PLincPOT.o.  3SGon1PLexc .o. 3SGon1PLexcFUT .o.3SGon1PLexcPOT.o. 3PLon1SG .o. 3PLon1SGfut .o. 3PLon1SGpot];   
 define SubjObj [1on2 .o. 2on1 .o. 3on2 .o. 3on1];
 
@@ -246,7 +248,7 @@ define SubjObj [1on2 .o. 2on1 .o. 3on2 .o. 3on1];
 
 define PERS [1SGPERS .o. 2SGPERS .o. 3SGPERS .o. 1PLincPERS .o. 1PLexcPERS .o. 2PLPERS .o. 3PLPERS .o. 1SGPERSobj .o. 2SGPERSobj .o. 1PLincPERSobj .o. 1PLexcPERSobj .o. 2PLPERSobj];
 
-define VDERIV [PHON .o. SubjObj .o. PERS];
+define VDERIV [PHON .o. PAST .o. SubjObj .o. PERS];
 
    ###################################################
 

@@ -185,7 +185,7 @@ perteneciencia_al	case=+Gen,postpos=kaq
 por		case=+Proloc	xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}	-
 por		case=+Kaus	-
 por		case=+Instr	-
-por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}
+por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}	-
 por_el_motivo_de		case=+Kaus	-
 por_el_motivo_del		case=+Kaus	-
 

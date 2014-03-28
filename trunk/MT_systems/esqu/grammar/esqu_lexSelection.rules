@@ -220,6 +220,10 @@ instigar		++Caus		d		!(xpath{descendant::NODE[@slem="a"]} && xpath{parent::NODE[
 permanecer	ka		d	xpath{parent::NODE[starts-with(@smi, "VMG")]}
 permanecer	++Perdur	d	!(xpath{parent::NODE[starts-with(@smi, "VMG")]})	
 
+# personar con alguien (reunirse para tratar algo): huñunakuy, if prep. arg. 'con' vs. 'kikin kay' otherwise
+personar	huñu		k		xpath{ancestor::CHUNK[1]/CHUNK/NODE[@slem="con"]}
+personar	rikhu		k		!(xpath{ancestor::CHUNK[1]/CHUNK/NODE[@slem="con"]})
+
 seguir		qati		d	xpath{parent::NODE[starts-with(@smi, "VMG")]}
 seguir		++Perdur	d	!(xpath{parent::NODE[starts-with(@smi, "VMG")]})
 

@@ -34,7 +34,7 @@ my %morphSel = ();
 #read semantic information from file into a hash (lemma, semantic Tag,  condition)
 while (<MORPHSELFILE>) {
 	chomp;
-	s/#.*//;     # no comments
+	s/^(\s)*#.*//;     # no comments
 	s/^\s+//;    # no leading white
 	s/\s+$//;    # no trailing white
 	next if /^$/;	# skip if empty line
@@ -43,7 +43,7 @@ while (<MORPHSELFILE>) {
 	$conditions =~ s/\s//g;	# no whitespace within condition
 	# assure key is unique, use srcConds:trgts as key
 	my $key = "$srcNodeConds---$trgtMI";
-	print STDERR "key: $key\n";
+	#print STDERR "key: $key\n";
 	my @value = ( $conditions, $keepOrDelete, $prob );
 	$morphSel{$key} = \@value;
 
@@ -64,7 +64,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 		# check if one of the node conditions apply to this node
 		if(scalar(@SYNnodes)>0)
 		{
-			print STDERR "Disambiguating morphological translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n";
+			#print STDERR "Disambiguating morphological translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n";
 			foreach my $ruleskey (@allNodeConditions)
 				{				
 					my ($nodeCond, $trgtMI) = split('---',$ruleskey);		  
@@ -81,7 +81,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 							# get target conditions
 							my $trgtConds = @{ $morphSel{$ruleskey}}[0];
 							my @trgtConditions = &splitConditionsIntoArray($trgtConds);
-							print STDERR "target conds: @trgtConditions\n";
+							#print STDERR "target conds: @trgtConditions\n";
 							
 							if(&evalConditions(\@trgtConditions,$node))
 							{
@@ -163,9 +163,9 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								   				# note: this is the morphological disambiuation -> keep sem attribute (no lexical differences in SYN's disambiguated here!)
 													my @synattrlist = $node->attributes();
 													foreach my $synattr (@synattrlist)
-													{
-														unless($synattr->nodeName =~ /ref|slem|smi|sform|UpCase|sem/)
-														{
+													{#print "attribute to remove in node ".$synattr->nodeName."\n";
+														unless($synattr->nodeName =~ /^ref|slem|smi|sform|UpCase|sem/)
+														{#print "removed attribute ".$synattr->nodeName."\n";
 															$node->removeAttribute($synattr->nodeName);
 														}
 													}

@@ -65,6 +65,13 @@ my.smi=/^DP3/		++3.Pl.Poss		k	xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="gru
 
 my.smi=/^DP3/		++3.Sg.Poss		k	!(xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/NODE[@slem="de"]} && xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi,"NCMP") or starts-with(@smi,"NCFP") or starts-with(@smi,"NCCP") or starts-with(@smi,"PP3MP") or starts-with(@smi,"PP3FP") or starts-with(@smi,"PP3CP") or starts-with(@smi,"PP3NP")]} )
 
+# special case: forjar de +material -> ruray material-manta vs. forjar without de -> qiqllamanta ruray
+my.slem=forjar && my.smi=/^V/		preform=#qiqllamanta		k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK/NODE[@slem="de"]})
+my.slem=forjar 				preform=#qiqllamanta		d	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK/NODE[@slem="de"]}
+
+# special case: invitar: invitar a hacer algo (rogar) -> mañakuy vs. invitar a alguien 
+my.slem=invitar				obj=infinitive_a	k		xpath{descendant::NODE[@slem="a"]} && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[starts-with(@smi,"VMN") or starts-with(@smi, "VSN")] }
+my.slem=invitar && my.smi=/^V/		obj=infinitive_a	d		!(xpath{descendant::NODE[@slem="a"]} && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[starts-with(@smi,"VMN") or starts-with(@smi, "VSN")] })
 
 
 #################
