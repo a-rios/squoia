@@ -1,4 +1,5 @@
 #Slot7
 
 "+Pot"
-|"+Imp" ;
+|"+Imp" 
+|"+Hab" :"@HAB" ;

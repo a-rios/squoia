@@ -31,6 +31,9 @@ my.prepos=/.+/				prepos				my.type=/grup-sp|coor-sp/		prepos			up		concat
     
 # delete plural suffix in demonstrative or indefinite pronouns if head is a number
 my.smi=/^DD/ && my.mi=/\+Pl/			"+Pl"			my.type=det				deleteMorph		up		concat
+# special case ningun/o/a -> add -pas (additive) in moveToHead_mi to head
+my.smi=/^DI/ && my.moveToHead_mi=/.+/		moveToHead_mi		my.type=/sn|coor-n/			chunkmi			up		concat
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
@@ -98,9 +101,20 @@ my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="p
 
 # morphological information inserted during transfer that is needed by all synonyms for generation goes to addverbmi, all information that is needed only by primary node goes to verbmi! 
     
-# copy lemma and morphology of auxiliary to head chunk (only relevant with habitual past forms)
+# copy lemma and morphology of auxiliary to head chunk (relevant with conditional past forms)
 my.auxlem=/.+/				auxlem				my.type=/grup-verb|coor-v/		auxlem			up	overwrite
 my.auxverbmi=/.+/			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwrite
+
+# special case: habitual past with soler + "pasado simple" or "indefinido": 
+# if 1. or 2. person: main verb -q +ka +finite ending
+my.slem=soler && my.smi=/1|2|3S/ && my.smi=/^...[IS]/				"ka"				my.type=/grup-verb|coor-v/		auxlem					up	overwrite
+my.smi=/^...[IS]/ && my.slem=soler  && my.smi=/1|2|3S/ 				verbmi				my.type=/grup-verb|coor-v/		auxverbmi				up	concat
+my.slem=soler && my.smi=/^...[IS]/ && my.smi=/1|2|3S/				"+Ag"				my.type=/grup-verb|coor-v/		addverbmi				up	concat
+
+# if 3. plural: verbform -qku -> 3.Pl.Subj.Hab
+#(not necessary, already in dix and through morphdisamb!) my.slem=soler && my.smi=/^...[IS]/ && my.smi=/3P/				"+Hab"				my.type=/grup-verb|coor-v/		addverbmi				up	concat
+my.slem=soler && my.smi=/3P/ && my.smi=/^...[IS]/ 				"yes"				my.type=/grup-verb|coor-v/		finiteMiInAux				up	concat
+
 
 #---------------------------------------------
 # COMPLEMENT CLAUSES
@@ -288,11 +302,6 @@ my.slem=hambre && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="
 my.slem=sed && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="ununaya" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=sueño && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="puñunaya" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
 
-
-## special case, forms with -naya: make Subj -> Obj (tengo hambre -> yarqanayaWAn)
-xpath{self::NODE[@lem="mikhunaya" and @slem="tener"]}		"yes"	my.type=/grup-verb|coor-v/	subjToObj	up	overwrite
-xpath{self::NODE[@lem="ununaya" and @slem="tener"]}		"yes"	my.type=/grup-verb|coor-v/	subjToObj	up	overwrite
-xpath{self::NODE[@lem="puñunaya" and @slem="tener"]}		"yes"	my.type=/grup-verb|coor-v/	subjToObj	up	overwrite
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 

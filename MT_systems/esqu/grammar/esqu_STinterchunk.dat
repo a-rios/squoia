@@ -77,7 +77,11 @@ my.type=/sn|coo-n/ && my.si=/suj/		case		my.IHRC=yes		"+Gen"		parent			2to1			co
 # -> we attach -pas to the verb
 my.chunkmi=++Add && child.slem=también			chunkmi			my.type=/.+/ && !(my.delete=yes)		chunkmi		parent		1to2		concat
 
-
-
+## special case, 
+##  subjToObj=1, forms with -naya: make Subj -> Obj (tengo hambre -> yarqanayaWAn)
+## or subjToObj=2, e.g. 'se me anotoja un helado' -> 'heladoTA munapakuNI'
+## -> for subjToObj=2, add accusative to original subject and set @si=cd
+my.si=/suj/ 		case				xpath{child::NODE[@subjToObj="2"]} && my.type=/grup-verb|coor-v/ 		"+Acc"		parent		2to1		overwrite
+#my.si=/suj/ 		si				my.type=/grup-verb|coor-v/ && xpath{child::NODE[@subjToObj="2"]}		"cd"		parent		2to1		overwrite
 
 

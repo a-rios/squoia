@@ -53,7 +53,7 @@ while(<STINTERFILE>) {
 	s/\s+$//;    # no trailing white
 	next if /^$/;   # skip if empty line
 	my ($chunk1Cond, $chunk1Attr ,$chunk2Cond, $chunk2Attr, $path1to2, $direction, $wmode ) = split( /\s*\t\s*/, $_, 7 );
-	print STDERR "chunk1 condition: $chunk1Cond; attribute: $chunk1Attr;\nchunk2 condition: $chunk2Cond; attribute: $chunk2Attr; path: $path1to2;\ndir: $direction; mode: $wmode\n\n";
+	#print STDERR "chunk1 condition: $chunk1Cond; attribute: $chunk1Attr;\nchunk2 condition: $chunk2Cond; attribute: $chunk2Attr; path: $path1to2;\ndir: $direction; mode: $wmode\n\n";
 	$chunk1Cond =~ s/\s//g;
 	$chunk2Cond =~ s/\s//g;
 	my $condKey = "$chunk1Cond\t$chunk2Cond\t$path1to2";
@@ -67,7 +67,7 @@ my $parser = XML::LibXML->new("utf8");
 my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 
 foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
-	print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n";
+	#print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n";
 	foreach my $condpair (keys %interConditions) {
 		my ($chunk1Cond,$chunk2Cond,$path1to2) = split( /\t/, $condpair);
 #		print STDERR "$chunk1Cond ++ $chunk2Cond\n";
@@ -79,17 +79,17 @@ foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
 		if ($result) {
 			# find chunk candidates related to the current chunk
 			my @candidates = &getRelatedChunks($chunk,$path1to2);
-			print STDERR scalar(@candidates). " candidates\n";
+			#print STDERR scalar(@candidates). " candidates\n";
 			if (scalar(@candidates)) {
-				print STDERR "first chunk candidate ". $candidates[0]->getAttribute('ref')."\n";
+				#print STDERR "first chunk candidate ". $candidates[0]->getAttribute('ref')."\n";
 				my @chunk2Conditions = &splitConditionsIntoArray($chunk2Cond);
-				print STDERR "conditions: @chunk2Conditions\n";
+				#print STDERR "conditions: @chunk2Conditions\n";
 				# find the first candidate related chunk that satisfies the conditions
 				foreach my $cand (@candidates) {
 					my $result = &evalConditions(\@chunk2Conditions,$cand);
-					print STDERR "result $result for candidate ". $cand->getAttribute('ref')."\n";
+					#print STDERR "result $result for candidate ". $cand->getAttribute('ref')."\n";
 					if ($result) {
-						print STDERR "found\n";
+						#print STDERR "found\n";
 						my $configline = $interConditions{$condpair};
 						&transferSyntInformation($configline,$chunk,$cand);
 					}
