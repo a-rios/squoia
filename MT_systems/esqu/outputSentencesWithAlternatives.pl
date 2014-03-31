@@ -19,17 +19,21 @@ my $sentOpts=0;
 
 while(<>){
 	
-	 #skip empty line
+	#skip empty line
     unless(/^\s*$/)
     {
-    	if(/#EOS$/)
+    	if(/#EOS/)
     	{
       		$newSentence=1;
       		#print sentence(s) with $nrbOfSentAlts with previous sentence
       		my $lastWordAlternatives = scalar(@{$sentLattice{$wordcount}});
       		$nbrOfAltSents = $nbrOfAltSents * $lastWordAlternatives;
       		&printLattice(\%sentLattice, $nbrOfAltSents);
-      		$sentOpts=0;
+      		undef(%sentLattice);
+    		#%sentLattice=();
+      		$wordcount=0;
+      		$nbrOfAltSents=1;
+      		undef($prev); undef($prevPunc); $startedWithPunc=0;
     	}
     	# word with analysis
     	else
@@ -37,15 +41,16 @@ while(<>){
    			s/\t//g;
    			s/\n//g;
    			#punctuation marks come with their mi tag, split
-   			my ($word,$pmi) = split('-PUNC-');
+   			#my ($word,$pmi) = split('-PUNC-');
    			#print  "pmi: $word, $pmi\n";
+   			my $word = $_;
      		#start a new sentence 
     		if($newSentence == 1) 
     		{ 
     			$newSentence =0;
-    			%sentLattice=();
-      			$wordcount=0;
-      			$nbrOfAltSents=1;
+      			#print "new sentence\n";
+      			#print "wc: $wordcount, nbrofAlts: $nbrOfAltSents\n";
+      			#foreach my $key (keys %sentLattice){print "key: $key\n";}
     			$sentLattice{$wordcount}=[$word];
     		}
     		else
@@ -82,6 +87,7 @@ sub printLattice{
 	#create matrix: $nbrOfAltSents x $nbrOfWords that contains all possible sentences
 	foreach my $key (sort { $a <=> $b} keys %sentLattice){
 		my $wordarray = $sentLattice{$key};
+		#print "at $key: ".@$wordarray[$key]."\n";
 		# word with more than one option
 		if(scalar(@$wordarray)>1){
 			push(@indexesOfAmbigWords, $key);
@@ -95,14 +101,21 @@ sub printLattice{
 		}
 	
 	}
-	# fill in ambiguous words, from left to right
-	#foreach my $i (@indexesOfAmbigWords){
-	my $first=0;
-	my $last =scalar(@indexesOfAmbigWords)-1;
-	print "non recursive with first:$first last:$last\n";
-	&insertTransOpts(\%sentMatrix,$first,$last,\@indexesOfAmbigWords);
-		
-	&printMatrix(\%sentMatrix);
+	#print "ambigs: @indexesOfAmbigWords\n";
+
+	if(scalar(@indexesOfAmbigWords)>0){
+		my $first=0;
+		my $last =scalar(@indexesOfAmbigWords)-1;
+		#print "non recursive with first:$first last:$last\n";
+		&insertTransOpts(\%sentMatrix,$first,$last,\@indexesOfAmbigWords);		
+	}
+
+	$sentOpts=0;
+	#&printMatrix(\%sentMatrix);
+	&printSents(\%sentMatrix);
+	#print "\n--------------------------\n";
+
+
 }
 
 sub insertTransOpts{
@@ -117,27 +130,28 @@ sub insertTransOpts{
 	
 	for(my $indexInFirstArray=0; $indexInFirstArray<scalar(@$wordarray);$indexInFirstArray++)
 	{
-		print "called with first:$first  last:$last , called at pos:$indexInFirstArray of $thisindex ".@$wordarray[$indexInFirstArray]." sentopts: $sentOpts\n";
+#		print "called with first:$first  last:$last , called at pos:$indexInFirstArray of $thisindex ".@$wordarray[$indexInFirstArray]." sentopts: $sentOpts\n";
 		if($first<$last)
 		{
 			my $startOpts= $sentOpts;
-			#$first++;
-			print "recursive with first:$first  last:$last , called at pos:$indexInFirstArray of $thisindex ".@$wordarray[$indexInFirstArray]." sentopts: $sentOpts\n";
+#			print "recursive with first:$first  last:$last , called at pos:$indexInFirstArray of $thisindex ".@$wordarray[$indexInFirstArray]." sentopts: $sentOpts\n";
 			&insertTransOpts($sentMatrixRef,$first+1,$last,$indexesOfAmbigWords);
 			for(my $i=$startOpts;$i<$sentOpts;$i++){
-					print "set opt:$i with word ".@$wordarray[$indexInFirstArray]." at first $first\n";
+#					print "set opt:$i with word ".@$wordarray[$indexInFirstArray]." at first $first\n";
 					$sentMatrix{$i}{$thisindex}= @$wordarray[$indexInFirstArray];
 			}	
 		}
 		else{
-		$sentMatrix{$sentOpts}{@$indexesOfAmbigWords[$first]}= @$wordarray[$indexInFirstArray];
-		print "filled opt:$sentOpts with word ".@$wordarray[$indexInFirstArray]." at pos $first ";
-		print "opt+1 hieer\n"; $sentOpts++;	
+			$sentMatrix{$sentOpts}{@$indexesOfAmbigWords[$first]}= @$wordarray[$indexInFirstArray];
+#			print "filled opt:$sentOpts with word ".@$wordarray[$indexInFirstArray]." at pos $first ";
+#			print "opt+1 hieer\n"; 
+			$sentOpts++;	
 		}
 	}
 
-	print "\n#####################\n";
+	#print "\n#####################\n";
 }
+
 
 
 sub printMatrix{
@@ -154,43 +168,23 @@ sub printMatrix{
 	}
 }
 
-sub getFirstAmbWordInRange{
-	my $sentLatticeRef = $_[0];
-	my %sentLattice = %$sentLatticeRef;
-	
-	my $start = $_[1];
-	my $end = $_[2];
-	print "start: $start, end $end\n";
-	my $i=$start;
-	while($i<=$end-1)
-	{	
-		if(@{$sentLattice{$i}}==1){$i++;}
-		else{return $i;}
-	}
-	return "none";
-}
 
-
-sub printSents {
+sub printSents{
 	
+	my $sentMatrixRef = $_[0];
+	my %sentMatrix = %$sentMatrixRef;
 	
-    #skip empty line
-    unless(/^\s*$/)
-    {
-    	if(/#EOS$/)
-    	{
-      		$newSentence=1;
-    	}
-    	# word with analysis
-    	else
-   		{
-   			s/\t//g;
-   			s/\n//g;
-   			#punctuation marks come with their mi tag, split
-   			my ($word,$pmi) = split('-PUNC-');
-   			#print STDERR "pmi: $pmi\n";
+	foreach my $opt (sort { $a <=> $b} keys %sentMatrix){
+		print "$opt: ";
+		my $sent = $sentMatrix{$opt};
+		foreach my $w (sort { $a <=> $b} keys %$sent){
+			#print $sentMatrix{$opt}{$w}." --";
+			#punctuation marks come with their mi tag, split
+   			my ($word,$pmi) = split('-PUNC-',$sentMatrix{$opt}{$w});
+   			$word =~ s/^\/(.+)/$1/g;
+			#print  "$word: $pmi\n";
      		#start a new sentence 
-    		if($newSentence == 1) 
+    		if($w == 0) 
     		{ 
 				# uppercase first word in sentence
 				#TODO
@@ -200,7 +194,6 @@ sub printSents {
 				}
 				else
 				{
-					print STDOUT "\n";
 					$word =ucfirst($word);
 					print STDOUT "$word";
 					$prev = $word;
@@ -208,7 +201,7 @@ sub printSents {
 					$startedWithPunc =0;
 				}
     		}
-    		else
+			else
     		{
     			unless($word eq ',' && $prev eq ',')
 				{
@@ -244,10 +237,9 @@ sub printSents {
 					
 				}
     		}
-    		unless($startedWithPunc ==1){
-    			$newSentence = 0;
-    		}
-   		}
-    }
-  }
+		}
+		print "\n";
+	}
+	
+}
   
