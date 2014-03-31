@@ -354,3 +354,7 @@ my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@
 
 my.slem=/incluso|sólo/ && my.mi=/^\+\+/		mi			my.type=/.+/		chunkmi		up	concat
 my.mi=/^\+\+/ && my.slem=/incluso|sólo/ 	"yes"			my.type=/.+/		delete		up	concat
+
+# add +Disc to head chunk of ña, and from there (in STinterchunk) to parent chunk ('ya se fue' -> ña ripuña, 2x ña)
+# not necessary, handled alone in STinterchunk
+#my.lem=ya && my.moveToHead_mi=/.+/		moveToHead_mi		my.type=/.+/		moveToHead_mi		up	concat

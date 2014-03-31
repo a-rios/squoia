@@ -77,6 +77,9 @@ my.type=/sn|coo-n/ && my.si=/suj/		case		my.IHRC=yes		"+Gen"		parent			2to1			co
 # -> we attach -pas to the verb
 my.chunkmi=++Add && child.slem=también			chunkmi			my.type=/.+/ && !(my.delete=yes)		chunkmi		parent		1to2		concat
 
+# +Disc from 'ya': move to parent chunk
+child.lem=ña && child.moveToHead_mi=/.+/		"+Disc"			my.type=/.+/ && !(my.delete=yes)		chunkmi		parent		1to2		concat
+
 ## special case, 
 ##  subjToObj=1, forms with -naya: make Subj -> Obj (tengo hambre -> yarqanayaWAn)
 ## or subjToObj=2, e.g. 'se me anotoja un helado' -> 'heladoTA munapakuNI'
