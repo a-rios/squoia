@@ -1481,6 +1481,21 @@ sub isCongruent{
 			{
 				$nounPerson = substr ($subjMI, 2, 1);
 				$nounNumber = substr ($subjMI, 4, 1);
+				
+				# if yo,él,ella and not congruent and verb is ambiguous 3rd/1st form 
+				# cantaba (pasado imperfecto), cantaría (condicional), cante (subjuntivo presente),  cantara (subjuntivo imperfecto),cantare (subjuntivo futuro) 
+				# -> change tag of verb!
+				if($subjNode->exists('self::NODE[@lem="él" or @lem="ella"]') && $verbMI =~ /V.II1S0|V.IC1S0|V.SP1S0|V.SI1S0|V.SF1S0/ )
+				{
+					$verbMI =~ s/1/3/;
+					$parentNode->setAttribute('mi', $verbMI);
+					return 1;
+				}
+				elsif($subjNode->exists('self::NODE[@lem="yo"]') && $verbMI =~ /V.II3S0|V.IC3S0|V.SP1S0|V.SI3S0|V.SF3S0/ ){
+					$verbMI =~ s/3/1/;
+					$parentNode->setAttribute('mi', $verbMI);
+					return 1;
+				}
 			}
 		}
 		else
@@ -1531,14 +1546,7 @@ sub isCongruent{
 #	my $nounmi = $subjNode->getAttribute('mi');
 #	print STDERR "$nounform:$verbform  verbprs:$verbPerson, verbnmb:$verbNumber, nounPrs:$nounPerson, nounNumb:$nounNumber, nounMI: $nounmi\n";
 	
-		if($nounPerson =~ $verbPerson && $nounNumber eq $verbNumber)
-		{
-			return 1;
-		}
-		else
-		{
-			return 0;
-		}
+		return ($nounPerson =~ $verbPerson && $nounNumber eq $verbNumber);
 	}
 	# if subject node or parent node doees not exist, don't change anything (this should not happen)
 	else

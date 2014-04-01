@@ -216,9 +216,6 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			my $chunkmi = $chunk->getAttribute('chunkmi');
  			
  			
- 			#print STDERR "verbmi: $verbmi .......... poss subj: $subjprsPoss\n";
- 			#print STDERR "verbmi: $verbmi .......... subj obj: $subjprs, $objprs\n";
- 			
  			# nispa
  			if($lemma1 && $verbmi1)
  			{
@@ -243,7 +240,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				my $add_mi= $syn->getAttribute('add_mi');
  				# if finiteMiInAux: iterate through SYN's in second verb and get verbmi's from there
  				my @verbmis;
- 				if($chunk->getAttribute('finiteMiInAux') eq 'yes'){
+ 				if($chunk->getAttribute('finiteMiInAux') eq 'yes' && !$chunk->hasAttribute('deletefiniteMiInAux')){
  					my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
  					# if no syns in aux node, take aux node itself
  					if(scalar(@auxSYNs)==0){
@@ -280,8 +277,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  					$verbmi = $verbmi.$add_mi.$addverbmi;
  					push(@verbmis, $verbmi);
  				}
- 				foreach my $verbmi (@verbmis)
+ 				for(my $k=0;$k<scalar(@verbmis);$k++)
  				{
+ 					my $verbmi = @verbmis[$k];
 	 				# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
 		 			my $lemma = $syn->getAttribute('lem');
 		 			if($syn->getAttribute('lem') eq 'unspecified' or $syn->getAttribute('unknown') eq 'transfer')
@@ -290,6 +288,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
 		 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
 		 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+		 				# if no source lemma because morph analysis didn't recognize the word: use the word form..
+		 				elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
 		 				
 		 				if(!$syn->hasAttribute('verbmi'))
 		 				{
@@ -305,96 +305,20 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 					}
 		 				}
 		 			}
-		 			my ($verbprs) = ($verbmi =~ m/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)/ );
-		 			my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
-		 			my ($objprs) = ($verbmi =~ m/\+([12]\.[PS][lg])(\.Incl|\.Excl)?\.Obj/ );
-		 			my ($subjprsPoss,$inclExclPoss) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Poss/ );
-			 		# check if subj and obj are same person, if so, change obj to reflexive
-		 			if($subjprs ne '' && $verbmi =~ $subjprs."Obj")
-		 			{
-		 				#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
-		 				$verbmi =~ s/\Q$subjprs\E($inclExcl)?\.Obj/Rflx/g;
-		 				#print STDERR "replaced $subjprs: $verbmi\n";
+		 			if($chunk->getAttribute('printAuxVerb') ne 'yes'){
+		 				$verbmi = &cleanVerbMi($verbmi,$chunk,$syn);
 		 			}
-		 			# if this is a nominal (perfect or obligative) form, check if object and possessive suffix are same person
-		 			# -> if so, replace object suffix with reflexive
-		 			if($chunk->getAttribute('verbform') =~ /perfect|obligative/ && $subjprsPoss ne '' && $verbmi =~ $subjprs."Obj")
-		 			{
-		 				#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
-		 				$verbmi =~ s/\Q$subjprsPoss\E($inclExcl)?\.Obj/Rflx/g;
-		 				#print STDERR "replaced $subjprs: $verbmi\n";
-		 			}
-		 			
-		 			# if there was a new subject inserted during transfer, change that (e.g. in direct speech)
-		 			if($chunk->getAttribute('verbprs') ne '')
-		 			{
-		 				my $newverbprs = $chunk->getAttribute('verbprs');
-		 				
-		 				#print STDERR "old verb prs: $verbprs\n";
-		 				$verbmi =~ s/\Q$verbprs\E/$newverbprs/g;
-		 			}
-		 			# if original subject is an object in Quechua, change that (e.g. tengo hambre -> yarqanaya-wa-n)
-		 			# and introduce a 3rd person subject marker to the verb
-		 			if($syn->getAttribute('subjToObj') eq '1')
-		 			{
-		 				$verbmi =~ s/\Q$verbprs\E/\+3.Sg.Subj/g;
-		 				if($subjprs =~ /1|2/)
-		 				{
-		 					$verbmi = $verbmi."+".$subjprs.$inclExcl.".Obj";
-		 					#print STDERR "new verbmi: $verbmi\n";
-		 				}
-		 			}
-		 			# second type of subjToObj: se me antoja un helado -> heladota munapakuni
-		 			if($syn->getAttribute('subjToObj') eq '2')
-		 			{
-		 				my ($cd) = $chunk->findnodes('child::CHUNK[contains(@si,"cd")][1]/NODE');
-		 				if($cd && $cd->getAttribute('slem') eq 'me'){
-		 						$verbmi =~ s/\Q$verbprs\E/\+1.Sg.Subj/g;
-		 						$verbmi =~ s/(\+)\+1(\.Sg)?\.Obj//;
-		 				}
-		 				elsif($cd && $cd->getAttribute('slem') eq 'te'){
-		 						$verbmi =~ s/\Q$verbprs\E/\+2.Sg.Subj/g;
-		 						$verbmi =~ s/(\+)\+2(\.Sg)?\.Obj//;
-		 				}
-		 				elsif($cd && $cd->getAttribute('slem') eq 'nos'){
-		 						$verbmi =~ s/\Q$verbprs\E/\+1.Pl.Incl.Subj/g;
-		 						$verbmi =~ s/(\+)\+1\.Pl\.(Incl|Excl)\.Obj//;
-		 				}
-		 				elsif($cd && $cd->getAttribute('slem') eq 'vos'){
-		 						$verbmi =~ s/\Q$verbprs\E/\+2.Pl.Subj/g;
-		 						$verbmi =~ s/(\+)\+2(\.Pl)?\.Obj//;
-		 				}
-		 			}
-		 			# if verbmi empty but node.mi=infinitive, add VRoot+Inf
-		 			if($verbmi eq '' && $syn->getAttribute('mi') eq 'infinitive')
-		 			{
-		 					$verbmi=$verbmi."+Inf";
-		 			}
-		 			# if this is a nominal verb chunk with a case suffix
-		 			if( $chunk->hasAttribute('case'))
-		 			{
-		 					$verbmi=$verbmi.$chunk->getAttribute('case');
-		 			}
-		 			# if lema = ir/marchar and morph contains +Rflx -> irse=riPUy -> change +Rflx to +Iprs
-		 			if($lemma eq 'ri' && $verbmi =~ /Rflx/)
-		 			{
-		 				$verbmi =~ s/Rflx/Iprs/g;
-		 			}
-		 			# if transitivity = rflx and verbmi contains +Rflx -> delete +Rflx
-		 			if($syn->getAttribute('transitivity') eq 'rflx' && $verbmi =~ /Rflx/ && $syn->getAttribute('add_mi') ne '+Rflx')
-		 			{	
-		 				$verbmi =~ s/\+(\+)?Rflx//g;
-		 			}
+
 		 			
 		 			# clean up and adjust morphology tags
 		 			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
-		 			if($lemma2 eq '' && $auxlem eq '' && $verbmi ne '')
+		 			if($lemma2 eq '' && $auxlem eq '' && $chunk->getAttribute('printAuxVerb') eq '' && $verbmi ne '')
 		 			{ 
 		 				# if there's a preform: print that first!
 						my @preformsWithEmptyFields = split('#', $syn->getAttribute('preform') );
 						my @preforms = grep {$_} @preformsWithEmptyFields; 
 		 				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
-		 				if($i==0){
+		 				if($i==0 && $k==0){
 			 				foreach my $p (@preforms){
 		 						print "$p ";
 		 					}
@@ -409,13 +333,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 				}
 		 			}
 		 			else
-		 			{
+		 			{ 
 		 				my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
 		 				# if there's a preform: print that first!
 						my @preformsWithEmptyFields = split('#', $syn->getAttribute('preform'));
 						my @preforms = grep {$_} @preformsWithEmptyFields; 
 		 				# first syn: no '/'
-		 				if($i==0){
+		 				if($i==0 && $k==0){
 		 					foreach my $p (@preforms){
 		 						print "$p ";
 		 					}
@@ -435,7 +359,65 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			}
  			if($auxOrLem2toprint==1)
  			{
- 				# TODO: if more than one syn in lemma2..print all?
+ 				 # get auxes (note: not true auxilaries, -> VM)
+ 				 if($chunk->getAttribute('printAuxVerb') eq 'yes')
+ 				 {
+ 				 	my @auxverbmis;
+ 					my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"VM")]/SYN');
+ 					# if no syns in aux node, take aux node itself
+ 					if(scalar(@auxSYNs)==0){
+ 						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
+ 						unless($vnode){
+ 							# if there's a conjunction in between
+ 							($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"C")]/NODE[starts-with(@smi,"V")][1]');
+ 						}
+ 						if($vnode){
+ 							push(@auxSYNs, $vnode);	
+ 						}
+ 					}
+ 					for(my $j=0;$j<scalar(@auxSYNs);$j++)
+ 					{
+ 						my $auxsyn = @auxSYNs[$j];
+ 						my $synmi = $auxsyn->getAttribute('verbmi');
+ 						my $add_mi = $auxsyn->getAttribute('add_mi');
+ 						my $verbmi = $synmi.$add_mi.$chunkmi;
+ 						$verbmi = &cleanVerbMi($verbmi,$chunk,$auxsyn);
+ 						#push(@auxverbmis, $verbmi);
+ 					
+	 					# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
+			 			my $lemma = $auxsyn->getAttribute('lem');
+			 			if($auxsyn->getAttribute('lem') eq 'unspecified' or $auxsyn->getAttribute('unknown') eq 'transfer'){
+			 				$lemma = $chunk->findvalue('child::NODE/@slem');
+			 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
+			 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
+			 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+			 				# if no source lemma because morph analysis didn't recognize the word: use the word form..
+		 					elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
+			 			}
+			 			
+			 			# if there's a preform: print that first!
+						my @preformsWithEmptyFields = split('#', $auxsyn->getAttribute('preform') );
+						my @preforms = grep {$_} @preformsWithEmptyFields; 
+		 				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
+		 				if($j==0){
+			 				foreach my $p (@preforms){
+		 						print "$p ";
+		 					}
+		 					print STDOUT "$lemma:$sortedVerbmi\n";
+		 				}
+		 				else{
+		 					print STDOUT "/";
+		 					foreach my $p (@preforms){
+		 						print "$p ";
+		 					}
+		 					print "$lemma:$sortedVerbmi\n";
+		 				}
+			 			
+ 					}
+ 					
+ 				}
+ 				
+ 				# lemma2, verbmi2: inserted by MT, no syn nodes, no additional information!
  				if($lemma2 && $verbmi2)
 		 		{
 		 			print STDOUT "$lemma2:".&adjustMorph($verbmi2,\%mapTagsToSlots);
@@ -444,7 +426,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			 	{
 			 		print STDOUT "$auxlem:".&adjustMorph($auxverbmi,\%mapTagsToSlots);
 			 	}
-			 	if($chunkmi ne '')
+			 	if($chunkmi ne '' && !$chunk->hasAttribute('printAuxVerb'))
 			 	{
 			 		print STDOUT &adjustMorph($chunkmi,\%mapTagsToSlots);
 			 	}
@@ -764,11 +746,7 @@ sub deleteUnusedTags{
 	my $morphString = $_[0];
 	my $chunk = $_[1];
 	my $deleteMorph = $chunk->getAttribute('deleteMorph');
-	# special case: chunks of type 'det' have been created AFTER syntactic transfer 
-	# -> their 'deleteMorph is in parent chunk!
-	if($chunk->getAttribute('type') eq 'det'){
-		$deleteMorph = $chunk->findvalue('parent::CHUNK/@deleteMorph');
-	}
+	
 	my @morphsToDelete = split(',',$deleteMorph);
 	foreach my $del (@morphsToDelete)
 	{$morphString =~ s/\Q$del\E//;}
@@ -1070,4 +1048,86 @@ sub printPrePunctuation{
  			}
 }
 
+sub cleanVerbMi{
+	my $verbmi = $_[0];
+	my $chunk=$_[1];
+	my $syn=$_[2];
+	
+	my ($verbprs) = ($verbmi =~ m/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)/ );
+	my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
+	my ($objprs) = ($verbmi =~ m/\+([12]\.[PS][lg])(\.Incl|\.Excl)?\.Obj/ );
+	my ($subjprsPoss,$inclExclPoss) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Poss/ );
+	
+	# check if subj and obj are same person, if so, change obj to reflexive
+	if($subjprs ne '' && $verbmi =~ $subjprs."Obj")
+	{
+		 	#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
+		 	$verbmi =~ s/\Q$subjprs\E($inclExcl)?\.Obj/Rflx/g;
+		 	#print STDERR "replaced $subjprs: $verbmi\n";
+	}
+	# if this is a nominal (perfect or obligative) form, check if object and possessive suffix are same person
+	# -> if so, replace object suffix with reflexive
+	if($chunk->getAttribute('verbform') =~ /perfect|obligative/ && $subjprsPoss ne '' && $verbmi =~ $subjprs."Obj")
+	{
+			#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
+			$verbmi =~ s/\Q$subjprsPoss\E($inclExcl)?\.Obj/Rflx/g;
+		 	#print STDERR "replaced $subjprs: $verbmi\n";
+	}
+	# if there was a new subject inserted during transfer, change that (e.g. in direct speech)
+	if($chunk->getAttribute('verbprs') ne '' && $verbprs ne '' )
+	{
+		 	my $newverbprs = $chunk->getAttribute('verbprs');
+			$verbmi =~ s/\Q$verbprs\E/$newverbprs/g;
+	} 			
+	# if original subject is an object in Quechua, change that (e.g. tengo hambre -> yarqanaya-wa-n)
+	# and introduce a 3rd person subject marker to the verb
+	if($syn->getAttribute('subjToObj') eq '1')
+	{
+			$verbmi =~ s/\Q$verbprs\E/\+3.Sg.Subj/g;
+		 	if($subjprs =~ /1|2/){
+		 			$verbmi = $verbmi."+".$subjprs.$inclExcl.".Obj";
+		 			#print STDERR "new verbmi: $verbmi\n";
+		 	}
+	}
+	# second type of subjToObj: se me antoja un helado -> heladota munapakuni
+	if($syn->getAttribute('subjToObj') eq '2')
+	{
+		 	my ($cd) = $chunk->findnodes('child::CHUNK[contains(@si,"cd")][1]/NODE');
+		 	if($cd && $cd->getAttribute('slem') eq 'me'){
+		 			$verbmi =~ s/\Q$verbprs\E/\+1.Sg.Subj/g;
+		 			$verbmi =~ s/(\+)\+1(\.Sg)?\.Obj//;
+		 	}
+		 	elsif($cd && $cd->getAttribute('slem') eq 'te'){
+		 			$verbmi =~ s/\Q$verbprs\E/\+2.Sg.Subj/g;
+		 			$verbmi =~ s/(\+)\+2(\.Sg)?\.Obj//;
+		 	}
+		 	elsif($cd && $cd->getAttribute('slem') eq 'nos'){
+		 			$verbmi =~ s/\Q$verbprs\E/\+1.Pl.Incl.Subj/g;
+		 			$verbmi =~ s/(\+)\+1\.Pl\.(Incl|Excl)\.Obj//;
+			}
+		 	elsif($cd && $cd->getAttribute('slem') eq 'vos'){
+		 			$verbmi =~ s/\Q$verbprs\E/\+2.Pl.Subj/g;
+		 			$verbmi =~ s/(\+)\+2(\.Pl)?\.Obj//;
+		 	}
+	}
+	# if verbmi empty but node.mi=infinitive, add VRoot+Inf
+	if($verbmi eq '' && $syn->getAttribute('mi') eq 'infinitive'){
+		 	$verbmi=$verbmi."+Inf";
+	}
+	# if this is a nominal verb chunk with a case suffix
+	if( $chunk->hasAttribute('case')){
+		 	$verbmi=$verbmi.$chunk->getAttribute('case');
+	}
+	# if lema = ir/marchar and morph contains +Rflx -> irse=riPUy -> change +Rflx to +Iprs
+	if($syn->getAttribute('lem') eq 'ri' && $verbmi =~ /Rflx/){
+		 	$verbmi =~ s/Rflx/Iprs/g;
+	}
+	# if transitivity = rflx and verbmi contains +Rflx -> delete +Rflx
+	if($syn->getAttribute('transitivity') eq 'rflx' && $verbmi =~ /Rflx/ && $syn->getAttribute('add_mi') ne '+Rflx')
+	{	
+		 	$verbmi =~ s/\+(\+)?Rflx//g;
+	}
+	
+	return $verbmi;			
+}
 

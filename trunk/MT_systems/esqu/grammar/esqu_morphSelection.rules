@@ -110,10 +110,10 @@ my.smi=VMN0000		infinitive			 k	!(chunkparent.verbform=/obligative|SS|agentive/)
   #--------------#
   
 my.smi=/^VM/	transitivity=trans		d	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]})
-my.smi=/^VM/	transitivity=rflx		d	!(xpath{ancestor::CHUNK[1]/descendant::NODE[@slem="se"]})
+my.smi=/^VM/	transitivity=rflx		d	!(xpath{ancestor::CHUNK[1]/descendant::NODE[@slem="se"]} || my.sform=/rse$/)
 my.smi=/^VM/	transitivity=rzpr		d	!(xpath{ancestor::CHUNK[1]/descendant::NODE[@slem="se"]} && (my.smi=/V....P./ || parent.smi=/V....P./ || child.smi=/V....P./  ) )
 my.smi=/^VM/	transitivity=intrans		d	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd") or contains(@si,"ci")]}
-my.smi=/^VM/	transitivity=intrans,rflx	d	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd") or contains(@si,"ci")]} && !(xpath{parent::CHUNK/descendant::NODE[@slem="se"]})
+my.smi=/^VM/	transitivity=intrans,rflx	d	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd") or contains(@si,"ci")]} && ( !(xpath{parent::CHUNK/descendant::NODE[@slem="se"]})  || my.sform=/rse$/) )    
 
 
  #--------------------#
