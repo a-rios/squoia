@@ -372,6 +372,22 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			}
 		}
 	}
+	
+	# check if all chunks are children of chunks (if nodes have child chunks, the lexical transfer module is not amused)
+	foreach my $chunk ($sentence->getElementsByTagName('CHUNK'))
+	{
+		if($chunk->parentNode->nodeName eq 'NODE')
+		{
+			my $realparent = @{$chunk->findnodes('ancestor::CHUNK[1]')}[0];
+			if($realparent){
+				$realparent->appendChild($chunk);
+			}
+			else{
+				$sentence->appendChild($chunk);
+			}
+		}
+	}
+	
 #	
 #	#print STDERR $sentence->toString()."\n";
 }

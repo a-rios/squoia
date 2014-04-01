@@ -102,6 +102,12 @@ sub printLattice{
 	
 	}
 	#print "ambigs: @indexesOfAmbigWords\n";
+	# if all words are ambiguous: initialize hash with dummy value
+	if(scalar(@indexesOfAmbigWords) == scalar (keys %sentLattice)){
+		for(my $opt=0;$opt<$nbrOfAltSents;$opt++){
+				$sentMatrix{$opt}{0}="dummy";
+			}
+	}
 
 	if(scalar(@indexesOfAmbigWords)>0){
 		my $first=0;
@@ -130,25 +136,27 @@ sub insertTransOpts{
 	
 	for(my $indexInFirstArray=0; $indexInFirstArray<scalar(@$wordarray);$indexInFirstArray++)
 	{
-#		print "called with first:$first  last:$last , called at pos:$indexInFirstArray of $thisindex ".@$wordarray[$indexInFirstArray]." sentopts: $sentOpts\n";
+		#print "called with first:$first  last:$last , called at pos:$indexInFirstArray of $thisindex ".@$wordarray[$indexInFirstArray]." sentopts: $sentOpts\n";
 		if($first<$last)
 		{
 			my $startOpts= $sentOpts;
-#			print "recursive with first:$first  last:$last , called at pos:$indexInFirstArray of $thisindex ".@$wordarray[$indexInFirstArray]." sentopts: $sentOpts\n";
+			#print "recursive with first:$first  last:$last , called at pos:$indexInFirstArray of $thisindex ".@$wordarray[$indexInFirstArray]." sentopts: $sentOpts\n";
 			&insertTransOpts($sentMatrixRef,$first+1,$last,$indexesOfAmbigWords);
 			for(my $i=$startOpts;$i<$sentOpts;$i++){
-#					print "set opt:$i with word ".@$wordarray[$indexInFirstArray]." at first $first\n";
+					#print "set opt:$i with word ".@$wordarray[$indexInFirstArray]." at first $first\n";
 					$sentMatrix{$i}{$thisindex}= @$wordarray[$indexInFirstArray];
 			}	
 		}
 		else{
 			$sentMatrix{$sentOpts}{@$indexesOfAmbigWords[$first]}= @$wordarray[$indexInFirstArray];
-#			print "filled opt:$sentOpts with word ".@$wordarray[$indexInFirstArray]." at pos $first ";
-#			print "opt+1 hieer\n"; 
+			#print "filled opt:$sentOpts with word ".@$wordarray[$indexInFirstArray]." at pos $first ";
+			#print "opt+1 hieer\n"; 
 			$sentOpts++;	
 		}
 	}
 
+	#print "\n#####################\n";
+	#&printMatrix(\%sentMatrix);
 	#print "\n#####################\n";
 }
 

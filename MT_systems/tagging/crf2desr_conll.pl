@@ -181,12 +181,19 @@ while(<>){
 	    	my $cpos = lc(substr($tag, 0, 1));
 	    	my $shortpos = lc(substr($tag, 0, 2));
 	    	
-	    	if($cpos =~ /^z|^f/){
+	    	if($cpos =~ /^f/){
 	    		#$shortpos = ucfirst($shortpos);
 	    		$shortpos = $tag;
 	    		$cpos = uc($cpos);
 	    		
 	    	}
+	    	
+	    	elsif($cpos eq 'z'){
+	    		#$shortpos = ucfirst($shortpos);
+	    		$shortpos = "Z" ;
+	    		
+	    	}
+	    	
 	    	if($shortpos eq 'np'){$shortpos = "nc";}
 	    	print "$cpos\t$shortpos\t";
 	    	

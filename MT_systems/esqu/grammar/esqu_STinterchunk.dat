@@ -87,4 +87,8 @@ child.lem=ña && child.moveToHead_mi=/.+/		"+Disc"			my.type=/.+/ && !(my.delete
 my.si=/suj/ 		case				xpath{child::NODE[@subjToObj="2"]} && my.type=/grup-verb|coor-v/ 		"+Acc"		parent		2to1		overwrite
 #my.si=/suj/ 		si				my.type=/grup-verb|coor-v/ && xpath{child::NODE[@subjToObj="2"]}		"cd"		parent		2to1		overwrite
 
+## if verb chunk has an objCase/iobjCase (from lexicon): overwrite case of object chunk
+# e.g. embarcar el avión -> avionMAN wichay/yaykuy
+my.si=/cd/ 		case				 my.type=/grup-verb|coor-v/ && my.objCase=/.+/ 		objCase		parent		2to1		overwrite
+my.si=/ci/ 		case				 my.type=/grup-verb|coor-v/ && my.iobjCase=/.+/ 	iobjCase	parent		2to1		overwrite
 
