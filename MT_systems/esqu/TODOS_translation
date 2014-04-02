@@ -1,5 +1,10 @@
 TODOS translation:
 
+
+TRANSLATION:
+-wapiti model lacks A LOT of peruvian Spanish words!
+- mías: kommt nie vor in Ancora, ergo: PX1FP0S0 wird von wapiti überschrieben mit NC (PX1FP0S0 ist nicht im Tagset!)
+
 GENERALLY:
 - watayuq kay (tener años)
  (-raya -> sostener, quedarse suspendido, SUSPENSOR)
@@ -15,6 +20,11 @@ GENERALLY:
 - (de) color + 'color' es -> delete color (casa de color azul -> anqas wasi) 
 # TODO: aunque_sea -> maskipas (adverb)
 - verse +AQ, resultar +AQ -> ka- .. adj, 
+
+CONLL2XML:
+- hacer +inf: analyzed by parser as 2 verb chunks, infinitive as complement clause to hacer -> should be in one chunk, so we can move +Caus to main verb and use morphology of finite hacer
+--> wär für es-quz generell besser, wenn inf complement + finits verb im gliich chunk!
+- parser macht gaaanz seltsame anlysen mit tener .. años.. (años = kopf, darunter verb ohne chunk)
 
 RELATIVE CLAUSES:
 - not agentive relative clauses in conditional: la casa que podría comprar -> verbform in quechua?? potential, kein rel-satz
