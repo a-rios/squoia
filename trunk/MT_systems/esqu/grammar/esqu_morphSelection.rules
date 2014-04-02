@@ -33,13 +33,14 @@ my.slem=allá		PrnDem+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="co
 
 # conmigo vs mí -> same tag, disambiguate here:
 # a mí -> ++1.Sg.Obj, para/por mí -> ñuqapaq /wan etc
-my.smi=PP1CSO00		++1.Sg.Obj		k	my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
+# note: PP1CSO00,PP2CSO00 -> not 3x zero, but 'o00' (o=oblique case!)
+my.smi=PP1CSO00		++1.Sg.Obj		k	(my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}) 
 my.smi=PP1CSO00		PrnPers			k	my.slem=mí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
-#my.smi=PP1CSO00	PrnPers+Instr		k	my.slem=conmigo
+my.smi=PP1CSO00		PrnPers+Instr		k	my.slem=conmigo
 
-my.smi=PP2CSO00		++2.Sg.Obj		k	my.slem=/tí|ti/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
-my.smi=PP2CSO00		PrnPers			k	my.slem=/tí|ti/ && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
-#my.smi=PP2CSO00	PrnPers+Instr		k	my.slem=contigo
+my.smi=PP2CSO00		++2.Sg.Obj		k	(my.slem=/tí|ti/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]})  
+my.smi=PP2CSO00		PrnPers			k	(my.slem=/tí|ti/ && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}) 
+my.smi=PP2CSO00		PrnPers+Instr		k	my.slem=contigo
 
 my.smi=PP2CP000		++2.Pl.Obj		k	my.sform=os || xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
 my.smi=PP2CP000		PrnPers			k	(my.slem=vosotros || my.slem=usted) && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
@@ -48,21 +49,20 @@ my.smi=PP3CSO00		++Rflx			k	my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NOD
 my.smi=PP3CSO00		NRoot			k	my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
 my.smi=PP3CSO00		NRoot+Instr		k	my.slem=consigo
 
-my.smi=PP3CNO00		++Rflx			k	my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}
+my.smi=PP3CNO00		++Rflx			k	(my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="a"]}) || my.slem=se
 my.smi=PP3CNO00		NRoot			k	my.slem=sí && xpath{parent::CHUNK/parent::CHUNK/NODE[not(@slem="a")]}
 my.smi=PP3CNO00		NRoot+Instr		k	my.slem=consigo
 
 # personal pronoun 1.Pl -> if verb is 2 pers: must be 1.pl.excl
 # -> 2 > 1.pl cannot be inclusive
 # nos:
-my.smi=/PP1.P000/		++1.Pl.Excl.Obj		k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/descendant::NODE[contains(@verbmi,"2")]} 
+my.smi=/PP1.P000/		++1.Pl.Excl.Obj		k	xpath{../ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/descendant-or-self::NODE[contains(@verbmi,"2")]} 
 
 # possessive pronouns 3rd person, Spanish: all 'su', qu: need number of possessor, if possessed noun is singular
 # (if both possessor and possessed noun plural -> -nku +kuna -> realized as -nkuna anyway, just take singular
 # singular is default, keep plural only if there's a double marked possessive with a plural possessor
-# (something like 'su casa de mis tíos' in Adean Spanish)
+# (something like 'su casa de mis tíos' in Andean Spanish)
 my.smi=/^DP3/		++3.Pl.Poss		k	xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/NODE[@slem="de"]} && xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi,"NCMP") or starts-with(@smi,"NCFP") or starts-with(@smi,"NCCP") or starts-with(@smi,"PP3MP") or starts-with(@smi,"PP3FP") or starts-with(@smi,"PP3CP") or starts-with(@smi,"PP3NP")]}
-
 my.smi=/^DP3/		++3.Sg.Poss		k	!(xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/NODE[@slem="de"]} && xpath{ancestor::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi,"NCMP") or starts-with(@smi,"NCFP") or starts-with(@smi,"NCCP") or starts-with(@smi,"PP3MP") or starts-with(@smi,"PP3FP") or starts-with(@smi,"PP3CP") or starts-with(@smi,"PP3NP")]} )
 
 # special case: forjar de +material -> ruray material-manta vs. forjar without de -> qiqllamanta ruray
@@ -121,8 +121,8 @@ my.smi=/^VM/	transitivity=intrans,rflx	d	xpath{ancestor::CHUNK[1]/CHUNK[contains
  # subcategorization  #
  #--------------------#
  # TODO: SAME variable needed!!!
-my.smi=/^VM/	subj=/.+/		d	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"suj")]/descendant::NODE[@lem="SAME" or @sem="SAME"] })
-my.smi=/^VM/	obj=/.+/		d	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/descendant::NODE[@lem="SAME" or @sem="SAME"] })
+#my.smi=/^VM/	subj=/.+/		d	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"suj")]/descendant::NODE[@lem="SAME" or @sem="SAME"] })
+#my.smi=/^VM/	obj=/.+/		d	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/descendant::NODE[@lem="SAME" or @sem="SAME"] })
  
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 

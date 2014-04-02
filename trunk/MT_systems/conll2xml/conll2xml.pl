@@ -107,37 +107,42 @@ while (<>)
      # if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
      if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|[^l](la|las|lo|los|le|les))$/ and $word !~ /parte|frente|adelante|base|menos$/ and $word !~ /_/)
      {
-	print STDERR "clitics in verb $lem: $word\n";
-	my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
-	if ($clstr !~ /^$/)	# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
-	{
-		&createAppendCliticNodes($sentence,$scount,$id,$clstr);
-	}
+		#print STDERR "clitics in verb $lem: $word\n";
+		my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
+		if ($clstr !~ /^$/){	# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
+			&createAppendCliticNodes($sentence,$scount,$id,$clstr);
+		}
      }
-     if($eaglesTag =~ /^NP/)
-     {
+     if($eaglesTag =~ /^NP/){
      	$pos="np";
      }
      # set rel of 'y' and 'o' to coord
-     if($lem eq 'y' || $lem eq 'o')
-     {
+     if($lem eq 'y' || $lem eq 'o'){
      	$rel = 'coord';
      }
      # Numbers: FreeLing uses their form as lemma (may be uppercased) -> change lem to lowercase for numbers!
-     if($pos eq 'Z')
-     {
-	# HACK!!! TODO check why FL tags it as a number Z and DeSR parses it as a circunstancial complement cc...
-	if ($word eq 'un' and $lem eq 'un' and $rel eq 'cc')
-	{
-		$lem = 'uno';
-		$rel = 'spec';
-		$pos = 'di';
-		$cpos = 'd';
-		$head = "". int($id)+1 . "";
-		$eaglesTag = 'DI0MS0';
-	}
-     	$lem = lc($lem);
+     if($pos eq 'Z'){
+		# HACK!!! TODO check why FL tags it as a number Z and DeSR parses it as a circunstancial complement cc...
+		if ($word eq 'un' and $lem eq 'un' and $rel eq 'cc'){
+			$lem = 'uno';
+			$rel = 'spec';
+			$pos = 'di';
+			$cpos = 'd';
+			$head = "". int($id)+1 . "";
+			$eaglesTag = 'DI0MS0';
+		}
+	    $lem = lc($lem);
      }
+     # often: 'se fue' -> fue tagged as 'ser', VSIS3S0 -> change to VMIS3S0, set lemma to 'ir'
+     if($eaglesTag eq 'VSIS3S0' && $lem eq 'ser'){
+     	my $precedingWord = $docHash{$scount.":".($id-1)};
+     	#print STDERR "preceding of fue: ".$precedingWord->getAttribute('lem')."\n";
+     	if($precedingWord && $precedingWord->getAttribute('lem') eq 'se'){
+     		$eaglesTag = 'VMIS3S0';
+     		$lem = 'ir';
+     	}
+     }
+     
      $wordNode->setAttribute( 'ord', $id );
      $wordNode->setAttribute( 'form', $word );
      $wordNode->setAttribute( 'lem', $lem );
@@ -1316,7 +1321,8 @@ sub toEaglesTag{
 		my $per = "0";
 		my $cas = "0";
 		my $pno = "0";
-		my $polite = "0"; # atm, always zero
+		my $polite = "0"; 
+		
 		my ($gen, $num) = ($info =~ m/gen=(.)\|num=(.)/);
 		
 		if($gen eq 'c')
@@ -1338,6 +1344,10 @@ sub toEaglesTag{
 		if($info =~ /pno=/)
 		{
 			($pno) = ($info =~ m/pno=(.)/ );
+		}
+		if($info =~ /pol=/)
+		{
+			($polite) = ($info =~ m/pol=(.)/ );
 		}
 		
 		$eaglesTag = "$pos$per$gen$num$cas$pno$polite";

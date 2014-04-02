@@ -200,7 +200,7 @@ while(<>){
 	    	
 	    	# print morphology
 	    	my $features;
-	    	my $gen, my $num, my $fun, my $pno, my $per, my $type, my $semclass, my $mod, my $ten, my $cas, my $form;
+	    	my $gen, my $num, my $fun, my $pno, my $per, my $type, my $semclass, my $mod, my $ten, my $cas, my $form, my $polite;
 	    	$tag = lc($tag);
 	    	if ($cpos eq 'a') #Adjectives => 4:gen,5:num[,6:fun]
 	 		{
@@ -273,10 +273,11 @@ while(<>){
 			      $features.="|ten=".$ten;
 			    }
 		    }
-		    elsif ($cpos eq "p")	# Pronouns => 4:gen,5:num[,3:per][,6:cas]
+		    elsif ($cpos eq "p")	# Pronouns => 4:gen,5:num[,3:per][,6:cas][,7:polite]
 	 		{
 			    $gen = substr($tag,3,1);
 			    $num = substr($tag,4,1);
+			    
 			    if ((substr($tag,0,2) eq "pr")){
 				      $gen = "0";
 				      if ($num eq "n"){
@@ -303,6 +304,14 @@ while(<>){
 			    $cas = substr($tag,5,1);
 			    if ($cas ne "0"){
 			      $features.="|cas=".$cas;
+			    }
+			    $pno = substr($tag,6,1);
+			    if ($pno ne "0"){
+			      $features.="|pno=".$pno;
+			    }
+			    $polite = substr($tag,7,1);
+			    if ($polite ne "0"){
+			      $features.="|pol=".$polite;
 			    }
 			 }
 			 elsif ($cpos eq "s")	# Prepositions => 4:gen,5:num,3:for

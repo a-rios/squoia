@@ -67,11 +67,12 @@ while(<STINTRAFILE>) {
 my $parser = XML::LibXML->new("utf8");
 my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 
+
 foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
 #	print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n";
 	my @intranodes = &getNodesOfSingleChunk($chunk);
 	foreach my $node (@intranodes) {
-		print STDERR "  node ". $node->getAttribute('ref'). " ".$node->getAttribute('sform'). "\n";
+		#print STDERR "  node ". $node->getAttribute('ref'). " ".$node->getAttribute('sform'). "\n";
 		foreach my $condpair (keys %intraConditions) {
 			my ($descCond,$ancCond) = split( /\t/, $condpair);
 #			print STDERR "$descCond ++ $ancCond\n";
@@ -82,7 +83,7 @@ foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
 #			print STDERR "result $result\n";
 			if ($result) {
 				#find ancestor within chunk
-				print STDERR "$descCond ++ $ancCond\n";
+				#print STDERR "$descCond ++ $ancCond\n";
 				my @ancConditions = &splitConditionsIntoArray($ancCond);
 				my $ancestor = $node;
 				my $found = 0;
@@ -98,7 +99,7 @@ foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
 #					print STDERR $ancestor->nodeName."\n";
 					my $configline = $intraConditions{$condpair};
 					my ($descAttr,$ancAttr,$direction,$wmode) = split(/\t/,$configline);
-					print STDERR "attr from to: $descAttr, $ancAttr\n\n";
+					#print STDERR "attr from to: $descAttr, $ancAttr\n\n";
 #					print STDERR "direction $direction\n";
 					if ($direction eq "up") {
 						&propagateAttr($node,$descAttr,$ancestor,$ancAttr,$wmode);

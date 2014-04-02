@@ -66,7 +66,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 		# check if one of the node conditions apply to this node
 		if(scalar(@SYNnodes)>0)
 		{
-			print STDERR "Disambiguating lexical translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n";
+			#print STDERR "Disambiguating lexical translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n";
 			my $actualsrclem = $node->getAttribute('slem');
 			
 			foreach my $lemCombo(@allNodeConditions)
@@ -113,7 +113,7 @@ foreach my $node ( $dom->getElementsByTagName('NODE'))
 									{
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
-											foreach my $m (@matchingSyns){print STDERR "match:".$m->toString()."\n";}
+											#foreach my $m (@matchingSyns){print STDERR "match:".$m->toString()."\n";}
 											if($keepOrDelete eq 'k')
 								   			{
 								    			# delete the attributes of the first SYN child that have been "copied" into the parent NODE

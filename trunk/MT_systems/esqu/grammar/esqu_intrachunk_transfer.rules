@@ -11,6 +11,9 @@
 #	'chunkchild'	=> 'child::CHUNK',
 #	'chunkparent'	=> 'ancestor::CHUNK[1]'
 
+#TODOS:
+## hacer_falta_que
+
     ###########
     # GRUP-SP #
     ###########
@@ -38,6 +41,15 @@ my.smi=/^DD/ && my.mi=/\+Pl/			"+Pl"			my.type=det				deleteMorph		up		concat
 my.smi=/^DI/ && my.moveToHead_mi=/.+/		moveToHead_mi		my.type=/sn|coor-n/			chunkmi			up		concat
 
 
+    ##############
+    # ADJECTIVES #
+    ##############
+
+# if head verb of adjective in cpred has a 'lemInCpred=yes' -> set this sa chunk to delete entirely if only one node in verb chunk, BUT
+# if more than one SYN in verb: let it be.. no way of deciding when to print and when not to print
+
+my.smi=/^A/ && xpath{parent::CHUNK/ancestor::CHUNK/NODE[@lemInCpred="yes" and not(SYN)]}  	"yes"		my.si=cpred		delete		up		concat
+   
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
     #########
@@ -313,9 +325,10 @@ my.slem=pena && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="co
 my.slem=vergüenza && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="vergüenza" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=/compasión|piedad/ && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="khuya" and @slem="tener"]}	"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=/fragancia|olor/ && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="q'apa" and @slem="tener"]}	"yes"	my.si=/cd/	delete		up	overwrite
-my.slem=hambre && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="mikhunaya" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=hambre && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="mikhunaya" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=sed && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="ununaya" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=sueño && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="puñunaya" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
+my.slem=fé && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="iñi" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
 
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -369,7 +382,3 @@ my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@
 
 my.slem=/incluso|sólo/ && my.mi=/^\+\+/		mi			my.type=/.+/		chunkmi		up	concat
 my.mi=/^\+\+/ && my.slem=/incluso|sólo/ 	"yes"			my.type=/.+/		delete		up	concat
-
-# add +Disc to head chunk of ña, and from there (in STinterchunk) to parent chunk ('ya se fue' -> ña ripuña, 2x ña)
-# not necessary, handled alone in STinterchunk
-#my.lem=ya && my.moveToHead_mi=/.+/		moveToHead_mi		my.type=/.+/		moveToHead_mi		up	concat

@@ -22,17 +22,13 @@ viejo		paya		k	(my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+
 viejo		machu		k	(my.smi=/AQ.M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/
 viejo		mawk'a		k	!( (my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} ) || my.smi=/NCF/) && !((my.smi=/AQ0M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/)
 
-#vejez: payayay (fem.), machuyay (masc.)
-#vejez		paya		k	rsibling.headsmi=/NCF/ && rsibling.type=sp-de
-#vejez		machu		k	rsibling.headsmi=/NCM/ && rsibling.type=sp-de
-
-anciano		paya		k	my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} 
-anciano		machu		k	my.smi=/AQ.M/|| xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}
+anciano		paya		k	(my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} ) || my.smi=/NCF/
+anciano		machu		k	(my.smi=/AQ.M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/
 anciano		yuyaq		k	!(my.smi=/AQ.M/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}) && !(my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]})
 
 #adolescente-> smi=NCC, need to check if head noun is masc/fem or if used as noun, if fem/masc article present
 adolescente	t'asqi		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} || child.smi=/D..F../
-adolescente	maqta		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}|| child.smi=/D..M../
+adolescente	maqta,wayna,warma		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}|| child.smi=/D..M../
 
 chico		wayna		k	my.smi=/NCM/
 chico		sipas		k	my.smi=/NCF/
@@ -90,25 +86,7 @@ hijo		ususi	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or
 hijo		wawa	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[starts-with(@smi,"NCF")]}
 hijo		churi	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or @slem="del"]]/CHUNK/NODE[starts-with(@smi,"NCM")]}
 
-
-# animals that have a feminine form in Spanish: zorro, zorrillo, perro, gato
-zorro		china_atuq	k	my.smi=/NCF/
-zorro		atuq		k	my.smi=/NCM/
-perro		allqu		k	my.smi=/NCF/ && my.preform=/china/
-perro		allqu		d	my.smi=/NCM/ && !(my.preform=/china/)
-zorrillo	china_añas	k	my.smi=/NCF/
-zorrillo	añas		k	my.smi=/NCM/
-gato		china_misi	k	my.smi=/NCF/
-gato		misi		k	my.smi=/NCM/
-
-
-
 # other ambiguities
-
-#alto, suni (altitude), hatun -> height
-# leave for language model
-#alto	suni	k	-
-#alto	hatun	k	-
 
 #edad, mita (era), wata (años),TODO: edad de hielo/piedra/etc 
 # TODO: add edad_media to lexicon
@@ -120,21 +98,6 @@ falta	hucha	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/
 falta	pisiy	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[not(@slem="respeto")]}
 falta	panta	k	my.smi=/^NC/ && (child.smi=/^DP/ || xpath{descendant::NODE[starts-with(@smi,"PX")]}) && !(xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]})
 
-#feraz. Ruruq [-Anim], miraq.[+Anim]
-# leave for language model
-#feraz	ruru	k	-
-#feraz	mira	k	-
-
-
-#lengua: qallu (de la boca), simi (idioma)
-# leave for language model
-#lengua	qallu	 -			0.1
-#lengua	simi	 sibling.smi=/AQ.+/	0.2
-
-#llama: llama (animal), nina (fuego)
-# leave for language model
-#llama	llama	k	-
-#llama	nina	k	-
 
 # propietario, kaqniyuq, but with sp-de: propietario de algo-> algoyuq
 propietario	+Poss		k	xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"]}
@@ -148,66 +111,31 @@ dueño	+Poss		k		xpath{following-sibling::CHUNK[@type="grup-sp"]/NODE[@slem="de"
 rico		qhapaq		k	!(xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.slem=qué )
 rico		miski		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="estar"]} || child.slem=qué
 
-#titular de casa -> wasiyuq, titular
-#titular		++Poss			d	
-#titular		unspecified		k	
-
-
 
    ##########
    # VEBRS  #
    ##########
    
-#abochornar, calor-> rupha-, avergonzarse -> p'inqa-
-#abochornar	rupha	k	-
-#abochornar	p'inqa	k	-
-
-#acertar: watu- (adivinar), chayachi- (el blanco)
-# leave for language model
-#acertar		watu		k	-
-#acertar		chaya		k	-
-
 # acordar: yuyari- (recordar) or kamachinaku- (llegar a un acuerdo)
 # if with reflexive + de-obj: yuyari, with direct object: kamachinaku
 acordar		yuya	k	xpath{parent::CHUNK/CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@slem="de"]} || xpath{parent::CHUNK/CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]}
 acordar		kama	k	xpath{following-sibling::CHUNK[(@type="sn" or @type="coor-n") and (@si="cd" or @si="cd-a")]/NODE[starts-with(@smi,"N")]}
 
-# conducir pusa- (+Anim), apa- (-Anim)
-# leave for language model
-#conducir	pusa	k	-
-#conducir	apa	k	-
-
-# contar: yupa- (count), willa- (tell)
-# leave for language model
-#contar		yupa	k	-
-#contar		willa	k	-
 
 #deber deuda/algo -> manuka-, deber hacer algo -> obligative
 deber	manuka		k	!(xpath{parent::NODE[starts-with(@smi,"V")]})
 deber	+Obl		k	xpath{parent::NODE[starts-with(@smi,"V")]}
 
 # encontrar -> without reflexive: tari- (encontrar algo)
-# with se +locative: ka- (encontrarse en..), with con or nothing -> tinku (encontrarse con alguien)
-encontrar		tari	k	!(xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]})
-encontrar		ka	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]}
-encontrar		tinku	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te"]} && !(xpath{parent::CHUNK/child::CHUNK/NODE[@slem="en"]})
+# encontrarse con -> tinkuy, encontrarse en or nothing: can be both kay (location)/tinkuy (meeting)
+encontrar		tari	d	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]}
+encontrar		ka	d	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="con"]}
+encontrar		tinku	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="con"]}
 
 # fingir algo -> tukuy, fingir +inf/gerund -> -ykacha
 fingir		tuku		d	xpath{parent::NODE[starts-with(@smi, "VMG") or starts-with(@smi, "VMN") or starts-with(@smi, "VSG") or starts-with(@smi, "VSN") ]}
 fingir		++Intrup	d	!(xpath{parent::NODE[starts-with(@smi, "VMG") or starts-with(@smi, "VMN") or starts-with(@smi, "VSG") or starts-with(@smi, "VSN") ]})
 
-
-# hacer algo: ruray, hacerse +np (hacerse el tonto = fingir): tukuy, hacer+infinitive: -chi (causative)
-# note: hacer/hacerse will be disambiguated in morphSelection (transitivity=rflx vs. transitivity=trans)
-hacer		rura,tuku	d	xpath{parent::NODE[starts-with(@smi, "VMN") or starts-with(@smi, "VSN") ]}
-hacer		++Caus		d	!(xpath{parent::NODE[starts-with(@smi, "VMN") or starts-with(@smi, "VSN") ]})
-
-#hacer falta (hacer falta que-> separate entry in lexicon)
-# TODO: hacer_falta_que
-# le hace falta su mama -> watu-, hace falto trabajo -> pisi-, hace falta que hablemos -> na+kan
-hacer_falta	watu	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="cd" or @si="suj")]/NODE[@smi="NP00SP0" or @sem="[+Fem]" or @sem="[+Masc]"]}
-hacer_falta	pisi	k	xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC") and not(@sem="[+Fem]") and not(@sem="[+Masc]")]}
-hacer_falta	ka	k	!(xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and (@si="cd-a" or @si="ci" or @si="suj")]/NODE[@smi="NP00SP0"]} || xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[(@type="sn" or @type="coor-n") and @si="cd"]/NODE[starts-with(@smi,"NC")]})
 
 # incitar + noun -> raykuy , incitar a + inf: ++Caus
 incitar		rayku		d		xpath{descendant::NODE[@slem="a"]} && xpath{parent::NODE[starts-with(@smi, "VMN") or starts-with(@smi, "VSN")]}
@@ -228,71 +156,68 @@ seguir		qati		d	xpath{parent::NODE[starts-with(@smi, "VMG")]}
 seguir		++Perdur	d	!(xpath{parent::NODE[starts-with(@smi, "VMG")]})
 
 # volver: tukuy/kutiy -> default, ++Autotrs -> with adjective + se (volverse rojo: pukayay), volver a + noun -> kutiy, volver a +infinitive -> ++Rep
-volver		++Autotrs	d	!(xpath{ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")] } && xpath{ancestor::CHUNK[1]/child::CHUNK/NODE[@slem="se"]} )
+volver		++Autotrs	k	xpath{ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")] } && xpath{ancestor::CHUNK[1]/child::CHUNK/NODE[@slem="se"]}
 volver		++Rep		k	xpath{parent::NODE[@mi="infinitive"]/descendant::NODE[@slem="a"] }
-volver		kuti,tuku,++Autotrs		k	!(xpath{parent::NODE[@mi="infinitive"]/descendant::NODE[@slem="a"]} )
 
 
 #### HACER/PERMITIR; causative ######
 
-hacer		++Caus	k	xpath{parent::NODE[@mi="infinitive"]}
-hacer		rura	k	!(xpath{parent::NODE[@mi="infinitive"]})
+# hacer algo: ruray, hacerse +np (hacerse el tonto = fingir): tukuy, hacer+infinitive: -chi (causative)
+# note: hacer/hacerse will be disambiguated in morphSelection (transitivity=rflx vs. transitivity=trans)
+hacer		rura,tuku	d	xpath{parent::NODE[starts-with(@smi, "VMN") or starts-with(@smi, "VSN") ]}
+hacer		++Caus		d	!(xpath{parent::NODE[starts-with(@smi, "VMN") or starts-with(@smi, "VSN") ]})
 
 permitir		++Caus	k	xpath{parent::NODE[@mi="infinitive"]}
 permitir		huñi	k	!(xpath{parent::NODE[@mi="infinitive"]})
 
-##### DAR ######
-
-# dar general
-dar	qu	k	!(xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="miedo"]})
-
-# dar miedo
-dar	mancha	k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="miedo"]}
-
 ##### TENER ######
 
 # tener años
-tener	ka	d	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="año"]}
+tener	ka	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="año"]} || xpath{parent::NODE[@slem="año"]}
 
 # tener enemistad
-tener	awqa	k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="enemistad"]}
+tener	awqa	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="enemistad"]}
 
 # tener flojera, pereza
-tener	qilla	k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="flojera" or @slem="pereza"]}
+tener	qilla	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="flojera" or @slem="pereza"]}
 
 # tener hambre
-tener	mikhunaya	k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="hambre"]}
+tener	mikhunaya	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="hambre"]}
 
 # tener hipo
-tener	hik'i	k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="hipo"]}
+tener	hik'i	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="hipo"]}
 
 # tener miedo
-tener	mancha	k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="miedo"]}
+tener	mancha	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="miedo"]}
+
 
 # tener pareja
-tener	yanacha		k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="pareja"]}
+tener	yanacha		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="pareja"]}
 
 # tener pena
-tener	llaki	k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="pena"]}
+tener	llaki	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="pena"]}
 
 # tener sed
-tener	ununaya		k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="sed"]}
+tener	ununaya		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="sed"]}
 
 # tener sueño
-tener	puñunaya	k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="sueño"]}
+tener	puñunaya	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="sueño"]}
 
 # tener vergüenza
-tener	p'inqa		k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="vergüenza"]}
+tener	p'inqa		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="vergüenza"]}
 
 # tener compasión
-tener	khuya		k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="compasión" or @slem="piedad"]}
+tener	khuya		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="compasión" or @slem="piedad"]}
 
-# tener fragancia
-tener	q'apa		k	xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="fragancia" or @slem="olor"]}
+# tener fragancia,olor
+tener	q'apa		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="fragancia" or @slem="olor"]}
+
+# tener fé
+tener	iñi		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="fé"]}
+
 
 # tener: default, use tene-
-tener	unspecified	k	!(xpath{following-sibling::CHUNK[contains(@si,"cd")]/NODE[@slem="fragancia" or @slem="olor" or @slem="compasión" or @slem="piedad" or @slem="vergüenza" or @slem="sueño" or @slem="sed" or @slem="pena" or @slem="pareja" or @slem="miedo" or @slem="hipo" or @slem="hambre" or @slem="flojera" or @slem="pereza" or @slem="enemistad" or @slem="año"]})
-
+tener	unspecified	k	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="fragancia" or @slem="olor" or @slem="compasión" or @slem="piedad" or @slem="vergüenza" or @slem="sueño" or @slem="sed" or @slem="pena" or @slem="pareja" or @slem="miedo" or @slem="hipo" or @slem="hambre" or @slem="flojera" or @slem="pereza" or @slem="enemistad" or @slem="año" or @slem="fé"]})
 
 
   #####################
@@ -306,4 +231,4 @@ usted	qamkuna		k	my.sform=ustedes
 # personal pronoun 1.Pl -> if verb is 2 pers: must be 1.pl.excl
 # -> 2 > 1.pl cannot be inclusive
 # nosotros/as (nos is disambiguated in morphSelection.rules)
-nosotros	ñuqayku		k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/child::CHUNK[contains(@si,"cd")]/NODE[contains(@mi,"++2")]} 
+nosotros	ñuqayku		k	xpath{../ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/child::CHUNK[contains(@si,"cd")]/NODE[contains(@mi,"++2")]} 

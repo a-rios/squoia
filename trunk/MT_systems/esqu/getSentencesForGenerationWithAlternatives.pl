@@ -305,6 +305,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 					}
 		 				}
 		 			}
+		 			# if lemInCpred -> get lemma from Cpred (if there is one)
+		 			if($syn->hasAttribute('lemInCpred')){
+		 				my $cpred = $syn->findvalue('ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")]/@lem');
+		 				if($cpred ne ''){
+		 					$lemma = $cpred;
+		 				}
+		 			}
 		 			if($chunk->getAttribute('printAuxVerb') ne 'yes'){
 		 				$verbmi = &cleanVerbMi($verbmi,$chunk,$syn);
 		 			}
