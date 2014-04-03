@@ -45,6 +45,7 @@ while (<PREPFILE>) {
 	s/\s+$//;    # no trailing white
 	next if /^$/;	# skip if empty line
 	my ( $srcprep, $trgtprep, $condition, $isDefault ) = split( /\s*\t+\s*/, $_, 4 );
+	#print STDERR "src: $srcprep, target: $trgtprep, cond:$condition, default: $isDefault\n";
 
 
 	# read into hash, key is srcprep, for each key define a two-dimensional array of

@@ -294,13 +294,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		 				if(!$syn->hasAttribute('verbmi'))
 		 				{
 		 					# if this a participle without finite verb, use -sqa form
-		 					if($syn->getAttribute('smi') =~ /^VMP/ )
+		 					if($syn->getAttribute('smi') =~ /^VMP/ && !$syn->exists('ancestor-or-self::NODE[1]/descendant::NODE[starts-with(@smi,"V")]') )
 		 					{ 
 		 						$verbmi="VRoot+Perf";
 		 					}
 		 					# if this a gerund without finite verb, use -spa form
-		 					elsif($syn->getAttribute('smi') =~ /^VMG/)
-		 					{
+		 					elsif($syn->getAttribute('smi') =~ /^VMG/ && !$syn->exists('ancestor-or-self::NODE[1]/descendant::NODE[starts-with(@smi,"V")]') )
+		 					{ 
 		 						$verbmi="VRoot+SS";
 		 					}
 		 				}
@@ -598,6 +598,10 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			my $date = @{$chunk->findnodes('child::NODE[@smi="W"]')}[0];
  			&printNode($date,$chunk);
  			print STDOUT "\n";
+ 			# need to print p'unchaw?
+ 			if($chunk->hasAttribute('postform')){
+ 				print STDOUT $chunk->getAttribute('postform').":\n";
+ 			}
  		}
  		# determiner (demonstrative, indefinite, interrogative or exclamative)
  		# TODO: print huk or not? (atm, not) huk is not really an indefinite article like Spanish 'un/a' (huk is atm only promoted to chunk before 'día')

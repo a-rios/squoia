@@ -26,29 +26,29 @@ afuera_de	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK
 
 a_fin_de	case=+Ben
 
-al_lado_de	postpos=kuska	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]}	- # al lado de una persona
-al_lado_de	postpos=kinraynin,nouncase=+Gen	!(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]})	- # al lado de otra cosa
+al_lado_de	postpos=kuska	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]}			- 	# al lado de una persona
+al_lado_de	postpos=kinraynin,nouncase=+Gen	!(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]})	-	# al lado de otra cosa
 
-a_la_derecha_de		postpos=pañan,nouncase=+Gen	-
-a_la_izquierda_de	postpos=lluq'in,nouncase=+Gen	-
+a_la_derecha_de		postpos=pañan,nouncase=+Gen
+a_la_izquierda_de	postpos=lluq'in,nouncase=+Gen
 
 alrededor_de	postpos=muyun,nouncase=+Gen	-
 
-ante		spform=ñawk'iypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-ante		spform=ñawk'iykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-ante		spform=ñawk'inchikpi,ñawk'iykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-ante		spform=ñawk'iykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-ante		spform=ñawk'inkupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
-ante		postpos=ñawk'in,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}
+ante		spform=ñawk'iypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+ante		spform=ñawk'iykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+ante		spform=ñawk'inchikpi,ñawk'iykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+ante		spform=ñawk'iykichikpi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+ante		spform=ñawk'inkupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
+ante		postpos=ñawk'in,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
 antes_de		prepos=manaraq			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb"]/NODE[@mi="infinitive"]}
-a_pesar_de 		postpos=hinata			-
+a_pesar_de 		postpos=hinata
 
-arriba_de	spform=hanayniypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-arriba_de	spform=hanaqniykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-arriba_de	spform=hanaqninchikpi,syn=hanaqniykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-arriba_de	spform=hanaqniykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-arriba_de	spform=hanaqninkupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
+arriba_de	spform=hanayniypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+arriba_de	spform=hanaqniykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+arriba_de	spform=hanaqninchikpi,syn=hanaqniykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+arriba_de	spform=hanaqniykichikpi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+arriba_de	spform=hanaqninkupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
 arriba_de	postpos=hanaqnin,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
 bajo		postpos=uran,nouncase=+Gen		-
@@ -59,132 +59,124 @@ como		postpos=hina,nouncase=+Dat	xpath{ancestor::CHUNK[@type="grup-verb" or @typ
 con		case=+Instr
 con_fin_de	case=+Ben
 con_objeto_de	case=+Ben
-contra		case=+Abl	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="proteger" or @slem="defender" or @slem="velar" or @slem="amparar" or @slem="cubrir"]}	-
-contra		case=+Dat	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="apoyar" or @slem="chocar" or @slem="apretar" or @slem="estrellar" or @sem="[+Mov]"]}				-
+contra		case=+Abl	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="proteger" or @slem="defender" or @slem="velar" or @slem="amparar" or @slem="cubrir"]}		-
+contra		case=+Dat	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="apoyar" or @slem="chocar" or @slem="apretar" or @slem="estrellar" or @sem="[+Mov]"]}		-
 contra		postpos=contran,nouncase=+Gen	-	+
-en_contra_de	postpos=contran,nouncase=+Gen	-
-cabe 
+en_contra_de	postpos=contran,nouncase=+Gen
+
+#cabe 
+
 # TODO: Mengenangaben: una tasa DE café?
-de	case=+Gen		chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or @sem="[+Mat]" or @smi="Z"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
-de 	case=+Abl		xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(@slem="acordar" or @slem="ejercer" or @slem="depender") or @slem="resarcir"]} || xpath{parent::CHUNK/parent::CHUNK[@type="sn"]/NODE[@smi="Z"]} 	+		# default, also with numbers: tres de las casas se han vendido: kimsa wasikunamanta rantikun
-de	case=+Acc		xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		- # acordarse de
-de	case=+Loc		xpath{parent::CHUNK/parent::CHUNK[@type="date"]} || xpath{descendant::CHUNK[@type="date"]} 	- # el 14 de diciembre -> 14 diciembre/Qhapaq ramymi killapi, also: 'del año 2003' -> 2003 wataPI
-de	func=attributive	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]" or @smi="NP00G00"]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
+de	case=+Gen			chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or @sem="[+Mat]" or @smi="Z"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
+de 	case=+Abl			xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(@slem="acordar" or @slem="ejercer" or @slem="depender") or @slem="resarcir"]} || xpath{parent::CHUNK/parent::CHUNK[@type="sn"]/NODE[@smi="Z"]} 	+		# default, also with numbers: tres de las casas se han vendido: kimsa wasikunamanta rantikun
+de	case=+Acc			xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		- # acordarse de
+de	case=+Loc			xpath{parent::CHUNK/parent::CHUNK[@type="date"]} || xpath{descendant::CHUNK[@type="date"]} 	- # el 14 de diciembre -> 14 diciembre/Qhapaq ramymi killapi, also: 'del año 2003' -> 2003 wataPI
+de	func=attributive		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]" or @smi="NP00G00"]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
 de	postpos=hina,nouncase=+Dat	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"]		-
 de	postpos=chayqa,nouncase=+Abl	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="depender"]		-		 # eso depende de ti -> qammantam chayqa (kan).
 
-del	case=+Gen		chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or @sem="[+Mat]"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
-del 	case=+Abl		chunkparent.type=grup-verb 	+
-del	case=+Loc		xpath{parent::CHUNK/parent::CHUNK[@type="date"]} || xpath{descendant::CHUNK[@type="date"]} 	- # el 14 de diciembre -> 14 diciembre/Qhapaq ramymi killapi, also: 'del año 2003' -> 2003 wataPI
-del	func=attributive	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]" or @smi="NP00G00" ]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
-
-
-debajo_de	spform=uraypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-debajo_de	spform=uraykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-debajo_de	spform=uranchikpi,syn=uraykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-debajo_de	spform=uraykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-debajo_de	spform=urankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
+debajo_de	spform=uraypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}						-
+debajo_de	spform=uraykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}						-
+debajo_de	spform=uranchikpi,syn=uraykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}		-
+debajo_de	spform=uraykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}			-
+debajo_de	spform=urankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}						-
 debajo_de	postpos=uran,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
-delante_de	spform=ñawpaypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-delante_de	spform=ñawpaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-delante_de	spform=ñawpanchikpi,syn=ñawpaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-delante_de	spform=ñawpaykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-delante_de	spform=ñawpankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
+delante_de	spform=ñawpaypi				xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+delante_de	spform=ñawpaykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+delante_de	spform=ñawpanchikpi,syn=ñawpaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+delante_de	spform=ñawpaykichikpi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+delante_de	spform=ñawpankupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
 delante_de	postpos=ñawpan,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
-dentro_de	spform=ukhuypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-dentro_de	spform=ukhuykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-dentro_de	spform=ukhunchikpi,syn=ukhuykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-dentro_de	spform=ukhuykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-dentro_de	spform=ukhunkupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
+dentro_de	spform=ukhuypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}						-
+dentro_de	spform=ukhuykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}					-
+dentro_de	spform=ukhunchikpi,syn=ukhuykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+dentro_de	spform=ukhuykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}			-
+dentro_de	spform=ukhunkupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}					-
 dentro_de	postpos=ukhun,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
-detrás_de	spform=qhipaypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-detrás_de	spform=qhipaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-detrás_de	spform=qhipanchikpi,syn=qhipaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-detrás_de	spform=qhipaykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-detrás_de	spform=qhipankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
-detrás_de	postpos=qhipan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
+detrás_de	spform=qhipaypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}						-
+detrás_de	spform=qhipaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}					-
+detrás_de	spform=qhipanchikpi,syn=qhipaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+detrás_de	spform=qhipaykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}			-
+detrás_de	spform=qhipankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}					-
+detrás_de	postpos=qhipan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}		+
 
 desde		case=+Abl
 #después_de 	postpos=hawa TODO, really hawa? qhipa seems better (?)
 después_de 	postpos=qhipa
 desque		case=+Abl
 durante		func=deleteNode
-en		case=+Loc	-	+
+en		case=+Loc		-	+
 en		case=+Acc		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="confiar" or @slem="comerciar"]}	-
 en		case=+Dat		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="poner" or @slem="introducir" or @slem="meter" or @slem="insertar" or @slem="penetrar" or @slem="entrar" or @slem="enclavar" or @slem="colocar" or @slem="acoplar" or @slem="depositar" or @slem="convertir"]}	-
 
 en_virtud_de	case=+Instr
-encima		postpos=hanan
+encima		postpos=hanan		# adverb?!?
 
-encima_de	spform=hanaypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-encima_de	spform=hanaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-encima_de	spform=hananchikpi,hanaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-encima_de	spform=hanaykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-encima_de	spform=hanankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
-encima_de	postpos=hanan,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
+encima_de	spform=hanaypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+encima_de	spform=hanaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+encima_de	spform=hananchikpi,hanaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+encima_de	spform=hanaykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+encima_de	spform=hanankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
+encima_de	postpos=hanan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
-en_cuanto_a	case=+Top		-
+en_cuanto_a	case=+Top
 
-en_medio_de	postpos=chawpin,nouncase=+Gen	-
+en_medio_de	postpos=chawpin,nouncase=+Gen
 
-entre		case=+Intsoc		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Masc]" or @sem="[+Fem]" or @sem="[+Hum]"]}
+entre		case=+Intsoc		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Masc]" or @sem="[+Fem]" or @sem="[+Hum]"]}	-
 entre		postpos=chawpi		-	+
-excepto		lem=mana,func=neg	-
 
-frente_a	spform=chimpaypi				xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-frente_a	spform=chimpaykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-frente_a	spform=chimpanchikpi,syn=chimpaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-frente_a	spform=chimpaykichikpi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-frente_a	spform=chimpankupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
+excepto		prepos=mana,func=neg
+
+frente_a	spform=chimpaypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+frente_a	spform=chimpaykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+frente_a	spform=chimpanchikpi,syn=chimpaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+frente_a	spform=chimpaykichikpi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+frente_a	spform=chimpankupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
 frente_a	postpos=chimpan,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 al_frente_de	postpos=chimpan,nouncase=+Gen
 enfrente_de	postpos=chimpan,nouncase=+Gen
 en_frente_de	postpos=chimpan,nouncase=+Gen
 
-fuera_de	spform=hawaypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-fuera_de	spform=hawaykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-fuera_de	spform=hawanchikpi,hawaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-fuera_de	spform=hawaykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-fuera_de	spform=hawankupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
+fuera_de	spform=hawaypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+fuera_de	spform=hawaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+fuera_de	spform=hawanchikpi,hawaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+fuera_de	spform=hawaykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+fuera_de	spform=hawankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
 fuera_de	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
 hacia		case=+Dat	-	+
 hasta		case=+Term	-	+
 
-lejos_de	spform=karuypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-lejos_de	spform=karuykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-lejos_de	spform=karunchikpi,hawaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-lejos_de	spform=karuykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-lejos_de	spform=karunkupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
+lejos_de	spform=karuypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+lejos_de	spform=karuykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+lejos_de	spform=karunchikpi,hawaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+lejos_de	spform=karuykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+lejos_de	spform=karunkupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
 lejos_de	postpos=karun,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
-junto_a		spform=qayllaypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-junto_a		spform=qayllaykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-junto_a		spform=qayllanchikpi,hawaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-junto_a		spform=qayllaykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-junto_a		spform=qayllankupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
+junto_a		spform=qayllaypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+junto_a		spform=qayllaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+junto_a		spform=qayllanchikpi,hawaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+junto_a		spform=qayllaykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+junto_a		spform=qayllankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
 junto_a		postpos=qayllan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
 mediante	case=+Instr	-
 para		case=+Ben	-
-para		case=+Dat # para allá
+#para		case=+Dat # para allá TODO
 
 perteneciente_a		case=+Gen
-perteneciente_al	case=+Gen
 perteneciencia_a	case=+Gen,postpos=kaq
-perteneciencia_al	case=+Gen,postpos=kaq
 
-por		case=+Proloc	xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}	-
-por		case=+Kaus	-
-por		case=+Instr	-
+por		case=+Proloc	xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}	-  # TODO: maybe exception: venir/ir por.. obligantive?
+por		case=+Kaus	-	+ # which one should be default?? rules for +Inst/+Kaus??
+por		case=+Instr	-	-  # TODO causee in causative constructions
 por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}	-
-por_el_motivo_de		case=+Kaus	-
-por_el_motivo_del		case=+Kaus	-
-
-sino		lem=sinu	-
+por_el_motivo_de		case=+Kaus
 
 # sin hacer ->mana ruwaspa, sin dientes -> kiruNNAQ, sin Pedro -> mana PedroWAN
 # default:  mana -wan (?)
@@ -197,19 +189,18 @@ sin		prepos=mana,nouncase=+Instr	xpath{parent::CHUNK/CHUNK[@type="sn" or @type="
 
 # sobre -> locativo: el libro está sobre la mesa -> hawa
 # sobre -> tema: el libro sobre la selva, hablar sobre algo -> Ablativo
-sobre	spform=hawaypi			xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
-sobre	spform=hawaykipi			xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
-sobre	spform=hawanchikpi,hawaykupi	xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
-sobre	spform=hawaykichikpi		xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
-sobre	spform=hawankupi			xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
-sobre	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	
+sobre	spform=hawaypi			xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}					-
+sobre	spform=hawaykipi		xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}					-
+sobre	spform=hawanchikpi,hawaykupi	xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	-
+sobre	spform=hawaykichikpi		xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}	-
+sobre	spform=hawankupi		xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}					-
+sobre	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]} && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]}		+
+sobre	case=+Abl	xpath{parent::CHUNK/parent::CHUNK/NODE[@slem="hablar" or @slem="conferir" or @slem="discutir"]})	- #TODO
 
-sobre	case=+Abl	!(xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Mov]" or @slem="estar"]})	+
-
-tras	spform=qhipaypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
-tras	spform=qhipaykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}
-tras	spform=qhipanchikpi,syn=qhipaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}
-tras	spform=qhipaykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}
-tras	spform=qhipankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
-tras	postpos=qhipan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
+tras	spform=qhipaypi				xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
+tras	spform=qhipaykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
+tras	spform=qhipanchikpi,syn=qhipaykupi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP1MP") or starts-with(@smi, "PP1FP") ]}	-
+tras	spform=qhipaykichikpi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20P") or starts-with(@smi, "PP2FP")]}	-
+tras	spform=qhipankupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
+tras	postpos=qhipan,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 

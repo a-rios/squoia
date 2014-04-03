@@ -92,3 +92,9 @@ my.si=/suj/ 		case				xpath{child::NODE[@subjToObj="2"]} && my.type=/grup-verb|c
 my.si=/cd/ 		case				 my.type=/grup-verb|coor-v/ && my.objCase=/.+/ 		objCase		parent		2to1		overwrite
 my.si=/ci/ 		case				 my.type=/grup-verb|coor-v/ && my.iobjCase=/.+/ 	iobjCase	parent		2to1		overwrite
 
+# hay + cd -> no accusative (hay leña -> llamt'a kan, no *llamt'ata kan)
+my.si=/cd/    	deleteMorph			child.slem=haber && child.smi=/3S/  && !(xpath{child::NODE[@slem="haber"]/descendant::NODE[starts-with(@smi,"V") or @slem="que"]})		"+Acc"			parent		2to1	concat					
+
+# in sentence with 3rd sg present copula -> kan is set to be deleted, in this case, insert -mi/si in cpred/atr
+my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka		"+DirE"		parent		2to1		concat
+ 
