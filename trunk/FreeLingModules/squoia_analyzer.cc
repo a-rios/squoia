@@ -471,8 +471,16 @@ int main (int argc, char **argv) {
                 OutputTokens(av);
               }
               else {
+		/*bool CRFformat=false;
+		if (cfg->OutputFormat == CRFMORF) {
+		    CRFformat=true;
+		    cfg->OutputFormat=MORFO;
+		}*/
                 //  splitter (and maybe more) requested
                 anlz.AnalyzeText(text,ls);
+		/*if (CRFformat) {
+		    cfg->OutputFormat=CRFMORF;
+		}*/
                 outputrequired = true;
               }
               break;

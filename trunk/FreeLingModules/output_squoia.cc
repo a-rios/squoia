@@ -181,6 +181,97 @@ list<analysis> output::printRetokenizable(wostream &sout, const list<word> &rtk,
   return s;
 }  
 
+//---------------------------------------------
+// print the morfo-analysis in crf format
+//---------------------------------------------
+/* Spalten:
+0:lowercased word
+1:case(lc/uc),
+2-3: lem/tag1
+4-5: lemma/tag2
+6-7: lemma/tag3
+8-9:lemma/tag4
+10-11:lemma/tag5
+12-13:lemma/tag6
+14-15:lemma/tag7
+16-17:lemma/tag8
+18: disambiguate yes/no
+19: class
+*/
+void output::PrintWordCRFMorf (wostream &sout, const word &w) {
+  const wchar_t* sep = L"\t";
+  const wchar_t* dummy = L"ZZZ";
+  wstring tags = L"";
+
+  sout << w.get_lc_form(); // lowercased word form
+  if (std::iswupper(w.get_form().c_str()[0])) {
+    sout << sep  << L"uc";
+  }
+  else {
+    sout << sep  << L"lc";
+  }
+
+  word::const_iterator ait;
+
+  word::const_iterator a_beg,a_end;
+  a_beg = w.selected_begin();
+  a_end = w.selected_end();
+
+  //int lem_i = 0;
+  //int tag_i = 0;
+  //const int MAXLEM = 5;
+  int i = 0;
+  const int MAXTAG = 8;
+  for (ait = a_beg; ait != a_end; ait++) {
+    if (ait->is_retokenizable ()) {
+      sout << L"(is retokenizable)";
+      list <word> rtk = ait->get_retokenizable ();
+      list <analysis> la=printRetokenizable(sout, rtk, rtk.begin(), L"", L"");
+      for (list<analysis>::iterator x=la.begin(); x!=la.end(); x++) {
+        sout << L" " << x->get_lemma() << L" " << x->get_tag();
+        sout << L" " << ait->get_prob()/la.size();
+      }
+    }
+    else {
+      //sout << L"not retokenizable";
+      /*bool newlemma=true;
+      word::const_iterator lemit;
+      for (lemit = a_beg; lemit != ait; lemit++) {
+	if (lemit->get_lemma().compare(ait->get_lemma()) == 0) { // same lemmas
+	  newlemma=false;
+	  break;
+	}
+      }
+      if (newlemma) {
+	sout << sep << ait->get_lemma();
+        lem_i++;
+      }
+      //tags += sep + ait->get_tag();*/
+      sout << sep << ait->get_lemma() << sep << ait->get_tag();
+    }
+    //tag_i++;
+    i++;
+  }
+/*  while (lem_i < MAXLEM) {
+    sout << sep << dummy;
+    tags += sep; tags += dummy;
+    lem_i++;
+  }
+  while (tag_i < MAXTAG) {
+    tags += sep; tags += dummy;
+    tag_i++;
+  }*/
+  while (i < MAXTAG) {
+    sout << sep << dummy << sep << dummy;
+    i++;
+  }
+  //sout << tags;
+  sout << sep << bool(w.get_n_selected() > 1);
+  if (w.get_n_selected() == 1 and a_beg->get_tag().compare(L"Z") != 0) {
+    sout << sep << a_beg->get_tag();
+  }
+  sout << endl;
+}
 
 //---------------------------------------------
 // print analysis for a word
@@ -568,7 +659,7 @@ void output::PrintResults (wostream &sout, list<sentence > &ls, analyzer &anlz, 
   list<sentence>::iterator is;
     
   for (is = ls.begin (); is != ls.end (); is++) {
-    if (cfg->OutputFormat >= SHALLOW) {
+    if (cfg->OutputFormat >= SHALLOW) { // and cfg->OutputFormat < CRFMORF) {
       /// obtain parse tree and draw it at will
       switch (cfg->OutputFormat) {
 
@@ -592,6 +683,14 @@ void output::PrintResults (wostream &sout, list<sentence > &ls, analyzer &anlz, 
         }
         break;
    
+        case CRFMORF: {
+          for (w = is->begin (); w != is->end (); w++) {
+	    PrintWordCRFMorf(sout,*w);
+          }
+	}
+
+        break;
+
         default:   // should never happen
         break;
       }
@@ -613,6 +712,9 @@ void output::PrintResults (wostream &sout, list<sentence > &ls, analyzer &anlz, 
             PrintWord(sout,*w,true,true);  
           }
         }
+//	else {	// cfg->OutputFormat == CRFMORF
+//	    PrintWordCRFMorf(sout,*w);
+//	}
 
         sout << endl;   
       }

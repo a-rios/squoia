@@ -50,6 +50,7 @@ class output {
    void PrintTree (std::wostream &sout, parse_tree::const_iterator n, int depth, const document &doc=document());
    void PrintDepTree (std::wostream &sout, dep_tree::const_iterator n, int depth, const document &doc=document());
    void PrintWord (std::wostream &sout, const word &w, bool only_sel=true, bool probs=true);
+   void PrintWordCRFMorf (std::wostream &sout, const word &w);
    void PrintResults (std::wostream &sout, std::list<sentence > &ls,
                       analyzer &anlz, const document &doc=document());
 };
