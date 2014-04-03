@@ -15,17 +15,13 @@
 
 
 # how treat ambiguous cases (cd-a, cd/ci)? better generate both..?
-a	case=+Acc	chunkparent.si=cd || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(contains(@sem,"ditrans"))]}) &&  !(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="embarcar"]})	- 			# veo A Juan, JuanTA rikuni
+a	case=+Acc	(chunkparent.si=cd || (chunkparent.si=creg && xpath{following-sibling::CHUNK/NODE[@smi="VMN0000" or @smi="VSN0000"]}) || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(contains(@sem,"ditrans"))]}) &&  !(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="embarcar"]}) ) && !( xpath{../child::CHUNK/NODE[@smi="W"]} || xpath{../child::CHUNK/NODE[@smi="Z"]/NODE[@sform="las"]} )	- 			# veo A Juan, JuanTA rikuni
 a	case=+Dat	chunkparent.si=ci || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"ditrans")]}) || xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="embarcar" or @slem="derivar"]}		+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
-a	case=+Loc	xpath{child::CHUNK[@type="sn"]/NODE[@smi="W"]}	-	# hora: a las 4 de la tarde -> -pi
-a	adpos=none 	parent.smi=VMN0000			# voy a +infinitive
+a	case=+Loc	xpath{../child::CHUNK[@type="sn"]/NODE[@smi="W"]} || xpath{../child::CHUNK/NODE[@smi="Z"]/NODE[@sform="las"]}					-	# hora: a las 4 de la tarde -> -pi
 a	case=+Gen	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="pertenecer"]		-	# esta casa pertenece a mi padre -> genitive
+a	adpos=none 	(rsibling.type=date && xpath{../descendant::CHUNK[NODE[@slem="de"]]/CHUNK/NODE[@slem="tarde"]})			-	# 
 
-al	case=+Acc	(chunkparent.si=cd || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(contains(@sem,"ditrans"))]}) ) &&  !(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="embarcar"]})	- 			# veo A Juan, JuanTA rikuni
-al	case=+Dat	chunkparent.si=ci || (chunkparent.si=cc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"ditrans")]}) || xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="embarcar"]}		+ 	# he ido a casa, wasiman rini (sp-obj), le he dado el libro a Jon, Jonman librota quni (iobj)
-al	case=+Gen	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="pertenecer"]		-	# esta casa pertenece al padre -> genitive
-
-acerca_de	func=topic	-	+ # TODO: really topic? 
+acerca_de	func=topic,case=+Top	-	+ # TODO: really topic? 
 afuera_de	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
 a_fin_de	case=+Ben
@@ -45,9 +41,8 @@ ante		spform=ñawk'iykichikpi	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="
 ante		spform=ñawk'inkupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}
 ante		postpos=ñawk'in,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}
 
-antes_de	prepos=manaraq			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb"]/NODE[@mi="infinitive"]}
-a_pesar_de 	postpos=hinata	-
-a_pesar_de_todo 	spform=chay_hinata	-
+antes_de		prepos=manaraq			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb"]/NODE[@mi="infinitive"]}
+a_pesar_de 		postpos=hinata			-
 
 arriba_de	spform=hanayniypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}
 arriba_de	spform=hanaqniykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}

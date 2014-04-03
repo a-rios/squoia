@@ -15,7 +15,7 @@ my.type=/coor-v|grup-verb/ && !(xpath{child::NODE/descendant::NODE[@smi="CS"]})	
 
 ### nominal chunks ####
 
-my.type=/sn|coor-n/			rel:my.verbform=/^rel/ && !(my.IHRC=yes), IHRC:my.IHRC=yes , sujIHRC:my.sujIHRC=yes , adj:(my.func=attributive || child.smi=/^A/), pp:(my.type=/grup-sp|coor-sp/ && !(child.postpos=/.+/) && !(child.spform=/.+/)), det:my.type=det, sn:my.type=sn && !(my.sujIHRC=yes), year:my.type=date, postPunc:my.type=F-term && child.smi=/FP|FAT|FET|FCT|FIT|FLT|FRC/, prePunc:child.smi=/FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA/ 		 prePunc .pp .year .det .rel .sujIHRC .adj +head .sn .IHRC .postPunc
+my.type=/sn|coor-n/		rel:my.verbform=/^rel/ && !(my.IHRC=yes), IHRC:my.IHRC=yes , sujIHRC:my.sujIHRC=yes , adj:(my.func=attributive || child.smi=/^A/), pp:(my.type=/grup-sp|coor-sp/ && !(child.postpos=/.+/) && !(child.spform=/.+/)), det:my.type=det, sn:(my.type=sn && !my.si=z) && !(my.sujIHRC=yes), year:my.type=date, number:my.si=z ,postPunc:my.type=F-term && child.smi=/FP|FAT|FET|FCT|FIT|FLT|FRC/, prePunc:child.smi=/FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA/ 		 prePunc .pp .year .det .number .rel .sujIHRC .adj +head .sn .IHRC .postPunc
 
 
 

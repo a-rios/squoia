@@ -144,17 +144,22 @@ my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(m
 # llegar/empezar/poner(se)/comenzar a +Inf:
 # lem = lem of infinitive, verbmi = mi of finite verb +Inch
 # TODO: ponerse a +Inf -> Inch
+  # if analyzed in one verb chunk:
 my.slem=/poner|llegar|comenzar|empezar/ && my.smi=/1|2|3/ && parent.mi=infinitive && my.verbmi=/.+/ 				"yes"		my.type=/grup-verb|coor-v/			finiteMiInAux			up	overwrite
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}	"+Inch"		my.type=/grup-verb|coor-v/			addverbmi			up	concat
 my.smi=/1|2|3/ && my.slem=/poner|empezar|llegar|comenzar|ir/ ) && xpath{ancestor::NODE[@mi="infinitive"]} ) )		"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	overwrite
+
+  # if analyzed in 2 verb chunks (finite verb main, infinitive as creg/cd below -> add +Acc to infinite, too difficult for complete conversion
+  # -> instead of 'empieza a caminar' -> 'puririn' => 'puriyta qallarin'
+  # ->  add +Acc to morphology (chunkmi)
+xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && (parent.si=cd  || xpath{../parent::CHUNK[(@type="grup-sp" or @type="coor-sp") and @si="creg"]/NODE[@slem="a"]} )			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat
+
 
 # if Infinitive+second verb as a "++" lemma and moveToHead_mi -> insert moveToHead_mi in addverbmi
 # in this case: second verb will not be printed, first verb needs mi from second verb for generation!
 my.smi=/^V/ && my.moveToHead_mi=/.+/	moveToHead_mi	my.type=/grup-verb|coor-v/	addverbmi	up	concat
 my.mi=infinitive && xpath{child::NODE[starts-with(@lem,"++")]}		"yes"	my.type=/grup-verb|coor-v/	finiteMiInAux		up		overwrite
 
-# if infinitive in own chunk, add +Inf and +Acc to morphology
-xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]})  && parent.si=cd 			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat
 
 # if infinitive or participle with VA (aux): get finite mi from aux 
 # gerunds: see below
@@ -330,6 +335,9 @@ my.slem=sed && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coo
 my.slem=sueño && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="puñunaya" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=fé && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="iñi" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
 
+# tener .. años: set case of wata -> +Poss, delete +Pl -> tengo 4 años -> 4 watayuq kani, no *4 watakunata kani
+my.slem=año && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="ka" and @slem="tener"]}			"+Pl,+Acc"		my.si=/cd/	deleteMorph		up	concat
+xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="ka" and @slem="tener"]} && my.slem=año			"+Poss"	my.si=/cd/	case			up	overwrite
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
