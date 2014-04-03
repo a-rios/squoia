@@ -60,6 +60,7 @@ namespace po = boost::program_options;
 #define PARSED   8
 #define DEP      9
 #define DESRTAG 10
+#define CRFMORF 11
 
 // codes for tagging algorithms
 #define HMM   0
@@ -207,7 +208,7 @@ class config {
       ("flush","Consider each newline as a sentence end")
       ("noflush","Do not consider each newline as a sentence end")
       ("inpf",po::value<std::string>(&InputF),"Input format (plain,token,splitted,morfo,sense,tagged)")
-      ("outf",po::value<std::string>(&OutputF),"Output format (ident,token,splitted,morfo,tagged,desrtag,shallow,parsed,dep)")
+      ("outf",po::value<std::string>(&OutputF),"Output format (ident,token,splitted,morfo,crfmorf,tagged,desrtag,shallow,parsed,dep)")
       ("train","Produce output format suitable for train scripts")
       ("fidn,I",po::value<std::string>(&identFile),"Language identifier file")
       ("ftok",po::value<std::string>(&tokFile),"Tokenizer rules file")
@@ -284,7 +285,7 @@ class config {
       ("ServerQueueSize",po::value<int>(&QueueSize)->default_value(DEFAULT_QUEUE_SIZE),"Maximum number of waiting requests in server mode")
       ("AlwaysFlush",po::value<bool>(&AlwaysFlush)->default_value(false),"Consider each newline as a sentence end")
       ("InputFormat",po::value<std::string>(&InputF)->default_value("plain"),"Input format (plain,token,splitted,morfo,sense,tagged)")
-      ("OutputFormat",po::value<std::string>(&OutputF)->default_value("tagged"),"Output format (token,splitted,morfo,tagged,desrtag,shallow,parsed,dep)")
+      ("OutputFormat",po::value<std::string>(&OutputF)->default_value("tagged"),"Output format (token,splitted,morfo,crfmorf,tagged,desrtag,shallow,parsed,dep)")
       ("LangIdentFile",po::value<std::string>(&identFile),"Language identifier file")
       ("TokenizerFile",po::value<std::string>(&tokFile),"Tokenizer rules file")
       ("TagsetFile",po::value<std::string>(&tagsetFile),"Tagset description file")
@@ -490,6 +491,7 @@ class config {
     else if (OutputF=="token") OutputFormat = TOKEN;
     else if (OutputF=="splitted") OutputFormat = SPLITTED;
     else if (OutputF=="morfo") OutputFormat = MORFO;
+    else if (OutputF=="crfmorf") OutputFormat = CRFMORF;
     else if (OutputF=="tagged") OutputFormat = TAGGED;
     else if (OutputF=="desrtag") OutputFormat = DESRTAG;
     else if (OutputF=="shallow") OutputFormat = SHALLOW;

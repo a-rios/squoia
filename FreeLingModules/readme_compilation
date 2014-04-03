@@ -19,12 +19,16 @@ cp config_squoia/config.h $FREELING/include/
 # compile the output part (output_squoia):
 g++ -c -o output_squoia.o output_squoia.cc -I$FREELING/include/
 
+# compile the analyzer part (analyzer_squoia):
+g++ -c -o analyzer_squoia.o analyzer_squoia.cc -I$FREELING/include/
+
 # compile the analyzer server (squoia_analyzer):
 g++ -c -o squoia_analyzer.o squoia_analyzer.cc -I$FREELING/include/
 
 
 # link the different parts to create the server executable:
-/bin/bash $FREELING_SRC/libtool --tag=CXX --mode=link g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o $FREELING_SRC/src/main/analyzer.o output_squoia.o -L$FREELING/lib -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
+#/bin/bash $FREELING_SRC/libtool --tag=CXX --mode=link g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o $FREELING_SRC/src/main/analyzer.o output_squoia.o -L$FREELING/lib -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
+g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o analyzer_squoia.o output_squoia.o -L/opt/matxin/local/lib -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
 
 # install program
 cp squoia_analyzer $FREELING/bin/
