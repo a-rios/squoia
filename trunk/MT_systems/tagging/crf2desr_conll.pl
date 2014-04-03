@@ -69,6 +69,12 @@ while(<>){
 	    	# get lemma(s) associated with tag (to the left of correct tag)
 	    	my $tag = @rows[-1];
 	    	chomp($tag);
+	    	if($tag =~ /^NP/){
+	    		# prelabeled & classified by FL -> take second last as tag if there is one!
+	    		if(@rows[-2] =~ /^NP/){
+	    				$tag = @rows[-2];
+	    		}
+	    	}
 	    	my @indexes = grep { $rows[$_] eq $tag } 0..18;
 	    	# if exactly one lemma associated with this tag, print it (at index-1 in rows)
 	    	if(scalar(@indexes) == 1){
@@ -128,7 +134,13 @@ while(<>){
 	    			}
 	    			# if proper name/common noun mismatch
 	    			if($tag =~ /^NP/){
-	    				@indexes = grep { $rows[$_] =~ 'NC' } 0..18;
+	    				# prelabeled & classified by FL -> take second last as tag if there is one!
+	    				if(@rows[-2] =~ /^NP/){
+	    					$tag = @rows[-2];
+	    				}
+	    				else{
+	    					@indexes = grep { $rows[$_] =~ 'NC' } 0..18;
+	    				}
 	    			}
 	    			elsif($tag =~ /^NC/){
 	    				@indexes = grep { $rows[$_] =~ /^NC/ } 0..18;
@@ -243,6 +255,7 @@ while(<>){
 			    if($type eq "p")
 			    {
 			       $semclass = substr($tag,4,2);
+			      # print STDERR "np class: $semclass $tag\n";
 			       $features = "gen=".$gen."|num=".$num."|np=".$semclass;  
 			    }
 			    else
