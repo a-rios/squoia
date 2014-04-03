@@ -134,14 +134,19 @@ while (<>)
 	    $lem = lc($lem);
      }
      # often: 'se fue' -> fue tagged as 'ser', VSIS3S0 -> change to VMIS3S0, set lemma to 'ir'
-     if($eaglesTag eq 'VSIS3S0' && $lem eq 'ser'){
+     if($eaglesTag =~ /VSIS[123][SP]0/ && $lem eq 'ser'){
      	my $precedingWord = $docHash{$scount.":".($id-1)};
      	#print STDERR "preceding of fue: ".$precedingWord->getAttribute('lem')."\n";
      	if($precedingWord && $precedingWord->getAttribute('lem') eq 'se'){
-     		$eaglesTag = 'VMIS3S0';
+     		$eaglesTag =~ s/^VS/VM/ ;
+     		#print STDERR "new tag: $eaglesTag\n";
      		$lem = 'ir';
      	}
      }
+     # freeling error for reirse, two lemmas, reír/reir -> change to reír
+     if($lem =~ /\/reir/){
+			$lem = 'reír';
+	}
      
      $wordNode->setAttribute( 'ord', $id );
      $wordNode->setAttribute( 'form', $word );
@@ -1903,6 +1908,19 @@ sub model2{
    				 {
   		 	 		$pos="np";
  				 }
+ 				 # often: 'se fue' -> fue tagged as 'ser', VSIS3S0 -> change to VMIS3S0, set lemma to 'ir'
+			     if($eaglesTag =~ /VSIS[123][SP]0/ && $lem eq 'ser'){
+			     	my $precedingWord = $docHash{$sentenceId.":".($id-1)};
+			     	#print STDERR "preceding of fue: ".$precedingWord->getAttribute('lem')."\n";
+			     	if($precedingWord && $precedingWord->getAttribute('lem') eq 'se'){
+			     		$eaglesTag =~ s/^VS/VM/ ;
+			     		#print STDERR "new tag: $eaglesTag\n";
+			     		$lem = 'ir';
+			     	}
+			     }
+			     if($lem =~ /\/reir/){
+			     	$lem = 'reír';
+			     }
 				   	 $wordNode->setAttribute( 'ord', $id );
  					 $wordNode->setAttribute( 'form', $word );
  	   				 $wordNode->setAttribute( 'lem', $lem );
@@ -1915,6 +1933,10 @@ sub model2{
   					 # store node in hash, key sentenceId:wordId, in order to resolve dependencies
     				 my $key = "$sentenceId:$id";
     				 $docHash{$key}= $wordNode;
+    				 
+#    				 print STDERR "\n##################\n";
+#    				 foreach my $key (keys %docHash){print STDERR "key $key $docHash{$key}\n";}
+#    				  print STDERR "\n##################\n";
     				 # print $sentence->toString();
     				  # print "\n\n";
 				}

@@ -6,7 +6,7 @@ TRANSLATION:
 - mías: kommt nie vor in Ancora, ergo: PX1FP0S0 wird von wapiti überschrieben mit NC (PX1FP0S0 ist nicht im Tagset!)
 
 GENERALLY:
-- watayuq kay (tener años)
+ - creg's -> which case?
  (-raya -> sostener, quedarse suspendido, SUSPENSOR)
  -> permanece cantando -> taki-chka -lla -n
  -> permanece tranquilo/callado:  quedó tranquilo  = Tranquilo-m quada-ku-n./amulla-cha-ku-n/Tranquilo-cha-ku-n, tranquilo-lla-m chura-ku-n 
@@ -151,4 +151,5 @@ SVM:
 (done - participles vs. adjectives: e.g. adinerado
   (done -> add paradigm Noun to all Particple-N/V forms)
   -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong) -> done, new tagger is better at this)
+(done - watayuq kay (tener años) )
 
