@@ -285,9 +285,11 @@ my.verbmi=/.+/ && my.smi=/3P/		"+3.Pl.Poss				my.IHRC=yes && my.verbform=rel:not
 # -> or just to the head chunk (if node does not have its own chunk)
 my.smi=RN					+Neg				my.type=/sadv/					chunkmi			up		concat
 
-# coordination: if coordinated nouns: -wan (or better -pas? TODO), if coordinated clauses: -taq
-my.slem=e || my.slem=y				"+Instr"			my.type=/sn|coor-n/				chunkmi			up		concat
-my.slem=e || my.slem=y				"+Intr"				my.type=/grup-verb|coor-v/			chunkmi			up		concat
+# coordination: if coordinated nouns: -wan if human [+Hum], [+Masc] [+Fem]; -pas otherwise
+# if coordinated clauses: -taq
+my.slem=e || my.slem=y				"+Instr"				my.type=/sn|coor-n/ && (child.sem=/\+Fem|\+Masc|\+Hum/ || child.smi=NP00SP0 ) 				chunkmi			up		concat
+my.slem=e || my.slem=y				"+Add"				my.type=/sn|coor-n/ && !(child.sem=/\+Fem|\+Masc|\+Hum/ || child.smi=NP00SP0)				chunkmi			up		concat
+my.slem=e || my.slem=y				"+Intr"				my.type=/grup-verb|coor-v/												chunkmi			up		concat
 
 my.slem=/tal_vez|quizás|posiblemente/		"+Asmpemph"				my.type=/.+/					chunkmi			up		concat
 my.slem=/también/				"++Add"				my.type=/.+/					chunkmi			up		concat
@@ -357,10 +359,6 @@ my.smi=/^PP1.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="gr
 my.smi=/^PP2.S/ && chunkgrandparent.case=+Acc && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		"++2.Sg.Obj"			my.type=/sn|coor-n/		addverbmi		up	concat
 
 
-  # Negation
-my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
-
-
 
     #################################
     # POSSESSOR on relational nouns #
@@ -370,27 +368,34 @@ my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
 # TODO: re-check!! conditional not true  (no verbmi in chunk anymore!)
 
 # 1.Sg:
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="yo"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"1.Sg.Subj") or contains(@verbmi2,"1.Sg.Subj")]} )				add_mi		my.type=/.+/		"1.Sg.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="yo"]} || xpath{ancestor::CHUNK/descendant-or-self::NODE[contains(@verbmi,"1.Sg.Subj")]} )				add_mi		my.type=/.+/		"+1.Sg.Poss"	down	overwrite
 # 1.Pl (preliminary solution: incl/excl not disambiguated yet!!):
-#my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"1.Pl.Excl.Subj")]} ||  xpath{ancestor::CHUNK[contains(@addverbmi,"1.Pl.Incl.Subj") or contains(@verbmi2,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Excl.Poss#1.Pl.Incl.Poss"	down	overwrite
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"1.Pl.Excl.Subj") or contains(@verbmi2,"1.Pl.Excl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Excl.Poss"	down	overwrite
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"1.Pl.Incl.Subj") or contains(@verbmi2,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"1.Pl.Incl.Poss"	down	overwrite
+#my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK/descendant-or-self::NODE[contains(@verbmi,"1.Pl.Excl.Subj")]} ||  xpath{ancestor::CHUNK/descendant-or-self::[contains(@verbmi,"1.Pl.Incl.Subj")]} )		add_mi		my.type=/.+/		"+1.Pl.Excl.Poss#1.Pl.Incl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK/descendant-or-self::NODE[contains(@verbmi,"1.Pl.Excl.Subj") ]} )		add_mi		my.type=/.+/		"+1.Pl.Excl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="nosotros"]} || xpath{ancestor::CHUNK/descendant-or-self::NODE[contains(@verbmi,"1.Pl.Incl.Subj") ]} )		add_mi		my.type=/.+/		"+1.Pl.Incl.Poss"	down	overwrite
 
 #2.Sg:
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="tú"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"2.Sg.Subj") or contains(@verbmi2,"2.Sg.Subj")]} )				add_mi		my.type=/.+/		"2.Sg.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="tú"]} || xpath{ancestor::CHUNK/descendant-or-self::NODE[contains(@verbmi,"2.Sg.Subj")]} )				add_mi		my.type=/.+/		"+2.Sg.Poss"	down	overwrite
 # 2.Pl:
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="vosotros" or @sform="ustedes"]} || xpath{ancestor::CHUNK[contains(@addverbmi,"2.Pl.Subj") or contains(@verbmi2,"2.Pl.Subj")]} )			add_mi		my.type=/.+/		"2.Pl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="vosotros" or @sform="ustedes"]} || xpath{ancestor::CHUNK/descendant-or-self::NODE[contains(@verbmi,"2.Pl.Subj")]} )			add_mi		my.type=/.+/		"+2.Pl.Poss"	down	overwrite
 
 #3.Pl:
-my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="ellos" ]} || xpath{ancestor::CHUNK[contains(@addverbmi,"3.Pl.Subj") or contains(@verbmi2,"3.Pl.Subj")]} )			add_mi		my.type=/.+/		"3.Pl.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( xpath{ancestor::CHUNK[@type="sn"]/NODE[@slem="ellos" ]} || xpath{ancestor::CHUNK/descendant-or-self::NODE[contains(@verbmi,"3.Pl.Subj")]} )			add_mi		my.type=/.+/		"+3.Pl.Poss"	down	overwrite
 
 #default: 3.Sg.Poss (-n)
-my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@smi,"PP1") or starts-with(@smi,"PP2") or @lem="paykuna"]}) && !(xpath{ancestor::CHUNK[contains(@addverbmi,"1.Sg.Subj") or contains(@addverbmi,"1.Pl.Incl.Subj") or contains(@addverbmi,"1.Pl.Excl.Subj") or contains(@addverbmi2,"2.Sg.Subj") or contains(@addverbmi,"2.Pl.Subj") or contains(@addverbmi2,"3.Pl") ]}) )			add_mi		my.type=/.+/		"3.Sg.Poss"	down	overwrite
+my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@smi,"PP1") or starts-with(@smi,"PP2") or @lem="paykuna"]}) && !(xpath{ancestor::CHUNK/descendant-or-self::NODE[contains(@verbmi,"1.Sg.Subj") or contains(@verbmi,"1.Pl.Incl.Subj") or contains(@verbmi,"1.Pl.Excl.Subj") or contains(@verbmi,"2.Sg.Subj") or contains(@verbmi,"2.Pl.Subj") or contains(@verbmi,"3.Pl") ]}) )			add_mi		my.type=/.+/		"+3.Sg.Poss"	down	overwrite
 
 
     ######################################################################
     # SPECIAL CASES: spanish words that are realized as quechua suffixes #
     ######################################################################
 
-my.slem=/incluso|sólo/ && my.mi=/^\+\+/		mi			my.type=/.+/		chunkmi		up	concat
-my.mi=/^\+\+/ && my.slem=/incluso|sólo/ 	"yes"			my.type=/.+/		delete		up	concat
+  # Negation
+my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
+
+my.slem=/incluso|sólo/ && my.mi=/^\+\+/		mi				my.type=/.+/		chunkmi		up	concat
+my.mi=/^\+\+/ && my.slem=/incluso|sólo/ 		"yes"			my.type=/.+/		delete		up	concat
+
+
+
+

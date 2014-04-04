@@ -81,15 +81,15 @@ foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
 			my @candidates = &getRelatedChunks($chunk,$path1to2);
 			#print STDERR scalar(@candidates). " candidates\n";
 			if (scalar(@candidates)) {
-				#print STDERR "first chunk candidate ". $candidates[0]->getAttribute('ref')."\n";
+				print STDERR "first chunk candidate ". $candidates[0]->getAttribute('ref')."\n";
 				my @chunk2Conditions = &splitConditionsIntoArray($chunk2Cond);
-				#print STDERR "conditions: @chunk2Conditions\n";
+				print STDERR "conditions: @chunk2Conditions\n";
 				# find the first candidate related chunk that satisfies the conditions
 				foreach my $cand (@candidates) {
 					my $result = &evalConditions(\@chunk2Conditions,$cand);
-					#print STDERR "result $result for candidate ". $cand->getAttribute('ref')."\n";
+					print STDERR "result $result for candidate ". $cand->getAttribute('ref')."\n";
 					if ($result) {
-						#print STDERR "found\n";
+						print STDERR "found\n";
 						my $configline = $interConditions{$condpair};
 						&transferSyntInformation($configline,$chunk,$cand);
 					}
@@ -109,7 +109,7 @@ sub transferSyntInformation{
 	my $chunk2   = $_[2];
 
 	my ($chunk1Attr,$chunk2Attr,$direction,$wmode) = split(/\t/,$configline);
-#	print STDERR "direction $direction\n";
+	print STDERR "direction $direction\n";
 	if ($direction eq "1to2") {
 		&propagateAttr($chunk1,$chunk1Attr,$chunk2,$chunk2Attr,$wmode);
 	}
