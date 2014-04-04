@@ -132,6 +132,13 @@ encontrar		tari	d	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem
 encontrar		ka	d	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="con"]}
 encontrar		tinku	k	xpath{parent::CHUNK/descendant::CHUNK/NODE[@slem="se" or @slem="me" or @slem="te" or @slem="nos" or @slem="vos"]} && xpath{parent::CHUNK/child::CHUNK/NODE[@slem="con"]}
 
+# enfrentar: enfrentarse con/contra -> maqanakuy -wan
+# otherwise: either churakuy or uyanchay
+
+enfrentar 		maqa		k	xpath{parent::CHUNK/CHUNK/NODE[@slem="se"]} && xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="contra" or @slem="con"]}
+enfrentar		chura,uyancha	k	!(xpath{parent::CHUNK/CHUNK/NODE[@slem="se"]} && xpath{parent::CHUNK/CHUNK[@type="grup-sp"]/NODE[@slem="contra" or @slem="con"]})
+
+
 # fingir algo -> tukuy, fingir +inf/gerund -> -ykacha
 fingir		tuku		d	xpath{parent::NODE[starts-with(@smi, "VMG") or starts-with(@smi, "VMN") or starts-with(@smi, "VSG") or starts-with(@smi, "VSN") ]}
 fingir		++Intrup	d	!(xpath{parent::NODE[starts-with(@smi, "VMG") or starts-with(@smi, "VMN") or starts-with(@smi, "VSG") or starts-with(@smi, "VSN") ]})

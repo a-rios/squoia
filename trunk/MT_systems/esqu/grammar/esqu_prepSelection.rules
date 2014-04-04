@@ -61,7 +61,8 @@ con_fin_de	case=+Ben
 con_objeto_de	case=+Ben
 contra		case=+Abl	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="proteger" or @slem="defender" or @slem="velar" or @slem="amparar" or @slem="cubrir"]}		-
 contra		case=+Dat	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="apoyar" or @slem="chocar" or @slem="apretar" or @slem="estrellar" or @sem="[+Mov]"]}		-
-contra		postpos=contran,nouncase=+Gen	-	+
+contra		postpos=contran,nouncase=+Gen		-	+
+contra		case=+Instr		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="enfrentar" and @lem="maqa"]}		-
 en_contra_de	postpos=contran,nouncase=+Gen
 
 #cabe 

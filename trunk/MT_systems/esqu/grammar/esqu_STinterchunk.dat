@@ -26,16 +26,14 @@
 # copy object information in addverbmi attribute in sn-chunks (clitics me,te,se) to the next higher verb chunk 
 # or to the pp chunk ( a mí, a tí..) and from there to the next higher verb chunk
 my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="grup-sp" and not(@spform)]/CHUNK[@type="sn"]/@addverbmi} 		addverbmi			chunkgrandparent		1to2		concat
-my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]} && ( !(child.slem=/^ir$/marchar/) && !(child.smi=/VMM01P0|VMSP1P0/ ) )			addverbmi			parent				1to2		concat
-
-#my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				my.type=/grup-verb|coor-v/		addverbmi			chunkgrandparent		1to2		concat
+my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]} && ( !(child.slem=/^ir$/marchar/) && !(child.smi=/VMM01P0|VMSP1P0/ ) )				addverbmi			parent					1to2		concat
 
 
 # copy chunkmi from sadv (negation) to chunk above, be it nominal or verbal (independent suffixes)
 my.type=/sadv/ && my.chunkmi=/.+/			chunkmi				my.type=/grup-verb|coor-v/		chunkmi			parent				1to2		concat
 
-# copy chunkmi=+Inst in coordination from head to child (from coor-n to sn)
-my.type=coor-n && my.chunkmi=+Instr			chunkmi				my.type=sn				chunkmi			child				1to2		concat	
+# copy chunkmi=+Inst / +Add  in coordination from head to child (from coor-n to sn)
+my.type=coor-n && my.chunkmi=/\+Instr|\+Add/		chunkmi				my.type=sn				chunkmi			child				1to2		concat	
 
 
 # copy ++Poss from propietario to the possessed noun
@@ -45,6 +43,9 @@ child.slem=/propietario|dueño/ && my.chunkmi=++Poss	chunkmi			my.type=sn				chu
 #my.type=/grup-sp|coor-sp/ && child.type=coor-n		case			my.type=sn && chunkparent.type=coor-n			case			ancestor	1to2		overwrite
 my.type=sn && chunkparent.type=coor-n 			case			my.type=/grup-sp|coor-sp/ && my.case=/.+/			case		chunkgrandparent	2to1		overwrite
 
+# headless relative clause with preposition -> copy case from preposition ('por lo que he visto' -> rikusqay-rayku)
+my.type=grup-sp && my.case=/.+/ && !(xpath{../child::CHUNK[@type="sn" or @type="coor-n"]})			case					my.type=/grup-verb|coor-v/ && my.HLRC=yes		chunkmi			chunkparent			1to2	concat
+
 # subject in nominal verb chunk: add genitive
 # TODO check if thats correct: 
 # ella sabe que tú te has ido -> qam(pa?) rikusqaykita yachan
@@ -53,16 +54,13 @@ my.si=/suj/ 		case		my.verbform=/perfect|obligative/ && my.case=+Acc	"+Gen"		par
 ## sólo/solamente -> copy chunkmi from sadv chunk to head
 child.slem=/sólo|solamente/ && my.chunkmi=++Lim		chunkmi			my.type=/.+/		chunkmi		parent		1to2		concat
 
-
-# para, a_fin_de, con_fin_de, con_objeto_de +infinitive: verbchunk is set to obligative, but needs person of verb as possessive suffix!
-my.verbform=obligative && parent.type=grup-sp && parent.case=+Ben			verbmi			my.type=/grup-verb|coor-v/ && !(xpath{descendant::CHUNK[@verbform="main"]/descendant::CHUNK[@case="+Ben"]/CHUNK[@verbform="obligative"]}) && (my.verbmi=/1\.Sg\.Subj/ || my.verbmi2=/1\.Sg\.Subj/)			"+1.Sg.Poss"		ancestor	2to1	concat
-my.verbform=obligative && parent.case=+Ben && parent.type=grup-sp 			verbmi			my.type=/grup-verb|coor-v/ && !(xpath{descendant::CHUNK[@verbform="main"]/descendant::CHUNK[@case="+Ben"]/CHUNK[@verbform="obligative"]}) && (my.verbmi=/1\.Pl\.Excl\.Subj/ || my.verbmi2=/1\.\Pl\.Excl.Subj/)		"+1.Pl.Excl.Poss"	ancestor	2to1	concat
-parent.type=grup-sp && parent.case=+Ben && my.verbform=obligative			verbmi			my.type=/grup-verb|coor-v/ && !(xpath{descendant::CHUNK[@verbform="main"]/descendant::CHUNK[@case="+Ben"]/CHUNK[@verbform="obligative"]}) && (my.verbmi=/1\.Pl\.Incl\.Subj/ || my.verbmi2=/1\.\Pl\.Incl.Subj/)		"+1.Pl.Incl.Poss"	ancestor	2to1	concat
-
-parent.case=+Ben && parent.type=grup-sp && my.verbform=obligative			verbmi			my.type=/grup-verb|coor-v/ && !(xpath{descendant::CHUNK[@verbform="main"]/descendant::CHUNK[@case="+Ben"]/CHUNK[@verbform="obligative"]}) && (my.verbmi=/2\.Sg.Subj/ || my.verbmi2=/2\.Sg.Subj/)			"+2.Sg.Poss"		ancestor	2to1	concat
-parent.case=+Ben && my.verbform=obligative && parent.type=grup-sp 			verbmi			my.type=/grup-verb|coor-v/ && !(xpath{descendant::CHUNK[@verbform="main"]/descendant::CHUNK[@case="+Ben"]/CHUNK[@verbform="obligative"]}) && (my.verbmi=/2\.Pl.Subj/ || my.verbmi2=/2\.Pl.Subj/)			"+2.Pl.Poss"		ancestor	2to1	concat
-parent.type=grup-sp && my.verbform=obligative && parent.case=+Ben			verbmi			my.type=/grup-verb|coor-v/ && !(xpath{descendant::CHUNK[@verbform="main"]/descendant::CHUNK[@case="+Ben"]/CHUNK[@verbform="obligative"]}) && (my.verbmi=/3\.Sg.Subj/ || my.verbmi2=/3\.Sg.Subj/)			"+3.Sg.Poss"		ancestor	2to1	concat
-xpath{self::CHUNK[@verbform="obligative"]} && parent.type=grup-sp && parent.case=+Ben	verbmi			my.type=/grup-verb|coor-v/ && !(xpath{descendant::CHUNK[@verbform="main"]/descendant::CHUNK[@case="+Ben"]/CHUNK[@verbform="obligative"]}) && (my.verbmi=/3\.Pl.Subj/ || my.verbmi2=/1\.Pl.Subj/)			"+3.Pl.Poss"		ancestor	2to1	concat
+# para, a_fin_de, con_fin_de, con_objeto_de +infinitive: verbchunk is set to obligative, but needs person of verb as possessive suffix! -> same subject as head verb
+my.type=/grup-verb|coor-v/ && my.verbform=obligative && chunkparent.type=grup-sp && chunkparent.case=+Ben					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "1S") or descendant-or-self::NODE[ contains(@smi, "1S")] ]  }		"+1.Sg.Poss"			ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && my.verbform=obligative && chunkparent.type=grup-sp && chunkparent.case=+Ben					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "2S") or descendant-or-self::NODE[ contains(@smi, "2S")] ]  }		"+2.Sg.Poss"			ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && my.verbform=obligative && chunkparent.type=grup-sp && chunkparent.case=+Ben					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "3S") or descendant-or-self::NODE[ contains(@smi, "3S")] ]  }		"+3.Sg.Poss"			ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && my.verbform=obligative && chunkparent.type=grup-sp && chunkparent.case=+Ben					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "1P") or descendant-or-self::NODE[ contains(@smi, "1P")] ]  }		"+1.Pl.Incl.Poss"		ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && my.verbform=obligative && chunkparent.type=grup-sp && chunkparent.case=+Ben					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "2P") or descendant-or-self::NODE[ contains(@smi, "2P")] ]  }		"+2.Pl.Poss"			ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && my.verbform=obligative && chunkparent.type=grup-sp && chunkparent.case=+Ben					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "3P") or descendant-or-self::NODE[ contains(@smi, "3P")] ]  }		"+3.Pl.Poss"			ancestor 			2to1			concat
 
 # para, a_fin_de, con_fin_de, con_objeto_de + inf -> copy case from grup-sp to infinitive chunk
 xpath{self::CHUNK[@verbform="obligative"]}  && parent.case=+Ben && parent.type=grup-sp	case			my.type=/grup-sp|coor-sp/		case		parent		2to1		concat
@@ -70,7 +68,7 @@ xpath{self::CHUNK[@verbform="obligative"]}  && parent.case=+Ben && parent.type=g
 # subject of a relative clause with IHRC=yes (internally headed relative clause)
 # -> add genitive suffix to subject
 # also: add possessive suffix of subject person to (nominal) verbform if the rel.clause is not.agentive (in intrachunk.rules!)
-my.type=/sn|coo-n/ && my.si=/suj/		case		my.IHRC=yes		"+Gen"		parent			2to1			concat
+my.type=/sn|coor-n/ && my.si=/suj/		case		my.IHRC=yes		"+Gen"		parent			2to1			concat
 
 # +Add from también: move to parent chunk
 # NOTE: parser attaches 'también' ALWAYS to the verb, might not be always correct, but there's really no way to be certain... 
@@ -85,7 +83,10 @@ child.lem=ña && child.moveToHead_mi=/.+/		"+Disc"			my.type=/.+/ && !(my.delete
 ## or subjToObj=2, e.g. 'se me anotoja un helado' -> 'heladoTA munapakuNI'
 ## -> for subjToObj=2, add accusative to original subject and set @si=cd
 my.si=/suj/ 		case				xpath{child::NODE[@subjToObj="2"]} && my.type=/grup-verb|coor-v/ 		"+Acc"		parent		2to1		overwrite
-#my.si=/suj/ 		si				my.type=/grup-verb|coor-v/ && xpath{child::NODE[@subjToObj="2"]}		"cd"		parent		2to1		overwrite
+
+# delete accusative within nominal clauses  -> quiero comer pan -> tanta mikhuyta munani , no *tantaTA mikhuyta munani
+# -> either: verbform=perfect or obligative, or: from Spanish infinitives -> just case + only child=infinitive +parent +grup-sp  count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]
+my.case=+Acc			deleteMorph				 	 my.verbform=/perfect|obligative/ || ( my.type=/grup-verb|coor-v/ && my.chunkmi=/Acc|Ben/ && child.mi=infinitive && xpath{child::NODE[count(child::NODE)=0]} )   			"+Acc"			parent		2to1		concat
 
 ## if verb chunk has an objCase/iobjCase (from lexicon): overwrite case of object chunk
 # e.g. embarcar el avión -> avionMAN wichay/yaykuy

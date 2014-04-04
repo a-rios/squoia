@@ -4,6 +4,7 @@ TODOS translation:
 TRANSLATION:
 -wapiti model lacks A LOT of peruvian Spanish words!
 - mías: kommt nie vor in Ancora, ergo: PX1FP0S0 wird von wapiti überschrieben mit NC (PX1FP0S0 ist nicht im Tagset!)
+-2Pl pasado simple, kommt nie vor in Ancora
 
 GENERALLY:
  - creg's -> which case?
@@ -33,7 +34,6 @@ RELATIVE CLAUSES:
 - check missing verb forms involving 2 participants (missing in grammar books)
 - Coordination of participle and relative clause 
 'Una de las empresas tomaría posesión de los sistemas Windows, CREADO por esta firma y QUE USAN el 95_por_ciento de los ordenadores de todo el mundo..'
-- headless RC's with preposition -> por lo que he visto -> rikusqayrayku -> add case!
 - headless RC's with cual/cuales
 
 LEXICON:
@@ -53,8 +53,7 @@ TOPIC/FOCUS:
 - topicalized nouns with relative clauses: fueron ellos quienes dejaron,
 
 PREPOSITIONS/ PREP-OBJECTS:
-- convertirse EN -> tukuy ..-MAN
-- enfrentarse contra -> maqanaku- -wan
+- prepositions with coor-n.. where goes the genitive? detrás de la casa y la puerta -> atm: wasiPpas punkupas qhipan 
 
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
@@ -152,4 +151,7 @@ SVM:
   (done -> add paradigm Noun to all Particple-N/V forms)
   -> disambiguate in morph rules (precaution because the tagger still gets those mostly wrong) -> done, new tagger is better at this)
 (done - watayuq kay (tener años) )
+( done - convertirse EN -> tukuy ..-MAN )
+( done - enfrentarse contra -> maqanaku- -wan )
+(done - - headless RC's with preposition -> por lo que he visto -> rikusqayrayku -> add case )
 

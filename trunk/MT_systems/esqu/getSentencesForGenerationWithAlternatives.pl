@@ -133,6 +133,7 @@ my %mapTagsToSlots = (
 	'+Disc'			=> 43,
 	'+Add'			=> 44,
 	'+Intr'			=> 45,
+	'+Lim_Intr'		=> 45,
 	'+Neg'			=> 46,
 	'+DirE'			=> 47,
 	'+IndE'			=> 47,
@@ -246,8 +247,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  					if(scalar(@auxSYNs)==0){
  						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
  						unless($vnode){
- 							# if there's a conjunction in between
- 							($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"C")]/NODE[starts-with(@smi,"V")][1]');
+ 							# if there's a conjunction or relative pronoun in between
+ 							($vnode) = $chunk->findnodes('child::NODE/NODE[not(starts-with(@smi,"V"))]/NODE[starts-with(@smi,"V")][1]');
+ 							#print STDERR $vnode->toString()."\n";
  						}
  						if($vnode){
  							push(@auxSYNs, $vnode);	
@@ -256,6 +258,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  					foreach my $auxsyn (@auxSYNs){
  						my $synmi = $auxsyn->getAttribute('verbmi');
  						my $verbmi = $synmi.$add_mi.$addverbmi;
+ 						#print STDERR "verbmi: $verbmi\n";
  						push(@verbmis, $verbmi);
  					}
  				}
