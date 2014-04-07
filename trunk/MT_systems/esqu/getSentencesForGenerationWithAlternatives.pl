@@ -231,6 +231,42 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				push(@SYNnodes, $vnode);
  			}
  			my $auxOrLem2toprint = 0;
+ 			# if verb disambiguation assigned verbform=infinitive -> print all lemmas with +Inf and content of addverbmi
+ 			if($chunk->getAttribute('verbform')  eq 'infinitive')
+ 			{
+ 					my $printedLems = '';
+ 					if($chunk->hasAttribute('finiteMiInAux')){
+ 						my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
+ 						foreach my $auxsyn (@auxSYNs){
+ 							my $lem = $auxsyn->getAttribute('lem');
+ 							unless($printedLems =~ /#$lem#/){
+	 							my $add_mi = $auxsyn->getAttribute('add_mi');
+	 							my $infverbmi = $chunk->getAttribute('infverbmi');
+	 							my $chunkmi = $chunk->getAttribute('chunkmi');
+	 							my $verbmi= $add_mi.$infverbmi.$chunkmi;
+	 							my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
+	 							print STDOUT $lem.":".$sortedVerbmi."\n";
+	 							$printedLems .= "#$lem#";
+ 							}
+ 						}
+ 					}
+ 					else{
+ 						foreach my $syn (@SYNnodes){
+ 							my $lem = $syn->getAttribute('lem');
+ 							unless($printedLems =~ /#$lem#/){
+	 							my $add_mi = $syn->getAttribute('add_mi');
+	 							my $infverbmi = $chunk->getAttribute('infverbmi');
+	 							my $chunkmi = $chunk->getAttribute('chunkmi');
+	 							my $verbmi= $add_mi.$infverbmi.$chunkmi;
+	 							my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
+	 							print STDOUT $lem.":".$sortedVerbmi."\n";
+	 							$printedLems .= "#$lem#";
+ 							}
+ 						}
+ 					}
+ 			}
+ 			else
+ 			{
  			
  			for (my $i=0; $i<scalar(@SYNnodes);$i++)
  			{
@@ -241,8 +277,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  				my $add_mi= $syn->getAttribute('add_mi');
  				# if finiteMiInAux: iterate through SYN's in second verb and get verbmi's from there
  				my @verbmis;
- 				if($chunk->getAttribute('finiteMiInAux') eq 'yes' && !$chunk->hasAttribute('deletefiniteMiInAux')){
- 					my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
+ 				
+ 				if($chunk->getAttribute('finiteMiInAux') eq 'yes' && !$chunk->hasAttribute('deletefiniteMiInAux'))
+ 				{
+ 					my @auxSYNs;
+ 					@auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
  					# if no syns in aux node, take aux node itself
  					if(scalar(@auxSYNs)==0){
  						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
@@ -442,6 +481,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			 	}
 			 	print STDOUT "\n";
  			}
+ 		}
  		}
  		# if this is a noun chunk, but NOT a pronoun (note, pronouns have an attribute  verbmi that has been copied to their verb,
  		# pronouns are realized as suffixes: we don't need to process them here)
