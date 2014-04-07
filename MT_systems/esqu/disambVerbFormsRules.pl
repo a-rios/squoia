@@ -202,7 +202,7 @@ foreach my $sentence (@sentenceList)
  					elsif($conjunction->getAttribute('lem') =~ /aunque|a_pesar_de_que|bien|bien_si|si_bien/ )
  					{
  						$nbrOfSwitchForms++;
- 						$verbChunk->setAttribute('addverbmi', '+Add');
+ 						$verbChunk->setAttribute('chunkmi', '+Add');
  					}
  					# if no SS/DS could be resolved (e.g. if main verb was not found): set to switch
  					if(!$verbChunk->hasAttribute('verbform')){
@@ -215,7 +215,7 @@ foreach my $sentence (@sentenceList)
  					#check if same subject 
  					&compareSubjects($verbChunk);
  					$nbrOfSwitchForms++;
- 					$verbChunk->setAttribute('addverbmi', '+Top');
+ 					$verbChunk->setAttribute('chunkmi', '+Top');
  				}
  				# if this is a subordinated clause with 'sin_que..'-> DS form 
  				# -> in same subject contexts, verb would be infinitive
@@ -251,7 +251,7 @@ foreach my $sentence (@sentenceList)
  						# -taq
 	 					if($conjunction->getAttribute('lem') =~ /^o$|^y$|^e$|^u$/ )
 	 					{
-	 						$verbChunk->setAttribute('addverbmi', '+Intr');
+	 						$verbChunk->setAttribute('chunkmi', '+Intr');
 	 					}
 	 					#ni, ni_siquera: nitaq
 	 					elsif($conjunction->getAttribute('lem') =~ /^ni$/ )
@@ -279,7 +279,7 @@ foreach my $sentence (@sentenceList)
 	 					# -taq
 	 					elsif($conjunction->getAttribute('lem') =~ /^o$|^y$|^e$|^u$/ )
 	 					{
-	 						$verbChunk->setAttribute('addverbmi', '+Intr');
+	 						$verbChunk->setAttribute('chunkmi', '+Intr');
 	 					}
 	 					#sino: aswanpas
 	 					elsif($conjunction->getAttribute('lem') =~ /sino/ )
@@ -404,7 +404,7 @@ foreach my $sentence (@sentenceList)
 								# indirect question with 'si' -> add -chu to (now direct speech) verbchunk
 								if($conjunction->getAttribute('lem') eq 'si')
 								{
-									$vChunk->setAttribute('addverbmi', '+Neg');
+									$vChunk->setAttribute('chunkmi', '+Neg');
 								}
 								$nbrOfFiniteForms++;
 								$nbrOfSwitchForms--;
@@ -484,7 +484,7 @@ foreach my $sentence (@sentenceList)
 								# indirect question with 'si' -> add -chu to (now direct speech) verbchunk
 								if($conjunction && $conjunction->getAttribute('lem') eq 'si')
 								{
-									$vChunk->setAttribute('addverbmi', '+Neg');
+									$vChunk->setAttribute('chunkmi', '+Neg');
 								}
 								$nbrOfFiniteForms++;
 								$nbrOfSwitchForms--;
@@ -525,6 +525,7 @@ foreach my $sentence (@sentenceList)
  				}
  				# if this is a subject clause -> infinitive
  				# que vengas tarde, me molesta 
+ 				# que tal con puede ser que..? '(no) puede ser que eso se demora/e' TODO
  				elsif($verbChunk->getAttribute('si') eq 'suj') 
  				{
  					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
@@ -538,12 +539,12 @@ foreach my $sentence (@sentenceList)
 	 						if($finiteVerb)
 	 						{
 	 						my $mi = $finiteVerb->getAttribute('mi');
-	 						if($mi =~ '1S'){$verbChunk->setAttribute('addverbmi','+1.Sg.Poss')};
-	 						if($mi =~ '2S'){$verbChunk->setAttribute('addverbmi','+2.Sg.Poss')};
-	 						if($mi =~ '3S'){$verbChunk->setAttribute('addverbmi','+3.Sg.Poss')};
-	 						if($mi =~ '1P'){$verbChunk->setAttribute('addverbmi','+1.Incl.Pl.Poss')};
-	 						if($mi =~ '2P'){$verbChunk->setAttribute('addverbmi','+2.Pl.Poss')};
-	 						if($mi =~ '3P'){$verbChunk->setAttribute('addverbmi','+3.Pl.Poss')};
+	 						if($mi =~ '1S'){$verbChunk->setAttribute('infverbmi','+Inf+1.Sg.Poss')};
+	 						if($mi =~ '2S'){$verbChunk->setAttribute('infverbmi','+Inf+2.Sg.Poss')};
+	 						if($mi =~ '3S'){$verbChunk->setAttribute('infverbmi','+Inf+3.Sg.Poss')};
+	 						if($mi =~ '1P'){$verbChunk->setAttribute('infverbmi','+Inf+1.Incl.Pl.Poss')};
+	 						if($mi =~ '2P'){$verbChunk->setAttribute('infverbmi','+Inf+2.Pl.Poss')};
+	 						if($mi =~ '3P'){$verbChunk->setAttribute('infverbmi','+Inf+3.Pl.Poss')};
 	 						}
  						}
  						else{
@@ -561,10 +562,10 @@ foreach my $sentence (@sentenceList)
  					$nbrOfNominalForms;
  					$verbChunk->setAttribute('verbform', 'perfect');
  					if($conjunction->getAttribute('lem') =~ /el_hecho_de_que/){
- 						$verbChunk->setAttribute('addverbmi', '+Top');
+ 						$verbChunk->setAttribute('chunkmi', '+Top');
  					}
  					if($conjunction->getAttribute('lem') =~ /desde_que/){
- 						$verbChunk->setAttribute('addverbmi', '+Abl');
+ 						$verbChunk->setAttribute('chunkmi', '+Abl');
  					}
  					
  				}

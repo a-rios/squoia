@@ -41,12 +41,10 @@ LEXICON:
 
 SUBORDINATED CLAUSES:
 - more than one infinitive in verb chunk: tenemos que aprender a vivir, hay que saber cocinar etc.
-- CS: a medida que ? a pesar de que?
+- CS: a medida que ? 
 - often: still main and sub-clause switched from parsing!!
 - indirect questions with 'si' -> != conditional clauses!! 'quisiera saber si vienes mañana' -> translate how? infinitive? 
 - coordinated complements of speech verbs -> coref-resolution: subj of relclause is either in the clause, or it's the head
-- En cuanto + finite verb (as soon as) -> spa/pti + wan ?, -spa/pti (evt. mit -wan)
-
 
 TOPIC/FOCUS:
 - topicalized nouns with relative clauses: fueron ellos quienes dejaron,
@@ -57,8 +55,8 @@ PREPOSITIONS/ PREP-OBJECTS:
 LOCUTIONS:
 - check ALL locutions in locutions_laura.dat for translations!
 
-GENARATION
-- generate synonyms
+REORDERING:
+- reimplement interChunkOrder.pl -> permit linebreaks in rules (readability!!)
 
 after more testing:
  - words that cannot be generated: just print lemma
@@ -154,4 +152,7 @@ SVM:
 ( done - enfrentarse contra -> maqanaku- -wan )
 (done - - headless RC's with preposition -> por lo que he visto -> rikusqayrayku -> add case )
 (done -  if verb chunk contains only participle: use -sqa form)
+( donde - a pesar de que)
+(done - En cuanto + finite verb (as soon as) -> spa/pti + wan ?, -spa/pti (evt. mit -wan) )
+(done - generate synonyms)
 
