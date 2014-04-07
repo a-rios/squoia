@@ -40,7 +40,6 @@ LEXICON:
 - construir + Noun -> -cha
 
 SUBORDINATED CLAUSES:
-(- if verb chunk contains only participle: use -sqa form)
 - more than one infinitive in verb chunk: tenemos que aprender a vivir, hay que saber cocinar etc.
 - CS: a medida que ? a pesar de que?
 - often: still main and sub-clause switched from parsing!!
@@ -154,4 +153,5 @@ SVM:
 ( done - convertirse EN -> tukuy ..-MAN )
 ( done - enfrentarse contra -> maqanaku- -wan )
 (done - - headless RC's with preposition -> por lo que he visto -> rikusqayrayku -> add case )
+(done -  if verb chunk contains only participle: use -sqa form)
 

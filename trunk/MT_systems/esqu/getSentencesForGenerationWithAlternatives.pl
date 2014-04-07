@@ -760,7 +760,7 @@ sub deleteUnusedTags{
 	my $morphString = $_[0];
 	my $chunk = $_[1];
 	my $deleteMorph = $chunk->getAttribute('deleteMorph');
-	
+	#print STDERR "to delete: $deleteMorph\n";
 	my @morphsToDelete = split(',',$deleteMorph);
 	foreach my $del (@morphsToDelete)
 	{$morphString =~ s/\Q$del\E//;}
