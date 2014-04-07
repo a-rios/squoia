@@ -245,7 +245,8 @@ my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			addverbmi			up		concat
 #my.slem=donde && my.smi=/^PR/				"+Loc"			my.verbform=/^rel:/				addverbmi			up		concat
 
 # set 3.Sg of copula (kan) to be deleted
-my.lem=ka && my.verbmi=Copula+3.Sg.Subj && my.mi=present 				"yes"			my.type=/grup-verb|coor-v/ && child.lem=ka			delete		up		overwrite
+# only if no negation
+my.lem=ka && my.verbmi=Copula+3.Sg.Subj && my.mi=present 				"yes"			my.type=/grup-verb|coor-v/ && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]})			delete		up		overwrite
 
 # special case: imperative 1.pl of 'ir/marchar' -> irregular form 'haku'
 my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/	"haku"		my.type=/grup-verb|coor-v/	lem		up	overwrite

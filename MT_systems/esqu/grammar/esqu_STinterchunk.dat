@@ -84,18 +84,20 @@ child.lem=ña && child.moveToHead_mi=/.+/		"+Disc"			my.type=/.+/ && !(my.delete
 ## -> for subjToObj=2, add accusative to original subject and set @si=cd
 my.si=/suj/ 		case				xpath{child::NODE[@subjToObj="2"]} && my.type=/grup-verb|coor-v/ 		"+Acc"		parent		2to1		overwrite
 
-# delete accusative within nominal clauses  -> quiero comer pan -> tanta mikhuyta munani , no *tantaTA mikhuyta munani
-# -> either: verbform=perfect or obligative, or: from Spanish infinitives -> just case + only child=infinitive +parent +grup-sp  count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]
-my.case=+Acc			deleteMorph				 	 my.verbform=/perfect|obligative/ || ( my.type=/grup-verb|coor-v/ && my.chunkmi=/Acc|Ben/ && child.mi=infinitive && xpath{child::NODE[count(child::NODE)=0]} )   			"+Acc"			parent		2to1		concat
+# delete accusative within nominal clauses 
+# (?? really?? both possible? what is the rule (appart form unspecific objects)? TODO!!)
+# -> either: verbform=perfect or obligative, or: from Spanish infinitives -> just case + only child=infinitive +parent +grup-sp  
+#(my.case=+Acc  || chunkparent.case=+Acc) && my.type=/sn|coor-n/			deleteMorph				 	 my.verbform=/perfect|obligative/ || ( my.type=/grup-verb|coor-v/ && my.chunkmi=/Acc|Ben/ && child.mi=infinitive && xpath{child::NODE[count(child::NODE)=0]} )   			"+Acc"			ancestor		2to1		concat
 
 ## if verb chunk has an objCase/iobjCase (from lexicon): overwrite case of object chunk
 # e.g. embarcar el avión -> avionMAN wichay/yaykuy
 my.si=/cd/ 		case				 my.type=/grup-verb|coor-v/ && my.objCase=/.+/ 		objCase		parent		2to1		overwrite
-my.si=/ci/ 		case				 my.type=/grup-verb|coor-v/ && my.iobjCase=/.+/ 	iobjCase	parent		2to1		overwrite
+my.si=/ci/ 		case				 my.type=/grup-verb|coor-v/ && my.iobjCase=/.+/ 		iobjCase	parent		2to1		overwrite
 
 # hay + cd -> no accusative (hay leña -> llamt'a kan, no *llamt'ata kan)
 my.si=/cd/    	deleteMorph			child.slem=haber && child.smi=/3S/  && !(xpath{child::NODE[@slem="haber"]/descendant::NODE[starts-with(@smi,"V") or @slem="que"]})		"+Acc"			parent		2to1	concat					
 
 # in sentence with 3rd sg present copula -> kan is set to be deleted, in this case, insert -mi/si in cpred/atr
-my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka		"+DirE"		parent		2to1		concat
+# -> sólo si no hay negación.., con negación -> manam .. kanchu
+my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]})		"+DirE"		parent		2to1		concat
  
