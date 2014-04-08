@@ -1,10 +1,14 @@
 TODOS translation:
 
 
-TRANSLATION:
+TAGGING:
 -wapiti model lacks A LOT of peruvian Spanish words!
 - mías: kommt nie vor in Ancora, ergo: PX1FP0S0 wird von wapiti überschrieben mit NC (PX1FP0S0 ist nicht im Tagset!)
 -2Pl pasado simple, kommt nie vor in Ancora
+- in Ancora: 
+    se		él	p	PP3CN000
+   sollte sein: 
+   se		se	p	P00CN000 or P03CN000 or PP3CN000
 
 GENERALLY:
  - creg's -> which case?

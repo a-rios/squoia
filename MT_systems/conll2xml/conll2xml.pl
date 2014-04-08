@@ -1384,8 +1384,9 @@ sub toEaglesTag{
 	{ 
 		$eaglesTag = $pos;
 	}
+	if($eaglesTag =~ /^Z|z/){return ucfirst($eaglesTag); }
+	else{return uc($eaglesTag); }
 	
-	return uc($eaglesTag);
 	
 }
 
