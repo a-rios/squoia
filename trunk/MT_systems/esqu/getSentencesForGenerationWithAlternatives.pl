@@ -202,8 +202,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  	foreach my $idref (sort {$a<=>$b} (keys (%chunkSequence))) 
  	{
  		my $chunk = $chunkSequence{$idref};
- 		#print STDERR "new chunk: ";
- 		#print STDERR $chunk->getAttribute('ref')."\n";
+ 		print STDERR "new chunk: ";
+ 		print STDERR $chunk->getAttribute('ref')."\n";
  		#if this is a verb chunk, get lemma and verbmi directly from chunk, no need to process the nodes
  		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]') && !$chunk->hasAttribute('delete') )
  		{
@@ -362,12 +362,22 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			 					{ 
 			 						$verbmi="VRoot+SS";
 			 					}
-			 					# if no this is the only verb node in this chunk -> no morphology on chunk level, try to guess morphs from eagles tag
-			 					elsif($syn->hasAttribute('unknown') && $chunk->exists('child::NODE[starts-with(@smi,"V") and count(descendant::NODE[starts-with(@smi,"V")] )=0 ]')){
-			 					#elsif($syn->hasAttribute('unknown') && !$chunk->hasAttribute('chunkmi') && !$chunk->hasAttribute('addverbmi') && !$chunk->hasAttribute('finiteMiInAux') && !$chunk->hasAttribute('printAuxVerb')){
-			 					
-			 						my $verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
-			 							print STDERR "hieeer  $verbmi\n";
+			 					# if no this is the only verb node in this chunk and unknown=transfer -> no morphology on chunk level, try to guess morphs from eagles tag
+			 					elsif($syn->hasAttribute('unknown') && !$chunk->exists('self::CHUNK[@addverbmi or @finiteMiInAux or @printAuxVerb]') && $chunk->exists('child::NODE[starts-with(@smi,"V") and count(descendant::NODE[starts-with(@smi,"V")] )=0 ]')){
+			 						if($chunk->getAttribute('verbform') eq 'rel:'){
+			 							$chunk->setAttribute('verbform', 'rel:not.agentive');
+			 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
+			 							(my $l, $verbmi) = split(':',$lem_and_verbmi);
+			 							$chunk->setAttribute('verbform', 'rel:agentive');
+			 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
+			 							my( $l, $verbmiAg) = split(':',$lem_and_verbmi);
+			 							push(@verbmis, $verbmiAg);
+			 							$chunk->setAttribute('rel_guessed', '1');
+			 						}
+			 						else{
+			 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
+			 							(my $l, $verbmi) = split(':',$lem_and_verbmi);
+			 						}
 			 					}
 			 				}
 			 			}
@@ -670,10 +680,16 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			 		}
 	 			}
  			}
+ 			
  			else{
  				&printNode($adjective,$chunk);
  				print STDOUT "\n";	
  			} 
+ 			my ($cc) = $chunk->findnodes('child::NODE/NODE[@smi="CC" and @lem]');
+ 			# if there's a conjunction with 'lem' (not 'y'/'o'), print that too
+ 			if($cc){
+ 				print STDOUT $cc->getAttribute('lem').":\n";
+ 			}
  		}
  		# dates: print as is (only numbers are in a date-chunk)
  		elsif($chunk->exists('self::CHUNK[@type="date"]') && !$chunk->hasAttribute('delete') )
@@ -1064,7 +1080,6 @@ sub mapEaglesTagToQuechuaMorph{
 			my $qu_tens = $mapEaglesTenseToTags{$tense};
 			$EagleMorphs = $slem.":".$qu_tens.$qu_pers;
 		}
-		print STDERR "fhsdjkhfskdjhfsdf $slem $EagleMorphs\n";
 	}
 	# pronouns, should all be in the lexicon, TODO: check if complete
 	#	elsif($eaglesTag =~ /^P/)
@@ -1076,7 +1091,6 @@ sub mapEaglesTagToQuechuaMorph{
 		#print STDER "slem: $slem";
 	}
 	$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
-	print STDERR "fhsdjkhfskdjhfsdf $slem $EagleMorphs\n";
 	return $EagleMorphs;
 }
 
