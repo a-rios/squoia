@@ -213,15 +213,18 @@ my.smi=/^VAIF/ && my.slem=haber		futureDisc		k		chunkparent.verbform=main
 
 # imperfect past (había hecho) -> plusquamperfect
 my.smi=/^VAII/ && my.slem=haber		perfect			k		chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAII/ && my.slem=haber		obligative		k		chunkparent.verbform=obligative
 my.smi=/^VAII/ && my.slem=haber		indirectpast		k		chunkparent.verbform=main
 
 # perfect past (hubo hecho)
 my.smi=/^VAIS/ && my.slem=haber		perfect			k		chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAIS/ && my.slem=haber		obligative		k		chunkparent.verbform=obligative
 # in main clause: directpast or indirectpast, delete everything else
-my.smi=/^VAIS/ && my.slem=haber		SS,DS,agentive,perfect	d		chunkparent.verbform=main
+my.smi=/^VAIS/ && my.slem=haber		SS,DS,agentive,perfect,obligative		d		chunkparent.verbform=main
 
 # indicative present TODO: main clause, he hecho-> ruwani or ruwarani?
 my.smi=/^VAIP/ && my.slem=haber		perfect			k		chunkparent.verbform=/rel:not\.agentive|perfect/
+my.smi=/^VAIP/ && my.slem=haber		obligative		k		chunkparent.verbform=obligative
 my.smi=/^VAIP/ && my.slem=haber		present			k		chunkparent.verbform=main
 
 # subjuntivo hubiésemos/hubiéramos hecho, TODO: relative clauses??

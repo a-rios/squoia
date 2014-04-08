@@ -165,7 +165,7 @@ seguir		++Perdur	d	!(xpath{parent::NODE[starts-with(@smi, "VMG")]})
 # volver: tukuy/kutiy -> default, ++Autotrs -> with adjective + se (volverse rojo: pukayay), volver a + noun -> kutiy, volver a +infinitive -> ++Rep
 volver		++Autotrs	k	xpath{ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")] } && xpath{ancestor::CHUNK[1]/child::CHUNK/NODE[@slem="se"]}
 volver		++Rep		k	xpath{parent::NODE[@mi="infinitive"]/descendant::NODE[@slem="a"] }
-
+volver		kuti,tuku		k	!(xpath{parent::NODE[@mi="infinitive"]/descendant::NODE[@slem="a"] } ) && !(xpath{ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")] } && xpath{ancestor::CHUNK[1]/child::CHUNK/NODE[@slem="se"]})
 
 #### HACER/PERMITIR; causative ######
 

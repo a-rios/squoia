@@ -201,8 +201,8 @@ while(<>){
 	    	}
 	    	
 	    	elsif($cpos eq 'z'){
-	    		#$shortpos = ucfirst($shortpos);
-	    		$shortpos = "Z" ;
+	    		$shortpos = ucfirst($shortpos);
+	    		#$shortpos = "Z" ;
 	    		
 	    	}
 	    	
