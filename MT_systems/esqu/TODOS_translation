@@ -25,6 +25,7 @@ GENERALLY:
 - (de) color + 'color' es -> delete color (casa de color azul -> anqas wasi) 
 # TODO: aunque_sea -> maskipas (adverb)
 - verse +AQ, resultar +AQ -> ka- .. adj, 
+- IMPORTANT: Spanish passive?? 'fue corroborada' -> kallpachasqa kan or kallpachasqan?
 
 CONLL2XML:
 - hacer +inf: analyzed by parser as 2 verb chunks, infinitive as complement clause to hacer -> should be in one chunk, so we can move +Caus to main verb and use morphology of finite hacer

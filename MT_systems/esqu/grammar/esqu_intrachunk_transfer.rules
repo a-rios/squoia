@@ -163,6 +163,8 @@ my.smi=/1|2|3/ && my.slem=/poner|empezar|llegar|comenzar|ir|continuar/ ) && xpat
   # ->  add +Acc to morphology (chunkmi)
 xpath{self::NODE[@mi="infinitive" or (@smi="VMN0000" and @mi="agentive")]} && !(xpath{following-sibling::NODE}) && !(xpath{descendant::NODE[starts-with(@smi,"V")]}) && (parent.si=cd  || xpath{../parent::CHUNK[(@type="grup-sp" or @type="coor-sp") and @si="creg"]/NODE[@slem="a"]} )			"+Acc"			my.type=/grup-verb|coor-v/ && !(my.verbform=main)			chunkmi		up		concat
 
+# passive: get morphology from auxiliary
+my.smi=/VS.+[123]/				"yes"				my.verbform=passive							finiteMiInAux				up		overwrite	
 
 # if Infinitive+second verb as a "++" lemma and moveToHead_mi -> insert moveToHead_mi in addverbmi
 # in this case: second verb will not be printed, first verb needs mi from second verb for generation!

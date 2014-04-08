@@ -89,7 +89,7 @@ while (<PREPFILE>) {
 				my $translationCondition =  @$target[1];    		
 
 				my @conditions = &splitConditionsIntoArray($translationCondition);
-				print STDERR "@conditions\n";
+				#print STDERR "@conditions\n";
 
 				# evaluate condition(s) to true or false
 				my $result= &evalConditions(\@conditions,$wordnode);
@@ -107,16 +107,16 @@ while (<PREPFILE>) {
  						 ||
  					 $a->[2] cmp $b->[2]
 							} @$translationsref;				
-			print STDERR "#############\n";
+			#print STDERR "#############\n";
 			for(my $j; $j<scalar(@FullSort);$j++){for(my $i;$i<4;$i++){print STDERR $FullSort[$j][$i]."\n";}}
-			print STDERR "#############\n";
+			#print STDERR "#############\n";
 		
 			#write specified attribute of the best translation into xml node
 			my $trgt = $FullSort[0][0];
 			my @pairs = split(',',$trgt);
 			foreach my $pair (@pairs) {
 				my ($trgtattr, $trgtprep) = split('=',$pair);
-				print STDERR "preposition $trgtattr => $trgtprep\n";
+			#	print STDERR "preposition $trgtattr => $trgtprep\n";
 				$wordnode->setAttribute($trgtattr, $trgtprep);
 			}
 		}
