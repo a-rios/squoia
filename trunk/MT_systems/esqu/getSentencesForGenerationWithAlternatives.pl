@@ -148,6 +148,22 @@ my %mapTagsToSlots = (
 	'+Emph'				=> 48
 	);
 
+my %mapEaglesTenseToTags = (
+	'P'		=> '',
+	'C'		=> '+Pot',
+	'S'		=> '+NPst',
+	'I'		=> '+NPst',
+	'F'		=> '+Fut'
+	);
+
+my %mapEaglesPersonToTags = (
+	'1S'		=> '+1.Sg.Subj',
+	'2S'		=> '+2.Sg.Subj',
+	'3S'		=> '+3.Sg.Subj',
+	'1P'		=> '+1.Pl.Incl.Subj',
+	'2P'		=> '+2.Pl.Subj',
+	'3P'		=> '+3.Pl.Subj'
+	);
 
 my @verbchunksWithConjunction = $dom->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v") and @conj]');
 foreach my $vchunk (@verbchunksWithConjunction)
@@ -266,10 +282,6 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  						}
  					}
  			}
-# 			# if this is an infinitive within a pp-chunk (not cd!)
-# 			elsif($chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]')){
-# 				
-# 			}
  			else
  			{
 	 			for (my $i=0; $i<scalar(@SYNnodes);$i++)
@@ -349,6 +361,13 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			 					elsif($syn->getAttribute('smi') =~ /^VMG/ && !$syn->exists('ancestor-or-self::NODE[1]/descendant::NODE[starts-with(@smi,"V")]') )
 			 					{ 
 			 						$verbmi="VRoot+SS";
+			 					}
+			 					# if no this is the only verb node in this chunk -> no morphology on chunk level, try to guess morphs from eagles tag
+			 					elsif($syn->hasAttribute('unknown') && $chunk->exists('child::NODE[starts-with(@smi,"V") and count(descendant::NODE[starts-with(@smi,"V")] )=0 ]')){
+			 					#elsif($syn->hasAttribute('unknown') && !$chunk->hasAttribute('chunkmi') && !$chunk->hasAttribute('addverbmi') && !$chunk->hasAttribute('finiteMiInAux') && !$chunk->hasAttribute('printAuxVerb')){
+			 					
+			 						my $verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
+			 							print STDERR "hieeer  $verbmi\n";
 			 					}
 			 				}
 			 			}
@@ -535,16 +554,24 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
  			print STDOUT $chunk->getAttribute('spform')."\n";
  			
  		}
- 		## pp-chunk that contains only a number, no sn-chunk, just node +Case:
+ 		## pp-chunk that contains only a number/numbers, no sn-chunk, just node +Case:
  		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[starts-with(@smi,"SP")]/NODE[starts-with(@smi,"Z")]')){
- 			my $number = @{$chunk->findnodes('child::NODE[starts-with(@smi,"SP")]/NODE[starts-with(@smi,"Z")]')}[0];
- 			&printNode($number,$chunk);
+ 			my @numbers = $chunk->findnodes('child::NODE[starts-with(@smi,"SP")]/descendant::NODE[starts-with(@smi,"Z")]');
+ 			for(my $i=0;$i<scalar(@numbers);$i++){
+ 				if($i == scalar(@numbers)-1){
+ 					&printNode(@numbers[$i],$chunk);
+ 				}
+ 				else{
+ 					&printNode(@numbers[$i],$chunk);
+ 					print STDOUT "\n";
+ 				}
+ 			}
  			# get case/postposition, if any
  			my $case = $chunk->getAttribute('case');
- 			my $postpos = $chunk->getAttribute('postpos');
+ 			my $postpos = $chunk->findvalue('child::NODE/@postpos');
  			if($case ne ''){print STDOUT "$case\n";}
  			elsif($postpos ne ''){print STDOUT "\n$postpos\n";}
- 			#print STDOUT "\n";
+ 			else{print STDOUT "\n";}
  		}
  		# no syns in prepositinal chunks (all prep's have a 'default' translation, maybe change? TODO) 
  		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]') && !$chunk->exists('child::CHUNK[@type="sn"]/@verbmi') && $chunk->exists('child::NODE/@postpos') && !$chunk->hasAttribute('case') && !$chunk->hasAttribute('delete')  )
@@ -1013,12 +1040,32 @@ sub mapEaglesTagToQuechuaMorph{
 	 	$EagleMorphs = $EagleMorphs."ni:VRoot+Perf";
 	 }
 	# note, this shouldn't be necessary under normal cirumstances, as all verb information is copied to the verb chunk
-#	elsif($eaglesTag =~ /^V/)
-#	{
-#		my $mode = substr($eaglesTag,2,1);
-#		my $tense = substr($eaglesTag,3,1);
-#		my $person = substr($eaglesTag,4,2);
-#	}
+	elsif($eaglesTag =~ /^V/)
+	{
+		my $mode = substr($eaglesTag,2,1);
+		my $tense = substr($eaglesTag,3,1);
+		my $person = substr($eaglesTag,4,2);
+		my $verbform = $chunk->getAttribute('verbform');
+		if($slem =~ /r$/){$slem =~ s/r$//;}
+		elsif($slem =~ /ndo$/){$slem =~ s/ndo$//;}
+		elsif($slem =~ /ad[oa]$/){$slem =~ s/ad[oa]$//;}
+		#conditional
+		if($verbform eq 'rel:agentive' ){
+			$EagleMorphs = $slem.":+Ag";
+		}
+		elsif( ($verbform eq 'rel:not.agentive' && $tense =~ /S|I|P/) || $verbform eq 'perfect'){
+			$EagleMorphs = $slem.":+Perf";
+		}
+		elsif( ($verbform eq 'rel:not.agentive' && $tense =~ /F|C/ ) || $verbform eq 'obligative'){
+			$EagleMorphs = $slem.":+Obl";
+		}
+		elsif($verbform eq 'main' ){
+			my $qu_pers = $mapEaglesPersonToTags{$person};
+			my $qu_tens = $mapEaglesTenseToTags{$tense};
+			$EagleMorphs = $slem.":".$qu_tens.$qu_pers;
+		}
+		print STDERR "fhsdjkhfskdjhfsdf $slem $EagleMorphs\n";
+	}
 	# pronouns, should all be in the lexicon, TODO: check if complete
 	#	elsif($eaglesTag =~ /^P/)
 	
@@ -1029,6 +1076,7 @@ sub mapEaglesTagToQuechuaMorph{
 		#print STDER "slem: $slem";
 	}
 	$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
+	print STDERR "fhsdjkhfskdjhfsdf $slem $EagleMorphs\n";
 	return $EagleMorphs;
 }
 

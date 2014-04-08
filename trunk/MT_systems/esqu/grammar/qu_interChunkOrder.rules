@@ -8,19 +8,13 @@
 # general order within verb chunks: SOV
 
 # order in subordinated verb chunk: first is second clause, last is head
-#my.type=grup-verb && xpath{child::NODE/descendant::NODE[@smi="CS"]}				suj:my.si=/suj/, dobj:my.si=/cd/, iobj:my.si=ci, ao:my.si=ao, neg: child.smi="RN" ,adjunct:my.si=/cc|atr/, Coma:my.type=F-term && child.smi=FC, postPunc:my.type=F-term && child.smi=/FP|FAT|FET|FCT|FIT|FLT|FRC/, prePunc:child.smi=/FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA/, otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}, otherInfs:xpath{self::CHUNK/NODE[(@smi="VMN0000" or @smi="VMN0000") and count(descendant-or-self::NODE[starts-with(@smi,"V")])=1]} && !(my.si=/cd|ci|ao|gerundi|cc|atr/)			prePunc .neg .ao .suj .otherInfs .adjunct .dobj .iobj .otherchildren .head .Coma .postPunc
 
-my.type=grup-verb && my.verbform=/perfect|agentive|obligative|infinitive/			suj:my.si=/suj/, dobj:my.si=/cd/, iobj:my.si=ci, ao:my.si=ao, neg:child.smi="RN" ,adjunct:my.si=/cc|atr/, Coma:my.type=F-term && child.smi=FC, postPunc:my.type=F-term && child.smi=/FP|FAT|FET|FCT|FIT|FLT|FRC/, prePunc:child.smi=/FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA/, otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}, otherInfs:xpath{self::CHUNK/NODE[(@smi="VMN0000" or @smi="VMN0000") and count(descendant-or-self::NODE[starts-with(@smi,"V")])=1]} && !(my.si=/cd|ci|ao|gerundi|cc|atr/)			prePunc .neg .ao .suj .otherInfs .adjunct .dobj .iobj .otherchildren .head .Coma .postPunc
+my.type=grup-verb && (my.verbform=/perfect|agentive|obligative|infinitive/|| (child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]} &&  !(my.verbform=/.+/)  ))			suj:my.si=/suj/, dobj:my.si=/cd/, iobj:my.si=ci, ao:my.si=ao, neg:child.smi="RN" ,adjunct:my.si=/cc|atr/, Coma:my.type=F-term && child.smi=FC, postPunc:my.type=F-term && child.smi=/FP|FAT|FET|FCT|FIT|FLT|FRC/, prePunc:child.smi=/FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA/, otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}, otherInfs:xpath{self::CHUNK/NODE[(@smi="VMN0000" or @smi="VMN0000") and count(descendant-or-self::NODE[starts-with(@smi,"V")])=1]} && !(my.si=/cd|ci|ao|gerundi|cc|atr/)			prePunc .neg .ao .suj .otherInfs .adjunct .dobj .iobj .otherchildren .head .Coma .postPunc
 
 
 # order in coordinated or single (main) verb chunk: keep order of clauses
-#my.type=/coor-v|grup-verb/ && !(xpath{child::NODE/descendant::NODE[@smi="CS"]})			topicCommaChunk: my.si=cc && xpath{child::CHUNK/NODE[@slem=","]} && my.ref=1, subV:my.type=/grup-verb|coor-v/ && !(my.si=/cd|gerundi/) && xpath{child::NODE/descendant::NODE[@smi="CS"]} , HLRC:my.HLRC=yes, coV:my.type=/grup-verb|coor-v/ && !(my.si=/cd|gerundi|ci/) && !(xpath{child::NODE/descendant::NODE[@smi="CS"]}) && !(my.HLRC=yes) && !(xpath{self::CHUNK/NODE[(@smi="VMN0000" or @smi="VMN0000") and count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]}), suj:my.si=/suj/ && my.type=/sn|coor-n/,dobj:my.si=/cd/ && my.type=/sn|coor-n|grup-verb|coor-v/, iobj:my.si=ci && my.type=/sn|coor-n/ ,ao:my.si=ao, adjunct:my.si=/cc|atr/ && !(xpath{child::CHUNK/NODE[@slem=","]}), Coma:my.type=F-term && child.smi=FC, postPunc:my.type=F-term && child.smi=/FP|FAT|FET|FCT|FIT|FLT|FRC/, prePunc:child.smi=/FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA/, gerund:my.si=gerundi, otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}, otherInfs:xpath{self::CHUNK/NODE[(@smi="VMN0000" or @smi="VMN0000") and count(descendant-or-self::NODE[starts-with(@smi,"V")])=1]} && !(my.si=/cd|ci|ao|gerundi|cc|atr/)			prePunc .topicCommaChunk .subV .HLRC .gerund .ao .otherInfs .suj .adjunct .dobj .iobj .otherchildren .head .Coma .coV .postPunc
 
 my.type=/coor-v|grup-verb/ && my.verbform=main			topicCommaChunk: my.si=cc && xpath{child::CHUNK/NODE[@slem=","]} && my.ref=1, subV:my.type=/grup-verb|coor-v/ && !(my.si=/cd|gerundi/) && xpath{child::NODE/descendant::NODE[@smi="CS"]} , HLRC:my.HLRC=yes, coV:my.type=/grup-verb|coor-v/ && !(my.si=/cd|gerundi|ci/) && !(xpath{child::NODE/descendant::NODE[@smi="CS"]}) && !(my.HLRC=yes) && !(xpath{self::CHUNK/NODE[(@smi="VMN0000" or @smi="VMN0000") and count(descendant-or-self::NODE[starts-with(@smi,"V")])>1]}), suj:my.si=/suj/ && my.type=/sn|coor-n/,dobj:my.si=/cd/ && my.type=/sn|coor-n|grup-verb|coor-v/, iobj:my.si=ci && my.type=/sn|coor-n/, neg:child.smi="RN" ,ao:my.si=ao, adjunct:my.si=/cc|atr/ && !(xpath{child::CHUNK/NODE[@slem=","]}), Coma:my.type=F-term && child.smi=FC, postPunc:my.type=F-term && child.smi=/FP|FAT|FET|FCT|FIT|FLT|FRC/, prePunc:child.smi=/FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA/, gerund:my.si=gerundi, otherchildren:xpath{self::CHUNK[not(@type="F-term") and not(@type="grup-verb") and not(@type="coor-v")]}, otherInfs:xpath{self::CHUNK/NODE[(@smi="VMN0000" or @smi="VMN0000") and count(descendant-or-self::NODE[starts-with(@smi,"V")])=1]} && !(my.si=/cd|ci|ao|gerundi|cc|atr/)			prePunc .topicCommaChunk .subV .HLRC .gerund .neg .ao .otherInfs .suj .adjunct .dobj .iobj .otherchildren .head .Coma .coV .postPunc
-
-
-### verb chunks within pp-chunks that have no verbform attribute: (infinitives)
-#my.type=/coor-v|grup-verb/ && parent.type=/grup-sp|coor-sp/		
 
 
 ### nominal chunks ####
@@ -29,7 +23,7 @@ my.type=/sn|coor-n/		rel:my.verbform=/^rel/ && !(my.IHRC=yes), IHRC:my.IHRC=yes 
 
 
 
-my.type=/grup-sp/&& child.postpos=/.+/			noun:my.type=/sn|coor-n/				noun .head
+my.type=/grup-sp/&& child.postpos=/.+/			noun:my.type=/sn|coor-n/, inf: my.type=/coor-v|grup-verb/&& child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]}	 				.inf .noun .head
 
 ## general rule: head final
 #xpath{self::CHUNK[not(@type="F-term")]} && xpath{child::CHUNK}		child:xpath{self::CHUNK[not(@type="F-term")]}		child .head
