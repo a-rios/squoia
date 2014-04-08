@@ -172,9 +172,9 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 													# fill in attributes of first SYN that is not in matchingtranslations
 													my @SYNnodes = $node->getChildrenByLocalName('SYN');
 								    				foreach my $syn (@SYNnodes)
-								    				{#print STDERR "inserted in node:".$firstsyn->toString."\n";
+								    				{
 								    					if(!grep( $_ == $syn, @matchingSyns ) or $syn == @SYNnodes[-1])
-								    					{
+								    					{ #print STDERR "inserted in node:".$syn->toString."\n";
 								    						my @Attributes = $syn->attributes();
 								    						foreach my $synattr (@Attributes)
 								    						{
@@ -185,13 +185,16 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 								    						last;
 								    					}
 								    				}
-								   				#remove all matching translations:
-								   				foreach my $matchingtranslation (@matchingSyns)
-								   				{	#print STDERR "delete: ".$matchingtranslation->toString()."\n";
-								   					#my $docstring = $dom->toString;
-													#print STDERR $docstring;
-								   					$node->removeChild($matchingtranslation);
-								   				}
+								    				# if ALL syn nodes match: do not remove them! 
+								    				unless(scalar(@matchingSyns) >= scalar(@SYNnodes)){
+										   				#remove all matching translations:
+										   				foreach my $matchingtranslation (@matchingSyns)
+										   				{	#print STDERR "delete: ".$matchingtranslation->toString()."\n";
+										   					#my $docstring = $dom->toString;
+															#print STDERR $docstring;
+										   					$node->removeChild($matchingtranslation);
+										   				}
+								    				}
 								    		}
 								   			else
 								   			{
