@@ -102,7 +102,7 @@ $in_sentence = 0;		# flag to avoid printing empty sentences!...
 $new_sent = "<s id=\"s1\"><saphi><nonterminal id=\"s1_VROOT\"><cat>VROOT</cat><children>\n";
 $end_sent = "</children></nonterminal></saphi></s>\n";
 my $header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<corpus id=\"ahk1968-2008_qu_disamb\">
+<quechua_corpus id=\"DW_qu\">
   <head>
     <schema href=\"../qu_schema.xml\" />
   </head>
@@ -261,7 +261,7 @@ while (<>) {
 if ($in_sentence) {		# if sentence not yet "ended"
  print STDOUT $end_sent;		# print EOS
 }
-print STDOUT "</body>\n</corpus>\n";
+print STDOUT "</body>\n</quechua_corpus>\n";
 
 # close(XFST);
 # close(PML);
