@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="DW_qu">
+<quechua_corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="DW_qu">
   <head>
     <schema href="../qu_schema.xml"/>
   </head>
@@ -3120,4 +3120,4 @@
 <terminal><order>5</order><label>punc</label><word>.</word><pos>$.</pos><translation/><morph/></terminal>
 </children></nonterminal></saphi></s>
 </body>
-</corpus>
+</quechua_corpus>
