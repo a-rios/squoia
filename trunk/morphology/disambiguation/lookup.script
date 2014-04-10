@@ -1,8 +1,8 @@
-main ../normalizer/normalizer.fst
-spanish ../normalizer/spanish.fst
-main2 ../normalizer/normalizer-relax.fst
-spanish2 ../normalizer/spanish-relax.fst
-guesser ../normalizer/guesser.fst
+main /home/clsquoia/google_squoia/morphology/normalizer/normalizer.fst
+spanish /home/clsquoia/google_squoia/morphology/normalizer/spanish.fst
+main2 /home/clsquoia/google_squoia/morphology/normalizer/normalizer-relax.fst
+spanish2 /home/clsquoia/google_squoia/morphology/normalizer/spanish-relax.fst
+guesser /home/clsquoia/google_squoia/morphology/normalizer/guesser.fst
 
 main
 spanish
