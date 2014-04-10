@@ -18,6 +18,8 @@ my $maxNBofEntries=1;
 my $maxNBofLems=1;
 my $maxNBofTags=1;
 
+my %AllTags=();
+
 
 while (<>) 
 {
@@ -36,6 +38,9 @@ while (<>)
                 my $analyisis = $lemma."##".$tag;
                 $forms{$form}{$analyisis} = 1;
                 $nbrOfEntries++;
+                # collect tags
+                $AllTags{$tag}=1;
+                
 #               if(exists $tags{$tag}){
 #                       print STDERR "$tag in form $form has more than one possible lemma\n";
 #               }
@@ -102,3 +107,4 @@ print STDERR "max nbr of tags: $maxNBofTags\n";
 
 
 store \%forms, 'FLdix';
+store \%AllTags, 'FLtags';

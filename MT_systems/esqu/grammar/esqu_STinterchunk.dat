@@ -49,7 +49,8 @@ my.type=grup-sp && my.case=/.+/ && !(xpath{../child::CHUNK[@type="sn" or @type="
 # subject in nominal verb chunk: add genitive
 # TODO check if thats correct: 
 # ella sabe que tú te has ido -> qam(pa?) rikusqaykita yachan
-my.si=/suj/ 		case		my.verbform=/perfect|obligative/ && my.case=+Acc	"+Gen"		parent		2to1		overwrite
+#my.si=/suj/ 		case		my.verbform=/perfect|obligative|not\.agentive/ && my.case=+Acc		"+Gen"		parent		2to1		overwrite
+my.si=/suj/ 		case		my.verbform=/perfect|obligative|not\.agentive/					"+Gen"		parent		2to1		overwrite
 
 ## sólo/solamente -> copy chunkmi from sadv chunk to head
 child.slem=/sólo|solamente/ && my.chunkmi=++Lim		chunkmi			my.type=/.+/		chunkmi		parent		1to2		concat

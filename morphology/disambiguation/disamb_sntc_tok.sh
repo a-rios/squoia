@@ -19,11 +19,12 @@ RAW_FILE=$1
 cat $RAW_FILE | perl $TOKENIZER | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/test.xfst
 
 cat $TMP_DIR/test.xfst | perl cleanGuessedRoots.pl -$EVID -$PISPAS > $TMP_DIR/test_clean.xfst
-cat $TMP_DIR/test_clean.xfst perl wapiti/xfst2wapiti_pos.pl -test > $TMP_DIR/pos.test
+
+cat $TMP_DIR/test_clean.xfst | perl wapiti/xfst2wapiti_pos.pl -test > $TMP_DIR/pos.test
 
 wapiti label -m $POS_MODEL $TMP_DIR/pos.test > $TMP_DIR/pos.result
 
-perl disambiguateRoots.pl $TMP_DIR/pos.result $XFST_FILE > $TMP_DIR/pos.disamb
+perl disambiguateRoots.pl $TMP_DIR/pos.result $TMP_DIR/test_clean.xfst > $TMP_DIR/pos.disamb
 
 perl wapiti/xfst2wapiti_morphTest.pl -1 $TMP_DIR/pos.disamb > $TMP_DIR/morph1.test
 

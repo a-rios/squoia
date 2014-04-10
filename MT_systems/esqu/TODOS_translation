@@ -9,6 +9,16 @@ TAGGING:
     se		él	p	PP3CN000
    sollte sein: 
    se		se	p	P00CN000 or P03CN000 or PP3CN000
+- dates: 
+    - nur Jahreszahlen, in Ancora:
+	1935	[??:??/??/1935:??.??]	w	W
+    - morph. von FL:
+	1998    lc      1998    Z  (wapitit labelts dann als W!)
+     aber: en el año 1998:
+	año_1998        lc      [??:??/??/1998:??.??:??]    
+    
+    
+ (done - insert NP classes)
 
 GENERALLY:
  - creg's -> which case?
