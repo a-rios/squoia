@@ -3395,22 +3395,31 @@ top_model top_model NCCS000 I
 <valer>_la_pena valer_la_pena $1:VM I
 
 %%%%% possessive pronouns with article %%%%%%%%%%%
+lo_mío lo_mío PX1NS0S0 I
 el_mío el_mío PX1MS0S0 I
 los_míos el_mío PX1MP0S0 I
 la_mía la_mía PX1FS0S0 I
 las_mías la_mía PX1FP0S0 I
+
+lo_tuyo lo_tuyo PX2NS0S0 I
 el_tuyo el_tuyo PX2MS0S0 I
 los_tuyos el_tuyo PX2MP0S0 I
 la_tuya la_tuya PX2FS0S0 I
 las_tuyas la_tuya PX2FP0S0 I
+
+lo_suyo lo_suyo PX3NS0C0 I
 el_suyo el_suyo PX3MS0C0 I
 los_suyos el_suyo PX3MP0C0 I
 la_suya la_suya PX3FS0C0 I
 las_suyas la_suya PX3FP0C0 I
+
+lo_nuestro lo_nuestro PX1NS0P0 I
 el_nuestro el_nuestro PX1MS0P0 I
 los_nuestros el_nuestro PX1MP0P0 I
 la_nuestra la_nuestra PX1FS0P0 I
 las_nuestras la_nuestra PX1FP0P0 I
+
+lo_vuestro lo_vuestro PX2NS0P0 I
 el_vuestro el_vuestro PX2MS0P0 I
 los_vuestros el_vuestro PX2MP0P0 I
 la_vuestra la_vuestra PX2FS0P0 I
