@@ -456,7 +456,7 @@ que	que	c	CS
 los_míos	el_mío	p	PX1MP0S0
 también	también	r	RG
 hubiesen	haber	v	VASI3P0
-estado	estado	v	VMP00SM
+estado	estar	v	VMP00SM
 aquí	aquí	r	RG
 ,	,	f	Fc
 pero	pero	c	CC
@@ -735,9 +735,9 @@ pues	pues	c	CS
 los	el	d	DA0MP0
 niños	niño	n	NCMP000
 aún	aun	r	RG
-estaban	estaban	v	VMII3P0
+estaban	estar	v	VAII3P0
 siendo	ser	v	VSG0000
-colocados	colocado	a	AQ0MPP
+colocados	colocado	v	VMP00PM
 en	en	s	SPS00
 sus	su	d	DP3CP0
 niveles	nivel	n	NCMP000
@@ -968,7 +968,7 @@ momento	momento	n	NCMS000
 ,	,	f	Fc
 yo	yo	p	PP1CSN00
 habría	haber	v	VAIC1S0
-estado	estado	v	VMP00SM
+estado	estar	v	VMP00SM
 en	en	s	SPS00
 una	uno	d	DI0FS0
 mejor	mejor	a	AQ0CS0
@@ -1137,7 +1137,7 @@ cuestión	cuestión	n	NCFS000
 
 Yo	yo	p	PP1CSN00
 habría	haber	v	VAIC1S0
-estado	estado	v	VMP00SM
+estado	estar	v	VMP00SM
 muy	muy	r	RG
 contento	contento	a	AQ0MS0
 si	si	c	CS
@@ -1282,7 +1282,7 @@ yo	yo	p	PP1CSN00
 habría	haber	v	VAIC1S0
 reaccionado	reaccionar	v	VMP00SM
 cuando	cuando	c	CS
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 en	en	s	SPS00
 el	el	d	DA0MS0
 sexto	6	a	AO0MS0
@@ -1497,7 +1497,7 @@ mantenerse	mantener	v	VMN0000
 .	.	f	Fp
 
 Yo	yo	p	PP1CSN00
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 copiando	copiar	v	VMG0000
 como	como	s	SPS00
 todos	todo	d	DI0MP0
@@ -1539,12 +1539,12 @@ el	el	d	DA0MS0
 camino	camino	n	NCMS000
 que	que	p	PR0CN000
 yo	yo	p	PP1CSN00
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 recorriendo	recorrer	v	VMG0000
 .	.	f	Fp
 
 Yo	yo	p	PP1CSN00
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 sacándome	sacar	v	VMG0000
 la	el	d	DA0FS0
 máscara	máscara	n	NCFS000
@@ -1566,13 +1566,13 @@ tenía	tener	v	VMII1S0
 calor	calor	n	NCMS000
 y	y	c	CC
 me	me	p	PP1CS000
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 acalorando	acalorar	v	VMG0000
 más	más	r	RG
 .	.	f	Fp
 
 Yo	yo	p	PP1CSN00
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 con	con	s	SPS00
 los	el	d	DA0MP0
 chicos	chico	n	NCMP000
@@ -1599,7 +1599,7 @@ tiroteos	tiroteo	n	NCMP000
 .	.	f	Fp
 
 Yo	yo	p	PP1CSN00
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 a_punto_de	a_punto_de	s	SPS00
 decirle	decir	v	VMN0000
 que	que	c	CS
@@ -1637,7 +1637,7 @@ estábamos	estábamos	v	VMII1P0
 bueno	bueno	i	I
 ,	,	f	Fc
 yo	yo	p	PP1CSN00
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 particularmente	particularmente	r	RG
 asustada	asustado	a	AQ0FSP
 "	"	f	Fe
@@ -1731,7 +1731,7 @@ Cuánto	cuánto	p	PT0MS000
 de	de	s	SPS00
 lo	el	d	DA0NS0
 que	que	p	PR0CN000
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 viendo	ver	v	VMG0000
 yo	yo	p	PP1CSN00
 había	haber	v	VAII3S0
@@ -1781,7 +1781,7 @@ situación	situación	n	NCFS000
 :	:	f	Fd
 Yo	yo	p	PP1CSN00
 había	haber	v	VAII1S0
-estado	estado	v	VAP00SM
+estado	estar	v	VAP00SM
 estudiando	estudiar	v	VMG0000
 inglés	inglés	n	NCMS000
 por	por	s	SPS00
@@ -1801,7 +1801,7 @@ con	con	s	SPS00
 las	el	d	DA0FP0
 que	que	p	PR0CN000
 me	me	p	PP1CS000
-estaban	estaban	v	VAII3P0
+estaban	estar	v	VAII3P0
 preparando	preparar	v	VMG0000
 para	para	s	SPS00
 trabajar	trabajar	v	VMN0000
@@ -1858,7 +1858,7 @@ sagradas	sagrado	a	AQ0FP0
 !	!	f	Fat
 
 Si	si	c	CS
-estabais	estabais	v	VAII2P0
+estabais	estar	v	VAII2P0
 pensando	pensar	v	VMG0000
 en	en	s	SPS00
 una	uno	d	DI0FS0
@@ -1881,7 +1881,7 @@ son	ser	v	VSIP3P0
 las	el	d	DA0FP0
 palabras	palabra	n	NCFP000
 que	que	p	PR0CN000
-estabais	estabais	v	VAII2P0
+estabais	estar	v	VAII2P0
 intercambiando	intercambiar	v	VMG0000
 con	con	s	SPS00
 tanta	tanto	d	DI0FS0
@@ -1996,7 +1996,7 @@ a	a	s	SPS00
 tutela	tutela	n	NCFS000
 ;	;	f	Fx
 fuimos	ser	v	VSIS1P0
-colonizados	colonizado	a	AQ0MPP
+colonizados	colonizado	v	VMP00PM
 y	y	c	CC
 ahora	ahora	r	RG
 somos	ser	v	VSIP1P0
@@ -2808,25 +2808,35 @@ del	de	s	SPCMS
 Señor	señor	n	NP00SP0
 .	.	f	Fp
 
-No	no	r	RN
-nos	nos	p	PP1CP000
-cansemos	cansar	v	VMSP1P0
+Dichosos	dichoso	a	AQ0MP0
+nosotros	nosotros	p	PP1MP000
 ,	,	f	Fc
-pues	pues	c	CS
-,	,	f	Fc
-de	de	s	SPS00
-hacer	hacer	v	VMN0000
-bien	bien	r	RG
-que	que	c	CS
-á	á	v	VMIF3S0
-su	su	d	DP3CS0
-tiempo	tiempo	n	NCMS000
-segaremos	segar	v	VMIF1P0
+queridos	querido	a	AQ0MPP
+hermanos	hermano	n	NCMP000
 ,	,	f	Fc
 si	si	c	CS
-no	no	r	RN
 hubiéremos	haber	v	VASF1P0
-desmayado	desmayar	v	VMP00SM
+cumplido	cumplir	v	VMP00SM
+los	el	d	DA0MP0
+mandamientos	mandamiento	n	NCMP000
+de	de	s	SPS00
+Dios	dios	n	NP00SP0
+en	en	s	SPS00
+la	el	d	DA0FS0
+concordia	concordia	n	NCFS000
+de	de	s	SPS00
+la	el	d	DA0FS0
+caridad	caridad	n	NCFS000
+,	,	f	Fc
+a_fin_de_que	a_fin_de_que	c	CS
+por	por	s	SPS00
+la	el	d	DA0FS0
+caridad	caridad	n	NCFS000
+se	se	p	PP3CN000
+nos	nos	p	PP1CP000
+perdonen	perdonar	v	VMSP3P0
+nuestros	nuestro	d	DP1MPP
+pecados	pecado	n	NCMP000
 .	.	f	Fp
 
 Los	el	d	DA0MP0
@@ -3159,7 +3169,7 @@ Pues	pues	r	RG
 desde	desde	s	SPS00
 donde	donde	c	CS
 yo	yo	p	PP1CSN00
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 no	no	r	RN
 parecía	parecer	v	VMII3S0
 que	que	c	CS
@@ -5998,7 +6008,7 @@ apoyaba	apoyar	v	VMII3S0
 Fui	ir	v	VMIS1S0
 hasta	hasta	s	SPS00
 donde	donde	c	CS
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 mi	mi	d	DP1CSS
 madre	madre	n	NCFS000
 y	y	c	CC
@@ -6037,7 +6047,7 @@ juzgaron	juzgar	v	VMIS3P0
 mi	mi	d	DP1CSS
 pasado	pasado	n	NCMS000
 y	y	c	CC
-estaban	estaban	v	VMII3P0
+estaban	estar	v	VMII3P0
 dispuestos	dispuesto	a	AQ0MPP
 a	a	s	SPS00
 contestar	contestar	v	VMN0000
@@ -6453,7 +6463,7 @@ tenía	tener	v	VMII1S0
 trece	13	z	Z
 años	año	n	NCMP000
 ,	,	f	Fc
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 loca	loco	a	AQ0FS0
 por	por	s	SPS00
 el	el	d	DA0MS0
@@ -6552,7 +6562,7 @@ El	el	d	DA0MS0
 crítico	crítico	n	NCMS000
 Achille_ségard	achille_ségard	n	NP00SP0
 no	no	r	RN
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 equivocado	equivocado	a	AQ0MSP
 cuando	cuando	c	CS
 hablaba	hablar	v	VMII3S0
@@ -6577,7 +6587,7 @@ hace	hacer	v	VMIP3S0
 dos	dos	d	DN0CP0
 ó	ó	c	CC
 tres	3	z	Z
-años    lc      año     NCMP000
+años	año	n	NCMP000
 ,	,	f	Fc
 el	el	d	DA0MS0
 sueldo	sueldo	n	NCMS000
@@ -6717,6 +6727,332 @@ de	de	s	SPS00
 caucho	caucho	n	NCMS000
 .	.	f	Fp
 
+El	el	d	DA0MS0
+mundo	mundo	n	NCMS000
+no	no	r	RN
+bailará	bailar	v	VMIF3S0
+al	a	s	SPCMS
+son	son	n	NCMS000
+de	de	s	SPS00
+la	el	d	DA0FS0
+opinión	opinión	n	NCFS000
+subjetiva	subjetivo	a	AQ0FS0
+del	de	s	SPCMS
+Japón	japón	n	NP00G00
+.	.	f	Fp
+
+Bailamos	bailar	v	VMIP1P0
+al	a	s	SPCMS
+son	son	n	NCMS000
+de	de	s	SPS00
+sus	su	d	DP3CP0
+tambores	tambor	n	NCMP000
+por	por	s	SPS00
+toda	todo	d	DI0FS0
+la	el	d	DA0FS0
+comunidad	comunidad	n	NCFS000
+.	.	f	Fp
+
+Intente	intentar	v	VMM03S0
+ayudarle	ayudar	v	VMN0000
+a	a	s	SPS00
+captar	captar	v	VMN0000
+el	el	d	DA0MS0
+ritmo	ritmo	n	NCMS000
+de	de	s	SPS00
+la	el	d	DA0FS0
+música	música	n	NCFS000
+agarrando	agarrar	v	VMG0000
+los	el	d	DA0MP0
+brazos	brazo	n	NCMP000
+del	de	s	SPCMS
+niño	niño	n	NCMS000
+y	y	c	CC
+moviéndolos	mover	v	VMG0000
+al	a	s	SPCMS
+son	son	n	NCMS000
+.	.	f	Fp
+
+Ha	haber	v	VAIP3S0
+llegado	llegar	v	VMP00SM
+un	uno	d	DI0MS0
+momento	momento	n	NCMS000
+en	en	s	SPS00
+que	que	p	PR0CN000
+debemos	deber	v	VMIP1P0
+dejar	dejar	v	VMN0000
+de	de	s	SPS00
+aceptar	aceptar	v	VMN0000
+las	el	d	DA0FP0
+cosas	cosa	n	NCFP000
+de	de	s	SPS00
+forma	forma	n	NCFS000
+rutinaria	rutinario	a	AQ0FS0
+como	como	c	CS
+si	si	c	CS
+fuéramos	ser	v	VSSI1P0
+muñecos	muñeco	n	NCMP000
+de	de	s	SPS00
+cuerda	cuerda	n	NCFS000
+en	en	s	SPS00
+una	uno	d	DI0FS0
+manida	manido	a	AQ0FSP
+farsa	farsa	n	NCFS000
+de	de	s	SPS00
+escrutinio	escrutinio	n	NCMS000
+parlamentario	parlamentario	a	AQ0MS0
+.	.	f	Fp
+
+Si	si	c	CS
+lo	lo	p	PP3MSA00
+fuéramos	ser	v	VSSI1P0
+todos	todo	d	DI0MP0
+los	el	d	DA0MP0
+factores	factor	n	NCMP000
+negativos	negativo	a	AQ0MP0
+que	que	p	PR0CN000
+nos	nos	p	PP1CP000
+presionan	presionar	v	VMIP3P0
+nos	nos	p	PP1CP000
+dejarían	dejar	v	VMIC3P0
+fuera_de	fuera_de	s	SPS00
+juego	juego	n	NCMS000
+.	.	f	Fp
+
+Si	si	c	CS
+fuéramos	ser	v	VSSI1P0
+capaces	capaz	a	AQ0CP0
+de	de	s	SPS00
+escuchar	escuchar	v	VMN0000
+estos	este	d	DD0MP0
+sonidos	sonido	n	NCMP000
+,	,	f	Fc
+obtendríamos	obtener	v	VMIC1P0
+una	uno	d	DI0FS0
+valiosa	valioso	a	AQ0FS0
+información	información	n	NCFS000
+acerca_del	acerca_de	s	SPCMS
+estado	estado	n	NCMS000
+de	de	s	SPS00
+nuestras	nuestro	d	DP1FPP
+máquinas	máquina	n	NCFP000
+e	y	c	CC
+instalaciones	instalación	n	NCFP000
+.	.	f	Fp
+
+Dijo	decir	v	VMIS3S0
+que	que	c	CS
+nos	nos	p	PP1CP000
+fuéramos	ir	v	VMSI1P0
+a	a	s	SPS00
+casa	casa	n	NCFS000
+,	,	f	Fc
+que	que	c	CS
+no	no	r	RN
+debíamos	deber	v	VMII1P0
+ir	ir	v	VMN0000
+a	a	s	SPS00
+un	uno	d	DI0MS0
+lugar	lugar	n	NCMS000
+del	de	s	SPCMS
+cual	cual	p	PR0CS000
+no	no	r	RN
+volveríamos	volver	v	VMIC1P0
+nunca	nunca	r	RG
+.	.	f	Fp
+
+Y	y	c	CC
+creo	creer	v	VMIP1S0
+que	que	c	CS
+sería	ser	v	VSIC3S0
+una	uno	d	DI0FS0
+negación	negación	n	NCFS000
+que	que	c	CS
+avanzáramos	avanzar	v	VMSI1P0
+en	en	s	SPS00
+todos	todo	d	DI0MP0
+los	el	d	DA0MP0
+sentidos	sentido	n	NCMP000
+y	y	c	CC
+las	el	d	DA0FP0
+mujeres	mujer	n	NCFP000
+nos	nos	p	PP1CP000
+fuéramos	ir	v	VMSI1P0
+quedando	quedar	v	VMG0000
+detrás	detrás	r	RG
+.	.	f	Fp
+
+Fuéramos	ir	v	VMSI1P0
+donde	donde	c	CS
+fuéramos	ir	v	VMSI1P0
+y	y	c	CC
+fuese	ser	v	VSSI3S0
+cual	cual	p	PR0CS000
+fuese	ser	v	VSSI3S0
+la	el	d	DA0FS0
+situación	situación	n	NCFS000
+,	,	f	Fc
+las	el	d	DA0FP0
+ruedas	rueda	n	NCFP000
+para	para	s	SPS00
+la	el	d	DA0FS0
+oración	oración	n	NCFS000
+giraban	girar	v	VMII3P0
+,	,	f	Fc
+el	el	d	DA0MS0
+incienso	incienso	n	NCMS000
+ardía	arder	v	VMII3S0
+y	y	c	CC
+se	se	p	PP3CN000
+salmodiaban	salmodiar	v	VMII3P0
+los	el	d	DA0MP0
+mantras	mantra	n	NCCP000
+.	.	f	Fp
+
+Me	me	p	PP1CS000
+gustaría	gustar	v	VMIC3S0
+,	,	f	Fc
+sin_embargo	sin_embargo	r	RG
+,	,	f	Fc
+que	que	c	CS
+fuésemos	ser	v	VSSI1P0
+más	más	r	RG
+precisos	preciso	a	AQ0MP0
+en	en	s	SPS00
+nuestro	nuestro	d	DP1MSP
+debate	debate	n	NCMS000
+.	.	f	Fp
+
+Si	si	c	CS
+no	no	r	RN
+fuésemos	ser	v	VSSI1P0
+internacionalistas	internacionalista	n	NCCP000
+,	,	f	Fc
+nos	nos	p	PP1CP000
+habríamos	haber	v	VAIC1P0
+deprimido	deprimir	v	VMP00SM
+.	.	f	Fp
+
+Cuán	cuán	r	RG
+terrible	terrible	a	AQ0CS0
+sería	ser	v	VSIC3S0
+si	si	c	CS
+fuésemos	ser	v	VSSI1P0
+llevados	llevar	v	VMP00PM
+a	a	s	SPS00
+nuestra	nuestro	d	DP1FSP
+ejecución	ejecución	n	NCFS000
+con	con	s	SPS00
+los	el	d	DA0MP0
+ojos	ojo	n	NCMP000
+vendados	vendado	a	AQ0MPP
+por	por	s	SPS00
+una	uno	d	DI0FS0
+suposición	suposición	n	NCFS000
+!	!	f	Fat
+
+Si	si	c	CS
+fuésemos	ser	v	VSSI1P0
+una	uno	d	DI0FS0
+democracia	democracia	n	NCFS000
+,	,	f	Fc
+la	el	d	DA0FS0
+voluntad	voluntad	n	NCFS000
+popular	popular	a	AQ0CS0
+predominaría	predominar	v	VMIC3S0
+.	.	f	Fp
+
+Esta	este	p	PD0FS000
+es	ser	v	VSIP3S0
+la	el	d	DA0FS0
+idea	idea	n	NCFS000
+que	que	p	PR0CN000
+nos	nos	p	PP1CP000
+ha	haber	v	VAIP3S0
+guiado	guiar	v	VMP00SM
+y	y	c	CC
+ha	haber	v	VAIP3S0
+hecho	hacer	v	VMP00SM
+que	que	c	CS
+fuésemos	ir	v	VMSI1P0
+todos	todo	p	PI0MP000
+en	en	s	SPS00
+la	el	d	DA0FS0
+misma	mismo	a	AQ0FS0
+dirección	dirección	n	NCFS000
+.	.	f	Fp
+
+Si	si	c	CS
+fuésemos	ir	v	VMSI1P0
+a	a	s	SPS00
+reinventar	reinventar	v	VMN0000
+el	el	d	DA0MS0
+computador	computador	n	NCMS000
+desde	desde	s	SPS00
+una	uno	d	DI0FS0
+perspectiva	perspectiva	n	NCFS000
+orgánica	orgánico	a	AQ0FS0
+,	,	f	Fc
+cómo	cómo	p	PT000000
+nos	nos	p	PP1CP000
+imaginamos	imaginar	v	VMIP1P0
+que	que	c	CS
+éste	este	p	PD0MS000
+sería	ser	v	VSIC3S0
+?	?	f	Fit
+
+El	el	d	DA0MS0
+ritmo	ritmo	n	NCMS000
+es	ser	v	VSIP3S0
+demasiado	demasiado	r	RG
+lento	lento	a	AQ0MS0
+actualmente	actualmente	r	RG
+y	y	c	CC
+parece	parecer	v	VMIP3S0
+como	como	c	CS
+si	si	c	CS
+fuésemos	ir	v	VMSI1P0
+a	a	s	SPS00
+necesitar	necesitar	v	VMN0000
+un	uno	d	DI0MS0
+siglo	siglo	n	NCMS000
+antes_de_que	antes_de_que	c	CS
+muchos	mucho	d	DI0MP0
+países	país	n	NCMP000
+logren	lograr	v	VMSP3P0
+al	a	s	SPCMS
+objetivo	objetivo	n	NCMS000
+.	.	f	Fp
+
+Así_que	así_que	c	CS
+fuimos	ir	v	VMIS1P0
+a	a	s	SPS00
+un	uno	d	DI0MS0
+especialista	especialista	n	NCCS000
+en	en	s	SPS00
+Orl	orl	n	NP00G00
+que	que	p	PR0CN000
+nos	nos	p	PP1CP000
+dijo	decir	v	VMIS3S0
+que	que	c	CS
+Marvin	marvin	n	NP00SP0
+tenía	tener	v	VMII3S0
+una	uno	d	DI0FS0
+grave	grave	a	AQ0CS0
+pérdida	pérdida	n	NCFS000
+auditiva	auditivo	a	AQ0FS0
+total	total	a	AQ0CS0
+,	,	f	Fc
+y	y	c	CC
+nos	nos	p	PP1CP000
+aconsejó	aconsejar	v	VMIS3S0
+que	que	c	CS
+fuésemos	ir	v	VMSI1P0
+inmediatamente	inmediatamente	r	RG
+al	a	s	SPCMS
+hospital	hospital	n	NCMS000
+.	.	f	Fp
+
 Me	me	p	PP1CS000
 llamo	llamar	v	VMIP1S0
 Gregorio_condori_mamani	gregorio_condori_mamani	n	NP00SP0
@@ -6753,7 +7089,7 @@ pobre	pobre	a	AQ0CS0
 y	y	c	CC
 huérfano	huérfano	a	AQ0MS0
 y	y	c	CC
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 en	en	s	SPS00
 poder	poder	n	NCMS000
 de	de	s	SPS00
@@ -7199,7 +7535,7 @@ Cusco	cusco	n	NP00G00
 El	el	d	DA0MS0
 tayta	tayta	n	NCMS000
 Laureno	laureno	n	NP00SP0
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 de	de	s	SPS00
 Alcalde_varayoq	alcalde_varayoq	n	NP00SP0
 y	y	c	CC
@@ -7211,7 +7547,7 @@ que	que	c	CS
 cuando	cuando	c	CS
 el	el	d	DA0MS0
 Inka	inka	n	NP00SP0
-estaba	estaba	v	VAII3S0
+estaba	estar	v	VAII3S0
 construyendo	construir	v	VMG0000
 el	el	d	DA0MS0
 Cusco	cusco	n	NP00G00
@@ -7319,7 +7655,7 @@ grande	grande	a	AQ0CS0
 
 Ya	ya	r	RG
 cuando	cuando	c	CS
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VAII3S0
 arreando	arrear	v	VMG0000
 al	a	s	SPCMS
 viento	viento	n	NCMS000
@@ -7621,7 +7957,7 @@ cuando	cuando	c	CS
 el	el	d	DA0MS0
 padre	padre	n	NCMS000
 sol	sol	n	NCMS000
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 bien	bien	r	RG
 inclinado	inclinado	a	AQ0MSP
 ,	,	f	Fc
@@ -7689,7 +8025,7 @@ mulas	mulo	n	NCFP000
 
 la	el	d	DA0FS0
 señora	señor	n	NCFS000
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 embarazada	embarazado	a	AQ0FSP
 ,	,	f	Fc
 ya	ya	r	RG
@@ -7790,7 +8126,7 @@ lluvia	lluvia	n	NCFS000
 todo	todo	d	DI0MS0
 mojadito	mojado	a	AQDMS0
 ,	,	f	Fc
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 agarrando	agarrar	v	VMG0000
 la	el	d	DA0FS0
 mula	mulo	n	NCFS000
@@ -7805,7 +8141,7 @@ arriero	arriero	n	NCMS000
 pobrecita	pobre	n	NCFS00D
 !	!	f	Fat
 -	-	f	Fg
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 con	con	s	SPS00
 dolores	dolor	n	NCMP000
 de	de	s	SPS00
@@ -7880,7 +8216,7 @@ vez	vez	n	NCFS000
 ,	,	f	Fc
 ya	ya	r	RG
 cuando	cuando	c	CS
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 por	por	s	SPS00
 amanecer	amanecer	v	VMN0000
 ,	,	f	Fc
@@ -7935,7 +8271,7 @@ y	y	c	CC
 en	en	s	SPS00
 lo	el	d	DA0NS0
 que	que	p	PR0CN000
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 gritando	gritar	v	VMG0000
 ,	,	f	Fc
 sentía	sentir	v	VMII1S0
@@ -7947,7 +8283,7 @@ había	haber	v	VAII3S0
 candela	candela	n	NCFS000
 que	que	p	PR0CN000
 me	me	p	PP1CS000
-estaba	estaba	v	VAII3S0
+estaba	estar	v	VAII3S0
 quemando	quemar	v	VMG0000
 el	el	d	DA0MS0
 cuerpo	cuerpo	n	NCMS000
@@ -8000,7 +8336,7 @@ dijo	decir	v	VMIS3S0
 ,	,	f	Fc
 y	y	c	CC
 llorando	llorar	v	VMG0000
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 sentado	sentado	a	AQ0MSP
 sobre	sobre	s	SPS00
 la	el	d	DA0FS0
@@ -8030,7 +8366,7 @@ siguiente	siguiente	a	AQ0CS0
 ,	,	f	Fc
 mi	mi	d	DP1CSS
 culo	culo	n	NCMS000
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 hinchado	hinchado	a	AQ0MSP
 ,	,	f	Fc
 todo	todo	d	DI0MS0
@@ -8106,7 +8442,7 @@ ojos	ojo	n	NCMP000
 y	y	c	CC
 mi	mi	d	DP1CSS
 culo	culo	n	NCMS000
-estaban	estaban	v	VMII3P0
+estaban	estar	v	VMII3P0
 hinchados	hinchado	a	AQ0MPP
 totalmente	totalmente	r	RG
 ,	,	f	Fc
@@ -8269,7 +8605,7 @@ de	de	s	SPS00
 lo	el	d	DA0NS0
 que	que	p	PR0CN000
 ya	ya	r	RG
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 caminando	caminar	v	VMG0000
 a	a	s	SPS00
 la	el	d	DA0FS0
@@ -8342,7 +8678,7 @@ Así	así	r	RG
 ,	,	f	Fc
 todo	todo	p	PI0MS000
 mi	mi	d	DP1CSS
-mal	mal	r	RG
+mal	mal	n	NCMS000
 era	ser	v	VSII3S0
 para	para	s	SPS00
 esto	este	p	PD0NS000
@@ -8353,7 +8689,7 @@ día	día	n	NCMS000
 siguiente	siguiente	a	AQ0CS0
 de	de	s	SPS00
 nuevo	nuevo	a	AQ0MS0
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 sano	sano	a	AQ0MS0
 .	.	f	Fp
 
@@ -8412,7 +8748,7 @@ estancia	estancia	n	NCFS000
 
 Como	como	c	CS
 yo	yo	p	PP1CSN00
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 llora	llorar	v	VMIP3S0
 y	y	c	CC
 llora	llorar	v	VMIP3S0
@@ -8466,7 +8802,7 @@ en	en	s	SPS00
 la	el	d	DA0FS0
 estancia	estancia	n	NCFS000
 ,	,	f	Fc
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 junto_con	junto_con	s	SPS00
 ellos	ellos	p	PP3MP000
 apacentando	apacentar	v	VMG0000
@@ -8574,7 +8910,7 @@ lugar	lugar	n	NCMS000
 En	en	s	SPS00
 lo	el	d	DA0NS0
 que	que	p	PR0CN000
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 caminando	caminar	v	VMG0000
 así	así	r	RG
 tras	tras	s	SPS00
@@ -8731,7 +9067,7 @@ tragadera	tragadera	n	NCFS000
 Ante	ante	s	SPS00
 sus	su	d	DP3CP0
 palabras	palabra	n	NCFP000
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 temblando	temblar	v	VMG0000
 de	de	s	SPS00
 vergüenza	vergüenza	n	NCFS000
@@ -8794,7 +9130,7 @@ siguiente	siguiente	a	AQ0CS0
 ,	,	f	Fc
 de	de	s	SPS00
 nuevo	nuevo	a	AQ0MS0
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 en	en	s	SPS00
 sus	su	d	DP3CP0
 mandatos	mandato	n	NCMP000
@@ -8804,12 +9140,12 @@ Aunque	aunque	c	CS
 yo	yo	p	PP1CSN00
 ya	ya	r	RG
 no	no	r	RN
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 en	en	s	SPS00
 mí	mí	p	PP1CS000
 ,	,	f	Fc
 siempre	siempre	r	RG
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 pensando	pensar	v	VMG0000
 en	en	s	SPS00
 irme	ir	v	VMN0000
@@ -9056,7 +9392,7 @@ dieran_cuenta	dar_cuenta	v	VMSI3P0
 
 Ya	ya	r	RG
 cuando	cuando	c	CS
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 dentro_del	dentro_de	s	SPCMS
 toldo	toldo	n	NCMS000
 me	me	p	PP1CS000
@@ -9383,7 +9719,7 @@ Así	así	r	RG
 en	en	s	SPS00
 lo	el	d	DA0NS0
 que	que	p	PR0CN000
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 caminando	caminar	v	VMG0000
 entre	entre	s	SPS00
 las	el	d	DA0FP0
@@ -10010,7 +10346,7 @@ su	su	d	DP3CS0
 casa	casa	n	NCFS000
 ,	,	f	Fc
 siempre	siempre	r	RG
-estaba	estaba	v	VAII3S0
+estaba	estar	v	VAII3S0
 viajando	viajar	v	VMG0000
 .	.	f	Fp
 
@@ -10228,7 +10564,7 @@ una	uno	d	DI0FS0
 mujer	mujer	n	NCFS000
 que	que	p	PR0CN000
 habían	haber	v	VAII3P0
-estado	estado	v	VAP00SM
+estado	estar	v	VAP00SM
 truchando	truchando	v	VMG0000
 ,	,	f	Fc
 así	así	r	RG
@@ -10504,7 +10840,7 @@ mundo	mundo	n	NCMS000
 .	.	f	Fp
 
 Eso	ese	p	PD0NS000
-nos	no	n	NCMP000
+nos	nos	p	PP1CP000
 dijo	decir	v	VMIS3S0
 una	uno	d	DI0FS0
 vez	vez	n	NCFS000
@@ -10800,7 +11136,7 @@ bien	bien	r	RG
 mi	mi	d	DP1CSS
 ropa	ropa	n	NCFS000
 siempre	siempre	r	RG
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 haraposa	haraposo	a	AQ0FS0
 como	como	s	SPS00
 ahora	ahora	r	RG
@@ -10855,7 +11191,7 @@ ayni	ayni	n	NCCS000
 .	.	f	Fp
 
 Así	así	r	RG
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 en	en	s	SPS00
 la	el	d	DA0FS0
 casa	casa	n	NCFS000
@@ -11324,7 +11660,7 @@ ropa	ropa	n	NCFS000
 que	que	p	PR0CN000
 me	me	p	PP1CS000
 puso	poner	v	VMIS3S0
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 nueva	nuevo	a	AQ0FS0
 .	.	f	Fp
 
@@ -11978,7 +12314,7 @@ Sicuani	sicuani	n	NP00G00
 .	.	f	Fp
 
 Así	así	r	RG
-estando	estando	v	VMG0000
+estando	estar	v	VMG0000
 entropados	entropado	a	AQ0MPP
 ,	,	f	Fc
 comiendo	comer	v	VMG0000
@@ -12333,7 +12669,7 @@ el	el	d	DA0MS0
 corazón	corazón	n	NCMS000
 volteado	volteado	a	AQ0MSP
 me	me	p	PP1CS000
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 yendo	ir	v	VMG0000
 con	con	s	SPS00
 dirección_a	dirección_a	s	SPS00
@@ -12808,7 +13144,7 @@ cruz	cruz	n	NCFS000
 .	.	f	Fp
 
 Yo	yo	p	PP1CSN00
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 sin	sin	s	SPS00
 moverme	mover	v	VMN0000
 ,	,	f	Fc
@@ -12995,7 +13331,7 @@ pelo	pelo	n	NCMS000
 
 De	de	s	SPS00
 eso	ese	p	PD0NS000
-estaba	estaba	v	VMII3S0
+estaba	estar	v	VMII3S0
 en	en	s	SPS00
 la	el	d	DA0FS0
 cárcel	cárcel	n	NCFS000
@@ -13109,7 +13445,7 @@ Bueno	bueno	i	I
 .	.	f	Fp
 
 Así	así	r	RG
-estaba	estaba	v	VMII1S0
+estaba	estar	v	VMII1S0
 de	de	s	SPS00
 nuevo	nuevo	a	AQ0MS0
 como	como	s	SPS00
@@ -13303,7 +13639,7 @@ con	con	s	SPS00
 .	.	f	Fp
 
 Así	así	r	RG
-estaba	estaba	v	VAII1S0
+estaba	estar	v	VAII1S0
 caminando	caminar	v	VMG0000
 de	de	s	SPS00
 casa	casa	n	NCFS000

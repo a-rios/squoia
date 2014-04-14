@@ -119,9 +119,22 @@ while(<>){
                         #print STDERR "looked in morfo dix for ".lc(@rows[0])."\n";
                         $entry = $Morfodix{lc(@rows[0])};
                 }
+                # if still no entry (was not in morfodix (proper names, quantities) due to different tokenization)
+                # -> print lowercased word form as lemma +tag as first analysis
+                 if(!$entry){
+                 		my ($tag) = (@rows[-1] =~ m/(.+)\n/ );
+                 	    print "@rows[1]\t$tag\t";
+                      	my $morfcount=0;
+                        while($morfcount<14){
+                                print "ZZZ\t";
+                                $morfcount++;
+                        }
+                        # need to disambiuate: yes
+                        print "1\t";   
+                }
                 
                 # check if number of tags > 8 (from FL): -> in this case, unknown word, set all to ZZZ
-                if(scalar(keys %{$entry})>8)
+                elsif(scalar(keys %{$entry})>8)
                 { 
                         my $morfcount=0;
                         while($morfcount<16){
