@@ -20,75 +20,82 @@ my $maxNBofTags=1;
 
 my %AllTags=();
 
+my $body =0;
 
 while (<>) 
 {
-   my ($form, @entries) = split(/\s/);
-   
-   # print lexicon for treetagger
-   #print "$form";
-   my $nbrOfEntries =0;
-   my %lems=();
-   my %tags=();
-   for (my $i=0; $i<scalar(@entries); $i=$i+2)
+   if($_ =~ /<Entries>/){
+  	 	$body=1;
+   }
+   unless($body==0)
    {
-                
-                my $lemma = @entries[$i];
-                my $tag = @entries[$i+1];
-                my $analyisis = $lemma."##".$tag;
-                $forms{$form}{$analyisis} = 1;
-                $nbrOfEntries++;
-                # collect tags
-                $AllTags{$tag}=1;
-                
-#               if(exists $tags{$tag}){
-#                       print STDERR "$tag in form $form has more than one possible lemma\n";
-#               }
-#               else{
-#                       $tags{$tag}=$lemma;
-#               }
-                # print lexicon for treetagger
-                if(exists($tags{$tag})){
-                        $tags{$tag} = $tags{$tag}.",".$lemma;
-                }
-                else{
-                        $tags{$tag}=$lemma;
-                }
-        # print for treetagger
-                #print "$tag\n";
-                
-                #print for svmtool
-                #print "$form $tag $lemma\n";
-                
-                $lems{$lemma}=1;
+   	
+	   my ($form, @entries) = split(/\s/);
+	   
+	   # print lexicon for treetagger
+	   #print "$form";
+	   my $nbrOfEntries =0;
+	   my %lems=();
+	   my %tags=();
+	   for (my $i=0; $i<scalar(@entries); $i=$i+2)
+	   {
+	                
+	                my $lemma = @entries[$i];
+	                my $tag = @entries[$i+1];
+	                my $analyisis = $lemma."##".$tag;
+	                $forms{$form}{$analyisis} = 1;
+	                $nbrOfEntries++;
+	                # collect tags
+	                $AllTags{$tag}=1;
+	                
+	#               if(exists $tags{$tag}){
+	#                       print STDERR "$tag in form $form has more than one possible lemma\n";
+	#               }
+	#               else{
+	#                       $tags{$tag}=$lemma;
+	#               }
+	                # print lexicon for treetagger
+	                if(exists($tags{$tag})){
+	                        $tags{$tag} = $tags{$tag}.",".$lemma;
+	                }
+	                else{
+	                        $tags{$tag}=$lemma;
+	                }
+	        # print for treetagger
+	                #print "$tag\n";
+	                
+	                #print for svmtool
+	                #print "$form $tag $lemma\n";
+	                
+	                $lems{$lemma}=1;
+	
+	
+	                
+	        }
+	#       foreach my $t (keys %tags){
+	#               #print "\t$t ".$tags{$t};
+	#       }
+	      ## print ambiguous tags for svmtool
+	#    if(scalar (keys %tags) > 1){
+	#       foreach my $t (keys %tags){
+	#                       print "$t\n";
+	#               }
+	#    }
+	         #print lexicon for treetagger
+	    #print "\n";
+	        
+	        if($nbrOfEntries>$maxNBofEntries){
+	                $maxNBofEntries = $nbrOfEntries;
+	        }
+	        # get nbr of lems & tags
+	        my $nbrOfLems = scalar( keys %lems);
+	        my $nbrOfTags = scalar( keys %tags);
+	        if($nbrOfLems > $maxNBofLems){$maxNBofLems = $nbrOfLems;}
+	        if($nbrOfTags > $maxNBofTags){$maxNBofTags = $nbrOfTags;}
+	        my $lemstr;
+	
 
-
-                
-        }
-#       foreach my $t (keys %tags){
-#               #print "\t$t ".$tags{$t};
-#       }
-      ## print ambiguous tags for svmtool
-#    if(scalar (keys %tags) > 1){
-#       foreach my $t (keys %tags){
-#                       print "$t\n";
-#               }
-#    }
-         #print lexicon for treetagger
-    #print "\n";
-        
-        if($nbrOfEntries>$maxNBofEntries){
-                $maxNBofEntries = $nbrOfEntries;
-        }
-        # get nbr of lems & tags
-        my $nbrOfLems = scalar( keys %lems);
-        my $nbrOfTags = scalar( keys %tags);
-        if($nbrOfLems > $maxNBofLems){$maxNBofLems = $nbrOfLems;}
-        if($nbrOfTags > $maxNBofTags){$maxNBofTags = $nbrOfTags;}
-        my $lemstr;
-
-
-        
+   }   
 }
 
 
@@ -100,6 +107,11 @@ while (<>)
 #       print "\n";
 #}
 
+print "analysis for salir: ";
+foreach my $s (keys $forms{'salir'}){
+	print " $s ";
+}
+print "\n";
 
 print STDERR "max nbr of entries: $maxNBofEntries\n";
 print STDERR "max nbr of lems: $maxNBofLems\n";
