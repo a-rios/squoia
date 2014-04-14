@@ -3278,9 +3278,9 @@ sin_embargo sin_embargo RG I
 <tener>_como_<objetivo> tener_como_objetivo $1:VM I
 <tratar>_como_<igual> tratar_como_igual $1:VM I
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % añadidas por Annette (de Ancora)
-%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 a_comienzo_<de> a_comienzo_de $3:SP I
 a_comienzos_<de> a_comienzos_de $3:SP I
@@ -3425,7 +3425,35 @@ los_vuestros el_vuestro PX2MP0P0 I
 la_vuestra la_vuestra PX2FS0P0 I
 las_vuestras la_vuestra PX2FP0P0 I
 
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% añadidas por Annette (peruanismos)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+a_pata a_pata RG I
+a_pique a_pique CS I
+a_la_prepo a_la_prepo RG I
+al_toque al_toque RG I
+<caer>_gordo caer_gordo $1:VM I
+<dar>_bola dar_bola $1:VM I
+de_frente de_frente RG I
+de_todas_mangas de_todas_mangas RG I
+<estar>_aguja estar_aguja $1:VM I
+<estar>_en_bola estar_en_bola $1:VM I
+<estar>_en_cana estar_en_cana $1:VM I
+<estirar>_la_pata estirar_la_pata $1:VM I
+<hacer>_hora hacer_hora $1:VM I
+<hacer>_la_taba hacer_la_taba $1:VM I
+<importar>_un_comino importar_un_comino $1:VM I
+<importar>_un_pepino importar_un_pepino $1:VM I
+<importar>_un_bledo importar_un_bledo $1:VM I
+<meter>_la_pata meter_la_pata $1:VM I
+<meter>_en_cana meter_en_cana $1:VM I
+<meter>_floro meter_floro $1:VM I
+ni_michi ni_michi RG I
+<parar>_bola parar_bola $1:VM I
+<pasar>_la_voz pasar_la_voz $1:VM I
+por_las_puras por_las_puras RG I
+<sacar>_la_mugre sacar_la_mugre $1:VM I
+<sacar>_la_vuelta sacar_la_vuelta $1:VM I
+<saco>_largo saco_largo $1:NC I
+<tirar>_pestaña tirar_pestaña $1:VM I
+<tirar>_jato tirar_jato $1:VM I
