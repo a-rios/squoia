@@ -631,6 +631,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 				 		}
 				 		
 				 	}
+				 	# lo que
 				 	elsif($node->exists('parent::NODE[@lem="que"]/parent::NODE[@form="lo" or @form="Lo" or @form="los" or @form="Los"]') )
 				 	{
 				 		# que
@@ -1101,6 +1102,20 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 			$prevsibling->appendChild($node);
 		}
 	}	
+	# delete chunks that have only chunk children, but no node children (otherwise lexical transfer crashes)
+	# -> those are probably leftovers from changes to the tree, should not occur
+	my @chunksWithNoNODEchildren = $sentence->findnodes('descendant::CHUNK[count(child::NODE)=0]');
+	foreach my $chunk (@chunksWithNoNODEchildren){
+		my $parentchunk = $chunk->parentNode();
+		if($parentchunk && $parentchunk->nodeName eq 'CHUNK'){
+			# attach this chunks' chunk children to its parent chunk, then delete it
+			my @childChunks = $chunk->childNodes();
+			foreach my $child (@childChunks){
+				$parentchunk->appendChild($child);
+			}
+			$parentchunk->removeChild($chunk);
+		}
+	}
 	
 	# make sure final punctuation (.!?) is child of top chunk, if not, append to top chunk
 	# -> otherwise punctuation will appear in some random position in the translated output!
