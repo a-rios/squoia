@@ -2453,7 +2453,7 @@ normas_de_seguridad normas_de_seguridad NCFP000 I
 normas_sociales normas_sociales NCFP000 I
 normativa_vigente normativa_vigente NCFS000 I
 no_sea_que no_sea_que CS I
-no_<ser>_cosa_<de> no_<ser>_cosa_de $4:SP I
+no_<ser>_cosa_<de> no_ser_cosa_de $4:SP I
 no_sólo no_sólo RG I
 <nota>_<media> nota_media $1:NC I
 nota_simple nota_simple NCFS000 I
@@ -3249,7 +3249,7 @@ día_tras_día día_tras_día RG I
 día_a_día día_a_día NCMS000 I
 <el>_<llamado> el_llamado $2:AQ I
 en_balde en_balde RG I
-en_<condición>_<de> en_<condición>_de $3:SP I
+en_<condición>_<de> en_condición_de $3:SP I
 en_condición_<de> en_condición_de $3:SP I
 en_directo en_directo RG I
 en_general en_general RG I
@@ -3265,7 +3265,7 @@ hasta_entonces hasta_entonces RG I
 hoy_en_día hoy_en_día RG I
 manos_a_la_obra manos_a_la_obra RG I
 <mantener>_al_tanto mantener_al_tanto $1:VM I
-<mantener>_al_tanto_<de> <mantener>_al_tanto_de $4:SP I
+<mantener>_al_tanto_<de> mantener_al_tanto_de $4:SP I
 <mercado>_<financiero> mercado_financiero $1:NC I
 mientras_tanto mientras_tanto RG I
 <organización>_sin_ánimo_de_lucro organización_sin_ánimo_de_lucro $1:NC I
