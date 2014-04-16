@@ -429,38 +429,20 @@ define Particles VerbRulesLower .o. [[Particle|ParticleBasic|ParticleVerb|Partic
        #                       #
        #########################
 
-define NAYA1 [~$["+Obl""+Trs"]]; # -naya -> +Des, not as +Obl+Trs
-define NAYA2 [~$["+Reub""+Trs"]];
-define NAYA3 [~$["+Reub""+Aff"]];
-define NAYKU [~$["+Reub""+Aff"]];
-define NAYA [NAYA1 .o. NAYA2 .o. NAYA3 .o. NAYKU];
+#  restrictions on verb suffixes, -naya -> +Des, not as +Obl+Trs, -nyari, sqama -> #-sqa-má -> only +Perf+DirE_Emph, not +IPst+DirE_Emph, sqay (not - imperative)
+# ykacha -> not -yka-cha, yuq not yu-q
+define VERBRESTRICTIONS1 [~$["+Obl""+Trs"| "+Reub""+Trs" | "+Reub""+Aff" | "+Reub""+Aff" | "+Cont""+Inch" | "+3.Sg.IPst"?*"+DirE_Emph" | "+IPst"?*"+2.Sg.Imp"|"+3.Sg.IPst"?*"+Pot"| "+2.Sg.Imp"?*"+Pot"|"+Inf""+Sml"|"@YU""+Ag"]];
 
-define SUN [~$["+2.Obj""+3.Sg.Subj"]]; # -sun -> 1.Pl.Inkl.Fut/Imp, but not 2.Obj,3.Subj
-define SUNKI [~$["+2.Obj""+2.Sg.Subj"]]; # -sunki -> 2.Obj,3.Subj, but not 2.Obj,2.Sg.Subj
-define SUNCHIS [~$["+2.Obj""+1.Pl.Incl.Subj"]];
-define SUNKICHIS [~$["+2.Obj""+2.Pl.Subj"]];
-define WASUN1 [~$["+1.Obj"?*"+1.Pl.Incl.Subj.Fut"]];
-define WASUN2 [~$["+1.Obj"?*"+1.Pl.Incl.Imp"]];
-define WANQAKU [~$["+1.Obj"?*"+3.Pl.Subj.Fut"]];
-define WANKU [~$["+1.Obj""+3.Pl.Subj"]];
+# restrictions on verb suffixes, -sun -> 1.Pl.Inkl.Fut/Imp, but not 2.Obj,3.Subj , -sunki -> 2.Obj,3.Subj, but not 2.Obj,2.Sg.Subj
+define VERBRESTRICTIONS2 [~$["+2.Obj""+3.Sg.Subj" | "+2.Obj""+2.Sg.Subj" | "+2.Obj""+1.Pl.Incl.Subj" | "+2.Obj""+2.Pl.Subj" | "+1.Obj"?*"+1.Pl.Incl.Subj.Fut" |"+1.Obj"?*"+1.Pl.Incl.Imp"|"+1.Obj"?*"+3.Pl.Subj.Fut"| "+1.Obj""+3.Pl.Subj"]];
 
-define TAPI [~$["+Acc""@TA""+Loc"]];
-define PITA [~$["+Loc""+Acc"]];
-define MANTA  [~$["+Dat_Ill""+Acc"]];
-define TAMANTA [~$["+Acc""@TA""+Abl"]];
+# restrictions on case suffixes, -ntawan, aswan -> special case, 'aswan' as an entry of its own in the lexicon, as unit, because otherwise there would be conflicting suffix sequences, e.g. as-wan-ta!
+define CASE1 [~$["+Acc""@TA""+Loc" |"+Loc""+Acc" | "+Dat_Ill""+Acc" | "+Acc""@TA""+Abl"|"+Proloc""+Con_Inst"|"+Con_Inst"?*"+Soc"|"@AS""+Con_Inst"]];
 
-define NYARI [~$["+Cont""+Inch"]];
-define SQAMA  [~$["+3.Sg.IPst"?*"+DirE_Emph"]]; #-sqa-má -> only +Perf+DirE_Emph, not +IPst+DirE_Emph
+# case suffixes can occur only once per word, except genitive (double genitive is possible)
+#define CASE2 [~$["+Iclsv"?*"+Iclsv"|"+Intsoc"?*"+Intsoc"|"+Distr"?*"+Distr"|"+Term"?*"+Term"|"+Aprx"?*"+Aprx"|"+Acc"?*"+Acc"|"+Proloc"?*"+Proloc"|"+Abl"?*"+Abl"|"+Dat_Ill"?*"+Dat_Ill"|"+Ben"?*"+Ben"|"+Loc"?*"+Loc"|"+Dist"?*"+Dist"|"+Kaus"?*"+Kaus"|"+Con_Inst"?*"+Con_Inst"|"+Soc"?*"+Soc"]];
+define CASE2 [~$["+Aprx"?*"+Aprx"|"+Acc"?*"+Acc"|"+Dat_Ill"?*"+Dat_Ill"|"+Ben"?*"+Ben"|"+Loc"?*"+Loc"|"+Con_Inst"?*"+Con_Inst"]];
 
-
-define SQAY [~$["+IPst"?*"+2.Sg.Imp"]];
-define SQAMAN [~$["+3.Sg.IPst"?*"+Pot"]];
-
-define YMAN [~$["+2.Sg.Imp"?*"+Pot"]];
-#define NKUMAN  [~$["+3.Pl.Subj"?*"+Pot"]];
-define YKACHA [~$["+Inf""+Sml"]];
-
-define YUQ  [~$["@YU""+Ag"]];
 
 define EVID4  [~$["+DirE"?*["+DirE_Emph"|"+IndE_Emph"|"+Asmp_Emph"|"+DirE_Res"|"+IndE_Res"|"+Asmp_Res"]]];
 define EVID5  [~$["+IndE"?*["+DirE_Emph"|"+Asmp_Emph"|"+IndE_Emph"|"+DirE_Res"|"+IndE_Res"|"+Asmp_Res"]]];
@@ -469,24 +451,16 @@ define EVID7 EVID4 .o. EVID5 .o. EVID6;
 
 define DISC [~$["Part_Disc""+Disc"]]; #ñaña = sister, should not be analyzed as +Disc+Disc
 
-define NTAWAN [~$["+Proloc""+Con_Inst"]];
-define ASWAN [~$["@AS""+Con_Inst"]];
-# special case, 'aswan' as an entry of its own in the lexicon, as unit, because otherwise there would be conflicting suffix sequences, e.g. as-wan-ta!
-
-define ALLIN [~$["@ALLI""+3.Sg.Poss"]];
-# special case, because both 'allin' and 'alli' do ocurr as roots
-
-define NAWPAQ2 [~$["@NAWPA""+Ag"]];
-define NAWPAQ NAWPAQ2;
-
-# case suffixes can occur only once per word, except genitive (double genitive is possible)
-define CASE [~$["+Iclsv"?*"+Iclsv"|"+Intsoc"?*"+Intsoc"|"+Distr"?*"+Distr"|"+Term"?*"+Term"|"+Aprx"?*"+Aprx"|"+Acc"?*"+Acc"|"+Proloc"?*"+Proloc"|"+Abl"?*"+Abl"|"+Dat_Ill"?*"+Dat_Ill"|"+Ben"?*"+Ben"|"+Loc"?*"+Loc"|"+Dist"?*"+Dist"|"+Kaus"?*"+Kaus"|"+Con_Inst"?*"+Con_Inst"|"+Soc"?*"+Soc"]];
+# ROOTRESTRICTIONS:allin: special case, because both 'allin' and 'alli' do ocurr as roots
+# ñawpaq not ñawpa-q
+define ROOTRESTRICTIONS [~$["@ALLI""+3.Sg.Poss" | "@NAWPA""+Ag"]];
 
 # Feature restriction on lower side, can only be applied AFTER genitive rule (see section on nominal morpho-phonology)
 define STIN [~$["@STI"{n}]]; # -stin, cannot be -sti -n (3.Sg.Subj or DirE)
 define FeatRestrLower  STIN;
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. SUNKICHIS  .o. WASUN1 .o. WASUN2 .o. WANQAKU .o. WANKU .o. TAPI .o. PITA .o. MANTA .o. NYARI  .o. SQAMA .o. YMAN  .o. TAMANTA .o. YKACHA  .o. YUQ .o. DISC .o. NTAWAN .o. ASWAN .o. ALLIN .o. NAWPAQ .o. SQAY .o. SQAMAN .o. EVID7 .o. CASE];
+define FeatRestr [VERBRESTRICTIONS1 .o. VERBRESTRICTIONS2 .o. CASE1 .o. CASE2 .o. EVID7 .o. DISC .o. ROOTRESTRICTIONS];
+
 
 ######################################################################################
 
