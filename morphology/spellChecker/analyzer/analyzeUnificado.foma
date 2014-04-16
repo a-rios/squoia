@@ -487,6 +487,7 @@ define YMAN [~$["+2.Sg.Imp"?*"+Pot"]];
 define YKACHA [~$["+Inf""+Sml"]];
 
 define YUQ  [~$["@YU""+Ag"]];
+define QTI  [~$["+Ag""+Char"]];
 
 define EVID4  [~$["+DirE"?*["+IndE_Emph"|"+Asmp_Emph"]]];
 define EVID5  [~$["+IndE"?*["+DirE_Emph"|"+Asmp_Emph"]]];
@@ -512,7 +513,7 @@ define NAWPAQ NAWPAQ2;
 define STIN [~$["@STI"{n}]]; # -stin, not be -sti -n (3.Sg.Subj)
 define FeatRestrLower  STIN;
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. SUNKICHIS  .o. WASUN1 .o. WASUN2 .o. WANQAKU .o. WANKU .o. TAPI .o. PITA .o. MANTA .o. NYARI  .o. SQAMA .o. YMAN  .o. TAMANTA .o. YKACHA  .o. YUQ .o. DISC  .o. NTAWAN .o. ASWAN .o. ALLIN .o. NAWPAQ  .o. SQAY .o. SQAMAN .o. EVID7];
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. SUNKICHIS  .o. WASUN1 .o. WASUN2 .o. WANQAKU .o. WANKU .o. TAPI .o. PITA .o. MANTA .o. NYARI  .o. SQAMA .o. YMAN  .o. TAMANTA .o. YKACHA  .o. YUQ .o. QTI .o. DISC  .o. NTAWAN .o. ASWAN .o. ALLIN .o. NAWPAQ  .o. SQAY .o. SQAMAN .o. EVID7];
 
 ######################################################################################
 

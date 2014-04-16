@@ -30,7 +30,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 
 }
 
-my $corpus= @{$dom->getElementsByTagName('corpus')}[0];
+my $corpus= @{$dom->getElementsByTagName('quechua_corpus')}[0];
 $corpus->setAttribute('xmlns','http://ufal.mff.cuni.cz/pdt/pml/');
 
 # print new xml to stdout
