@@ -4,5 +4,8 @@ define N=N=2 [
 | [ {yuq}  "+Poss"  ]: ["@POSS"{yuq}]
 | [ {niyuq}  "+Poss"  ]: ["@POSSni"{niyuq}]
 | [ {niyuq}  "+Poss"  ]: ["@POSSni"{ñiyuq}]
+| [ {yuq}  "+Poss"  ]: ["@POSS"{yup}]
+| [ {niyuq}  "+Poss"  ]: ["@POSSni"{niyup}]
+| [ {niyuq}  "+Poss"  ]: ["@POSSni"{ñiyup}]
 | [ {nnaq}  "+Priv"  ]: {nnaq}
 ] ;

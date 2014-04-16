@@ -469,8 +469,6 @@ define EVID7 EVID4 .o. EVID5 .o. EVID6;
 
 define DISC [~$["Part_Disc""+Disc"]]; #ñaña = sister, should not be analyzed as +Disc+Disc
 
-
-
 define NTAWAN [~$["+Proloc""+Con_Inst"]];
 define ASWAN [~$["@AS""+Con_Inst"]];
 # special case, 'aswan' as an entry of its own in the lexicon, as unit, because otherwise there would be conflicting suffix sequences, e.g. as-wan-ta!
@@ -481,11 +479,14 @@ define ALLIN [~$["@ALLI""+3.Sg.Poss"]];
 define NAWPAQ2 [~$["@NAWPA""+Ag"]];
 define NAWPAQ NAWPAQ2;
 
+# case suffixes can occur only once per word, except genitive (double genitive is possible)
+define CASE [~$["+Iclsv"?*"+Iclsv"|"+Intsoc"?*"+Intsoc"|"+Distr"?*"+Distr"|"+Term"?*"+Term"|"+Aprx"?*"+Aprx"|"+Acc"?*"+Acc"|"+Proloc"?*"+Proloc"|"+Abl"?*"+Abl"|"+Dat_Ill"?*"+Dat_Ill"|"+Ben"?*"+Ben"|"+Loc"?*"+Loc"|"+Dist"?*"+Dist"|"+Kaus"?*"+Kaus"|"+Con_Inst"?*"+Con_Inst"|"+Soc"?*"+Soc"]];
+
 # Feature restriction on lower side, can only be applied AFTER genitive rule (see section on nominal morpho-phonology)
-define STIN [~$["@STI"{n}]]; # -stin, not be -sti -n (3.Sg.Subj or DirE)
+define STIN [~$["@STI"{n}]]; # -stin, cannot be -sti -n (3.Sg.Subj or DirE)
 define FeatRestrLower  STIN;
 
-define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. SUNKICHIS  .o. WASUN1 .o. WASUN2 .o. WANQAKU .o. WANKU .o. TAPI .o. PITA .o. MANTA .o. NYARI  .o. SQAMA .o. YMAN  .o. TAMANTA .o. YKACHA  .o. YUQ .o. DISC .o. NTAWAN .o. ASWAN .o. ALLIN .o. NAWPAQ .o. SQAY .o. SQAMAN .o. EVID7];
+define FeatRestr [NAYA .o. SUN .o. SUNKI .o. SUNCHIS .o. SUNKICHIS  .o. WASUN1 .o. WASUN2 .o. WANQAKU .o. WANKU .o. TAPI .o. PITA .o. MANTA .o. NYARI  .o. SQAMA .o. YMAN  .o. TAMANTA .o. YKACHA  .o. YUQ .o. DISC .o. NTAWAN .o. ASWAN .o. ALLIN .o. NAWPAQ .o. SQAY .o. SQAMAN .o. EVID7 .o. CASE];
 
 ######################################################################################
 
