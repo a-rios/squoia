@@ -627,7 +627,7 @@
 | [ {hunt'a} "[" "NRoot" "]" "["  "=lleno" "]" ] : {hunt'a}
 | [ {hunta} "[" "NRoot" "]" "["  "=lleno" "]" ] : {hunta}
 | [ {hunu} "[" "NRoot" "]" "["  "=millón" "]" ] : {hunu}
-| [ {huñu} "[" "NRoot" "]" "["  "=suma" "]" ] : {huñu}
+| [ {huñu} "[" "NRoot" "]" "["  "=grupo,conjunto,suma" "]" ] : {huñu}
 | [ {hupi} "[" "NRoot" "]" "["  "=inútil" "]" ] : {hupi}
 | [ {huq'ara} "[" "NRoot" "]" "["  "=sordo" "]" ] : {huq'ara}
 | [ {huqara} "[" "NRoot" "]" "["  "=sordo" "]" ] : {huqara}

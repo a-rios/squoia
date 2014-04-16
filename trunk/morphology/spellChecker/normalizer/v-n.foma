@@ -10,5 +10,6 @@ define VtoN [
 #| [  {lu}   "+Char" ] : {lu}
 | [  {na}  "+Obl" ] : {na}
 | [  {q}  "+Ag" ] : {q}
+| [  {qi}  "+Ag" ] : {qi}
 #| [  {mpa}  "+Posi" ] : ["@MPA"{mpa}]
 ] ;

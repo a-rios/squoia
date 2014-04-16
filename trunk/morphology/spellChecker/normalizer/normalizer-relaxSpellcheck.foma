@@ -336,7 +336,7 @@
 
 
        source n-v.foma
-       source  v-n.foma 
+       source  v-n-relax.foma 
        #mit diesen Suffixen nominalisierte Verben können nicht wieder verbalisiert werden
        source  v-n-final.foma
        source  v-n-transitive.foma

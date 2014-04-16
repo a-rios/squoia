@@ -6,5 +6,6 @@ define VtoN [
 | "+Char" : [{ti}|{li}|{yli}|{liku}|{lu}]
 | "+Obl" : {na}
 | "+Ag" : {q}
+| "+Ag" : {qi}
 | "+Posi" : {mpa}]
 ;

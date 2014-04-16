@@ -2182,6 +2182,7 @@
 | [ {tusu} "[" "NRoot" "]" "["  "=baile" "]" ] : {tusu}
 | [ {tuta} "[" "NRoot" "]" "["  "=noche" "]" ] : {tuta}
 | [ {tutuma} "[" "NRoot" "]" "["  "=botella" "]" ] : {tutuma}
+| [ {tuylla} "[" "NRoot" "]" "["  "=instante" "]" ] : {tuylla}
 | [ {tuyru} "[" "NRoot" "]" "["  "=marca,señal" "]" ] : {tuyru}
 | [ {tuytu} "[" "NRoot" "]" "["  "=flotante" "]" ] : {tuytu}
 | [ {t'uyu} "[" "NRoot" "]" "["  "=remo" "]" ] : {t'uyu}

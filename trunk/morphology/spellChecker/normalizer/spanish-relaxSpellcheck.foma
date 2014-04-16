@@ -341,7 +341,7 @@
 
 
        source n-v-guesser.foma
-       source  v-n.foma 
+       source  v-n-relax.foma 
        # nominalized verbs with these suffixes cannot be re-verbalized
        source  v-n-final.foma
        source  v-n-transitive.foma
