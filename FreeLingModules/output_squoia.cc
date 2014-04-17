@@ -198,12 +198,23 @@ list<analysis> output::printRetokenizable(wostream &sout, const list<word> &rtk,
 18: disambiguate yes/no
 19: class
 */
-void output::PrintWordCRFMorf (wostream &sout, const word &w) {
+void output::PrintWordCRFMorf (wostream &sout, const word &w, bool first_nonpunct_word) {
   const wchar_t* sep = L"\t";
   const wchar_t* dummy = L"ZZZ";
-  wstring tags = L"";
+  const wchar_t* NPtag = L"NP";
+  //wstring tags = L"";
+  wstring NPstr = L"";
+  wstring notNPtag = L"";
 
   sout << w.get_lc_form(); // lowercased word form
+/*
+  if (first_nonpunct_word) {
+    sout << sep  << L"first";
+  }
+  else {
+    sout << sep  << L"follow";
+  }
+*/
   if (std::iswupper(w.get_form().c_str()[0])) {
     sout << sep  << L"uc";
   }
@@ -222,6 +233,7 @@ void output::PrintWordCRFMorf (wostream &sout, const word &w) {
   //const int MAXLEM = 5;
   int i = 0;
   const int MAXTAG = 8;
+  int nptag = 0;
   for (ait = a_beg; ait != a_end; ait++) {
     if (ait->is_retokenizable ()) {
       sout << L"(is retokenizable)";
@@ -247,10 +259,24 @@ void output::PrintWordCRFMorf (wostream &sout, const word &w) {
         lem_i++;
       }
       //tags += sep + ait->get_tag();*/
-      sout << sep << ait->get_lemma() << sep << ait->get_tag();
+      std::size_t found = ait->get_tag().find(NPtag);
+      if ( first_nonpunct_word and (found==0) ) {	// found "NP" at beginning of tag
+        nptag++;
+        NPstr += sep + ait->get_lemma() + sep + ait->get_tag();
+      } else {
+        notNPtag = ait->get_tag();
+        sout << sep << ait->get_lemma() << sep << notNPtag;
+      }
     }
     //tag_i++;
     i++;
+  }
+  if (nptag == i) {	// only NP tags...
+    sout << NPstr;
+  }
+  else {	// other tags as NP tags
+    if (nptag > 0)
+      i -= nptag;	// discard the NP tags
   }
 /*  while (lem_i < MAXLEM) {
     sout << sep << dummy;
@@ -267,8 +293,13 @@ void output::PrintWordCRFMorf (wostream &sout, const word &w) {
   }
   //sout << tags;
   sout << sep << bool(w.get_n_selected() > 1);
-  if (w.get_n_selected() == 1 and a_beg->get_tag().compare(L"Z") != 0) {
-    sout << sep << a_beg->get_tag();
+  if (a_beg->get_tag().compare(L"Z") != 0) {	// don't print tag "Z", don't force it because maybe it's a "DN"
+    if (w.get_n_selected() == 1) {
+      sout << sep << a_beg->get_tag();
+    }
+    else if ((w.get_n_selected()-nptag) == 1) {	// after discarding NP tags there is one other tag left, the notNPtag
+      sout << sep << notNPtag;
+    }
   }
   sout << endl;
 }
@@ -684,8 +715,16 @@ void output::PrintResults (wostream &sout, list<sentence > &ls, analyzer &anlz, 
         break;
    
         case CRFMORF: {
+          bool first_nonpunct_word = false, found = false;
           for (w = is->begin (); w != is->end (); w++) {
-	    PrintWordCRFMorf(sout,*w);
+            if (found) {
+              first_nonpunct_word = false;
+            } else {
+              first_nonpunct_word = (w->selected_begin()->get_tag().find(L"F")!=0);
+              found = first_nonpunct_word;
+            }
+	    //PrintWordCRFMorf(sout,*w,(w == is->begin()));
+	    PrintWordCRFMorf(sout,*w,first_nonpunct_word);
           }
 	}
 
