@@ -140,7 +140,7 @@ int main(int argc, char *argv[]) {
     
     
     /* Standard read from stdin */
-	line = xxcalloc(LINE_LIMIT, sizeof(char));
+	line = xxcalloc(LINE_LIMIT, sizeof(char)); 
 	while (get_next_line() != NULL) {
 	    results = 0;
 	    handle_line(line);;
