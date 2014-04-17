@@ -59,9 +59,9 @@ struct lookup_chain {
 
     static char *(*applyer)() = &apply_up;  /* Default apply direction = up */ 
     static void handle_line(char *s);
-    static char *get_next_line();
+   // static char *get_next_line();
     char *result, *separator = "\t";
-    static char *line;
+  //  static char *line;
     static void server_init();
 
 
@@ -167,10 +167,7 @@ int main(int argc, char *argv[]) {
     apply_med_set_med_limit(medh,g_med_limit);
     apply_med_set_med_cutoff(medh,g_med_cutoff);
     
-    
-    
 
-	
 	server_init();
 	serverstring = xxcalloc(UDP_MAX+1, sizeof(char));
 	line = xxcalloc(UDP_MAX+1, sizeof(char));
@@ -188,11 +185,8 @@ int main(int argc, char *argv[]) {
 	    udpsize = 0;
 	    serverstring[0] = '\0';
 	    handle_line(line);
-	    if (!buffered_output) {
-		fflush(stdout);
-	    }
-// 	    if (results == 0) {
-// 		app_print(NULL);
+// 	    if (!buffered_output) {
+// 		fflush(stdout);
 // 	    }
 	    if (serverstring[0] != '\0') {
 		numbytes = sendto(listen_sd, serverstring, strlen(serverstring), 0, (struct sockaddr *)&clientaddr, addrlen);
@@ -234,13 +228,13 @@ int main(int argc, char *argv[]) {
 }  
     
 
-char *get_next_line() {
-    char *r;
-    if ((r = fgets(line, LINE_LIMIT, INFILE)) != NULL) {
-	line[strcspn(line, "\n\r")] = '\0';
-    }
-    return r;
-}
+// char *get_next_line() {
+//     char *r;
+//     if ((r = fgets(line, LINE_LIMIT, INFILE)) != NULL) {
+// 	line[strcspn(line, "\n\r")] = '\0';
+//     }
+//     return r;
+// }
 
 void handle_line(char *s) {
     char *result, *tempstr;
