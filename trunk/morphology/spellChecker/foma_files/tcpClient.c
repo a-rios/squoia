@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
     
     while (get_next_line() != NULL) {
 	 //results = 0; 
-       //  printf("sent %s\n\n",line); 
+        // printf("sent %s\n\n",line); 
 	 n = write(sockfd,line,strlen(line));
 	 
 	if (n < 0) 
