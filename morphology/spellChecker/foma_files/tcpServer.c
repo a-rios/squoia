@@ -51,7 +51,8 @@ struct lookup_chain {
     static FILE *INFILE;
 
     static char *(*applyer)() = &apply_up;  /* Default apply direction = up */ 
-    static void handle_line(char *line, int connfd);
+   // static void handle_line(char *line, int connfd);
+    static char *handle_line(char *line);
     static char *get_next_line();
     char* concat_outstr(char *s1, char *s2);
     char* concat_med(char *s1, char *s2, char *s3);
@@ -199,17 +200,22 @@ int main(int argc, char *argv[])
         connfd = accept(listenfd, (struct sockaddr*)NULL, NULL); 
     
 	//n =  read( connfd,sendBuff,255 );
-	byte_count = recv(connfd, sendBuff, 1024,0);
+	do {
+	  byte_count = recv(connfd, sendBuff, 1024,0);
 	if (byte_count < 0)
 	{
 	      perror("ERROR reading from socket");
 	      exit(1);
 	 }
 	 sendBuff[byte_count] = '\0';
-	 fprintf(stderr,"string received:\t%s\n", sendBuff);
+	 //fprintf(stderr,"string received:\t%s\n", sendBuff);
 	 
 	    char *line = concat(sendBuff,"");
-	    handle_line(line, connfd);;
+	    //handle_line(line, connfd);;
+	    char *outstr = handle_line(line);
+	    // printf("sent outstring: %s", outstr);
+	    write(connfd, outstr, strlen(outstr));
+	} while(byte_count > 0);
 
 	}
 	
@@ -217,8 +223,7 @@ int main(int argc, char *argv[])
         close(connfd);
         sleep(1);
 }
-
-void handle_line(char *s, int connfd) {
+char *handle_line(char *s) {
     char *result, *tempstr, *outstr;
     int normalized=0;
     char *line = concat(s,"");
@@ -239,15 +244,16 @@ void handle_line(char *s, int connfd) {
 		  result = applyer(chain_pos->ah, tempstr);
 		  if (result != NULL) {
 		      results++;
-		      printf("%s:\n \t%s\n", line, result);
+		      //printf("%s:\n \t%s\n", line, result);
 		      outstr = concat_outstr(line, result);
+		      outstr = concat(outstr, "\n");
 		     // write(connfd, outstr, strlen(outstr));
 		      normalized=1;
 		      while ((result = applyer(chain_pos->ah, NULL)) != NULL) {
 			  results++;
-			printf("%s:\n \t%s\n", line, result);
+			//printf("%s:\n \t%s\n", line, result);
 			   char *outstr1 = concat_outstr(line, result);
-			   outstr = concat(outstr, outstr1);
+			   outstr = concat_med(outstr, outstr1, "\n");
 		      }
 		      break;
 		  }
@@ -256,7 +262,7 @@ void handle_line(char *s, int connfd) {
 		  }
 	      }
 	      if(normalized == 1){
-		write(connfd, outstr, strlen(outstr));
+		//write(connfd, outstr, strlen(outstr));
 	      }
 	    } 
 	    else {    
@@ -290,9 +296,6 @@ void handle_line(char *s, int connfd) {
 		      break;
 		  }
 	      }
-	      if(normalized == 1){
-		write(connfd, outstr, strlen(outstr));
-	      }
 	  }
 	  /* if no result from chain.bin (normalizer), use med search with spellcheckUnificado.bin */
 	  if(normalized == 0){
@@ -303,7 +306,7 @@ void handle_line(char *s, int connfd) {
 		if (result == NULL) 
 		{
 		    outstr = concat(outstr1, "\t???\n");
-		    write(connfd, outstr, strlen(outstr));
+		    //write(connfd, outstr, strlen(outstr));
 		} 
 		else 
 		{
@@ -330,19 +333,146 @@ void handle_line(char *s, int connfd) {
 		      secondout = concat(secondout, secondout4);
 		    }
 		    outstr = concat(firstout, secondout);
-		    write(connfd, outstr, strlen(outstr));
+		    //write(connfd, outstr, strlen(outstr));
 		}
 	    }
 	  
 	}
 	/* word was recognized by analyzer.bin */
 	else{
-	  //printf("%s:\n \t%s\n", line, "--");
-	  outstr = concat(line, "--");
-	  write(connfd, outstr, strlen(outstr));
+	  printf("%s:\n \t%s\n", line, "--");
+	  outstr = concat_med(line, "\n" ,"\t--\n");
+	  //write(connfd, outstr, strlen(outstr));
 	}
     }
+    return outstr;
 }
+
+// void handle_line(char *s, int connfd) {
+//     char *result, *tempstr, *outstr;
+//     int normalized=0;
+//     char *line = concat(s,"");
+//     
+//     /* make sure string is not empty */
+//     if(line[0] != '\0')
+//     {
+// 	/* Apply analyzer.bin */  
+// 	result = apply_up(ah, line);
+// 	
+// 	/* if no result from analyzer, spell check this word with normalizer */
+// 	if(result == NULL)
+// 	{
+// 	  /* apply chain.bin (normalizer) */
+// 	    if (apply_alternates == 1) {
+// 	     // printf("apply_alternates is true, line is %s\n",  line);
+// 	      for (chain_pos = chain_head, tempstr = s;   ; chain_pos = chain_pos->next) {
+// 		  result = applyer(chain_pos->ah, tempstr);
+// 		  if (result != NULL) {
+// 		      results++;
+// 		      printf("%s:\n \t%s\n", line, result);
+// 		      outstr = concat_outstr(line, result);
+// 		     // write(connfd, outstr, strlen(outstr));
+// 		      normalized=1;
+// 		      while ((result = applyer(chain_pos->ah, NULL)) != NULL) {
+// 			  results++;
+// 			printf("%s:\n \t%s\n", line, result);
+// 			   char *outstr1 = concat_outstr(line, result);
+// 			   outstr = concat(outstr, outstr1);
+// 		      }
+// 		      break;
+// 		  }
+// 		  if (chain_pos == chain_tail) {
+// 		      break;
+// 		  }
+// 	      }
+// 	      if(normalized == 1){
+// 		write(connfd, outstr, strlen(outstr));
+// 	      }
+// 	    } 
+// 	    else {    
+// 	      /* Get result from chain */
+// 	      for (chain_pos = chain_head, tempstr = s;  ; chain_pos = chain_pos->next) {		
+// 		  result = applyer(chain_pos->ah, tempstr);		
+// 		  if (result != NULL && chain_pos != chain_tail) {
+// 		      tempstr = result;
+// 		      continue;
+// 		  }
+// 		  if (result != NULL && chain_pos == chain_tail) {
+// 		      do {
+// 			  results++;
+// 			  printf("%s:\n \t%s\n", line, result);
+// 			  char *outstr2 = concat_outstr(line, result);
+// 			  outstr = concat(outstr, outstr2);
+// 			  normalized=1;
+// 		      } while ((result = applyer(chain_pos->ah, NULL)) != NULL);
+// 		  }
+// 		  if (result == NULL) {
+// 		      /* Move up */
+// 		      for (chain_pos = chain_pos->prev; chain_pos != NULL; chain_pos = chain_pos->prev) {
+// 			  result = applyer(chain_pos->ah, NULL);
+// 			  if (result != NULL) {
+// 			      tempstr = result;
+// 			      break;
+// 			  }
+// 		      }
+// 		  }
+// 		  if (chain_pos == NULL) {
+// 		      break;
+// 		  }
+// 	      }
+// 	      if(normalized == 1){
+// 		write(connfd, outstr, strlen(outstr));
+// 	      }
+// 	  }
+// 	  /* if no result from chain.bin (normalizer), use med search with spellcheckUnificado.bin */
+// 	  if(normalized == 0){
+// 		/*apply med search*/
+// 		//printf("%s\n", line);
+// 		char *outstr1 = concat(line, "\n");
+// 		result = apply_med(medh, line);
+// 		if (result == NULL) 
+// 		{
+// 		    outstr = concat(outstr1, "\t???\n");
+// 		    write(connfd, outstr, strlen(outstr));
+// 		} 
+// 		else 
+// 		{
+//  		    char *outstr2 = concat_med("\t", result, "\n");
+//  		    char *outstr3 = concat_med("\t", apply_med_get_instring(medh), "\n");
+// 		    // get cost
+//  		    char costStr[20];
+//  		    int cost = apply_med_get_cost(medh);
+//  		    sprintf(costStr,"%d",cost);
+// 		    char *outstr4 = concat_med("\tCost[f]: ", costStr, "\n\n");
+// 		    char *outstr5 = concat_med(outstr1, outstr2, outstr3);
+// 		    char *firstout = concat(outstr5, outstr4);
+// 		    
+// 		    char *secondout ="";
+// 		    while ((result = apply_med(medh,NULL)) != NULL) {
+// 		      char *secondout1 = concat_med("\t", result, "\n");
+// 		      char *secondout2 = concat_med("\t", apply_med_get_instring(medh), "\n");
+// 		       // get cost
+// 		      char costStr[20];
+// 		      int cost = apply_med_get_cost(medh);
+// 		      sprintf(costStr,"%d",cost);
+// 		      char *secondout3 = concat_med("\tCost[f]: ", costStr, "\n\n");
+// 		      char *secondout4 = concat_med(secondout1, secondout2, secondout3);
+// 		      secondout = concat(secondout, secondout4);
+// 		    }
+// 		    outstr = concat(firstout, secondout);
+// 		    write(connfd, outstr, strlen(outstr));
+// 		}
+// 	    }
+// 	  
+// 	}
+// 	/* word was recognized by analyzer.bin */
+// 	else{
+// 	  //printf("%s:\n \t%s\n", line, "--");
+// 	  outstr = concat(line, "--");
+// 	  write(connfd, outstr, strlen(outstr));
+// 	}
+//     }
+// }
 
 
 char* concat_outstr(char *s1, char *s3)
