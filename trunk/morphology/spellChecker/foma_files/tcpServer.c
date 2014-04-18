@@ -56,7 +56,7 @@ struct lookup_chain {
     char* concat_outstr(char *s1, char *s2);
     char* concat_med(char *s1, char *s2, char *s3);
     char* concat(char *s1, char *s2);
-    char* copystr(char *s1);
+
     
     char *result, *separator = "\t";
 //    static char *line;
@@ -181,7 +181,16 @@ int main(int argc, char *argv[])
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     serv_addr.sin_port = htons(FLOOKUP_PORT); 
 
-    bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)); 
+   // bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
+    /* Now bind the host address using bind() call.*/
+    if (bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0)
+    {
+         perror("ERROR on binding");
+         exit(1);
+    }
+    else{
+        printf("started server on port %d\n", port_number);
+    }
 
     listen(listenfd, 10); 
 
@@ -213,8 +222,6 @@ void handle_line(char *s, int connfd) {
     char *result, *tempstr, *outstr;
     int normalized=0;
     char *line = concat(s,"");
-     printf(" s after copy: %s\n", s);
-
     
     /* make sure string is not empty */
     if(line[0] != '\0')
@@ -227,18 +234,18 @@ void handle_line(char *s, int connfd) {
 	{
 	  /* apply chain.bin (normalizer) */
 	    if (apply_alternates == 1) {
-	      printf("apply_alternates is true, line is %s\n",  line);
+	     // printf("apply_alternates is true, line is %s\n",  line);
 	      for (chain_pos = chain_head, tempstr = s;   ; chain_pos = chain_pos->next) {
 		  result = applyer(chain_pos->ah, tempstr);
 		  if (result != NULL) {
 		      results++;
-		     // printf("%s:\n \t%s\n", line, result);
+		      printf("%s:\n \t%s\n", line, result);
 		      outstr = concat_outstr(line, result);
 		     // write(connfd, outstr, strlen(outstr));
 		      normalized=1;
 		      while ((result = applyer(chain_pos->ah, NULL)) != NULL) {
 			  results++;
-			//printf("%s:\n \t%s\n", line, result);
+			printf("%s:\n \t%s\n", line, result);
 			   char *outstr1 = concat_outstr(line, result);
 			   outstr = concat(outstr, outstr1);
 		      }
@@ -248,7 +255,9 @@ void handle_line(char *s, int connfd) {
 		      break;
 		  }
 	      }
-	      write(connfd, outstr, strlen(outstr));
+	      if(normalized == 1){
+		write(connfd, outstr, strlen(outstr));
+	      }
 	    } 
 	    else {    
 	      /* Get result from chain */
@@ -261,7 +270,7 @@ void handle_line(char *s, int connfd) {
 		  if (result != NULL && chain_pos == chain_tail) {
 		      do {
 			  results++;
-			  //printf("%s:\n \t%s\n", line, result);
+			  printf("%s:\n \t%s\n", line, result);
 			  char *outstr2 = concat_outstr(line, result);
 			  outstr = concat(outstr, outstr2);
 			  normalized=1;
@@ -281,7 +290,9 @@ void handle_line(char *s, int connfd) {
 		      break;
 		  }
 	      }
-	      write(connfd, outstr, strlen(outstr));
+	      if(normalized == 1){
+		write(connfd, outstr, strlen(outstr));
+	      }
 	  }
 	  /* if no result from chain.bin (normalizer), use med search with spellcheckUnificado.bin */
 	  if(normalized == 0){
@@ -369,17 +380,6 @@ char* concat(char *s1, char *s2)
     char *result = malloc(len1+len2+1);//+1 for the zero-terminator
     memcpy(result, s1, len1);
     memcpy(result+len1, s2, len2+1);//+1 to copy the null-terminator
-    return result;
-}
-
-char* copystr(char *s1){
-//       int copylen = strlen(s1);
-//       char copy[copylen+1];
-//       strncpy(copy, s1, copylen);
-//       return copy;
-    size_t len1 = strlen(s1);
-    char *result = malloc(len1+1);//+1 for the zero-terminator
-    memcpy(result, s1, len1+1);
     return result;
 }
 
