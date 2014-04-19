@@ -17,17 +17,18 @@
 #define DIR_UP 1
 #define UDP_MAX 65535
 
-//TODO
-char *usagestring = "Usage: spellcheck [-l med_limit] [-c cutoff] -1 <analyzer.bin> <chain.bin> <spellcheckUnificado.bin>\n";
-char *helpstring = "Applies spell checking to words from stdin to foma finite state tranducers read from 3 files:\n"
+
+char *usagestring = "Usage: tcpServer [-l med_limit] [-c cutoff] [-P port number] <analyzer.bin> <chain.bin> <spellcheckUnificado.bin>\n";
+char *helpstring = "Starts spellcheck server on localhost"
+"Use with tcpClient to spellcheck data from stdin with finite state tranducers read from 3 files (pass in this order!):\n"
 "\t<analyzer.bin> :\t\tstrict analyzer that decides whether a word needs spell checking or not\n"
 "\t<chain.bin> :\t\t\tchain of normalizers that will to correct typical misspelings (e.g. '-nqui' -> '-nki', 'hua' -> 'wa')\n"
-"\t<spellcheckUnificado.bin> :\tactual spell checker that suggests similar words based on minimum edit distance\nOptions:\n"
-"-h\t\tprint help\n"
+"\t<spellcheckUnificado.bin> :\tactual spell checker that suggests similar words based on minimum edit distance\n"
+"Options:\n"
+"-h\t\tprint this help\n"
 "-l med_limit\tset maximum number of suggestions (default is 5)\n"
 "-c cutoff\tset maximum levenshtein distance for suggestions (default is 15)\n"
-"-A\t\t  specify address of server\n"
-"-P\t\t  specify port of server (default 8888)\n";
+"-P\t\tspecify port of server (default 8888)\n";
 
 struct lookup_chain {
     struct fsm *net;
@@ -180,7 +181,7 @@ int main(int argc, char *argv[])
 
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    serv_addr.sin_port = htons(FLOOKUP_PORT); 
+    serv_addr.sin_port = htons(port_number); 
 
    // bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
     /* Now bind the host address using bind() call.*/
