@@ -19,8 +19,12 @@ int opt = 1;
 static char  *line;
 // static void app_print(char *result);
 
-char *usagestring = "Usage: blibliblabla\n";
-char *helpstring = "blabla\n";
+char *usagestring = "Usage: tcpClient [-P port number]\n";
+char *helpstring = "tcpClient reads (tokenized) data from stdin and calls tcpServer for spell checking\n"
+"Options:\n"
+"-h\t\tprint help\n"
+"-P\t\tspecify port of server (default 8888)\n";
+
 static char *get_next_line();
 
 // void app_print(char *result) {
