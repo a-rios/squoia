@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
     analyzername = argv[optind];
     analyzernet = fsm_read_binary_file(analyzername);
     if (analyzernet == NULL) {
-	fprintf(stderr, "%s: %s\n", "File error", analyzername);
+	fprintf(stderr, "%s: %s\n%sprint -h for help\n", "File error", analyzername, usagestring);
 	exit(EXIT_FAILURE);
     }
     ah = apply_init(analyzernet);
@@ -119,7 +119,7 @@ int main(int argc, char *argv[])
     /* get chain binary  */
     chainname = argv[optind+1];
     if ((fsrh = fsm_read_binary_file_multiple_init(chainname)) == NULL) {
-        perror("File error");
+        fprintf(stderr, "%s: %s\n%sprint -h for help\n", "File error", chainname, usagestring);
 	exit(EXIT_FAILURE);
     }
     
@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
 	}
     }
     if (numnets < 1) {
-	fprintf(stderr, "%s: %s\n", "File error", chainname);
+	fprintf(stderr, "%s: %s\nprint -h for help\n", "File error", chainname);
 	exit(EXIT_FAILURE);
     }
  
@@ -161,7 +161,7 @@ int main(int argc, char *argv[])
     medname = argv[optind+2];
     mednet = fsm_read_binary_file(medname);
     if (mednet == NULL) {
-	fprintf(stderr, "%s: %s\n", "File error", medname);
+	fprintf(stderr, "%s: %s\n%s\nprint -h for help\n", "File error", medname, usagestring);
 	exit(EXIT_FAILURE);
     }
     medh = apply_med_init(mednet);
