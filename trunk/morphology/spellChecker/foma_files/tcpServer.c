@@ -200,25 +200,39 @@ int main(int argc, char *argv[])
      {
         connfd = accept(listenfd, (struct sockaddr*)NULL, NULL); 
     
-	//n =  read( connfd,sendBuff,255 );
-	do {
-	  byte_count = recv(connfd, sendBuff, 1024,0);
-	if (byte_count < 0)
-	{
-	      perror("ERROR reading from socket");
-	      exit(1);
-	 }
-	 sendBuff[byte_count] = '\0';
-	 //fprintf(stderr,"string received:\t%s\n", sendBuff);
-	 
-	    char *line = concat(sendBuff,"");
-	    //handle_line(line, connfd);;
-	    char *outstr = handle_line(line);
-	    // printf("sent outstring: %s", outstr);
-	    write(connfd, outstr, strlen(outstr));
-	} while(byte_count > 0);
+	
+	// fork child
+	int pid = fork();
+	if (pid < 0){
+            perror("ERROR could not fork");
+	    exit(1);
+        }
+        if (pid == 0)  
+        {
+	  /* This is the client process */
+            close(listenfd);
+            do {
+	      byte_count = recv(connfd, sendBuff, 1024,0);
+	      if (byte_count < 0){
+		  perror("ERROR reading from socket");
+		  exit(1);
+	      }
+		sendBuff[byte_count] = '\0';
+		//fprintf(stderr,"string received:\t%s\n", sendBuff);    
+		char *line = concat(sendBuff,"");
+		//handle_line(line, connfd);;
+		char *outstr = handle_line(line);
+		// printf("sent outstring: %s", outstr);
+		write(connfd, outstr, strlen(outstr));
+	    } while(byte_count > 0);
+            exit(0);
+        }
+        else
+        {
+            close(connfd);
+        }
 
-	}
+      }
 	
 	
         close(connfd);
