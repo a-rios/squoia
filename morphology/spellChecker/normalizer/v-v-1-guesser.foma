@@ -8,7 +8,7 @@ define V=V=1 [
 | [  {rpari} "+Int" ]: {rpari}
 | [  {yqari} "+Stat_Multi" ]: {yqari}
 | [  {rqari} "+Multi" ]: {rqari}
-| [  {tiya}  "+Sml" "]"] : {tiya}
+| [  {tiya}  "+Sml" ] : {tiya}
 | [  {ykacha}  "+Intrup" ] : {ykacha}
 | [  {kacha}  "+Intrup" ] : {kacha}
 | [  {nya} "+Cont" ] :  {nya}
@@ -21,11 +21,11 @@ define V=V=1 [
 | [  {yku}"+y+"  "+Aff" ] : {y}"@YKU"
 | [  {rqu}"+rqu+" "+Rptn" ] : {rqu}"@RQU"
 | [  {ru}"+ru+"  "+Rptn" ] :  {ru}"@RQU"
-| [  {ysi}  "+Ass" "]"]  : {ysi}"@YSI"
-| [  {schi}  "+Ass" "]"]  : {schi}"@YSI"
-| [  {scha}  "+Ass" "]"]  : {scha}"@YSI"
-| [  {naya}  "+Des" "]"] : {naya}
-#| [  {rku}  "+Dir" "]"] : {rku}
+| [  {ysi}  "+Ass" ]  : {ysi}"@YSI"
+| [  {schi}  "+Ass" ]  : {schi}"@YSI"
+| [  {scha}  "+Ass" ]  : {scha}"@YSI"
+| [  {naya}  "+Des" ] : {naya}
+#| [  {rku}  "+Dir" ] : {rku}
 | [  {cha}  "+Vdim" ] : {cha}"@Vdim"
 #| [   {pa}  "+Rep" ] : {pa}
 | [  {paya}  "+MRep" ] : {paya}
