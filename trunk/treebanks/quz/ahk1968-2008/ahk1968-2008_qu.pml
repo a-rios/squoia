@@ -37902,110 +37902,240 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
         <nonterminal id="s118_VROOT">
           <cat>VROOT</cat>
           <children>
-            <terminal>
-              <order>1</order>
-              <label>$</label>
-              <word>112</word>
-              <pos>Root</pos>
-              <morph>
-                <tag>NRootNUM</tag>
-              </morph>
-            </terminal>
-            <terminal>
-              <order>2</order>
-              <label>$</label>
-              <word>Hina</word>
-              <pos>Root</pos>
-              <morph>
-                <tag>Part_Sim</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>3</order>
-                  <label>mod</label>
-                  <word>-lla</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+Lim_Aff</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>4</order>
-                  <label>$</label>
-                  <word>-taq</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+Con_Intr</tag>
-                  </morph>
-                </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>5</order>
+            <terminal id="s118_4">
+              <order>4</order>
               <label>punc</label>
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal>
-              <order>6</order>
-              <label>$</label>
-              <word>Alemán</word>
-              <pos>Root</pos>
-              <morph>
-                <tag>NRootES</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>7</order>
-                  <label>mod</label>
-                  <word>-ya</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+Emph</tag>
-                  </morph>
-                </terminal>
-              </children>
+            <terminal id="s118_24">
+              <order>24</order>
+              <label>punc</label>
+              <word>,</word>
+              <pos>$.</pos>
             </terminal>
-            <terminal>
-              <order>11</order>
-              <label>$</label>
-              <word>-man</word>
-              <pos>Cas</pos>
+            <terminal id="s118_36">
+              <order>36</order>
+              <label>sntc</label>
+              <word>riqsi</word>
+              <pos>Root</pos>
+              <translation>=conocer</translation>
               <morph>
-                <tag>+Dat_Ill</tag>
+                <tag>VRoot</tag>
               </morph>
               <children>
-                <terminal>
-                  <order>8</order>
-                  <label>s.arg.claus</label>
-                  <word>mira</word>
+                <terminal id="s118_21">
+                  <order>21</order>
+                  <label>co</label>
+                  <word>riqsi</word>
                   <pos>Root</pos>
-                  <translation>=aumentar</translation>
+                  <translation>=conocer</translation>
                   <morph>
                     <tag>VRoot</tag>
                   </morph>
                   <children>
-                    <terminal>
-                      <order>12</order>
-                      <label>$</label>
-                      <word>-pas</word>
+                    <terminal id="s118_1">
+                      <order>1</order>
+                      <label>linker</label>
+                      <word>Hina</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <morph>
+                        <tag>Part_Sim</tag>
+                      </morph>
+                      <children>
+                        <terminal id="s118_2">
+                          <order>2</order>
+                          <label>mod</label>
+                          <word>-lla</word>
+                          <pos>Amb</pos>
+                          <morph>
+                            <tag>+Lim_Aff</tag>
+                          </morph>
+                        </terminal>
+                        <terminal id="s118_3">
+                          <order>3</order>
+                          <label>s.co</label>
+                          <word>-taq</word>
+                          <pos>Amb</pos>
+                          <morph>
+                            <tag>+Con_Intr</tag>
+                          </morph>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal id="s118_9">
+                      <order>9</order>
+                      <label>iobj</label>
+                      <word>-man</word>
+                      <pos>Cas</pos>
+                      <morph>
+                        <tag>+Dat_Ill</tag>
+                      </morph>
+                      <children>
+                        <terminal id="s118_6">
+                          <order>6</order>
+                          <label>s.arg.claus</label>
+                          <word>mira</word>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <translation>=producir</translation>
+                          <morph>
+                            <tag>VRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s118_5">
+                              <order>5</order>
+                              <label>mod</label>
+                              <word>Alemania</word>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>NP</tag>
+                              </morph>
+                            </terminal>
+                            <terminal id="s118_10">
+                              <order>10</order>
+                              <label>s.co</label>
+                              <word>-pas</word>
+                              <pos>Amb</pos>
+                              <morph>
+                                <tag>+Add</tag>
+                              </morph>
+                            </terminal>
+                            <terminal id="s118_8">
+                              <order>8</order>
+                              <label>ns</label>
+                              <word>-qkuna</word>
+                              <pos>NS_Num</pos>
+                              <morph>
+                                <tag>+Ag</tag>
+                                <tag>+Pl</tag>
+                              </morph>
+                            </terminal>
+                            <terminal id="s118_7">
+                              <order>7</order>
+                              <label>mod</label>
+                              <word>-chi</word>
+                              <pos>VDeriv</pos>
+                              <morph>
+                                <tag>+Caus</tag>
+                              </morph>
+                            </terminal>
+                          </children>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal id="s118_19">
+                      <order>19</order>
+                      <label>obj</label>
+                      <word>-ta</word>
+                      <pos>Cas</pos>
+                      <morph>
+                        <tag>+Acc</tag>
+                      </morph>
+                      <children>
+                        <terminal id="s118_16">
+                          <order>16</order>
+                          <label>s.arg.claus</label>
+                          <word>ka</word>
+                          <pos>Root</pos>
+                          <translation>=ser</translation>
+                          <morph>
+                            <tag>VRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s118_12">
+                              <order>12</order>
+                              <label>mod</label>
+                              <word>-pi</word>
+                              <pos>Cas</pos>
+                              <morph>
+                                <tag>+Loc</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s118_11">
+                                  <order>11</order>
+                                  <label>s.arg</label>
+                                  <word>imaymana</word>
+                                  <pos>Root</pos>
+                                  <translation>=toda_clase_de,todos</translation>
+                                  <morph>
+                                    <tag>NRoot</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal id="s118_14">
+                              <order>14</order>
+                              <label>subj</label>
+                              <word>qhatucha</word>
+                              <pos>Root_VS</pos>
+                              <translation>=mercado</translation>
+                              <morph>
+                                <tag>NRoot</tag>
+                                <tag>+Fact</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s118_13">
+                                  <order>13</order>
+                                  <label>mod</label>
+                                  <word>allin</word>
+                                  <pos>Root</pos>
+                                  <translation>=bueno</translation>
+                                  <morph>
+                                    <tag>NRoot</tag>
+                                  </morph>
+                                </terminal>
+                                <terminal id="s118_15">
+                                  <order>15</order>
+                                  <label>ns</label>
+                                  <word>-y</word>
+                                  <pos>NS</pos>
+                                  <morph>
+                                    <tag>+Inf</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal id="s118_17">
+                              <order>17</order>
+                              <label>ns</label>
+                              <word>-sqa</word>
+                              <pos>NS</pos>
+                              <morph>
+                                <tag>+Perf</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s118_18">
+                                  <order>18</order>
+                                  <label>s.poss.subj</label>
+                                  <word>-n</word>
+                                  <pos>NPers</pos>
+                                  <morph>
+                                    <tag>+3.Sg.Poss</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                          </children>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal id="s118_20">
+                      <order>20</order>
+                      <label>ev</label>
+                      <word>-m</word>
                       <pos>Amb</pos>
                       <morph>
-                        <tag>+Add</tag>
+                        <tag>+DirE</tag>
                       </morph>
                     </terminal>
-                    <terminal>
-                      <order>10</order>
-                      <label>ns</label>
-                      <word>-qkuna</word>
-                      <pos>NS_Num</pos>
-                      <morph>
-                        <tag>+Ag</tag>
-                        <tag>+Pl</tag>
-                      </morph>
-                    </terminal>
-                    <terminal>
-                      <order>9</order>
+                    <terminal id="s118_22">
+                      <order>22</order>
                       <label>mod</label>
                       <word>-chi</word>
                       <pos>VDeriv</pos>
@@ -38013,222 +38143,20 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                         <tag>+Caus</tag>
                       </morph>
                     </terminal>
-                  </children>
-                </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>14</order>
-              <label>$</label>
-              <word>-pi</word>
-              <pos>Cas</pos>
-              <morph>
-                <tag>+Loc</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>13</order>
-                  <label>s.arg</label>
-                  <word>imaymana</word>
-                  <pos>Root</pos>
-                  <translation>=toda_clase_de,todos</translation>
-                  <morph>
-                    <tag>NRoot</tag>
-                  </morph>
-                </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>15</order>
-              <label>$</label>
-              <word>allin</word>
-              <pos>Root</pos>
-              <translation>=bueno</translation>
-              <morph>
-                <tag>NRoot</tag>
-              </morph>
-            </terminal>
-            <terminal>
-              <order>16</order>
-              <label>$</label>
-              <word>qhatucha</word>
-              <pos>Root_VS</pos>
-              <translation>=mercado</translation>
-              <morph>
-                <tag>NRoot</tag>
-                <tag>+Fact</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>17</order>
-                  <label>ns</label>
-                  <word>-y</word>
-                  <pos>NS</pos>
-                  <morph>
-                    <tag>+Inf</tag>
-                  </morph>
-                </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>21</order>
-              <label>$</label>
-              <word>-ta</word>
-              <pos>Cas</pos>
-              <morph>
-                <tag>+Acc</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>18</order>
-                  <label>s.arg.claus</label>
-                  <word>ka</word>
-                  <pos>Root</pos>
-                  <translation>=ser</translation>
-                  <morph>
-                    <tag>VRoot</tag>
-                  </morph>
-                  <children>
-                    <terminal>
-                      <order>19</order>
-                      <label>ns</label>
-                      <word>-sqa</word>
-                      <pos>NS</pos>
+                    <terminal id="s118_23">
+                      <order>23</order>
+                      <label>s.subj</label>
+                      <word>-n</word>
+                      <pos>VPers</pos>
                       <morph>
-                        <tag>+Perf</tag>
+                        <tag>+3.Sg.Subj</tag>
                       </morph>
-                      <children>
-                        <terminal>
-                          <order>20</order>
-                          <label>s.poss.subj</label>
-                          <word>-n</word>
-                          <pos>NPers</pos>
-                          <morph>
-                            <tag>+3.Sg.Poss</tag>
-                          </morph>
-                        </terminal>
-                      </children>
                     </terminal>
                   </children>
                 </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>22</order>
-              <label>ev</label>
-              <word>-m</word>
-              <pos>Amb</pos>
-              <morph>
-                <tag>+DirE</tag>
-              </morph>
-            </terminal>
-            <terminal>
-              <order>23</order>
-              <label>$</label>
-              <word>riqsi</word>
-              <pos>Root</pos>
-              <translation>=conocer</translation>
-              <morph>
-                <tag>VRoot</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>24</order>
-                  <label>mod</label>
-                  <word>-chi</word>
-                  <pos>VDeriv</pos>
-                  <morph>
-                    <tag>+Caus</tag>
-                  </morph>
-                </terminal>
-                <terminal>
+                <terminal id="s118_25">
                   <order>25</order>
-                  <label>s.subj</label>
-                  <word>-n</word>
-                  <pos>VPers</pos>
-                  <morph>
-                    <tag>+3.Sg.Subj</tag>
-                  </morph>
-                </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>26</order>
-              <label>punc</label>
-              <word>,</word>
-              <pos>$.</pos>
-            </terminal>
-            <terminal>
-              <order>27</order>
-              <label>$</label>
-              <word>ka</word>
-              <pos>Root</pos>
-              <translation>=ser</translation>
-              <morph>
-                <tag>VRoot</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>29</order>
-                  <label>mod</label>
-                  <word>-lla</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+Lim_Aff</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>30</order>
-                  <label>$</label>
-                  <word>-taq</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+Con_Intr</tag>
-                  </morph>
-                </terminal>
-                <terminal>
-                  <order>28</order>
-                  <label>ns</label>
-                  <word>-q</word>
-                  <pos>NS</pos>
-                  <morph>
-                    <tag>+Ag</tag>
-                  </morph>
-                </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>31</order>
-              <label>$</label>
-              <word>may</word>
-              <pos>Root</pos>
-              <translation>=dónde</translation>
-              <morph>
-                <tag>PrnInterr</tag>
-              </morph>
-            </terminal>
-            <terminal>
-              <order>32</order>
-              <label>$</label>
-              <word>impuestokuna</word>
-              <pos>Root_Num</pos>
-              <morph>
-                <tag>NRootES</tag>
-                <tag>+Pl</tag>
-              </morph>
-            </terminal>
-            <terminal>
-              <order>36</order>
-              <label>$</label>
-              <word>-manta</word>
-              <pos>Cas</pos>
-              <morph>
-                <tag>+Abl</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>33</order>
-                  <label>s.arg.claus</label>
+                  <label>linker</label>
                   <word>ka</word>
                   <pos>Root</pos>
                   <translation>=ser</translation>
@@ -38236,51 +38164,109 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>VRoot</tag>
                   </morph>
                   <children>
-                    <terminal>
-                      <order>37</order>
-                      <label>$</label>
-                      <word>-pas</word>
+                    <terminal id="s118_27">
+                      <order>27</order>
+                      <label>mod</label>
+                      <word>-lla</word>
                       <pos>Amb</pos>
                       <morph>
-                        <tag>+Add</tag>
+                        <tag>+Lim_Aff</tag>
                       </morph>
                     </terminal>
-                    <terminal>
-                      <order>34</order>
+                    <terminal id="s118_28">
+                      <order>28</order>
+                      <label>$</label>
+                      <word>-taq</word>
+                      <pos>Amb</pos>
+                      <morph>
+                        <tag>+Con_Intr</tag>
+                      </morph>
+                    </terminal>
+                    <terminal id="s118_26">
+                      <order>26</order>
                       <label>ns</label>
-                      <word>-sqa</word>
+                      <word>-q</word>
                       <pos>NS</pos>
                       <morph>
-                        <tag>+Perf</tag>
+                        <tag>+Ag</tag>
+                      </morph>
+                    </terminal>
+                  </children>
+                </terminal>
+                <terminal id="s118_34">
+                  <order>34</order>
+                  <label>mod</label>
+                  <word>-manta</word>
+                  <pos>Cas</pos>
+                  <morph>
+                    <tag>+Abl</tag>
+                  </morph>
+                  <children>
+                    <terminal id="s118_31">
+                      <order>31</order>
+                      <label>s.arg.claus</label>
+                      <word>ka</word>
+                      <pos>Root</pos>
+                      <translation>=ser</translation>
+                      <morph>
+                        <tag>VRoot</tag>
                       </morph>
                       <children>
-                        <terminal>
-                          <order>35</order>
-                          <label>s.poss.subj</label>
-                          <word>-n</word>
-                          <pos>NPers</pos>
+                        <terminal id="s118_29">
+                          <order>29</order>
+                          <label>loc</label>
+                          <word>may</word>
+                          <pos>Root</pos>
+                          <translation>=dónde</translation>
                           <morph>
-                            <tag>+3.Sg.Poss</tag>
+                            <tag>PrnInterr</tag>
                           </morph>
+                        </terminal>
+                        <terminal id="s118_30">
+                          <order>30</order>
+                          <label>subj</label>
+                          <word>impuestokuna</word>
+                          <pos>Root_Num</pos>
+                          <morph>
+                            <tag>NRootES</tag>
+                            <tag>+Pl</tag>
+                          </morph>
+                        </terminal>
+                        <terminal id="s118_35">
+                          <order>35</order>
+                          <label>s.co</label>
+                          <word>-pas</word>
+                          <pos>Amb</pos>
+                          <morph>
+                            <tag>+Add</tag>
+                          </morph>
+                        </terminal>
+                        <terminal id="s118_32">
+                          <order>32</order>
+                          <label>ns</label>
+                          <word>-sqa</word>
+                          <pos>NS</pos>
+                          <morph>
+                            <tag>+Perf</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s118_33">
+                              <order>33</order>
+                              <label>s.poss.subj</label>
+                              <word>-n</word>
+                              <pos>NPers</pos>
+                              <morph>
+                                <tag>+3.Sg.Poss</tag>
+                              </morph>
+                            </terminal>
+                          </children>
                         </terminal>
                       </children>
                     </terminal>
                   </children>
                 </terminal>
-              </children>
-            </terminal>
-            <terminal>
-              <order>38</order>
-              <label>$</label>
-              <word>riqsi</word>
-              <pos>Root</pos>
-              <translation>=conocer</translation>
-              <morph>
-                <tag>VRoot</tag>
-              </morph>
-              <children>
-                <terminal>
-                  <order>41</order>
+                <terminal id="s118_39">
+                  <order>39</order>
                   <label>mod</label>
                   <word>-lla</word>
                   <pos>Amb</pos>
@@ -38288,17 +38274,17 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>+Lim_Aff</tag>
                   </morph>
                 </terminal>
-                <terminal>
-                  <order>43</order>
-                  <label>$</label>
+                <terminal id="s118_41">
+                  <order>41</order>
+                  <label>s.co</label>
                   <word>-taq</word>
                   <pos>Amb</pos>
                   <morph>
                     <tag>+Con_Intr</tag>
                   </morph>
                 </terminal>
-                <terminal>
-                  <order>39</order>
+                <terminal id="s118_37">
+                  <order>37</order>
                   <label>mod</label>
                   <word>-chi</word>
                   <pos>VDeriv</pos>
@@ -38306,8 +38292,8 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>+Caus</tag>
                   </morph>
                 </terminal>
-                <terminal>
-                  <order>40</order>
+                <terminal id="s118_38">
+                  <order>38</order>
                   <label>mod</label>
                   <word>-ku</word>
                   <pos>VDeriv</pos>
@@ -38315,8 +38301,8 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>+Rflx_Int</tag>
                   </morph>
                 </terminal>
-                <terminal>
-                  <order>42</order>
+                <terminal id="s118_40">
+                  <order>40</order>
                   <label>s.subj</label>
                   <word>-n</word>
                   <pos>VPers</pos>
@@ -38326,8 +38312,8 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
-              <order>44</order>
+            <terminal id="s118_42">
+              <order>42</order>
               <label>punc</label>
               <word>.</word>
               <pos>$.</pos>
@@ -38341,7 +38327,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
         <nonterminal id="s119_VROOT">
           <cat>VROOT</cat>
           <children>
-            <terminal>
+            <terminal id="s119_1">
               <order>1</order>
               <label>$</label>
               <word>113</word>
@@ -38350,7 +38336,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>NRootNUM</tag>
               </morph>
             </terminal>
-            <terminal>
+            <terminal id="s119_2">
               <order>2</order>
               <label>$</label>
               <word>Hina</word>
@@ -38359,7 +38345,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>Part_Sim</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_3">
                   <order>3</order>
                   <label>mod</label>
                   <word>-lla</word>
@@ -38368,7 +38354,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>+Lim_Aff</tag>
                   </morph>
                 </terminal>
-                <terminal>
+                <terminal id="s119_4">
                   <order>4</order>
                   <label>$</label>
                   <word>-taq</word>
@@ -38379,7 +38365,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_5">
               <order>5</order>
               <label>ev</label>
               <word>-mi</word>
@@ -38388,7 +38374,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+DirE</tag>
               </morph>
             </terminal>
-            <terminal>
+            <terminal id="s119_6">
               <order>6</order>
               <label>$</label>
               <word>yacha</word>
@@ -38398,7 +38384,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>VRoot</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_10">
                   <order>10</order>
                   <label>$</label>
                   <word>-taq</word>
@@ -38407,7 +38393,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>+Con_Intr</tag>
                   </morph>
                 </terminal>
-                <terminal>
+                <terminal id="s119_7">
                   <order>7</order>
                   <label>mod</label>
                   <word>-ku</word>
@@ -38416,7 +38402,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>+Rflx_Int</tag>
                   </morph>
                 </terminal>
-                <terminal>
+                <terminal id="s119_9">
                   <order>9</order>
                   <label>s.subj</label>
                   <word>-n</word>
@@ -38427,7 +38413,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_8">
               <order>8</order>
               <label>$</label>
               <word>-rqalla</word>
@@ -38437,13 +38423,13 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Lim_Aff</tag>
               </morph>
             </terminal>
-            <terminal>
+            <terminal id="s119_11">
               <order>11</order>
               <label>punc</label>
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal>
+            <terminal id="s119_14">
               <order>14</order>
               <label>$</label>
               <word>-paq</word>
@@ -38452,7 +38438,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Ben</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_12">
                   <order>12</order>
                   <label>s.arg</label>
                   <word>indutra</word>
@@ -38461,7 +38447,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>NRootG</tag>
                   </morph>
                   <children>
-                    <terminal>
+                    <terminal id="s119_13">
                       <order>13</order>
                       <label>s.poss</label>
                       <word>-nku</word>
@@ -38474,7 +38460,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_16">
               <order>16</order>
               <label>$</label>
               <word>-pi</word>
@@ -38483,7 +38469,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Loc</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_15">
                   <order>15</order>
                   <label>s.arg</label>
                   <word>Alemaniaya</word>
@@ -38494,7 +38480,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_17">
               <order>17</order>
               <label>$</label>
               <word>rura</word>
@@ -38504,7 +38490,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>VRoot</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_18">
                   <order>18</order>
                   <label>ns</label>
                   <word>-sqa</word>
@@ -38515,7 +38501,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_19">
               <order>19</order>
               <label>$</label>
               <word>makinariya</word>
@@ -38525,7 +38511,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Trs</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_21">
                   <order>21</order>
                   <label>ns</label>
                   <word>-na</word>
@@ -38534,7 +38520,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>+Obl</tag>
                   </morph>
                 </terminal>
-                <terminal>
+                <terminal id="s119_20">
                   <order>20</order>
                   <label>mod</label>
                   <word>-ku</word>
@@ -38545,13 +38531,13 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_22">
               <order>22</order>
               <label>punc</label>
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal>
+            <terminal id="s119_23">
               <order>23</order>
               <label>$</label>
               <word>waki</word>
@@ -38561,7 +38547,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>NRoot</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_24">
                   <order>24</order>
                   <label>s.poss</label>
                   <word>-n</word>
@@ -38572,7 +38558,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_25">
               <order>25</order>
               <label>$</label>
               <word>Perú</word>
@@ -38581,7 +38567,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>NP</tag>
               </morph>
             </terminal>
-            <terminal>
+            <terminal id="s119_27">
               <order>27</order>
               <label>$</label>
               <word>-pi</word>
@@ -38590,7 +38576,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Loc</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_26">
                   <order>26</order>
                   <label>s.arg</label>
                   <word>suyu</word>
@@ -38602,7 +38588,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_28">
               <order>28</order>
               <label>$</label>
               <word>ka</word>
@@ -38612,7 +38598,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>VRoot</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_29">
                   <order>29</order>
                   <label>ns</label>
                   <word>-q</word>
@@ -38623,7 +38609,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_31">
               <order>31</order>
               <label>$</label>
               <word>-p</word>
@@ -38632,7 +38618,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Gen</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_30">
                   <order>30</order>
                   <label>s.arg</label>
                   <word>impresakuna</word>
@@ -38644,7 +38630,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_33">
               <order>33</order>
               <label>$</label>
               <word>-p</word>
@@ -38653,7 +38639,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Gen</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_32">
                   <order>32</order>
                   <label>s.arg</label>
                   <word>#empresakuna</word>
@@ -38665,7 +38651,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_34">
               <order>34</order>
               <label>$</label>
               <word>ancha</word>
@@ -38675,7 +38661,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>NRoot</tag>
               </morph>
             </terminal>
-            <terminal>
+            <terminal id="s119_37">
               <order>37</order>
               <label>$</label>
               <word>-manta</word>
@@ -38684,7 +38670,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Abl</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_35">
                   <order>35</order>
                   <label>s.arg.claus</label>
                   <word>ranti</word>
@@ -38694,7 +38680,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>VRoot</tag>
                   </morph>
                   <children>
-                    <terminal>
+                    <terminal id="s119_36">
                       <order>36</order>
                       <label>ns</label>
                       <word>-y</word>
@@ -38707,13 +38693,13 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_38">
               <order>38</order>
               <label>punc</label>
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal>
+            <terminal id="s119_42">
               <order>42</order>
               <label>$</label>
               <word>-paq</word>
@@ -38722,7 +38708,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Ben</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_39">
                   <order>39</order>
                   <label>s.arg.claus</label>
                   <word>paqari</word>
@@ -38732,7 +38718,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>VRoot</tag>
                   </morph>
                   <children>
-                    <terminal>
+                    <terminal id="s119_41">
                       <order>41</order>
                       <label>ns</label>
                       <word>-na</word>
@@ -38741,7 +38727,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                         <tag>+Obl</tag>
                       </morph>
                     </terminal>
-                    <terminal>
+                    <terminal id="s119_40">
                       <order>40</order>
                       <label>mod</label>
                       <word>-chi</word>
@@ -38754,7 +38740,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_44">
               <order>44</order>
               <label>$</label>
               <word>-manta</word>
@@ -38763,7 +38749,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 <tag>+Abl</tag>
               </morph>
               <children>
-                <terminal>
+                <terminal id="s119_43">
                   <order>43</order>
                   <label>s.arg</label>
                   <word>licencia</word>
@@ -38772,7 +38758,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                     <tag>NRootES</tag>
                   </morph>
                   <children>
-                    <terminal>
+                    <terminal id="s119_45">
                       <order>45</order>
                       <label>$</label>
                       <word>-pas</word>
@@ -38785,7 +38771,7 @@ porque este 'mod' también afecta a otro elemento coordinado.</comment>
                 </terminal>
               </children>
             </terminal>
-            <terminal>
+            <terminal id="s119_46">
               <order>46</order>
               <label>punc</label>
               <word>.</word>
