@@ -823,6 +823,7 @@
 | [ {masa} "[" "VRoot" "]" "[" "=extender" "]" ] :  {masa}
 | [ {maskha} "[" "VRoot" "]" "[" "=buscar" "]" ] :  {mask'a}
 | [ {maskha} "[" "VRoot" "]" "[" "=buscar" "]" ] :  {maska}
+| [ {maskha} "[" "VRoot" "]" "[" "=buscar" "]" ] :  {mashka}
 | [ {maskha} "[" "VRoot" "]" "[" "=buscar" "]" ] :  {maskha}
 | [ {masma} "[" "VRoot" "]" "[" "=construir" "]" ] :  {masma}
 | [ {mast'a} "[" "VRoot" "]" "[" "=tender,tumbar" "]" ] :  {mast'a}
@@ -1132,6 +1133,7 @@
 | [ {q'añu} "[" "VRoot" "]" "[" "=desmenuzar" "]" ] :  {q'añu}
 | [ {q'añu} "[" "VRoot" "]" "[" "=desmenuzar" "]" ] :  {qañu}
 | [ {qapari} "[" "VRoot" "]" "[" "=gritar" "]" ] :  {qapari}
+| [ {qaparqacha} "[" "VRoot" "]" "[" "=gritar,vocear" "]" ] :  {qaparqacha}
 | [ {q'apa} "[" "VRoot" "]" "[" "=oler" "]" ] :  {q'apa}
 | [ {q'api} "[" "VRoot" "]" "[" "=apretar,exprimir,dar_la_mano" "]" ] :  {q'api}
 | [ {q'api} "[" "VRoot" "]" "[" "=apretar,exprimir,dar_la_mano" "]" ] :  {qapi}
@@ -1262,6 +1264,7 @@
 | [ {q'utu} "[" "VRoot" "]" "[" "=engañar" "]" ] :  {q'utu}
 | [ {qu} "[" "VRoot" "]" "[" "=dar" "]" ] :  {qu}
 | [ {quyllu} "[" "VRoot" "]" "[" "=fruncir" "]" ] :  {quyllu}
+| [ {quywi} "[" "VRoot" "]" "[" "=silbar" "]" ] :  {quywi}
 | [ {racha} "[" "VRoot" "]" "[" "=arañar,rasgar" "]" ] :  {racha}
 | [ {rachi} "[" "VRoot" "]" "[" "=arañar,rasgar" "]" ] :  {rachi}
 | [ {rakchi} "[" "VRoot" "]" "[" "=rasguñar" "]" ] :  {rakchi}
@@ -1624,6 +1627,7 @@
 | [ {wach'u} "[" "VRoot" "]" "[" "=abrir_surcos" "]" ] :  {wach'u}
 | [ {wachu} "[" "VRoot" "]" "[" "=devastar" "]" ] :  {wachu}
 | [ {waha} "[" "VRoot" "]" "[" "=defender" "]" ] :  {waha}
+| [ {wahaha} "[" "VRoot" "]" "[" "=reirse" "]" ] :  {wahaha}
 | [ {wakha} "[" "VRoot" "]" "[" "=desmoronar" "]" ] :  {wakha}
 | [ {waki} "[" "VRoot" "]" "[" "=negociar,comparar" "]" ] :  {waki}
 | [ {waklla} "[" "VRoot" "]" "[" "=caer_a_un_lado" "]" ] :  {waklla}
