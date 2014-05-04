@@ -631,7 +631,7 @@ define Word  FeatRestr  .o. NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] 
 read regex Cleanup2 .o. LexRestr .o. Word;
 
 #define Word NounRulesUpper .o. CASE .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex  Word;
+#read regex TRANS .o. Word;
 
 
 save stack normalizer.fst
