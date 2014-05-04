@@ -33,9 +33,9 @@ GENERALLY:
 - passive verb forms with infinitive ser: not disambiguated at the moment, because this chunk has no finite verb
 - generally: spanish passive forms (in dix distinguished in paradigm by VRoot vs Copula
 - (de) color + 'color' es -> delete color (casa de color azul -> anqas wasi) 
-# TODO: aunque_sea -> maskipas (adverb)
 - verse +AQ, resultar +AQ -> ka- .. adj, 
 - IMPORTANT: Spanish passive?? 'fue corroborada' -> kallpachasqa kan or kallpachasqan?
+- fechas -> locative -> el 3 de junio del año 2003 -> de 2x = -pi, not -pa
 
 CONLL2XML:
 - hacer +inf: analyzed by parser as 2 verb chunks, infinitive as complement clause to hacer -> should be in one chunk, so we can move +Caus to main verb and use morphology of finite hacer
