@@ -8,6 +8,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <time.h> 
+#include <limits.h>
 
 #include <getopt.h>
 #include "fomalib.h"
