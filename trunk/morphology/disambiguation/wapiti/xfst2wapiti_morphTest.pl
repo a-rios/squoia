@@ -467,7 +467,7 @@ if($mode eq '-3')
 				#print STDERR "@$word[0], has evid: ".&sentenceHasEvid(\@words, $i)."\n";
 				
 				#print "@$word[0]: evid @$word[4], gen: @$word[5] \n";
-				print STDERR "-ykun \n";
+				#print STDERR "-ykun \n";
 			}
 			# -n
 			elsif(&containedInOtherMorphs($analyses,"+DirE","+3.Sg.Poss") )
@@ -489,7 +489,7 @@ if($mode eq '-3')
 						@$word[6] = 0;
 					}
 				}
-				print STDERR "-n \n";
+				#print STDERR "-n \n";
 				#print STDERR "@$word[0]: evid @$word[4], gen: @$word[5] \n";
 			}
 			# -pis
@@ -499,7 +499,7 @@ if($mode eq '-3')
 				push(@possibleClasses, "Add");
 				@$word[3] = "amb3";
 				@$word[5] = &sentenceHasEvid(\@words, $i);
-				print STDERR "-pis \n";
+				#print STDERR "-pis \n";
 			}
 	
 			# -s with Spanish roots: Plural or IndE (e.g. derechus)
@@ -516,7 +516,7 @@ if($mode eq '-3')
 						@$word[5] = &sentenceHasEvid(\@words, $i);
 					}
 				}
-				print STDERR "-s \n";
+				#print STDERR "-s \n";
 			}
 			# else: lexical ambiguities, leave
 			else
@@ -767,7 +767,7 @@ sub disambMorph1{
 		my $word = @words[$i];
 			
 			my @crfRows = split('\t', $crfline);
-			if( (lc(@$word[0]) eq @crfRows[0]) or (@$word[0] eq '#EOS' and $crfline =~ /^\s*$/ ))
+			if( (lc(@$word[0]) eq @crfRows[0]) or (@$word[0] eq '#EOS' and $crfline =~ /^\s*$/ ) )
 			{
 				# check if marked as ambiguous
 				if(@$word[3] eq 'amb'){
@@ -824,12 +824,11 @@ sub disambMorph1{
 				}
 				
 			}
-			else{
+			else{ 
+				# if the lines in xfst and crf output don't match, something's wrong.. 
 				print STDERR "not equal in crf line $i: xfst: @$word[0]  crf: @crfRows[0]\n";
 				exit;
 			}
-			
-		
 	}
 
 	# retrieve number of previously disambiguated forms ('rule' based, e.g +Dist/+Term, chiqan/chiqa etc.)
