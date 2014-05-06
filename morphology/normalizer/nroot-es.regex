@@ -101,6 +101,7 @@
 | [ {teléfono} "["  "NRootES"  "]" ] :   {tiliwunu}
 | [ {televisón} "["  "NRootES"  "]" ] :   {tiliwisyun}
 | [ {tiempo} "["  "NRootES"  "]" ] :   {timpu}
+| [ {vaca} "["  "NRootES"  "]" ] :   {waka}
 | [ {velorio} "["  "NRootES"  "]" ] :   {biluryu}
 | [ {vieja} "["  "NRootES"  "]" ] :   {biha}
 | [ {viejo} "["  "NRootES"  "]" ] :   {bihu}
