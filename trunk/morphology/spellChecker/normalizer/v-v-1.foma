@@ -33,4 +33,19 @@ define V=V=1 [
 | [  {chi}  "+Caus" ] : {chi}"@CHI"
 | [   {ri}  "+Inch" ] : {ri}"@RI"
 | [  {lli}  "+Autotrs" ] : {lli} 
+# préstamos del aymara
+| [  {naqa}  "+Intrup" ] : {naqa} 
+# acción difusa, sin meta ~ ykacha
+| [  {tata}  "+Dir" ] : {tata}
+ # directional: indica extensión o dispersión 
+| [  {thapi}  "+Dir" ] : {thapi} 
+#  directional: indica concentración o reunión
+| [  {kipa}  "+Dir" ] : {kipa} 
+# directional: indica cambio de dirección
+| [  {kata}  "+Dir" ] : {kata} 
+# directional: a través
+| [  {qa}  "+Dir" ] : {qa}  
+# directional: hacia abajo
+| [  {t'a}  "+Mom" ] : {t'a} 
+# aspect: acción única, momentánea y breve
 ] ;

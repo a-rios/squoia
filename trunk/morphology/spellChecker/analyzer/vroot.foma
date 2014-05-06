@@ -380,6 +380,7 @@ define VRootQin [
 |  "=probar" : {malli}
 |  "=plantar" : {mallki}
 |  "=pedir,rogar" : {maña}
+|  "=negar" : {manancha}
 |  "=tener_miedo" : {mancha}
 |  "=ensanchar" : {manka}
 | "=domar" : {mansa}

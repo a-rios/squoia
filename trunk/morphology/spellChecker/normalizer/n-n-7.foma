@@ -3,6 +3,7 @@
 define N=N=7 [
    [  {kama}   "+Dist" ] : {kama}
 |  [  {rayku}    "+Kaus" ] : {rayku}
+|  [  {rayku}    "+Kaus" ] : {layku}
 |  [  {wan}    "+Con_Inst" ] : {wan}
 |  [  {puwan}    "+Soc" ] : {puwan} 
 ]
