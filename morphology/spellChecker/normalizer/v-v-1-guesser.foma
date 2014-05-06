@@ -33,4 +33,9 @@ define V=V=1 [
 | [  {chi}  "+Caus" ] : {chi}"@CHI"
 | [   {ri}  "+Inch" ] : {ri}"@RI"
 | [  {lli}  "+Autotrs" ] : {lli} 
+# préstamos del aymara
+| [  {thapi}  "+Dir" ] : {thapi} 
+#  directional: indica concentración o reunión
+| [  {t'a}  "+Mom" ] : {t'a} 
+# aspect: acción única, momentánea y breve
 ] ;

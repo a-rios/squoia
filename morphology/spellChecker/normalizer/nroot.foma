@@ -1227,6 +1227,7 @@ define NRootQ [
 | {millqa} : {millqa}
 | {millu} : {millu}
 | {mincha} : {mincha}
+| {mincha} : {minchha}
 | {mink'a} : {mink'a}
 | {mink'a} : {minka}
 | {mira} : {mira}
@@ -2200,6 +2201,7 @@ define NRootQ [
 | {huk'ucha} : {ukucha}
 | {ukuku} : {ukuku}
 | {ukumari} : {ukumari}
+| {ukumari} : {ukhumari}
 | [{ukhu}"@UKU"] : {uku}
 | {ulinchu} : {ulinchu}
 | {ullanta} : {ullanta}
