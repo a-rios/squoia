@@ -1365,7 +1365,6 @@
 | [ {simp'a} "[" "VRoot" "]" "[" "=trenzar" "]" ] :  {simp'a}
 | [ {simp'a} "[" "VRoot" "]" "[" "=trenzar" "]" ] :  {simpa}
 | [ {simpi} "[" "VRoot" "]" "[" "=acusar" "]" ] :  {simpi}
-| [ {simpu} "[" "VRoot" "]" "[" "=morder" "]" ] :  {simpu}
 | [ {sinka} "[" "VRoot" "]" "[" "=emborracharse" "]" ] :  {sinka}
 | [ {sinku} "[" "VRoot" "]" "[" "=revolcar" "]" ] :  {sinku}
 | [ {sinq'a} "[" "VRoot" "]" "[" "=respirar" "]" ] :  {sinq'a}
