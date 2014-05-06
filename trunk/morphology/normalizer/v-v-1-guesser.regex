@@ -28,4 +28,9 @@
 | [ "[" "^DB" "]" "[" "--" "]"  {chi} "[" "VDeriv" "]" "[" "+Caus" "]" ] : {chi}"@CHI"
 | [ "[" "--" "]"  {ri} "[" "VDeriv" "]" "[" "+Inch" "]" ] : {ri}"@RI"
 | [ "[" "--" "]" {lli} "[" "VDeriv" "]" "[" "+Autotrs" "]" ] : {lli} 
+# sufijos aymaras prestados en ciertos dialectos:
+| [ "[" "--" "]" {thapi} "[" "VDeriv" "]" "[" "+Dir" "]" ] : {thapi}
+#  directional: indica concentración o reunión
+| [ "[" "--" "]" {t'a} "[" "VDeriv" "]" "[" "+Mom" "]" ] : {t'a}
+# aspect: acción única, momentánea y breve
 ;
