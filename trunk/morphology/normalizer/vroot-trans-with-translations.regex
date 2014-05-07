@@ -158,7 +158,6 @@
 | [{kirpa} "[" "VRoot" "]" "[" "=tapar" "]" ] :  {kirpa} 
 | [{kitu} "[" "VRoot" "]" "[" "=agacharse" "]" ] :  {kitu} 
 | [{kuchu} "[" "VRoot" "]" "[" "=cortar,unir" "]" ] :  {kuchu}
-| [{kuma} "[" "VRoot" "]" "[" "=empujar" "]" ] :  {kuma} 
 | [{kuski} "[" "VRoot" "]" "[" "=analizar" "]" ] :  {kuski} 
 | [{kuti} "[" "VRoot" "]" "[" "=volver" "]" ] :  {kuti} 
 | [{kuyu} "[" "VRoot" "]" "[" "=mover" "]" ] :  {kuyu} 
@@ -238,7 +237,6 @@
 | [{muthu} "[" "VRoot" "]" "[" "=cortar" "]" ] :  {muthu} 
 | [{muyu} "[" "VRoot" "]" "[" "=girar" "]" ] :  {muyu} 
 | [{nak'a} "[" "VRoot" "]" "[" "=matar" "]" ] :  {nak'a} 
-| [{nak'a} "[" "VRoot" "]" "[" "=matar" "]" ] :  {naka} 
 | [{ñat'u} "[" "VRoot" "]" "[" "=aplastar" "]" ] :  {ñat'u} 
 | [{ñawchi} "[" "VRoot" "]" "[" "=auxiliar" "]" ] :  {ñawchi} 
 | [{ñut'u} "[" "VRoot" "]" "[" "=aplastar" "]" ] :  {ñut'u} 

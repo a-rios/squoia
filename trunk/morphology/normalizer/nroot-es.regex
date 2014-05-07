@@ -82,7 +82,6 @@
 | [ {mejor} "["  "NRootES"  "]" ] :   {mihur}
 | [ {merienda} "["  "NRootES"  "]" ] :   {mirinda}
 | [ {miércoles} "["  "NRootES"  "]" ] :   {mirkulis}
-| [ {mío} "["  "NRootES"  "]" ] :   {miyu}
 | [ {nación} "["  "NRootES"  "]" ] :   {nasyun}
 | [ {naranja} "["  "NRootES"  "]" ] :   {naranqa}
 | [ {novia} "["  "NRootES"  "]" ] :   {nubiya}
