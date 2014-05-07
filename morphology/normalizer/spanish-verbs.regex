@@ -2162,7 +2162,6 @@
 | [ {cumplimenta} "["  "VRootES"  "]" ] : {cumplimenta}
 | [ {cumpli} "["  "VRootES"  "]" ] : {cumpli}
 | [ {cuna} "["  "VRootES"  "]" ] : {cuna}
-| [ {cundi} "["  "VRootES"  "]" ] : {cundi}
 | [ {cunea} "["  "VRootES"  "]" ] : {cunea}
 | [ {cuquea} "["  "VRootES"  "]" ] : {cuquea}
 | [ {cura} "["  "VRootES"  "]" ] : {cura}

@@ -232,28 +232,28 @@ if($mode eq '-1')
 		{
 			# VERBAL morphology
 			# -sqayki
-			if(&containedInOtherMorphs($analyses,"+Perf","+1.Sg.Subj_2.Sg.Obj.Fut"))
+			if(&containedInOtherMorphs($analyses,"Perf","\Q+1.Sg.Subj_2.Sg.Obj.Fut\E"))
 			{
 				push(@possibleClasses, "Perf");
 				push(@possibleClasses, "Fut");
-				if(&containedInOtherMorphs($analyses,"+Perf","+IPst+1.Sg.Subj_2.Sg.Obj")){
+				if(&containedInOtherMorphs($analyses,"Perf","\Q+IPst+1.Sg.Subj_2.Sg.Obj\E")){
 					push(@possibleClasses, "IPst");
 				}
 				@$word[3] = "amb";
 				#print "@$word[0]\n";
 			}
 			# -sqaykichik
-			elsif(&containedInOtherMorphs($analyses,"+Perf","+1.Sg.Subj_2.Pl.Obj.Fut"))
+			elsif(&containedInOtherMorphs($analyses,"Perf","\Q+1.Sg.Subj_2.Pl.Obj.Fut\E"))
 			{
 				push(@possibleClasses, "Perf");
 				push(@possibleClasses, "Fut");
-				if(&containedInOtherMorphs($analyses,"+Perf","+IPst+1.Sg.Subj_2.Pl.Obj")){
+				if(&containedInOtherMorphs($analyses,"Perf","\Q+IPst+1.Sg.Subj_2.Pl.Obj\E")){
 					push(@possibleClasses, "IPst");
 				}
 				@$word[3] = "amb";
 			}
 			# -sqa
-			elsif(&containedInOtherMorphs($analyses,"+Perf","+IPst") || &containedInOtherMorphs($analyses,"+Perf","+3.Sg.Subj.IPst") )
+			elsif(&containedInOtherMorphs($analyses,"Perf","\Q+IPst\E") || &containedInOtherMorphs($analyses,"Perf","\Q+3.Sg.Subj.IPst\E") )
 			{
 				push(@possibleClasses, "IPst");
 				push(@possibleClasses, "Perf");
@@ -262,7 +262,7 @@ if($mode eq '-1')
 				#print "@$word[0]\n";
 			}
 			# -y
-			elsif(&containedInOtherMorphs($analyses,"+2.Sg.Subj.Imp","+Inf"))
+			elsif(&containedInOtherMorphs($analyses,"\Q+2.Sg.Subj.Imp\E","Inf"))
 			{
 				push(@possibleClasses, "Imp");
 				push(@possibleClasses, "Inf");
@@ -271,7 +271,7 @@ if($mode eq '-1')
 				#print "@$word[0]\n";
 			}
 			# -yman
-			elsif(&containedInOtherMorphs($analyses,"+1.Sg.Subj.Pot","+Inf+Dat_Ill"))
+			elsif(&containedInOtherMorphs($analyses,"\Q+1.Sg.Subj.Pot\E","\Q+Inf+Dat_Ill\E"))
 			{
 				push(@possibleClasses, "Pot");
 				push(@possibleClasses, "Inf");
@@ -280,7 +280,7 @@ if($mode eq '-1')
 				#print "@$word[0]\n";
 			}
 			# -ykuna
-			elsif(&containedInOtherMorphs($analyses,"+Inf+Pl","+Aff+Obl"))
+			elsif(&containedInOtherMorphs($analyses,"\Q+Inf+Pl\E","\Q+Aff+Obl\E"))
 			{
 				push(@possibleClasses, "Inf");
 				push(@possibleClasses, "Aff_Obl");
@@ -295,7 +295,7 @@ if($mode eq '-1')
 #				push(@possibleClasses, "Rzpr_Rflx_Obl");
 #			}
 			# -kuna
-			elsif(&containedInOtherMorphs($analyses,"+Pl","+Rflx_Int+Obl"))
+			elsif(&containedInOtherMorphs($analyses,"\Q+Pl\E","\Q+Rflx_Int+Obl\E"))
 			{
 				push(@possibleClasses, "Pl");
 				push(@possibleClasses, "Rflx_Obl");
@@ -304,12 +304,12 @@ if($mode eq '-1')
 				#print "@$word[0]\n";
 			}
 			# -cha
-			elsif(&containedInOtherMorphs($analyses,"+Fact","+Dim"))
+			elsif(&containedInOtherMorphs($analyses,"Fact","Dim"))
 			{
 				push(@possibleClasses, "Fact");
 				push(@possibleClasses, "Dim");
 				# should not be a verb, but you never know..
-				if(&containedInOtherMorphs($analyses,"+Dim","+Vdim+Rflx_Int+Obl") or &containedInOtherMorphs($analyses,"+Fact","+Vdim") ){
+				if(&containedInOtherMorphs($analyses,"Dim","\Q+Vdim+Rflx_Int+Obl\E") or &containedInOtherMorphs($analyses,"Fact","Vdim") ){
 					push(@possibleClasses, "Vdim");
 				}
 				#push(@ambWords,$word);
@@ -360,21 +360,21 @@ if($mode eq '-2')
 		{
 			# VERBAL morphology
 			# -sun
-			if(&containedInOtherMorphs($analyses,"+1.Pl.Incl.Subj.Imp","+1.Pl.Incl.Subj.Fut"))
+			if(&containedInOtherMorphs($analyses,"\Q+1.Pl.Incl.Subj.Imp\E","\Q+1.Pl.Incl.Subj.Fut\E"))
 			{
 				push(@possibleClasses, "Imp");
 				push(@possibleClasses, "Fut");
 				@$word[3] = "amb2";
 			}
 			# -nqa
-			elsif(&containedInOtherMorphs($analyses,"+3.Sg.Subj+Top","+3.Sg.Subj.Fut"))
+			elsif(&containedInOtherMorphs($analyses,"\Q+3.Sg.Subj+Top\E","\Q+3.Sg.Subj.Fut\E"))
 			{
 				push(@possibleClasses, "Top");
 				push(@possibleClasses, "Fut");
 				@$word[3] = "amb2";
 			}
 			# -sqaykiku
-			elsif(&containedInOtherMorphs($analyses,"+IPst+1.Pl.Excl.Subj_2.Sg.Obj","+1.Pl.Excl.Subj_2.Sg.Obj.Fut"))
+			elsif(&containedInOtherMorphs($analyses,"\Q+IPst+1.Pl.Excl.Subj_2.Sg.Obj\E","\Q+1.Pl.Excl.Subj_2.Sg.Obj.Fut\E"))
 			{
 				push(@possibleClasses, "IPst");
 				push(@possibleClasses, "Fut");
@@ -396,21 +396,21 @@ if($mode eq '-2')
 #				@$word[3] = "amb2";
 #			}
 			# -wanku 
-			elsif(&containedInOtherMorphs($analyses,"+1.Obj+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) or &containedInOtherMorphs($analyses,"+1.Obj+NPst+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) or &containedInOtherMorphs($analyses,"+1.Obj+IPst+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) &containedInOtherMorphs($analyses,"+1.Obj+Prog+3.Pl.Subj","+3.Subj_1.Pl.Excl.Obj" ) )
+			elsif(&containedInOtherMorphs($analyses,"\Q+1.Obj\E.*\Q+3.Pl.Subj\E","\Q+3.Subj_1.Pl.Excl.Obj\E" )  )
 			{
 				push(@possibleClasses, "1Sg");
 				push(@possibleClasses, "1Pl");
 				@$word[3] = "amb2";
 			}
 			# -wanqaku 
-			elsif(&containedInOtherMorphs($analyses,"+1.Obj+3.Pl.Subj.Fut","+3.Subj_1.Pl.Excl.Obj.Fut" ) or &containedInOtherMorphs($analyses,"+1.Obj+Prog+3.Pl.Subj.Fut","+3.Subj_1.Pl.Excl.Obj.Fut" )  )
+			elsif(&containedInOtherMorphs($analyses,"\Q+1.Obj+3.Pl.Subj.Fut\E","\Q+3.Subj_1.Pl.Excl.Obj.Fut\E" ) or &containedInOtherMorphs($analyses,"\Q+1.Obj+Prog+3.Pl.Subj.Fut\E","\Q+3.Subj_1.Pl.Excl.Obj.Fut\E" )  )
 			{
 				push(@possibleClasses, "1Sg");
 				push(@possibleClasses, "1Pl");
 				@$word[3] = "amb2";
 			}
 			# -npuni: -n -puni or -m -pu -ni (problem: occurs onyl as -n -puni in training material!)
-			elsif(&containedInOtherMorphs($analyses,"+3.Sg.Subj+Def","+Cis_Trs+Rgr_Iprs+1.Sg.Subj" )){
+			elsif(&containedInOtherMorphs($analyses,"\Q+3.Sg.Subj+Def\E","\Q+Cis_Trs+Rgr_Iprs+1.Sg.Subj\E" )){
 				push(@possibleClasses, "1Sg");
 				push(@possibleClasses, "3Sg");
 				@$word[3] = "amb2";
@@ -457,7 +457,7 @@ if($mode eq '-3')
 		if(scalar(@$analyses)>1)
 		{
 			# yku-n
-			if(&containedInOtherMorphs($analyses,"+1.Pl.Excl.Subj+DirE","+Aff+3.Sg.Subj") )
+			if(&containedInOtherMorphs($analyses,"\Q+1.Pl.Excl.Subj+DirE\Q","\Q+Aff+3.Sg.Subj\E") )
 			{
 				push(@possibleClasses, "DirEs");
 				push(@possibleClasses, "Subj");
@@ -470,7 +470,7 @@ if($mode eq '-3')
 				#print STDERR "-ykun \n";
 			}
 			# -n
-			elsif(&containedInOtherMorphs($analyses,"+DirE","+3.Sg.Poss") )
+			elsif(&containedInOtherMorphs($analyses,"\Q+DirE\E","\Q+3.Sg.Poss\E") )
 			{
 				push(@possibleClasses, "DirE");
 				push(@possibleClasses, "Poss");
@@ -493,7 +493,7 @@ if($mode eq '-3')
 				#print STDERR "@$word[0]: evid @$word[4], gen: @$word[5] \n";
 			}
 			# -pis
-			elsif(&containedInOtherMorphs($analyses,"+Loc+IndE","+Add"))
+			elsif(&containedInOtherMorphs($analyses,"\Q+Loc+IndE\E","Add"))
 			{
 				push(@possibleClasses, "Loc_IndE");
 				push(@possibleClasses, "Add");
@@ -688,8 +688,8 @@ sub containedInOtherMorphs{
 	{
 		my $analysis = @$analyses[$j];
 		my $allmorphs = $analysis->{'allmorphs'};
-		#print STDERR @$analyses[$j]->{'lem'}." morphs: $allmorphs  string: $string1\n";
-		if($allmorphs =~ /\Q$string1\E/)
+		#print STDERR @$analyses[$j]->{'lem'}." morphs: $allmorphs  string: $string1 $string2\n";
+		if($allmorphs =~ /$string1/)
 		{	
 			# check if later analysis has +Term
 			for(my $k=$j+1;$j<$k;$k--) 
@@ -697,7 +697,7 @@ sub containedInOtherMorphs{
 				my $analysis2 = @$analyses[$k];
 				my $postmorphs = $analysis2->{'allmorphs'};
 				#print "next: $postmorphs\n";
-				if($postmorphs =~ /\Q$string2\E/ )
+				if($postmorphs =~ /$string2/ )
 				{		
 					#print "2 found $allmorphs\n";
 					#print "2compared with $postmorphs\n";
@@ -710,7 +710,7 @@ sub containedInOtherMorphs{
 				my $analysis3 = @$analyses[$k];
 				my $premorphs = $analysis3->{'allmorphs'};
 				#print "prev: $premorphs\n";
-				if($premorphs =~ /\Q$string2\E/)
+				if($premorphs =~ /$string2/)
 				{
 					#print "3 found $allmorphs\n";
 					#print "3 compared with $premorphs\n";
@@ -881,7 +881,7 @@ sub disambMorph2{
 		my $analyses = @$word[1];
 		
 		# not a real ambiguitiy: rqari vs. rqa-ri -> keep -rqari
-		if(&containedInOtherMorphs($analyses,"+Multi","+Rptn+Inch") ){
+		if(&containedInOtherMorphs($analyses,"\Q+Multi\Q","\Q+Rptn+Inch\E") ){
 			for(my $j=0;$j<scalar(@$analyses);$j++) {
 				my $analysis = @$analyses[$j];
 				if($analysis->{'allmorphs'} =~ /\+Rptn\+Inch/){

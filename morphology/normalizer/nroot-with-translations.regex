@@ -2127,7 +2127,6 @@
 | [ {t'illa} "[" "NRoot" "]" "["  "=salvaje" "]" ] : {t'illa}
 | [ {t'illa} "[" "NRoot" "]" "["  "=salvaje" "]" ] : {tilla}
 | [ {t'impu} "[" "NRoot" "]" "["  "=sancochado" "]" ] : {t'impu}
-| [ {t'impu} "[" "NRoot" "]" "["  "=sancochado" "]" ] : {timpu}
 | [ {tiñi} "[" "NRoot" "]" "["  "=ladrón" "]" ] : {tiñi}
 | [ {tini} "[" "NRoot" "]" "["  "=límite" "]" ] : {tini}
 | [ {t'inka} "[" "NRoot" "]" "["  "=regalo" "]" ] : {t'inka}
@@ -2812,7 +2811,6 @@
 | [ {phuspu} "[" "NRoot" "]" "[" "=habas_tostadas" "]" ] : {phuspu} 
 | [ {phusti} "[" "NRoot" "]" "[" "=chato,enanizado" "]" ] : {phusti} 
 | [ {phusullu} "[" "NRoot" "]" "[" "=ampolla" "]" ] : {phusullu} 
-| [ {picha} "[" "NRoot" "]" "[" "=barredura,borradura" "]" ] : {picha} 
 | [ {pichiwchu} "[" "NRoot" "]" "[" "=pájaro" "]" ] : {pichiwchu} 
 | [ {pichiwchuru} "[" "NRoot" "]" "[" "=gorrión" "]" ] : {pichiwchuru} 
 | [ {pichiw} "[" "NRoot" "]" "[" "=pajarillo" "]" ] : {pichiw} 
@@ -2943,7 +2941,6 @@
 | [ {uchha} "[" "NRoot" "]" "[" "=bosta_de_equino,bosta,estiércol" "]" ] : {uchha} 
 | [ {ukhulli} "[" "NRoot" "]" "[" "=desconocido,recóndito" "]" ] : {ukhulli} 
 | [ {ullpu} "[" "NRoot" "]" "[" "=postrado" "]" ] : {ullpu} 
-| [ {umaku} "[" "NRoot" "]" "[" "=cabezudo" "]" ] : {umaku} 
 | [ {umiña} "[" "NRoot" "]" "[" "=joya" "]" ] : {umiña} 
 | [ {umutu} "[" "NRoot" "]" "[" "=enano,esclavo" "]" ] : {umutu} 
 | [ {uritu} "[" "NRoot" "]" "[" "=loro,papagayo" "]" ] : {uritu} 
@@ -2959,7 +2956,6 @@
 | [ {uturunku} "[" "NRoot" "]" "[" "=tigre" "]" ] : {uturunku} 
 | [ {wachala} "[" "NRoot" "]" "[" "=mantilla" "]" ] : {wachala} 
 | [ {wachwa} "[" "NRoot" "]" "[" "=pato" "]" ] : {wachwa} 
-| [ {wakta} "[" "NRoot" "]" "[" "=adrede" "]" ] : {wakta} 
 | [ {waku} "[" "NRoot" "]" "[" "=ceramio,guaco" "]" ] : {waku} 
 | [ {wallata} "[" "NRoot" "]" "[" "=ganso,pato" "]" ] : {wallata} 
 | [ {wallawisa} "[" "NRoot" "]" "[" "=guerrero,militar" "]" ] : {wallawisa} 
@@ -2970,6 +2966,7 @@
 | [ {wankari} "[" "NRoot" "]" "[" "=mojinete" "]" ] : {wankari} 
 | [ {wankhi} "[" "NRoot" "]" "[" "=chambón,hosco,inepto,inútil" "]" ] : {wankhi} 
 | [ {wanli} "[" "NRoot" "]" "[" "=bamboleo,péndulo" "]" ] : {wanli} 
+| [ {wantu} "[" "NRoot" "]" "[" "=parihuela" "]" ] : {wantu} 
 | [ {wanwan} "[" "NRoot" "]" "[" "=zancudo" "]" ] : {wanwan} 
 | [ {wap'uru} "[" "NRoot" "]" "[" "=batea" "]" ] : {wap'uru} 
 | [ {waralli} "[" "NRoot" "]" "[" "=calzoncillo" "]" ] : {waralli} 
@@ -2983,7 +2980,6 @@
 | [ {wichhi} "[" "NRoot" "]" "[" "=jarra" "]" ] : {wichhi} 
 | [ {wichi} "[" "NRoot" "]" "[" "=borde" "]" ] : {wichi} 
 | [ {wikllu} "[" "NRoot" "]" "[" "=deforme,desviado,inclinado,ladeado" "]" ] : {wikllu} 
-| [ {wik'u} "[" "NRoot" "]" "[" "=cesma" "]" ] : {wik'u} 
 | [ {willachu} "[" "NRoot" "]" "[" "=comunicador,informador" "]" ] : {willachu} 
 | [ {willaka} "[" "NRoot" "]" "[" "=comunicador,informador" "]" ] : {willaka} 
 | [ {willpu} "[" "NRoot" "]" "[" "=desaliento,desfallecimiento,postración" "]" ] : {willpu} 

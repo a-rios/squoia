@@ -1169,6 +1169,7 @@
 | [ {qhasu} "[" "VRoot" "]" "[" "=romper" "]" ] :  {qasu}
 | [ {qhachwa} "[" "VRoot" "]" "[" "=bailar" "]" ] :  {qaswa}
 | [ {qata} "[" "VRoot" "]" "[" "=cubrir" "]" ] :  {qata}
+| [ {qata} "[" "VRoot" "]" "[" "=cubrir" "]" ] :  {qhata}
 | [ {qati} "[" "VRoot" "]" "[" "=seguir,arrear,contagiar" "]" ] :  {qati}
 | [ {qatqa} "[" "VRoot" "]" "[" "=rascar" "]" ] :  {qatqa}
 | [ {qhatu} "[" "VRoot" "]" "[" "=negociar" "]" ] :  {qatu}
