@@ -441,7 +441,7 @@ define Verb  [[VROOT|VDERIV] VerbSuffixes];
        #########################
 
 # naya/sun,  -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj, raya: not -rqa -yka
-define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] | | {rqa}"+ru+" %["VDeriv"%] %["+Rptn"%] "@RQU" %["--"%]{yka}"+yu+" ]] ; 
+define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] |  {rqa}"+ru+" %["VDeriv"%] %["+Rptn"%] "@RQU" %["--"%]{yka}"+yu+" ]] ; 
 
 # case suffixes:  tapi, pita, manta, tamanta, mantaq, ntin, paq, tata (false double accusatives: contratatan -> not contra-ta-ta!), -niray -> not nira -y (poss), nkaman -> not -nka-man but n-kama-n
 define CASE [~$["+Acc"?*"+Loc" | "+Loc"?*"+Acc" | "+Dat_Ill"?*"+Acc" | "+Acc"?*"+Abl" | "+Abl"?*"+Gen" | {ntin}%["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] %[ | {pa}%["Cas"%] %["+Gen"%] ?* "@GENq" |"+Acc" ?* "+Acc" | "@GENq" ?* "@TA" |  {nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] {y}%[ | {nka}%[ ?* {man}%[  ] ];
