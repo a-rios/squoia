@@ -77,7 +77,7 @@ sub printLattice{
 	my $sentLatticeref = $_[0];
 	my %sentLattice = %$sentLatticeref;
 	my $nbrOfAltSents = $_[1];
-	my %alternativeSentArrays=();
+	#my %alternativeSentArrays=();
 	my $nbrOfWords = scalar(keys %sentLattice);
 	my %sentMatrix=();
 	
