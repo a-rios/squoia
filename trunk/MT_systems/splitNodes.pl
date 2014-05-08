@@ -31,7 +31,7 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 my $maxNodeRef = &getMaxNodeRef($dom);
 
 foreach my $wordnode ( $dom->getElementsByTagName('NODE') ) {
-	if ( $wordnode->hasAttribute('split') and $wordnode->getAttribute('split')=="yes")      #if node has an attribute split=yes, append sibling node
+	if ( $wordnode->hasAttribute('split') and $wordnode->getAttribute('split') eq "yes")      #if node has an attribute split=yes, append sibling node
 	{
 		my %attrvalues;
 		$wordnode->removeAttribute('split');
@@ -68,6 +68,7 @@ foreach my $wordnode ( $dom->getElementsByTagName('NODE') ) {
 #			$newWord->setAttribute( 'ref', "-".$i );
 			$newWord->setAttribute( 'ref', $maxNodeRef+$i );
 			$newWord->setAttribute( 'lem', $lemmas[$i] );
+			$newWord->setAttribute( 'delete', 'no' );
 			foreach my $attr (keys %attrvalues) {
 				my $values = $attrvalues{$attr};
 				$newWord->setAttribute( $attr, @{$values}[$i] );
