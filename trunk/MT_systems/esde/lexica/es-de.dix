@@ -29,6 +29,7 @@
     <sdef n="cmdverb"	c="command verb marker, e.g. hoeren, lassen, sehen"/>
     <sdef n="compar"	c="comparative marker for adjectives and adverbs"/>
     <sdef n="ling"	c="manually set (linguist) lexical preference"/>
+    <sdef n="checked"	c="status of entry, if manually checked or not"/>
   </sdefs>
 <!-- Paradigmas -->
   <pardefs>
@@ -1056,6 +1057,9 @@
     </pardef>
 
   </pardefs>
+<!--section id="VortragDemo" type="standard">
+   <e><p><l>captura_de_datos</l><r>Datenerfassung</r></p><par n='NC_N_NUM_FEM'/></e>
+</section-->
 <section id="MWE-diariodelcusco" type="standard">
    <e><p><l>cadena_perpetua</l><r>lebenslänglich_Zuchthaus</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>calidad_de_vida</l><r>Lebensqualität</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -23838,6 +23842,7 @@
    <e><p><l>nostalgia</l><r>Nostalgie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nostalgia</l><r>Sehnsucht</r></p><par n='NC_N_57_HAND'/></e>
    <e><p><l>nota</l><r>Bemerkung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>nota</l><r>Hinweis</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>nota</l><r>Musiknote</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nota</l><r>Note</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nota</l><r>Notiz</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -35636,7 +35641,7 @@ según	CS -> SP?
 
 <!-- Prepositions -->
         <e><p><l>a</l><r><s n='adpos'/>a</r></p><par n='PREP'/></e> <!-- removes the node... -->
-        <e><p><l>al</l><r>zu_d(er)<s n='adpos'/>al</r></p><par n='PREPART'/></e> <!-- contractions -->
+        <e><p><l>a</l><r>zu_d(er)<s n='adpos'/>al</r></p><par n='PREPART'/></e> <!-- contractions -->
         <e><p><l>ante</l><r>vor<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
         <e><p><l>ápud</l><r>in<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- apud: para señalar algo que está en la obra, o en el libro de alguien-->
         <e><p><l>bajo</l><r>unter<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
@@ -35648,7 +35653,7 @@ según	CS -> SP?
         <e><p><l>contra</l><r>wider<s n='cas'/>Akk</r></p><par n='PREP'/></e>
         <!--e><p><l>de</l><r>von<s n='cas'/>Dat</r></p></e-->
         <e><p><l>de</l><r><s n='adpos'/>de</r></p><par n='PREP'/></e>
-        <e><p><l>del</l><r>von_d(er)<s n='adpos'/>del</r></p><par n='PREPART'/></e> <!-- contractions -->
+        <e><p><l>de</l><r>von_d(er)<s n='adpos'/>del</r></p><par n='PREPART'/></e> <!-- contractions -->
         <e><p><l>desde</l><r>seit<s n='cas'/>Dat</r></p><par n='PREP'/></e>
         <e><p><l>dirección</l><r><s n='adpos'/>dirección</r></p><par n='PREP'/></e>
         <e><p><l>donde</l><r>bei<s n='cas'/>Dat</r></p><par n='PREP'/></e> <!-- donde as preposition: "en casa de, en el sitio de" = "at (someone's place)"-->

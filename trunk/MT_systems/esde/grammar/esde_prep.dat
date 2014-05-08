@@ -78,7 +78,12 @@ de		lem=von,cas=Dat		xpath{self::NODE[parent::CHUNK[@si="sp"]/CHUNK[contains(@ty
 # la casa de mi padre => das Haus meines Vaters (without preposition)
 de		cas=Gen,delete=yes	chunkparent.si=sp&&chunkgrandparent.type=/NP/	-
 de		cas=Gen,delete=yes	xpath{//CHUNK[contains(@type,"NP")]/CHUNK[@type="CPP"]/CHUNK[@si="sp"]/NODE}	-
-de		cas=Gen,delete=yes	xpath{//NODE[parent::CHUNK[@si="sp" and preceding-sibling::CHUNK/NODE[@slem="%"]]]}	-
+de		cas=Gen,delete=yes	xpath{//NODE[parent::CHUNK[@si="sp" and preceding-sibling::CHUNK/NODE[@slem="%"]]]}	-	
+#del		cas=Gen,lem=d(er),split=no,pos=ART	chunkparent.si=sp&&chunkgrandparent.type=/NP/	-
+#del		cas=Gen,delete=yes	chunkparent.si=sp&&chunkgrandparent.type=/NP/	-
+del		cas=Gen,delete=yes,mi=Masc.Sg		xpath{//CHUNK[contains(@type,"NP")]/CHUNK[@si="sp"]/NODE[following-sibling::CHUNK[contains(@type,"NP") and NODE[@mi="Masc.Sg"]]]}
+del		cas=Gen,delete=yes	xpath{//CHUNK[contains(@type,"NP")]/CHUNK[@type="CPP"]/CHUNK[@si="sp"]/NODE}	-
+del		cas=Gen,delete=yes	xpath{//NODE[parent::CHUNK[@si="sp" and preceding-sibling::CHUNK/NODE[@slem="%"]]]}	-	
 
 # de manera significativa => auf signifikante Art
 #de		lem=auf,cas=Akk		chunkparent.type=/PP/&&child.slem=manera		-
@@ -89,7 +94,7 @@ de		lem=auf,cas=Akk		chunkparent.type=/PP/&&xpath{parent::CHUNK[@type="PP" and C
 
 # la mujer viene del campo => die Frau kommt vom Land
 de 		lem=von,cas=Dat		chunkgrandparent.type=VP				-
-del 		lem=von_d(er),cas=Dat		chunkgrandparent.type=VP				-
+del 		lem=von_d(er),cas=Dat,slem=del		chunkgrandparent.type=VP				-
 # viene de Alemania => sie kommt aus Deutschland
 #de 	mi=+Abl	chunkgrandparent.headsmi=/V.+/	+
 
