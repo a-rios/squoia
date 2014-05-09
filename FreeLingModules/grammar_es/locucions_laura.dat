@@ -1272,6 +1272,7 @@ de_hoz_y_de_coz de_hoz_y_de_coz RG I
 de_ida_y_vuelta de_ida_y_vuelta RG I
 de_iure de_iure RG I
 <dejar>_de_lado dejar_de_lado $1:VM I
+<dejar>_en_suspenso dejar_en_suspenso $1:VM I
 de_jure de_jure RG I
 de_juro de_juro RG I
 de_la_cruz_a_la_fecha de_la_cruz_a_la_fecha RG I
