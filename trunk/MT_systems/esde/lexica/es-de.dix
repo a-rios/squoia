@@ -1057,9 +1057,10 @@
     </pardef>
 
   </pardefs>
-<!--section id="VortragDemo" type="standard">
+<section id="FL-locuciones" type="standard">
    <e><p><l>captura_de_datos</l><r>Datenerfassung</r></p><par n='NC_N_NUM_FEM'/></e>
-</section-->
+   <e><p><l>equipo_nacional</l><r>Nationalmannschaft</r></p><par n='NC_N_NUM_FEM'/></e>
+</section>
 <section id="MWE-diariodelcusco" type="standard">
    <e><p><l>cadena_perpetua</l><r>lebenslänglich_Zuchthaus</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>calidad_de_vida</l><r>Lebensqualität</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -9683,6 +9684,7 @@
    <e><p><l>dejar negro</l><r>schlecht reden (über)</r></p><par n="VM_VV_MAIN"/></e>	<!-- TODO locuciones -->
    <e><p><l>dejarse caer</l><r>sich fallen lassen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dejarse llevar</l><r>sich gehen lassen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>dejar_en_suspenso</l><r>aus|setzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>delatar</l><r>petzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>delatar</l><r>verraten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>delegar</l><r>ab|ordnen</r></p><par n="VM_VV_MAIN"/></e>
@@ -34907,6 +34909,7 @@ aún_cuando	RG-->
    <e><p><l>allá</l><r>dort</r></p><par n='RG_ADV'/></e> 
    <e><p><l>allí</l><r>dort</r></p><par n='RG_ADV'/></e> 
    <e><p><l>alrededor</l><r>rundum</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>anoche</l><r>gestern_Abend</r></p><par n='RG_ADV'/></e> 
    <e><p><l>antes</l><r>vorher</r></p><par n='RG_ADV'/></e> 
    <e><p><l>apenas</l><r>kaum</r></p><par n='RG_ADV'/></e> 
    <e><p><l>aquí</l><r>hier</r></p><par n='RG_ADV'/></e> 
@@ -34975,6 +34978,7 @@ aún_cuando	RG-->
    <e><p><l>mejor</l><r>besser<s n='compar'/>yes</r></p><par n='RG_ADV'/></e>
    <e><p><l>menos</l><r>weniger<s n='compar'/>yes</r></p><par n='RG_ADV'/></e>
    <e><p><l>mientras</l><r>unterdessen</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>mientras_tanto</l><r>inzwischen</r></p><par n='RG_ADV'/></e> 
    <e><p><l>mucho</l><r>viel</r></p><par n='RG_ADV'/></e>
    <e><p><l>mucho</l><r>sehr</r></p><par n='RG_ADV'/></e>
    <e><p><l>muy</l><r>sehr</r></p><par n='RG_ADV'/></e>
@@ -34991,6 +34995,7 @@ aún_cuando	RG-->
    <e><p><l>por_ejemplo</l><r>zum Beispiel</r></p><par n='RG_ADV'/></e>
    <e><p><l>por_lo_menos</l><r>mindestens</r></p><par n='RG_ADV'/></e>
    <e><p><l>por_lo_menos</l><r>wenigstens</r></p><par n='RG_ADV'/></e>
+   <e><p><l>por_lo_tanto</l><r>folglich</r></p><par n='RG_ADV'/></e>
    <e><p><l>por_otro_lado</l><r>andererseits</r></p><par n='RG_ADV'/></e>
    <e><p><l>por_supuesto</l><r>selbstverständlich</r></p><par n='RG_ADV'/></e>
    <e><p><l>pronto</l><r>bald</r></p><par n='RG_ADV'/></e>
@@ -35001,6 +35006,7 @@ aún_cuando	RG-->
    <e><p><l>siempre_y_cuando</l><r>immer</r></p><par n='RG_ADV'/></e> <!-- sofern ? conjunction? -->
    <e><p><l>sin_duda</l><r>zweifellos</r></p><par n='RG_ADV'/></e> <!-- zwar, ausser Zweifel, allerdings -->
    <e><p><l>sin_duda_alguna</l><r>zweifellos</r></p><par n='RG_ADV'/></e> <!-- zwar, ausser Zweifel, allerdings -->
+   <e><p><l>sin_embargo</l><r>allerdings</r></p><par n='RG_ADV'/></e> <!-- sin_embargo also a conjunction ? -->
    <e><p><l>solo</l><r>nur</r></p><par n='RG_ADV'/></e>
    <e><p><l>sólo</l><r>nur</r></p><par n='RG_ADV'/></e>
    <e><p><l>tal_vez</l><r>vielleicht</r></p><par n='RG_ADV'/></e>
@@ -35023,7 +35029,6 @@ de_lo_contrario	RG
 de_pies_a_cabeza	RG
 de_reserva	RG
 desde_luego	RG
-en_aquel_entonces	RG
 en_líneas_generales	RG
 frente	RG
 in	RG
@@ -35034,7 +35039,6 @@ por_consiguiente	RG
 por_el_contrario	RG
 por_favor	RG
 por_lo_general	RG
-por_lo_tanto	RG
 por_separado	RG
 por_todo_lo_alto	RG
 
@@ -35090,6 +35094,7 @@ por_todo_lo_alto	RG
    <e><p><l>económica</l><r>wirtschaftlich</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>económicamente</l><r>wirtschaftlich</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>efectivamente</l><r>tatsächlich</r></p><par n='RG_ADJD'/></e> 
+   <e><p><l>eficazmente</l><r>wirksam</r></p><par n='RG_ADJD'/></e> <!-- wirkungsvoll -->
    <e><p><l>enérgicamente</l><r>energisch</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>esencialmente</l><r>hauptsächlich</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>específicamente</l><r>spezifisch</r></p><par n='RG_ADJD'/></e> 
@@ -35180,10 +35185,12 @@ por_todo_lo_alto	RG
    <e><p><l>primordialmente</l><r>vorrangig</r></p><par n='RG_ADJD'/></e> <!-- $$$ erstrangig, vor allem -->
    <e><p><l>principalmente</l><r>hauptsächlich</r></p><par n='RG_ADJD'/></e> <!-- insbesondere, vorwiegend -->
    <e><p><l>probablemente</l><r>wahrscheinlich</r></p><par n='RG_ADJD'/></e> 
+   <e><p><l>profesionalmente</l><r>professionell</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>públicamente</l><r>öffentlich</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>rápidamente</l><r>schnell</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>raramente</l><r>selten</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>realmente</l><r>wirklich</r></p><par n='RG_ADJD'/></e> <!-- eigentlich -->
+   <e><p><l>recientemente</l><r>neulich</r></p><par n='RG_ADJD'/></e> <!-- kürzlich, jüngst, unlängst -->
    <e><p><l>regularmente</l><r>regelmäßig</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>relativamente</l><r>relativ</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>respectivamente</l><r>beziehungsweise</r></p><par n='RG_ADJD'/></e> <!-- jeweils -->
@@ -35206,6 +35213,7 @@ por_todo_lo_alto	RG
    <e><p><l>sosteniblemente</l><r>nachhaltig</r></p><par n='RG_ADJD'/></e> <!-- tragbar, haltbar -->
    <e><p><l>suficientemente</l><r>genug</r></p><par n='RG_ADJD'/></e> <!-- $$$ genug/genügend? ausreichend -->
    <e><p><l>sumamente</l><r>höchst</r></p><par n='RG_ADJD'/></e> 
+   <e><p><l>supuestamente</l><r>angeblich</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>sustancialmente</l><r>wesentlich</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>técnicamente</l><r>technisch</r></p><par n='RG_ADJD'/></e> 
    <e><p><l>típicamente</l><r>typischerweise</r></p><par n='RG_ADJD'/></e> 

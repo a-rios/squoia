@@ -55,8 +55,8 @@ export DESR_PORT=5678	# model1 = spanish_es4.MLP
 
 # tag, parse and convert to "matxin" xml
 #analyzer_client $TAGPORT | $DESR_DIR/src/desr $DESR_PARAMS 2>./junk | perl $CONLL_BIN  2>> ./junk | matxin-xfer-lex -c $ESDE_CHUNKTYPE $ESDE_DICT.bin > $TESTOUTPUT.desrparsed
-analyzer_client $TAGPORT | desr_client $DESR_PORT 2>./junk | perl $CONLL_BIN 2> /dev/null | matxin-xfer-lex -c $ESDE_CHUNKTYPE $ESDE_DICT.bin > $TESTOUTPUT.desrparsed
-#exit
+analyzer_client $TAGPORT | desr_client $DESR_PORT 2>./junk | perl $CONLL_BIN 2> /dev/null | matxin-xfer-lex -c $ESDE_CHUNKTYPE $ESDE_DICT.bin #> $TESTOUTPUT.desrparsed
+exit
 xmllint --format $TESTOUTPUT.desrparsed
 
 export PERL5LIB="$SQUOIAMATXIN:$ESDEMATXIN"
@@ -86,9 +86,10 @@ fi
 perl $SQUOIAMATXIN/myoutputOrderChunk.pl < $TESTOUTPUT.xml 2>> ./junk > $TESTOUTPUT.stts
 
 MOLIFDE=/home/clmolif/molifde
-flookup $MOLIFDE/fst/SttsGeneratorTool.fst < $TESTOUTPUT.stts > $TESTOUTPUT.fstout
-
+#flookup $MOLIFDE/fst/SttsGeneratorTool.fst < $TESTOUTPUT.stts > $TESTOUTPUT.fstout
+perl $ESDEMATXIN/generateMorph.pl "flookup $MOLIFDE/fst/SttsGeneratorTool.fst" < $TESTOUTPUT.stts > $TESTOUTPUT.fstout 2>> ./junk
 perl  $ESDEMATXIN/cleanFstOutput.pl < $TESTOUTPUT.fstout > $TESTOUTPUT.gen 2>> ./junk
+#perl $ESDEMATXIN/generateMorph.pl "flookup $MOLIFDE/fst/SttsGeneratorTool.fst" < $TESTOUTPUT.stts 2>> ./junk | perl $ESDEMATXIN/cleanFstOutput.pl > $TESTOUTPUT.gen 2>> ./junk
 cat $TESTOUTPUT.gen
 
 if [ $ALTERNATIVES -eq 1 ]

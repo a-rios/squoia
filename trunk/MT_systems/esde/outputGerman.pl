@@ -517,6 +517,7 @@ print STDERR "def type: $deftype\tgender: $gen\tnumber $num\n";
 	#	sie_PPER_3.Sg.Fem.Dat		=> ihr
 	#	wir_PPER_1.Pl.*.Nom		=> wir
 	elsif ($pos =~ /PPER/) {
+		my ($pers, $num, $gen) = split(/\./,$mi);
 		if (not $node->hasAttribute('lem')) {
 			$lem = $mapPronoun{$mi};
 			$gen = "*";
@@ -526,7 +527,6 @@ print STDERR "def type: $deftype\tgender: $gen\tnumber $num\n";
 		}
 		#$morphInfo = "$mi.$cas";
 		#$morphStr = $morphStr."_".$morphInfo;
-		my ($pers, $num, $gen) = split(/\./,$mi);
 		$morphStr = &genPPER($format,$lem,$pers,$num,$gen,$cas);
 	}
 	# PRELAT: relative pronoun, attributive
