@@ -17,9 +17,11 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN);
 $dom->documentElement()->setAttribute( 'xmlns' , '' );
 my $counter = 1;
 
+
 foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
 	print STDERR "inserting IDs in sentence: $counter\n";
+	#print STDERR $sentence->toString."\n";
 	my $nonterminal = @{$sentence->findnodes('child::saphi/nonterminal')}[0];
 	#print $nonterminal;
 	$sentence->setAttribute('id', 's'.$counter);
@@ -46,8 +48,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
     	$counter++;
 }
 
-my $corpus= @{$dom->getElementsByTagName('quechua_corpus')}[0];
-$corpus->setAttribute('xmlns','http://ufal.mff.cuni.cz/pdt/pml/');
+
+$dom->documentElement()->setAttribute('xmlns: ','http://ufal.mff.cuni.cz/pdt/pml/');
 
 # print new xml to stdout
 my $docstring = $dom->toString;
