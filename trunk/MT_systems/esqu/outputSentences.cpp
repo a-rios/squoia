@@ -3,44 +3,69 @@
 // g++ -o outputSentences outputSentences.cpp -I/home/clsquoia/kenlm-master/ -DKENLM_MAX_ORDER=6 -L/home/clsquoia/kenlm-master/lib/ -lkenlm -lboost_regex
 
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <locale>
 #include <map>
 #include "lm/model.hh"
+#include "lm/ngram_query.hh"
 #include <boost/algorithm/string.hpp>
 #include <boost/algorithm/string/regex.hpp>
 #include <boost/regex.hpp>
 
 int sentOpts =0;
-std::map< int, std::vector<std::wstring> > sentLattice;
+//std::map< int, std::vector<std::wstring> > sentLattice;
+std::map< int, std::vector<std::string> > sentLattice;
+//lm::ngram::Model model("test.binary");
+std::string usagestring = "TODO blabla";
+static int  CUTOFF = 3;
 
 
-void printMatrix(std::map< int, std::map< int, std::wstring > >sentMatrix){
+void printMatrix(std::map< int, std::map< int, std::string > >sentMatrix){
 	for(int opt=0; opt<sentMatrix.size();opt++){
-		std::wcout << opt << L": ";
-		std::map< int, std::wstring> sent = sentMatrix[opt];
+		std::cout << opt << ": ";
+		std::map< int, std::string> sent = sentMatrix[opt];
 		for(int i=0;i<sent.size();i++){
-			std::wcout << sentMatrix[opt][i] << L" ";
+			std::cout << sentMatrix[opt][i] << " ";
 		}
-		std::wcout << std::endl;
+		std::cout  << std::endl;
 	}
 }
 
-void printSents(std::map< int, std::map< int, std::wstring > >sentMatrix){
+
+bool probCompare(const std::pair<float, int>& firstElem, const std::pair<float, int>& secondElem) {
+  return firstElem.first > secondElem.first;
+
+}
+
+void printTest(std::vector<std::pair<float,int> > sortedOpts){
+	std::sort(sortedOpts.begin(), sortedOpts.end(), probCompare);
+	for(int i=0;i<sortedOpts.size();i++){
+		std::cout << "i position: " << i << ", contains pair 1st el: " << sortedOpts[i].first << " second elem: " << sortedOpts[i].second << "\n";
+	}
+}
+
+
+void printSents(std::map< int, std::map< int, std::string > >sentMatrix, std::vector<std::pair<float,int> > sortedOpts){
 	using namespace boost;
 	bool startedWithPunc=0;
-	std::wstring prev, prevPunc;
+	std::string prev, prevPunc;
 
-	for(int opt=0; opt<sentMatrix.size();opt++){
-		std::wcout << opt << L": ";
-		std::map< int, std::wstring> sent = sentMatrix[opt];
-				for(int i=0;i<sent.size();i++){
+	std::sort(sortedOpts.begin(), sortedOpts.end(), probCompare);
+	//for(int s=0;s<sortedOpts.size();s++){
+	for(int s=0;(s<CUTOFF and s<sortedOpts.size());s++){
+		//std::cerr << "i position: " << i << ", contains pair 1st el: " << sortedOpts[i].first << " second elem: " << sortedOpts[i].second << "\n";
+		int opt = sortedOpts[s].second;
+		//std::cout << opt << ": ";
+
+		std::map< int, std::string> sent = sentMatrix[opt];
+		for(int i=0;i<sent.size();i++){
 					//punctuation marks come with their mi tag, split
-					std::wstring line = sentMatrix[opt][i];
-					std::vector<std::wstring> puncs (2);
+					std::string line = sentMatrix[opt][i];
+					std::vector<std::string> puncs (2);
 					algorithm::split_regex(puncs, line,regex("-PUNC-") );
-					std::wstring word = puncs.at(0);
-					std::wstring pmi;
+					std::string word = puncs.at(0);
+					std::string pmi;
 
 					if(puncs.size()>1){
 						pmi = puncs.at(1);
@@ -56,21 +81,21 @@ void printSents(std::map< int, std::map< int, std::wstring > >sentMatrix){
 					if(i ==0){
 						// uppercase first word in sentence
 						//	#TODO
-						if( equals(word, L",") or ends_with(pmi,L"T")   ){
+						if( equals(word, ",") or ends_with(pmi,"T")   ){
 							startedWithPunc =1;
 						}
 						else
 						{
-							std::wcout << std::endl;
-							word[0] = std::towupper(word[0]);
-							std::wcout  << word ;
+							//std::wcout << std::endl;
+							word[0] = std::toupper(word[0]);
+							std::cout << word ;
 							prev = word;
 							prevPunc = pmi;
 							startedWithPunc=0;
 						}
 					}
 					else{
-						if(! (equals(word, L",") and equals(prev,L",") ) ){
+						if(! (equals(word, ",") and equals(prev,",") ) ){
 							// if this is a punctuation mark,
 							// check whether its closing (attach to previous word), pmi:
 							// - ends with 'T'
@@ -78,39 +103,76 @@ void printSents(std::map< int, std::map< int, std::wstring > >sentMatrix){
 							// or opening (pmi ends with 'A') or is
 							// special case '/' (FH) -> no space at all
 							// mathematical signs: -, +, = -> treat same as words (spaces both left and right)
-							wregex rx(L".*FH|FP|FC|FD|FX|FT|FS$");
+							regex rx(".*FH|FP|FC|FD|FX|FT|FS$");
 //							if(regex_search(pmi,rx)){
 //									std::wcout << L"matched " <<pmi << std::endl;
 //							}
-							if( (!equals(pmi,L"") and ends_with(pmi,L"T")) or regex_search(pmi,rx) ||  equals(pmi, L"FH") ){
-								std::wcout << word;
+							if( (!equals(pmi,"") and ends_with(pmi,"T")) or regex_search(pmi,rx) ||  equals(pmi, "FH") ){
+								std::cout << word;
 								prevPunc =pmi;
 								prev = word;
 							}
-							else if(ends_with(pmi,L"A") ){
-								std::wcout << L" " << word;
+							else if(ends_with(pmi,"A") ){
+								std::cout << " " << word;
 								prevPunc =pmi;
 							}
-							else if(ends_with(prevPunc, L"A") or equals(prevPunc, L"FH")){
-								std::wcout << word;
-								prevPunc = L"";
+							else if(ends_with(prevPunc, "A") or equals(prevPunc, "FH")){
+								std::cout << word;
+								prevPunc = "";
 								prev = word;
 							}
 							else{
-								std::wcout<< L" " << word;
+								std::cout<< " " << word;
 								prev = word;
 							}
 						}
 					}
 			}
-			std::wcout << std::endl;
+			// print probability for this sentence
+			std::cout << " p:" << sortedOpts[s].first << std::endl;
 	}
 }
 
 
+void getProbs(std::map< int, std::map< int, std::string > >& sentMatrix, const lm::ngram::Model &model){
 
-void insertTransOpts(std::map< int, std::map< int, std::wstring > >&sentMatrix,int first,int last,std::vector< int > indexesOfAmbigWords){
-	std::vector< std::wstring > wordarray = sentLattice[indexesOfAmbigWords[first]];
+	std::vector<std::pair<float, int> > sortedOpts;
+	for(int opt=0; opt<sentMatrix.size();opt++){
+			//std::cerr << opt << ": ";
+			std::map< int, std::string> sent = sentMatrix[opt];
+
+			lm::ngram::State state(model.BeginSentenceState()), out_state;
+			// no sentence context
+			//lm::ngram::State state(model.NullContextState()), out_state;
+			const lm::ngram::Vocabulary &vocab = model.GetVocabulary();
+
+
+			lm::FullScoreReturn ret;
+			float total =0.0;
+
+			for(int i=0;i<sent.size();i++)
+			{
+				std::string w = sent[i];
+				// alternatives start with '/' and punctuation end with -PUNC-tag -> delete tag and leading '/'
+				if(boost::starts_with(w,"/")){boost::erase_head(w,1);}
+				if(boost::contains(w,"-PUNC-")){w = w.substr(0,1);}
+				ret = model.FullScore(state, vocab.Index(w), out_state);
+			//	std::cerr << "tested word " << w << " ,full p: " << ret.prob << " == " <<vocab.Index(w) <<'\n';
+				total += ret.prob;
+				state = out_state;
+
+			}
+			ret = model.FullScore(state, model.GetVocabulary().EndSentence(), out_state);
+			total += ret.prob;
+			//std::cerr  <<  " total p: " << total <<'\n';
+			std::pair<float,int> mypair (total, opt);
+			sortedOpts.push_back(mypair);
+		}
+	 printSents(sentMatrix,sortedOpts);
+}
+
+void insertTransOpts(std::map< int, std::map< int, std::string > >&sentMatrix,int first,int last,std::vector< int > indexesOfAmbigWords){
+	std::vector< std::string > wordarray = sentLattice[indexesOfAmbigWords[first]];
 	int thisindex = indexesOfAmbigWords[first];
 
 	for(int indexInFirstArray=0; indexInFirstArray<wordarray.size();indexInFirstArray++){
@@ -138,10 +200,10 @@ void insertTransOpts(std::map< int, std::map< int, std::wstring > >&sentMatrix,i
 }
 
 
-void printLattice(std::map< int, std::vector<std::wstring> > &sentLattice, int nbrOfAltSents){
+void printLattice(std::map< int, std::vector<std::string> > &sentLattice, int nbrOfAltSents, const lm::ngram::Model &model){
 	int nbrOfWords = sentLattice.size();
-	std::map< int, std::map< int, std::wstring > >sentMatrix;
-	std::wcerr << L"number of alts: " << nbrOfAltSents << std::endl;
+	std::map< int, std::map< int, std::string > >sentMatrix;
+	//std::cerr << "number of alts: " << nbrOfAltSents << std::endl;
 	std::vector< int > indexesOfAmbigWords;
 	//create matrix: $nbrOfAltSents x $nbrOfWords that contains all possible sentences
 	for(int i =0; i< nbrOfWords; i++){
@@ -158,8 +220,7 @@ void printLattice(std::map< int, std::vector<std::wstring> > &sentLattice, int n
 	//	# if all words are ambiguous: initialize hash with dummy value
 	if(indexesOfAmbigWords.size() == sentLattice.size() and sentLattice.size()>0){
 		for(int opt=0;opt<nbrOfAltSents;opt++){
-				std::wcout<< L"hieeeer" <<std::endl;
-				sentMatrix[opt][0]=L"dummy";
+				sentMatrix[opt][0]="dummy";
 		}
 		//std::wcout << L"sentLattice all ambs: " << sentLattice[0].at(0) << std::endl;
 	}
@@ -169,87 +230,105 @@ void printLattice(std::map< int, std::vector<std::wstring> > &sentLattice, int n
 		insertTransOpts(sentMatrix,first,last,indexesOfAmbigWords);
 	}
 
+	getProbs(sentMatrix,model);
 	sentOpts=0;
-	//std::wcout << sentLattice.size() <<L"###############################" << std::endl;
 	//printMatrix(sentMatrix);
-	//std::wcout << sentLattice.size() <<L"###############################" << std::endl;
-	//sentMatrix.clear();
-	printSents(sentMatrix);
-	//	#print "\n--------------------------\n";
+	//printSents(sentMatrix);
 
 }
 
-
-int main() {
-	std::setlocale(LC_ALL, "en_US.utf8");
-	std::wstring line; // prev, prevPunc;
-	bool newSentence = 1;
-	//bool startedWithPunc = 0;
-	int wordcount =0;
-	int nbrOfAltSents=1;
-
-	using namespace boost;
-
-	while(std::getline(std::wcin,line)){
-		if(!line.empty()){
-			// end of sentence, start new one
-			if (contains(line, "#EOS")){
-				newSentence = 1;
-				int lastWordAlternatives = sentLattice[wordcount].size();
-				nbrOfAltSents = nbrOfAltSents * lastWordAlternatives;
-				printLattice(sentLattice, nbrOfAltSents);
-				sentLattice.clear();
-				wordcount=0;
-				nbrOfAltSents=1;
-				//startedWithPunc =0;
-				//prev.clear(); prevPunc.clear();
-
-			}
-			// not at the end of a sentence: get word form(s)
-			else{
-				erase_all(line,"\t");
-				erase_all(line,"\n");
-				std::wstring word = line;
-
-				//#start a new sentence
-				if(newSentence ==1){
-					newSentence=0;
-					sentLattice[wordcount].push_back(word);
-				}
-				else{
-					//alternative translation
-					if(find_regex(word,regex("^/.+"))){
-						sentLattice[wordcount].push_back(word);
-						//std::wcout << word << std::endl;
-					}
-					else{
-						//count entries for previous words and multiply with nbrOfAltSents before storing new word
-						int prevWordAlternatives = sentLattice[wordcount].size();
-						nbrOfAltSents = nbrOfAltSents * prevWordAlternatives;
-						wordcount++;
-						sentLattice[wordcount].push_back(word);
-					}
-				}
-			}
+int main(int argc, char *argv[]) {
+	//	std::setlocale(LC_ALL, "en_US.utf8");
+		int opt = 1;
+		bool sentence_context =1;
+		const char *file = NULL;
+		while ((opt = getopt(argc, argv, "f:c:h")) != -1) {
+		      switch(opt) {
+		        case 'f':
+		        	//std::cerr << optarg<< "\n";
+		        	file = optarg;
+		        	break;
+		        case 'c':
+		        	CUTOFF = atoi(optarg);
+		        	break;
+		        case 'h':
+		        	//std::cerr << usagestring << '\n';
+		            exit(0);
+		        default:
+		            //std::cerr << usagestring << '\n';
+		            exit(EXIT_FAILURE);
+		    }
 		}
-	}
-//	while (std::getline(std::wcin),s){
-//		std::wcout << s << std::endl;
-//	 }
-//  using namespace lm::ngram;
-//  Model model("test.binary");
-//  State state(model.BeginSentenceState()), out_state;
-//  const Vocabulary &vocab = model.GetVocabulary();
-//  std::string word;
-//  while (std::cin >> word) {
-//    std::cout << model.Score(state, vocab.Index(word), out_state) << '\n';
-//    state = out_state;
-//  }
+		if (!file){
+			std::cerr << usagestring << '\n';
+			exit(EXIT_FAILURE);
+		}
+		try {
+			    lm::ngram::ModelType model_type;
+			    if (RecognizeBinary(file, model_type)) {
+			    		lm::ngram::Model model(file);
+			    		std::string line;
+			    		bool newSentence = 1;
+			    		int wordcount =0;
+			    		int nbrOfAltSents=1;
 
+			    		using namespace boost;
 
+			    		while(std::getline(std::cin,line)){
+			    			if(!line.empty()){
+			    				// end of sentence, start new one
+			    				if (contains(line, "#EOS")){
+			    					newSentence = 1;
+			    					int lastWordAlternatives = sentLattice[wordcount].size();
+			    					nbrOfAltSents = nbrOfAltSents * lastWordAlternatives;
+			    					printLattice(sentLattice, nbrOfAltSents, model);
+			    					//printLatticeWithNgrams(sentLattice, nbrOfAltSents, model_type, file);
+			    					sentLattice.clear();
+			    					wordcount=0;
+			    					nbrOfAltSents=1;
+			    					//startedWithPunc =0;
+			    					//prev.clear(); prevPunc.clear();
 
+			    				}
+			    				// not at the end of a sentence: get word form(s)
+			    				else{
+			    					erase_all(line,"\t");
+			    					erase_all(line,"\n");
+			    					std::string word = line;
+			    					//std::cout << word << '\n';
+
+			    					//#start a new sentence
+			    					if(newSentence ==1){
+			    						newSentence=0;
+			    						sentLattice[wordcount].push_back(word);
+			    					}
+			    					else{
+			    						//alternative translation
+			    						if(find_regex(word,regex("^/.+"))){
+			    							sentLattice[wordcount].push_back(word);
+			    							//std::cout << word << std::endl;
+			    						}
+			    						else{
+			    							//count entries for previous words and multiply with nbrOfAltSents before storing new word
+			    							int prevWordAlternatives = sentLattice[wordcount].size();
+			    							nbrOfAltSents = nbrOfAltSents * prevWordAlternatives;
+			    							wordcount++;
+			    							sentLattice[wordcount].push_back(word);
+			    						}
+			    					}
+			    				}
+			    			}
+			    		}
+
+			    } else {
+			    	//model type not recognized: abort
+			    	std::cerr << "model type not recognized, check content of " << file << "!" << std::endl;
+			    	exit(0);
+			    }
+			  } catch (const std::exception &e) {
+			    std::cerr << e.what() << std::endl;
+			    return 1;
+			  }
+			return 0;
 }
-
-
-
 
