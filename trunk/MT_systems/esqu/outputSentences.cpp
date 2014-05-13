@@ -3,21 +3,20 @@
 // g++ -o outputSentences outputSentences.cpp -I/home/clsquoia/kenlm-master/ -DKENLM_MAX_ORDER=6 -L/home/clsquoia/kenlm-master/lib/ -lkenlm -lboost_regex
 
 #include <iostream>
-#include <sstream>
-#include <string>
-#include <locale>
 #include <map>
 #include "lm/model.hh"
-#include "lm/ngram_query.hh"
 #include <boost/algorithm/string.hpp>
 #include <boost/algorithm/string/regex.hpp>
-#include <boost/regex.hpp>
 
 int sentOpts =0;
 //std::map< int, std::vector<std::wstring> > sentLattice;
 std::map< int, std::vector<std::string> > sentLattice;
 //lm::ngram::Model model("test.binary");
-std::string usagestring = "TODO blabla";
+std::string usagestring = "Usage: outputSentences -f model (-n n-best, default n=3) -h help (provide data on stdin)";
+std::string helpstring=	"Reads output data from MT system on stdin and prints out n-best sentences\n"
+		"-h\t\tprint help\n"
+		"-f\t\tkenlm language model (binary!)\n"
+		"-n\t\tprint n-best (optional, default is 3)\n";
 static int  CUTOFF = 3;
 
 
@@ -242,20 +241,22 @@ int main(int argc, char *argv[]) {
 		int opt = 1;
 		bool sentence_context =1;
 		const char *file = NULL;
-		while ((opt = getopt(argc, argv, "f:c:h")) != -1) {
+		while ((opt = getopt(argc, argv, "f:n:h")) != -1) {
 		      switch(opt) {
 		        case 'f':
 		        	//std::cerr << optarg<< "\n";
 		        	file = optarg;
 		        	break;
-		        case 'c':
+		        case 'n':
 		        	CUTOFF = atoi(optarg);
 		        	break;
 		        case 'h':
-		        	//std::cerr << usagestring << '\n';
+		        	std::cerr << usagestring << '\n';
+		        	std::cerr << helpstring << '\n';
 		            exit(0);
 		        default:
-		            //std::cerr << usagestring << '\n';
+		            std::cerr << usagestring << '\n';
+		            std::cerr << helpstring << '\n';
 		            exit(EXIT_FAILURE);
 		    }
 		}
