@@ -1,4 +1,4 @@
-#labels Featured,Phase-Deploy
+#labels Deprecated,Phase-Deploy
 NEW: Alex Rudnick set up some build scripts that make this install process much easier, you can find them here:
 
 [https://github.com/alexrudnick/squoia_environment]
