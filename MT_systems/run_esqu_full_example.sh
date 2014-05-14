@@ -27,14 +27,16 @@ export DESR_BIN=$PROJECT_DIR/desrModules
 export DESR_PARAMS="-m $DESR_MODEL -c $DESR_CONFIG"
 # model1 = spanish_es4.MLP
 export DESR_PORT=5678
+# how many translation should be printed if more than one possible
+N_BEST=$1
 
-#test if squoia_analyzer is already listening
-if ps ax | grep -v grep | grep squoia_analyzer > /dev/null
+# #test if squoia_analyzer is already listening
+if ps ax | grep -v grep | grep "squoia_analyzer.*port=$FREELING_PORT"  > /dev/null
 then
  echo "squoia_analyzer server already started" >&2
 else
  echo "squoia_analyzer server not yet started" >&2
- squoia_analyzer -f $FREELING_CONFIG --outf=desrtag --server --port=$FREELING_PORT 2> logdesrtag &
+ squoia_analyzer -f $FREELING_CONFIG --outf=crfmorf --server --port=8844 2> logcrfmorf &
  echo "squoia_analyzer started..." >&2
 
 while ! echo "" | analyzer_client $FREELING_PORT 2> /dev/null 
@@ -46,13 +48,13 @@ while ! echo "" | analyzer_client $FREELING_PORT 2> /dev/null
  echo "squoia_analyzer now ready" >&2
 fi
 
-# test if desr server already started listening, model 1, NOTE:adjust path to your model!
-if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish_es4.MLP --port 5678' > /dev/null
+# test if desr server already started listening, model 1
+if ps ax | grep -v grep | grep "desr_server.*--port $DESR_PORT" > /dev/null
 then
  echo "desr_server server with model 1 already started" >&2
 else
  echo "desr_server server with model 1 not yet started" >&2
- desr_server -m $DESR_DIR/spanish_es4.MLP --port 5678 2> logdesr_es4 &
+ desr_server -m $DESR_DIR/spanish_es4.MLP --port $DESR_PORT 2> logdesr_es4 &
  echo "desr_server with model 1 started..." >&2
  echo "please wait..." >&2
  sleep 1
@@ -60,8 +62,8 @@ else
  echo "desr_server with model 1 now ready" >&2
 fi
 
-# test if desr server already started listening, model 2, NOTE:adjust path to your model!
-if ps ax | grep -v grep | grep 'desr_server -m /opt/desr/spanish.MLP --port 1234' > /dev/null
+# test if desr server already started listening, model 2
+if ps ax | grep -v grep | grep 'desr_server.*--port 1234' > /dev/null
 then
  echo "desr_server server with model 2 already started" >&2
 else
@@ -74,8 +76,11 @@ else
 fi
 
 
+
+
+
 #perl readConfig.pl $MATXIN_CONFIG;
 
 
 # server-client mode, new desr parser client
-$MATXIN_BIN/analyzer_client $FREELING_PORT | $DESR_BIN/desr_client $DESR_PORT |perl conll2xml/conll2xml.pl | perl esqu/disambRelClauses_desr.pl  | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID | perl esqu/svm.pl  | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX  | perl splitNodes.pl  | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl | perl childToSiblingChunk.pl  | perl recursiveNumberChunks.pl | perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl  | perl esqu/getSentencesForGenerationWithAlternatives.pl | lookup -flags xcv29TT $PROJECT_DIR/morphology/transfer_generator/unificadoTransfer.fst | perl esqu/outputSentencesWithAlternatives.pl
+./tagWapiti.sh |desr_client $DESR_PORT | perl conll2xml/conll2xml.pl |perl esqu/disambRelClauses_desr.pl | perl esqu/corefSubj_desr.pl  | perl esqu/disambVerbFormsRules.pl $EVID |perl esqu/svm.pl |$MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX   | perl splitNodes.pl  | perl insertSemanticTags.pl  | perl semanticDisamb.pl | perl morphDisamb.pl  | perl prepositionDisamb.pl  | perl  synTransferIntraChunk.pl | perl STinterchunk.pl | perl nodesToChunks.pl | perl childToSiblingChunk.pl  | perl recursiveNumberChunks.pl | perl interChunkOrder.pl | perl linearOrderChunk.pl | perl nodeOrderInChunk.pl | perl esqu/getSentencesForGenerationWithAlternatives.pl | lookup -flags xcKv29TT $PROJECT_DIR/morphology/transfer_generator/unificadoTransfer.fst | esqu/outputSentences -f esqu/test.binary -n $N_BEST
