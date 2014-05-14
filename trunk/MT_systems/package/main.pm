@@ -90,6 +90,8 @@ my $tmp2 = $path."/tmp/tmp.conll";
 
 ### create xml from conll
 my $dom = squoia::conll2xml::main(\*CONLL2);
+
+### verb disambiguation: TODO: only if direction es-quz
 squoia::esqu::disambRelClauses::main(\$dom);
 squoia::esqu::coref::main(\$dom);
 squoia::esqu::disambVerbFormsRules::main(\$dom);
