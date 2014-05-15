@@ -18,7 +18,7 @@ my %nounLexicon;
 # (done) encontrarse de/en -> kaq
 
 sub main{
-	my $dom = $_[0];
+	my $dom = ${$_[0]};
 	%lexEntriesWithFrames = %{$_[1]};
 	%nounLexicon = %{$_[2]};
 	
@@ -33,7 +33,7 @@ sub main{
 #	}
 #}
 	
-	foreach my $sentence  ( $$dom->getElementsByTagName('SENTENCE'))
+	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		#debug
 		print STDERR "disambiguating relative clause in ".$sentence->getAttribute('ord')."\n";
@@ -567,7 +567,7 @@ sub main{
 		}
 	}
 
- return $dom;
+ #return $dom;
 #
 ## print new xml to stdout
 #my $docstring = $$dom->toString(1);

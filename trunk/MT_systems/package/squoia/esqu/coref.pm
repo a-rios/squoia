@@ -5,9 +5,9 @@ use utf8;
 use strict;
 
 sub main{
-	my $dom = $_[0];
+	my $dom = ${$_[0]};
 
-	my @sentenceList = $$dom->getElementsByTagName('SENTENCE');
+	my @sentenceList = $dom->getElementsByTagName('SENTENCE');
 	
 	my $activeSubj ;
 	my $coreflem = '';
@@ -25,8 +25,8 @@ sub main{
 		# get all verb chunks and check if they have an overt subject, 
 		# if they don't have an overt subject and precede the main clause -> look for subject in preceding sentence
 		# if they don't have an overt subject and follow the main clause, and the main clause has an overt subject, this is the subject of the subordinated chunk
-		print STDERR "sentence:";
-		print STDERR $sentence->getAttribute('ord');
+		#print STDERR "sentence:";
+		#print STDERR $sentence->getAttribute('ord');
 		
 	 	
 	 	# consider linear sequence in sentence; in xml the verb of the main clause comes always first, but in this case the subject of a preceding subordinated clause is probably coreferent with the subject of the preceding clause
@@ -86,7 +86,7 @@ sub main{
 	 			{
 	 				$verbChunk->setAttribute('coref',$coreflem);
 	 				$verbChunk->setAttribute('corefmi',$corefmi);
-	 				print STDERR "inserted coreflem: $coreflem $corefmi\n";
+	 				#print STDERR "inserted coreflem: $coreflem $corefmi\n";
 	 				$nbrOfinsertedSubjs++;
 	 			}
 	 			elsif(!$finiteVerb)
@@ -105,7 +105,7 @@ sub main{
 	 		}
 	 	
 	 	} 
-		print STDERR "\n---------------------\n";
+		#print STDERR "\n---------------------\n";
 	}
 	print STDERR "\n****************************************************************************************\n";
 	print STDERR "total number of subjectless verb chunks: ".($nbrOfsubjectlessVerbChunks+$noActiveSubjDueToPrecedingPrn)."\n";
@@ -120,7 +120,7 @@ sub main{
 #	my $docstring = $dom->toString(3);
 #	#print $dom->actualEncoding();
 #	print STDOUT $docstring;
-	return $dom;
+#	return $dom;
 }
 
 sub isLocalPerson{

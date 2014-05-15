@@ -23,7 +23,10 @@ BEGIN{
 	use squoia::util;
 	use squoia::conll2xml;
 	use squoia::crf2conll;
-#	use squoia::insertSemanticTags;
+	use squoia::insertSemanticTags;
+	use squoia::semanticDisamb;
+	use squoia::morphDisamb;
+	use squoia::prepositionDisamb;
 	
 	## esqu modules
 	use squoia::esqu::disambRelClauses;
@@ -60,27 +63,39 @@ my $MATXIN_DIX="$path/squoia/esqu/lexica/es-quz.bin";
 ### get commandline options
 my %options;
 
-# setup my defaults
+# setup options
+# general options
+my $help = 0;
 my $config;
 my $infile;
 my $semlex;
+my $lexDisamb;
+my $morphDisam;
+my $prepDisamb;
+# esqu options
 my $nounlex;
 my $verblex;
 my $evidentiality = "direct";
 my $svmtestfile;
 my $wordnet;
-my $help     = 0;
+# esde options
 
 GetOptions(
+    'help|h'     => \$help,
     'config|c=s'    => \$config,
     'infile|i=s'    => \$infile,
-    'evidentiality|e=s'     => \$evidentiality,
-    'svmtestfile|t=s' => \$svmtestfile,
+     # general options
     'semlex=s' => \$semlex,
-    'help|h'     => \$help,
+    'lexDisamb=s' => \$lexDisamb,
+    'morphDisamb=s' => \$morphDisamb,
+    'prepDisamb=s' => \$prepDisamb,
+    # options for es-quz
+    'evidentiality|e=s'     => \$evidentiality,
+    'svmtestfile=s' => \$svmtestfile,
     'nounlex=s' => \$nounlex,
     'verblex=s' => \$verblex,
     'wordnet=s' => \$wordnet,
+    # TODO options for es-de
 ) or die "Incorrect usage! TODO helpstring\n";
 
 	if($config ne ''){
@@ -145,6 +160,7 @@ my $tmp2 = $path."/tmp/tmp.conll";
 
 #### create xml from conll
 my $dom = squoia::conll2xml::main(\*CONLL2);
+close(CONLL2);
 
 ####-----------------------------------end analysis Spanish input -----------------------------------------------####
 
@@ -279,8 +295,8 @@ squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex);
 		## retrieve verb lemma classes from word net from disk
 		eval {
 			my $hashref = Storable::retrieve("$path/storage/verbLemClasses");
-		} or die "No VerbLemClasses in $path/storage found! specify --wordnet=path to read in the Spanish verb synsets from wordnet (indicate path to mcr30). ";
-		%verbLemClasses =  %{ Storable::retrieve("$path/storage/verbLemClasses") };
+		} or die "No VerbLemClasses in $path/storage found! specify --wordnet to read in the Spanish verb synsets from wordnet (indicate path to mcr30). ";
+		%verbLemClasses =  %{ retrieve("$path/storage/verbLemClasses") };
 	}
 
 squoia::esqu::svm::main(\$dom, \%verbLex, \%verbLemClasses);
@@ -304,50 +320,185 @@ my $tmp3 = $path."/tmp/tmp.xml";
 
 $dom = XML::LibXML->load_xml( IO => *XFER );
 close(XFER);
-#
+
 #### insert semantic tags: 
-### if semantic dictionary or new config file given on commandline: read into %semanticLexicone
-#my %semanticLexicon =();
-#if($semlex ne ''){
-#	print STDERR "reading semantic lexicon from $semlex\n";
-#	open SEMFILE, "< $semlex" or die "Can't open $semlex : $!";
-#}
-#elsif($config ne ''){
-#	$semlex= $config{"SemLex"} or die "Semantic dictionary not specified in config, insert SemLex='path to semantic lexicon' or use option --semlex=path!";
-#	print STDERR "reading semantic lexicon from file specified in $config: $semlex\n";
-#	open SEMFILE, "< $semlex" or die "Can't open $semlex as specified in config: $!";
-#}
-#if(SEMFILE){
-#	## read semantic information from file into a hash (lemma, semantic Tag,  condition)
-#	while(<SEMFILE>){
-#		 	chomp;
-#		 	s/#.*//;     # no comments
-#			s/^\s+//;    # no leading white
-#			s/\s+$//;    # no trailing white
-#			my ($lemma, $semTag ,$condition ) = split( /\s*\t+\s*/, $_, 3 );
-#			my @value = ($semTag, $condition);
-#			$semanticLexicon{$lemma} = \@value;
-#		}
-#		store \%semanticLexicon, "$path/storage/SemLex";
-#}
-#else{
-#	## if neither semlex nor config given: check if semantic dictionary is already available in storage
-#	eval{
-#		retrieve("$path/storage/SemLex");
-#		%semanticLexicon = %{ retrieve("$path/storage/SemLex") };
-#	} or print STDERR "Failed to retrieve semantic lexicon, set option SemLex=path in config or use --semlex=path on commandline to indicate semantic lexicon!\n";
-#	
-#}
+## if semantic dictionary or new config file given on commandline: read into %semanticLexicone
+	my %semanticLexicon =();
+	my $readrules=0;
+	if($semlex ne ''){
+		$readrules =1;
+		print STDERR "reading semantic lexicon from $semlex\n";
+		open SEMFILE, "< $semlex" or die "Can't open $semlex : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$semlex= $config{"SemLex"} or die "Semantic dictionary not specified in config, insert SemLex='path to semantic lexicon' or use option --semlex!";
+		print STDERR "reading semantic lexicon from file specified in $config: $semlex\n";
+		open SEMFILE, "< $semlex" or die "Can't open $semlex as specified in config: $!";
+	}
+	if($readrules){
+		## read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while(<SEMFILE>){
+			 	chomp;
+			 	s/#.*//;     # no comments
+				s/^\s+//;    # no leading white
+				s/\s+$//;    # no trailing white
+				my ($lemma, $semTag ,$condition ) = split( /\s*\t+\s*/, $_, 3 );
+				my @value = ($semTag, $condition);
+				$semanticLexicon{$lemma} = \@value;
+			}
+			store \%semanticLexicon, "$path/storage/SemLex";
+	}
+	else{
+		## if neither --semlex nor --config given: check if semantic dictionary is already available in storage
+		eval{
+			retrieve("$path/storage/SemLex");
+		} or print STDERR "Failed to retrieve semantic lexicon, set option SemLex=path in config or use --semlex on commandline to indicate semantic lexicon!\n";
+		%semanticLexicon = %{ retrieve("$path/storage/SemLex") };
+	}
+	
+squoia::insertSemanticTags::main(\$dom, \%semanticLexicon);
 
+### lexical disambiguation, rule-based
+	my %lexSel =();
+	$readrules=0;
+	
+	if($lexDisamb ne ''){
+		$readrules =1;
+		print STDERR "reading lexical disambiguation rules from $lexDisamb\n";
+		open LEXFILE, "< $lexDisamb" or die "Can't open $lexDisamb : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$lexDisamb = $config{"LexSelFile"} or die "Lexical selection file not specified in config, insert LexSelFile='path to lexical disambiguation rules' or use option --lexDisamb!";
+		print STDERR "reading lexical selection rules from file specified in $config: $lexDisamb\n";
+		open LEXFILE, "< $lexDisamb" or die "Can't open $lexDisamb as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<LEXFILE>) {
+			chomp;
+			s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;	# skip if empty line
+			my ( $srclem, $trgtlem, $keepOrDelete, $condition ) = split( /\s*\t+\s*/, $_, 4 );
+			$condition =~ s/\s//g;	# no whitespace within condition
+			# assure key is unique, use srclemma:trgtlemma as key
+			my $key = "$srclem:$trgtlem";  
+			my @value = ( $condition, $keepOrDelete );
+			$lexSel{$key} = \@value;
+		}
+		store \%lexSel, "$path/storage/LexSelRules";
+		close(LEXFILE);
+	}
+	else{
+		## if neither --lexDisamb nor --config given: check if semantic dictionary is already available in storage
+		eval{
+			retrieve("$path/storage/LexSelRules");
+		} or print STDERR "Failed to retrieve lexical selection rules, set option LexSelFile=path in config or use --lexDisamb path on commandline to indicate lexical selection rules!\n";
+		%lexSel = %{ retrieve("$path/storage/LexSelRules") };
+	}
+	
+squoia::semanticDisamb::main(\$dom, \%lexSel);
 
+### morphological disambiguation, rule-based
+	my %morphSel = ();
+	$readrules=0;
+	
+	if($morphDisamb ne ''){
+		$readrules =1;
+		print STDERR "reading morphological disambiguation rules from $morphDisamb\n";
+		open MORPHFILE, "< $morphDisamb" or die "Can't open $morphDisamb : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$morphDisamb = $config{"MorphSelFile"} or die "Morphological selection file not specified in config, insert MorphSelFile='path to morphological disambiguation rules' or use option --morphDisamb!";
+		print STDERR "reading morphological selection rules from file specified in $config: $morphDisamb\n";
+		open MORPHFILE, "< $morphDisamb" or die "Can't open $morphDisamb as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<MORPHFILE>) {
+			chomp;
+			s/^(\s)*#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;	# skip if empty line
+			my ( $srcNodeConds, $trgtMI, $keepOrDelete, $conditions, $prob ) = split( /\s*\t+\s*/, $_, 5 );
+		
+			$conditions =~ s/\s//g;	# no whitespace within condition
+			# assure key is unique, use srcConds:trgts as key
+			my $key = "$srcNodeConds---$trgtMI";
+			#print STDERR "key: $key\n";
+			my @value = ( $conditions, $keepOrDelete, $prob );
+			$morphSel{$key} = \@value;
+		}
+		store \%morphSel, "$path/storage/MorphSelRules";
+		close(MORPHFILE);
+	}
+	else{
+		## if neither --morphDisamb nor --config given: check if semantic dictionary is already available in storage
+		eval{
+			retrieve("$path/storage/MorphSelRules");
+		} or print STDERR "Failed to retrieve morphological selection rules, set option MorphSelFile=path in config or use --morphDisamb path on commandline to indicate morphological selection rules!\n";
+		%morphSel = %{ retrieve("$path/storage/MorphSelRules") };
+	}
 
+squoia::morphDisamb::main(\$dom, \%morphSel);
 
+### preposition disambiguation, rule-based
+	my %prepSel = ();
+	$readrules =0;
 
+	if($prepDisamb ne ''){
+		$readrules =1;
+		print STDERR "reading preposition disambiguation rules from $prepDisamb\n";
+		open PREPFILE, "< $prepDisamb" or die "Can't open $prepDisamb : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$prepDisamb = $config{"PrepFile"} or die "Preposition disambiguation file not specified in config, insert PrepFile='path to preposition disambiguation rules' or use option --prepDisamb!";
+		print STDERR "reading preposition disambiguation rules from file specified in $config: $prepDisamb\n";
+		open PREPFILE, "< $prepDisamb" or die "Can't open $prepDisamb as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<PREPFILE>) {
+			chomp;
+			s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;	# skip if empty line
+			my ( $srcprep, $trgtprep, $condition, $isDefault ) = split( /\s*\t+\s*/, $_, 4 );
+			#print STDERR "src: $srcprep, target: $trgtprep, cond:$condition, default: $isDefault\n";
+			
+			# read into hash, key is srcprep, for each key define a two-dimensional array of
+			# translations, whose element are arrays of the values read in from the prep file
+			my @value = ($trgtprep, $condition, $isDefault );
+			if (!exists( $prepSel{$srcprep} )){
+				my @translations=();
+				push(@translations,\@value);	
+				$prepSel{$srcprep} = \@translations;
+			}
+			else{
+				push(@{ $prepSel{$srcprep} },\@value);	
+			}
+		}
+		store \%prepSel, "$path/storage/PrepSelRules";
+		close(PREPFILE);
+	}
+	else{
+		## if neither --prepDisamb nor --config given: check if semantic dictionary is already available in storage
+		eval{
+			retrieve("$path/storage/PrepSelRules");
+		} or print STDERR "Failed to retrieve preposition selection rules, set option PrepFile=path in config or use --prepDisamb path on commandline to indicate preposition disambiguation rules!\n";
+		%prepSel = %{ retrieve("$path/storage/PrepSelRules") };
+	}
 
+squoia::prepositionDisamb::main(\$dom, \%prepSel);
 
-
-
-my $docstring = $dom->toString(1);
+my $docstring = $dom->toString(3);
 print STDOUT $docstring;
 #foreach my $n ($dom->getElementsByTagName('NODE')){
 #	if($n->getAttribute('form') =~ /ó/){
