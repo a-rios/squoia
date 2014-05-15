@@ -66,8 +66,8 @@ sub main{
 	}
 
 	# print new xml to stdout
-	my $docstring = $dom->toString;
-	print STDOUT $docstring;
+	#my $docstring = $dom->toString;
+	#print STDOUT $docstring;
 }
 
 1;
