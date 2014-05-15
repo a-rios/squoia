@@ -16,16 +16,16 @@ my $nbrOfVerbChunks=0;
 my $nbrOfNonFiniteChunks=0;
 
 sub main{
-	my $dom = $_[0];
+	my $dom = ${$_[0]};
 	my $evid = $_[1];
 	%nounLexicon = %{$_[2]};
 
-	my $corpus = @{$$dom->getElementsByTagName('corpus')}[0];
+	my $corpus = @{$dom->getElementsByTagName('corpus')}[0];
 	if($corpus){
 		$corpus->setAttribute('evidentiality',$evid);
 	}
 	
-	my @sentenceList = $$dom->getElementsByTagName('SENTENCE');
+	my @sentenceList = $dom->getElementsByTagName('SENTENCE');
 		
 	
 	## TODO: indirect questions with PT -> preguntan cuán efectivo será.., preguntan cómo será..
@@ -655,7 +655,7 @@ sub main{
 	print STDERR "total number of disambiguated verb forms: ".($nbrOfRelClauses+$nbrOfSwitchForms+$nbrOfNominalForms+$nbrOfFinalClauses+$nbrOfFiniteForms)."\n";
 	print STDERR "\n****************************************************************************************\n";
 
-	return $dom;	
+	#return $dom;	
 	# print new xml to stdout
 #	my $docstring = $dom->toString(1);
 #	#print STDERR $dom->actualEncoding();

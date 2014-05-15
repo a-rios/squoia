@@ -14,7 +14,6 @@ use Algorithm::SVM;
 use Algorithm::SVM::DataSet;
 
 my $path = File::Basename::dirname(File::Spec::Functions::rel2abs($0));
-my $localpath = $path."/squoia/esqu";
 #print STDERR $localpath;
 
 # get the ambiguous subordinated verbs together with main verb and possible linker
@@ -92,18 +91,18 @@ my %mapSVMClassToXmlClass = ( 3.0 => 7, 1.0 => 3, 0.0 => 2, 2.0 => 6);
 #	print STDERR "$k: ".$mapSemsToVec{$k}."\n";
 #}
 
-my $modelPath = "$localpath/ancoraAndiula_svm.model";
+my $modelPath = "$path/storage/ancoraAndiula_svm.model";
 #print STDERR "modelpath: $modelPath\n";
 my $svm =  new Algorithm::SVM(Model => "$modelPath");
 my %verbLexWithFrames;
 my %verbLemClasses;
 
 sub main{
-	my $dom = $_[0];
+	my $dom = ${$_[0]};
 	%verbLexWithFrames = %{$_[1]};
 	%verbLemClasses = %{$_[2]};
 	my $sno;
-	foreach my $sentence  ( $$dom->getElementsByTagName('SENTENCE'))
+	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		$sno = $sentence->getAttribute('ord');
 		print STDERR "SENT $sno\n";
@@ -279,7 +278,7 @@ sub main{
 		print STDERR "\n";	# empty line between sentences
 	}
 
-	return $dom;
+	#return $dom;
 	## print new xml to stdout
 	#my $docstring = $dom->toString;
 	#print STDOUT $docstring;
