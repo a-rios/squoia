@@ -63,14 +63,14 @@ sub main{
 	 				$coreflem = $activeSubj->findvalue('@lem');
 	 				$corefmi = $activeSubj->findvalue('@mi');
 	 				
-	 				print STDERR " coreflem: $coreflem $corefmi\n";
+	 				#print STDERR " coreflem: $coreflem $corefmi\n";
 	 				$blockedBysubjPrn=0;
 	 			}
 	 		}
 	 		# if subj of this verb is a pronoun (personal or demonstrative) -> delete previous subject, might be something else, indefinite?
 	 		elsif($activeSubj && $verbChunk->exists('child::CHUNK[@si="suj"]/NODE[@rel="suj" and (@pos="pp" or @pos="pd" )]') )
 	 		{
-	 			print STDERR "deleted ".$activeSubj->findvalue('@lem')." as active subject due to pronominal subject in following verb chunk\n";
+	 			#print STDERR "deleted ".$activeSubj->findvalue('@lem')." as active subject due to pronominal subject in following verb chunk\n";
 				$nbrOfPronominalSubjs++;
 	 			#TODO find a way do coreference resolution for pronouns!!
 	 			undef $activeSubj;
@@ -101,7 +101,7 @@ sub main{
 	 		elsif(!$activeSubj && $blockedBysubjPrn)
 	 		{
 	 			$noActiveSubjDueToPrecedingPrn++;
-	 			print STDERR "no subject inserted due to previous subj=pers-prn in verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n";
+	 			#print STDERR "no subject inserted due to previous subj=pers-prn in verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n";
 	 		}
 	 	
 	 	} 
