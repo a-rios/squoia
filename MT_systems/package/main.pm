@@ -27,6 +27,10 @@ BEGIN{
 	use squoia::semanticDisamb;
 	use squoia::morphDisamb;
 	use squoia::prepositionDisamb;
+	use squoia::intrachunkTransfer;
+	use squoia::interchunkTransfer;
+	use squoia::nodesToChunks;
+
 	
 	## esqu modules
 	use squoia::esqu::disambRelClauses;
@@ -72,6 +76,9 @@ my $semlex;
 my $lexDisamb;
 my $morphDisam;
 my $prepDisamb;
+my $intraTransfer;
+my $interTransfer;
+my $nodes2chunks;
 # esqu options
 my $nounlex;
 my $verblex;
@@ -89,6 +96,9 @@ GetOptions(
     'lexDisamb=s' => \$lexDisamb,
     'morphDisamb=s' => \$morphDisamb,
     'prepDisamb=s' => \$prepDisamb,
+    'intraTransfer=s' => \$intraTransfer,
+    'interTransfer=s' => \$interTransfer,
+    'nodes2chunks=s' => \$nodes2chunks,
     # options for es-quz
     'evidentiality|e=s'     => \$evidentiality,
     'svmtestfile=s' => \$svmtestfile,
@@ -172,7 +182,7 @@ close(CONLL2);
 	# retrieve semantic verb and noun lexica for verb disambiguation
 	my %nounLex = (); my %verbLex = ();
 	if($nounlex ne ''){
-		open NOUNS, "<:encoding(UTF-8) $nounlex" or die "Can't open $nounlex : $!";
+		open (NOUNS, "<:encoding(UTF-8)", $nounlex) or die "Can't open $nounlex : $!";
 		print STDERR "reading semantic noun lexicon form $nounlex...\n";
 		while(<NOUNS>){
 		s/#.*//;     # no comments
@@ -242,9 +252,9 @@ squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex);
 		my $spa2ilimap = "$wordnet/spaWN/wei_spa-30_to_ili.tsv";
 		my $ilirecord = "$wordnet/data/wei_ili_record.tsv";
 		my $variant = "$wordnet/spaWN/wei_spa-30_variant.tsv";
-		open SPA2ILI, "<:encoding(UTF-8) $spa2ilimap" or die "Can't open $spa2ilimap : $!";
-		open ILIREC, "<:encoding(UTF-8) $ilirecord" or die "Can't open $ilirecord : $!";
-		open VARIANT,  "<:encoding(UTF-8) $variant" or die "Can't open $variant : $!";
+		open (SPA2ILI, "<:encoding(UTF-8)", $spa2ilimap) or die "Can't open $spa2ilimap : $!";
+		open (ILIREC, "<:encoding(UTF-8)", $ilirecord) or die "Can't open $ilirecord : $!";
+		open (VARIANT,  "<:encoding(UTF-8)", $variant) or die "Can't open $variant : $!";
 	
 		my %VerbSem; my %synsets; my %spa2ili; my %ilirecs;
 		while(<SPA2ILI>){
@@ -328,13 +338,13 @@ close(XFER);
 	if($semlex ne ''){
 		$readrules =1;
 		print STDERR "reading semantic lexicon from $semlex\n";
-		open SEMFILE, "< $semlex" or die "Can't open $semlex : $!";
+		open (SEMFILE, "<:encoding(UTF-8)", $semlex) or die "Can't open $semlex : $!";
 	}
 	elsif($config ne ''){
 		$readrules =1;
 		$semlex= $config{"SemLex"} or die "Semantic dictionary not specified in config, insert SemLex='path to semantic lexicon' or use option --semlex!";
 		print STDERR "reading semantic lexicon from file specified in $config: $semlex\n";
-		open SEMFILE, "< $semlex" or die "Can't open $semlex as specified in config: $!";
+		open (SEMFILE, "<:encoding(UTF-8)", $semlex) or die "Can't open $semlex as specified in config: $!";
 	}
 	if($readrules){
 		## read semantic information from file into a hash (lemma, semantic Tag,  condition)
@@ -366,13 +376,13 @@ squoia::insertSemanticTags::main(\$dom, \%semanticLexicon);
 	if($lexDisamb ne ''){
 		$readrules =1;
 		print STDERR "reading lexical disambiguation rules from $lexDisamb\n";
-		open LEXFILE, "< $lexDisamb" or die "Can't open $lexDisamb : $!";
+		open (LEXFILE, "<:encoding(UTF-8)", $lexDisamb) or die "Can't open $lexDisamb : $!";
 	}
 	elsif($config ne ''){
 		$readrules =1;
 		$lexDisamb = $config{"LexSelFile"} or die "Lexical selection file not specified in config, insert LexSelFile='path to lexical disambiguation rules' or use option --lexDisamb!";
 		print STDERR "reading lexical selection rules from file specified in $config: $lexDisamb\n";
-		open LEXFILE, "< $lexDisamb" or die "Can't open $lexDisamb as specified in config: $!";
+		open (LEXFILE, "<:encoding(UTF-8)", $lexDisamb) or die "Can't open $lexDisamb as specified in config: $!";
 	}
 	if($readrules){
 		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
@@ -409,13 +419,13 @@ squoia::semanticDisamb::main(\$dom, \%lexSel);
 	if($morphDisamb ne ''){
 		$readrules =1;
 		print STDERR "reading morphological disambiguation rules from $morphDisamb\n";
-		open MORPHFILE, "< $morphDisamb" or die "Can't open $morphDisamb : $!";
+		open (MORPHFILE, "<:encoding(UTF-8)", $morphDisamb) or die "Can't open $morphDisamb : $!";
 	}
 	elsif($config ne ''){
 		$readrules =1;
 		$morphDisamb = $config{"MorphSelFile"} or die "Morphological selection file not specified in config, insert MorphSelFile='path to morphological disambiguation rules' or use option --morphDisamb!";
 		print STDERR "reading morphological selection rules from file specified in $config: $morphDisamb\n";
-		open MORPHFILE, "< $morphDisamb" or die "Can't open $morphDisamb as specified in config: $!";
+		open (MORPHFILE, "<:encoding(UTF-8)", $morphDisamb) or die "Can't open $morphDisamb as specified in config: $!";
 	}
 	if($readrules){
 		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
@@ -438,7 +448,7 @@ squoia::semanticDisamb::main(\$dom, \%lexSel);
 		close(MORPHFILE);
 	}
 	else{
-		## if neither --morphDisamb nor --config given: check if semantic dictionary is already available in storage
+		## if neither --morphDisamb nor --config given: check if lexical disambiguaiton rules are already available in storage
 		eval{
 			retrieve("$path/storage/MorphSelRules");
 		} or print STDERR "Failed to retrieve morphological selection rules, set option MorphSelFile=path in config or use --morphDisamb path on commandline to indicate morphological selection rules!\n";
@@ -454,13 +464,13 @@ squoia::morphDisamb::main(\$dom, \%morphSel);
 	if($prepDisamb ne ''){
 		$readrules =1;
 		print STDERR "reading preposition disambiguation rules from $prepDisamb\n";
-		open PREPFILE, "< $prepDisamb" or die "Can't open $prepDisamb : $!";
+		open (PREPFILE, "<:encoding(UTF-8)", $prepDisamb) or die "Can't open $prepDisamb: $!";
 	}
 	elsif($config ne ''){
 		$readrules =1;
 		$prepDisamb = $config{"PrepFile"} or die "Preposition disambiguation file not specified in config, insert PrepFile='path to preposition disambiguation rules' or use option --prepDisamb!";
 		print STDERR "reading preposition disambiguation rules from file specified in $config: $prepDisamb\n";
-		open PREPFILE, "< $prepDisamb" or die "Can't open $prepDisamb as specified in config: $!";
+		open (PREPFILE, "<:encoding(UTF-8)", $prepDisamb) or die "Can't open $prepDisamb as specified in config: $!";
 	}
 	if($readrules){
 		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
@@ -489,14 +499,156 @@ squoia::morphDisamb::main(\$dom, \%morphSel);
 		close(PREPFILE);
 	}
 	else{
-		## if neither --prepDisamb nor --config given: check if semantic dictionary is already available in storage
+		## if neither --prepDisamb nor --config given: check if preposition disambiguation rules are already available in storage
 		eval{
 			retrieve("$path/storage/PrepSelRules");
 		} or print STDERR "Failed to retrieve preposition selection rules, set option PrepFile=path in config or use --prepDisamb path on commandline to indicate preposition disambiguation rules!\n";
 		%prepSel = %{ retrieve("$path/storage/PrepSelRules") };
 	}
 
+foreach my $k (sort keys %prepSel){print "key $k\n";}
 squoia::prepositionDisamb::main(\$dom, \%prepSel);
+
+### syntactic transfer, intra-chunks (from nodes to chunks and vice versa)
+	my %intraConditions = ();
+	$readrules =0;
+	
+	if($intraTransfer ne ''){
+		$readrules =1;
+		print STDERR "reading syntactic intrachunk transfer rules from $intraTransfer\n";
+		open (INTRAFILE, "<:encoding(UTF-8)", $intraTransfer) or die "Can't open $intraTransfer : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$intraTransfer = $config{"IntraTransferFile"} or die "Syntactic intrachunk transfer rules file not specified in config, insert IntraTransferFile='path to syntactic intrachunk transfer rules' or use option --intraTransfer!";
+		print STDERR "reading syntactic intrachunk transfer rules from file specified in $config: $intraTransfer\n";
+		open (INTRAFILE, "<:encoding(UTF-8)", $intraTransfer) or die "Can't open $intraTransfer as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<INTRAFILE>) {
+			#read syntactic transfer information from file into an array with intra chunk conditions
+		 	chomp;
+		 	s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;   # skip if empty line
+			my ($descCond, $descAttr ,$ancCond, $ancAttr, $direction, $wmode ) = split( /\s*\t\s*/, $_, 6 );
+		#	print STDERR "descendant condition: $descCond; descendant attribute: $descAttr;\nancestor condition: $ancCond; ancestor attribute: $ancAttr;\ndir: $direction; mode: $wmode\n\n";
+			$descCond =~ s/\s//g;
+			$ancCond =~ s/\s//g;
+			my $condKey = "$descCond\t$ancCond";
+			$intraConditions{$condKey} = $descAttr."\t".$ancAttr."\t".$direction."\t".$wmode;
+		}
+		store \%intraConditions, "$path/storage/IntraTransferRules";
+		close(INTRAFILE);
+	}
+	else{
+		## if neither --intraTransfer nor --config given: check if syntactic intrachunk transfer rules are already available in storage
+		eval{
+			retrieve("$path/storage/IntraTransferRules");
+		} or print STDERR "Failed to retrieve syntactic intrachunk transfer rules, set option IntraTransferFile=path in config or use --intraTransfer path on commandline to indicate syntactic intrachunk transfer rules!\n";
+		%intraConditions = %{ retrieve("$path/storage/IntraTransferRules") };
+	}
+	
+squoia::intrachunkTransfer::main(\$dom, \%intraConditions);
+
+### syntactic transfer, inter-chunks (move/copy information between chunks)
+	my %interConditions =();
+	$readrules =0;
+	
+	if($interTransfer ne ''){
+		$readrules =1;
+		print STDERR "reading syntactic interchunk transfer rules from $interTransfer\n";
+		open (INTERFILE, "<:encoding(UTF-8)", $interTransfer) or die "Can't open $interTransfer : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$interTransfer = $config{"InterTransferFile"} or die "Syntactic interchunk transfer rules file not specified in config, insert InterTransferFile='path to syntactic interchunk transfer rules' or use option --interTransfer!";
+		print STDERR "reading syntactic interchunk transfer rules from file specified in $config: $interTransfer\n";
+		open (INTERFILE, "<:encoding(UTF-8)", $interTransfer) or die "Can't open $interTransfer as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<INTERFILE>) {
+			chomp;
+		 	s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;   # skip if empty line
+			my ($chunk1Cond, $chunk1Attr ,$chunk2Cond, $chunk2Attr, $path1to2, $direction, $wmode ) = split( /\s*\t\s*/, $_, 7 );
+			#print STDERR "chunk1 condition: $chunk1Cond; attribute: $chunk1Attr;\nchunk2 condition: $chunk2Cond; attribute: $chunk2Attr; path: $path1to2;\ndir: $direction; mode: $wmode\n\n";
+			$chunk1Cond =~ s/\s//g;
+			$chunk2Cond =~ s/\s//g;
+			my $condKey = "$chunk1Cond\t$chunk2Cond\t$path1to2";
+			$interConditions{$condKey} = $chunk1Attr."\t".$chunk2Attr."\t".$direction."\t".$wmode;
+		}
+		store \%interConditions, "$path/storage/InterTransferRules";
+		close(INTERFILE);
+	}
+	else{
+		## if neither --interTransfer nor --config given: check if syntactic interchunk transfer rules are already available in storage
+		eval{
+			retrieve("$path/storage/InterTransferRules");
+		} or print STDERR "Failed to retrieve syntactic interchunk transfer rules, set option InterTransferFile=path in config or use --interTransfer path on commandline to indicate syntactic interchunk transfer rules!\n";
+		%interConditions = %{ retrieve("$path/storage/InterTransferRules") };
+	}
+	
+squoia::interchunkTransfer::main(\$dom, \%interConditions);
+
+### promote nodes to chunks, if necessary
+	my %targetAttributes;
+	my %sourceAttributes;
+	my @nodes2chunksRules;
+	$readrules =0;
+	
+	if($nodes2chunks ne ''){
+		$readrules =1;
+		print STDERR "reading node2chunk rules from $nodes2chunks\n";
+		open (NODES2CHUNKSFILE, "<:encoding(UTF-8)", $nodes2chunks) or die "Can't open $nodes2chunks : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$nodes2chunks = $config{"NodeChunkFile"} or die "node2chunks rules file not specified in config, insert NodeChunkFile='path to node2chunks rules' or use option --node2chunks!";
+		print STDERR "reading node2chunks rules from file specified in $config: $node2chunks\n";
+		open (NODES2CHUNKSFILE, "<:encoding(UTF-8)", $nodes2chunks) or die "Can't open $nodes2chunks as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<NODES2CHUNKSFILE>) {
+			chomp;
+		 	s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;	# skip if empty line
+			my ($origNodeCond, $sourceChunkAttrVal, $targetChunkAttrVal ) = split( /\s*\t+\s*/, $_, 3 );
+			$targetAttributes{$origNodeCond} = $targetChunkAttrVal;
+			$sourceAttributes{$origNodeCond} = $sourceChunkAttrVal;
+		}
+		@nodes2chunksRules[0]=\%targetAttributes;
+		@nodes2chunksRules[1]=\%sourceAttributes;
+		store \@nodes2chunksRules, "$path/storage/nodes2chunksRules";
+		close(NODES2CHUNKSFILE);
+	}
+	else{
+		## if neither --node2chunks nor --config given: check if node2chunks rules are already available in storage
+		eval{
+			retrieve("$path/storage/nodes2chunksRules");
+		} or print STDERR "Failed to retrieve node2chunks rules, set option NodeChunkFile=path in config or use --node2chunks path on commandline to indicate node2chunks rules!\n";
+		@nodes2chunksRules = @{ retrieve("$path/storage/nodes2chunksRules") };
+	}
+	
+squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
+
+
+
+
+# read the node conditions from file into a hash (origNodeCond, parentChunkCond, targetChunkAttrVal )
+while(<NODECHUNKFILE>)
+{
+
+
+}
 
 my $docstring = $dom->toString(3);
 print STDOUT $docstring;
