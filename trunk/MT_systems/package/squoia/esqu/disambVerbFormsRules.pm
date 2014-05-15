@@ -4,14 +4,7 @@ package squoia::esqu::disambVerbFormsRules;
 use utf8;                  # Source code is UTF-8
 use strict;
 
-my $path = File::Basename::dirname(File::Spec::Functions::rel2abs($0));
-my $localpath = $path."/squoia/esqu";
-
-eval {
-	my $hashref = Storable::retrieve("$localpath/NounLex");
-} or die "No NounLex in $localpath found! Use readInSemanticDix.pl first!";
-
-my %nounLexicon = %{ Storable::retrieve("$localpath/NounLex") };
+my %nounLexicon;
 
 my $nbrOfRelClauses =0;
 my $nbrOfSwitchForms=0;
@@ -25,6 +18,7 @@ my $nbrOfNonFiniteChunks=0;
 sub main{
 	my $dom = $_[0];
 	my $evid = $_[1];
+	%nounLexicon = %{$_[2]};
 
 	my $corpus = @{$$dom->getElementsByTagName('corpus')}[0];
 	if($corpus){

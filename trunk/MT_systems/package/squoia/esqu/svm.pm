@@ -61,18 +61,6 @@ my %mapModToVec = (
 	'I'	=> 45, 'S'	=> 46, 'P'	=> 47, 'N'	=> 48, 'G'	=> 49, 'M'	=> 50
 );
 
-# version comoCorr
-#my %mapLinkerToVec = (
-#	'none'	=> 51, 'que'	=> 52, 'ya_que'	=> 53, 'para_que'	=> 54, 'el_hecho_de_que'	=> 55, 'pues'	=> 56,
-#	'como'	=> 57, 'mientras_que'	=> 58, 'después_de_que'	=> 59,  'al_tiempo_que'	=> 60, 'puesto_que'	=> 61, 'si'	=> 62, 
-#	'hasta_que'	=> 63, 'mientras'	=> 64,
-#	'aunque'	=> 65, 'cuando'	=> 66, 'desde_que'	=> 67, 'porque'	=> 68, 'antes_de_que'	=> 69, 'sin_que'	=> 70, 'y_cuando'	=> 71,
-#	'según'	=> 72, 'una_vez_que'	=> 73, 'en_cuanto'	=> 74, 'aun_cuando'	=> 75, 'de_modo_que'	=> 76, 'así_que'	=> 77, 'a_pesar_de_que'	=> 78, 'en_caso_de_que'	=> 79,
-#	'si_bien'	=> 80, 'tan_pronto'	=> 81, 'por_eso'	=> 82, 'aún_cuando'	=> 83, 'tal_y_como'	=> 84, 'siempre_y_cuando'	=> 85, 'a_fin_de_que'	=> 86, 'siempre_que'	=> 87,
-#	'a_medida_que'	=> 88, 'en_cuanto_que'	=> 89
-#	);
-#	
-
 # version 4
 my %mapLinkerToVec = (
 	'none'	=> 51, 'que'	=> 52, 'ya_que'	=> 53, 'para_que'	=> 54, 'el_hecho_de_que'	=> 55, 'pues'	=> 56,
@@ -85,13 +73,6 @@ my %mapLinkerToVec = (
 	'siempre_y_cuando'	=> 86, 'a_fin_de_que'	=> 87, 'siempre_que'	=> 88,
 	'a_medida_que'	=> 89, 'en_cuanto_que'	=> 90
 	);
-
-# comoCorr
-#my %mapUnknownLinkerToKnowns = (
-#	'una_vez_que'	=> 'en_cuanto', 'con_tal_que'	=> 'si', 'con_tal_de_que'	=> 'si','conque'	=> 'si', 'si_bien'	=> 'aunque', 'empero'	=> 'pero', 
-#	'puesto_que'	=> 'pues', 'dado_que'	=> 'ya_que', 'con_fin_de_que'	=> 'para_que', 'con_objeto_de_que'	=> 'para_que', 
-#	'al_tiempo_que'	=> 'mientras_que', 'a_que' => 'para_que', 'debido_a_que' => 'por_eso', 'por_lo_tanto' => 'por_eso'
-#);
 
 #version 4
 my %mapUnknownLinkerToKnowns = (
@@ -111,19 +92,16 @@ my %mapSVMClassToXmlClass = ( 3.0 => 7, 1.0 => 3, 0.0 => 2, 2.0 => 6);
 #	print STDERR "$k: ".$mapSemsToVec{$k}."\n";
 #}
 
-my $verblexPath = "$localpath/VerbLex";
-my $verbLemPath = "$localpath/verbLemClasses";
-my %verbLexWithFrames   = %{ Storable::retrieve($verblexPath) };
-my %verbLemClasses =  %{ Storable::retrieve($verbLemPath) };
-
-#my $modelPath = "$localpath/ancoraAndiula_svm.model";
-# testing
 my $modelPath = "$localpath/ancoraAndiula_svm.model";
 #print STDERR "modelpath: $modelPath\n";
 my $svm =  new Algorithm::SVM(Model => "$modelPath");
+my %verbLexWithFrames;
+my %verbLemClasses;
 
 sub main{
 	my $dom = $_[0];
+	%verbLexWithFrames = %{$_[1]};
+	%verbLemClasses = %{$_[2]};
 	my $sno;
 	foreach my $sentence  ( $$dom->getElementsByTagName('SENTENCE'))
 	{
