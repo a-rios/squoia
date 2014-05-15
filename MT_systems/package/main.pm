@@ -42,6 +42,8 @@ BEGIN{
 	use squoia::esqu::coref;
 	use squoia::esqu::disambVerbFormsRules;
 	use squoia::esqu::svm;
+	use squoia::esqu::xml2morph;
+	
 	
 	## esde modules
 
@@ -66,6 +68,13 @@ my $DESR_PORT=5678;
 
 ## set variables for lexical transfer
 my $MATXIN_DIX="$path/squoia/esqu/lexica/es-quz.bin";
+
+## set variables for morphological generation
+my $XFST_GENERATOR = "$path/squoia/esqu/morphgen/unificadoTransfer.fst";
+
+## set variables for language model
+my $QU_MODEL = "$path/storage/test_qu_lm.binary";
+my $nbest = 3;
 
 ###-----------------------------------begin read commandline arguments -----------------------------------------------####
 
@@ -110,6 +119,7 @@ GetOptions(
     'child2sibling=s' => \$child2sibling,
     'interOrder=s' => \$interOrder,
     'intraOrder=s' => \$intraOrder,
+    'nbest|n=i' => \$nbest,
     # options for es-quz
     'evidentiality|e=s'     => \$evidentiality,
     'svmtestfile=s' => \$svmtestfile,
@@ -798,27 +808,33 @@ squoia::intrachunkOrder::main(\$dom, \%intraOrderRules);
 
 my $docstring = $dom->toString(3);
 print STDOUT $docstring;
-#foreach my $n ($dom->getElementsByTagName('NODE')){
-#	if($n->getAttribute('form') =~ /ó/){
-#	print "matched: ".$n->getAttribute('form')."\n";
-#	}
-#	else{
-#		print "not matched: ".$n->getAttribute('form')."\n";
-#	}
-#}
-#
 
 ###-----------------------------------end translation ---------------------------------------------------------####
 
 ###-----------------------------------begin morphological generation ---------------------------------------------------------####
+### esqu: get morph tags from xml, use
+my $morphfile = "$path/tmp/tmp.morph";
+squoia::esqu::xml2morph::main(\$dom, $morphfile);
 
-
+## generate word forms
+		open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $XFST_GENERATOR "  ) || die "morphological generation failed: $!\n";		
+		my $sentFile = "$path/tmp/tmp.words";
+		open (SENT, ">:encoding(UTF-8)", $sentFile);
+		while(<XFST>){
+			print SENT $_;
+		}
+		close(XFST);
 ###-----------------------------------end morphological generation ---------------------------------------------------------####
 
+
 ###-----------------------------------begin ranking (kenlm) ---------------------------------------------------------####
+## use kenlm to print the n-best ($NBEST) translations	
+## quz
+system("$path/squoia/esqu/outputSentences -m $QU_MODEL -n $nbest -i $sentFile");
+## de
 
 ###-----------------------------------end ranking (kenlm) ---------------------------------------------------------####
 
 END{
-	
+	## done!! cleanup?
 }
