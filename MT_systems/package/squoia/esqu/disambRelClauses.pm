@@ -3,38 +3,10 @@
 package squoia::esqu::disambRelClauses;
 
 use utf8;         
-#binmode STDIN, ':utf8';
-#binmode STDOUT, ':utf8';
 use strict;
 
-#print STDERR "our path: $squoia::main::path\n";
-my $path = File::Basename::dirname(File::Spec::Functions::rel2abs($0));
-my $localpath = $path."/squoia/esqu";
-#print STDERR "local path: $localpath\n";
-
-# retrieve hash with config parameters from disk, get path to file with semantic information
-eval {
-	my $hashref = Storable::retrieve("$localpath/VerbLex");
-} or die "No VerbLex in $localpath found! Use readInSemanticDix.pl first! ";
-
-eval {
-	my $hashref = Storable::retrieve("$localpath/NounLex");
-} or die "No NounLex in $localpath found! Use readInSemanticDix.pl first!";
-
-my %lexEntriesWithFrames   = %{ Storable::retrieve("$localpath/VerbLex") };
-my %nounLexicon = %{ Storable::retrieve("$localpath/NounLex") };
-
-#foreach my $key (sort keys %lexEntriesWithFrames)
-#{
-#	print "$key: ";
-#	foreach my $frame (@{ $lexEntriesWithFrames{$key} })
-#	{
-#		print "$frame ";
-#	}
-#	#print @{ $lexEntriesWithFrames{$key} }[0];
-#	print "\n";
-#}
-
+my %lexEntriesWithFrames;
+my %nounLexicon;
 # TODO: quedarse/acabar de + adjetivo -> resultativo -> not.agentive  (kasqa)
 # TODO: con haber de, deber, tener/hay que  +inf -> obligative (?) -> -na kaq (?) (excepción: tener que ver con algo)
 # TODO: verse +adj -> resultative -> not.agentive, que resulta en/+adj ->  (adj-yasqa) oder adj kaq, acabar +adj -> adj-yasqa, pred tukukuq
@@ -47,6 +19,8 @@ my %nounLexicon = %{ Storable::retrieve("$localpath/NounLex") };
 
 sub main{
 	my $dom = $_[0];
+	%lexEntriesWithFrames = %{$_[1]};
+	%nounLexicon = %{$_[2]};
 	
 #	foreach my $n ($$dom->getElementsByTagName('NODE')){
 #	if($n->getAttribute('form') =~ /ó/){
