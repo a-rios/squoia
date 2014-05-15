@@ -30,6 +30,11 @@ BEGIN{
 	use squoia::intrachunkTransfer;
 	use squoia::interchunkTransfer;
 	use squoia::nodesToChunks;
+	use squoia::childToSiblingChunk;
+	use squoia::recursiveNumberChunks;
+	use squoia::interchunkOrder;
+	use squoia::linearOrderChunk;
+	use squoia::intrachunkOrder;
 
 	
 	## esqu modules
@@ -79,6 +84,9 @@ my $prepDisamb;
 my $intraTransfer;
 my $interTransfer;
 my $nodes2chunks;
+my $child2sibling;
+my $interOrder;
+my $intraOrder;
 # esqu options
 my $nounlex;
 my $verblex;
@@ -99,6 +107,9 @@ GetOptions(
     'intraTransfer=s' => \$intraTransfer,
     'interTransfer=s' => \$interTransfer,
     'nodes2chunks=s' => \$nodes2chunks,
+    'child2sibling=s' => \$child2sibling,
+    'interOrder=s' => \$interOrder,
+    'intraOrder=s' => \$intraOrder,
     # options for es-quz
     'evidentiality|e=s'     => \$evidentiality,
     'svmtestfile=s' => \$svmtestfile,
@@ -640,15 +651,150 @@ squoia::interchunkTransfer::main(\$dom, \%interConditions);
 	
 squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
 
+### rules to promote child chunks to siblings (necessary for ordering Quechua internally headed relative clauses)
+	my %targetAttributes;
+	$readrules =0;
+	
+	if($child2sibling ne ''){
+		$readrules =1;
+		print STDERR "reading child2sibling rules from $child2sibling\n";
+		open (CHILD2SIBLINGFILE, "<:encoding(UTF-8)", $child2sibling) or die "Can't open $child2sibling : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$child2sibling= $config{"ChildToSiblingFile"} or die "child2sibling rules file not specified in config, insert NodeChunkFile='path to child2sibling rules' or use option --child2sibling!";
+		print STDERR "reading child2sibling rules from file specified in $config: $child2sibling\n";
+		open (CHILD2SIBLINGFILE, "<:encoding(UTF-8)", $child2sibling) or die "Can't open $child2sibling as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<CHILD2SIBLINGFILE>) {
+			chomp;
+		 	s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;	# skip if empty line
+			my ($childChunkCond, $targetChunkAttrVal ) = split( /\s*\t+\s*/, $_, 2 );
+			$targetAttributes{$childChunkCond} = $targetChunkAttrVal;			
+		}
+		store \%targetAttributes, "$path/storage/child2siblingRules";
+		close(CHILD2SIBLINGFILE);
+	}
+	else{
+		## if neither --child2sibling nor --config given: check if child2sibling rules are already available in storage
+		eval{
+			retrieve("$path/storage/child2siblingRules");
+		} or print STDERR "Failed to retrieve child2sibling rules, set option ChildToSiblingFile=path in config or use --child2sibling path on commandline to indicate child2sibling rules!\n";
+		%targetAttributes = %{ retrieve("$path/storage/child2siblingRules") };
+	}
+	
+squoia::childToSiblingChunk::main(\$dom, \%targetAttributes);
+### number chunks recursively
+squoia::recursiveNumberChunks::main(\$dom);
+
+### order chunks relative to each other (interchunk ordering)
+	my %interOrderRules = ();
+	$readrules=0;
+	
+	if($interOrder ne ''){
+		$readrules =1;
+		print STDERR "reading interchunk order rules from $interOrder\n";
+		open (INTERORDERFILE, "<:encoding(UTF-8)", $interOrder) or die "Can't open $interOrder : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$interOrder= $config{"ChunkOrderFile"} or die "interchunk order rules file not specified in config, insert ChunkOrderFile='path to interchunk order rules' or use option --interOrder!";
+		print STDERR "reading interchunk order rules from file specified in $config: $interOrder\n";
+		open (INTERORDERFILE, "<:encoding(UTF-8)", $interOrder) or die "Can't open $interOrder as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<INTERORDERFILE>) {
+				chomp;
+				s/#.*//;     # no comments
+				s/^\s+//;    # no leading white
+				s/\s+$//;    # no trailing white
+				next if /^$/;	# skip if empty line
+				my ($parentchunk, $childchunks, $order ) = split( /\s*\t+\s*/, $_, 3 );
+				# split childchunks into array and remove empty fields resulted from split
+				$childchunks =~ s/(xpath{[^}]+),([^}]+})/\1XPATHCOMMA\2/g;	#replace comma within xpath with special string so it will not get split
+				my @childsWithEmptyFields = split( /\s*,\s*/, $childchunks);
+				foreach my $ch (@childsWithEmptyFields) {
+					$ch =~ s/XPATHCOMMA/,/g;	#replace comma back
+				}
+				my @childs = grep {$_} @childsWithEmptyFields; 
+				
+				# fill hash, key is head condition(s)
+				my @value = ( \@childs, $order);
+				$interOrderRules{$parentchunk} = \@value;
+		}
+		store \%interOrderRules, "$path/storage/interchunkOrderRules";
+		close(INTERORDERFILE);
+	}
+	else{
+		## if neither --interOrder nor --config given: check if interchunk order rules are already available in storage
+		eval{
+			retrieve("$path/storage/interchunkOrderRules");
+		} or print STDERR "Failed to retrieve interchunk order rules, set option ChunkOrderFile=path in config or use --interOrder path on commandline to indicate interchunk order rules!\n";
+		%interOrderRules = %{ retrieve("$path/storage/interchunkOrderRules") };
+	}
+	
+squoia::interchunkOrder::main(\$dom, \%interOrderRules);
+## linear odering of chunks
+squoia::linearOrderChunk::main(\$dom);
+
+## ordering of nodes in chunks (intrachunk order)
+my %intraOrderRules = ();
+	$readrules=0;
+	
+	if($intraOrder ne ''){
+		$readrules =1;
+		print STDERR "reading intrachunk order rules from $intraOrder\n";
+		open (INTRAORDERFILE, "<:encoding(UTF-8)", $intraOrder) or die "Can't open $intraOrder : $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$intraOrder= $config{"NodeOrderFile"} or die "intrachunk order rules file not specified in config, insert NodeOrderFile='path to intrachunk order rules' or use option --intraOrder!";
+		print STDERR "reading intrachunk order rules from file specified in $config: $intraOrder\n";
+		open (INTRAORDERFILE, "<:encoding(UTF-8)", $intraOrder) or die "Can't open $intraOrder as specified in config: $!";
+	}
+	if($readrules){
+		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+		while (<INTRAORDERFILE>) {
+			chomp;
+			s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;	# skip if empty line
+			my ($head, $childnodes, $order ) = split( /\s*\t+\s*/, $_, 3 );
+		
+			$head =~ s/\s//g;	# no whitespace within condition
+			$childnodes =~ s/\s//g;	# no whitespace within condition
+		
+			# split childnodes into array and remove empty fields resulted from split
+			my @childsWithEmptyFields = split( ',', $childnodes);
+			my @childs = grep {$_} @childsWithEmptyFields; 
+			
+			#print STDERR @childs[0];
+			# fill hash, key is head condition(s)
+			my @value = ( \@childs, $order);
+			$intraOrderRules{$head} = \@value;
+		}
+		store \%intraOrderRules, "$path/storage/intrachunkOrderRules";
+		close(INTRAORDERFILE);
+	}
+	else{
+		## if neither --intraOrder nor --config given: check if intrachunk order rules are already available in storage
+		eval{
+			retrieve("$path/storage/intrachunkOrderRules");
+		} or print STDERR "Failed to retrieve intrachunk order rules, set option NodeOrderFile=path in config or use --intraOrder path on commandline to indicate intrachunk order rules!\n";
+		%intraOrderRules = %{ retrieve("$path/storage/intrachunkOrderRules") };
+	}
+	
+squoia::intrachunkOrder::main(\$dom, \%intraOrderRules);
 
 
 
-# read the node conditions from file into a hash (origNodeCond, parentChunkCond, targetChunkAttrVal )
-while(<NODECHUNKFILE>)
-{
-
-
-}
 
 my $docstring = $dom->toString(3);
 print STDOUT $docstring;
