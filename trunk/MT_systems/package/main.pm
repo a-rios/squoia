@@ -60,8 +60,6 @@ my %config;
 ###-----------------------------------begin read commandline arguments -----------------------------------------------####
 
 ### get commandline options
-my %options;
-
 # setup options
 # general options
 my $help = 0;
@@ -105,6 +103,67 @@ my $quModel;
 # esde options
 my $deModel;
 
+my $helpstring = "Usage: main.pm [options]
+available options are:
+--help|-h: print this help
+--config|-c: indicate config (necessary for first run, later optional)
+--infile|-i: infile with text to translate (optional, if no infile given, reads input from stdin)
+--direction|-d: translation direction, valid options are esqu (Spanish-Quechua) and esde (Spanish-German)
+--outformat|-o: output format, valid formats are:
+\t tagged: (wapiti crf)
+\t parsed: (conll)
+\t conll2xml: (xml created from parsing)
+\t rdisamb: (xml disambiguated relative clauses, only with direction esqu)
+\t coref: (xml after coreference resolution for subjects, only with direction esqu)
+\t vdisamb: (xml disambiguated verb forms, rule-based, only with direction esqu)
+\t svm: (xml disambiguated verb forms with libsvm, only with direction esqu)
+\t lextrans: (xml after lexical transfer)
+\t morphdisamb: (xml after morphological disambiguation)
+\t prepdisamb: (xml after preposition disambiguation)
+\t intraTrans: (xml after intrachunk syntactic transfer)
+\t interTrans: (xml after interchunk syntactic transfer)
+\t intraOrder: (xml after intrachunk syntactic ordering)
+\t interOrder: (xml after interchunk syntactic ordering)
+\t morph: (input for morphological generation)
+\t words: (output of morphological generation)
+\t nbest: (nbest translation options = default)
+Options for tagging:
+--wapiti: path to wapiti executables
+--wapitiModel: path to wapiti model (for tagging)
+--freelingPort: port for squoia_analyzer (morphological analysis)
+--freelingConf: path to FreeLing config, only needed if squoia_analyzer should be restartet (morphological analysis)
+Options for parsing:
+--desrPort1: port for desr_server with model 1
+--desrPort2: port for desr_server with model 2
+--desrModel1: model 1 for desr_server
+--desrModel2: model 2 for desr_server
+Options for lexical transfer:
+--bidix: bilingual dictionary for lexical transfer
+--matxin: path to maxtin executables
+Options for translation, general:
+--semlex: semantic lexicon (semantic tags will be inserted during translation)
+--lexDisamb: lexical disambiguation rules
+--morphDisamb: morphological disambiguation rules
+--prepDisamb: preposition disambiguation rules
+--intraTransfer: intrachunk transfer rules
+--interTransfer: interchunk transfer rules
+--nodes2chunks: rules to promote nodes to chunks
+--child2sibling: rules to promote child to sibling chunks
+--interOrder: rules for interchunk reordering
+--intraOrder: rules for intrachunk reordering
+--nbest|-n: print n-best translations
+Options for translation, es-quz:
+--evidentiality|-e: basic evidentiality (direct, indirect)
+--svmtestfile: test file for svm module (only for debugging)
+--nounlex: semantic noun lexicon
+--verblex: verbframe lexicon
+--wordnet: spanish wordnet (path to mcr30 directory of wordnet)
+--morphgenerator: path to morphological generation binary
+--quModel: Quechua language model
+Options for translation, es-de: TODO
+--deModel: German langugage model
+\n";
+
 GetOptions(
 	# general options
     'help|h'     => \$help,
@@ -147,8 +206,9 @@ GetOptions(
     'quModel=s' => \$quModel,
     # TODO options for es-de
     'deModel' => \$deModel
-) or die "Incorrect usage! TODO helpstring\n";
+) or die "Incorrect usage!\n $helpstring";
 
+	if($help){ print STDERR $helpstring; exit;}
 	if($config ne ''){
 		print STDERR "reading config file: $config\n";
 		open (CONFIG, "<:encoding(UTF-8)", $config);
@@ -181,8 +241,6 @@ GetOptions(
 		
 		} or print STDERR "No config file specified and no saved $path/storage/config.bin found, specifiy a config file with -c!\n";
 	}
-
-	if($help){ print STDERR "TODO help\n"; exit;}
 	
 	# specify translation direction, valid options are esqu and esde
 	if($direction eq ''){
