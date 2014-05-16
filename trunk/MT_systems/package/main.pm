@@ -58,22 +58,22 @@ my %config;
 
 ## set variables for tagging (FreeLing and Wapiti)
 # tagging
-my $WAPITI_DIR="/home/clsquoia/Wapiti";
-my $WAPITI_MODEL="/home/clsquoia/google_squoia/MT_systems/tagging/wapiti/3gram_enhancedAncora.model";
-my $FREELING_PORT="8844";
-my $MATXIN_BIN="/opt/matxin/local/bin";
+#my $WAPITI_DIR="/home/clsquoia/Wapiti";
+#my $WAPITI_MODEL="/home/clsquoia/google_squoia/MT_systems/tagging/wapiti/3gram_enhancedAncora.model";
+#my $FREELING_PORT="8844";
+#my $MATXIN_BIN="/opt/matxin/local/bin";
 
 ## set variables for desr parser
-my $DESR_PORT=5678;
+#my $DESR_PORT=5678;
 
 ## set variables for lexical transfer
-my $MATXIN_DIX="$path/squoia/esqu/lexica/es-quz.bin";
+#y $MATXIN_DIX="$path/squoia/esqu/lexica/es-quz.bin";
 
 ## set variables for morphological generation
 my $XFST_GENERATOR = "$path/squoia/esqu/morphgen/unificadoTransfer.fst";
 
 ## set variables for language model
-my $QU_MODEL = "$path/storage/test_qu_lm.binary";
+my $QU_MODEL = "$path/model/test_qu_lm.binary";
 my $nbest = 3;
 
 ###-----------------------------------begin read commandline arguments -----------------------------------------------####
@@ -86,6 +86,16 @@ my %options;
 my $help = 0;
 my $config;
 my $infile;
+# options for tagging
+my $wapiti;
+my $wapitiModel;
+my $freelingPort=8844;
+my $matxin;
+# options for parsing
+my $desrPort=5678;
+# options for lexical transfer
+my $bidix;
+# general options for translation
 my $semlex;
 my $lexDisamb;
 my $morphDisam;
@@ -105,10 +115,20 @@ my $wordnet;
 # esde options
 
 GetOptions(
+	# general options
     'help|h'     => \$help,
     'config|c=s'    => \$config,
     'infile|i=s'    => \$infile,
-     # general options
+    # options for tagging
+	'wapiti=s'    => \$wapiti,
+	'wapitiModel=s'    => \$wapitiModel,
+	'freelingPort=i'    => \$freelingPort,
+	'matxin=s'    => \$matxin,
+	# options for parsing
+	'desrPort=s'	=> \$desrPort,
+	# options for lexical transfer
+	'bidix=s'	=> \$bidix,
+     # translation options
     'semlex=s' => \$semlex,
     'lexDisamb=s' => \$lexDisamb,
     'morphDisamb=s' => \$morphDisamb,
@@ -142,6 +162,8 @@ GetOptions(
 			if($var ne 'GRAMMAR_DIR'){
 				my $grammarPath = $config{'GRAMMAR_DIR'} or die "GRAMMAR_DIR not specified in config!";
 				$value =~ s/\$GRAMMAR_DIR/$grammarPath/g;
+				my $squoiaPath = $config{'SQUOIA_DIR'} or die "SQUOIA_DIR not specified in config!";
+				$value =~ s/\$SQUOIA_DIR/$squoiaPath/g;
 		
 			}
 			#print "$var=$value\n";
@@ -161,9 +183,21 @@ GetOptions(
 	}
 
 	if($help){ print STDERR "TODO help\n"; exit;}
-	# if input file given with --infile or -i:
-	if($infile ne ''){
-			open(CONLL,"-|" ,"cat $infile | $MATXIN_BIN/analyzer_client 8844 | $WAPITI_DIR/wapiti label --force -m $WAPITI_MODEL"  ) || die "tagging failed: $!\n";
+		
+
+###-----------------------------------end read commandline arguments -----------------------------------------------####
+
+###-----------------------------------begin analysis Spanish input -----------------------------------------------####
+### tagging: if input file given with --infile or -i:
+# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
+if($matxin eq '' or $wapiti eq '' or $wapitiModel eq ''){
+	eval{
+		$matxin = $config{'matxin'}; $wapiti = $config{'wapiti'}; $wapitiModel = $config{'wapitiModel'};
+	}
+	or die "Tagging failed, location of matxin, wapiti or wapiti model not indicated!\n";;
+}
+if($infile ne ''){
+			open(CONLL,"-|" ,"cat $infile | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
 	}
 	# if no infile given, expect input on stdin
 	else{
@@ -171,13 +205,10 @@ GetOptions(
 		my $tmp = $path."/tmp/tmp.txt";
 		open (TMP, ">:encoding(UTF-8)", $tmp);
 		while(<>){print TMP $_;}
-		open(CONLL,"-|" ,"cat $tmp | $MATXIN_BIN/analyzer_client 8844 | $WAPITI_DIR/wapiti label --force -m $WAPITI_MODEL"  ) || die "tagging failed: $!\n";
+		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
 		close(TMP);
-	}	
+}
 
-###-----------------------------------end read commandline arguments -----------------------------------------------####
-
-###-----------------------------------begin analysis Spanish input -----------------------------------------------####
 #### convert to wapiti crf to conll for desr parser
 my $conllLines = squoia::crf2conll::main(\*CONLL);
 
@@ -186,7 +217,7 @@ my $tmp2 = $path."/tmp/tmp.conll";
 		# !! not again ">:encoding(UTF-8)", results in 'doble' encoded strings!!
 		open (TMP2, ">", $tmp2);
 		foreach my $l (@$conllLines){print TMP2 $l;}
-		open(CONLL2,"-|" ,"cat $tmp2 | desr_client $DESR_PORT"  ) || die "parsing failed: $!\n";
+		open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort"  ) || die "parsing failed: $!\n";
 		close(TMP2);
 
 #### create xml from conll
@@ -341,12 +372,20 @@ squoia::esqu::svm::main(\$dom, \%verbLex, \%verbLemClasses);
 
 ####-----------------------------------begin translation ---------------------------------------------------------####
 #### lexical transfer with matxin-xfer-lex
+## check if $bidix is set
+if($bidix eq ''){
+	eval{
+		$bidix = $config{'bidix'};
+	}
+	or die "Lexical transfer failed, location of bilingual dictionary not indicated (set option bidix in confix or use --bidix on commandline)!\n";
+}
+print STDERR "bidix=$bidix\n";
 my $tmp3 = $path."/tmp/tmp.xml";
 		# !! not again ">:encoding(UTF-8)", results in 'doble' encoded strings!!
 		open (TMP3, ">", $tmp3);
 		my $docstring = $dom->toString(1);
 		print TMP3 $docstring;
-		open(XFER,"-|" ,"cat $tmp3 | $MATXIN_BIN/matxin-xfer-lex $MATXIN_DIX"  ) || die "lexical transfer failed: $!\n";
+		open(XFER,"-|" ,"cat $tmp3 | $matxin/matxin-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
 		close(TMP3);
 
 $dom = XML::LibXML->load_xml( IO => *XFER );
