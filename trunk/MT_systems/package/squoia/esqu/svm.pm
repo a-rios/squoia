@@ -91,7 +91,7 @@ my %mapSVMClassToXmlClass = ( 3.0 => 7, 1.0 => 3, 0.0 => 2, 2.0 => 6);
 #	print STDERR "$k: ".$mapSemsToVec{$k}."\n";
 #}
 
-my $modelPath = "$path/storage/ancoraAndiula_svm.model";
+my $modelPath = "$path/models/ancoraAndiula_svm.model";
 #print STDERR "modelpath: $modelPath\n";
 my $svm =  new Algorithm::SVM(Model => "$modelPath");
 my %verbLexWithFrames;

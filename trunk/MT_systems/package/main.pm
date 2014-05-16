@@ -50,31 +50,12 @@ BEGIN{
 	#use squoia::esqu::testSVM;
 	#use Encode::Detect::Detector;
 	
+	
 }
 
 
 # variables needed to run the MT system
 my %config;
-
-## set variables for tagging (FreeLing and Wapiti)
-# tagging
-#my $WAPITI_DIR="/home/clsquoia/Wapiti";
-#my $WAPITI_MODEL="/home/clsquoia/google_squoia/MT_systems/tagging/wapiti/3gram_enhancedAncora.model";
-#my $FREELING_PORT="8844";
-#my $MATXIN_BIN="/opt/matxin/local/bin";
-
-## set variables for desr parser
-#my $DESR_PORT=5678;
-
-## set variables for lexical transfer
-#y $MATXIN_DIX="$path/squoia/esqu/lexica/es-quz.bin";
-
-## set variables for morphological generation
-my $XFST_GENERATOR = "$path/squoia/esqu/morphgen/unificadoTransfer.fst";
-
-## set variables for language model
-my $QU_MODEL = "$path/model/test_qu_lm.binary";
-my $nbest = 3;
 
 ###-----------------------------------begin read commandline arguments -----------------------------------------------####
 
@@ -86,6 +67,9 @@ my %options;
 my $help = 0;
 my $config;
 my $infile;
+my $nbest = 3;
+my $direction;
+my $outformat; # default nbest: print nbest translations, other valid options are: tagged (wapiti), parsed (desr), conll2xml, rdisamb, coref, vdisamb, svm, lextrans, morphdisamb, prepdisamb, intraTrans, interTrans, intraOrder, interOrder, morph, words
 # options for tagging
 my $wapiti;
 my $wapitiModel;
@@ -112,13 +96,18 @@ my $verblex;
 my $evidentiality = "direct";
 my $svmtestfile;
 my $wordnet;
+my $morphgenerator;
+my $quModel;
 # esde options
+my $deModel;
 
 GetOptions(
 	# general options
     'help|h'     => \$help,
     'config|c=s'    => \$config,
     'infile|i=s'    => \$infile,
+    'direction|d=s' => \$direction,
+    'outformat|o=s' => \$outformat,
     # options for tagging
 	'wapiti=s'    => \$wapiti,
 	'wapitiModel=s'    => \$wapitiModel,
@@ -146,7 +135,10 @@ GetOptions(
     'nounlex=s' => \$nounlex,
     'verblex=s' => \$verblex,
     'wordnet=s' => \$wordnet,
+    'morphgenerator=s' => \$morphgenerator,
+    'quModel=s' => \$quModel,
     # TODO options for es-de
+    'deModel' => \$deModel
 ) or die "Incorrect usage! TODO helpstring\n";
 
 	if($config ne ''){
@@ -159,7 +151,7 @@ GetOptions(
 			s/\s+$//;    # no trailing white
 			next unless length;    # anything left?
 			my ( $var, $value ) = split( /\s*=\s*/, $_, 2 );
-			if($var ne 'GRAMMAR_DIR'){
+			if($var ne 'GRAMMAR_DIR' and $var ne 'SQUOIA_DIR'){
 				my $grammarPath = $config{'GRAMMAR_DIR'} or die "GRAMMAR_DIR not specified in config!";
 				$value =~ s/\$GRAMMAR_DIR/$grammarPath/g;
 				my $squoiaPath = $config{'SQUOIA_DIR'} or die "SQUOIA_DIR not specified in config!";
@@ -183,8 +175,46 @@ GetOptions(
 	}
 
 	if($help){ print STDERR "TODO help\n"; exit;}
-		
+	
+	# specify translation direction, valid options are esqu and esde
+	if($direction eq ''){
+		eval{
+			$direction = $config{'direction'};
+		} or die "Translation direction not specified, set direction=esqu or direction=esde in config, or use --direction or -d on commandline!\n";
+	}
+	if($direction !~ /^esqu|esde$/){
+		die "Invalid translation direction $direction, valid options are 'esde' or 'esqu'!\n";
+	}
 
+	## check if outformat is a valid option, and check if it's set in config, if neither --outformat nor outformat= set in config: set to 'nbest'
+	if($outformat eq ''){
+		eval{
+			$outformat = $config{'outformat'};
+		} or $outformat ='nbest';
+	}
+	if($outformat !~ /^nbest|tagged|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|morphdisamb|prepdisamb|intraTrans|interTrans|intraOrder|interOrder|morph|words$/){
+		die "Invalid output format $outformat, valid options are:\n
+\t tagged (wapiti crf)\n
+\t parsed (conll)\n
+\t conll2xml (xml created from parsing)\n
+\t rdisamb (xml disambiguated relative clauses, only with direction esqu)\n
+\t coref (xml after coreference resolution for subjects, only with direction esqu)\n
+\t vdisamb (xml disambiguated verb forms, rule-based, only with direction esqu)\n
+\t svm (xml disambiguated verb forms with libsvm, only with direction esqu)\n
+\t lextrans (xml after lexical transfer)\n
+\t morphdisamb (xml after morphological disambiguation)\n
+\t prepdisamb (xml after preposition disambiguation)\n
+\t intraTrans (xml after intrachunk syntactic transfer)\n
+\t interTrans (xml after interchunk syntactic transfer)\n
+\t intraOrder (xml after intrachunk syntactic ordering)\n
+\t interOrder (xml after interchunk syntactic ordering)\n
+\t morph (input for morphological generation)\n
+\t words (output of morphological generation)\n
+\t nbest (nbest translation options = default)\n";
+	}
+
+		## TODO check if freeling and desr are running on indicated ports
+		
 ###-----------------------------------end read commandline arguments -----------------------------------------------####
 
 ###-----------------------------------begin analysis Spanish input -----------------------------------------------####
@@ -208,6 +238,12 @@ if($infile ne ''){
 		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
 		close(TMP);
 }
+## if output format is 'crf': print and exit
+if($outformat eq 'tagged'){
+	while(<CONLL>){print;}
+	close(CONLL);
+	exit;
+}
 
 #### convert to wapiti crf to conll for desr parser
 my $conllLines = squoia::crf2conll::main(\*CONLL);
@@ -220,9 +256,22 @@ my $tmp2 = $path."/tmp/tmp.conll";
 		open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort"  ) || die "parsing failed: $!\n";
 		close(TMP2);
 
+## if output format is 'conll': print and exit
+if($outformat eq 'parsed'){
+	while(<CONLL2>){print;}
+	close(CONLL2);
+	exit;
+}
 #### create xml from conll
 my $dom = squoia::conll2xml::main(\*CONLL2);
 close(CONLL2);
+
+## if output format is 'conll2xml': print and exit
+if($outformat eq 'conll2xml'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
 
 ####-----------------------------------end analysis Spanish input -----------------------------------------------####
 
@@ -230,7 +279,8 @@ close(CONLL2);
 ####-----------------------------------begin preprocessing for es-qu -----------------------------------------------####
 #
 #### verb disambiguation: TODO: only if direction es-quz
-
+if($direction eq 'esqu')
+{
 	# retrieve semantic verb and noun lexica for verb disambiguation
 	my %nounLex = (); my %verbLex = ();
 	if($nounlex ne ''){
@@ -288,7 +338,22 @@ close(CONLL2);
 	}
 
 squoia::esqu::disambRelClauses::main(\$dom, \%nounLex, \%verbLex);
+
+## if output format is 'rdisamb': print and exit
+if($outformat eq 'rdisamb'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
+
 squoia::esqu::coref::main(\$dom);
+
+## if output format is 'coref': print and exit
+if($outformat eq 'coref'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
 
 	# check if evidentiality set
 	if($evidentiality ne 'direct' or $evidentiality eq 'indirect'){
@@ -296,6 +361,13 @@ squoia::esqu::coref::main(\$dom);
 		$evidentiality = 'direct';
 	}
 squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex);
+
+## if output format is 'vdisamb': print and exit
+if($outformat eq 'vdisamb'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
 
 	# get verb lemma classes from word net for disambiguation with svm
 	my %verbLemClasses=();
@@ -362,11 +434,19 @@ squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex);
 	}
 
 squoia::esqu::svm::main(\$dom, \%verbLex, \%verbLemClasses);
+
+## if output format is 'svm': print and exit
+if($outformat eq 'svm'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
 ## test svm module
 #    if($options{'t'}){
 #    	squoia::esqu::testSVM::main($options{'t'});
 #    }
 #
+}
 ####-----------------------------------end preprocessing for es-qu -----------------------------------------------####
 
 
@@ -379,7 +459,6 @@ if($bidix eq ''){
 	}
 	or die "Lexical transfer failed, location of bilingual dictionary not indicated (set option bidix in confix or use --bidix on commandline)!\n";
 }
-print STDERR "bidix=$bidix\n";
 my $tmp3 = $path."/tmp/tmp.xml";
 		# !! not again ">:encoding(UTF-8)", results in 'doble' encoded strings!!
 		open (TMP3, ">", $tmp3);
@@ -390,6 +469,13 @@ my $tmp3 = $path."/tmp/tmp.xml";
 
 $dom = XML::LibXML->load_xml( IO => *XFER );
 close(XFER);
+
+## if output format is 'lextrans': print and exit
+if($outformat eq 'lextrans'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
 
 #### insert semantic tags: 
 ## if semantic dictionary or new config file given on commandline: read into %semanticLexicone
@@ -517,6 +603,13 @@ squoia::semanticDisamb::main(\$dom, \%lexSel);
 
 squoia::morphDisamb::main(\$dom, \%morphSel);
 
+## if output format is 'morphdisamb': print and exit
+if($outformat eq 'morphdisamb'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
+
 ### preposition disambiguation, rule-based
 	my %prepSel = ();
 	$readrules =0;
@@ -565,9 +658,14 @@ squoia::morphDisamb::main(\$dom, \%morphSel);
 		} or print STDERR "Failed to retrieve preposition selection rules, set option PrepFile=path in config or use --prepDisamb path on commandline to indicate preposition disambiguation rules!\n";
 		%prepSel = %{ retrieve("$path/storage/PrepSelRules") };
 	}
-
-foreach my $k (sort keys %prepSel){print "key $k\n";}
 squoia::prepositionDisamb::main(\$dom, \%prepSel);
+
+## if output format is 'prepdisamb': print and exit
+if($outformat eq 'prepdisamb'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
 
 ### syntactic transfer, intra-chunks (from nodes to chunks and vice versa)
 	my %intraConditions = ();
@@ -613,6 +711,13 @@ squoia::prepositionDisamb::main(\$dom, \%prepSel);
 	
 squoia::intrachunkTransfer::main(\$dom, \%intraConditions);
 
+## if output format is 'intraTrans': print and exit
+if($outformat eq 'intraTrans'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
+
 ### syntactic transfer, inter-chunks (move/copy information between chunks)
 	my %interConditions =();
 	$readrules =0;
@@ -655,6 +760,13 @@ squoia::intrachunkTransfer::main(\$dom, \%intraConditions);
 	}
 	
 squoia::interchunkTransfer::main(\$dom, \%interConditions);
+
+## if output format is 'interTrans': print and exit
+if($outformat eq 'interTrans'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
 
 ### promote nodes to chunks, if necessary
 	my %targetAttributes;
@@ -700,6 +812,8 @@ squoia::interchunkTransfer::main(\$dom, \%interConditions);
 	
 squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
 
+if($direction eq 'esqu')## TODO: really only for quz? or also needed for de?
+{
 ### rules to promote child chunks to siblings (necessary for ordering Quechua internally headed relative clauses)
 	my %targetAttributes;
 	$readrules =0;
@@ -738,6 +852,8 @@ squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
 	}
 	
 squoia::childToSiblingChunk::main(\$dom, \%targetAttributes);
+}
+
 ### number chunks recursively
 squoia::recursiveNumberChunks::main(\$dom);
 
@@ -789,6 +905,14 @@ squoia::recursiveNumberChunks::main(\$dom);
 	}
 	
 squoia::interchunkOrder::main(\$dom, \%interOrderRules);
+
+## if output format is 'interOrder': print and exit
+if($outformat eq 'interOrder'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
+
 ## linear odering of chunks
 squoia::linearOrderChunk::main(\$dom);
 
@@ -842,35 +966,78 @@ my %intraOrderRules = ();
 	
 squoia::intrachunkOrder::main(\$dom, \%intraOrderRules);
 
-
-
-
-my $docstring = $dom->toString(3);
-print STDOUT $docstring;
+## if output format is 'intraOrder': print and exit
+if($outformat eq 'intraOrder'){
+	my $docstring = $dom->toString(3);
+	print STDOUT $docstring;
+	exit;
+}
 
 ###-----------------------------------end translation ---------------------------------------------------------####
 
 ###-----------------------------------begin morphological generation ---------------------------------------------------------####
-### esqu: get morph tags from xml, use
-my $morphfile = "$path/tmp/tmp.morph";
-squoia::esqu::xml2morph::main(\$dom, $morphfile);
-
-## generate word forms
-		open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $XFST_GENERATOR "  ) || die "morphological generation failed: $!\n";		
-		my $sentFile = "$path/tmp/tmp.words";
-		open (SENT, ">:encoding(UTF-8)", $sentFile);
-		while(<XFST>){
-			print SENT $_;
+## quz
+my $sentFile;
+if($direction eq 'esqu')
+{
+	### esqu: get morph tags from xml, use
+	my $morphfile = "$path/tmp/tmp.morph";
+	squoia::esqu::xml2morph::main(\$dom, $morphfile);
+	
+	## if output format is 'morph': print and exit
+	if($outformat eq 'morph'){
+		system("cat $morphfile");
+		exit;
+	}
+	
+	## generate word forms with xfst
+	## check if $morphgenerator is set
+	if($morphgenerator eq ''){
+		eval{
+			$morphgenerator = $config{'morphgenerator'};
 		}
-		close(XFST);
+		or die "Morphological generation failed, location of xfst generator not indicated (set option morphgenerator in confix or use --morphgenerator on commandline)!\n";
+	}
+			open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $morphgenerator "  ) || die "morphological generation failed: $!\n";		
+			$sentFile = "$path/tmp/tmp.words";
+			open (SENT, ">:encoding(UTF-8)", $sentFile);
+			while(<XFST>){
+				print SENT $_;
+			}
+			close(XFST);
+			
+		## if output format is 'words': print and exit
+		if($outformat eq 'words'){
+			system("cat $sentFile");
+			exit;
+		}
+}
+## de
+elsif($direction eq 'esde'){
+	
+}
+
+
 ###-----------------------------------end morphological generation ---------------------------------------------------------####
 
 
 ###-----------------------------------begin ranking (kenlm) ---------------------------------------------------------####
-## use kenlm to print the n-best ($NBEST) translations	
-## quz
-system("$path/squoia/esqu/outputSentences -m $QU_MODEL -n $nbest -i $sentFile");
+## use kenlm to print the n-best ($nbest) translations	
+if($direction eq 'esqu')
+{
+	# check if quModel is set
+	if($quModel eq ''){
+		eval{
+			$quModel = $config{'quModel'};
+		}
+		or die "Ranking failed, location of quechua language model not indicated (set option quModel in confix or use --quModel on commandline)!\n";
+	}
+	system("$path/squoia/esqu/outputSentences -m $quModel -n $nbest -i $sentFile");
+}
 ## de
+elsif($direction eq 'esde'){
+	
+}
 
 ###-----------------------------------end ranking (kenlm) ---------------------------------------------------------####
 
