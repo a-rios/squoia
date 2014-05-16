@@ -73,10 +73,14 @@ my $outformat; # default nbest: print nbest translations, other valid options ar
 # options for tagging
 my $wapiti;
 my $wapitiModel;
-my $freelingPort=8844;
+my $freelingPort;
+my $freelingConf;
 my $matxin;
 # options for parsing
-my $desrPort=5678;
+my $desrPort1;
+my $desrPort2;
+my $desrModel1;
+my $desrModel2;
 # options for lexical transfer
 my $bidix;
 # general options for translation
@@ -112,9 +116,13 @@ GetOptions(
 	'wapiti=s'    => \$wapiti,
 	'wapitiModel=s'    => \$wapitiModel,
 	'freelingPort=i'    => \$freelingPort,
+	'freelingConf=i'    => \$freelingConf,
 	'matxin=s'    => \$matxin,
 	# options for parsing
-	'desrPort=s'	=> \$desrPort,
+	'desrPort1=i'	=> \$desrPort1,
+	'desrPort2=i'	=> \$desrPort2,
+	'desrModel1=s'	=> \$desrModel1,
+	'desrModel2=s'	=> \$desrModel2,
 	# options for lexical transfer
 	'bidix=s'	=> \$bidix,
      # translation options
@@ -213,7 +221,33 @@ GetOptions(
 \t nbest (nbest translation options = default)\n";
 	}
 
-		## TODO check if freeling and desr are running on indicated ports
+		## TODO check if freeling and desr are running on indicated ports (for desr: further below, before parsing starts)
+		# #test if squoia_analyzer is already listening
+		# set freeling parameters
+		if($freelingPort eq ''){
+			eval{
+				$freelingPort = $config{'freelingPort'};
+			} or warn  "no freelingPort given, using default 8844\n";
+			if($freelingPort eq ''){
+				$freelingPort = 8844; 
+			}
+		}
+		if($freelingConf eq ''){
+			eval{
+				$freelingConf = $config{'freelingConf'};
+			} or die  "Could not start tagging, no freelingConf given\n";
+		}
+		my $analyzerRunning = `ps ax | grep -v grep | grep "squoia_analyzer.*$freelingConf.*port=$freelingPort"` ;
+		if($analyzerRunning eq ''){
+			print STDERR "no instance of squoia_analyzer server running on port $freelingPort with config $freelingConf\n";
+			print STDERR "starting squoia_analyzer server on port $freelingPort with config $freelingConf...\n";
+			system("squoia_analyzer -f $freelingConf --outf=crfmorf --server --port=$freelingPort 2> logcrfmorf &");
+			while(`echo "test" | analyzer_client "$freelingPort" 2>/dev/null` eq ''){
+				print STDERR "starting squoia_analyzer, please wait...\n";
+				sleep 10;
+			}
+			print STDERR "squoia_analyzer now ready\n";
+		}
 		
 ###-----------------------------------end read commandline arguments -----------------------------------------------####
 
@@ -248,12 +282,59 @@ if($outformat eq 'tagged'){
 #### convert to wapiti crf to conll for desr parser
 my $conllLines = squoia::crf2conll::main(\*CONLL);
 
+	#### Check if parser servers are already running (2 instances with different models)
+	# first instance
+	# set desr parameters
+		if($desrPort1 eq ''){
+			eval{
+				$desrPort1 = $config{'desrPort1'};
+			} or warn  "no desrPort1 given, using default 5678\n";
+			if($desrPort1 eq ''){
+				$desrPort1 = 5678; 
+			}
+		}
+		if($desrModel1 eq ''){
+			eval{
+				$desrModel1 = $config{'desrModel1'};
+			} or die  "Could not start parsing, no desrModel1 given\n";
+		}
+		my $desr1Running = `ps ax | grep -v grep | grep "desr_server.*$desrModel1.*--port $desrPort1"` ;
+		if($desr1Running eq ''){
+			print STDERR "no instance of desr_server running on port $desrPort1 with model $desrModel1\n";
+			print STDERR "starting desr_server on port $desrPort1 with model $desrModel1...\n";
+			system("desr_server -m $desrModel1 --port $desrPort1 2> logdesr_1 &");
+			print STDERR "desr_server with model 1 = $desrModel1 started on port $desrPort1...\n";
+			sleep 1;
+		}
+	# same for 2nd instance
+		if($desrPort2 eq ''){
+			eval{
+				$desrPort2 = $config{'desrPort2'};
+			} or warn  "no desrPort2 given, using default 1234\n";
+			if($desrPort2 eq ''){
+				$desrPort2 = 1234; 
+			}
+		}
+		if($desrModel2 eq ''){
+			eval{
+				$desrModel2 = $config{'desrModel2'};
+			} or die  "Could not start parsing, no desrModel2 given\n";
+		}
+		my $desr2Running = `ps ax | grep -v grep | grep "desr_server.*$desrModel2.*--port $desrPort2"` ;
+		if($desr2Running eq ''){
+			print STDERR "no instance of desr_server running on port $desrPort2 with model $desrModel2\n";
+			print STDERR "starting desr_server on port $desrPort2 with model $desrModel2...\n";
+			system("desr_server -m $desrModel2 --port $desrPort2 2> logdesr_2 &");
+			print STDERR "desr_server with model 2 = $desrModel2 started on port $desrPort2...\n";
+			sleep 1;
+		}
+
 ### parse tagged text:
 my $tmp2 = $path."/tmp/tmp.conll";
 		# !! not again ">:encoding(UTF-8)", results in 'doble' encoded strings!!
 		open (TMP2, ">", $tmp2);
 		foreach my $l (@$conllLines){print TMP2 $l;}
-		open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort"  ) || die "parsing failed: $!\n";
+		open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort1"  ) || die "parsing failed: $!\n";
 		close(TMP2);
 
 ## if output format is 'conll': print and exit
@@ -263,7 +344,7 @@ if($outformat eq 'parsed'){
 	exit;
 }
 #### create xml from conll
-my $dom = squoia::conll2xml::main(\*CONLL2);
+my $dom = squoia::conll2xml::main(\*CONLL2, $desrPort2);
 close(CONLL2);
 
 ## if output format is 'conll2xml': print and exit
@@ -278,7 +359,7 @@ if($outformat eq 'conll2xml'){
 
 ####-----------------------------------begin preprocessing for es-qu -----------------------------------------------####
 #
-#### verb disambiguation: TODO: only if direction es-quz
+#### verb disambiguation
 if($direction eq 'esqu')
 {
 	# retrieve semantic verb and noun lexica for verb disambiguation
@@ -812,8 +893,6 @@ if($outformat eq 'interTrans'){
 	
 squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
 
-if($direction eq 'esqu')## TODO: really only for quz? or also needed for de?
-{
 ### rules to promote child chunks to siblings (necessary for ordering Quechua internally headed relative clauses)
 	my %targetAttributes;
 	$readrules =0;
@@ -852,7 +931,6 @@ if($direction eq 'esqu')## TODO: really only for quz? or also needed for de?
 	}
 	
 squoia::childToSiblingChunk::main(\$dom, \%targetAttributes);
-}
 
 ### number chunks recursively
 squoia::recursiveNumberChunks::main(\$dom);
