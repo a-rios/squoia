@@ -1,5 +1,10 @@
 #!/usr/bin/perl 
 
+## IMPORTANT TODO's: 
+# - ambiguous lemmas from tagging... generate both forms? 
+# - atm: input needs to be 1 sentence per line: 
+#   --> for automatic sentence splitting, do we want to use FreeLing or the sentence splitter from the Lingua package?
+
 package squoia::main;
 our $path;
 use utf8;
@@ -1132,6 +1137,7 @@ if($direction eq 'esqu')
 			open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $morphgenerator "  ) || die "morphological generation failed: $!\n";		
 			$sentFile = "$path/tmp/tmp.words";
 			open (SENT, ">:encoding(UTF-8)", $sentFile);
+			binmode(XFST, ':utf8');
 			while(<XFST>){
 				print SENT $_;
 			}
