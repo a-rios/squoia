@@ -12,8 +12,6 @@ BEGIN{
 	use lib $path.".";
 
 	binmode STDIN, ':encoding(UTF-8)';
-	#binmode STDERR, ':utf8';
-	#binmode(STDOUT);
 	use XML::LibXML;
 	use Storable;
 	use strict;
@@ -35,6 +33,7 @@ BEGIN{
 	use squoia::interchunkOrder;
 	use squoia::linearOrderChunk;
 	use squoia::intrachunkOrder;
+	#use squoia::esqu::testSVM;
 
 	
 	## esqu modules
@@ -45,11 +44,7 @@ BEGIN{
 	use squoia::esqu::xml2morph;
 	
 	
-	## esde modules
-
-	#use squoia::esqu::testSVM;
-	#use Encode::Detect::Detector;
-	
+	## esde modules	
 	
 }
 
@@ -259,24 +254,24 @@ GetOptions(
 		} or $outformat ='nbest';
 	}
 	if($outformat !~ /^nbest|tagged|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|morphdisamb|prepdisamb|intraTrans|interTrans|intraOrder|interOrder|morph|words$/){
-		die "Invalid output format $outformat, valid options are:\n
-\t tagged (wapiti crf)\n
-\t parsed (conll)\n
-\t conll2xml (xml created from parsing)\n
-\t rdisamb (xml disambiguated relative clauses, only with direction esqu)\n
-\t coref (xml after coreference resolution for subjects, only with direction esqu)\n
-\t vdisamb (xml disambiguated verb forms, rule-based, only with direction esqu)\n
-\t svm (xml disambiguated verb forms with libsvm, only with direction esqu)\n
-\t lextrans (xml after lexical transfer)\n
-\t morphdisamb (xml after morphological disambiguation)\n
-\t prepdisamb (xml after preposition disambiguation)\n
-\t intraTrans (xml after intrachunk syntactic transfer)\n
-\t interTrans (xml after interchunk syntactic transfer)\n
-\t intraOrder (xml after intrachunk syntactic ordering)\n
-\t interOrder (xml after interchunk syntactic ordering)\n
-\t morph (input for morphological generation)\n
-\t words (output of morphological generation)\n
-\t nbest (nbest translation options = default)\n";
+		die "Invalid output format $outformat, valid options are:
+\t tagged: (wapiti crf)
+\t parsed: (conll)
+\t conll2xml: (xml created from parsing)
+\t rdisamb: (xml disambiguated relative clauses, only with direction esqu)
+\t coref: (xml after coreference resolution for subjects, only with direction esqu)
+\t vdisamb: (xml disambiguated verb forms, rule-based, only with direction esqu)
+\t svm: (xml disambiguated verb forms with libsvm, only with direction esqu)
+\t lextrans: (xml after lexical transfer)
+\t morphdisamb: (xml after morphological disambiguation)
+\t prepdisamb: (xml after preposition disambiguation)
+\t intraTrans: (xml after intrachunk syntactic transfer)
+\t interTrans: (xml after interchunk syntactic transfer)
+\t intraOrder: (xml after intrachunk syntactic ordering)
+\t interOrder: (xml after interchunk syntactic ordering)
+\t morph: (input for morphological generation)
+\t words: (output of morphological generation)
+\t nbest: (nbest translation options = default)";
 	}
 
 		## TODO check if freeling and desr are running on indicated ports (for desr: further below, before parsing starts)
