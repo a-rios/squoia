@@ -10,7 +10,7 @@ use strict;
 use Algorithm::SVM;
 use Algorithm::SVM::DataSet;
 my $path = File::Basename::dirname(File::Spec::Functions::rel2abs($0));
-my $localpath = $path."/squoia/esqu";
+my $localpath = $path."/models";
 
 #my $svm1 =  new Algorithm::SVM(Model => 'svm_model_class7');
 ##my $svm2 =  new Algorithm::SVM(Model => 'svm_model_class6');
