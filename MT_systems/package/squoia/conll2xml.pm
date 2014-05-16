@@ -56,7 +56,8 @@ my $openBar=1;
 sub main{
 	my $InputLines = $_[0];
 	binmode($InputLines, ':utf8');
-	#foreach my $line (@$InputLines)
+	my $desrPort2 = $_[1]; 	# port where desr_server with model2 runs
+
 	while(<$InputLines>)
 	{
 		my $line = $_;
@@ -249,7 +250,7 @@ sub main{
 					}
 					or do
 					{
-						&model2($sentence);
+						&model2($sentence,$desrPort2);
 						print STDERR "loop detected in sentence: ".$sentence->getAttribute('ord')."\n";
 						$model2 = 1;
 						$i--;
@@ -264,7 +265,7 @@ sub main{
 				
 					if($pos =~ /d.|s.|p[^I]|c.|n.|r.|F./ && scalar(@nodes) > 4)
 					{
-						&model2($sentence);
+						&model2($sentence,$desrPort2);
 						$model2 = 1;
 						$i--;
 						last;
@@ -1905,17 +1906,17 @@ sub attachNewChunkUnderChunk{
 
 sub model2{
 	my $sentence =  $_[0];
+	my $desrPort2= $_[1];
 	if($sentence)
 	{
 		$sentence->removeChildNodes();
 		my $sentenceId = $sentence->getAttribute('ord');
 		my $path = File::Basename::dirname(File::Spec::Functions::rel2abs($0));
 		my $tmp = $path."/tmp/tmp2.conll";
-		my $DESR_PORT=1234;
 		
 		open (TMP, ">:encoding(UTF-8)", $tmp);
 		print TMP $conllHash{$sentenceId};		
-		open(DESR,"-|" ,"cat $tmp | desr_client $DESR_PORT"  ) || die "parsing failed: $!\n";
+		open(DESR,"-|" ,"cat $tmp | desr_client $desrPort2"  ) || die "parsing failed: $!\n";
 
 		while (<DESR>)
 		{
