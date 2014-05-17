@@ -64,10 +64,11 @@ my %config;
 # general options
 my $help = 0;
 my $config;
-my $infile;
+my $file;
 my $nbest = 3;
 my $direction;
-my $outformat; # default nbest: print nbest translations, other valid options are: tagged (wapiti), parsed (desr), conll2xml, rdisamb, coref, vdisamb, svm, lextrans, morphdisamb, prepdisamb, intraTrans, interTrans, intraOrder, interOrder, morph, words
+my $outformat = 'nbest'; # default nbest: print nbest translations, other valid options are: tagged (wapiti), parsed (desr), conll2xml, rdisamb, coref, vdisamb, svm, lextrans, morphdisamb, prepdisamb, intraTrans, interTrans, intraOrder, interOrder, morph, words
+my $informat = 'senttok'; # TODO: default better be plain..?
 # options for tagging
 my $wapiti;
 my $wapitiModel;
@@ -107,26 +108,56 @@ my $helpstring = "Usage: main.pm [options]
 available options are:
 --help|-h: print this help
 --config|-c: indicate config (necessary for first run, later optional)
---infile|-i: infile with text to translate (optional, if no infile given, reads input from stdin)
+--file|-f: file with text to translate (optional, if no file given, reads input from stdin)
 --direction|-d: translation direction, valid options are esqu (Spanish-Quechua) and esde (Spanish-German)
 --outformat|-o: output format, valid formats are:
-\t tagged: (wapiti crf)
-\t parsed: (conll)
-\t conll2xml: (xml created from parsing)
-\t rdisamb: (xml disambiguated relative clauses, only with direction esqu)
-\t coref: (xml after coreference resolution for subjects, only with direction esqu)
-\t vdisamb: (xml disambiguated verb forms, rule-based, only with direction esqu)
-\t svm: (xml disambiguated verb forms with libsvm, only with direction esqu)
-\t lextrans: (xml after lexical transfer)
-\t morphdisamb: (xml after morphological disambiguation)
-\t prepdisamb: (xml after preposition disambiguation)
-\t intraTrans: (xml after intrachunk syntactic transfer)
-\t interTrans: (xml after interchunk syntactic transfer)
-\t intraOrder: (xml after intrachunk syntactic ordering)
-\t interOrder: (xml after interchunk syntactic ordering)
-\t morph: (input for morphological generation)
-\t words: (output of morphological generation)
-\t nbest: (nbest translation options = default)
+\t senttok: plain text, one sentence per line
+\t tagged: wapiti crf
+\t conll: tagged conll
+\t parsed: desr output (conll)
+\t conll2xml: xml created from parsing
+\t rdisamb: xml disambiguated relative clauses, only with direction esqu
+\t coref: xml after coreference resolution for subjects, only with direction esqu
+\t vdisamb: xml disambiguated verb forms, rule-based, only with direction esqu
+\t svm: xml disambiguated verb forms with libsvm, only with direction esqu
+\t lextrans: xml after lexical transfer
+\t semtags: xml after insertion of semantic tags
+\t lexdisamb: xml after lexical disambiguation (rule-based)
+\t morphdisamb: xml after morphological disambiguation
+\t prepdisamb: xml after preposition disambiguation
+\t intraTrans: xml after intrachunk syntactic transfer
+\t interTrans: xml after interchunk syntactic transfer
+\t node2chunk: xml after promotion of nodes to chunks
+\t node2sibling: xml after promtion of child chunks to siblings
+\t intraOrder: xml after intrachunk syntactic ordering
+\t interOrder: xml after interchunk syntactic ordering
+\t morph: input for morphological generation
+\t words: output of morphological generation
+\t nbest: nbest translation options = default
+--informat|-i: input format, valid formats are: 
+\t plain: plain text
+\t senttok: plain text, one sentence per line (=default)
+\t tagged: wapiti crf
+\t conll: tagged conll
+\t parsed: desr output (conll)
+\t conll2xml: xml created from parsing
+\t rdisamb: xml disambiguated relative clauses, only with direction esqu
+\t coref: xml after coreference resolution for subjects, only with direction esqu
+\t vdisamb: xml disambiguated verb forms, rule-based, only with direction esqu
+\t svm: xml disambiguated verb forms with libsvm, only with direction esqu
+\t lextrans: xml after lexical transfer
+\t semtags: xml after insertion of semantic tags
+\t lexdisamb: xml after lexical disambiguation (rule-based)
+\t morphdisamb: xml after morphological disambiguation
+\t prepdisamb: xml after preposition disambiguation
+\t intraTrans: xml after intrachunk syntactic transfer
+\t interTrans: xml after interchunk syntactic transfer
+\t node2chunk: xml after promotion of nodes to chunks
+\t node2sibling: xml after promtion of child chunks to siblings
+\t intraOrder: xml after intrachunk syntactic ordering
+\t interOrder: xml after interchunk syntactic ordering
+\t morph: input for morphological generation
+\t words: output of morphological generation
 Options for tagging:
 --wapiti: path to wapiti executables
 --wapitiModel: path to wapiti model (for tagging)
@@ -164,13 +195,22 @@ Options for translation, es-de: TODO
 --deModel: German langugage model
 \n";
 
+my %mapInputFormats = (
+	'plain' => 1, 'senttok'	=> 2,  'tagged'	=> 4, 'conll'	=> 5, 'parsed'	=> 6, 'conll2xml'	=> 7,
+	'rdisamb' => 8, 'coref'	=> 9, 'vdisamb'	=> 10, 'svm'	=> 11, 'lextrans'	=> 12, 'semtags'	=> 13, 'lexdisamb'	=> 14,
+	'morphdisamb' => 15, 'prepdisamb'	=> 16, 'intraTrans'	=> 17, 'interTrans'	=> 18, 'node2chunk'	=> 19, 'child2sibling'	=> 20,
+	'interOrder'=> 21, 'intraOrder'=> 22, 'morph'=> 23, 'words'=> 24, 'nbest' => 25
+);
+
+
 GetOptions(
 	# general options
     'help|h'     => \$help,
     'config|c=s'    => \$config,
-    'infile|i=s'    => \$infile,
+    'file|f=s'    => \$file,
     'direction|d=s' => \$direction,
     'outformat|o=s' => \$outformat,
+    'informat|i=s' => \$informat,
     # options for tagging
 	'wapiti=s'    => \$wapiti,
 	'wapitiModel=s'    => \$wapitiModel,
@@ -258,27 +298,72 @@ GetOptions(
 			$outformat = $config{'outformat'};
 		} or $outformat ='nbest';
 	}
-	if($outformat !~ /^nbest|tagged|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|morphdisamb|prepdisamb|intraTrans|interTrans|intraOrder|interOrder|morph|words$/){
+	if($outformat !~ /^senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words|nbest$/){
 		die "Invalid output format $outformat, valid options are:
-\t tagged: (wapiti crf)
-\t parsed: (conll)
-\t conll2xml: (xml created from parsing)
-\t rdisamb: (xml disambiguated relative clauses, only with direction esqu)
-\t coref: (xml after coreference resolution for subjects, only with direction esqu)
-\t vdisamb: (xml disambiguated verb forms, rule-based, only with direction esqu)
-\t svm: (xml disambiguated verb forms with libsvm, only with direction esqu)
-\t lextrans: (xml after lexical transfer)
-\t morphdisamb: (xml after morphological disambiguation)
-\t prepdisamb: (xml after preposition disambiguation)
-\t intraTrans: (xml after intrachunk syntactic transfer)
-\t interTrans: (xml after interchunk syntactic transfer)
-\t intraOrder: (xml after intrachunk syntactic ordering)
-\t interOrder: (xml after interchunk syntactic ordering)
-\t morph: (input for morphological generation)
-\t words: (output of morphological generation)
-\t nbest: (nbest translation options = default)";
+\t senttok: plain text, one sentence per line
+\t tagged: wapiti crf
+\t conll: tagged conll
+\t parsed: desr output (conll)
+\t conll2xml: xml created from parsing
+\t rdisamb: xml disambiguated relative clauses, only with direction esqu
+\t coref: xml after coreference resolution for subjects, only with direction esqu
+\t vdisamb: xml disambiguated verb forms, rule-based, only with direction esqu
+\t svm: xml disambiguated verb forms with libsvm, only with direction esqu
+\t lextrans: xml after lexical transfer
+\t semtags: xml after insertion of semantic tags
+\t lexdisamb: xml after lexical disambiguation (rule-based)
+\t morphdisamb: xml after morphological disambiguation
+\t prepdisamb: xml after preposition disambiguation
+\t intraTrans: xml after intrachunk syntactic transfer
+\t interTrans: xml after interchunk syntactic transfer
+\t node2chunk: xml after promotion of nodes to chunks
+\t node2sibling: xml after promtion of child chunks to siblings
+\t intraOrder: xml after intrachunk syntactic ordering
+\t interOrder: xml after interchunk syntactic ordering
+\t morph: input for morphological generation
+\t words: output of morphological generation
+\t nbest: nbest translation options = default";
+	}
+	## check if input format is a valid option, and check if it's set in config, if neither --informat nor informat= set in config: set to 'senttok'
+	if($informat eq ''){
+		eval{
+			$informat = $config{'informat'};
+		} or $informat ='senttok';
+	}
+	if($informat !~ /^plain|senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words$/ ){
+				die "Invalid input format $informat, valid options are:
+\t plain: plain text
+\t senttok: plain text, one sentence per line (=default)
+\t crf: crf instances, freeling output (morphological analysis)
+\t tagged: wapiti crf
+\t conll: tagged conll
+\t parsed: desr output (conll)
+\t conll2xml: xml created from parsing
+\t rdisamb: xml disambiguated relative clauses, only with direction esqu
+\t coref: xml after coreference resolution for subjects, only with direction esqu
+\t vdisamb: xml disambiguated verb forms, rule-based, only with direction esqu
+\t svm: xml disambiguated verb forms with libsvm, only with direction esqu
+\t lextrans: xml after lexical transfer
+\t semtags: xml after insertion of semantic tags
+\t lexdisamb: xml after lexical disambiguation (rule-based)
+\t morphdisamb: xml after morphological disambiguation
+\t prepdisamb: xml after preposition disambiguation
+\t intraTrans: xml after intrachunk syntactic transfer
+\t interTrans: xml after interchunk syntactic transfer
+\t node2chunk: xml after promotion of nodes to chunks
+\t node2sibling: xml after promtion of child chunks to siblings
+\t intraOrder: xml after intrachunk syntactic ordering
+\t interOrder: xml after interchunk syntactic ordering
+\t morph: input for morphological generation
+\t words: output of morphological generation";
 	}
 
+	my $startTrans = $mapInputFormats{$informat};
+	if($startTrans > $mapInputFormats{$outformat}){
+		die "cannot process input from format=$informat to format=$outformat (wrong direction)!!\n";
+	}
+		
+	
 		## TODO check if freeling and desr are running on indicated ports (for desr: further below, before parsing starts)
 		# #test if squoia_analyzer is already listening
 		# set freeling parameters
@@ -298,48 +383,82 @@ GetOptions(
 		my $analyzerRunning = `ps ax | grep -v grep | grep "squoia_analyzer.*$freelingConf.*port=$freelingPort"` ;
 		if($analyzerRunning eq ''){
 			print STDERR "no instance of squoia_analyzer server running on port $freelingPort with config $freelingConf\n";
-			print STDERR "starting squoia_analyzer server on port $freelingPort with config $freelingConf...\n";
-			system("squoia_analyzer -f $freelingConf --outf=crfmorf --server --port=$freelingPort 2> logcrfmorf &");
+			print STDERR "starting squoia_analyzer server on port $freelingPort with config $freelingConf, logging to $path/logs/logcrfmorf...\n";
+			system("squoia_analyzer -f $freelingConf --outf=crfmorf --server --port=$freelingPort 2> $path/logs/logcrfmorf &");
 			while(`echo "test" | analyzer_client "$freelingPort" 2>/dev/null` eq ''){
 				print STDERR "starting squoia_analyzer, please wait...\n";
 				sleep 10;
 			}
 			print STDERR "squoia_analyzer now ready\n";
 		}
-		
+	
+
 ###-----------------------------------end read commandline arguments -----------------------------------------------####
 
 ###-----------------------------------begin analysis Spanish input -----------------------------------------------####
-### tagging: if input file given with --infile or -i:
-# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
-if($matxin eq '' or $wapiti eq '' or $wapitiModel eq ''){
-	eval{
-		$matxin = $config{'matxin'}; $wapiti = $config{'wapiti'}; $wapitiModel = $config{'wapitiModel'};
+if($startTrans<2)
+{ }# TODO sentence tokenization
+
+if($startTrans<4)
+{
+	### tagging: if input file given with --file or -f:
+	# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
+	if($matxin eq '' or $wapiti eq '' or $wapitiModel eq ''){
+		eval{
+			$matxin = $config{'matxin'}; $wapiti = $config{'wapiti'}; $wapitiModel = $config{'wapitiModel'};
+		}
+		or die "Tagging failed, location of matxin, wapiti or wapiti model not indicated!\n";;
 	}
-	or die "Tagging failed, location of matxin, wapiti or wapiti model not indicated!\n";;
+	if($file ne ''){
+				open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+		}
+		# if no file given, expect input on stdin
+		else{
+			# solution without open2, use tmp file
+			my $tmp = $path."/tmp/tmp.txt";
+			open (TMP, ">:encoding(UTF-8)", $tmp);
+			while(<>){print TMP $_;}
+			open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+			close(TMP);
+	}
+	## if output format is 'crf': print and exit
+	if($outformat eq 'tagged'){
+		while(<CONLL>){print;}
+		close(CONLL);
+		exit;
+	}
 }
-if($infile ne ''){
-			open(CONLL,"-|" ,"cat $infile | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+my $conllLines;
+if($startTrans<5){
+	# if starting translation process from here, read file or stdin
+	if($startTrans==4){
+		if($file){
+			open (FILE, "<", $file);
+			$conllLines = squoia::crf2conll::main(\*FILE);
+			close(FILE);
+		}
+		else{
+			#### convert to wapiti crf to conll for desr parser
+			binmode(STDIN);
+			$conllLines = squoia::crf2conll::main(\*STDIN);
+		}
+
 	}
-	# if no infile given, expect input on stdin
 	else{
-		# solution without open2, use tmp file
-		my $tmp = $path."/tmp/tmp.txt";
-		open (TMP, ">:encoding(UTF-8)", $tmp);
-		while(<>){print TMP $_;}
-		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
-		close(TMP);
+		#### convert to wapiti crf to conll for desr parser
+		$conllLines = squoia::crf2conll::main(\*CONLL);
+		close(CONLL);
+	}
+	
+	if($outformat eq 'conll'){
+		foreach my $line (@$conllLines){
+			print STDOUT $line;
+		}
+		exit;
+	}
 }
-## if output format is 'crf': print and exit
-if($outformat eq 'tagged'){
-	while(<CONLL>){print;}
-	close(CONLL);
-	exit;
-}
-
-#### convert to wapiti crf to conll for desr parser
-my $conllLines = squoia::crf2conll::main(\*CONLL);
-
+if($startTrans <7)
+{
 	#### Check if parser servers are already running (2 instances with different models)
 	# first instance
 	# set desr parameters
@@ -359,12 +478,13 @@ my $conllLines = squoia::crf2conll::main(\*CONLL);
 		my $desr1Running = `ps ax | grep -v grep | grep "desr_server.*$desrModel1.*--port $desrPort1"` ;
 		if($desr1Running eq ''){
 			print STDERR "no instance of desr_server running on port $desrPort1 with model $desrModel1\n";
-			print STDERR "starting desr_server on port $desrPort1 with model $desrModel1...\n";
-			system("desr_server -m $desrModel1 --port $desrPort1 2> logdesr_1 &");
+			print STDERR "starting desr_server on port $desrPort1 with model $desrModel1, logging to $path/logs/logdesr_1...\n";
+			system("desr_server -m $desrModel1 --port $desrPort1 2> $path/logs/logdesr_1 &");
 			print STDERR "desr_server with model 1 = $desrModel1 started on port $desrPort1...\n";
 			sleep 1;
 		}
-	# same for 2nd instance
+		
+		# same for 2nd instance
 		if($desrPort2 eq ''){
 			eval{
 				$desrPort2 = $config{'desrPort2'};
@@ -381,44 +501,77 @@ my $conllLines = squoia::crf2conll::main(\*CONLL);
 		my $desr2Running = `ps ax | grep -v grep | grep "desr_server.*$desrModel2.*--port $desrPort2"` ;
 		if($desr2Running eq ''){
 			print STDERR "no instance of desr_server running on port $desrPort2 with model $desrModel2\n";
-			print STDERR "starting desr_server on port $desrPort2 with model $desrModel2...\n";
-			system("desr_server -m $desrModel2 --port $desrPort2 2> logdesr_2 &");
+			print STDERR "starting desr_server on port $desrPort2 with model $desrModel2, logging to $path/logs/logdesr_2...\n";
+			system("desr_server -m $desrModel2 --port $desrPort2 2> $path/logs/logdesr_2 &");
 			print STDERR "desr_server with model 2 = $desrModel2 started on port $desrPort2...\n";
 			sleep 1;
 		}
 
-### parse tagged text:
-my $tmp2 = $path."/tmp/tmp.conll";
-		# !! not again ">:encoding(UTF-8)", results in 'doble' encoded strings!!
-		open (TMP2, ">", $tmp2);
-		foreach my $l (@$conllLines){print TMP2 $l;}
+	if($startTrans <6)
+	{
+		### parse tagged text:
+		my $tmp2;
+		# if starting translation process from here, read file or stdin
+		if($startTrans ==5 && $file ne ''){
+			$tmp2 = $file;
+		}
+		else{
+			$tmp2 = $path."/tmp/tmp.conll";
+			open (TMP2, ">", $tmp2);
+			# if starting translation from here and no file given: read from stdin
+			if($startTrans ==5){
+				binmode(STDIN);
+				while(<>){
+					print TMP2 $_;
+				}
+			}
+			else{		
+				foreach my $l (@$conllLines){print TMP2 $l;}
+			}
+		}
 		open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort1"  ) || die "parsing failed: $!\n";
 		close(TMP2);
+		
+		## if output format is 'conll': print and exit
+		if($outformat eq 'parsed'){
+			while(<CONLL2>){print;}
+			close(CONLL2);
+			exit;
+		}
+	}
 
-## if output format is 'conll': print and exit
-if($outformat eq 'parsed'){
-	while(<CONLL2>){print;}
+	my $dom;
+
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==6){
+		if($file ne ''){
+			open (FILE, "<", $file);
+			$dom = squoia::conll2xml::main(\*FILE, $desrPort2);
+			close(FILE);
+		}
+		else{
+			binmode(STDIN);
+			$dom = squoia::conll2xml::main(\*STDIN, $desrPort2);
+		}
+	}
+	#### create xml from conll
+	$dom = squoia::conll2xml::main(\*CONLL2, $desrPort2);
 	close(CONLL2);
-	exit;
-}
-#### create xml from conll
-my $dom = squoia::conll2xml::main(\*CONLL2, $desrPort2);
-close(CONLL2);
-
-## if output format is 'conll2xml': print and exit
-if($outformat eq 'conll2xml'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	
+	## if output format is 'conll2xml': print and exit
+	if($outformat eq 'conll2xml'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
 ####-----------------------------------end analysis Spanish input -----------------------------------------------####
 
 
 ####-----------------------------------begin preprocessing for es-qu -----------------------------------------------####
-#
 #### verb disambiguation
-if($direction eq 'esqu')
+if($direction eq 'esqu' && $startTrans < 11)
 {
 	# retrieve semantic verb and noun lexica for verb disambiguation
 	my %nounLex = (); my %verbLex = ();
@@ -476,38 +629,71 @@ if($direction eq 'esqu')
 		%verbLex   = %{ Storable::retrieve("$path/storage/VerbLex") };	
 	}
 
-squoia::esqu::disambRelClauses::main(\$dom, \%nounLex, \%verbLex);
+if($startTrans < 8)
+{
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==7){
+		if($file ne '' ){
+				open (FILE, "<", $file);
+				$dom  = XML::LibXML->load_xml( IO => *FILE );
+				close(FILE);
+		}
+		else{
+			binmode(STDIN);
+			$dom  = XML::LibXML->load_xml( IO => *STDIN);
+		}
+	}
+	squoia::esqu::disambRelClauses::main(\$dom, \%nounLex, \%verbLex);
 
-## if output format is 'rdisamb': print and exit
-if($outformat eq 'rdisamb'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	## if output format is 'rdisamb': print and exit
+	if($outformat eq 'rdisamb'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
-squoia::esqu::coref::main(\$dom);
-
-## if output format is 'coref': print and exit
-if($outformat eq 'coref'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+if($startTrans < 9)
+{
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==8){
+		$dom = &readXML();
+	}
+	squoia::esqu::coref::main(\$dom);
+	
+	## if output format is 'coref': print and exit
+	if($outformat eq 'coref'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
+if($startTrans < 10)
+{
 	# check if evidentiality set
 	if($evidentiality ne 'direct' or $evidentiality eq 'indirect'){
 		print STDERR "Invalid value  '$evidentiality' for option --evidentiality, possible values are 'direct' or 'indirect'. Using default (=direct)\n";
 		$evidentiality = 'direct';
 	}
-squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex);
+	
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==9){
+		$dom = &readXML();
+	}
+	
+	squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex);
 
-## if output format is 'vdisamb': print and exit
-if($outformat eq 'vdisamb'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	## if output format is 'vdisamb': print and exit
+	if($outformat eq 'vdisamb'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
+if($startTrans< 11)
+{
 	# get verb lemma classes from word net for disambiguation with svm
 	my %verbLemClasses=();
 	
@@ -571,14 +757,20 @@ if($outformat eq 'vdisamb'){
 		} or die "No VerbLemClasses in $path/storage found! specify --wordnet to read in the Spanish verb synsets from wordnet (indicate path to mcr30). ";
 		%verbLemClasses =  %{ retrieve("$path/storage/verbLemClasses") };
 	}
+	
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==10){
+		$dom = &readXML();
+	}
 
-squoia::esqu::svm::main(\$dom, \%verbLex, \%verbLemClasses);
+ 	squoia::esqu::svm::main(\$dom, \%verbLex, \%verbLemClasses);
 
-## if output format is 'svm': print and exit
-if($outformat eq 'svm'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	## if output format is 'svm': print and exit
+	if($outformat eq 'svm'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 ## test svm module
 #    if($options{'t'}){
@@ -591,32 +783,59 @@ if($outformat eq 'svm'){
 
 ####-----------------------------------begin translation ---------------------------------------------------------####
 #### lexical transfer with matxin-xfer-lex
-## check if $bidix is set
-if($bidix eq ''){
-	eval{
-		$bidix = $config{'bidix'};
+if($startTrans <12)
+{
+	## check if $bidix is set
+	if($bidix eq ''){
+		eval{
+			$bidix = $config{'bidix'};
+		}
+		or die "Lexical transfer failed, location of bilingual dictionary not indicated (set option bidix in confix or use --bidix on commandline)!\n";
 	}
-	or die "Lexical transfer failed, location of bilingual dictionary not indicated (set option bidix in confix or use --bidix on commandline)!\n";
-}
-my $tmp3 = $path."/tmp/tmp.xml";
-		# !! not again ">:encoding(UTF-8)", results in 'doble' encoded strings!!
+	
+	# if starting translation process from here, read file or stdin
+	my $tmp3;
+	if($startTrans ==11 && $file ne ''){
+		$tmp3 = $file;
+	}
+	else{
+		$tmp3 = $path."/tmp/tmp.xml";
 		open (TMP3, ">", $tmp3);
-		my $docstring = $dom->toString(1);
-		print TMP3 $docstring;
-		open(XFER,"-|" ,"cat $tmp3 | $matxin/matxin-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
-		close(TMP3);
+		# if starting translation from here and no file given: read from stdin
+		if($startTrans ==11){
+			binmode(STDIN);
+			while(<>){
+				print TMP3 $_;
+			}
+		}else{		
+			my $docstring = $dom->toString(1);
+			print TMP3 $docstring;
+		}
+	}
+	# check if $matxin is set, otherwise exit
+	if($matxin eq ''){
+		eval{
+			$matxin = $config{'matxin'}; 
+		}or die "Lexical failed, location of matxin-xfer-lex not indicated! Set option matxin in config or use --matxin on commandline\n";;
+	}
 
-$dom = XML::LibXML->load_xml( IO => *XFER );
-close(XFER);
+	open(XFER,"-|" ,"cat $tmp3 | $matxin/matxin-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
+	close(TMP3);
+	
+	$dom = XML::LibXML->load_xml( IO => *XFER );
+	close(XFER);
 
-## if output format is 'lextrans': print and exit
-if($outformat eq 'lextrans'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	## if output format is 'lextrans': print and exit
+	if($outformat eq 'lextrans'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
 #### insert semantic tags: 
+if($startTrans <13)
+{
 ## if semantic dictionary or new config file given on commandline: read into %semanticLexicone
 	my %semanticLexicon =();
 	my $readrules=0;
@@ -652,9 +871,22 @@ if($outformat eq 'lextrans'){
 		%semanticLexicon = %{ retrieve("$path/storage/SemLex") };
 	}
 	
-squoia::insertSemanticTags::main(\$dom, \%semanticLexicon);
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==12){
+		$dom = &readXML();
+	}
+	squoia::insertSemanticTags::main(\$dom, \%semanticLexicon);
+	
+	if($outformat eq 'semtags'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
 
 ### lexical disambiguation, rule-based
+if($startTrans <14)
+{
 	my %lexSel =();
 	$readrules=0;
 	
@@ -695,9 +927,22 @@ squoia::insertSemanticTags::main(\$dom, \%semanticLexicon);
 		%lexSel = %{ retrieve("$path/storage/LexSelRules") };
 	}
 	
-squoia::semanticDisamb::main(\$dom, \%lexSel);
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==13){
+		$dom = &readXML();
+	}
+	squoia::semanticDisamb::main(\$dom, \%lexSel);
+	
+	if($outformat eq 'lexdisamb'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
 
 ### morphological disambiguation, rule-based
+if($startTrans <15)
+{
 	my %morphSel = ();
 	$readrules=0;
 	
@@ -740,15 +985,22 @@ squoia::semanticDisamb::main(\$dom, \%lexSel);
 		%morphSel = %{ retrieve("$path/storage/MorphSelRules") };
 	}
 
-squoia::morphDisamb::main(\$dom, \%morphSel);
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==14){
+		$dom = &readXML();
+	}
+	squoia::morphDisamb::main(\$dom, \%morphSel);
 
-## if output format is 'morphdisamb': print and exit
-if($outformat eq 'morphdisamb'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	## if output format is 'morphdisamb': print and exit
+	if($outformat eq 'morphdisamb'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
+if($startTrans <16)
+{
 ### preposition disambiguation, rule-based
 	my %prepSel = ();
 	$readrules =0;
@@ -797,15 +1049,22 @@ if($outformat eq 'morphdisamb'){
 		} or print STDERR "Failed to retrieve preposition selection rules, set option PrepFile=path in config or use --prepDisamb path on commandline to indicate preposition disambiguation rules!\n";
 		%prepSel = %{ retrieve("$path/storage/PrepSelRules") };
 	}
-squoia::prepositionDisamb::main(\$dom, \%prepSel);
-
-## if output format is 'prepdisamb': print and exit
-if($outformat eq 'prepdisamb'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==15){
+		$dom = &readXML();
+	}
+	squoia::prepositionDisamb::main(\$dom, \%prepSel);
+	
+	## if output format is 'prepdisamb': print and exit
+	if($outformat eq 'prepdisamb'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
-
+if($startTrans <17)
+{
 ### syntactic transfer, intra-chunks (from nodes to chunks and vice versa)
 	my %intraConditions = ();
 	$readrules =0;
@@ -848,16 +1107,23 @@ if($outformat eq 'prepdisamb'){
 		%intraConditions = %{ retrieve("$path/storage/IntraTransferRules") };
 	}
 	
-squoia::intrachunkTransfer::main(\$dom, \%intraConditions);
-
-## if output format is 'intraTrans': print and exit
-if($outformat eq 'intraTrans'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==16){
+		$dom = &readXML();
+	}
+	squoia::intrachunkTransfer::main(\$dom, \%intraConditions);
+	
+	## if output format is 'intraTrans': print and exit
+	if($outformat eq 'intraTrans'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
 ### syntactic transfer, inter-chunks (move/copy information between chunks)
+if($startTrans <18)
+{
 	my %interConditions =();
 	$readrules =0;
 	
@@ -898,16 +1164,23 @@ if($outformat eq 'intraTrans'){
 		%interConditions = %{ retrieve("$path/storage/InterTransferRules") };
 	}
 	
-squoia::interchunkTransfer::main(\$dom, \%interConditions);
-
-## if output format is 'interTrans': print and exit
-if($outformat eq 'interTrans'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==17){
+		$dom = &readXML();
+	}
+	squoia::interchunkTransfer::main(\$dom, \%interConditions);
+	
+	## if output format is 'interTrans': print and exit
+	if($outformat eq 'interTrans'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
 ### promote nodes to chunks, if necessary
+if($startTrans <19)
+{
 	my %targetAttributes;
 	my %sourceAttributes;
 	my @nodes2chunksRules;
@@ -949,9 +1222,22 @@ if($outformat eq 'interTrans'){
 		@nodes2chunksRules = @{ retrieve("$path/storage/nodes2chunksRules") };
 	}
 	
-squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==18){
+		$dom = &readXML();
+	}
+	squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
+	## if output format is 'node2chunk': print and exit
+	if($outformat eq 'node2chunk'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
 
 ### rules to promote child chunks to siblings (necessary for ordering Quechua internally headed relative clauses)
+if($startTrans <20)
+{
 	my %targetAttributes;
 	$readrules =0;
 	
@@ -988,166 +1274,211 @@ squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
 		%targetAttributes = %{ retrieve("$path/storage/child2siblingRules") };
 	}
 	
-squoia::childToSiblingChunk::main(\$dom, \%targetAttributes);
-
-### number chunks recursively
-squoia::recursiveNumberChunks::main(\$dom);
-
-### order chunks relative to each other (interchunk ordering)
-	my %interOrderRules = ();
-	$readrules=0;
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==19){
+		$dom = &readXML();
+	}
+	squoia::childToSiblingChunk::main(\$dom, \%targetAttributes);
 	
-	if($interOrder ne ''){
-		$readrules =1;
-		print STDERR "reading interchunk order rules from $interOrder\n";
-		open (INTERORDERFILE, "<:encoding(UTF-8)", $interOrder) or die "Can't open $interOrder : $!";
+	## if output format is 'node2chunk': print and exit
+	if($outformat eq 'child2sibling'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
 	}
-	elsif($config ne ''){
-		$readrules =1;
-		$interOrder= $config{"ChunkOrderFile"} or die "interchunk order rules file not specified in config, insert ChunkOrderFile='path to interchunk order rules' or use option --interOrder!";
-		print STDERR "reading interchunk order rules from file specified in $config: $interOrder\n";
-		open (INTERORDERFILE, "<:encoding(UTF-8)", $interOrder) or die "Can't open $interOrder as specified in config: $!";
+}
+if($startTrans <21)
+{
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==20){
+		$dom = &readXML();
 	}
-	if($readrules){
-		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
-		while (<INTERORDERFILE>) {
+	### number chunks recursively
+	squoia::recursiveNumberChunks::main(\$dom);
+	
+	### order chunks relative to each other (interchunk ordering)
+		my %interOrderRules = ();
+		$readrules=0;
+		
+		if($interOrder ne ''){
+			$readrules =1;
+			print STDERR "reading interchunk order rules from $interOrder\n";
+			open (INTERORDERFILE, "<:encoding(UTF-8)", $interOrder) or die "Can't open $interOrder : $!";
+		}
+		elsif($config ne ''){
+			$readrules =1;
+			$interOrder= $config{"ChunkOrderFile"} or die "interchunk order rules file not specified in config, insert ChunkOrderFile='path to interchunk order rules' or use option --interOrder!";
+			print STDERR "reading interchunk order rules from file specified in $config: $interOrder\n";
+			open (INTERORDERFILE, "<:encoding(UTF-8)", $interOrder) or die "Can't open $interOrder as specified in config: $!";
+		}
+		if($readrules){
+			#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+			while (<INTERORDERFILE>) {
+					chomp;
+					s/#.*//;     # no comments
+					s/^\s+//;    # no leading white
+					s/\s+$//;    # no trailing white
+					next if /^$/;	# skip if empty line
+					my ($parentchunk, $childchunks, $order ) = split( /\s*\t+\s*/, $_, 3 );
+					# split childchunks into array and remove empty fields resulted from split
+					$childchunks =~ s/(xpath{[^}]+),([^}]+})/\1XPATHCOMMA\2/g;	#replace comma within xpath with special string so it will not get split
+					my @childsWithEmptyFields = split( /\s*,\s*/, $childchunks);
+					foreach my $ch (@childsWithEmptyFields) {
+						$ch =~ s/XPATHCOMMA/,/g;	#replace comma back
+					}
+					my @childs = grep {$_} @childsWithEmptyFields; 
+					
+					# fill hash, key is head condition(s)
+					my @value = ( \@childs, $order);
+					$interOrderRules{$parentchunk} = \@value;
+			}
+			store \%interOrderRules, "$path/storage/interchunkOrderRules";
+			close(INTERORDERFILE);
+		}
+		else{
+			## if neither --interOrder nor --config given: check if interchunk order rules are already available in storage
+			eval{
+				retrieve("$path/storage/interchunkOrderRules");
+			} or print STDERR "Failed to retrieve interchunk order rules, set option ChunkOrderFile=path in config or use --interOrder path on commandline to indicate interchunk order rules!\n";
+			%interOrderRules = %{ retrieve("$path/storage/interchunkOrderRules") };
+		}
+	squoia::interchunkOrder::main(\$dom, \%interOrderRules);
+
+	## if output format is 'interOrder': print and exit
+	if($outformat eq 'interOrder'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
+
+if($startTrans <22)
+{
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==21){
+		$dom = &readXML();
+	}
+	## linear odering of chunks
+	squoia::linearOrderChunk::main(\$dom);
+	
+	## ordering of nodes in chunks (intrachunk order)
+	my %intraOrderRules = ();
+		$readrules=0;
+		
+		if($intraOrder ne ''){
+			$readrules =1;
+			print STDERR "reading intrachunk order rules from $intraOrder\n";
+			open (INTRAORDERFILE, "<:encoding(UTF-8)", $intraOrder) or die "Can't open $intraOrder : $!";
+		}
+		elsif($config ne ''){
+			$readrules =1;
+			$intraOrder= $config{"NodeOrderFile"} or die "intrachunk order rules file not specified in config, insert NodeOrderFile='path to intrachunk order rules' or use option --intraOrder!";
+			print STDERR "reading intrachunk order rules from file specified in $config: $intraOrder\n";
+			open (INTRAORDERFILE, "<:encoding(UTF-8)", $intraOrder) or die "Can't open $intraOrder as specified in config: $!";
+		}
+		if($readrules){
+			#read semantic information from file into a hash (lemma, semantic Tag,  condition)
+			while (<INTRAORDERFILE>) {
 				chomp;
 				s/#.*//;     # no comments
 				s/^\s+//;    # no leading white
 				s/\s+$//;    # no trailing white
 				next if /^$/;	# skip if empty line
-				my ($parentchunk, $childchunks, $order ) = split( /\s*\t+\s*/, $_, 3 );
-				# split childchunks into array and remove empty fields resulted from split
-				$childchunks =~ s/(xpath{[^}]+),([^}]+})/\1XPATHCOMMA\2/g;	#replace comma within xpath with special string so it will not get split
-				my @childsWithEmptyFields = split( /\s*,\s*/, $childchunks);
-				foreach my $ch (@childsWithEmptyFields) {
-					$ch =~ s/XPATHCOMMA/,/g;	#replace comma back
-				}
+				my ($head, $childnodes, $order ) = split( /\s*\t+\s*/, $_, 3 );
+			
+				$head =~ s/\s//g;	# no whitespace within condition
+				$childnodes =~ s/\s//g;	# no whitespace within condition
+			
+				# split childnodes into array and remove empty fields resulted from split
+				my @childsWithEmptyFields = split( ',', $childnodes);
 				my @childs = grep {$_} @childsWithEmptyFields; 
 				
+				#print STDERR @childs[0];
 				# fill hash, key is head condition(s)
 				my @value = ( \@childs, $order);
-				$interOrderRules{$parentchunk} = \@value;
+				$intraOrderRules{$head} = \@value;
+			}
+			store \%intraOrderRules, "$path/storage/intrachunkOrderRules";
+			close(INTRAORDERFILE);
 		}
-		store \%interOrderRules, "$path/storage/interchunkOrderRules";
-		close(INTERORDERFILE);
-	}
-	else{
-		## if neither --interOrder nor --config given: check if interchunk order rules are already available in storage
-		eval{
-			retrieve("$path/storage/interchunkOrderRules");
-		} or print STDERR "Failed to retrieve interchunk order rules, set option ChunkOrderFile=path in config or use --interOrder path on commandline to indicate interchunk order rules!\n";
-		%interOrderRules = %{ retrieve("$path/storage/interchunkOrderRules") };
-	}
-	
-squoia::interchunkOrder::main(\$dom, \%interOrderRules);
-
-## if output format is 'interOrder': print and exit
-if($outformat eq 'interOrder'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
-}
-
-## linear odering of chunks
-squoia::linearOrderChunk::main(\$dom);
-
-## ordering of nodes in chunks (intrachunk order)
-my %intraOrderRules = ();
-	$readrules=0;
-	
-	if($intraOrder ne ''){
-		$readrules =1;
-		print STDERR "reading intrachunk order rules from $intraOrder\n";
-		open (INTRAORDERFILE, "<:encoding(UTF-8)", $intraOrder) or die "Can't open $intraOrder : $!";
-	}
-	elsif($config ne ''){
-		$readrules =1;
-		$intraOrder= $config{"NodeOrderFile"} or die "intrachunk order rules file not specified in config, insert NodeOrderFile='path to intrachunk order rules' or use option --intraOrder!";
-		print STDERR "reading intrachunk order rules from file specified in $config: $intraOrder\n";
-		open (INTRAORDERFILE, "<:encoding(UTF-8)", $intraOrder) or die "Can't open $intraOrder as specified in config: $!";
-	}
-	if($readrules){
-		#read semantic information from file into a hash (lemma, semantic Tag,  condition)
-		while (<INTRAORDERFILE>) {
-			chomp;
-			s/#.*//;     # no comments
-			s/^\s+//;    # no leading white
-			s/\s+$//;    # no trailing white
-			next if /^$/;	# skip if empty line
-			my ($head, $childnodes, $order ) = split( /\s*\t+\s*/, $_, 3 );
-		
-			$head =~ s/\s//g;	# no whitespace within condition
-			$childnodes =~ s/\s//g;	# no whitespace within condition
-		
-			# split childnodes into array and remove empty fields resulted from split
-			my @childsWithEmptyFields = split( ',', $childnodes);
-			my @childs = grep {$_} @childsWithEmptyFields; 
-			
-			#print STDERR @childs[0];
-			# fill hash, key is head condition(s)
-			my @value = ( \@childs, $order);
-			$intraOrderRules{$head} = \@value;
+		else{
+			## if neither --intraOrder nor --config given: check if intrachunk order rules are already available in storage
+			eval{
+				retrieve("$path/storage/intrachunkOrderRules");
+			} or print STDERR "Failed to retrieve intrachunk order rules, set option NodeOrderFile=path in config or use --intraOrder path on commandline to indicate intrachunk order rules!\n";
+			%intraOrderRules = %{ retrieve("$path/storage/intrachunkOrderRules") };
 		}
-		store \%intraOrderRules, "$path/storage/intrachunkOrderRules";
-		close(INTRAORDERFILE);
-	}
-	else{
-		## if neither --intraOrder nor --config given: check if intrachunk order rules are already available in storage
-		eval{
-			retrieve("$path/storage/intrachunkOrderRules");
-		} or print STDERR "Failed to retrieve intrachunk order rules, set option NodeOrderFile=path in config or use --intraOrder path on commandline to indicate intrachunk order rules!\n";
-		%intraOrderRules = %{ retrieve("$path/storage/intrachunkOrderRules") };
-	}
-	
-squoia::intrachunkOrder::main(\$dom, \%intraOrderRules);
 
-## if output format is 'intraOrder': print and exit
-if($outformat eq 'intraOrder'){
-	my $docstring = $dom->toString(3);
-	print STDOUT $docstring;
-	exit;
+	squoia::intrachunkOrder::main(\$dom, \%intraOrderRules);
+	
+	## if output format is 'intraOrder': print and exit
+	if($outformat eq 'intraOrder'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
 }
 
 ###-----------------------------------end translation ---------------------------------------------------------####
 
 ###-----------------------------------begin morphological generation ---------------------------------------------------------####
 ## quz
-my $sentFile;
-if($direction eq 'esqu')
+my $sentFile = "$path/tmp/tmp.words";
+my $morphfile = "$path/tmp/tmp.morph";
+if($direction eq 'esqu' && $startTrans< 24)
 {
-	### esqu: get morph tags from xml, use
-	my $morphfile = "$path/tmp/tmp.morph";
-	squoia::esqu::xml2morph::main(\$dom, $morphfile);
-	
-	## if output format is 'morph': print and exit
-	if($outformat eq 'morph'){
-		system("cat $morphfile");
-		exit;
-	}
-	
-	## generate word forms with xfst
-	## check if $morphgenerator is set
-	if($morphgenerator eq ''){
-		eval{
-			$morphgenerator = $config{'morphgenerator'};
+	if($startTrans < 23)
+	{
+		# if starting translation process from here, read file or stdin
+		if($startTrans ==22){
+			$dom = &readXML();
 		}
-		or die "Morphological generation failed, location of xfst generator not indicated (set option morphgenerator in confix or use --morphgenerator on commandline)!\n";
-	}
-			open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $morphgenerator "  ) || die "morphological generation failed: $!\n";		
-			$sentFile = "$path/tmp/tmp.words";
-			open (SENT, ">:encoding(UTF-8)", $sentFile);
-			binmode(XFST, ':utf8');
-			while(<XFST>){
-				print SENT $_;
-			}
-			close(XFST);
-			
-		## if output format is 'words': print and exit
-		if($outformat eq 'words'){
-			system("cat $sentFile");
+		squoia::esqu::xml2morph::main(\$dom, $morphfile);
+		
+		## if output format is 'morph': print and exit
+		if($outformat eq 'morph'){
+			system("cat $morphfile");
 			exit;
 		}
+	}
+	if($startTrans<24)
+	{
+		## generate word forms with xfst
+		## check if $morphgenerator is set
+		if($morphgenerator eq ''){
+			eval{
+				$morphgenerator = $config{'morphgenerator'};
+			}
+			or die "Morphological generation failed, location of xfst generator not indicated (set option morphgenerator in confix or use --morphgenerator on commandline)!\n";
+		}
+				# if starting with a morph file: take file as input or stdin TODO
+				if($startTrans == 23 && $file ne ''){
+					if($file ne ''){
+						$morphfile = $file;
+					}
+					else{
+						open (MORPH, ">:encoding(UTF-8)", $morphfile);
+						while(<>){
+							print MORPH $_;
+						}
+						close(MORPH);
+					}
+				}
+				open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $morphgenerator "  ) || die "morphological generation failed: $!\n";		
+				open (SENT, ">:encoding(UTF-8)", $sentFile);
+				binmode(XFST, ':utf8');
+				while(<XFST>){
+					print SENT $_;
+				}
+				close(XFST);
+				close(SENT);
+				
+			## if output format is 'words': print and exit
+			if($outformat eq 'words'){
+				system("cat $sentFile");
+				exit;
+			}
+	}
 }
 ## de
 elsif($direction eq 'esde'){
@@ -1169,6 +1500,20 @@ if($direction eq 'esqu')
 		}
 		or die "Ranking failed, location of quechua language model not indicated (set option quModel in confix or use --quModel on commandline)!\n";
 	}
+	
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==24){
+		if($file ne ''){
+			$sentFile = $file;
+		}
+		else{
+			open (SENT, ">:encoding(UTF-8)", $sentFile);
+			while(<>){
+				print SENT $_;
+			}
+			close(SENT);
+		}
+	}
 	system("$path/squoia/esqu/outputSentences -m $quModel -n $nbest -i $sentFile");
 }
 ## de
@@ -1180,4 +1525,18 @@ elsif($direction eq 'esde'){
 
 END{
 	## done!! cleanup?
+}
+
+
+sub readXML{
+	if($file ne '' ){
+				open (FILE, "<", $file);
+				$dom  = XML::LibXML->load_xml( IO => *FILE );
+				close(FILE);
+		}
+		else{
+			binmode(STDIN);
+			$dom  = XML::LibXML->load_xml( IO => *STDIN);
+		}
+	return $dom;
 }
