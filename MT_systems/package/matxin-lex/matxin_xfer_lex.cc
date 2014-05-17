@@ -349,9 +349,18 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     {
       // Beste kasuetan:
       // Transferentzia lexikoa egiten da, lem, pos, mi, cas eta sub attributuak sortuz.
-      trad = get_translation(attrib(reader, "lem"),
-                             attrib(reader, "mi"), unknown);
 
+     // changed squoia: if number 'Z' or 'DN' ->  use word form for lookup, not lemma
+     wstring mi = attrib(reader, "mi");
+     if(mi.substr(0,1) == L"Z" or mi.substr(0,2) == L"DN"){
+    	 trad = get_translation(attrib(reader, "form"),
+    	                              attrib(reader, "mi"), unknown);
+     }
+     else{
+         trad = get_translation(attrib(reader, "lem"),
+                                attrib(reader, "mi"), unknown);
+     }
+    // trad = get_translation(attrib(reader, "lem"), attrib(reader, "mi"), unknown);
       
       if (unknown) {
         attributes += L" unknown='transfer'";
@@ -506,10 +515,21 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
     {
       // Transferentzia lexikoa egiten da,
       // lem eta pos atributuen balio berriak sortuz
-      vector<wstring> trad = get_translation(attrib(reader, "lem"),
-                                             attrib(reader, "mi"),
-                                             unknown);
+//      vector<wstring> trad = get_translation(attrib(reader, "lem"),
+//                                             attrib(reader, "mi"),
+//                                             unknown);
+     // changed squoia: if number 'Z' or 'DN' ->  use word form for lookup, not lemma
+      wstring mi = attrib(reader, "mi");
+      vector<wstring> trad;
+      if(mi.substr(0,1) == L"Z" or mi.substr(0,2) == L"DN"){
+        	 trad = get_translation(attrib(reader, "form"),
+        	                              attrib(reader, "mi"), unknown);
 
+      }
+      else{
+             trad = get_translation(attrib(reader, "lem"),
+                                    attrib(reader, "mi"), unknown);
+      }
       if (trad.size() > 1) {
         synonyms = getsyn(trad);
       }
