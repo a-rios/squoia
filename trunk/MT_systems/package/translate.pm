@@ -396,8 +396,8 @@ GetOptions(
 ###-----------------------------------end read commandline arguments -----------------------------------------------####
 
 ###-----------------------------------begin analysis Spanish input -----------------------------------------------####
-if($startTrans<2)
-{ }# TODO sentence tokenization
+#if($startTrans<2)
+#{ } TODO sentence tokenization
 
 if($startTrans<4)
 {
@@ -457,6 +457,7 @@ if($startTrans<5){
 		exit;
 	}
 }
+my $dom;
 if($startTrans <7)
 {
 	#### Check if parser servers are already running (2 instances with different models)
@@ -540,8 +541,6 @@ if($startTrans <7)
 		}
 	}
 
-	my $dom;
-
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==6){
 		if($file ne ''){
@@ -554,9 +553,12 @@ if($startTrans <7)
 			$dom = squoia::conll2xml::main(\*STDIN, $desrPort2);
 		}
 	}
-	#### create xml from conll
-	$dom = squoia::conll2xml::main(\*CONLL2, $desrPort2);
-	close(CONLL2);
+	else{
+		#### create xml from conll
+		$dom = squoia::conll2xml::main(\*CONLL2, $desrPort2);
+		close(CONLL2);
+		
+	}
 	
 	## if output format is 'conll2xml': print and exit
 	if($outformat eq 'conll2xml'){
