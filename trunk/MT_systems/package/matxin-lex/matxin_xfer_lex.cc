@@ -308,9 +308,12 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
   wstring nodes, pos;
   wstring subnodes;
   wstring synonyms;
+  wstring synonyms2;
   wstring child_attributes;
   wstring tagName = getTagName(reader);
   vector<wstring> trad;
+  // squoia: ambiguos lemmas-> need 2nd trad
+  vector<wstring> trad2;
   vector<wstring> select;
   int tagType = xmlTextReaderNodeType(reader);
   bool head_child = false;
@@ -349,19 +352,31 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     {
       // Beste kasuetan:
       // Transferentzia lexikoa egiten da, lem, pos, mi, cas eta sub attributuak sortuz.
+      // trad = get_translation(attrib(reader, "lem"), attrib(reader, "mi"), unknown);
 
      // changed squoia: if number 'Z' or 'DN' ->  use word form for lookup, not lemma
-     wstring mi = attrib(reader, "mi");
-     if(mi.substr(0,1) == L"Z" or mi.substr(0,2) == L"DN"){
-    	 trad = get_translation(attrib(reader, "form"),
-    	                              attrib(reader, "mi"), unknown);
+
+     if(attrib(reader, "mi").substr(0,1) == L"Z" or attrib(reader, "mi").substr(0,2) == L"DN"){
+    	 trad = get_translation(attrib(reader, "form"), attrib(reader, "mi"), unknown);
      }
      else{
-         trad = get_translation(attrib(reader, "lem"),
-                                attrib(reader, "mi"), unknown);
+    	 // squoia: split ambiguous lemmas from tagging (e.g. asiento: asentir/asentar) and lookup both
+    	 int split =attrib(reader, "lem").find(L"/");
+    	 if(split != wstring::npos){
+    		 wcerr << attrib(reader, "lem") << L" split at: " << split << L"\n";
+    		 wstring lem1 = attrib(reader, "lem").substr(0,split);
+    		 wstring lem2 = attrib(reader, "lem").substr(split+1,wstring::npos);
+    		 wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
+
+    		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
+    		 trad2 = get_translation(lem2, attrib(reader, "mi"), unknown);
+    	 }
+    	 else{
+             trad = get_translation(attrib(reader, "lem"),attrib(reader, "mi"), unknown);
+    	 }
      }
-    // trad = get_translation(attrib(reader, "lem"), attrib(reader, "mi"), unknown);
       
+
       if (unknown) {
         attributes += L" unknown='transfer'";
       }
@@ -376,6 +391,9 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
 	if (trad.size() > 1) {
 	  synonyms = getsyn(trad);
 	}
+	if (trad2.size() > 1) {
+		  synonyms2 = getsyn(trad2);
+		}
 
 	if (select[0].find(L"\\") != wstring::npos) {
 	  subnodes = multiNodes(reader, select[0], attributes);
@@ -406,10 +424,11 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     }
 
     if (xmlTextReaderIsEmptyElement(reader) == 1 and
-        subnodes == L"" && synonyms == L"")
+        subnodes == L"" && synonyms == L""  && synonyms2 == L"")
     {
       // NODE hutsa bada (<NODE .../>), NODE hutsa sortzen da eta
       // momentuko NODEarekin bukatzen dugu.
+    	// empty nodes (?)
       nodes += attributes + L"/>\n";
       return std::make_pair(nodes,pos);
     }
@@ -417,14 +436,14 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     {
       // NODE hutsa bada (<NODE .../>), NODE hutsa sortzen da eta
       // momentuko NODEarekin bukatzen dugu.
-      nodes += attributes + L">\n" + synonyms + subnodes + L"</NODE>\n";
+      nodes += attributes + L">\n" + synonyms +synonyms2 + subnodes + L"</NODE>\n";
       return std::make_pair(nodes,pos);
     }
     else
     {
       // bestela NODE hasiera etiketaren bukaera idatzi eta
       // etiketa barrukoa tratatzera pasatzen gara.
-      nodes += attributes + L">\n" + synonyms + subnodes;
+      nodes += attributes + L">\n" + synonyms + synonyms2 + subnodes;
     }
   }
   else
@@ -488,7 +507,7 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
 // NODEaren azpian dauden NODEak irakurri eta prozesatzen ditu. NODE horiek ez dira CHUNKaren burua izango (head=false)
 wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
 {
-  wstring nodes, synonyms, child_attributes;
+  wstring nodes, synonyms, synonyms2, child_attributes;
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
   bool unknown = false;
@@ -519,19 +538,34 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
 //                                             attrib(reader, "mi"),
 //                                             unknown);
      // changed squoia: if number 'Z' or 'DN' ->  use word form for lookup, not lemma
-      wstring mi = attrib(reader, "mi");
       vector<wstring> trad;
-      if(mi.substr(0,1) == L"Z" or mi.substr(0,2) == L"DN"){
+      vector<wstring> trad2;
+      if(attrib(reader, "mi").substr(0,1) == L"Z" or attrib(reader, "mi").substr(0,2) == L"DN"){
         	 trad = get_translation(attrib(reader, "form"),
         	                              attrib(reader, "mi"), unknown);
 
       }
       else{
-             trad = get_translation(attrib(reader, "lem"),
-                                    attrib(reader, "mi"), unknown);
-      }
+    	  // squoia: split ambiguous lemmas from tagging (e.g. asiento: asentir/asentar) and lookup both
+    	     	 int split =attrib(reader, "lem").find(L"/");
+    	     	 if(split != wstring::npos){
+    	     		 wcerr << attrib(reader, "lem") << L" split at: " << split << L"\n";
+    	     		 wstring lem1 = attrib(reader, "lem").substr(0,split);
+    	     		 wstring lem2 = attrib(reader, "lem").substr(split+1,wstring::npos);
+    	     		 wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
+
+    	     		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
+    	     		 trad2 = get_translation(lem2, attrib(reader, "mi"), unknown);
+    	     	 }
+    	     	 else{
+    	              trad = get_translation(attrib(reader, "lem"),attrib(reader, "mi"), unknown);
+    	     	 }
+       }
       if (trad.size() > 1) {
         synonyms = getsyn(trad);
+      }
+      if (trad2.size() > 1) {
+             synonyms2 = getsyn(trad2);
       }
       attributes += L" " + text_allAttrib_except(text_allAttrib_except(trad[0], L"mi"), L"lem");
       attributes += L" lem='_" + text_attrib(trad[0], L"lem") + L"_'";
@@ -549,7 +583,7 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
                     write_xml(attrib(reader, "mi")) + L"'";
     }
 
-    if (xmlTextReaderIsEmptyElement(reader) == 1 && synonyms == L"")
+    if (xmlTextReaderIsEmptyElement(reader) == 1 && synonyms == L"" && synonyms2 == L"")
     {
       //Elementu hutsa bada (<NODE .../>) NODE hutsa sortzen da eta NODE honetkin bukatu dugu.
       nodes += attributes + L"/>\n";
@@ -558,7 +592,7 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
     else
     {
       //Ez bada NODE hutsa hasiera etiketa ixten da.
-      nodes += attributes + L">\n" + synonyms;
+      nodes += attributes + L">\n" + synonyms + synonyms2;
     }
   }
   else
