@@ -2,6 +2,7 @@
 
 ## IMPORTANT TODO's: 
 # - ambiguous lemmas from tagging... generate both forms? 
+# done, changed in matxin-xfer-lex
 # - atm: input needs to be 1 sentence per line: 
 #   --> for automatic sentence splitting, do we want to use FreeLing or the sentence splitter from the Lingua package?
 
