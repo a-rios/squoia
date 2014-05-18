@@ -22,7 +22,7 @@ sub main{
 	
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		{	
-			print STDERR "inserting semantic tags in sentence ".$sentence->getAttribute('ref')."\n";
+			#print STDERR "inserting semantic tags in sentence ".$sentence->getAttribute('ref')."\n";
 			my @NODES = $sentence->findnodes('descendant::NODE');
 			push(@NODES,$sentence->findnodes('descendant::SYN'));
 			foreach my $wordnode (@NODES) 

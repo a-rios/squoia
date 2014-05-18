@@ -322,7 +322,7 @@ define AS [(HonAff) (AS=1) (HonAff) (AS=2) (AS=3)^{0,2} (HonAff) (AS=4)(HonAff) 
        ##########
        
        # alternatives: '/', note if lemmas were ambiguous in tagging, there may be 2 roots separated with /
-       define Root [ ("/") [VocRoot|ConsRoot|Numbers|UPPER|%_|"-"|" "|"&"|"/"]* (":"):0];
+       define Root [ ("/") [VocRoot|ConsRoot|Numbers|UPPER|%_|"-"|" "|"&"|"/"|"%"]* (":"):0];
 
 ######################################################################
 ######################################################################

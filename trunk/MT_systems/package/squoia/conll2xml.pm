@@ -159,6 +159,11 @@ sub main{
 	     		$lem = 'ir';
 	     	}
 	     }
+	     # if 'hay' tagged as VA -> changed to VM!
+	     if($eaglesTag eq 'VAIP3S0' && $word =~ /^[Hh]ay$/){
+	     		$eaglesTag = 'VMIP3S0' ;
+	     		print STDERR "new tag for hay: $eaglesTag\n";
+	     }
 	     # freeling error for reirse, two lemmas, reír/reir -> change to reír
 	     if($lem =~ /\/reir/){
 				$lem = 'reír';
