@@ -108,7 +108,7 @@ sub main{
 				    			$outLine .= "\t";
 				    		}
 				    		else{
-				    			$outLine .= "/".$lem."\t";
+				    			$outLine .= "##".$lem."\t";
 				    			#print "/".$lem."\t";
 				    		}
 				    	}
@@ -124,7 +124,7 @@ sub main{
 				    		my $lem = @rows[$i-1];
 		    				unless($printedLems =~ /#\Q$lem\E#/){
 		    					$printedLems .= "#$lem#";
-		    					$outLine .= "/".$lem;
+		    					$outLine .= "##".$lem;
 		    				}
 				    	}
 		    		}

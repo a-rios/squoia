@@ -361,15 +361,19 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
      }
      else{
     	 // squoia: split ambiguous lemmas from tagging (e.g. asiento: asentir/asentar) and lookup both
-    	 int split =attrib(reader, "lem").find(L"/");
+    	 // TODO: insert some attribute to know which slem belongs to which lem!
+    	 int split =attrib(reader, "lem").find(L"#");
     	 if(split != wstring::npos){
-    		 wcerr << attrib(reader, "lem") << L" split at: " << split << L"\n";
+    		 wcerr << attrib(reader, "lem") << L"1 split at: " << split << L"\n";
     		 wstring lem1 = attrib(reader, "lem").substr(0,split);
-    		 wstring lem2 = attrib(reader, "lem").substr(split+1,wstring::npos);
+    		 wstring lem2 = attrib(reader, "lem").substr(split+2,wstring::npos);
     		 wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
 
     		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
     		 trad2 = get_translation(lem2, attrib(reader, "mi"), unknown);
+
+    		 wcerr << L"trad size lem1 " <<trad.size() << L" trad size lem2:" << trad2[0] << L"\n";
+
     	 }
     	 else{
              trad = get_translation(attrib(reader, "lem"),attrib(reader, "mi"), unknown);
@@ -382,7 +386,7 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
       }
       else 
       {
-	if (trad.size() > 1) {
+	if (trad.size() > 1 or (trad.size() ==1 and trad2.size() > 0 )) {
 	  select = lexical_selection(parent_attribs, attributes, trad); 
 	} else {
 	  select = trad;
@@ -393,7 +397,12 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
 	}
 	if (trad2.size() > 1) {
 		  synonyms2 = getsyn(trad2);
-		}
+	}
+	else if (trad2.size() == 1) {
+		// add translation of 2nd lemma to synonyms
+		wstring trad2_str = L"<SYN " + trad2[0] + L" />\n";
+		synonyms2 += trad2_str;
+	}
 
 	if (select[0].find(L"\\") != wstring::npos) {
 	  subnodes = multiNodes(reader, select[0], attributes);
@@ -547,11 +556,11 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
       }
       else{
     	  // squoia: split ambiguous lemmas from tagging (e.g. asiento: asentir/asentar) and lookup both
-    	     	 int split =attrib(reader, "lem").find(L"/");
+    	     	 int split =attrib(reader, "lem").find(L"#");
     	     	 if(split != wstring::npos){
-    	     		 wcerr << attrib(reader, "lem") << L" split at: " << split << L"\n";
+    	     		 wcerr << attrib(reader, "lem") << L"2 split at: " << split << L"\n";
     	     		 wstring lem1 = attrib(reader, "lem").substr(0,split);
-    	     		 wstring lem2 = attrib(reader, "lem").substr(split+1,wstring::npos);
+    	     		 wstring lem2 = attrib(reader, "lem").substr(split+2,wstring::npos);
     	     		 wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
 
     	     		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
@@ -561,12 +570,17 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
     	              trad = get_translation(attrib(reader, "lem"),attrib(reader, "mi"), unknown);
     	     	 }
        }
-      if (trad.size() > 1) {
+      if (trad.size() > 1 or (trad.size() ==1 and trad2.size() > 0 )) {
         synonyms = getsyn(trad);
       }
       if (trad2.size() > 1) {
              synonyms2 = getsyn(trad2);
       }
+      else if (trad2.size() == 1) {
+      		// add translation of 2nd lemma to synonyms
+      		wstring trad2_str = L"<SYN " + trad2[0] + L" />\n";
+      		synonyms2 += trad2_str;
+      	}
       attributes += L" " + text_allAttrib_except(text_allAttrib_except(trad[0], L"mi"), L"lem");
       attributes += L" lem='_" + text_attrib(trad[0], L"lem") + L"_'";
       attributes += L" mi='" + attrib(reader, "mi") + L"'";
