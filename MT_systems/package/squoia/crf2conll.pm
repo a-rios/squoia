@@ -98,17 +98,19 @@ sub main{
 		    	}
 		    	elsif(scalar(@indexes)>1){
 		    		# if more than one lemma associated with this tag: write lemma1/lemma2 (but check if they're the same!)
+		    		# if one lemma is a digit and the other is a word (1,uno) -> if form is word, use form, if form is digit, use digit
 		    		my $printedLems = '';
+		    		my $lemmastring='';
 		    		foreach my $i (@indexes){
 		    			#last lemma
 				    	if($i == @indexes[-1])
 				    	{
 				    		my $lem = @rows[$i-1];
 				    		if($printedLems =~ /#\Q$lem\E#/){
-				    			$outLine .= "\t";
+				    			$lemmastring .= "\t";
 				    		}
 				    		else{
-				    			$outLine .= "##".$lem."\t";
+				    			$lemmastring .= "##".$lem."\t";
 				    			#print "/".$lem."\t";
 				    		}
 				    	}
@@ -117,17 +119,22 @@ sub main{
 				    		my $lem = @rows[$i-1];
 		    				unless($printedLems =~ /#\Q$lem\E#/){
 		    					$printedLems .= "#$lem#";
-		    					$outLine .= $lem;
+		    					$lemmastring .= $lem;
 		    				}
 				    	}
 				    	else{
 				    		my $lem = @rows[$i-1];
 		    				unless($printedLems =~ /#\Q$lem\E#/){
 		    					$printedLems .= "#$lem#";
-		    					$outLine .= "##".$lem;
+		    					$lemmastring .= "##".$lem;
 		    				}
 				    	}
 		    		}
+		    		if($lemmastring =~ /\d+##\w/){
+		    			my ($digit, $numberword) = ($lemmastring =~ m/(\d+)##(.+)/);
+		    			$lemmastring = (@rows[0] =~ /\d+/) ? $digit."\t" : $numberword;
+		    		}
+		    		$outLine .= $lemmastring;
 		    	}
 		    	# if no index -> wapiti assigned a tag that wasn't suggested by freeling -> number or proper name, should only have one lemma
 		    	# -> @rows[4] should be ZZZ, if not: don't know which lemma...

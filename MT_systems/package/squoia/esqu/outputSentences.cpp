@@ -129,8 +129,12 @@ void printSents(std::map< int, std::map< int, std::string > >sentMatrix, std::ve
 						}
 					}
 			}
-			// print probability for this sentence
-			std::cout << " p:" << sortedOpts[s].first << std::endl;
+			// if cutoff >1 print probability for this sentence, otherwise just a newline
+		    (CUTOFF>1) ? std::cout << " p:" << sortedOpts[s].first << std::endl : std::cout << "\n";
+	}
+	// if cutoff > 1, print empty line between sentences
+	if(CUTOFF>1){
+		std::cout << "\n";
 	}
 }
 

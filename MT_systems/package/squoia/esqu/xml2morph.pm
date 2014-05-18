@@ -329,6 +329,10 @@ sub main{
 		 					if($addverbmi =~ /\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss/ and $verbmi =~ /\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss/){
 		 						$verbmi =~ s/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss)//g;
 		 					}
+		 					# with 'hay que' as complement clause (dice que hay que trabajar) -> results in Inf+Acc AND Obl+possessive -> delete +Inf
+							if($addverbmi =~ /\+Inf/ && $addverbmi =~ /\+Obl/){
+								$addverbmi =~ s/\+Inf//g;
+							}
 		 					$verbmi = $verbmi.$add_mi.$addverbmi;
 		 					push(@verbmis, $verbmi);
 		 				}
@@ -339,10 +343,15 @@ sub main{
 				 			my $lemma = $syn->getAttribute('lem');
 				 			if($syn->getAttribute('lem') eq 'unspecified' or $syn->getAttribute('unknown') eq 'transfer')
 				 			{
-				 				$lemma = $chunk->findvalue('child::NODE/@slem');
-				 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
-				 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
-				 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+				 				# check if this SYN has an slem (ambiguous lemmas from tagging), else take slem from parent NODE
+				 				$lemma = $syn->getAttribute('slem') ? $syn->getAttribute('slem'): $chunk->findvalue('child::NODE/@slem');
+				 				#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
+				 				if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
+				 				unless($lemma =~ /_/){
+					 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
+					 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
+					 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+				 				}
 				 				# if no source lemma because morph analysis didn't recognize the word: use the word form..
 				 				elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
 				 				
@@ -468,6 +477,8 @@ sub main{
 					 			my $lemma = $auxsyn->getAttribute('lem');
 					 			if($auxsyn->getAttribute('lem') eq 'unspecified' or $auxsyn->getAttribute('unknown') eq 'transfer'){
 					 				$lemma = $chunk->findvalue('child::NODE/@slem');
+					 				#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
+				 					if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
 					 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
 					 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
 					 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
@@ -681,7 +692,7 @@ sub main{
 	 				&printNode($adjective,$chunk);
 	 				print OUTFILE "\n";	
 	 			} 
-	 			my ($cc) = $chunk->findnodes('child::NODE/NODE[@smi="CC" and @lem]');
+	 			my ($cc) = $chunk->findnodes('child::NODE/NODE[@smi="CC" and @lem and not(@lem="unspecified")]');
 	 			# if there's a conjunction with 'lem' (not 'y'/'o'), print that too
 	 			if($cc){
 	 				print OUTFILE $cc->getAttribute('lem').":\n";
@@ -750,6 +761,10 @@ sub printNode{
  		#print STDOUT  $node->getAttribute('slem').":".$node->getAttribute('mi');
  		if($node->hasAttribute('slem')){
  			$lemma = $node->getAttribute('slem');
+ 			#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
+			if($lemma =~ /##/ && $node->getAttribute('tradlem') ne ''){
+				$lemma = $node->getAttribute('tradlem');
+			}
  		}
  		# if this is a syn node -> take slem from parent node
  		else{
@@ -1191,7 +1206,7 @@ sub cleanVerbMi{
 	my $verbmi = $_[0];
 	my $chunk=$_[1];
 	my $syn=$_[2];
-	
+
 	my ($verbprs) = ($verbmi =~ m/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)/ );
 	my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
 	my ($objprs) = ($verbmi =~ m/\+([12]\.[PS][lg])(\.Incl|\.Excl)?\.Obj/ );
@@ -1265,6 +1280,10 @@ sub cleanVerbMi{
 	if($syn->getAttribute('transitivity') eq 'rflx' && $verbmi =~ /Rflx/ && $syn->getAttribute('add_mi') ne '+Rflx')
 	{	
 		 	$verbmi =~ s/\+(\+)?Rflx//g;
+	}
+	# with 'hay que' as complement clause (dice que hay que trabajar) -> results in Inf+Acc AND Obl+possessive -> delete +Inf
+	if($verbmi =~ /\+Inf/ && $verbmi =~ /\+Obl/){
+		$verbmi =~ s/\+Inf//g;
 	}
 	
 	return $verbmi;			

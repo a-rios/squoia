@@ -154,6 +154,15 @@ wstring get_dict_attributes(const wstring full)
   return result;
 }
 
+wstring getsyn2lems(vector<wstring> translations, wstring slem)
+{
+  wstring output;
+
+  for (size_t i = 0; i < translations.size(); i++)
+    output += L"<SYN " + translations[i] + L" slem='" + slem + L"' />\n";
+
+  return output;
+}
 
 wstring getsyn(vector<wstring> translations)
 {
@@ -314,6 +323,7 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
   vector<wstring> trad;
   // squoia: ambiguos lemmas-> need 2nd trad
   vector<wstring> trad2;
+  wstring lem1, lem2;
   vector<wstring> select;
   int tagType = xmlTextReaderNodeType(reader);
   bool head_child = false;
@@ -364,10 +374,10 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     	 // TODO: insert some attribute to know which slem belongs to which lem!
     	 int split =attrib(reader, "lem").find(L"#");
     	 if(split != wstring::npos){
-    		 wcerr << attrib(reader, "lem") << L"1 split at: " << split << L"\n";
-    		 wstring lem1 = attrib(reader, "lem").substr(0,split);
-    		 wstring lem2 = attrib(reader, "lem").substr(split+2,wstring::npos);
-    		 wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
+    		// wcerr << attrib(reader, "lem") << L"1 split at: " << split << L"\n";
+    		 lem1 = attrib(reader, "lem").substr(0,split);
+    		 lem2 = attrib(reader, "lem").substr(split+2,wstring::npos);
+    		// wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
 
     		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
     		 trad2 = get_translation(lem2, attrib(reader, "mi"), unknown);
@@ -392,16 +402,25 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
 	  select = trad;
 	}
 
-	if (trad.size() > 1) {
+	if (trad.size() > 1 && trad2.size() == 0) {
 	  synonyms = getsyn(trad);
 	}
+	// if there was a second lemma translated: add slem to synonyms to avoid confusion
+	else if (trad.size() > 1 && trad2.size() > 0) {
+		  synonyms = getsyn2lems(trad, lem1);
+
+	}
 	if (trad2.size() > 1) {
-		  synonyms2 = getsyn(trad2);
+		  synonyms2 = getsyn2lems(trad2,lem2);
+		  //  add tradlem='lem1' to node, so that we know which lemma belongs to the first translation
+		  attributes += L" tradlem='" + lem1 + L"' ";
 	}
 	else if (trad2.size() == 1) {
 		// add translation of 2nd lemma to synonyms
-		wstring trad2_str = L"<SYN " + trad2[0] + L" />\n";
+		wstring trad2_str = L"<SYN " + trad2[0] +  L" slem='" + lem2 + L"' />\n";
 		synonyms2 += trad2_str;
+		//  add tradlem='lem1' to node, so that we know which lemma belongs to the first translation
+		attributes += L" tradlem='" + lem1 + L"' ";
 	}
 
 	if (select[0].find(L"\\") != wstring::npos) {
@@ -517,6 +536,7 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
 wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
 {
   wstring nodes, synonyms, synonyms2, child_attributes;
+  wstring lem1, lem2;
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
   bool unknown = false;
@@ -559,8 +579,8 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
     	     	 int split =attrib(reader, "lem").find(L"#");
     	     	 if(split != wstring::npos){
     	     		 wcerr << attrib(reader, "lem") << L"2 split at: " << split << L"\n";
-    	     		 wstring lem1 = attrib(reader, "lem").substr(0,split);
-    	     		 wstring lem2 = attrib(reader, "lem").substr(split+2,wstring::npos);
+    	     		 lem1 = attrib(reader, "lem").substr(0,split);
+    	     		 lem2 = attrib(reader, "lem").substr(split+2,wstring::npos);
     	     		 wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
 
     	     		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
@@ -570,16 +590,25 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
     	              trad = get_translation(attrib(reader, "lem"),attrib(reader, "mi"), unknown);
     	     	 }
        }
-      if (trad.size() > 1 or (trad.size() ==1 and trad2.size() > 0 )) {
+
+      if (trad.size() > 1 and trad2.size() ==0 ) {
         synonyms = getsyn(trad);
       }
+      // if there was a second lemma translated: add slem to synonyms to avoid confusion
+      else if (trad.size() > 1 && trad2.size() > 0) {
+             synonyms = getsyn2lems(trad, lem1);
+       }
       if (trad2.size() > 1) {
-             synonyms2 = getsyn(trad2);
+    	  synonyms2 = getsyn2lems(trad2,lem2);
+    	  //  add tradlem='lem1' to node, so that we know which lemma belongs to the first translation
+    	  attributes += L" tradlem='" + lem1 + L"' ";
       }
       else if (trad2.size() == 1) {
-      		// add translation of 2nd lemma to synonyms
-      		wstring trad2_str = L"<SYN " + trad2[0] + L" />\n";
-      		synonyms2 += trad2_str;
+    	  // add translation of 2nd lemma to synonyms
+    	  wstring trad2_str = L"<SYN " + trad2[0] +  L" slem='" + lem2 + L"' />\n";
+    	  synonyms2 += trad2_str;
+    	  //add tradlem='lem1' to node, so that we know which lemma belongs to the first translation
+    	  attributes += L" tradlem='" + lem1 + L"' ";
       	}
       attributes += L" " + text_allAttrib_except(text_allAttrib_except(trad[0], L"mi"), L"lem");
       attributes += L" lem='_" + text_attrib(trad[0], L"lem") + L"_'";
