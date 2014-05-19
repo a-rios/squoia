@@ -1,8 +1,0 @@
-#nominalisierende Suffixe, die nicht wieder zu verbalisieren sind
-
-"+Perf" : {sqa}
-|"+DS" : {pti}
-|"+SSsim" : {stin}
-|"+SS" : {spa}
-
-;
