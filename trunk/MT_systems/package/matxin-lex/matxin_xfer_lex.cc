@@ -578,10 +578,10 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
     	  // squoia: split ambiguous lemmas from tagging (e.g. asiento: asentir/asentar) and lookup both
     	     	 int split =attrib(reader, "lem").find(L"#");
     	     	 if(split != wstring::npos){
-    	     		 wcerr << attrib(reader, "lem") << L"2 split at: " << split << L"\n";
+    	     		//wcerr << attrib(reader, "lem") << L"2 split at: " << split << L"\n";
     	     		 lem1 = attrib(reader, "lem").substr(0,split);
     	     		 lem2 = attrib(reader, "lem").substr(split+2,wstring::npos);
-    	     		 wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
+    	     		// wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
 
     	     		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
     	     		 trad2 = get_translation(lem2, attrib(reader, "mi"), unknown);

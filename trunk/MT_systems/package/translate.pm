@@ -5,6 +5,7 @@
 # done, changed in matxin-xfer-lex
 # - atm: input needs to be 1 sentence per line: 
 #   --> for automatic sentence splitting, do we want to use FreeLing or the sentence splitter from the Lingua package?
+# -> freeling gseht besser us, erkennt titel...
 
 package squoia::translate;
 our $path;

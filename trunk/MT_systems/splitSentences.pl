@@ -21,10 +21,10 @@ while(<>){
        # print $splitter->split($text);
         my @sentences = $splitter->split_array($text);
         foreach my $s (@sentences){
-        	unless($s =~ /^[\t\s]*$/){
+        	#unless($s =~ /^[\t\s]*$/){
         		#print $s." #EOS\n";
         		print $s."\n";
-        	}
+        	#}
         }
         
         
