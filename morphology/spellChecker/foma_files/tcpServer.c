@@ -16,7 +16,7 @@
 #define LINE_LIMIT 262144
 #define FLOOKUP_PORT 8888
 #define DIR_UP 1
-#define UDP_MAX 65535
+
 
 
 char *usagestring = "Usage: tcpServer [-l med_limit] [-c cutoff] [-P port number] <analyzer.bin> <chain.bin> <spellcheckUnificado.bin>\n";
@@ -46,7 +46,7 @@ struct lookup_chain {
     static struct fsm *net;
     static fsm_read_binary_handle fsrh;
     static struct lookup_chain *chain_head, *chain_tail, *chain_new, *chain_pos;
-    static int  numnets = 0, echo = 1, apply_alternates = 1, index_flag_states = 0, index_cutoff = 0, index_mem_limit = INT_MAX , index_arcs = 0, direction = DIR_UP, buffered_output = 1, results, port_number = FLOOKUP_PORT;
+    static int  numnets = 0, echo = 1, apply_alternates = 1, index_flag_states = 0, index_cutoff = 0, index_mem_limit = INT_MAX , index_arcs = 0, direction = DIR_UP, results, port_number = FLOOKUP_PORT;
     //static char  *server_address = NULL, *line, *serverstring = NULL;
     struct sockaddr_in serv_addr; 
     
@@ -73,9 +73,6 @@ int main(int argc, char *argv[])
     char *chainname, *analyzername, *medname;
     struct fsm *net;
     INFILE = stdin;
-    
-    extern g_med_limit;
-    extern g_med_cutoff;
     
     extern g_med_limit;
     extern g_med_cutoff;
