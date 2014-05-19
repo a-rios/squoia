@@ -27,8 +27,7 @@
 | [{ayllu} "[" "VRoot" "]" "[" "=juntar,abrigar" "]" ] :  {ayllu} 
 | [{aypu} "[" "VRoot" "]" "[" "=repartir" "]" ] :  {aypu} 
 | [{ayti} "[" "VRoot" "]" "[" "=enjuagar,cubrir" "]" ] :  {ayti}
-| [{aywi} "[" "VRoot" "]" "[" "=lavar" "]" ] :  {aywi} 
-| [{chacha} "[" "VRoot" "]" "[" "=derrumbar" "]" ] :  {chacha} 
+| [{aywi} "[" "VRoot" "]" "[" "=lavar" "]" ] :  {aywi}  
 | [{chakcha} "[" "VRoot" "]" "[" "=alcanzar" "]" ] :  {chakcha} 
 | [{chakchu} "[" "VRoot" "]" "[" "=dispersar" "]" ] :  {chakchu} 
 | [{chakra} "[" "VRoot" "]" "[" "=cultivar" "]" ] :  {chakra} 

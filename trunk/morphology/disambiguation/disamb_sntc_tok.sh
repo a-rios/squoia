@@ -12,8 +12,8 @@ MORPH2_MODEL=wapiti/model3/model_lc_bigrammLemmas
 MORPH3_MODEL=wapiti/model4/model_lc_bigrammLemmas
 
 TMP_DIR=tmp4
-EVID="cuz"
-PISPAS="pis"
+EVID="aya"
+PISPAS="pas"
 RAW_FILE=$1
 
 cat $RAW_FILE | perl $TOKENIZER | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/test.xfst

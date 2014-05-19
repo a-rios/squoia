@@ -761,6 +761,10 @@ sub disambMorph1{
 	my $disambiguatedForms=0;
 	
 	my @crfLines = <CRF>;
+	# note: if wapiti inserts empty line at the end, delete it
+	if(scalar(@crfLines) == scalar(@words)+1 && @crfLines[-1] =~ /^\s*$/){
+		pop(@crfLines);
+	}
 	
 	for(my $i=0;$i<scalar(@crfLines);$i++){
 		my $crfline = @crfLines[$i];
@@ -873,6 +877,10 @@ sub disambMorph2{
 	my $disambiguatedForms=0;
 	
 	my @crfLines = <CRF>;
+	# note: if wapiti inserts empty line at the end, delete it
+	if(scalar(@crfLines) == scalar(@words)+1 && @crfLines[-1] =~ /^\s*$/){
+		pop(@crfLines);
+	}
 	
 	for(my $i=0;$i<scalar(@crfLines);$i++)
 	{
@@ -1040,6 +1048,10 @@ sub disambMorph3{
 	my $disambiguatedForms=0;
 	
 	my @crfLines = <CRF>;
+	# note: if wapiti inserts empty line at the end, delete it
+	if(scalar(@crfLines) == scalar(@words)+1 && @crfLines[-1] =~ /^\s*$/){
+		pop(@crfLines);
+	}
 	
 	for(my $i=0;$i<scalar(@crfLines);$i++)
 	{
