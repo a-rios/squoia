@@ -1,0 +1,9 @@
+# Configuration: ChildToSiblingFile
+# 	child chunks become siblings of head (parent) chunks (to be reordered independently among other chunks)
+# Format:
+#	1				2
+#	childChunkCondition		targetChunkAttrVal (attribute values that contain whitespaces most be enclosed by quotes, values MAY NOT contain comas)
+
+#my.type=grup-verb&&my.si=S	comment="upgrade relative clause",flat=true
+
+my.si=/suj/ && parent.IHRC=yes		sujIHRC=yes

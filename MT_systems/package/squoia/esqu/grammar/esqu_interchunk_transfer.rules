@@ -1,0 +1,108 @@
+# 1							2				3				4			5		6		7
+# chunk1Cond						chunk1Attr			chunk2Cond			chunk2Attr		ch1ch2Path	direction	writeMode
+# --------------------------------------------------------------------------------------------------------------------------- #
+#  possible paths:
+#	'my'			=> '.',
+#	'child'			=> 'child::CHUNK',
+#	'firstchild'		=> 'child::CHUNK[1]',
+#	'chunkgrandchild'	=> 'descendant::CHUNK[2]',
+#	'descendant'		=> 'descendant::CHUNK',
+#	'parent'		=> '..',
+#	'chunkparent'		=> 'ancestor::CHUNK[1]',
+#	'chunkgrandparent'	=> 'ancestor::CHUNK[2]',
+#	'lsibling'		=> 'preceding-sibling::CHUNK',
+#	'rsibling'		=> 'following-sibling::CHUNK'
+
+
+
+
+# copy attribue nouncase generated from preposition to noun in the pp
+# -> this is only necessary in case the preposition is a postposition marked with 3.Sg.Poss and the noun needs a genitive suffix
+# detrás de la casa: wasiPA qhipan
+#my.nouncase=/.+/ && my.type=/grup-sp|coor-sp/		nouncase			my.type=sn			nouncase		child		1to2		concat
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+# copy object information in addverbmi attribute in sn-chunks (clitics me,te,se) to the next higher verb chunk 
+# or to the pp chunk ( a mí, a tí..) and from there to the next higher verb chunk
+my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="grup-sp" and not(@spform)]/CHUNK[@type="sn"]/@addverbmi} 		addverbmi			chunkgrandparent		1to2		concat
+my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type="grup-verb" or @type="coor-v"]} && ( !(child.slem=/^ir$/marchar/) && !(child.smi=/VMM01P0|VMSP1P0/ ) )				addverbmi			parent					1to2		concat
+
+
+# copy chunkmi from sadv (negation) to chunk above, be it nominal or verbal (independent suffixes)
+my.type=/sadv/ && my.chunkmi=/.+/			chunkmi				my.type=/grup-verb|coor-v/		chunkmi			parent				1to2		concat
+
+# copy chunkmi=+Inst / +Add  in coordination from head to child (from coor-n to sn)
+my.type=coor-n && my.chunkmi=/\+Instr|\+Add/		chunkmi				my.type=sn				chunkmi			child				1to2		concat	
+
+
+# copy ++Poss from propietario to the possessed noun
+child.slem=/propietario|dueño/ && my.chunkmi=++Poss	chunkmi			my.type=sn				chunkmi			chunkgrandchild			1to2		concat
+
+# in a pp with a coordinated np inside: copy the case/nouncase attribute to the second coordinated np
+#my.type=/grup-sp|coor-sp/ && child.type=coor-n		case			my.type=sn && chunkparent.type=coor-n			case			ancestor		1to2		overwrite
+my.type=sn && chunkparent.type=coor-n 			case			my.type=/grup-sp|coor-sp/ && my.case=/.+/			case		chunkgrandparent	2to1		overwrite
+
+# headless relative clause with preposition -> copy case from preposition ('por lo que he visto' -> rikusqay-rayku)
+my.type=grup-sp && my.case=/.+/ && !(xpath{../child::CHUNK[@type="sn" or @type="coor-n"]})			case					my.type=/grup-verb|coor-v/ && my.HLRC=yes		chunkmi			chunkparent			1to2	concat
+
+# subject in nominal verb chunk: add genitive
+# TODO check if thats correct: 
+# ella sabe que tú te has ido -> qam(pa?) rikusqaykita yachan
+#my.si=/suj/ 		case		my.verbform=/perfect|obligative|not\.agentive/ && my.case=+Acc		"+Gen"		parent		2to1		overwrite
+my.si=/suj/ 		case		my.verbform=/perfect|obligative|not\.agentive/					"+Gen"		parent		2to1		overwrite
+
+## sólo/solamente -> copy chunkmi from sadv chunk to head
+child.slem=/sólo|solamente/ && my.chunkmi=++Lim		chunkmi			my.type=/.+/		chunkmi		parent		1to2		concat
+
+# para, a_fin_de, con_fin_de, con_objeto_de +infinitive: verbchunk is set to obligative, but needs person of verb as possessive suffix! -> same subject as head verb
+# note: only first ancestor with finite verb!!
+# same for all infinitives within pp-chunks (?)
+
+my.type=/grup-verb|coor-v/ && ( (chunkparent.case=/.+/ && !(chunkparent.case=+Acc ) ) || xpath{parent::CHUNK/NODE/@postpos}) && child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]}					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "1S") or descendant-or-self::NODE[ contains(@smi, "1S")] ]  } && !(xpath{descendant::CHUNK[ (@type="grup-verb" or @type="coor-v") and child::NODE[(starts-with(@smi,"V") and  (contains(@smi, "1")  or contains(@smi, "2") or contains(@smi, "3")) )or descendant-or-self::NODE[starts-with(@smi,"V") and ( contains(@smi, "1") or contains(@smi, "2") or contains(@smi, "3") ) ] ] ]/descendant::CHUNK[@type="grup-sp" or @type="coor-sp"]/CHUNK[@type="grup-verb" or @type="coor-v" ]/NODE[(@smi="VMN0000" or @smi="VSN0000" ) and count(descendant::NODE[starts-with(@smi,"V")] )=0 ] })		"+1.Sg.Poss"			ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && ( (chunkparent.case=/.+/ && !(chunkparent.case=+Acc ) ) || xpath{parent::CHUNK/NODE/@postpos}) && child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]}					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "2S") or descendant-or-self::NODE[ contains(@smi, "2S")] ]  } && !(xpath{descendant::CHUNK[ (@type="grup-verb" or @type="coor-v") and child::NODE[(starts-with(@smi,"V") and  (contains(@smi, "1")  or contains(@smi, "2") or contains(@smi, "3")) )or descendant-or-self::NODE[starts-with(@smi,"V") and ( contains(@smi, "1") or contains(@smi, "2") or contains(@smi, "3") ) ] ] ]/descendant::CHUNK[@type="grup-sp" or @type="coor-sp"]/CHUNK[@type="grup-verb" or @type="coor-v" ]/NODE[(@smi="VMN0000" or @smi="VSN0000" ) and count(descendant::NODE[starts-with(@smi,"V")] )=0 ] })		"+2.Sg.Poss"			ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && ((chunkparent.case=/.+/ && !(chunkparent.case=+Acc ) ) || xpath{parent::CHUNK/NODE/@postpos}) && child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]}					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "3S") or descendant-or-self::NODE[ contains(@smi, "3S")] ]  } && !(xpath{descendant::CHUNK[ (@type="grup-verb" or @type="coor-v") and child::NODE[(starts-with(@smi,"V") and  (contains(@smi, "1")  or contains(@smi, "2") or contains(@smi, "3")) )or descendant-or-self::NODE[starts-with(@smi,"V") and ( contains(@smi, "1") or contains(@smi, "2") or contains(@smi, "3") ) ] ] ]/descendant::CHUNK[@type="grup-sp" or @type="coor-sp"]/CHUNK[@type="grup-verb" or @type="coor-v" ]/NODE[(@smi="VMN0000" or @smi="VSN0000" ) and count(descendant::NODE[starts-with(@smi,"V")] )=0 ] })		"+3.Sg.Poss"			ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && ((chunkparent.case=/.+/ && !(chunkparent.case=+Acc ) ) || xpath{parent::CHUNK/NODE/@postpos})  && child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]}					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "1P") or descendant-or-self::NODE[ contains(@smi, "1P")] ]  } && !(xpath{descendant::CHUNK[ (@type="grup-verb" or @type="coor-v") and child::NODE[(starts-with(@smi,"V") and  (contains(@smi, "1")  or contains(@smi, "2") or contains(@smi, "3")) )or descendant-or-self::NODE[starts-with(@smi,"V") and ( contains(@smi, "1") or contains(@smi, "2") or contains(@smi, "3") ) ] ] ]/descendant::CHUNK[@type="grup-sp" or @type="coor-sp"]/CHUNK[@type="grup-verb" or @type="coor-v" ]/NODE[(@smi="VMN0000" or @smi="VSN0000" ) and count(descendant::NODE[starts-with(@smi,"V")] )=0 ] })		"+1.Pl.Incl.Poss"		ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && ((chunkparent.case=/.+/ && !(chunkparent.case=+Acc ) ) || xpath{parent::CHUNK/NODE/@postpos}) && child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]}					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "2P") or descendant-or-self::NODE[ contains(@smi, "2P")] ]  } && !(xpath{descendant::CHUNK[ (@type="grup-verb" or @type="coor-v") and child::NODE[(starts-with(@smi,"V") and  (contains(@smi, "1")  or contains(@smi, "2") or contains(@smi, "3")) )or descendant-or-self::NODE[starts-with(@smi,"V") and ( contains(@smi, "1") or contains(@smi, "2") or contains(@smi, "3") ) ] ] ]/descendant::CHUNK[@type="grup-sp" or @type="coor-sp"]/CHUNK[@type="grup-verb" or @type="coor-v" ]/NODE[(@smi="VMN0000" or @smi="VSN0000" ) and count(descendant::NODE[starts-with(@smi,"V")] )=0 ] })		"+2.Pl.Poss"			ancestor 			2to1			concat
+my.type=/grup-verb|coor-v/ && ((chunkparent.case=/.+/ && !(chunkparent.case=+Acc ) ) || xpath{parent::CHUNK/NODE/@postpos}) && child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]}					addverbmi									my.type=/grup-verb|coor-v/ && xpath{child::NODE[contains(@smi, "3P") or descendant-or-self::NODE[ contains(@smi, "3P")] ]  } && !(xpath{descendant::CHUNK[ (@type="grup-verb" or @type="coor-v") and child::NODE[(starts-with(@smi,"V") and  (contains(@smi, "1")  or contains(@smi, "2") or contains(@smi, "3")) )or descendant-or-self::NODE[starts-with(@smi,"V") and ( contains(@smi, "1") or contains(@smi, "2") or contains(@smi, "3") ) ] ] ]/descendant::CHUNK[@type="grup-sp" or @type="coor-sp"]/CHUNK[@type="grup-verb" or @type="coor-v" ]/NODE[(@smi="VMN0000" or @smi="VSN0000" ) and count(descendant::NODE[starts-with(@smi,"V")] )=0 ] })		"+3.Pl.Poss"			ancestor 			2to1			concat
+
+# infinitive within pp-chunk with case attribute: -> copy case to verb chunk
+my.type=/grup-verb|coor-v/ && chunkparent.case=/.+/ && child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]}				chunkmi				my.type=/grup-sp|coor-sp/ && my.case=/.+/					case					parent				2to1				concat
+my.type=/grup-verb|coor-v/ && chunkparent.nouncase=/.+/  && child.smi=/VMN0000|VSN0000/ && xpath{child::NODE[count(descendant::NODE[starts-with(@smi,"V")] )=0 ]} 		chunkmi				my.type=/grup-sp|coor-sp/ && my.nouncase=/.+/				nouncase			parent				2to1				concat
+
+# subject of a relative clause with IHRC=yes (internally headed relative clause)
+# -> add genitive suffix to subject
+# also: add possessive suffix of subject person to (nominal) verbform if the rel.clause is not.agentive (in intrachunk.rules!)
+my.type=/sn|coor-n/ && my.si=/suj/		case		my.IHRC=yes		"+Gen"		parent			2to1			concat
+
+# +Add from también: move to parent chunk
+# NOTE: parser attaches 'también' ALWAYS to the verb, might not be always correct, but there's really no way to be certain... 
+# -> we attach -pas to the verb
+my.chunkmi=++Add && child.slem=también			chunkmi			my.type=/.+/ && !(my.delete=yes)		chunkmi		parent		1to2		concat
+
+# +Disc from 'ya': move to parent chunk
+child.lem=ña && child.moveToHead_mi=/.+/		"+Disc"			my.type=/.+/ && !(my.delete=yes)		chunkmi		parent		1to2		concat
+
+## special case, 
+##  subjToObj=1, forms with -naya: make Subj -> Obj (tengo hambre -> yarqanayaWAn)
+## or subjToObj=2, e.g. 'se me anotoja un helado' -> 'heladoTA munapakuNI'
+## -> for subjToObj=2, add accusative to original subject and set @si=cd
+my.si=/suj/ 		case				xpath{child::NODE[@subjToObj="2"]} && my.type=/grup-verb|coor-v/ 		"+Acc"		parent		2to1		overwrite
+
+# delete accusative within nominal clauses 
+# (?? really?? both possible? what is the rule (appart form unspecific objects)? TODO!!)
+# -> either: verbform=perfect or obligative, or: from Spanish infinitives -> just case + only child=infinitive +parent +grup-sp  
+#(my.case=+Acc  || chunkparent.case=+Acc) && my.type=/sn|coor-n/			deleteMorph				 	 my.verbform=/perfect|obligative/ || ( my.type=/grup-verb|coor-v/ && my.chunkmi=/Acc|Ben/ && child.mi=infinitive && xpath{child::NODE[count(child::NODE)=0]} )   			"+Acc"			ancestor		2to1		concat
+
+## if verb chunk has an objCase/iobjCase (from lexicon): overwrite case of object chunk
+# e.g. embarcar el avión -> avionMAN wichay/yaykuy
+my.si=/cd/ 		case				 my.type=/grup-verb|coor-v/ && my.objCase=/.+/ 		objCase		parent		2to1		overwrite
+my.si=/ci/ 		case				 my.type=/grup-verb|coor-v/ && my.iobjCase=/.+/ 		iobjCase	parent		2to1		overwrite
+
+# hay + cd -> no accusative (hay leña -> llamt'a kan, no *llamt'ata kan)
+my.si=/cd/    	deleteMorph			child.slem=haber && child.smi=/3S/  && !(xpath{child::NODE[@slem="haber"]/descendant::NODE[starts-with(@smi,"V") or @slem="que"]})		"+Acc"			parent		2to1	concat					
+
+# in sentence with 3rd sg present copula -> kan is set to be deleted, in this case, insert -mi/si in cpred/atr
+# -> sólo si no hay negación.., con negación -> manam .. kanchu
+my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]})		"+DirE"		parent		2to1		concat
+ 
