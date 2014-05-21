@@ -32,6 +32,7 @@ BEGIN{
 	use squoia::semanticDisamb;
 	use squoia::morphDisamb;
 	use squoia::prepositionDisamb;
+	use squoia::splitNodes;
 	use squoia::intrachunkTransfer;
 	use squoia::interchunkTransfer;
 	use squoia::nodesToChunks;
@@ -52,7 +53,10 @@ BEGIN{
 	
 	
 	## esde modules	
-	
+	use squoia::esde::addFutureAux;
+	use squoia::esde::addPronouns;
+	use squoia::esde::splitVerbPrefix;
+	use squoia::esde::verbPrepDisamb;
 }
 
 
@@ -78,8 +82,8 @@ my $freelingPort;
 my $freelingConf;
 my $matxin;
 # options for parsing
-my $desrPort1;
-my $desrPort2;
+my $desrPort1;	# TODO set default values here ? my $desrPort1 = 5678;
+my $desrPort2;	# my $desrPort2 = 1234;
 my $desrModel1;
 my $desrModel2;
 # options for lexical transfer
@@ -104,9 +108,13 @@ my $wordnet;
 my $morphgenerator;
 my $quModel;
 # esde options
+my $chunkMap;	# TODO option for lexical transfer; put together with $bidix ?
+my $statLexDisamb;
+my $verbPrep;
+my $demorphgenerator;	# TODO together with esqu options => common option ? 
 my $deModel;
 
-my $helpstring = "Usage: main.pm [options]
+my $helpstring = "Usage: $0 [options]
 available options are:
 --help|-h: print this help
 --config|-c: indicate config (necessary for first run, later optional)
@@ -127,6 +135,10 @@ available options are:
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
 \t prepdisamb: xml after preposition disambiguation
+\t mwsplit: xml after multi-word splitting
+\t pronoun: xml after inserting subject pronouns, only with direction esde
+\t future: xml after inserting future auxiliary, only with direction esde
+\t vprefix: xml after verb prefix splitting, only with direction esde
 \t intraTrans: xml after intrachunk syntactic transfer
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
@@ -152,10 +164,14 @@ available options are:
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
 \t prepdisamb: xml after preposition disambiguation
+\t mwsplit: xml after multi-word splitting
+\t pronoun: xml after inserting subject pronouns, only with direction esde
+\t future: xml after inserting future auxiliary, only with direction esde
+\t vprefix: xml after verb prefix splitting, only with direction esde
 \t intraTrans: xml after intrachunk syntactic transfer
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
-\t node2sibling: xml after promtion of child chunks to siblings
+\t node2sibling: xml after promotion of child chunks to siblings
 \t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
 \t morph: input for morphological generation
@@ -194,13 +210,19 @@ Options for translation, es-quz:
 --morphgenerator: path to morphological generation binary
 --quModel: Quechua language model
 Options for translation, es-de: TODO
---deModel: German langugage model
+--chunkMap: mapping of chunk names (for lexical transfer)
+--statLexDisamb: statistical lexical disambiguation (weighted word alignments)
+--verbPrep: verb dependent preposition disambiguation rules (after prepDisamb)
+--demorphgenerator: path to German morphological generation binary
+--deModel: German language model
 \n";
 
 my %mapInputFormats = (
 	'plain' => 1, 'senttok'	=> 2,  'tagged'	=> 4, 'conll'	=> 5, 'parsed'	=> 6, 'conll2xml'	=> 7,
 	'rdisamb' => 8, 'coref'	=> 9, 'vdisamb'	=> 10, 'svm'	=> 11, 'lextrans'	=> 12, 'semtags'	=> 13, 'lexdisamb'	=> 14,
-	'morphdisamb' => 15, 'prepdisamb'	=> 16, 'intraTrans'	=> 17, 'interTrans'	=> 18, 'node2chunk'	=> 19, 'child2sibling'	=> 20,
+	'morphdisamb' => 15, 'prepdisamb'	=> 16, 
+	'mwsplit'	=> 16.5, 'pronoun'	=> 16.6, 'future'	=> 16.7, 'vprefix'	=> 16.8,
+	'intraTrans'	=> 17, 'interTrans'	=> 18, 'node2chunk'	=> 19, 'child2sibling'	=> 20,
 	'interOrder'=> 21, 'intraOrder'=> 22, 'morph'=> 23, 'words'=> 24, 'nbest' => 25
 );
 
@@ -217,7 +239,7 @@ GetOptions(
 	'wapiti=s'    => \$wapiti,
 	'wapitiModel=s'    => \$wapitiModel,
 	'freelingPort=i'    => \$freelingPort,
-	'freelingConf=i'    => \$freelingConf,
+	'freelingConf=s'    => \$freelingConf,
 	'matxin=s'    => \$matxin,
 	# options for parsing
 	'desrPort1=i'	=> \$desrPort1,
@@ -247,13 +269,17 @@ GetOptions(
     'morphgenerator=s' => \$morphgenerator,
     'quModel=s' => \$quModel,
     # TODO options for es-de
-    'deModel' => \$deModel
+    'chunkMap=s' => \$chunkMap,
+    'statLexDisamb=s' => \$statLexDisamb,
+    'verbPrep=s' => \$verbPrep,
+    'demorphgenerator=s' => \$demorphgenerator,	# together with esqu?
+    'deModel=s' => \$deModel
 ) or die "Incorrect usage!\n $helpstring";
 
 	if($help){ print STDERR $helpstring; exit;}
 	if($config ne ''){
 		print STDERR "reading config file: $config\n";
-		open (CONFIG, "<:encoding(UTF-8)", $config);
+		open (CONFIG, "<:encoding(UTF-8)", $config) or die "Can't open configuration file $config: $!\n";
 		while (<CONFIG>) {
 			chomp;       # no newline
 			s/#.*//;     # no comments
@@ -300,7 +326,7 @@ GetOptions(
 			$outformat = $config{'outformat'};
 		} or $outformat ='nbest';
 	}
-	if($outformat !~ /^senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words|nbest$/){
+	if($outformat !~ /^senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|mwsplit|pronoun|future|vprefix|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words|nbest$/){
 		die "Invalid output format $outformat, valid options are:
 \t senttok: plain text, one sentence per line
 \t tagged: wapiti crf
@@ -316,6 +342,10 @@ GetOptions(
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
 \t prepdisamb: xml after preposition disambiguation
+\t mwsplit: xml after multi-word splitting
+\t pronoun: xml after inserting subject pronouns, only with direction esde
+\t future: xml after inserting future auxiliary, only with direction esde
+\t vprefix: xml after verb prefix splitting, only with direction esde
 \t intraTrans: xml after intrachunk syntactic transfer
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
@@ -332,7 +362,7 @@ GetOptions(
 			$informat = $config{'informat'};
 		} or $informat ='senttok';
 	}
-	if($informat !~ /^plain|senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words$/ ){
+	if($informat !~ /^plain|senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|mwsplit|pronoun|future|vprefix|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words$/ ){
 				die "Invalid input format $informat, valid options are:
 \t plain: plain text
 \t senttok: plain text, one sentence per line (=default)
@@ -350,6 +380,10 @@ GetOptions(
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
 \t prepdisamb: xml after preposition disambiguation
+\t mwsplit: xml after multi-word splitting
+\t pronoun: xml after inserting subject pronouns, only with direction esde
+\t future: xml after inserting future auxiliary, only with direction esde
+\t vprefix: xml after verb prefix splitting, only with direction esde
 \t intraTrans: xml after intrachunk syntactic transfer
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
@@ -361,6 +395,7 @@ GetOptions(
 	}
 
 	my $startTrans = $mapInputFormats{$informat};
+print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 	if($startTrans > $mapInputFormats{$outformat}){
 		die "cannot process input from format=$informat to format=$outformat (wrong direction)!!\n";
 	}
@@ -398,10 +433,10 @@ GetOptions(
 ###-----------------------------------end read commandline arguments -----------------------------------------------####
 
 ###-----------------------------------begin analysis Spanish input -----------------------------------------------####
-#if($startTrans<2)
+#if($startTrans<$mapInputFormats{'senttok'})	#2)
 #{ } TODO sentence tokenization
 
-if($startTrans<4)
+if($startTrans<$mapInputFormats{'tagged'})	#4)
 {
 	### tagging: if input file given with --file or -f:
 	# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
@@ -418,7 +453,7 @@ if($startTrans<4)
 		else{
 			# solution without open2, use tmp file
 			my $tmp = $path."/tmp/tmp.txt";
-			open (TMP, ">:encoding(UTF-8)", $tmp);
+			open (TMP, ">:encoding(UTF-8)", $tmp) or die "Can't open temporary file \"$tmp\" to write: $!\n";
 			while(<>){print TMP $_;}
 			open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
 			close(TMP);
@@ -431,11 +466,11 @@ if($startTrans<4)
 	}
 }
 my $conllLines;
-if($startTrans<5){
+if($startTrans<$mapInputFormats{'conll'}){	#5){
 	# if starting translation process from here, read file or stdin
-	if($startTrans==4){
+	if($startTrans==$mapInputFormats{'tagged'}){	#4){
 		if($file){
-			open (FILE, "<", $file);
+			open (FILE, "<", $file) or die "Can't open input file \"$file\" to translate: $!\n";
 			$conllLines = squoia::crf2conll::main(\*FILE);
 			close(FILE);
 		}
@@ -460,7 +495,7 @@ if($startTrans<5){
 	}
 }
 my $dom;
-if($startTrans <7)
+if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 {
 	#### Check if parser servers are already running (2 instances with different models)
 	# first instance
@@ -510,19 +545,19 @@ if($startTrans <7)
 			sleep 1;
 		}
 
-	if($startTrans <6)
+	if($startTrans <$mapInputFormats{'parsed'})	#6)
 	{
 		### parse tagged text:
 		my $tmp2;
 		# if starting translation process from here, read file or stdin
-		if($startTrans ==5 && $file ne ''){
+		if($startTrans ==$mapInputFormats{'conll'} && $file ne ''){	#5
 			$tmp2 = $file;
 		}
 		else{
 			$tmp2 = $path."/tmp/tmp.conll";
-			open (TMP2, ">", $tmp2);
+			open (TMP2, ">", $tmp2)  or die "Can't open temporary file \"$tmp2\" to write: $!\n";
 			# if starting translation from here and no file given: read from stdin
-			if($startTrans ==5){
+			if($startTrans ==$mapInputFormats{'conll'}){	#5)
 				binmode(STDIN);
 				while(<>){
 					print TMP2 $_;
@@ -544,9 +579,9 @@ if($startTrans <7)
 	}
 
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==6){
+	if($startTrans ==$mapInputFormats{'parsed'}){	#6){
 		if($file ne ''){
-			open (FILE, "<", $file);
+			open (FILE, "<", $file) or die "Can't open input file \"$file\" to translate: $!\n";
 			$dom = squoia::conll2xml::main(\*FILE, $desrPort2);
 			close(FILE);
 		}
@@ -575,7 +610,7 @@ if($startTrans <7)
 
 ####-----------------------------------begin preprocessing for es-qu -----------------------------------------------####
 #### verb disambiguation
-if($direction eq 'esqu' && $startTrans < 11)
+if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 {
 	# retrieve semantic verb and noun lexica for verb disambiguation
 	my %nounLex = (); my %verbLex = ();
@@ -633,12 +668,12 @@ if($direction eq 'esqu' && $startTrans < 11)
 		%verbLex   = %{ Storable::retrieve("$path/storage/VerbLex") };	
 	}
 
-if($startTrans < 8)
+if($startTrans < $mapInputFormats{'rdisamb'})	#8)
 {
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==7){
+	if($startTrans ==$mapInputFormats{'conll2xml'}){	#7){
 		if($file ne '' ){
-				open (FILE, "<", $file);
+				open (FILE, "<", $file)  or die "Can't open input file \"$file\" to translate: $!\n";
 				$dom  = XML::LibXML->load_xml( IO => *FILE );
 				close(FILE);
 		}
@@ -657,10 +692,10 @@ if($startTrans < 8)
 	}
 }
 
-if($startTrans < 9)
+if($startTrans < $mapInputFormats{'coref'})	#9)
 {
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==8){
+	if($startTrans ==$mapInputFormats{'rdisamb'}){	#8){
 		$dom = &readXML();
 	}
 	squoia::esqu::coref::main(\$dom);
@@ -673,7 +708,7 @@ if($startTrans < 9)
 	}
 }
 
-if($startTrans < 10)
+if($startTrans < $mapInputFormats{'vdisamb'})	#10)
 {
 	# check if evidentiality set
 	if($evidentiality ne 'direct' or $evidentiality eq 'indirect'){
@@ -682,7 +717,7 @@ if($startTrans < 10)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==9){
+	if($startTrans ==$mapInputFormats{'coref'}){	#9){
 		$dom = &readXML();
 	}
 	
@@ -696,7 +731,7 @@ if($startTrans < 10)
 	}
 }
 
-if($startTrans< 11)
+if($startTrans<$mapInputFormats{'svm'})	# 11)
 {
 	# get verb lemma classes from word net for disambiguation with svm
 	my %verbLemClasses=();
@@ -763,7 +798,7 @@ if($startTrans< 11)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==10){
+	if($startTrans ==$mapInputFormats{'vdisamb'}){	#10){
 		$dom = &readXML();
 	}
 
@@ -787,8 +822,9 @@ if($startTrans< 11)
 
 ####-----------------------------------begin translation ---------------------------------------------------------####
 #### lexical transfer with matxin-xfer-lex
-if($startTrans <12)
+if($startTrans <$mapInputFormats{'lextrans'})	#12)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'lextrans'} .") lexical transfer\n";
 	## check if $bidix is set
 	if($bidix eq ''){
 		eval{
@@ -799,14 +835,14 @@ if($startTrans <12)
 	
 	# if starting translation process from here, read file or stdin
 	my $tmp3;
-	if($startTrans ==11 && $file ne ''){
+	if($startTrans ==$mapInputFormats{'svm'} && $file ne ''){	#11
 		$tmp3 = $file;
 	}
 	else{
 		$tmp3 = $path."/tmp/tmp.xml";
-		open (TMP3, ">", $tmp3);
+		open (TMP3, ">", $tmp3) or die "Can't open temporary file \"$tmp3\" to write: $!\n";
 		# if starting translation from here and no file given: read from stdin
-		if($startTrans ==11){
+		if($startTrans ==$mapInputFormats{'svm'}){	#11){
 			binmode(STDIN);
 			while(<>){
 				print TMP3 $_;
@@ -823,7 +859,12 @@ if($startTrans <12)
 		}or die "Lexical failed, location of matxin-xfer-lex not indicated! Set option matxin in config or use --matxin on commandline\n";;
 	}
 
-	open(XFER,"-|" ,"cat $tmp3 | $matxin/matxin-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
+	if($chunkMap eq '' and $config{'chunkMap'} eq ''){
+		open(XFER,"-|" ,"cat $tmp3 | $matxin/matxin-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
+	} else {
+		$chunkMap = $config{'chunkMap'} if ($chunkMap eq '');
+		open(XFER,"-|" ,"cat $tmp3 | $matxin/matxin-xfer-lex -c $chunkMap $bidix"  ) || die "lexical transfer failed: $!\n";
+	}
 	close(TMP3);
 	
 	$dom = XML::LibXML->load_xml( IO => *XFER );
@@ -838,8 +879,9 @@ if($startTrans <12)
 }
 
 #### insert semantic tags: 
-if($startTrans <13)
+if($startTrans <$mapInputFormats{'semtags'})	#13)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'semtags'} .") insert semantic tags\n";
 ## if semantic dictionary or new config file given on commandline: read into %semanticLexicone
 	my %semanticLexicon =();
 	my $readrules=0;
@@ -876,7 +918,7 @@ if($startTrans <13)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==12){
+	if($startTrans ==$mapInputFormats{'lextrans'}){	#12){
 		$dom = &readXML();
 	}
 	squoia::insertSemanticTags::main(\$dom, \%semanticLexicon);
@@ -889,8 +931,9 @@ if($startTrans <13)
 }
 
 ### lexical disambiguation, rule-based
-if($startTrans <14)
+if($startTrans <$mapInputFormats{'lexdisamb'})	#14)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'lexdisamb'} .") lexical disambiguation, rule-based\n";
 	my %lexSel =();
 	$readrules=0;
 	
@@ -932,7 +975,7 @@ if($startTrans <14)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==13){
+	if($startTrans ==$mapInputFormats{'semtags'}){	#13){
 		$dom = &readXML();
 	}
 	squoia::semanticDisamb::main(\$dom, \%lexSel);
@@ -945,8 +988,9 @@ if($startTrans <14)
 }
 
 ### morphological disambiguation, rule-based
-if($startTrans <15)
+if($startTrans <$mapInputFormats{'morphdisamb'})	#15)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'morphdisamb'} .") morphological disambiguation, rule-based\n";
 	my %morphSel = ();
 	$readrules=0;
 	
@@ -990,7 +1034,7 @@ if($startTrans <15)
 	}
 
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==14){
+	if($startTrans ==$mapInputFormats{'lexdisamb'}){	#14){
 		$dom = &readXML();
 	}
 	squoia::morphDisamb::main(\$dom, \%morphSel);
@@ -1003,9 +1047,10 @@ if($startTrans <15)
 	}
 }
 
-if($startTrans <16)
-{
 ### preposition disambiguation, rule-based
+if($startTrans <$mapInputFormats{'prepdisamb'})	#16)
+{
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'prepdisamb'} .") preposition disambiguation, rule-based\n";
 	my %prepSel = ();
 	$readrules =0;
 
@@ -1055,7 +1100,7 @@ if($startTrans <16)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==15){
+	if($startTrans ==$mapInputFormats{'morphdisamb'}){	#15){
 		$dom = &readXML();
 	}
 	squoia::prepositionDisamb::main(\$dom, \%prepSel);
@@ -1067,9 +1112,80 @@ if($startTrans <16)
 		exit;
 	}
 }
-if($startTrans <17)
+####-----------------------------------begin specific processing for es-de -----------------------------------------------####
+if($direction eq 'esde')
 {
+### split multi-words
+if($startTrans <$mapInputFormats{'mwsplit'})
+{
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'mwsplit'} .") split multi-words\n";
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==$mapInputFormats{'prepdisamb'}){
+		$dom = &readXML();
+	}
+	squoia::splitNodes::main(\$dom);
+	## if output format is 'mwsplit': print and exit
+	if($outformat eq 'mwsplit'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
+### insert subject pronouns
+if($startTrans <$mapInputFormats{'pronoun'})
+{
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'pronoun'} .") insert subject pronouns\n";
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==$mapInputFormats{'mwsplit'}){
+		$dom = &readXML();
+	}
+	squoia::esde::addPronouns::main(\$dom);
+	## if output format is 'mwsplit': print and exit
+	if($outformat eq 'pronoun'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
+### insert future auxiliaries
+if($startTrans <$mapInputFormats{'future'})
+{
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'future'} .") insert future auxiliaries\n";
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==$mapInputFormats{'pronoun'}){
+		$dom = &readXML();
+	}
+	squoia::esde::addFutureAux::main(\$dom);
+	## if output format is 'mwsplit': print and exit
+	if($outformat eq 'future'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
+### split verb prefixes
+if($startTrans <$mapInputFormats{'vprefix'})
+{
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'vprefix'} .") split verb prefixes\n";
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==$mapInputFormats{'future'}){
+		$dom = &readXML();
+	}
+	squoia::esde::splitVerbPrefix::main(\$dom);
+	## if output format is 'mwsplit': print and exit
+	if($outformat eq 'vprefix'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
+}
+####-----------------------------------end specific processing for es-de -----------------------------------------------####
+
 ### syntactic transfer, intra-chunks (from nodes to chunks and vice versa)
+if($startTrans <$mapInputFormats{'intraTrans'})	#17)
+{
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'intraTrans'} .") syntactic transfer, intra-chunks\n";
 	my %intraConditions = ();
 	$readrules =0;
 	
@@ -1112,7 +1228,7 @@ if($startTrans <17)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==16){
+	if($startTrans ==$mapInputFormats{'prepdisamb'} or ($direction eq 'esde' and $startTrans ==$mapInputFormats{'vprefix'})){	#16){
 		$dom = &readXML();
 	}
 	squoia::intrachunkTransfer::main(\$dom, \%intraConditions);
@@ -1126,8 +1242,9 @@ if($startTrans <17)
 }
 
 ### syntactic transfer, inter-chunks (move/copy information between chunks)
-if($startTrans <18)
+if($startTrans <$mapInputFormats{'interTrans'})	#18)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'interTrans'} .") syntactic transfer, inter-chunks\n";
 	my %interConditions =();
 	$readrules =0;
 	
@@ -1169,7 +1286,7 @@ if($startTrans <18)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==17){
+	if($startTrans ==$mapInputFormats{'intraTrans'}){	#17){
 		$dom = &readXML();
 	}
 	squoia::interchunkTransfer::main(\$dom, \%interConditions);
@@ -1183,8 +1300,9 @@ if($startTrans <18)
 }
 
 ### promote nodes to chunks, if necessary
-if($startTrans <19)
+if($startTrans <$mapInputFormats{'node2chunk'})	#19)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'node2chunk'} .") promote nodes to chunks\n";
 	my %targetAttributes;
 	my %sourceAttributes;
 	my @nodes2chunksRules;
@@ -1227,7 +1345,7 @@ if($startTrans <19)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==18){
+	if($startTrans ==$mapInputFormats{'interTrans'}){	#18){
 		$dom = &readXML();
 	}
 	squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
@@ -1240,8 +1358,9 @@ if($startTrans <19)
 }
 
 ### rules to promote child chunks to siblings (necessary for ordering Quechua internally headed relative clauses)
-if($startTrans <20)
+if($startTrans <$mapInputFormats{'child2sibling'})	#20)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'child2sibling'} .") promote child chunks to siblings\n";
 	my %targetAttributes;
 	$readrules =0;
 	
@@ -1279,7 +1398,7 @@ if($startTrans <20)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==19){
+	if($startTrans ==$mapInputFormats{'node2chunk'}){	#19){
 		$dom = &readXML();
 	}
 	squoia::childToSiblingChunk::main(\$dom, \%targetAttributes);
@@ -1291,10 +1410,11 @@ if($startTrans <20)
 		exit;
 	}
 }
-if($startTrans <21)
+if($startTrans <$mapInputFormats{'interOrder'})	#21)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'interOrder'} .") reorder the chunks, inter-chunks\n";
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==20){
+	if($startTrans ==$mapInputFormats{'child2sibling'}){	#20){
 		$dom = &readXML();
 	}
 	### number chunks recursively
@@ -1356,10 +1476,11 @@ if($startTrans <21)
 	}
 }
 
-if($startTrans <22)
+if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'intraOrder'} .") reorder the nodes, intra-chunks\n";
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==21){
+	if($startTrans ==$mapInputFormats{'interOrder'}){	#21){
 		$dom = &readXML();
 	}
 	## linear odering of chunks
@@ -1429,9 +1550,9 @@ if($startTrans <22)
 ## quz
 my $sentFile = "$path/tmp/tmp.words";
 my $morphfile = "$path/tmp/tmp.morph";
-if($direction eq 'esqu' && $startTrans< 24)
+if($direction eq 'esqu' && $startTrans< $mapInputFormats{'words'})	#24)
 {
-	if($startTrans < 23)
+	if($startTrans < $mapInputFormats{'morph'})	#23)
 	{
 		# if starting translation process from here, read file or stdin
 		if($startTrans ==22){
@@ -1445,7 +1566,7 @@ if($direction eq 'esqu' && $startTrans< 24)
 			exit;
 		}
 	}
-	if($startTrans<24)
+	if($startTrans<$mapInputFormats{'words'})	#24)
 	{
 		## generate word forms with xfst
 		## check if $morphgenerator is set
@@ -1456,12 +1577,12 @@ if($direction eq 'esqu' && $startTrans< 24)
 			or die "Morphological generation failed, location of xfst generator not indicated (set option morphgenerator in confix or use --morphgenerator on commandline)!\n";
 		}
 				# if starting with a morph file: take file as input or stdin TODO
-				if($startTrans == 23 && $file ne ''){
+				if($startTrans == $mapInputFormats{'morph'} && $file ne ''){	#23 
 					if($file ne ''){
 						$morphfile = $file;
 					}
 					else{
-						open (MORPH, ">:encoding(UTF-8)", $morphfile);
+						open (MORPH, ">:encoding(UTF-8)", $morphfile) or die "Can't open file \"$morphfile\" to write: $!\n";
 						while(<>){
 							print MORPH $_;
 						}
@@ -1469,7 +1590,7 @@ if($direction eq 'esqu' && $startTrans< 24)
 					}
 				}
 				open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $morphgenerator "  ) || die "morphological generation failed: $!\n";		
-				open (SENT, ">:encoding(UTF-8)", $sentFile);
+				open (SENT, ">:encoding(UTF-8)", $sentFile) or die "Can't open file \"$sentFile\" to write: $!\n";
 				binmode(XFST, ':utf8');
 				while(<XFST>){
 					print SENT $_;
@@ -1506,12 +1627,12 @@ if($direction eq 'esqu')
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==24){
+	if($startTrans ==$mapInputFormats{'words'}){	#24){
 		if($file ne ''){
 			$sentFile = $file;
 		}
 		else{
-			open (SENT, ">:encoding(UTF-8)", $sentFile);
+			open (SENT, ">:encoding(UTF-8)", $sentFile) or die "Can't open file \"$sentFile\" to write: $!\n";
 			while(<>){
 				print SENT $_;
 			}
@@ -1534,7 +1655,7 @@ END{
 
 sub readXML{
 	if($file ne '' ){
-				open (FILE, "<", $file);
+				open (FILE, "<", $file) or die "Can't open file \"$file\": $!\n";
 				$dom  = XML::LibXML->load_xml( IO => *FILE );
 				close(FILE);
 		}
