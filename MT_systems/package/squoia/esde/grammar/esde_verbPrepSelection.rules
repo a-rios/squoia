@@ -1,0 +1,91 @@
+# 1		2	3		4	5
+# ESverb	ESprep	DEverb		DEprep	DEcas
+
+# TODO: allow alternatives, e.g. abogar por = plädieren	auf|für + Akk
+#abogar		por	plädieren	auf	Akk
+abogar		por	plädieren	für	Akk
+abogar		por	verteidigen	-	Akk
+acabar		en	enden		auf	Akk
+acabar		en	enden		mit	Dat
+advertir	de	hin|weisen	auf	Akk
+advertir	de	warnen		vor	Dat
+basar		en	beruhen		auf	Dat
+centrar		en	konzentrieren	auf	Akk
+consistir	en	beruhen		auf	Dat
+consistir	en	beruhen		in	Dat
+consistir	en	bestehen	in	Dat
+consistir	en	bestehen	aus	Dat
+consistir	en	handeln		um	Akk
+consistir	en	sich_handeln	um	Akk
+creer		en	glauben		an	Akk
+excluir		de	aus|schließen	von	Dat
+excluir		del	aus|schließen	von_d(er)	Dat
+#fiarse de = sich verlassen auf
+fiar		de	verlassen	auf	Akk
+formar_parte	de	gehören		zu	Dat
+guiar		por	richten		nach	Dat
+guiar		por	halten		an	Dat
+insistir	en	bestehen	auf	Akk
+insistir	en	beharren	auf	Akk
+insistir	en	drängen		auf	Akk
+insistir	en	insistieren	auf	Akk
+#reírse de = lachen ueber = jmdn auslachen
+reír		de	lachen		über	Akk
+reír		de	belachen	-	Akk
+reír		de	aus|lachen	-	Akk
+pensar		en	denken		an	Akk
+pensar		en	nach|denken	über	Akk
+persistir	en	bestehen	auf	Dat
+persistir	en	beharren	auf	Dat
+pertenecer	a	an|gehen	-	Akk
+pertenecer	a	an|gehören	-	Dat
+pertenecer	a	gehören		zu	Dat
+#pertenecer	a	gehören		-	Dat	# also possible without prep in DE
+pertenecer	a	zählen		zu	Dat
+prescindir	de	ab|sehen	von	Dat
+prescindir	de	verzichten	auf	Akk
+prevenir	de	warnen		vor	Dat
+#quejarse de = sich beschweren ueber
+quejar		de	beschweren	über	Akk
+quejar		del	beschweren	über_d(er)	Akk
+quejar		de	jammern		über	Akk
+quejar		del	jammern		über_d(er)	Akk
+renegar		de	los|sagen	von	Dat
+renunciar	a	ab|sehen	von	Dat
+renunciar	a	verzichten	auf	Akk
+residir		en	beruhen		auf	Dat
+# esde_prep.dat:
+# soñar con => traeumen von
+#con		cas=Dat,lem=von		xpath{self::NODE[parent::CHUNK[@si="creg" and parent::CHUNK[NODE[@slem="soñar"]]]]}	-
+#con		cas=Dat,lem=von		xpath{self::NODE[parent::CHUNK[@si="s" and @type="PP" and parent::CHUNK[@si="creg" and parent::CHUNK[NODE[@slem="soñar"]]]]]}	-
+soñar		con	träumen		von	Dat
+
+acusar		de	an|klagen	-	Gen
+acusar		de	beschuldigen	-	Gen
+acusar		de	bezichtigen	-	Gen
+#adueñarse de = sich+Dat etwas+Akk aneignen
+adueñar		de	an|eignen	-	Akk
+cumplir		con	befriedigen	-	Akk
+cumplir		con	erfüllen	-	Akk
+cumplir		con	nach|kommen	-	Dat
+insistir	en	betonen		-	Akk
+optar		por	aus|wählen	-	Akk
+optar		por	wählen		-	Akk
+percatar	de	bemerken	-	Akk
+percatar	de	erkennen	-	Akk
+percatar	de	wahr|nehmen	-	Akk
+renegar		de	ab|schwören	-	Dat
+renegar		de	verfluchen	-	Akk
+seguir		con	fort|setzen	-	Akk
+
+#buscar		-	suchen		-	Akk	# TODO: generate both variants?
+buscar		-	suchen		nach	Dat
+#esperar	-	erwarten	-	Akk
+esperar		-	warten		auf	Akk
+#esperar	-	erhoffen	-	Akk
+esperar		-	hoffen		auf	Akk
+
+manipular	-	hantieren	mit	Dat
+#padecer	-	erleiden	-	Akk
+padecer		-	leiden		an	Dat
+

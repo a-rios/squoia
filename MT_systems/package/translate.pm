@@ -57,6 +57,7 @@ BEGIN{
 	use squoia::esde::addPronouns;
 	use squoia::esde::splitVerbPrefix;
 	use squoia::esde::verbPrepDisamb;
+	use squoia::esde::outputGermanMorph;
 }
 
 
@@ -111,7 +112,6 @@ my $quModel;
 my $chunkMap;	# TODO option for lexical transfer; put together with $bidix ?
 my $statLexDisamb;
 my $verbPrep;
-my $demorphgenerator;	# TODO together with esqu options => common option ? 
 my $deModel;
 
 my $helpstring = "Usage: $0 [options]
@@ -135,6 +135,7 @@ available options are:
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
 \t prepdisamb: xml after preposition disambiguation
+\t vprepdisamb: xml after verb preposition disambiguation, only with direction esde
 \t mwsplit: xml after multi-word splitting
 \t pronoun: xml after inserting subject pronouns, only with direction esde
 \t future: xml after inserting future auxiliary, only with direction esde
@@ -164,6 +165,7 @@ available options are:
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
 \t prepdisamb: xml after preposition disambiguation
+\t vprepdisamb: xml after verb preposition disambiguation, only with direction esde
 \t mwsplit: xml after multi-word splitting
 \t pronoun: xml after inserting subject pronouns, only with direction esde
 \t future: xml after inserting future auxiliary, only with direction esde
@@ -209,11 +211,10 @@ Options for translation, es-quz:
 --wordnet: spanish wordnet (path to mcr30 directory of wordnet)
 --morphgenerator: path to morphological generation binary
 --quModel: Quechua language model
-Options for translation, es-de: TODO
+Options for translation, es-de:
 --chunkMap: mapping of chunk names (for lexical transfer)
 --statLexDisamb: statistical lexical disambiguation (weighted word alignments)
 --verbPrep: verb dependent preposition disambiguation rules (after prepDisamb)
---demorphgenerator: path to German morphological generation binary
 --deModel: German language model
 \n";
 
@@ -221,7 +222,7 @@ my %mapInputFormats = (
 	'plain' => 1, 'senttok'	=> 2,  'tagged'	=> 4, 'conll'	=> 5, 'parsed'	=> 6, 'conll2xml'	=> 7,
 	'rdisamb' => 8, 'coref'	=> 9, 'vdisamb'	=> 10, 'svm'	=> 11, 'lextrans'	=> 12, 'semtags'	=> 13, 'lexdisamb'	=> 14,
 	'morphdisamb' => 15, 'prepdisamb'	=> 16, 
-	'mwsplit'	=> 16.5, 'pronoun'	=> 16.6, 'future'	=> 16.7, 'vprefix'	=> 16.8,
+	'vprepdisamb'	=> 16.4, 'mwsplit'	=> 16.5, 'pronoun'	=> 16.6, 'future'	=> 16.7, 'vprefix'	=> 16.8,
 	'intraTrans'	=> 17, 'interTrans'	=> 18, 'node2chunk'	=> 19, 'child2sibling'	=> 20,
 	'interOrder'=> 21, 'intraOrder'=> 22, 'morph'=> 23, 'words'=> 24, 'nbest' => 25
 );
@@ -268,11 +269,10 @@ GetOptions(
     'wordnet=s' => \$wordnet,
     'morphgenerator=s' => \$morphgenerator,
     'quModel=s' => \$quModel,
-    # TODO options for es-de
+    # options for es-de
     'chunkMap=s' => \$chunkMap,
     'statLexDisamb=s' => \$statLexDisamb,
     'verbPrep=s' => \$verbPrep,
-    'demorphgenerator=s' => \$demorphgenerator,	# together with esqu?
     'deModel=s' => \$deModel
 ) or die "Incorrect usage!\n $helpstring";
 
@@ -326,7 +326,7 @@ GetOptions(
 			$outformat = $config{'outformat'};
 		} or $outformat ='nbest';
 	}
-	if($outformat !~ /^senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|mwsplit|pronoun|future|vprefix|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words|nbest$/){
+	if($outformat !~ /^senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|vprepdisamb|mwsplit|pronoun|future|vprefix|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words|nbest$/){
 		die "Invalid output format $outformat, valid options are:
 \t senttok: plain text, one sentence per line
 \t tagged: wapiti crf
@@ -342,6 +342,7 @@ GetOptions(
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
 \t prepdisamb: xml after preposition disambiguation
+\t vprepdisamb: xml after verb preposition disambiguation, only with direction esde
 \t mwsplit: xml after multi-word splitting
 \t pronoun: xml after inserting subject pronouns, only with direction esde
 \t future: xml after inserting future auxiliary, only with direction esde
@@ -380,6 +381,7 @@ GetOptions(
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
 \t prepdisamb: xml after preposition disambiguation
+\t vprepdisamb: xml after verb preposition disambiguation, only with direction esde
 \t mwsplit: xml after multi-word splitting
 \t pronoun: xml after inserting subject pronouns, only with direction esde
 \t future: xml after inserting future auxiliary, only with direction esde
@@ -1115,12 +1117,69 @@ if($startTrans <$mapInputFormats{'prepdisamb'})	#16)
 ####-----------------------------------begin specific processing for es-de -----------------------------------------------####
 if($direction eq 'esde')
 {
+### verb preposition disambiguation
+if($startTrans <$mapInputFormats{'vprepdisamb'})
+{
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'vprepdisamb'} .") verb preposition disambiguation\n";
+	my %verbPrepSel = ();
+	$readrules =0;
+
+	if($verbPrep ne ''){
+		$readrules =1;
+		print STDERR "reading verb preposition disambiguation rules from $verbPrep\n";
+		open (VERBPREPFILE, "<:encoding(UTF-8)", $verbPrep) or die "Can't open $verbPrep: $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$verbPrep = $config{"VerbPrepFile"} or die "Verb preposition disambiguation file not specified in config, insert VerbPrepFile='path to verb preposition disambiguation rules' or use option --verbPrep!";
+		print STDERR "reading verb preposition disambiguation rules from file specified in $config: $verbPrep\n";
+		open (VERBPREPFILE, "<:encoding(UTF-8)", $verbPrep) or die "Can't open $verbPrep as specified in config: $!";
+	}
+	if($readrules){
+		#read verb prep information from file into a hash (SLverb, SLprep, TLverb, TLprep, TLcase)
+		while (<VERBPREPFILE>) {
+			chomp;
+			s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;	# skip if empty line
+			my ( $SLverb, $SLprep, $TLverb, $TLprep, $TLcase ) = split( /\s*\t+\s*/, $_, 5 );
+
+			# assure key is unique, use SLverb+SLprep+TLverb as key
+			my $key = "$SLverb\t$SLprep\t$TLverb";
+			my @value = ( $TLprep, $TLcase );
+			$verbPrepSel{$key} = \@value;
+		}
+		store \%verbPrepSel, "$path/storage/VerbPrepSelRules";
+		close(VERBPREPFILE);
+	}
+	else{
+		## if neither --verbPrep nor --config given: check if verb preposition disambiguation rules are already available in storage
+		eval{
+			retrieve("$path/storage/VerbPrepSelRules");
+		} or print STDERR "Failed to retrieve verb preposition selection rules, set option VerbPrepFile=path in config or use --verbPrep path on commandline to indicate verb preposition disambiguation rules!\n";
+		%verbPrepSel = %{ retrieve("$path/storage/VerbPrepSelRules") };
+	}
+
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==$mapInputFormats{'prepdisamb'}){
+		$dom = &readXML();
+	}
+	squoia::esde::verbPrepDisamb::main(\$dom, \%verbPrepSel);
+	## if output format is 'mwsplit': print and exit
+	if($outformat eq 'vprepdisamb'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
+
 ### split multi-words
 if($startTrans <$mapInputFormats{'mwsplit'})
 {
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'mwsplit'} .") split multi-words\n";
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==$mapInputFormats{'prepdisamb'}){
+	if($startTrans ==$mapInputFormats{'vprepdisamb'}){
 		$dom = &readXML();
 	}
 	squoia::splitNodes::main(\$dom);
@@ -1547,48 +1606,54 @@ if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 ###-----------------------------------end translation ---------------------------------------------------------####
 
 ###-----------------------------------begin morphological generation ---------------------------------------------------------####
-## quz
 my $sentFile = "$path/tmp/tmp.words";
 my $morphfile = "$path/tmp/tmp.morph";
-if($direction eq 'esqu' && $startTrans< $mapInputFormats{'words'})	#24)
+if($startTrans < $mapInputFormats{'morph'})	#23)
 {
-	if($startTrans < $mapInputFormats{'morph'})	#23)
-	{
-		# if starting translation process from here, read file or stdin
-		if($startTrans ==22){
-			$dom = &readXML();
-		}
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==$mapInputFormats{'intraOrder'}){	#22)
+		$dom = &readXML();
+	}
+	if ($direction eq 'esqu') {
 		squoia::esqu::xml2morph::main(\$dom, $morphfile);
-		
-		## if output format is 'morph': print and exit
-		if($outformat eq 'morph'){
-			system("cat $morphfile");
-			exit;
+	} elsif ($direction eq 'esde') {
+		squoia::esde::outputGermanMorph::main(\$dom,$morphfile);
+	} else {
+		print STDERR "Translation direction not defined!\n";
+	}
+	## if output format is 'morph': print and exit
+	if($outformat eq 'morph'){
+		system("cat $morphfile");
+		exit;
+	}
+}
+if($startTrans< $mapInputFormats{'words'})
+{
+	## generate word forms with xfst
+	## check if $morphgenerator is set
+	if($morphgenerator eq ''){
+		eval{
+			$morphgenerator = $config{'morphgenerator'};
+		}
+		or die "Morphological generation failed, location of xfst generator not indicated (set option morphgenerator in confix or use --morphgenerator on commandline)!\n";
+	}
+	# if starting with a morph file: take file as input or stdin TODO
+	if($startTrans == $mapInputFormats{'morph'} && $file ne ''){	#23 
+		if($file ne ''){
+			$morphfile = $file;
+		}
+		else{
+			open (MORPH, ">:encoding(UTF-8)", $morphfile) or die "Can't open file \"$morphfile\" to write: $!\n";
+			while(<>){
+				print MORPH $_;
+			}
+			close(MORPH);
 		}
 	}
-	if($startTrans<$mapInputFormats{'words'})	#24)
+	## quz
+	if($direction eq 'esqu')
 	{
-		## generate word forms with xfst
-		## check if $morphgenerator is set
-		if($morphgenerator eq ''){
-			eval{
-				$morphgenerator = $config{'morphgenerator'};
-			}
-			or die "Morphological generation failed, location of xfst generator not indicated (set option morphgenerator in confix or use --morphgenerator on commandline)!\n";
-		}
-				# if starting with a morph file: take file as input or stdin TODO
-				if($startTrans == $mapInputFormats{'morph'} && $file ne ''){	#23 
-					if($file ne ''){
-						$morphfile = $file;
-					}
-					else{
-						open (MORPH, ">:encoding(UTF-8)", $morphfile) or die "Can't open file \"$morphfile\" to write: $!\n";
-						while(<>){
-							print MORPH $_;
-						}
-						close(MORPH);
-					}
-				}
+
 				open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $morphgenerator "  ) || die "morphological generation failed: $!\n";		
 				open (SENT, ">:encoding(UTF-8)", $sentFile) or die "Can't open file \"$sentFile\" to write: $!\n";
 				binmode(XFST, ':utf8');
@@ -1597,17 +1662,19 @@ if($direction eq 'esqu' && $startTrans< $mapInputFormats{'words'})	#24)
 				}
 				close(XFST);
 				close(SENT);
-				
-			## if output format is 'words': print and exit
-			if($outformat eq 'words'){
-				system("cat $sentFile");
-				exit;
-			}
 	}
-}
-## de
-elsif($direction eq 'esde'){
-	
+	## de
+	elsif($direction eq 'esde')
+	{
+		my $morphwordFile = "$path/tmp/tmp.morphword";
+		squoia::esde::outputGermanMorph::generateMorphWord($morphfile,$morphwordFile,"flookup $morphgenerator");
+		squoia::esde::outputGermanMorph::cleanFstOutput($morphwordFile,$sentFile);
+	}
+	## if output format is 'words': print and exit
+	if($outformat eq 'words'){
+		system("cat $sentFile");
+		exit;
+	}
 }
 
 

@@ -34,7 +34,7 @@ sub main{
 	foreach my $prepchunk ( $dom->findnodes('//CHUNK[@si="'.$PREP_FUNC.'"]') ) {
 		my $prepnode = @{$prepchunk->findnodes('descendant::NODE[starts-with(@smi,"'.$SL_PREP_CPOS.'")]')}[0];
 		next if not $prepnode;
-		my $verbchunk = &getParentChunk($prepchunk);
+		my $verbchunk = squoia::util::getParentChunk($prepchunk);
 		my $verbnode = @{$verbchunk->findnodes('child::NODE')}[0];
 		next if not $verbnode;
 
@@ -72,7 +72,7 @@ sub main{
 	}
 	# get all direct complement chunks
 	foreach my $objchunk ( $dom->findnodes('//CHUNK[@si="'.$DOBJ_FUNC.'"]') ) {	# TODO : cd-a? starts-with(@si,
-		my $verbchunk = &getParentChunk($objchunk);
+		my $verbchunk = squoia::util::getParentChunk($objchunk);
 		my $verbnode = @{$verbchunk->findnodes('child::NODE')}[0];
 
 		my $SLverb = $verbnode->getAttribute('slem');
