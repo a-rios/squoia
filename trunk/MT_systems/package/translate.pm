@@ -42,7 +42,7 @@ BEGIN{
 	use squoia::linearOrderChunk;
 	use squoia::intrachunkOrder;
 	#use squoia::esqu::testSVM;
-
+	use squoia::alternativeSentences;
 	
 	## esqu modules
 	use squoia::esqu::disambRelClauses;
@@ -53,10 +53,11 @@ BEGIN{
 	
 	
 	## esde modules	
-	use squoia::esde::addFutureAux;
-	use squoia::esde::addPronouns;
-	use squoia::esde::splitVerbPrefix;
+	use squoia::esde::statBilexDisamb;
 	use squoia::esde::verbPrepDisamb;
+	use squoia::esde::addPronouns;
+	use squoia::esde::addFutureAux;
+	use squoia::esde::splitVerbPrefix;
 	use squoia::esde::outputGermanMorph;
 }
 
@@ -110,7 +111,9 @@ my $morphgenerator;
 my $quModel;
 # esde options
 my $chunkMap;	# TODO option for lexical transfer; put together with $bidix ?
-my $statLexDisamb;
+my $biLexProb;
+my $deLemmaModel;
+my $maxalt = 2;	# default maximum 2 lemma alternatives
 my $verbPrep;
 my $deModel;
 
@@ -134,6 +137,7 @@ available options are:
 \t semtags: xml after insertion of semantic tags
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
+\t statlexdisamb: xml after statistic lexical disambiguation, only with direction esde
 \t prepdisamb: xml after preposition disambiguation
 \t vprepdisamb: xml after verb preposition disambiguation, only with direction esde
 \t mwsplit: xml after multi-word splitting
@@ -164,6 +168,7 @@ available options are:
 \t semtags: xml after insertion of semantic tags
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
+\t statlexdisamb: xml after statistic lexical disambiguation, only with direction esde
 \t prepdisamb: xml after preposition disambiguation
 \t vprepdisamb: xml after verb preposition disambiguation, only with direction esde
 \t mwsplit: xml after multi-word splitting
@@ -213,7 +218,9 @@ Options for translation, es-quz:
 --quModel: Quechua language model
 Options for translation, es-de:
 --chunkMap: mapping of chunk names (for lexical transfer)
---statLexDisamb: statistical lexical disambiguation (weighted word alignments)
+--bilexprob: bilingual lexical probabilities (for statistical disambiguation)
+--deLemmaModel: German lemma language model
+--maxalt: maximum number of lemma alternatives
 --verbPrep: verb dependent preposition disambiguation rules (after prepDisamb)
 --deModel: German language model
 \n";
@@ -221,7 +228,9 @@ Options for translation, es-de:
 my %mapInputFormats = (
 	'plain' => 1, 'senttok'	=> 2,  'tagged'	=> 4, 'conll'	=> 5, 'parsed'	=> 6, 'conll2xml'	=> 7,
 	'rdisamb' => 8, 'coref'	=> 9, 'vdisamb'	=> 10, 'svm'	=> 11, 'lextrans'	=> 12, 'semtags'	=> 13, 'lexdisamb'	=> 14,
-	'morphdisamb' => 15, 'prepdisamb'	=> 16, 
+	'morphdisamb' => 15,
+	'statlexdisamb'	=> 15.5,
+	'prepdisamb'	=> 16, 
 	'vprepdisamb'	=> 16.4, 'mwsplit'	=> 16.5, 'pronoun'	=> 16.6, 'future'	=> 16.7, 'vprefix'	=> 16.8,
 	'intraTrans'	=> 17, 'interTrans'	=> 18, 'node2chunk'	=> 19, 'child2sibling'	=> 20,
 	'interOrder'=> 21, 'intraOrder'=> 22, 'morph'=> 23, 'words'=> 24, 'nbest' => 25
@@ -271,7 +280,9 @@ GetOptions(
     'quModel=s' => \$quModel,
     # options for es-de
     'chunkMap=s' => \$chunkMap,
-    'statLexDisamb=s' => \$statLexDisamb,
+    'bilexprob=s' => \$biLexProb,
+    'deLemmaModel=s' => \$deLemmaModel,
+    'maxalt=i' => \$maxalt,
     'verbPrep=s' => \$verbPrep,
     'deModel=s' => \$deModel
 ) or die "Incorrect usage!\n $helpstring";
@@ -326,7 +337,7 @@ GetOptions(
 			$outformat = $config{'outformat'};
 		} or $outformat ='nbest';
 	}
-	if($outformat !~ /^senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|vprepdisamb|mwsplit|pronoun|future|vprefix|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words|nbest$/){
+	if($outformat !~ /^senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|statlexdisamb|prepdisamb|vprepdisamb|mwsplit|pronoun|future|vprefix|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words|nbest$/){
 		die "Invalid output format $outformat, valid options are:
 \t senttok: plain text, one sentence per line
 \t tagged: wapiti crf
@@ -341,6 +352,7 @@ GetOptions(
 \t semtags: xml after insertion of semantic tags
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
+\t statlexdisamb: xml after statistic lexical disambiguation, only with direction esde
 \t prepdisamb: xml after preposition disambiguation
 \t vprepdisamb: xml after verb preposition disambiguation, only with direction esde
 \t mwsplit: xml after multi-word splitting
@@ -363,7 +375,7 @@ GetOptions(
 			$informat = $config{'informat'};
 		} or $informat ='senttok';
 	}
-	if($informat !~ /^plain|senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|prepdisamb|mwsplit|pronoun|future|vprefix|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words$/ ){
+	if($informat !~ /^plain|senttok|tagged|conll|parsed|conll2xml|rdisamb|coref|vdisamb|svm|lextrans|semtags|lexdisamb|morphdisamb|statlexdisamb|prepdisamb|mwsplit|pronoun|future|vprefix|intraTrans|interTrans|node2chunk|child2sibling|interOrder|intraOrder|morph|words$/ ){
 				die "Invalid input format $informat, valid options are:
 \t plain: plain text
 \t senttok: plain text, one sentence per line (=default)
@@ -380,6 +392,7 @@ GetOptions(
 \t semtags: xml after insertion of semantic tags
 \t lexdisamb: xml after lexical disambiguation (rule-based)
 \t morphdisamb: xml after morphological disambiguation
+\t statlexdisamb: xml after statistic lexical disambiguation, only with direction esde
 \t prepdisamb: xml after preposition disambiguation
 \t vprepdisamb: xml after verb preposition disambiguation, only with direction esde
 \t mwsplit: xml after multi-word splitting
@@ -1049,6 +1062,75 @@ if($startTrans <$mapInputFormats{'morphdisamb'})	#15)
 	}
 }
 
+####-----------------------------------begin specific processing for es-de -----------------------------------------------####
+if($direction eq 'esde')
+{
+### statistic lexical disambiguation
+if($startTrans <$mapInputFormats{'statlexdisamb'})
+{
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'statlexdisamb'} .") statistical lexical disambiguation\n";
+	my %bilexprobs = ();
+	$readrules =0;
+
+	# check if deModel is set
+	if($deLemmaModel eq ''){
+		eval{
+			$deLemmaModel = $config{'deLemmaModel'};
+		}
+		or die "Statistic lexical disambiguation failed, location of German lemma language model not indicated (set option deLemmaModel in config or use --deLemmaModel on commandline)!\n";
+	}
+	
+	if($biLexProb ne ''){
+		$readrules =1;
+		print STDERR "reading bilingual lexical probabilities from $biLexProb\n";
+		open (BILEXPROBFILE, "<:encoding(UTF-8)", $biLexProb) or die "Can't open $biLexProb: $!";
+	}
+	elsif($config ne ''){
+		$readrules =1;
+		$biLexProb = $config{"BilexProbFile"} or die "Bilingual lexical probability file not specified in config, insert BilexProbFile='path to bilingual lexical probabilities' or use option --bilexprob!";
+		print STDERR "reading bilingual lexical probabilities from file specified in $config: $biLexProb\n";
+		open (BILEXPROBFILE, "<:encoding(UTF-8)", $biLexProb) or die "Can't open $biLexProb as specified in config: $!";
+	}
+	if($readrules){
+		#read bilingual lexical probabilities from file into a hash (slem, tlem, prob)
+		while (<BILEXPROBFILE>) {
+			chomp;
+			s/#.*//;     # no comments
+			s/^\s+//;    # no leading white
+			s/\s+$//;    # no trailing white
+			next if /^$/;	# skip if empty line
+			my ( $slem, $tlem, $prob ) = split( /\s*\t+\s*/, $_, 3 );
+			# assure key is unique, use slem:tlem as key
+			my $key = "$slem\t$tlem";
+			$bilexprobs{$key} = $prob;
+		}
+		store \%bilexprobs, "$path/storage/BilexProbabilities";
+		close(BILEXPROBFILE);
+	}
+	else{
+		## if neither --bilexProb nor --config given: check if bilingual lexical probabilities are already available in storage
+		eval{
+			retrieve("$path/storage/BilexProbabilities");
+		} or print STDERR "Failed to retrieve bilingual lexical probabilities, set option BilexProbFile=path in config or use --bilexprob path on commandline to indicate bilingual lexical probabilities!\n";
+		%bilexprobs = %{ retrieve("$path/storage/BilexProbabilities") };
+	}
+
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==$mapInputFormats{'morphdisamb'}){
+		$dom = &readXML();
+	}
+	squoia::esde::statBilexDisamb::main(\$dom, \%bilexprobs, $deLemmaModel, $maxalt);
+	squoia::alternativeSentences::main(\$dom);
+	## if output format is 'statlexdisamb': print and exit
+	if($outformat eq 'statlexdisamb'){
+		my $docstring = $dom->toString(3);
+		print STDOUT $docstring;
+		exit;
+	}
+}
+}
+####-----------------------------------end specific processing for es-de -----------------------------------------------####
+
 ### preposition disambiguation, rule-based
 if($startTrans <$mapInputFormats{'prepdisamb'})	#16)
 {
@@ -1102,7 +1184,8 @@ if($startTrans <$mapInputFormats{'prepdisamb'})	#16)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==$mapInputFormats{'morphdisamb'}){	#15){
+	if(($direction eq 'esqu' and $startTrans ==$mapInputFormats{'morphdisamb'})
+	 or ($direction eq 'esde' and $startTrans ==$mapInputFormats{'statlexdisamb'})){
 		$dom = &readXML();
 	}
 	squoia::prepositionDisamb::main(\$dom, \%prepSel);
@@ -1166,7 +1249,7 @@ if($startTrans <$mapInputFormats{'vprepdisamb'})
 		$dom = &readXML();
 	}
 	squoia::esde::verbPrepDisamb::main(\$dom, \%verbPrepSel);
-	## if output format is 'mwsplit': print and exit
+	## if output format is 'vprepdisamb': print and exit
 	if($outformat eq 'vprepdisamb'){
 		my $docstring = $dom->toString(3);
 		print STDOUT $docstring;
@@ -1199,7 +1282,7 @@ if($startTrans <$mapInputFormats{'pronoun'})
 		$dom = &readXML();
 	}
 	squoia::esde::addPronouns::main(\$dom);
-	## if output format is 'mwsplit': print and exit
+	## if output format is 'pronoun': print and exit
 	if($outformat eq 'pronoun'){
 		my $docstring = $dom->toString(3);
 		print STDOUT $docstring;
@@ -1215,7 +1298,7 @@ if($startTrans <$mapInputFormats{'future'})
 		$dom = &readXML();
 	}
 	squoia::esde::addFutureAux::main(\$dom);
-	## if output format is 'mwsplit': print and exit
+	## if output format is 'future': print and exit
 	if($outformat eq 'future'){
 		my $docstring = $dom->toString(3);
 		print STDOUT $docstring;
@@ -1231,7 +1314,7 @@ if($startTrans <$mapInputFormats{'vprefix'})
 		$dom = &readXML();
 	}
 	squoia::esde::splitVerbPrefix::main(\$dom);
-	## if output format is 'mwsplit': print and exit
+	## if output format is 'vprefix': print and exit
 	if($outformat eq 'vprefix'){
 		my $docstring = $dom->toString(3);
 		print STDOUT $docstring;
@@ -1287,7 +1370,8 @@ if($startTrans <$mapInputFormats{'intraTrans'})	#17)
 	}
 	
 	# if starting translation process from here, read file or stdin
-	if($startTrans ==$mapInputFormats{'prepdisamb'} or ($direction eq 'esde' and $startTrans ==$mapInputFormats{'vprefix'})){	#16){
+	if(($direction eq 'esqu' and $startTrans ==$mapInputFormats{'prepdisamb'})
+	 or ($direction eq 'esde' and $startTrans ==$mapInputFormats{'vprefix'})){
 		$dom = &readXML();
 	}
 	squoia::intrachunkTransfer::main(\$dom, \%intraConditions);
@@ -1690,7 +1774,7 @@ if($direction eq 'esqu')
 		eval{
 			$quModel = $config{'quModel'};
 		}
-		or die "Ranking failed, location of quechua language model not indicated (set option quModel in confix or use --quModel on commandline)!\n";
+		or die "Ranking failed, location of quechua language model not indicated (set option quModel in config or use --quModel on commandline)!\n";
 	}
 	
 	# if starting translation process from here, read file or stdin
@@ -1710,6 +1794,28 @@ if($direction eq 'esqu')
 }
 ## de
 elsif($direction eq 'esde'){
+	# check if deModel is set
+	if($deModel eq ''){
+		eval{
+			$deModel = $config{'deModel'};
+		}
+		or die "Ranking failed, location of German language model not indicated (set option deModel in confix or use --deModel on commandline)!\n";
+	}
+	
+	# if starting translation process from here, read file or stdin
+	if($startTrans ==$mapInputFormats{'words'}){
+		if($file ne ''){
+			$sentFile = $file;
+		}
+		else{
+			open (SENT, ">:encoding(UTF-8)", $sentFile) or die "Can't open file \"$sentFile\" to write: $!\n";
+			while(<>){
+				print SENT $_;
+			}
+			close(SENT);
+		}
+	}
+	system("$path/squoia/esde/outputSentences -m $deModel -n $nbest -i $sentFile");	# TODO: outputSentences for German...
 	
 }
 
@@ -1722,13 +1828,13 @@ END{
 
 sub readXML{
 	if($file ne '' ){
-				open (FILE, "<", $file) or die "Can't open file \"$file\": $!\n";
-				$dom  = XML::LibXML->load_xml( IO => *FILE );
-				close(FILE);
-		}
-		else{
-			binmode(STDIN);
-			$dom  = XML::LibXML->load_xml( IO => *STDIN);
-		}
+		open (FILE, "<", $file) or die "Can't open file \"$file\": $!\n";
+		$dom  = XML::LibXML->load_xml( IO => *FILE );
+		close(FILE);
+	}
+	else{
+		binmode(STDIN);
+		$dom  = XML::LibXML->load_xml( IO => *STDIN);
+	}
 	return $dom;
 }
