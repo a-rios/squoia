@@ -12,6 +12,7 @@ define Cons [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|'|’];
 define VocRoot 	[a|e|i|o|u|á|é|í|ó|ú|ü];
 define ConsRoot [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|x|y|z|'|’];
 define UPPER 	[A|B|C|D|E|F|G|H|I|J|K|L|M|N|Ñ|O|P|Q|R|S|T|U|V|W|X|Y|Z|Á|É|Í|Ó|Ú|Ü];
+define LOWER	[a|e|i|o|u|b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]; # only needed for punctuation tags -> ASCII suffices
 define Numbers [%0|1|2|3|4|5|6|7|8|9|%,|%.|%'];
 # should be able to generate quantities recognized by FreeLing (see quantities.dat in Freeling's grammar)
 define Quantity   [Numbers* [","|'|"."] Numbers* (" ")["%"|"$"|"£"|"€"|"¥"|"Å"|"ºc"|"ºf"|"ºk"]* [VocRoot|ConsRoot|UPPER]* (2|3)  ];
@@ -442,8 +443,8 @@ define Verb [[Root|VDeriv] VerbSuffixes ] .o. VDERIV;
        # Satzzeichen #
        #-------------#
        
-       define punc [%,|%،|%、|%.|%…|"%"|'|%;|%/|%⁄|"-"|%‒|%–|%—|%―|%!|%?|%+|%(|%)|%[|%]|%:|"&"|%"|%\|%^|%~|%`|%°|%§|%¿|%¡|%»|%«|%’|%@|%#|%*|%=|%}|%{|%_|%<|%>|%—|"..."|"``"|"‘"|%"|"''"|%“|"<<"|">>"|%„|%”];
-       define puncWord [punc "-PUNC-" UPPER+ ];
+       define punc [%,|%،|%、|%.|%…|"%"|'|%;|%/|%⁄|"-"|%‒|%–|%—|%―|%!|%?|%+|%(|%)|%[|%]|%:|"&"|%"|%\|%^|%~|%`|%°|%§|%¿|%¡|%»|%«|%’|%@|%#|%*|%=|%}|%{|%_|%<|%>|%—|"..."|"``"|"‘"|%"|"''"|%“|"<<"|">>"|%„|%”|’];
+       define puncWord [punc "-PUNC-" UPPER+ (LOWER) ];
           
 
 #########################################################################

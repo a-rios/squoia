@@ -105,7 +105,7 @@ sub main{
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		$sno = $sentence->getAttribute('ord');
-		print STDERR "SENT $sno\n";
+		#print STDERR "SENT $sno\n";
 		#get all interesting NODES within SENTENCE
 		my @sentenceNodes = $sentence->findnodes('descendant::NODE[parent::CHUNK[@verbform] or starts-with(@mi,"PR") or @mi="CS"]'); #head verb, relative pronoun, or subordinating conjunction
 	
@@ -144,12 +144,12 @@ sub main{
 				
 			}
 			elsif ($smi =~ /^CS/) {
-				print STDERR "LINKER\n";
+				#print STDERR "LINKER\n";
 			}
 			else {
 				my $verbform = $node->parentNode->getAttribute('verbform');
 				if ($verbform =~ /ambiguous/) {
-					print STDERR "\n---AMBIGUOUS ";
+					#print STDERR "\n---AMBIGUOUS ";
 					# before trying to find the main verb and linker: check if this is a passive form
 					# (smv cannot classify passives!)
 					if($node->getAttribute('mi') =~ /VMP00S[MF]/ && $node->exists('child::NODE[@lem="ser" or NODE[@lem="ser"] ]')){
@@ -168,15 +168,15 @@ sub main{
 							my $linker = $prevnode->getAttribute('lem');
 							$newverbform = "MLdisamb";
 							#print STDOUT "FOUND an example in sentence $sno\n";
-							print STDERR "linked with $linker\n";
+							#print STDERR "linked with $linker\n";
 							# search main verb left or right of this one
 							my $found=0;
 							for (my $j=$i-2; $j>=0; $j--) { # left
 								my $cand = $nodes[$j];
 								if ($cand->parentNode->hasAttribute('verbform')) {
-									print STDERR "found candidate main verb left of subordinated verb\n";
+									#print STDERR "found candidate main verb left of subordinated verb\n";
 									my $candverb = $cand->getAttribute('lem');
-									print STDERR "classifiy: $candverb,$subordverb,$linker\n";
+									#print STDERR "classifiy: $candverb,$subordverb,$linker\n";
 									my $class = &predictVerbform($candverb,$subordverb,$smi,$linker);
 									$newverbform = $mapClassToVerbform{$class};
 									$node->parentNode->setAttribute('verbform', $newverbform);
@@ -186,20 +186,20 @@ sub main{
 									last;
 								}
 								else {
-									print STDERR "WEIRD left $cand ....\n";
+									print STDERR "WEIRD left $cand for svm....\n";
 								}
 							}
 							if (not $found) {
 								for (my $j=$i+1; $j<scalar(@nodes); $j++) { # search right for the next verb; 
 									my $cand = $nodes[$j];
 									if ($cand->parentNode->hasAttribute('verbform')) {
-										print STDERR "found candidate main verb right of subordinated verb\n";
+										#print STDERR "found candidate main verb right of subordinated verb\n";
 										if ($nodes[$j-1]->getAttribute('mi') =~ /^CS|^PR/ ) {
-											print STDERR "candidate is rather subordinated with ".$nodes[$j-1]->getAttribute('lem')."... continue searching\n";
+											#print STDERR "candidate is rather subordinated with ".$nodes[$j-1]->getAttribute('lem')."... continue searching\n";
 											next; 
 										}
 										my $candverb = $cand->getAttribute('lem');
-										print STDERR "classifiy: $candverb,$subordverb,$linker\n";
+										#print STDERR "classifiy: $candverb,$subordverb,$linker\n";
 										#print STDOUT "$candverb,$subordverb,$linker\n";
 										my $class = &predictVerbform($candverb,$subordverb,$smi,$linker);
 										$newverbform = $mapClassToVerbform{$class};
@@ -220,35 +220,35 @@ sub main{
 									# for evaluation
 									#$node->parentNode->setAttribute('verbformMLsvm', $newverbform);
 									
-									print STDERR "no main verb but linker\n";
-									print STDERR "classify: 0,$subordverb,$linker\n";
+								#	print STDERR "no main verb but linker\n";
+								#	print STDERR "classify: 0,$subordverb,$linker\n";
 								}
 							
 							}
 						}
 						elsif (($prevsmi =~ /^PR/ && $prevnode->getAttribute('lem') ne 'cuyo' ) or $node->exists('child::NODE[ (starts-with(@mi,"PR") and not(@lem="cuyo"))  or NODE[NODE[starts-with(@mi,"PR") and not(@lem="cuyo") ]] ]')) {
-							print STDERR "relative clause\n";
+							#print STDERR "relative clause\n";
 							$newverbform = "rel:";
 							$node->parentNode->setAttribute('verbform',$newverbform);
 							# for evaluation
 							#$node->parentNode->setAttribute('verbformMLrule',$newverbform);
-							print STDERR "verb form of $subordverb set to 'rel:'\n";
+						#	print STDERR "verb form of $subordverb set to 'rel:'\n";
 							# try to find head noun
 							my $headnoun = squoia::util::getHeadNoun($node->parentNode());
-							if($headnoun != -1){
-								print STDERR "headnoun is:".$headnoun->toString()."\n";
-							}
-							else{
-								# TODO: scan to the left....? or better leave ambiguous?
-								print STDERR "head noun not found\n";
-							}
+#							if($headnoun != -1){
+#								print STDERR "headnoun is:".$headnoun->toString()."\n";
+#							}
+#							else{
+#								# TODO: scan to the left....? or better leave ambiguous?
+#								print STDERR "head noun not found\n";
+#							}
 						}
 						else {
-							print STDERR "no linker, not in relative clause, no coordinative conjunction\n";
+							#print STDERR "no linker, not in relative clause, no coordinative conjunction\n";
 							my $headverb = $prevnode->getAttribute('lem');
 							$newverbform = $prevnode->parentNode->getAttribute('verbform');
 							
-							print STDERR "verb form of $subordverb set to 'main' (coordination would be $newverbform)\n";
+							#print STDERR "verb form of $subordverb set to 'main' (coordination would be $newverbform)\n";
 							$node->parentNode->setAttribute('verbform','main');
 							# for evaluation
 							#$node->parentNode->setAttribute('verbformMLrule','main');
@@ -261,8 +261,8 @@ sub main{
 						}
 					}
 					else {
-						print STDERR "no previous verb, no linker, not in relative clause\n";
-						print STDERR "verb form of $subordverb set to 'main'\n";
+						#print STDERR "no previous verb, no linker, not in relative clause\n";
+						#print STDERR "verb form of $subordverb set to 'main'\n";
 						$node->parentNode->setAttribute('verbform','main');
 						# for evaluation
 						#$node->parentNode->setAttribute('verbformMLrule','main');
@@ -270,12 +270,12 @@ sub main{
 					}
 				}
 				else {
-					print STDERR "VERB form: $verbform\n";
+					#print STDERR "VERB form: $verbform\n";
 				}
 			}
 		}
 		
-		print STDERR "\n";	# empty line between sentences
+		#print STDERR "\n";	# empty line between sentences
 	}
 
 	#return $dom;
@@ -324,7 +324,7 @@ sub predictVerbform{
 	# get linker
 	if($mapUnknownLinkerToKnowns{$linker}){
 		$linker = $mapUnknownLinkerToKnowns{$linker};
-		print STDERR "mapped linker to: $linker\n";
+		#print STDERR "mapped linker to: $linker\n";
 	}
 	if($mapLinkerToVec{$linker}){
 		@vec[$mapLinkerToVec{$linker}] = 1;
@@ -338,13 +338,13 @@ sub predictVerbform{
 	
 	## NOTE, need an extra element!!
 	unshift(@vec,0);
-	print STDERR "vec: @vec\n";
-	print STDERR "length: ".scalar(@vec)."\n";
+	#print STDERR "vec: @vec\n";
+	#print STDERR "length: ".scalar(@vec)."\n";
 	my $ds =  new Algorithm::SVM::DataSet(Label => 1, Data => \@vec);
 									 
 	my $svmClass = $svm->predict($ds);
 	
-	print STDERR "predicted $svmClass, in xml: $mapSVMClassToXmlClass{$svmClass}, verb form: $mapClassToVerbform{$mapSVMClassToXmlClass{$svmClass}}\n";
+	#print STDERR "predicted $svmClass, in xml: $mapSVMClassToXmlClass{$svmClass}, verb form: $mapClassToVerbform{$mapSVMClassToXmlClass{$svmClass}}\n";
 	
 	return $mapSVMClassToXmlClass{$svmClass};
 #	my  @test  = 	$ds->asArray();						 

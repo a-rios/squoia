@@ -139,8 +139,8 @@ sub getFiniteVerb{
 	}
 	else
 	{
-		print STDERR "finite verb not found in chunk: ";
-		print STDERR $verbchunk->getAttribute('ord')."\n";
+		#print STDERR "finite verb not found in chunk: ";
+		#print STDERR $verbchunk->getAttribute('ord')."\n";
 		#print STDERR $verbchunk->toString();
 		#print STDERR "\n";
 		return 0;
@@ -322,7 +322,7 @@ if($newHeadPos<scalar(@{$newSequence}))
 				{
 					
 					my $precedingPosition = &getPos($oldSequence,$precedingElement);
-					print STDERR "el: $precedingElement. $precedingPosition\n";
+					#print STDERR "el: $precedingElement. $precedingPosition\n";
 				
 					#print STDERR "prec pos: $precedingPosition, element match:";
 					if($precedingPosition<scalar(@{$oldSequence}))
@@ -357,7 +357,7 @@ sub insertIntoArray{
 	my $arrayref=$_[0];
 	my $element = $_[1];
 	my $index = $_[2];
-	print STDERR "@{$arrayref}\n";
+	#print STDERR "@{$arrayref}\n";
 	
 }
 
@@ -428,9 +428,9 @@ sub getRelatedChunks{
 	my $pathStr = $_[1];
 
 	my $xpath = &mapPath2XPath($pathStr,\%mapChunkHash);
-	print STDERR "xpath to related chunks: $xpath\n";
+	#print STDERR "xpath to related chunks: $xpath\n";
 	my @candidates = $srcChunk->findnodes($xpath);
-	print STDERR scalar(@candidates). " candidates\n";
+	#print STDERR scalar(@candidates). " candidates\n";
 	return @candidates;
 }
 
@@ -439,9 +439,9 @@ sub getRelatedNodes{
 	my $nodePathStr = $_[1];
 
 	my $xpath = &mapPath2XPath($nodePathStr,\%mapNodeHash);
-	print STDERR "$xpath\n";
+	#print STDERR "$xpath\n";
 	my @candidates = $srcNode->findnodes($xpath);
-	print STDERR scalar(@candidates). " candidates\n";
+	#print STDERR scalar(@candidates). " candidates\n";
 	return @candidates;
 }
 
@@ -452,7 +452,7 @@ sub getTargetNode{
 	my $trgNode = $srcNode;
 	my $pathStep;
 	if ($pathStep = shift(@$nodePath)) {
-		print STDERR "path step: $pathStep\n";
+		#print STDERR "path step: $pathStep\n";
 		# NODE is self
 		if ( $pathStep eq 'my' ) {
 			$trgNode = $srcNode;
@@ -503,12 +503,12 @@ sub evalConditionsTest{
 	my $trgNode = $_[2];
 	
 	foreach my $cond (@copyConditions) {
-		print STDERR "condition: $cond ";
+		#print STDERR "condition: $cond ";
 		my ( $nodePathAttr, $value ) = split( '=', $cond );
 		my @nodePath = split( /\./, $nodePathAttr );
 		my $nodeAttr = pop(@nodePath);
-		print STDERR "node path: @nodePath\n";
-		print STDERR "node attribute: $nodeAttr\n";
+		#print STDERR "node path: @nodePath\n";
+		#print STDERR "node attribute: $nodeAttr\n";
 		# no condition given, treat as false ?TODO?
 		if ( $nodeAttr eq '-' ) {
 			$cond= 0; 
@@ -794,9 +794,9 @@ sub getMainVerb{
 	{
 		#get sentence id
 		my $sentenceID = $relClause->findvalue('ancestor::SENTENCE/@ord');
-		print STDERR "main verb not found in sentence nr. $sentenceID: \n ";
-		print STDERR $relClause->toString();
-		print STDERR "\n";
+#		print STDERR "main verb not found in sentence nr. $sentenceID: \n ";
+#		print STDERR $relClause->toString();
+#		print STDERR "\n";
 	}
 }
 

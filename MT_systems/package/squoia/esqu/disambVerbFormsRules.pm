@@ -42,15 +42,14 @@ sub main{
 		# get all verb chunks and check if they have an overt subject, 
 		# if they don't have an overt subject and precede the main clause -> look for subject in preceding sentence
 		# if they don't have an overt subject and follow the main clause, and the main clause has an overt subject, this is the subject of the subordinated chunk
-		print STDERR "Disambiguating verb form in sentence:";
-		print STDERR $sentence->getAttribute('ord')."\n";
+		#print STDERR "Disambiguating verb form in sentence: ".$sentence->getAttribute('ord')."\n";
 		
 	 	
 	 	# consider linear sequence in sentence; in xml the verb of the main clause comes always first, but in this case the subject of a preceding subordinated clause is probably coreferent with the subject of the preceding clause
 	 	my @verbChunks = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]');
 	 	$nbrOfVerbChunks = $nbrOfVerbChunks+scalar(@verbChunks);
-	 	#print STDERR "$nbrOfVerbChunks\n";
-	 	
+#	 	#print STDERR "$nbrOfVerbChunks\n";
+#	 	
 	 	foreach my $verbChunk (@verbChunks)
 	 	{
 	 		#print STDERR "disambiguating verb chunk: ".$verbChunk->getAttribute('ord')."\n";
@@ -76,7 +75,7 @@ sub main{
 	 					($conjunction) = $verbChunk->findnodes('child::CHUNK/NODE[@lem="mientras" or @lem="aun_no" or @lem="aún_no"][1]');
 	 				}
 	 				if($conjunction){
-	 					print STDERR "conj in ".$verbChunk->getAttribute('ord').": ".$conjunction->toString()."\n";
+	 					#print STDERR "conj in ".$verbChunk->getAttribute('ord').": ".$conjunction->toString()."\n";
 	 					#print STDERR "lem: ".$conjunction->getAttribute('lem')."\n";
 	 				}
 	 				
@@ -595,7 +594,7 @@ sub main{
 					# set delete=yes in haber
 	 				# 'las inercias que hay que combatir'
 	 				# note that parser can attach 'que' to 'hay' but also to infinitive! 
-	 				if(( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || ( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/NODE[@lem="que"]]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]') ) )
+	 				if(( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || ( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3") and NODE[@lem="que"]]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]') ) )
 	 				{
 	 					$nbrOfFiniteForms++;
 	 					#$verbChunk->setAttribute('verbform','main');
@@ -643,17 +642,17 @@ sub main{
 	 	}
 	}
 	
-	print STDERR "\n****************************************************************************************\n";
-	print STDERR "total number of verb chunks: ".$nbrOfVerbChunks."\n";
-	print STDERR "total number of verb chunks with no finite verb: ".$nbrOfNonFiniteChunks."\n";
-	print STDERR "total number of relative clauses: $nbrOfRelClauses \n";
-	print STDERR "total number of switch reference forms: ".$nbrOfSwitchForms."\n";
-	print STDERR "total number of nominal clauses: ".$nbrOfNominalForms."\n";
-	print STDERR "total number of final clauses: ".$nbrOfFinalClauses."\n";
-	print STDERR "total number of finite forms: ".$nbrOfFiniteForms."\n";
-	print STDERR "total number of ambiguous clauses: ".$nbrOfAmbigousClauses."\n";
-	print STDERR "total number of disambiguated verb forms: ".($nbrOfRelClauses+$nbrOfSwitchForms+$nbrOfNominalForms+$nbrOfFinalClauses+$nbrOfFiniteForms)."\n";
-	print STDERR "\n****************************************************************************************\n";
+#	print STDERR "\n****************************************************************************************\n";
+#	print STDERR "total number of verb chunks: ".$nbrOfVerbChunks."\n";
+#	print STDERR "total number of verb chunks with no finite verb: ".$nbrOfNonFiniteChunks."\n";
+#	print STDERR "total number of relative clauses: $nbrOfRelClauses \n";
+#	print STDERR "total number of switch reference forms: ".$nbrOfSwitchForms."\n";
+#	print STDERR "total number of nominal clauses: ".$nbrOfNominalForms."\n";
+#	print STDERR "total number of final clauses: ".$nbrOfFinalClauses."\n";
+#	print STDERR "total number of finite forms: ".$nbrOfFiniteForms."\n";
+#	print STDERR "total number of ambiguous clauses: ".$nbrOfAmbigousClauses."\n";
+#	print STDERR "total number of disambiguated verb forms: ".($nbrOfRelClauses+$nbrOfSwitchForms+$nbrOfNominalForms+$nbrOfFinalClauses+$nbrOfFiniteForms)."\n";
+#	print STDERR "\n****************************************************************************************\n";
 
 	#return $dom;	
 	# print new xml to stdout
@@ -768,7 +767,7 @@ sub compareSubjects{
 sub compareSubjectsDirectSpeech{
 	my $verbChunk = $_[0];
 	my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
-	print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n";
+	#print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n";
 	#subject of main clause
 	my $mainverb = &getVerbMainClause($verbChunk);
 	if($mainverb && $finiteVerb)
@@ -825,7 +824,7 @@ sub compareSubjectsDirectSpeech{
 					# subject of this (subordinate) clause
 					my ($subjNoun, $subjMI ) = &getSubjectNounSpeech($verbChunk);
 					my ($subjNounMain,$subjMIMain ) =  &getSubjectNounSpeech($mainverb);
-					print STDERR "main suj: $subjNounMain, sub suj: $subjNoun\n";
+					#print STDERR "main suj: $subjNounMain, sub suj: $subjNoun\n";
 		
 				# if subjects of main and subord clause found, check if they're the same
 				if($subjNounMain && $subjNoun && $subjMIMain && $subjMI)
@@ -941,7 +940,7 @@ sub getSubjectNoun{
 	}
 
 	my @subj = ($subjectNoun, $subjectNounMI);
-	print STDERR "$subjectNoun:$subjectNounMI\n";
+	#print STDERR "$subjectNoun:$subjectNounMI\n";
 	return @subj;
 }
 
@@ -976,7 +975,7 @@ sub getSubjectNounSpeech{
 	}
 
 	my @subj = ($subjectNoun, $subjectNounMI);
-	print STDERR "$subjectNoun:$subjectNounMI\n";
+	#print STDERR "$subjectNoun:$subjectNounMI\n";
 	return @subj;
 }
 

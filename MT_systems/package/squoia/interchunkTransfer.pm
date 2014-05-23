@@ -75,7 +75,7 @@ sub transferSyntInformation{
 	my $chunk2   = $_[2];
 
 	my ($chunk1Attr,$chunk2Attr,$direction,$wmode) = split(/\t/,$configline);
-	print STDERR "direction $direction\n";
+	#print STDERR "direction $direction\n";
 	if ($direction eq "1to2") {
 		&propagateAttr($chunk1,$chunk1Attr,$chunk2,$chunk2Attr,$wmode);
 	}

@@ -17,6 +17,7 @@
 # - rules are stored in a hash, key is the combination of the source lemma (1st column) and target lemma (2nd column in rules)
 #  --> it's not possible to have more than one rule with the same source lemma and the same target lemma!!
 
+
 #gender related ambiguities
 viejo		paya		k	(my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]}) || my.smi=/NCF/
 viejo		machu		k	(my.smi=/AQ.M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/
