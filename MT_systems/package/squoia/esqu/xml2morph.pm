@@ -211,7 +211,7 @@ sub main{
 	 			
 	 			# if there's a node (e.g. interrogative pronoun) in verb chunk or
 	 			#if wrong analysis-> there might be a node in the verbchunk that doesn't belong here, extract that node
-	 			my @spareNodes = $chunk->findnodes('child::NODE[starts-with(@smi,"V")]/descendant::NODE[not(starts-with(@smi, "V") or starts-with(@smi, "C") or starts-with(@smi,"PR") or starts-with(@smi,"DA") or starts-with(@smi,"S"))]');
+	 			my @spareNodes = $chunk->findnodes('child::NODE[starts-with(@smi,"V")]/descendant::NODE[not(starts-with(@smi, "V") or starts-with(@smi, "C") or starts-with(@smi,"PR") or starts-with(@smi,"DA") or starts-with(@smi,"DP") or starts-with(@smi,"S"))]');
 	 			foreach my $sparenode (@spareNodes)
 	 			{
 					&printNode($sparenode,$chunk);
@@ -524,6 +524,9 @@ sub main{
 					 	}
 					 	print OUTFILE "\n";
 		 			}
+		 		}
+		 		if($chunk->getAttribute('conjLast') ne ''){
+		 			print OUTFILE $chunk->getAttribute('conjLast').":\n";
 		 		}
 	 		}
 	 		# if this is a noun chunk, but NOT a pronoun (note, pronouns have an attribute  verbmi that has been copied to their verb,

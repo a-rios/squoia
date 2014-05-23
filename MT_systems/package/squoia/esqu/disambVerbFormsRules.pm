@@ -141,7 +141,7 @@ sub main{
 	 					$nbrOfFiniteForms++;
 	 					$verbChunk->setAttribute('verbform', 'main');
 	 				}
-	 				# if this is a subordinated clause with 'si/cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
+	 				# if this is a subordinated clause with 'cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
 	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aún_cuando|aun_cuando|aunque|a_pesar_de_que|porque|con_tal_que|con_tal_de_que|en_cuanto|una_vez_que|después_de_que/ )
 	 				{
 	 					#check if same subject 
@@ -166,13 +166,22 @@ sub main{
 	 						$verbChunk->setAttribute('verbform' ,'switch');
 	 					}
 	 				}
-	 				# with si: conditional, switch +Top, but note: might also be an indirect question ('preguntaron si compraste la casa')
-	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si$|^conque$/ && !$verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="preguntar" or @lem="interrogar"]') )
+	 				# with conque, switch +Top
+	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^conque$/ )
 	 				{
 	 					#check if same subject 
 	 					&compareSubjects($verbChunk);
 	 					$nbrOfSwitchForms++;
 	 					$verbChunk->setAttribute('chunkmi', '+Top');
+	 				}
+	 				# with si: conditional, main  chayq (and sichus?), but note: might also be an indirect question ('preguntaron si compraste la casa')
+	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si$/ && !$verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="preguntar" or @lem="interrogar"]') )
+	 				{
+	 					#check if same subject 
+	 					$verbChunk->setAttribute('verbform', 'main');
+	 					$verbChunk->setAttribute('conj', 'sichus');
+	 					$verbChunk->setAttribute('conjHere', 'yes');
+	 					$verbChunk->setAttribute('conjLast', 'chayqa');
 	 				}
 	 				# if this is a subordinated clause with 'sin_que..'-> DS form 
 	 				# -> in same subject contexts, verb would be infinitive
