@@ -80,6 +80,7 @@ my $informat = 'senttok'; # TODO: default better be plain..?
 # options for tagging
 my $wapiti;
 my $wapitiModel;
+my $wapitiPort;
 my $freelingPort;
 my $freelingConf;
 my $matxin;
@@ -187,6 +188,7 @@ available options are:
 Options for tagging:
 --wapiti: path to wapiti executables
 --wapitiModel: path to wapiti model (for tagging)
+--wapitiPort: port for wapiti_server (for tagging)
 --freelingPort: port for squoia_analyzer (morphological analysis)
 --freelingConf: path to FreeLing config, only needed if squoia_analyzer should be restartet (morphological analysis)
 Options for parsing:
@@ -250,6 +252,7 @@ GetOptions(
     # options for tagging
 	'wapiti=s'    => \$wapiti,
 	'wapitiModel=s'    => \$wapitiModel,
+	'wapitiPort=i'    => \$wapitiPort,
 	'freelingPort=i'    => \$freelingPort,
 	'freelingConf=s'    => \$freelingConf,
 	'matxin=s'    => \$matxin,
@@ -446,6 +449,23 @@ print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 			}
 			print STDERR "squoia_analyzer now ready\n";
 		}
+#		if($wapitiModel eq '' or $wapitiPort eq ''){
+#			eval{
+#				$wapitiModel = $config{'wapitiModel'}; $wapitiPort = $config{'wapitiPort'};
+#			}
+#			or die "Could not start tagging, no wapiti model or port given!\n";;
+#		}
+#		my $wapitiRunning = `ps ax | grep -v grep | grep "wapiti_server"|grep "$wapitiModel" | grep "port.*$wapitiPort"` ;
+#		if($wapitiRunning eq ''){
+#			print STDERR "no instance of wapiti tagger server running on port $wapitiPort with model $wapitiModel\n";
+#			print STDERR "starting wapiti_server on port $wapitiPort with model $wapitiModel, logging to $path/logs/logwapiti...\n";
+#			system("wapiti_server label -m $wapitiModel --port $wapitiPort 2> $path/logs/logwapiti &");
+#			print STDERR "starting wapiti_server, please wait...\n";
+#			sleep 10;
+#			print STDERR "wapiti_server now hopefully ready\n";
+#		} else {
+#			print STDERR "Tagger wapiti_server running\n";
+#		}
 	
 
 ###-----------------------------------end read commandline arguments -----------------------------------------------####
@@ -456,25 +476,28 @@ print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 
 if($startTrans<$mapInputFormats{'tagged'})	#4)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'tagged'} .") tagging\n";
 	### tagging: if input file given with --file or -f:
 	# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
 	if($matxin eq '' or $wapiti eq '' or $wapitiModel eq ''){
 		eval{
-			$matxin = $config{'matxin'}; $wapiti = $config{'wapiti'}; $wapitiModel = $config{'wapitiModel'};
+			$matxin = $config{'matxin'}; $wapiti = $config{'wapiti'}; $wapitiModel = $config{'wapitiModel'}; $wapitiPort = $config{'wapitiPort'};
 		}
-		or die "Tagging failed, location of matxin, wapiti or wapiti model not indicated!\n";;
+		or die "Tagging failed, location of matxin, wapiti or wapiti model or port not indicated!\n";;
 	}
 	if($file ne ''){
-				open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
-		}
-		# if no file given, expect input on stdin
-		else{
-			# solution without open2, use tmp file
-			my $tmp = $path."/tmp/tmp.txt";
-			open (TMP, ">:encoding(UTF-8)", $tmp) or die "Can't open temporary file \"$tmp\" to write: $!\n";
-			while(<>){print TMP $_;}
-			open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
-			close(TMP);
+		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+#		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
+	}
+	# if no file given, expect input on stdin
+	else{
+		# solution without open2, use tmp file
+		my $tmp = $path."/tmp/tmp.txt";
+		open (TMP, ">:encoding(UTF-8)", $tmp) or die "Can't open temporary file \"$tmp\" to write: $!\n";
+		while(<>){print TMP $_;}
+		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+#		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
+		close(TMP);
 	}
 	## if output format is 'crf': print and exit
 	if($outformat eq 'tagged'){
@@ -485,6 +508,7 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 }
 my $conllLines;
 if($startTrans<$mapInputFormats{'conll'}){	#5){
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'conll'} .") conll format\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans==$mapInputFormats{'tagged'}){	#4){
 		if($file){
@@ -563,6 +587,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 			sleep 1;
 		}
 
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'parsed'} .") parsing\n";
 	if($startTrans <$mapInputFormats{'parsed'})	#6)
 	{
 		### parse tagged text:
@@ -596,6 +621,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 		}
 	}
 
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'conll2xml'} .") conll to xml format\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'parsed'}){	#6){
 		if($file ne ''){
