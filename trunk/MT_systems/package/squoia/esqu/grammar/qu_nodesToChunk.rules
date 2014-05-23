@@ -1,9 +1,0 @@
-#origNodeConditions							parentChunkAttrVal	targetChunkAttrVal
-#my.pos=/PRELS/ && parent.pos=/VV/ && chunkparent.type=/VP/		relPro="no"	type=NP-relpro,comment="relative pronoun"
-
-# in case determiner = plural -> delete plural suffix in det-chunk (estas casas -> kay wasikuna, not *kaykuna wasikuna)
-my.smi=/^D[DTEIN]/ && !(chunkparent.delete=yes) && !my.slem=uno				func=hasdet		type=det,deleteMorph=+Pl
-
-my.smi=/^DI/ && my.slem=uno && xpath{parent::NODE[@slem="día"]}				func=hasdet		type=det
-
-
