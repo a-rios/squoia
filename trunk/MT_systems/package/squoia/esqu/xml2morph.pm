@@ -198,8 +198,8 @@ sub main{
 	 	foreach my $idref (sort {$a<=>$b} (keys (%chunkSequence))) 
 	 	{
 	 		my $chunk = $chunkSequence{$idref};
-	 		print STDERR "new chunk: ";
-	 		print STDERR $chunk->getAttribute('ref')."\n";
+	 		#print STDERR "new chunk: ";
+	 		#print STDERR $chunk->getAttribute('ref')."\n";
 	 		#if this is a verb chunk, get lemma and verbmi directly from chunk, no need to process the nodes
 	 		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]') && !$chunk->hasAttribute('delete') )
 	 		{
@@ -265,7 +265,8 @@ sub main{
 	 					}
 	 					else{
 	 						foreach my $syn (@SYNnodes){
-	 							my $lem = $syn->getAttribute('lem');
+	 							#my $lem = $syn->getAttribute('lem');
+	 							my $lem = &getVerbLem($syn,$chunk);
 	 							unless($printedLems =~ /#$lem#/){
 		 							my $add_mi = $syn->getAttribute('add_mi');
 		 							my $infverbmi = $chunk->getAttribute('infverbmi');
@@ -635,6 +636,8 @@ sub main{
 	 			}
 	 			# find the adverb
 	 			my $adverb = @{$chunk->findnodes('child::NODE[@smi="RG" or @smi="RN" ]')}[0];
+	 			
+	 			
 	 			if($adverb->exists('child::SYN'))
 	 			{
 		 			# get its syn nodes:
@@ -655,7 +658,13 @@ sub main{
 	 			}
 	 			else{
 	 				&printNode($adverb,$chunk);
-	 				print OUTFILE "\n";	
+	 				print OUTFILE "\n";
+	 				# if RN && possibleImp=yes -> print 'ama' as second option (negative imperatives are always ambiguous, could also be subjuntivo (and tagger mixes up these two quite frequently))
+	 				if($chunk->hasAttribute('possibleImp')){
+	 						# set lem = ama and print node again
+	 						print OUTFILE "/ama";
+	 						print OUTFILE "\n";
+	 				}	
 	 			} 
 	 		}
 	 		# adjectives: print as is
@@ -745,6 +754,7 @@ sub main{
 	 	print OUTFILE "#EOS\n";
 	 	#print STDOUT "#EOS".$sentence->getAttribute('ref')."\n";
 	}
+	close(OUTFILE);
 }
 
 
@@ -1130,7 +1140,6 @@ sub getFirstChild{
 
  		
 	}
-	close(OUTFILE);
 }
 
 
@@ -1287,6 +1296,24 @@ sub cleanVerbMi{
 	}
 	
 	return $verbmi;			
+}
+
+sub getVerbLem{
+	my $syn = $_[0];
+	my $chunk = $_[1];
+	my $lemma;
+	# check if this SYN has an slem (ambiguous lemmas from tagging), else take slem from parent NODE
+	$lemma = $syn->getAttribute('slem') ? $syn->getAttribute('slem'): $chunk->findvalue('child::NODE/@slem');
+	#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
+	if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
+		unless($lemma =~ /_/){
+			if($lemma =~ /r$/){$lemma =~ s/r$//;}
+			elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
+			elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+		}
+	# if no source lemma because morph analysis didn't recognize the word: use the word form..
+	elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
+	return $lemma;
 }
 
 1;

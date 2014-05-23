@@ -136,7 +136,7 @@ sub main{
 						
 						#print STDERR "output sequence: @{$outputSequence}\n";
 	
-						print STDERR "output sequence: @{$outputSequence}\n";
+						#print STDERR "output sequence: @{$outputSequence}\n";
 						
 						# insert attribute ord (order) into xml of all the chunks,
 						# order is defined by the index of the variable @outputSequence

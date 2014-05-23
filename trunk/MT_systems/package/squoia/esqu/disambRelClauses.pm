@@ -36,7 +36,7 @@ sub main{
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		#debug
-		print STDERR "disambiguating relative clause in ".$sentence->getAttribute('ord')."\n";
+#		#print STDERR "disambiguating relative clause in ".$sentence->getAttribute('ord')."\n";
 		
 		# check if sentence contains relative clause
 		# with preposition sometimes grup-sp, rel=cc/sp depends on noun (vi al hombre [a quien dejaron])
@@ -44,7 +44,7 @@ sub main{
 		my @relprnWithPP = $sentence->findnodes('descendant::CHUNK[@type="sn"]/CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb"]/descendant::NODE[@pos="pr"]');
 		foreach my $relprnWithPP (@relprnWithPP)
 		{
-			my $verbchunk = &getParentChunk($relprnWithPP);
+			my $verbchunk = squoia::util::getParentChunk($relprnWithPP);
 			#my @verbforms = $verbchunk->findnodes('descendant::NODE[@pos="vs" or @pos="vm"]');
 			my @verbforms =();
 			if($verbchunk)
@@ -151,7 +151,7 @@ sub main{
 							if( ($verbform->exists('child::NODE[(@form="lo" or @form="Lo") and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3S/) || ($verbform->exists('child::NODE[(@form="los" or @form="Los") and @rel="spec"]') && $verbform->getAttribute('mi') =~ /3P/) )
 							{
 								#my $verbchunk = @{$verbform->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
-								if($verbchunk && hasDorSPobj($verbchunk))
+								if($verbchunk && &hasDorSPobj($verbchunk))
 								{
 									$verbform->setAttribute('verbform', 'rel:agentive');
 									$verbchunk->setAttribute('chunkmi', '+Top');

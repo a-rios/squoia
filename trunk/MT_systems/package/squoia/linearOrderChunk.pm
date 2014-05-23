@@ -15,12 +15,12 @@ sub main{
 	
 		foreach my $chunk (@sentenceCHUNKS)
 		{
-			print STDERR "ordered chunks\n";
+			#print STDERR "ordered chunks\n";
 			my $orderedChunks = &linearOrderChunk($chunk);
 			my $index = 0;
 			foreach my $chunk (@$orderedChunks) {
 				$chunk->setAttribute('ord',$index);
-				print STDERR "ref:".$chunk->getAttribute('ref')."\tord:".$chunk->getAttribute('ord')."\tc_ord:".$chunk->getAttribute('c_ord')."\tp_ord:".$chunk->getAttribute('p_ord')."\n";
+			#	print STDERR "ref:".$chunk->getAttribute('ref')."\tord:".$chunk->getAttribute('ord')."\tc_ord:".$chunk->getAttribute('c_ord')."\tp_ord:".$chunk->getAttribute('p_ord')."\n";
 				$index++;
 			}
 		}
@@ -43,7 +43,7 @@ sub linearOrderChunk{
 		$ord = $childChunk->getAttribute('c_ord');
 		$orderhash{$ord} = $childChunk;
 	}
-	print STDERR "ordered chunks under parent chunk with ref:" .$parentChunk->getAttribute('ref')."\n";
+	#print STDERR "ordered chunks under parent chunk with ref:" .$parentChunk->getAttribute('ref')."\n";
 	foreach my $ord (sort {$a <=> $b} keys %orderhash) {
 		my $chunk = $orderhash{$ord};
 		if ($chunk->isSameNode($parentChunk)) {

@@ -107,15 +107,15 @@ sub main{
 	 	} 
 		#print STDERR "\n---------------------\n";
 	}
-	print STDERR "\n****************************************************************************************\n";
-	print STDERR "total number of subjectless verb chunks: ".($nbrOfsubjectlessVerbChunks+$noActiveSubjDueToPrecedingPrn)."\n";
-	print STDERR "total number of subjectless verb chunks without finite verb: $nbrOfsubjectlessVerbChunksWithoutFiniteVerb\n";
-	print STDERR "total number of truly subjectless verb chunks: ".($nbrOfsubjectlessVerbChunks-$nbrOfsubjectlessVerbChunksWithoutFiniteVerb)."\n";
-	print STDERR "total number of inserted subjects: $nbrOfinsertedSubjs\n";
-	print STDERR "total number of subjectless verb chunks where no subject could be inserted: $nbrOfsubjectlessVerbChunksWhereSubjNotInserted\n";
-	print STDERR "total number of verbs with pronominal subjects (could not be resolved): $nbrOfPronominalSubjs\n";
-	print STDERR "total number of verbs where subject could not be inserted due to previuous pronominal subject: $noActiveSubjDueToPrecedingPrn\n";
-	print STDERR "\n****************************************************************************************\n";
+#	print STDERR "\n****************************************************************************************\n";
+#	print STDERR "total number of subjectless verb chunks: ".($nbrOfsubjectlessVerbChunks+$noActiveSubjDueToPrecedingPrn)."\n";
+#	print STDERR "total number of subjectless verb chunks without finite verb: $nbrOfsubjectlessVerbChunksWithoutFiniteVerb\n";
+#	print STDERR "total number of truly subjectless verb chunks: ".($nbrOfsubjectlessVerbChunks-$nbrOfsubjectlessVerbChunksWithoutFiniteVerb)."\n";
+#	print STDERR "total number of inserted subjects: $nbrOfinsertedSubjs\n";
+#	print STDERR "total number of subjectless verb chunks where no subject could be inserted: $nbrOfsubjectlessVerbChunksWhereSubjNotInserted\n";
+#	print STDERR "total number of verbs with pronominal subjects (could not be resolved): $nbrOfPronominalSubjs\n";
+#	print STDERR "total number of verbs where subject could not be inserted due to previuous pronominal subject: $noActiveSubjDueToPrecedingPrn\n";
+#	print STDERR "\n****************************************************************************************\n";
 #	# print new xml to stdout
 #	my $docstring = $dom->toString(3);
 #	#print $dom->actualEncoding();
@@ -213,7 +213,7 @@ sub checkNumberAndPerson {
 					my $prnSubjOfVerb = $finiteVerb->findvalue('child::NODE[@rel="suj" and @cpos="p"]/@mi');
 					my $gender =  substr ($prnSubjOfVerb, 3, 1);
 					my $corefgender =  substr ($corefmi, 2, 1);
-					print STDERR "gender: $gender, coref gender: $corefgender\n";
+				#	print STDERR "gender: $gender, coref gender: $corefgender\n";
 				
 					return ($corefgender eq  $gender || $gender eq '0' || $corefgender eq '0');
 				}

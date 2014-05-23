@@ -32,7 +32,7 @@ sub main{
 				foreach my $attrVal (@attributes) {
 					my ($newChunkAttr,$newChunkVal) = split("=", $attrVal);
 					$newChunkVal =~ s/["]//g;
-					print STDERR "setting attribute $newChunkAttr to $newChunkVal\n";
+					#print STDERR "setting attribute $newChunkAttr to $newChunkVal\n";
 					$chunk->setAttribute($newChunkAttr,$newChunkVal);
 				}
 			}

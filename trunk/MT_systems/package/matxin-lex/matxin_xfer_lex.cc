@@ -382,7 +382,7 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
     		 trad2 = get_translation(lem2, attrib(reader, "mi"), unknown);
 
-    		 wcerr << L"trad size lem1 " <<trad.size() << L" trad size lem2:" << trad2[0] << L"\n";
+    		// wcerr << L"trad size lem1 " <<trad.size() << L" trad size lem2:" << trad2[0] << L"\n";
 
     	 }
     	 else{

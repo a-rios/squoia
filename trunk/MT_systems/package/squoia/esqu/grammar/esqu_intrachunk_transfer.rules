@@ -173,7 +173,7 @@ my.mi=infinitive && xpath{child::NODE[starts-with(@lem,"++")]}		"yes"		my.type=/
 
 # if infinitive or participle with VA (aux): get finite mi from aux 
 # gerunds: see below
-my.smi=/1|2|3/  && my.smi=/^VA/  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) && xpath{ancestor::NODE} && !(my.slem=haber && my.smi=/3S/ )		"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	overwrite
+my.smi=/1|2|3/  && my.smi=/^VA/  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) && xpath{ancestor::NODE} && !(my.slem=haber && my.smi=/3S/ && xpath{descendant::NODE[@slem="que" and @smi="CS"]} )		"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	overwrite
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk
@@ -393,7 +393,9 @@ my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@
     # SPECIAL CASES: spanish words that are realized as quechua suffixes #
     ######################################################################
 
-  # Negation
+# Negation
+# in imperatives: overwrite 'mana' with 'ama'!
+my.slem=no			"yes"				my.type=sadv && xpath{ancestor::CHUNK[@type="coor-v" or @type="grup-verb"][1]/NODE[starts-with(@smi,"V")]/descendant-or-self::NODE[@mi="imperative"] }		possibleImp				up			overwrite
 my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
 
 my.slem=/incluso|sólo/ && my.mi=/^\+\+/		mi				my.type=/.+/		chunkmi		up	concat

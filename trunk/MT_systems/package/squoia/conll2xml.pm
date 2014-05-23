@@ -234,7 +234,7 @@ sub main{
 		{
 			my $sentence = @sentences[$i];
 			my $sentenceId = $sentence->getAttribute('ord');
-			print STDERR "adjusting dependencies in sentence: ".$sentence->getAttribute('ord')."\n";
+			#print STDERR "adjusting dependencies in sentence: ".$sentence->getAttribute('ord')."\n";
 			#print STDERR "2: ".$sentence->toString."\n";
 			my @nodes = $sentence->getElementsByTagName('NODE');
 		
@@ -292,7 +292,7 @@ sub main{
 	{
 		
 		my $sentenceId = $sentence->getAttribute('ord');
-		print STDERR "insert chunks in sentence: $sentenceId\n";
+		#print STDERR "insert chunks in sentence: $sentenceId\n";
 		#my $chunkCount = 1;
 		my $parent;
 		my @nodes =  $sentence->getElementsByTagName('NODE');
@@ -353,7 +353,7 @@ sub main{
 					 	substr($eaglesTag, 1, 1) = "M";
 					 	$node->setAttribute('mi',$eaglesTag);
 					 	$node->setAttribute('pos', 'vm');
-					 	print STDERR "change mi to $eaglesTag\n";
+					 	print STDERR "changed mi of ".$node->{'form'}." to $eaglesTag\n";
 					 }
 					 
 					 # if relative clause with preposition preceding relative pronoun-> desr makes wrong analysis:
@@ -1039,7 +1039,7 @@ sub main{
 		my $topverbchunk = @{$sentence->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v") and @si="top"][1]')}[0];
 		#my $topverbchunk = @{$sentence->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v")][1]')}[0];
 		if($topverbchunk && $topverbchunk->exists('child::NODE[@cpos="v"]/descendant::NODE[@pos="cs"]'))
-		{ print STDERR "top chunk".$topverbchunk->getAttribute('ord')."\n";
+		{ print STDERR "in sentence $sentenceId, top chunk is".$topverbchunk->getAttribute('ord')."\n";
 				my $realMain = @{$topverbchunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v" and not(child::NODE[@pos="cs"])]')}[-1];
 				if($realMain)
 				{

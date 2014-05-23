@@ -1,4 +1,4 @@
-## 1.row: lemma or source lemma, 2.row: semantic tag, 3. row: condition, where semantic tag should be inserted (can be a perl regular expression)
+## 1.column: lemma or source lemma, 2.column: semantic tag, 3. column: condition, where semantic tag should be inserted (can be a perl regular expression)
 ## TODO: insert plants
 
 # masculine

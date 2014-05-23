@@ -23,6 +23,7 @@
 my.smi=/^N/	s_pos=adj	d	my.smi=/^N/
 my.smi=/^A/	s_pos=noun	d	my.smi=/^A/
 
+
 # aqui, ahí, allá: kay, chay, haqay +Loc if static, +Dat with movement verbs
 my.slem=aquí		PrnDem+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
 my.slem=aquí		PrnDem+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
@@ -99,9 +100,9 @@ my.smi=/^V/		habitualpast			d	!(my.slem=soler)
 
 # infinitive: -y or -na (-> hay que hacer, tener que hacer)
 # or -spa -> sin hacer -> mana ruraspa
-my.smi=VMN0000		obligative			 k	chunkparent.verbform=obligative
+my.smi=VMN0000		obligative			 k	(chunkparent.verbform=obligative || chunkparent.verbform=rel:not.agentive)
 my.smi=VMN0000		SS				 k	chunkparent.verbform=SS
-my.smi=VMN0000		agentive			 k	chunkparent.verbform=agentive
+my.smi=VMN0000		agentive			 k	(chunkparent.verbform=agentive || chunkparent.verbform=rel:agentive)
 my.smi=VMN0000		infinitive			 k	!(chunkparent.verbform=/obligative|SS|agentive/)
 
 
