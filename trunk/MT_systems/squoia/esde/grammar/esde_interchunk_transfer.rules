@@ -1,0 +1,41 @@
+# 1				2			3				4			5		6		7
+# chunk1Cond			chunk1Attr		chunk2Cond			chunk2Attr		ch1ch2Path	direction	writeMode
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+# mark the clause as subject holder
+#my.si=subj			YES			my.si=top			subhold			parent		1to2		overwrite
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+## Interrogative clause
+# mark the main clause if it contains an interrogative punctuation sign
+my.type=P-eos&&child.smi=/Fit|FIT/	inter		my.type=VP&&my.si=top		senttype		parent		1to2		overwrite
+#xpath{//CHUNK[@type="P-eos" and NODE[@smi="Fit"]]}	inter	xpath{//CHUNK[@type="VP" and @si="top"}		senttype	parent	1to2	overwrite
+
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+# AP chunk modifies NP chunk: pass the morphological information from the NP down to the AP
+my.type=AP&&my.si=adj-mod	mi			my.type=NP&&my.mi=/./		mi			parent		2to1		overwrite
+my.type=AP&&my.si=/s.a/		cas			my.type=NP&&my.cas=/./		cas			parent		2to1		overwrite
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+# NP with function 'cc': set accusative case [condOrigen: si=top or type=VP or ?]
+my.type=NP&&my.si=cc		cas			my.type=VP			Akk			parent		1to2		overwrite
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+# NP with flex: pass the info down to the AP
+my.type=AP			flex			my.type=NP&&my.flex=/./		flex			parent		2to1		no-overwrite
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+##Pronouns/Clitics
+# ES reflexive verbs => DE irreflexive verbs: delete reflexive pronoun
+xpath{//CHUNK[@type="NP" and NODE[@pos="PRF"]]}		delete		xpath{//CHUNK[@type="VP" and NODE[@irrefl="yes"]]}	yes	parent		2to1		overwrite
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+#################
+# Passive voice # but that's too late to be useful for the preposition disambiguation!!!... and the chunk2Cond is too simple, there shouldn't be any auxiliary like in "hemos caminado por el pasillo" ;-)
+#################
+#my.type=/PP/&&child.slem=por	agent			my.type=/VP/&&child.pos=/V.PP/		yes		parent		2to1		no-overwrite
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+

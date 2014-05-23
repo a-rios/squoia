@@ -1,0 +1,259 @@
+#
+# Rules to solve lexical ambiguity
+#
+# Format:
+# source_lemma        target_lemma(s)     k/d     condition            ## comment
+# condition: if the condition evaluates to true, two actions possible:
+# -> k=keep (keep only this option), d=delete  (delete this tranlsation option from output)
+# shortnames in conditions:
+# my -> this node, parent -> parent node, child -> child node (true if condition is met for at least one child node), 
+# rsibling/lsibling -> right/left sibling node (true if condition is met for at least one sibling node to the right/left)
+# chunkparent: first ancestor that is a chunk, chunkgrandparent etc.
+# xpath{} also possible
+
+# IMPORTANT: 
+# - if more than one translation option with 'k' for a node evaluates to true, the first one will be used to fill 
+#   the attributes of NODE, but the all others that evaluate to true will be kept as SYN nodes!
+# - rules are stored in a hash, key is the combination of the source lemma (1st column) and target lemma(s) (2nd column in rules)
+#  --> it's not possible to have more than one rule with the same source lemma and the same target lemma!!
+
+###########
+# Adverbs #
+###########
+# ya no = nicht mehr: "Ya no trabaja" => "er arbeitet nicht mehr"
+# ya = schon: "He llegado ya" => "ich bin schon angekommen"
+ya	mehr	k	xpath{//NODE[@slem="ya" and ancestor::CHUNK[@type="AVP" and following-sibling::CHUNK[@type="AVP" and NODE[@slem="no"]]]]}
+ya	schon	k	my.slem=/ya/&&chunkparent.type=/AVP/
+
+################
+# Conjunctions #
+################
+# Tanto el hijo como la madre trabajan mucho => Sowohl der Sohn wie/als die Mutter arbeiten viel
+como	wie,als	k	xpath{self::NODE[@smi="CS" and ancestor::CHUNK[@type="CNP"]/CHUNK[@type="AVP"]/NODE[@slem="tanto"]]}
+como	da	k	chunkparent.si=S
+como	als	d	chunkparent.type=VP
+
+################
+# Prepositions #
+################
+# see esde_prep.dat
+
+############
+# Pronouns #
+############
+# reflexive or irreflexive personal pronouns
+#irreflexive
+#me	ich		!(xpath{//NODE[starts-with(@smi,"PP1CS") and parent::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Sg")]]]})
+me	ich		k	!(xpath{//NODE[starts-with(@smi,"PP1CS") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Sg")]]]]})
+#reflexive
+me	ich_PRF		k	xpath{//NODE[starts-with(@smi,"PP1CS") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Sg")]]]]}
+
+#irreflexive
+te	du		k	!(xpath{//NODE[starts-with(@smi,"PP2CS") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"2.Sg")]]]]})
+#reflexive
+te	du_PRF		k	xpath{//NODE[starts-with(@smi,"PP2CS") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"2.Sg")]]]]}
+
+#irreflexive
+nos	wir		k	!(xpath{//NODE[starts-with(@smi,"PP1CP") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Pl")]]]]})
+#reflexive
+nos	wir_PRF		k	xpath{//NODE[starts-with(@smi,"PP1CP") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"1.Pl")]]]]}
+
+#irreflexive
+os	ihr		k	!(xpath{//NODE[starts-with(@smi,"PP2CP") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"2.Pl")]]]]})
+#reflexive
+os	ihr_PRF		k	xpath{//NODE[starts-with(@smi,"PP2CP") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"2.Pl")]]]]}
+
+# ideal case
+#se	sie		k	!(xpath{//CHUNK[@type="NP" and @si="morfema.pronominal"]/NODE[@smi="PP3CN000"]})
+#se	sie_PRF		k	xpath{//CHUNK[@type="NP" and @si="morfema.pronominal"]/NODE[@smi="PP3CN000"]}
+#irreflexive
+se	sie		k	!(xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"3")]]]]})
+#reflexive
+se	sie_PRF		k	xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"3")]]]]}
+
+##############
+# Adjectives #
+##############
+
+político	Schwieger-	d	!(xpath{//NODE[parent::CHUNK[preceding-sibling::NODE[@slem="familia"]]]})
+
+
+#########
+# Nouns #
+#########
+
+# gentry vs language # TODO: other languages resp. mark the entries in dix?
+#--------------------#
+alemán	Deutsch		k	my.smi=/NCMS/&&child.smi=/DA/
+chino	Chinesisch	k	my.smi=/NCMS/&&child.smi=/DA/
+español	Spanisch	k	my.smi=/NCMS/&&child.smi=/DA/
+#--------------------#
+
+abuelo	Grossmutter,Großmutter	d	my.smi=/NCM/
+abuelo	Grossvater,Großvater	d	my.smi=/NCF/
+abuelo	Grosseltern,Großeltern	d	my.smi=/NCMS|NCF/	# "Grosseltern" never corresponds to singular form "el abuelo" nor feminine forms
+
+capital	Hauptstadt	k	my.smi=/NCF/
+capital	Kapital		k	my.smi=/NCM/
+
+# TODO solve the disambiguation of "proper" gender already in the bilingual dictionary?
+colaborador	Mitarbeiterin	k	my.smi=/NCF/
+colaborador	Mitarbeiter	k	my.smi=/NCM/
+
+editorial	Leitartikel	k	my.smi=/NCM/
+editorial	Verlag		k	my.smi=/NCF/
+
+gracia	Dank		d	my.smi=/NCFS/
+
+hermano	Schwester	k	my.smi=/NCF/
+hermano	Bruder		k	my.smi=/NCM/
+
+hijo	Tochter		k	my.smi=/NCF/
+hijo	Sohn		k	my.smi=/NCM/
+
+juez	Richterin	k	my.smi=/NCF/
+juez	Richter		k	my.smi=/NCM/
+
+# plural form is ambiguous "die Vaeter/Eltern"
+# padre	Vater	k	my.smi=/NCMS/
+# padre	Eltern	k	my.smi=/NCMP/
+padre	Eltern	d	my.smi=/NCMS/	# "Eltern" never corresponds to singular form "el padre"
+
+papa	Kartoffel	k	my.smi=/NCF/
+papa	Papst		k	my.smi=/NCM/
+
+participante	Teilnehmerin	k	child.smi=/D..F/
+participante	Teilnehmer	k	child.smi=/D..M/
+
+# TODO: all ES nouns ending with "ista"
+accionista	Aktionärin	k	child.smi=/D..F/
+accionista	Aktionär	k	child.smi=/D..M/
+
+periodista	Journalistin	k	child.smi=/D..F/
+periodista	Journalist	k	child.smi=/D..M/
+
+ponente	Referentin	k	child.smi=/D..F/
+ponente	Referent	k	child.smi=/D..M/
+
+profesional	Fachleute	k	my.smi=/NC.P/
+profesional	Fachmann	k	my.smi=/NCMS/
+profesional	Fachfrau	k	my.smi=/NCFS/
+
+profesor	Professorin	k	my.smi=/NCF/
+profesor	Professor	k	my.smi=/NCM/
+
+radio	Radio		k	my.smi=/NCF/
+radio	Radius		k	my.smi=/NCM/
+
+vecino	Nachbarin	k	my.smi=/NCF/
+vecino	Nachbar		k	my.smi=/NCM/
+
+#########
+# Verbs #
+#########
+# Past participle
+abrir		offen		k	my.smi=/VMP00/&&parent.smi=/NC/
+abrir		öffnen		k	my.smi=/VMP00/&&chunkparent.type=/VP/
+
+apropiar	tauglich	k	my.smi=/VMP00/&&parent.smi=/NC/
+apropiar	an|passen	k	my.smi=/VMP00/&&chunkparent.type=/VP/
+
+
+# Auxiliary
+#haber	sein	my.smi=/VA.+/ && parent.aux=[be+]	#prob=0.2
+#haber	haben	my.smi=/VA.+/ && !(parent.aux=[be+])	#prob=0.8
+
+# Passive auxiliary
+ser	sein	k	my.smi=/VS.+/ && !(parent.smi=/VMP00[PS][FM]/&& chunkparent.type=/VP/) && !(grandparent.smi=/VMP00[PS][FM]/ && chunkgrandparent.type=/VP/)
+ser	werden	k	my.smi=/VS.+/ && ((parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/VP/) || (grandparent.smi=/VMP00[PS][FM]/ && chunkgrandparent.type=/VP/))
+
+# estar = sein: "El libro estaba en la mesa" => "Das Buch war auf dem Tisch"
+# estar + GERUND = gerade + FIN: "Estamos bebiendo vino" => "Wir trinken gerade Wein"
+estar	sein	k	!(parent.smi=/VMG/)
+estar	gerade	k	parent.smi=/VMG/
+
+# Main
+# acabar = beenden: "acaba el trabajo" => "er beendet die Arbeit"
+# acabar de + inf = soeben: "acabamos de comer" => "wir haben soeben gegessen"
+acabar	schliesslich	xpath{//NODE[following-sibling::CHUNK[@type="VZ-inf" and NODE[@slem="por"]]]}	#prob=0.3
+acabar	beenden		!((parent.smi=/VMN/&&rsibling.slem=de) or xpath{//NODE[following-sibling::CHUNK[@type="VZ-inf" and NODE[@slem="por"]]]})	#prob=0.1
+acabar	haben_soeben	parent.smi=/VMN/&&rsibling.slem=de	#prob=0.7
+#acabar	enden		k	xpath{//NODE[parent::CHUNK[]/CHUNK[@type="PP" and @si="creg"]]}
+
+# casar [transitiv,irreflexiv] = vermaehlen/trauen/verheiraten: "el cura casa a la pareja" => "der Pfarrer traut das Paar"
+# casarse [reflexiv] = heiraten [irreflexiv, intransitiv]/sich vermaehlen : "se casaron por lo civil" => "sie heirateten standesamtlich"
+# casarse con = jmdn heiraten [transitiv]: "quiere casarse con el rey" => "sie moechte den Koenig heiraten"
+# caution! depends on the previous identification of reflexiv pronouns
+casar	trauen		k	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=0]}
+casar	heiraten	k	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=1]}
+
+# colgar = hängen: "la imagen cuelga en la pared" => "das Bild hängt an der Wand"
+# colgar algo = etwas aufhängen: "cuelgo el cuadro a la pared" => "ich hänge das Bild an die Wand"
+colgar	auf|hängen	k	xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE}
+colgar	hängen		k	!(xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE})
+
+# deber: main (-INF) vs modal (+INF) verb
+deber	schulden,verdanken	k	!(xpath{//NODE[@smi="VMN0000"]/NODE})
+deber	müssen,sollen		k	xpath{//NODE[@mi="Inf"]/NODE}
+
+# despertarse = auf|wachen
+# despertar = wecken, erwecken, auf|wecken
+# NOTE: reflexiv pronouns get disambiguated only later (because of the tree structure)...
+# 	i.e. we must check also here if the object is the same person as the subject!!!
+despertar	auf|wachen			k	xpath{//NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and ((starts-with(@mi,"1.Sg") and following-sibling::CHUNK/NODE[starts-with(@mi,"1.Sg")]) or (starts-with(@mi,"1.Pl") and following-sibling::CHUNK/NODE[starts-with(@mi,"1.Pl")]) or (starts-with(@mi,"2.Sg") and following-sibling::CHUNK/NODE[starts-with(@mi,"2.Sg")]) or (starts-with(@mi,"2.Pl") and following-sibling::CHUNK/NODE[starts-with(@mi,"2.Pl")]) or (starts-with(@mi,"3") and following-sibling::CHUNK/NODE[starts-with(@smi,"PP3CN")]) )]]}
+despertar	erwecken,auf|wecken,wecken	k	!(xpath{//NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and ((starts-with(@mi,"1.Sg") and following-sibling::CHUNK/NODE[starts-with(@mi,"1.Sg")]) or (starts-with(@mi,"1.Pl") and following-sibling::CHUNK/NODE[starts-with(@mi,"1.Pl")]) or (starts-with(@mi,"2.Sg") and following-sibling::CHUNK/NODE[starts-with(@mi,"2.Sg")]) or (starts-with(@mi,"2.Pl") and following-sibling::CHUNK/NODE[starts-with(@mi,"2.Pl")]) or (starts-with(@mi,"3") and following-sibling::CHUNK/NODE[starts-with(@smi,"PP3CN")]) )]]})
+
+# disminuir = ab|nehmen: "la lluvia disminuye" => "der Regen nimmt ab"
+# disminuir algo = etwas verringern: "el calor disminuye los rendimientos" => "die Hitze verringert die Ertraege"
+disminuir	verringern	k	xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE}
+disminuir	verkleinern	k	xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE[@slem="disminuir"]}
+disminuir	ab|nehmen	k	chunkparent.type=/VP/
+disminuir	nach|lassen	k	!(xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE})
+
+# fijar = befestigen, fest|legen, fest|machen, fest|setzen
+# fijarse = (sich) achten, acht|geben, beachten, bemerken
+fijar	befestigen,fest|legen,fest|machen,fest|setzen		xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=0]}
+fijar	achten,acht|geben,beachten,bemerken			xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=1]}
+
+# insistir = insistieren, nach|haken: "insistieron" => "sie insistierten"
+# insistir en algo = auf etwas(Dat) insistieren, draengen, beharren, bestehen; etwas betonen: "insistieron en el problema" => "sie beharrten auf dem Problem"
+insistir	insistieren	chunkparent.chunkchild.smi=/dobj/	prob=0.6
+# intransitiv
+insistir	insistieren	chunkparent.type=/VP/			prob=0.4
+
+# levantar = heben
+# levantarse = auf|stehen
+levantar	heben		xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=0]}
+levantar	auf|stehen	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sibling::CHUNK/NODE[@pos="PRF"])=1]}
+
+# llegar a + place = ankommen; erreichen: "llega al aeropuerto" => "er kommt an den Flughafen an"; "er erreicht den Flughafen"
+# llegar a + inf = schaffen: "llega a hacer algo" => "er schafft es, etwas zu machen"
+# llegar a ser + something = werden: "llega a ser imposible" => "es wird unmoeglich"
+llegar	an|kommen	k	!(parent.smi=/V[AMS]N/&&child.slem=a)
+llegar	schaffen	k	parent.smi=/VMN/&&child.slem=a
+llegar	werden		k	parent.smi=/VSN/&&child.slem=a
+
+# quedar con alguien = sich verabreden mit jemandem; abmachen mit; verbleiben
+# quedar en algo = etwas ausmachen; etwas vereinbaren
+# quedar = bleiben; übrigbleiben;
+#quedar	ab|machen	parent.smi=/VM/		-
+#quedar	verabreden
+#quedar	verbleiben	parent.smi=/VM/		-
+
+# seguir = folgen: "te sigo" => "ich folge dir"
+# seguir con = fortsetzen +Akk : "sigue con la carrera" => "er setzt das Studium fort"
+# seguir + gerund = noch/weiterhin: "sigue comiendo" => "er isst noch"
+seguir	folgen,fort|setzen,weiter|machen	k	!(parent.smi=/VMG/)
+seguir	noch					k	parent.smi=/VMG/
+#seguir	fort|setzen,weiter|machen		k	!(parent.smi=/VMG/) && PP(con)
+
+# tener = haben: "Tenemos un coche" => "Wir haben ein Auto"
+# tener que + INF = muessen: "Tuvieron que levantarse temprano" => "Sie mussten frueh aufstehen"
+tener	haben	k	!(parent.smi=/VMN/&&rsibling.slem=que)
+tener	müssen	k	parent.smi=/VMN/&&rsibling.slem=que
+
+# volver = zurueck|gehen: "Volvemos a casa" => "Wir gehen nach Hause zurueck"
+# volver = "wieder": "Vuelve a comer" => "er isst wieder"
+volver	drehen,um|drehen,zurück|gehen,zurück|kehren,zurück|kommen	k	!(parent.smi=/VMN/&&child.slem=a)
+volver	wieder		k	parent.smi=/VMN/&&child.slem=a
+
