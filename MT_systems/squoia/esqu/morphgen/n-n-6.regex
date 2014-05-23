@@ -1,0 +1,11 @@
+#Slot6
+
+ "+Acc" : {ta}
+|"+Gen"
+|"+Proloc" : {%nta}
+|"+Abl" : {manta}
+|"+Dat" : {man}
+|"+Ben": {paq}
+|"+Loc" : {pi} 
+;
+

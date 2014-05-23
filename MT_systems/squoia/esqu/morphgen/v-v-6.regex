@@ -1,0 +1,79 @@
+#Slot6, Personenmarkierungen
+
+ "+1.Sg.Subj"
+|"+2.Sg.Subj"
+|"+3.Sg.Subj"
+|"+1.Pl.Incl.Subj"
+|"+1.Pl.Excl.Subj"
+|"+2.Pl.Subj"
+|"+3.Pl.Subj"
+# Portmanteau forms
+|"+3.Pl.Subj.Hab"
+# potential
+|"+1.Sg.Subj.Pot"
+|"+1.Pl.Incl.Subj.Pot"
+|"+1.Pl.Excl.Subj.Pot"
+|"+2.Sg.Subj.Pot"
+|"+2.Pl.Subj.Pot"
+|"+3.Sg.Subj.Pot"
+|"+3.Pl.Subj.Pot"
+#future
+|"+1.Sg.Subj.Fut"
+|"+1.Pl.Incl.Subj.Fut"
+|"+1.Pl.Excl.Subj.Fut"
+|"+2.Sg.Subj.Fut"
+|"+2.Pl.Subj.Fut"
+|"+3.Sg.Subj.Fut"
+|"+3.Pl.Subj.Fut"
+#imperative
+|"+1.Pl.Incl.Subj.Imp"
+|"+2.Sg.Subj.Imp"
+|"+2.Pl.Subj.Imp"
+|"+3.Sg.Subj.Imp"
+|"+3.Pl.Subj.Imp"
+;
+
+# Portmanteau forms
+#|"+3.Pl.Subj.Hab" : {qku}
+# potential
+#|"+1.Sg.Subj.Pot" : {yman}
+#|"+1.Pl.Incl.Subj.Pot" : {chwan}
+# note: Ayacucho: -ymanku
+#|"+1.Pl.Excl.Subj.Pot" : {ykuman}
+#|"+2.Sg.Subj.Pot" : {waq}
+#|"+2.Pl.Subj.Pot" : {waqchik}
+# note: Ayacucho: -nmanku
+#|"+3.Sg.Subj.Pot" : {nman}
+#|"+3.Pl.Subj.Pot" : {nkuman}
+#future
+#|"+1.Sg.Subj.Fut" : {saq}
+#|"+1.Pl.Incl.Subj.Fut" : {sun}
+#|"+1.Pl.Excl.Subj.Fut" : {saqku}
+#|"+2.Sg.Subj.Fut" : {nki}
+#|"+2.Pl.Subj.Fut" : {nkichik}
+#|"+3.Sg.Subj.Fut" : {nqa}
+#|"+3.Pl.Subj.Fut" : {nqaku}
+#imperative
+#|"+1.Pl.Incl.Subj.Imp" : {sun}
+#|"+2.Sg.Subj.Imp" : {y}
+#|"+2.Pl.Subj.Imp" : {ychik}
+#|"+3.Sg.Subj.Imp" : {chun}
+#|"+3.Pl.Subj.Imp" : {chunku}
+;
+
+#|"+3.Subj_1.Pl.Incl.Obj" : {wanchik}
+#|"+3.Subj_1.Pl.Incl.Obj.Fut" : {wasun}
+#|"+3.Subj_1.Pl.Excl.Obj.Fut" : {wanqaku}
+#|"+2.Sg.Subj_1.Pl.Excl.Obj" : {wankiku}
+#|"+2.Pl.Subj_1.Sg.Obj.Imp" : {waychik}
+#|"+2.Sg.Subj_1.Pl.Obj.Imp" : {wayku}
+#|"+1.Sg.Subj_2.Sg.Obj" : {yki}
+#|"+1.Sg.Subj_2.Pl.Obj" : {ykichis}
+#|"+1.Pl.Excl.Subj_2.Sg.Obj" : {ykiku}
+#|"+3.Subj_2.Sg.Obj" : {sunki}
+#|"+3.Subj_2.Pl.Obj" : {sunkichik}
+#|"+1.Sg.Subj_2.Sg.Obj.Fut" : {sqayki}
+#|"+1.Sg.Subj_2.Pl.Obj.Fut" : {sqaykichik}
+#|"+1.Pl.Excl.Subj_2.Sg.Obj.Fut" : {sqaykiku}
+#|"+3.Sg.NPst" : {rqa}
+#|"+3.Sg.IPst" : {sqa}
