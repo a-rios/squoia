@@ -59,7 +59,7 @@ sub main{
 			  		}
 		  		}
 		  		else{
-		  			push(@outputLines, "$date\t$date\tw\tw\t_\t_\t_\t_\t_\n");
+		  			push(@outputLines, "$wordCount\t$date\t$date\tw\tw\t_\t_\t_\t_\t_\n");
 		  		}
 			}
 			else
@@ -207,7 +207,17 @@ sub main{
 				    	}
 				    	# should not happen! (TODO: locuciones -> let Freeling decide!)
 		    			else{
-		    				$outLine .= "UNKNOWN!!\t";
+		    				# get all lemmas, if they're all the same: set this, else: set form
+		    				my $lem = @rows[2];
+		    				for(my $i=4;$i<=8;$i+=2){
+		    					if(@rows[$i] ne $lem && @rows[$i] ne 'ZZZ'){
+		    						# print form as lemma
+		    						$lem = @rows[0];
+		    						last;
+		    					}
+		    				}
+		    				$outLine .= "$lem\t";
+		    				#$outLine .= "UNKNOWN!!\t";
 		    			}
 		    		}
 		    	}
