@@ -113,7 +113,8 @@ my $quModel;
 my $chunkMap;	# TODO option for lexical transfer; put together with $bidix ?
 my $biLexProb;
 my $deLemmaModel;
-my $maxalt = 2;	# default maximum 2 lemma alternatives
+my $maxalt = 2;	# default maximum 2 lemma alternatives; if maxalt==0 then no statistic lexical disambiguation, but all alternatives are produced
+my $noalt = ''; # default is false; flag to switch statistical disambiguation and sentence alternatives off
 my $verbPrep;
 my $deModel;
 
@@ -147,7 +148,7 @@ available options are:
 \t intraTrans: xml after intrachunk syntactic transfer
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
-\t node2sibling: xml after promtion of child chunks to siblings
+\t child2sibling: xml after promtion of child chunks to siblings
 \t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
 \t morph: input for morphological generation
@@ -178,7 +179,7 @@ available options are:
 \t intraTrans: xml after intrachunk syntactic transfer
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
-\t node2sibling: xml after promotion of child chunks to siblings
+\t child2sibling: xml after promotion of child chunks to siblings
 \t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
 \t morph: input for morphological generation
@@ -203,7 +204,7 @@ Options for translation, general:
 --prepDisamb: preposition disambiguation rules
 --intraTransfer: intrachunk transfer rules
 --interTransfer: interchunk transfer rules
---nodes2chunks: rules to promote nodes to chunks
+--node2chunk: rules to promote nodes to chunks
 --child2sibling: rules to promote child to sibling chunks
 --interOrder: rules for interchunk reordering
 --intraOrder: rules for intrachunk reordering
@@ -220,6 +221,7 @@ Options for translation, es-de:
 --chunkMap: mapping of chunk names (for lexical transfer)
 --bilexprob: bilingual lexical probabilities (for statistical disambiguation)
 --deLemmaModel: German lemma language model
+--noalt: flag to switch statistical disambiguation and sentence alternatives off
 --maxalt: maximum number of lemma alternatives
 --verbPrep: verb dependent preposition disambiguation rules (after prepDisamb)
 --deModel: German language model
@@ -265,7 +267,7 @@ GetOptions(
     'prepDisamb=s' => \$prepDisamb,
     'intraTransfer=s' => \$intraTransfer,
     'interTransfer=s' => \$interTransfer,
-    'nodes2chunks=s' => \$nodes2chunks,
+    'node2chunk=s' => \$nodes2chunks,
     'child2sibling=s' => \$child2sibling,
     'interOrder=s' => \$interOrder,
     'intraOrder=s' => \$intraOrder,
@@ -282,6 +284,7 @@ GetOptions(
     'chunkMap=s' => \$chunkMap,
     'bilexprob=s' => \$biLexProb,
     'deLemmaModel=s' => \$deLemmaModel,
+    'noalt' => \$noalt,
     'maxalt=i' => \$maxalt,
     'verbPrep=s' => \$verbPrep,
     'deModel=s' => \$deModel
@@ -362,7 +365,7 @@ GetOptions(
 \t intraTrans: xml after intrachunk syntactic transfer
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
-\t node2sibling: xml after promtion of child chunks to siblings
+\t child2sibling: xml after promtion of child chunks to siblings
 \t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
 \t morph: input for morphological generation
@@ -402,7 +405,7 @@ GetOptions(
 \t intraTrans: xml after intrachunk syntactic transfer
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
-\t node2sibling: xml after promtion of child chunks to siblings
+\t child2sibling: xml after promtion of child chunks to siblings
 \t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
 \t morph: input for morphological generation
@@ -411,7 +414,7 @@ GetOptions(
 
 	my $startTrans = $mapInputFormats{$informat};
 print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
-	if($startTrans > $mapInputFormats{$outformat}){
+	if($startTrans >= $mapInputFormats{$outformat}){
 		die "cannot process input from format=$informat to format=$outformat (wrong direction)!!\n";
 	}
 		
@@ -1071,56 +1074,64 @@ if($startTrans <$mapInputFormats{'statlexdisamb'})
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'statlexdisamb'} .") statistical lexical disambiguation\n";
 	my %bilexprobs = ();
 	$readrules =0;
-
-	# check if deModel is set
-	if($deLemmaModel eq ''){
-		eval{
-			$deLemmaModel = $config{'deLemmaModel'};
-		}
-		or die "Statistic lexical disambiguation failed, location of German lemma language model not indicated (set option deLemmaModel in config or use --deLemmaModel on commandline)!\n";
-	}
+	if (not $noalt) {
+		if ($maxalt > 0) {
+			# check if deModel is set
+			if($deLemmaModel eq ''){
+				eval{
+					$deLemmaModel = $config{'deLemmaModel'};
+				}
+				or die "Statistic lexical disambiguation failed, location of German lemma language model not indicated (set option deLemmaModel in config or use --deLemmaModel on commandline)!\n";
+			}
 	
-	if($biLexProb ne ''){
-		$readrules =1;
-		print STDERR "reading bilingual lexical probabilities from $biLexProb\n";
-		open (BILEXPROBFILE, "<:encoding(UTF-8)", $biLexProb) or die "Can't open $biLexProb: $!";
-	}
-	elsif($config ne ''){
-		$readrules =1;
-		$biLexProb = $config{"BilexProbFile"} or die "Bilingual lexical probability file not specified in config, insert BilexProbFile='path to bilingual lexical probabilities' or use option --bilexprob!";
-		print STDERR "reading bilingual lexical probabilities from file specified in $config: $biLexProb\n";
-		open (BILEXPROBFILE, "<:encoding(UTF-8)", $biLexProb) or die "Can't open $biLexProb as specified in config: $!";
-	}
-	if($readrules){
-		#read bilingual lexical probabilities from file into a hash (slem, tlem, prob)
-		while (<BILEXPROBFILE>) {
-			chomp;
-			s/#.*//;     # no comments
-			s/^\s+//;    # no leading white
-			s/\s+$//;    # no trailing white
-			next if /^$/;	# skip if empty line
-			my ( $slem, $tlem, $prob ) = split( /\s*\t+\s*/, $_, 3 );
-			# assure key is unique, use slem:tlem as key
-			my $key = "$slem\t$tlem";
-			$bilexprobs{$key} = $prob;
+			if($biLexProb ne ''){
+				$readrules =1;
+				print STDERR "reading bilingual lexical probabilities from $biLexProb\n";
+				open (BILEXPROBFILE, "<:encoding(UTF-8)", $biLexProb) or die "Can't open $biLexProb: $!";
+			}
+			elsif($config ne ''){
+				$readrules =1;
+				$biLexProb = $config{"BilexProbFile"} or die "Bilingual lexical probability file not specified in config, insert BilexProbFile='path to bilingual lexical probabilities' or use option --bilexprob!";
+				print STDERR "reading bilingual lexical probabilities from file specified in $config: $biLexProb\n";
+				open (BILEXPROBFILE, "<:encoding(UTF-8)", $biLexProb) or die "Can't open $biLexProb as specified in config: $!";
+			}
+			if($readrules){
+				#read bilingual lexical probabilities from file into a hash (slem, tlem, prob)
+				while (<BILEXPROBFILE>) {
+					chomp;
+					s/#.*//;     # no comments
+					s/^\s+//;    # no leading white
+					s/\s+$//;    # no trailing white
+					next if /^$/;	# skip if empty line
+					my ( $slem, $tlem, $prob ) = split( /\s*\t+\s*/, $_, 3 );
+					# assure key is unique, use slem:tlem as key
+					my $key = "$slem\t$tlem";
+					$bilexprobs{$key} = $prob;
+				}
+				store \%bilexprobs, "$path/storage/BilexProbabilities";
+				close(BILEXPROBFILE);
+			}
+			else{
+				## if neither --bilexProb nor --config given: check if bilingual lexical probabilities are already available in storage
+				eval{
+					retrieve("$path/storage/BilexProbabilities");
+				} or print STDERR "Failed to retrieve bilingual lexical probabilities, set option BilexProbFile=path in config or use --bilexprob path on commandline to indicate bilingual lexical probabilities!\n";
+				%bilexprobs = %{ retrieve("$path/storage/BilexProbabilities") };
+			}
 		}
-		store \%bilexprobs, "$path/storage/BilexProbabilities";
-		close(BILEXPROBFILE);
 	}
-	else{
-		## if neither --bilexProb nor --config given: check if bilingual lexical probabilities are already available in storage
-		eval{
-			retrieve("$path/storage/BilexProbabilities");
-		} or print STDERR "Failed to retrieve bilingual lexical probabilities, set option BilexProbFile=path in config or use --bilexprob path on commandline to indicate bilingual lexical probabilities!\n";
-		%bilexprobs = %{ retrieve("$path/storage/BilexProbabilities") };
-	}
-
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'morphdisamb'}){
 		$dom = &readXML();
 	}
-	squoia::esde::statBilexDisamb::main(\$dom, \%bilexprobs, $deLemmaModel, $maxalt);
-	squoia::alternativeSentences::main(\$dom);
+	if (not $noalt) {
+		if ($maxalt > 0) {
+			squoia::esde::statBilexDisamb::main(\$dom, \%bilexprobs, $deLemmaModel, $maxalt);
+		}
+		squoia::alternativeSentences::main(\$dom);
+	} else {
+		squoia::alternativeSentences::countAlternatives(\$dom);
+	}
 	## if output format is 'statlexdisamb': print and exit
 	if($outformat eq 'statlexdisamb'){
 		my $docstring = $dom->toString(3);
