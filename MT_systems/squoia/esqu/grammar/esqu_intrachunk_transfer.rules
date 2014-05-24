@@ -398,8 +398,8 @@ my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@
 my.slem=no			"yes"				my.type=sadv && xpath{ancestor::CHUNK[@type="coor-v" or @type="grup-verb"][1]/NODE[starts-with(@smi,"V")]/descendant-or-self::NODE[@mi="imperative"] }		possibleImp				up			overwrite
 my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
 
-my.slem=/incluso|sólo/ && my.mi=/^\+\+/		mi				my.type=/.+/		chunkmi		up	concat
-my.mi=/^\+\+/ && my.slem=/incluso|sólo/ 		"yes"			my.type=/.+/		delete		up	concat
+my.slem=/incluso|sólo|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento/ && my.mi=/^\+\+/			mi			my.type=/.+/		chunkmi		up	concat
+my.mi=/^\+\+/ && my.slem=/incluso|sólo|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento/ 		"yes"			my.type=/.+/		delete		up	concat
 
 
 

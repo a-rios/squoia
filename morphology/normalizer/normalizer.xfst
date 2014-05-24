@@ -574,8 +574,7 @@ define FeatRestr [AccGen .o. NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o.
 
 #special case, aswan has its own entry in the lexicon, as otherwise there are problems with the suffix sequence, vgl. as-wan-ta!
 #special case, allin, as allin and also alli are as roots in the lexicon!
-define ASWANALLIN [~$[ "=poco"%] %["^DB"%] %["--"%] {wan} | "=poco"%]  %["--"%] {na} | "=chicha_de_maíz" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI"  %["--"%] [{n}|{cha}] %[ ["NDeriv"|"VDeriv"] ]];
-
+define ASWANALLIN [~$[ "=poco"%] %["^DB"%] %["--"%] {wan} | "=poco"%]  %["--"%] {na} | "=chicha_de_maíz" %] %["^DB"%] %["--"%] [n|m] %[ | "@ALLI" %["^DB"%] %["--"%] [n|m] %[ | "@ALLI"  %["--"%] [{n}|{cha}] %[ ["NDeriv"|"VDeriv"] ]];
 
 #special case, as hatun and also hatu are as roots in the lexicon, additionally hatucha=abuela, but in verbalization only hatun-cha- allowed
 #special case, as allin and also alli are as roots in the lexicon!

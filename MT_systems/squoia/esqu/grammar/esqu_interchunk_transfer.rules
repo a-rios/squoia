@@ -53,7 +53,7 @@ my.type=grup-sp && my.case=/.+/ && !(xpath{../child::CHUNK[@type="sn" or @type="
 my.si=/suj/ 		case		my.verbform=/perfect|obligative|not\.agentive/					"+Gen"		parent		2to1		overwrite
 
 ## sólo/solamente -> copy chunkmi from sadv chunk to head
-child.slem=/sólo|solamente/ && my.chunkmi=++Lim		chunkmi			my.type=/.+/		chunkmi		parent		1to2		concat
+child.slem=/sólo|solamente|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento/ && my.chunkmi=/^\+\+/		chunkmi			my.type=/.+/		chunkmi		parent		1to2		concat
 
 # para, a_fin_de, con_fin_de, con_objeto_de +infinitive: verbchunk is set to obligative, but needs person of verb as possessive suffix! -> same subject as head verb
 # note: only first ancestor with finite verb!!

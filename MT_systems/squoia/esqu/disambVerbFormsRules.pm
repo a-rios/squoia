@@ -175,7 +175,7 @@ sub main{
 	 					$verbChunk->setAttribute('chunkmi', '+Top');
 	 				}
 	 				# with si: conditional, main  chayq (and sichus?), but note: might also be an indirect question ('preguntaron si compraste la casa')
-	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si$/ && !$verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="preguntar" or @lem="interrogar"]') )
+	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si|a_condición_de_que$/ && !$verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="preguntar" or @lem="interrogar"]') )
 	 				{
 	 					#check if same subject 
 	 					$verbChunk->setAttribute('verbform', 'main');
