@@ -21,11 +21,15 @@ a	case=+Loc	xpath{../child::CHUNK[@type="sn"]/NODE[@smi="W"]} || xpath{../child:
 a	case=+Gen	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="pertenecer"]		-	# esta casa pertenece a mi padre -> genitive
 a	adpos=none 	(rsibling.type=date && xpath{../descendant::CHUNK[NODE[@slem="de"]]/CHUNK/NODE[@slem="tarde"]})			-	# 
 
+a_causa_de	case=+Kaus
 acerca_de	func=topic,case=+Top	-	+ # TODO: really topic? 
+a_consecuencia_de	case=+Kaus
+a_continuación_de	postpos=qhipa
+a_fin_de	case=+Ben
 afuera_de	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
-a_fin_de	case=+Ben
-
+al_centro_de		postpos=chawpinman,nouncase=+Gen
+al_interior_de		postpos=ukhunman,nouncase=+Gen
 al_lado_de	postpos=kuska	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]}			- 	# al lado de una persona
 al_lado_de	postpos=kinraynin,nouncase=+Gen	!(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]})	-	# al lado de otra cosa
 
@@ -112,6 +116,9 @@ durante		func=deleteNode
 en		case=+Loc		-	+
 en		case=+Acc		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="confiar" or @slem="comerciar"]}	-
 en		case=+Dat		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="poner" or @slem="introducir" or @slem="meter" or @slem="insertar" or @slem="penetrar" or @slem="entrar" or @slem="enclavar" or @slem="colocar" or @slem="acoplar" or @slem="depositar" or @slem="convertir"]}	-
+
+en_el_centro_de		postpos=chawpinpi,nouncase=+Gen
+en_el_interior_de	postpos=ukhunpi,nouncase=+Gen
 
 en_virtud_de	case=+Instr
 encima		postpos=hanan		# adverb?!?

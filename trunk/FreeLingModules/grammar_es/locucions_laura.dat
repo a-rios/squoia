@@ -3,8 +3,8 @@ a_barlovento a_barlovento RG I
 a_barrisco a_barrisco RG I
 a_base_<de> a_base_de $3:SP I
 a_base_de_bien a_base_de_bien RG I
-abastecimiento_de_agua abastecimiento_de_agua NCMS000 I
-abastecimiento_de_agua_potable abastecimiento_de_agua_potable NCMS000 I
+%abastecimiento_de_agua abastecimiento_de_agua NCMS000 I
+%abastecimiento_de_agua_potable abastecimiento_de_agua_potable NCMS000 I
 ab_initio ab_initio RG I
 ab_intestato ab_intestato RG I
 a_boca_de_cañón a_boca_de_cañón RG I
@@ -42,7 +42,6 @@ a_cambio a_cambio RG I
 a_cambio_<de> a_cambio_de $3:SP I
 a_campo_raso a_campo_raso RG I
 a_campo_traviesa a_campo_traviesa RG I
-a_cántaros a_cántaros RG I
 a_cara_de_perro a_cara_de_perro RG I
 a_cara_descubierta a_cara_descubierta RG I
 a_carcajada_limpia a_carcajada_limpia RG I
@@ -1202,11 +1201,11 @@ de_bote_en_bote de_bote_en_bote RG I
 de_bracero de_bracero RG I
 de_bruces de_bruces RG I
 de_buena_cepa de_buena_cepa RG I
-de_buena_familia de_buena_familia RG I
+%de_buena_familia de_buena_familia RG I
 de_buena_fe de_buena_fe RG I
 de_buena_gana de_buena_gana RG I
-de_buena_ley de_buena_ley RG I
-de_buena_ropa de_buena_ropa RG I
+%de_buena_ley de_buena_ley RG I
+%de_buena_ropa de_buena_ropa RG I
 de_buenas_a_primeras de_buenas_a_primeras RG I
 de_buena_voluntad de_buena_voluntad RG I
 de_buen_efecto de_buen_efecto RG I
@@ -2285,6 +2284,8 @@ liga_árabe liga_árabe NCFS000 I
 línea_fija línea_fija NCFS000 I
 literatura_juvenil literatura_juvenil NCFS000 I
 <llevar>_a_cabo llevar_a_cabo $1:VM I
+<llover>_a_cántaros llover_a_cántaros $1:VM I
+<llover>_a_mares llover_a_mares $1:VM I
 <lluvia>_<torrencial> lluvia_torrencial $1:NC I
 <local>_<comercial> local_comercial $1:NC I
 loco_citato loco_citato RG I

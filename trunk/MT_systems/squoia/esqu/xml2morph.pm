@@ -201,7 +201,7 @@ sub main{
 	 		#print STDERR "new chunk: ";
 	 		#print STDERR $chunk->getAttribute('ref')."\n";
 	 		#if this is a verb chunk, get lemma and verbmi directly from chunk, no need to process the nodes
-	 		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]') && !$chunk->hasAttribute('delete') )
+	 		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]') )
 	 		{
 	 			# if there's a conjunction to be inserted and this verb chunk has no children chunks, print conjunction first
 	 			if($chunk->hasAttribute('conjHere'))
@@ -217,314 +217,316 @@ sub main{
 					&printNode($sparenode,$chunk);
 					print OUTFILE "\n";
 	 			}
-	 			
-	 			#in case an auxiliary needs to be generated, get that too
-	 			my $lemma2 = $chunk->getAttribute('lem2');
-	 			my $verbmi2 = $chunk->getAttribute('verbmi2');
-	 			# preverbs: quotation, nispa nin
-	 			my $lemma1 = $chunk->getAttribute('lem1');
-	 			my $verbmi1 = $chunk->getAttribute('verbmi1');
-	 			my $auxlem = $chunk->getAttribute('auxlem');
-	 			my $auxverbmi = $chunk->getAttribute('auxverbmi');
-	 			my $chunkmi = $chunk->getAttribute('chunkmi');
-	 			
-	 			
-	 			# nispa
-	 			if($lemma1 && $verbmi1)
+	 			unless($chunk->hasAttribute('delete') )
 	 			{
-	 				print OUTFILE "$lemma1:$verbmi1\n";
-	 			}
-	 			
-	 			# iterate through all SYN nodes and print:
-	 			my @SYNnodes = $chunk->findnodes('child::NODE/SYN');
-	 			# if no syn nodes: push node to @SYNnodes
-	 			if(scalar(@SYNnodes)==0){
-	 				my ($vnode) = $chunk->findnodes('child::NODE[1][starts-with(@smi, "V")]');
-	 				push(@SYNnodes, $vnode);
-	 			}
-	 			my $auxOrLem2toprint = 0;
-	 			
-	 			# if verb disambiguation assigned verbform=infinitive -> print all lemmas with +Inf and content of addverbmi
-	 			if($chunk->getAttribute('verbform')  eq 'infinitive')
-	 			{
-	 					my $printedLems = '';
-	 					if($chunk->hasAttribute('finiteMiInAux')){
-	 						my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
-	 						foreach my $auxsyn (@auxSYNs){
-	 							my $lem = $auxsyn->getAttribute('lem');
-	 							unless($printedLems =~ /#$lem#/){
-		 							my $add_mi = $auxsyn->getAttribute('add_mi');
-		 							my $infverbmi = $chunk->getAttribute('infverbmi');
-		 							my $chunkmi = $chunk->getAttribute('chunkmi');
-		 							my $verbmi= $add_mi.$infverbmi.$chunkmi;
-		 							my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
-		 							print OUTFILE $lem.":".$sortedVerbmi."\n";
-		 							$printedLems .= "#$lem#";
-	 							}
-	 						}
-	 					}
-	 					else{
-	 						foreach my $syn (@SYNnodes){
-	 							#my $lem = $syn->getAttribute('lem');
-	 							my $lem = &getVerbLem($syn,$chunk);
-	 							unless($printedLems =~ /#$lem#/){
-		 							my $add_mi = $syn->getAttribute('add_mi');
-		 							my $infverbmi = $chunk->getAttribute('infverbmi');
-		 							my $chunkmi = $chunk->getAttribute('chunkmi');
-		 							my $verbmi= $add_mi.$infverbmi.$chunkmi;
-		 							my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
-		 							print OUTFILE $lem.":".$sortedVerbmi."\n";
-		 							$printedLems .= "#$lem#";
-	 							}
-	 						}
-	 					}
-	 			}
-	 			else
-	 			{
-		 			for (my $i=0; $i<scalar(@SYNnodes);$i++)
+		 			#in case an auxiliary needs to be generated, get that too
+		 			my $lemma2 = $chunk->getAttribute('lem2');
+		 			my $verbmi2 = $chunk->getAttribute('verbmi2');
+		 			# preverbs: quotation, nispa nin
+		 			my $lemma1 = $chunk->getAttribute('lem1');
+		 			my $verbmi1 = $chunk->getAttribute('verbmi1');
+		 			my $auxlem = $chunk->getAttribute('auxlem');
+		 			my $auxverbmi = $chunk->getAttribute('auxverbmi');
+		 			my $chunkmi = $chunk->getAttribute('chunkmi');
+		 			
+		 			
+		 			# nispa
+		 			if($lemma1 && $verbmi1)
 		 			{
-		 				my $syn = @SYNnodes[$i];
-		 				# addverbmi: mi that is needed by ALL synonyms (chunk level)
-		 				# vs. verbmi + add_mi in synnodes: mi that is needed only by this syn node
-		 				my $addverbmi = $chunk->getAttribute('addverbmi');
-		 				my $add_mi= $syn->getAttribute('add_mi');
-		 				# if finiteMiInAux: iterate through SYN's in second verb and get verbmi's from there
-		 				my @verbmis;
-		 				
-		 				if($chunk->getAttribute('finiteMiInAux') eq 'yes' && !$chunk->hasAttribute('deletefiniteMiInAux'))
-		 				{
-		 					my @auxSYNs;
-		 					@auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
-		 					# if no syns in aux node, take aux node itself
-		 					if(scalar(@auxSYNs)==0){
-		 						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
-		 						unless($vnode){
-		 							# if there's a conjunction or relative pronoun in between
-		 							($vnode) = $chunk->findnodes('child::NODE/NODE[not(starts-with(@smi,"V"))]/NODE[starts-with(@smi,"V")][1]');
-		 							#print STDERR $vnode->toString()."\n";
-		 						}
-		 						if($vnode){
-		 							push(@auxSYNs, $vnode);	
-		 						}
-		 					}
-		 					foreach my $auxsyn (@auxSYNs){
-		 						my $synmi = $auxsyn->getAttribute('verbmi');
-		 						my $verbmi = $synmi.$add_mi.$addverbmi;
-		 						#print STDERR "verbmi: $verbmi\n";
-		 						push(@verbmis, $verbmi);
-		 					}
-		 				}
-		 				else
-		 				{
-		 					my $verbmi = $syn->getAttribute('verbmi');
-		 					# clear conflicting mi's (addverbmi prevails)
-		 					if($addverbmi =~ /Subj/ and $verbmi =~ /Subj/){
-		 						$verbmi =~ s/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)//g;
-		 					}
-		 					if($addverbmi =~ /Obl|Perf|DS|SS|Ag/ and $verbmi =~ /Inf/){
-		 						$verbmi =~ s/\+Inf//g;
-		 					}
-		 					if($addverbmi =~ /Inf/  and $verbmi =~ /Obl|Perf|DS|SS|Ag/ ){
-		 						$verbmi =~ s/\+Obl|Perf|DS|SS|Ag//g;
-		 					}
-		 					if($addverbmi =~ /\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss/ and $verbmi =~ /\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss/){
-		 						$verbmi =~ s/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss)//g;
-		 					}
-		 					# with 'hay que' as complement clause (dice que hay que trabajar) -> results in Inf+Acc AND Obl+possessive -> delete +Inf
-							if($addverbmi =~ /\+Inf/ && $addverbmi =~ /\+Obl/){
-								$addverbmi =~ s/\+Inf//g;
-							}
-		 					$verbmi = $verbmi.$add_mi.$addverbmi;
-		 					push(@verbmis, $verbmi);
-		 				}
-		 				for(my $k=0;$k<scalar(@verbmis);$k++)
-		 				{
-		 					my $verbmi = @verbmis[$k]; 
-			 				# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
-				 			my $lemma = $syn->getAttribute('lem');
-				 			if($syn->getAttribute('lem') eq 'unspecified' or $syn->getAttribute('unknown') eq 'transfer')
-				 			{
-				 				# check if this SYN has an slem (ambiguous lemmas from tagging), else take slem from parent NODE
-				 				$lemma = $syn->getAttribute('slem') ? $syn->getAttribute('slem'): $chunk->findvalue('child::NODE/@slem');
-				 				#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
-				 				if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
-				 				unless($lemma =~ /_/){
-					 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
-					 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
-					 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
-				 				}
-				 				# if no source lemma because morph analysis didn't recognize the word: use the word form..
-				 				elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
-				 				
-				 				if(!$syn->hasAttribute('verbmi'))
-				 				{
-				 					# if this a participle without finite verb, use -sqa form
-				 					if($syn->getAttribute('smi') =~ /^VMP/ && !$syn->exists('ancestor-or-self::NODE[1]/descendant::NODE[starts-with(@smi,"V")]') )
-				 					{ 
-				 						$verbmi="VRoot+Perf";
-				 					}
-				 					# if this a gerund without finite verb, use -spa form
-				 					elsif($syn->getAttribute('smi') =~ /^VMG/ && !$syn->exists('ancestor-or-self::NODE[1]/descendant::NODE[starts-with(@smi,"V")]') )
-				 					{ 
-				 						$verbmi="VRoot+SS";
-				 					}
-				 					# if no this is the only verb node in this chunk and unknown=transfer -> no morphology on chunk level, try to guess morphs from eagles tag
-				 					elsif($syn->hasAttribute('unknown') && !$chunk->exists('self::CHUNK[@addverbmi or @finiteMiInAux or @printAuxVerb]') && $chunk->exists('child::NODE[starts-with(@smi,"V") and count(descendant::NODE[starts-with(@smi,"V")] )=0 ]')){
-				 						if($chunk->getAttribute('verbform') eq 'rel:'){
-				 							$chunk->setAttribute('verbform', 'rel:not.agentive');
-				 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
-				 							(my $l, $verbmi) = split(':',$lem_and_verbmi);
-				 							$chunk->setAttribute('verbform', 'rel:agentive');
-				 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
-				 							my( $l, $verbmiAg) = split(':',$lem_and_verbmi);
-				 							push(@verbmis, $verbmiAg);
-				 							$chunk->setAttribute('rel_guessed', '1');
-				 						}
-				 						else{
-				 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
-				 							(my $l, $verbmi) = split(':',$lem_and_verbmi);
-				 						}
-				 					}
-				 				}
-				 			}
-				 			# if lemInCpred -> get lemma from Cpred (if there is one)
-				 			if($syn->hasAttribute('lemInCpred')){
-				 				my $cpred = $syn->findvalue('ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")]/@lem');
-				 				if($cpred ne ''){
-				 					$lemma = $cpred;
-				 				}
-				 			}
-				 			
-				 			# clean up and adjust morphology tags
-				 			if($chunk->getAttribute('printAuxVerb') ne 'yes'){
-				 				$verbmi = &cleanVerbMi($verbmi,$chunk,$syn);
-				 			}
-		
-				 			
-				 			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
-				 			if($lemma2 eq '' && $auxlem eq '' && $chunk->getAttribute('printAuxVerb') eq '' && $verbmi ne '')
-				 			{ 
-				 				# if there's a preform: print that first!
-								my @preformsWithEmptyFields = split('#', $syn->getAttribute('preform') );
-								my @preforms = grep {$_} @preformsWithEmptyFields; 
-				 				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
-				 				if($i==0 && $k==0){
-					 				foreach my $p (@preforms){
-				 						print OUTFILE "$p ";
-				 					}
-				 					print OUTFILE "$lemma:$sortedVerbmi\n";
-				 				}
-				 				else{
-				 					print OUTFILE "/";
-				 					foreach my $p (@preforms){
-				 						print OUTFILE "$p ";
-				 					}
-				 					print OUTFILE "$lemma:$sortedVerbmi\n";
-				 				}
-				 			}
-				 			else
-				 			{ 
-				 				my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
-				 				# if there's a preform: print that first!
-								my @preformsWithEmptyFields = split('#', $syn->getAttribute('preform'));
-								my @preforms = grep {$_} @preformsWithEmptyFields; 
-				 				# first syn: no '/'
-				 				if($i==0 && $k==0){
-				 					foreach my $p (@preforms){
-				 						print OUTFILE "$p ";
-				 					}
-				 					print OUTFILE "$lemma:$sortedVerbmi\n";
-				 				}
-				 				else{
-				 					print OUTFILE "/";
-				 					foreach my $p (@preforms){
-				 						print OUTFILE "$p ";
-				 					}
-				 					print OUTFILE "$lemma:$sortedVerbmi\n";
-				 				}
-				 				$auxOrLem2toprint =1;
-				 			}
-				 			
-			 			}
+		 				print OUTFILE "$lemma1:$verbmi1\n";
 		 			}
-		 			if($auxOrLem2toprint==1)
+		 			
+		 			# iterate through all SYN nodes and print:
+		 			my @SYNnodes = $chunk->findnodes('child::NODE/SYN');
+		 			# if no syn nodes: push node to @SYNnodes
+		 			if(scalar(@SYNnodes)==0){
+		 				my ($vnode) = $chunk->findnodes('child::NODE[1][starts-with(@smi, "V")]');
+		 				push(@SYNnodes, $vnode);
+		 			}
+		 			my $auxOrLem2toprint = 0;
+		 			
+		 			# if verb disambiguation assigned verbform=infinitive -> print all lemmas with +Inf and content of addverbmi
+		 			if($chunk->getAttribute('verbform')  eq 'infinitive')
 		 			{
-		 				 # get auxes (note: not true auxilaries, -> VM)
-		 				 if($chunk->getAttribute('printAuxVerb') eq 'yes')
-		 				 {
-		 				 	my @auxverbmis;
-		 					my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"VM")]/SYN');
-		 					# if no syns in aux node, take aux node itself
-		 					if(scalar(@auxSYNs)==0){
-		 						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
-		 						unless($vnode){
-		 							# if there's a conjunction in between
-		 							($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"C")]/NODE[starts-with(@smi,"V")][1]');
-		 						}
-		 						if($vnode){
-		 							push(@auxSYNs, $vnode);	
+		 					my $printedLems = '';
+		 					if($chunk->hasAttribute('finiteMiInAux')){
+		 						my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
+		 						foreach my $auxsyn (@auxSYNs){
+		 							my $lem = $auxsyn->getAttribute('lem');
+		 							unless($printedLems =~ /#$lem#/){
+			 							my $add_mi = $auxsyn->getAttribute('add_mi');
+			 							my $infverbmi = $chunk->getAttribute('infverbmi');
+			 							my $chunkmi = $chunk->getAttribute('chunkmi');
+			 							my $verbmi= $add_mi.$infverbmi.$chunkmi;
+			 							my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
+			 							print OUTFILE $lem.":".$sortedVerbmi."\n";
+			 							$printedLems .= "#$lem#";
+		 							}
 		 						}
 		 					}
-		 					for(my $j=0;$j<scalar(@auxSYNs);$j++)
-		 					{
-		 						my $auxsyn = @auxSYNs[$j];
-		 						my $synmi = $auxsyn->getAttribute('verbmi');
-		 						my $add_mi = $auxsyn->getAttribute('add_mi');
-		 						my $verbmi = $synmi.$add_mi.$chunkmi;
-		 						$verbmi = &cleanVerbMi($verbmi,$chunk,$auxsyn);
-		 						#push(@auxverbmis, $verbmi);
-		 					
-			 					# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
-					 			my $lemma = $auxsyn->getAttribute('lem');
-					 			if($auxsyn->getAttribute('lem') eq 'unspecified' or $auxsyn->getAttribute('unknown') eq 'transfer'){
-					 				$lemma = $chunk->findvalue('child::NODE/@slem');
+		 					else{
+		 						foreach my $syn (@SYNnodes){
+		 							#my $lem = $syn->getAttribute('lem');
+		 							my $lem = &getVerbLem($syn,$chunk);
+		 							unless($printedLems =~ /#$lem#/){
+			 							my $add_mi = $syn->getAttribute('add_mi');
+			 							my $infverbmi = $chunk->getAttribute('infverbmi');
+			 							my $chunkmi = $chunk->getAttribute('chunkmi');
+			 							my $verbmi= $add_mi.$infverbmi.$chunkmi;
+			 							my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
+			 							print OUTFILE $lem.":".$sortedVerbmi."\n";
+			 							$printedLems .= "#$lem#";
+		 							}
+		 						}
+		 					}
+		 			}
+		 			else
+		 			{
+			 			for (my $i=0; $i<scalar(@SYNnodes);$i++)
+			 			{
+			 				my $syn = @SYNnodes[$i];
+			 				# addverbmi: mi that is needed by ALL synonyms (chunk level)
+			 				# vs. verbmi + add_mi in synnodes: mi that is needed only by this syn node
+			 				my $addverbmi = $chunk->getAttribute('addverbmi');
+			 				my $add_mi= $syn->getAttribute('add_mi');
+			 				# if finiteMiInAux: iterate through SYN's in second verb and get verbmi's from there
+			 				my @verbmis;
+			 				
+			 				if($chunk->getAttribute('finiteMiInAux') eq 'yes' && !$chunk->hasAttribute('deletefiniteMiInAux'))
+			 				{
+			 					my @auxSYNs;
+			 					@auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
+			 					# if no syns in aux node, take aux node itself
+			 					if(scalar(@auxSYNs)==0){
+			 						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
+			 						unless($vnode){
+			 							# if there's a conjunction or relative pronoun in between
+			 							($vnode) = $chunk->findnodes('child::NODE/NODE[not(starts-with(@smi,"V"))]/NODE[starts-with(@smi,"V")][1]');
+			 							#print STDERR $vnode->toString()."\n";
+			 						}
+			 						if($vnode){
+			 							push(@auxSYNs, $vnode);	
+			 						}
+			 					}
+			 					foreach my $auxsyn (@auxSYNs){
+			 						my $synmi = $auxsyn->getAttribute('verbmi');
+			 						my $verbmi = $synmi.$add_mi.$addverbmi;
+			 						#print STDERR "verbmi: $verbmi\n";
+			 						push(@verbmis, $verbmi);
+			 					}
+			 				}
+			 				else
+			 				{
+			 					my $verbmi = $syn->getAttribute('verbmi');
+			 					# clear conflicting mi's (addverbmi prevails)
+			 					if($addverbmi =~ /Subj/ and $verbmi =~ /Subj/){
+			 						$verbmi =~ s/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Subj)//g;
+			 					}
+			 					if($addverbmi =~ /Obl|Perf|DS|SS|Ag/ and $verbmi =~ /Inf/){
+			 						$verbmi =~ s/\+Inf//g;
+			 					}
+			 					if($addverbmi =~ /Inf/  and $verbmi =~ /Obl|Perf|DS|SS|Ag/ ){
+			 						$verbmi =~ s/\+Obl|Perf|DS|SS|Ag//g;
+			 					}
+			 					if($addverbmi =~ /\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss/ and $verbmi =~ /\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss/){
+			 						$verbmi =~ s/(\+[123]\.[PS][lg](\.Incl|\.Excl)?\.Poss)//g;
+			 					}
+			 					# with 'hay que' as complement clause (dice que hay que trabajar) -> results in Inf+Acc AND Obl+possessive -> delete +Inf
+								if($addverbmi =~ /\+Inf/ && $addverbmi =~ /\+Obl/){
+									$addverbmi =~ s/\+Inf//g;
+								}
+			 					$verbmi = $verbmi.$add_mi.$addverbmi;
+			 					push(@verbmis, $verbmi);
+			 				}
+			 				for(my $k=0;$k<scalar(@verbmis);$k++)
+			 				{
+			 					my $verbmi = @verbmis[$k]; 
+				 				# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
+					 			my $lemma = $syn->getAttribute('lem');
+					 			if($syn->getAttribute('lem') eq 'unspecified' or $syn->getAttribute('unknown') eq 'transfer')
+					 			{
+					 				# check if this SYN has an slem (ambiguous lemmas from tagging), else take slem from parent NODE
+					 				$lemma = $syn->getAttribute('slem') ? $syn->getAttribute('slem'): $chunk->findvalue('child::NODE/@slem');
 					 				#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
-				 					if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
-					 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
-					 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
-					 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+					 				if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
+					 				unless($lemma =~ /_/){
+						 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
+						 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
+						 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+					 				}
 					 				# if no source lemma because morph analysis didn't recognize the word: use the word form..
-				 					elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
+					 				elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
+					 				
+					 				if(!$syn->hasAttribute('verbmi'))
+					 				{
+					 					# if this a participle without finite verb, use -sqa form
+					 					if($syn->getAttribute('smi') =~ /^VMP/ && !$syn->exists('ancestor-or-self::NODE[1]/descendant::NODE[starts-with(@smi,"V")]') )
+					 					{ 
+					 						$verbmi="VRoot+Perf";
+					 					}
+					 					# if this a gerund without finite verb, use -spa form
+					 					elsif($syn->getAttribute('smi') =~ /^VMG/ && !$syn->exists('ancestor-or-self::NODE[1]/descendant::NODE[starts-with(@smi,"V")]') )
+					 					{ 
+					 						$verbmi="VRoot+SS";
+					 					}
+					 					# if no this is the only verb node in this chunk and unknown=transfer -> no morphology on chunk level, try to guess morphs from eagles tag
+					 					elsif($syn->hasAttribute('unknown') && !$chunk->exists('self::CHUNK[@addverbmi or @finiteMiInAux or @printAuxVerb]') && $chunk->exists('child::NODE[starts-with(@smi,"V") and count(descendant::NODE[starts-with(@smi,"V")] )=0 ]')){
+					 						if($chunk->getAttribute('verbform') eq 'rel:'){
+					 							$chunk->setAttribute('verbform', 'rel:not.agentive');
+					 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
+					 							(my $l, $verbmi) = split(':',$lem_and_verbmi);
+					 							$chunk->setAttribute('verbform', 'rel:agentive');
+					 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
+					 							my( $l, $verbmiAg) = split(':',$lem_and_verbmi);
+					 							push(@verbmis, $verbmiAg);
+					 							$chunk->setAttribute('rel_guessed', '1');
+					 						}
+					 						else{
+					 							my $lem_and_verbmi = &mapEaglesTagToQuechuaMorph($syn,$chunk);
+					 							(my $l, $verbmi) = split(':',$lem_and_verbmi);
+					 						}
+					 					}
+					 				}
+					 			}
+					 			# if lemInCpred -> get lemma from Cpred (if there is one)
+					 			if($syn->hasAttribute('lemInCpred')){
+					 				my $cpred = $syn->findvalue('ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")]/@lem');
+					 				if($cpred ne ''){
+					 					$lemma = $cpred;
+					 				}
 					 			}
 					 			
-					 			# if there's a preform: print that first!
-								my @preformsWithEmptyFields = split('#', $auxsyn->getAttribute('preform') );
-								my @preforms = grep {$_} @preformsWithEmptyFields; 
-				 				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
-				 				if($j==0){
-					 				foreach my $p (@preforms){
-				 						print OUTFILE "$p ";
-				 					}
-				 					print OUTFILE "$lemma:$sortedVerbmi\n";
-				 				}
-				 				else{
-				 					print OUTFILE "/";
-				 					foreach my $p (@preforms){
-				 						print OUTFILE "$p ";
-				 					}
-				 					print OUTFILE "$lemma:$sortedVerbmi\n";
-				 				}
+					 			# clean up and adjust morphology tags
+					 			if($chunk->getAttribute('printAuxVerb') ne 'yes'){
+					 				$verbmi = &cleanVerbMi($verbmi,$chunk,$syn);
+					 			}
+			
 					 			
-		 					}
-		 					
-		 				}
-		 				
-		 				# lemma2, verbmi2: inserted by MT, no syn nodes, no additional information!
-		 				if($lemma2 && $verbmi2)
-				 		{
-				 			print OUTFILE "$lemma2:".&adjustMorph($verbmi2,\%mapTagsToSlots);
-				 		}
-					 	if($auxlem && $auxverbmi)
-					 	{
-					 		print OUTFILE "$auxlem:".&adjustMorph($auxverbmi,\%mapTagsToSlots);
-					 	}
-					 	if($chunkmi ne '' && !$chunk->hasAttribute('printAuxVerb'))
-					 	{
-					 		print OUTFILE &adjustMorph($chunkmi,\%mapTagsToSlots);
-					 	}
-					 	print OUTFILE "\n";
-		 			}
-		 		}
+					 			# if this is the last verb that needs to be generated in this chunk, insert chunkmi
+					 			if($lemma2 eq '' && $auxlem eq '' && $chunk->getAttribute('printAuxVerb') eq '' && $verbmi ne '')
+					 			{ 
+					 				# if there's a preform: print that first!
+									my @preformsWithEmptyFields = split('#', $syn->getAttribute('preform') );
+									my @preforms = grep {$_} @preformsWithEmptyFields; 
+					 				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
+					 				if($i==0 && $k==0){
+						 				foreach my $p (@preforms){
+					 						print OUTFILE "$p ";
+					 					}
+					 					print OUTFILE "$lemma:$sortedVerbmi\n";
+					 				}
+					 				else{
+					 					print OUTFILE "/";
+					 					foreach my $p (@preforms){
+					 						print OUTFILE "$p ";
+					 					}
+					 					print OUTFILE "$lemma:$sortedVerbmi\n";
+					 				}
+					 			}
+					 			else
+					 			{ 
+					 				my $sortedVerbmi = &adjustMorph($verbmi,\%mapTagsToSlots);
+					 				# if there's a preform: print that first!
+									my @preformsWithEmptyFields = split('#', $syn->getAttribute('preform'));
+									my @preforms = grep {$_} @preformsWithEmptyFields; 
+					 				# first syn: no '/'
+					 				if($i==0 && $k==0){
+					 					foreach my $p (@preforms){
+					 						print OUTFILE "$p ";
+					 					}
+					 					print OUTFILE "$lemma:$sortedVerbmi\n";
+					 				}
+					 				else{
+					 					print OUTFILE "/";
+					 					foreach my $p (@preforms){
+					 						print OUTFILE "$p ";
+					 					}
+					 					print OUTFILE "$lemma:$sortedVerbmi\n";
+					 				}
+					 				$auxOrLem2toprint =1;
+					 			}
+					 			
+				 			}
+			 			}
+			 			if($auxOrLem2toprint==1)
+			 			{
+			 				 # get auxes (note: not true auxilaries, -> VM)
+			 				 if($chunk->getAttribute('printAuxVerb') eq 'yes')
+			 				 {
+			 				 	my @auxverbmis;
+			 					my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"VM")]/SYN');
+			 					# if no syns in aux node, take aux node itself
+			 					if(scalar(@auxSYNs)==0){
+			 						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
+			 						unless($vnode){
+			 							# if there's a conjunction in between
+			 							($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"C")]/NODE[starts-with(@smi,"V")][1]');
+			 						}
+			 						if($vnode){
+			 							push(@auxSYNs, $vnode);	
+			 						}
+			 					}
+			 					for(my $j=0;$j<scalar(@auxSYNs);$j++)
+			 					{
+			 						my $auxsyn = @auxSYNs[$j];
+			 						my $synmi = $auxsyn->getAttribute('verbmi');
+			 						my $add_mi = $auxsyn->getAttribute('add_mi');
+			 						my $verbmi = $synmi.$add_mi.$chunkmi;
+			 						$verbmi = &cleanVerbMi($verbmi,$chunk,$auxsyn);
+			 						#push(@auxverbmis, $verbmi);
+			 					
+				 					# if verb unknown, lem aleady contains the source lemma, in this, strip the final -r (from the Spanish infinitive))
+						 			my $lemma = $auxsyn->getAttribute('lem');
+						 			if($auxsyn->getAttribute('lem') eq 'unspecified' or $auxsyn->getAttribute('unknown') eq 'transfer'){
+						 				$lemma = $chunk->findvalue('child::NODE/@slem');
+						 				#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
+					 					if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
+						 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
+						 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
+						 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+						 				# if no source lemma because morph analysis didn't recognize the word: use the word form..
+					 					elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
+						 			}
+						 			
+						 			# if there's a preform: print that first!
+									my @preformsWithEmptyFields = split('#', $auxsyn->getAttribute('preform') );
+									my @preforms = grep {$_} @preformsWithEmptyFields; 
+					 				my $sortedVerbmi = &adjustMorph($verbmi.$chunkmi,\%mapTagsToSlots);
+					 				if($j==0){
+						 				foreach my $p (@preforms){
+					 						print OUTFILE "$p ";
+					 					}
+					 					print OUTFILE "$lemma:$sortedVerbmi\n";
+					 				}
+					 				else{
+					 					print OUTFILE "/";
+					 					foreach my $p (@preforms){
+					 						print OUTFILE "$p ";
+					 					}
+					 					print OUTFILE "$lemma:$sortedVerbmi\n";
+					 				}
+						 			
+			 					}
+			 					
+			 				}
+			 				
+			 				# lemma2, verbmi2: inserted by MT, no syn nodes, no additional information!
+			 				if($lemma2 && $verbmi2)
+					 		{
+					 			print OUTFILE "$lemma2:".&adjustMorph($verbmi2,\%mapTagsToSlots);
+					 		}
+						 	if($auxlem && $auxverbmi)
+						 	{
+						 		print OUTFILE "$auxlem:".&adjustMorph($auxverbmi,\%mapTagsToSlots);
+						 	}
+						 	if($chunkmi ne '' && !$chunk->hasAttribute('printAuxVerb'))
+						 	{
+						 		print OUTFILE &adjustMorph($chunkmi,\%mapTagsToSlots);
+						 	}
+						 	print OUTFILE "\n";
+			 			}
+			 		}
+	 			}
 		 		if($chunk->getAttribute('conjLast') ne ''){
 		 			print OUTFILE $chunk->getAttribute('conjLast').":\n";
 		 		}
