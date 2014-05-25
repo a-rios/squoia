@@ -21,22 +21,39 @@ a	case=+Loc	xpath{../child::CHUNK[@type="sn"]/NODE[@smi="W"]} || xpath{../child:
 a	case=+Gen	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="pertenecer"]		-	# esta casa pertenece a mi padre -> genitive
 a	adpos=none 	(rsibling.type=date && xpath{../descendant::CHUNK[NODE[@slem="de"]]/CHUNK/NODE[@slem="tarde"]})			-	# 
 
-a_causa_de	case=+Kaus
-acerca_de	func=topic,case=+Top	-	+ # TODO: really topic? 
+a_causa_de		case=+Kaus
+acerca_de		func=topic,case=+Top		 # TODO: really topic? 
+a_comienzo_de		postpos=qallariyninpi,nouncase=+Gen
+a_comienzos_de		postpos=qallariyninpi,nouncase=+Gen
 a_consecuencia_de	case=+Kaus
 a_continuación_de	postpos=qhipa
-a_fin_de	case=+Ben
-afuera_de	postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
+a_espaldas_de		postpos=wasanpi,nouncase=+Gen
+a_final_de		postpos=tukuyninpi,nouncase=+Gen
+a_finales_de		postpos=tukuyninpi,nouncase=+Gen
+a_fin_de		case=+Ben
+afuera_de		postpos=hawan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
+al_borde_de		postpos=patanpi,nouncase=+Gen
+al_cabo_de 		postpos=qhipa
 al_centro_de		postpos=chawpinman,nouncase=+Gen
+al_decir_de		postpos=nisqanpi hina,nouncase=+Gen		# según dice
+al_derrededor_de	postpos=muyun,nouncase=+Gen
+al_inicio_de		postpos=qallariyninpi,nouncase=+Gen
 al_interior_de		postpos=ukhunman,nouncase=+Gen
-al_lado_de	postpos=kuska	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]}			- 	# al lado de una persona
-al_lado_de	postpos=kinraynin,nouncase=+Gen	!(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]})	-	# al lado de otra cosa
-
+al_lado_de		postpos=kuska			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]}			- 	# al lado de una persona
+al_lado_de		postpos=kinraynin,nouncase=+Gen	!(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]})		-	# al lado de otra cosa
+al_margen_de		postpos=patanpi,nouncase=+Gen
+al_modo_de		postpos=hina
+a_modo_de		postpos=hina
+al_objeto_de		case=+Ben
 a_la_derecha_de		postpos=pañan,nouncase=+Gen
 a_la_izquierda_de	postpos=lluq'in,nouncase=+Gen
+a_la_manera_de		postpos=hina
+a_manera_de		postpos=hina
+a_partir_de		case=+Abl
+a_principios_de		postpos=qallariyninpi
 
-alrededor_de	postpos=muyun,nouncase=+Gen	-
+alrededor_de	postpos=muyun,nouncase=+Gen
 
 ante		spform=ñawk'iypi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}				-
 ante		spform=ñawk'iykipi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}				-
@@ -55,21 +72,23 @@ arriba_de	spform=hanaqniykichikpi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@
 arriba_de	spform=hanaqninkupi			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
 arriba_de	postpos=hanaqnin,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
-bajo		postpos=uran,nouncase=+Gen		-
+bajo		postpos=uran,nouncase=+Gen
 cerca_de 	postpos=sichpan,nouncase=+Gen
 como		postpos=hina			!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"])		+
 como		postpos=hina,nouncase=+Dat	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"]		-
 
-con		case=+Instr
-con_fin_de	case=+Ben
-con_objeto_de	case=+Ben
+con			case=+Instr
+con_fin_de		case=+Ben
+con_el_fin_de		case=+Ben
+con_objeto_de		case=+Ben
+con_el_objetivo_de	case=+Ben
+con_lo_que_respecta_a	case=+Top
+
 contra		case=+Abl	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="proteger" or @slem="defender" or @slem="velar" or @slem="amparar" or @slem="cubrir"]}		-
 contra		case=+Dat	xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="apoyar" or @slem="chocar" or @slem="apretar" or @slem="estrellar" or @sem="[+Mov]"]}		-
 contra		postpos=contran,nouncase=+Gen		-	+
 contra		case=+Instr		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="enfrentar" and @lem="maqa"]}		-
 en_contra_de	postpos=contran,nouncase=+Gen
-
-#cabe 
 
 # TODO: Mengenangaben: una tasa DE café?
 de	case=+Gen			chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or @sem="[+Mat]" or @smi="Z"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
@@ -79,6 +98,8 @@ de	case=+Loc			xpath{parent::CHUNK/parent::CHUNK[@type="date"]} || xpath{descend
 de	func=attributive		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]" or @smi="NP00G00"]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
 de	postpos=hina,nouncase=+Dat	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"]		-
 de	postpos=chayqa,nouncase=+Abl	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="depender"]		-		 # eso depende de ti -> qammantam chayqa (kan).
+
+de_al_lado_de		postpos=kinraynin,nouncase=+Gen
 
 debajo_de	spform=uraypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}						-
 debajo_de	spform=uraykipi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP20S")]}						-
@@ -117,9 +138,23 @@ en		case=+Loc		-	+
 en		case=+Acc		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="confiar" or @slem="comerciar"]}	-
 en		case=+Dat		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="poner" or @slem="introducir" or @slem="meter" or @slem="insertar" or @slem="penetrar" or @slem="entrar" or @slem="enclavar" or @slem="colocar" or @slem="acoplar" or @slem="depositar" or @slem="convertir"]}	-
 
+en_busca_de		postpos=maskhaspa
+en_cercanías_de 	postpos=sichpan,nouncase=+Gen
+en_compañía_de		postpos=kuska
+en_derrededor_de	postpos=muyun,nouncase=+Gen
 en_el_centro_de		postpos=chawpinpi,nouncase=+Gen
+en_el_entorno_de	postpos=muyun,nouncase=+Gen
 en_el_interior_de	postpos=ukhunpi,nouncase=+Gen
+en_el_otro_lado_de	postpos=huk kinrayninpi,nouncase=+Gen
 
+en_las_proximidades_de	postpos=sichpan,nouncase=+Gen
+en_la_temporada_de	postpos=pachapi
+en_lo_concerniente_a	postpos=+Top
+en_memoria_de		postpos=yuyaspa
+en_mitad_de		postpos=chawpinpi,nouncase=+Gen
+en_recuerdo_de		postpos=yuyaspa
+en_representación_de	postpos=rantinpi,nouncase=+Gen
+en_tiempo_de		postpos=pachapi
 en_virtud_de	case=+Instr
 encima		postpos=hanan		# adverb?!?
 
@@ -173,6 +208,8 @@ junto_a		spform=qayllaykichikpi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@typ
 junto_a		spform=qayllankupi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30P") ]}				-
 junto_a		postpos=qayllan,nouncase=+Gen	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP30S") or starts-with(@smi, "N")]}	+
 
+luego_de	postpos=qhipa
+
 mediante	case=+Instr	-
 para		case=+Ben	-
 #para		case=+Dat # para allá TODO
@@ -185,6 +222,19 @@ por		case=+Kaus	-	+ # which one should be default?? rules for +Inst/+Kaus??
 por		case=+Instr	-	-  # TODO causee in causative constructions
 por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}	-
 por_el_motivo_de		case=+Kaus
+por_al_lado_de	postpos=kinrayninpi,nouncase=+Gen
+por_causa_de	case=+Kaus
+por_debajo_de		postpos=uranpi,nouncase=+Gen
+por_delante_de		postpos=ñawpanpi,nouncase=+Gen
+por_detrás_de		postpos=qhipanpi,nouncase=+Gen
+por_encima_de		postpos=hananpi,nouncase=+Gen
+por_el_centro_de	postpos=chawpinpi,nouncase=+Gen
+por_este_lado_de	postpos=chay kinrayninpi,nouncase=+Gen
+por_el_otro_lado_de	postpos=huk kinrayninpi,nouncase=+Gen
+por_motivo_de		case=+Kaus
+
+según			postpos=hina
+según_el_decir_de	postpos=nisqanpi hina,nouncase=+Gen
 
 # sin hacer ->mana ruwaspa, sin dientes -> kiruNNAQ, sin Pedro -> mana PedroWAN
 # default:  mana -wan (?)

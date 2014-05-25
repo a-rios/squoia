@@ -1537,7 +1537,7 @@ diente_torcido diente_torcido NCMS000 I
 dignidad_humana dignidad_humana NCFS000 I
 dióxido_de_azufre dióxido_de_azufre NCMS000 I
 dióxido_de_carbono dióxido_de_carbono NCMS000 I
-dirección_<a> dirección_a $2:SP I
+%dirección_<a> dirección_a $2:SP I
 dirección_administrativa dirección_administrativa NCFS000 I
 dirección_del_viento dirección_del_viento NCFS000 I
 dirección_de_recursos_humanos dirección_de_recursos_humanos NCFS000 I
@@ -1746,7 +1746,7 @@ en_la_necesidad_<de> en_la_necesidad_de $4:SP I
 en_las_cercanías_<de> en_las_cercanías_de $4:SP I
 en_las_proximidades_<de> en_las_proximidades_de $4:SP I
 en_la_temporada_<de> en_la_temporada_de $4:SP I
-en_la_zona_<de> en_la_zona_de $4:SP I
+%en_la_zona_<de> en_la_zona_de $4:SP I
 en_limpio en_limpio RG I
 en_línea en_línea RG I
 en_líneas_generales en_líneas_generales RG I
@@ -2455,7 +2455,7 @@ normas_de_seguridad normas_de_seguridad NCFP000 I
 normas_sociales normas_sociales NCFP000 I
 normativa_vigente normativa_vigente NCFS000 I
 no_sea_que no_sea_que CS I
-no_<ser>_cosa_<de> no_ser_cosa_de $4:SP I
+%no_<ser>_cosa_<de> no_ser_cosa_de $4:SP I
 no_sólo no_sólo RG I
 <nota>_<media> nota_media $1:NC I
 nota_simple nota_simple NCFS000 I
@@ -2467,7 +2467,7 @@ número_de_identificación_fiscal número_de_identificación_fiscal NCMS000 I
 número_de_identificación número_de_identificación NCMS000 I
 número_de_profesores número_de_profesores NCMS000 I
 números_rojos números_rojos NCMP000 I
-o_bien o_bien CC I
+%o_bien o_bien CC I
 <obispo>_<auxiliar> obispo_auxiliar $1:NC I
 <obra>_de_teatro obra_de_teatro $1:NC I
 obra_nueva obra_nueva NCFS000 I
@@ -3267,7 +3267,6 @@ hasta_entonces hasta_entonces RG I
 hoy_en_día hoy_en_día RG I
 manos_a_la_obra manos_a_la_obra RG I
 <mantener>_al_tanto mantener_al_tanto $1:VM I
-<mantener>_al_tanto_<de> mantener_al_tanto_de $4:SP I
 <mercado>_<financiero> mercado_financiero $1:NC I
 mientras_tanto mientras_tanto RG I
 <organización>_sin_ánimo_de_lucro organización_sin_ánimo_de_lucro $1:NC I
@@ -3369,7 +3368,6 @@ hasta_el_punto_que hasta_el_punto_que CS I
 <llevar>_a_efecto llevar_a_efecto $1:VM I
 no_obstante no_obstante RG I
 perteneciente_<a> perteneciente_a $2:SP I
-perteneciencia_<a> perteneciencia_a $2:SP I
 pese_a_que pese_a_que CS I
 <poner>_en_acción poner_en_acción $1:VM I
 <poner>_en_cuestión poner_en_cuestión $1:VM I
