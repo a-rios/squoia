@@ -35,7 +35,8 @@ sub main{
 	## verse +adj/participio -> 'kan', 
 	## resultar +adj, participio -> -sqa, but 'resulta claro que eso afecta a la población..' -> infinitive?
 	## subject clauses -> es posible que no pueden seguir produciendo
-	## según + verbo -> cómo se traduce?
+	## done - según + verbo -> cómo se traduce? -sqaman hina
+	## al + infinitive -> spa/pti
 	
 	foreach my $sentence (@sentenceList)
 	{
@@ -174,7 +175,7 @@ sub main{
 	 					$nbrOfSwitchForms++;
 	 					$verbChunk->setAttribute('chunkmi', '+Top');
 	 				}
-	 				# with si: conditional, main  chayq (and sichus?), but note: might also be an indirect question ('preguntaron si compraste la casa')
+	 				# with si: conditional, main  chayqa (and sichus?), but note: might also be an indirect question ('preguntaron si compraste la casa')
 	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^si|a_condición_de_que$/ && !$verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="preguntar" or @lem="interrogar"]') )
 	 				{
 	 					#check if same subject 
@@ -290,7 +291,7 @@ sub main{
 	 				# nominal subordinated clauses (no complement clauses, those are treated below!)
 	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^como$/ )
 	 				{
-	 					$nbrOfNominalForms;
+	 					$nbrOfNominalForms++;
 	 					if(&isSubjunctive($verbChunk) or &isFuture($verbChunk))
 	 					{
 	 						$verbChunk->setAttribute('verbform', 'obligative');
@@ -302,11 +303,18 @@ sub main{
 	 					# hazlo como te dije -> nisqay hinalla ruway
 	 					if($conjunction->getAttribute('lem') =~ /como/)
 	 					{
-	 						$verbChunk->setAttribute('postpos', 'hinalla');
+	 						$verbChunk->setAttribute('conjLast', 'hinalla');
 	 					}
 	 				}
+	 				# según -> -sqaman hina
+	 				if($conjunction && $conjunction->getAttribute('lem') =~ /^según$/){
+	 					$nbrOfNominalForms++;
+	 					$verbChunk->setAttribute('verbform', 'perfect');
+	 					$verbChunk->setAttribute('conjLast', 'hina');
+	 					$verbChunk->setAttribute('chunkmi', '+Dat');
+	 				}
 	 				# if this is a final clause,  -na?
-					elsif($conjunction && $conjunction->getAttribute('lem') =~ /^a_que$|al_tiempo_que|con_fin_de_que|a_fin_de_que|con_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
+					elsif($conjunction && $conjunction->getAttribute('lem') =~ /^a_que$|al_tiempo_que|con_fin_de_que|a_fin_de_que|con_objeto_de_que|al_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
 					{ 
 						$nbrOfFinalClauses++;
 						$verbChunk->setAttribute('verbform', 'obligative');
@@ -634,7 +642,7 @@ sub main{
 	 		}
 	 		# if this is an infinitive chunk with 'para', 'con_objeto_de', con/a_fin_de -> set verbform to obligative
 	 		# -> se fue a Lima para trabajar -> llamk'ananpaq Limata ripun.
-	 		elsif(!squoia::util::getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="para" or @lem="con_objeto_de" or @lem="con_fin_de" or @lem="a_fin_de" ]') )
+	 		elsif(!squoia::util::getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="para" or @lem="con_objeto_de" or @lem="al_objeto_de" or @lem="con_fin_de" or @lem="a_fin_de" or @lem="a_fines_de" ]') )
 	 		{
 	 			$verbChunk->setAttribute('verbform','obligative');
 	 		}
