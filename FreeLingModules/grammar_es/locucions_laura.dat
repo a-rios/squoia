@@ -2075,17 +2075,17 @@ guerra_civil_española guerra_civil_española NCFS000 I
 <hacer>_mucho_tiempo_que hacer_mucho_tiempo_que RG I
 <hacer>_cargo hacer_cargo $1:VM I
 <hacer>_cimarra hacer_cimarra $1:VM I
-<hacer>_el_longui hacerse_el_longui $1:VM I
-<hacer>_el_longuis hacerse_el_longuis $1:VM I
-<hacer>_<el>_<sueco> hacerse_el_sueco $1:VM I
-<hacer>_falta_a_alguien hacer_falta_a_alguien $1:VM I
+<hacer>_la_cimarra hacer_la_cimarra $1:VM I
+<hacer>_el_longui hacer_el_longuis $1:VM I
+<hacer>_el_longuis hacer_el_longuis $1:VM I
+<hacer>_el_longuiso hacer_el_longuis $1:VM I
+<hacer>_<el>_<sueco> hacer_el_sueco $1:VM I
 <hacer>_falta hacer_falta $1:VM I
 <hacer>_falta_que hacer_falta_que $1:VM I
 <hacer>_frente hacer_frente $1:VM I
 <hacer>_la_cusca hacer_la_cusca $1:VM I
 <hacer>_referencia hacer_referencia $1:VM I
 <hacer>_uso hacer_uso $1:VM I
-<hacer>_ver hacer_ver $1:VM I
 hacia_mediados_<de> hacia_mediados_de $3:SP I
 hacienda_pública hacienda_pública NCFS000 I
 hasta_cierto_punto hasta_cierto_punto RG I
@@ -2378,6 +2378,8 @@ moneda_nacional moneda_nacional NCFS000 I
 moneda_única moneda_única NCFS000 I
 monóxido_de_carbono monóxido_de_carbono NCFS000 I
 <montar>_a_caballo montar_a_caballo $1:VM I
+<montar>_en_caballo montar_en_caballo $1:VM I
+<montar>_caballo montar_caballo $1:VM I
 mortalidad_infantil mortalidad_infantil NCFS000 I
 mortis_causa mortis_causa RG I
 <motor>_de_búsqueda motor_de_búsqueda $1:NC I
@@ -2443,6 +2445,7 @@ nivel_de_vida nivel_de_vida NCMS000 I
 nivel_educativo nivel_educativo NCMS000 I
 nivel_técnico nivel_técnico NCMS000 I
 no_<decir>_chus_ni_mus no_decir_chus_ni_mus $2:VM I
+<decir>_chus_ni_mus decir_chus_ni_mus $1:VM I
 no_ha_lugar no_ha_lugar RG I
 <nombre>_<comercial> nombre_comercial $1:NC I
 <nombre>_del_<archivo> nombre_del_archivo $1:NC I
@@ -3273,10 +3276,10 @@ mientras_tanto mientras_tanto RG I
 <pendiente>_<de> pendiente_de $2:SP I
 <poner>_manos_a_la_obra poner_manos_a_la_obra $1:VM I
 <servir>_como_base servir_como_base $1:VM I
-<servir>_de_base servir_de_base $1:VM II
+<servir>_de_base servir_de_base $1:VM I
 si_bien si_bien CS I
 sin_embargo sin_embargo RG I
-<tener>_como_<objetivo> tener_como_objetivo $1:VM I
+%<tener>_como_<objetivo> tener_como_objetivo $1:VM I
 <tratar>_como_<igual> tratar_como_igual $1:VM I
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3357,7 +3360,6 @@ en_vísperas_<de> en_vísperas_de $3:SP I
 <estar>_de_acuerdo estar_de_acuerdo $1:VM I
 <hacer>_añicos hacer_añicos $1:VM I
 <hacer>_hincapié hacer_hincapié $1:VM I
-<hacer>_cargo hacer_cargo $1:VM I
 <hacer>_gala hacer_gala $1:VM I
 <hacer>_mención hacer_mención $1:VM I
 <hacer>_trizas hacer_trizas $1:VM I
@@ -3367,6 +3369,7 @@ hasta_el_punto_que hasta_el_punto_que CS I
 %lo_mismo_que lo_mismo_que CC I
 <llevar>_a_efecto llevar_a_efecto $1:VM I
 no_obstante no_obstante RG I
+<pasar>_por_alto pasar_por_alto $1:VM I
 perteneciente_<a> perteneciente_a $2:SP I
 pese_a_que pese_a_que CS I
 <poner>_en_acción poner_en_acción $1:VM I
@@ -3445,6 +3448,7 @@ de_todas_mangas de_todas_mangas RG I
 <importar>_un_comino importar_un_comino $1:VM I
 <importar>_un_pepino importar_un_pepino $1:VM I
 <importar>_un_bledo importar_un_bledo $1:VM I
+<importar>_un_pedo importar_un_pedo $1:VM I
 <meter>_la_pata meter_la_pata $1:VM I
 <meter>_en_cana meter_en_cana $1:VM I
 <meter>_floro meter_floro $1:VM I
@@ -3456,4 +3460,7 @@ por_las_puras por_las_puras RG I
 <sacar>_la_vuelta sacar_la_vuelta $1:VM I
 <saco>_largo saco_largo $1:NC I
 <tirar>_pestaña tirar_pestaña $1:VM I
+<tirar>_pedos tirar_pedos $1:VM I
+<tirar>_un_pedo tirar_pedos $1:VM I
+<tirar>_monses tirar_monses $1:VM I
 <tirar>_jato tirar_jato $1:VM I

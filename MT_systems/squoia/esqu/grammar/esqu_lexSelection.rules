@@ -180,8 +180,8 @@ permitir		huñi	k	!(xpath{parent::NODE[@mi="infinitive"]})
 
 ##### TENER ######
 
-# tener años
-tener	ka	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="año"]} || xpath{parent::NODE[@slem="año"]}
+# tener años, tener lugar
+tener	ka	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="año"]} || xpath{parent::NODE[@slem="año" or @slem="lugar"]}
 
 # tener enemistad
 tener	awqa	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="enemistad"]}
@@ -197,7 +197,6 @@ tener	hik'i	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="hip
 
 # tener miedo
 tener	mancha	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="miedo"]}
-
 
 # tener pareja
 tener	yanacha		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="pareja"]}
@@ -223,6 +222,8 @@ tener	q'apa		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="fr
 # tener fé
 tener	iñi		k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="fé"]}
 
+# tener éxito
+tener	ati	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="éxito"]}
 
 # tener: default, use tene-
 tener	unspecified	k	!(xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="fragancia" or @slem="olor" or @slem="compasión" or @slem="piedad" or @slem="vergüenza" or @slem="sueño" or @slem="sed" or @slem="pena" or @slem="pareja" or @slem="miedo" or @slem="hipo" or @slem="hambre" or @slem="flojera" or @slem="pereza" or @slem="enemistad" or @slem="año" or @slem="fé"]})
