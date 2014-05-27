@@ -77,7 +77,8 @@ cerca_de 	postpos=sichpan,nouncase=+Gen
 como		postpos=hina			!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"])		+
 como		postpos=hina,nouncase=+Dat	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"]		-
 
-con			case=+Instr
+con			case=+Instr		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="estar_de_acuerdo"]})		+
+con			case=+Acc		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="estar_de_acuerdo"]}		-
 con_fin_de		case=+Ben
 con_el_fin_de		case=+Ben
 con_objeto_de		case=+Ben

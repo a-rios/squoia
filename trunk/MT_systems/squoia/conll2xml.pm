@@ -92,7 +92,8 @@ sub main{
 	     # special case with estar (needs to be vm for desr and form instead of lemma -> set lemma back to 'estar')
 	     if(($pos =~ /vm|va/ || $pos eq 'va') && $lem =~ /^est/ && $lem !~ /r$/)
 	     {
-	     	$lem = "estar";
+	     	$lem =~ s/^est[^_]+/estar/;
+	     	#$lem = "estar";
 	     }
 	     # quotes, opening -> fea, closing -> fet
 	     if($pos eq 'Fe')
