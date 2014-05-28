@@ -3,7 +3,7 @@
 package squoia::crf2conll;
 
 use strict;
-use utf8;
+#use utf8;
 
 sub main{
 	my $inputLines = $_[0];
@@ -41,29 +41,30 @@ sub main{
 				# 8	junio	junio	n	nc	gen=m|num=s	7	CONCAT	_	_
 		        my $date = @rows[0];
 		        my @tokens = split(/\_/,$date);
-		  		
-		  		if(scalar(@tokens)>1){
-			  		foreach my $token (@tokens)
-			  		{
-			  			if($token eq @tokens[0]){
-			  				#print "$token\tFILL_IN\n";
-			  				&printDateToken($token);
-			  			}
-			  			else{
-			  				$wordCount++;
-			  				#print "$wordCount\t$token\tFILL_IN\n";
-			  				#print "$wordCount\t";
-			  				$outLine .= "$wordCount\t";
-			  				$outLine .= &printDateToken($token);
-			  			}
-			  		}
+
+	  		if(scalar(@tokens)>1){
+		  		foreach my $token (@tokens)
+		  		{
+		  			if($token eq @tokens[0]){
+		  				#print "$token\tFILL_IN\n";
+		  				$outLine .= &printDateToken($token);
+		  			}
+		  			else{
+		  				$wordCount++;
+		  				#print "$wordCount\t$token\tFILL_IN\n";
+		  				#print "$wordCount\t";
+		  				$outLine .= "$wordCount\t";
+		  				$outLine .= &printDateToken($token);
+		  			}
 		  		}
-		  		else{
-		  			push(@outputLines, "$wordCount\t$date\t$date\tw\tw\t_\t_\t_\t_\t_\n");
-		  		}
-			}
-			else
-			{
+			  	push(@outputLines, $outLine);
+	  		}
+	  		else{
+	  			push(@outputLines, "$wordCount\t$date\t$date\tw\tw\t_\t_\t_\t_\t_\n");
+	  		}
+		}
+		else
+		{
 		    	# print word form
 		    	if(@rows[1] eq 'uc'){
 		    		#print ucfirst(@rows[0])."\t";
@@ -417,6 +418,9 @@ sub printDateToken{
 	}
 	elsif($date =~ /^\d+$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta/){
 		$subOutLine .=  "$date\t$date\tw\tw\t_\t_\t_\t_\t_\n";
+	}
+	elsif($date =~ /pasado|próximo/){
+		$subOutLine .=  "$date\t$date\ta\taq\tgen=m|num=s\t_\t_\t_\t_\n";
 	}
 	else{
 		$subOutLine .=  "$date\tFILL_IN\n";

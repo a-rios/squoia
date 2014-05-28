@@ -517,14 +517,14 @@ if($startTrans<$mapInputFormats{'conll'}){	#5){
 			close(FILE);
 		}
 		else{
-			#### convert to wapiti crf to conll for desr parser
+			#### convert from wapiti crf to conll for desr parser
 			binmode(STDIN);
 			$conllLines = squoia::crf2conll::main(\*STDIN);
 		}
 
 	}
 	else{
-		#### convert to wapiti crf to conll for desr parser
+		#### convert from wapiti crf to conll for desr parser
 		$conllLines = squoia::crf2conll::main(\*CONLL);
 		close(CONLL);
 	}
