@@ -37,6 +37,7 @@ al_borde_de		postpos=patanpi,nouncase=+Gen
 al_cabo_de 		postpos=qhipa
 al_centro_de		postpos=chawpinman,nouncase=+Gen
 al_decir_de		postpos=nisqanpi hina,nouncase=+Gen		# según dice
+al_igual_que		postpos=hina
 al_derrededor_de	postpos=muyun,nouncase=+Gen
 al_inicio_de		postpos=qallariyninpi,nouncase=+Gen
 al_interior_de		postpos=ukhunman,nouncase=+Gen
@@ -92,14 +93,15 @@ contra		case=+Instr		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="enf
 en_contra_de	postpos=contran,nouncase=+Gen
 
 # TODO: Mengenangaben: una tasa DE café?
-de	case=+Gen			chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or @sem="[+Mat]" or @smi="Z"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
+de	case=+Gen			chunkgrandparent.type=sn && !(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00G00" or contains(@sem,"+Mat") or @smi="Z"]})	-	# genitive: if head is a noun chunk and child is not a geographical proper name
 de 	case=+Abl			xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[not(@slem="acordar" or @slem="ejercer" or @slem="depender") or @slem="resarcir"]} || xpath{parent::CHUNK/parent::CHUNK[@type="sn"]/NODE[@smi="Z"]} 	+		# default, also with numbers: tres de las casas se han vendido: kimsa wasikunamanta rantikun
 de	case=+Acc			xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@slem="acordar"]}		- # acordarse de
 de	case=+Loc			xpath{parent::CHUNK/parent::CHUNK[@type="date"]} || xpath{descendant::CHUNK[@type="date"]} 	- # el 14 de diciembre -> 14 diciembre/Qhapaq ramymi killapi, also: 'del año 2003' -> 2003 wataPI
-de	func=attributive		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Mat]" or @smi="NP00G00"]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
+de	func=attributive		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[contains(@sem,"+Mat")  or @smi="NP00G00"]}  				-	# material: casa de piedra -> translate as attributive noun - rumi wasi
 de	postpos=hina,nouncase=+Dat	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"]		-
 de	postpos=chayqa,nouncase=+Abl	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="depender"]		-		 # eso depende de ti -> qammantam chayqa (kan).
 
+de_acuerdo_con		postpos=hina,nouncase=+Dat
 de_al_lado_de		postpos=kinraynin,nouncase=+Gen
 
 debajo_de	spform=uraypi		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[starts-with(@smi, "PP10S")]}						-

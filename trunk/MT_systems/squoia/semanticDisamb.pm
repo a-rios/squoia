@@ -36,7 +36,7 @@ sub main{
 				
 				foreach my $lemCombo(@allNodeConditions)
 				{				
-						my ($srclem, $trgtlemmas) = split(':',$lemCombo);		  
+						my ($srclem, $trgtlemmas, $keepOrDelete) = split(':',$lemCombo);		  
 						
 						# check if source lemma matches lemma in rule
 						if($actualsrclem eq $srclem)

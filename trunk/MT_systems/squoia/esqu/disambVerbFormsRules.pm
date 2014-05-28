@@ -143,7 +143,7 @@ sub main{
 	 					$verbChunk->setAttribute('verbform', 'main');
 	 				}
 	 				# if this is a subordinated clause with 'cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
-	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aún_cuando|aun_cuando|aunque|a_pesar_de_que|porque|con_tal_que|con_tal_de_que|en_cuanto|una_vez_que|después_de_que/ )
+	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aún_cuando|aun_cuando|aunque|a_pesar_de_que|porque|con_tal_que|con_tal_de_que|en_cuanto|tan_pronto_como|una_vez_que|después_de_que|después_que/ )
 	 				{
 	 					#check if same subject 
 	 					&compareSubjects($verbChunk);
@@ -289,7 +289,7 @@ sub main{
 	 					}
 	 				}
 	 				# nominal subordinated clauses (no complement clauses, those are treated below!)
-	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^como$/ )
+	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^como$|al_igual_que/ )
 	 				{
 	 					$nbrOfNominalForms++;
 	 					if(&isSubjunctive($verbChunk) or &isFuture($verbChunk))
@@ -300,21 +300,19 @@ sub main{
 	 					{
 	 						$verbChunk->setAttribute('verbform', 'perfect');
 	 					}
-	 					# hazlo como te dije -> nisqay hinalla ruway
-	 					if($conjunction->getAttribute('lem') =~ /como/)
-	 					{
-	 						$verbChunk->setAttribute('conjLast', 'hinalla');
-	 					}
+	 					# hazlo como te dije -> nisqayman hina ruway
+	 					$verbChunk->setAttribute('chunkmi', '+Dat');
+	 					$verbChunk->setAttribute('conjLast', 'hina');
 	 				}
-	 				# según -> -sqaman hina
-	 				if($conjunction && $conjunction->getAttribute('lem') =~ /^según$/){
+	 				# según -> -sqaman hina, según que (?)
+	 				if($conjunction && $conjunction->getAttribute('lem') =~ /^según$|según_que/){
 	 					$nbrOfNominalForms++;
 	 					$verbChunk->setAttribute('verbform', 'perfect');
 	 					$verbChunk->setAttribute('conjLast', 'hina');
 	 					$verbChunk->setAttribute('chunkmi', '+Dat');
 	 				}
 	 				# if this is a final clause,  -na?
-					elsif($conjunction && $conjunction->getAttribute('lem') =~ /^a_que$|al_tiempo_que|con_fin_de_que|a_fin_de_que|con_objeto_de_que|al_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
+					elsif($conjunction && $conjunction->getAttribute('lem') =~ /^a_que$|al_tiempo_que|con_el_fin_de_que|con_fin_de_que|a_fin_de_que|con_objeto_de_que|con_objeto_que|al_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
 					{ 
 						$nbrOfFinalClauses++;
 						$verbChunk->setAttribute('verbform', 'obligative');
@@ -531,15 +529,16 @@ sub main{
 	 					
 	 				}
 	 				# el_hecho_de_que, desde que -> perfect +Top
-	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /el_hecho_de_que|desde_que/ )
+	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /el_hecho_de_que|desde_que|desde_el_momento_en_que/ )
 	 				{
 	 					$nbrOfNominalForms;
 	 					$verbChunk->setAttribute('verbform', 'perfect');
 	 					if($conjunction->getAttribute('lem') =~ /el_hecho_de_que/){
 	 						$verbChunk->setAttribute('chunkmi', '+Top');
 	 					}
-	 					if($conjunction->getAttribute('lem') =~ /desde_que/){
+	 					if($conjunction->getAttribute('lem') =~ /desde/){
 	 						$verbChunk->setAttribute('chunkmi', '+Abl');
+	 						$verbChunk->setAttribute('conjLast', 'pacha');
 	 					}
 	 					
 	 				}
@@ -642,7 +641,7 @@ sub main{
 	 		}
 	 		# if this is an infinitive chunk with 'para', 'con_objeto_de', con/a_fin_de -> set verbform to obligative
 	 		# -> se fue a Lima para trabajar -> llamk'ananpaq Limata ripun.
-	 		elsif(!squoia::util::getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="para" or @lem="con_objeto_de" or @lem="al_objeto_de" or @lem="con_fin_de" or @lem="a_fin_de" or @lem="a_fines_de" ]') )
+	 		elsif(!squoia::util::getFiniteVerb($verbChunk) && $verbChunk->exists('child::NODE[@mi="VMN0000"]') && $verbChunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/NODE[@lem="para" or @lem="con_objeto_de" or @lem="al_objeto_de" or @lem="con_fin_de" or @lem="con_el_fin_de" or @lem="a_fin_de" or @lem="a_fines_de" ]') )
 	 		{
 	 			$verbChunk->setAttribute('verbform','obligative');
 	 		}

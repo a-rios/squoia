@@ -1003,7 +1003,7 @@ if($startTrans <$mapInputFormats{'lexdisamb'})	#14)
 			my ( $srclem, $trgtlem, $keepOrDelete, $condition ) = split( /\s*\t+\s*/, $_, 4 );
 			$condition =~ s/\s//g;	# no whitespace within condition
 			# assure key is unique, use srclemma:trgtlemma as key
-			my $key = "$srclem:$trgtlem";  
+			my $key = "$srclem:$trgtlem:$keepOrDelete";  
 			my @value = ( $condition, $keepOrDelete );
 			$lexSel{$key} = \@value;
 		}

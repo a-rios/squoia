@@ -76,8 +76,8 @@ my %mapLinkerToVec = (
 #version 4
 my %mapUnknownLinkerToKnowns = (
 	'con_tal_que'	=> 'si', 'con_tal_de_que'	=> 'si','conque'	=> 'si', 'empero'	=> 'pero', 
-	'puesto_que'	=> 'pues', 'con_fin_de_que'	=> 'para_que', 'con_objeto_de_que'	=> 'para_que', 
-	'al_tiempo_que'	=> 'mientras_que', 'a_que' => 'para_que', 'por_lo_tanto' => 'por_eso'
+	'puesto_que'	=> 'pues', 'con_el_fin_de_que'	=> 'para_que', 'con_fin_de_que'	=> 'para_que', 'con_objeto_de_que'	=> 'para_que', 'con_objeto_que'	=> 'para_que',
+	'al_tiempo_que'	=> 'mientras_que', 'a_que' => 'para_que', 'por_lo_tanto' => 'por_eso', 'desde_el_momento_en_que' => 'desde_que'
 );
 	
 ## in svm model:
