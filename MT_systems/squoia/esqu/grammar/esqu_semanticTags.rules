@@ -297,7 +297,60 @@ trasmitir	[ditrans]	-
 vedar		[ditrans]	-
 vender		[ditrans]	-
 
-
+# bebidas (algunas están abajo, en 'materiales')
+aguardiente	[+Liq]	-
+batido		[+Liq]	-
+cachina		[+Liq]	-
+café		[+Liq]	-
+campari		[+Liq]	-
+canelazo	[+Liq]	-
+cerveza		[+Liq]	-
+champagne	[+Liq]	-
+champán		[+Liq]	-
+champaña	[+Liq]	-
+champús		[+Liq]	-
+chela		[+Liq]	-
+chicha		[+Liq]	-
+chicha_morada	[+Liq]	-
+chicha_de_jora	[+Liq]	-
+coca-cola	[+Liq]	-
+cóctel		[+Liq]	-
+cognac		[+Liq]	-
+curacao		[+Liq]	-
+curaçao		[+Liq]	-
+emoliente	[+Liq]	-
+fanta		[+Liq]	-
+gaseosa		[+Liq]	-
+gin		[+Liq]	-
+inca_cola	[+Liq]	-
+jugo		[+Liq]	-
+leche		[+Liq]	-
+licor		[+Liq]	-
+licuado		[+Liq]	-
+mate		[+Liq]	-
+mate_de_coca	[+Liq]	-
+martini		[+Liq]	-
+mosto		[+Liq]	-
+pepsi		[+Liq]	-
+pepsi_cola	[+Liq]	-
+pisco		[+Liq]	-
+pisco_sour	[+Liq]	-
+ponche		[+Liq]	-
+refresco	[+Liq]	-
+té		[+Liq]	-
+tequila		[+Liq]	-
+tinto		[+Liq]	-
+trago		[+Liq]	-
+sangría		[+Liq]	-
+surtido		[+Liq]	-
+ron		[+Liq]	-
+sprite		[+Liq]	-
+whiskey		[+Liq]	-
+whisky		[+Liq]	-
+vermuth		[+Liq]	-
+vino		[+Liq]	-
+vodka		[+Liq]	-
+zumo		[+Liq]	-
 
 # materials, source lemma:
 acero	[+Mat]	-
@@ -305,11 +358,11 @@ acetileno	[+Mat]	-
 acetona	[+Mat]	-
 ácido	[+Mat]	-
 aerosol	[+Mat]	-
-agua	[+Mat]	-
+agua	[+Mat,+Liq]	-
 aguanieve	[+Mat]	-
 aire	[+Mat]	-
 álcali	[+Mat]	-
-alcohol	[+Mat]	-
+alcohol	[+Mat,+Liq]	-
 algodón	[+Mat]	-
 aluminio	[+Mat]	-
 amoniaco	[+Mat]	-
@@ -327,7 +380,7 @@ bioetanol	[+Mat]	-
 biogás	[+Mat]	-
 bisulfuro	[+Mat]	-
 boro	[+Mat]	-
-brandy	[+Mat]	-
+brandy	[+Mat,+Liq]	-
 bromo	[+Mat]	-
 bronce	[+Mat]	-
 butano	[+Mat]	-
@@ -340,7 +393,7 @@ canela	[+Mat]	-
 carbohidrato	[+Mat]	-
 carbono	[+Mat]	-
 cartón	[+Mat]	-
-cafeína	[+Mat]	-
+cafeína	[+Mat,+Liq]	-
 celulosa	[+Mat]	-
 cemento	[+Mat]	-
 cera	[+Mat]	-
@@ -429,7 +482,7 @@ satén	[+Mat]	-
 sebo	[+Mat]	-
 seda	[+Mat]	-
 sisal	[+Mat]	-
-soda	[+Mat]	-
+soda	[+Mat,+Liq]	-
 sosa	[+Mat]	-
 sulfato	[+Mat]	-
 sulfuro	[+Mat]	-

@@ -188,7 +188,8 @@ al_gusto_<de> al_gusto_de $3:SP I
 al_hilo al_hilo RG I
 al_hilo_del_viento al_hilo_del_viento RG I
 al_hilo_de_mediodía al_hilo_de_mediodía RG I
-al_igual_que al_igual_que CS I
+al_igual_que al_igual_que CS A
+al_igual_que al_igual_que SP A
 al_interior_<de> al_interior_de $3:SP I
 al_libre_albedrío al_libre_albedrío RG I
 al_lucero_del_alba al_lucero_del_alba RG I
@@ -852,7 +853,7 @@ carta_de_las_naciones_unidas carta_de_las_naciones_unidas NCFS000 I
 <cartera>_de_valores cartera_de_valores $1:NC I
 <casa>_<rural> casa_rural $1:NC I
 casi_geostrófico casi_geostrófico RG I
-casi_que casi_que CS I
+%casi_que casi_que CS I
 <celebración>_<eucarístico> celebración_eucarística $1:NC I
 <censo>_de_población censo_de_población $1:NC I
 <central>_<hidroeléctrico> central_hidroeléctrica $1:NC I
@@ -1169,7 +1170,7 @@ dado_que dado_que CS I
 <dato>_<personal> dato_personal $1:NC I
 de_acá_para_allá de_acá_para_allá RG I
 de_acarreo de_acarreo RG I
-de_acuerdo_con de_acuerdo_con SPS00 I
+de_acuerdo_con de_acuerdo_con SP I
 de_al_lado_<de> de_al_lado_de $4:SP I
 de_a_folio de_a_folio RG I
 de_alto_copete de_alto_copete RG I
@@ -3307,6 +3308,7 @@ a_la_izquierda_<de> a_la_izquierda_de $4:SP I
 a_la_ligera a_la_ligera RG I
 a_la_vez_que a_la_vez_que CC I
 a_lo_largo_<de> a_lo_largo_de $4:SP I
+% TODO: a_que really necessary?
 a_que a_que CS I
 al_azar al_azar RG I
 al_borde_<de> al_borde_de $3:SP I

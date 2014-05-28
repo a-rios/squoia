@@ -163,6 +163,14 @@ personar	rikhu		k		!(xpath{ancestor::CHUNK[1]/CHUNK/NODE[@slem="con"]})
 seguir		qati		d	xpath{parent::NODE[starts-with(@smi, "VMG")]}
 seguir		++Perdur	d	!(xpath{parent::NODE[starts-with(@smi, "VMG")]})
 
+# servir de/como -> kay
+servir		ka		k	xpath{parent::CHUNK/child::CHUNK[@si="creg" or @si="cc"]/NODE[@slem="de" or @slem="como"]}
+servir		ka		d	!(xpath{parent::CHUNK/child::CHUNK[@si="creg" or @si="cc"]/NODE[@slem="de" or @slem="como"]})
+
+# tomar hap'i- agarrar, upya- beber
+tomar		upya		k	xpath{parent::CHUNK/child::CHUNK[contains(@si,"cd")]/NODE[contains(@sem,"+Liq")]}
+tomar		hap'i		k	!(xpath{parent::CHUNK/child::CHUNK[contains(@si,"cd")]/NODE[contains(@sem,"+Liq")]})
+
 # volver: tukuy/kutiy -> default, ++Autotrs -> with adjective + se (volverse rojo: pukayay), volver a + noun -> kutiy, volver a +infinitive -> ++Rep
 volver		++Autotrs	k	xpath{ancestor::CHUNK[1]/child::CHUNK[@si="cpred"]/NODE[starts-with(@smi, "AQ")] } && xpath{ancestor::CHUNK[1]/child::CHUNK/NODE[@slem="se"]}
 volver		++Rep		k	xpath{parent::NODE[@mi="infinitive"]/descendant::NODE[@slem="a"] }
