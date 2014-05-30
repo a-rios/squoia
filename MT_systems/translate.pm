@@ -587,9 +587,9 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 			sleep 1;
 		}
 
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'parsed'} .") parsing\n";
 	if($startTrans <$mapInputFormats{'parsed'})	#6)
 	{
+		print STDERR "* TRANS-STEP " . $mapInputFormats{'parsed'} .") parsing\n";
 		### parse tagged text:
 		my $tmp2;
 		# if starting translation process from here, read file or stdin
@@ -886,7 +886,8 @@ if($startTrans <$mapInputFormats{'lextrans'})	#12)
 		$tmp3 = $path."/tmp/tmp.xml";
 		open (TMP3, ">", $tmp3) or die "Can't open temporary file \"$tmp3\" to write: $!\n";
 		# if starting translation from here and no file given: read from stdin
-		if($startTrans ==$mapInputFormats{'svm'}){	#11){
+		if(($direction eq 'esqu' and $startTrans ==$mapInputFormats{'svm'})
+		or ($direction eq 'esde' and $startTrans ==$mapInputFormats{'conll2xml'})){
 			binmode(STDIN);
 			while(<>){
 				print TMP3 $_;
