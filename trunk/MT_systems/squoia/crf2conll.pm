@@ -401,7 +401,7 @@ sub printDateToken{
 	elsif($date eq 'del'){
 		$subOutLine .=  "de\tde\ts\tsp\tgen=m|num=s|for=c\t_\t_\t_\t_\n";
 	}
-	elsif($date =~ /mañana|tarde|noche/){
+	elsif($date =~ /madrugada|mañana|tarde|noche/){
 		$subOutLine .=  "$date\t$date\tn\tnc\tgen=f|num=s\t_\t_\t_\t_\n";
 	}
 	elsif($date =~ /^el$/){
@@ -416,7 +416,7 @@ sub printDateToken{
 	elsif($date =~ /^las$/){
 		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=p\t_\t_\t_\t_\n";
 	}
-	elsif($date =~ /^\d+$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta/){
+	elsif($date =~ /^\d+$|^[0-2]?\d:[0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta|^(y|menos)$/){
 		$subOutLine .=  "$date\t$date\tw\tw\t_\t_\t_\t_\t_\n";
 	}
 	elsif($date =~ /pasado|próximo/){
