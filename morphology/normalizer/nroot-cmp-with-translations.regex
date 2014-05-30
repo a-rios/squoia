@@ -233,7 +233,6 @@
 | [ {simi} "[" "NRoot" "]" "[" "=boca" "]" ] :  {simi}
 | [ {sirk'a} "[" "NRoot" "]" "[" "=vena" "]" ] :  {sirka}
 | [ {sirk'a} "[" "NRoot" "]" "[" "=vena" "]" ] :  {sirk'a}
-| [ {sisa} "[" "NRoot" "]" "[" "=flor" "]" ] :  {sisa}
 | [ {sisi} "[" "NRoot" "]" "[" "=hormiga" "]" ] :  {sisi}
 | [ {sunqu} "[" "NRoot" "]" "[" "=corazón" "]" ] :  {sunqu}
 | [ {supay} "[" "NRoot" "]" "[" "=diablo" "]" ] :  {supay}

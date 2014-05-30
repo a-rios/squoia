@@ -9,7 +9,9 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/algorithm/string/regex.hpp>
 
+
 int sentOpts =0;
+bool morphProbs=0;
 //std::map< int, std::vector<std::wstring> > sentLattice;
 std::map< int, std::vector<std::string> > sentLattice;
 //lm::ngram::Model model("test.binary");
@@ -18,7 +20,8 @@ std::string helpstring=	"Reads output data from MT system on stdin or from file 
 		"-h\t\tprint help\n"
 		"-m\t\tkenlm language model (binary!)\n"
 		"-i\t\tinput file with generated word forms (optional, if no file given, reads data from stdin)\n"
-		"-n\t\tprint n-best (optional, default is 3)\n";
+		"-n\t\tprint n-best (optional, default is 3)\n"
+		"-l\t\tuse lemma and morphemes to calculate sentence probability instead of whole words\n";
 static int  CUTOFF = 3;
 
 
@@ -176,6 +179,62 @@ void getProbs(std::map< int, std::map< int, std::string > >& sentMatrix, const l
 	 printSents(sentMatrix,sortedOpts);
 }
 
+void getProbsMorphs(std::map< int, std::map< int, std::string > >& sentMatrix, const lm::ngram::Model &model){
+
+	std::vector<std::pair<float, int> > sortedOpts;
+	for(int opt=0; opt<sentMatrix.size();opt++){
+			//std::cerr << opt << ": ";
+			std::map< int, std::string> sent = sentMatrix[opt];
+
+			lm::ngram::State state(model.BeginSentenceState()), out_state;
+			// no sentence context
+			//lm::ngram::State state(model.NullContextState()), out_state;
+			const lm::ngram::Vocabulary &vocab = model.GetVocabulary();
+
+
+			lm::FullScoreReturn ret;
+			float total =0.0;
+
+			for(int i=0;i<sent.size();i++)
+			{
+				std::string w = sent[i];
+				// alternatives start with '/' and punctuation end with -PUNC-tag -> delete tag and leading '/'
+				if(boost::starts_with(w,"/")){boost::erase_head(w,1);}
+				if(boost::contains(w,"-PUNC-")){w = w.substr(0,1);}
+				// split word into morphs and get probabilities
+				std::vector<std::string> strs;
+				boost::split(strs,w,boost::is_any_of(":"));
+				std::string lem = strs[0];
+				std::vector<std::string> morphs;
+				boost::regex morphrx("\\+[^\\+]+");
+				boost::find_all_regex(morphs, strs[1], morphrx);
+
+//				std::cerr << "lemma: " << lem << "morph size " << morphs.size() <<"\n";
+//				for(int j=0;j<morphs.size();j++){
+//					std::cerr << "    morph: " << morphs[j] << "\n";
+//				}
+
+				ret = model.FullScore(state, vocab.Index(lem), out_state);
+			//	std::cerr << "tested word " << w << " ,full p: " << ret.prob << " == " <<vocab.Index(w) <<'\n';
+				total += ret.prob;
+				state = out_state;
+				// get Probs for morphs
+				for(int j=0;j<morphs.size();j++){
+					ret = model.FullScore(state, vocab.Index(morphs[j]), out_state);
+					total += ret.prob;
+					state = out_state;
+				}
+
+			}
+			ret = model.FullScore(state, model.GetVocabulary().EndSentence(), out_state);
+			total += ret.prob;
+			//std::cerr  <<  " total p: " << total <<'\n';
+			std::pair<float,int> mypair (total, opt);
+			sortedOpts.push_back(mypair);
+		}
+	 printSents(sentMatrix,sortedOpts);
+}
+
 void insertTransOpts(std::map< int, std::map< int, std::string > >&sentMatrix,int first,int last,std::vector< int > indexesOfAmbigWords){
 	std::vector< std::string > wordarray = sentLattice[indexesOfAmbigWords[first]];
 	int thisindex = indexesOfAmbigWords[first];
@@ -235,7 +294,7 @@ void printLattice(std::map< int, std::vector<std::string> > &sentLattice, int nb
 		insertTransOpts(sentMatrix,first,last,indexesOfAmbigWords);
 	}
 
-	getProbs(sentMatrix,model);
+	morphProbs ? getProbsMorphs(sentMatrix,model) : getProbs(sentMatrix,model);
 	sentOpts=0;
 	//printMatrix(sentMatrix);
 	//printSents(sentMatrix);
@@ -252,7 +311,7 @@ int main(int argc, char *argv[]) {
 		std::istream* pCin = &std::cin;
 
 
-		while ((opt = getopt(argc, argv, "m:n:i:h")) != -1) {
+		while ((opt = getopt(argc, argv, "m:n:i:hl")) != -1) {
 		      switch(opt) {
 		        case 'm':
 		        	//std::cerr << optarg<< "\n";
@@ -265,6 +324,9 @@ int main(int argc, char *argv[]) {
 		        case 'n':
 		        	CUTOFF = atoi(optarg);
 		        	break;
+		        case 'l':
+		       		morphProbs = 1;
+		       		break;
 		        case 'h':
 		        	std::cerr << usagestring << '\n';
 		        	std::cerr << helpstring << '\n';
