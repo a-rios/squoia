@@ -21,7 +21,6 @@
 | [ {hayk'a}"[" "NRoot" "]" "["  "=varios" "]" ] :  {jayka}
 | [ {hayk'a} "[" "NRoot" "]" "["  "=varios" "]" ] :  {hayk'a}
 | [ {jayk'a} "[" "NRoot" "]" "["  "=varios" "]" ] :  {jayk'a}
-| [ {k'ata} "[" "NRoot" "]" "["  "=único" "]" ] :  {k'ata}
 | [ {limpu} "[" "NRoot" "]" "["  "=todo" "]" ] :  {limpu}
 | [ {llapa} "[" "NRoot" "]" "["  "=todo" "]" ] :  {llapa}
 | [ {llipi} "[" "NRoot" "]" "["  "=todo" "]" ] :  {llipi}

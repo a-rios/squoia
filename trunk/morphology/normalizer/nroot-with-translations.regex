@@ -110,7 +110,6 @@
 | [ {atillcha} "[" "NRoot" "]" "["  "=camarada" "]" "@HUM"] : {atillcha}
 | [ {ati} "[" "NRoot" "]" "["  "=desgracia,posibilidad" "]" ] : {ati}
 | [ {atipachaw} "[" "NRoot" "]" "["  "=martes" "]" ] : {atipachaw}
-| [ {atipa} "[" "NRoot" "]" "["  "=victoria" "]" ] : {atipa}
 | [ {atisanka} "[" "NRoot" "]" "["  "=cautivo" "]" ] : {atisanka}
 | [ {atitaphya} "[" "NRoot" "]" "["  "=pena" "]" ] : {atitaphya}
 | [ {atitapyha} "[" "NRoot" "]" "["  "=pena" "]" ] : {atitapya}
@@ -595,7 +594,6 @@
 | [ {huk'ucha} "[" "NRoot" "]" "["  "=ratón" "]" ] : {hukucha}
 | [ {huku} "[" "NRoot" "]" "["  "=búho" "]" ] : {huku}
 | [ {huk'u} "[" "NRoot" "]" "["  "=estrecho" "]" ] : {huk'u}
-| [ {hukwa} "[" "NRoot" "]" "["  "=revés" "]" ] : {hukwa}
 | [ {hulun} "[" "NRoot" "]" "["  "=granadilla" "]" ] : {hulun}
 | [ {uma} "[" "NRoot" "]" "["  "=cabeza" "]" ] : {huma}
 | [ {humint'a} "[" "NRoot" "]" "["  "=tamal,humita" "]" ] : {humint'a}
@@ -1160,7 +1158,6 @@
 | [ {mach'aqway} "[" "NRoot" "]" "["  "=serpiente" "]" ] : {mach'aqway}
 | [ {mach'aqway} "[" "NRoot" "]" "["  "=serpiente" "]" ] : {machaqway}
 | [ {mach'ay} "[" "NRoot" "]" "["  "=cueva" "]" ] : {mach'ay}
-| [ {mach'ay} "[" "NRoot" "]" "["  "=cueva" "]" ] : {machay}
 | [ {machi} "[" "NRoot" "]" "["  "=mono" "]" ] : {machi}
 | [ {machula} "[" "NRoot" "]" "["  "=abuelo" "]" "@HUM"] : {machula}
 | [ {machu} "[" "NRoot" "]" "["  "=viejo" "]" "@HUM"] : {machu}
@@ -2459,7 +2456,6 @@
 | [ {yalli} "[" "NRoot" "]" "["  "=caro,más" "]" ] : {yalli}
 | [ {yaña} "[" "NRoot" "]" "["  "=experimento" "]" ] : {yaña}
 | [ {yana} "[" "NRoot" "]" "["  "=negro" "]" ] : {yana}
-| [ {yanapa} "[" "NRoot" "]" "["  "=ayuda" "]" ] : {yanapa}
 | [ {yanaqi} "[" "NRoot" "]" "["  "=amigo" "]" ] : {yanaqi}
 | [ {yanqa} "[" "NRoot" "]" "["  "=gratis,en_vano,mentira" "]" ] : {yanqa}
 | [ {llant'a} "[" "NRoot" "]" "["  "=leña" "]" ] : {yanta}
@@ -2664,7 +2660,7 @@
 | [ {kapuli} "[" "NRoot" "]" "[" "=capulí" "]" ] : {kapuli} 
 | [ {k'askarillu} "[" "NRoot" "]" "[" "=incondicional,lametada,lenguarada" "]" ] : {k'askarillu} 
 | [ {k'aski} "[" "NRoot" "]" "[" "=jactancioso,ufano,vanidoso" "]" ] : {k'aski} 
-| [ {k'ata} "[" "NRoot" "]" "[" "=ápice,molécula,nonada" "]" ] : {k'ata} 
+| [ {k'ata} "[" "NRoot" "]" "[" "=ápice,molécula,nonada,único" "]" ] : {k'ata} 
 | [ {kawitu} "[" "NRoot" "]" "[" "=barbacoa" "]" ] : {kawitu} 
 | [ {khallpi} "[" "NRoot" "]" "[" "=desportilladura,fragmento" "]" ] : {khallpi} 
 | [ {khallu} "[" "NRoot" "]" "[" "=dos_lados_de_una_prenda" "]" ] : {khallu} 

@@ -514,7 +514,6 @@
 | [ {kani} "[" "VRoot" "]" "[" "=ladrar,morder" "]" ] :  {kani}
 | [ {kañi} "[" "VRoot" "]" "[" "=pagar" "]" ] :  {kañi}
 | [ {kanka} "[" "VRoot" "]" "[" "=asar" "]" ] :  {kanka}
-| [ {khanki} "[" "VRoot" "]" "[" "=mordiscar" "]" ] :  {kanki}
 | [ {k'anti} "[" "VRoot" "]" "[" "=ronronear,torcer" "]" ] :  {k'anti}
 | [ {k'anti} "[" "VRoot" "]" "[" "=ronronear,torcer" "]" ] :  {kanti}
 | [ {k'atki} "[" "VRoot" "]" "[" "=escarbar,limpiar" "]" ] :  {k'aphki}
@@ -934,8 +933,7 @@
 | [ {ñawpa} "[" "VRoot" "]" "[" "=adelantar" "]" "@NAWPA" ] :  {ñawpa}
 | [ {ñawsa} "[" "VRoot" "]" "[" "=cegar" "]" ] :  {ñawsa}
 | [ {ñiktu} "[" "VRoot" "]" "[" "=arrugarse" "]" ] :  {ñiktu}
-| [ {ñiku} "[" "VRoot" "]" "[" "=pedir" "]" ] :  {ñiku}
-| [ {ñiñi} "[" "VRoot" "]" "[" "=creer" "]" ] :  {ñiñi}
+| [ {iñi} "[" "VRoot" "]" "[" "=creer" "]" ] :  {ñiñi}
 | [ {ñiqa} "[" "VRoot" "]" "[" "=chocar" "]" ] :  {ñiqa}
 | [ {ñiqi} "[" "VRoot" "]" "[" "=abollar" "]" ] :  {ñiqi}
 | [ {ñit'i} "[" "VRoot" "]" "[" "=presionar" "]" ] :  {ñit'i}

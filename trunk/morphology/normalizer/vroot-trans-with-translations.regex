@@ -280,8 +280,6 @@
 | [{sat'i} "[" "VRoot" "]" "[" "=introducir" "]" ] :  {sati} 
 | [{siklla} "[" "VRoot" "]" "[" "=dirigir" "]" ] :  {siklla} 
 | [{sik'i} "[" "VRoot" "]" "[" "=extraer" "]" ] :  {sik'i} 
-| [{simpi} "[" "VRoot" "]" "[" "=acusar" "]" ] :  {simpi} 
-| [{simpu} "[" "VRoot" "]" "[" "=morder" "]" ] :  {simpu} 
 | [{sipra} "[" "VRoot" "]" "[" "=pelar" "]" ] :  {sipra} 
 | [{suwa} "[" "VRoot" "]" "[" "=robar" "]" ] :  {suwa} 
 | [{suysu} "[" "VRoot" "]" "[" "=colar" "]" ] :  {suysu} 
