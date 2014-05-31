@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
         result = apply_med(medh, line);
         /* IMPLEMENTACIÓN RICHARD */
         if (result == NULL) {
-        	lineCorrect = apply_med_get_instring(medh);
+            lineCorrect = apply_med_get_instring(medh);
             char str[8000];
             strcat(str, lineCorrect);
             strcat(str, ",");
@@ -120,7 +120,7 @@ int main(int argc, char *argv[]) {
             char dst[sizeof str];
             int instringLength = strlen(str);
             sprintf(dst, "%.*s", instringLength - 1, &str[0]);
-            printf("%s\n", dst);
+            fprintf(stdout,"%s\n", dst);
         }
         /*
         if (result == NULL) {
