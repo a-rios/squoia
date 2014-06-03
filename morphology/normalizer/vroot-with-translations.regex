@@ -33,6 +33,7 @@
 | [ {allchha} "[" "VRoot" "]" "[" "=ordenar" "]" ] :  {allchha}
 | [ {allichi} "[" "VRoot" "]" "[" "=mejorar" "]" ] :  {allichi}
 | [ {allipa} "[" "VRoot" "]" "[" "=mejorar" "]" ] :  {allipa}
+| [ {allipu} "[" "VRoot" "]" "[" "=mejorar" "]" ] :  {allipu}
 | [ {allikachi} "[" "VRoot" "]" "[" "=preferir" "]" ] :  {allikachi}
 | [ {allinchi} "[" "VRoot" "]" "[" "=mejorar" "]" ] :  {allinchi}
 | [ {allmi} "[" "VRoot" "]" "[" "=levantar" "]" ] :  {allmi}
@@ -202,6 +203,8 @@
 | [ {chhallu} "[" "VRoot" "]" "[" "=destrozar,rajarse" "]" ] :  {chhallu}
 | [ {chhalu} "[" "VRoot" "]" "[" "=estrellar" "]" ] :  {chhalu}
 | [ {chhichi} "[" "VRoot" "]" "[" "=cuchichear" "]" ] :  {chhichi}
+| [ {chhipipi} "[" "VRoot" "]" "[" "=centellear" "]" ] :  {chhipipi}
+| [ {chhipipi} "[" "VRoot" "]" "[" "=centellear" "]" ] :  {chhipipipi}
 | [ {chhilchi} "[" "VRoot" "]" "[" "=caer_rocío" "]" ] :  {chhilchi}
 | [ {chhilla} "[" "VRoot" "]" "[" "=derramar" "]" ] :  {chhilla}
 | [ {chhillqu} "[" "VRoot" "]" "[" "=arrancar" "]" ] :  {chhillqu}
@@ -267,6 +270,7 @@
 | [ {chiri} "[" "VRoot" "]" "[" "=estar_frío" "]" ] :  {chiri}
 | [ {chirma} "[" "VRoot" "]" "[" "=dañar" "]" ] :  {chirma}
 | [ {chishi} "[" "VRoot" "]" "[" "=dormir" "]" ] :  {chishi}
+| [ {ch'irwa} "[" "VRoot" "]" "[" "=exprimir" "]" ] :  {ch'irwa}
 | [ {ch'isi} "[" "VRoot" "]" "[" "=tardecer" "]" ] :  {ch'isi}
 | [ {ch'isi} "[" "VRoot" "]" "[" "=tardecer" "]" ] :  {chisi}
 | [ {ch'ita} "[" "VRoot" "]" "[" "=abrochar" "]" ] :  {ch'ita}
@@ -481,8 +485,8 @@
 | [ {isñi} "[" "VRoot" "]" "[" "=sonarse_la_nariz" "]" ] :  {isñi}
 | [ {hisp'a} "[" "VRoot" "]" "[" "=orinar" "]" ] :  {ispa}
 | [ {isqa} "[" "VRoot" "]" "[" "=dormirse" "]" ] :  {isqa}
-| [ {ithiri} "[" "VRoot" "]" "[" "=retirar" "]" ] :  {ithiri}
-| [ {ithiri} "[" "VRoot" "]" "[" "=retirar" "]" ] :  {itiri}
+| [ {ithi} "[" "VRoot" "]" "[" "=retirar,recorrer" "]" ] :  {ithi}
+| [ {ithi} "[" "VRoot" "]" "[" "=retirar,recorrer" "]" ] :  {iti}
 | [ {itu} "[" "VRoot" "]" "[" "=cargar" "]" ] :  {itu}
 | [ {kacha} "[" "VRoot" "]" "[" "=mandar,soltar" "]" ] :  {kacha}
 | [ {k'achi} "[" "VRoot" "]" "[" "=cortar" "]" ] :  {k'achi}
@@ -531,6 +535,7 @@
 | [ {kharkati} "[" "VRoot" "]" "[" "=temblar" "]" ] :  {karkati}
 | [ {kharka} "[" "VRoot" "]" "[" "=temer" "]" ] :  {karka}
 | [ {k'arku} "[" "VRoot" "]" "[" "=avinagrarse" "]" ] :  {k'arku}
+| [ {karpa} "[" "VRoot" "]" "[" "=entoldar" "]" ] :  {karpa}
 | [ {k'aska} "[" "VRoot" "]" "[" "=pegar" "]" ] :  {k'aska}
 | [ {k'aska} "[" "VRoot" "]" "[" "=pegar" "]" ] :  {kaska}
 | [ {khaska} "[" "VRoot" "]" "[" "=roer" "]" ] :  {khaska}
@@ -642,6 +647,7 @@
 | [ {kumsa} "[" "VRoot" "]" "[" "=empujar" "]" ] :  {kumsa}
 | [ {k'umu} "[" "VRoot" "]" "[" "=inclinar" "]" ] :  {k'umu}
 | [ {kumu} "[" "VRoot" "]" "[" "=jactarse" "]" ] :  {kumu}
+| [ {k'unku} "[" "VRoot" "]" "[" "=apestar" "]" ] :  {k'unku}
 | [ {kuntu} "[" "VRoot" "]" "[" "=perfumar" "]" ] :  {kuntu}
 | [ {kupa} "[" "VRoot" "]" "[" "=sobar" "]" ] :  {kupa}
 | [ {kurku} "[" "VRoot" "]" "[" "=agacharse" "]" ] :  {kurku}
