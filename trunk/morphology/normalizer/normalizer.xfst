@@ -1,6 +1,8 @@
 # set char-encoding utf-8
 # -*- encoding: utf-8 -*-
 # TODOs: 
+# -nti-n -> other than 3rd person: kinsantinkun, kinsantiykichis, kinsantiyku
+# done:
 # -switches: allow -m as -n, -pas as -pis
 # yachachinasuykikupaq yacha[VRoot][=saber,habitar][^DB][--]chi[VDeriv][+Caus][^DB][--]na[NS][+Obl][^DB][--]suykiku[NPers][+1.Pl.Excl.Subj_2.Sg.Obj]
 # -upallarapuyku LLAra
@@ -16,8 +18,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"] ];
 
 ############################################################################### 
 
@@ -142,6 +144,10 @@
        define watrans [  "@WA"  => "+1.Obj" ?* _  ];
        define sutrans [  "@SU"  => "+2.Obj" ?* _  ];
        
+       # sometimes inverted sequence (with "@PORTMANTEAU" ): 
+       # sqa-sunki, rqa-sunki instead of su-rqa-nki -> limit these forms to after +Prog, +NPst, +Ipst
+       define portmanteau [  "@PORTMANTEAU"  => ["+IPst"|"+Prog"|"+NPst"] ?* _  ];
+       
        #-----------------------------------------------------------------------------------------------------------------------------#
        # if in lower side {rqu} as {rqa}, {pu} as {pa} etc. -> we want those forms to appear on the upper side as well               #
        # (otherwise rqa/pa would appear as rqu/pu in the output, which would be wrong given the morphological context of these forms #
@@ -167,7 +173,7 @@
        define pupa2 [ {pa}"+pu+" <- {pu}"+pu+" \\  _  ?* ["@KU"|"@MU"] ];
        define kuka2 [ {ka}"+ku+" <- {ku}"+ku+" \\  _  ?* ["@MU"|"@CHI"|"@PU"|"+Rzpr"] ];
 
-      define VerbRulesUpper  naRzpr .o. shortYKU .o. rqurqa5 .o. rqurqa6 .o. rqurqa7 .o. ykuyka3 .o. ykuyka4 .o. ykuyka5 .o. mpuDIR2  .o. pupa2 .o. kuka2 .o. watrans .o. sutrans;
+      define VerbRulesUpper  naRzpr .o. shortYKU .o. rqurqa5 .o. rqurqa6 .o. rqurqa7 .o. ykuyka3 .o. ykuyka4 .o. ykuyka5 .o. mpuDIR2  .o. pupa2 .o. kuka2 .o. watrans .o. sutrans .o. portmanteau;
 
        #-------------------------------------------------------------------------------------------#
        # rqu --> rqa before mu, pu , ri ,ysi (rqa can only be +Rptn in this position, everywhere   #
@@ -323,7 +329,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define N=N=7 DB @re"n-n-7.regex" ;
        define kamaDist [ "[" "^DB" "]" "[" "--" "]" {kama}  "[" "Cas" "]" "[" "+Dist" "]"] : {kama};
 
-      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  .o. QuechuaOrtho ;
+      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  .o. QuechuaOrtho ;
      
 ######################################################################################
 
@@ -348,7 +354,6 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        #------------------------#
        define NDeriv1 [VROOT  VerbalSuffixesBeforeNS VtoN];
        define NDeriv1final [VROOT  VerbalSuffixesBeforeNS VtoNfinal];
-       define NDeriv1finalTrans [VROOT  VerbalSuffixesBeforeNS VtoNfinalTrans];
 
        #----------------------------#
        # verbalized nouns:          #
@@ -381,6 +386,15 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        #-------------------------------------#
        define NDeriv3 [VDeriv2  VerbalSuffixesBeforeNS VtoN];
        define NDeriv3final [VDeriv2  VerbalSuffixesBeforeNS VtoNfinal];
+       
+       #-------------------------------------#
+       # nominalized verbs with transitiv    #
+       # person markins (in npers.regex)     #
+       # "apamuwanaykichik",                 #
+       # "yupaychasunaykichik"               #
+       #-------------------------------------#   
+       define NDeriv1finalTrans [VROOT  VerbalSuffixesBeforeNS VtoNfinalTrans];
+       define NDeriv1finalTrans2 [(VDeriv2|VDeriv1)  VerbalSuffixesBeforeNS VtoNfinalTrans];
 
 #define NDERIV [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
 define NDERIV [NDeriv1|NDeriv2|NDeriv3];
@@ -408,7 +422,7 @@ define VDERIV [VDeriv1|VDeriv2];
 
 
 define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3) (N=N=5) (N=N=6) (N=N=7)] ;
-define NounConverbTrans watrans .o. sutrans .o. [[NDeriv1finalTrans] (HonAff) npers (N=N=5) (N=N=6) (N=N=7)] ;
+define NounConverbTrans watrans .o. sutrans .o. [[NDeriv1finalTrans|NDeriv1finalTrans2] (HonAff) npers (N=N=5) (N=N=6) (N=N=7)] ;
 define NounNormal PossessivPlural .o. [[NROOT|NDERIV|NRootInc|Compounds] NounSuffixes] ;
 define Noun [NounConverb|NounNormal|NounConverbTrans];
 define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
@@ -600,7 +614,7 @@ define IMANAWAQAYCHALLALLA [~$[ {ima} %[ ["Part_Conec" %]|"NRoot"%] %["=cosa"%]]
 define COMPOUNDS [~$[ "=mundo,tiempo"%] %["^DB"%] %["--"%] {mama}%[ | "=grasa"%] %["^DB"%] %["--"%] {qucha}%[ | "+Inf"%] %["^DB"%] %["--"%] {urqu}%[ | "=desperdicio"%] %["^DB"%] %["--"%] {t'anta}%[ ]];
 
 # ñawpaq, chiqap/chiqaq, llump'aq, ch'usaq, ichuq, illaq, ñawraq, ariq, tupaq, yuraq, hayk'aq, askhaq -> achkhaq (abundante), no achkha-q
-define AQROOTS [~$["@NAWPA" %["^DB"%]  %["--"%] [q|p] %[ | ["@CHIQA"|"@CHANI"] %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichhu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"|"@ALLI"|"@CHIQA"|"@CHANI"] %[?* "@GENq" | [{ari}|{ichhu}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=segar_paja"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS" | {hayk'a} %[ ["NRoot"|"PrnInterr"] %] %[ ["=varios"|"=cuánto"] %] %["^DB"%] "@GENq" | "=mucho"%] %["^DB"%] "@GENq" ]]; 
+define AQROOTS [~$["@NAWPA" %["^DB"%]  %["--"%] [q|p] %[ | ["@CHIQA"|"@CHANI"] %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichhu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"|"@ALLI"|"@CHIQA"|"@CHANI"] %["^DB"%] "@GENq" | [{ari}|{ichhu}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=segar_paja"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS" | {hayk'a} %[ ["NRoot"|"PrnInterr"] %] %[ ["=varios"|"=cuánto"] %] %["^DB"%] "@GENq" | "=mucho"%] %["^DB"%] "@GENq" ]]; 
 
 # other ambiguous roots: illapa, hukucha/huk'ucha(q), puputi, sipas, taksapas (*tak-sapa-s), chanincha- -> chani -n -cha (*chanin-cha), resqina -> riqsi-na, no ri-q-sina
 define AMBROOTS1 [~$[  ["@ILLA" %["^DB"%]| "=amanecer,brillar"%] ] %["--"%] [{pa}|{paq}|{pata}] %[ | [{huk}('){u} %["NRoot"%] %[ ["=estrecho"|"=búho"] %] | ["@UKU"|"@WISKA"] ]  %["--"%] {cha}(q) %[ ["NDeriv"|"VS"] | "=ombligo"%] %["--"%] {ti}%[ | [S|s]i %["Part_Cond"%] %["^DB"%] %["--"%] {pas} %[ | "=paz"%] %["^DB"%] %["--"%] {sapa} %[ | {chanin} %["NRoot"%] %["=correcto"%] %["--"%][{cha}|{chaq}]%[ | "=ir"%] %["^DB"%] %["--"%] q %["NS"%] %["+Ag"%] %["^DB"%] %["--"%] {sina}%[ ]];
@@ -631,7 +645,7 @@ define Word  FeatRestr  .o. NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] 
 read regex Cleanup2 .o. LexRestr .o. Word;
 
 #define Word NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex  IMANAWAQAYCHALLALLA .o. Word;
+#read regex TRANS .o. Word;
 
 
 save stack normalizer.fst

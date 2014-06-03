@@ -26,6 +26,7 @@
 | [ {festeja} "[" "VRootES" "]" ] :  {phista}
 | [ {freí} "[" "VRootES" "]" ] :  {friyi}
 | [ {invita} "[" "VRootES" "]" ] :  {imbita}
+| [ {kasu} "[" "VRootES" "]" ] :  {kasu}
 | [ {lee} "[" "VRootES" "]" ] :  {liyi}
 | [ {lía} "[" "VRootES" "]" ] :  {liya}
 | [ {locea} "[" "VRootES" "]" ] :  {lukya}

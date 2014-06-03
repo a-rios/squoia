@@ -1,4 +1,5 @@
 # nominal transitive forms, only in nominalized transitive verbs with -su/-wa
+## TODO: permit alternative sequences, e.g. -na -suykiku?
 
 # -su -yki, +3.Subj_2.Sg.Obj
   [ "@SU" "[" "--" "]" {yki} "[" "NPers" "]" "[" "+3.Subj_2.Sg.Obj" "]" ] :  {yki}
@@ -14,5 +15,9 @@
 | [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychik}
 | [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychis}
 | [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychiq}
+# -wa -ykichik: +2.Pl.Subj_1.Obj
+| [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichik}
+| [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichis}
+| [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichiq}
 ;
 

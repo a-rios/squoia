@@ -4,5 +4,7 @@
 | ["[" "--" "]" {yuq} "[" "NDeriv" "]"  "[" "+Poss" "]" ]: ["@POSS"{yuq}]
 | ["[" "--" "]" {niyuq} "[" "NDeriv" "]"  "[" "+Poss" "]" ]: ["@POSSni"{niyuq}]
 | ["[" "--" "]" {niyuq} "[" "NDeriv" "]"  "[" "+Poss" "]" ]: ["@POSSni"{ñiyuq}]
+| ["[" "--" "]" {nillayuq} "[" "NDeriv" "]"  "[" "+Poss+Lim" "]" ]: ["@POSSni"{nillayuq}]
+| ["[" "--" "]" {nillayuq} "[" "NDeriv" "]"  "[" "+Poss+Lim" "]" ]: ["@POSSni"{ñillayuq}]
 | ["[" "--" "]" {nnaq} "[" "NDeriv" "]"  "[" "+Priv" "]" ]: {nnaq}
 ;

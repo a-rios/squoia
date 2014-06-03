@@ -49,6 +49,9 @@
 |  [ "@WA" "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {nchik}
 |  [ "@WA" "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {nchis}
 |  [ "@WA" "[" "--" "]" {nchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {nchiq}
+|  [ "@WA" "[" "--" "]" {nkichik}"[" "VPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {nkichik}
+|  [ "@WA" "[" "--" "]" {nkichik}"[" "VPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {nkichis}
+|  [ "@WA" "[" "--" "]" {nkichik}"[" "VPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {nkichiq}
 |  [ "@WA" "[" "--" "]" {nkiku} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Pl.Excl.Obj" "]" ] : {nkiku}
 |  [ "@WA" "[" "--" "]" {nku} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Excl.Obj" "]" ] : {nku}
 |  [ "@WA" "[" "--" "]" {sun} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {sun}
@@ -80,4 +83,23 @@
 |  [ "@TRAN" "[" "--" "]" {sqaykiku} "[" "VPers" "]" "[" "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" "]" ] :{saykiku}
 |  [ "[" "--" "]" {rqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.NPst" "]" ] : {rqa}
 |  [ "[" "--" "]" {rqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.NPst" "]" ] : {ra}
-|  [ "[" "--" "]" {sqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.IPst" "]" ] : {sqa};
+|  [ "[" "--" "]" {sqa} "[" "Tns_VPers" "]" "[" "+3.Sg.Subj.IPst" "]" ] : {sqa}
+# sometimes inverted sequence: sqa-sunki, rqa-sunki instead of su-rqa-nki -> limit these forms to after +Prog, +NPst, +Ipst
+|  [ "@PORTMANTEAU" "[" "--" "]" {sunki} "[" "VPers" "]" "[" "+3.Subj_2.Sg.Obj" "]" ] : {sunki}
+|  [ "@PORTMANTEAU" "[" "--" "]" {sunkiku} "[" "VPers" "]" "[" "+3.Pl.Subj_2.Sg.Obj" "]" ] : {sunkiku}
+|  [ "@PORTMANTEAU" "[" "--" "]" {sunkichik}"[" "VPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {sunkichik}
+|  [ "@PORTMANTEAU" "[" "--" "]" {sunkichik}"[" "VPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {sunkichis}
+|  [ "@PORTMANTEAU" "[" "--" "]" {sunkichik}"[" "VPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {sunkichiq}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wanchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {wanchik}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wanchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {wanchis}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wanchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {wanchiq}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wankiku} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Pl.Excl.Obj" "]" ] : {wankiku}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wanku} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Excl.Obj" "]" ] : {wanku}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wasun} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {wasun}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wasunchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {wasunchik}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wasunchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {wasunchis}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wasunchik} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj.Fut" "]" ] : {wasunchiq}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wanqaku} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Excl.Obj.Fut" "]" ] : {wanqaku}
+|  [ "@PORTMANTEAU" "[" "--" "]" {waychik} "[" "VPers" "]" "[" "+2.Pl.Subj_1.Sg.Obj.Imp" "]" ] : {waychiq}
+|  [ "@PORTMANTEAU" "[" "--" "]" {wayku} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Pl.Obj.Imp" "]" ] : {wayku}
+;
