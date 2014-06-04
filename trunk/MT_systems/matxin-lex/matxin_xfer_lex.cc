@@ -377,12 +377,12 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     		// wcerr << attrib(reader, "lem") << L"1 split at: " << split << L"\n";
     		 lem1 = attrib(reader, "lem").substr(0,split);
     		 lem2 = attrib(reader, "lem").substr(split+2,wstring::npos);
-    		// wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
+    		 //wcerr << L"lemma 1" << lem1 << L" lemma 2: " << lem2 << L"\n";
 
     		 trad = get_translation(lem1, attrib(reader, "mi"), unknown);
     		 trad2 = get_translation(lem2, attrib(reader, "mi"), unknown);
 
-    		// wcerr << L"trad size lem1 " <<trad.size() << L" trad size lem2:" << trad2[0] << L"\n";
+    		 //wcerr << L"trad size lem1 " <<trad.size() << L" trad size lem2:" << trad2[0] << L"\n";
 
     	 }
     	 else{
@@ -390,16 +390,19 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     	 }
      }
       
-
       if (unknown) {
         attributes += L" unknown='transfer'";
       }
-      else 
+      else // either trad or trad2 has at least one translation
       {
-	if (trad.size() > 1 or (trad.size() ==1 and trad2.size() > 0 )) {
+	if (trad.size() > 1 ) {
 	  select = lexical_selection(parent_attribs, attributes, trad); 
-	} else {
+	} else if (trad2.size() > 1) {
+	  select = lexical_selection(parent_attribs, attributes, trad2);
+	} else if (trad.size() > 0) {
 	  select = trad;
+	} else {
+	  select = trad2;
 	}
 
 	if (trad.size() > 1 && trad2.size() == 0) {
@@ -446,7 +449,7 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
 	    attributes += L" sem='" + write_xml(sem.substr(1, sem.size() - 2)) + L"'";
 	  }
 	}
-      
+     
 	head_child = head && (text_attrib(select[0], L"lem") == L"");
       }
     }

@@ -915,6 +915,10 @@
        <e><p><l><s n="parol"/>AQ0</l><r><s n="pos"/>TRUNC<s n="mi"/></r></p><par n='Adj'/></e>	<!-- keep mi although it isn't used -->
        <e><p><l><s n="parol"/>AQS</l><r><s n="pos"/>TRUNC<s n="mi"/></r></p><par n='Adj'/></e> <!-- -isimo forms called superlatives; German equivalent?-->
     </pardef>
+    <pardef n="AQ_PROV">
+       <e><p><l><s n="parol"/>AQ0</l><r><s n="pos"/>TRUNC<s n="mi"/></r></p><par n='Adj'/></e>	<!-- keep mi although it isn't used -->
+       <e><p><l><s n="parol"/>AQS</l><r><s n="pos"/>PROV<s n="mi"/></r></p><par n='Adj'/></e>
+    </pardef>
      
       
       <!--AQ..P participal adjectives, might be necessary to generate from Quechua verb +sqa (nominalizer) -->
@@ -1057,6 +1061,187 @@
     </pardef>
 
   </pardefs>
+<section id="RGfromADJ-diariodelcusco" type="standard">
+   <e><p><l>curiosamente</l><r>verwunderlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>diariamente</l><r>täglich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>drásticamente</l><r>drastisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>estrictamente</l><r>streng</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>felizmente</l><r>froh</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>firmemente</l><r>fest</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>fraternalmente</l><r>brüderlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>fácilmente</l><r>leicht</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>físicamente</l><r>körperlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>ilícitamente</l><r>unerlaubt</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>incansablemente</l><r>unermüdlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>indebidamente</l><r>unberechtigt</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>indeterminadamente</l><r>unschlüssig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>indirectamente</l><r>indirekt</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>indudablemente</l><r>zweifellos</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>informalmente</l><r>zwanglos</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>irremediablemente</l><r>unheilbar</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>judicialmente</l><r>richterlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>matemáticamente</l><r>mathematisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>negativamente</l><r>verneinend</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>netamente</l><r>sauber</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>obviamente</l><r>offensichtlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>originalmente</l><r>originell</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>pasivamente</l><r>untätig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>periodísticamente</l><r>journalistisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>políticamente</l><r>politisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>progresivamente</l><r>fortschrittlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>propiamente</l><r>eigen</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>religiosamente</l><r>religiös</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>sencillamente</l><r>unkompliziert</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>seriamente</l><r>gesetzt</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>tranquilamente</l><r>ruhig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>verdaderamente</l><r>wahr</r></p><par n='RG_ADJD'/></e>
+</section>
+<section id="Adverbs-diariodelcusco" type="standard">
+   <e><p><l>acá</l><r>hier</r></p><par n='RG_ADV'/></e>
+   <e><p><l>enseguida</l><r>sofort</r></p><par n='RG_ADV'/></e>
+   <e><p><l>otrora</l><r>ehemals</r></p><par n='RG_ADV'/></e>
+   <e><p><l>otrora</l><r>früher</r></p><par n='RG_ADV'/></e>
+   <e><p><l>viceversa</l><r>umgekehrt</r></p><par n='RG_ADJD'/></e>
+</section>
+<section id="Adjectives-diariodelcusco" type="standard">
+   <e><p><l>altoandino</l><r>hochandin</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>amazónico</l><r>Amazonas</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>apurimeño</l><r>aus Apurímac</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>ayacuchano</l><r>aus Ayacucho</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>brasilero</l><r>brasilianisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>castrense</l><r>militärisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>chiclayano</l><r>aus Chiclayo</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>chumbivilcano</l><r>aus Chumbivilcas</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>costeño</l><r>Küste-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>cusqueño</l><r>aus Cuzco</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>fujimorista</l><r>Fujimori-Anhänger-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>guaraní</l><r>Guaraní</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>huancaíno</l><r>aus Huancayo</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>inca</l><r>Inka</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>interandino</l><r>interandin</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>limeño</l><r>aus Lima</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>quechua</l><r>Quechua</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sudamericano</l><r>südamerikanisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>surandino</l><r>südandin</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tucumano</l><r>aus Tucumán</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>uruguayo</l><r>uruguayisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>villanesco</l><r>Volks-</r></p><par n='AQ_TRUNC'/></e>
+</section>
+<section id="ParticipleAdjectives-diariodelcusco" type="standard">
+   <e><p><l>acariciado</l><r>gestreichelt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>acertado</l><r>getroffen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>aclimatado</l><r>eingelebt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>acondicionado</l><r>klimatisiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>acordado</l><r>vereinbart</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>acusado</l><r>bezichtigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>adoptado</l><r>angenommen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>agrupado</l><r>gruppiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>alargado</l><r>verlängert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>anunciado</l><r>angekündigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>arreglado</l><r>repariert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>atendido</l><r>berücksichtigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>atraído</l><r>angezogen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>avisado</l><r>gewarnt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>bañado</l><r>gebadet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>canalizado</l><r>kanalisiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>caracterizado</l><r>charakterisiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>celebrado</l><r>gefeiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cerrado</l><r>geschlossen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cometido</l><r>begangen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>comprobado</l><r>überprüft</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>concluido</l><r>gefolgert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>confirmado</l><r>bestätigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>consolidado</l><r>konsolidiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>construido</l><r>gebaut</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>contado</l><r>gezählt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>contaminado</l><r>verschmutzt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>convertido</l><r>verwandelt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>convocado</l><r>einberufen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cuidado</l><r>gesorgt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cumplido</l><r>nachgekommen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>dado</l><r>gegeben</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>damnificado</l><r>geschadet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>debido</l><r>verdankt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>declarado</l><r>festgestellt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>demostrado</l><r>gezeigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>designado</l><r>bestimmt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>despedido</l><r>verabschiedet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>desperdiciado</l><r>verschwendet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>destruido</l><r>zerstört</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>detenido</l><r>verhaftet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>deteriorado</l><r>beschädigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>dictado</l><r>vorgeschrieben</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>dirigido</l><r>gesteuert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>discutido</l><r>geplaudert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>distribuido</l><r>verteilt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>dividido</l><r>verteilt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>edificado</l><r>gebaut</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>emitido</l><r>gegeben</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>favorecido</l><r>gefördert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>formulado</l><r>formuliert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ganado</l><r>verdient</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>garantizado</l><r>garantiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>generado</l><r>geschafft</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>generalizado</l><r>verallgemeinert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>granizado</l><r>gehagelt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>hallado</l><r>gefunden</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>humillado</l><r>erniedrigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>identificado</l><r>identifiziert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>impactado</l><r>beeindruckt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>implementado</l><r>implementiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>impregnado</l><r>imprägniert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>iniciado</l><r>gestartet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>instalado</l><r>installiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>jugado</l><r>gespielt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>levantado</l><r>verursacht</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>liderado</l><r>geführt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>llegado</l><r>geschafft</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>logrado</l><r>zustandegebracht</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>maltratado</l><r>misshandelt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>manejado</l><r>gehandhabt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>manoseado</l><r>betatscht</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mejorado</l><r>verbessert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>mencionado</l><r>erwähnt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>modificado</l><r>modifiziert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nombrado</l><r>genannt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>obtenido</l><r>gekriegt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ocurrido</l><r>vorgekommen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>orientado</l><r>zurechtgefunden</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>planificado</l><r>geplant</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>planteado</l><r>versetzt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>precisado</l><r>präzisiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>presentado</l><r>vorgezeigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>presidido</l><r>geleitet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>proclamado</l><r>verkündet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>programado</l><r>vorgenommen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>provocado</l><r>verursacht</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>recostado</l><r>zurückgelehnt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>referido</l><r>referiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>reflejado</l><r>widergespiegelt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>regido</l><r>regiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>remitido</l><r>vergeben</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>renovado</l><r>modernisiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>reportado</l><r>gemeldet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>representado</l><r>vertreten</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>requerido</l><r>verlangt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>resguardado</l><r>verwahrt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>respaldado</l><r>unterstützt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>retenido</l><r>zurückgehalten</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>rodeado</l><r>umsäumt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>servido</l><r>gedient</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>señalado</l><r>gezeigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sobrado</l><r>übriggeblieben</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sufrido</l><r>gelitten</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sumado</l><r>addiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>superado</l><r>überwunden</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>suspendido</l><r>aufgehangen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>temido</l><r>gefürchtet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>trabajado</l><r>gearbeitet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>traído</l><r>mitgebracht</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>unido</l><r>vereint</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>vencido</l><r>überwunden</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>vendido</l><r>verkauft</r></p><par n='AQ_ADJ'/></e>
+</section>
 <section id="FL-locuciones" type="standard">
    <e><p><l>captura_de_datos</l><r>Datenerfassung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>equipo_nacional</l><r>Nationalmannschaft</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -24369,6 +24554,7 @@
    <e><p><l>pagaré</l><r>Schuldschein</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>página</l><r>Blatt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>página</l><r>Seite</r></p><par n='NC_N_76_FEDER'/></e>
+   <e><p><l>p</l><r>post</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- TODO hack to avoid segmentation fault in matxin-xfer-lex -->
    <e><p><l>página_web</l><r>Internetseite</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>pág.</l><r>Seite</r></p><par n='NC_N_76_FEDER'/></e> <!-- TODO abbreviations -->
    <e><p><l>pago</l><r>Zahlung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -30344,6 +30530,7 @@ veintitodos
    <e><p><l>andante</l><r>fahrend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>andante</l><r>reisend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>andante</l><r>wandernd<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>andino</l><r>andin<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>andino</l><r>Anden-<s n="molif"/>1</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>anecdótico</l><r>anekdotisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>añejo</l><r>alt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
