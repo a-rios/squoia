@@ -1102,6 +1102,43 @@
    <e><p><l>otrora</l><r>ehemals</r></p><par n='RG_ADV'/></e>
    <e><p><l>otrora</l><r>früher</r></p><par n='RG_ADV'/></e>
    <e><p><l>viceversa</l><r>umgekehrt</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>a_cambio</l><r>dafür</r></p><par n='RG_ADV'/></e>
+   <e><p><l>a_continuación</l><r>anschliessend</r></p><par n='RG_ADV'/></e>
+   <e><p><l>a_diario</l><r>täglich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>a_lo_grande</l><r>grossartig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>a_más_tardar</l><r>x</r></p><par n='RG_ADV'/></e>
+   <e><p><l>a_rajatabla</l><r>unbedingt</r></p><par n='RG_ADV'/></e>
+   <e><p><l>aún_así</l><r>trotzdem</r></p><par n='RG_ADV'/></e>
+   <e><p><l>aún_no</l><r>noch nicht</r></p><par n='RG_ADV'/></e>
+   <e><p><l>de_buena_voluntad</l><r>gutwillig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>de_igual_manera</l><r>ebenfalls</r></p><par n='RG_ADV'/></e>
+   <e><p><l>de_lo_contrario</l><r>andernfalls</r></p><par n='RG_ADV'/></e>
+   <e><p><l>del_otro_lado</l><r>andererseits</r></p><par n='RG_ADV'/></e>
+   <e><p><l>de_ninguna_manera</l><r>keinesfalls</r></p><par n='RG_ADV'/></e>
+   <e><p><l>de_principio_a_fin</l><r>durchgehend</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>de_todas_maneras</l><r>jedenfalls</r></p><par n='RG_ADV'/></e>
+   <e><p><l>de_todos_modos</l><r>sowieso</r></p><par n='RG_ADV'/></e>
+   <e><p><l>día_a_día</l><r>tagtäglich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>día_tras_día</l><r>tagein tagaus</r></p><par n='RG_ADV'/></e>
+   <e><p><l>en_consecuencia</l><r>folglich</r></p><par n='RG_ADV'/></e>
+   <e><p><l>en_especial</l><r>besonders</r></p><par n='RG_ADV'/></e>
+   <e><p><l>en_fin</l><r>nun ja</r></p><par n='RG_ADV'/></e>
+   <e><p><l>en_remojo</l><r>eingeweicht</r></p><par n='RG_ADV'/></e>
+   <e><p><l>en_serio</l><r>ernsthaft</r></p><par n='RG_ADV'/></e>
+   <e><p><l>en_todo_caso</l><r>jedenfalls</r></p><par n='RG_ADV'/></e>
+   <e><p><l>más_de_la_cuenta</l><r>zu viel</r></p><par n='RG_ADV'/></e>
+   <e><p><l>nada_más_y_nada_menos</l><r>nicht mehr und nicht weniger</r></p><par n='RG_ADV'/></e>
+   <e><p><l>ni_mucho_menos</l><r>noch lange nicht</r></p><par n='RG_ADV'/></e>
+   <e><p><l>no_obstante</l><r>jedoch</r></p><par n='RG_ADV'/></e>
+   <e><p><l>no_sólo</l><r>nicht nur</r></p><par n='RG_ADV'/></e>
+   <e><p><l>para_colmo</l><r>noch dazu</r></p><par n='RG_ADV'/></e>
+   <e><p><l>por_ende</l><r>folglich</r></p><par n='RG_ADV'/></e>
+   <e><p><l>por_escrito</l><r>schriftlich</r></p><par n='RG_ADV'/></e>
+   <e><p><l>por_favor</l><r>bitte</r></p><par n='RG_ADV'/></e>
+   <e><p><l>por_lo_general</l><r>im Allgemeinen</r></p><par n='RG_ADV'/></e>
+   <e><p><l>por_tanto</l><r>deshalb</r></p><par n='RG_ADV'/></e>
+   <e><p><l>sin_lugar_a_dudas</l><r>zweifelsohne</r></p><par n='RG_ADV'/></e>
+   <e><p><l>sobre_todo</l><r>vor allem</r></p><par n='RG_ADV'/></e>
 </section>
 <section id="Adjectives-diariodelcusco" type="standard">
    <e><p><l>altoandino</l><r>hochandin</r></p><par n='AQ_ADJ'/></e>
@@ -1241,6 +1278,24 @@
    <e><p><l>unido</l><r>vereint</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vencido</l><r>überwunden</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vendido</l><r>verkauft</r></p><par n='AQ_ADJ'/></e>
+</section>
+<section id="Verbs-diariodelcusco" type="standard">
+   <e><p><l>cometer_errores</l><r>Fehler_begehen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>dar_la_gana</l><r>Lust_machen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>dar_paso</l><r>Zutritt_verschaffen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>dar_respuesta</l><r>antworten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>dejar_de_lado</l><r>aus|klammern</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>estar_de_acuerdo</l><r>einverstanden_sein</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>hacer_falta</l><r>fehlen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>hacer_frente</l><r>gegenüber|treten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>hacer_referencia</l><r>referenziern</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>hacer_uso</l><r>gebrauchen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>poner_en_marcha</l><r>starten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>poner_fin</l><r>beenden</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sacar_adelante</l><r>voran|bringen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>tomar_en_cuenta</l><r>berücksichtigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>tomar_parte</l><r>teil|nehmen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>valer_la_pena</l><r>sich_lohnen</r></p><par n='VM_VV_MAIN'/></e>
 </section>
 <section id="FL-locuciones" type="standard">
    <e><p><l>captura_de_datos</l><r>Datenerfassung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -10276,9 +10331,9 @@
    <e><p><l>enfermar</l><r>erkranken</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO enfermar de algo = an etwas+Dat erkranken -->
    <e><p><l>enfocar</l><r>fokussieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>enfocar</l><r>ins Auge fassen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>enfrentar</l><r>gegenüber|stehen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>enfrentar</l><r>gegenüber|stehen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <!--e><p><l>enfrentar</l><r>in Auge sehen [fig.]</r></p><par n="VM_VV_MAIN"/></e-->
-   <e><p><l>enfrentarse a</l><r>gegenüber|treten</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>enfrentarse a</l><r>gegenüber|treten</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>enfrentarse con</l><r>sich konfrontiert sehen mit</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>enfrentarse</l><r>sich auseinander setzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>enfriar</l><r>kalt machen</r></p><par n="VM_VV_MAIN"/></e>
@@ -35633,6 +35688,7 @@ zas
    <e><p><l>bueno<s n="parol"/>I</l><r>gut<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>carajo<s n="parol"/>I</l><r>verdammt<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>claro<s n="parol"/>I</l><r>klar<s n="pos"/>ITJ</r></p></e> 
+   <e><p><l>gracias<s n="parol"/>I</l><r>danke<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>hombre<s n="parol"/>I</l><r>Mann<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>ojalá<s n="parol"/>I</l><r>hoffentlich<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>paciencia<s n="parol"/>I</l><r>Geduld<s n="pos"/>ITJ</r></p></e> 
@@ -35643,6 +35699,7 @@ zas
 <!-- Conjunctions -->
    <!-- coordinating -->
    <e><p><l>así_como</l><r>sowie</r></p><par n='CC_KON'/></e> <!-- así_como => ebenso wie? -->
+   <e><p><l>así_como_también</l><r>sowie_auch</r></p><par n='CC_KON'/></e>
    <e><p><l>aunque</l><r>obwohl</r></p><par n='CC_KON'/></e> <!-- aunque seems to be analysed as a CC -->
    <e><p><l>aunque</l><r>auch wenn</r></p><par n='CC_KON'/></e> <!-- +subjuntivo TODO lexsel? -->
    <e><p><l>bien</l><r>sei</r></p><par n='CC_KON'/></e> <!-- TODO distributive : bien ... bien ... => sei? -->
@@ -35651,6 +35708,7 @@ zas
    <e><p><l>empero</l><r>aber</r></p><par n='CC_KON'/></e>
    <e><p><l>mas</l><r>aber</r></p><par n='CC_KON'/></e> 
    <e><p><l>ni</l><r>noch</r></p><par n='CC_KON'/></e> <!-- TODO ni...ni = weder...noch; how do we know which one we have? -->
+   <e><p><l>ni_siquiera</l><r>nicht_einmal</r></p><par n='CC_KON'/></e>
    <e><p><l>no_obstante</l><r>doch</r></p><par n='CC_KON'/></e>
    <e><p><l>no_sólo</l><r>nicht nur</r></p><par n='CC_KON'/></e> <!-- TODO distributive: no solo ... sino -->
    <e><p><l>o</l><r>oder</r></p><par n='CC_KON'/></e> 
@@ -35662,6 +35720,7 @@ zas
    <e><p><l>si_bien</l><r>wenngleich</r></p><par n='CC_KON'/></e> <!-- CC => KON or better KOUS? -->
    <e><p><l>sin_embargo</l><r>jedoch</r></p><par n='CC_KON'/></e> 
    <e><p><l>sino</l><r>sondern</r></p><par n='CC_KON'/></e> 
+   <e><p><l>sino_también</l><r>sondern_auch</r></p><par n='CC_KON'/></e> 
    <e><p><l>sino_que</l><r>sondern</r></p><par n='CC_KON'/></e> <!-- sino_que CC? TODO check! sondern dass? -->
    <e><p><l>siquier</l><r>wenn auch</r></p><par n='CC_KON'/></e> 
    <e><p><l>siquiera</l><r>wenn auch</r></p><par n='CC_KON'/></e> 
@@ -35679,9 +35738,16 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>a_fin_de_que</l><r>damit</r></p><par n='CS_KOUS'/></e>
    <e><p><l>a_medida_que</l><r>während</r></p><par n='CS_KOUS'/></e> <!-- in dem Masse, wie...; je nachdem, sowie -->
    <e><p><l>a_menos_que</l><r>ausser</r></p><par n='CS_KOUS'/></e> <!-- ausser? es sei denn, sofern nicht -->
+   <e><p><l>a_pesar_de_que</l><r>obwohl</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>a_que</l><r>dass</r></p><par n='CS_KOUS'/></e>
    <e><p><l>adonde</l><r>wohin</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>al_igual_que</l><r>ebenso wie</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>al_mismo_tiempo_que</l><r>gleichzeitig wie</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>antes_de_que</l><r>bevor</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>así_que</l><r>sodass</r></p><par n='CS_KOUS'/></e>
    <e><p><l>aun</l><r>sogar</r></p><par n='CS_KOUS'/></e> <!-- auch -->
    <e><p><l>aunque</l><r>obwohl</r></p><par n='CS_KOUS'/></e> <!-- aunque seems to be analysed as a CC -->
+   <e><p><l>cada_vez_que</l><r>jedesmal, wenn</r></p><par n='CS_KOUS'/></e>
    <e><p><l>como</l><r>wie</r></p><par n='CS_KOUS'/></e> <!-- como = wie (equality) ; in time and comparative expressions ?-->
    <e><p><l>como</l><r>als</r></p><par n='CS_KOUS'/></e> <!-- como = als (unequality) ; in time and comparative expressions ?-->
    <e><p><l>como</l><r>da</r></p><par n='CS_KOUS'/></e> <!-- como = da/weil ?-->
@@ -35691,38 +35757,45 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>cuando</l><r>als</r></p><par n='CS_KOUS'/></e>
    <e><p><l>cuando</l><r>wenn</r></p><par n='CS_KOUS'/></e>
    <e><p><l>dado_que</l><r>weil</r></p><par n='CS_KOUS'/></e> <!-- dado que => da? weil? -->
+   <e><p><l>de_manera_que</l><r>sodass</r></p><par n='CS_KOUS'/></e>
    <e><p><l>de_modo_que</l><r>sodass</r></p><par n='CS_KOUS'/></e> <!-- somit, also -->
    <e><p><l>de_tal_manera_que</l><r>somit</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>debido_a_que</l><r>da</r></p><par n='CS_KOUS'/></e>
    <e><p><l>desde_el_momento_en_que</l><r>seitdem</r></p><par n='CS_KOUS'/></e>
    <e><p><l>desde_que</l><r>seitdem</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>después_de_que</l><r>nachdem</r></p><par n='CS_KOUS'/></e>
    <e><p><l>donde</l><r>wo</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>el_hecho_de_que</l><r>dass</r></p><par n='CS_KOUS'/></e>
    <e><p><l>en_caso_de_que</l><r>falls</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>en_cuanto</l><r>sobald</r></p><par n='CS_KOUS'/></e>
    <e><p><l>en_tanto_que</l><r>während</r></p><par n='CS_KOUS'/></e>
    <e><p><l>entonces</l><r>also</r></p><par n='CS_KOUS'/></e>
    <e><p><l>ergo</l><r>also</r></p><par n='CS_KOUS'/></e>
    <e><p><l>incluso</l><r>also</r></p><par n='CS_KOUS'/></e>
    <e><p><l>hasta_que</l><r>bis</r></p><par n='CS_KOUS'/></e>
    <e><p><l>luego</l><r>also</r></p><par n='CS_KOUS'/></e> <!-- also, folglich TODO: FreeLing analyses "luego" only as adverb? -->
+   <e><p><l>luego_que</l><r>nachdem</r></p><par n='CS_KOUS'/></e>
    <e><p><l>mientras</l><r>während</r></p><par n='CS_KOUS'/></e> <!-- indem, solange -->
    <e><p><l>mientras_que</l><r>während</r></p><par n='CS_KOUS'/></e> <!-- jedoch, aber -->
    <e><p><l>ni_que</l><r>nicht dass</r></p><par n='CS_KOUS'/></e> <!-- nicht dass? -->
    <e><p><l>para_que</l><r>damit</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>pese_a_que</l><r>obwohl</r></p><par n='CS_KOUS'/></e>
    <e><p><l>porque</l><r>weil</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>por_eso</l><r>deshalb</r></p><par n='CS_KOUS'/></e>
    <e><p><l>por_tanto</l><r>deshalb</r></p><par n='CS_KOUS'/></e>
    <e><p><l>pues</l><r>da</r></p><par n='CS_KOUS'/></e> <!-- pues = da/denn ?-->
+   <e><p><l>puesto_que</l><r>da</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>que</l><r>dass</r></p><par n='CS_KOUS'/></e> 
+   <e><p><l>según</l><r>je_nachdem_wie</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>si</l><r>wenn</r></p><par n='CS_KOUS'/></e> <!-- falls, wenn + subjuntivo=>konditional???-->
+   <e><p><l>si_bien</l><r>wenngleich</r></p><par n='CS_KOUS'/></e>
+   <e><p><l>si_bien_que</l><r>obwohl</r></p><par n='CS_KOUS'/></e>
    <e><p><l>sin_que</l><r>ohne dass</r></p><par n='CS_KOUS'/></e>
    <e><p><l>supuesto_que</l><r>angenommen dass</r></p><par n='CS_KOUS'/></e>
    <e><p><l>tal_como</l><r>wie</r></p><par n='CS_KOUS'/></e>
    <e><p><l>tal_y_como</l><r>so</r></p><par n='CS_KOUS'/></e> <!-- TODO check CS? tal_y_como => so ?-->
    <e><p><l>una_vez_que</l><r>einmal dass</r></p><par n='CS_KOUS'/></e> <!-- einmal dass ?-->
    <e><p><l>ya_que</l><r>da</r></p><par n='CS_KOUS'/></e> <!-- ya_que => da ?-->
-<!-- further CS extracted from squoia
-entonces CS -> RG
-según	CS -> SP?
--->
 
 <!-- Determiners - Articles -->
     <!-- definite -->
@@ -35755,7 +35828,7 @@ según	CS -> SP?
    <e><p><l>bastante</l><r>genuegend</r></p><par n='DI_ADV'/></e> <!-- bastante => genuegend? ADV/ADJ? -->
    <e><p><l>cada</l><r>jeder</r></p><par n='DI_PIAT'/></e> <!-- cada DI0CS0 => jeder/jede/jedes DI_PIAT -->
    <e><p><l>cualquiera<s n="parol"/>DI0CS0</l><r>irgendein</r></p><par n='DI_ART'/></e> <!-- irgendein? or beliebig PIAT? ADJ?  -->
-   <e><p><l>cuanto</l><r>wie viel</r></p><par n='DI_ART'/></e> <!--wie viel?  -->
+   <e><p><l>cuanto</l><r>wie viel</r></p><par n='DI_PIAT'/></e> <!--wie viel?  -->
    <e><p><l>demás</l><r>weitere</r></p><par n='DI_PIAT'/></e> <!-- demás => weitere? -->
    <e><p><l>demasiado</l><r>zuviel</r></p><par n='DI_PIAT'/></e> <!-- demasiado => zuviel? -->
    <e><p><l>mucho</l><r>viel</r></p><par n='DI_PIAT'/></e> <!-- muchos => viele/mehrere? TODO: add "viel" in molif or is it already there as indefinite adjective? -->
@@ -35776,6 +35849,9 @@ según	CS -> SP?
    <e><p><l>varios</l><r>verschiedene</r></p><par n='DI_PIAT'/></e> <!-- only plural: varios/varias => verschiedene TODO check molif -->
 
    <!-- numeral TODO remove paradigm DN_PIAT ? TODO general rule for numbers given in digits: slem="5" smi="DN0CP0" ?-->
+   <e><p><l>3</l><r>3</r></p><par n='DN_CARD'/></e>
+   <e><p><l>4</l><r>4</r></p><par n='DN_CARD'/></e>
+   <e><p><l>5</l><r>5</r></p><par n='DN_CARD'/></e>
    <e><p><l>dos</l><r>zwei</r></p><par n='DN_CARD'/></e>
    <e><p><l>tres</l><r>drei</r></p><par n='DN_CARD'/></e>
    <e><p><l>cuatro</l><r>vier</r></p><par n='DN_CARD'/></e>
@@ -35968,7 +36044,6 @@ en_vez_de	SPS00
 en_vías_de	SPS00
 en_virtud_de	SPS00
 en_vista_de	SPS00
-frente_a	SPS00
 fuera_de	SPS00
 
 lejos_de	SPS00
@@ -35980,90 +36055,103 @@ sin_contar_con	SPS00
 
 a_mediados_de
 a_principios_de
-frente_a
 
 -->
   <!-- Multitoken prepositions: one paradigm with PREP/PREPART for _de/del resp. _a/al not possible because of entry specific "cas" and "adpos" -->
    <e><p><l>abajo_de</l><r>unterhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- abajo_de = unterhalb + Gen -->
-   <e><p><l>abajo_del</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>abajo_de</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>abajo_de</l><r>unter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- abajo_de = unter + Dat (is movement also possible, i.e. Akk?) -->
-   <e><p><l>abajo_del</l><r>unter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>abajo_de</l><r>unter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_base_de</l><r>auf Grund von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- auf Grund von, auf der Grundlage von -->
-   <e><p><l>a_base_del</l><r>auf Grund von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>a_base_de</l><r>auf Grund von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_beneficio_de</l><r>zugunsten<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- a_beneficio_de = zugunsten + Gen ; also zugunsten von + Dat, esp. with plural -->
-   <e><p><l>a_beneficio_del</l><r>zugunsten_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_beneficio_de</l><r>zugunsten_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>a_cargo_de</l><r>zu Lasten von<s n="cas"/>Dat</r></p><par n='PREP'/></e>
-   <e><p><l>a_cargo_del</l><r>zu Lasten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>a_cargo_de</l><r>zu Lasten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_causa_de</l><r>aufgrund<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- aufgrund + Gen -->
-   <e><p><l>a_causa_del</l><r>aufgrund_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_causa_de</l><r>aufgrund_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>acerca_de</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- acerca de = bezüglich +Gen, in Bezug auf +Akk, hinsichtlich +Gen, über +Akk -->
-   <e><p><l>acerca_del</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>acerca_de</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>a_consecuencia_de</l><r>infolge<s n="cas"/>Gen</r></p><par n='PREP'/></e>
-   <e><p><l>a_consecuencia_del</l><r>infolge_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_consecuencia_de</l><r>infolge_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>además_de</l><r>zusätzlich zu<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- ademas de = zusaetzlich zu? -->
-   <e><p><l>además_del</l><r>zusätzlich zu_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>además_de</l><r>zusätzlich zu_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_diferencia_de</l><r>im Gegensatz zu<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- a diferencia de = im Gegensatz zu +Dat, im Unterschied zu +Dat -->
-   <e><p><l>a_diferencia_del</l><r>im Gegensatz zu_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>a_diferencia_de</l><r>im Gegensatz zu_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_expensas_de</l><r>auf Kosten<s n="cas"/>Gen</r></p><par n='PREP'/></e>
-   <e><p><l>a_expensas_del</l><r>auf Kosten_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_expensas_de</l><r>auf Kosten_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>a_favor_de</l><r>zugunsten von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- zugunsten von, zu Gunsten von + Dat -->
-   <e><p><l>a_favor_del</l><r>zugunsten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>a_favor_de</l><r>zugunsten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_fin_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- prep or only conjunction "a fin de que" ? -->
    <e><p><l>a_fines_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>alrededor_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>antes_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
+   <e><p><l>alrededor_de</l><r>um<s n="cas"/>Akk</r></p><par n='PREP'/></e>
+   <e><p><l>alrededor_de</l><r>um_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>antes_de</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>antes_de</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_partir_de</l><r>ab<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- a_partir_de = ab/ TODO circum : von ... an ? -->
-   <e><p><l>a_partir_del</l><r>ab_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>	<!-- a_partir_del -->
+   <e><p><l>a_partir_de</l><r>ab_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>	<!-- a_partir_del -->
    <e><p><l>a_pesar_de</l><r>trotz<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- a_pesar_de = trotz + Gen -->
-   <e><p><l>a_pesar_del</l><r>trotz_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>	<!-- a_pesar_de = trotz + Gen -->
+   <e><p><l>a_pesar_de</l><r>trotz_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>	<!-- a_pesar_de = trotz + Gen -->
    <e><p><l>a_propósito_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>a_punto_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>a_raíz_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>arriba_de</l><r>oberhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
-   <e><p><l>arriba_del</l><r>oberhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>	<!--  -->
+   <e><p><l>arriba_de</l><r>oberhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>	<!--  -->
 
    <e><p><l>a_través_de</l><r>durch<s n="cas"/>Akk</r></p><par n='PREP'/></e>
-   <e><p><l>a_través_del</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>a_través_de</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>cerca_de</l><r>bei<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>cerca_de</l><r>bei_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>con_respecto_a</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- bezüglich, hinsichtlich + Gen -->
-   <e><p><l>con_respecto_al</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>con_respecto_a</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unterhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- debajo_de = unterhalb + Gen -->
-   <e><p><l>debajo_del</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>debajo_de</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- debajo_de = unter + Dat (is movement also possible, i.e. Akk?) -->
-   <e><p><l>debajo_del</l><r>unter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>debajo_de</l><r>unter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>debido_a</l><r>wegen<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- debido_a = wegen + Gen -->
-   <e><p><l>debido_al</l><r>wegen_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>debido_a</l><r>wegen_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>delante_de</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
-   <e><p><l>delante_del</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>delante_de</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>dentro_de</l><r>in<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
-   <e><p><l>dentro_del</l><r>in_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>dentro_de</l><r>in_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>dentro_de</l><r>innerhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- TODO only local not time -->
-   <e><p><l>dentro_del</l><r>innerhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>dentro_de</l><r>innerhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>desde_hace</l><r>seit<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- desde hace/hacia = seit + Dat -->
    <e><p><l>detrás_de</l><r>hinter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
-   <e><p><l>detrás_del</l><r>hinter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>detrás_de</l><r>hinter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>después_de</l><r>nach<s n="cas"/>Dat</r></p><par n='PREP'/></e>
-   <e><p><l>después_del</l><r>nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>después_de</l><r>nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>dirección_a</l><r>nach<s n="cas"/>Dat</r></p><par n='PREP'/></e>
-   <e><p><l>dirección_al</l><r>nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>dirección_a</l><r>nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>encima_de</l><r>auf<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- auf/ueber? TODO: by movement could be Akk -->
-   <e><p><l>encima_del</l><r>auf_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>encima_de</l><r>auf_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_contra_de</l><r>gegen<s n="cas"/>Akk</r></p><par n='PREP'/></e>
+   <e><p><l>en_contra_de</l><r>gegen_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>en_cuanto_a</l><r>betreffend<s n="cas"/>Akk</r></p><par n='PREP'/></e>
+   <e><p><l>en_cuanto_a</l><r>betreffend_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>en_medio_de</l><r>mitten in<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- DE "multitoken" without "_" so that the whole prepositional expression is generated/printed; TODO change outputGerman/cleanup -->
-   <e><p><l>en_medio_del</l><r>mitten in_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_medio_de</l><r>mitten in_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>frente_a</l><r>angesichts<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>frente_a</l><r>angesichts_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>frente_a</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>frente_a</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>gracias_a</l><r>dank<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- gracias_a = dank + Dat (though also possible with Gen) -->
-   <e><p><l>gracias_al</l><r>dank_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>gracias_a</l><r>dank_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>junto_a</l><r>bei<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_a = bei + Dat -->
-   <e><p><l>junto_al</l><r>bei_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>junto_a</l><r>bei_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>junto_a</l><r>neben<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_a = neben + Akk(mov)/Dat -->
-   <e><p><l>junto_al</l><r>neben_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>junto_a</l><r>neben_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>junto_con</l><r>mit<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_con = (zusammen?) mit + Dat -->
    <e><p><l>más_allá_de</l><r>jenseits<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- más_allá_de = jenseits + Gen; TODO expressions: mirar mas alla de = ueber X hinausschauen -->
-   <e><p><l>más_allá_del</l><r>jenseits_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>más_allá_de</l><r>jenseits_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>pese_a</l><r>trotz<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>pese_a</l><r>trotz_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>por_medio_de</l><r>durch<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- por_medio_de = durch + Akk ; mittels + Gen -->
-   <e><p><l>por_medio_del</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>por_medio_de</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>respecto_a</l><r>hinsichtlich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- hinsichtlich + Gen -->
-   <e><p><l>respecto_al</l><r>hinsichtlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>respecto_a</l><r>hinsichtlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>respecto_de</l><r>hinsichtlich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- respecto_de? = hinsichtlich + Gen -->
-   <e><p><l>respecto_del</l><r>hinsichtlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>respecto_de</l><r>hinsichtlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
 
 <!-- Pronouns -->
    <!-- Personal pronouns -->
@@ -36127,9 +36215,13 @@ frente_a
    <e><p><l>mío<s n="parol"/>PX1MP0S0</l><r>ich<s n="pos"/>PPOSS<s n="mi"/>Pl</r></p></e> <!-- míos -->
    <e><p><l>mío<s n="parol"/>PX1MS0S0</l><r>ich<s n="pos"/>PPOSS<s n="mi"/>Sg</r></p></e> <!-- mío -->
    <e><p><l>nuestro<s n="parol"/>PX1FP0P0</l><r>wir<s n="pos"/>PPOSS<s n="mi"/>Pl</r></p></e> <!-- nuestras -->
+   <e><p><l>la_nuestra<s n="parol"/>PX1FP0P0</l><r>wir<s n="pos"/>PPOSS<s n="mi"/>Pl</r></p></e> <!-- nuestras -->
    <e><p><l>nuestro<s n="parol"/>PX1FS0P0</l><r>wir<s n="pos"/>PPOSS<s n="mi"/>Sg</r></p></e> <!-- nuestra -->
+   <e><p><l>la_nuestra<s n="parol"/>PX1FS0P0</l><r>wir<s n="pos"/>PPOSS<s n="mi"/>Sg</r></p></e> <!-- nuestra -->
    <e><p><l>nuestro<s n="parol"/>PX1MP0P0</l><r>wir<s n="pos"/>PPOSS<s n="mi"/>Pl</r></p></e> <!-- nuestros -->
+   <e><p><l>el_nuestro<s n="parol"/>PX1MP0P0</l><r>wir<s n="pos"/>PPOSS<s n="mi"/>Pl</r></p></e> <!-- nuestros -->
    <e><p><l>nuestro<s n="parol"/>PX1MS0P0</l><r>wir<s n="pos"/>PPOSS<s n="mi"/>Sg</r></p></e> <!-- nuestro -->
+   <e><p><l>el_nuestro<s n="parol"/>PX1MS0P0</l><r>wir<s n="pos"/>PPOSS<s n="mi"/>Sg</r></p></e> <!-- nuestro -->
 
    <e><p><l>tuyo<s n="parol"/>PX2FP0S0</l><r>dein<s n="pos"/>PPOSS<s n="mi"/>Pl</r></p></e> <!-- tuyas -->
    <e><p><l>tuyo<s n="parol"/>PX2FS0S0</l><r>dein<s n="pos"/>PPOSS<s n="mi"/>Sg</r></p></e> <!-- tuya -->
@@ -36142,16 +36234,22 @@ frente_a
 
    <!-- Spanish 3rd person "suyo" => German "sein/ihr/Ihr" ? how do we solve that? -->
    <e><p><l>suyo<s n="parol"/>PX3FP0C0</l><r>er<s n="pos"/>PPOSS<s n="mi"/>Fem.Pl</r></p></e> <!-- suyas => sein/ihr/Ihr ? -->
+   <e><p><l>la_suya<s n="parol"/>PX3FP0C0</l><r>er<s n="pos"/>PPOSS<s n="mi"/>Fem.Pl</r></p></e> <!-- suyas => sein/ihr/Ihr ? -->
    <e><p><l>suyo<s n="parol"/>PX3FS0C0</l><r>er<s n="pos"/>PPOSS<s n="mi"/>Fem.Sg</r></p></e> <!-- suya => sein/ihr/Ihr ? -->
+   <e><p><l>la_suya<s n="parol"/>PX3FS0C0</l><r>er<s n="pos"/>PPOSS<s n="mi"/>Fem.Sg</r></p></e> <!-- suya => sein/ihr/Ihr ? -->
    <e><p><l>suyo<s n="parol"/>PX3MP0C0</l><r>er<s n="pos"/>PPOSS<s n="mi"/>Masc.Pl</r></p></e> <!-- suyos => sein/ihr/Ihr ? -->
+   <e><p><l>el_suyo<s n="parol"/>PX3MP0C0</l><r>er<s n="pos"/>PPOSS<s n="mi"/>Masc.Pl</r></p></e> <!-- suyos => sein/ihr/Ihr ? -->
    <e><p><l>suyo<s n="parol"/>PX3MS0C0</l><r>er<s n="pos"/>PPOSS<s n="mi"/>Masc.Sg</r></p></e> <!-- suyo => sein/ihr/Ihr ? -->
+   <e><p><l>el_suyo<s n="parol"/>PX3MS0C0</l><r>er<s n="pos"/>PPOSS<s n="mi"/>Masc.Sg</r></p></e> <!-- suyo => sein/ihr/Ihr ? -->
 
    <!-- indefinite -->
    <e><p><l>algo</l><r>etwas</r></p><par n='PI_PIS'/></e>
    <e><p><l>alguien</l><r>jemand</r></p><par n='PI_PIS'/></e>
    <e><p><l>alguno</l><r>irgendein</r></p><par n='PI_PIS'/></e>
    <e><p><l>ambos</l><r>beide</r></p><par n='PI_PIS'/></e> <!-- TODO check molif beide? -->
+   <e><p><l>cualquiera</l><r>irgendein</r></p><par n='PI_PIS'/></e>
    <e><p><l>demás</l><r>weitere</r></p><par n='PI_PIS'/></e> <!-- TODO check molif weitere? -->
+   <e><p><l>medio</l><r>halb</r></p><par n='PI_PIS'/></e>
    <e><p><l>mismo</l><r>derselbe</r></p><par n='PI_PIS'/></e>
    <e><p><l>mucho</l><r>viel</r></p><par n='PI_PIS'/></e>	<!-- not in molif!?! -->
    <e><p><l>nada</l><r>nichts</r></p><par n='PI_PIS'/></e>
@@ -36247,6 +36345,21 @@ frente_a
    <e><p><l>|<s n="parol"/>Fz</l><r>|<s n="pos"/>$(</r></p></e>
    <e><p><l>$<s n="parol"/>Fz</l><r>$<s n="pos"/>$(</r></p></e>
    <e><p><l>+<s n="parol"/>Fz</l><r>+<s n="pos"/>$(</r></p></e>
+
+   <e><p><l>’<s n="parol"/>FE</l><r>’<s n="pos"/>$(</r></p></e>
+   <e><p><l>“<s n="parol"/>FE</l><r>“<s n="pos"/>$(</r></p></e>
+   <e><p><l>–<s n="parol"/>FG</l><r>–<s n="pos"/>$(</r></p></e>
+   <e><p><l>–<s n="parol"/>FGA</l><r>–<s n="pos"/>$(</r></p></e>
+   <e><p><l>-<s n="parol"/>FGT</l><r>-<s n="pos"/>$(</r></p></e>
+   <e><p><l>–<s n="parol"/>FGT</l><r>–<s n="pos"/>$(</r></p></e>
+   <e><p><l>”<s n="parol"/>FPT</l><r>”<s n="pos"/>$(</r></p></e>
+   <e><p><l>…<s n="parol"/>FS</l><r>…<s n="pos"/>$.</r></p></e>
+   <e><p><l>´<s n="parol"/>Fz</l><r>´<s n="pos"/>$(</r></p></e>
+   <e><p><l>°<s n="parol"/>Fz</l><r>°<s n="pos"/>$(</r></p></e>
+   <e><p><l>’<s n="parol"/>Fz</l><r>’<s n="pos"/>$(</r></p></e>
+   <e><p><l>@<s n="parol"/>Fz</l><r>@<s n="pos"/>$(</r></p></e>
+   <e><p><l>′<s n="parol"/>Fz</l><r>′<s n="pos"/>$(</r></p></e>
+   <e><p><l><s n="parol"/>Fz</l><r><s n="pos"/>$(</r></p></e>
 
   </section>
 </dictionary>
