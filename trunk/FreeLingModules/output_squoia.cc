@@ -202,6 +202,12 @@ void output::PrintWordCRFMorf (wostream &sout, const word &w, bool first_nonpunc
   const wchar_t* sep = L"\t";
   const wchar_t* dummy = L"ZZZ";
   const wchar_t* NPtag = L"NP";
+  const wchar_t* VGtag = L"G0000";
+  const wchar_t* VarGform = L"ando";
+  const wchar_t* VarGform2 = L"ándo";
+  const wchar_t* VierGform = L"endo";
+  const wchar_t* VierGform2 = L"éndo";
+  const wchar_t* ViMperative = L"VMM";
   //wstring tags = L"";
   wstring NPstr = L"";
   wstring notNPtag = L"";
@@ -259,6 +265,25 @@ void output::PrintWordCRFMorf (wostream &sout, const word &w, bool first_nonpunc
         lem_i++;
       }
       //tags += sep + ait->get_tag();*/
+      std::size_t gerundtag = ait->get_tag().find(VGtag);
+      std::size_t gerundform1 = w.get_form().find(VarGform);
+      std::size_t gerundform2 = w.get_form().find(VarGform2);
+      std::size_t gerundform3 = w.get_form().find(VierGform);
+      std::size_t gerundform4 = w.get_form().find(VierGform2);
+      if ((gerundtag==2) and 
+	  (gerundform1 != std::string::npos or gerundform2 != std::string::npos or gerundform3 != std::string::npos or gerundform4 != std::string::npos)) {
+        //wcerr << ait->get_lemma() << L" is a gerund form\n";
+        sout << sep << ait->get_lemma() << sep << ait->get_tag();
+        i++;
+	break;
+      }
+      std::size_t imperative = ait->get_tag().find(ViMperative);
+      if (imperative == 0) {
+        wcerr << ait->get_lemma() << L" is an imperative form\n";
+        sout << sep << ait->get_lemma() << sep << ait->get_tag();
+        i++;
+        break;
+      }
       std::size_t found = ait->get_tag().find(NPtag);
       if ( first_nonpunct_word and (found==0) ) {	// found "NP" at beginning of tag
         nptag++;
