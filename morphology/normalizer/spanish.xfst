@@ -201,9 +201,13 @@
        define mpuDIR [ {mu}"@MU" -> [m|n]"@MU"  ||  _ ?* "@PU" ];
 
        #----------------------------------------------------------------------------------------------#
-       # pu regressive --> pa only before ku and mu (might otherwise be confused with -pa repetitive) #
+       # pu regressive --> pa only before ku and mu                                                   #
+       # with -ku: if -na in between pu->pa seems to be optional (?), TODO: check!                    #
        #----------------------------------------------------------------------------------------------#
-       define pupa [ {pu}"@PU" -> {pa}"@PU" ||  _  ?* ["@KU"|"@MU"] ];
+       define pupamu [ {pu}"@PU" -> {pa}"@PU" ||  _  ?* "@MU" ];
+       define pupaku [ {pu}"@PU" -> {pa}"@PU" ||  _  [{ku}|{ka}]"@KU"];
+       define pupanaku [ {pu}"@PU" (->) {pa}"@PU" ||  _  [{naku}|{naka}]"@KU"];
+       define pupa pupamu .o. pupaku .o. pupanaku;
 
        #-----------------------------------------------------------------------#
        # ku reflexive --> ka before chi and mu and pu (possibley before na (?) #
@@ -313,7 +317,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=6 DB @re"v-v-6-norm.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
 
-    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,5} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
 
 
 #####################################################################################
@@ -359,7 +363,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define VtoNfinal DB @re"v-n-final.regex" ;
        define VtoNfinalTrans DB @re"v-n-transitive.regex" ;
        define Relational [ "[" "--" "]" {n} "[" "NDeriv" "]" "[" "+Rel" "]" ] : {n};
-       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower .o. QuechuaOrtho .o.UpperCase;
+       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,5} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower .o. QuechuaOrtho .o.UpperCase;
 
        #------------------------#
        # nominalized verbs:     #
@@ -453,8 +457,8 @@ define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %
 # exclude combinations of -na, Reubicative and verb makers that are homophonous with transitional nominal person markers (only relevant for ambiguous roots!),
 # e.g. taki -na -yki should be Obl + 2.Sg.Poss and NOT +Reub and +1.Sg.Subj_2.Sg.Obj
 
-# -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers
-define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" ]];
+# -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers, transitive nominalized forms: na-suyki etc, not -na -su (aug) -yki
+define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" | "+Aug"%] %["^DB"%] "@INTRsu" ]];
 
 # botella -> not bote-lla, cosechan -> not cose-cha-n
 define LexRestr [~$[ {bote} %["NRootES"%] %["^DB"%] %["--"%]{lla}%[ | {cose} %["VrootES"%] %["--"%] {cha} %[ ]];

@@ -102,4 +102,5 @@
 |  [ "@PORTMANTEAU" "[" "--" "]" {wanqaku} "[" "VPers" "]" "[" "+3.Subj_1.Pl.Excl.Obj.Fut" "]" ] : {wanqaku}
 |  [ "@PORTMANTEAU" "[" "--" "]" {waychik} "[" "VPers" "]" "[" "+2.Pl.Subj_1.Sg.Obj.Imp" "]" ] : {waychiq}
 |  [ "@PORTMANTEAU" "[" "--" "]" {wayku} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Pl.Obj.Imp" "]" ] : {wayku}
+|  [ "@PORTMANTEAU" "[" "--" "]" {way} "[" "VPers" "]" "[" "+2.Sg.Subj_1.Sg.Obj" "]" ] : {way}
 ;

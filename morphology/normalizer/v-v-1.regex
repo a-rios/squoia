@@ -28,8 +28,6 @@
 | [ "[" "--" "]" {cha} "[" "VDeriv" "]" "[" "+Vdim" "]" ] : {cha}"@Vdim"
 | [ "[" "--" "]"  {pa} "[" "VDeriv" "]" "[" "+Rep" "]" ] : {pa}
 | [ "[" "--" "]" {paya} "[" "VDeriv" "]" "[" "+MRep" "]" ] : {paya}
-| [ "[" "--" "]" {na} "[" "VDeriv" "]" "[" "+Rzpr" "]" ] : {na}
-| [ "[" "^DB" "]" "[" "--" "]"  {chi} "[" "VDeriv" "]" "[" "+Caus" "]" ] : {chi}"@CHI"
 | [ "[" "--" "]"  {ri} "[" "VDeriv" "]" "[" "+Inch" "]" ] : {ri}"@RI"
 | [ "[" "--" "]" {lli} "[" "VDeriv" "]" "[" "+Autotrs" "]" ] : {lli} 
 # sufijos aymaras prestados en ciertos dialectos:
@@ -47,4 +45,6 @@
 # directional: hacia abajo
 | [ "[" "--" "]" {t'a} "[" "VDeriv" "]" "[" "+Mom" "]" ] : {t'a}
 # aspect: acción única, momentánea y breve
+# -qi: sufijo que aparece en voces onomatopeyicas, p.e. phuqchiqi-, q'aqyaqi-, qhulluqi- (<Aymara?)
+| [ "[" "--" "]" {qi}  "[" "VS" "]" "[" "+Onom" "]"] : {qi}
 ;

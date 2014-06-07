@@ -293,7 +293,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=6 DB @re"v-v-6-norm.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
 
-    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) V=V=1^{0,2} (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
 
 
 #####################################################################################
@@ -339,7 +339,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define VtoNfinal DB @re"v-n-final.regex" ;
        define VtoNfinalTrans DB @re"v-n-transitive.regex" ;
        define Relational [ "[" "--" "]" {n} "[" "NDeriv" "]" "[" "+Rel" "]" ] : {n};
-       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower .o. QuechuaOrtho .o.UpperCase;
+       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,3} (HonAff) V=V=1^{0,2} (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower .o. QuechuaOrtho .o.UpperCase;
 
        #------------------------#
        # nominalized verbs:     #

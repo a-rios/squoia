@@ -19,5 +19,24 @@
 | [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichik}
 | [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichis}
 | [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichiq}
+## less frequent sequence: nominalizer+ su/wa +possessive
+# -su -yki, +3.Subj_2.Sg.Obj
+|  [  "[" "--" "]" {suyki} "[" "NPers" "]" "[" "+3.Subj_2.Sg.Obj" "]" ] :  {suyki}
+# -su -ykichik: +3.Subj_2.Pl.Obj
+| [  "[" "--" "]" {suykichik} "[" "NPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {suykichik}
+| [  "[" "--" "]" {suykichik} "[" "NPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {suykichis}
+| [  "[" "--" "]" {suykichik} "[" "NPers" "]" "[" "+3.Subj_2.Pl.Obj" "]" ] : {suykichiq}
+# -su -ykiku: +3.Pl.Subj_2.Sg.Obj
+| [ "[" "--" "]" {suykiku} "[" "NPers" "]" "[" "+3.Pl.Subj_2.Sg.Obj" "]" ] : {suykiku}
+# -wa -ykiku: +2.Sg.Subj_1.Pl.Excl.Obj
+| [  "[" "--" "]" {suykiku} "[" "NPers" "]" "[" "+2.Sg.Subj_1.Pl.Excl.Obj" "]" ] : {waykiku}
+# -wa -ychik:  +3.Subj_1.Pl.Incl.Obj
+| [  "[" "--" "]" {suychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {waychik}
+| [  "[" "--" "]" {suychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {waychis}
+| [  "[" "--" "]" {suychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {waychiq}
+# -wa -ykichik: +2.Pl.Subj_1.Obj
+| [  "[" "--" "]" {suykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {waykichik}
+| [  "[" "--" "]" {suykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {waykichis}
+| [  "[" "--" "]" {suykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {waykichiq}
 ;
 
