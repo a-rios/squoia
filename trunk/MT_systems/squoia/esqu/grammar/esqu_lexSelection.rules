@@ -87,6 +87,10 @@ hijo		ususi	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or
 hijo		wawa	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de"]]/CHUNK/NODE[starts-with(@smi,"NCF")]}
 hijo		churi	k	xpath{following-sibling::CHUNK[@type="grup-sp"][NODE[@slem="de" or @slem="del"]]/CHUNK/NODE[starts-with(@smi,"NCM")]}
 
+# padre -> only tayta-mama if plural (los padres)
+padre		tayta-mama	d	!(my.smi=/NCMP/)
+
+
 # other ambiguities
 
 #edad, mita (era), wata (años),TODO: edad de hielo/piedra/etc 
