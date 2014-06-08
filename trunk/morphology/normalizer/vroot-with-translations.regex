@@ -159,6 +159,7 @@
 | [ {chamqa} "[" "VRoot" "]" "[" "=moler,lanzar" "]" ] :  {ch'anqa}
 | [ {ch'anta} "[" "VRoot" "]" "[" "=unir" "]" ] :  {ch'anta}
 | [ {ch'anta} "[" "VRoot" "]" "[" "=unir" "]" ] :  {chanta}
+| [ {chanti} "[" "VRoot" "]" "[" "=clavar,punzar" "]" ] :  {chanti}
 | [ {ch'antu} "[" "VRoot" "]" "[" "=efectuar" "]" ] :  {ch'antu}
 | [ {ch'antu} "[" "VRoot" "]" "[" "=efectuar" "]" ] :  {chantu}
 | [ {chapa} "[" "VRoot" "]" "[" "=cubrir,espiar,invadir" "]" ] :  {chapa}
@@ -457,7 +458,7 @@
 | [ {hich'a} "[" "VRoot" "]" "[" "=derramar" "]" ] :  {icha}
 | [ {ichhu} "[" "VRoot" "]" "[" "=segar_paja" "]" ] :  {ichhu}
 | [ {ichi} "[" "VRoot" "]" "[" "=detenerse" "]" ] :  {ichi}
-| [ {ichhu} "[" "VRoot" "]" "[" "=segar_paja" "]" ] :  {ichu}
+#| [ {ichhu} "[" "VRoot" "]" "[" "=segar_paja" "]" ] :  {ichu}
 | [ {ikara} "[" "VRoot" "]" "[" "=curar" "]" ] :  {ikara}
 | [ {ikchu} "[" "VRoot" "]" "[" "=hipar" "]" ] :  {ikchu}
 | [ {iki} "[" "VRoot" "]" "[" "=copular" "]" ] :  {iki}
@@ -654,6 +655,7 @@
 | [ {k'unrururu} "[" "VRoot" "]" "[" "=sonar_el_terremoto" "]" ] :  {k'unrururu}
 | [ {k'unrururu} "[" "VRoot" "]" "[" "=sonar_el_terremoto" "]" ] :  {kunrururu}
 | [ {kupa} "[" "VRoot" "]" "[" "=sobar" "]" ] :  {kupa}
+| [ {k'upa} "[" "VRoot" "]" "[" "=ensortijarse_los_cabellos" "]" ] :  {k'upa}
 | [ {kurku} "[" "VRoot" "]" "[" "=agacharse" "]" ] :  {kurku}
 | [ {k'urpa} "[" "VRoot" "]" "[" "=barbechar" "]" ] :  {k'urpa}
 | [ {kuru} "[" "VRoot" "]" "[" "=agusanarse" "]" ] :  {kuru}
@@ -690,6 +692,7 @@
 | [ {laqhi} "[" "VRoot" "]" "[" "=deshojar" "]" ] :  {laqhi}
 | [ {laqichu} "[" "VRoot" "]" "[" "=abofetear" "]" ] :  {laqichu}
 | [ {laqhi} "[" "VRoot" "]" "[" "=deshojar" "]" ] :  {laqi}
+| [ {laq'uchi} "[" "VRoot" "]" "[" "=chasquear" "]" ] :  {laq'uchi}
 | [ {laqya} "[" "VRoot" "]" "[" "=abofetear" "]" ] :  {laqya}
 | [ {lara} "[" "VRoot" "]" "[" "=quebrar" "]" ] :  {lara}
 | [ {last'a} "[" "VRoot" "]" "[" "=ensanchar" "]" ] :  {last'a}
@@ -1262,6 +1265,7 @@
 | [ {q'iwi} "[" "VRoot" "]" "[" "=torcer" "]" ] :  {qiwi}
 | [ {q'uchu} "[" "VRoot" "]" "[" "=divertirse" "]" ] :  {q'uchu}
 | [ {q'uchu} "[" "VRoot" "]" "[" "=divertirse" "]" ] :  {quchu}
+| [ {q'ula} "[" "VRoot" "]" "[" "=incinerar" "]" ] :  {q'ula}
 | [ {qullu} "[" "VRoot" "]" "[" "=amontonar,extinguir" "]" ] :  {qullu}
 | [ {qullqa} "[" "VRoot" "]" "[" "=entrojar" "]" ] :  {qullqa}
 | [ {q'umpu} "[" "VRoot" "]" "[" "=apelotonar" "]" ] :  {q'umpu}
@@ -1817,6 +1821,7 @@
 | [ {chaqma} "[" "VRoot" "]" "[" "=barbechar" "]" ] : {chaqma} 
 | [ {chaqna} "[" "VRoot" "]" "[" "=encadenar" "]" ] : {chaqna} 
 | [ {ch'ararara} "[" "VRoot" "]" "[" "=berrear,chirriar" "]" ] : {ch'ararara} 
+| [ {ch'arwa} "[" "VRoot" "]" "[" "=exprimir,ordeñar" "]" ] : {ch'arwa} 
 | [ {ch'arwi} "[" "VRoot" "]" "[" "=desordenar" "]" ] : {ch'arwi} 
 | [ {ch'aspa} "[" "VRoot" "]" "[" "=asaltar,atracar,pillar,raptar" "]" ] : {ch'aspa} 
 | [ {chhamqa} "[" "VRoot" "]" "[" "=frangollar" "]" ] : {chhamqa} 
@@ -1832,6 +1837,7 @@
 | [ {chinlili} "[" "VRoot" "]" "[" "=tintinear" "]" ] : {chinlili} 
 | [ {chinu} "[" "VRoot" "]" "[" "=arrullar" "]" ] : {chinu} 
 | [ {chiphchi} "[" "VRoot" "]" "[" "=cuchichear,murmurar,refulgir,relucir" "]" ] : {chiphchi} 
+| [ {chiphchi} "[" "VRoot" "]" "[" "=cuchichear,murmurar,refulgir,relucir" "]" ] : {chhiphchi} 
 | [ {chipipipi} "[" "VRoot" "]" "[" "=reverberar" "]" ] : {chipipipi} 
 | [ {ch'iqiqiqi} "[" "VRoot" "]" "[" "=chisporrotear" "]" ] : {ch'iqiqiqi} 
 | [ {chirara} "[" "VRoot" "]" "[" "=despejar" "]" ] : {chirara} 
@@ -1849,6 +1855,7 @@
 | [ {hapt'a} "[" "VRoot" "]" "[" "=llevar_en_puño,medir_en_puñados" "]" ] : {hapt'a} 
 | [ {hast'i} "[" "VRoot" "]" "[" "=atizar_el_fuego" "]" ] : {hast'i} 
 | [ {hasut'i} "[" "VRoot" "]" "[" "=azotar,chicotear,flagelar,latiguear" "]" ] : {hasut'i} 
+| [ {hasut'i} "[" "VRoot" "]" "[" "=azotar,chicotear,flagelar,latiguear" "]" ] : {hasuti} 
 | [ {hat'a} "[" "VRoot" "]" "[" "=echar_o_despedir_con_enfado" "]" ] : {hat'a} 
 | [ {hayñinqa} "[" "VRoot" "]" "[" "=honrar,prestigiar,reputar" "]" ] : {hayñinqa} 
 | [ {hayrata} "[" "VRoot" "]" "[" "=castigar,condenar,sancionar,sentenciar" "]" ] : {hayrata} 

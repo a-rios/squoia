@@ -215,10 +215,11 @@
 
        #--------------------------------------------------------------------------------------#
        # -yku becomes -yka before -mu, -pu, -ysi, -chi, -ri, -cha                             #
-       # and -na. Seems not always to be the case, therefore, this rule is optional (->)      #
+       # and -na (and -ku? sometimes).                                                        #
+       # Seems not always to be the case, therefore, this rule is optional (->)               #
        #--------------------------------------------------------------------------------------#
-       define ykuyka1 [ {yku}"@YKU" (->) {yka}"@YKU" || _   ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"+Rzpr"]];
-       define ykuyka2 [ {yu}"@YKU" (->) {ya}"@YKU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"+Rzpr"]];
+       define ykuyka1 [ {yku}"@YKU" (->) {yka}"@YKU" || _   ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"+Rzpr"|"@KU"]];
+       define ykuyka2 [ {yu}"@YKU" (->) {ya}"@YKU" || _ ?* ["@MU"|"@PU"|"@YSI"|"@CHI"|"@RI"|"+Rzpr"|"@KU"]];
        
        #--------------------------------------------------------------------------------------------------------------------------#
        # -mu translocative --> as -m only before pu (might otherwise be confused wth -mpa, positional, -mpu can be written as npu #
@@ -361,10 +362,9 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define N=N=5 DB @re"n-n-5.regex" ;
        define N=N=6 DB @re"n-n-6.regex" ;
        define N=N=7 DB @re"n-n-7.regex" ;
-       define kamaDist [ "[" "^DB" "]" "[" "--" "]" {kama}  "[" "Cas" "]" "[" "+Dist" "]"] : {kama};
-       define nkaDist [ "[" "^DB" "]" "[" "--" "]" {nka}  "[" "Cas" "]" "[" "+Dist" "]"] : {nka};
+       define niqAprx [ "[" "^DB" "]" "[" "--" "]" {niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : [{niq}|{ñiq}];
 
-      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist|nkaDist) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  ;
+      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) (niqAprx) N=N=2^{0,2} (HonAff) (N=N=5) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  ;
      
 ######################################################################################
 
@@ -482,13 +482,13 @@ define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
        # demonstrative pronouns #
        #------------------------#
        define PrnDem @re"prndem.regex";
-       define PrnDemInfl [PrnDem (HonAff) (AS=1) (HonAff) (AS=2) (N=N=1) (N=N=2) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} N=N=7^{0,2}];
+       define PrnDemInfl [PrnDem (HonAff) (AS=1) (HonAff) (AS=2) (N=N=1) (niqAprx)  (N=N=2) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} N=N=7^{0,2}];
 
        #------------------------#
        # interrogative pronouns #
        #------------------------#
        define PrnInterrog @re"prninterrog.regex";
-       define PrnInterrogInfl [PrnInterrog (N=N=1) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} (N=N=7)^{0,2}];
+       define PrnInterrogInfl [PrnInterrog (N=N=1) (niqAprx) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} (N=N=7)^{0,2}];
 
 define Prn PossessivPlural .o. [PrnPersInfl|PrnDemInfl|PrnInterrogInfl] ;
 
@@ -644,7 +644,7 @@ define IMANAWAQAYCHALLALLA [~$[ {ima} %[ ["Part_Conec" %]|"NRoot"%] %["=cosa"%]]
 # compounds: pachmama, wiraqucha, compounds with urqu -> not if first noun has infinitive -> e.g. qhawayurqu -> y[NS][+Inf][^DB][--]urqu, usut'anta, not usu-t'anta (->husut'anta)
 define COMPOUNDS [~$[ "=mundo,tiempo"%] %["^DB"%] %["--"%] {mama}%[ | "=grasa"%] %["^DB"%] %["--"%] {qucha}%[ | "+Inf"%] %["^DB"%] %["--"%] {urqu}%[ | "=desperdicio"%] %["^DB"%] %["--"%] {t'anta}%[ ]];
 
-# ñawpaq, chiqap/chiqaq, llump'aq, ch'usaq, ichuq, illaq, ñawraq, ariq, tupaq, yuraq, hayk'aq, askhaq -> achkhaq (abundante), no achkha-q
+# ñawpaq, chiqap/chiqaq, llump'aq, ch'usaq, ichuq - ichhuq (only in relax, because of rule that allows insertion of h), illaq, ñawraq, ariq, tupaq, yuraq, hayk'aq, askhaq -> achkhaq (abundante), no achkha-q
 define AQROOTS [~$["@NAWPA" %["^DB"%]  %["--"%] [q|p] %[ | ["@CHIQA"|"@CHANI"] %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichhu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"|"@ALLI"|"@CHIQA"|"@CHANI"] %["^DB"%] "@GENq" | [{ari}|{ichhu}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=segar_paja"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS" | {hayk'a} %[ ["NRoot"|"PrnInterr"] %] %[ ["=varios"|"=cuánto"] %] %["^DB"%] "@GENq" | "=mucho"%] %["^DB"%] "@GENq" ]]; 
 
 # other ambiguous roots: illapa, hukucha/huk'ucha(q), puputi, sipas, taksapas (*tak-sapa-s), chanincha- -> chani -n -cha (*chanin-cha), resqina -> riqsi-na, no ri-q-sina, munaycha -> nor muna -y -cha (asmp), umalliq: not uma (engañar) + lli

@@ -446,7 +446,7 @@ define VDERIV [VDeriv1|VDeriv2];
 
 #define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3)  (N=N=5) (N=N=6) (N=N=7) (AS)] ;
 define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3) (AS)] ;
-define NounConverbTrans watrans .o. sutrans .o. [[NDeriv1finalTrans|NDeriv1finalTrans2] (HonAff) npers (N=N=5) (N=N=6) (N=N=7)] ;;
+define NounConverbTrans watrans .o. sutrans .o. [[NDeriv1finalTrans|NDeriv1finalTrans2] (HonAff) npers (N=N=5) (N=N=6) (N=N=7) (AS)] ;;
 define NounNormal  PossessivPlural .o. [[NROOT|NDERIV] NounSuffixes] ;
 define Noun [NounConverb|NounNormal|NounConverbTrans];
 define Verb  [[VROOT|VDERIV] VerbSuffixes];

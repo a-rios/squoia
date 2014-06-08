@@ -14,6 +14,7 @@
 | [ {pichqa} "[""NRootNUM"  "]" ] :   {phichqa}
 | [ {pichqa} "[""NRootNUM"  "]" ] :   {pisqa}
 | [ {pichqa} "[""NRootNUM"  "]" ] :   {phisqa}
+| [ {pichqa} "[""NRootNUM"  "]" ] :   {phiska}
 | [ {suqta} "[""NRootNUM"  "]" ] :   {suqta}
 | [ {qanchis} "[""NRootNUM"  "]" ] :   {qanchis}
 | [ {qanchis} "[""NRootNUM"  "]" ] :   {q'anchis}
