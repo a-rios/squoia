@@ -3340,6 +3340,7 @@ de_parte_<de> de_parte_de $3:SP I
 de_sobras de_sobras RG I
 debido_a_que debido_a_que CS I
 después_que después_que CS I
+día_y_noche día_y_noche RG I
 en_especial en_especial RG I
 en_caso_de_que en_caso_de_que CS I
 en_colaboración_con en_colaboración_con SPS00 I
