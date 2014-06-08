@@ -5,6 +5,9 @@
 | [ {arrienda} "[" "VRootES" "]" ] :  {arrinda}
 | [ {bendeci} "[" "VRootES" "]" ] :  {bindisi}
 | [ {cambia} "[" "VRootES" "]" ] :  {kambiya}
+| [ {cargona} "[" "VRootES" "]" ] :  {cargona}
+| [ {celosa} "[" "VRootES" "]" ] :  {celosa}
+| [ {chanza} "[" "VRootES" "]" ] :  {chanza}
 | [ {coge} "[" "VRootES" "]" ] :  {kuhi}
 | [ {comoda} "[" "VRootES" "]" ] :  {kumuda}
 | [ {confia} "[" "VRootES" "]" ] :  {kunfiya}
@@ -22,6 +25,7 @@
 | [ {deja} "[" "VRootES" "]" ] :  {diha}
 | [ {desea} "[" "VRootES" "]" ] :  {disya}
 | [ {destrui} "[" "VRootES" "]" ] :  {distruwi}
+| [ {entiende} "[" "VRootES" "]" ] :  {entiende}
 | [ {festeja} "[" "VRootES" "]" ] :  {fiyista}
 | [ {festeja} "[" "VRootES" "]" ] :  {phista}
 | [ {freí} "[" "VRootES" "]" ] :  {friyi}
