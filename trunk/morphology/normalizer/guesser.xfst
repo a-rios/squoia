@@ -293,7 +293,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=6 DB @re"v-v-6-norm.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
 
-    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) V=V=1^{0,2} (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff)  V=V=2^{0,5} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
 
 
 #####################################################################################
@@ -324,6 +324,18 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
 
       define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
      #  define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff)  (kamaDist) (N=N=3) (HonAff) (N=N=4) (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
+
+######################################################################################
+     
+      ######################
+      #                    #
+      # PROPER NAMES       #
+      #                    #
+      ######################
+      
+      define NPRoots @re"NP.regex" ;
+      define NPsuffixes   [ (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2}] .o. QuechuaOrtho .o. UpperCase ;
+      define properNames [NPRoots NPsuffixes (AS)];
      
 ######################################################################################
 
@@ -445,9 +457,9 @@ define MINSUFFIX  [~$[ ?*"--"?* ] ];
 
 
 #define Wort IGRules .o. [[Noun|Verb] (AS)] .o. NounRules .o. GENACC .o. AmbiRules ;
-define Wort IGRules .o. [Noun|Verb] .o. NounRules  .o. AmbiRules ;
+define Wort  ~MINSUFFIX .o. IGRules .o. [Noun|Verb] .o. NounRules  .o. AmbiRules ;
 
-read regex Cleanup2 .o. ~MINSUFFIX .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent;
+read regex Cleanup2 .o. FeatRestr .o. [Wort|properNames]  .o. Cleanup1 .o. Accent;
 #read regex Cleanup2 .o. ~MINSUFFIX .o. YWAN .o. Wort  .o. Cleanup1 .o. Accent;
 
 

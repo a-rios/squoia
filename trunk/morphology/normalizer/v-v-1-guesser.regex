@@ -24,8 +24,8 @@
 | [ "[" "--" "]" {cha} "[" "VDeriv" "]" "[" "+Vdim" "]" ] : {cha}"@Vdim"
 #| [ "[" "--" "]"  {pa} "[" "VDeriv" "]" "[" "+Rep" "]" ] : {pa}
 | [ "[" "--" "]" {paya} "[" "VDeriv" "]" "[" "+MRep" "]" ] : {paya}
-| [ "[" "--" "]" {na} "[" "VDeriv" "]" "[" "+Rzpr" "]" ] : {na}
-| [ "[" "^DB" "]" "[" "--" "]"  {chi} "[" "VDeriv" "]" "[" "+Caus" "]" ] : {chi}"@CHI"
+#| [ "[" "--" "]" {na} "[" "VDeriv" "]" "[" "+Rzpr" "]" ] : {na}
+#| [ "[" "^DB" "]" "[" "--" "]"  {chi} "[" "VDeriv" "]" "[" "+Caus" "]" ] : {chi}"@CHI"
 | [ "[" "--" "]"  {ri} "[" "VDeriv" "]" "[" "+Inch" "]" ] : {ri}"@RI"
 | [ "[" "--" "]" {lli} "[" "VDeriv" "]" "[" "+Autotrs" "]" ] : {lli} 
 # sufijos aymaras prestados en ciertos dialectos:
