@@ -5888,7 +5888,7 @@ icha	icha[Part_Contr]
 
 qullqita	qullqi[NRoot][=plata][^DB][--]ta[Cas][+Acc]
 
-apamuwaq	apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]wa[VPers][+1.Obj][^DB][--]q[NS][+Ag]
+apamuwaq	apa[VRoot][=llevar][--]mu[VDeriv][+Cis_Trs][^DB][--]waq[VPers][+2.Sg.Subj.Pot]
 
 kachi	kachi[NRoot][=sal]
 
@@ -6274,9 +6274,9 @@ kani	ka[VRoot][=ser][^DB][--]ni[VPers][+1.Sg.Subj]
 
 manan	mana[Part_Neg][^DB][--]n[Amb][+DirE]
 
-madrinayman	madrina[NRootES][^DB][--]y[NPers][+1.Sg.Poss][^DB][--]man[Cas][+Dat_Ill]
+madrinayman	madrina[NRootES][^DB][--]y[NPers][+1.Sg.Poss]
 
-teneyta	tene[VRootES][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
+manteneyta	mantene[VRootES][^DB][--]y[NS][+Inf][^DB][--]ta[Cas][+Acc]
 
 munawanñachu	muna[VRoot][=querer][^DB][--]wa[VPers][+1.Obj][^DB][--]n[VPers][+3.Sg.Subj][^DB][--]ña[Amb][+Disc][^DB][--]chu[Amb][+Intr_Neg]
 
@@ -6884,7 +6884,9 @@ lliw	lliw[NRoot][=todo]
 
 yuraq	yuraq[NRoot][=blanco]
 
-rit'iqtapasqan	rit'iqtapasqan	+?
+rit'iq	rit'i[NRoot][=nieve][--]p[Cas][+Gen]
+
+tapasqan	tapa[VRootES][--]sqa[NS][+Perf][^DB][--]n[Amb][+DirE]
 
 .	.[$,]
 
