@@ -1279,7 +1279,48 @@
    <e><p><l>vencido</l><r>überwunden</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vendido</l><r>verkauft</r></p><par n='AQ_ADJ'/></e>
 </section>
-<section id="Verbs-diariodelcusco" type="standard">
+<section id="Verbs-30mostfreq-diariodelcusco" type="standard">
+   <e><p><l>anotar</l><r>vermerken</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>asistir</l><r>besuchen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>asistir</l><r>helfen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>asumir</l><r>an|nehmen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>asumir</l><r>übernehmen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>brindar</l><r>an|bieten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>caber</l><r>passen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>capturar</l><r>fest|nehmen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>clasificar</l><r>ein|teilen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>combatir</l><r>kämpfen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>comentar</l><r>besprechen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>complicar</l><r>erschweren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>comunicar</l><r>mit|teilen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>considerar</l><r>berücksichtigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>conversar</l><r>sich_unterhalten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>corresponder</l><r>entsprechen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>denunciar</l><r>an|klagen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>dialogar</l><r>miteinander sprechen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>disputar</l><r>streiten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>efectuar</l><r>aus|führen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>ejecutar</l><r>durch|führen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>expresar</l><r>aus|drücken</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>laborar</l><r>bearbeiten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>puntualizar</l><r>klar|stellen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>puntualizar</l><r>vervollständigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sancionar</l><r>bestätigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sancionar</l><r>erlassen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sancionar</l><r>strafen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sentenciar</l><r>entscheiden</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sentenciar</l><r>verurteilen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sostener</l><r>unterstützen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>suscribir</l><r>abonnieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>suscribir</l><r>unterzeichnen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sustentar</l><r>unterhalten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>transferir</l><r>übertragen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>transferir</l><r>überweisen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>ubicar</l><r>sich befinden</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>verificar</l><r>bestätigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>verificar</l><r>überprüfen</r></p><par n='VM_VV_MAIN'/></e>
+</section>
+<section id="MWU-Verbs-diariodelcusco" type="standard">
    <e><p><l>cometer_errores</l><r>Fehler_begehen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>dar_la_gana</l><r>Lust_machen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>dar_paso</l><r>Zutritt_verschaffen</r></p><par n='VM_VV_MAIN'/></e>
@@ -1301,7 +1342,7 @@
    <e><p><l>captura_de_datos</l><r>Datenerfassung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>equipo_nacional</l><r>Nationalmannschaft</r></p><par n='NC_N_NUM_FEM'/></e>
 </section>
-<section id="MWE-diariodelcusco" type="standard">
+<section id="MWE-Nouns-diariodelcusco" type="standard">
    <e><p><l>cadena_perpetua</l><r>lebenslänglich_Zuchthaus</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>calidad_de_vida</l><r>Lebensqualität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>director_general</l><r>Generaldirektor</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -24609,7 +24650,7 @@
    <e><p><l>pagaré</l><r>Schuldschein</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>página</l><r>Blatt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>página</l><r>Seite</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>p</l><r>post</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- TODO hack to avoid segmentation fault in matxin-xfer-lex -->
+   <!--e><p><l>p</l><r>post</r></p><par n='NC_N_NUM_NOUN'/></e>	 TODO hack to avoid segmentation fault in matxin-xfer-lex -->
    <e><p><l>página_web</l><r>Internetseite</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>pág.</l><r>Seite</r></p><par n='NC_N_76_FEDER'/></e> <!-- TODO abbreviations -->
    <e><p><l>pago</l><r>Zahlung</r></p><par n='NC_N_NUM_FEM'/></e>
