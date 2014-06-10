@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 use strict;
+use utf8;
 use open ':utf8';
 binmode STDIN, ':utf8';
 binmode STDERR, ':utf8';
@@ -532,7 +533,7 @@ if($mode eq '-3')
 		}
 		#push(@$word, \@possibleClasses);
 		@$word[2] = \@possibleClasses;
-		#print @$word[0].": @possibleClasses\n";
+		print STDERR @$word[0].": possible classes: @possibleClasses\n";
 		
 	}
 	# store @words to disk
@@ -907,7 +908,7 @@ sub disambMorph2{
 				if(@$word[3] eq 'amb2')
 				{
 					$ambigForms++;
-					print STDERR "xfst: @$word[0]  crf: @crfRows[0]\n";
+					#print STDERR "xfst: @$word[0]  crf: @crfRows[0]\n";
 					my $correctMorph = @crfRows[-1];
 					my $form = @$word[0];
 					$correctMorph =~ s/\n//;
