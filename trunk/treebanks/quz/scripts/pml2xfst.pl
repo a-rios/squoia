@@ -44,7 +44,7 @@ my %mapTagsToSuffixFormsNormalized = (
      '+Caus'         => 'chi',
      '+Char'         => 'ti|li',
      '+Cis_Trs'         => 'm(u)?',
-     '+Cont'         => 'nya',
+     '+Cont'         => 'nya|raq',
      '+Con_Inst'         => 'wan',
      '+Con_Intr'         => 'taq',
      '+DS'         => 'pti',
@@ -86,11 +86,11 @@ my %mapTagsToSuffixFormsNormalized = (
      '+Perf'         => 'sqa',
      '+Pl'         => 'kuna',
      '+Posi'         => 'mpa',
-     '+Poss'         => 'yuq',
+     '+Poss'         => '(ni)?yuq',
      '+Pot'         => 'man',
      '+Priv'         => 'nnaq',
      '+Prog'         => 'chka',
-     '+Proloc'         => 'nta',
+     '+Proloc'         => '(ni)?nta',
      '+QTop'         => 'ri',
      '+Rel'         => 'n',
      '+Rem'         => 'ymana',
@@ -132,7 +132,7 @@ my %mapTagsToSuffixFormsNormalized = (
      '+1.Sg.Subj_2.Sg.Obj'         => 'yki',
      '+1.Sg.Subj_2.Sg.Obj.Fut'         => 'sqayki',
      '+2.Obj'         => 'su',
-     '+2.Pl.Poss'         => 'ykichik',
+     '+2.Pl.Poss'         => '(ni)?ykichik',
      '+2.Pl.Subj'         => 'nkichik',
      '+2.Pl.Subj.Pot'         => 'waqchik',
      '+2.Pl.Subj_1.Sg.Obj.Imp'         => 'waychik',
@@ -145,7 +145,7 @@ my %mapTagsToSuffixFormsNormalized = (
      '+2.Sg.Subj_1.Pl.Obj.Imp'         => 'yku',
      '+3.Poss'         => '(ni)?n',
      '+3.Pl.Subj.IPst'         => 'sqaku',
-     '+3.Pl.Poss'         => 'nku',
+     '+3.Pl.Poss'         => '(ni)?nku',
      '+3.Pl.Subj'         => 'nku',
      '+3.Pl.Subj.Fut'         => 'nqaku',
      '+3.Pl.Subj.Hab'         => 'qku',
@@ -185,7 +185,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+Caus'         => 'chi',
      '+Char'         => 'ti|li',
      '+Cis_Trs'         => 'm(u)?|n',
-     '+Cont'         => 'nya',
+     '+Cont'         => 'nya|raq',
      '+Con_Inst'         => 'wan',
      '+Con_Intr'         => 'taq',
      '+DS'         => '[qp]ti',
@@ -227,11 +227,11 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+Perf'         => 'sqa',
      '+Pl'         => 'kuna',
      '+Posi'         => 'mpa',
-     '+Poss'         => 'y[uo]q',
+     '+Poss'         => '([nñ]i)?y[uo]q',
      '+Pot'         => 'man',
      '+Priv'         => 'nnaq',
-     '+Prog'         => 'chka|sha',
-     '+Proloc'         => 'nta',
+     '+Prog'         => 'chka|sha|sa|sya',
+     '+Proloc'         => '([nñ]i)?nta',
      '+QTop'         => 'ri',
      '+Rel'         => 'n',
      '+Rem'         => 'ymana',
@@ -273,7 +273,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+1.Sg.Subj_2.Sg.Obj'         => 'yki',
      '+1.Sg.Subj_2.Sg.Obj.Fut'         => 'sqayki',
      '+2.Obj'         => 'su',
-     '+2.Pl.Poss'         => 'ykichi[ksqj]',
+     '+2.Pl.Poss'         => '([nñ]i)?ykichi[ksqj]',
      '+2.Pl.Subj'         => 'nkichi[ksqj]',
      '+2.Pl.Subj.Pot'         => 'waqchi[ksqj]',
      '+2.Pl.Subj_1.Sg.Obj.Imp'         => 'waychi[ksqj]',
@@ -286,7 +286,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+2.Sg.Subj_1.Pl.Obj.Imp'         => 'yku',
      '+3.Poss'         => '([nñ]i)?n',
      '+3.Pl.Subj.IPst'         => 'sqaku',
-     '+3.Pl.Poss'         => 'nku',
+     '+3.Pl.Poss'         => '([nñ]i)?nku',
      '+3.Pl.Subj'         => 'nku',
      '+3.Pl.Subj.Fut'         => 'nqaku',
      '+3.Pl.Subj.Hab'         => 'qku',
@@ -312,7 +312,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
 foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
 	# for debugging:
-	print STDERR "sentence: ".$sentence->getAttribute('id')."\n";
+	#print STDERR "sentence: ".$sentence->getAttribute('id')."\n";
 	
 	my @terminals = $sentence->findnodes('descendant::terminal');
 	#print "length terminals: ".scalar(@terminals)."\n";
@@ -399,16 +399,13 @@ sub getAnalysis{
 			# match at the end of the string
 			#my ($morphform) = $token =~ m/(\Q$morphformregex\E)$/;
 			my $morphform;
-			if($morphtag eq '+Cis_Trs'){
-				$morphform = $token =~ m/($morphformregex)\Epu$/;
-			}
 			($morphform) = $token =~ m/($morphformregex)\E$/;
 			if(!$morphform){
 				print STDERR "root: could not find $morphformregex for $morphtag in $token\n";
 				exit;
 			}
 			
-			$token =~ s/$morphformregex\E$//;
+			$token =~ s/$morphform$//;
 			
 			if($i<scalar(@pos)-1){
 				$analysis = $morphform."[".$p."][".@tags[$i]->textContent."][--]".$analysis;
@@ -448,7 +445,7 @@ sub getAnalysis{
 					print STDERR "could not find $morphformregex for $morphtag in $token, at $i, id: ".$terminal->getAttribute('id')."\n";
 					exit;
 				}
-				$token =~ s/^$morphformregex\E//;
+				$token =~ s/^$morphform//;
 				
 				if($i<scalar(@pos)-1){
 					$analysis .= $morphform."[".$p."][".$morphtag."][--]";
