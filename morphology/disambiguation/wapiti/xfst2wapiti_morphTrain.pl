@@ -525,7 +525,18 @@ for (my $i=0;$i<scalar(@words);$i++){
 			#print $morphsref;
 			foreach my $morph (@$morphsref){
 			unless($printedmorphs =~ /\Q$morph\E/){
-			print "$morph\t";
+				# in portmanteau forms -sunki -> only +3.Subj_2.Sg.Obj, -> insert +2/1.Obj in order to have the same morphtags as with regular sequences (-su .. -nki)
+				if($morph =~ /.+_2\.(Sg|Pl)\.Obj/ && $printedmorphs !~ /\+2\.\Obj/){
+					print "+2.Obj\t";
+					$printedmorphs = $printedmorphs."+2.Obj";
+					$nbrOfMorph++;
+				}
+				if($morph =~ /.+_1\.(Sg|Pl(\.Incl|\.Excl))\.Obj/ && $printedmorphs !~ /\+1\.\Obj/){
+					print "+1.Obj\t";
+					$printedmorphs = $printedmorphs."+1.Obj";
+					$nbrOfMorph++;
+				}
+				print "$morph\t";
 				$printedmorphs = $printedmorphs.$morph;
 				$nbrOfMorph++;
 				}

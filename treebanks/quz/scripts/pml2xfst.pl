@@ -381,7 +381,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 sub getAnalysis{
 	my $terminal = $_[0];
 	my $token = @{$terminal->findnodes('word')}[0]->textContent;
-	$token =~ s/^-(.)/\1/;
+	$token =~ s/^-(.+)/\1/;
 	my $pos = @{$terminal->findnodes('pos')}[0]->textContent;
 	my @pos = split('_',$pos);
 	my @tags = $terminal->findnodes('descendant::tag');
@@ -428,17 +428,19 @@ sub getAnalysis{
 		$analysis .= "[SP]";
 	}
 	else{
-		for(my $i=0; $i<scalar(@pos);$i++){
+		for(my $i=0; $i<scalar(@pos);$i++)
+		{
 			my $p = @pos[$i];
 			# if morpheme(s)
 			if(@tags[$i])
 			{
 				my $morphtag = @tags[$i]->textContent;
+				if($morphtag eq '+3.Sg.Subj.IPst' or $morphtag eq '+3.Sg.Subj.NPst'){
+					$p = "Tns_VPers";
+					$i++;
+				}
 				my $morphformregex = ($mode eq '-norm')? $mapTagsToSuffixFormsNormalized{$morphtag} : $mapTagsToSuffixFormsNotNormalized{$morphtag};
 				my $morphform;
-				if($morphtag eq '+Cis_Trs'){
-					$morphform = $token =~ m/^($morphformregex)\Epu/;
-				}
 				($morphform) = $token =~ m/^($morphformregex)\E/;
 				
 				if(!$morphform){
@@ -446,7 +448,6 @@ sub getAnalysis{
 					exit;
 				}
 				$token =~ s/^$morphform//;
-				
 				if($i<scalar(@pos)-1){
 					$analysis .= $morphform."[".$p."][".$morphtag."][--]";
 				}
@@ -458,10 +459,10 @@ sub getAnalysis{
 			# else: punctuation:
 			# .		.[$.]
 			else{
+				print 
 				$analysis = $token."[".$p."]";
 			}
 		}
-
 	}
 	return $analysis;
 	
