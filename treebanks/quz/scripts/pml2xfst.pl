@@ -348,7 +348,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 				# new word: print last word, then print this
 				if(&isNewWord($token)){
 					# delete [^DB] after last suffix
-					$analysis =~ s/\[\^DB\]\[--\]$//;
+					$analysis =~ s/(\[\^DB\])?\[--\]$//;
 					print "$wordform\t$analysis\n\n";
 					$wordform = $token;
 					$analysis = &getAnalysis($terminal);
@@ -361,7 +361,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 					$wordform .= $token;
 					$analysis .= &getAnalysis($terminal);
 					# delete [^DB] after last suffix
-					$analysis =~ s/\[\^DB\]\[--\]$//;
+					$analysis =~ s/(\[\^DB\])?\[--\]$//;
 					#print "last $i: $wordform\t$analysis\n\n";
 					print "$wordform\t$analysis\n\n";
 				}
@@ -399,12 +399,12 @@ sub getAnalysis{
 			# match at the end of the string
 			#my ($morphform) = $token =~ m/(\Q$morphformregex\E)$/;
 			my $morphform;
+			
 			($morphform) = $token =~ m/($morphformregex)\E$/;
 			if(!$morphform){
 				print STDERR "root: could not find $morphformregex for $morphtag in $token\n";
 				exit;
 			}
-			
 			$token =~ s/$morphform$//;
 			
 			if($i<scalar(@pos)-1){
@@ -417,10 +417,11 @@ sub getAnalysis{
 		}
 		if(@{$terminal->findnodes('translation')}[0]){
 			my $translation = @{$terminal->findnodes('translation')}[0]->textContent;
-			$analysis = $token."[".@tags[0]->textContent."][$translation][--]".$analysis; 
+			$analysis = ($analysis ne '') ? $token."[".@tags[0]->textContent."][$translation][--]".$analysis : $token."[".@tags[0]->textContent."][$translation][^DB][--]" ;
 		}
 		else{
-			$analysis = $token."[".@tags[0]->textContent."][--]".$analysis; 
+			$analysis = ($analysis ne '') ? $analysis = $token."[".@tags[0]->textContent."][--]".$analysis : $analysis = $token."[".@tags[0]->textContent."][^DB][--]";
+			#$analysis = $token."[".@tags[0]->textContent."][--]".$analysis; 
 		}
 		
 	}
