@@ -312,7 +312,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
 foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
 	# for debugging:
-	#print STDERR "sentence: ".$sentence->getAttribute('id')."\n";
+	print STDERR "sentence: ".$sentence->getAttribute('id')."\n";
 	
 	my @terminals = $sentence->findnodes('descendant::terminal');
 	#print "length terminals: ".scalar(@terminals)."\n";
@@ -384,7 +384,7 @@ sub getAnalysis{
 	$token =~ s/^-(.+)/\1/;
 	my $pos = @{$terminal->findnodes('pos')}[0]->textContent;
 	my @pos = split('_',$pos);
-	my @tags = $terminal->findnodes('descendant::tag');
+	my @tags = $terminal->findnodes('child::morph/tag');
 	my $analysis = '';
 	#$analysis = $token;
 	if($pos =~ 'Root')
@@ -436,7 +436,7 @@ sub getAnalysis{
 			if(@tags[$i])
 			{
 				my $morphtag = @tags[$i]->textContent;
-				if($morphtag eq '+3.Sg.Subj.IPst' or $morphtag eq '+3.Sg.Subj.NPst'){
+				if($morphtag eq '+3.Sg.Subj.IPst' or $morphtag eq '+3.Sg.Subj.NPst' or $morphtag eq '+3.Pl.Subj.IPst' or $morphtag eq '+3.Pl.Subj.NPst'){
 					$p = "Tns_VPers";
 					$i++;
 				}
@@ -460,7 +460,6 @@ sub getAnalysis{
 			# else: punctuation:
 			# .		.[$.]
 			else{
-				print 
 				$analysis = $token."[".$p."]";
 			}
 		}
