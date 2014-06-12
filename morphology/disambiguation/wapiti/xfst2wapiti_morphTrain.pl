@@ -344,9 +344,10 @@ if($mode eq '-3')
 		my $string = @$analyses[0]->{'string'};
 		my $form = @$word[0];
 		my $xfstAnalyses =  $xfstWords{$form};
-		#print "$form morphs: $allmorphs\n";
+		#print "$form morphs: $allmorphs\n  string: $string\n";
 		
-		if(exists($xfstWords{$form}) && scalar(@$xfstAnalyses)>1)
+	#	if(exists($xfstWords{$form}) && scalar(@$xfstAnalyses)>1)
+		if(exists($xfstWords{$form}) )
 		{
 			# TODO: missing in training material: rqakun -> rqa -ku -n/ -rqaku -m
 			# yku-n
@@ -387,14 +388,6 @@ if($mode eq '-3')
 				#print "$form class $actualClass\n";
 			}
 			# -pis
-#			elsif(&containedInOtherMorphs($xfstAnalyses,"+Loc+IndE","+Add"))
-#			{
-#				push(@possibleClasses, "Loc_IndE");
-#				push(@possibleClasses, "Add");
-#				if($allmorphs =~ /\Q+Loc+IndE\E/){$actualClass = "Loc_IndE";}
-#				elsif($allmorphs =~ /Add/ ){$actualClass = "Add";}
-#				@$word[4] = &sentenceHasEvid(\@words, $i);
-#			}
 			# get also the ones with -pas for training, otherwise we have only Loc_IndE in training (additive ocurrs only as -pas in trainig texts!)
 			elsif($allmorphs =~ /\Q+Loc+IndE\E/ || ($allmorphs =~ /\Q+Add\E/ && $string !~ /Add.*(IndE|DirE|Asmp)/) )
 			{
