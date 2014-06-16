@@ -614,7 +614,7 @@
 | [ {humu} "[" "NRoot" "]" "["  "=razón" "]" ] : {humu}
 | [ {hunaq} "[" "NRoot" "]" "["  "=día" "]" ] : {hunaq}
 | [ {hunina} "[" "NRoot" "]" "["  "=pasto" "]" ] : {hunina}
-| [ {huñi} "[" "NRoot" "]" "["  "=madeja" "]" ] : {huñi}
+| [ {huñi} "[" "NRoot" "]" "["  "=anuencia,asentimiento" "]" ] : {huñi}
 | [ {hunk'a} "[" "NRoot" "]" "["  "=semana" "]" ] : {hunk'a}
 | [ {hunk'a} "[" "NRoot" "]" "["  "=semana" "]" ] : {hunka}
 | [ {hunt'a} "[" "NRoot" "]" "["  "=lleno" "]" ] : {hunt'a}
@@ -1894,7 +1894,7 @@
 | [ {ranak'i} "[" "NRoot" "]" "["  "=penumbra" "]" ] : {ranak'i}
 | [ {rana} "[" "NRoot" "]" "["  "=venta" "]" ] : {rana}
 | [ {ranra} "[" "NRoot" "]" "["  "=pedregoso" "]" ] : {ranra}
-| [ {ranti} "[" "NRoot" "]" "["  "=compra,representante,delegado" "]" ] : {ranti}
+| [ {ranti} "[" "NRoot" "]" "["  "=compra,representante,delegado,sustituo" "]" ] : {ranti}
 | [ {rapa} "[" "NRoot" "]" "["  "=llama" "]" ] : {rapa}
 | [ {rap'a} "[" "NRoot" "]" "["  "=página" "]" ] : {rap'a}
 | [ {rap'i} "[" "NRoot" "]" "["  "=hoja" "]" ] : {raphi}

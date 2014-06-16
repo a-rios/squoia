@@ -24,6 +24,7 @@
 | [ {cristiano} "["  "NRootES"  "]" ] :   {kristiyanu}
 | [ {dañado} "["  "NRootES"  "]" ] :   {dañaw}
 | [ {dedo} "["  "NRootES"  "]" ] :   {riru}
+| [ {revista} "["  "NRootES"  "]" ] :   {riwista}
 | [ {delicado} "["  "NRootES"  "]" ] :   {dilikaw}
 | [ {de_repente} "["  "NRootES"  "]" ] :   {diripinti}
 | [ {de_repente} "["  "NRootES"  "]" ] :   {ridipinti}
