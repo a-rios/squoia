@@ -315,8 +315,8 @@
 | [ {ch'urku} "[" "VRoot" "]" "[" "=resolver" "]" ] :  {ch'urku}
 | [ {churpu} "[" "VRoot" "]" "[" "=poner_encima_de_fogón" "]" ] :  {churpu}
 | [ {churu} "[" "VRoot" "]" "[" "=circundar" "]" ] :  {churu}
-| [ {ch'usa} "[" "VRoot" "]" "[" "=faltar,ausentarse" "]" ] :  {ch'usa}
-| [ {ch'usa} "[" "VRoot" "]" "[" "=faltar,ausentarse" "]" ] :  {chusa}
+| [ {ch'usa} "[" "VRoot" "]" "[" "=faltar,ausentarse,viajar" "]" ] :  {ch'usa}
+| [ {ch'usa} "[" "VRoot" "]" "[" "=faltar,ausentarse,viajar" "]" ] :  {chusa}
 | [ {ch'uski} "[" "VRoot" "]" "[" "=pelar" "]" ] :  {ch'uski}
 | [ {ch'uski} "[" "VRoot" "]" "[" "=pelar" "]" ] :  {chuski}
 | [ {chusni} "[" "VRoot" "]" "[" "=zumbar" "]" ] :  {chusni}

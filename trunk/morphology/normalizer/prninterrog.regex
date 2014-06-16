@@ -6,6 +6,8 @@
 | [ {hayk'a} "[" "PrnInterr" "]" "["  "=cuánto" "]"]: {hayk'a}
 | [ {hayk'a} "[" "PrnInterr" "]" "["  "=cuánto" "]"]: {jayka}
 | [ {hayk'a} "[" "PrnInterr" "]" "["  "=cuánto" "]"]: {jayk'a}
+| [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {haykap}
+| [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {hayk'ap}
 | [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {haykaq}
 | [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {hayk'aq}
 | [ {hayk'ap} "[" "PrnInterr" "]" "["  "=cuándo" "]" ]: {jaykaq}
