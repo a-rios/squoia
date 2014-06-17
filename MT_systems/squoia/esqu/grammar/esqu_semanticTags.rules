@@ -126,6 +126,21 @@ rikra	[+Mov]	my.smi=/^V/
 sat'i	[+Mov]	my.smi=/^V/
 mudar	[+Mov]	-
 
+# time units
+año		[+time]		my.smi=/^N/
+mes		[+time]		my.smi=/^N/
+semana		[+time]		my.smi=/^N/
+día		[+time]		my.smi=/^N/
+hora		[+time]		my.smi=/^N/
+segundo		[+time]		my.smi=/^N/
+minuto		[+time]		my.smi=/^N/
+milisegundo	[+time]		my.smi=/^N/
+década		[+time]		my.smi=/^N/
+siglo		[+time]		my.smi=/^N/
+milenio		[+time]		my.smi=/^N/
+semestre	[+time]		my.smi=/^N/
+trimestre	[+time]		my.smi=/^N/
+
 # perception verbs
 contemplar	[+Perc]		my.smi=/^V/
 descubrir	[+Perc]		my.smi=/^V/

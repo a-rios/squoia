@@ -136,7 +136,8 @@ desde		case=+Abl
 #después_de 	postpos=hawa TODO, really hawa? qhipa seems better (?)
 después_de 	postpos=qhipa
 desque		case=+Abl
-durante		func=deleteNode
+durante		postpos=puriynin ukhupi,nouncase=+Gen		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+time]"]}		-
+durante		func=deleteNode		-	+
 en		case=+Loc		-	+
 en		case=+Acc		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="confiar" or @slem="comerciar"]}	-
 en		case=+Dat		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="poner" or @slem="introducir" or @slem="meter" or @slem="insertar" or @slem="penetrar" or @slem="entrar" or @slem="enclavar" or @slem="colocar" or @slem="acoplar" or @slem="depositar" or @slem="convertir"]}	-
@@ -173,6 +174,7 @@ en_cuanto_a	case=+Top
 en_medio_de	postpos=chawpin,nouncase=+Gen
 
 entre		case=+Intsoc		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Masc]" or @sem="[+Fem]" or @sem="[+Hum]"]}	-
+#entre		postpos=ukhu		-	-	# TODO rule?
 entre		postpos=chawpi		-	+
 
 excepto		prepos=mana,func=neg
