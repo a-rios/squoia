@@ -239,7 +239,8 @@ while (<>) {
     }
     $wn++;
    }}
-   if ($rtok =~ /^[.?!;]+$/ or $rtok =~ /#EOS/) {	# end of sentence
+  # if ($rtok =~ /^[.?!;]+$/ or $rtok =~ /#EOS/) {	# end of sentence
+  if ($rtok =~ /#EOS/) {
     if ($in_sentence) {
      print STDOUT $end_sent;	# print EOS
      $sn++;			# and prepare new sentence

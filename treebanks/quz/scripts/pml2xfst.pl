@@ -64,7 +64,7 @@ my %mapTagsToSuffixFormsNormalized = (
      '+Fact'         => 'cha',
      '+Gen'         => 'p(a)?',
      '+IPst'         => 'sqa',
-     '+Iclsv'         => 'ntin',
+     '+Iclsv'         => '(ni)?ntin',
      '+Inch'         => 'ri',
      '+IndE'         => 's(i)?',
      '+IndE_Emph'         => 'sá',
@@ -161,8 +161,8 @@ my %mapTagsToSuffixFormsNormalized = (
      '+3.Sg.Subj'         => 'n',
      '+3.Sg.Subj.Fut'         => 'nqa',
      '+3.Subj_1.Pl.Excl.Obj.Fut'         => 'wanqaku',
-     '+3.Subj_1.Pl.Incl.Obj'         => 'ychik',
-     '+3.Subj_1.Pl.Incl.Obj.Fut'         => 'wasunchik',
+     '+3.Subj_1.Pl.Incl.Obj'         => 'nchik',
+     '+3.Subj_1.Pl.Incl.Obj.Fut'         => 'sunchik',
      '+3.Subj_2.Pl.Obj'         => 'ykichik',
      '+3.Subj_2.Sg.Obj'         => 'sunki',
 	);
@@ -302,8 +302,8 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+3.Sg.Subj'         => 'n',
      '+3.Sg.Subj.Fut'         => 'nqa',
      '+3.Subj_1.Pl.Excl.Obj.Fut'         => 'wanqaku',
-     '+3.Subj_1.Pl.Incl.Obj'         => 'ychi[ksqj]',
-     '+3.Subj_1.Pl.Incl.Obj.Fut'         => 'wasunchi[ksqj]',
+     '+3.Subj_1.Pl.Incl.Obj'         => 'nchi[ksqj]',
+     '+3.Subj_1.Pl.Incl.Obj.Fut'         => 'sunchi[ksqj]',
      '+3.Subj_2.Pl.Obj'         => 'ykichi[ksqj]',
      '+3.Subj_2.Sg.Obj'         => 'sunki',
 	);
@@ -400,7 +400,7 @@ sub getAnalysis{
 			#my ($morphform) = $token =~ m/(\Q$morphformregex\E)$/;
 			my $morphform;
 			
-			($morphform) = $token =~ m/($morphformregex)\E$/;
+			($morphform) = lc($token) =~ m/($morphformregex)\E$/;
 			if(!$morphform){
 				print STDERR "root: could not find $morphformregex for $morphtag in $token\n";
 				exit;
@@ -442,7 +442,7 @@ sub getAnalysis{
 				}
 				my $morphformregex = ($mode eq '-norm')? $mapTagsToSuffixFormsNormalized{$morphtag} : $mapTagsToSuffixFormsNotNormalized{$morphtag};
 				my $morphform;
-				($morphform) = $token =~ m/^($morphformregex)\E/;
+				($morphform) = lc($token) =~ m/^($morphformregex)\E/;
 				
 				if(!$morphform){
 					print STDERR "could not find $morphformregex for $morphtag in $token, at $i, id: ".$terminal->getAttribute('id')."\n";
