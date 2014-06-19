@@ -427,6 +427,8 @@
      <value>Asp</value>
      <value>Asp_Amb</value>
      <value>Asp_VPers</value>
+     <!-- Asp_Tns -> only possible if -lla between tense and person, e.g. ka -chka -rqa -lla -n -taq      -->
+     <value>Asp_Tns</value>
      <value>Asp_Tns_VPers</value>
      <value>Asp_Tns_VPers_Mod</value>
      <value>Asp_VPers_Mod</value>
@@ -455,6 +457,7 @@
      <value>NS_NDeriv</value>
      <value>NS_NDeriv_Num</value>
      <value>NS_Num</value>
+     <value>NS_VS</value>
      <value>PrnPers+1.Sg_NDeriv</value>
      <value>PrnPers+1.Sg_Num</value>
      <value>PrnPers+2.Sg_NDeriv</value>
