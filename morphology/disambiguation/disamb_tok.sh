@@ -4,12 +4,28 @@ export XFST_DIR=/home/clsquoia/google_squoia/morphology/normalizer
 
 export TOKENIZER=$XFST_DIR/tokenize.pl
 
+# POS_MODEL=wapiti/model1/model_lbfgs_nowordforms
+# MORPH1_MODEL=wapiti/model2/model_lbfgs_lc
+# MORPH2_MODEL=wapiti/model3/model_lc_bigrammLemmas
+# MORPH3_MODEL=wapiti/model4/model_lc_bigrammLemmas
 
-POS_MODEL=wapiti/model1/model_lbfgs_nowordforms
+# with inforesources
+# POS_MODEL=wapiti/model1/model_lbfgs_nowordforms_w_inforesources
+# MORPH1_MODEL=wapiti/model2/model_lbfgs_lc_with_inforesources 
+# MORPH2_MODEL=wapiti/model3/model_lc_bigrammLemmas_with_inforesources
+# MORPH3_MODEL=wapiti/model4/model_lc_bigrammLemmas_with_inforesources
 
-MORPH1_MODEL=wapiti/model2/model_lbfgs_lc
-MORPH2_MODEL=wapiti/model3/model_lc_bigrammLemmas
-MORPH3_MODEL=wapiti/model4/model_lc_bigrammLemmas
+# with ahk
+# POS_MODEL=wapiti/model1/model_w_ahk
+# MORPH1_MODEL=wapiti/model2/model_w_ahk 
+# MORPH2_MODEL=wapiti/model3/model_w_ahk
+# MORPH3_MODEL=wapiti/model4/model_w_ahk
+
+# with inforesources +ahk
+POS_MODEL=wapiti/model1/model_w_inforesources_ahk
+MORPH1_MODEL=wapiti/model2/model_w_inforesources_ahk
+MORPH2_MODEL=wapiti/model3/model_w_inforesources_ahk
+MORPH3_MODEL=wapiti/model4/model_w_inforesources_ahk
 
 TMP_DIR=tmp2
 EVID="aya"
