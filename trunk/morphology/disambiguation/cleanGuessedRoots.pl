@@ -30,67 +30,74 @@ if($add ne '-pis' and $add ne '-pas'){
 my @words;
 my $newWord=1;
 my $index=0;
+my $analysisStrings ="";
 
 while(<>)
 {
 	if (/^$/)
 	{
 		$newWord=1;
+		$analysisStrings ="";
 	}
 	else
 	{	
 		my ($form, $analysis) = split(/\t/);
-	
-		my ($root) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$|AdvES|PrepES|ConjES)/ ;
-		#print "$analysis\n";
 		
-		if($root eq ''){
-			if($form eq '#EOS'){
-				$root = '#EOS';
-			}
-			else{
-				$root = "ZZZ";
-			}
-		}
-		
-		my $guessed = 0;
-		if($analysis =~ m/(VRootG|NRootG)/){
-			$guessed = 1;
-		}
-		my $np=0;
-		if($analysis =~ m/\[NP\]/){
-			$np = 1;
-		}
-		
-		my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
-	
-		#print "$form: $root morphs: @morphtags\n";
-		my %hashAnalysis;
-		$hashAnalysis{'pos'} = $root;
-		$hashAnalysis{'morph'} = \@morphtags;
-		$hashAnalysis{'string'} = $_;
-		$hashAnalysis{'guessed'} = $guessed;
-		$hashAnalysis{'form'} = $form;
-    
-		if($newWord)
+		# if there is another analysis that is exactly the same: delete one of them
+		unless($analysisStrings =~ /\Q##$_##\E/)
 		{
-			my @analyses = ( \%hashAnalysis ) ;
-			#my @word = ($form, \@analyses);
-			my @word = $np==1 ? ($form, \@analyses, $np) : ($form, \@analyses);
-			push(@words,\@word);
-			$index++;
-		}
-		else
-		{
-			my $thisword = @words[-1];
-			my $analyses = @$thisword[1];
-			push(@$analyses, \%hashAnalysis);
-			if($np){
-				@$thisword[2] =1;
+			$analysisStrings .= "##$_##";
+			my ($root) = $analysis =~ m/(ALFS|CARD|NP|NRoot|Part|VRoot|PrnDem|PrnInterr|PrnPers|SP|\$|AdvES|PrepES|ConjES)/ ;
+			#print "$analysis\n";
+			
+			if($root eq ''){
+				if($form eq '#EOS'){
+					$root = '#EOS';
+				}
+				else{
+					$root = "ZZZ";
+				}
+			}
+			
+			my $guessed = 0;
+			if($analysis =~ m/(VRootG|NRootG)/){
+				$guessed = 1;
+			}
+			my $np=0;
+			if($analysis =~ m/\[NP\]/){
+				$np = 1;
+			}
+			
+			my @morphtags =  $analysis =~ m/(\+.+?)\]/g ;
+		
+			#print "$form: $root morphs: @morphtags\n";
+			my %hashAnalysis;
+			$hashAnalysis{'pos'} = $root;
+			$hashAnalysis{'morph'} = \@morphtags;
+			$hashAnalysis{'string'} = $_;
+			$hashAnalysis{'guessed'} = $guessed;
+			$hashAnalysis{'form'} = $form;
+	    
+			if($newWord)
+			{
+				my @analyses = ( \%hashAnalysis ) ;
+				#my @word = ($form, \@analyses);
+				my @word = $np==1 ? ($form, \@analyses, $np) : ($form, \@analyses);
+				push(@words,\@word);
+				$index++;
+			}
+			else
+			{
+				my $thisword = @words[-1];
+				my $analyses = @$thisword[1];
+				push(@$analyses, \%hashAnalysis);
+				if($np){
+					@$thisword[2] =1;
+				}
 			}
 		}
 		$newWord=0;	
- }
+	 }
 	
 }
 
@@ -126,8 +133,7 @@ foreach my $word (@words){
 				splice (@{$analyses},$j,1);	
 				$j--;
 				#print STDERR "deleted analysis: $string \n";
-			}
-			
+			}			
 			
 			my ($root) = ($string =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
 			my ($rootPos) = ($string =~ m/\[(.*?Root.*?)\]/ );
@@ -230,51 +236,51 @@ foreach my $word (@words){
 	}
 	
 	# find guessed roots -> take shortest (can be more than one!)
-#	if(@$analyses[0]->{'guessed'} == 1){
-#		#print @$analyses[0]->{'string'}."\n";
-#		my $string = @$analyses[0]->{'string'};
-#		my ($shortestRoot) = ($string =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
-#		my $length = length($shortestRoot);
-#		#print $shortestRoot." length: ".length($shortestRoot)."\n";
-#		
-#		# find shortest root
+	if(@$analyses[0]->{'guessed'} == 1){
+		#print @$analyses[0]->{'string'}."\n";
+		my $string = @$analyses[0]->{'string'};
+		my ($shortestRoot) = ($string =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
+		my $length = length($shortestRoot);
+		#print $shortestRoot." length: ".length($shortestRoot)."\n";
+		
+		# find shortest root
+		for(my $j=0;$j<scalar(@$analyses);$j++) {
+			my $analysis = @$analyses[$j];
+			my $stringTest = $analysis->{'string'};
+			#print $stringTest;
+			my ($shortestRootTest) = ($stringTest =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
+			if(length($shortestRootTest)<$length && length($shortestRootTest)>2){
+				$shortestRoot = $shortestRootTest;
+				$length = length($shortestRootTest);
+			}
+			# if root in first analysis was only 2
+			elsif($length<3){
+				$shortestRoot = $shortestRootTest;
+				$length = length($shortestRootTest);
+			}
+		}
+		
+		#print "shortest: $shortestRoot, $length\n";
+		#delete all analyses with other roots than $shortestRoot
+		for(my $j=0;$j<scalar(@$analyses);$j++) {
+			my $analysis = @$analyses[$j];
+			my $stringTest = $analysis->{'string'};
+			my ($shortestRootTest) = ($stringTest =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
+			unless($shortestRoot eq $shortestRootTest){
+				splice (@{$analyses},$j,1);	
+				$j--;
+				#print "remove: $stringTest";
+			}
+		}
+		
+#		print "after deletion: \n";
 #		for(my $j=0;$j<scalar(@$analyses);$j++) {
 #			my $analysis = @$analyses[$j];
-#			my $stringTest = $analysis->{'string'};
-#			#print $stringTest;
-#			my ($shortestRootTest) = ($stringTest =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
-#			if(length($shortestRootTest)<$length && length($shortestRootTest)>2){
-#				$shortestRoot = $shortestRootTest;
-#				$length = length($shortestRootTest);
-#			}
-#			# if root in first analysis was only 2
-#			elsif($length<3){
-#				$shortestRoot = $shortestRootTest;
-#				$length = length($shortestRootTest);
-#			}
+#			print $analysis->{'string'};
 #		}
-#		
-#		#print "shortest: $shortestRoot, $length\n";
-#		#delete all analyses with other roots than $shortestRoot
-#		for(my $j=0;$j<scalar(@$analyses);$j++) {
-#			my $analysis = @$analyses[$j];
-#			my $stringTest = $analysis->{'string'};
-#			my ($shortestRootTest) = ($stringTest =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
-#			unless($shortestRoot eq $shortestRootTest){
-#				splice (@{$analyses},$j,1);	
-#				$j--;
-#				#print "remove: $stringTest";
-#			}
-#		}
-#		
-##		print "after deletion: \n";
-##		for(my $j=0;$j<scalar(@$analyses);$j++) {
-##			my $analysis = @$analyses[$j];
-##			print $analysis->{'string'};
-##		}
-##		print "\n";
-#		
-#	}
+#		print "\n";
+		
+	}
 
 }
 

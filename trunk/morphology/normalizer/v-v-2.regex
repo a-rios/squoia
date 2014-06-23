@@ -6,6 +6,6 @@
 | [ "[" "--" "]" {na} "[" "VDeriv" "]" "[" "+Rzpr" "]" ] : {na}
 | [ "[" "^DB" "]" "[" "--" "]"  {chi} "[" "VDeriv" "]" "[" "+Caus" "]" ] : {chi}"@CHI"
 # might occur in between
-| [ "[" "--" "]" {lla} "[" "Amb" "]" "[" "+Lim_Aff" "]"] : {lla}
+| [ "[" "^DB" "]" "[" "--" "]" {lla} "[" "Amb" "]" "[" "+Lim_Aff" "]" ] : {lla}
 ;
 #|  [ "[" "--" "]" {n}"+nn" "[" "VDeriv" "]" "[" "+Cis_Trs" "]" ] :  {n}"@MU";

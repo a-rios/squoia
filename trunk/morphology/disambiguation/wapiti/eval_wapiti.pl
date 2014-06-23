@@ -102,6 +102,7 @@ if($mode eq '-pos' or $mode eq '-morph')
 					# discount root errors from previous step
 					if( ($classCRF eq 'none' && $classGOLD ne 'none') || ($classCRF ne 'none' && $classGOLD eq 'none') ){
 							$prevErrors++;
+							#print "$crfLine  $goldLine\n\n";
 					}
 					elsif($classCRF ne 'none'){
 						$wrongClass++;

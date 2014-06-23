@@ -533,8 +533,9 @@ if($mode eq '-3')
 		}
 		#push(@$word, \@possibleClasses);
 		@$word[2] = \@possibleClasses;
-		print STDERR @$word[0].": possible classes: @possibleClasses\n";
-		
+#		if(scalar(@possibleClasses)>1){
+#			print STDERR @$word[0].": possible classes: @possibleClasses\n";
+#		}
 	}
 	# store @words to disk
 	store \@words, 'words3';
