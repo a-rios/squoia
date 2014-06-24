@@ -317,6 +317,15 @@ if($mode eq '-1')
 				@$word[3] = "amb";
 				#print "@$word[0]\n";
 			}
+			# -waq (2.Pot) vs. -wa -q (Ag)
+			elsif(&containedInOtherMorphs($analyses,"\Q+1\.Obj+Ag\E","\Q\+2\.Sg\.Subj\.Pot\E"))
+			{
+				push(@possibleClasses, "2Pot");
+				push(@possibleClasses, "Ag");
+				#push(@ambWords,$word);
+				@$word[3] = "amb";
+				#print "@$word[0]\n";
+			}
 			
 			# else: other ambiguities, leave
 			else
@@ -807,10 +816,13 @@ sub disambMorph1{
 							# -ykuna: Inf, Aff_Obl
 							# -kuna: Pl, Rflx_Obl
 							# -cha: Fact, Dim
+							# -waq: 2Pot, Ag
 							#$correctMorph = s/\n//;
 							chomp($correctMorph);
 							if($correctMorph eq 'Aff_Obl'){$correctMorph = 'Aff+Obl';}
 							if($correctMorph eq 'Rflx_Obl'){$correctMorph = 'Rflx+Obl';}
+							if($correctMorph eq '2Pot'){$correctMorph = '+2.Sg.Subj.Pot';}
+							if($correctMorph eq 'Ag'){$correctMorph = '+1.Obj+Ag';}
 							#print STDERR "$form: all: $allmorphs, correct: $correctMorph"."ll\n";
 							if($allmorphs !~ /\Q$correctMorph\E/ && scalar(@$analyses) > 1){
 								#print STDERR "delete: $allmorphs\n";

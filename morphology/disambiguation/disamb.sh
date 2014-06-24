@@ -28,7 +28,7 @@ export TOKENIZER=$XFST_DIR/tokenize.pl
 
 # with inforesources +ahk
 POS_MODEL=wapiti/model1/model_w_inforesources_ahk
-MORPH1_MODEL=wapiti/model2/model_w_inforesources_ahk
+MORPH1_MODEL=wapiti/model2/model_w_inforesources_ahk_WAQ
 MORPH2_MODEL=wapiti/model3/model_w_inforesources_ahk
 MORPH3_MODEL=wapiti/model4/model_w_inforesources_ahk
 
