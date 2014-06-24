@@ -2356,7 +2356,6 @@
 | [ {waklla} "[" "NRoot" "]" "["  "=ladeado" "]" ] : {waklla}
 | [ {waklli} "[" "NRoot" "]" "["  "=daño" "]" ] : {waklli}
 | [ {wapsi} "[" "NRoot" "]" "["  "=vapor" "]" ] : {waksi}
-| [ {walla} "[" "NRoot" "]" "["  "=guerrero" "]" ] : {walla}
 | [ {wallpa} "[" "NRoot" "]" "["  "=gallina" "]" ] : {wallpa}
 | [ {wallqa} "[" "NRoot" "]" "["  "=collar" "]" ] : {wallqa}
 | [ {wallwak'u} "[" "NRoot" "]" "["  "=áxila,sobaco" "]" ] : {wallwak'u}
@@ -2977,7 +2976,7 @@
 | [ {t'ukuru} "[" "NRoot" "]" "[" "=engrudo,masa" "]" ] : {t'ukuru} 
 | [ {tullpu} "[" "NRoot" "]" "[" "=tinte" "]" ] : {tullpu} 
 | [ {tulumpi} "[" "NRoot" "]" "[" "=pendiente" "]" ] : {tulumpi} 
-| [ {tumpa} "[" "NRoot" "]" "[" "=imputación,inculpación" "]" ] : {tumpa} 
+| [ {tumpa} "[" "NRoot" "]" "[" "=imputación,inculpación,poco" "]" ] : {tumpa} 
 | [ {t'uña} "[" "NRoot" "]" "[" "=triturada" "]" ] : {t'uña} 
 | [ {tuni} "[" "NRoot" "]" "[" "=columna,pilastra,poste" "]" ] : {tuni} 
 | [ {tuska} "[" "NRoot" "]" "[" "=aromo" "]" ] : {tuska} 
@@ -3000,7 +2999,6 @@
 | [ {usuri} "[" "NRoot" "]" "[" "=infeliz,inhábil,inútil,miserable" "]" ] : {usuri} 
 | [ {utukullu} "[" "NRoot" "]" "[" "=úvula" "]" ] : {utukullu} 
 | [ {utukushma} "[" "NRoot" "]" "[" "=corta" "]" ] : {utukushma} 
-| [ {utu} "[" "NRoot" "]" "[" "=agusanado,corroído" "]" ] : {utu}
 | [ {uturunku} "[" "NRoot" "]" "[" "=tigre" "]" ] : {uturunku} 
 | [ {wachala} "[" "NRoot" "]" "[" "=mantilla" "]" ] : {wachala} 
 | [ {wachwa} "[" "NRoot" "]" "[" "=pato" "]" ] : {wachwa} 

@@ -557,7 +557,7 @@ define Particles VerbRulesUpper .o. [[Particle|ParticleBasic|ParticleVerb|Partic
    
 # limit analysis of -qta as genitive-accusative to cases with human roots (e.g. mamaqta richkani - I'm going to my mother's)
 # otherwise: assume -qta as agentive+accusative
-define AccGen [  %["^DB"%] "@GENq" %["--"%]{p} %["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%]{ta}%["Cas"%]  => "@HUM" _  ];
+define AccGen [  %["^DB"%] ("@GENq") %["--"%] [{p}|{pa}] %["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%]{ta}%["Cas"%]  => "@HUM" _  ];
        
 # naya/sun,  -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj, naya/paya/raya: not -rqa -yka, pasaq -> pa-saq, not pasa -q
 define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] | {rqa}"+ru+" %["VDeriv"%] %["+Rptn"%] "@RQU" %["--"%]{yka}"+yu+" | ["+Rzpr"|"+Reub"] %] %["--"%] {yka} "+yu+"| "+Rep"%] %["--"%] {yka} "+yu+" | "+Desesp"%] %["^DB"%] %["--"%] {q} %["NS"%] %["+Ag" ]] ; 
@@ -581,7 +581,7 @@ define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %
 # -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers, transitive nominalized forms: na-suyki etc, not -na -su (aug) -yki
 define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" | "+Aug"%] %["^DB"%] "@INTRsu" ]];
 
-#define FeatRestr [AccGen .o. NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS  ];
+define FeatRestr [AccGen .o. NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS  ];
 
 #define NKUMAN  [~$["+3.Pl.Subj"?*"+Pot"]]; #occurs in Gregorio -> nku -man as potential instead of -manku
 #define WAQ [~$["+1.Obj"%] %["^DB"%] %["--"%]{q}%["NS"%] %["+Ag"]]; #may occur
@@ -611,7 +611,7 @@ define YROOTS [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y} %[ | 
 
 # imana & waqaycha
 # forbid -llalla analized as +Lim+Lim -> if a word contains a sequence -llalla, the first -lla is probably part of the root
-define IMANAWAQAYCHALLALLA [~$[ {ima} %[ ["Part_Conec" %]|"NRoot"%] %["=cosa"%]] %["--"%]{na} %[ | {waqa} %["VRoot"%] %["=llorar"%] %["^DB"%] %["--"%] {y} %["NS"%] %["+Inf"%] %["--"%] [{cha}|{chaq}] %[ |"+Lim_Aff"%] %["^DB"%] %["--"%] {lla} ]];
+define IMANAWAQAYCHALLALLA [~$[ {ima} %[ ["Part_Conec" %]|"NRoot"%] %["=cosa"%]] %["--"%]{na} %[ | {waqa} %["VRoot"%] %["=llorar,defender"%] %["^DB"%] %["--"%] {y} %["NS"%] %["+Inf"%] %["--"%] [{cha}|{chaq}] %[ |"+Lim_Aff"%] %["^DB"%] %["--"%] {lla} ]];
 
 # compounds: pachmama, wiraqucha, compounds with urqu -> not if first noun has infinitive -> e.g. qhawayurqu -> y[NS][+Inf][^DB][--]urqu, usut'anta, not usu-t'anta (->husut'anta)
 define COMPOUNDS [~$[ "=mundo,tiempo"%] %["^DB"%] %["--"%] {mama}%[ | "=grasa"%] %["^DB"%] %["--"%] {qucha}%[ | "+Inf"%] %["^DB"%] %["--"%] {urqu}%[ | "=desperdicio"%] %["^DB"%] %["--"%] {t'anta}%[ ]];
@@ -625,11 +625,11 @@ define AMBROOTS1 [~$[  ["@ILLA" %["^DB"%]| "=amanecer,brillar"%] ] %["--"%] [{pa
 # other ambiguous roots: kamayuq, taklla, kukuli (kuku+li), waranqa (mil vs. wara -n -qa), hamut'a -> not hamu -t'a, habas -> not hawakuna but habas, with roots that end in -ku, forbid followed by -na (+Reub),, e.g. mamakuna not mamaku -na, pichaq -> picha-q not pi-cha-q or pi-chaq, yanapasa: not yana -pasa, pisiya(chi,pu..) -> NRoot+Trs, NOT yka!
 define AMBROOTS2 [~$[ "=gobernar,mandar,crear"%] %["--"%] {yku} "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %[ | {tak}%["NRoot"%] %["=paz"%] %["^DB"%] %["--"%] {lla} %[ | "=fantasma"%] %["--"%] {li} %["NDeriv"  | "=pantalón" %] %["^DB"%] %["--"%] n %["NPers"%] %["+3.Sg.Poss"%] %["^DB"%] %["--"%]{qa}%[ | "=venir" %] %["--"%] {t'a}%[ | "=fuera,arriba"%] %["^DB"%] %["--"%] {s}%[ | {ku}%[ "NRoot" ?* "+Reub" | "=quién" %] %["--"%] [{chaq}|{cha}] %["NDeriv" | "=servir,ayudar"%] %["--"%] {pasa}%[ | "=faltar"%] %["--"%] {yka} "+yu+" ]];
 
-# other ambiguous roots: ñiqin -> not ni -qi -n, yanapa -> not yana pa (rgr_iprs), should be rep, same with atipa
-define AMBROOTS3 [~$[ {ni} %["VRoot"%] %["=decir"%] (%["^DB"%]) %["--"%] {qi} %[ | {ñiqi} %["VRoot"%] %["=abollar"%] %["^DB"%] %["--"%] n %[ | ["=servir,ayudar"|"=poder,vencer"] %] %["--"%] {pa} "+pu+" ]];
+# other ambiguous roots: ñiqin -> not ni -qi -n, yanapa -> not yana pa (rgr_iprs), should be rep, same with atipa, kuchus (=codo), not kuchu -s, apulli not apu-lli
+define AMBROOTS3 [~$[ {ni} %["VRoot"%] %["=decir"%] (%["^DB"%]) %["--"%] {qi} %[ | {ñiqi} %["VRoot"%] %["=abollar"%] %["^DB"%] %["--"%] n %[ | ["=servir,ayudar"|"=poder,vencer"] %] %["--"%] {pa} "+pu+" | {kuchu} %["NRoot"%] %["=corte,cortadura"%] %["^DB"%] %["--"%] s%[ | "=antepasado,abuelo,dios_montano,poderoso"%] %["--"%] {lli}%[ ]];
 
 
-#define LexRestr [ASWANALLIN .o. HATUNPAQARIN .o. KACHARIKU  .o. YROOTS .o. IMANAWAQAYCHALLALLA .o. COMPOUNDS .o. AQROOTS .o. AMBROOTS1 .o. AMBROOTS2 .o. AMBROOTS3];
+define LexRestr [ASWANALLIN .o. HATUNPAQARIN .o. KACHARIKU  .o. YROOTS .o. IMANAWAQAYCHALLALLA .o. COMPOUNDS .o. AQROOTS .o. AMBROOTS1 .o. AMBROOTS2 .o. AMBROOTS3];
 
 
 ######################################################################################
@@ -649,12 +649,10 @@ define NITAQ [ [ {ni} "[" "Part_Contr" "]" "[" "^DB" "]" "[" "--" "]" {taq} "[" 
 
 define preWord IGRules .o. [[Noun|Verb|Prn|Particles|HAKU|HAKUPL] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
 
-#define Word  FeatRestr  .o. NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex Cleanup2 .o. LexRestr .o. Word;
+define Word  FeatRestr  .o. NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+read regex Cleanup2 .o. LexRestr .o. Word;
 
-define Word NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-read regex YROOTS .o. Word;
+#define Word NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
+#read regex YROOTS .o. Word;
 
-
-#save stack normalizer.fst
-save stack normalizer-test.fst
+save stack normalizer.fst

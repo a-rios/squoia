@@ -233,6 +233,14 @@ if($mode eq '-1')
 				elsif($allmorphs =~ /\Q+Vdim\E/){$actualClass = "Vdim";}
 				#print "@$word[0]\n";
 			}
+			# -waq 2.Sg.Pot vs. -wa -q (Ag) NOTE: could not evaluate performance on this ambiguity, occurs in none of the four test texts
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+1.Obj+Ag","+2.Sg.Subj.Pot" )  )
+			{
+				push(@possibleClasses, "2Pot");
+				push(@possibleClasses, "Ag");
+				if($allmorphs =~  /\+2\.Sg\.Subj\.Pot/){$actualClass = "2Pot";}
+				elsif($allmorphs =~ /\+1\.Obj.*\+Ag/ ){$actualClass = "Ag";}
+			}
 		}
 		# else: other ambiguities, leave
 		else
