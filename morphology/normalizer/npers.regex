@@ -15,10 +15,18 @@
 | [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychik}
 | [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychis}
 | [ "@WA" "[" "--" "]" {ychik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ychiq}
+# wa (-q) -ninchik
+| [ "@WA" "[" "--" "]" {ninchik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ninchik}
+| [ "@WA" "[" "--" "]" {ninchik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ninchis}
+| [ "@WA" "[" "--" "]" {ninchik} "[" "NPers" "]" "[" "+3.Subj_1.Pl.Incl.Obj" "]" ] : {ninchiq}
 # -wa -ykichik: +2.Pl.Subj_1.Obj
 | [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichik}
 | [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichis}
 | [ "@WA" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ykichiq}
+# -wa -q -ninkichik: +2.Pl.Subj_1.Obj -> not necessary, compositional!!
+| [ "@WA" "[" "--" "]" {ninkichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ninkichik}
+| [ "@WA" "[" "--" "]" {ninkichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ninkichis}
+| [ "@WA" "[" "--" "]" {ninkichik} "[" "NPers" "]" "[" "+2.Pl.Subj_1.Obj" "]" ] : {ninkichiq}
 ## less frequent sequence: nominalizer+ su/wa +possessive
 # -su -yki, +3.Subj_2.Sg.Obj
 |  [  "[" "--" "]" {suyki} "[" "NPers" "]" "[" "+3.Subj_2.Sg.Obj" "]" ] :  {suyki}

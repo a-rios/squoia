@@ -579,7 +579,7 @@ define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %
 # e.g. taki -na -yki should be Obl + 2.Sg.Poss and NOT +Reub and +1.Sg.Subj_2.Sg.Obj
 
 # -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers, transitive nominalized forms: na-suyki etc, not -na -su (aug) -yki
-define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" | "+Aug"%] %["^DB"%] "@INTRsu" ]];
+define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" | "+Aug"%] %["^DB"%] "@INTRsu" | "+1.Obj"%] %["^DB"%] %["--"%]{q} %["NS"%] %["+Ag"%] %["^DB"%] %["--"%] {ninchik} %["NPers"%] %["+1.Pl.Incl.Poss"  ]];
 
 define FeatRestr [AccGen .o. NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS  ];
 
@@ -625,8 +625,8 @@ define AMBROOTS1 [~$[  ["@ILLA" %["^DB"%]| "=amanecer,brillar"%] ] %["--"%] [{pa
 # other ambiguous roots: kamayuq, taklla, kukuli (kuku+li), waranqa (mil vs. wara -n -qa), hamut'a -> not hamu -t'a, habas -> not hawakuna but habas, with roots that end in -ku, forbid followed by -na (+Reub),, e.g. mamakuna not mamaku -na, pichaq -> picha-q not pi-cha-q or pi-chaq, yanapasa: not yana -pasa, pisiya(chi,pu..) -> NRoot+Trs, NOT yka!
 define AMBROOTS2 [~$[ "=gobernar,mandar,crear"%] %["--"%] {yku} "+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %[ | {tak}%["NRoot"%] %["=paz"%] %["^DB"%] %["--"%] {lla} %[ | "=fantasma"%] %["--"%] {li} %["NDeriv"  | "=pantalón" %] %["^DB"%] %["--"%] n %["NPers"%] %["+3.Sg.Poss"%] %["^DB"%] %["--"%]{qa}%[ | "=venir" %] %["--"%] {t'a}%[ | "=fuera,arriba"%] %["^DB"%] %["--"%] {s}%[ | {ku}%[ "NRoot" ?* "+Reub" | "=quién" %] %["--"%] [{chaq}|{cha}] %["NDeriv" | "=servir,ayudar"%] %["--"%] {pasa}%[ | "=faltar"%] %["--"%] {yka} "+yu+" ]];
 
-# other ambiguous roots: ñiqin -> not ni -qi -n, yanapa -> not yana pa (rgr_iprs), should be rep, same with atipa, kuchus (=codo), not kuchu -s, apulli not apu-lli
-define AMBROOTS3 [~$[ {ni} %["VRoot"%] %["=decir"%] (%["^DB"%]) %["--"%] {qi} %[ | {ñiqi} %["VRoot"%] %["=abollar"%] %["^DB"%] %["--"%] n %[ | ["=servir,ayudar"|"=poder,vencer"] %] %["--"%] {pa} "+pu+" | {kuchu} %["NRoot"%] %["=corte,cortadura"%] %["^DB"%] %["--"%] s%[ | "=antepasado,abuelo,dios_montano,poderoso"%] %["--"%] {lli}%[ ]];
+# other ambiguous roots: ñiqin -> not ni -qi -n, yanapa -> not yana pa (rgr_iprs), should be rep, same with atipa, kuchus (=codo), not kuchu -s, apulli not apu-lli, qullana, not qulla -na, hukllawa- not huklla-wa
+define AMBROOTS3 [~$[ {ni} %["VRoot"%] %["=decir"%] (%["^DB"%]) %["--"%] {qi} %[ | {ñiqi} %["VRoot"%] %["=abollar"%] %["^DB"%] %["--"%] n %[ | ["=servir,ayudar"|"=poder,vencer"] %] %["--"%] {pa} "+pu+" | {kuchu} %["NRoot"%] %["=corte,cortadura"%] %["^DB"%] %["--"%] s%[ | "=antepasado,abuelo,dios_montano,poderoso"%] %["--"%] {lli}%[ |  "=majestuoso"%] %["--"%] {na} %["VS"%] %["+Reub" | {huklla} %["VRoot"%] %["=anexar"%] %["^DB"%] %["--"%] {wa}%[ ]];
 
 
 define LexRestr [ASWANALLIN .o. HATUNPAQARIN .o. KACHARIKU  .o. YROOTS .o. IMANAWAQAYCHALLALLA .o. COMPOUNDS .o. AQROOTS .o. AMBROOTS1 .o. AMBROOTS2 .o. AMBROOTS3];
@@ -653,6 +653,6 @@ define Word  FeatRestr  .o. NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] 
 read regex Cleanup2 .o. LexRestr .o. Word;
 
 #define Word NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex YROOTS .o. Word;
+#read regex AMBROOTS3 .o. Word;
 
 save stack normalizer.fst

@@ -24,13 +24,13 @@ export TOKENIZER=$XFST_DIR/tokenize.pl
 
 # with inforesources +ahk
 POS_MODEL=wapiti/model1/model_w_inforesources_ahk
-MORPH1_MODEL=wapiti/model2/model_w_inforesources_ahk_WAQ
+MORPH1_MODEL=wapiti/model2/model_w_inforesources_ahk_WAQ2
 MORPH2_MODEL=wapiti/model3/model_w_inforesources_ahk
 MORPH3_MODEL=wapiti/model4/model_w_inforesources_ahk
 
 TMP_DIR=tmp4
-EVID="cuz"
-PISPAS="pis"
+EVID="aya"
+PISPAS="pas"
 RAW_FILE=$1
 
 cat $RAW_FILE | perl $TOKENIZER | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/test.xfst

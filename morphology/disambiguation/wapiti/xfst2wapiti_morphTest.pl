@@ -317,10 +317,10 @@ if($mode eq '-1')
 				@$word[3] = "amb";
 				#print "@$word[0]\n";
 			}
-			# -waq (2.Pot) vs. -wa -q (Ag)
-			elsif(&containedInOtherMorphs($analyses,"\Q+1\.Obj+Ag\E","\Q\+2\.Sg\.Subj\.Pot\E"))
+			# -waq (2.Pot) vs. -wa -q (Ag), waqninchik (+1.Pl.Incl.Subj.Pot)
+			elsif(&containedInOtherMorphs($analyses,"\Q+1.Obj+Ag\E","\Q+2.Sg.Subj.Pot\E") or &containedInOtherMorphs($analyses,"\Q+1.Obj+Ag+3.Subj_1.Pl.Incl.Obj\E","\Q+1.Pl.Incl.Subj.Pot\E"))
 			{
-				push(@possibleClasses, "2Pot");
+				push(@possibleClasses, "12Pot");
 				push(@possibleClasses, "Ag");
 				#push(@ambWords,$word);
 				@$word[3] = "amb";
@@ -816,12 +816,12 @@ sub disambMorph1{
 							# -ykuna: Inf, Aff_Obl
 							# -kuna: Pl, Rflx_Obl
 							# -cha: Fact, Dim
-							# -waq: 2Pot, Ag
+							# -waq(ninchik): 12Pot, Ag
 							#$correctMorph = s/\n//;
 							chomp($correctMorph);
 							if($correctMorph eq 'Aff_Obl'){$correctMorph = 'Aff+Obl';}
 							if($correctMorph eq 'Rflx_Obl'){$correctMorph = 'Rflx+Obl';}
-							if($correctMorph eq '2Pot'){$correctMorph = '+2.Sg.Subj.Pot';}
+							if($correctMorph eq '12Pot'){$correctMorph = '\.Pot';}
 							if($correctMorph eq 'Ag'){$correctMorph = '+1.Obj+Ag';}
 							#print STDERR "$form: all: $allmorphs, correct: $correctMorph"."ll\n";
 							if($allmorphs !~ /\Q$correctMorph\E/ && scalar(@$analyses) > 1){
