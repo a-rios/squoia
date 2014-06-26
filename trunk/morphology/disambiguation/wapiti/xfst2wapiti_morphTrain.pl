@@ -234,11 +234,11 @@ if($mode eq '-1')
 				#print "@$word[0]\n";
 			}
 			# -waq 2.Sg.Pot vs. -wa -q (Ag) NOTE: could not evaluate performance on this ambiguity, occurs in none of the four test texts
-			elsif(&containedInOtherMorphs($xfstAnalyses,"+1.Obj+Ag","+2.Sg.Subj.Pot" )  )
+			elsif(&containedInOtherMorphs($xfstAnalyses,"+1.Obj+Ag","+2.Sg.Subj.Pot" ) or &containedInOtherMorphs($xfstAnalyses,"+1.Obj+Ag+3.Subj_1.Pl.Incl.Obj","+1.Pl.Incl.Subj.Pot" ))
 			{
-				push(@possibleClasses, "2Pot");
+				push(@possibleClasses, "12Pot");
 				push(@possibleClasses, "Ag");
-				if($allmorphs =~  /\+2\.Sg\.Subj\.Pot/){$actualClass = "2Pot";}
+				if($allmorphs =~  /\+2\.Sg\.Subj\.Pot/){$actualClass = "12Pot";}
 				elsif($allmorphs =~ /\+1\.Obj.*\+Ag/ ){$actualClass = "Ag";}
 			}
 		}

@@ -481,7 +481,7 @@ define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %
 # e.g. taki -na -yki should be Obl + 2.Sg.Poss and NOT +Reub and +1.Sg.Subj_2.Sg.Obj
 
 # -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers, transitive nominalized forms: na-suyki etc, not -na -su (aug) -yki
-define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" | "+Aug"%] %["^DB"%] "@INTRsu" ]];
+define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" | "+Aug"%] %["^DB"%] "@INTRsu"  | "+1.Obj"%] %["^DB"%] %["--"%]{q} %["NS"%] %["+Ag"%] %["^DB"%] %["--"%] {ninchik} %["NPers"%] %["+1.Pl.Incl.Poss"  ]];
 
 # botella -> not bote-lla, cosechan -> not cose-cha-n
 define LexRestr [~$[ {bote} %["NRootES"%] %["^DB"%] %["--"%]{lla}%[ | {cose} %["VrootES"%] %["--"%] {cha} %[ ]];
