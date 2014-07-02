@@ -26,7 +26,7 @@ $domnew->setDocumentElement( $book );
 
 foreach my $s ($dom->getElementsByTagName('s') ){
 	my $sentence = XML::LibXML::Element->new( 's' );
-	$sentence->setAttribute('id', $s->getAttribute('n'));
+	$sentence->setAttribute('id', $s->getAttribute('Intertext_id'));
 	$book->appendChild($sentence);
 	if($mode eq '-full'){
 		foreach my $w  ($s->findnodes('descendant::w')){

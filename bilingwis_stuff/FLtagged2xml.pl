@@ -18,6 +18,7 @@ my $bookID = $ARGV[1];
 open (TAGGED, "<", $file)  or die "Can't open input file \"$file\": $!\n";
 ;
 
+my $abs_sentence_count=1; # absolute sentence number, needed because of Intertext..
 my $sentence_count = 1;
 my $article_count = 0;
 my $token_count =1;
@@ -30,7 +31,8 @@ $book->setAttribute('id', $bookID);
 $dom->setDocumentElement( $book );
 
 while(<TAGGED>){
-	if(/^[XIV]+\s/){
+	#if(/^[XIV]+\t/){ # for chapters in gregorio..
+	if(/^newChapter/){ # other texts
 		$article = XML::LibXML::Element->new( 'article' );
 		$book->appendChild($article);
 		#undef $article;
@@ -38,8 +40,10 @@ while(<TAGGED>){
 		$article->setAttribute('n',$article_count);
 		my $tocEntry = XML::LibXML::Element->new( 'tocEntry' );
 		my ($toc) = ($_ =~ /^([XIV]+)/);
-		$tocEntry->setAttribute('title', $toc);
-		$article->appendChild($tocEntry);
+		if($toc){
+			$tocEntry->setAttribute('title', $toc);
+			$article->appendChild($tocEntry);
+		}
 		$sentence_count=1;
 		
 	}
@@ -48,11 +52,13 @@ while(<TAGGED>){
 		 # append prev sentence
 	      $article->appendChild($sentence);
 	      $sentence->setAttribute('n', $article_count."-".$sentence_count);
+	      $sentence->setAttribute('Intertext_id', '1:'.$abs_sentence_count);
 	      $sentence->setAttribute('lang', 'quz');
 	      # reset $sentence
 	      undef $sentence;
 	      $sentence = XML::LibXML::Element->new( 's' );
 	      $sentence_count++;
+	      $abs_sentence_count++;
 	      $token_count=0;
 	      
 	}
