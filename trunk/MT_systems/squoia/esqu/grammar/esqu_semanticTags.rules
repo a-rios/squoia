@@ -263,7 +263,7 @@ ordenar		[ditrans]	-
 otorgar		[ditrans]	-
 pagar		[ditrans]	-
 parar		[ditrans]	-
-pasar		[ditrans]	-
+pasar		[ditrans,+Mov]	-
 pedir		[ditrans]	-
 perdonar	[ditrans]	-
 permitir	[ditrans]	-
