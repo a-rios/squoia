@@ -38029,7 +38029,7 @@ rikukusaq	rikhu[VRoot][=ver,aparecer][^DB][--]ku[VDeriv][+Rflx_Int][^DB][--]saq[
 
 #EOS	#EOS+?
 
-Phawayá	Phawa[NRoot][=carrera,vuelo][^DB][--]yá[Amb][+Emph]
+Phawayyá	Phawa[VRoot][=correr,volar][^DB][--]y[VPers][+2.Sg.Subj.Imp][^DB][--]yá[Amb][+Emph] 
 
 qam	qam[PrnPers+2.Sg]
 
@@ -40223,7 +40223,7 @@ michiqchakunata	michi[VRoot][=pastear][^DB][--]q[NS][+Ag][--]cha[NDeriv][+Dim][-
 
 -	-[$-]
 
-Manzin	Manzin[NP]
+Manam	Mana[Part_Neg][^DB][--]m[Amb][+DirE]
 
 ,	,[$,]
 
@@ -51261,9 +51261,7 @@ qichunakuchkallanku	qichu[VRoot][=quitar][--]na[VDeriv][+Rzpr][^DB][--]ku[VDeriv
 
 #EOS	#EOS+?
 
-Wayqi	Wayqi[NRoot][=hermano]
-
-pura	pura[Cas][+Intsoc]
+Wayqipura	Wayqi[NRoot][=hermano]pura[Cas][+Intsoc]
 
 saqisqata	saqi[VRoot][=dejar][^DB][--]sqa[NS][+Perf][^DB][--]ta[Cas][+Acc]
 
