@@ -8,15 +8,15 @@ binmode STDERR, ':utf8';
 #use Storable;
 use XML::LibXML;
 
-my $dom    = XML::LibXML->load_xml( IO => *STDIN );
-
 my $num_args = $#ARGV + 1;
-if ($num_args > 1) {
-  print "\nUsage: perl xml2senttok.pl -simple/-full (only relevant for Quechua, simple or full xml: with simple quechua token=morphemes)\n";
+if ($num_args > 1 ) {
+  print "\nUsage: perl xml2senttok.pl -simple/-full (provide XML on STDIN) \n";
+  print "\tonly relevant for Quechua: simple or full xml: with simple quechua token=morphemes\n";
   exit;
   }
 
 my $mode =  $ARGV[0];
+my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 
 ## make xml for InterText
 my $domnew = XML::LibXML->createDocument ('1.0', 'UTF-8');
