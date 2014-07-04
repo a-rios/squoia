@@ -32,7 +32,7 @@ $dom->setDocumentElement( $book );
 
 while(<TAGGED>){
 	#if(/^[XIV]+\t/){ # for chapters in gregorio..
-	if(/^newChapter/){ # other texts
+	if(/newChapter/){ # other texts
 		$article = XML::LibXML::Element->new( 'article' );
 		$book->appendChild($article);
 		#undef $article;
