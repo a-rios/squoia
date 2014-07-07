@@ -163,7 +163,7 @@ foreach my $e (@nounentries){
 		#print "lem: $quMainLem: ".$add_mi."\n";
 	}
 	
-	unless($s_pos eq 'adj'){
+	if($s_pos ne 'adj'){
 		if(exists($eslex{'noun'}{$eslem})){
 			push($eslex{'noun'}{$eslem}, $quMainLem."#$preform");
 		}
@@ -171,6 +171,14 @@ foreach my $e (@nounentries){
 			$eslex{'noun'}{$eslem} = [$quMainLem."#$preform"];
 		}
 		
+	}
+	else{
+		if(exists($eslex{'adjective'}{$eslem})){
+			push($eslex{'adjective'}{$eslem}, $quMainLem."#$preform");
+		}
+		else{
+			$eslex{'adjective'}{$eslem} = [$quMainLem."#$preform"];
+		}
 	}
 	
 }
@@ -188,13 +196,16 @@ foreach my $e (@verbentries){
 	
 	if($add_mi ne ''){
 		my $form = $mapTags2FormsVerbs{$add_mi};
-		# use both kacha and ykacha
-		my $form2 =~ s/#/y/;
-		$form =~ s/#//;
+		if($form =~ /^#/){
+			# use both kacha and ykacha
+			my $form2 =~ s/#/y/;
+			$form =~ s/#//;
+			$quMainLem2 = $quMainLem.$form2;
+		}
 		
 		
 		$quMainLem .= $form;
-		$quMainLem2 = $quMainLem.$form2;
+
 		#print "$add_mi\n";
 	}
 	if(exists($eslex{'verb'}{$eslem})){
@@ -239,10 +250,10 @@ foreach my $e (@interjectionsentries){
 	my ($quMainLem) = ($r->toString() =~ /r>(.+?)</);
 	
 	
-	if(exists($eslex{'interjections'}{$eslem})){
-			push($eslex{'interjections'}{$eslem}, $quMainLem);
+	if(exists($eslex{'interjection'}{$eslem})){
+			push($eslex{'interjection'}{$eslem}, $quMainLem);
 	}else{
-		$eslex{'interjections'}{$eslem} = [$quMainLem];
+		$eslex{'interjection'}{$eslem} = [$quMainLem];
 	}
 	
 }
@@ -354,8 +365,11 @@ foreach my $e (@conjunctionsentries){
 
 # possessive determiners:
 $eslex{'posspronoun'}{'mi'}=[ '-y', '-niy', 'ñuqap'];
+$eslex{'posspronoun'}{'mío'}=[ '-y', '-niy', 'ñuqap'];
 $eslex{'posspronoun'}{'tu'}=['-yki', '-niyki', 'qampa'];
+$eslex{'posspronoun'}{'tuyo'}=['-yki', '-niyki', 'qampa'];
 $eslex{'posspronoun'}{'su'}=['-n', '-nin', 'paypa'];
+$eslex{'posspronoun'}{'suyo'}=['-n', '-nin', 'paypa'];
 $eslex{'posspronoun'}{'nuestro'}=['-yku', '-niyku', '-nchik', '-ninchik', 'ñuqaykup', 'ñuqanchikpa'];
 $eslex{'posspronoun'}{'vuestro'}=['-ykichik', '-niykichik', 'qamkunapa'];
 
@@ -553,15 +567,15 @@ $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 #print hash:
 foreach my $section (keys %eslex){
 	print "sec: $section\n";
-	if($section eq 'preposition'){
-		foreach my $lem (keys $eslex{$section}){
-			print $lem."\t";
-			foreach my $quz (@{$eslex{$section}{$lem}} ){
-				print "$quz, ";
-			}
-			print "\n";
-		}
-	}
+#	if($section eq 'verb'){
+#		foreach my $lem (keys $eslex{$section}){
+#			print $lem."\t";
+#			foreach my $quz (@{$eslex{$section}{$lem}} ){
+#				print "$quz, ";
+#			}
+#			print "\n";
+#		}
+#	}
 }
 
 store \%eslex, 'lexicon-es-qu';
