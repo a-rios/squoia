@@ -53,7 +53,7 @@ while(<TAGGED>){
 	      $article->appendChild($sentence);
 	      $sentence->setAttribute('n', $article_count."-".$sentence_count);
 	      $sentence->setAttribute('Intertext_id', '1:'.$abs_sentence_count);
-	      $sentence->setAttribute('lang', 'quz');
+	      $sentence->setAttribute('lang', 'es');
 	      # reset $sentence
 	      undef $sentence;
 	      $sentence = XML::LibXML::Element->new( 's' );
@@ -76,7 +76,7 @@ while(<TAGGED>){
 		if(eof){
 		  $article->appendChild($sentence);
 	      $sentence->setAttribute('n', $article_count."-".$sentence_count);
-	      $sentence->setAttribute('lang', 'quz');
+	      $sentence->setAttribute('lang', 'es');
 		}
 		
 	}
