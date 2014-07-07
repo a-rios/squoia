@@ -120,7 +120,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 					
 					# if no proper name or loan: get translation from dictionary
 					my $quz_class = &mapPos2LexEntry($pos_es);
-					#print "class: $quz_class, pos: $pos_es\n";
+					#print "es word: $wordform_es class: $quz_class, pos: $pos_es\n";
 					# lexicon lookup: use word form with personal pronouns, otherwise: lemma
 					my $translations_dix = 	($quz_class eq 'prspronoun')? $lexicon_es_qu{$quz_class}{$wordform_es} : $lexicon_es_qu{$quz_class}{$lem_es};
 					# if this was an adjective, and adjective lookup did not return anything: look in noun lexicon
@@ -139,7 +139,63 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 								my @quz_cand_ts;
 								foreach my $s_quz (@sents_quz){
 									my @cands = $s_quz->findnodes($xpath_to_quz_cand);
-									push(@quz_cand_ts, @cands);
+									my %cand_ids;
+									my $is_aligned=1;
+									if(scalar(@preforms>0)){
+										# search preforms, last element in @preforms = first word to the left of mainword
+										my $leftContexCount=1;
+										for(my $i=scalar(@preforms)-1;$i>=0;$i--)
+										{
+											my $preform = @preforms[$i];
+											my $xpath_to_preform = 'preceding-sibling::t['.$leftContexCount.']';
+											#print "preform: $preform\t";
+											#print "xpath: $xpath_to_preform\n";
+											# scan left context of candidates: only if preform(s) present -> align, otherwise: only partial match, do not align
+											
+											foreach my $cand (@cands){
+												#print "cand: ".$cand->toString()."\n";
+												my ($preform_cand) = $cand->findnodes($xpath_to_preform);
+												if($preform_cand and lc($preform_cand->findvalue('child::w/text()')) eq $preform ){
+													$cand_ids{$cand->getAttribute('n')}{$preform_cand->getAttribute('n')}=1;
+													#print "preform hieeer".$preform_cand->toString()."\n";
+												}
+												else{
+													$is_aligned =0;
+													undef %cand_ids;
+													#print "hieeer\n";
+													last;
+												}
+											}
+											$leftContexCount++;	
+										}
+										# if all preforms found: insert alignments
+										if($is_aligned){
+												if(exists($alignments{$tokenID_es})){
+													
+													foreach my $id (keys %cand_ids){
+														print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
+														push($alignments{$tokenID_es}, $id );
+														foreach my $preID (keys $cand_ids{$id}){
+															print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
+															push($alignments{$tokenID_es}, $preID );
+														}
+													}
+												}
+												else{
+													foreach my $id (keys %cand_ids){
+														$alignments{$tokenID_es} = [ $id];
+														print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
+														foreach my $preID (keys $cand_ids{$id}){
+															print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
+															push($alignments{$tokenID_es}, $preID );
+														}
+													}
+												}
+										}
+									}
+									else{
+										push(@quz_cand_ts, @cands);
+									}
 								}
 								foreach my $cand (@quz_cand_ts){
 									if(exists($alignments{$tokenID_es})){
@@ -152,7 +208,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 									}
 								}
 								
-							} 
+							}
 						}
 					}
 					

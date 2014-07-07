@@ -136,10 +136,11 @@ my %mapTags2FormsConj = (
 
 my %eslex = ();
 
-my @nounentries = $dom->findnodes('descendant::section[@id="nouns" or id="months" or id="kinship_terms" or id="animals_gender" or id="gender_sensitive_roots"]/e');
+my @nounentries = $dom->findnodes('descendant::section[@id="nouns" or @id="months" or @id="kinship_terms" or @id="animals_gender" or @id="gender_sensitive_roots"]/e');
 
 foreach my $e (@nounentries){
 	my ($l) = $e->findnodes('child::p/l[1]');
+	#print $l->toString()."\n";
 	my $eslem = $l->textContent;
 	
 	my ($r) = $e->findnodes('child::p/r[1]');
@@ -565,9 +566,9 @@ $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 #}
 
 #print hash:
-foreach my $section (keys %eslex){
-	print "sec: $section\n";
-#	if($section eq 'verb'){
+#foreach my $section (keys %eslex){
+#	print "sec: $section\n";
+#	if($section eq 'noun'){
 #		foreach my $lem (keys $eslex{$section}){
 #			print $lem."\t";
 #			foreach my $quz (@{$eslex{$section}{$lem}} ){
@@ -576,6 +577,6 @@ foreach my $section (keys %eslex){
 #			print "\n";
 #		}
 #	}
-}
+#}
 
 store \%eslex, 'lexicon-es-qu';
