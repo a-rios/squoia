@@ -180,7 +180,7 @@ my %mapTags2FormsConj = (
 	'+Abl+Top' => 'mantaqa',
 	'+Abl+Add' => 'mantapas',
 	'+2.Sg.Subj.Imp+Neg' => 'ychu',
-	'++Intrup' => '-ykacha',
+	'++Intrup' => 'ykacha',
 	'+Acc' => 'ta',
 	'+Instr+Add' => 'wanpas',
 	'+Sim+Top' => 'hinaqa',
@@ -191,6 +191,17 @@ my %mapTags2FormsConj = (
 	
 );
 
+my %mapTagsFromDix2TagsFromXfst = (
+	'++Lim' => '+Lim_Aff',
+	'++Intr' => '+Con_Intr',
+	'++Dat' => '+Dat_Ill',
+	'++Cis' => '+Cis_Trs',
+	'++Instr' => '+Con_Inst',
+	'++Neg' => '+Intr_Neg',
+	'++Rflx' => '+Rflx_Int',
+	'++Iprs' => '+Rgr_Iprs',
+	'++Lim+Intr' => '+Lim_Aff+Con_Intr'
+);
 
 my %eslex = ();
 
@@ -497,8 +508,9 @@ foreach my $e (@adverbssentries){
 		#print "lem: $quMainLem: ".$add_mi."\n";
 	}
 	# if translation is a suffix
-	elsif($mi =~ /^\+\+/){
-		$form = $mi;
+	elsif($mi =~ /^\+\+/ or $quMainLem =~ /^\+/){
+		my $xfst_mi = $mapTagsFromDix2TagsFromXfst{$mi};
+		$quMainLem = ($xfst_mi)	? $xfst_mi:	$mi;
 	}
 	if(exists($eslex{'adverb'}{$eslem})){
 			push($eslex{'adverb'}{$eslem}, $quMainLem."#$preform");
@@ -611,30 +623,32 @@ $eslex{'preposition'}{'sobre'}=[ 'hawa', 'hana', '-manta'];
 $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 
 
-#print hash:
-#foreach my $section (keys %lex){
+##print hash:
+#foreach my $section (keys %eslex){
 #	print "sec: $section\n";
-#	foreach my $lem (keys $lex{$section}){
-#		print $lem."\t";
-#		foreach my $quz (@{$lex{$section}{$lem}} ){
-#			print "$quz, ";
+#	foreach my $lem (keys $eslex{$section}){
+#		foreach my $quz (@{$eslex{$section}{$lem}} ){
+#			if($quz =~ /^\+/){
+#				print $lem."\t";
+#				print "$quz, ";
+#			}
 #		}
 #		print "\n";
 #	}
 #}
 
 #print hash:
-#foreach my $section (keys %eslex){
-#	print "sec: $section\n";
-#	if($section eq 'noun'){
-#		foreach my $lem (keys $eslex{$section}){
-#			print $lem."\t";
-#			foreach my $quz (@{$eslex{$section}{$lem}} ){
-#				print "$quz, ";
-#			}
-#			print "\n";
-#		}
-#	}
-#}
+foreach my $section (keys %eslex){
+	print "sec: $section\n";
+	if($section eq 'adverb'){
+		foreach my $lem (keys $eslex{$section}){
+			print $lem."\t";
+			foreach my $quz (@{$eslex{$section}{$lem}} ){
+				print "$quz, ";
+			}
+			print "\n";
+		}
+	}
+}
 
 store \%eslex, 'lexicon-es-qu';
