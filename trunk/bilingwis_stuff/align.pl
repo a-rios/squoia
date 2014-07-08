@@ -35,12 +35,13 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 	my $xpathToSeg = 'descendant::seg[@id='.$segID."]";
 	my ($segment_quz) = $dom_sent_quz->findnodes($xpathToSeg);
 	
-	if($segment_quz){
+	if($segment_quz)
+	{
 		#print "found corresponding $segID\n";
 		# find sentences in xml
 		my @sents_quz;
 		my @wordforms_quz;
-		my @roots_quz;
+		#my @roots_quz;
 		my @morphs_quz;
 		foreach my $s_quz ($segment_quz->findnodes('child::s')){
 			my $sentIDquz = $s_quz->getAttribute('id');
@@ -53,10 +54,10 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 				push(@wordforms_quz, lc($w->textContent) );
 				#print 'quz: '.$w->textContent."\n";
 			}
-			my @roots = $s->findnodes('child::t/root');
-			foreach my $root (@roots){
-				push(@roots_quz, lc($root->textContent) );
-			}
+#			my @roots = $s->findnodes('child::t/root');
+#			foreach my $root (@roots){
+#				push(@roots_quz, lc($root->textContent) );
+#			}
 			my @morphs = $s->findnodes('child::t/morph');
 			foreach my $morph (@morphs){
 				push(@morphs_quz, lc($morph->textContent) );
@@ -128,102 +129,247 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 					if(!$translations_dix and $quz_class eq 'adjective'){
 						$translations_dix = $lexicon_es_qu{'noun'}{$lem_es};
 					}
-					if($translations_dix){
+					if($translations_dix)
+					{
 						#print "es: $wordform_es, quz: @$translations_dix\n";
 						# first step: align only (relatively) unambiguous forms, i.e. Quechua roots and words, no suffixes
-						if($quz_class =~ /^noun|^verb|interjection|number/){
+						#if($quz_class =~ /^noun|^verb|interjection|number/)
+						if($quz_class !~ /preposition|conjunction/)
+						{
 							my @quz_cands;
-							foreach my $translation (@$translations_dix){
-								my ($mainword, @preforms) = split('#',$translation);
-								$xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$mainword.'")]]';
-								my @quz_cand_ts;
-								foreach my $s_quz (@sents_quz){
-									my @cands = $s_quz->findnodes($xpath_to_quz_cand);
-									my %cand_ids;
-									my $is_aligned=1;
-									if(scalar(@preforms>0)){
-										# search preforms, last element in @preforms = first word to the left of mainword
-										my $leftContexCount=1;
-										for(my $i=scalar(@preforms)-1;$i>=0;$i--)
-										{
-											my $preform = @preforms[$i];
-											my $xpath_to_preform = 'preceding-sibling::t['.$leftContexCount.']';
-											#print "preform: $preform\t";
-											#print "xpath: $xpath_to_preform\n";
-											# scan left context of candidates: only if preform(s) present -> align, otherwise: only partial match, do not align
-											
-											foreach my $cand (@cands){
-												#print "cand: ".$cand->toString()."\n";
-												my ($preform_cand) = $cand->findnodes($xpath_to_preform);
-												if($preform_cand and lc($preform_cand->findvalue('child::w/text()')) eq $preform ){
-													$cand_ids{$cand->getAttribute('n')}{$preform_cand->getAttribute('n')}=1;
-													#print "preform hieeer".$preform_cand->toString()."\n";
+							foreach my $translation (@$translations_dix)
+							{
+								# don't align suffixes yet!
+								unless($translation =~ /^-/ or $quz_class =~ /prspronoun|posspronoun|preposition|determiner/)
+								{
+									my ($mainword, @preforms) = split('#',$translation);
+									$xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$mainword.'")]]';
+									my @quz_cand_ts;
+									foreach my $s_quz (@sents_quz){
+										my @cands = $s_quz->findnodes($xpath_to_quz_cand);
+										my %cand_ids;
+										my $is_aligned=1;
+										if(scalar(@preforms>0)){
+											# search preforms, last element in @preforms = first word to the left of mainword
+											my $leftContexCount=1;
+											for(my $i=scalar(@preforms)-1;$i>=0;$i--)
+											{
+												my $preform = @preforms[$i];
+												my $xpath_to_preform = 'preceding-sibling::t['.$leftContexCount.']';
+												#print "preform: $preform\t";
+												#print "xpath: $xpath_to_preform\n";
+												# scan left context of candidates: only if preform(s) present -> align, otherwise: only partial match, do not align
+												
+												foreach my $cand (@cands){
+													#print "cand: ".$cand->toString()."\n";
+													my ($preform_cand) = $cand->findnodes($xpath_to_preform);
+													if($preform_cand and lc($preform_cand->findvalue('child::w/text()')) eq $preform ){
+														$cand_ids{$cand->getAttribute('n')}{$preform_cand->getAttribute('n')}=1;
+														#print "preform hieeer".$preform_cand->toString()."\n";
+													}
+													else{
+														$is_aligned =0;
+														undef %cand_ids;
+														#print "hieeer\n";
+														last;
+													}
 												}
-												else{
-													$is_aligned =0;
-													undef %cand_ids;
-													#print "hieeer\n";
-													last;
+												$leftContexCount++;	
+											}
+											# if all preforms found: insert alignments
+											if($is_aligned){
+													if(exists($alignments{$tokenID_es})){
+														
+														foreach my $id (keys %cand_ids){
+															print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
+															push($alignments{$tokenID_es}, $id );
+															foreach my $preID (keys $cand_ids{$id}){
+																print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
+																push($alignments{$tokenID_es}, $preID );
+															}
+														}
+													}
+													else{
+														foreach my $id (keys %cand_ids){
+															$alignments{$tokenID_es} = [ $id];
+															print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
+															foreach my $preID (keys $cand_ids{$id}){
+																print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
+																push($alignments{$tokenID_es}, $preID );
+															}
+														}
+													}
+											}
+										}
+										else{
+											push(@quz_cand_ts, @cands);
+										}
+									}
+									foreach my $cand (@quz_cand_ts){
+										if(exists($alignments{$tokenID_es})){
+											print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
+											push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+										}
+										else{
+											$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
+											print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
+										}
+									}#foreach
+								}#unless
+							}#foreach $translation
+						}# if $quz_class
+					}# if $translation
+				}# foreach my $wordforms_es
+			}# foreach my $w_es
+			
+		# try to align Spanish words to suffixes and postpositions, but use already existing alignments between word forms as ankers
+		foreach my $w_es ($s_es_in_xml->findnodes('child::t')){
+			my $wordform_es = lc($w_es->textContent());					
+			my $pos_es = $w_es->getAttribute('pos');
+			my $lem_es = $w_es->getAttribute('lemma');
+			my $tokenID_es = $w_es->getAttribute('n');
+			
+			#only consider unaligned words (?), no proper names (with '_')
+			unless($alignments{$tokenID_es} or $pos_es =~ /^NP/ ){
+				print "unaligned: $wordform_es\n";
+				# if no proper name or loan: get translation from dictionary
+				my $quz_class = &mapPos2LexEntry($pos_es);
+				#print "es word: $wordform_es class: $quz_class, pos: $pos_es\n";
+				# lexicon lookup: use word form with personal pronouns, otherwise: lemma
+				my $translations_dix = 	($quz_class eq 'prspronoun')? $lexicon_es_qu{$quz_class}{$wordform_es} : $lexicon_es_qu{$quz_class}{$lem_es};
+				# if this was an adjective, and adjective lookup did not return anything: look in noun lexicon
+				# (adjective lexicon contains only those adjectives that have a different translation from the corresponding noun)
+				if(!$translations_dix and $quz_class eq 'adjective'){
+						$translations_dix = $lexicon_es_qu{'noun'}{$lem_es};
+				}
+				if($translations_dix){
+					my $xpath_to_quz_cand;
+					my @quz_cand_ts;
+					foreach my $translation (@$translations_dix)
+					{
+							# case suffix
+							if($translation =~ /^-/){
+								$xpath_to_quz_cand = 'descendant::t/morph[ translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$translation.'"]';
+								#print "xpath: $xpath_to_quz_cand\n";
+								# get all candidates
+								foreach my $s_quz (@sents_quz){
+										my @cands = $s_quz->findnodes($xpath_to_quz_cand);
+										my %cand_ids;
+										my $is_aligned=1;
+										push(@quz_cand_ts, @cands);
+#										foreach my $c (@cands){
+#											print "candidate for $wordform_es: ".$c->toString()."\n";
+#										}
+									}
+							}
+							else{
+								$xpath_to_quz_cand = 'descendant::t[w[starts-with (translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$translation.'")]]';
+								#print "xpath: $xpath_to_quz_cand\n";
+								# get all candidates
+								foreach my $s_quz (@sents_quz){
+										my @cands = $s_quz->findnodes($xpath_to_quz_cand);
+										my %cand_ids;
+										my $is_aligned=1;
+										push(@quz_cand_ts, @cands);
+#										foreach my $c (@cands){
+#											print "candidate for $wordform_es: ".$c->toString()."\n";
+#										}
+									}
+								}
+						}
+						# if more than one candidate: check if one of their roots is aligned to noun on the right of the Spanish preposition, same
+						if(scalar(@quz_cand_ts>1) and $quz_class =~ /preposition|posspronoun/){
+									
+									my ($firstLeftNoun_es) = $w_es->findnodes('following-sibling::t[starts-with(@pos,"N") or @pos="VMN0000"][1]');
+									if($firstLeftNoun_es){
+										#print "noun:  ".$firstLeftNoun_es->toString()."\n";
+										my $firstLeftNoun_es_id = $firstLeftNoun_es->getAttribute('n');
+										#print "noun id: $firstLeftNoun_es_id\n";
+										my $firstLeftNoun_alignments = $alignments{$firstLeftNoun_es_id};
+										
+										foreach my $cand (@quz_cand_ts){
+											# TODO test possessive pronouns!!
+											# if possessive pronoun (not suffix) in Quechua (e.g. 'ñuqap'): stop, in this case, corresponding root is to the right, not left!
+											if($quz_class eq 'posspronoun' and $cand->nodeName eq 't'){
+												my $quz_w_id = $cand->findvalue('parent::t/following-sibling::t/@n');
+												# if quechua root is aligned to this noun: align preposition and suffix/postposition
+												if($firstLeftNoun_alignments and grep {$_ =~ /^\Q$quz_w_id\E$/} @$firstLeftNoun_alignments){
+													$alignments{$tokenID_es} =[$cand->getAttribute('n')];
+													print "suffix aligned $tokenID_es with ".$cand->getAttribute('n')."\n";
 												}
 											}
-											$leftContexCount++;	
-										}
-										# if all preforms found: insert alignments
-										if($is_aligned){
-												if(exists($alignments{$tokenID_es})){
-													
-													foreach my $id (keys %cand_ids){
-														print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
-														push($alignments{$tokenID_es}, $id );
-														foreach my $preID (keys $cand_ids{$id}){
-															print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
-															push($alignments{$tokenID_es}, $preID );
-														}
-													}
+											else{
+												my $quz_w_id = $cand->findvalue('parent::t/@n');
+												# if quechua root is aligned to this noun: align preposition and suffix/postposition
+												if($firstLeftNoun_alignments and grep {$_ =~ /^\Q$quz_w_id\E$/} @$firstLeftNoun_alignments){
+													$alignments{$tokenID_es} =[$cand->getAttribute('n')];
+													print "suffix aligned $tokenID_es with ".$cand->getAttribute('n')."\n";
 												}
-												else{
-													foreach my $id (keys %cand_ids){
-														$alignments{$tokenID_es} = [ $id];
-														print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
-														foreach my $preID (keys $cand_ids{$id}){
-															print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
-															push($alignments{$tokenID_es}, $preID );
-														}
-													}
-												}
+											}
 										}
 									}
-									else{
-										push(@quz_cand_ts, @cands);
-									}
+						}
+						if(scalar(@quz_cand_ts>1) and $quz_class =~ /prspronoun/){
+								# only main verbs as ser and estar don't take objects
+								my ($firstLeftVerb_es) = $w_es->findnodes('following-sibling::t[starts-with(@pos,"VM")][1]');
+								if($firstLeftVerb_es){
+									#print "verb:  ".$firstLeftVerb_es->toString()."\n";
+									my $firstLeftVerb_es_id = $firstLeftVerb_es->getAttribute('n');
+									#print "verb id: $firstLeftVerb_es_id\n";
+									my $firstLeftVerb_alignments = $alignments{$firstLeftVerb_es_id};
 								}
 								foreach my $cand (@quz_cand_ts){
-									if(exists($alignments{$tokenID_es})){
-										print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
-										push($alignments{$tokenID_es}, $cand->getAttribute('n') );
-									}
-									else{
-										$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
-										print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
-									}
+									my $quz_w_id = $cand->findvalue('parent::t/@n');
+									#------
 								}
 								
-							}
+								
 						}
-					}
-					
-				}
-		
+						# only one candidate: align
+						elsif(scalar(@quz_cand_ts) == 1){
+									$alignments{$tokenID_es} =[@quz_cand_ts[0]->getAttribute('n')];
+									print "only candidate aligned $tokenID_es with ".@quz_cand_ts[0]->getAttribute('n')."\n";
+						}
+				}# if $translation_dix
+			}#unless aligned or proper name
+		} # 2nd foreach my $w_es
+		print "################################################\n";
+		# just for debugging: still unaligned?
+		foreach my $w_es ($s_es_in_xml->findnodes('child::t')){
+			my $tokenID_es = $w_es->getAttribute('n');
+			my $wordform_es = lc($w_es->textContent());
+			my $pos_es = $w_es->getAttribute('pos');
+			#only consider unaligned words (?), no proper names (with '_')
+			unless($alignments{$tokenID_es} or $pos_es =~ /^NP/ ){
+				print "still unaligned: $wordform_es\n";
 			}
-			
 		}
-		
-		
+		}# foreach my $s_es
+	}# if $quz_segment
+} # foreach $segment_es
+
+print "################################################\n";
+foreach my $es_id (keys %alignments){
+	my $xpath_to_es_w = 'descendant::t[@n="'.$es_id.'"]';
+	my ($w_es) = $dom_es->findnodes($xpath_to_es_w);
+	my $wordform_es = $w_es->textContent();
+	print "aligments for $wordform_es with id $es_id: ";
 	
-		
+	my $alignment_ids = $alignments{$es_id};
+	foreach my $id (@$alignment_ids){
+		my $xpath_to_quz_w = 'descendant::*[@n="'.$id.'"]';
+		my ($w_quz) = $dom_quz->findnodes($xpath_to_quz_w);
+		my ($wordform_quz) = ( $w_quz->toString() =~ m/w>([^<]+)/ ) ;
+		if(!$wordform_quz){
+			($wordform_quz) = ( $w_quz->toString() =~ m/$id.*>(-[^<]+)/ ) ;
+		}
+		print "quz: $wordform_quz $id, ";
 	}
+	print "\n";
 	
 }
+
+
 
 sub mapPos2LexEntry{
 	my $pos = $_[0];
