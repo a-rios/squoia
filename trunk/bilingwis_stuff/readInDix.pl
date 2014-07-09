@@ -640,7 +640,7 @@ $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 #print hash:
 foreach my $section (keys %eslex){
 	print "sec: $section\n";
-	if($section eq 'adverb'){
+	if($section eq 'determiner'){
 		foreach my $lem (keys $eslex{$section}){
 			print $lem."\t";
 			foreach my $quz (@{$eslex{$section}{$lem}} ){

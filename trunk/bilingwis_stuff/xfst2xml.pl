@@ -86,11 +86,13 @@ while(<XFST>){
 			my $root = XML::LibXML::Element->new( 'root' );
 			my @rootMorphs = split('\[--\]' , $wroot);
 			my @rootforms = ($wroot =~ m/([A-Za-zñéóúíáüäöÑ']+?)\[/g) ;
+			my ($root_only) = ($wroot =~ m/^([A-Za-zñéóúíáüäöÑ']+?)\[/) ;
 			my $rootform; 
 			foreach my $r (@rootforms){
 				$rootform .= $r;
 			}
 			$root->appendText($rootform);
+			$root->setAttribute('root', $root_only);
 			
 			my $rootmorph_count =1;
 			foreach my $m (@rootMorphs){
