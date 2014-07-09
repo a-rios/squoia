@@ -356,8 +356,8 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 							}
 						}
 						# if more than one candidate: check if one of their roots is aligned to noun on the right of the Spanish preposition, same
-						if(scalar(@quz_cand_ts>1) and $quz_class =~ /preposition|posspronoun|determiner/){
-								
+						if(scalar(@quz_cand_ts>1) and $quz_class =~ /preposition|posspronoun|determiner/)
+						{
 									my ($firstRightNoun_es) = $w_es->findnodes('following-sibling::t[starts-with(@pos,"N") or @pos="VMN0000"][1]');
 									if($firstRightNoun_es){
 										#print "noun:  ".$firstRightNoun_es->toString()."\n";
