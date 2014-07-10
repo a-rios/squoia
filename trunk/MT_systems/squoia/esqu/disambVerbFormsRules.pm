@@ -150,7 +150,7 @@ sub main{
 	 					if($conjunction->getAttribute('lem') =~ /porque|con_tal_que|con_tal_de_que/ )
 	 					{
 	 						$nbrOfSwitchForms++;
-	 						if($sentence->getAttribute('evidentiality') eq 'indirect'){z
+	 						if($sentence->getAttribute('evidentiality') eq 'indirect'){
 	 							$verbChunk->setAttribute('chunkmi', '+IndE');
 	 						}
 	 						else{
