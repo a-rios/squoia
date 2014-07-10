@@ -9,13 +9,13 @@ use Storable;
 
 my $num_args = $#ARGV + 1;
 if ($num_args != 4) {
-  print "\nUsage: perl align.pl sentence_aligned_es.xml es.xml quz.xml (full) sentence_aligned_quz.xml \n";
+  print "\nUsage: perl align.pl es.xml quz.xml (full) sentence_aligned_es.xml sentence_aligned_quz.xml \n";
   exit;
   }
 
 my $file_es = $ARGV[0];
-my $file_sent_es = $ARGV[1];
-my $file_quz = $ARGV[2];
+my $file_quz = $ARGV[1];
+my $file_sent_es = $ARGV[2];
 my $file_sent_quz = $ARGV[3];
 open (ES, "<", $file_es)  or die "Can't open input file \"$file_es\": $!\n";
 open (SENT_ES, "<", $file_sent_es)  or die "Can't open input file \"$file_sent_es\": $!\n";
@@ -301,10 +301,35 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 							}#foreach $translation
 						}# if $quz_class
 					}# if $translation
+					if(!exists($alignments{$tokenID_es})) #no still no alignment: maybe Spanish root that occurs on the Quechua side as well, but may have a different form (e.g. mantengas - mantenenayki)?
+					{
+						# finite verb: cut infinitive -r
+						if($pos_es =~ /^V.+[123].+/){
+							$lem_es =~ s/r$//;
+						}
+						if(length($lem_es)>4){
+							my $xpath_to_loan_cand = $xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(@root, "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$lem_es.'")]]';
+							my @quz_cand_ts;
+							foreach my $s_quz (@sents_quz){
+								my @cands = $s_quz->findnodes($xpath_to_quz_cand);
+								push(@quz_cand_ts, @cands);
+							}
+							foreach my $cand (@quz_cand_ts){
+								if(exists($alignments{$tokenID_es})){
+									#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$cand->getAttribute('n')."-1 \n";
+									# align whole token or only root? 
+									push($alignments{$tokenID_es}, $cand->getAttribute('n')."-1" );
+								}else{	#align token or only root?
+									$alignments{$tokenID_es} = [$cand->getAttribute('n')."-1"];
+									#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$cand->getAttribute('n')."-1 \n";
+								}
+							}
+						}
+					}# else align loan words
 				}# foreach my $wordforms_es
 			}# foreach my $w_es
 			
-		# try to align Spanish words to suffixes and postpositions, but use already existing alignments between word forms as ankers
+		# try to align Spanish words to suffixes, postpositions, determiners and conjunction that are realized as suffixes, but use already existing alignments between word forms as ankers
 		foreach my $w_es ($s_es_in_xml->findnodes('child::t'))
 		{
 			my $wordform_es = lc($w_es->textContent());					
@@ -389,7 +414,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 									}
 						}
 						# personal pronouns (clitics)
-						if(scalar(@quz_cand_ts>1) and $quz_class =~ /prspronoun/){
+						if(scalar(@quz_cand_ts>1) and $quz_class =~ /prspronoun|conjunction/){
 								# only main verbs as ser and estar don't take objects
 								my ($firstLeftVerb_es) = $w_es->findnodes('following-sibling::t[starts-with(@pos,"VM")][1]');
 								if($firstLeftVerb_es){
@@ -451,38 +476,39 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 #			}
 #		}
 		}# foreach my $s_es
-		#print alignments for this sentence:
-		print "alignments in sentences: \n";
-		foreach my $s_quz ($segment_quz->findnodes('child::s')){
-			print "quz-".$s_quz->getAttribute('id').": ".$s_quz->textContent()."\n";
-		}
-		foreach my $s_es ($segment_es->findnodes('child::s')){
-			print "es-".$s_es->getAttribute('id').": ".$s_es->textContent()."\n";
-			my $xpathToSentes = 'descendant::s[@Intertext_id="'.$s_es->getAttribute('id').'"]';
-			my ($s_es_in_xml) = $dom_es->findnodes($xpathToSentes);
-			
-			foreach my $w_es ($s_es_in_xml->findnodes('child::t')){
-				my $id = $w_es->getAttribute('n');
-				my $wordform_es = $w_es->textContent();
-				print "aligments for $wordform_es with id $id: \t";
-				my $alignment_ids = $alignments{$id};
-				foreach my $id (@$alignment_ids){
-					my $xpath_to_quz_w = 'descendant::*[@n="'.$id.'"]';
-					my ($w_quz) = $dom_quz->findnodes($xpath_to_quz_w);
-					my ($wordform_quz) = ( $w_quz->toString() =~ m/>([^<]+)<rootmorph/ ) ;
-					if(!$wordform_quz){
-						($wordform_quz) = ( $w_quz->toString() =~ m/$id.*>(-[^<]+)/ ) ;
-					}
-					print "quz: $wordform_quz $id, ";
-				}
-			print "\n";
-		}
-		}
+		
+#		#print for debugging: alignments for this sentence:
+#		print "alignments in sentences: \n";
+#		foreach my $s_quz ($segment_quz->findnodes('child::s')){
+#			print "quz-".$s_quz->getAttribute('id').": ".$s_quz->textContent()."\n";
+#		}
+#		foreach my $s_es ($segment_es->findnodes('child::s')){
+#			print "es-".$s_es->getAttribute('id').": ".$s_es->textContent()."\n";
+#			my $xpathToSentes = 'descendant::s[@Intertext_id="'.$s_es->getAttribute('id').'"]';
+#			my ($s_es_in_xml) = $dom_es->findnodes($xpathToSentes);
+#			
+#			foreach my $w_es ($s_es_in_xml->findnodes('child::t')){
+#				my $id = $w_es->getAttribute('n');
+#				my $wordform_es = $w_es->textContent();
+#				print "aligments for $wordform_es with id $id: \t";
+#				my $alignment_ids = $alignments{$id};
+#				foreach my $id (@$alignment_ids){
+#					my $xpath_to_quz_w = 'descendant::*[@n="'.$id.'"]';
+#					my ($w_quz) = $dom_quz->findnodes($xpath_to_quz_w);
+#					my ($wordform_quz) = ( $w_quz->toString() =~ m/>([^<]+)<rootmorph/ ) ;
+#					if(!$wordform_quz){
+#						($wordform_quz) = ( $w_quz->toString() =~ m/$id.*>(-[^<]+)/ ) ;
+#					}
+#					print "quz: $wordform_quz $id, ";
+#				}
+#			print "\n";
+#		}
+#		}
 	}# if $quz_segment
 } # foreach $segment_es
 
 #print "################################################\n";
-#foreach my $es_id (sort {$a<=>$b} keys %alignments){
+#foreach my $es_id (sort id_sort keys %alignments){
 #	my $xpath_to_es_w = 'descendant::t[@n="'.$es_id.'"]';
 #	my ($w_es) = $dom_es->findnodes($xpath_to_es_w);
 #	my $wordform_es = $w_es->textContent();
@@ -501,6 +527,16 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 #	print "\n";
 #	
 #}
+
+my $es_book_id = $dom_es->documentElement->getAttribute('id');
+my $quz_book_id = $dom_quz->documentElement->getAttribute('id');
+foreach my $es_id (sort id_sort keys %alignments){
+	my $alignment_ids = $alignments{$es_id};
+	foreach my $quz_id (@$alignment_ids){
+		print "$es_book_id-$es_id\t$quz_book_id-$quz_id\n";
+	}
+	
+}
 
 
 
@@ -524,6 +560,33 @@ sub mapPos2LexEntry{
 }
 
 
-
+sub id_sort {
+	my ($article_a, $sentence_a, $token_a) = split('-', $a);
+	my ($article_b, $sentence_b, $token_b) = split('-', $b);
+	
+	if($article_a > $article_b){
+		return 1;
+	}
+	elsif($article_b > $article_a){
+		return -1;
+	}
+	else{
+		if($sentence_a > $sentence_b){
+			return 1;
+		}
+		elsif($sentence_b > $sentence_a){
+			return -1;
+		}
+		else{
+			if($token_a > $token_b){
+				return 1;
+			}
+			elsif($token_b > $token_a){
+				return -1;
+			}
+		}
+	}
+	return 0;
+}
 
 

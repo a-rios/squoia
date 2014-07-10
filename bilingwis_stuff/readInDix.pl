@@ -425,6 +425,11 @@ foreach my $e (@conjunctionsentries){
 		$quMainLem .= $form;
 		#print "lem: $quMainLem: ".$add_mi."\n";
 	}
+	# if translation is a suffix
+	elsif($mi =~ /^\+\+/ or $quMainLem =~ /^\+/){
+		my $xfst_mi = $mapTagsFromDix2TagsFromXfst{$mi};
+		$quMainLem = ($xfst_mi)	? $xfst_mi:	$mi;
+	}
 	if(exists($eslex{'conjunction'}{$eslem})){
 			push($eslex{'conjunction'}{$eslem}, $quMainLem);
 		}
@@ -640,7 +645,7 @@ $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 #print hash:
 foreach my $section (keys %eslex){
 	print "sec: $section\n";
-	if($section eq 'determiner'){
+	if($section eq 'conjunction'){
 		foreach my $lem (keys $eslex{$section}){
 			print $lem."\t";
 			foreach my $quz (@{$eslex{$section}{$lem}} ){
