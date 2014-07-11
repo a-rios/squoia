@@ -24,7 +24,11 @@ my.pos=/APPR/&&chunkparent.type=/PP/		xART:my.smi=/D[AP].+/||my.pos=ART,xADJ:my.
 # Verb
 # non finite (participle or infinitive) modal verb (child) after main verb in infinitive (head)
 # he podido comer => ich habe VVINF(essen) VMPP(koennen)
-my.pos=/VVINF/&&child.pos=/VMPP|VMINF/			x1:my.pos=/VMPP|VMINF/			head .x1
+my.pos=/VVINF/&&child.pos=/VMPP|VMINF/			xMODV:my.pos=/VMPP|VMINF/			head .xMODV
+
+# non finite (participle or infinitive?) auxiliary verb (child) after main verb participle (head)
+# ha sido debatido => ist VVPP(debattiert) VAPP(worden)
+my.pos=/VVPP/&&child.pos=/VAPP|VAINF/			xAUXPP:my.pos=/VAPP|VAINF/			head .xAUXPP
 
 # verb periphrases
 # empezar a + INF => anfangen zu + INF
@@ -38,7 +42,7 @@ my.pos=/VVINF/&&child.pos=APPR&&child.lem=zu	xV:my.pos=/VVPP/&&parent.pos=/VVINF
 # Gerund: seguir(finite form) + main_verb_es(gerund) => main_verb_de(finite form) + adv(noch)
 #      <NODE ref="4" alloc="15" slem="comer" smi="VMG0000" UpCase="none" lem="essen" pos="VV" mi="Ger" ord="1">
 #        <NODE ref="3" alloc="9" slem="seguir" smi="VMIP3S0" UpCase="none" lem="noch" pos="ADV" spos="VVFIN" mi="3.Sg.Pres.Ind" ord="0">
-my.pos=/V.FIN/&&chunkparent.type=VP&&chunkparent.si=/top/&&!(chunkparent.nodechunk=[-finVerb])	xPDO:my.smi=/PP...A/||(my.pos=PPER&&my.cas=Akk),xPIO:my.smi=/PP...D/||(my.pos=PPER&&my.cas=Dat),xADV:my.spos=/VV/&&my.pos=ADV,xPRF:my.pos=PRF	head +xPRF +xPDO +xPIO +xADV
+my.pos=/V.FIN/&&chunkparent.type=VP&&chunkparent.si=/top/&&!(chunkparent.finVerb=no)	xPDO:my.smi=/PP...A/||(my.pos=PPER&&my.cas=Akk),xPIO:my.smi=/PP...D/||(my.pos=PPER&&my.cas=Dat),xADV:my.spos=/VV/&&my.pos=ADV,xPRF:my.pos=PRF	head +xPRF +xPDO +xPIO +xADV
 #xpath{//CHUNK[@type="VP"]/NODE[@pos="VVFIN"]}		xPDO:my.smi=/PP...A/,xPIO:my.smi=/PP...D/	head +xPDO +xPIO
 #xpath{../../CHUNK/NODE[@pos="VVFIN"]}			xPDO:my.smi=/PP...A/,xPIO:my.smi=/PP...D/	head +xPDO +xPIO
 
@@ -50,13 +54,13 @@ my.pos=/V.FIN/&&chunkparent.type=VP&&chunkparent.si=/vsubord/	xPDO:my.smi=/PP...
 #<CHUNK type="finVerb" comment="upgraded node" ref="5" p_ord="0" c_ord="1" ord="1">
 # <NODE ref="1" alloc="0" slem="haber" smi="VAIP1S0" sform="He" UpCase="none" lem="haben" pos="VAFIN" mi="1.Sg.Pres.Ind" noderef="1"></NODE></CHUNK>
 # => the main verb chunk has no finite form anymore
-#    <CHUNK ref="1" type="VP" alloc="0" si="top" headlem="irren" nodechunk="[-finVerb]" p_ord="2" ord="2">
+#    <CHUNK ref="1" type="VP" alloc="0" si="top" headlem="irren" finVerb="no" p_ord="2" ord="2">
 #      <NODE ref="4" alloc="12" slem="equivocar" smi="VMN0000" sform="equivocar" UpCase="none" lem="irren" pos="VVPP" mi="Inf">        
 #        <NODE ref="2" alloc="3" slem="volver" smi="VMP00SM" sform="vuelto" UpCase="none" lem="wieder" pos="ADV" mi="Pos.*.*.Sg.*" spos="VVPP"></NODE>
 #        <NODE ref="3" alloc="10" slem="a" smi="SPS00" sform="a" UpCase="none" lem="" pos="APPR" adpos="a" delete="yes"></NODE>
 #        <NODE ref="5" alloc="21" slem="me" smi="PP1CS000" sform="me" UpCase="none" lem="ich_PRF" pos="PRF" mi="1.Sg" cas="Akk"></NODE>
 #      </NODE>
-my.pos=/VV/&&chunkparent.type=VP&&chunkparent.si=/top/&&chunkparent.nodechunk=[-finVerb]	xPDO:my.smi=/PP...A/||(my.pos=PPER&&my.cas=Akk),xPIO:my.smi=/PP...D/||(my.pos=PPER&&my.cas=Dat),xADV:my.spos=/VV/&&my.pos=ADV,xPRF:my.pos=PRF		xPRF +xPDO +xPIO +xADV +head
+my.pos=/VV/&&chunkparent.type=VP&&chunkparent.si=/top/&&chunkparent.finVerb=no		xPDO:my.smi=/PP...A/||(my.pos=PPER&&my.cas=Akk), xPIO:my.smi=/PP...D/||(my.pos=PPER&&my.cas=Dat), xADV:my.spos=/VV/&&my.pos=ADV, xPRF:my.pos=PRF, xAUXPP:my.pos=/VAPP|VAINF/, xMODV:my.pos=/VMPP|VMINF/		xPRF +xPDO +xPIO +xADV +head +xAUXPP +xMODV
 
 # VZ-inf
 # infinite verb+zu has been split

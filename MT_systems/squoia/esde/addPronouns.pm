@@ -1,9 +1,6 @@
 #!/usr/bin/perl
 
-# addPronounChunk: add/guess the pronouns needed for German but absent in Spanish (pro-drop language)
-#
-# Input: xml output from lexical transfer module from Matxin/Apertium (LT) after splitNodes.pl
-# Output: 
+# add pronoun chunks: add/guess the pronouns needed for German but absent in Spanish (pro-drop language)
 
 package squoia::esde::addPronouns;
 

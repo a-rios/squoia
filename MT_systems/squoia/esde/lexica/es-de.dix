@@ -892,6 +892,7 @@
     <pardef n="Adj">
       <e><p><l>CP0</l><r>*.Pl</r></p></e> <!-- C: common? not in all types of Spanish adjectives; only left to right ?-->
       <e><p><l>CS0</l><r>*.Sg</r></p></e> <!-- do we need that information at all? in German it depends on the gender of the head noun in attributive function or it is invariable as a predicate -->
+      <e><p><l>CN0</l><r>*.Sg</r></p></e> <!-- example: "ex" -->
       <e><p><l>FP0</l><r>*.Pl</r></p></e>
       <e><p><l>FS0</l><r>*.Sg</r></p></e>
       <e><p><l>MP0</l><r>*.Pl</r></p></e>
@@ -1078,6 +1079,7 @@
    <e><p><l>indirectamente</l><r>indirekt</r></p><par n='RG_ADJD'/></e>
    <e><p><l>indudablemente</l><r>zweifellos</r></p><par n='RG_ADJD'/></e>
    <e><p><l>informalmente</l><r>zwanglos</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>institucionalmente</l><r>institutionell</r></p><par n='RG_ADJD'/></e>
    <e><p><l>irremediablemente</l><r>unheilbar</r></p><par n='RG_ADJD'/></e>
    <e><p><l>judicialmente</l><r>richterlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>matemáticamente</l><r>mathematisch</r></p><par n='RG_ADJD'/></e>
@@ -1110,6 +1112,7 @@
    <e><p><l>a_rajatabla</l><r>unbedingt</r></p><par n='RG_ADV'/></e>
    <e><p><l>aún_así</l><r>trotzdem</r></p><par n='RG_ADV'/></e>
    <e><p><l>aún_no</l><r>noch nicht</r></p><par n='RG_ADV'/></e>
+   <e><p><l>aun_no</l><r>noch nicht</r></p><par n='RG_ADV'/></e> <!-- without diacritic -->
    <e><p><l>de_buena_voluntad</l><r>gutwillig</r></p><par n='RG_ADJD'/></e>
    <e><p><l>de_igual_manera</l><r>ebenfalls</r></p><par n='RG_ADV'/></e>
    <e><p><l>de_lo_contrario</l><r>andernfalls</r></p><par n='RG_ADV'/></e>
@@ -1144,6 +1147,7 @@
    <e><p><l>altoandino</l><r>hochandin</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>amazónico</l><r>Amazonas</r></p><par n='AQ_PROV'/></e>
    <e><p><l>apurimeño</l><r>aus Apurímac</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>arqueológico</l><r>archäologisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ayacuchano</l><r>aus Ayacucho</r></p><par n='AQ_PROV'/></e>
    <e><p><l>brasilero</l><r>brasilianisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>castrense</l><r>militärisch</r></p><par n='AQ_ADJ'/></e>
@@ -1151,18 +1155,30 @@
    <e><p><l>chumbivilcano</l><r>aus Chumbivilcas</r></p><par n='AQ_PROV'/></e>
    <e><p><l>costeño</l><r>Küste-</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>cusqueño</l><r>aus Cuzco</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>dirigente</l><r>leitend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ejecutor</l><r>auftragsausführend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>electoral</l><r>Wahl-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>enfático</l><r>emphatisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ex</l><r>ehemalig</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>fujimorista</l><r>Fujimori-Anhänger-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>gremial</l><r>zünftig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>gremial</l><r>Zunft-</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>guaraní</l><r>Guaraní</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>huancaíno</l><r>aus Huancayo</r></p><par n='AQ_PROV'/></e>
    <e><p><l>inca</l><r>Inka</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>interandino</l><r>interandin</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>limeño</l><r>aus Lima</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>macroregional</l><r>makroregional</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>magisterial</l><r>Lehr-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>presencial</l><r>anwesend</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>quechua</l><r>Quechua</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>responsable</l><r>verantwortlich</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>sudamericano</l><r>südamerikanisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>surandino</l><r>südandin</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>tucumano</l><r>aus Tucumán</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tucumano</l><r>aus Tucumán</r></p><par n='AQ_PROV'/></e>
    <e><p><l>uruguayo</l><r>uruguayisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>villanesco</l><r>Volks-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>virtual</l><r>virtuell</r></p><par n='AQ_ADJ'/></e>
 </section>
 <section id="ParticipleAdjectives-diariodelcusco" type="standard">
    <e><p><l>acariciado</l><r>gestreichelt</r></p><par n='AQ_ADJ'/></e>
@@ -1174,6 +1190,7 @@
    <e><p><l>adoptado</l><r>angenommen</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>agrupado</l><r>gruppiert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>alargado</l><r>verlängert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>amparado</l><r>geschützt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anunciado</l><r>angekündigt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>arreglado</l><r>repariert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>atendido</l><r>berücksichtigt</r></p><par n='AQ_ADJ'/></e>
@@ -1194,6 +1211,7 @@
    <e><p><l>contaminado</l><r>verschmutzt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>convertido</l><r>verwandelt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>convocado</l><r>einberufen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cuestionado</l><r>bestritten</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cuidado</l><r>gesorgt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cumplido</l><r>nachgekommen</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>dado</l><r>gegeben</r></p><par n='AQ_ADJ'/></e>
@@ -1201,6 +1219,7 @@
    <e><p><l>debido</l><r>verdankt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>declarado</l><r>festgestellt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>demostrado</l><r>gezeigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>descentralizado</l><r>dezentralisiert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>designado</l><r>bestimmt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>despedido</l><r>verabschiedet</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>desperdiciado</l><r>verschwendet</r></p><par n='AQ_ADJ'/></e>
@@ -1244,6 +1263,8 @@
    <e><p><l>obtenido</l><r>gekriegt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ocurrido</l><r>vorgekommen</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>orientado</l><r>zurechtgefunden</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>pedido</l><r>bestellt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>pedido</l><r>verlangt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>planificado</l><r>geplant</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>planteado</l><r>versetzt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>precisado</l><r>präzisiert</r></p><par n='AQ_ADJ'/></e>
@@ -1278,6 +1299,27 @@
    <e><p><l>unido</l><r>vereint</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vencido</l><r>überwunden</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vendido</l><r>verkauft</r></p><par n='AQ_ADJ'/></e>
+</section>
+<section id="Verbs-june-diariodelcusco" type="standard">
+   <e><p><l>apuntalar</l><r>stützen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>argumentar</l><r>argumentieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>aseverar</l><r>behaupten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>aseverar</l><r>beteuern</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>aseverar</l><r>versichern</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>atentar</l><r>an|greifen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>centralizar</l><r>zentralisieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>coincidir</l><r>überein|stimmen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>coincidir</l><r>zusammen|treffen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>congelar</l><r>ein|frieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>coordinar</l><r>koordinieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>debatir</l><r>besprechen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>debatir</l><r>debattieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>dictaminar</l><r>begutachten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>fragmentar</l><r>fragmentieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>fragmentar</l><r>zerlegen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>fragmentar</l><r>zersplittern</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sincerar</l><r>rechtfertigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>sincerar</l><r>aus|sprechen</r></p><par n='VM_VV_MAIN'/></e> <!-- sincerarse con alguien = sich mit jdm aussprechen/bei jmd entschuldigen -->
 </section>
 <section id="Verbs-30mostfreq-diariodelcusco" type="standard">
    <e><p><l>anotar</l><r>vermerken</r></p><par n='VM_VV_MAIN'/></e>
@@ -1340,9 +1382,11 @@
 </section>
 <section id="FL-locuciones" type="standard">
    <e><p><l>captura_de_datos</l><r>Datenerfassung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>economía_mundial</l><r>Weltwirtschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>equipo_nacional</l><r>Nationalmannschaft</r></p><par n='NC_N_NUM_FEM'/></e>
 </section>
 <section id="MWE-Nouns-diariodelcusco" type="standard">
+   <e><p><l>asamblea_popular</l><r>Volksversammlung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cadena_perpetua</l><r>lebenslänglich_Zuchthaus</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>calidad_de_vida</l><r>Lebensqualität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>director_general</l><r>Generaldirektor</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -1356,6 +1400,7 @@
    <e><p><l>patrimonio_cultural</l><r>Kulturgut</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>procedimiento_administrativo</l><r>Verwaltungsverfahren</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>recursos_hídricos</l><r>Wasserressourcen</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>recursos_públicos</l><r>öffentliche Mittel</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- plural -->
    <e><p><l>representante_del_gobierno</l><r>Regierungsvertreter</r></p><par n='NC_N_NUM_NOUN'/></e>
 </section>
 <section id="BabelNet-mOLIFde-Adjectives" type="standard">
@@ -9535,6 +9580,7 @@
    <e><p><l>amenazar</l><r>drohen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>amontonar</l><r>an|häufen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>amortizar</l><r>amortisieren</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>amparar</l><r>schützen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>ampliar</l><r>erweitern</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>amplificar</l><r>verstärken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>amputar</l><r>amputieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -9865,6 +9911,8 @@
    <e><p><l>cuadruplicar</l><r>vierfachen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cualificar</l><r>qualifizieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cubrir</l><r>bedecken</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>cuestionar</l><r>bestreiten</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>cuestionar</l><r>infrage stellen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cuidar</l><r>achten</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO achten auf +Akk -->
    <e><p><l>cuidar</l><r>betreuen</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO cuidar de algo/alguien= etwas/jmdn betreuen -->
    <e><p><l>cuidar</l><r>hüten</r></p><par n='VM_VV_MAIN'/></e>
@@ -10047,7 +10095,8 @@
    <e><p><l>descender</l><r>ab|steigen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>descender</l><r>herunter|gehen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>descender</l><r>herunter|steigen</r></p><par n="VM_VV_MAIN_BE"/></e>
-   <e><p><l>descender</l><r>sinken</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>descender</l><r>sinken</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>descentralizar</l><r>dezentralisieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>descifrar</l><r>dechiffrieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>descifrar</l><r>entschlüsseln</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>descifrar</l><r>entziffern</r></p><par n="VM_VV_MAIN"/></e>
@@ -13835,6 +13884,7 @@
    <e><p><l>afiliación</l><r>Angliederung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>afiliación</l><r>Anschluss</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>afiliación</l><r>Beitritt</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>afiliado</l><r>Mitglied</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>afinidad</l><r>Affinität</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>afinidad</l><r>Ähnlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>afirmación</l><r>Bestätigung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -21939,6 +21989,8 @@
    <e><p><l>intervención</l><r>Einschreiten</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>intervención</l><r>Intervention</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>intervención</l><r>Überwachung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>interventor</l><r>Prüfer</r></p><par n='NC_N_GENTRY_ERIN'/></e>
+   <e><p><l>interventor</l><r>Überwacher</r></p><par n='NC_N_GENTRY_ERIN'/></e>
    <e><p><l>intestino delgado</l><r>Dünndarm</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>intestino</l><r>Darm</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>intimidación</l><r>Einschüchterung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -23710,6 +23762,7 @@
    <e><p><l>montura</l><r>Halterung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>montura</l><r>Montur</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>montura</l><r>Sattel</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>monumentalidad</l><r>Monumentalität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>monumento</l><r>Denkmal</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>monumento</l><r>Sehenswürdigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>monzón</l><r>Monsun</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -28639,6 +28692,7 @@
    <e><p><l>sumo sacerdote</l><r>Hohepriester</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>superconductividad</l><r>Supraleiter</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>superficie</l><r>Oberfläche</r></p><par n='NC_N_76_FEDER'/></e>
+   <e><p><l>superintendencia</l><r>Aufsichtsbehörde</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>superioridad</l><r>Überlegenheit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>superlativo</l><r>Superlativ</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>superposición</l><r>Überlagerung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -36125,6 +36179,10 @@ a_principios_de
    <e><p><l>a_favor_de</l><r>zugunsten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_fin_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- prep or only conjunction "a fin de que" ? -->
    <e><p><l>a_fines_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
+   <e><p><l>al_frente_de</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- motion verb: Akk ?; state: Dat -->
+   <e><p><l>al_frente_de</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>	<!-- motion verb: Akk ?; state: Dat -->
+   <e><p><l>al_interior_de</l><r>in<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- motion verb: Akk; state: Dat -->
+   <e><p><l>al_interior_de</l><r>in_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>	<!-- motion verb: Akk; state: Dat -->
    <e><p><l>alrededor_de</l><r>um<s n="cas"/>Akk</r></p><par n='PREP'/></e>
    <e><p><l>alrededor_de</l><r>um_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>antes_de</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>
@@ -36133,6 +36191,8 @@ a_principios_de
    <e><p><l>a_partir_de</l><r>ab_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>	<!-- a_partir_del -->
    <e><p><l>a_pesar_de</l><r>trotz<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- a_pesar_de = trotz + Gen -->
    <e><p><l>a_pesar_de</l><r>trotz_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>	<!-- a_pesar_de = trotz + Gen -->
+   <e><p><l>a_petición_de</l><r>auf Anfrage von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- auf Wunsch von -->
+   <e><p><l>a_petición_de</l><r>auf Anfrage von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_propósito_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>a_punto_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>a_raíz_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
@@ -36145,6 +36205,8 @@ a_principios_de
    <e><p><l>cerca_de</l><r>bei_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>con_respecto_a</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- bezüglich, hinsichtlich + Gen -->
    <e><p><l>con_respecto_a</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>de_parte_de</l><r>von<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>de_parte_de</l><r>von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unterhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- debajo_de = unterhalb + Gen -->
    <e><p><l>debajo_de</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- debajo_de = unter + Dat (is movement also possible, i.e. Akk?) -->
