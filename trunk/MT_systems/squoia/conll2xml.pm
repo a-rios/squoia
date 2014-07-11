@@ -1133,7 +1133,11 @@ sub main{
 		foreach my $node (@nodesWithNodeSiblings){
 			my $prevsibling = $node->previousSibling();
 			if($prevsibling){
-				$prevsibling->appendChild($node);
+				if ($prevsibling->getAttribute('mi') =~ /V...[1-3][SP]./) {	# finite
+					$node->appendChild($prevsibling);
+				} else {
+					$prevsibling->appendChild($node);
+				}
 			}
 		}	
 		# delete chunks that have only chunk children, but no node children (otherwise lexical transfer crashes)
