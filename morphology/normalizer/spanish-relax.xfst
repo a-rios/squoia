@@ -12,8 +12,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@PORTMANTEAU"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@PORTMANTEAU"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@PORTMANTEAU"|"@PLspES"|"@PLspS"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@PORTMANTEAU"|"@PLspES"|"@PLspS"] ];
 
 ############################################################################### 
 
@@ -25,10 +25,10 @@
 
       define Numbers [%0|1|2|3|4|5|6|7|8|9|%,|%.|%'];
       define Vowel [a|e|i|o|u|á|é|í|ó|ú|A|E|I|O|U|Á|É|Í|Ó|Ú|Ü|"@TA"|{pa}"@PA"|"@PTI"|"@STI"];
-      define Cons [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|B|C|D|F|G|H|J|K|L|M|N|Ñ|P|Q|R|S|T|V|W|X|Y|Z|'|{m}"@MU"|{m}"@MI"|{s}"@SI"|{ch}"@CHA"|{ntin}"@NTIN"|{p}"@PA"|{q}"@PA"];
+      define Cons [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|B|C|D|F|G|H|J|K|L|M|N|Ñ|P|Q|R|S|T|V|W|X|Y|Z|'|{m}"@MU"|{m}"@MI"|{s}"@SI"|{ch}"@CHA"|{ntin}"@NTIN"|{p}"@PA"|{q}"@PA"|"@PLspS"|"@PLspES"];
       
       define VowelRoot [a|e|i|o|u|á|é|í|ó|ú|A|E|I|O|U|Á|É|Í|Ó|Ú|Ü];
-      define ConsRoot [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|B|C|D|F|G|H|J|K|L|M|N|Ñ|P|Q|R|S|T|V|W|X|Y|Z|'];
+      define ConsRoot [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|B|C|D|F|G|H|J|K|L|M|N|Ñ|P|Q|R|S|T|V|W|X|Y|Z];
 
       
       #--------------------------#
@@ -132,6 +132,13 @@
        define 1PossPl [  %["+1.Poss"%] <-  %["+1.Sg.Poss"%] \\  _ %["--"%]{kuna}%["Num"%] ];
 
        define PossessivPlural [3PossPl .o. 1PossPl];
+       
+       #---------------------------------------------------#
+       # Spanish -es after onsonant, -s after vowel        #
+       #---------------------------------------------------#
+       define spanPL1 [  {s}"@PLspS"  => VowelRoot _  ];
+       define spanPL2 [  {es}"@PLspES"  => ConsRoot _  ];
+       define spanPL spanPL1 .o. spanPL2;
 
        #------------------------------------------------------------#
        # Genitive -pa after Konsonant, -q/-p after Vowel (optional) #
@@ -154,7 +161,19 @@
 	define POSS2 [ "@POSSni" => Cons _  ];
 	define POSSESSIV POSS1 .o. POSS2;
 
-       define NounRules GENITIV .o. POSSESSIV;
+       define NounRules GENITIV .o. spanPL .o. POSSESSIV;
+       
+       
+       #-----------------------------------------------------------------------------------------------#
+       # with Spanish plural forms in -es: remove accent on last syllable, if present (afán -> afanes) #
+       #-----------------------------------------------------------------------------------------------#
+       define accentSPpl1 [ a <- á  \\ _  ConsRoot %["NRootES"%] %["--"%]{es}%["Num"  ];
+       define accentSPpl2 [ e <- é  \\ _  ConsRoot %["NRootES"%] %["--"%]{es}%["Num"  ];
+       define accentSPpl3 [ i <- í  \\ _  ConsRoot %["NRootES"%] %["--"%]{es}%["Num"  ];
+       define accentSPpl4 [ o <- ó  \\ _  ConsRoot %["NRootES"%] %["--"%]{es}%["Num"  ];
+       define accentSPpl5 [ u <- ú  \\ _  ConsRoot %["NRootES"%] %["--"%]{es}%["Num"  ];
+       define NounRulesUpper accentSPpl1 .o. accentSPpl2 .o. accentSPpl3 .o. accentSPpl4 .o. accentSPpl5;
+
 
        ##########
        # VERBAL #
@@ -369,8 +388,10 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define N=N=6 DB @re"n-n-6.regex" ;
        define N=N=7 DB @re"n-n-7.regex" ;
        define kamaDist [ "[" "^DB" "]" "[" "--" "]" {kama} "[" "Cas" "]" "[" "+Dist" "]" ] : {kama};
+       define spanishPlural1 [ "[" "--" "]" {s} "[" "Num" "]" "[" "+Pl" "]" ] : [{s}"@PLspS"];
+       define spanishPlural2 [ "[" "--" "]" {es} "[" "Num" "]" "[" "+Pl" "]" ] : [{es}"@PLspES"];
 
-      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
+      define NounSuffixes PossessivPlural .o. [ (spanishPlural1|spanishPlural2) (N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
 
      
 ######################################################################################
@@ -493,7 +514,7 @@ define FeatRestr [NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. 
 
 
 #define Wort IGRules .o. [[Noun|Verb] (AS)] .o. NounRules .o. GENACC .o. AmbiRules ;
-define Wort IGRules .o. [Noun|Verb|ADVERBS|CONJUNCTIONS|PREPOSITIONS] .o. NounRules .o. AmbiRules ;
+define Wort IGRules .o. NounRulesUpper .o. [Noun|Verb|ADVERBS|CONJUNCTIONS|PREPOSITIONS] .o. NounRules .o. AmbiRules ;
 
 read regex Cleanup2  .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent .o. UpperCase;
 #read regex Cleanup2 .o. Wort  .o. Accent .o. UpperCase;

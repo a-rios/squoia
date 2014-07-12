@@ -412,7 +412,7 @@ if($mode eq '-3')
 				foreach my $analisis(@$xfstAnalyses)
 				{
 					my $string = $analisis->{'string'};
-					if($string =~ /s\[NRootES/  )
+					if($string =~ /s\[NRootES/ or $string =~ /\QNRootES][--]s[Num\E/  )
 					{
 						push(@possibleClasses, "Pl");
 						push(@possibleClasses, "IndE");

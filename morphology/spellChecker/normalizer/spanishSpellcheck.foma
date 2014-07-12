@@ -7,8 +7,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@PLspES"|"@PLspS"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@PLspES"|"@PLspS"] ];
 
        define CleanSigma [ "" <- ["+1.Obj" | "+1.Pl.Excl.Poss" | "+1.Pl.Excl.Poss+Lim" | "+1.Pl.Excl.Subj" | "+1.Pl.Excl.Subj.Fut" | "+1.Pl.Excl.Subj_2.Sg.Obj" | "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" | "+1.Pl.Incl.Poss" | "+1.Pl.Incl.Poss+Lim" | "+1.Pl.Incl.Subj" | "+1.Pl.Incl.Subj.Fut" | "+1.Pl.Incl.Subj.Imp" | "+1.Pl.Incl.Subj.Pot" | "+1.Poss" | "+1.Sg.Poss" | "+1.Sg.Poss+Lim" | "+1.Sg.Subj" | "+1.Sg.Subj.Fut" | "+1.Sg.Subj.Pot" | "+1.Sg.Subj_2.Pl.Obj" | "+1.Sg.Subj_2.Pl.Obj.Fut" | "+1.Sg.Subj_2.Sg.Obj" | "+1.Sg.Subj_2.Sg.Obj.Fut" | "+2.Obj" | "+2.Pl.Poss" | "+2.Pl.Poss+Lim" | "+2.Pl.Subj" | "+2.Pl.Subj.Imp" | "+2.Pl.Subj.Pot" | "+2.Sg.Poss" | "+2.Sg.Poss+Lim" | "+2.Sg.Subj" | "+2.Sg.Subj.Imp" | "+2.Sg.Subj.Pot" | "+2.Sg.Subj_1.Pl.Excl.Obj" | "+2.Sg.Subj_1.Pl.Obj.Imp" | "+3.Pl.Poss" | "+3.Pl.Poss+Lim" | "+3.Pl.Subj" | "+3.Pl.Subj.Fut" | "+3.Pl.Subj.Hab" | "+3.Pl.Subj.IPst" | "+3.Pl.Subj.Imp" | "+3.Pl.Subj.NPst" | "+3.Pl.Subj.Pot" | "+3.Pl.Subj_2.Sg.Obj" | "+3.Poss" | "+3.Sg.Poss" | "+3.Sg.Poss+Lim" | "+3.Sg.Subj" | "+3.Sg.Subj.Fut" | "+3.Sg.Subj.IPst" | "+3.Sg.Subj.Imp" | "+3.Sg.Subj.NPst" | "+3.Subj_1.Pl.Excl.Obj" | "+3.Subj_1.Pl.Excl.Obj.Fut" | "+3.Subj_1.Pl.Incl.Obj" | "+3.Subj_1.Pl.Incl.Obj.Fut" | "+3.Subj_2.Pl.Obj" | "+3.Subj_2.Sg.Obj" | "+Abl" | "+Abtmp" | "+Acc" | "+Add" | "+Aff" | "+Ag" | "+Aprx" | "+Asmp" | "+Asmp_Emph" | "+Ass" | "+Aug" | "+Autotrs" | "+Ben" | "+Caus" | "+Char" | "+Cis_Trs" | "+Con_Inst" | "+Con_Intr" | "+Cont" | "+DS" | "+Dat_Ill" | "+Def" | "+Des" | "+Desesp" | "+Dim" | "+Dir" | "+DirE" | "+DirE_Emph" | "+Disc" | "+Dist" | "+Distr" | "+Dub" | "+Emph" | "+Fact" | "+Gen" | "+IPst" | "+Iclsv" | "+Inch" | "+IndE" | "+IndE_Emph" | "+Inf" | "+Int" | "+Intr_Neg" | "+Intrup" | "+Intsoc" | "+Kaus" | "+Lim_Aff" | "+Loc" | "+Mom" | "+MPoss" | "+MRep" | "+Multi" | "+NPst" | "+Neg" | "+Obl" | "+Perdur" | "+Perf" | "+Pl" | "+Posi" | "+Poss" | "+Pot" | "+Priv" | "+Prog" | "+QTop" | "+Rem" | "+Rep" | "+Res" | "+Reub" | "+Rflx_Int" | "+Rgr_Iprs" | "+Rptn" | "+Rzpr" | "+SS" | "+SS_Sim" | "+Sim" | "+Sml" | "+Soc" | "+Stat_Multi" | "+Term" | "+Top" | "+Trs" | "+Vdim" | "PrnPers+1.Pl.Excl" | "PrnPers+1.Pl.Incl" | "PrnPers+1.Sg" | "PrnPers+2.Sg" | "PrnPers+3.Sg" | "PrnPers+Lim+1.Pl.Excl" | "PrnPers+Lim+1.Pl.Incl"]  ]; 
        
@@ -22,10 +22,10 @@
 
       define Numbers [%0|1|2|3|4|5|6|7|8|9|%,|%.|%'];
       define Vowel [a|e|i|o|u|á|é|í|ó|ú|A|E|I|O|U|Á|É|Í|Ó|Ú|Ü|"@TA"|{pa}"@PA"|"@PTI"|"@STI"];
-      define Cons [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|B|C|D|F|G|H|J|K|L|M|N|Ñ|P|Q|R|S|T|V|W|X|Y|Z|'|{m}"@MU"|{m}"@MI"|{s}"@SI"|{ch}"@CHA"|{ntin}"@NTIN"|{p}"@PA"|{q}"@PA"];
+      define Cons [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|B|C|D|F|G|H|J|K|L|M|N|Ñ|P|Q|R|S|T|V|W|X|Y|Z|'|{m}"@MU"|{m}"@MI"|{s}"@SI"|{ch}"@CHA"|{ntin}"@NTIN"|{p}"@PA"|{q}"@PA"|"@PLspS"|"@PLspES"];
       
       define VowelRoot [a|e|i|o|u|á|é|í|ó|ú|A|E|I|O|U|Á|É|Í|Ó|Ú|Ü];
-      define ConsRoot [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|B|C|D|F|G|H|J|K|L|M|N|Ñ|P|Q|R|S|T|V|W|X|Y|Z|'];
+      define ConsRoot [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|B|C|D|F|G|H|J|K|L|M|N|Ñ|P|Q|R|S|T|V|W|X|Y|Z];
 
       #--------------------------#
       # allow uppercase letters  #
@@ -100,6 +100,13 @@
 	define PA2 [  {p}"@PA"  => Vowel _  ];
 	#define PA3 [  {pa}"@PA" => Cons _  ];
       define GENITIV PA1 .o. PA2 ;
+      
+       #---------------------------------------------------#
+       # Spanish -es after onsonant, -s after vowel        #
+       #---------------------------------------------------#
+       define spanPL1 [  {s}"@PLspS"  => VowelRoot _  ];
+       define spanPL2 [  {es}"@PLspES"  => ConsRoot _  ];
+       define spanPL spanPL1 .o. spanPL2;
 
        #--------------------------------------------------------#
        # Possessive forms need euphon. -ni/-ñi after Consonants #
@@ -113,7 +120,17 @@
 	define POSS2 [ "@POSSni" => Cons _  ];
 	define POSSESSIV POSS1 .o. POSS2;
 
-       define NounRules GENITIV .o. POSSESSIV;
+       define NounRules GENITIV .o. spanPL .o. POSSESSIV;
+       
+       #-----------------------------------------------------------------------------------------------#
+       # with Spanish plural forms in -es: remove accent on last syllable, if present (afán -> afanes) #
+       #-----------------------------------------------------------------------------------------------#
+       define accentSPpl1 [ a <- á  \\ _  ConsRoot {es} "@PLspES"  ];
+       define accentSPpl2 [ e <- é  \\ _  ConsRoot {es} "@PLspES"  ];
+       define accentSPpl3 [ i <- í  \\ _  ConsRoot {es} "@PLspES" ];
+       define accentSPpl4 [ o <- ó  \\ _  ConsRoot {es} "@PLspES"  ];
+       define accentSPpl5 [ u <- ú  \\ _  ConsRoot {es} "@PLspES" ];
+       define NounRulesUpper accentSPpl1 .o. accentSPpl2 .o. accentSPpl3 .o. accentSPpl4 .o. accentSPpl5;
 
        ##########
        # VERBAL #
@@ -288,8 +305,10 @@
       define NROOT2 NROOT2pre .o. SpanOrtho; #g-o
       source spanish-nouns3.foma
       define NROOT3 NROOT3pre .o. SpanOrtho; #o-z
+      source spanish-nouns4.foma
+      define NROOT4 NROOTendSpre .o. SpanOrtho; # roots that end with -s in singular
       
-      define NROOT [NROOT1|NROOT2|NROOT3];
+      define NROOT [NROOT1|NROOT2|NROOT3|NROOT4];
 
        source n-n-1-guesser.foma
        source  n-n-2.foma
@@ -301,9 +320,11 @@
        source  n-n-6.foma
        source  n-n-7.foma
        define kamaDist [  {kama} "+Dist" ] : {kama};
+       define spanishPlural1 [  {s} "+Pl"  ] : [{s}"@PLspS"];
+       define spanishPlural2 [  {es} "@PLspES" "+Pl"  ] : [{es}"@PLspES"];
        
 
-      define NounSuffixes  [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
+      define NounSuffixes  [ (spanishPlural1|spanishPlural2) (N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
    
 ######################################################################################
 
@@ -418,7 +439,7 @@ define FeatRestr [ CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS  ];
 #read regex Cleanup2 .o. Wort  .o. Cleanup1 .o. Accent;
 
 
-define preWord [Noun|Verb|ADVERBS|CONJUNCTIONS|PREPOSITIONS] .o. NounRules .o. AmbiRules ;
+define preWord NounRulesUpper .o. [Noun|Verb|ADVERBS|CONJUNCTIONS|PREPOSITIONS] .o. NounRules .o. AmbiRules ;
 define Word  Cleanup2 .o. FeatRestr .o. preWord  .o. Cleanup1 .o. Accent .o. UpperCase;
 read regex CleanSigma .o. Word;
 
