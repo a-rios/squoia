@@ -449,15 +449,14 @@ define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
        # demonstrative pronouns #
        #------------------------#
        define PrnDem @re"prndem.regex";
-       define niqAprx [ [ "[" "^DB" "]" "[" "--" "]" {niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : [{niq}|{ñiq}] ];
        
-       define PrnDemInfl [PrnDem (HonAff) (AS=1) (HonAff) (AS=2) (N=N=1) (niqAprx) (N=N=2) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} N=N=7^{0,2}];
+       define PrnDemInfl [PrnDem (HonAff) (AS=1) (HonAff) (AS=2) (N=N=1) (N=N=2) (N=N=3) (N=N=4) (N=N=5)^{0,2} (N=N=4) (HonAff) (N=N=6)^{0,2} N=N=7^{0,2}];
 
        #------------------------#
        # interrogative pronouns #
        #------------------------#
        define PrnInterrog @re"prninterrog.regex";
-       define PrnInterrogInfl [PrnInterrog (N=N=1) (niqAprx) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} (N=N=7)^{0,2}];
+       define PrnInterrogInfl [PrnInterrog (N=N=1) (N=N=3) (N=N=4) (N=N=5)^{0,2} (N=N=4) (HonAff) (N=N=6)^{0,2} (N=N=7)^{0,2}];
 
 define Prn PossessivPlural .o. [PrnPersInfl|PrnDemInfl|PrnInterrogInfl] .o. QuechuaOrtho;
 
@@ -653,6 +652,7 @@ define preWord IGRules .o. [[Noun|Verb|Prn|Particles|HAKU|HAKUPL] (AS)] .o. Noun
 define Word  FeatRestr  .o. NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 read regex Cleanup2 .o. LexRestr .o. Word;
 
+#for quick compiling (debgging)
 #define Word NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 #read regex AMBROOTS3 .o. Word;
 
