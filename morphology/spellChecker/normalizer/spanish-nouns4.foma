@@ -139,6 +139,7 @@ define NROOTendSpre [
 |{jativés}  : {jativés}
 |{javanés}  : {javanés}
 |{jesús}  : {jesús}
+|{jueves}  : {jueves}
 |{koljos}  : {koljos}
 |{koljós}  : {koljós}
 |{leonés}  : {leonés}
@@ -150,6 +151,7 @@ define NROOTendSpre [
 |{logroñés}  : {logroñés}
 |{lotus}  : {lotus}
 |{luis}  : {luis}
+|{lunes}  : {lunes}
 |{lupus}  : {lupus}
 |{luxemburgués}  : {luxemburgués}
 |{mahonés}  : {mahonés}
@@ -159,12 +161,14 @@ define NROOTendSpre [
 |{mantés}  : {mantés}
 |{marqués}  : {marqués}
 |{marsellés}  : {marsellés}
+|{martes}  : {martes}
 |{mas}  : {mas}
 |{mataronés}  : {mataronés}
 |{mentís}  : {mentís}
 |{mes}  : {mes}
 |{mesinés}  : {mesinés}
 |{microbús}  : {microbús}
+|{miércoles}  : {miércoles}
 |{mies}  : {mies}
 |{milanés}  : {milanés}
 |{minibús}  : {minibús}
@@ -259,6 +263,7 @@ define NROOTendSpre [
 |{veronés}  : {veronés}
 |{vicediós}  : {vicediós}
 |{vienés}  : {vienés}
+|{viernes}  : {viernes}
 |{vigués}  : {vigués}
 |{zelandés}  : {zelandés}
 |{zimbawés}  : {zimbawés}
