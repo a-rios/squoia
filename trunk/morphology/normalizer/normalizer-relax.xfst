@@ -362,9 +362,8 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define N=N=5 DB @re"n-n-5.regex" ;
        define N=N=6 DB @re"n-n-6.regex" ;
        define N=N=7 DB @re"n-n-7.regex" ;
-       define niqAprx [ "[" "^DB" "]" "[" "--" "]" {niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : [{niq}|{ñiq}];
 
-      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) (niqAprx) N=N=2^{0,2} (HonAff) (N=N=5) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  ;
+      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff)  N=N=2^{0,2} (HonAff) (N=N=5) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  ;
      
 ######################################################################################
 
@@ -482,6 +481,8 @@ define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
        # demonstrative pronouns #
        #------------------------#
        define PrnDem @re"prndem.regex";
+       define niqAprx [ "[" "^DB" "]" "[" "--" "]" {niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : [{niq}|{ñiq}];
+       
        define PrnDemInfl [PrnDem (HonAff) (AS=1) (HonAff) (AS=2) (N=N=1) (niqAprx)  (N=N=2) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} N=N=7^{0,2}];
 
        #------------------------#

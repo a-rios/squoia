@@ -1,6 +1,0 @@
-# verbal slot 2: directionals and reflexive, allomorphic variants -ka, -pa, -m, see rules section in quechua.xfst
-
-   [ "[" "^DB" "]" "[" "--" "]" {ku}"+ku+" "[" "VDeriv" "]" "[" "+Rflx_Int" "]" ] : {ku}"@KU"
-|  [ "[" "--" "]" {pu}"+pu+" "[" "VDeriv" "]" "[" "+Rgr_Iprs" "]" ] : {pu}"@PU"
-|  [ "[" "--" "]" {mu}"+mu+" "[" "VDeriv" "]" "[" "+Cis_Trs" "]" ] :  {mu}"@MU";
-#|  [ "[" "--" "]" {n}"+nn" "[" "VDeriv" "]" "[" "+Cis_Trs" "]" ] :  {n}"@MU";

@@ -881,7 +881,7 @@ sub disambMorph1{
 
 	
 	print STDERR "number of words: $totalWords\n"; 
-	print STDERR "unambiguous forms: $unambigForms : "; printf STERR ("%.2f", $unamb); print STDERR "\n";
+	print STDERR "unambiguous forms: $unambigForms : "; printf STDERR ("%.2f", $unamb); print STDERR "\n";
 	print STDERR "ambiguous forms: $ambigForms : "; printf STDERR ("%.2f", $amb); print STDERR "\n";
 	print STDERR "disambiguated with morph1: rules: $$prevdisamb, crf: $disambiguatedForms : "; printf STDERR ("%.2f", $disamb); print STDERR "\n";
 	print STDERR "still ambiguous after morph1 disambiguation: $stillambigForms : "; printf STDERR ("%.2f", $stillamb); print STDERR "\n";
@@ -1054,7 +1054,7 @@ sub disambMorph2{
 	}
 	
 	print STDERR "number of words: $totalWords\n"; 
-	print STDERR "unambiguous forms: $unambigForms : "; printf STERR ("%.2f", $unamb); print STDERR "\n";
+	print STDERR "unambiguous forms: $unambigForms : "; printf STDERR ("%.2f", $unamb); print STDERR "\n";
 	print STDERR "ambiguous forms: $ambigForms : "; printf STDERR ("%.2f", $amb); print STDERR "\n";
 	print STDERR "disambiguated with morph2: $disambiguatedForms : "; printf STDERR ("%.2f", $disamb); print STDERR "\n";
 	print STDERR "still ambiguous after morph2 disambiguation: $stillambigForms : "; printf STDERR ("%.2f", $stillamb); print STDERR "\n";
@@ -1222,7 +1222,7 @@ sub disambMorph3{
 	
 	
 	print STDERR "number of words: $totalWords\n"; 
-	print STDERR "unambiguous forms: $unambigForms : "; printf STERR ("%.2f", $unamb); print STDERR "\n";
+	print STDERR "unambiguous forms: $unambigForms : "; printf STDERR ("%.2f", $unamb); print STDERR "\n";
 	print STDERR "ambiguous forms: $ambigForms : "; printf STDERR ("%.2f", $amb); print STDERR "\n";
 	print STDERR "disambiguated with morph3: rules: $$prevdisamb, crf: $disambiguatedForms : "; printf STDERR ("%.2f", $disamb); print STDERR "\n";
 	print STDERR "still ambiguous after morph3 disambiguation: $stillambigForms : "; printf STDERR ("%.2f", $stillamb); print STDERR "\n";

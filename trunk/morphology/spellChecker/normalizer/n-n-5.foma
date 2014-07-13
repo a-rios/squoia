@@ -2,11 +2,11 @@
 
 define N=N=5 [
    [ {ntin}  "+Iclsv" ]:["@POSS"{ntin}]
-|  [  {ntin}  "+Iclsv" ]: ["@POSS"{nti}]
+|  [  {nti}  "+Iclsv" ]: ["@POSS"{nti}]
 |  [  {nintin}  "+Iclsv" ]:["@POSSni"{nintin}]
-|  [  {nintin}  "+Iclsv" ]: ["@POSSni"{ninti}]
+|  [  {ninti}  "+Iclsv" ]: ["@POSSni"{ninti}]
 |  [  {nintin}  "+Iclsv" ]:["@POSSni"{ñintin}]
-|  [  {nintin}  "+Iclsv" ]: ["@POSSni"{ñinti}]
+|  [  {ninti}  "+Iclsv" ]: ["@POSSni"{ñinti}]
 |  [  {pura}  "+Intsoc" ] : {pura}
 |  [  {nka}   "+Distr" ] : {nka}
 |  [  {kama}   "+Term" ] : {kama}

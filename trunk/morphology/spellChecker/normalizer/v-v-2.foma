@@ -4,6 +4,10 @@ define V=V=2 [
    [ {ku}"+ku+"  "+Rflx_Int"  ] : {ku}"@KU"
 |  [  {pu}"+pu+"  "+Rgr_Iprs"  ] : {pu}"@PU"
 |  [  {mu}"+mu+"  "+Cis_Trs"  ] :  {mu}"@MU"
+|  [  {na}  "+Rzpr" ] : {na}
+|  [  {chi}  "+Caus" ] : {chi}"@CHI"
+# might occur in between
+| [ {lla} "+Lim_Aff" ] : {lla}
 ];
 
 
