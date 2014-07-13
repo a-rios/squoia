@@ -389,9 +389,8 @@
        # "yupaychasunaykichik"               #
        #-------------------------------------#
        define NDeriv1finalTrans [VROOT  VerbalSuffixesBeforeNS VtoNfinalTrans];
-       define NDeriv1finalTrans2 [(VDeriv2|VDeriv1)  VerbalSuffixesBeforeNS VtoNfinalTrans]
+       define NDeriv1finalTrans2 [ [VDeriv2|VDeriv1]  VerbalSuffixesBeforeNS VtoNfinalTrans];
 
-#define NDERIV [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
 define NDERIV [NDeriv1|NDeriv2|NDeriv3];
 define NDERIVFINAL [NDeriv1final|NDeriv2final|NDeriv3final];
 define VDERIV [VDeriv1|VDeriv2];
