@@ -10,7 +10,7 @@
        define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@PLspES"|"@PLspS"] -> ""];
        define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@PLspES"|"@PLspS"] ];
 
-       define CleanSigma [ "" <- ["+1.Obj" | "+1.Pl.Excl.Poss" | "+1.Pl.Excl.Poss+Lim" | "+1.Pl.Excl.Subj" | "+1.Pl.Excl.Subj.Fut" | "+1.Pl.Excl.Subj_2.Sg.Obj" | "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" | "+1.Pl.Incl.Poss" | "+1.Pl.Incl.Poss+Lim" | "+1.Pl.Incl.Subj" | "+1.Pl.Incl.Subj.Fut" | "+1.Pl.Incl.Subj.Imp" | "+1.Pl.Incl.Subj.Pot" | "+1.Poss" | "+1.Sg.Poss" | "+1.Sg.Poss+Lim" | "+1.Sg.Subj" | "+1.Sg.Subj.Fut" | "+1.Sg.Subj.Pot" | "+1.Sg.Subj_2.Pl.Obj" | "+1.Sg.Subj_2.Pl.Obj.Fut" | "+1.Sg.Subj_2.Sg.Obj" | "+1.Sg.Subj_2.Sg.Obj.Fut" | "+2.Obj" | "+2.Pl.Poss" | "+2.Pl.Poss+Lim" | "+2.Pl.Subj" | "+2.Pl.Subj.Imp" | "+2.Pl.Subj.Pot" | "+2.Sg.Poss" | "+2.Sg.Poss+Lim" | "+2.Sg.Subj" | "+2.Sg.Subj.Imp" | "+2.Sg.Subj.Pot" | "+2.Sg.Subj_1.Pl.Excl.Obj" | "+2.Sg.Subj_1.Pl.Obj.Imp" | "+3.Pl.Poss" | "+3.Pl.Poss+Lim" | "+3.Pl.Subj" | "+3.Pl.Subj.Fut" | "+3.Pl.Subj.Hab" | "+3.Pl.Subj.IPst" | "+3.Pl.Subj.Imp" | "+3.Pl.Subj.NPst" | "+3.Pl.Subj.Pot" | "+3.Pl.Subj_2.Sg.Obj" | "+3.Poss" | "+3.Sg.Poss" | "+3.Sg.Poss+Lim" | "+3.Sg.Subj" | "+3.Sg.Subj.Fut" | "+3.Sg.Subj.IPst" | "+3.Sg.Subj.Imp" | "+3.Sg.Subj.NPst" | "+3.Subj_1.Pl.Excl.Obj" | "+3.Subj_1.Pl.Excl.Obj.Fut" | "+3.Subj_1.Pl.Incl.Obj" | "+3.Subj_1.Pl.Incl.Obj.Fut" | "+3.Subj_2.Pl.Obj" | "+3.Subj_2.Sg.Obj" | "+Abl" | "+Abtmp" | "+Acc" | "+Add" | "+Aff" | "+Ag" | "+Aprx" | "+Asmp" | "+Asmp_Emph" | "+Ass" | "+Aug" | "+Autotrs" | "+Ben" | "+Caus" | "+Char" | "+Cis_Trs" | "+Con_Inst" | "+Con_Intr" | "+Cont" | "+DS" | "+Dat_Ill" | "+Def" | "+Des" | "+Desesp" | "+Dim" | "+Dir" | "+DirE" | "+DirE_Emph" | "+Disc" | "+Dist" | "+Distr" | "+Dub" | "+Emph" | "+Fact" | "+Gen" | "+IPst" | "+Iclsv" | "+Inch" | "+IndE" | "+IndE_Emph" | "+Inf" | "+Int" | "+Intr_Neg" | "+Intrup" | "+Intsoc" | "+Kaus" | "+Lim_Aff" | "+Loc" | "+Mom" | "+MPoss" | "+MRep" | "+Multi" | "+NPst" | "+Neg" | "+Obl" | "+Perdur" | "+Perf" | "+Pl" | "+Posi" | "+Poss" | "+Pot" | "+Priv" | "+Prog" | "+QTop" | "+Rem" | "+Rep" | "+Res" | "+Reub" | "+Rflx_Int" | "+Rgr_Iprs" | "+Rptn" | "+Rzpr" | "+SS" | "+SS_Sim" | "+Sim" | "+Sml" | "+Soc" | "+Stat_Multi" | "+Term" | "+Top" | "+Trs" | "+Vdim" | "PrnPers+1.Pl.Excl" | "PrnPers+1.Pl.Incl" | "PrnPers+1.Sg" | "PrnPers+2.Sg" | "PrnPers+3.Sg" | "PrnPers+Lim+1.Pl.Excl" | "PrnPers+Lim+1.Pl.Incl"]  ]; 
+       define CleanSigma [ "" <- ["+1.Obj" | "+1.Pl.Excl.Poss" | "+1.Pl.Excl.Poss+Lim" | "+1.Pl.Excl.Subj" | "+1.Pl.Excl.Subj.Fut" | "+1.Pl.Excl.Subj_2.Sg.Obj" | "+1.Pl.Excl.Subj_2.Sg.Obj.Fut" | "+1.Pl.Incl.Poss" | "+1.Pl.Incl.Poss+Lim" | "+1.Pl.Incl.Subj" | "+1.Pl.Incl.Subj.Fut" | "+1.Pl.Incl.Subj.Imp" | "+1.Pl.Incl.Subj.Pot" | "+1.Poss" | "+1.Sg.Poss" | "+1.Sg.Poss+Lim" | "+1.Sg.Subj" | "+1.Sg.Subj.Fut" | "+1.Sg.Subj.Pot" | "+1.Sg.Subj_2.Pl.Obj" | "+1.Sg.Subj_2.Pl.Obj.Fut" | "+1.Sg.Subj_2.Sg.Obj" | "+1.Sg.Subj_2.Sg.Obj.Fut" | "+2.Obj" | "+2.Pl.Poss" | "+2.Pl.Poss+Lim" | "+2.Pl.Subj" | "+2.Pl.Subj.Imp" | "+2.Pl.Subj.Pot" | "+2.Sg.Poss" | "+2.Sg.Poss+Lim" | "+2.Sg.Subj" | "+2.Sg.Subj.Imp" | "+2.Sg.Subj.Pot" | "+2.Sg.Subj_1.Pl.Excl.Obj" | "+2.Sg.Subj_1.Pl.Obj.Imp" | "+3.Pl.Poss" | "+3.Pl.Poss+Lim" | "+3.Pl.Subj" | "+3.Pl.Subj.Fut" | "+3.Pl.Subj.Hab" | "+3.Pl.Subj.IPst" | "+3.Pl.Subj.Imp" | "+3.Pl.Subj.NPst" | "+3.Pl.Subj.Pot" | "+3.Pl.Subj_2.Sg.Obj" | "+3.Poss" | "+3.Sg.Poss" | "+3.Sg.Poss+Lim" | "+3.Sg.Subj" | "+3.Sg.Subj.Fut" | "+3.Sg.Subj.IPst" | "+3.Sg.Subj.Imp" | "+3.Sg.Subj.NPst" | "+3.Subj_1.Pl.Excl.Obj" | "+3.Subj_1.Pl.Excl.Obj.Fut" | "+3.Subj_1.Pl.Incl.Obj" | "+3.Subj_1.Pl.Incl.Obj.Fut" | "+3.Subj_2.Pl.Obj" | "+3.Subj_2.Sg.Obj" | "+Abl" | "+Abtmp" | "+Acc" | "+Add" | "+Aff" | "+Ag" | "+Aprx" | "+Asmp" | "+Asmp_Emph" | "+Ass" | "+Aug" | "+Autotrs" | "+Ben" | "+Caus" | "+Char" | "+Cis_Trs" | "+Con_Inst" | "+Con_Intr" | "+Cont" | "+DS" | "+Dat_Ill" | "+Def" | "+Des" | "+Desesp" | "+Dim" | "+Dir" | "+DirE" | "+DirE_Emph" | "+Disc" | "+Dist" | "+Distr" | "+Dub" | "+Emph" | "+Fact" | "+Gen" | "+IPst" | "+Iclsv" | "+Inch" | "+IndE" | "+IndE_Emph" | "+Inf" | "+Int" | "+Intr_Neg" | "+Intrup" | "+Intsoc" | "+Kaus" | "+Lim_Aff" | "+Loc" | "+Mom" | "+MPoss" | "+MRep" | "+Multi" | "+NPst" | "+Neg" | "+Obl" | "+Onom" | "+Perdur" | "+Perf" | "+Pl" | "+Posi" | "+Poss" | "+Pot" | "+Priv" | "+Prog" | "+QTop" | "+Rem" | "+Rep" | "+Res" | "+Reub" | "+Rflx_Int" | "+Rgr_Iprs" | "+Rptn" | "+Rzpr" | "+SS" | "+SS_Sim" | "+Sim" | "+Sml" | "+Soc" | "+Stat_Multi" | "+Term" | "+Top" | "+Trs" | "+Vdim" | "PrnPers+1.Pl.Excl" | "PrnPers+1.Pl.Incl" | "PrnPers+1.Sg" | "PrnPers+2.Sg" | "PrnPers+3.Sg" | "PrnPers+Lim+1.Pl.Excl" | "PrnPers+Lim+1.Pl.Incl"]  ]; 
        
 ############################################################################### 
 
@@ -288,7 +288,7 @@
        source  v-v-6-norm.foma
        source v-v-7.foma
 
-    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,5} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)]  .o. VerbRulesLower .o. UpperCase .o. QuechuaOrtho ;
 
 
 #####################################################################################
@@ -319,12 +319,11 @@
        source  n-n-5.foma
        source  n-n-6.foma
        source  n-n-7.foma
-       define kamaDist [  {kama} "+Dist" ] : {kama};
        define spanishPlural1 [  {s} "+Pl"  ] : [{s}"@PLspS"];
        define spanishPlural2 [  {es} "@PLspES" "+Pl"  ] : [{es}"@PLspES"];
        
 
-      define NounSuffixes  [ (spanishPlural1|spanishPlural2) (N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
+      define NounSuffixes  [ (spanishPlural1|spanishPlural2) (N=N=1) (HonAff)  N=N=2^{0,2} (HonAff) (N=N=5) (HonAff) (N=N=3) (HonAff) (N=N=4) (HonAff)  (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
    
 ######################################################################################
 
@@ -341,7 +340,7 @@
        source  v-n-final.foma
        source  v-n-transitive.foma
        define Relational [ {n} "+Rel" : {n} ];
-       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower .o. QuechuaOrtho .o.UpperCase;
+       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,5} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower .o. QuechuaOrtho .o.UpperCase;
 
        #------------------------#
        # nominalized verbs:     #
@@ -350,7 +349,6 @@
        #------------------------#
        define NDeriv1 [VROOT  [ [VerbalSuffixesBeforeNS VtoN] .o. QuechuaOrtho ] ];
        define NDeriv1final [VROOT  [ [VerbalSuffixesBeforeNS VtoNfinal] .o. QuechuaOrtho ] ];
-       define NDeriv1finalTrans [VROOT [ [VerbalSuffixesBeforeNS VtoNfinalTrans] .o. QuechuaOrtho ] ];
 
        #----------------------------#
        # verbalized nouns:          #
@@ -384,6 +382,15 @@
        define NDeriv3 [VDeriv2  [ [VerbalSuffixesBeforeNS VtoN] .o. QuechuaOrtho ] ];
        define NDeriv3final [VDeriv2  [ [VerbalSuffixesBeforeNS VtoNfinal] .o. QuechuaOrtho ] ];
 
+       #-------------------------------------#
+       # nominalized verbs with transitiv    #
+       # person markins (in npers.regex)     #
+       # "apamuwanaykichik",                 #
+       # "yupaychasunaykichik"               #
+       #-------------------------------------#
+       define NDeriv1finalTrans [VROOT  VerbalSuffixesBeforeNS VtoNfinalTrans];
+       define NDeriv1finalTrans2 [(VDeriv2|VDeriv1)  VerbalSuffixesBeforeNS VtoNfinalTrans];
+       
 #define NDERIV [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
 define NDERIV [NDeriv1|NDeriv2|NDeriv3];
 define NDERIVFINAL [NDeriv1final|NDeriv2final|NDeriv3final];
@@ -392,7 +399,7 @@ define VDERIV [VDeriv1|VDeriv2];
 
 #define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3)  (N=N=5) (N=N=6) (N=N=7) (AS)] ;
 define NounConverb  [[NDERIVFINAL] (HonAff) (N=N=3) (AS)] ;
-define NounConverbTrans watrans .o. sutrans .o. [[NDeriv1finalTrans] (HonAff) npers (N=N=5) (N=N=6) (N=N=7)] ;
+define NounConverbTrans watrans .o. sutrans .o. [[NDeriv1finalTrans|NDeriv1finalTrans2] (HonAff) npers (N=N=5) (N=N=6) (N=N=7)] ;
 define NounNormal  [[NROOT|NDERIV] NounSuffixes] ;
 define Noun [NounConverb|NounNormal|NounConverbTrans];
 define Verb  [[VROOT|VDERIV] VerbSuffixes];

@@ -29,8 +29,6 @@ define V=V=1 [
 | [  {cha}  "+Vdim" ] : {cha}"@Vdim"
 | [   {pa}  "+Rep" ] : {pa}
 | [  {paya}  "+MRep" ] : {paya}
-| [  {na}  "+Rzpr" ] : {na}
-| [  {chi}  "+Caus" ] : {chi}"@CHI"
 | [   {ri}  "+Inch" ] : {ri}"@RI"
 | [  {lli}  "+Autotrs" ] : {lli} 
 # préstamos del aymara
@@ -48,4 +46,6 @@ define V=V=1 [
 # directional: hacia abajo
 | [  {t'a}  "+Mom" ] : {t'a} 
 # aspect: acción única, momentánea y breve
+# -qi: sufijo que aparece en voces onomatopeyicas, p.e. phuqchiqi-, q'aqyaqi-, qhulluqi- (<Aymara?)
+| [ {qi} "+Onom" ] : {qi}
 ] ;

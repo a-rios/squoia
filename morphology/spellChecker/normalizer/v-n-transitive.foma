@@ -6,6 +6,6 @@ define VtoNfinalTrans [
 | [  {spa}   "+SS"  ] : {shpa}
 | [  {sqa}  "+Perf"  ] : {sqa}
 | [  {na}  "+Obl"  ] : {na}
-# not with -q ? (note: would need -ni)
-#| [  {q}  "+Ag"  ] : {q}
+# also with -q ? (note: needs -ni)
+| [  {q}  "+Ag"  ] : {q}
 ] ;

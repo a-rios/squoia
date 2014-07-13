@@ -1,7 +1,0 @@
-# ambivalent suffixes slot 1
-
-  [ "[" "--" "]" {hina} "[" "Amb" "]" "[" "+Sim" "]"] : {hina}
-| [ "[" "--" "]" {jina} "[" "Amb" "]" "[" "+Sim" "]"] : {jina}
-| [ "[" "--" "]" {pacha} "[" "Amb" "]" "[" "+Abtmp" "]" ]: {pacha} ;
-
-

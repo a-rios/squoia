@@ -304,7 +304,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=6 DB @re"v-v-6-norm.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
 
-    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} V=V=2^{0,5} (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. QuechuaOrtho;
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,5} (HonAff)  (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. QuechuaOrtho;
 
 
 #####################################################################################
@@ -332,7 +332,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define N=N=6 DB @re"n-n-6.regex" ;
        define N=N=7 DB @re"n-n-7.regex" ;
 
-      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) (niqAprx) N=N=2^{0,2} (HonAff) (N=N=5) (HonAff) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  .o. QuechuaOrtho ;
+      define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff)  N=N=2^{0,2} (HonAff) (N=N=5) (HonAff) (N=N=3) (HonAff) (N=N=4) (HonAff) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff)]  .o. QuechuaOrtho ;
      
 ######################################################################################
 
@@ -399,7 +399,6 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define NDeriv1finalTrans [VROOT  VerbalSuffixesBeforeNS VtoNfinalTrans];
        define NDeriv1finalTrans2 [(VDeriv2|VDeriv1)  VerbalSuffixesBeforeNS VtoNfinalTrans];
 
-#define NDERIV [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
 define NDERIV [NDeriv1|NDeriv2|NDeriv3];
 define NDERIVFINAL [NDeriv1final|NDeriv2final|NDeriv3final];
 define VDERIV [VDeriv1|VDeriv2];
@@ -450,6 +449,8 @@ define Verb  [[VROOT|VDERIV|VRootInc] VerbSuffixes];
        # demonstrative pronouns #
        #------------------------#
        define PrnDem @re"prndem.regex";
+       define niqAprx [ [ "[" "^DB" "]" "[" "--" "]" {niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : [{niq}|{ñiq}] ];
+       
        define PrnDemInfl [PrnDem (HonAff) (AS=1) (HonAff) (AS=2) (N=N=1) (niqAprx) (N=N=2) (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) (N=N=6)^{0,2} N=N=7^{0,2}];
 
        #------------------------#

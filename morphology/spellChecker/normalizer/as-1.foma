@@ -3,5 +3,6 @@ define AS=1 [
   [  {hina}  "+Sim" ] : {hina}
 | [ {hina}  "+Sim" ] : {jina}
 | [  {pacha}  "+Abtmp" ]: {pacha} 
+| [  {chuhina}  "+Sim" ]: {chuhina} 
 ];
 
