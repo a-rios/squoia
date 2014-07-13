@@ -36,7 +36,7 @@
 
       define UpperCase [ a (->) A,b (->) B,c (->) C,d (->) D,e (->) E,f (->) F,g (->) G,h (->) H,i (->) I,j (->) J,k (->) K,l (->) L,m (->) M,n (->) N,o (->) O,p (->) P,q (->) Q,r (->) R,s (->) S,t (->) T,u (->) U,v (->) V,w (->) W,x (->) X,y (->) Y,z (->) Z,ñ (->) Ñ];
       
-      define Allophone [ u (->) o||  _  (s|t|n|r|l|"@KU"|"@PU"|"@MU"|"@RQU") q, q (s|t|n|r|h|l|') _  , _ (s|t|n|r|l|"@KU"|"@PU"|"@MU"|"@RQU"){cc}, {cc}(s|t|n|r|h|l|') _ ] .o. [i (->) e || _ (s|t|n|r|h|l|"@PTI"|"@CHI"|"@YSI") q, q (s|t|n|r|l|ll|h|') _ , _ (s|t|n|r|h|l|"@PTI"|"@CHI"|"@YSI"){cc}, {cc}(s|t|n|r|l|ll|') _  ];
+      define Allophone [ u (->) o||  _  (s|t|n|r|l|{ll}|"@KU"|"@PU"|"@MU"|"@RQU") q, q (s|t|n|r|h|l|{ll}|') _  , _ (s|t|n|r|l|{ll}|"@KU"|"@PU"|"@MU"|"@RQU"){cc}, {cc}(s|t|n|r|h|l|{ll}|') _ ] .o. [i (->) e || _ (s|t|n|r|h|l|{ll}|"@PTI"|"@CHI"|"@YSI") q, q (s|t|n|r|l|{ll}|h|') _ , _ (s|t|n|r|h|l|{ll}|"@PTI"|"@CHI"|"@YSI"){cc}, {cc}(s|t|n|r|l|{ll}|') _  ];
 
       #---------------------------#
        # alternative orthographies #
@@ -272,7 +272,7 @@
       source  as-5.foma
       source  as-6.foma
       source  as-7.foma
-      define HonAff [ {lla}  "+Lim_Aff" ] : {lla} ;
+      define HonAff [ [ {lla}  "+Lim_Aff" ] : {lla} ];
 
       define AS [(HonAff) (AS=1) (HonAff) (AS=2) (AS=3)^{0,2} (HonAff) (AS=4) (HonAff) (AS=5) (AS=6) (AS=7)] .o. UpperCase;
 
