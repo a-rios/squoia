@@ -40,6 +40,8 @@ my.pos=/VAPP/&&my.aux=sein			aux	my.lem=haben&&my.slem=haber&&my.smi=/VA.+/	lem	
 # modal/command verbs: special word order for past participle form (that looks like infinite form)
 my.pos=/VMPP/||(my.pos=/VVPP/&&my.cmdverb=yes)	yes		my.type=/VP/		ppexcep		up	overwrite
 
+# passive voice
+my.smi=/VMP00[SP][FM]/ && child.slem=ser	passive		my.type=/VP/		voice		up	overwrite
 
 # ES direct object => DE Dativ
 # example: sigue a la hija => (er) folgt der Tochter
@@ -130,6 +132,9 @@ my.spos=/VAPP/&&my.pos=VA	pos	my.type=VP	VAPP	down	overwrite
 xpath{//CHUNK[@type="VP" and (@si="S" or @si="atr")]/descendant::NODE[starts-with(@pos,"V") and contains(@pos,"INF") and count(descendant::NODE[starts-with(@pos,"V")])=0]}	zu	my.type=VP			yes			down		overwrite
 
 xpath{//CHUNK[@type="VP" and (@si="S" or @si="atr")]/descendant::NODE[@zu="yes" or (starts-with(@pos,"V") and contains(@pos,"INF") and count(descendant::NODE[starts-with(@pos,"V")])=0)]}	yes	my.type=VP			zu			up		overwrite
+
+# infinitive without "zu"
+xpath{//CHUNK[@type="VP" and (@si="top" or @si="suj")]/descendant::NODE[@pos="VVINF" and count(descendant::NODE[starts-with(@pos,"V")])=0]}	no	my.type=VP	finVerb		up	overwrite
 
 # Reflexive verbs
 my.spos=/VVFIN/&&my.pos=/VV/&&my.refl=/yes/	pos	my.type=/VP/	"VVFIN"		down	overwrite

@@ -164,8 +164,10 @@ apropiar	an|passen	k	my.smi=/VMP00/&&chunkparent.type=/VP/
 #haber	haben	my.smi=/VA.+/ && !(parent.aux=[be+])	#prob=0.8
 
 # Passive auxiliary
-ser	sein	k	my.smi=/VS.+/ && !(parent.smi=/VMP00[PS][FM]/&& chunkparent.type=/VP/) && !(grandparent.smi=/VMP00[PS][FM]/ && chunkgrandparent.type=/VP/)
-ser	werden	k	my.smi=/VS.+/ && ((parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/VP/) || (grandparent.smi=/VMP00[PS][FM]/ && chunkgrandparent.type=/VP/))
+#ser	sein	k	my.smi=/VS.+/ && !(parent.smi=/VMP00[PS][FM]/&& chunkparent.type=/VP/) && !(grandparent.smi=/VMP00[PS][FM]/ && chunkgrandparent.type=/VP/)
+#ser	werden	k	my.smi=/VS.+/ && ((parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/VP/) || (grandparent.smi=/VMP00[PS][FM]/ && chunkgrandparent.type=/VP/))
+ser	sein	k	my.smi=/VS.+/ && !(parent.smi=/VMP00[PS][FM]/&& chunkparent.type=/VP/)
+ser	werden	k	my.smi=/VS.+/ && (parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/VP/)
 
 # estar = sein: "El libro estaba en la mesa" => "Das Buch war auf dem Tisch"
 # estar + GERUND = gerade + FIN: "Estamos bebiendo vino" => "Wir trinken gerade Wein"

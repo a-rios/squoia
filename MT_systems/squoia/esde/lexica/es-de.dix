@@ -9761,6 +9761,7 @@
    <e><p><l>cavar</l><r>graben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cazar</l><r>jagen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>celebrar</l><r>feiern</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>cenar</l><r>essen</r></p><par n="VM_VV_MAIN"/></e>	<!-- cenar = "zu Abend essen" -->
    <e><p><l>centrar</l><r>konzentrieren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>cerrar</l><r>schließen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>cesar</l><r>auf|hören</r></p><par n='VM_VV_MAIN'/></e>
@@ -35273,7 +35274,8 @@ aún_cuando	RG-->
    <e><p><l>de_puño_y_letra</l><r>eigenhändig</r></p><par n='RG_ADV'/></e> 
    <e><p><l>de_vez_en_cuando</l><r>ab und zu</r></p><par n='RG_ADV'/></e> 
    <e><p><l>delante</l><r>vorn</r></p><par n='RG_ADV'/></e> 
-   <e><p><l>demasiado</l><r>zuviel</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>demasiado</l><r>zu</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>demasiado</l><r>zuviel</r></p><par n='RG_ADV'/></e>	<!-- come demasiado => er isst zuviel; es demasiado caro => es ist zu teuer -->
    <e><p><l>demás</l><r>uebrig</r></p><par n='RG_ADV'/></e> <!-- $$ -->
    <e><p><l>dentro</l><r>drinnen</r></p><par n='RG_ADV'/></e> 
    <e><p><l>después</l><r>nachher</r></p><par n='RG_ADV'/></e> 
