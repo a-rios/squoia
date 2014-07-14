@@ -250,7 +250,7 @@ sub main{
 		 			{
 		 					my $printedLems = '';
 		 					if($chunk->hasAttribute('finiteMiInAux')){
-		 						my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
+		 						my @auxSYNs = $chunk->findnodes('child::NODE/descendant::NODE[starts-with(@smi,"V")]/SYN');
 		 						foreach my $auxsyn (@auxSYNs){
 		 							my $lem = $auxsyn->getAttribute('lem');
 		 							unless($printedLems =~ /#$lem#/){
@@ -293,17 +293,17 @@ sub main{
 			 				my @verbmis;
 			 				
 			 				if($chunk->getAttribute('finiteMiInAux') eq 'yes' && !$chunk->hasAttribute('deletefiniteMiInAux'))
-			 				{
+			 				{  
 			 					my @auxSYNs;
-			 					@auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")]/SYN');
+			 					@auxSYNs = $chunk->findnodes('child::NODE/descendant::NODE[starts-with(@smi,"V")]/SYN');
 			 					# if no syns in aux node, take aux node itself
 			 					if(scalar(@auxSYNs)==0){
-			 						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
-			 						unless($vnode){
-			 							# if there's a conjunction or relative pronoun in between
-			 							($vnode) = $chunk->findnodes('child::NODE/NODE[not(starts-with(@smi,"V"))]/NODE[starts-with(@smi,"V")][1]');
-			 							#print STDERR $vnode->toString()."\n";
-			 						}
+			 						my ($vnode) = $chunk->findnodes('child::NODE/descendant::NODE[starts-with(@smi,"V") and (contains(@smi,"1") or contains(@smi,"2") or contains(@smi,"3")) ][1]');
+#			 						unless($vnode){
+#			 							# if there's a conjunction or relative pronoun in between
+#			 							($vnode) = $chunk->findnodes('child::NODE/NODE[not(starts-with(@smi,"V"))]/NODE[starts-with(@smi,"V")and (contains(@smi,"1") or (contains(@smi,"2") or (contains(@smi,"3")][1]');
+#			 							#print STDERR $vnode->toString()."\n";
+#			 						}
 			 						if($vnode){
 			 							push(@auxSYNs, $vnode);	
 			 						}
@@ -454,13 +454,13 @@ sub main{
 			 				 if($chunk->getAttribute('printAuxVerb') eq 'yes')
 			 				 {
 			 				 	my @auxverbmis;
-			 					my @auxSYNs = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"VM")]/SYN');
+			 					my @auxSYNs = $chunk->findnodes('child::NODE/descendant::NODE[starts-with(@smi,"VM")]/SYN');
 			 					# if no syns in aux node, take aux node itself
 			 					if(scalar(@auxSYNs)==0){
-			 						my ($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"V")][1]');
+			 						my ($vnode) = $chunk->findnodes('child::NODE/descendant::NODE[starts-with(@smi,"V")][1]');
 			 						unless($vnode){
 			 							# if there's a conjunction in between
-			 							($vnode) = $chunk->findnodes('child::NODE/NODE[starts-with(@smi,"C")]/NODE[starts-with(@smi,"V")][1]');
+			 							($vnode) = $chunk->findnodes('child::NODE/descendant::NODE[starts-with(@smi,"C")]/NODE[starts-with(@smi,"V")][1]');
 			 						}
 			 						if($vnode){
 			 							push(@auxSYNs, $vnode);	
@@ -706,7 +706,7 @@ sub main{
 	 				&printNode($adjective,$chunk);
 	 				print OUTFILE "\n";	
 	 			} 
-	 			my ($cc) = $chunk->findnodes('child::NODE/NODE[@smi="CC" and @lem and not(@lem="unspecified")]');
+	 			my ($cc) = $chunk->findnodes('child::NODE/descendant::NODE[@smi="CC" and @lem and not(@lem="unspecified")]');
 	 			# if there's a conjunction with 'lem' (not 'y'/'o'), print that too
 	 			if($cc){
 	 				print OUTFILE $cc->getAttribute('lem').":\n";

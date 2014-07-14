@@ -29,8 +29,8 @@ MORPH2_MODEL=wapiti/model3/model_w_inforesources_ahk
 MORPH3_MODEL=wapiti/model4/model_w_inforesources_ahk
 
 TMP_DIR=tmp4
-EVID="aya"
-PISPAS="pas"
+EVID="cuz"
+PISPAS="pis"
 RAW_FILE=$1
 
 cat $RAW_FILE | perl $TOKENIZER | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/test.xfst
