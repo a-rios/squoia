@@ -123,7 +123,7 @@ my.slem=de && xpath{parent::CHUNK/parent::CHUNK[@chunkmi="++Poss"]/NODE[@slem="p
     
 # copy lemma and morphology of auxiliary to head chunk (relevant with conditional past forms)
 # don't do this with 'habría que' -> handled below
-my.auxlem=/.+/ && !(my.slem=haber && my.smi=/3S/ && xpath{descendant::NODE[@slem="que"]})				auxlem				my.type=/grup-verb|coor-v/		auxlem			up	overwrite
+my.auxlem=/.+/ && !(my.slem=haber && my.smi=/3S/ && xpath{descendant::NODE[@slem="que"]})			auxlem				my.type=/grup-verb|coor-v/		auxlem			up	overwrite
 my.auxverbmi=/.+/ && !(my.slem=haber && my.smi=/3S/ && xpath{descendant::NODE[@slem="que"]})			auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi		up	overwrite
 
 # special case: habitual past with soler + "pasado simple" or "indefinido": 
