@@ -638,7 +638,7 @@ print STDERR "def type: $deftype\tgender: $gen\tnumber $num\n";
 	#	lemma_VVPP
 	#	machen_VVPP
 	elsif ($pos =~ /V[AMV]PP/) {
-		$morphStr = $morphStr."_" if ($pos !~ /VMPP/);	# already lemma_pos
+		$morphStr = $morphStr."_" if ($pos !~ /VMPP/);	# already lemma_pos; TODO: trick: keep "können_VMPP" without final "_" to avoid the generation of VMPP forms like "gekonnt" => it gets cleaned later!
 	}
 	# VV: Gerund
 	#	lemma_VVPP
@@ -871,7 +871,7 @@ sub cleanFstOutput{
 			}
 			else {
 				print STDERR "$infst ";
-				my ($lemma,$rest) = split(/$POSre/,$infst);
+				my ($lemma,$rest) = split(/$POSre|_VMPP/,$infst);
 				print STDERR "with lemma $lemma\n";
 	 			#my ($lemma,$pos) = split(/_/,$infst); # TODO: Named entities have also underscores; check this before cutting only the first part of the NE!
 				$lemma =~ s/\|//g;	# eliminate the separable verb prefix mark "|" still present in infinitive forms
