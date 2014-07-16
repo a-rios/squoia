@@ -191,8 +191,8 @@ casar	heiraten	k	xpath{self::NODE[starts-with(@pos,"VV") and count(following-sib
 
 # colgar = hängen: "la imagen cuelga en la pared" => "das Bild hängt an der Wand"
 # colgar algo = etwas aufhängen: "cuelgo el cuadro a la pared" => "ich hänge das Bild an die Wand"
-colgar	auf|hängen	k	xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE}
-colgar	hängen		k	!(xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE})
+colgar	auf|hängen	k	xpath{//CHUNK[@type="VP" and CHUNK[(@si="cd" or @si="cd-a")]]/NODE}
+colgar	hängen		k	!(xpath{//CHUNK[@type="VP" and CHUNK[(@si="cd" or @si="cd-a")]]/NODE})
 
 # deber: main (-INF) vs modal (+INF) verb
 deber	schulden,verdanken	k	!(xpath{//NODE[@smi="VMN0000"]/NODE})
@@ -207,10 +207,10 @@ despertar	erwecken,auf|wecken,wecken	k	!(xpath{//NODE[starts-with(@pos,"VV") and
 
 # disminuir = ab|nehmen: "la lluvia disminuye" => "der Regen nimmt ab"
 # disminuir algo = etwas verringern: "el calor disminuye los rendimientos" => "die Hitze verringert die Ertraege"
-disminuir	verringern	k	xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE}
-disminuir	verkleinern	k	xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE[@slem="disminuir"]}
+disminuir	verringern	k	xpath{//CHUNK[@type="VP" and CHUNK[(@si="cd" or @si="cd-a")]]/NODE}
+disminuir	verkleinern	k	xpath{//CHUNK[@type="VP" and CHUNK[(@si="cd" or @si="cd-a")]]/NODE[@slem="disminuir"]}
 disminuir	ab|nehmen	k	chunkparent.type=/VP/
-disminuir	nach|lassen	k	!(xpath{//CHUNK[@type="VP" and CHUNK[@si="cd"]]/NODE})
+disminuir	nach|lassen	k	!(xpath{//CHUNK[@type="VP" and CHUNK[(@si="cd" or @si="cd-a")]]/NODE})
 
 # fijar = befestigen, fest|legen, fest|machen, fest|setzen
 # fijarse = (sich) achten, acht|geben, beachten, bemerken

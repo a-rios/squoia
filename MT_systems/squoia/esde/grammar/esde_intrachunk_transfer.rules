@@ -134,7 +134,7 @@ xpath{//CHUNK[@type="VP" and (@si="S" or @si="atr")]/descendant::NODE[starts-wit
 xpath{//CHUNK[@type="VP" and (@si="S" or @si="atr")]/descendant::NODE[@zu="yes" or (starts-with(@pos,"V") and contains(@pos,"INF") and count(descendant::NODE[starts-with(@pos,"V")])=0)]}	yes	my.type=VP			zu			up		overwrite
 
 # infinitive without "zu"
-xpath{//CHUNK[@type="VP" and (@si="top" or @si="suj")]/descendant::NODE[@pos="VVINF" and count(descendant::NODE[starts-with(@pos,"V")])=0]}	no	my.type=VP	finVerb		up	overwrite
+xpath{//CHUNK[@type="VP" and (@si="top" or @si="suj" or @si="suj-a")]/descendant::NODE[@pos="VVINF" and count(descendant::NODE[starts-with(@pos,"V")])=0]}	no	my.type=VP	finVerb		up	overwrite
 
 # Reflexive verbs
 my.spos=/VVFIN/&&my.pos=/VV/&&my.refl=/yes/	pos	my.type=/VP/	"VVFIN"		down	overwrite
@@ -215,19 +215,19 @@ my.pos=/ADJ/		flex			my.type=/C?AP/&&chunkgrandparent.flex=/./	chunkparent.chunk
 # verb past participles as adjectives
 my.pos=/ADJ/		flex			my.type=/VP/&&child.pos=ADJA&&chunkparent.flex=/./	chunkparent.flex		down		no-overwrite
 # set case of direct objects to Akk
-my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkparent.si=cd	Akk		down		no-overwrite
-my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkgrandparent.si=cd	Akk		down		no-overwrite
+my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkparent.si=/cd|cd-a/	Akk		down		no-overwrite
+my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkgrandparent.si=/cd|cd-a/	Akk		down		no-overwrite
 
 
 # set case of direct objects to Akk (or another case like Dat given by the head verb)
-my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&my.si=cd&&chunkparent.dobjcas=/./	chunkparent.dobjcas	down		no-overwrite
-my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&(my.si=cd||chunkparent.si=cd)&&!(chunkparent.dobjcas=/./)	Akk			down		no-overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&my.si=/cd|cd-a/&&chunkparent.dobjcas=/./	chunkparent.dobjcas	down		no-overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&(my.si=/cd|cd-a/||chunkparent.si=/cd|cd-a/)&&!(chunkparent.dobjcas=/./)	Akk			down		no-overwrite
 
 # set case of subjects and attributives to Nom
-my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=NP&&my.si=/atr|suj/	Nom			down		overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=NP&&my.si=/atr|suj|suj-a/	Nom			down		overwrite
 
 # set number of subject PWS "wer" to singular in finite verb
-my.pos=/V.FIN/		subjnum		xpath{//CHUNK[@type="VP" and CHUNK[@si="suj" and @type="NP" and NODE[@pos="PWS"]]]}	"Sg"	down	overwrite
+my.pos=/V.FIN/		subjnum		xpath{//CHUNK[@type="VP" and CHUNK[(@si="suj" or @si="suj-a") and @type="NP" and NODE[@pos="PWS"]]]}	"Sg"	down	overwrite
 
 # set case of indirect objects to Dat
 #my.pos=/NN|ART|PPOSAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&my.si=ci	Dat			down		no-overwrite
@@ -268,7 +268,7 @@ my.pos=APPR&&chunkparent.type=NP		cas		my.pos=/PPER/			cas			up		overwrite
 # --------------------------------------------------------------------------------------------------------------------------- #
 # ES object doubling
 # set delete=yes to pronominal objects if there is a corresponding nominal object
-my.pos=PPER&&my.smi=/PP...A../	delete		my.type=VP&&chunkchild.si=cd		yes			down		no-overwrite
+my.pos=PPER&&my.smi=/PP...A../	delete		my.type=VP&&chunkchild.si=/cd|cd-a/		yes			down		no-overwrite
 my.pos=PPER&&my.smi=/PP...D../	delete		my.type=VP&&chunkchild.si=ci		yes			down		no-overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
@@ -276,7 +276,7 @@ my.pos=PPER&&my.smi=/PP...D../	delete		my.type=VP&&chunkchild.si=ci		yes			down	
 my.pos=/PRELS/&&my.slem=que	mi		my.type=/VP/&&my.si=/S/&&chunkparent.type=/NP/	chunkparent.mi			down		overwrite
 my.pos=/PRELS/&&my.slem=que	mi		my.type=/VP/&&my.si=/sn/&&chunkparent.type=/PP/&&chunkgrandparent.type=/NP/	chunkparent.chunkparent.mi			down		overwrite
 my.pos=/PRELS/&&my.slem=que	cas		my.type=/VP/&&my.si=/sn/&&chunkparent.type=/PP/			chunkparent.cas		down	overwrite
-my.pos=/PRELS/&&my.slem=que	cas		my.type=/VP/&&my.si=S&&chunkparent.type=/NP/&&chunkchild.si=suj	"Akk"		down	overwrite
+my.pos=/PRELS/&&my.slem=que	cas		my.type=/VP/&&my.si=S&&chunkparent.type=/NP/&&chunkchild.si=/suj|suj-a/	"Akk"		down	overwrite
 my.pos=/PRELAT/&&my.slem=cuyo	mi		my.type=/NP/&&chunkparent.type=/NP/	chunkparent.mi			down		overwrite
 
 # delete the additional definite article by relative pronouns "la/el/las/los que"; special case "lo que"?
@@ -284,6 +284,6 @@ my.pos=/PRELAT/&&my.slem=cuyo	mi		my.type=/NP/&&chunkparent.type=/NP/	chunkparen
 my.slem=el		delete		xpath{//CHUNK[(@type="VP" or @type="CVP") and (descendant::NODE[@pos="PRELS" and NODE[@slem="el"]] or descendant::NODE[@slem="el" and NODE[@pos="PRELS"]])]}	yes	down	overwrite
 
 # set type of "a"-PP for human direct object to NP
-#-			NP			my.type=PP&&si=cd		ntype			up		overwrite
+#-			NP			my.type=PP&&si=/cd|cd-a/		ntype			up		overwrite
 
 

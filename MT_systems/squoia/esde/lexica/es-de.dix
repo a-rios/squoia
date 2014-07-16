@@ -10454,6 +10454,7 @@
    <e><p><l>enterrar</l><r>begraben</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>entrar</l><r>betreten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>entrar</l><r>ein|dringen</r></p><par n="VM_VV_MAIN_BE"/></e>
+   <e><p><l>entrar</l><r>ein|treten</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>entrar</l><r>hinein|gehen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>entregar</l><r>geben</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>entregar</l><r>übergeben</r></p><par n="VM_VV_MAIN"/></e>
