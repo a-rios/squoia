@@ -49,8 +49,8 @@ sub main{
 	 	# consider linear sequence in sentence; in xml the verb of the main clause comes always first, but in this case the subject of a preceding subordinated clause is probably coreferent with the subject of the preceding clause
 	 	my @verbChunks = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]');
 	 	$nbrOfVerbChunks = $nbrOfVerbChunks+scalar(@verbChunks);
-#	 	#print STDERR "$nbrOfVerbChunks\n";
-#	 	
+	 	#print STDERR "$nbrOfVerbChunks\n";
+	 	
 	 	foreach my $verbChunk (@verbChunks)
 	 	{
 	 		#print STDERR "disambiguating verb chunk: ".$verbChunk->getAttribute('ord')."\n";
@@ -98,10 +98,11 @@ sub main{
 	 				}
 	 				# if this is hay/había/habrá que + infinitive -nan kan
 	 				# note that parser can attach 'que' to 'hay' but also to infinitive! 
-	 				elsif(( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que" or @lem="de"]') ) || ( ($verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/NODE[@lem="que"]]') || $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")/following-sibling::NODE[@lem="que"]]') ) && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]') ) )
+	 				elsif( ( $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]') && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]/NODE[@lem="que" or @lem="de"]') ) || ( ($verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]/NODE[@lem="que"]') || $verbChunk->exists('child::NODE[@lem="haber" and contains(@mi,"3")]/following-sibling::NODE[@lem="que"]') ) && $verbChunk->exists('child::CHUNK/NODE[@mi="VMN0000"]') ) )
 	 				{ 
 	 					$nbrOfFiniteForms++;
 	 					$verbChunk->setAttribute('verbform','main');
+	 					hunk->setAttribute('verbform','main');
 	 					#$verbChunk->setAttribute('delete','yes');
 	 					# get infintive of main verb and set this form to obligative
 	 					my $infinitiveWithQUE = @{$verbChunk->findnodes('child::CHUNK[NODE[@mi="VMN0000"]/NODE[@lem="que"]][1]')}[0];
@@ -111,6 +112,7 @@ sub main{
 	 						$nbrOfFinalClauses++;
 	 						$infinitiveWithQUE->setAttribute('verbform', 'obligative');
 	 						$infinitiveWithQUE->setAttribute('addverbmi', '+3.Sg.Poss');
+	 						$verbChunk->setAttribute('verbform','main');
 	 					}
 	 					elsif($infinitiveWithoutQUE)
 	 					{
@@ -121,7 +123,7 @@ sub main{
 	 				} 			
 	 				# if this is a passive clause with 'ser'/'estar'
 	 				elsif($verbChunk->exists('child::NODE[starts-with(@mi,"VMP")]/NODE[@lem="ser" or @lem="estar"]'))
-	 				{
+	 				{#
 	 					$verbChunk->setAttribute('verbform', 'passive');
 	 				}
 	 				# if this is a topicalization with 'ser' -> delete verb, but insert a topic marker
