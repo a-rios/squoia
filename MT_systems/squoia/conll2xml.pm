@@ -1891,7 +1891,7 @@ sub attachNewChunkUnderChunk{
 		#print STDERR "parent node before ". $parent->toString() . "\n";
 		#print STDERR "parent nodeName before ". $parent->nodeName . "\n";
 		if ($parent->nodeName eq 'NODE') {
-			print STDERR "new chunk" . $newChunk->toString(). " within NODE ". $parent->toString() ." has to be appended to a higher CHUNK\n";
+			#print STDERR "new chunk" . $newChunk->toString(). " within NODE ". $parent->toString() ." has to be appended to a higher CHUNK\n";
 			$parent = @{$parent->findnodes('ancestor::CHUNK[1]')}[0];
 		}
 		#print STDERR "parent node after ". $parent->toString() . "\n";

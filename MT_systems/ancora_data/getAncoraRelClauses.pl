@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-
+#BEGIN {push @INC, 'home/clsquoia/google_squoia/MT_systems'}
 use utf8;                  # Source code is UTF-8
 #use open ':utf8';
 use Storable; # to retrieve hash from disk
@@ -11,7 +11,8 @@ use XML::LibXML;
 use File::Spec::Functions qw(rel2abs);
 use File::Basename;
 my $path = dirname(rel2abs($0));
-require "$path/../util.pl";
+#require "$path/../util.pl";
+#import squoia::util;
 
 
 my %mapMorphsToClasses = (
@@ -141,8 +142,9 @@ foreach my $sentence (@sentenceList)
  	
  	foreach my $verbChunk (@verbChunks)
  	{
- 	  #  print STDERR "verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n";
+ 	    
  		my $headNoun = &getHeadNoun($verbChunk);
+ 		print STDERR "verb chunk nbr: ".$verbChunk->getAttribute('ord')." ".$headNoun."\n";
  		my $mainV = &getMainVerb2($verbChunk);
 		my ($relpron) = $verbChunk->findnodes('descendant::NODE[starts-with(@mi,"PR")][1]');
 		
@@ -358,8 +360,91 @@ sub getMainVerb2{
 	}
  }
 
+sub getHeadNoun($;$){
+	my ($relClause, $parentchunk) = @_;
+	
+	if(!defined($parentchunk))
+	{
+		$parentchunk = $relClause->parentNode();
+	}	
+#	print STDERR $parentchunk->getAttribute('type');
+#	print STDERR "\n";
+	my $headNoun;
+	
+	#if preceded by single noun
+	if($parentchunk->exists('self::CHUNK[@type="sn"]'))
+	{#print STDERR "1\n";
+		# if head noun is a demonstrative pronoun (doesn't ocurr? TODO: check)
+		# old: head noun = noun or prsprn -> atm, prsprn no chunk
+		#$headNoun = @{$parentchunk->findnodes('descendant::NODE[starts-with(@mi,"N") or starts-with(@mi,"PP")][1]')}[-1];
+		$headNoun = @{$parentchunk->findnodes('descendant::NODE[starts-with(@mi,"N") or starts-with(@mi,"PP")][1]')}[-1];
+	}
+	# if this is a coordinated relclause -> look for head noun one level higher up
+	elsif($parentchunk->exists('self::CHUNK[@type="coor-v"]/NODE/NODE[@pos="pr" or NODE[@pos="pr"] ]'))
+	{
+		($headNoun) = $parentchunk->findnodes('parent::CHUNK[@type="sn" or @type="coor-n"]/descendant::NODE[starts-with(@mi,"N") or starts-with(@mi,"PP")][1]');
+		#print STDERR $headNoun->toString()."\n";
+	}
+
+	#assure that head noun is above rel-clause (in cases of wrong analysis)
+	if($headNoun && isAncestor($relClause,$headNoun))
+	{
+			undef($headNoun);
+	}
+	#if head noun is defined, return 
+	if($headNoun)
+	{
+		return $headNoun;
+	}
+	else
+	{   #get sentence id
+		my $sentenceID = $relClause->findvalue('ancestor::SENTENCE/@ord');
+		#print STDERR "Wrong analysis in sentence nr. $sentenceID? no head noun found, head chunk is: ";
+		#print STDERR $parentchunk->toString();
+		return -1;
+	}
+}
+sub isAncestor{
+	my $relClause = $_[0];
+	my $headNoun = $_[1];
+	
+	my $headNounOrd = $headNoun->getAttribute('ord');
+	my $xpath = 'descendant::NODE[@ord="'.$headNounOrd.'"]';
+	
+
+	return($relClause->exists($xpath));
+}
 
 
+sub getFiniteVerb{
+	my $verbchunk = $_[0];
+	# finite verb is the one with a person marking (1,2,3)
+	my $verb = @{$verbchunk->findnodes('child::NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
+	my $verb2Cand = @{$verbchunk->findnodes('child::NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
+	my $verb3Cand = @{$verbchunk->findnodes('child::NODE/NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]')}[-1];
+	
+	if($verb)
+	{
+		return $verb;
+	}
+	elsif($verb2Cand)
+	{
+		return $verb2Cand;	
+	}
+	elsif($verb3Cand)
+	{
+		return $verb3Cand;	
+	}
+	else
+	{
+		#print STDERR "finite verb not found in chunk: ";
+		#print STDERR $verbchunk->getAttribute('ord')."\n";
+		#print STDERR $verbchunk->toString();
+		#print STDERR "\n";
+		return 0;
+	}	
+	
+}
 # print new xml to stdout
 # my $docstring = $dom->toString(1);
 # #print STDERR $dom->actualEncoding();
