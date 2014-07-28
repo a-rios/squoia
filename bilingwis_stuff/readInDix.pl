@@ -345,19 +345,19 @@ $eslex{'prspronoun'}{'los'}=['paykunata', 'chaykunata'];
 $eslex{'prspronoun'}{'le'}=['payman', 'payta', 'chayman', 'chayta'];
 $eslex{'prspronoun'}{'les'}=['paykunaman', 'paykunata', 'chaykunaman', 'chaykunata'];
 $eslex{'prspronoun'}{'me'}=['-wa', 'ñuqata', 'ñuqaman'];
-$eslex{'prspronoun'}{'mí'}=['-wa', 'ñuqata', 'ñuqaman'];
-$eslex{'prspronoun'}{'nos'}=['-wa', 'ñuqaykuta', 'ñuqaykuman', 'ñuqanchikta', 'ñuqanchikman'];
+$eslex{'prspronoun'}{'mí'}=['-wa',  'ñuqa']; #only ñuqa -> a mí, de mí -> preposition aligned to suffixes
+$eslex{'prspronoun'}{'nos'}=['-wa', 'ñuqayku', 'ñuqanchik'];
 $eslex{'prspronoun'}{'nosotros'}=['ñuqayku', 'ñuqanchik'];
 $eslex{'prspronoun'}{'nosotras'}=['ñuqayku', 'ñuqanchik'];
-$eslex{'prspronoun'}{'os'}=['-su', 'qamkunata', 'qamkunaman'];
+$eslex{'prspronoun'}{'os'}=['-su', 'qamkuna'];
 $eslex{'prspronoun'}{'se'}=['-ku'];
 $eslex{'prspronoun'}{'sí'}=['-ku'];
 $eslex{'prspronoun'}{'te'}=['-su', 'qamta', 'qamman'];
-$eslex{'prspronoun'}{'ti'}=['-su', 'qamta', 'qamman'];
+$eslex{'prspronoun'}{'ti'}=['-su', 'qam'];
 $eslex{'prspronoun'}{'tú'}=['qam'];
 $eslex{'prspronoun'}{'usted'}=['qam'];
 $eslex{'prspronoun'}{'ustedes'}=['qamkuna'];
-$eslex{'prspronoun'}{'vos'}=['-su', 'qamkunata', 'qamkunaman'];
+$eslex{'prspronoun'}{'vos'}=['-su', 'qamkuna'];
 $eslex{'prspronoun'}{'vosotras'}=['qamkuna'];  
 $eslex{'prspronoun'}{'vosotros'}=['qamkuna'];
 $eslex{'prspronoun'}{'yo'}=['ñuqa'];                                                                                                                                                                                         
@@ -628,32 +628,37 @@ $eslex{'preposition'}{'sobre'}=[ 'hawa', 'hana', '-manta'];
 $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 
 
-##print hash:
+###print hash:
 #foreach my $section (keys %eslex){
 #	print "sec: $section\n";
+#	my $printed =0;
 #	foreach my $lem (keys $eslex{$section}){
 #		foreach my $quz (@{$eslex{$section}{$lem}} ){
 #			if($quz =~ /^\+/){
 #				print $lem."\t";
 #				print "$quz, ";
+#				$printed =1;
 #			}
+#			else{
+#				$printed=0;
+#			}
+#			if($printed){print "\n";}
 #		}
-#		print "\n";
 #	}
 #}
 
 #print hash:
-foreach my $section (keys %eslex){
-	print "sec: $section\n";
-	if($section eq 'conjunction'){
-		foreach my $lem (keys $eslex{$section}){
-			print $lem."\t";
-			foreach my $quz (@{$eslex{$section}{$lem}} ){
-				print "$quz, ";
-			}
-			print "\n";
-		}
-	}
-}
+#foreach my $section (keys %eslex){
+#	print "sec: $section\n";
+#	if($section eq 'conjunction'){
+#		foreach my $lem (keys $eslex{$section}){
+#			print $lem."\t";
+#			foreach my $quz (@{$eslex{$section}{$lem}} ){
+#				print "$quz, ";
+#			}
+#			print "\n";
+#		}
+#	}
+#}
 
 store \%eslex, 'lexicon-es-qu';
