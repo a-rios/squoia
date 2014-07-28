@@ -109,13 +109,13 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 							next;
 						}
 					}
-					# lenght < 3 -> match whole string, unless this is punctuation (do not align punctuation..)
+					# lenght < 3 -> match whole string, but only if this was part of a proper name (to avoid non-adjacent alignments)
 					else{
-						unless($w_es->getAttribute('pos') =~ /^F/){
+						if($w_es->textContent() =~ /_/){
 							if (grep {$_ =~ /^\Q$wordform_es\E$/} @wordforms_quz) {
 								$xpath_to_quz_cand = 'descendant::t[w[translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$wordform_es.'"]]';
 							
-#								print "w es: $wordform_es\n";
+#								print "w es: $wordform_es,".$w_es->getAttribute('n')."\n";
 #								print $xpath_to_quz_cand."\n";
 								my @quz_cand_ts;
 								foreach my $s_quz (@sents_quz){
@@ -123,8 +123,10 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 									push(@quz_cand_ts, @cands);
 								}
 								foreach my $cand (@quz_cand_ts){
+									#print "found: ".$cand->getAttribute('n')."\n";
 								#unless already aligned
 								unless($quz_already_aligned{$cand->getAttribute('n')} ==1){
+#									print "not aligned".$cand->getAttribute('n')."\n";
 									$quz_already_aligned{$cand->getAttribute('n')} =1;
 									if(exists($alignments{$tokenID_es})){
 										push($alignments{$tokenID_es}, $cand->getAttribute('n') );
@@ -160,8 +162,8 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 							my @quz_cands;
 							foreach my $translation (@$translations_dix)
 							{
-								# don't align suffixes yet!
-								unless($translation =~ /^-|^\+/ or $quz_class =~ /prspronoun|posspronoun|preposition/ or ($quz_class eq 'determiner' and $pos_es !~ /^DN/))
+								# don't align suffixes yet! prspronoun: whole word forms can be aligned already here
+								unless($translation =~ /^-|^\+/ or $quz_class =~ /posspronoun|preposition|conjunction/ or ($quz_class eq 'determiner' and $pos_es !~ /^DN/))
 								{
 									my ($mainword, @preforms) = split('#',$translation);
 									#print "translation $wordform_es, $lem_es: $mainword\n";
@@ -286,77 +288,77 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 											last;
 										}
 									}#foreach
-								}#unless
-								# if this word is translated as a suffix, but to unknown head: search for tags given in translation
-								if($translation =~ /^\+/)
-								{
-									my @translation_tags = ($translation =~  /(\+[^\+#]+)/g);
-									#print "trans tags: @translation_tags\n";
-									#find first tag (if more than one: have to be adjacent!)
-									my $xpath_to_tag = 'descendant::t/morph[@tag="'.@translation_tags[0].'"]';
-									my %cand_ids;
-									foreach my $s_quz (@sents_quz)
+									# if this is an adverb translated as a suffix, but to unknown head: search for tags given in translation
+									if($translation =~ /^\+/)
 									{
-										my @cands = $s_quz->findnodes($xpath_to_tag);
-										#print "xpath $xpath_to_tag\n";
-										if(scalar(@translation_tags)>1 and scalar(@cands)>0)
+										my @translation_tags = ($translation =~  /(\+[^\+#]+)/g);
+										#print "trans tags: @translation_tags\n";
+										#find first tag (if more than one: have to be adjacent!)
+										my $xpath_to_tag = 'descendant::t/morph[@tag="'.@translation_tags[0].'"]';
+										my %cand_ids;
+										foreach my $s_quz (@sents_quz)
 										{
-											my $is_aligned=1;
-											foreach my $cand (@cands){
-												# check if following morphs concurr 
-												for(my $i=1; $i<scalar(@translation_tags);$i++){
-													my $nextTag = @translation_tags[$i];
-													my $xpath_to_nextTag = 'following-sibling::morph['.$i.']';
-													my ($nextTag_cand) = $cand->findnodes($xpath_to_nextTag);
-													if($nextTag_cand and $nextTag_cand->getAttribute('tag') eq $nextTag){
-														$cand_ids{$cand->getAttribute('n')}{$nextTag_cand->getAttribute('n')}=1;
+											my @cands = $s_quz->findnodes($xpath_to_tag);
+											#print "xpath $xpath_to_tag\n";
+											if(scalar(@translation_tags)>1 and scalar(@cands)>0)
+											{
+												my $is_aligned=1;
+												foreach my $cand (@cands){
+													# check if following morphs concurr 
+													for(my $i=1; $i<scalar(@translation_tags);$i++){
+														my $nextTag = @translation_tags[$i];
+														my $xpath_to_nextTag = 'following-sibling::morph['.$i.']';
+														my ($nextTag_cand) = $cand->findnodes($xpath_to_nextTag);
+														if($nextTag_cand and $nextTag_cand->getAttribute('tag') eq $nextTag){
+															$cand_ids{$cand->getAttribute('n')}{$nextTag_cand->getAttribute('n')}=1;
+														}
+														else{
+															$is_aligned = 0;
+															undef %cand_ids;
+															last;
+														}
+													
 													}
-													else{
-														$is_aligned = 0;
-														undef %cand_ids;
-														last;
-													}
-												
+												}
+												# if all tags found: insert alignments
+												if($is_aligned){
+														if(exists($alignments{$tokenID_es})){
+															foreach my $id (keys %cand_ids){
+																#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
+																push($alignments{$tokenID_es}, $id );
+																foreach my $tagID (keys $cand_ids{$id}){
+																	#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
+																	push($alignments{$tokenID_es}, $tagID );
+																}
+															}
+														}
+														else{
+															foreach my $id (keys %cand_ids){
+																$alignments{$tokenID_es} = [$id];
+															#	print "aligned: $wordform_es id: $tokenID_es ----  tagid: ".$id."\n";
+																foreach my $tagID (keys $cand_ids{$id}){
+																	#print "aligned tag: $wordform_es id: $tokenID_es ----  tagid: ".$tagID."\n";
+																	push($alignments{$tokenID_es}, $tagID );
+																}
+															}
+														}
 												}
 											}
-											# if all tags found: insert alignments
-											if($is_aligned){
+											elsif(scalar(@translation_tags)==1 and scalar(@cands)>0){
+												foreach my $cand (@cands){
 													if(exists($alignments{$tokenID_es})){
-														foreach my $id (keys %cand_ids){
-															#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
-															push($alignments{$tokenID_es}, $id );
-															foreach my $tagID (keys $cand_ids{$id}){
-																#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
-																push($alignments{$tokenID_es}, $tagID );
-															}
-														}
+														#print "aligned: $wordform_es id: $tokenID_es ---- , id: ".$cand->getAttribute('n')."\n";
+														push($alignments{$tokenID_es}, $cand->getAttribute('n') );
 													}
 													else{
-														foreach my $id (keys %cand_ids){
-															$alignments{$tokenID_es} = [$id];
-														#	print "aligned: $wordform_es id: $tokenID_es ----  tagid: ".$id."\n";
-															foreach my $tagID (keys $cand_ids{$id}){
-																#print "aligned tag: $wordform_es id: $tokenID_es ----  tagid: ".$tagID."\n";
-																push($alignments{$tokenID_es}, $tagID );
-															}
-														}
+														$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
+														#print "aligned: $wordform_es id: $tokenID_es ---- , id: ".$cand->getAttribute('n')."\n";
 													}
-											}
-										}
-										elsif(scalar(@translation_tags)==1 and scalar(@cands)>0){
-											foreach my $cand (@cands){
-												if(exists($alignments{$tokenID_es})){
-													#print "aligned: $wordform_es id: $tokenID_es ---- , id: ".$cand->getAttribute('n')."\n";
-													push($alignments{$tokenID_es}, $cand->getAttribute('n') );
-												}
-												else{
-													$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
-													#print "aligned: $wordform_es id: $tokenID_es ---- , id: ".$cand->getAttribute('n')."\n";
 												}
 											}
 										}
 									}
-								}
+								}#unless
 							}#foreach $translation
 						}# if $quz_class
 					}# if $translation
@@ -420,14 +422,20 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 					{ 
 							$translation =~ s/#//;
 							#print "translation for $wordform_es: $translation\n";
+							# if conjunction with ++ -> as a suffix (only one)
+							if($translation =~ /^\+/){
+								$translation =~ s/^\+\+/\+/;
+								$xpath_to_quz_cand = 'descendant::t/morph[@tag="'.$translation.'"]';
+#								print $xpath_to_quz_cand."\n";
+							}
 							# case suffix
-							if($translation =~ /^-/){
+							elsif($translation =~ /^-/){
 								$xpath_to_quz_cand = 'descendant::t/morph[ translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$translation.'"]';
 							}
 							# with personal pronouns (not suffixes, those are handled above): exact matches, not starts-with
 							elsif($quz_class eq 'prspronoun'){
 								$xpath_to_quz_cand = 'descendant::t[w[translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$translation.'"]]';
-							}
+							}					
 							else{
 								$xpath_to_quz_cand = 'descendant::t[w[starts-with (translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$translation.'")]]';
 							}
@@ -446,7 +454,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 						# if more than one candidate: check if one of their roots is aligned to noun on the right of the Spanish preposition, same
 						if(scalar(@quz_cand_ts>1) and $quz_class =~ /preposition|posspronoun|determiner/)
 						{
-									my ($firstRightNoun_es) = $w_es->findnodes('following-sibling::t[starts-with(@pos,"N") or @pos="VMN0000"][1]');
+									my ($firstRightNoun_es) = $w_es->findnodes('following-sibling::t[starts-with(@pos,"N") or @pos="VMN0000" or starts-with(@pos, "PP")][1]');
 									if($firstRightNoun_es){
 										#print "noun:  ".$firstRightNoun_es->toString()."\n";
 										my $firstRightNoun_es_id = $firstRightNoun_es->getAttribute('n');
@@ -616,7 +624,7 @@ my $es_book_id = $dom_es->documentElement->getAttribute('id');
 my $quz_book_id = $dom_quz->documentElement->getAttribute('id');
 foreach my $es_id (sort id_sort keys %alignments){
 	my $alignment_ids = $alignments{$es_id};
-	my @uniq_alignments = uniq(@$alignment_ids);
+	my @uniq_alignments = sort id_sort uniq(@$alignment_ids);
 	
 #	my $xpath_to_es_word = 'descendant::t[@n="'.$es_id.'"]';
 #	my ($es_word) = $dom_es->findnodes($xpath_to_es_word);
@@ -649,14 +657,14 @@ foreach my $es_id (sort id_sort keys %alignments){
 			my ($this_token_id) = ($this_id =~ /^\d+-\d+-(\d+)/);
 			#print "$this_id token $this_token_id, $prev_token_id\n";
 			# no morph in id, whole word form is aligned and adjacent:
-			if(!$this_morph_id && ($this_token_id-1 == $prev_token_id || $this_token_id+1 == $prev_token_id) ) {
+			if(!$this_morph_id && $this_token_id-1 == $prev_token_id  ) {
 				$end_tok = $this_token_id;
 				$prev_token_id = $this_token_id;
 			}
-			elsif(!$this_morph_id && !($this_token_id-1 == $prev_token_id || $this_token_id+1 == $prev_token_id) ){
+			elsif(!$this_morph_id && !($this_token_id-1 == $prev_token_id )) {
 				$is_adjacent =0;
 			}
-			elsif($this_morph_id && ( ($this_token_id == $prev_token_id && ($this_morph_id-1 == $prev_morph_id ||  $this_morph_id+1 == $prev_morph_id )) || ($this_morph_id ==1 &&  ($this_token_id+1 == $prev_token_id || $this_token_id-1 == $prev_token_id) ) )){
+			elsif($this_morph_id && ( ($this_token_id == $prev_token_id && $this_morph_id-1 == $prev_morph_id ) || ($this_morph_id ==1 &&  $this_token_id-1 == $prev_token_id ) )){
 				$end_tok = $this_token_id;
 				$end_morph = $this_morph_id;
 				$prev_morph_id = $this_morph_id;
@@ -678,20 +686,48 @@ foreach my $es_id (sort id_sort keys %alignments){
 		
 	}
 	if(!$is_adjacent){
-		print "non-adjacent alignments in: ";
+#		print "non-adjacent alignments in: ";
+#				my $xpath_to_es_word = 'descendant::t[@n="'.$es_id.'"]';
+#				my ($es_word) = $dom_es->findnodes($xpath_to_es_word);
+#				print $es_word->textContent()."\n";
+#				foreach my $quz_id (@uniq_alignments){
+#					print "$es_book_id-$es_id\t$quz_book_id-$quz_id\n";
+#				}
+	}
+	else{
+		if(scalar(@uniq_alignments) ==1){
+			#print "$es_book_id-$es_id\t$quz_book_id-".@uniq_alignments[0]."\n";
+		}
+		# more than one alignment, adjacent
+		else{
+			# only whole tokens aligned
+			if(!$end_morph && !$start_morph){
+				#print "$es_book_id-$es_id\t$quz_book_id-".@uniq_alignments[0].":$end_tok\n";
+			}
+			# also: adjacent roots aligned: align whole word forms
+			elsif($end_morph ==1 && $start_morph ==1 && $start_tok != $end_tok){
+				my ($quz_start_id) = (@uniq_alignments[0] =~ m/^(\d+-\d+-\d+)/);
+				#print "$es_book_id-$es_id\t$quz_book_id-$quz_start_id:$end_tok\n";
+			}
+			# adjacent morphemes aligned
+			elsif($end_morph != 1 && $start_tok == $end_tok){
+				print "morphemes: $es_book_id-$es_id\t$quz_book_id-".@uniq_alignments[0].":$end_morph\n";
+			}
+			else{
+				print "weird alignment!!!\n";
+			}
+				print "start: $start_tok, $start_morph, end: $end_tok, $end_morph\n";
 				my $xpath_to_es_word = 'descendant::t[@n="'.$es_id.'"]';
 				my ($es_word) = $dom_es->findnodes($xpath_to_es_word);
 				print $es_word->textContent()."\n";
 				foreach my $quz_id (@uniq_alignments){
-					print "$es_book_id-$es_id\t$quz_book_id-$quz_id\n";
+					print "\tcontains: $es_book_id-$es_id\t$quz_book_id-$quz_id\n";
 				}
+				print "\n";
+			
+		}
+		
 	}
-
-
-#	foreach my $quz_id (@$alignment_ids){
-#		print "$es_book_id-$es_id\t$quz_book_id-$quz_id\n";
-#	}
-#	print "\n";
 	
 }
 
