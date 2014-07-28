@@ -43,6 +43,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 		my @wordforms_quz;
 		#my @roots_quz;
 		my @morphs_quz;
+		my %quz_already_aligned =();
 		foreach my $s_quz ($segment_quz->findnodes('child::s')){
 			my $sentIDquz = $s_quz->getAttribute('id');
 			my $xpathToSentquz = 'descendant::s[@Intertext_id="'.$sentIDquz.'"]';
@@ -54,10 +55,6 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 				push(@wordforms_quz, lc($w->textContent) );
 				#print 'quz: '.$w->textContent."\n";
 			}
-#			my @roots = $s->findnodes('child::t/root');
-#			foreach my $root (@roots){
-#				push(@roots_quz, lc($root->textContent) );
-#			}
 			my @morphs = $s->findnodes('child::t/morph');
 			foreach my $morph (@morphs){
 				push(@morphs_quz, lc($morph->textContent) );
@@ -97,23 +94,47 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 								push(@quz_cand_ts, @cands);
 							}
 							foreach my $cand (@quz_cand_ts){
-								if(exists($alignments{$tokenID_es})){
-									push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+								#unless already aligned
+								unless($quz_already_aligned{$cand->getAttribute('n')} ==1){
+									$quz_already_aligned{$cand->getAttribute('n')} =1;
+									if(exists($alignments{$tokenID_es})){
+										push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+									}
+									else{
+										$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
+									}
+									last;
 								}
-								else{
-									$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
-								}
-							}
-												#print "quz:  @quz_cand_ts\n";
+							} #print "quz:  @quz_cand_ts\n";
 							next;
 						}
 					}
-					# lenght < 1 -> match whole string, unless this is punctuation (do not align punctuation..)
+					# lenght < 3 -> match whole string, unless this is punctuation (do not align punctuation..)
 					else{
 						unless($w_es->getAttribute('pos') =~ /^F/){
 							if (grep {$_ =~ /^\Q$wordform_es\E$/} @wordforms_quz) {
-								#TODO: align!!
-								#print "w es: $wordform_es\n";
+								$xpath_to_quz_cand = 'descendant::t[w[translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$wordform_es.'"]]';
+							
+#								print "w es: $wordform_es\n";
+#								print $xpath_to_quz_cand."\n";
+								my @quz_cand_ts;
+								foreach my $s_quz (@sents_quz){
+									my @cands = $s_quz->findnodes($xpath_to_quz_cand);
+									push(@quz_cand_ts, @cands);
+								}
+								foreach my $cand (@quz_cand_ts){
+								#unless already aligned
+								unless($quz_already_aligned{$cand->getAttribute('n')} ==1){
+									$quz_already_aligned{$cand->getAttribute('n')} =1;
+									if(exists($alignments{$tokenID_es})){
+										push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+									}
+									else{
+										$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
+									}
+									last;
+								}
+							} #print "quz:  @quz_cand_ts\n";
 								next;
 							}
 						}
@@ -146,16 +167,42 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 									#print "translation $wordform_es, $lem_es: $mainword\n";
 									# if only one syllable (ka, chay, kay..)-> match rootmorph EXACTLY, not just beginning, to avoid very ambiguous alignments (chay -> chaya-, etc.)
 									if($mainword =~ /([^aeiou]*[aeiou][^aeiou]*){2,}/){
-										$xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$mainword.'")]]';
+										# if finite verb with 1/2 person: exclude quechua verbs with other subject person
+										if($pos_es =~ /V...1../){
+											$xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$mainword.'")] and count(descendant::morph[contains(@tag, "2") or contains(@tag, "3")] )=0  ]';
+										}
+										elsif($pos_es =~ /V...2../){
+											$xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$mainword.'")] and count(descendant::morph[contains(@tag, "1") or contains(@tag, "3")] )=0  ]';
+										}
+										elsif($pos_es =~ /V...3../){
+											$xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$mainword.'")] and count(descendant::morph[contains(@tag, "1") or contains(@tag, "2")] )=0  ]';
+										}
+										else{
+											$xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$mainword.'")]]';
+										}
 									}
 									# only one syllable: use root in attribute @root ('only' root, no suffixes)
 									else{
-										$xpath_to_quz_cand = 'descendant::t[root[ translate(@root, "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$mainword.'"]]';
+										if($pos_es =~ /V...1../){
+												$xpath_to_quz_cand = 'descendant::t[root[ translate(@root, "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$mainword.'"]  and count(descendant::morph[contains(@tag, "2") or contains(@tag, "3")] )=0  ]';
+										}
+										elsif($pos_es =~ /V...2../){
+											$xpath_to_quz_cand = 'descendant::t[root[ translate(@root, "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$mainword.'"]  and count(descendant::morph[contains(@tag, "1") or contains(@tag, "3")] )=0  ]';
+										}
+										elsif($pos_es =~ /V...3../){
+											$xpath_to_quz_cand = 'descendant::t[root[ translate(@root, "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$mainword.'"]  and count(descendant::morph[contains(@tag, "1") or contains(@tag, "2")] )=0  ]';
+										}
+										else{
+											$xpath_to_quz_cand = 'descendant::t[root[ translate(@root, "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$mainword.'"]]';
+										}
 									}
 									#print "xpath: $xpath_to_quz_cand\n";
 									my @quz_cand_ts;
 									foreach my $s_quz (@sents_quz){
 										my @cands = $s_quz->findnodes($xpath_to_quz_cand);
+#										foreach my $c (@cands){
+#											print "cand: ".$c->textContent()."\n";
+#										}
 										my %cand_ids;
 										my $is_aligned=1;
 										if(scalar(@preforms>0)){
@@ -189,25 +236,33 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 											if($is_aligned){
 													if(exists($alignments{$tokenID_es})){
 														foreach my $id (keys %cand_ids){
-															#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
-															# align whole token or only root? 
-															#push($alignments{$tokenID_es}, $id );
-															push($alignments{$tokenID_es}, $id."-1" );
-															foreach my $preID (keys $cand_ids{$id}){
-																#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
-																#push($alignments{$tokenID_es}, $preID );
-																push($alignments{$tokenID_es}, $preID."-1" );
+															unless($quz_already_aligned{$id} ==1){
+																#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
+																# align whole token or only root? 
+																#push($alignments{$tokenID_es}, $id );
+																push($alignments{$tokenID_es}, $id."-1" );
+																foreach my $preID (keys $cand_ids{$id}){
+																	#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
+																	#push($alignments{$tokenID_es}, $preID );
+																	push($alignments{$tokenID_es}, $preID."-1" );
+																}
+																$quz_already_aligned{$id} =1;
+																last;
 															}
 														}
 													}
 													else{
 														foreach my $id (keys %cand_ids){
-															#align token or only root?
-															$alignments{$tokenID_es} = [$id."-1"];
-															#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
-															foreach my $preID (keys $cand_ids{$id}){
-																#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
-																push($alignments{$tokenID_es}, $preID."-1" );
+															unless($quz_already_aligned{$id} ==1){
+																#align token or only root?
+																$alignments{$tokenID_es} = [$id."-1"];
+																#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
+																foreach my $preID (keys $cand_ids{$id}){
+																	#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
+																	push($alignments{$tokenID_es}, $preID."-1" );
+																}
+																$quz_already_aligned{$id} =1;
+																last;
 															}
 														}
 													}
@@ -218,13 +273,17 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 										}
 									}
 									foreach my $cand (@quz_cand_ts){
-										if(exists($alignments{$tokenID_es})){
-											#print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
-											push($alignments{$tokenID_es}, $cand->getAttribute('n')."-1" );
-										}
-										else{
-											$alignments{$tokenID_es} = [ $cand->getAttribute('n')."-1"];
-											#print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
+										unless($quz_already_aligned{$cand->getAttribute('n')} ==1){
+											if(exists($alignments{$tokenID_es})){
+												#print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
+												push($alignments{$tokenID_es}, $cand->getAttribute('n')."-1" );
+											}
+											else{
+												$alignments{$tokenID_es} = [ $cand->getAttribute('n')."-1"];
+												#print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
+											}
+											$quz_already_aligned{$cand->getAttribute('n')} =1;
+											last;
 										}
 									}#foreach
 								}#unless
@@ -308,20 +367,24 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 							$lem_es =~ s/r$//;
 						}
 						if(length($lem_es)>4){
-							my $xpath_to_loan_cand = $xpath_to_quz_cand = 'descendant::t[root[starts-with( translate(@root, "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$lem_es.'")]]';
+							my $xpath_to_loan_cand = 'descendant::t[root[starts-with( translate(@root, "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$lem_es.'")]]';
 							my @quz_cand_ts;
 							foreach my $s_quz (@sents_quz){
-								my @cands = $s_quz->findnodes($xpath_to_quz_cand);
+								my @cands = $s_quz->findnodes($xpath_to_loan_cand);
 								push(@quz_cand_ts, @cands);
 							}
 							foreach my $cand (@quz_cand_ts){
-								if(exists($alignments{$tokenID_es})){
-									#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$cand->getAttribute('n')."-1 \n";
-									# align whole token or only root? 
-									push($alignments{$tokenID_es}, $cand->getAttribute('n')."-1" );
-								}else{	#align token or only root?
-									$alignments{$tokenID_es} = [$cand->getAttribute('n')."-1"];
-									#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$cand->getAttribute('n')."-1 \n";
+								unless($quz_already_aligned{$cand->getAttribute('n') } == 1){
+									if(exists($alignments{$tokenID_es})){
+										#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$cand->getAttribute('n')."-1 \n";
+										# align whole token or only root? 
+										push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+									}else{	#align token or only root?
+										$alignments{$tokenID_es} = [$cand->getAttribute('n')];
+										#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$cand->getAttribute('n')."-1 \n";
+									}
+									$quz_already_aligned{$cand->getAttribute('n') } =1;
+									last;
 								}
 							}
 						}
@@ -516,12 +579,33 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 #	
 #	my $alignment_ids = $alignments{$es_id};
 #	foreach my $id (@$alignment_ids){
-#		my $xpath_to_quz_w = 'descendant::*[@n="'.$id.'"]';
-#		my ($w_quz) = $dom_quz->findnodes($xpath_to_quz_w);
-#		my ($wordform_quz) = ( $w_quz->toString() =~ m/w>([^<]+)/ ) ;
-#		if(!$wordform_quz){
+##		my $xpath_to_quz_w = 'descendant::*[@n="'.$id.'"]';
+##		my ($w_quz) = $dom_quz->findnodes($xpath_to_quz_w);
+##		my ($wordform_quz) = ( $w_quz->toString() =~ m/w>([^<]+)/ ) ;
+##		if(!$wordform_quz){
+##			($wordform_quz) = ( $w_quz->toString() =~ m/$id.*>(-[^<]+)/ ) ;
+##		}
+#		# whole words
+#		my $wordform_quz;
+#		if($id =~ /^\d+-\d+-\d+$/){
+#			my $xpath_to_quz_w = 'descendant::*[@n="'.$id.'"]';
+#			my ($w_quz) = $dom_quz->findnodes($xpath_to_quz_w);
+#			($wordform_quz) = ( $w_quz->toString() =~ m/w>([^<]+)/ ) ;
+#		}
+#		#roots: print whole word form
+#		elsif($id =~ /^\d+-\d+-\d+-1$/){
+#			$id =~ s/-1$//;
+#			my $xpath_to_quz_w = 'descendant::*[@n="'.$id.'"]';
+#			my ($w_quz) = $dom_quz->findnodes($xpath_to_quz_w);
+#			($wordform_quz) = ( $w_quz->toString() =~ m/w>([^<]+)/ ) ;
+#		}
+#		#suffixes
+#		elsif($id =~ /^\d+-\d+-\d+-\d+/){
+#			my $xpath_to_quz_w = 'descendant::*[@n="'.$id.'"]';
+#			my ($w_quz) = $dom_quz->findnodes($xpath_to_quz_w);
 #			($wordform_quz) = ( $w_quz->toString() =~ m/$id.*>(-[^<]+)/ ) ;
 #		}
+#
 #		print "quz: $wordform_quz $id, ";
 #	}
 #	print "\n";
@@ -532,9 +616,82 @@ my $es_book_id = $dom_es->documentElement->getAttribute('id');
 my $quz_book_id = $dom_quz->documentElement->getAttribute('id');
 foreach my $es_id (sort id_sort keys %alignments){
 	my $alignment_ids = $alignments{$es_id};
-	foreach my $quz_id (@$alignment_ids){
-		print "$es_book_id-$es_id\t$quz_book_id-$quz_id\n";
+	my @uniq_alignments = uniq(@$alignment_ids);
+	
+#	my $xpath_to_es_word = 'descendant::t[@n="'.$es_id.'"]';
+#	my ($es_word) = $dom_es->findnodes($xpath_to_es_word);
+#	print $es_word->textContent()."\n";
+	
+	# check if adjacent morphemes!
+	my $prev_morph_id;
+	my $prev_token_id;
+	my $is_adjacent=1;
+	my $start_tok;
+	my $end_tok;
+	my $start_morph;
+	my $end_morph;
+	for (my $i=0;$i<scalar(@uniq_alignments);$i++)
+	{
+		my $this_id = @uniq_alignments[$i];
+		if($i==0){
+			($prev_morph_id) = ($this_id =~ /^\d+-\d+-\d+-(\d+)/);
+			($prev_token_id) = ($this_id =~ /^\d+-\d+-(\d+)/);
+			$start_morph = $prev_morph_id;
+			$start_tok = $prev_token_id;
+#			print "this id: $this_id, prev token id: $prev_token_id, morph: $prev_morph_id\n";
+			# no morph id: whole word is aligned, just print
+#			if(!$prev_morph_id){
+#				#print "$es_book_id-$es_id\t$quz_book_id-$this_id\n";
+#			}
+		}
+		else{
+			my ($this_morph_id) = ($this_id =~ /^\d+-\d+-\d+-(\d+)/);
+			my ($this_token_id) = ($this_id =~ /^\d+-\d+-(\d+)/);
+			#print "$this_id token $this_token_id, $prev_token_id\n";
+			# no morph in id, whole word form is aligned and adjacent:
+			if(!$this_morph_id && ($this_token_id-1 == $prev_token_id || $this_token_id+1 == $prev_token_id) ) {
+				$end_tok = $this_token_id;
+				$prev_token_id = $this_token_id;
+			}
+			elsif(!$this_morph_id && !($this_token_id-1 == $prev_token_id || $this_token_id+1 == $prev_token_id) ){
+				$is_adjacent =0;
+			}
+			elsif($this_morph_id && ( ($this_token_id == $prev_token_id && ($this_morph_id-1 == $prev_morph_id ||  $this_morph_id+1 == $prev_morph_id )) || ($this_morph_id ==1 &&  ($this_token_id+1 == $prev_token_id || $this_token_id-1 == $prev_token_id) ) )){
+				$end_tok = $this_token_id;
+				$end_morph = $this_morph_id;
+				$prev_morph_id = $this_morph_id;
+			}
+			elsif($this_morph_id && !($this_morph_id-1 == $prev_morph_id)){
+				# or print only first??
+				$is_adjacent = 0;
+#				print "non-adjacent alignments in: ";
+#				my $xpath_to_es_word = 'descendant::t[@n="'.$es_id.'"]';
+#				my ($es_word) = $dom_es->findnodes($xpath_to_es_word);
+#				print $es_word->textContent()."\n";
+#				foreach my $quz_id (@uniq_alignments){
+#					print "$es_book_id-$es_id\t$quz_book_id-$quz_id\n";
+#				}
+#				print "\n";
+#				last;
+			}
+		}
+		
 	}
+	if(!$is_adjacent){
+		print "non-adjacent alignments in: ";
+				my $xpath_to_es_word = 'descendant::t[@n="'.$es_id.'"]';
+				my ($es_word) = $dom_es->findnodes($xpath_to_es_word);
+				print $es_word->textContent()."\n";
+				foreach my $quz_id (@uniq_alignments){
+					print "$es_book_id-$es_id\t$quz_book_id-$quz_id\n";
+				}
+	}
+
+
+#	foreach my $quz_id (@$alignment_ids){
+#		print "$es_book_id-$es_id\t$quz_book_id-$quz_id\n";
+#	}
+#	print "\n";
 	
 }
 
@@ -589,4 +746,7 @@ sub id_sort {
 	return 0;
 }
 
-
+sub uniq {
+    my %contained_id;
+    grep !$contained_id{$_}++, @_;
+}
