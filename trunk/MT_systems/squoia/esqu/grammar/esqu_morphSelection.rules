@@ -170,7 +170,7 @@ my.smi=/^VMIC/		obligative			k	chunkparent.verbform=/obligative|rel:not\.agentiv
 my.smi=/^VMSI/		potential			k	chunkparent.verbform=main && !(xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]})
 my.smi=/^VMSI/		imperative			k	chunkparent.verbform=main && ( xpath{ancestor::CHUNK[@type="grup-verb"][2]/NODE[contains(@sem,"speech")]} || xpath{parent::CHUNK[@type="grup-verb" or @type="coor-v"]/CHUNK[@type="F-term"]/NODE[@slem="!"]} )
 my.smi=/^VMSI/		perfect				k	chunkparent.verbform=perfect	 # complement clause
-my.smi=/^VMSI/		obligative			k	chunkparent.verbform=obligative
+my.smi=/^VMSI/		obligative			k	chunkparent.verbform=/obligative|rel:not\.agentive/
 
 # subjuntivo present, TODO: relative clauses?
 my.smi=/^VMSP/		perfect				k	chunkparent.verbform=perfect	 # complement clause

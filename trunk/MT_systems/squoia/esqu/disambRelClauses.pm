@@ -19,9 +19,10 @@ my %nounLexicon;
 
 sub main{
 	my $dom = ${$_[0]};
-	%lexEntriesWithFrames = %{$_[1]};
-	%nounLexicon = %{$_[2]};
+	%nounLexicon = %{$_[1]};
+	%lexEntriesWithFrames = %{$_[2]};
 	
+
 #	foreach my $n ($$dom->getElementsByTagName('NODE')){
 #	if($n->getAttribute('form') =~ /ó/){
 #	print "matched: ".$n->getAttribute('form')."\n";
@@ -36,7 +37,7 @@ sub main{
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		#debug
-#		#print STDERR "disambiguating relative clause in ".$sentence->getAttribute('ord')."\n";
+		#print STDERR "disambiguating relative clause in ".$sentence->getAttribute('ord')."\n";
 		
 		# check if sentence contains relative clause
 		# with preposition sometimes grup-sp, rel=cc/sp depends on noun (vi al hombre [a quien dejaron])
@@ -224,7 +225,6 @@ sub main{
 			# set to sutinchasqa
 			elsif($relClause->exists('child::NODE[@lem="titular" or @lem="llamar"]') and $relClause->exists('descendant::NODE[@form="se" or @form="Se"]')  )
 			{
-				#set to 'agentive' -> kaq
 				&setVerbform($relClause,0);
 			}
 			# with 'lo que', lo cual, (el que, la que..?) -> head is pronoun, else 'a la/el cual'
@@ -240,7 +240,7 @@ sub main{
 			}
 			# check if relclause is passive with ser+participle: in this case, head noun is syntactic subject, but semantic object-> not agentive
 			# 'la casa que ha sido vendida..'
-			elsif($relClause->exists('child::NODE/NODE[@lem="ser" and @pos="vs"]') && $relClause->exists('child::NODE[starts-with(@mi, "VMP")]') )
+			elsif($relClause->exists('child::NODE/descendant::NODE[@lem="ser" and @pos="vs"]') && $relClause->exists('child::NODE[starts-with(@mi, "VMP")]') )
 			{
 				&setVerbform($relClause,0);
 			}
@@ -298,8 +298,8 @@ sub main{
 								if(exists $lexEntriesWithFrames{$lem})
 								{
 									my @frameTypes = @{$lexEntriesWithFrames{$lem}};
-									print STDERR @frameTypes;
-									print STDERR "\n\n";
+									#print STDERR @frameTypes;
+									#print STDERR "\n\n";
 									# if there is only one verb frame in the lexicon, assume this is the actual verb frame in this relative clause
 									if(scalar(@frameTypes) == 1)
 									{
@@ -371,7 +371,7 @@ sub main{
 								 					# in those cases: take anticausative as default
 								 					
 								 					#check if parser has labeled 'se' as 'impers' -> in this case: not agentive
-								 					if($relClause->exists('NODE/NODE[@lem="se" and @rel="impers"]'))
+								 					if($relClause->exists('NODE/descendant::NODE[@lem="se" and @rel="impers"]'))
 								 					{
 								 						&setVerbform($relClause,0);
 								 						undef(@frameTypes);
@@ -934,7 +934,7 @@ sub hasSubjRel{
 #	print STDERR "rel clause: \n".$relClauseNode->toString."\n";
 #	my $r = $relClauseNode->exists('CHUNK[@si="suj"]');
 #	print STDERR "returned: $r\n";
-	return ($relClauseNode->exists('CHUNK[@si="suj"]'));
+	return ($relClauseNode->exists('CHUNK[@si="suj" or @si="suj-a"]'));
 
 }
 

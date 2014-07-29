@@ -683,7 +683,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 		open VERBS, "< $verblex" or die "Can't open $verblex : $!";
 		print STDERR "reading verb frame lexicon form $verblex...\n";
 		my $verbdom    = XML::LibXML->load_xml( IO => *VERBS );
-		my @lexEntriesList = $dom->getElementsByTagName('lexentry');
+		my @lexEntriesList = $verbdom->getElementsByTagName('lexentry');
 		foreach my $lexentry (@lexEntriesList)
 		{
 			my $lemma = $lexentry->getAttribute('lemma');
