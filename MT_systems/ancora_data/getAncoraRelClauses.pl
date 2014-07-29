@@ -103,7 +103,7 @@ my %mapMorphsToClasses = (
 		
 		# verb morphology
 		#print STDOUT "vTense,vMod,vPers,vNum,hasSE,";
-		print STDOUT "vTense,vMod,vNum,hasSE,hasCreg,hasCC,hasCI,hasCag,hasCpred,";
+		print STDOUT "vTense,vMod,vNum,hasSE,hasCreg,hasCC,hasCI,hasCag,hasCpred,isSER,";
 		
 		# last row: class
 		print STDOUT "relpron,agentive\n";;
@@ -144,7 +144,7 @@ foreach my $sentence (@sentenceList)
  	{
  	    
  		my $headNoun = &getHeadNoun($verbChunk);
- 		print STDERR "verb chunk nbr: ".$verbChunk->getAttribute('ord')." ".$headNoun."\n";
+ 		#print  "sentence: ".$sentence->getAttribute('ord')." verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n";
  		my $mainV = &getMainVerb2($verbChunk);
 		my ($relpron) = $verbChunk->findnodes('descendant::NODE[starts-with(@mi,"PR")][1]');
 		
@@ -296,20 +296,21 @@ foreach my $sentence (@sentenceList)
 						print "$mTense,$mMod,$mNum,";
 						
 						# does this rel. clause have 'se'?
-						if($verbChunk->exists('descendant::NODE[@form="se" or @form="Se"]') or $mLem =~ /rse$/){
+						if($verbChunk->exists('child::NODE/descendant::NODE[@form="se" or @form="Se"]') or $mLem =~ /rse$/){
 							print "1,";
 						}
 						else{
 							print "0,";
 						}
 						# hasCreg,hasCC,hasCI,hasCag,hasCpred"
-						my $hasCreg = ($verbChunk->exists('descendant::CHUNK[@si="creg"]')) ? 1 : 0;
-						my $hasCC = ($verbChunk->exists('descendant::CHUNK[@si="cc"]')) ? 1 : 0;
-						my $hasCI = ($verbChunk->exists('descendant::CHUNK[@si="ci"]')) ? 1 : 0;
-						my $hasCag = ($verbChunk->exists('descendant::CHUNK[@si="cag"]')) ? 1 : 0;
-						my $hasCpred = ($verbChunk->exists('descendant::CHUNK[@si="cpred"]')) ? 1 : 0;
+						my $hasCreg = ($verbChunk->exists('child::CHUNK[@si="creg"]')) ? 1 : 0;
+						my $hasCC = ($verbChunk->exists('child::CHUNK[@si="cc"]')) ? 1 : 0;
+						my $hasCI = ($verbChunk->exists('child::CHUNK[@si="ci"]')) ? 1 : 0;
+						my $hasCag = ($verbChunk->exists('child::CHUNK[@si="cag"]')) ? 1 : 0;
+						my $hasCpred = ($verbChunk->exists('child::CHUNK[@si="cpred"]')) ? 1 : 0;
+						my $isSER = ($mLem eq 'ser') ? 1: 0;
 						
-						print "$hasCreg,$hasCC,$hasCI,$hasCag,$hasCpred,";
+						print "$hasCreg,$hasCC,$hasCI,$hasCag,$hasCpred,$isSER,";
 						
 						# print relative pronoun
 						if($relpron){

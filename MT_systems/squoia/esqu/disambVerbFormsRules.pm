@@ -58,7 +58,7 @@ sub main{
 	 		{
 	 			# disambiguation needed only if not relative clause (those are handled separately)
 	 			if( !squoia::util::isRelClause($verbChunk) && !$verbChunk->hasAttribute('verbform'))
-	 			{ #print STDERR "disambiguating verb chunk: ".$verbChunk->getAttribute('ord')."\n";
+	 			{ print STDERR "disambiguating verb chunk: ".$verbChunk->getAttribute('ord')."\n";
 	 				my $conjunction;
 	 				# get conjunction, if present:
 	 				#  if coordinated, get the conjunction from head of coordination, unless this verb has its own conjunction 
@@ -146,7 +146,7 @@ sub main{
 	 				}
 	 				# if this is a subordinated clause with 'cuando..'-> switch-reference forms (desr sometimes makes the sub-clause the main clause)
 	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aún_cuando|aun_cuando|aunque|a_pesar_de_que|porque|con_tal_que|con_tal_de_que|en_cuanto|tan_pronto_como|una_vez_que|después_de_que|después_que/ )
-	 				{
+	 				{ 
 	 					#check if same subject 
 	 					&compareSubjects($verbChunk);
 	 					if($conjunction->getAttribute('lem') =~ /porque|con_tal_que|con_tal_de_que/ )
@@ -307,7 +307,7 @@ sub main{
 	 					$verbChunk->setAttribute('conjLast', 'hina');
 	 				}
 	 				# según -> -sqaman hina, según que (?)
-	 				if($conjunction && $conjunction->getAttribute('lem') =~ /^según$|según_que/){
+	 				elsif($conjunction && $conjunction->getAttribute('lem') =~ /^según$|según_que/){
 	 					$nbrOfNominalForms++;
 	 					$verbChunk->setAttribute('verbform', 'perfect');
 	 					$verbChunk->setAttribute('conjLast', 'hina');
@@ -476,7 +476,7 @@ sub main{
 								}
 	 						}
 	 						else
-	 						{
+	 						{ 
 	 							$nbrOfAmbigousClauses++;
 								$verbChunk->setAttribute('verbform', 'ambiguous');
 	 						}
@@ -566,7 +566,7 @@ sub main{
 	 					$verbChunk->setAttribute('verbform', 'main');
 	 				}
 	 				# if there is a grup-verb above, check if there's a finite verb in it, if not, this chunk is probably not the main verb, make this chunk finite
-	 				elsif($verbChunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]'))
+	 				elsif( $verbChunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]'))
 	 				{
 	 					my @parentVChunks = $verbChunk->findnodes('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]');
 	 					my $finite =0;
@@ -682,7 +682,7 @@ sub main{
 sub compareSubjects{
 	my $verbChunk = $_[0];
 	my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
-#	print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n";
+	print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n";
 	#subject of main clause
 	my $mainverb = &getVerbMainClause($verbChunk);
 	if($mainverb && $finiteVerb)
@@ -780,6 +780,7 @@ sub compareSubjects{
 		$nbrOfAmbigousClauses++;
 		$verbChunk->setAttribute('verbform', 'switch');
 	}
+	#print STDERR $verbChunk->toString()."\n";
 }
 
 sub compareSubjectsDirectSpeech{
