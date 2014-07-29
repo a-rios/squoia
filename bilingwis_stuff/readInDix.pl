@@ -200,7 +200,8 @@ my %mapTagsFromDix2TagsFromXfst = (
 	'++Neg' => '+Intr_Neg',
 	'++Rflx' => '+Rflx_Int',
 	'++Iprs' => '+Rgr_Iprs',
-	'++Lim+Intr' => '+Lim_Aff+Con_Intr'
+	'++Lim+Intr' => '+Lim_Aff+Con_Intr',
+	'++Instr+Add' => '+Con_Inst+Add'
 );
 
 my %eslex = ();
@@ -628,24 +629,25 @@ $eslex{'preposition'}{'sobre'}=[ 'hawa', 'hana', '-manta'];
 $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 
 
-###print hash:
-#foreach my $section (keys %eslex){
-#	print "sec: $section\n";
-#	my $printed =0;
-#	foreach my $lem (keys $eslex{$section}){
-#		foreach my $quz (@{$eslex{$section}{$lem}} ){
-#			if($quz =~ /^\+/){
-#				print $lem."\t";
-#				print "$quz, ";
-#				$printed =1;
-#			}
-#			else{
-#				$printed=0;
-#			}
-#			if($printed){print "\n";}
-#		}
-#	}
-#}
+##print hash:
+foreach my $section (keys %eslex){
+	print "sec: $section\n";
+	my $printed =0;
+	foreach my $lem (keys $eslex{$section}){
+		foreach my $quz (@{$eslex{$section}{$lem}} ){
+			if($quz =~ /^\+/){
+				print $lem."\t";
+				print "$quz, ";
+				$printed =1;
+			}
+			else{
+				$printed=0;
+			}
+			if($printed){print "\n";}
+		}
+	}
+}
+
 
 #print hash:
 #foreach my $section (keys %eslex){

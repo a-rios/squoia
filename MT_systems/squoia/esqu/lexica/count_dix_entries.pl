@@ -67,7 +67,6 @@ foreach my $section ($dom->getElementsByTagName('section')){
     my @entries = $section->findnodes('child::e');
      my %entries = [];
       foreach my $e (@entries){
-	      $totalentries++;
 	      my ($r) = $e->findnodes('child::p/r[1]');
 	      if($entries{$e}){
 		      push($entries{$e}, $r);
@@ -82,11 +81,11 @@ foreach my $section ($dom->getElementsByTagName('section')){
     #print "test ".$entries{$e}[0]->textContent."\n";
 	my $rs = $entries{$e};
 	#print "test ".@$rs[0]->textContent."\n";
-	if($rs && scalar(@$rs) ==1 && @$rs[0]->textContent =~ 'unspecified' ){
-		$translated++;
+	if($rs && scalar(@$rs) ==1 && @$rs[0]->textContent eq 'unspecified' ){
+		$untranslated++;
 	}
 	elsif($rs){
-		$untranslated++;
+		$translated++;
 	}
 	else{
 	  print "no r's: ".$entries{$e}."\n";
