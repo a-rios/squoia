@@ -70,7 +70,7 @@
        define Orthography18 [ {ph} (->) {f}];     
        
        
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18];
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18 ];
 
        define QuechuaOrtho Allophone .o. Orthography;
        
@@ -86,8 +86,10 @@
        define SPOrthography10 [ {ia} (->) {iya}];
        define SPOrthography11 [ {io} (->) {iyu}];
        define SPOrthography12 [ [v|b] (->) {w}];
+       define SPOrthography13 [ {ado} (->) {aw} || _ .#.];
+       define SPOrthography14 [ {ado} (->) {aru} || _ .#.];
        
-       define SPOrthography [SPOrthography1 .o. SPOrthography2 .o. SPOrthography3 .o. SPOrthography4 .o. SPOrthography5 .o.  SPOrthography6 .o. SPOrthography7 .o. SPOrthography8 .o. SPOrthography9 .o. SPOrthography10 .o. SPOrthography11 .o. SPOrthography12 ];
+       define SPOrthography [SPOrthography1 .o. SPOrthography2 .o. SPOrthography3 .o. SPOrthography4 .o. SPOrthography5 .o.  SPOrthography6 .o. SPOrthography7 .o. SPOrthography8 .o. SPOrthography9 .o. SPOrthography10 .o. SPOrthography11 .o. SPOrthography12 .o. SPOrthography13  .o. SPOrthography14 ];
 
        # apply after Cleanup
        define Accent1 [ a (->) á, u (->) ú ||  _ [w|y] .#.];
@@ -274,11 +276,11 @@
        #define EVID4 [ {cha}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
 
 	define SI1 [  {s}"@SI"  => Vowel _  ];
-	define SI2 [  {si}"@SI" => Cons _  ];
+	define SI2 [  [{si}|{sis}]"@SI" => Cons _  ];
 
 	define MI1 [  {m}"@MI"  => Vowel _  ];
 	define MI2 [  {n}"@MI"  => Vowel _  ];
-	define MI3 [  {mi}"@MI" => Cons _  ];
+	define MI3 [  [{mi}|{min}]"@MI" => Cons _  ];
 
 	define CHA1 [  {ch}"@CHA"  => Vowel _  ];
 	define CHA2 [  {chi}"@CHA"  => Cons _  ];
@@ -457,7 +459,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        # "yupaychasunaykichik"               #
        #-------------------------------------#   
        define NDeriv1finalTrans [VROOT [ [VerbalSuffixesBeforeNS VtoNfinalTrans] .o. QuechuaOrtho ] ];
-       define NDeriv1finalTrans2 [(VDeriv2|VDeriv1) [ [VerbalSuffixesBeforeNS VtoNfinalTrans] .o. QuechuaOrtho ]];
+       define NDeriv1finalTrans2 [[VDeriv2|VDeriv1] [ [VerbalSuffixesBeforeNS VtoNfinalTrans] .o. QuechuaOrtho ]];
 
 #define NDERIV [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
 define NDERIV [NDeriv1|NDeriv2|NDeriv3];

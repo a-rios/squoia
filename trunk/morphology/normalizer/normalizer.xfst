@@ -18,8 +18,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"|"@EXCEPT"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"|"@EXCEPT"] ];
 
 ############################################################################### 
 
@@ -222,17 +222,17 @@
        # of flags, otherwise the context might not be right                                                           #
        #--------------------------------------------------------------------------------------------------------------#
 
-       #define EVID1 [ {mi}"@MI" -> [{m}|{n}]"@MI"  ||Vowel  _ ];
+       #define EVID1 [ {mi}]"@MI" -> [{m}|{n}]"@MI"  ||Vowel  _ ];
        #define EVID2 [ {si}"@SI" -> {s}"@SIu" || Vowel  _ ];
        #define EVID3 [ {chi}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
        #define EVID4 [ {cha}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
 
 	define SI1 [  {s}"@SI"  => Vowel _  ];
-	define SI2 [  {si}"@SI" => Cons _  ];
+	define SI2 [  [{si}|{sis}]"@SI" => Cons _  ];
 
 	define MI1 [  {m}"@MI"  => Vowel _  ];
 	define MI2 [  {n}"@MI"  => Vowel _  ];
-	define MI3 [  {mi}"@MI" => Cons _  ];
+	define MI3 [  [{mi}|{min}]"@MI" => Cons _  ];
 
 	define CHA1 [  {ch}"@CHA"  => Vowel _  ];
 	define CHA2 [  {chi}"@CHA"  => Cons _  ];
@@ -303,8 +303,10 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define V=V=5 DB @re"v-v-5.regex" ;
        define V=V=6 DB @re"v-v-6-norm.regex" ;
        define V=V=7 @re"v-v-7.regex" ;
+       # needed for sequence -nayuku-
+       define reflexive [ "[" "^DB" "]" "[" "--" "]" {ku}"+ku+" "[" "VDeriv" "]" "[" "+Rflx_Int" "]" ] : {ku}"@KU";
 
-    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,5} (HonAff)  (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. QuechuaOrtho;
+    define VerbSuffixes  VerbRulesUpper  .o. [(HonAff) V=V=1^{0,4} (HonAff) V=V=2^{0,5} (HonAff)  (V=V=1) (reflexive) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7)]  .o. VerbRulesLower .o. QuechuaOrtho;
 
 
 #####################################################################################
@@ -397,7 +399,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        # "yupaychasunaykichik"               #
        #-------------------------------------#   
        define NDeriv1finalTrans [VROOT  VerbalSuffixesBeforeNS VtoNfinalTrans];
-       define NDeriv1finalTrans2 [(VDeriv2|VDeriv1)  VerbalSuffixesBeforeNS VtoNfinalTrans];
+       define NDeriv1finalTrans2 [[VDeriv2|VDeriv1]  VerbalSuffixesBeforeNS VtoNfinalTrans];
 
 define NDERIV [NDeriv1|NDeriv2|NDeriv3];
 define NDERIVFINAL [NDeriv1final|NDeriv2final|NDeriv3final];
@@ -557,7 +559,7 @@ define Particles VerbRulesUpper .o. [[Particle|ParticleBasic|ParticleVerb|Partic
    
 # limit analysis of -qta as genitive-accusative to cases with human roots (e.g. mamaqta richkani - I'm going to my mother's)
 # otherwise: assume -qta as agentive+accusative
-define AccGen [  %["^DB"%] ("@GENq") %["--"%] [{p}|{pa}] %["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%]{ta}%["Cas"%]  => "@HUM" _  ];
+define AccGen [  %["^DB"%] ("@GENq") %["--"%] [{p}|{pa}] %["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%]{ta}%["Cas"%]  => "@HUM" ?* _  ];
        
 # naya/sun,  -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj, naya/paya/raya: not -rqa -yka, pasaq -> pa-saq, not pasa -q
 define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] | {rqa}"+ru+" %["VDeriv"%] %["+Rptn"%] "@RQU" %["--"%]{yka}"+yu+" | ["+Rzpr"|"+Reub"] %] %["--"%] {yka} "+yu+"| "+Rep"%] %["--"%] {yka} "+yu+" | "+Desesp"%] %["^DB"%] %["--"%] {q} %["NS"%] %["+Ag" ]] ; 
@@ -616,8 +618,8 @@ define IMANAWAQAYCHALLALLA [~$[ {ima} %[ ["Part_Conec" %]|"NRoot"%] %["=cosa"%]]
 # compounds: pachmama, wiraqucha, compounds with urqu -> not if first noun has infinitive -> e.g. qhawayurqu -> y[NS][+Inf][^DB][--]urqu, usut'anta, not usu-t'anta (->husut'anta)
 define COMPOUNDS [~$[ "=mundo,tiempo"%] %["^DB"%] %["--"%] {mama}%[ | "=grasa"%] %["^DB"%] %["--"%] {qucha}%[ | "+Inf"%] %["^DB"%] %["--"%] {urqu}%[ | "=desperdicio"%] %["^DB"%] %["--"%] {t'anta}%[ ]];
 
-# ñawpaq, chiqap/chiqaq, llump'aq, ch'usaq, ichuq, illaq, ñawraq, ariq, tupaq, yuraq, hayk'aq, askhaq -> achkhaq (abundante), no achkha-q, 
-define AQROOTS [~$["@NAWPA" %["^DB"%]  %["--"%] [q|p] %[ | ["@CHIQA"|"@CHANI"] %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"|"@ALLI"|"@CHIQA"|"@CHANI"] %["^DB"%] "@GENq" | [{ari}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS" | {hayk'a} %[ ["NRoot"|"PrnInterr"] %] %[ ["=varios"|"=cuánto"] %] %["^DB"%] ["@GENq"|%["--"%] p %["Cas"] | "=mucho"%] %["^DB"%] "@GENq"  ]]; 
+# ñawpaq, chiqap/chiqaq/chiqas, llump'aq, ch'usaq, ichuq, illaq, ñawraq, ariq, tupaq, yuraq, hayk'aq, askhaq -> achkhaq (abundante), no achkha-q, 
+define AQROOTS [~$["@NAWPA" %["^DB"%]  %["--"%] [q|p] %[ | ["@CHIQA"|"@CHANI"] %["^DB"%] %["--"%] [q|n|m|p] %[ | "=ser_limpio"%] %["^DB"%] %["--"%]{q} %["NS" | [{ichu}|{ch'usa}|"@ILLA"|{ñawra}|"@YURA"|"@ALLI"|"@CHIQA"|"@CHANI"] %["^DB"%] "@GENq" | [{ari}|{ch'usa}|{tupa}] ?* ["=estrenar"|"=faltar,ausentarse"|"=encontrarse"]%] %["^DB"%] %["--"%]{q} %["NS" | {hayk'a} %[ ["NRoot"|"PrnInterr"] %] %[ ["=varios"|"=cuánto"] %] %["^DB"%] ["@GENq"|%["--"%] p %["Cas"] | "=mucho"%] %["^DB"%] "@GENq" | "@CHIQA" %["^DB"%] %["--"%] {s} %[ ]]; 
 
 # other ambiguous roots: illapa, hukucha/huk'ucha(q), puputi, sipas, taksapas (*tak-sapa-s), chanincha- -> chani -n -cha (*chanin-cha), resqina -> riqsi-na, no ri-q-sina, munaycha -> nor muna -y -cha (asmp), umalliq: not uma (engañar) + lli
 define AMBROOTS1 [~$[  ["@ILLA" %["^DB"%]| "=amanecer,brillar"%] ] %["--"%] [{pa}|{paq}|{pata}] %[ | [{huk}('){u} %["NRoot"%] %[ ["=estrecho"|"=búho"] %] | ["@UKU"|"@WISKA"] ]  %["--"%] {cha}(q) %[ ["NDeriv"|"VS"] | "=ombligo"%] %["--"%] {ti}%[ | [S|s]i %["Part_Cond"%] %["^DB"%] %["--"%] {pas} %[ | "=paz"%] %["^DB"%] %["--"%] {sapa} %[ | {chanin} %["NRoot"%] %["=correcto"%] %["--"%][{cha}|{chaq}]%[ | "=ir"%] %["^DB"%] %["--"%] q %["NS"%] %["+Ag"%] %["^DB"%] %["--"%] {sina}%[ | "=querer" %] %["^DB"%] ("@IMP") %["--"%] y %[ ["NS"|"VPers"] %] %[ ["+Inf"|"+2.Sg.Subj.Imp"] %] (%["^DB"%]) %["--"%] {cha} %[ ["Amb"|"NDeriv"] | "=engañar"%] %["--"%] {lli} %["VDeriv" ]];

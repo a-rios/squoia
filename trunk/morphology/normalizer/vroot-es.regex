@@ -1,8 +1,11 @@
 # common Spanish loanwords, verbs
 
  [ {agradece} "[" "VRootES" "]" ] :  {dyuspagara}
+| [ {avanza} "[" "VRootES" "]" ] :  {abansa}
 | [ {arrea} "[" "VRootES" "]" ] :  {arriya}
 | [ {arrienda} "[" "VRootES" "]" ] :  {arrinda}
+| [ {atende} "[" "VRootES" "]" ] :  {atiende}
+| [ {aguanta} "[" "VRootES" "]" ] :  {awanta}
 | [ {bendeci} "[" "VRootES" "]" ] :  {bindisi}
 | [ {cambia} "[" "VRootES" "]" ] :  {kambiya}
 | [ {cargona} "[" "VRootES" "]" ] :  {cargona}
@@ -28,15 +31,23 @@
 | [ {entiende} "[" "VRootES" "]" ] :  {entiende}
 | [ {festeja} "[" "VRootES" "]" ] :  {fiyista}
 | [ {festeja} "[" "VRootES" "]" ] :  {phista}
+| [ {pensa} "[" "VRootES" "]" ] :  {piensa}
+| [ {perde} "[" "VRootES" "]" ] :  {pierde}
 | [ {freí} "[" "VRootES" "]" ] :  {friyi}
 | [ {invita} "[" "VRootES" "]" ] :  {imbita}
 | [ {kasu} "[" "VRootES" "]" ] :  {kasu}
+| [ {queda} "[" "VRootES" "]" ] :  {keda}
 | [ {lee} "[" "VRootES" "]" ] :  {liyi}
 | [ {lía} "[" "VRootES" "]" ] :  {liya}
 | [ {locea} "[" "VRootES" "]" ] :  {lukya}
+| [ {mantene} "[" "VRootES" "]" ] :  {mantiene}
 | [ {mea} "[" "VRootES" "]" ] :  {miya}
 | [ {monta} "[" "VRootES" "]" ] :  {silla}
+| [ {servi} "[" "VRootES" "]" ] :  {sirbi}
 | [ {tantea} "[" "VRootES" "]" ] :  {tantiya}
 | [ {tener_cólera} "[" "VRootES" "]" ] :  {kulira}
+| [ {vela} "[" "VRootES" "]" ] :  {bila}
+| [ {vale} "[" "VRootES" "]" ] :  {bali}
 | [ {vence} "[" "VRootES" "]" ] :  {binsi}
+| [ {agradece} "[" "VRootES" "]" ] :  {ulpaycha}
 ;

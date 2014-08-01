@@ -249,11 +249,11 @@
        #define EVID4 [ {cha}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
 
 	define SI1 [  {s}"@SI"  => Vowel _  ];
-	define SI2 [  {si}"@SI" => Cons _  ];
+	define SI2 [  [{si}|{sis}]"@SI" => Cons _  ];;
 
 	define MI1 [  {m}"@MI"  => Vowel _  ];
 	define MI2 [  {n}"@MI"  => Vowel _  ];
-	define MI3 [  {mi}"@MI" => Cons _  ];
+	define MI3 [  [{mi}|{min}]"@MI" => Cons _  ];
 
 	define CHA1 [  {ch}"@CHA"  => Vowel _  ];
 	define CHA2 [  {chi}"@CHA"  => Cons _  ];
@@ -431,7 +431,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        # "yupaychasunaykichik"               #
        #-------------------------------------#   
        define NDeriv1finalTrans [VROOT [ [VerbalSuffixesBeforeNS VtoNfinalTrans] .o. QuechuaOrtho ] ];
-       define NDeriv1finalTrans2 [(VDeriv2|VDeriv1) [ [VerbalSuffixesBeforeNS VtoNfinalTrans] .o. QuechuaOrtho ]];
+       define NDeriv1finalTrans2 [[VDeriv2|VDeriv1] [ [VerbalSuffixesBeforeNS VtoNfinalTrans] .o. QuechuaOrtho ]];
 
 #define NDERIV [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
 define NDERIV [NDeriv1|NDeriv2|NDeriv3];

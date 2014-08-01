@@ -10,6 +10,9 @@
 | [{chayna} "[" "PrnDem" "]"] : {chayna}
 | [{chay} "[" "PrnDem" "]"] : {chhay}
 | [{chayna} "[" "PrnDem" "]"] : {chhayna}
+| [{chayna} "[" "PrnDem" "]"] : {shayna}
+| [{anchay} "[" "PrnDem" "]"] : {anchay}
+| [{anchay} "[" "PrnDem" "]"] : {anchhay}
 | [{kay} "[" "PrnDem" "]"] : {kay}
 | [{kayna} "[" "PrnDem" "]"] : {kayna}
 | [{kay} "[" "PrnDem" "]"] : {khay}
@@ -20,7 +23,7 @@
 | [{haqay} "[" "PrnDem" "]"] : {haqhay}
 | [{haqay} "[" "PrnDem" "]"] : {haq'ay}
 | [{haqay} "[" "PrnDem" "]"] : {jaqay}
-| [{haqhay} "[" "PrnDem" "]"] : {jaqhay}
+| [{haqay} "[" "PrnDem" "]"] : {jaqhay}
 | [{haqay} "[" "PrnDem" "]"] : {jaq'ay}
 | [{haqayna} "[" "PrnDem" "]"] : {haqayna}
 | [{haqayna} "[" "PrnDem" "]"] : {haqhayna}
@@ -30,4 +33,6 @@
 | [{haqayna} "[" "PrnDem" "]"] : {jaq'ayna}
 | [{chaqay} "[" "PrnDem" "]"] : {chahay}
 | [{chaqay} "[" "PrnDem" "]"] : {chhaqay}
+| [{chaqayna} "[" "PrnDem" "]"] : {chaqayna}
+| [{chaqayna} "[" "PrnDem" "]"] : {chhaqayna}
 ;
