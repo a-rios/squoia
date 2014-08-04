@@ -14,8 +14,8 @@
        #-------------------------------#
        # Delete all flag on both sides #
        #-------------------------------#
-       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"|"@EXCEPT"] -> ""];
-       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"|"@EXCEPT"] ];
+       define Cleanup1 [["@MU"|"@PU"|"@KU"|"@YSI"|"@RI"|"@MPA"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@SIS"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|%["CARD"%]|"+nn"|"@PLYUQ"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"|"@EXCEPT"|"@Misspelled"] -> ""];
+       define Cleanup2 ["" <- ["@MU"|"@PU"|"@KU"|"@YSI"|"@MPA"|"@RI"|"@CHI"|"@RQU"|"@MI"|"@SI"|"@SIS"|"@CHA"|"@Vdim"|"@YKU"|"@YU"|"@PTI"|"@STI"|"@PA"|"@GENq"|"@TA"|"@AS"|"@ALLI"|"@HATU"|"@POSS"|"@POSSni"|"+ku+"|"+yku+"|"+yu+"|"+rqu+"|"+ru+"|"+pu+"|"+mu+"|"+nn"|"@NAWPA"|"@CHIQA"|"@YANA"|"@WA"|"@INTR"|"@INTRsu"|"@SU"|"@TRAN"|"@1OBJ"|"+y+"|"@SAPROG"|"@IMP"|"@PLYUQ"|"@ILLA"|"@YURA"|"@CHANI"|"@UKU"|"@WISKA"|"@PLbol"|"@HUM"|"@PORTMANTEAU"|"@EXCEPT"|"@Misspelled"] ];
 
        
 ############################################################################### 
@@ -33,9 +33,9 @@
       # allow uppercase letters  #
       #--------------------------#
 
-      define LowerCase [A (->) a, B (->) b, C (->) c,D (->) d,E (->) e,F (->) f,G (->) g,H (->) h,I (->) i,J (->) j,K (->) k,L (->) l,M (->) m,N (->) n,O (->) o,P (->) p,Q (->) q,R (->) r,S (->) s,T (->) t,U (->) u,V (->) v,W (->) w,X (->) x,Y (->) y,Z (->) z,Ñ (->) ñ];
+      define LowerCase [A (->) a, B (->) b, C (->) c,D (->) d,E (->) e,F (->) f,G (->) g,H (->) h,I (->) i,J (->) j,K (->) k,L (->) l,M (->) m,N (->) n,O (->) o,P (->) p,Q (->) q,R (->) r,S (->) s,T (->) t,U (->) u,V (->) v,W (->) w,X (->) x,Y (->) y,Z (->) z,Ñ (->) ñ, Á (->) á, É (->) é, Í (->) í, Ó (->) ó, Ú (->) ú ];
 
-      define UpperCase [ a (->) A,b (->) B,c (->) C,d (->) D,e (->) E,f (->) F,g (->) G,h (->) H,i (->) I,j (->) J,k (->) K,l (->) L,m (->) M,n (->) N,o (->) O,p (->) P,q (->) Q,r (->) R,s (->) S,t (->) T,u (->) U,v (->) V,w (->) W,x (->) X,y (->) Y,z (->) Z,ñ (->) Ñ];
+      define UpperCase [ a (->) A,b (->) B,c (->) C,d (->) D,e (->) E,f (->) F,g (->) G,h (->) H,i (->) I,j (->) J,k (->) K,l (->) L,m (->) M,n (->) N,o (->) O,p (->) P,q (->) Q,r (->) R,s (->) S,t (->) T,u (->) U,v (->) V,w (->) W,x (->) X,y (->) Y,z (->) Z,ñ (->) Ñ, á (->) Á, é (->) É, í (->) Í, ó (->) Ó, ú (->) Ú ];
 
 
       #-------------------------------------------------------------------#
@@ -94,7 +94,7 @@
        #- may be written with or without their accents   #
        #- e may be written as i, o as u in Spanish words #
        #-------------------------------------------------#
-       define AccentES [ á (->) a,é (->) [e|i],í (->) i, ó (->) [o|u],ú (->) u, ü (->) u];
+       define AccentES [ á (->) a,é (->) [e|i],í (->) i, ó (->) [o|u],ú (->) u, ü (->) u, Á (->) A, É (->) E, Í (->) I, Ó (->) O, Ú (->) U];
        define AccentES2 [ a (->) á,e (->) é, i (->) í,o (->) ó, u (->) ú, u (->) ü ];
        define spanLetras [ e (->) i, i (->) e, o (->) u, u (->) o, c (->) k , d (->) t, g (->)j, w  (->) o, b (->) p, v (->) w, z (->) s , j (->) h];
        define SpanOrtho AccentES .o. AccentES2 .o. spanLetras;
@@ -145,8 +145,11 @@
 
 	define POSS1 [ "@POSS"  => Vowel _  ];
 	define POSS2 [ "@POSSni" => Cons _  ];
+	
+	# misspelled -yki after -i: wasiki -> recognized as wasiyki
+	define POSS3 [ "@Misspelled" => [{i}|"@PTI"] _  ];
 
-        define POSSESSIV POSS1 .o. POSS2;
+        define POSSESSIV POSS1 .o. POSS2 .o. POSS3;
 
         define NounRules GENITIV .o. POSSESSIV;
         
@@ -259,7 +262,7 @@
        #define EVID4 [ {cha}"@CHA" -> {ch}"@CHA" || Vowel  _ ];
 
 	define SI1 [  {s}"@SI"  => Vowel _  ];
-	define SI2 [  [{si}|{sis}]"@SI" => Cons _  ];
+	define SI2 [  [{si}"@SI"|{sis}"@SIS"] => Cons _  ];
 
 	define MI1 [  {m}"@MI"  => Vowel _  ];
 	define MI2 [  {n}"@MI"  => Vowel _  ];
@@ -635,7 +638,7 @@ define HATUNPAQARIN [~$[{hatu} %["NRoot"%] %["=grande"%] %["^DB"%] %["--"%] [n|m
 define KACHARIKU [~$[ {ka}%["VRoot"%] %["=ser"%] %["--"%] {cha} | {ri}%["VRoot"%] %["=ir"%] %["^DB"%] %["--"%] {ku} ]];
 
 # tukuy- should not be analyzed es tuku -y , qayllay, millaym, utqhay
-define YROOTS [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y} %[ | [{wicha}|{ura}] %["VRoot"%] %[ ["=subir"|"=bajar"] %] %["^DB"%] %["--"%] {y}%[ | [{utqha}|{ñawra}|{hawa}|{milla}|{qaylla}|{unchuchuku}] %["NRoot"%] %[ ["=rápido,apurado"|"=diversidad"|"=fuera,arriba"|"=asco,feo"|"=presencia,cercano"|"=comadreja"] %] %["^DB"%] %["--"%] {y} %[ | [{milla}|{utqha}]%["VRoot"%] %[ ["=dañar,tener_asco"|"=apurarse"] %] %["^DB"%] ("@IMP") %["--"%] {y} %[  ]];
+define YROOTS [~$[ {tuku}%["NRoot"%] %["=lechuza"%] %["^DB"%] %["--"%] {y} %[ | [{wicha}|{ura}] %["VRoot"%] %[ ["=subir"|"=bajar"] %] %["^DB"%] %["--"%] {y}%[ | [{utqha}|{ñawra}|{hawa}|{milla}|{qaylla}|{unchuchuku}|{llunchuy}] %["NRoot"%] %[ ["=rápido,apurado"|"=diversidad"|"=fuera,arriba"|"=asco,feo"|"=presencia,cercano"|"=comadreja"|"=nuera"] %] ("@HUM") %["^DB"%] %["--"%] {y} %[ | [{milla}|{utqha}]%["VRoot"%] %[ ["=dañar,tener_asco"|"=apurarse"] %] %["^DB"%] ("@IMP") %["--"%] {y} %[  ]];
 
 # imana & waqaycha
 # forbid -llalla analized as +Lim+Lim -> if a word contains a sequence -llalla, the first -lla is probably part of the root

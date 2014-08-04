@@ -35,4 +35,6 @@
 | [{chaqay} "[" "PrnDem" "]"] : {chhaqay}
 | [{chaqayna} "[" "PrnDem" "]"] : {chaqayna}
 | [{chaqayna} "[" "PrnDem" "]"] : {chhaqayna}
+| [{chaqayna} "[" "PrnDem" "]"] : {chahayna}
+| [{chaqayna} "[" "PrnDem" "]"] : {chhahayna}
 ;

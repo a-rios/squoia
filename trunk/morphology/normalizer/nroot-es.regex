@@ -2,7 +2,9 @@
 
  [ {abuela} "["  "NRootES"  "]" ] :   {awila}
 | [ {abuelo} "["  "NRootES"  "]" ] :   {awilu}
+| [ {aceite} "["  "NRootES"  "]" ] :   {asiti}
 | [ {adobe} "["  "NRootES"  "]" ] :   {aruwi}
+| [ {alverja} "["  "NRootES"  "]" ] :   {alwirha}
 | [ {alcaldía} "["  "NRootES"  "]" ] :   {alcaldyia}
 | [ {arado} "["  "NRootES"  "]" ] :   {araw}
 | [ {arroz} "["  "NRootES"  "]" ] :   {aros}
@@ -40,7 +42,9 @@
 | [ {disfraz} "["  "NRootES"  "]" ] :   {disfrasi}
 | [ {disgracia} "["  "NRootES"  "]" ] :   {disgrasya}
 | [ {doctor} "["  "NRootES"  "]" ] :   {duktur}
+| [ {dueño} "["  "NRootES"  "]" ] :   {duyñu}
 | [ {dueño} "["  "NRootES"  "]" ] :   {duwiñu}
+| [ {horquita} "["  "NRootES"  "]" ] :   {hurkita}
 | [ {envidia} "["  "NRootES"  "]" ] :   {inwidiya}
 | [ {escuela} "["  "NRootES"  "]" ] :   {iskuyla}
 | [ {escuela} "["  "NRootES"  "]" ] :   {iskwiyla}
@@ -55,7 +59,10 @@
 | [ {feo} "["  "NRootES"  "]" ] :   {fiyu}
 | [ {feria} "["  "NRootES"  "]" ] :   {firiya}
 | [ {fiesta} "["  "NRootES"  "]" ] :   {fiyista}
+| [ {fósforo} "["  "NRootES"  "]" ] :   {fuspuru}
+| [ {fósforo} "["  "NRootES"  "]" ] :   {puspuru}
 | [ {pañuelo} "["  "NRootES"  "]" ] :   {pañuylu}
+| [ {familia} "[" "NRootES" "]" ] : {phamilla}
 | [ {fiesta} "["  "NRootES"  "]" ] :   {phista}
 | [ {fuerte} "["  "NRootES"  "]" ] :   {fuwirti}
 | [ {gobierno} "["  "NRootES"  "]" ] :   {gubyirnu}
@@ -73,10 +80,14 @@
 | [ {igualito} "["  "NRootES"  "]" ] :   {igwalla}
 | [ {iglesia} "["  "NRootES"  "]" ] :   {inlisa}
 | [ {iglesia} "["  "NRootES"  "]" ] :   {inlisha}
+| [ {iglesia} "["  "NRootES"  "]" ] :   {inlisiya}
 | [ {iglesia} "["  "NRootES"  "]" ] :   {inlesa}
+| [ {incienso} "["  "NRootES"  "]" ] :   {insinsu}
+| [ {inyección} "["  "NRootES"  "]" ] :   {inyiksun}
 | [ {iguana} "["  "NRootES"  "]" ] :   {iwana}
-| [ {inginiero} "["  "NRootES"  "]" ] :   {injinyiru}
-| [ {inginiero} "["  "NRootES"  "]" ] :   {inhiñiru}
+| [ {ingeniero} "["  "NRootES"  "]" ] :   {injinyiru}
+| [ {ingeniero} "["  "NRootES"  "]" ] :   {inhiñiru}
+| [ {ingeniero} "["  "NRootES"  "]" ] :   {inqiñiru}
 | [ {inglés} "["  "NRootES"  "]" ] :   {inlis}
 | [ {italiano} "["  "NRootES"  "]" ] :   {italyanu}
 | [ {jarra} "["  "NRootES"  "]" ] :   {harra}
@@ -86,12 +97,19 @@
 | [ {julio} "["  "NRootES"  "]" ] :   {hulyu}
 | [ {junio} "["  "NRootES"  "]" ] :   {hunyu} 
 | [ {labio} "["  "NRootES"  "]" ] :   {labyu}
+| [ {naranja} "["  "NRootES"  "]" ] :   {laranha}
 | [ {lado} "["  "NRootES"  "]" ] :   {laru}
 | [ {lado} "["  "NRootES"  "]" ] :   {law}
 | [ {libro} "["  "NRootES"  "]" ] :   {liwru}
 | [ {mar} "["  "NRootES"  "]" ] :   {lamar}
+| [ {plaza} "["  "NRootES"  "]" ] :   {lasa}
+| [ {plástico} "["  "NRootES"  "]" ] :   {lastiku}
+| [ {plátano} "["  "NRootES"  "]" ] :   {latanu}
+| [ {cuerpo} "["  "NRootES"  "]" ] :   {kurpu}
+| [ {cuerpo} "["  "NRootES"  "]" ] :   {werpo}
 | [ {mamita} "["  "NRootES"  "]" ] :   {mamita}
 | [ {martes} "["  "NRootES"  "]" ] :   {martis}
+| [ {mantequilla} "["  "NRootES"  "]" ] :   {mantikilla}
 | [ {marzo} "["  "NRootES"  "]" ] :   {marsu}
 | [ {mejor} "["  "NRootES"  "]" ] :   {mihur}
 | [ {merienda} "["  "NRootES"  "]" ] :   {mirinda}
