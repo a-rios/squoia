@@ -57,4 +57,6 @@
 | [ "[" "--" "]" {nillaykichik} "[" "NPers" "]" "[" "+2.Pl.Poss+Lim" "]" ] : [ "@POSSni"{ñillaykichis}]
 | [ "[" "--" "]" {nillaykichik} "[" "NPers" "]" "[" "+2.Pl.Poss+Lim" "]" ] : [ "@POSSni"{ñillaykichiq}]
 | [ "[" "--" "]" {nillanku} "[" "NPers" "]" "[" "+3.Pl.Poss+Lim" "]" ] : [ "@POSSni"{ñillanku}]
+# misspelled -yki after -i: wasiki -> recognized as wasiyki
+| [ "[" "--" "]" {yki} "[" "NPers" "]" "[" "+2.Sg.Poss" "]" ] : [ "@Misspelled"{ki}]
 ;
