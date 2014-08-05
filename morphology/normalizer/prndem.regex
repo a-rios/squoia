@@ -11,6 +11,7 @@
 | [{chay} "[" "PrnDem" "]"] : {chhay}
 | [{chayna} "[" "PrnDem" "]"] : {chhayna}
 | [{chayna} "[" "PrnDem" "]"] : {shayna}
+| [{chayna} "[" "PrnDem" "]"] : {sayna}
 | [{anchay} "[" "PrnDem" "]"] : {anchay}
 | [{anchay} "[" "PrnDem" "]"] : {anchhay}
 | [{kay} "[" "PrnDem" "]"] : {kay}

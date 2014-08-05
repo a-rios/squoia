@@ -328,18 +328,6 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
 
       define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff) (kamaDist) (N=N=3) (HonAff) (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
      #  define NounSuffixes PossessivPlural .o. [(N=N=1) (HonAff) N=N=2^{0,2} (HonAff)  (kamaDist) (N=N=3) (HonAff) (N=N=4) (HonAff) (AS)]  .o. QuechuaOrtho .o. UpperCase;
-
-######################################################################################
-     
-      ######################
-      #                    #
-      # PROPER NAMES       #
-      #                    #
-      ######################
-      
-      define NPRoots @re"NP.regex" ;
-      define NPsuffixes   [ (N=N=4) (N=N=5)^{0,3} (HonAff) N=N=6^{0,3} N=N=7^{0,2}] .o. QuechuaOrtho .o. UpperCase ;
-      define properNames [NPRoots NPsuffixes (AS)];
      
 ######################################################################################
 
