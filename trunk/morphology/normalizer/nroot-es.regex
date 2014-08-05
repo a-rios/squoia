@@ -31,6 +31,7 @@
 | [ {condenado} "["  "NRootES"  "]" ] :   {kondenaw}
 | [ {dañado} "["  "NRootES"  "]" ] :   {dañaw}
 | [ {dedo} "["  "NRootES"  "]" ] :   {riru}
+| [ {trigo} "["  "NRootES"  "]" ] :   {riwu}
 | [ {revista} "["  "NRootES"  "]" ] :   {riwista}
 | [ {delicado} "["  "NRootES"  "]" ] :   {dilikaw}
 | [ {de_repente} "["  "NRootES"  "]" ] :   {diripinti}
@@ -61,6 +62,7 @@
 | [ {fiesta} "["  "NRootES"  "]" ] :   {fiyista}
 | [ {fósforo} "["  "NRootES"  "]" ] :   {fuspuru}
 | [ {fósforo} "["  "NRootES"  "]" ] :   {puspuru}
+| [ {fósforo} "["  "NRootES"  "]" ] :   {phuspuru}
 | [ {pañuelo} "["  "NRootES"  "]" ] :   {pañuylu}
 | [ {familia} "[" "NRootES" "]" ] : {phamilla}
 | [ {fiesta} "["  "NRootES"  "]" ] :   {phista}
@@ -120,6 +122,7 @@
 | [ {noviembre} "["  "NRootES"  "]" ] :   {nubimbri}
 | [ {noviembre} "["  "NRootES"  "]" ] :   {nuvimbri}
 | [ {novio} "["  "NRootES"  "]" ] :   {nubiyu}
+| [ {periódico} "["  "NRootES"  "]" ] :   {pirudiku}
 | [ {octobre} "["  "NRootES"  "]" ] :   {utupri}
 | [ {ojalá} "["  "NRootES"  "]" ] :   {uhalá}
 | [ {orto_lado} "["  "NRootES"  "]" ] :   {hukláw}
@@ -127,7 +130,9 @@
 | [ {oveja} "["  "NRootES"  "]" ] :   {uwiha}
 | [ {raíz} "["  "NRootES"  "]" ] :   {rayis}
 | [ {reunión} "["  "NRootES"  "]" ] :   {riyunyun}
+| [ {durazno} "["  "NRootES"  "]" ] :   {rurasnu}
 | [ {rueda} "["  "NRootES"  "]" ] :   {ruyda}
+| [ {cebada} "["  "NRootES"  "]" ] :   {siwara}
 | [ {cierto} "["  "NRootES"  "]" ] :   {sirtu}
 | [ {soles} "["  "NRootES"  "]" ] :   {soles}
 | [ {sosiego} "["  "NRootES"  "]" ] :   {susiwu}

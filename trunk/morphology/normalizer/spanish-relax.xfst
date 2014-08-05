@@ -288,7 +288,9 @@
 
 	define CHA1 [  {ch}"@CHA"  => Vowel _  ];
 	define CHA2 [  {chi}"@CHA"  => Cons _  ];
-	define CHA3 [  {cha}"@CHA" => Cons _  ];
+	#define CHA3 [  {cha}"@CHA" => Cons _  ];
+	# doesn't seem to be the case for -cha.... but restrict analysis as -cha to cases where there is a case, possessive or plural suffix to the left, see Feature restrictinos (has to be applied on the upper side!)
+
 
        #define AmbiRules EVID1 .o. EVID2 .o. EVID3 .o. EVID4;
 	define AmbiRules SI1 .o. SI2 .o. MI1 .o. MI2 .o. MI3 .o. CHA1 .o. CHA2 .o. CHA3;
@@ -510,10 +512,13 @@ define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %
 # -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers, transitive nominalized forms: na-suyki etc, not -na -su (aug) -yki
 define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" | "+Aug"%] %["^DB"%] "@INTRsu"  | "+1.Obj"%] %["^DB"%] %["--"%]{q} %["NS"%] %["+Ag"%] %["^DB"%] %["--"%] {ninchik} %["NPers"%] %["+1.Pl.Incl.Poss"  ]];
 
+# restrict evidential -cha to cases where there is a case, possessive or plural suffix to the left, (has to be applied on the upper side, can therefore not be included in AmbiRules)
+define CHA3 [ {cha}%["Amb"%] %["+Asmp" %] "@CHA" => ["Cas"|"Num"|"NPers"] ?*  _  ];
+
 # botella -> not bote-lla, cosechan -> not cose-cha-n
 define LexRestr [~$[ {bote} %["NRootES"%] %["^DB"%] %["--"%]{lla}%[ | {cose} %["VrootES"%] %["--"%] {cha} %[ ]];
 
-define FeatRestr [NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS  .o. LexRestr];
+define FeatRestr [NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS .o. CHA3 .o. LexRestr];
 
 
 ######################################################################################
