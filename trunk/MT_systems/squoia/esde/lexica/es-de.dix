@@ -1063,10 +1063,19 @@
 
   </pardefs>
 <section id="RGfromADJ-diariodelcusco" type="standard">
+   <e><p><l>aparentemente</l><r>offensichtlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>aparentemente</l><r>scheinbar</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>circunstancialmente</l><r>umstandsbedingt</r></p><par n='RG_ADJD'/></e>
    <e><p><l>curiosamente</l><r>verwunderlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>despiadadamente</l><r>gnadenlos</r></p><par n='RG_ADJD'/></e>
    <e><p><l>diariamente</l><r>täglich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>documentadamente</l><r>dokumentiert</r></p><par n='RG_ADJD'/></e>
    <e><p><l>drásticamente</l><r>drastisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>escuetamente</l><r>knapp</r></p><par n='RG_ADJD'/></e>
    <e><p><l>estrictamente</l><r>streng</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>expresamente</l><r>ausdrücklich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>extrañamente</l><r>merkwürdigerweise</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>fehacientemente</l><r>glaubwürdig</r></p><par n='RG_ADJD'/></e>
    <e><p><l>felizmente</l><r>froh</r></p><par n='RG_ADJD'/></e>
    <e><p><l>firmemente</l><r>fest</r></p><par n='RG_ADJD'/></e>
    <e><p><l>fraternalmente</l><r>brüderlich</r></p><par n='RG_ADJD'/></e>
@@ -1079,26 +1088,50 @@
    <e><p><l>indirectamente</l><r>indirekt</r></p><par n='RG_ADJD'/></e>
    <e><p><l>indudablemente</l><r>zweifellos</r></p><par n='RG_ADJD'/></e>
    <e><p><l>informalmente</l><r>zwanglos</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>inobjetablemente</l><r>uneinwendbar</r></p><par n='RG_ADJD'/></e>
    <e><p><l>institucionalmente</l><r>institutionell</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>intempestivamente</l><r>ungelegen</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>interinamente</l><r>vorläufig</r></p><par n='RG_ADJD'/></e>
    <e><p><l>irremediablemente</l><r>unheilbar</r></p><par n='RG_ADJD'/></e>
    <e><p><l>judicialmente</l><r>richterlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>lastimosamente</l><r>bedauernswert</r></p><par n='RG_ADJD'/></e>
    <e><p><l>matemáticamente</l><r>mathematisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>monolíticamente</l><r>monolitisch</r></p><par n='RG_ADJD'/></e>
    <e><p><l>negativamente</l><r>verneinend</r></p><par n='RG_ADJD'/></e>
    <e><p><l>netamente</l><r>sauber</r></p><par n='RG_ADJD'/></e>
    <e><p><l>obviamente</l><r>offensichtlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>originalmente</l><r>originell</r></p><par n='RG_ADJD'/></e>
    <e><p><l>pasivamente</l><r>untätig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>penalmente</l><r>strafrechtlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>periodísticamente</l><r>journalistisch</r></p><par n='RG_ADJD'/></e>
    <e><p><l>políticamente</l><r>politisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>precariamente</l><r>prekär</r></p><par n='RG_ADJD'/></e>
    <e><p><l>progresivamente</l><r>fortschrittlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>propiamente</l><r>eigen</r></p><par n='RG_ADJD'/></e>
    <e><p><l>religiosamente</l><r>religiös</r></p><par n='RG_ADJD'/></e>
    <e><p><l>sencillamente</l><r>unkompliziert</r></p><par n='RG_ADJD'/></e>
    <e><p><l>seriamente</l><r>gesetzt</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>sexualmente</l><r>sexuell</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>tajantemente</l><r>kategorisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>telefónicamente</l><r>telefonisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>teóricamente</l><r>theoretisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>textualmente</l><r>textuell</r></p><par n='RG_ADJD'/></e>
    <e><p><l>tranquilamente</l><r>ruhig</r></p><par n='RG_ADJD'/></e>
    <e><p><l>verdaderamente</l><r>wahr</r></p><par n='RG_ADJD'/></e>
 </section>
 <section id="Adverbs-diariodelcusco" type="standard">
+   <e><p><l>con_las_manos_vacías</l><r>mit leeren Haenden</r></p><par n='RG_ADV'/></e>
+   <e><p><l>de_cuerpo_presente</l><r>anwesend</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>de_mal_vivir</l><r>von schlechtem Leben</r></p><par n='RG_ADV'/></e>	<!-- de mal vivir = de mala vida = ? -->
+   <e><p><l>de_pro</l><r>von Wort</r></p><par n='RG_ADV'/></e>
+   <e><p><l>en_su_defecto</l><r>andernfalls</r></p><par n='RG_ADV'/></e>
+   <e><p><l>ni</l><r>nicht einmal</r></p><par n='RG_ADV'/></e>
+   <e><p><l>por_lo_pronto</l><r>vorerst</r></p><par n='RG_ADV'/></e>
+
+   <e><p><l>a_buen_recaudo</l><r>in Verwahrung</r></p><par n='RG_ADV'/></e>
+   <e><p><l>aún_cuando</l><r>noch wenn</r></p><par n='RG_ADV'/></e>
+   <e><p><l>de_circunvalación</l><r>Umgehungs-</r></p><par n='RG_ADV'/></e>	<!-- adverb? -->
+
    <e><p><l>acá</l><r>hier</r></p><par n='RG_ADV'/></e>
    <e><p><l>enseguida</l><r>sofort</r></p><par n='RG_ADV'/></e>
    <e><p><l>otrora</l><r>ehemals</r></p><par n='RG_ADV'/></e>
@@ -1144,6 +1177,128 @@
    <e><p><l>sobre_todo</l><r>vor allem</r></p><par n='RG_ADV'/></e>
 </section>
 <section id="Adjectives-diariodelcusco" type="standard">
+   <e><p><l>turístico</l><r>turistisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>celeste</l><r>Himmel-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>celeste</l><r>himmelblau</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>minero</l><r>Bergbau-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>minero</l><r>bergmännisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>deportivo</l><r>sportlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tarifario</l><r>tariflich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>vigente</l><r>bestehend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>vigente</l><r>gültig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>presupuestal</l><r>budgetiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>administrativo</l><r>administrativ</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>vehicular</l><r>Fahrzeug-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>urbano</l><r>städtisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>supremo</l><r>allerhöchst</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>supremo</l><r>Ober-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>blanquirroja</l><r>weiss-rot</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>emblemático</l><r>kultig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>emblemático</l><r>sinnbildlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>doble</l><r>doppelt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>trascendental</l><r>transzendental</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>excepcional</l><r>ausserordentlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>emotivo</l><r>emotiv</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>violento</l><r>gewaltsam</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tecnológico</l><r>technologisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sonoro</l><r>klangvoll</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sonoro</l><r>stimmhaft</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sintético</l><r>synthetisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>previsional</l><r>Plan-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>preocupante</l><r>besorgniserregend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>paisajístico</l><r>landschaftlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>occiso</l><r>ermordet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inerte</l><r>leblos</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inerte</l><r>reglos</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inerte</l><r>unbelebt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inaugural</l><r>Eröffnungs-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>impar</l><r>ungerade</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>hídrico</l><r>Wasser-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>fiduciario</l><r>treuhänderisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ético</l><r>ethisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>delictivo</l><r>verbrecherisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>declaratorio</l><r>Feststellungs-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>copioso</l><r>reichhaltig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>copioso</l><r>reichlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>conviviente</l><r>gemeinschaftlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ambiental</l><r>Umwelt-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>adicional</l><r>zusätzlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>transitorio</l><r>transitorisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>telefónico</l><r>Telefon-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>telefónico</l><r>telefonisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sustancial</l><r>substanziell</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sustancial</l><r>wesentlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sorpresivo</l><r>überraschend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>solemne</l><r>feierlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>séptico</l><r>septisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>saludable</l><r>gesund</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>saludable</l><r>heilsam</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>puntero</l><r>führend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>participativo</l><r>partizipativ</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>participativo</l><r>teilnehmend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>norteño</l><r>nordländisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>modificatorio</l><r>Änderungs-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>mayoritario</l><r>mehrheitlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>insalubre</l><r>ungesund</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inmueble</l><r>unbeweglich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>injustificado</l><r>unberechtigt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>infortunado</l><r>unglücklich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>gasífero</l><r>gashaltig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>factible</l><r>machbar</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>arduo</l><r>langwierig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>arduo</l><r>mühsam</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>aledaño</l><r>angrenzend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>alcohólico</l><r>alkoholisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>acusatorio</l><r>anklägerisch</r></p><par n='AQ_ADJ'/></e>
+
+   <e><p><l>8</l><r>acht</r></p><par n='AO_ADJ'/></e>
+   <e><p><l>ancashino</l><r>aus Ancash</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>asumido</l><r>übernommen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>conformado</l><r>geformt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>considerado</l><r>besonnen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>considerado</l><r>rücksichtsvoll</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>descampado</l><r>geräumt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>destinado</l><r>bestimmt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>deudor</l><r>schuldig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>distrital</l><r>Bezirks-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>dudoso</l><r>dubios</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>dudoso</l><r>fraglich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>dudoso</l><r>zweifelhaft</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>encabezado</l><r>eingeleitet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>encaminado</l><r>eingeleitet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>folklórico</l><r>folkloristisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>graso</l><r>fett</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>graso</l><r>fettig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>imparable</l><r>unaufhaltsam</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>improcedente</l><r>unzulässig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>incrementado</l><r>erhöht</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>incrementado</l><r>vermehrt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inscrito</l><r>eingeschrieben</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>integrado</l><r>integriert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>integrante</l><r>integrierend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>inventado</l><r>erfunden</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>lacónico</l><r>lakonisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ministerial</l><r>ministeriell</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>multidisciplinario</l><r>multidisziplinär</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>municipal</l><r>Gemeinde-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>municipal</l><r>kommunal</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>nutricional</l><r>Ernährungs-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>nutricional</l><r>nutritiv</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>policial</l><r>Polizei-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>policial</l><r>polizeilich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>presupuesto</l><r>angenommen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>quíntuple</l><r>fünffach</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>referencial</l><r>referenziell</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>saliente</l><r>ausscheidend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>saliente</l><r>hervortretend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sexual</l><r>sexuell</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>suscrito</l><r>unterzeichnet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tardío</l><r>spät</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tico</l><r>costa-ricanisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>truncado</l><r>gestutzt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ubicado</l><r>gelegen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>vial</l><r>Strassen-</r></p><par n='AQ_TRUNC'/></e>
+
    <e><p><l>altoandino</l><r>hochandin</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>amazónico</l><r>Amazonas</r></p><par n='AQ_PROV'/></e>
    <e><p><l>apurimeño</l><r>aus Apurímac</r></p><par n='AQ_PROV'/></e>
@@ -1300,6 +1455,27 @@
    <e><p><l>vencido</l><r>überwunden</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vendido</l><r>verkauft</r></p><par n='AQ_ADJ'/></e>
 </section>
+<section id="Verbs-july-diariodelcusco" type="standard">
+   <e><p><l>agachar</l><r>beugen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>aplastar</l><r>quetschen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>apuntar</l><r>auf|schreiben</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>ascender</l><r>steigen</r></p><par n='VM_VV_MAIN_BE'/></e>
+   <e><p><l>atinar</l><r>erraten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>concesionar</l><r>konzessionieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>consumar</l><r>vollenden</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>consumir</l><r>verbrauchen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>contener</l><r>enthalten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>entrevistar</l><r>befragen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>juramentar</l><r>vereidigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>priorizar</l><r>priorisieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>promediar</l><r>halbieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>remeter</l><r>wieder hinein|stecken</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>subrayar</l><r>unterstreichen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>subsanar</l><r>beheben</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>trascender</l><r>sich aus|breiten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>ultrajar</l><r>beleidigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>ultrajar</l><r>vergewaltigen</r></p><par n='VM_VV_MAIN'/></e>
+</section>
 <section id="Verbs-june-diariodelcusco" type="standard">
    <e><p><l>apuntalar</l><r>stützen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>argumentar</l><r>argumentieren</r></p><par n='VM_VV_MAIN'/></e>
@@ -1385,6 +1561,46 @@
    <e><p><l>economía_mundial</l><r>Weltwirtschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>equipo_nacional</l><r>Nationalmannschaft</r></p><par n='NC_N_NUM_FEM'/></e>
 </section>
+<section id="Nouns-diario-july" type="standard">
+   <e><p><l>abastos</l><r>Proviant</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- abastos only in plural ? -->
+   <e><p><l>anchoveta</l><r>peruanisch Sardelle</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>beneficiario</l><r>Begünstigte</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>calamina</l><r>Ölkohle</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>calamina</l><r>Wellblech</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>calamina</l><r>Zinkspat</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>casona</l><r>alte Villa</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>comicio</l><r>Wahlen</r></p><par n='NC_N_NUM_NOUN'/></e> <!-- plural -->
+   <e><p><l>concretización</l><r>Konkretisierung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>consejería</l><r>Rat</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>cusqueño</l><r>Person aus Cusco</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>directivo</l><r>Führungskraft</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>ducto</l><r>Kanal</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>ducto</l><r>Leitung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>ducto</l><r>Rohr</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>edil</l><r>Stadtrat</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>financiamiento</l><r>Finanzierung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>gestante</l><r>Schwangere</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>humareda</l><r>Rauchwolke</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>implicado</l><r>Kompliz</r></p><par n='NC_N_GENTRY_EIN'/></e>
+   <e><p><l>inmediación</l><r>Nähe</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>juramentación</l><r>Eid</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- not in RAE; juramento = Eid, Schwur -->
+   <e><p><l>legislativo</l><r>Legislativ</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>ómnibus</l><r>Omnibus</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>penal</l><r>Strafanstalt</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>penal</l><r>Strafe</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>penal</l><r>Strafstoss</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>perjudicado</l><r>Geschädigte</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pleno</l><r>Plenum</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>priorización</l><r>Priorisierung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>quema</l><r>Brennen</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>quema</l><r>Verbrennung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>regidor</l><r>Gemeindevertreter</r></p><par n='NC_N_GENTRY_ERIN'/></e>
+   <e><p><l>seguro</l><r>Sicherung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>seguro</l><r>Versicherung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>tanto</l><r>Anzahlung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>tanto</l><r>Punkt</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>trámite</l><r>Formalität</r></p><par n='NC_N_NUM_FEM'/></e>
+</section>
 <section id="MWE-Nouns-diariodelcusco" type="standard">
    <e><p><l>asamblea_popular</l><r>Volksversammlung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>cadena_perpetua</l><r>lebenslänglich_Zuchthaus</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -1393,15 +1609,19 @@
    <e><p><l>empresa_privada</l><r>Privatunternehmen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>exceso_de_velocidad</l><r>Geschwindigkeitsüberschreitung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gobierno_central</l><r>Zentralregierung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>grupo_de_trabajo</l><r>Arbeitsgruppe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>libertad_de_expresión</l><r>Redefreiheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>local_comercial</l><r>Geschäftsraum</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>medios_de_comunicación</l><r>Medien</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>partido_político</l><r>Partei</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>patrimonio_cultural</l><r>Kulturgut</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>presidencia_del_gobierno</l><r>Kanzleramt</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- Deutschland; kein Plural -->
    <e><p><l>procedimiento_administrativo</l><r>Verwaltungsverfahren</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>recursos_hídricos</l><r>Wasserressourcen</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>recursos_públicos</l><r>öffentliche Mittel</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- plural -->
    <e><p><l>representante_del_gobierno</l><r>Regierungsvertreter</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>situación_económica</l><r>Wirtschaftslage</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>terreno_de_juego</l><r>Spielplatz</r></p><par n='NC_N_NUM_MASC'/></e>
 </section>
 <section id="BabelNet-mOLIFde-Adjectives" type="standard">
    <e><p><l>abisal</l><r>abyssal</r></p><par n='AQ_ADJ'/></e>
@@ -9941,13 +10161,12 @@
    <e><p><l>dar_a_conocer</l><r>bekannt|geben</r></p><par n='VM_VV_MAIN'/></e>
    <!--e><p><l>dar cosas [coloq.]</l><r>unangenehm sein</r></p><par n="VM_VV_MAIN"/></e-->
    <e><p><l>dar_cuenta</l><r>berichten</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO dar cuenta de = ueber etwas+Akk berichten -->
+   <e><p><l>dar_cuenta</l><r>bemerken<s n="irrefl"/>yes</r></p><par n='VM_VV_MAIN'/></e>	<!-- TODO darse cuenta de = etwas+Akk bemerken -->
    <e><p><l>dar_las_gracias</l><r>danken</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>dar lástima</l><r>Leid tun</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dar la vuelta</l><r>umdrehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dar la vuelta</l><r>wenden</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dar</l><r>geben</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>darse cuenta de algo</l><r>etwas bemerken</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>darse cuenta</l><r>bemerken</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>darse prisa</l><r>sich beeilen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>dar un paseo</l><r>einen Spaziergang machen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>datar</l><r>datieren</r></p><par n="VM_VV_MAIN"/></e>
@@ -35754,7 +35973,7 @@ rediez
 rediós
 salve
 sanseacabó
-señor
+
 sniff
 so
 
@@ -35791,6 +36010,7 @@ zas
    <e><p><l>hombre<s n="parol"/>I</l><r>Mann<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>ojalá<s n="parol"/>I</l><r>hoffentlich<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>paciencia<s n="parol"/>I</l><r>Geduld<s n="pos"/>ITJ</r></p></e> 
+   <e><p><l>señor<s n="parol"/>I</l><r>Herr<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>socorro<s n="parol"/>I</l><r>Hilfe<s n="pos"/>ITJ</r></p></e> 
    <e><p><l>vamos<s n="parol"/>I</l><r>los<s n="pos"/>ITJ</r></p></e> 
 
@@ -35948,9 +36168,23 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>varios</l><r>verschiedene</r></p><par n='DI_PIAT'/></e> <!-- only plural: varios/varias => verschiedene TODO check molif -->
 
    <!-- numeral TODO remove paradigm DN_PIAT ? TODO general rule for numbers given in digits: slem="5" smi="DN0CP0" ?-->
+   <e><p><l>1</l><r>1</r></p><par n='DN_CARD'/></e>
+   <e><p><l>2</l><r>2</r></p><par n='DN_CARD'/></e>
    <e><p><l>3</l><r>3</r></p><par n='DN_CARD'/></e>
    <e><p><l>4</l><r>4</r></p><par n='DN_CARD'/></e>
    <e><p><l>5</l><r>5</r></p><par n='DN_CARD'/></e>
+   <e><p><l>6</l><r>6</r></p><par n='DN_CARD'/></e>
+   <e><p><l>7</l><r>7</r></p><par n='DN_CARD'/></e>
+   <e><p><l>8</l><r>8</r></p><par n='DN_CARD'/></e>
+   <e><p><l>9</l><r>9</r></p><par n='DN_CARD'/></e>
+   <e><p><l>10</l><r>10</r></p><par n='DN_CARD'/></e>
+   <e><p><l>11</l><r>11</r></p><par n='DN_CARD'/></e>
+   <e><p><l>12</l><r>12</r></p><par n='DN_CARD'/></e>
+   <e><p><l>13</l><r>13</r></p><par n='DN_CARD'/></e>
+   <e><p><l>14</l><r>14</r></p><par n='DN_CARD'/></e>
+   <e><p><l>15</l><r>15</r></p><par n='DN_CARD'/></e>
+   <e><p><l>100</l><r>100</r></p><par n='DN_CARD'/></e>
+   <e><p><l>1000</l><r>1000</r></p><par n='DN_CARD'/></e>
    <e><p><l>dos</l><r>zwei</r></p><par n='DN_CARD'/></e>
    <e><p><l>tres</l><r>drei</r></p><par n='DN_CARD'/></e>
    <e><p><l>cuatro</l><r>vier</r></p><par n='DN_CARD'/></e>
@@ -36121,9 +36355,9 @@ dentro $$$ dentro is an adverb, the preposition is "dentro de" = innerhalb
 <!--
 con_excepción_de	SPS00
 conforme_a	SPS00
-con_miras_a	SPS00
+
 con_ocasión_de	SPS00
-de_acuerdo_con	SPS00
+
 de_cara_a	SPS00
 después_de	SPS00
 
@@ -36143,17 +36377,55 @@ en_vez_de	SPS00
 en_vías_de	SPS00
 en_virtud_de	SPS00
 en_vista_de	SPS00
-fuera_de	SPS00
 
 lejos_de	SPS00
-luego_de	SPS00
-	SPS00
+
 pese_a	SPS00
 posteriormente_a	SPS00
 sin_contar_con	SPS00
 
 a_mediados_de
 a_principios_de
+
+a_cerca_de	SPS00
+a_efectos_de	SPS00
+a_espaldas_de	SPCMS
+a_excepción_de	SPS00
+a_falta_de	SPS00
+a_finales_de	SPS00
+a_fines_de	SPCMS
+a_la_espera_de	SPS00
+a_la_zona_de	SPS00
+al_cargo_de	SPS00
+al_centro_de	SPS00
+al_compás_de	SPS00
+al_inicio_de	SPS00
+al_margen_de	SPS00
+a_lo_largo_y_ancho_de	SPS00
+a_nombre_de	SPS00
+con_excepción_de	SPS00
+conforme_a	SPS00
+con_relación_a	SPS00
+con_tal_de	SPS00
+de_la_mano_de	SPS00
+en_calidad_de	SPS00
+en_condición_de##en_condiciones_de	SPS00
+en_el_centro_de	SPS00
+en_el_entorno_de	SPCMS
+en_favor_de	SPCMS
+en_favor_de	SPS00
+en_manos_de	SPCMS
+en_materia_de	SPS00
+en_razón_de	SPS00
+en_representación_de	SPS00
+en_señal_de	SPS00
+
+pendiente_de	SPS00
+perteneciente_a	SPS00
+por_el_centro_de	SPS00
+
+sin_contar_con	SPS00
+sin_perjuicio_de	SPCMS
 
 -->
   <!-- Multitoken prepositions: one paradigm with PREP/PREPART for _de/del resp. _a/al not possible because of entry specific "cas" and "adpos" -->
@@ -36165,6 +36437,8 @@ a_principios_de
    <e><p><l>a_base_de</l><r>auf Grund von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_beneficio_de</l><r>zugunsten<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- a_beneficio_de = zugunsten + Gen ; also zugunsten von + Dat, esp. with plural -->
    <e><p><l>a_beneficio_de</l><r>zugunsten_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_cambio_de</l><r>im Austausch gegen<s n="cas"/>Akk</r></p><par n='PREP'/></e>
+   <e><p><l>a_cambio_de</l><r>im Austausch gegen_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>a_cargo_de</l><r>zu Lasten von<s n="cas"/>Dat</r></p><par n='PREP'/></e>
    <e><p><l>a_cargo_de</l><r>zu Lasten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_causa_de</l><r>aufgrund<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- aufgrund + Gen -->
@@ -36207,8 +36481,15 @@ a_principios_de
    <e><p><l>a_través_de</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>cerca_de</l><r>bei<s n="cas"/>Dat</r></p><par n='PREP'/></e>
    <e><p><l>cerca_de</l><r>bei_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>con_el_fin_de</l><r>um<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- con el fin de = um ... zu...? -->
+   <e><p><l>con_el_objetivo_de</l><r>um<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- con el objetivo de = um ... zu...? -->
+   <e><p><l>con_miras_a</l><r>im Hinblick auf<s n="cas"/>Akk</r></p><par n='PREP'/></e>
+   <e><p><l>con_miras_a</l><r>im Hinblick auf_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>con_respecto_a</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- bezüglich, hinsichtlich + Gen -->
    <e><p><l>con_respecto_a</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>de_acuerdo_con</l><r>gemäß<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>de_cara_a</l><r>angesichts<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>de_cara_a</l><r>angesichts_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>de_parte_de</l><r>von<s n="cas"/>Dat</r></p><par n='PREP'/></e>
    <e><p><l>de_parte_de</l><r>von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>debajo_de</l><r>unterhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- debajo_de = unterhalb + Gen -->
@@ -36232,16 +36513,32 @@ a_principios_de
    <e><p><l>dirección_a</l><r>nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>encima_de</l><r>auf<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- auf/ueber? TODO: by movement could be Akk -->
    <e><p><l>encima_de</l><r>auf_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_busca_de</l><r>auf der Suche nach<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>en_busca_de</l><r>auf der Suche nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>en_contra_de</l><r>gegen<s n="cas"/>Akk</r></p><par n='PREP'/></e>
    <e><p><l>en_contra_de</l><r>gegen_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>en_cuanto_a</l><r>betreffend<s n="cas"/>Akk</r></p><par n='PREP'/></e>
    <e><p><l>en_cuanto_a</l><r>betreffend_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>en_el_interior_de</l><r>im Innen<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>en_el_interior_de</l><r>im Innen_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>en_lugar_de</l><r>statt<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>en_lugar_de</l><r>statt_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>en_medio_de</l><r>mitten in<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- DE "multitoken" without "_" so that the whole prepositional expression is generated/printed; TODO change outputGerman/cleanup -->
    <e><p><l>en_medio_de</l><r>mitten in_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_nombre_de</l><r>im Namen von<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>en_nombre_de</l><r>im Namen von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_pos_de</l><r>hinter<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- en pos de = detras de = hinter + Akk(mov)/Dat -->
+   <e><p><l>en_pos_de</l><r>hinter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_torno_a</l><r>um<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- en torno a = um ... herum, ueber -->
+   <e><p><l>en_torno_a</l><r>um_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>frente_a</l><r>angesichts<s n="cas"/>Gen</r></p><par n='PREP'/></e>
    <e><p><l>frente_a</l><r>angesichts_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>frente_a</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>
    <e><p><l>frente_a</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>fuera_de</l><r>ausser<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>fuera_de</l><r>ausser_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>fuera_de</l><r>ausserhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>fuera_de</l><r>ausserhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>gracias_a</l><r>dank<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- gracias_a = dank + Dat (though also possible with Gen) -->
    <e><p><l>gracias_a</l><r>dank_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>junto_a</l><r>bei<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_a = bei + Dat -->
@@ -36249,12 +36546,22 @@ a_principios_de
    <e><p><l>junto_a</l><r>neben<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_a = neben + Akk(mov)/Dat -->
    <e><p><l>junto_a</l><r>neben_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>junto_con</l><r>mit<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- junto_con = (zusammen?) mit + Dat -->
+   <e><p><l>lejos_de</l><r>weit von<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>lejos_de</l><r>weit von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>luego_de</l><r>nach<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>luego_de</l><r>nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>más_allá_de</l><r>jenseits<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- más_allá_de = jenseits + Gen; TODO expressions: mirar mas alla de = ueber X hinausschauen -->
    <e><p><l>más_allá_de</l><r>jenseits_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>pese_a</l><r>trotz<s n="cas"/>Gen</r></p><par n='PREP'/></e>
    <e><p><l>pese_a</l><r>trotz_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>por_debajo_de</l><r>unterhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>por_debajo_de</l><r>unterhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>por_encima_de</l><r>oberhalb<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- por_encima_de = ueber ? -->
+   <e><p><l>por_encima_de</l><r>oberhalb_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>por_medio_de</l><r>durch<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- por_medio_de = durch + Akk ; mittels + Gen -->
    <e><p><l>por_medio_de</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>por_parte_de</l><r>durch<s n="cas"/>Akk</r></p><par n='PREP'/></e>
+   <e><p><l>por_parte_de</l><r>durch_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>respecto_a</l><r>hinsichtlich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- hinsichtlich + Gen -->
    <e><p><l>respecto_a</l><r>hinsichtlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>respecto_de</l><r>hinsichtlich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- respecto_de? = hinsichtlich + Gen -->
