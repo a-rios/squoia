@@ -44,9 +44,10 @@
       #-------------------------------------------------------------------#
 
       define Allophone1 [ u (->) o||  _ ((s|t|n|r|l|{ll}|m) (a|e|i|o|u))* q, q ((a|e|i|o|u) (s|t|n|r|h|l|'|{ll}|m))*  _  , _ ((s|t|n|r|l|m|{ll}) (a|e|i|o|u))* {cc}, {cc} ((a|e|i|o|u) (s|t|n|r|h|l|'|{ll}|m))* _ ] .o. [i (->) e || _ ((s|t|n|r|h|l|{ll}|m) (a|e|i|o|u))* q, q ((a|e|i|o|u) (s|t|n|r|l|{ll}|h|'|m))* _ , _ ((s|t|n|r|h|l|m|{ll}) (a|e|i|o|u))* {cc}, {cc} ((a|e|i|o|u) (s|t|n|r|l|m|{ll}|'))* _  ];
-      define Allophone2 [ {ll} (->) l || _ q];
+      define Allophone2 [ {ll} (->) l || _ [q|k] ];
+      define Allophone3 [ {s} (->) {sh} || _ k ];
 
-      define Allophone [Allophone1 .o. Allophone2 ] ;
+      define Allophone [Allophone1 .o. Allophone2 .o. Allophone3] ;
       define AllophoneBeforeCleanUp [ m (->) n || \"@MPA" _ p ];
 
        #---------------------------#
@@ -77,9 +78,10 @@
        define Orthography17 [ {h} (->) {j}, {H} (->) {J} ||  [a|i|l|m|n|r|u] _ Vowel ];
        define Orthography18 [ [{k}|{q}] (->) {j} || Vowel_ ];       
        define Orthography19 [ {ph} (->) {f}];    
+       define Orthography20 [ {q} (->) {x} || Vowel_ ];  
   
               
-       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18 .o. Orthography19];
+       define Orthography [Orthography1 .o. Orthography2 .o. Orthography3 .o. Orthography4 .o. Orthography5 .o.  Orthography6 .o. Orthography7 .o. Orthography8 .o. Orthography9 .o. Orthography10 .o. Orthography11 .o. Orthography12 .o. Orthography13 .o. Orthography14 .o. Orthography15 .o. Orthography16 .o. Orthography17 .o. Orthography18 .o. Orthography19 .o. Orthography20];
 
        define QuechuaOrtho Allophone .o. Orthography;
 
@@ -602,7 +604,7 @@ define CASE [~$[ ["@TA"|"+Loc"%] ] %["^DB"%] %["--"%] [{pi}|{ta}]%[ | "+Dat_Ill"
 define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" | "+Fact"%] %["--"%] {cha} %["VDeriv" | "+Inf"%] %["--"%] {cha} %["NDeriv"%] %["+Dim" ]];
 
 # verbal derivation 2: paku, pamu, yman, ykacha, yuq, saq (#saq, if -sa is allowed as progressive allomorph (Bolivian Quechua) TODO: allow and disambiguate later??), ptin (#-pti -> Ayacuchano, but -n as DirE, only Cuzqueño), stin (-stin, not as -sti -n (3.Sg.Subj, or DirE))
-define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%][{ku}|{ka}]"+ku+" | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" | {yka} "+yku+" %["VDeriv"%] %["+Aff"%] "@YKU" %["--"%] {cha} %[ |"+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"  | "@SAPROG"?*"+Ag" | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
+define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%][{ku}|{ka}]"+ku+" | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" | {yka} "+yku+" %["VDeriv"%] %["+Aff"%] "@YKU" %["--"%] {cha} %[ |"+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"  | "@SAPROG"?*"+Ag" | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] %[ | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
 
 # independent suffixes: pas, taq, niraq, -qpataq -> +Ag+Gen+Con, not +Ag+pata+Gen
 define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %["+IndE" | "@TA" %["^DB"%] "@GENq" | {nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] "@GENq" | "Part_Disc"%] %["^DB"%] %["--"%] {ña} %["Amb" | q %["NS"%] %["+Ag"%] %["^DB"%] %["--"%] {pata}%[ ]] ;
@@ -614,8 +616,8 @@ define INDEP [~$[{pa}%["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%] s %["Amb"%] %
 # -su: sunman, sunchis, transitional su/wa with verbal and nominal subject markers, transitive nominalized forms: na-suyki etc, not -na -su (aug) -yki
 define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"|"@TRAN"] | "+Reub"%] %["^DB"%] ["@TRAN"|"@INTR"|"@INTRsu"] %["--"%] [{yki}|{yku}|{ykichik}] %["VPers" | "+1.Pl.Incl.Subj.Imp"?*"+Pot" | "+Aug"%] %["^DB"%] %["--"%] {nchi} [s|k|q] %["NPers" | "+y+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] {wa} %["VPers"%] %["+1.Obj"%] %["^DB"%] %["--"%] [n|{nqa}] %["VPers" | "+Aug"%] %["^DB"%] "@INTRsu" | "+1.Obj"%] %["^DB"%] %["--"%]{q} %["NS"%] %["+Ag"%] %["^DB"%] %["--"%] {ninchik} %["NPers"%] %["+1.Pl.Incl.Poss"  ]];
 
-# restrict evidential -cha to cases where there is a case, possessive or plural suffix to the left, (has to be applied on the upper side, can therefore not be included in AmbiRules)
-define CHA3 [ {cha}%["Amb"%] %["+Asmp" %] "@CHA" => ["Cas"|"Num"|"NPers"] ?*  _  ];
+# restrict evidential -cha to cases where there is a case, possessive or plural suffix, or finite verb suffix to the left, (has to be applied on the upper side, can therefore not be included in AmbiRules)
+define CHA3 [ {cha}%["Amb"%] %["+Asmp" %] "@CHA" => ["Cas"|"Num"|"NPers"|"VPers"|"Amb"] ?*  _  ];
 
 define FeatRestr [AccGen .o. NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS .o. CHA3 ];
 

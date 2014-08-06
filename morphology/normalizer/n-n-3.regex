@@ -59,4 +59,11 @@
 | [ "[" "--" "]" {nillanku} "[" "NPers" "]" "[" "+3.Pl.Poss+Lim" "]" ] : [ "@POSSni"{ñillanku}]
 # misspelled -yki after -i: wasiki -> recognized as wasiyki
 | [ "[" "--" "]" {yki} "[" "NPers" "]" "[" "+2.Sg.Poss" "]" ] : [ "@Misspelled"{ki}]
+| [ "[" "--" "]" {niyki} "[" "NPers" "]" "[" "+2.Sg.Poss" "]" ] : [ "@POSSni"{niki}]
+| [ "@INTR" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Poss" "]" ] : [ "@Misspelled"{kichik}]
+| [ "@INTR" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Poss" "]" ] : [ "@Misspelled"{kichis}]
+| [ "@INTR" "[" "--" "]" {ykichik} "[" "NPers" "]" "[" "+2.Pl.Poss" "]" ] : [ "@Misspelled"{kichiq}]
+| [ "[" "--" "]" {niykichik} "[" "NPers" "]" "[" "+2.Pl.Poss" "]" ] : [ "@POSSni"{nikichik}]
+| [ "[" "--" "]" {niykichik} "[" "NPers" "]" "[" "+2.Pl.Poss" "]" ] : [ "@POSSni"{nikichis}]
+| [ "[" "--" "]" {niykichik} "[" "NPers" "]" "[" "+2.Pl.Poss" "]" ] : [ "@POSSni"{nikichiq}]
 ;
