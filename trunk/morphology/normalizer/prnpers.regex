@@ -2,6 +2,8 @@
 
   [ {ñuqa} "[" "PrnPers+1.Sg" "]" "@HUM"] : {ñuqa}
 | [ {ñuqa} "[" "PrnPers+1.Sg" "]" "@HUM"] : {nuqa}
+| [ {ñuqa} "[" "PrnPers+1.Sg" "]" "[" "^DB" "]" "[" "--" "]" {lla} "[" "Amb" "]" "[" "+Lim_Aff" "]" "[" "^DB" "]" "[" "--" "]" {y} "[" "NPers" "]" "[" "+1.Sg.Poss" "]" "@HUM"] : {ñuqallay}
+| [ {ñuqa} "[" "PrnPers+1.Sg" "]" "[" "^DB" "]" "[" "--" "]" {lla} "[" "Amb" "]" "[" "+Lim_Aff" "]" "[" "^DB" "]" "[" "--" "]" {y} "[" "NPers" "]" "[" "+1.Sg.Poss" "]" "@HUM"] : {nuqallay}
 | [ {qam} "[" "PrnPers+2.Sg" "]" "@HUM"] : {qam}
 | [ {qam} "[" "PrnPers+2.Sg" "]" "@HUM"] : {qan}
 | [ {pay} "[" "PrnPers+3.Sg" "]" "@HUM"] : {pay}

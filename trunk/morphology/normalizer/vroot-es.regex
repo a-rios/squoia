@@ -31,6 +31,7 @@
 | [ {entiende} "[" "VRootES" "]" ] :  {entiende}
 | [ {festeja} "[" "VRootES" "]" ] :  {fiyista}
 | [ {festeja} "[" "VRootES" "]" ] :  {phista}
+| [ {goberna} "[" "VRootES" "]" ] :  {gobierna}
 | [ {pensa} "[" "VRootES" "]" ] :  {piensa}
 | [ {perde} "[" "VRootES" "]" ] :  {pierde}
 | [ {freí} "[" "VRootES" "]" ] :  {friyi}
@@ -44,6 +45,7 @@
 | [ {mea} "[" "VRootES" "]" ] :  {miya}
 | [ {monta} "[" "VRootES" "]" ] :  {silla}
 | [ {servi} "[" "VRootES" "]" ] :  {sirbi}
+| [ {senti} "[" "VRootES" "]" ] :  {sienti}
 | [ {tantea} "[" "VRootES" "]" ] :  {tantiya}
 | [ {tener_cólera} "[" "VRootES" "]" ] :  {kulira}
 | [ {vela} "[" "VRootES" "]" ] :  {bila}

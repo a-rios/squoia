@@ -8,6 +8,7 @@
 | [ "[" "--" "]" {su} "[" "NDeriv" "]" "[" "+Aug" "]"] : {su}
 | [ "[" "--" "]" {chachaq} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chachaq}
 | ["[" "--" "]" {cha} "[" "NDeriv" "]" "[" "+Dim" "]"] : {cha}
+| ["[" "--" "]" {cha} "[" "NDeriv" "]" "[" "+Dim" "]"] : {scha}
 | ["[" "--" "]" {niray} "[" "NDeriv" "]" "[" "+Sim" "]"] : {niray}
 | ["[" "--" "]" {niraq} "[" "NDeriv" "]" "[" "+Sim" "]"] : {niraq}
 | ["[" "--" "]" {nira} "[" "NDeriv" "]" "[" "+Sim" "]"] : {nira}

@@ -56,7 +56,7 @@
 | [ {estación} "["  "NRootES"  "]" ] :   {istasyun}
 | [ {estancia} "["  "NRootES"  "]" ] :   {istansya}
 | [ {igual} "["  "NRootES"  "]" ] :   {iwal}
-| [ {jueves} "["  "NRootES"  "]" ] :   {juivis}
+| [ {eucalipto} "["  "NRootES"  "]" ] :   {iwkaliktu}
 | [ {feo} "["  "NRootES"  "]" ] :   {fiyu}
 | [ {feria} "["  "NRootES"  "]" ] :   {firiya}
 | [ {fiesta} "["  "NRootES"  "]" ] :   {fiyista}
@@ -94,10 +94,11 @@
 | [ {italiano} "["  "NRootES"  "]" ] :   {italyanu}
 | [ {jarra} "["  "NRootES"  "]" ] :   {harra}
 | [ {jeuz} "["  "NRootES"  "]" ] :   {huwis}
-| [ {jueves} "["  "NRootES"  "]" ] :   {huybis}
-| [ {jueves} "["  "NRootES"  "]" ] :   {huyis}
 | [ {julio} "["  "NRootES"  "]" ] :   {hulyu}
 | [ {junio} "["  "NRootES"  "]" ] :   {hunyu} 
+| [ {carretera} "["  "NRootES"  "]" ] :   {karetera} 
+| [ {cuaderno} "["  "NRootES"  "]" ] :   {kuwadirnu}
+| [ {cuaderno} "["  "NRootES"  "]" ] :   {kuwarirnu} 
 | [ {labio} "["  "NRootES"  "]" ] :   {labyu}
 | [ {naranja} "["  "NRootES"  "]" ] :   {laranha}
 | [ {lado} "["  "NRootES"  "]" ] :   {laru}
@@ -109,8 +110,8 @@
 | [ {plátano} "["  "NRootES"  "]" ] :   {latanu}
 | [ {cuerpo} "["  "NRootES"  "]" ] :   {kurpu}
 | [ {cuerpo} "["  "NRootES"  "]" ] :   {werpo}
+| [ {maquina} "["  "NRootES"  "]" ] :   {makina}
 | [ {mamita} "["  "NRootES"  "]" ] :   {mamita}
-| [ {martes} "["  "NRootES"  "]" ] :   {martis}
 | [ {mantequilla} "["  "NRootES"  "]" ] :   {mantikilla}
 | [ {marzo} "["  "NRootES"  "]" ] :   {marsu}
 | [ {mejor} "["  "NRootES"  "]" ] :   {mihur}
@@ -122,6 +123,7 @@
 | [ {noviembre} "["  "NRootES"  "]" ] :   {nubimbri}
 | [ {noviembre} "["  "NRootES"  "]" ] :   {nuvimbri}
 | [ {novio} "["  "NRootES"  "]" ] :   {nubiyu}
+| [ {papito} "["  "NRootES"  "]" ] :   {papito}
 | [ {periódico} "["  "NRootES"  "]" ] :   {pirudiku}
 | [ {octobre} "["  "NRootES"  "]" ] :   {utupri}
 | [ {ojalá} "["  "NRootES"  "]" ] :   {uhalá}
@@ -148,8 +150,19 @@
 | [ {viento} "["  "NRootES"  "]" ] :   {bintu}
 | [ {viento} "["  "NRootES"  "]" ] :   {wintu}
 | [ {viaje} "["  "NRootES"  "]" ] :   {biyahi}
-| [ {viernes} "["  "NRootES"  "]" ] :   {birnis}
-| [ {viernes} "["  "NRootES"  "]" ] :   {biyirnis}
 | [ {viudo} "["  "NRootES"  "]" ] :   {biyudu}
 | [ {zanahoria} "["  "NRootES"  "]" ] :   {sanawriya}
+# días de la semana:
+| [ {lunes} "["  "NRootES"  "]" ] :   {lunis}
+| [ {martes} "["  "NRootES"  "]" ] :   {martis}
+| [ {miércoles} "["  "NRootES"  "]" ] :   {miércoles}
+| [ {miércoles} "["  "NRootES"  "]" ] :   {mirkulis}
+| [ {jueves} "["  "NRootES"  "]" ] :   {juivis}
+| [ {jueves} "["  "NRootES"  "]" ] :   {huybis}
+| [ {jueves} "["  "NRootES"  "]" ] :   {huyis}
+| [ {viernes} "["  "NRootES"  "]" ] :   {viernes}
+| [ {viernes} "["  "NRootES"  "]" ] :   {birnis}
+| [ {viernes} "["  "NRootES"  "]" ] :   {biyirnis}
+| [{sábado}"[""NRootES""]"]:{sábado}
+| [{domingo}"[""NRootES""]"]:{domingo}
 ;
