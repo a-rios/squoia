@@ -19,10 +19,13 @@ my %semanticLexicon =();
 sub main{
 	my $dom = ${$_[0]};
 	%semanticLexicon = %{$_[1]};
+	my $verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 	
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 		{	
-			#print STDERR "inserting semantic tags in sentence ".$sentence->getAttribute('ref')."\n";
+			#print STDERR "inserting semantic tags in sentence ".$sentence->getAttribute('ref')."\n" if $verbose;
 			my @NODES = $sentence->findnodes('descendant::NODE');
 			push(@NODES,$sentence->findnodes('descendant::SYN'));
 			foreach my $wordnode (@NODES) 

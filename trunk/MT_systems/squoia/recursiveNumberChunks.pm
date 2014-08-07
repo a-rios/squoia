@@ -7,11 +7,14 @@ use strict;
 
 sub main{
 	my $dom = ${$_[0]};
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	# get all SENTENCE chunks, iterate over childchunks
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
-		#print STDERR $sentence->toString;
+		#print STDERR $sentence->toString if $verbose;
 		#get all direct child CHUNKS within SENTENCE
 		my @sentenceCHUNKS = $sentence->findnodes('child::CHUNK');
 	

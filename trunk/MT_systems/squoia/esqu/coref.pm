@@ -4,8 +4,13 @@ package squoia::esqu::coref;
 use utf8;
 use strict;
 
+my $verbose = '';
+
 sub main{
 	my $dom = ${$_[0]};
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	my @sentenceList = $dom->getElementsByTagName('SENTENCE');
 	
@@ -25,8 +30,8 @@ sub main{
 		# get all verb chunks and check if they have an overt subject, 
 		# if they don't have an overt subject and precede the main clause -> look for subject in preceding sentence
 		# if they don't have an overt subject and follow the main clause, and the main clause has an overt subject, this is the subject of the subordinated chunk
-		#print STDERR "sentence:";
-		#print STDERR $sentence->getAttribute('ord');
+		#print STDERR "sentence:" if $verbose;
+		#print STDERR $sentence->getAttribute('ord') if $verbose;
 		
 	 	
 	 	# consider linear sequence in sentence; in xml the verb of the main clause comes always first, but in this case the subject of a preceding subordinated clause is probably coreferent with the subject of the preceding clause
@@ -45,10 +50,10 @@ sub main{
 	 	foreach my $idref (sort {$a<=>$b} (keys (%chunkSequence))) 
 	 	{
 	 		my $verbChunk = $chunkSequence{$idref};
-			#print STDERR "\nverb chunk idref: $idref: \n";
-	# 		print STDERR "verbchunk: \n".$verbChunk->toString()."\n";
-	#print STDERR "verb form: ".$verbChunk->findvalue('child::NODE[@cpos="vm"]/@lem')."\n";	
-	# 		print STDERR "\n\n";
+			#print STDERR "\nverb chunk idref: $idref: \n" if $verbose;
+	# 		print STDERR "verbchunk: \n".$verbChunk->toString()."\n" if $verbose;
+	#print STDERR "verb form: ".$verbChunk->findvalue('child::NODE[@cpos="vm"]/@lem')."\n" if $verbose;	
+	# 		print STDERR "\n\n" if $verbose;
 			
 	 		# only necessary for 3rd person subjects, no subjects of participle forms ('denominado Paltayoq' -> Paltayoq should not be Antecedent), also: ignore relative clauses, and ignore complement clauses 'dice que x se fue' -> x should not be antecedent
 	 		if( $verbChunk->exists('CHUNK[(@type="sn" or @type="date") and (@si="suj" or @si="suj-a")]' ) && !$verbChunk->exists('CHUNK[@type="sn" and (@si="suj" or @si="suj-a")]/NODE[@rel="suj" and (@pos="pd" or @pos="pi")]' ) && !&isLocalPerson($verbChunk) && !squoia::util::isRelClause($verbChunk) && !$verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd"]/NODE/NODE[@pos="cs"]') )
@@ -63,14 +68,14 @@ sub main{
 	 				$coreflem = $activeSubj->findvalue('@lem');
 	 				$corefmi = $activeSubj->findvalue('@mi');
 	 				
-	 				#print STDERR " coreflem: $coreflem $corefmi\n";
+	 				#print STDERR " coreflem: $coreflem $corefmi\n" if $verbose;
 	 				$blockedBysubjPrn=0;
 	 			}
 	 		}
 	 		# if subj of this verb is a pronoun (personal or demonstrative) -> delete previous subject, might be something else, indefinite?
 	 		elsif($activeSubj && $verbChunk->exists('child::CHUNK[@si="suj"]/NODE[@rel="suj" and (@pos="pp" or @pos="pd" )]') )
 	 		{
-	 			#print STDERR "deleted ".$activeSubj->findvalue('@lem')." as active subject due to pronominal subject in following verb chunk\n";
+	 			#print STDERR "deleted ".$activeSubj->findvalue('@lem')." as active subject due to pronominal subject in following verb chunk\n" if $verbose;
 				$nbrOfPronominalSubjs++;
 	 			#TODO find a way do coreference resolution for pronouns!!
 	 			undef $activeSubj;
@@ -81,12 +86,12 @@ sub main{
 	 			$nbrOfsubjectlessVerbChunks++;
 	 			#check if number is the same
 	 			my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
-	 			#print STDERR "finite verb in verb chunk nbr ".$verbChunk->getAttribute('ord').$finiteVerb->getAttribute('form')."\n";
+	 			#print STDERR "finite verb in verb chunk nbr ".$verbChunk->getAttribute('ord').$finiteVerb->getAttribute('form')."\n" if $verbose;
 	 			if($finiteVerb && &checkNumberAndPerson($finiteVerb, $activeSubj,$corefmi))
 	 			{
 	 				$verbChunk->setAttribute('coref',$coreflem);
 	 				$verbChunk->setAttribute('corefmi',$corefmi);
-	 				#print STDERR "inserted coreflem: $coreflem $corefmi\n";
+	 				#print STDERR "inserted coreflem: $coreflem $corefmi\n" if $verbose;
 	 				$nbrOfinsertedSubjs++;
 	 			}
 	 			elsif(!$finiteVerb)
@@ -101,11 +106,11 @@ sub main{
 	 		elsif(!$activeSubj && $blockedBysubjPrn)
 	 		{
 	 			$noActiveSubjDueToPrecedingPrn++;
-	 			#print STDERR "no subject inserted due to previous subj=pers-prn in verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n";
+	 			#print STDERR "no subject inserted due to previous subj=pers-prn in verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n" if $verbose;
 	 		}
 	 	
 	 	} 
-		#print STDERR "\n---------------------\n";
+		#print STDERR "\n---------------------\n" if $verbose;
 	}
 #	print STDERR "\n****************************************************************************************\n";
 #	print STDERR "total number of subjectless verb chunks: ".($nbrOfsubjectlessVerbChunks+$noActiveSubjDueToPrecedingPrn)."\n";
@@ -195,7 +200,7 @@ sub checkNumberAndPerson {
 		}
 #		my $corefform = $activeSubj->getAttribute('form');
 #		my $verbform =  $finiteVerb->getAttribute('form');
-#		print STDERR "\n $corefform:$verbform  $corefmi, $verbmi: nr $corefNumber, $VerbNumber; prs: $VerbPerson, $corefPerson\n";
+#		print STDERR "\n $corefform:$verbform  $corefmi, $verbmi: nr $corefNumber, $VerbNumber; prs: $VerbPerson, $corefPerson\n" if $verbose;
 		# if person on verb and noun don't match, return false
 		if($VerbPerson ne $corefPerson)
 		{
@@ -213,7 +218,7 @@ sub checkNumberAndPerson {
 					my $prnSubjOfVerb = $finiteVerb->findvalue('child::NODE[@rel="suj" and @cpos="p"]/@mi');
 					my $gender =  substr ($prnSubjOfVerb, 3, 1);
 					my $corefgender =  substr ($corefmi, 2, 1);
-				#	print STDERR "gender: $gender, coref gender: $corefgender\n";
+				#	print STDERR "gender: $gender, coref gender: $corefgender\n" if $verbose;
 				
 					return ($corefgender eq  $gender || $gender eq '0' || $corefgender eq '0');
 				}

@@ -28,45 +28,48 @@ use utf8;
 sub main{
 	my $dom = ${$_[0]};
 	my %intraConditions = %{$_[1]};
+	my $verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
-	#	print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n";
+	#	print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n" if $verbose;
 		my @intranodes = squoia::util::getNodesOfSingleChunk($chunk);
 		foreach my $node (@intranodes) {
-			#print STDERR "  node ". $node->getAttribute('ref'). " ".$node->getAttribute('sform'). "\n";
+			#print STDERR "  node ". $node->getAttribute('ref'). " ".$node->getAttribute('sform'). "\n" if $verbose;
 			foreach my $condpair (keys %intraConditions) {
 				my ($descCond,$ancCond) = split( /\t/, $condpair);
-	#			print STDERR "$descCond ++ $ancCond\n";
+	#			print STDERR "$descCond ++ $ancCond\n" if $verbose;
 				#check descendant node conditions
 				my @nodeConditions = squoia::util::splitConditionsIntoArray($descCond);
-	#			print STDERR "$descCond\n";
+	#			print STDERR "$descCond\n" if $verbose;
 				my $result = squoia::util::evalConditions(\@nodeConditions,$node);
-	#			print STDERR "result $result\n";
+	#			print STDERR "result $result\n" if $verbose;
 				if ($result) {
 					#find ancestor within chunk
-					#print STDERR "$descCond ++ $ancCond\n";
+					#print STDERR "$descCond ++ $ancCond\n" if $verbose;
 					my @ancConditions = squoia::util::splitConditionsIntoArray($ancCond);
 					my $ancestor = $node;
 					my $found = 0;
 					while (not $ancestor->isSameNode($chunk)) {
 						$ancestor = $ancestor->parentNode;
-	#					print STDERR $ancestor->nodeName."\n";
-	#					print STDERR $ancestor->getAttribute('type')."\n";
+	#					print STDERR $ancestor->nodeName."\n" if $verbose;
+	#					print STDERR $ancestor->getAttribute('type')."\n" if $verbose;
 						$found = squoia::util::evalConditions(\@ancConditions,$ancestor);
 						last if $found;
 					}
 					if ($found) {	
-	#					print STDERR "\n\n\nfound ancestor ".$ancestor->getAttribute('ref')."\n";
-	#					print STDERR $ancestor->nodeName."\n";
+	#					print STDERR "\n\n\nfound ancestor ".$ancestor->getAttribute('ref')."\n" if $verbose;
+	#					print STDERR $ancestor->nodeName."\n" if $verbose;
 						my $configline = $intraConditions{$condpair};
 						my ($descAttr,$ancAttr,$direction,$wmode) = split(/\t/,$configline);
-						#print STDERR "attr from to: $descAttr, $ancAttr\n\n";
-	#					print STDERR "direction $direction\n";
+						#print STDERR "attr from to: $descAttr, $ancAttr\n\n" if $verbose;
+	#					print STDERR "direction $direction\n" if $verbose;
 						if ($direction eq "up") {
-							&propagateAttr($node,$descAttr,$ancestor,$ancAttr,$wmode);
+							&propagateAttr($node,$descAttr,$ancestor,$ancAttr,$wmode,$verbose);
 						}
 						elsif ($direction eq "down") {
-							&propagateAttr($ancestor,$ancAttr,$node,$descAttr,$wmode);	# switch src and trg
+							&propagateAttr($ancestor,$ancAttr,$node,$descAttr,$wmode,$verbose);	# switch src and trg
 						}
 						else {
 							die "wrong propagation direction \"$direction\"";
@@ -79,7 +82,7 @@ sub main{
 	
 	# print new xml to stdout
 	#my $docstring = $dom->toString;
-	#print STDOUT $docstring;
+	#print STDOUT $docstring if $verbose;
 }
 
 sub propagateAttr{
@@ -88,6 +91,7 @@ sub propagateAttr{
 	my $trgNode = $_[2];
 	my $trgAttr = $_[3];
 	my $wmode = $_[4];
+	my $verbose = $_[5];
 
 	my $srcVal = $srcAttr;
 	if ($srcAttr !~ /\"/ and $srcAttr =~ /\./) {	# attributes within quotes are taken as values and can contain a dot
@@ -107,21 +111,21 @@ sub propagateAttr{
 		if ($trgNode->hasAttribute($trgAttr)) {
 			my $newVal = $trgNode->getAttribute($trgAttr).",".$srcVal;
 			$trgNode->setAttribute($trgAttr,$newVal);
-			#print STDERR "ATTRIBUTE...............$newVal\n";
+			#print STDERR "ATTRIBUTE...............$newVal\n" if $verbose;
 		}
 		else {
 			$trgNode->setAttribute($trgAttr,$srcVal);			
 		}
 	}
 	elsif ($wmode eq "overwrite") {
-#print STDERR "overwrite attribute $trgAttr with value $srcVal\n";
-#print STDERR $srcNode->nodePath()." propagates to ".$trgNode->nodePath()."\n";
-#print STDERR $srcNode->toString()."\n==>\n".$trgNode->toString()."\n\n";
+#print STDERR "overwrite attribute $trgAttr with value $srcVal\n" if $verbose;
+#print STDERR $srcNode->nodePath()." propagates to ".$trgNode->nodePath()."\n" if $verbose;
+#print STDERR $srcNode->toString()."\n==>\n".$trgNode->toString()."\n\n" if $verbose;
 		$trgNode->setAttribute($trgAttr,$srcVal);
 	}
 	elsif ($wmode eq "no-overwrite") {
 		if ($trgNode->getAttribute($trgAttr)) {
-			print STDERR "target node already has a value for the attribute ".$trgAttr."\n";
+			print STDERR "target node already has a value for the attribute ".$trgAttr."\n" if $verbose;
 		}
 		else {
 			$trgNode->setAttribute($trgAttr,$srcVal);

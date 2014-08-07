@@ -14,11 +14,13 @@ use List::MoreUtils qw(uniq);
 sub main{
 	my $dom = ${$_[0]};
 	my %rules = %{$_[1]};
+	my $verbose = $_[2];
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 	my @allHeadConditions = keys(%rules);
 	# get all SENTENCE chunks, iterate over childchunks
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
-		#print STDERR $sentence->toString;
+		#print STDERR $sentence->toString if $verbose;
 		#get all CHUNKS within SENTENCE
 		my @sentenceCHUNKS = $sentence->findnodes('descendant::CHUNK');
 	
@@ -68,16 +70,16 @@ sub main{
 									#replace double colon within xpath with special string so it will not get split
 									#$childCond =~ s/(xpath{[^}]+)::([^}]+})/\1XPATHDOUBLECOLON\2/g;
 									$childCond =~ s/::/XPATHDOUBLECOLON/g;
-									#print STDERR "child chunk escaped cond: $childCond\n";
+									#print STDERR "child chunk escaped cond: $childCond\n" if $verbose;
 									my ($variable, $childChunkCondition) =  split( ':', $childCond);
 									#put the double colon back
 									$childChunkCondition =~ s/XPATHDOUBLECOLON/::/g;
-									#print STDERR "child chunk cond: $childChunkCondition \n";
+									#print STDERR "child chunk cond: $childChunkCondition \n" if $verbose;
 									my @singleChildChunkConditionsforEvaluation = squoia::util::splitConditionsIntoArray($childChunkCondition);
-									#print STDERR "single child chunk cond: @singleChildChunkConditionsforEvaluation \n";
+									#print STDERR "single child chunk cond: @singleChildChunkConditionsforEvaluation \n" if $verbose;
 									if(squoia::util::evalConditions(\@singleChildChunkConditionsforEvaluation,$child))
 									{
-										#print STDERR "matched child $variable:".$child->toString()."\n";
+										#print STDERR "matched child $variable:".$child->toString()."\n" if $verbose;
 										push(@{$variablesWithChunkRefs{$variable}},$child);
 										if (exists($chunksNotCoveredByConditions{$c_ord})) 
 										{
@@ -123,20 +125,18 @@ sub main{
 							}
 						}
 						my @inputSequence = uniq(@inputSequenceFull);
-						#print STDERR "sentence nr:";
-						#print STDERR $sentence->getAttribute('ref');
-						#print STDERR "\n";
-							
+
+						print STDERR "sentence nr:" if $verbose;
+						print STDERR $sentence->getAttribute('ref')."\n" if $verbose;
+						
 						# @inputSequence = original sequence of chunks (by variables),
 						# @variablesWithNewPositions = new sequence of chunks as defined in grammar file
-						#print STDERR "input sequence: @inputSequence\n";	
-						#print STDERR "variables with chunk position: @variablesWithNewPositions\n";			
+						print STDERR "input sequence: @inputSequence\n" if $verbose;	
+						print STDERR "variables with chunk position: @variablesWithNewPositions\n" if $verbose;
 										
 						my $outputSequence = squoia::util::mergeArrays(\@inputSequence,\@variablesWithNewPositions);
 						
-						#print STDERR "output sequence: @{$outputSequence}\n";
-	
-						#print STDERR "output sequence: @{$outputSequence}\n";
+						print STDERR "output sequence: @{$outputSequence}\n" if $verbose;
 						
 						# insert attribute ord (order) into xml of all the chunks,
 						# order is defined by the index of the variable @outputSequence
@@ -157,9 +157,9 @@ sub main{
 								else {
 									$chunk->setAttribute('c_ord', $orderIndex);
 								}
-								#print STDERR "i:$orderIndex\n";
-								#$chunk->setAttribute('ord', $orderIndex);
-								#print STDERR "------------------\n$chunk\n------------------------\n";
+								print STDERR "i:$orderIndex\n" if $verbose;
+								$chunk->setAttribute('ord', $orderIndex);
+								print STDERR "------------------\n$chunk\n------------------------\n" if $verbose;
 								$orderIndex++;
 							}
 						}
@@ -172,7 +172,7 @@ sub main{
 	
 	# print new xml to stdout
 	#my $docstring = $dom->toString;
-	#print STDOUT $docstring;
+	#print STDOUT $docstring if $verbose;
 }
 
 1;

@@ -57,10 +57,13 @@ sub addClonedSentence{
 
 sub countAlternatives{
 	my $dom = ${$_[0]};
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	my @sentences = $dom->findnodes('//SENTENCE');
 	my $nofsent = int(@sentences);
-	print STDERR "$nofsent sentences before duplication\n";
+	print STDERR "$nofsent sentences before duplication\n" if $verbose;
 	my $totsent;
 	foreach my $sent (@sentences) {
 		my $nofalt = 1;		# number of alternatives for this sentence
@@ -74,17 +77,20 @@ sub countAlternatives{
 			$nofalt = $nofalt * $nofsyn;
 		}
 		my $sref = $sent->getAttribute('ref');
-		print STDERR "$nofalt alternatives for sentence $sref\n";
+		print STDERR "$nofalt alternatives for sentence $sref\n" if $verbose;
 		$totsent = $totsent + $nofalt;
 	}
-	print STDERR "$totsent sentences after duplication\n";
+	print STDERR "$totsent sentences after duplication\n" if $verbose;
 }
 
 sub main{
 	my $dom = ${$_[0]};
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	my $nofsent = int(@{$dom->findnodes('//SENTENCE')});
-	print STDERR "$nofsent sentences before duplication\n";
+	print STDERR "$nofsent sentences before duplication\n" if $verbose;
 
 	while ($dom->findnodes('//SYN')) {
 	# get all nodes (NODE) with ambigous translations (SYN)
@@ -107,7 +113,7 @@ sub main{
 		}
 
 		my $sentnode = &getParentSentence($node);
-		print STDERR "sent ". $sentnode->getAttribute('ref') ."\n";
+		print STDERR "sent ". $sentnode->getAttribute('ref') ."\n" if $verbose;
 		my $maxAlt = &getSentMaxAlt($sentnode);
 
 		if ($maxAlt == 0) {	# there are no alternatives yet
@@ -124,7 +130,7 @@ sub main{
 		# duplicate sentence for all synonyms
 		foreach my $syn (@synonyms) {
 			$maxAlt++;
-			print STDERR "synonym ". $syn->toString() ."\n\n";
+			print STDERR "synonym ". $syn->toString() ."\n\n" if $verbose;
 			# copy whole sentence
 			my $newSent = &addClonedSentence($sentnode,$maxAlt);
 			my $newpath = $nodepath;
@@ -145,7 +151,7 @@ sub main{
 	}
 
 	my $newnofsent = int(@{$dom->findnodes('//SENTENCE')});
-	print STDERR "$newnofsent sentences after duplication\n";
+	print STDERR "$newnofsent sentences after duplication\n" if $verbose;
 
 	# number alternative sentences
 	for (my $index=1;$index le $nofsent;$index++) {
@@ -153,7 +159,7 @@ sub main{
 		foreach my $sent ($dom->findnodes('//SENTENCE[@ref="'.$index.'"]')) {
 			$sent->setAttribute('alt',++$nofalt);
 		}
-		print STDERR "sentence $index has $nofalt alternatives\n";
+		print STDERR "sentence $index has $nofalt alternatives\n" if $verbose;
 	}
 }
 

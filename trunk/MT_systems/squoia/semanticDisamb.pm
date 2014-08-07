@@ -17,6 +17,10 @@ my %lexSel = ();
 sub main{
 	my $dom = ${$_[0]};
 	%lexSel = %{$_[1]};
+	my $verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	my @allNodeConditions = keys(%lexSel);
 	
 	# get all nodes (NODE) with ambigous translations (SYN)
@@ -31,7 +35,7 @@ sub main{
 			# check if one of the node conditions apply to this node
 			if(scalar(@SYNnodes)>0)
 			{
-				#print STDERR "Disambiguating lexical translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n";
+				#print STDERR "Disambiguating lexical translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n" if $verbose;
 				my $actualsrclem = $node->getAttribute('slem');
 				
 				foreach my $lemCombo(@allNodeConditions)
@@ -41,7 +45,7 @@ sub main{
 						# check if source lemma matches lemma in rule
 						if($actualsrclem eq $srclem)
 						#if($actualsrclem =~ /^$srclem$/)
-						{ #print STDERR "lem: $actualsrclem, $srclem\n";
+						{ #print STDERR "lem: $actualsrclem, $srclem\n" if $verbose;
 								# check for each target conditions if one of the matching rules applies
 								# if yes, check if k=keep or d=delete 
 								# -> if keep, keep all matching SYN nodes and delete all the other SYN nodes
@@ -64,21 +68,21 @@ sub main{
 											# if this was a rule with 'k' -> check also node itself if it matches!
 											my $xpathstring= 'child::SYN[@lem="'.$trgt.'"]';
 											my $selfXpathString = 'self::NODE[@lem="'.$trgt.'"]';
-											#print STDERR "xpath: $xpathstring\n";
+											#print STDERR "xpath: $xpathstring\n" if $verbose;
 											
 											# find synnode with this 'slem', can be more than one
 											my @matchingSynsCand = $node->findnodes($xpathstring);
 											my @matchingSynsCand2 = $node->findnodes($selfXpathString);
 											push(@matchingSyns,@matchingSynsCand);
 											push(@matchingSyns,@matchingSynsCand2);
-											#foreach my $m (@matchingSynsCand){print STDERR "match cand:".$m->toString()."\n";}
+											#foreach my $m (@matchingSynsCand){print STDERR "match cand:".$m->toString()."\n" if $verbose;}
 									}
 										
 										if(scalar(@matchingSyns)>0)
 										{
 												my $matchingtranslation = @matchingSyns[0];
 												my @matchingtranslationAttributes = $matchingtranslation->attributes();
-												#foreach my $m (@matchingSyns){print STDERR "match:".$m->toString()."\n";}
+												#foreach my $m (@matchingSyns){print STDERR "match:".$m->toString()."\n" if $verbose;}
 												if($keepOrDelete eq 'k')
 									   			{
 									    			# delete the attributes of the first SYN child that have been "copied" into the parent NODE
@@ -127,7 +131,7 @@ sub main{
 														# fill in attributes of first SYN that is not in matchingtranslations
 														my @SYNnodes = $node->getChildrenByLocalName('SYN');
 									    				foreach my $syn (@SYNnodes)
-									    				{#print STDERR "inserted in node:".$firstsyn->toString."\n";
+									    				{#print STDERR "inserted in node:".$firstsyn->toString."\n" if $verbose;
 									    					if(!grep( $_ == $syn, @matchingSyns ) or $syn == @SYNnodes[-1])
 									    					{
 									    						my @Attributes = $syn->attributes();
@@ -142,13 +146,13 @@ sub main{
 									    				}
 									   					#remove all matching translations:
 									   					foreach my $matchingtranslation (@matchingSyns)
-									   					{	#print STDERR "delete: ".$matchingtranslation->toString()."\n";
+									   					{	#print STDERR "delete: ".$matchingtranslation->toString()."\n" if $verbose;
 									   						$node->removeChild($matchingtranslation);
 									   					}
 									    			
 									   					#remove all matching translations:
 									   					foreach my $matchingtranslation (@matchingSyns)
-									   					{	#print STDERR "delete: ".$matchingtranslation->toString()."\n";
+									   					{	#print STDERR "delete: ".$matchingtranslation->toString()."\n" if $verbose;
 									   						$node->removeChild($matchingtranslation);
 									   					}
 									   				}

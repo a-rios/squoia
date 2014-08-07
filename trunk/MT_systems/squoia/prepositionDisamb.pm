@@ -20,6 +20,9 @@ use strict;
 sub main{
 	my $dom = ${$_[0]};
 	my %prepSel = %{$_[1]};
+	my $verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 	
 	# get all nodes (NODE) with prepositions on source side (prep=srcprep)
 	foreach my $wordnode ( $dom->getElementsByTagName('NODE')) 
@@ -42,11 +45,11 @@ sub main{
 				my $translationCondition =  @$target[1];    		
 
 				my @conditions = squoia::util::splitConditionsIntoArray($translationCondition);
-				#print STDERR "@conditions\n";
+				#print STDERR "@conditions\n" if $verbose;
 
 				# evaluate condition(s) to true or false
 				my $result= squoia::util::evalConditions(\@conditions,$wordnode);
-				#print STDERR "result: $result\n";
+				#print STDERR "result: $result\n" if $verbose;
 				
 				# save result of evaluation as value of condition
 				@$target[3] = $result;
@@ -60,14 +63,14 @@ sub main{
  						 ||
  					 $a->[2] cmp $b->[2]
 							} @$translationsref;
-			#for(my $j; $j<scalar(@FullSort);$j++){for(my $i;$i<4;$i++){print STDERR $FullSort[$j][$i]."\n";}}
+			#for(my $j; $j<scalar(@FullSort);$j++){for(my $i;$i<4;$i++){print STDERR $FullSort[$j][$i]."\n" if $verbose;}}
 		
 			#write specified attribute of the best translation into xml node
 			my $trgt = $FullSort[0][0];
 			my @pairs = split(',',$trgt);
 			foreach my $pair (@pairs) {
 				my ($trgtattr, $trgtprep) = split('=',$pair);
-			#	print STDERR "preposition $trgtattr => $trgtprep\n";
+			#	print STDERR "preposition $trgtattr => $trgtprep\n" if $verbose;
 				$wordnode->setAttribute($trgtattr, $trgtprep);
 			}
 		}

@@ -22,6 +22,10 @@ use utf8;
 sub main{
 	my $dom = ${$_[0]};
 	my @nodes2chunksRules = @{$_[1]};
+	my $verbose = $_[2];
+	
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	my %targetAttributes = %{@nodes2chunksRules[0]};
 	my %sourceAttributes = %{@nodes2chunksRules[1]};
 	my $maxChunkRef = squoia::util::getMaxChunkRef($dom);
@@ -37,7 +41,7 @@ sub main{
 				my $result = squoia::util::evalConditions(\@nodeConditions,$node);
 				if ($result) {
 					# "upgrade" the NODE node to a CHUNK node
-					#print STDERR "upgrade " . $node->nodePath() . "(" . $node->getAttribute('slem') .") to a CHUNK\n";
+					print STDERR "upgrade " . $node->nodePath() . "(" . $node->getAttribute('slem') .") to a CHUNK\n" if $verbose;
 					$node->unbindNode();
 					my $newChunk = XML::LibXML::Element->new('CHUNK');
 					$newChunk->appendChild($node);
@@ -61,13 +65,13 @@ sub main{
 			}
 		}
 		#else {
-		#	print STDERR "should the head node really be upgraded to a chunk?\n";
+		#	print STDERR "should the head node really be upgraded to a chunk?\n" if $verbose;
 		#}
 	}
 
 	# print new xml to stdout
 	#my $docstring = $dom->toString;
-	#print STDOUT $docstring;
+	#print STDOUT $docstring if $verbose;
 }
 
 1;

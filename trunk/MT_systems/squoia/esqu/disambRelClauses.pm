@@ -5,6 +5,8 @@ package squoia::esqu::disambRelClauses;
 use utf8;         
 use strict;
 
+my $verbose = '';
+
 my %lexEntriesWithFrames;
 my %nounLexicon;
 # TODO: quedarse/acabar de + adjetivo -> resultativo -> not.agentive  (kasqa)
@@ -21,6 +23,9 @@ sub main{
 	my $dom = ${$_[0]};
 	%nounLexicon = %{$_[1]};
 	%lexEntriesWithFrames = %{$_[2]};
+	$verbose = $_[3];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 	
 
 #	foreach my $n ($$dom->getElementsByTagName('NODE')){
@@ -37,7 +42,7 @@ sub main{
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		#debug
-		#print STDERR "disambiguating relative clause in ".$sentence->getAttribute('ord')."\n";
+		#print STDERR "disambiguating relative clause in ".$sentence->getAttribute('ord')."\n" if $verbose;
 		
 		# check if sentence contains relative clause
 		# with preposition sometimes grup-sp, rel=cc/sp depends on noun (vi al hombre [a quien dejaron])
@@ -200,8 +205,8 @@ sub main{
 	#			&setVerbform($relClause,0);
 	#		}
 			
-			#print STDERR "\n relclause: ".$relClause->toString."\n";
-			#print STDERR "\n relpron:".$relprn->getAttribute('lem')."\n";
+			#print STDERR "\n relclause: ".$relClause->toString."\n" if $verbose;
+			#print STDERR "\n relpron:".$relprn->getAttribute('lem')."\n" if $verbose;
 			# if relative pronoun is something else than 'que' or 'quien', head noun is not subject
 			if($relprn->getAttribute('lem') !~ /que|quien|cual/)
 			#elsif($relprn->getAttribute('lem') !~ /que|quien|cual/)
@@ -250,18 +255,18 @@ sub main{
 				# if getHeadNoun return 1, this is no relative clause, but something wrongly analysed -> ingnore this chunk
 				unless($headNoun == -1)
 				{
-					#print STDERR $headNoun->getAttribute('lem');
+					#print STDERR $headNoun->getAttribute('lem') if $verbose;
 					my $headNounMI = $headNoun->getAttribute('mi');
 					#get lemma of head noun
 					my $headNounLem = $headNoun->getAttribute('lem');
-					#print STDERR "head lem: $headNounLem\n";
-					#print STDERR "mi: $headNounMI\n";
+					#print STDERR "head lem: $headNounLem\n" if $verbose;
+					#print STDERR "mi: $headNounMI\n" if $verbose;
 				
 					my $finiteVerb = squoia::util::getFiniteVerb($relClause);
 					if($finiteVerb)
 					{
 						my $verbMI = $finiteVerb->getAttribute('mi');
-						#print STDERR $finiteVerb->toString;
+						#print STDERR $finiteVerb->toString if $verbose;
 		
 						# relative clauses where head noun is personal pronoun of local person (1/2)
 						# if verb agrees-> subj, (check frame), if not -> not agent
@@ -293,13 +298,13 @@ sub main{
 							if($mainVerb)
 							{
 								my $lem = $mainVerb->getAttribute('lem');
-							#	print STDERR "verb:$lem ";
+							#	print STDERR "verb:$lem " if $verbose;
 										
 								if(exists $lexEntriesWithFrames{$lem})
 								{
 									my @frameTypes = @{$lexEntriesWithFrames{$lem}};
-									#print STDERR @frameTypes;
-									#print STDERR "\n\n";
+									#print STDERR @frameTypes if $verbose;
+									#print STDERR "\n\n" if $verbose;
 									# if there is only one verb frame in the lexicon, assume this is the actual verb frame in this relative clause
 									if(scalar(@frameTypes) == 1)
 									{
@@ -308,12 +313,12 @@ sub main{
 									}
 									elsif(scalar(@frameTypes) > 1)
 									{
-		#								print STDERR "$lem:\n";
+		#								print STDERR "$lem:\n" if $verbose;
 		#								foreach my $frame (@frameTypes)
 		#								{
-		#									print STDERR "$frame\n";	
+		#									print STDERR "$frame\n" if $verbose;	
 		#								}
-		#								print STDERR "\n";
+		#								print STDERR "\n" if $verbose;
 		
 										for (my $i=0;$i<scalar(@frameTypes);$i++)
 									 	{
@@ -321,7 +326,7 @@ sub main{
 								 			
 								 			#if d-obj or iobj present, delete all intransitive frames
 								 			if($frame =~ /[BCD].+default|A.+#(anticausative|resultative|intransitive|passive)/ && (&hasDobj($relClause) || &hasIobj($relClause)) && scalar(@frameTypes)>1)
-								 			{# print STDERR "delete $frame\n";
+								 			{# print STDERR "delete $frame\n" if $verbose;
 								 				splice(@frameTypes,$i,1);
 								 				$i--;
 								 			}
@@ -447,12 +452,12 @@ sub main{
 										# cases, where verb has more than 1 frame and neither subj nor obj are present as np in rel-clause	
 										if(@frameTypes)
 										{ 
-		#									print STDERR "frames left for $lem:\n";
+		#									print STDERR "frames left for $lem:\n" if $verbose;
 		#									foreach my $frame (@frameTypes)
 		#									{
-		#										print STDERR "$frame\n";	
+		#										print STDERR "$frame\n" if $verbose;	
 		#									}
-		#									print STDERR "\n";
+		#									print STDERR "\n" if $verbose;
 											if(scalar(@frameTypes) == 1)
 											{ 
 												my $frame = @frameTypes[0];
@@ -467,14 +472,14 @@ sub main{
 												if($headNounLem =~ /_/)
 												{
 													my @firstLem = split ( '_', $headNounLem);
-													#print STDERR "$firstLem[0]\n";
+													#print STDERR "$firstLem[0]\n" if $verbose;
 													$semTag = $nounLexicon{$firstLem[0]};
 												}
 												else
 												{
 													 $semTag = $nounLexicon{$headNounLem};
 												}
-												#print STDERR "semtag: $semTag\n";
+												#print STDERR "semtag: $semTag\n" if $verbose;
 												# if subject thematic roles of all frames are agt/cau
 												# -> check if semantics of noun matches thematic roles of agent/causer
 												# one exception: C11 with 'tem' should be agentive as well
@@ -590,7 +595,7 @@ sub isCongruentPronoun{
 		my $pronounprs = substr ($prnMI, 2, 1);
 		my $pronounnbr = substr ($prnMI, 4, 1);
 	
-		#print STDERR "$prnMI: prs:$pronounprs, nbr: $pronounnbr, $verbMI: prs:$verbprs nbr: $verbnbr\n";
+		#print STDERR "$prnMI: prs:$pronounprs, nbr: $pronounnbr, $verbMI: prs:$verbprs nbr: $verbnbr\n" if $verbose;
 		return ($pronounprs eq $verbprs && $pronounnbr eq $verbnbr);
 	}
 	#this shouldn't happen
@@ -931,9 +936,9 @@ sub guess{
 
 sub hasSubjRel{
 	my $relClauseNode = $_[0];
-#	print STDERR "rel clause: \n".$relClauseNode->toString."\n";
+#	print STDERR "rel clause: \n".$relClauseNode->toString."\n" if $verbose;
 #	my $r = $relClauseNode->exists('CHUNK[@si="suj"]');
-#	print STDERR "returned: $r\n";
+#	print STDERR "returned: $r\n" if $verbose;
 	return ($relClauseNode->exists('CHUNK[@si="suj" or @si="suj-a"]'));
 
 }

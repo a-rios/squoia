@@ -4,6 +4,8 @@ package squoia::esde::outputGermanMorph;
 use strict;
 use utf8;
 
+my $verbose = '';
+
 my %mapGermanDate =       (
         'L'		=> 'Montag',
 	'M'		=> 'Dienstag',
@@ -43,7 +45,7 @@ sub outputGermanDate{
 	my $datestr = '';
 	if ($daterec->{'siglo'}) {
 		my $jahr100 = $daterec->{'siglo'};
-		print STDERR "Jahrhundert: $jahr100\n";
+		print STDERR "Jahrhundert: $jahr100\n" if $verbose;
 		#$datestr = $datestr . "im ".uc($jahr100).". Jahrhundert";
 		$datestr = $datestr .uc($jahr100).". Jahrhundert";
 	}
@@ -51,7 +53,7 @@ sub outputGermanDate{
 		#$datestr = $datestr."am";
 		if ($daterec->{'semdia'} ) {
 			my $wochentag = $mapGermanDate{$daterec->{'semdia'}};
-			print STDERR "Name des Tages: ".$wochentag."\n";
+			print STDERR "Name des Tages: ".$wochentag."\n" if $verbose;
 			$datestr = $datestr ." $wochentag";
 			if ($daterec->{'dia'}) {
 				$datestr = $datestr.", den";
@@ -64,44 +66,44 @@ sub outputGermanDate{
 		}
 		if ($daterec->{'mes'}) {
 			my $monat = $mapGermanDate{$daterec->{'mes'}};
-			print STDERR "Name des Monats: ".$monat."\n";
+			print STDERR "Name des Monats: ".$monat."\n" if $verbose;
 			$datestr = $datestr. " $monat";
 			if ($daterec->{'anno'}) {
 				my $jahr = $daterec->{'anno'};
-				print STDERR "im Jahre: ".$jahr."\n";
+				print STDERR "im Jahre: ".$jahr."\n" if $verbose;
 				$datestr = $datestr." $jahr";
 			}
 		}
 	}
 	elsif ($daterec->{'mes'}) {
 		my $monat = $mapGermanDate{$daterec->{'mes'}};
-		print STDERR "Name des Monats: ".$monat."\n";
+		print STDERR "Name des Monats: ".$monat."\n" if $verbose;
 		#$datestr = $datestr. "im $monat";
 		$datestr = $datestr. $monat;
 		if ($daterec->{'anno'}) {
 			my $jahr = $daterec->{'anno'};
-			print STDERR "im Jahre: ".$jahr."\n";
+			print STDERR "im Jahre: ".$jahr."\n" if $verbose;
 			$datestr = $datestr." $jahr";
 		}
 	}
 	elsif ($daterec->{'anno'}) {
 		my $jahr = $daterec->{'anno'};
-		print STDERR "im Jahre: ".$jahr."\n";
+		print STDERR "im Jahre: ".$jahr."\n" if $verbose;
 		$datestr = $datestr."in $jahr";
 	}
 	if ($daterec->{'hora'}) {
 		my $zeit = $daterec->{'hora'};
 		$zeit =~ s/^0//;
-		print STDERR "um ". $zeit. " Uhr";
+		print STDERR "um ". $zeit. " Uhr" if $verbose;
 		$datestr = $datestr." um $zeit Uhr";
 	}
 	if ($daterec->{'min'}) {
-		print STDERR $daterec->{'min'}."\n";
+		print STDERR $daterec->{'min'}."\n" if $verbose;
 		$datestr = $datestr." ".$daterec->{'min'};
 	}
 	if ($daterec->{'ampm'}) {
 		my $vornach = $mapGermanDate{$daterec->{'ampm'}};
-		print STDERR "$vornach\n";
+		print STDERR "$vornach\n" if $verbose;
 		$datestr = $datestr." $vornach";
 	}
 	return $datestr;
@@ -369,7 +371,7 @@ sub genPPER {
 		#	sie_PPER_3.Sg.Fem.Dat		=> ihr
 		#	wir_PPER_1.Pl.*.Nom		=> wir
 		$morphStr = $lem."_PPER_$pers.$num.$gen.$cas";
-		print STDERR "molif PPER\n";
+		print STDERR "molif PPER\n" if $verbose;
 	}
 	elsif ($format eq "smor") {
 		# sie<+PPRO><type><pers><num><gen><cas><flex>	=> TODO: type= (Pers|Prfl) from ? ; always flex=Wk ?
@@ -383,7 +385,7 @@ sub genPPER {
 		$cas = &mapCase($cas,$format);
 		# $flex = "Wk";
 		$morphStr = "sie<+PPRO><$pprotype><$pers><$num><$gen><$cas><Wk>";		
-		print STDERR "smor PPRO\n";
+		print STDERR "smor PPRO\n" if $verbose;
 	}
 	else {
 		print STDERR "don't know this format!...\n";
@@ -416,7 +418,7 @@ sub genMorphGenInput{
 	my $num;
 	my $morphStr = $lem."_".$pos;
 	my $morphInfo;
-	print STDERR "** $lem vom pos $pos mit mi $mi\n";
+	print STDERR "** $lem vom pos $pos mit mi $mi\n" if $verbose;
 	# APPRART: APpositions/PRepositions with ARTicle
 	# 	lemma_APPRART_gen.cas.num
 	# complete list of merged preposition with definite article:
@@ -430,7 +432,7 @@ sub genMorphGenInput{
 	elsif ($pos =~ /ART/) {
 		my $deftype = $node->getAttribute('deftype');
 		my ($gen,$num) = split(/\./,$mi);
-print STDERR "def type: $deftype\tgender: $gen\tnumber $num\n";
+		print STDERR "def type: $deftype\tgender: $gen\tnumber $num\n" if $verbose;
 		$morphStr = &genART($format,$lem,$deftype,$gen,$cas,$num);
 	}
 	# ADJectives
@@ -667,10 +669,10 @@ print STDERR "def type: $deftype\tgender: $gen\tnumber $num\n";
 	#		[s:xix] for "siglo_XIX"
 	elsif ($pos =~/\[W\]/) {
 		# TODO: map the date format to German words!
-print STDERR "HELLO, I found the date $lem\n";
+		print STDERR "HELLO, I found the date $lem\n" if $verbose;
 		my $date_record = &splitDate($lem);
 		$morphStr = &outputGermanDate($date_record);
-print STDERR "in German: $morphStr\n";
+		print STDERR "in German: $morphStr\n" if $verbose;
 	}
 	# Numbers: [Z] (DeSR: CARD from DN...; FL: not CARD because numbers are automatically mapped to [Z], the lemma written with digits)
 	# TODO: mwu? slem="media_docena" smi="Z" pos="[Z]"
@@ -685,7 +687,7 @@ print STDERR "in German: $morphStr\n";
 		$morphStr = "$1.";
 	}
 	else {
-		print STDERR "unknown pos: $pos for lemma: $lem\n";
+		print STDERR "unknown pos: $pos for lemma: $lem\n" if $verbose;
 		#print STDOUT "$lem\n";
 		$morphStr = "*unkPOS*". $morphStr;
 	}
@@ -695,6 +697,10 @@ print STDERR "in German: $morphStr\n";
 sub main{
 	my $dom = ${$_[0]};
 	my $tmpfile = $_[1];
+	my $verbose = $_[2];
+	
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	open (OUTFILE, ">:encoding(UTF-8)", $tmpfile) or die "Can't open $tmpfile : $!";
 	binmode OUTFILE, ':utf8';
 
@@ -703,7 +709,7 @@ sub main{
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
 		print OUTFILE "<s". $sentence->getAttribute('ref') . ">\n";
-		#print STDERR $sentence->toString;
+		#print STDERR $sentence->toString if $verbose;
 		#get all direct child CHUNKS within SENTENCE
 		my @sentenceCHUNKS = $sentence->findnodes('descendant::CHUNK');
 
@@ -715,7 +721,7 @@ sub main{
 		}
 		foreach my $ord (sort { $a <=> $b } keys %orderhash) {
 			my $chunk = $orderhash{$ord};
-			#print STDERR "ref: ".$chunk->getAttribute('ref')."\tord: ".$chunk->getAttribute('ord')."\ttype: ".$chunk->getAttribute('type')."\n";
+			#print STDERR "ref: ".$chunk->getAttribute('ref')."\tord: ".$chunk->getAttribute('ord')."\ttype: ".$chunk->getAttribute('type')."\n" if $verbose;
 			my @childnodes = squoia::util::getNodesOfSingleChunk($chunk);
 			my %nodeorder;
 			foreach my $child (@childnodes) {
@@ -730,10 +736,10 @@ sub main{
 			}
 			foreach my $ord (sort { $a <=> $b } keys %nodeorder) {
 				my $node = $nodeorder{$ord};
-				#print STDERR "\tnode ref: ".$node->getAttribute('ref')."\tnode ord: ".$node->getAttribute('ord')."\tnode lemma: ".$node->getAttribute('lem')."\n";
+				#print STDERR "\tnode ref: ".$node->getAttribute('ref')."\tnode ord: ".$node->getAttribute('ord')."\tnode lemma: ".$node->getAttribute('lem')."\n" if $verbose;
 				# TODO: call whatever subroutines to output the node information you want, e.g. the lemma
 				if ($node->hasAttribute('delete') and $node->getAttribute('delete') eq 'yes') {
-					print STDERR "[".$node->getAttribute('slem')."]\n";
+					print STDERR "[".$node->getAttribute('slem')."]\n" if $verbose;
 				}
 				# unknown word
 				# i.e. the word is not in the bilingual dictionary and could not be lexically transfered
@@ -743,11 +749,11 @@ sub main{
 					if ($node->hasAttribute('sform')) {
 						$unknownStr = "*".$node->getAttribute('sform');
 					}
-					print STDERR "unknown $unknownStr\n";
+					print STDERR "unknown $unknownStr\n" if $verbose;
 					print OUTFILE "$unknownStr\n";
 				}
 				else {
-					print STDERR $node->getAttribute('lem')." ";
+					print STDERR $node->getAttribute('lem')." " if $verbose;
 					my $morphstring = &genGerman($node);
 					print OUTFILE "$morphstring\n";
 				}
@@ -762,8 +768,11 @@ sub generateMorphWord{
 	my $infile = $_[0];
 	my $outfile = $_[1];
 	my $generator= $_[2];
+	my $verbose = $_[3];
 
-	print STDERR "Morphology generator: $generator\n";
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
+	print STDERR "Morphology generator: $generator\n" if $verbose;
         open (INFILE, "<:encoding(UTF-8)", $infile) or die "Can't open $infile : $!";
 	open (OUTFILE, ">", $outfile) or die "Can't open $outfile : $!";
 
@@ -771,7 +780,7 @@ sub generateMorphWord{
 		chomp;
 		if (/\|/) {
 			my ($pref,$verb) = split /\|/;
-			print STDERR "Prefix: $pref ; verb: $verb\n";
+			print STDERR "Prefix: $pref ; verb: $verb\n" if $verbose;
 			my $morph = `echo "$verb" | $generator `;
 			if ($morph !~ /\+\?/) {
 				my ($stts,$form) = split(/\t/,$morph);
@@ -783,7 +792,7 @@ sub generateMorphWord{
 			}
 		}
 		else {
-			print STDERR "Stts string: $_ to generate\n";
+			print STDERR "Stts string: $_ to generate\n" if $verbose;
 			my $morph = `echo "$_" | $generator `;
 			print OUTFILE $morph;
 		}
@@ -823,9 +832,10 @@ sub printWordForms{
 	for (my $i=0; $i < $len; $i++) {
 		my $wordform = $outarrayref->[$i]->[-1];
 		# print the last word form alternative #TODO: have some probabilistic preferences?
-		print STDERR "$wordform ";
+		print STDERR "$wordform " if $verbose;
 		$sentence .= "$wordform ";
 	}
+	print STDERR "\n" if $verbose;
 	$sentence =~ s/\ban dem\b/am/g;
 	$sentence =~ s/\bbei dem\b/beim/g;
 	$sentence =~ s/\bin dem\b/im/g;
@@ -839,6 +849,9 @@ sub printWordForms{
 sub cleanFstOutput{
 	my $infile = $_[0];
         my $outfile = $_[1];
+	my $verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
         open (INFILE, "<:encoding(UTF-8)", $infile) or die "Can't open $infile : $!";
         binmode INFILE, ':utf8';
@@ -870,9 +883,9 @@ sub cleanFstOutput{
 				push(@outarray,["$infst"]);
 			}
 			else {
-				print STDERR "$infst ";
+				print STDERR "$infst " if $verbose;
 				my ($lemma,$rest) = split(/$POSre|_VMPP/,$infst);
-				print STDERR "with lemma $lemma\n";
+				print STDERR "with lemma $lemma\n" if $verbose;
 	 			#my ($lemma,$pos) = split(/_/,$infst); # TODO: Named entities have also underscores; check this before cutting only the first part of the NE!
 				$lemma =~ s/\|//g;	# eliminate the separable verb prefix mark "|" still present in infinitive forms
 				push(@outarray,["$lemma"]);

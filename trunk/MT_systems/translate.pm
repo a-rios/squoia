@@ -71,6 +71,7 @@ my %config;
 # setup options
 # general options
 my $help = 0;
+my $verbose = ''; # default is false; flag to switch verbose output on
 my $config;
 my $file;
 my $nbest = 3;
@@ -123,6 +124,7 @@ my $deModel;
 my $helpstring = "Usage: $0 [options]
 available options are:
 --help|-h: print this help
+--verbose: flag to switch verbose output on
 --config|-c: indicate config (necessary for first run, later optional)
 --file|-f: file with text to translate (optional, if no file given, reads input from stdin)
 --direction|-d: translation direction, valid options are esqu (Spanish-Quechua) and esde (Spanish-German)
@@ -246,6 +248,7 @@ my %mapInputFormats = (
 GetOptions(
 	# general options
     'help|h'     => \$help,
+    'verbose'	=> \$verbose,
     'config|c=s'    => \$config,
     'file|f=s'    => \$file,
     'direction|d=s' => \$direction,
@@ -516,19 +519,19 @@ if($startTrans<$mapInputFormats{'conll'}){	#5){
 	if($startTrans==$mapInputFormats{'tagged'}){	#4){
 		if($file){
 			open (FILE, "<", $file) or die "Can't open input file \"$file\" to translate: $!\n";
-			$conllLines = squoia::crf2conll::main(\*FILE);
+			$conllLines = squoia::crf2conll::main(\*FILE,$verbose);
 			close(FILE);
 		}
 		else{
 			#### convert from wapiti crf to conll for desr parser
 			binmode(STDIN);
-			$conllLines = squoia::crf2conll::main(\*STDIN);
+			$conllLines = squoia::crf2conll::main(\*STDIN,$verbose);
 		}
 
 	}
 	else{
 		#### convert from wapiti crf to conll for desr parser
-		$conllLines = squoia::crf2conll::main(\*CONLL);
+		$conllLines = squoia::crf2conll::main(\*CONLL,$verbose);
 		close(CONLL);
 	}
 	
@@ -629,17 +632,17 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 	if($startTrans ==$mapInputFormats{'parsed'}){	#6){
 		if($file ne ''){
 			open (FILE, "<", $file) or die "Can't open input file \"$file\" to translate: $!\n";
-			$dom = squoia::conll2xml::main(\*FILE, $desrPort2);
+			$dom = squoia::conll2xml::main(\*FILE, $desrPort2,$verbose);
 			close(FILE);
 		}
 		else{
 			binmode(STDIN);
-			$dom = squoia::conll2xml::main(\*STDIN, $desrPort2);
+			$dom = squoia::conll2xml::main(\*STDIN, $desrPort2,$verbose);
 		}
 	}
 	else{
 		#### create xml from conll
-		$dom = squoia::conll2xml::main(\*CONLL2, $desrPort2);
+		$dom = squoia::conll2xml::main(\*CONLL2, $desrPort2,$verbose);
 		close(CONLL2);
 		
 	}
@@ -717,6 +720,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 
 if($startTrans < $mapInputFormats{'rdisamb'})	#8)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'rdisamb'} .") relative clause disambiguation\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'conll2xml'}){	#7){
 		if($file ne '' ){
@@ -729,7 +733,7 @@ if($startTrans < $mapInputFormats{'rdisamb'})	#8)
 			$dom  = XML::LibXML->load_xml( IO => *STDIN);
 		}
 	}
-	squoia::esqu::disambRelClauses::main(\$dom, \%nounLex, \%verbLex);
+	squoia::esqu::disambRelClauses::main(\$dom, \%nounLex, \%verbLex, $verbose);
 
 	## if output format is 'rdisamb': print and exit
 	if($outformat eq 'rdisamb'){
@@ -741,11 +745,12 @@ if($startTrans < $mapInputFormats{'rdisamb'})	#8)
 
 if($startTrans < $mapInputFormats{'coref'})	#9)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'coref'} .") subject coreference resolution\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'rdisamb'}){	#8){
 		$dom = &readXML();
 	}
-	squoia::esqu::coref::main(\$dom);
+	squoia::esqu::coref::main(\$dom, $verbose);
 	
 	## if output format is 'coref': print and exit
 	if($outformat eq 'coref'){
@@ -757,6 +762,7 @@ if($startTrans < $mapInputFormats{'coref'})	#9)
 
 if($startTrans < $mapInputFormats{'vdisamb'})	#10)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'vdisamb'} .") verb form disambiguation (rule-based)\n";
 	# check if evidentiality set
 	if($evidentiality ne 'direct' or $evidentiality eq 'indirect'){
 		print STDERR "Invalid value  '$evidentiality' for option --evidentiality, possible values are 'direct' or 'indirect'. Using default (=direct)\n";
@@ -768,7 +774,7 @@ if($startTrans < $mapInputFormats{'vdisamb'})	#10)
 		$dom = &readXML();
 	}
 	
-	squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex);
+	squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex, $verbose);
 
 	## if output format is 'vdisamb': print and exit
 	if($outformat eq 'vdisamb'){
@@ -780,6 +786,7 @@ if($startTrans < $mapInputFormats{'vdisamb'})	#10)
 
 if($startTrans<$mapInputFormats{'svm'})	# 11)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'svm'} .") verb form disambiguation (svm)\n";
 	# get verb lemma classes from word net for disambiguation with svm
 	my %verbLemClasses=();
 	
@@ -849,7 +856,7 @@ if($startTrans<$mapInputFormats{'svm'})	# 11)
 		$dom = &readXML();
 	}
 
- 	squoia::esqu::svm::main(\$dom, \%verbLex, \%verbLemClasses);
+ 	squoia::esqu::svm::main(\$dom, \%verbLex, \%verbLemClasses, $verbose);
 
 	## if output format is 'svm': print and exit
 	if($outformat eq 'svm'){
@@ -969,7 +976,7 @@ if($startTrans <$mapInputFormats{'semtags'})	#13)
 	if($startTrans ==$mapInputFormats{'lextrans'}){	#12){
 		$dom = &readXML();
 	}
-	squoia::insertSemanticTags::main(\$dom, \%semanticLexicon);
+	squoia::insertSemanticTags::main(\$dom, \%semanticLexicon, $verbose);
 	
 	if($outformat eq 'semtags'){
 		my $docstring = $dom->toString(3);
@@ -1026,7 +1033,7 @@ if($startTrans <$mapInputFormats{'lexdisamb'})	#14)
 	if($startTrans ==$mapInputFormats{'semtags'}){	#13){
 		$dom = &readXML();
 	}
-	squoia::semanticDisamb::main(\$dom, \%lexSel);
+	squoia::semanticDisamb::main(\$dom, \%lexSel, $verbose);
 	
 	if($outformat eq 'lexdisamb'){
 		my $docstring = $dom->toString(3);
@@ -1085,7 +1092,7 @@ if($startTrans <$mapInputFormats{'morphdisamb'})	#15)
 	if($startTrans ==$mapInputFormats{'lexdisamb'}){	#14){
 		$dom = &readXML();
 	}
-	squoia::morphDisamb::main(\$dom, \%morphSel);
+	squoia::morphDisamb::main(\$dom, \%morphSel, $verbose);
 
 	## if output format is 'morphdisamb': print and exit
 	if($outformat eq 'morphdisamb'){
@@ -1156,11 +1163,11 @@ if($startTrans <$mapInputFormats{'statlexdisamb'})
 	}
 	if (not $noalt) {
 		if ($maxalt > 0) {
-			squoia::esde::statBilexDisamb::main(\$dom, \%bilexprobs, $deLemmaModel, $maxalt);
+			squoia::esde::statBilexDisamb::main(\$dom, \%bilexprobs, $deLemmaModel, $maxalt, $verbose);
 		}
-		squoia::alternativeSentences::main(\$dom);
+		squoia::alternativeSentences::main(\$dom, $verbose);
 	} else {
-		squoia::alternativeSentences::countAlternatives(\$dom);
+		squoia::alternativeSentences::countAlternatives(\$dom, $verbose);
 	}
 	## if output format is 'statlexdisamb': print and exit
 	if($outformat eq 'statlexdisamb'){
@@ -1229,7 +1236,7 @@ if($startTrans <$mapInputFormats{'prepdisamb'})	#16)
 	 or ($direction eq 'esde' and $startTrans ==$mapInputFormats{'statlexdisamb'})){
 		$dom = &readXML();
 	}
-	squoia::prepositionDisamb::main(\$dom, \%prepSel);
+	squoia::prepositionDisamb::main(\$dom, \%prepSel, $verbose);
 	
 	## if output format is 'prepdisamb': print and exit
 	if($outformat eq 'prepdisamb'){
@@ -1289,7 +1296,7 @@ if($startTrans <$mapInputFormats{'vprepdisamb'})
 	if($startTrans ==$mapInputFormats{'prepdisamb'}){
 		$dom = &readXML();
 	}
-	squoia::esde::verbPrepDisamb::main(\$dom, \%verbPrepSel);
+	squoia::esde::verbPrepDisamb::main(\$dom, \%verbPrepSel, $verbose);
 	## if output format is 'vprepdisamb': print and exit
 	if($outformat eq 'vprepdisamb'){
 		my $docstring = $dom->toString(3);
@@ -1306,7 +1313,7 @@ if($startTrans <$mapInputFormats{'mwsplit'})
 	if($startTrans ==$mapInputFormats{'vprepdisamb'}){
 		$dom = &readXML();
 	}
-	squoia::splitNodes::main(\$dom);
+	squoia::splitNodes::main(\$dom, $verbose);
 	## if output format is 'mwsplit': print and exit
 	if($outformat eq 'mwsplit'){
 		my $docstring = $dom->toString(3);
@@ -1322,7 +1329,7 @@ if($startTrans <$mapInputFormats{'pronoun'})
 	if($startTrans ==$mapInputFormats{'mwsplit'}){
 		$dom = &readXML();
 	}
-	squoia::esde::addPronouns::main(\$dom);
+	squoia::esde::addPronouns::main(\$dom, $verbose);
 	## if output format is 'pronoun': print and exit
 	if($outformat eq 'pronoun'){
 		my $docstring = $dom->toString(3);
@@ -1338,7 +1345,7 @@ if($startTrans <$mapInputFormats{'future'})
 	if($startTrans ==$mapInputFormats{'pronoun'}){
 		$dom = &readXML();
 	}
-	squoia::esde::addFutureAux::main(\$dom);
+	squoia::esde::addFutureAux::main(\$dom, $verbose);
 	## if output format is 'future': print and exit
 	if($outformat eq 'future'){
 		my $docstring = $dom->toString(3);
@@ -1354,7 +1361,7 @@ if($startTrans <$mapInputFormats{'vprefix'})
 	if($startTrans ==$mapInputFormats{'future'}){
 		$dom = &readXML();
 	}
-	squoia::esde::splitVerbPrefix::main(\$dom);
+	squoia::esde::splitVerbPrefix::main(\$dom, $verbose);
 	## if output format is 'vprefix': print and exit
 	if($outformat eq 'vprefix'){
 		my $docstring = $dom->toString(3);
@@ -1415,7 +1422,7 @@ if($startTrans <$mapInputFormats{'intraTrans'})	#17)
 	 or ($direction eq 'esde' and $startTrans ==$mapInputFormats{'vprefix'})){
 		$dom = &readXML();
 	}
-	squoia::intrachunkTransfer::main(\$dom, \%intraConditions);
+	squoia::intrachunkTransfer::main(\$dom, \%intraConditions, $verbose);
 	
 	## if output format is 'intraTrans': print and exit
 	if($outformat eq 'intraTrans'){
@@ -1473,7 +1480,7 @@ if($startTrans <$mapInputFormats{'interTrans'})	#18)
 	if($startTrans ==$mapInputFormats{'intraTrans'}){	#17){
 		$dom = &readXML();
 	}
-	squoia::interchunkTransfer::main(\$dom, \%interConditions);
+	squoia::interchunkTransfer::main(\$dom, \%interConditions, $verbose);
 	
 	## if output format is 'interTrans': print and exit
 	if($outformat eq 'interTrans'){
@@ -1532,7 +1539,7 @@ if($startTrans <$mapInputFormats{'node2chunk'})	#19)
 	if($startTrans ==$mapInputFormats{'interTrans'}){	#18){
 		$dom = &readXML();
 	}
-	squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules);
+	squoia::nodesToChunks::main(\$dom, \@nodes2chunksRules, $verbose);
 	## if output format is 'node2chunk': print and exit
 	if($outformat eq 'node2chunk'){
 		my $docstring = $dom->toString(3);
@@ -1585,7 +1592,7 @@ if($startTrans <$mapInputFormats{'child2sibling'})	#20)
 	if($startTrans ==$mapInputFormats{'node2chunk'}){	#19){
 		$dom = &readXML();
 	}
-	squoia::childToSiblingChunk::main(\$dom, \%targetAttributes);
+	squoia::childToSiblingChunk::main(\$dom, \%targetAttributes, $verbose);
 	
 	## if output format is 'node2chunk': print and exit
 	if($outformat eq 'child2sibling'){
@@ -1602,7 +1609,7 @@ if($startTrans <$mapInputFormats{'interOrder'})	#21)
 		$dom = &readXML();
 	}
 	### number chunks recursively
-	squoia::recursiveNumberChunks::main(\$dom);
+	squoia::recursiveNumberChunks::main(\$dom, $verbose);
 	
 	if ($noreord) {
 		print STDERR "\t\"no reordering\" flag set: only numbering the chunks\n";
@@ -1654,7 +1661,7 @@ if($startTrans <$mapInputFormats{'interOrder'})	#21)
 				} or print STDERR "Failed to retrieve interchunk order rules, set option ChunkOrderFile=path in config or use --interOrder path on commandline to indicate interchunk order rules!\n";
 				%interOrderRules = %{ retrieve("$path/storage/interchunkOrderRules") };
 			}
-		squoia::interchunkOrder::main(\$dom, \%interOrderRules);
+		squoia::interchunkOrder::main(\$dom, \%interOrderRules, $verbose);
 	}
 
 	## if output format is 'interOrder': print and exit
@@ -1673,7 +1680,7 @@ if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 		$dom = &readXML();
 	}
 	## linear odering of chunks
-	squoia::linearOrderChunk::main(\$dom);
+	squoia::linearOrderChunk::main(\$dom, $verbose);
 	
 	if ($noreord) {
 		print STDERR "\t\"no reordering\" flag set: only numbering the nodes\n";
@@ -1727,7 +1734,7 @@ if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 				%intraOrderRules = %{ retrieve("$path/storage/intrachunkOrderRules") };
 			}
 
-		squoia::intrachunkOrder::main(\$dom, \%intraOrderRules);
+		squoia::intrachunkOrder::main(\$dom, \%intraOrderRules, $verbose);
 	}
 	
 	## if output format is 'intraOrder': print and exit
@@ -1745,14 +1752,15 @@ my $sentFile = "$path/tmp/tmp.words";
 my $morphfile = "$path/tmp/tmp.morph";
 if($startTrans < $mapInputFormats{'morph'})	#23)
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'morph'} .") morphological generation\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'intraOrder'}){	#22)
 		$dom = &readXML();
 	}
 	if ($direction eq 'esqu') {
-		squoia::esqu::xml2morph::main(\$dom, $morphfile);
+		squoia::esqu::xml2morph::main(\$dom, $morphfile, $verbose);
 	} elsif ($direction eq 'esde') {
-		squoia::esde::outputGermanMorph::main(\$dom,$morphfile);
+		squoia::esde::outputGermanMorph::main(\$dom,$morphfile,$verbose);
 	} else {
 		print STDERR "Translation direction not defined!\n";
 	}
@@ -1764,6 +1772,7 @@ if($startTrans < $mapInputFormats{'morph'})	#23)
 }
 if($startTrans< $mapInputFormats{'words'})
 {
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'words'} .") word forms\n";
 	## generate word forms with xfst
 	## check if $morphgenerator is set
 	if($morphgenerator eq ''){
@@ -1802,8 +1811,8 @@ if($startTrans< $mapInputFormats{'words'})
 	elsif($direction eq 'esde')
 	{
 		my $morphwordFile = "$path/tmp/tmp.morphword";
-		squoia::esde::outputGermanMorph::generateMorphWord($morphfile,$morphwordFile,"flookup $morphgenerator");
-		squoia::esde::outputGermanMorph::cleanFstOutput($morphwordFile,$sentFile);
+		squoia::esde::outputGermanMorph::generateMorphWord($morphfile,$morphwordFile,"flookup $morphgenerator",$verbose);
+		squoia::esde::outputGermanMorph::cleanFstOutput($morphwordFile,$sentFile,$verbose);
 	}
 	## if output format is 'words': print and exit
 	if($outformat eq 'words'){
@@ -1818,6 +1827,7 @@ if($startTrans< $mapInputFormats{'words'})
 
 ###-----------------------------------begin ranking (kenlm) ---------------------------------------------------------####
 ## use kenlm to print the n-best ($nbest) translations	
+print STDERR "* TRANS-STEP " . $mapInputFormats{'nbest'} .") n-best translations\n";
 if($direction eq 'esqu')
 {
 	# check if quModel is set
