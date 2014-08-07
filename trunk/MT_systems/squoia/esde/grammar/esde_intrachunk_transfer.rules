@@ -129,9 +129,9 @@ my.spos=/VAPP/&&my.pos=VA	pos	my.type=VP	VAPP	down	overwrite
 #xpath{//CHUNK[@type="PP"]/CHUNK[@type="VP" and @si="S"]/descendant::NODE[starts-with(@pos,"V") and contains(@pos,"INF") and count(NODE[starts-with(@pos,"V")])=0]}	zu	my.type=VP			yes			down		overwrite
 
 # more general: a verb phrase with V.INF
-xpath{//CHUNK[@type="VP" and (@si="S" or @si="atr")]/descendant::NODE[starts-with(@pos,"V") and contains(@pos,"INF") and count(descendant::NODE[starts-with(@pos,"V")])=0]}	zu	my.type=VP			yes			down		overwrite
+xpath{//CHUNK[@type="VP" and (@si="S" or @si="atr" or @si="cd")]/descendant::NODE[starts-with(@pos,"V") and contains(@pos,"INF") and count(descendant::NODE[starts-with(@pos,"V")])=0]}	zu	my.type=VP			yes			down		overwrite
 
-xpath{//CHUNK[@type="VP" and (@si="S" or @si="atr")]/descendant::NODE[@zu="yes" or (starts-with(@pos,"V") and contains(@pos,"INF") and count(descendant::NODE[starts-with(@pos,"V")])=0)]}	yes	my.type=VP			zu			up		overwrite
+xpath{//CHUNK[@type="VP" and (@si="S" or @si="atr" or @si="cd")]/descendant::NODE[@zu="yes" or (starts-with(@pos,"V") and contains(@pos,"INF") and count(descendant::NODE[starts-with(@pos,"V")])=0)]}	yes	my.type=VP			zu			up		overwrite
 
 # infinitive without "zu"
 xpath{//CHUNK[@type="VP" and (@si="top" or @si="suj" or @si="suj-a")]/descendant::NODE[@pos="VVINF" and count(descendant::NODE[starts-with(@pos,"V")])=0]}	no	my.type=VP	finVerb		up	overwrite
