@@ -9,6 +9,9 @@ use utf8;
 
 sub main{
 	my $dom = ${$_[0]};
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	my $maxChunkRef = squoia::util::getMaxChunkRef($dom);
 	my $subject = "suj";
@@ -21,15 +24,15 @@ sub main{
 		my $parentChunk = squoia::util::getParentChunk($node);	# VP chunk
 		if ($parentChunk->getAttribute('si') =~ /^S|sn/) {	# TODO other possibilities?
 			# do not add any pronoun in a relative clause TODO if it is the subject, but it could be the object!!!
-			print STDERR "relative clause does not need any extra pronoun\n";
+			print STDERR "relative clause does not need any extra pronoun\n" if $verbose;
 			# get person of finite verb
 			my $finverb = @{$node->findnodes('descendant-or-self::NODE[contains(@pos,"FIN") or contains(@spos,"FIN")]')}[0];
 			if ($finverb and $finverb->getAttribute('mi') =~ /^3\./) {
 				# TODO: the verb is in 3rd person; relative could be the object...
-				print STDERR "verb in 3rd person; relpronoun could still be the object...\n";
+				print STDERR "verb in 3rd person; relpronoun could still be the object...\n" if $verbose;
 				next;
 			} # else the finite verb has no explicit subject but has the form of a 1st or 2nd person => add pronoun
-			print STDERR "add subject pronoun anyway!\n";
+			print STDERR "add subject pronoun anyway!\n" if $verbose;
 		}
 		my $pronounChunk = XML::LibXML::Element->new('CHUNK');
 		$maxChunkRef++;
@@ -55,14 +58,14 @@ sub main{
 			}
 		}
 		if ($finVerb) {
-			print STDERR "finite verb form " . $finVerb->getAttribute('sform') ."\n";
+			print STDERR "finite verb form " . $finVerb->getAttribute('sform') ."\n" if $verbose;
 			my $verbMorph = "3.Sg.Pres.Ind";		# arbitrary default value
 			if ($finVerb->hasAttribute('mi')) {
 				$verbMorph = $finVerb->getAttribute('mi');
 			}
 			else {
 				print STDERR $finVerb->serialize."Finite verb node has no morphological information (mi attribute)...
-						this shouldn't be the case! Please check your diccionary and transfer rules\n";
+						this shouldn't be the case! Please check your diccionary and transfer rules\n" if $verbose;
 			}
 			my ($pers,$num) = split(/\./,$verbMorph);
 			my $pronounMorph = $pers . "." . $num;

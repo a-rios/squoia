@@ -7,6 +7,10 @@ use strict;
 
 sub main{
 	my $inputLines = $_[0];
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	my @outputLines;
 	my $newSent =1;
 	my $wordCount;

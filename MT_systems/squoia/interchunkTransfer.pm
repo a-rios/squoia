@@ -30,33 +30,36 @@ use utf8;
 sub main{
 	my $dom = ${$_[0]};
 	my %interConditions = %{$_[1]};
+	my $verbose = $_[2];
 	
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
-		#print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n";
+		#print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n" if $verbose;
 		foreach my $condpair (keys %interConditions) {
 			my ($chunk1Cond,$chunk2Cond,$path1to2) = split( /\t/, $condpair);
-	#		print STDERR "$chunk1Cond ++ $chunk2Cond\n";
+	#		print STDERR "$chunk1Cond ++ $chunk2Cond\n" if $verbose;
 			#check chunk 1 conditions
 			my @chunk1Conditions = squoia::util::splitConditionsIntoArray($chunk1Cond);
-	#		print STDERR "$chunk1Cond\n";
+	#		print STDERR "$chunk1Cond\n" if $verbose;
 			my $result = squoia::util::evalConditions(\@chunk1Conditions,$chunk);
-	#		print STDERR "result $result\n";
+	#		print STDERR "result $result\n" if $verbose;
 			if ($result) {
 				# find chunk candidates related to the current chunk
 				my @candidates = squoia::util::getRelatedChunks($chunk,$path1to2);
-				#print STDERR scalar(@candidates). " candidates\n";
+				#print STDERR scalar(@candidates). " candidates\n" if $verbose;
 				if (scalar(@candidates)) {
-				#	print STDERR "first chunk candidate ". $candidates[0]->getAttribute('ref')."\n";
+				#	print STDERR "first chunk candidate ". $candidates[0]->getAttribute('ref')."\n" if $verbose;
 					my @chunk2Conditions = squoia::util::splitConditionsIntoArray($chunk2Cond);
-					#print STDERR "conditions: @chunk2Conditions\n";
+					#print STDERR "conditions: @chunk2Conditions\n" if $verbose;
 					# find the first candidate related chunk that satisfies the conditions
 					foreach my $cand (@candidates) {
 						my $result = squoia::util::evalConditions(\@chunk2Conditions,$cand);
-						#print STDERR "result $result for candidate ". $cand->getAttribute('ref')."\n";
+						#print STDERR "result $result for candidate ". $cand->getAttribute('ref')."\n" if $verbose;
 						if ($result) {
-						#	print STDERR "found\n";
+						#	print STDERR "found\n" if $verbose;
 							my $configline = $interConditions{$condpair};
-							&transferSyntInformation($configline,$chunk,$cand);
+							&transferSyntInformation($configline,$chunk,$cand,$verbose);
 						}
 					}
 				}
@@ -66,21 +69,22 @@ sub main{
 	
 	# print new xml to stdout
 	#my $docstring = $dom->toString;
-	#print STDOUT $docstring;
+	#print STDOUT $docstring if $verbose;
 }
 
 sub transferSyntInformation{
 	my $configline = $_[0];
 	my $chunk1 = $_[1];
 	my $chunk2   = $_[2];
+	my $verbose = $_[3];
 
 	my ($chunk1Attr,$chunk2Attr,$direction,$wmode) = split(/\t/,$configline);
 	#print STDERR "direction $direction\n";
 	if ($direction eq "1to2") {
-		&propagateAttr($chunk1,$chunk1Attr,$chunk2,$chunk2Attr,$wmode);
+		&propagateAttr($chunk1,$chunk1Attr,$chunk2,$chunk2Attr,$wmode,$verbose);
 	}
 	elsif ($direction eq "2to1") {
-		&propagateAttr($chunk2,$chunk2Attr,$chunk1,$chunk1Attr,$wmode);	# switch src and trg
+		&propagateAttr($chunk2,$chunk2Attr,$chunk1,$chunk1Attr,$wmode,$verbose);	# switch src and trg
 	}
 	else {
 		die "wrong propagation direction \"$direction\"";
@@ -93,6 +97,7 @@ sub propagateAttr{
 	my $trgNode = $_[2];
 	my $trgAttr = $_[3];
 	my $wmode = $_[4];
+	my $verbose = $_[5];
 
 	my $srcVal = $srcNode->getAttribute($srcAttr);
 	if ($srcVal eq '') {
@@ -108,10 +113,10 @@ sub propagateAttr{
 	}
 	elsif ($wmode eq "no-overwrite") {
 		if ($trgNode->getAttribute($trgAttr)) {
-			print STDERR "target node already has a value for the attribute ".$trgAttr."\n";
+			print STDERR "target node already has a value for the attribute ".$trgAttr."\n" if $verbose;
 		}
 		else {
-#			print STDERR "$srcAttr => $trgAttr = $srcVal\n";
+#			print STDERR "$srcAttr => $trgAttr = $srcVal\n" if $verbose;
 			$trgNode->setAttribute($trgAttr,$srcVal);
 		}
 	}

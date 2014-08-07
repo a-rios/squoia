@@ -21,6 +21,9 @@ use utf8;
 
 sub main{
 	my $dom = ${$_[0]};
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	my $maxNodeRef = squoia::util::getMaxNodeRef($dom);
 
@@ -33,7 +36,7 @@ sub main{
 			my @lemmas     = split( _, $wordnode->getAttribute('lem') );
 			# how many new nodes have to be generated (=number of lemmas)
 			my $numberOfNewNodes = @lemmas;
-			print STDERR $wordnode->getAttribute('lem')." split into $numberOfNewNodes nodes\n";
+			print STDERR $wordnode->getAttribute('lem')." split into $numberOfNewNodes nodes\n" if $verbose;
 			my @attributes = $wordnode->attributes();
 			foreach my $attribute (@attributes) {
 				my $attrName = $attribute->nodeName;

@@ -55,6 +55,10 @@ my $openBar=1;
 
 sub main{
 	my $InputLines = $_[0];
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	binmode($InputLines, ':utf8');
 	my $desrPort2 = $_[1]; 	# port where desr_server with model2 runs
 

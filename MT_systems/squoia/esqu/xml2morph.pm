@@ -5,7 +5,7 @@ use utf8;                  # Source code is UTF-8
 use strict;
 #use warnings;
 
-
+my $verbose = '';
 
 # use slots 1-20 for verbs
 # 21 for nominalizers
@@ -158,6 +158,10 @@ my %mapEaglesPersonToTags = (
 sub main{
 	my $dom = ${$_[0]};
 	my $tmpfile = $_[1];
+	$verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	open (OUTFILE, ">:encoding(UTF-8)", $tmpfile) or die "Can't open $tmpfile : $!";
 	binmode OUTFILE, ':utf8';
 
@@ -171,8 +175,8 @@ sub main{
 	 				if($firstchild)
 	 				{
 	 					$firstchild->setAttribute('conj', $vchunk->getAttribute('conj'));
-	 					#print STDERR "attribute set: ".$firstchild->getAttribute('conj')."\n";
-	 					#print STDERR $firstchild->toString()."\n";
+	 					#print STDERR "attribute set: ".$firstchild->getAttribute('conj')."\n" if $verbose;
+	 					#print STDERR $firstchild->toString()."\n" if $verbose;
 	 				}
 	 				else
 	 				{
@@ -198,8 +202,8 @@ sub main{
 	 	foreach my $idref (sort {$a<=>$b} (keys (%chunkSequence))) 
 	 	{
 	 		my $chunk = $chunkSequence{$idref};
-	 		#print STDERR "new chunk: ";
-	 		#print STDERR $chunk->getAttribute('ref')."\n";
+	 		#print STDERR "new chunk: " if $verbose;
+	 		#print STDERR $chunk->getAttribute('ref')."\n" if $verbose;
 	 		#if this is a verb chunk, get lemma and verbmi directly from chunk, no need to process the nodes
 	 		if($chunk->exists('self::CHUNK[@type="grup-verb" or @type="coor-v"]') )
 	 		{
@@ -302,7 +306,7 @@ sub main{
 #			 						unless($vnode){
 #			 							# if there's a conjunction or relative pronoun in between
 #			 							($vnode) = $chunk->findnodes('child::NODE/NODE[not(starts-with(@smi,"V"))]/NODE[starts-with(@smi,"V")and (contains(@smi,"1") or (contains(@smi,"2") or (contains(@smi,"3")][1]');
-#			 							#print STDERR $vnode->toString()."\n";
+#			 							#print STDERR $vnode->toString()."\n" if $verbose;
 #			 						}
 			 						if($vnode){
 			 							push(@auxSYNs, $vnode);	
@@ -311,7 +315,7 @@ sub main{
 			 					foreach my $auxsyn (@auxSYNs){
 			 						my $synmi = $auxsyn->getAttribute('verbmi');
 			 						my $verbmi = $synmi.$add_mi.$addverbmi;
-			 						#print STDERR "verbmi: $verbmi\n";
+			 						#print STDERR "verbmi: $verbmi\n" if $verbose;
 			 						push(@verbmis, $verbmi);
 			 					}
 			 				}
@@ -824,12 +828,12 @@ sub printNode{
  		else
  		{ 
  			my ($root,$morph) = $mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)?(.*)/ ;
- 			#print STDERR "root: $root, morph: $morph\n";
+ 			#print STDERR "root: $root, morph: $morph\n" if $verbose;
  		
  			if($add_mi ne '')
  			{ 
  			 	my ($correctroot,$addmorph) = ($add_mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)?(.*)/ ) ;
- 				#print STDERR "add_mi: $add_mi,....$add_morph\n"; 
+ 				#print STDERR "add_mi: $add_mi,....$add_morph\n" if $verbose; 
  				if($correctroot ne '' )
  				{
  					#print STDOUT ":$correctroot$addmorph$morph";
@@ -848,9 +852,9 @@ sub printNode{
  			}
  		}
  		$nodeString = $nodeString.&getMorphFromChunk($node,$chunk);
- 		#print STDERR "new node string: $nodeString\n";
+ 		#print STDERR "new node string: $nodeString\n" if $verbose;
  		$nodeString = &deleteUnusedTags($nodeString,$chunk);
- 		#print STDERR "deleted morphs node string: $nodeString\n";
+ 		#print STDERR "deleted morphs node string: $nodeString\n" if $verbose;
  		# clean up and adjust morphology tags
  		if($postform eq ''){
  			print OUTFILE "$lemma:".&adjustMorph($nodeString,\%mapTagsToSlots);
@@ -889,7 +893,7 @@ sub deleteUnusedTags{
 	my $morphString = $_[0];
 	my $chunk = $_[1];
 	my $deleteMorph = $chunk->getAttribute('deleteMorph');
-	#print STDERR "to delete: $deleteMorph\n";
+	#print STDERR "to delete: $deleteMorph\n" if $verbose;
 	my @morphsToDelete = split(',',$deleteMorph);
 	foreach my $del (@morphsToDelete)
 	{$morphString =~ s/\Q$del\E//;}
@@ -1182,7 +1186,7 @@ sub adjustMorph{
 
 	my %sortedMorphs =();
 	my $sortedMorphString ='';
-	#print STDERR "morphemes:"; 
+	#print STDERR "morphemes:" if $verbose; 
 	foreach my $m (@morphs)
 	{
 		unless($m eq '+' or $m eq '')
@@ -1198,8 +1202,8 @@ sub adjustMorph{
 	{
   		$sortedMorphString= $sortedMorphString.$tag;
 	}
-	#print STDERR "unsorted morph: $morphString\n";
-	#print STDERR "sorted morph: $sortedMorphString\n";
+	#print STDERR "unsorted morph: $morphString\n" if $verbose;
+	#print STDERR "sorted morph: $sortedMorphString\n" if $verbose;
 	return $sortedMorphString;
 }
 
@@ -1231,7 +1235,7 @@ sub cleanVerbMi{
 	{
 		 	#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
 		 	$verbmi =~ s/\Q$subjprs\E($inclExcl)?\.Obj/Rflx/g;
-		 	#print STDERR "replaced $subjprs: $verbmi\n";
+		 	#print STDERR "replaced $subjprs: $verbmi\n" if $verbose;
 	}
 	# if this is a nominal (perfect or obligative) form, check if object and possessive suffix are same person
 	# -> if so, replace object suffix with reflexive
@@ -1239,7 +1243,7 @@ sub cleanVerbMi{
 	{
 			#my ($oldObj) = ($verbmi =~ m/\Q$subjprs\E()/ );
 			$verbmi =~ s/\Q$subjprsPoss\E($inclExcl)?\.Obj/Rflx/g;
-		 	#print STDERR "replaced $subjprs: $verbmi\n";
+		 	#print STDERR "replaced $subjprs: $verbmi\n" if $verbose;
 	}
 	# if there was a new subject inserted during transfer, change that (e.g. in direct speech)
 	if($chunk->getAttribute('verbprs') ne '' && $verbprs ne '' )
@@ -1254,7 +1258,7 @@ sub cleanVerbMi{
 			$verbmi =~ s/\Q$verbprs\E/\+3.Sg.Subj/g;
 		 	if($subjprs =~ /1|2/){
 		 			$verbmi = $verbmi."+".$subjprs.$inclExcl.".Obj";
-		 			#print STDERR "new verbmi: $verbmi\n";
+		 			#print STDERR "new verbmi: $verbmi\n" if $verbose;
 		 	}
 	}
 	# second type of subjToObj: se me antoja un helado -> heladota munapakuni

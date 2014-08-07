@@ -26,6 +26,9 @@ use strict;
 
 sub main{
 	my $dom = ${$_[0]};
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 	
 	my @specialnodes = $dom->findnodes('//CHUNK[@type="VP"]/NODE/descendant-or-self::NODE[@tense="Fut"]');
 	foreach my $node (@specialnodes) {

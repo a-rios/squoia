@@ -17,6 +17,9 @@ use utf8;
 sub main{
 	my $dom = ${$_[0]};
 	my %targetAttributes = %{$_[1]};
+	my $verbose = $_[2];
+	
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	foreach my $chunk ( $dom->findnodes('//CHUNK/CHUNK/CHUNK') ) {	# the candidates child chunks must have a grandparent chunk to become sibling of their parent chunk
 		my $grandparent = $chunk->parentNode->parentNode;
@@ -32,7 +35,7 @@ sub main{
 				foreach my $attrVal (@attributes) {
 					my ($newChunkAttr,$newChunkVal) = split("=", $attrVal);
 					$newChunkVal =~ s/["]//g;
-					#print STDERR "setting attribute $newChunkAttr to $newChunkVal\n";
+					print STDERR "setting attribute $newChunkAttr to $newChunkVal\n" if $verbose;
 					$chunk->setAttribute($newChunkAttr,$newChunkVal);
 				}
 			}
@@ -41,7 +44,7 @@ sub main{
 
 	# print new xml to stdout
 	#my $docstring = $dom->toString;
-	#print STDOUT $docstring;
+	#print STDOUT $docstring if $verbose;
 }
 1;
 

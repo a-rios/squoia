@@ -4,23 +4,30 @@ package squoia::linearOrderChunk;
 use utf8;
 use strict;
 
+my $verbose = '';
+
 sub main{
 	my $dom = ${$_[0]};
+	$verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
-		#print STDERR $sentence->toString;
+		#print STDERR $sentence->toString if $verbose;
+		print STDERR $sentence->nodePath() if $verbose;
+		print STDERR "sentence nr " . $sentence->getAttribute('ref') ."\n" if $verbose;
 		#get all direct child CHUNKS within SENTENCE
 		my @sentenceCHUNKS = $sentence->findnodes('child::CHUNK');
 	
 		foreach my $chunk (@sentenceCHUNKS)
 		{
-			#print STDERR "ordered chunks\n";
+			#print STDERR "ordered chunks\n" if $verbose;
 			my $orderedChunks = &linearOrderChunk($chunk);
 			my $index = 0;
 			foreach my $chunk (@$orderedChunks) {
 				$chunk->setAttribute('ord',$index);
-			#	print STDERR "ref:".$chunk->getAttribute('ref')."\tord:".$chunk->getAttribute('ord')."\tc_ord:".$chunk->getAttribute('c_ord')."\tp_ord:".$chunk->getAttribute('p_ord')."\n";
+			#	print STDERR "ref:".$chunk->getAttribute('ref')."\tord:".$chunk->getAttribute('ord')."\tc_ord:".$chunk->getAttribute('c_ord')."\tp_ord:".$chunk->getAttribute('p_ord')."\n" if $verbose;
 				$index++;
 			}
 		}
@@ -43,7 +50,7 @@ sub linearOrderChunk{
 		$ord = $childChunk->getAttribute('c_ord');
 		$orderhash{$ord} = $childChunk;
 	}
-	#print STDERR "ordered chunks under parent chunk with ref:" .$parentChunk->getAttribute('ref')."\n";
+	print STDERR "ordered chunks under parent chunk with ref:" .$parentChunk->getAttribute('ref')."\n" if $verbose;
 	foreach my $ord (sort {$a <=> $b} keys %orderhash) {
 		my $chunk = $orderhash{$ord};
 		if ($chunk->isSameNode($parentChunk)) {

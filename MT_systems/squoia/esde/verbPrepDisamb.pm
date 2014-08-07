@@ -21,6 +21,9 @@ use utf8;
 sub main{
 	my $dom = ${$_[0]};
 	my %verbprep = %{$_[1]};
+	my $verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	# Language-specific (?) "constant values"
 	my $PREP_FUNC = "creg";
@@ -45,29 +48,29 @@ sub main{
 		my $verbkey = "$SLverb\t$SLprep\t$TLverb";
 		if (exists($verbprep{$verbkey})) {
 			my ($TLprep,$TLcase) = @{$verbprep{$verbkey}};
-			print STDERR "$verbkey mapped to prep: $TLprep; case: $TLcase\n";
+			print STDERR "$verbkey mapped to prep: $TLprep; case: $TLcase\n" if $verbose;
 			# 1) both sides have prep => replace SL prep with TL prep (or at least disambiguate)
 			if ($SLprep ne "-" and $TLprep ne "-") {
-				print STDERR "both side have prep: set SL prep $SLprep to (disambiguated) TL prep $TLprep and TL case $TLcase\n";
+				print STDERR "both side have prep: set SL prep $SLprep to (disambiguated) TL prep $TLprep and TL case $TLcase\n" if $verbose;
 				$prepnode->setAttribute('lem',$TLprep);
 				$prepnode->setAttribute('cas',$TLcase);
 			}
 			# 2) SL prep, TL no prep => delete prep?
 			elsif ($TLprep eq "-" and $SLprep ne "-") {
-				print STDERR "SL prep, TL no prep: set SL prep $SLprep delete attribute to yes\n";
+				print STDERR "SL prep, TL no prep: set SL prep $SLprep delete attribute to yes\n" if $verbose;
 				$prepnode->setAttribute('delete','yes');
 				$prepnode->setAttribute('cas',$TLcase);
 			}
 	# this is never the case if we get only the creg chunks!!!		# 3) SL no prep, TL prep => add prep?
 			elsif ($SLprep eq "-" and $TLprep ne "-") {
-				print STDERR "SL no prep, TL prep: add TL prep $TLprep and case $TLcase\n";
+				print STDERR "SL no prep, TL prep: add TL prep $TLprep and case $TLcase\n" if $verbose;
 			}
 			else {
-				print STDERR "this should not be the case; check your verb_prep file!\n";
+				print STDERR "this should not be the case; check your verb_prep file!\n" if $verbose;
 			}
 		}
 		else {
-			print STDERR "no entry for $verbkey\n";
+			print STDERR "no entry for $verbkey\n" if $verbose;
 		}
 	}
 	# get all direct complement chunks
@@ -82,10 +85,10 @@ sub main{
 		my $verbkey = "$SLverb\t$SLprep\t$TLverb";
 		if (exists($verbprep{$verbkey})) {
 			my ($TLprep,$TLcase) = @{$verbprep{$verbkey}};
-			print STDERR "$verbkey mapped to prep: $TLprep; case: $TLcase\n";
+			print STDERR "$verbkey mapped to prep: $TLprep; case: $TLcase\n" if $verbose;
 			# 3) SL no prep, TL prep => add prep?
 			if ($TLprep ne "-") {
-				print STDERR "SL no prep, TL prep: add prepositional phrase chunk with TL prep $TLprep and case $TLcase\n";
+				print STDERR "SL no prep, TL prep: add prepositional phrase chunk with TL prep $TLprep and case $TLcase\n" if $verbose;
 				my $prepchunk = XML::LibXML::Element->new('CHUNK');
 				$prepchunk->setAttribute('ref',"0");	# TODO get max ref?
 				$prepchunk->setAttribute('type',$PREP_PHRASE);
@@ -102,11 +105,11 @@ sub main{
 				$prepchunk->addChild($objchunk);
 			}
 			else {
-				print STDERR "this should not be the case; check your verb_prep file!\n";
+				print STDERR "this should not be the case; check your verb_prep file!\n" if $verbose;
 			}
 		}
 		else {
-			print STDERR "no entry for $verbkey\n";
+			print STDERR "no entry for $verbkey\n" if $verbose;
 		}
 	}
 }

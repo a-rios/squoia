@@ -14,6 +14,9 @@ use utf8;
 
 sub main{
 	my $dom = ${$_[0]};
+	my $verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	my $maxChunkRef = squoia::util::getMaxChunkRef($dom);
 	my $xpathexpr = '//CHUNK[@type="VP" or @type="CVP"]/descendant-or-self::NODE[contains(@lem,"|") and (@pos="VVFIN" or @pos="VVIMP")]';

@@ -15,6 +15,10 @@ use strict;
 sub main{
 	my $dom = ${$_[0]};
 	my %morphSel = %{$_[1]};
+	my $verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	my @allNodeConditions = keys(%morphSel);
 
 	# get all nodes (NODE) with ambigous translations (SYN)
@@ -29,7 +33,7 @@ sub main{
 		# check if one of the node conditions apply to this node
 		if(scalar(@SYNnodes)>0)
 		{
-			#print STDERR "Disambiguating morphological translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n";
+			#print STDERR "Disambiguating morphological translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n" if $verbose;
 			foreach my $ruleskey (@allNodeConditions)
 				{				
 					my ($nodeCond, $trgtMI) = split('---',$ruleskey);		  
@@ -46,7 +50,7 @@ sub main{
 							# get target conditions
 							my $trgtConds = @{ $morphSel{$ruleskey}}[0];
 							my @trgtConditions = squoia::util::splitConditionsIntoArray($trgtConds);
-							#print STDERR "target conds: @trgtConditions\n";
+							#print STDERR "target conds: @trgtConditions\n" if $verbose;
 							
 							if(squoia::util::evalConditions(\@trgtConditions,$node))
 							{
@@ -73,7 +77,7 @@ sub main{
 											$xpathstring= 'child::SYN[@'.$attr.'="'.$value.'"]';
 											$selfXpathString= 'self::NODE[@'.$attr.'="'.$value.'"]';
 										}
-										#print STDERR "xpath: $xpathstring\n";
+										#print STDERR "xpath: $xpathstring\n" if $verbose;
 										# find synnode with this 'mi', can be more than one
 										my @matchingSynsCand = $node->findnodes($xpathstring);
 										my @matchingSynsCand2 = $node->findnodes($selfXpathString);
@@ -85,7 +89,7 @@ sub main{
 									{ 
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
-											#foreach my $m (@matchingSyns){print STDERR "match for $ruleskey:".$m->toString()."\n";}
+											#foreach my $m (@matchingSyns){print STDERR "match for $ruleskey:".$m->toString()."\n" if $verbose;}
 									
 								 		   	if($keepOrDelete eq 'k')
 								   			{
@@ -139,7 +143,7 @@ sub main{
 								    				foreach my $syn (@SYNnodes)
 								    				{
 								    					if(!grep( $_ == $syn, @matchingSyns ) or $syn == @SYNnodes[-1])
-								    					{ #print STDERR "inserted in node:".$syn->toString."\n";
+								    					{ #print STDERR "inserted in node:".$syn->toString."\n" if $verbose;
 								    						my @Attributes = $syn->attributes();
 								    						foreach my $synattr (@Attributes)
 								    						{
@@ -154,9 +158,9 @@ sub main{
 								    				unless(scalar(@matchingSyns) >= scalar(@SYNnodes)){
 										   				#remove all matching translations:
 										   				foreach my $matchingtranslation (@matchingSyns)
-										   				{	#print STDERR "delete: ".$matchingtranslation->toString()."\n";
+										   				{	#print STDERR "delete: ".$matchingtranslation->toString()."\n" if $verbose;
 										   					#my $docstring = $dom->toString;
-															#print STDERR $docstring;
+															#print STDERR $docstring if $verbose;
 										   					$node->removeChild($matchingtranslation);
 										   				}
 								    				}

@@ -15,12 +15,16 @@ use List::MoreUtils qw(uniq);
 sub main{
 	my $dom = ${$_[0]};
 	my %rules = %{$_[1]};
+	my $verbose = $_[2];
+	
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
 	my @allHeadConditions = keys(%rules);
 	# get all SENTENCE nodes, iterate over childnodes
 	#foreach my $node ( $dom->getElementsByTagName('*'))
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 	{
-		#print STDERR $sentence->toString;
+		#print STDERR $sentence->toString if $verbose;
 		#get all NODES within SENTENCE
 		my @sentenceNODES = $sentence->findnodes('descendant::NODE');
 		
@@ -103,18 +107,18 @@ sub main{
 							}
 						}
 						my @inputSequence = uniq(@inputSequenceFull);
-	#					print STDERR "sentence nr:";
-	#					print STDERR $sentence->getAttribute('ref');
-	#					print STDERR "\n";
+						print STDERR "sentence nr:" . $sentence->getAttribute('ref') ."\n" if $verbose;
 							
 						# @inputSequence = original sequence of nodes (by variables),
 						# @variablesWithNewPositions = new sequence of nodes as defined in grammar file
-						# print STDERR "input sequence: @inputSequence\n"; print STDERR scalar(@inputSequence);	
-						# print STDERR "variables with node pos: @variablesWithNewPositions\n";		print STDERR scalar(@variablesWithNewPositions);	
+						print STDERR "input sequence: @inputSequence\n" if $verbose;
+						#print STDERR scalar(@inputSequence) if $verbose;	
+						print STDERR "variables with node pos: @variablesWithNewPositions\n" if $verbose;
+						#print STDERR scalar(@variablesWithNewPositions) if $verbose;	
 										
 						my $outputSequence = squoia::util::mergeArrays(\@inputSequence,\@variablesWithNewPositions);
 						
-						#print STDERR "output sequence: @{$outputSequence}\n";
+						print STDERR "output sequence: @{$outputSequence}\n" if $verbose;
 						
 						# insert attribute ord (order) into xml of all the nodes,
 						# order is defined by the index of the variable @outputSequence
@@ -129,9 +133,9 @@ sub main{
 							#get corresponding node(s)
 							foreach my $node (@ {$variablesWithNodeRefs{$orderedVariable}})
 							{
-								#print STDERR "i:$orderIndex\n";
+								#print STDERR "i:$orderIndex\n" if $verbose;
 								$node->setAttribute('ord', $orderIndex);
-								#print STDERR "------------------\n$node\n------------------------\n";
+								#print STDERR "------------------\n$node\n------------------------\n" if $verbose;
 								$orderIndex++;
 							}
 						}
@@ -143,6 +147,6 @@ sub main{
 	}
 	# print new xml to stdout
 	#my $docstring = $dom->toString;
-	#print STDOUT $docstring;
+	#print STDOUT $docstring if $verbose;
 }
 1;
