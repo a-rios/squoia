@@ -53,14 +53,15 @@ my $sentence; # actual sentence
 my $openQuot=1;
 my $openBar=1;
 
+my $verbose = '';
+
 sub main{
 	my $InputLines = $_[0];
-	my $verbose = $_[1];
-
-	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
-
 	binmode($InputLines, ':utf8');
 	my $desrPort2 = $_[1]; 	# port where desr_server with model2 runs
+	$verbose = $_[2];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	while(<$InputLines>)
 	{
@@ -128,7 +129,7 @@ sub main{
 	     # if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
 	     if($eaglesTag =~ /^V.[GNM]/ and $word =~ /(me|te|nos|os|se|[^l](la|las|lo|los|le|les))$/ and $word !~ /parte|frente|adelante|base|menos$/ and $word !~ /_/)
 	     {
-			#print STDERR "clitics in verb $lem: $word\n";
+			#print STDERR "clitics in verb $lem: $word\n" if $verbose;
 			my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
 			if ($clstr !~ /^$/){	# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
 				&createAppendCliticNodes($sentence,$scount,$id,$clstr);
@@ -157,17 +158,17 @@ sub main{
 	     # often: 'se fue' -> fue tagged as 'ser', VSIS3S0 -> change to VMIS3S0, set lemma to 'ir'
 	     if($eaglesTag =~ /VSIS[123][SP]0/ && $lem eq 'ser'){
 	     	my $precedingWord = $docHash{$scount.":".($id-1)};
-	     	#print STDERR "preceding of fue: ".$precedingWord->getAttribute('lem')."\n";
+	     	#print STDERR "preceding of fue: ".$precedingWord->getAttribute('lem')."\n" if $verbose;
 	     	if($precedingWord && $precedingWord->getAttribute('lem') eq 'se'){
 	     		$eaglesTag =~ s/^VS/VM/ ;
-	     		#print STDERR "new tag: $eaglesTag\n";
+	     		#print STDERR "new tag: $eaglesTag\n" if $verbose;
 	     		$lem = 'ir';
 	     	}
 	     }
 #	     # if 'hay' tagged as VA -> changed to VM!
 #	     if($eaglesTag eq 'VAIP3S0' && $word =~ /^[Hh]ay$/){
 #	     		$eaglesTag = 'VMIP3S0' ;
-#	     		print STDERR "new tag for hay: $eaglesTag\n";
+#	     		print STDERR "new tag for hay: $eaglesTag\n" if $verbose;
 #	     }
 	     # freeling error for reirse, two lemmas, reír/reir -> change to reír
 	     if($lem =~ /\/reir/){
@@ -217,8 +218,8 @@ sub main{
 		{
 			my $sentence = @sentences[$i];
 			my $sentenceId = $sentence->getAttribute('ord');
-			print STDERR "model2 in sentence: $sentenceId\n";
-			#print STDERR "1:".$sentence->toString."\n";
+			print STDERR "model2 in sentence: $sentenceId\n" if $verbose;
+			#print STDERR "1:".$sentence->toString."\n" if $verbose;
 			my @nodes = $sentence->getElementsByTagName('NODE');
 		
 			foreach my $node (@nodes)
@@ -239,18 +240,18 @@ sub main{
 		{
 			my $sentence = @sentences[$i];
 			my $sentenceId = $sentence->getAttribute('ord');
-			#print STDERR "adjusting dependencies in sentence: ".$sentence->getAttribute('ord')."\n";
-			#print STDERR "2: ".$sentence->toString."\n";
+			#print STDERR "adjusting dependencies in sentence: ".$sentence->getAttribute('ord')."\n" if $verbose;
+			#print STDERR "2: ".$sentence->toString."\n" if $verbose;
 			my @nodes = $sentence->getElementsByTagName('NODE');
 		
 			foreach my $node (@nodes)
 			{
-				#print STDERR $node->getAttribute('ord')."\n";
+				#print STDERR $node->getAttribute('ord')."\n" if $verbose;
 				my $head = $node->getAttribute('head');
 				if ($head ne '0')
 				{
 					my $headKey = "$sentenceId:$head";
-					#print STDERR "Head key: $headKey\n";
+					#print STDERR "Head key: $headKey\n" if $verbose;
 					my $word = $node->getAttribute('form');
 					#print "$word= $headKey\n";
 					my $parent = $docHash{$headKey};
@@ -261,7 +262,7 @@ sub main{
 					or do
 					{
 						&model2($sentence,$desrPort2);
-						print STDERR "loop detected in sentence: ".$sentence->getAttribute('ord')."\n";
+						print STDERR "loop detected in sentence: ".$sentence->getAttribute('ord')."\n" if $verbose;
 						$model2 = 1;
 						$i--;
 						last;
@@ -287,9 +288,9 @@ sub main{
 	
 	
 	#my $docstring = $dom->toString(3);
-	#print STDERR $docstring;
-	#print STDERR "------------------------------------------------\n";
-	#print STDERR "------------------------------------------------\n";
+	#print STDERR $docstring if $verbose;
+	#print STDERR "------------------------------------------------\n" if $verbose;
+	#print STDERR "------------------------------------------------\n" if $verbose;
 	
 	# insert chunks
 	
@@ -297,7 +298,7 @@ sub main{
 	{
 		
 		my $sentenceId = $sentence->getAttribute('ord');
-		#print STDERR "insert chunks in sentence: $sentenceId\n";
+		#print STDERR "insert chunks in sentence: $sentenceId\n" if $verbose;
 		#my $chunkCount = 1;
 		my $parent;
 		my @nodes =  $sentence->getElementsByTagName('NODE');
@@ -358,7 +359,7 @@ sub main{
 					 	substr($eaglesTag, 1, 1) = "M";
 					 	$node->setAttribute('mi',$eaglesTag);
 					 	$node->setAttribute('pos', 'vm');
-					 	print STDERR "changed mi of ".$node->{'form'}." to $eaglesTag\n";
+					 	print STDERR "changed mi of ".$node->{'form'}." to $eaglesTag\n" if $verbose;
 					 }
 					 
 					 # if relative clause with preposition preceding relative pronoun-> desr makes wrong analysis:
@@ -447,7 +448,7 @@ sub main{
 	#  </SENTENCE>
 	#	 			elsif($relcual && $cualsubj && ( $relcual->getAttribute('ord') > $cualsubj->getAttribute('ord') ))
 	#	 			{
-	#	 				print STDERR "cualsubj:".$cualsubj->toString."\n";
+	#	 				print STDERR "cualsubj:".$cualsubj->toString."\n" if $verbose;
 	#	 					$node->setAttribute('head', $cualsubj->getAttribute('ord'));
 	#				 	 	$head = $cualsubj->getAttribute('ord');
 	#				 	 	$node->setAttribute('rel', 'S');
@@ -545,7 +546,7 @@ sub main{
 						elsif($subj && $node->exists('child::*[(@si="suj" and @type="sn")or (@rel="suj" and @cpos="n")]/descendant::NODE[@lem="cual"]') )
 						{
 							my $subjnoun = @{$node->findnodes('child::*[(@si="suj" and @type="sn") or (@rel="suj" and @cpos="n")][1]')}[-1];
-							#print STDERR "subjnoun: ".$subjnoun->toString;
+							#print STDERR "subjnoun: ".$subjnoun->toString if $verbose;
 							my $cual = @{$subjnoun->findnodes('child::NODE[@lem="cual"][1]')}[-1];
 							if($cual && $subjnoun)
 							{
@@ -589,7 +590,7 @@ sub main{
 							my $headnoun = &getHeadNoun($node);
 							if($headnoun && &isCongruent($headnoun, $node))
 							{ 
-								print STDERR "suj inserted in sentence: $sentenceId\n";
+								print STDERR "suj inserted in sentence: $sentenceId\n" if $verbose;
 								#parent node = noun, parent of that = sn-chunk
 								# new head of this verb will be the head of this sn-chunk
 								$snchunk = $headnoun->parentNode;
@@ -616,7 +617,7 @@ sub main{
 						# edit: same problem with 'me lo, te la, etc', -> adapted regex, note that $clitic2 contains also 'me,te,no,vos,os' now
 					 	elsif($node->getAttribute('rel') eq 'CONCAT' && $node->exists('parent::NODE[@pos="pp" and (@lem="lo" or @lem="le" or @lem="te" or @lem="me" or @lem="nos" or @lem="vos" or @lem="os")]'))
 					 	{
-					 		#print STDERR "abzweigung erwischt\n";
+					 		#print STDERR "abzweigung erwischt\n" if $verbose;
 					 		$clitic = $node->parentNode();
 					 		$clitic2 = @{$clitic->parentNode()->findnodes('parent::CHUNK[@type="sn"]/NODE[@lem="se" or @lem="te" or @lem="me" or @lem="nos" or @lem="vos" or @lem="os"][1]')}[0];
 					 		# if 'se lo'
@@ -624,7 +625,7 @@ sub main{
 					 		{
 					 			#attach verb to current head of 'se' and 'la'/'lo' (se and lo/la already in sn-chunks!)
 					 			$parent = $clitic2->parentNode->parentNode;
-					 			#print STDERR "parent of se : ".$parent->toString();
+					 			#print STDERR "parent of se : ".$parent->toString() if $verbose;
 					 			$node->setAttribute('head', $parent->getAttribute('ord'));
 					 			# add 'se' and 'lo/la' to verb with their chunks
 					 			# should be attached AFTER verb, else sequence gets mixed up
@@ -639,7 +640,7 @@ sub main{
 					 			$clitic2->setAttribute('rel', 'ci');
 					 			$clitic->setAttribute('rel', 'cd');
 					 			$clitic->parentNode->setAttribute('si', 'cd');				 			
-					 			print STDERR "changed verb clitics in sentence $sentenceId\n";
+					 			print STDERR "changed verb clitics in sentence $sentenceId\n" if $verbose;
 					 		}
 					 		# if only one clitc ('Cuando vine, le dije./Cuando vine, la vi.')
 					 		elsif ($clitic && !$clitic2)
@@ -648,7 +649,7 @@ sub main{
 					 			$node->setAttribute('head', $parent->getAttribute('ord'));
 					 			$clitic->setAttribute('head', $node->getAttribute('ord'));
 					 			#$clitic->parentNode->setAttribute('ord', $node->getAttribute('ord'));
-					 			print STDERR "changed CONCAT in verb clitics in sentence $sentenceId\n";
+					 			print STDERR "changed CONCAT in verb clitics in sentence $sentenceId\n" if $verbose;
 					 			
 					 			if($clitic->getAttribute('lem') eq 'lo')
 					 			{
@@ -745,7 +746,7 @@ sub main{
 					 elsif($LO && $QUE)
 					 {
 					 	$verbchunk->appendChild($QUE);
-					 	#print STDERR $LO->toString;
+					 	#print STDERR $LO->toString if $verbose;
 			 			$verbchunk->appendChild($LO);
 					 }
 					 
@@ -776,7 +777,7 @@ sub main{
 					 {
 					 	$nounchunk->setAttribute('type', 'sn');
 					 }
-					 #print STDERR "node: ".$node->getAttribute('lem')." ,parent: ".$parent->toString."\n";
+					 #print STDERR "node: ".$node->getAttribute('lem')." ,parent: ".$parent->toString."\n" if $verbose;
 					 # if this is suj -> check if congruent with finite verb, check also if parent is a verbchunk
 					 if($node->getAttribute('rel') eq 'suj' && $parent->exists('self::*[@type="grup-verb" or @cpos="v"]') && &isCongruent($node, $parent) == 0)
 					 {
@@ -822,7 +823,7 @@ sub main{
 				# if this is a preposition, make a prepositional chunk (grup-sp)
 				elsif ($node->exists('self::NODE[starts-with(@mi,"SP")]'))
 				{
-					 #print STDERR "parent of prep: \n".$parent->toString."\n";
+					 #print STDERR "parent of prep: \n".$parent->toString."\n" if $verbose;
 					 # if head is an infinitive (para hacer, voy a hacer, de hacer etc)-> don't create a chunk, preposition just hangs below verb
 					 # check if preposition precedes infinitive, otherwise make a chunk
 					 if($parent->exists('self::CHUNK/NODE[@mi="VMN0000" or @mi="VSN0000"]') && $parent->getAttribute('ord')> $node->getAttribute('ord'))
@@ -901,7 +902,7 @@ sub main{
 					 $sadvchunk->appendChild($node);
 					$parent = &attachNewChunkUnderChunk($sadvchunk,$parent,$sentence);
 					#if ($parent->nodeName eq 'NODE') {
-					#	print STDERR "adverb chunk" . $sadvchunk->toString(). " within NODE ". $parent->toString() ." has to be appended to a higher CHUNK\n";
+					#	print STDERR "adverb chunk" . $sadvchunk->toString(). " within NODE ". $parent->toString() ." has to be appended to a higher CHUNK\n" if $verbose;
 					#	$parent = @{$parent->findnodes('ancestor::CHUNK[1]')}[0];
 					#}
 					 #$parent->appendChild($sadvchunk);
@@ -1044,11 +1045,11 @@ sub main{
 		my $topverbchunk = @{$sentence->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v") and @si="top"][1]')}[0];
 		#my $topverbchunk = @{$sentence->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v")][1]')}[0];
 		if($topverbchunk && $topverbchunk->exists('child::NODE[@cpos="v"]/descendant::NODE[@pos="cs"]'))
-		{ print STDERR "in sentence $sentenceId, top chunk is".$topverbchunk->getAttribute('ord')."\n";
+		{ print STDERR "in sentence $sentenceId, top chunk is".$topverbchunk->getAttribute('ord')."\n" if $verbose;
 				my $realMain = @{$topverbchunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@cpos="v" and not(child::NODE[@pos="cs"])]')}[-1];
 				if($realMain)
 				{
-					print STDERR "real main verb: ".$realMain->toString();
+					print STDERR "real main verb: ".$realMain->toString() if $verbose;
 					$topverbchunk->parentNode->appendChild($realMain->parentNode());
 					$realMain->parentNode()->appendChild($topverbchunk);			
 					$topverbchunk->setAttribute('si', 'S');
@@ -1064,13 +1065,13 @@ sub main{
 					my @subjectNodes = $verbchunk->findnodes('child::CHUNK[@si="suj"]/NODE[@rel="suj"]');
 				    if(scalar(@subjectNodes) > 1)
 					{  
-						#print STDERR "verb chunk ord: ".$verbchunk->getAttribute('ord'). "\n";
+						#print STDERR "verb chunk ord: ".$verbchunk->getAttribute('ord'). "\n" if $verbose;
 					 	my %subjs =();
 					 	foreach my $subjCand (@subjectNodes)
 					 	{
 					 		my $ord = $subjCand->getAttribute('ord');
 					 		$subjs{$ord} = $subjCand;
-					 		print STDERR "to many subjects: ".$subjCand->getAttribute('lem')." ord: ".$ord."\n";
+					 		print STDERR "to many subjects: ".$subjCand->getAttribute('lem')." ord: ".$ord."\n" if $verbose;
 					 	}
 					 	
 					 	my $candIsSubj = 0;
@@ -1079,7 +1080,7 @@ sub main{
 					 		my $subjCand = $subjs{$ord};
 					 		if(&isCongruent($subjCand,$verbchunk) && $candIsSubj == 0)
 					 		{
-					 			print STDERR "correct subj: ".$subjCand->getAttribute('lem')."\n";
+					 			print STDERR "correct subj: ".$subjCand->getAttribute('lem')."\n" if $verbose;
 					 			$candIsSubj =1;
 					 		}
 					 		else
@@ -1087,7 +1088,7 @@ sub main{
 					 			$subjCand->parentNode->setAttribute('si', 'cd-a');
 					 			$subjCand->setAttribute('rel', 'cd-a');
 					 		}
-					 		#print STDERR "sorted lemma subj: ".$subjCand->getAttribute('lem')." ord: ".$ord."\n";
+					 		#print STDERR "sorted lemma subj: ".$subjCand->getAttribute('lem')." ord: ".$ord."\n" if $verbose;
 					 	}
 					 	
 					 }
@@ -1109,7 +1110,7 @@ sub main{
 		# make sure no chunk has a sibling node, lexical transfer module doesn't like that either
 		my @nodesWithChunkSiblings = $sentence->findnodes('descendant::NODE[preceding-sibling::CHUNK]');			
 		foreach my $node (@nodesWithChunkSiblings)
-		{		# print STDERR "node sibl: ".$node->toString()."\n";
+		{		# print STDERR "node sibl: ".$node->toString()."\n" if $verbose;
 				# if CC or CS -> try to attach it to the following verb chunk, if that fails to the preceding
 				# if there's no verb chunk, attach it to the next higher chunk (probably an error by the tagger, but let's try to avoid 
 				# making the lexical transfer fail)
@@ -1265,7 +1266,7 @@ sub toEaglesTag{
 		}
 		
 		$eaglesTag = $pos."0"."$gen$num$fun";	
-		#print STDERR "feat: $eaglesTag\n";
+		#print STDERR "feat: $eaglesTag\n" if $verbose;
 	}
 	
 	#determiners
@@ -1290,7 +1291,7 @@ sub toEaglesTag{
 			($pno) = ($info =~ m/pno=(.)/ );
 		}
 	    $eaglesTag = "$pos$per$gen$num$pno";	
-	    #print STDERR "feat: $eaglesTag\n";		
+	    #print STDERR "feat: $eaglesTag\n" if $verbose;		
 	}
 	
 	# nouns
@@ -1304,7 +1305,7 @@ sub toEaglesTag{
 	{ 
 		my ($gen, $num)= ($info =~ m/gen=(.)\|num=(.)/ );
 		my ($nptype) = ($info =~ m/np=(..)/ );
-		 #print STDERR "feat: $gen, $num, $info\n";	
+		 #print STDERR "feat: $gen, $num, $info\n" if $verbose;	
 		if($gen eq 'c')
 		{
 			$gen = '0';
@@ -1323,7 +1324,7 @@ sub toEaglesTag{
 		{
 			 $eaglesTag = "$pos$gen$num"."000";	
 		}
-	    #print STDERR "feat: $eaglesTag, $info\n";		
+	    #print STDERR "feat: $eaglesTag, $info\n" if $verbose;		
 	}
 
 	# verbs
@@ -1363,7 +1364,7 @@ sub toEaglesTag{
 		}
 		
 	   $eaglesTag = "$pos$mod$ten$per$num$gen";	
-	   #print STDERR "feat: $eaglesTag\n";		
+	   #print STDERR "feat: $eaglesTag\n" if $verbose;		
 	}
 	
 	#pronouns que PR0CN000 
@@ -1411,7 +1412,7 @@ sub toEaglesTag{
 		}
 		
 		$eaglesTag = "$pos$per$gen$num$cas$pno$polite";
-		#print STDERR "feat pronoun: $eaglesTag\n";		
+		#print STDERR "feat pronoun: $eaglesTag\n" if $verbose;		
 	}
 	
     #prepositions
@@ -1432,7 +1433,7 @@ sub toEaglesTag{
 			$gen = "0";
 		}
 		$eaglesTag = "$pos$form$gen$num";
-		#print STDERR "feat: $eaglesTag\n";	
+		#print STDERR "feat: $eaglesTag\n" if $verbose;	
 	}
 	# other cases
 	else
@@ -1475,7 +1476,7 @@ sub isCongruent{
 				return 1;
 			}
 		}
-		#print STDERR "parentnode: ".$parentNode->toString."\n";
+		#print STDERR "parentnode: ".$parentNode->toString."\n" if $verbose;
 		my $verbMI = $parentNode->getAttribute('mi');
 		my $verbPerson = substr ($verbMI, 4, 1);
 		my $verbNumber = substr ($verbMI, 5, 1);
@@ -1615,7 +1616,7 @@ sub isCongruent{
 #	my $verbform = $parentNode->getAttribute('form');
 #	my $nounform = $subjNode->getAttribute('form');
 #	my $nounmi = $subjNode->getAttribute('mi');
-#	print STDERR "$nounform:$verbform  verbprs:$verbPerson, verbnmb:$verbNumber, nounPrs:$nounPerson, nounNumb:$nounNumber, nounMI: $nounmi\n";
+#	print STDERR "$nounform:$verbform  verbprs:$verbPerson, verbnmb:$verbNumber, nounPrs:$nounPerson, nounNumb:$nounNumber, nounMI: $nounmi\n" if $verbose;
 	
 		return ($nounPerson =~ $verbPerson && $nounNumber eq $verbNumber);
 	}
@@ -1629,7 +1630,7 @@ sub isCongruent{
 sub getFiniteVerb{
 	my $verbchunk = $_[0];
 	
-	#print STDERR "verbchunk: ".$verbchunk->toString();
+	#print STDERR "verbchunk: ".$verbchunk->toString() if $verbose;
 	# finite verb is the one with a person marking (1,2,3)
 	# case: only finite verb in chunk
 	my @verb = $verbchunk->findnodes('child::NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1"))][1]');
@@ -1648,9 +1649,9 @@ sub getFiniteVerb{
 		{
 		#get sentence id
 		my $sentenceID = $verbchunk->findvalue('ancestor::SENTENCE/@ord');
-		print STDERR "finite verb not found in sentence nr. $sentenceID: \n ";
-		print STDERR $verbchunk->toString();
-		print STDERR "\n";
+		print STDERR "finite verb not found in sentence nr. $sentenceID: \n " if $verbose;
+		print STDERR $verbchunk->toString() if $verbose;
+		print STDERR "\n" if $verbose;
 			return -1;
 		}
 	}
@@ -1726,8 +1727,8 @@ sub getHeadNoun{
 			}
 			else
 			{   #get sentence id
-				print STDERR "Head noun not found in: \n";
-				print STDERR $parentchunk->toString()."\n";
+				print STDERR "Head noun not found in: \n" if $verbose;
+				print STDERR $parentchunk->toString()."\n" if $verbose;
 				return 0;
 			}
 		}
@@ -1791,13 +1792,13 @@ sub attachCSToCorrectHead{
 			my $parentord = $currentParent->getAttribute('ord');
 		
 			my @sequence = sort {$a<=>$b} keys %nodeHash;
-			#print STDERR "@sequence\n length ".scalar(@sequence)."\n";
+			#print STDERR "@sequence\n length ".scalar(@sequence)."\n" if $verbose;
 			my $isRelClause=0;
 			
 			for (my $i=$csord+1; $i<=scalar(@sequence);$i++)
 			{
 				my $node = $nodeHash{$i};
-				#print STDERR "i: $i ".$node->getAttribute('form')."\n";
+				#print STDERR "i: $i ".$node->getAttribute('form')."\n" if $verbose;
 				if($node && $node->getAttribute('pos') eq 'pr'){
 					$isRelClause =1;
 				}
@@ -1814,11 +1815,11 @@ sub attachCSToCorrectHead{
 					}
 				}
 			}
-			#print STDERR  "foll verb: ".$followingMainVerb->getAttribute('form')."\n";
-			#print STDERR  "current verb: ".$currentParent->getAttribute('form')."\n";
+			#print STDERR  "foll verb: ".$followingMainVerb->getAttribute('form')."\n" if $verbose;
+			#print STDERR  "current verb: ".$currentParent->getAttribute('form')."\n" if $verbose;
 			if($followingMainVerb && !$followingMainVerb->isSameNode($currentParent))
 			{
-				#print STDERR "foll verb: ".$followingMainVerb->toString();
+				#print STDERR "foll verb: ".$followingMainVerb->toString() if $verbose;
 				#if verb is descendant of cs, first attach verb to head of cs, then attach cs to verb 
 				# otherwise we get a hierarchy request err
 				if(&isAncestor($followingMainVerb,$cs))
@@ -1892,13 +1893,13 @@ sub attachNewChunkUnderChunk{
 
     if($newChunk && $parent)
     {
-		#print STDERR "parent node before ". $parent->toString() . "\n";
-		#print STDERR "parent nodeName before ". $parent->nodeName . "\n";
+		#print STDERR "parent node before ". $parent->toString() . "\n" if $verbose;
+		#print STDERR "parent nodeName before ". $parent->nodeName . "\n" if $verbose;
 		if ($parent->nodeName eq 'NODE') {
-			#print STDERR "new chunk" . $newChunk->toString(). " within NODE ". $parent->toString() ." has to be appended to a higher CHUNK\n";
+			#print STDERR "new chunk" . $newChunk->toString(). " within NODE ". $parent->toString() ." has to be appended to a higher CHUNK\n" if $verbose;
 			$parent = @{$parent->findnodes('ancestor::CHUNK[1]')}[0];
 		}
-		#print STDERR "parent node after ". $parent->toString() . "\n";
+		#print STDERR "parent node after ". $parent->toString() . "\n" if $verbose;
 		if($parent)
 		{
 			$parent->appendChild($newChunk);
@@ -1953,7 +1954,7 @@ sub model2{
 				# exclude certain words that may occur at the end of the lemma in locutions (e.g. echar_de_menos) -> we don't want to split -os in this case!
 				if($eaglesTag =~ /^V.[GNM]/ and $word !~ /parte|frente|adelante|base|menos$/ and $word =~ /(me|te|nos|os|se|[^l](la|las|lo|los|le|les))$/ and $word != /_/)
 				{
-					print STDERR "clitics in verb $lem: $word\n";
+					print STDERR "clitics in verb $lem: $word\n" if $verbose;
 					my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
 					if ($clstr !~ /^$/)	# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
 					{
@@ -1967,10 +1968,10 @@ sub model2{
  				 # often: 'se fue' -> fue tagged as 'ser', VSIS3S0 -> change to VMIS3S0, set lemma to 'ir'
 			     if($eaglesTag =~ /VSIS[123][SP]0/ && $lem eq 'ser'){
 			     	my $precedingWord = $docHash{$sentenceId.":".($id-1)};
-			     	#print STDERR "preceding of fue: ".$precedingWord->getAttribute('lem')."\n";
+			     	#print STDERR "preceding of fue: ".$precedingWord->getAttribute('lem')."\n" if $verbose;
 			     	if($precedingWord && $precedingWord->getAttribute('lem') eq 'se'){
 			     		$eaglesTag =~ s/^VS/VM/ ;
-			     		#print STDERR "new tag: $eaglesTag\n";
+			     		#print STDERR "new tag: $eaglesTag\n" if $verbose;
 			     		$lem = 'ir';
 			     	}
 			     }
@@ -2041,14 +2042,14 @@ sub splitCliticsFromVerb{
 	{
 		$vfcl[0] = $1;
 		$vfcl[1] = $2;
-		print STDERR "verb gerund $vfcl[0] ; clitics $vfcl[1]\n";
+		print STDERR "verb gerund $vfcl[0] ; clitics $vfcl[1]\n" if $verbose;
 	}
 	# infinitive
 	elsif ($vtag =~ /V.N/ and $word =~ /(.*r)([^r]+)/)
 	{
 		$vfcl[0] = $1;
 		$vfcl[1] = $2;
-		print STDERR "verb infinitive $vfcl[0] ; clitics $vfcl[1]\n";
+		print STDERR "verb infinitive $vfcl[0] ; clitics $vfcl[1]\n" if $verbose;
 	}
 	# imperative
 	elsif ($vtag =~ /V.M/)
@@ -2074,7 +2075,7 @@ sub splitCliticsFromVerb{
 		elsif ($vtag =~ /V.M01P0/) {
 			$vend = "mos";
 		}
-		print STDERR "$vtag verb $vlem form ends in $vend\n";
+		print STDERR "$vtag verb $vlem form ends in $vend\n" if $verbose;
 		if ($word =~ /(.*?$vend)((me|te|nos|os|se|la|las|lo|los|le|les)+)$/)
 		{
 			$vfcl[0] = $1;
@@ -2085,7 +2086,7 @@ sub splitCliticsFromVerb{
 			$vfcl[0] = $word;
 			$vfcl[1] = "";
 		}		
-		print STDERR "verb imperative $vfcl[0] ; clitics $vfcl[1]\n";
+		print STDERR "verb imperative $vfcl[0] ; clitics $vfcl[1]\n" if $verbose;
 	}
 	return $vfcl[1];	# only return a single variable, the clitic string
 }
@@ -2125,7 +2126,7 @@ sub createAppendCliticNodes{
 	my $clitics = &getClitics($clstr);
 	foreach my $c (@{$clitics})
 	{
-		print STDERR "$c\n";
+		print STDERR "$c\n" if $verbose;
 		my $cliticNode = XML::LibXML::Element->new( 'NODE' );
 		$sentence->appendChild($cliticNode);
 		$cliticNode->setAttribute( 'ord', $clid ); # TODO new id...
@@ -2135,10 +2136,10 @@ sub createAppendCliticNodes{
 		$cliticNode->setAttribute( 'cpos', "p" );
 		$cliticNode->setAttribute( 'head', $verbid );	# head of clitics is the verb itself
 		my $cleaglesTag = $mapCliticToEaglesTag{$c};
-		print STDERR "eagles tag for clitic $c : $cleaglesTag\n";
+		print STDERR "eagles tag for clitic $c : $cleaglesTag\n" if $verbose;
 		my $clrel = &getCliticRelation($cleaglesTag);
 		$cliticNode->setAttribute( 'rel', $clrel );	# TODO rel = cd|ci|creg? refl?
-		print STDERR "possible relation for clitic $c : $clrel\n";
+		print STDERR "possible relation for clitic $c : $clrel\n" if $verbose;
 		$cliticNode->setAttribute( 'mi', $cleaglesTag );
 		my $clkey = "$scount:$clid";
 		$docHash{$clkey}= $cliticNode;
@@ -2156,13 +2157,13 @@ sub isLastNode{
 	foreach my $node ($sentence->findnodes('descendant::NODE'))
 			{
 				my $key = $node->getAttribute('ord');
-				#print STDERR $node->getAttribute('form')."key: $key\n";
+				#print STDERR $node->getAttribute('form')."key: $key\n" if $verbose;
 				$nodeHash{$key} = $node;
 			}
 			my $nodeord = $node->getAttribute('ord');
 		
 			my @sequence = sort {$a<=>$b} keys %nodeHash;			
-			#print STDERR "last node: ".@sequence[0]."n";
+			#print STDERR "last node: ".@sequence[0]."n" if $verbose;
 			return ( scalar(@sequence)>1 && $nodeHash{@sequence[-1]}->isSameNode($node) );
 			
 }
@@ -2180,7 +2181,7 @@ sub moveTopNodeUnderChunk{
 		$sentence->appendChild($firstverbchunk);
 		$firstverbchunk->appendChild($topnode);
 		$firstverbchunk->setAttribute('si', 'top');
-		print STDERR "moved verb chunk to top in sentence: $sentenceId\n";
+		print STDERR "moved verb chunk to top in sentence: $sentenceId\n" if $verbose;
 	}
 	else	
 	{
@@ -2193,7 +2194,7 @@ sub moveTopNodeUnderChunk{
 			my $newtopnode = @{$firstAnyChunk->findnodes('child::NODE[1]')}[0];
 			$newtopnode->appendChild($topnode);
 			$firstAnyChunk->setAttribute('si', 'top');
-			print STDERR "moved non-verbal chunk to top in sentence: $sentenceId\n";
+			print STDERR "moved non-verbal chunk to top in sentence: $sentenceId\n" if $verbose;
 		}
 		# if no chunk: create an artificial chunk (otherwise lexical module will crash!)
 		elsif($topnode)
@@ -2204,7 +2205,7 @@ sub moveTopNodeUnderChunk{
 			$dummyChunk->setAttribute('ord', $topnode->getAttribute('ord'));
 			$sentence->appendChild($dummyChunk);
 			$dummyChunk->appendChild($topnode);
-			print STDERR "inserted dummy chunk as head in sentence: $sentenceId\n";
+			print STDERR "inserted dummy chunk as head in sentence: $sentenceId\n" if $verbose;
 		}
 	}
 	# check if topnode is now chunk, if not, repeat
