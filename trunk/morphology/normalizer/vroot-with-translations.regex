@@ -538,6 +538,7 @@
 | [ {kana} "[" "VRoot" "]" "[" "=quemar" "]" ] :  {kaña}
 | [ {k'ancha} "[" "VRoot" "]" "[" "=alumbrar" "]" ] :  {k'ancha}
 | [ {kancha} "[" "VRoot" "]" "[" "=cercar" "]" ] :  {kancha}
+| [ {kanchi} "[" "VRoot" "]" "[" "=alumbrar" "]" ] :  {kanchi}
 | [ {kani} "[" "VRoot" "]" "[" "=ladrar,morder" "]" ] :  {kani}
 | [ {kañi} "[" "VRoot" "]" "[" "=pagar" "]" ] :  {kañi}
 | [ {kanka} "[" "VRoot" "]" "[" "=asar" "]" ] :  {kanka}
@@ -1725,7 +1726,6 @@
 | [ {wakha} "[" "VRoot" "]" "[" "=desmoronar" "]" ] :  {wakha}
 | [ {waki} "[" "VRoot" "]" "[" "=negociar,comparar" "]" ] :  {waki}
 | [ {waklla} "[" "VRoot" "]" "[" "=caer_a_un_lado" "]" ] :  {waklla}
-| [ {wapsi} "[" "VRoot" "]" "[" "=evaporar,fallar" "]" ] :  {waksi}
 | [ {wakta} "[" "VRoot" "]" "[" "=regalar" "]" ] :  {wakta}
 | [ {wakwa} "[" "VRoot" "]" "[" "=brotar,salir_atropelladamente" "]" ] :  {wakwa}
 | [ {wallqa} "[" "VRoot" "]" "[" "=sobacar,llevar_bajo_el_brazo" "]" ] :  {wallqa}
@@ -1744,6 +1744,8 @@
 | [ {wañu} "[" "VRoot" "]" "[" "=morir" "]" ] :  {wañu}
 | [ {wanya} "[" "VRoot" "]" "[" "=bostezar" "]" ] :  {wanya}
 | [ {wapsi} "[" "VRoot" "]" "[" "=evaporar" "]" ] :  {wapsi}
+| [ {wapsi} "[" "VRoot" "]" "[" "=evaporar,fallar" "]" ] :  {waksi}
+| [ {wapsi} "[" "VRoot" "]" "[" "=evaporar,fallar" "]" ] :  {waspi}
 | [ {wap'u} "[" "VRoot" "]" "["  "=tragar,devorar" "]" ] : {wap'u}
 | [ {wapya} "[" "VRoot" "]" "[" "=evaporar" "]" ] :  {wapya}
 | [ {waqa} "[" "VRoot" "]" "[" "=llorar,defender" "]" ] :  {waqa}
@@ -2113,8 +2115,7 @@
 | [ {suqsu} "[" "VRoot" "]" "[" "=tragar" "]" ] : {suqsu} 
 | [ {suqu} "[" "VRoot" "]" "[" "=libar" "]" ] : {suqu} 
 | [ {surump'i} "[" "VRoot" "]" "[" "=ofuscar" "]" ] : {surump'i} 
-| [ {suru} "[" "VRoot" "]" "[" "=emanar" "]" ] : {suru} 
-| [ {takarpu} "[" "VRoot" "]" "[" "=estacar,plantar" "]" ] : {takarpu} 
+| [ {suru} "[" "VRoot" "]" "[" "=emanar" "]" ] : {suru}  
 | [ {tantara} "[" "VRoot" "]" "[" "=separar" "]" ] : {tantara} 
 | [ {t'añu} "[" "VRoot" "]" "[" "=achatar" "]" ] : {t'añu} 
 | [ {tapara} "[" "VRoot" "]" "[" "=doblar,plegar" "]" ] : {tapara} 

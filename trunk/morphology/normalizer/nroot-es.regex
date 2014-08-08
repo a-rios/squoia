@@ -103,6 +103,7 @@
 | [ {naranja} "["  "NRootES"  "]" ] :   {laranha}
 | [ {lado} "["  "NRootES"  "]" ] :   {laru}
 | [ {lado} "["  "NRootES"  "]" ] :   {law}
+| [ {ley} "["  "NRootES"  "]" ] :   {ley}
 | [ {libro} "["  "NRootES"  "]" ] :   {liwru}
 | [ {mar} "["  "NRootES"  "]" ] :   {lamar}
 | [ {plaza} "["  "NRootES"  "]" ] :   {lasa}
@@ -119,6 +120,7 @@
 | [ {miércoles} "["  "NRootES"  "]" ] :   {mirkulis}
 | [ {nación} "["  "NRootES"  "]" ] :   {nasyun}
 | [ {naranja} "["  "NRootES"  "]" ] :   {naranqa}
+| [ {pneumonia} "["  "NRootES"  "]" ] :   {niwmuniya}
 | [ {novia} "["  "NRootES"  "]" ] :   {nubiya}
 | [ {noviembre} "["  "NRootES"  "]" ] :   {nubimbri}
 | [ {noviembre} "["  "NRootES"  "]" ] :   {nuvimbri}
