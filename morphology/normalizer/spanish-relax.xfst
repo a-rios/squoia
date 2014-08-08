@@ -293,7 +293,7 @@
 
 
        #define AmbiRules EVID1 .o. EVID2 .o. EVID3 .o. EVID4;
-	define AmbiRules SI1 .o. SI2 .o. MI1 .o. MI2 .o. MI3 .o. CHA1 .o. CHA2 .o. CHA3;
+	define AmbiRules SI1 .o. SI2 .o. MI1 .o. MI2 .o. MI3 .o. CHA1 .o. CHA2;
 
 ########################################################################
 ########################################################################
@@ -382,7 +382,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
       define NROOT2 @re"spanish-nouns2.regex" .o. SpanOrtho; #g-z
       define NROOT [NROOT1|NROOT2];
       
-     # define NROOT @re"test.regex" .o. SpanOrtho;
+      #define NROOT @re"test.regex" .o. SpanOrtho;
       
 
 
@@ -416,7 +416,7 @@ define IGRules IGverb1 .o. IGverb2 .o. IGas1 .o. IGas2;
        define VtoNfinal DB @re"v-n-final.regex" ;
        define VtoNfinalTrans DB @re"v-n-transitive.regex" ;
        define Relational [ "[" "--" "]" {n} "[" "NDeriv" "]" "[" "+Rel" "]" ] : {n};
-       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,5} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower .o. QuechuaOrtho .o.UpperCase;
+       define VerbalSuffixesBeforeNS  VerbRulesUpper .o. [V=V=1^{0,3} (HonAff) V=V=2^{0,5} (HonAff) (V=V=1) (reflexive) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] .o. VerbRulesLower .o. QuechuaOrtho .o.UpperCase;
 
        #------------------------#
        # nominalized verbs:     #
@@ -496,8 +496,8 @@ define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%]
 # case suffixes:  tapi, pita, manta, tamanta, mantaq, ntin, paq, tata (false double accusatives: contratatan -> not contra-ta-ta!), -niray -> not nira -y (poss), nkaman -> not -nka-man but n-kama-n
 define CASE [~$[ ["@TA"|"+Loc"%] ] %["^DB"%] %["--"%] [{pi}|{ta}]%[ | "+Dat_Ill"%] %["^DB"%] %["--"%] {ta}%[ | "@TA" %["^DB"%] %["--"%]{manta}%[ | "+Abl"%] %["^DB"%] "@GENq" | [{ntin}|{nti}] %["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m] %[ | "+Gen"%] "@PA" %["^DB"%] "@GENq" | "+Posi"%] %["^DB"%] ["@GENq"| %["--"%] {ta} %[ ] | "@PLbol" ?* "@PA" | {nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] {y}%[ | {nka}%["Cas"%] %["+Distr"%] %["^DB"%] %["--"%]{man}%[ ] ];
 
-# verbal derivation, nyari, qti,  sqama, sqan, rqan (sqas ?), sqay, sqaman, sqa+fut, sqaykiman, rqa/sqa-Imp,  chachaq -> not Fact+Vdim!, -ycha ->not +Inf+Dim!
-define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" | "+Fact"%] %["--"%] {cha} %["VDeriv" | "+Inf"%] %["--"%] {cha} %["NDeriv"%] %["+Dim" ]];
+# verbal derivation, nyari, qti,  sqama, sqan, rqan (sqas ?), sqay, sqaman, sqa+fut, sqaykiman, rqa/sqa-Imp,  chachaq -> not Fact+Vdim!, -ycha ->not +Inf+Dim! , -rpari (not -rpa-ri)
+define VERBMORPHS [~$["+Cont"?*"+Inch" | "+Ag"?*"+Char" | "+3.Sg.Subj.IPst"?*"+DirE_Emph" | "+3.Sg.Subj.IPst"?*"+DirE" | "+3.Sg.Subj.NPst"%] %["^DB"%] %["--"%][n|m]%["Amb"  | ["+IPst"|"+3.Sg.Subj.IPst"]?*["+1.Sg.Subj.Pot"|"+Pot"] | ["+IPst"|"Tns_VPers"]?*["+3.Sg.Subj.Fut"] | "+1.Sg.Subj_2.Sg.Obj.Fut"?*"+Pot" | ["Tns"|"VPers_Tns"] ?* "@IMP" | "+Fact"%] %["--"%] {cha} %["VDeriv" | "+Inf"%] %["--"%] {cha} %["NDeriv"%] %["+Dim" | {rpa} %["VDeriv"%] %["+Dir"%] %["--"%] {ri} %["VDeriv" ]];
 
 # verbal derivation 2: paku, pamu, yman, ykacha, yuq, saq (#saq, if -sa is allowed as progressive allomorph (Bolivian Quechua) TODO: allow and disambiguate later??), ptin (#-pti -> Ayacuchano, but -n as DirE, only Cuzqueño), stin (-stin, not as -sti -n (3.Sg.Subj, or DirE))
 define VERBMORPHS2  [~$[%["+Rep"%] %["^DB"%] %["--"%][{ku}|{ka}]"+ku+" | "+Rep"%] %["--"%]{mu} | "+2.Sg.Subj.Imp"?*"+Pot" | "+Inf"%] %["--"%] {kacha} %["VS"%] %["+Sml" | {yka} "+yku+" %["VDeriv"%] %["+Aff"%] "@YKU" %["--"%] {cha} %[ |"+yu+" %["VDeriv"%] %["+Aff"%] "@YKU" %["^DB"%] %["--"%] q %["NS"  | "@SAPROG"?*"+Ag" | {stin}%["NS"%] %["+SS_Sim"%] %["^DB"%] %["--"%] [n|m] %[ | {pti}%["NS"%] %["+DS"%] "@PTI" %["^DB"%] %["--"%] [n|m] %["Amb" ]];
@@ -528,7 +528,7 @@ define FeatRestr [NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. 
 define Wort IGRules .o. NounRulesUpper .o. [Noun|Verb|ADVERBS|CONJUNCTIONS|PREPOSITIONS] .o. NounRules .o. AmbiRules ;
 
 read regex Cleanup2  .o. FeatRestr .o. Wort  .o. Cleanup1 .o. Accent .o. UpperCase;
-#read regex Cleanup2 .o. Wort  .o. Accent .o. UpperCase;
+#read regex Cleanup2 .o. Wort  .o. Cleanup1 .o. Accent .o. UpperCase;
 #read regex Cleanup2 .o. Wort  .o. Cleanup1 .o. Accent;
 
 
