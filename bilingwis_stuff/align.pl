@@ -74,7 +74,14 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 				my $tokenID_es = $w_es->getAttribute('n');
 				# check if there's a Quechua word that starts with the exactly same sequence of characters (only if $wordform_es > 3) (proper names & loans)
 				# proper names in Spanish: mwe with '_' -> split
-				my @wordforms_es = split('_', $wordform_es);
+				my @wordforms_es;
+				if($pos_es =~ /^NP/){
+					@wordforms_es = split('_', $wordform_es);
+				}
+				# don't split prepositions and locucions
+				else{					
+					push(@wordforms_es, $wordform_es);	
+				}
 				#print "wordforms: @wordforms_es  ".@wordforms_es."\n";
 				foreach my $wordform_es (@wordforms_es){
 					my $xpath_to_quz_cand;
@@ -578,6 +585,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 	}# if $quz_segment
 } # foreach $segment_es
 
+#### FOR DEBUGGING, print aligned words
 #print "################################################\n";
 #foreach my $es_id (sort id_sort keys %alignments){
 #	my $xpath_to_es_w = 'descendant::t[@n="'.$es_id.'"]';
