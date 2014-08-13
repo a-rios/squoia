@@ -1561,6 +1561,42 @@
    <e><p><l>economía_mundial</l><r>Weltwirtschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>equipo_nacional</l><r>Nationalmannschaft</r></p><par n='NC_N_NUM_FEM'/></e>
 </section>
+<section id="Nouns-diario" type="standard">
+   <e><p><l>agravio</l><r>Beeinträchtigung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>agravio</l><r>Beleidigung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>alerta</l><r>Hut</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>alerta</l><r>Warnung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>alza</l><r>Anstieg</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>alza</l><r>Aufschwung</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>alza</l><r>Hebel</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>camélido</l><r>Kamel</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- Camelidae -->
+   <e><p><l>cómputo</l><r>Berechnung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>designación</l><r>Bezeichnung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>designación</l><r>Nominierung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>formalización</l><r>Ausfertigung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>formalización</l><r>Formalisierung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>funcionamiento</l><r>Betrieb</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>funcionamiento</l><r>Funktionsweise</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>gasoducto</l><r>Erdgasleitung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>gasoducto</l><r>Ferngasleitung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>liguilla</l><r>Liga</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- die kleine Liga? Unterliga? -->
+   <e><p><l>normatividad</l><r>Normativität</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>nosocomio</l><r>Krankenhaus</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>operativo</l><r>Einsatzkommando</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>perjuicio</l><r>Beeinträchtigung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>perjuicio</l><r>Benachteiligung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>perjuicio</l><r>Schaden</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>pollería</l><r>Geflügelhandlung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>postergación</l><r>Aufschub</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>puntaje</l><r>Punktzahl</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>quínoa</l><r>Quinoa</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- das Inkakorn, der Inkareis, der Perureis, die Reismelde, der Reisspinat -->
+   <e><p><l>quinoa</l><r>Quinoa</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>quinua</l><r>Quinoa</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>reasignación</l><r>Wiederzuweisung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>responsable</l><r>Verantwortliche</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>viceministro</l><r>Vizeminister</r></p><par n='NC_N_GENTRY_ERIN'/></e>
+
+</section>
 <section id="Nouns-diario-july" type="standard">
    <e><p><l>abastos</l><r>Proviant</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- abastos only in plural ? -->
    <e><p><l>anchoveta</l><r>peruanisch Sardelle</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -1602,26 +1638,43 @@
    <e><p><l>trámite</l><r>Formalität</r></p><par n='NC_N_NUM_FEM'/></e>
 </section>
 <section id="MWE-Nouns-diariodelcusco" type="standard">
+   <e><p><l>aeropuerto_internacional</l><r>international_Flughafen</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- TODO split -->
    <e><p><l>asamblea_popular</l><r>Volksversammlung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>asesor_legal</l><r>Rechtsberater</r></p><par n='NC_N_GENTRY_ERIN'/></e>
+   <e><p><l>ayuda_humanitaria</l><r>humanitär_Hilfe</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- TODO split -->
    <e><p><l>cadena_perpetua</l><r>lebenslänglich_Zuchthaus</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>calidad_de_vida</l><r>Lebensqualität</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>campo_de_juego</l><r>Spielfeld</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>director_general</l><r>Generaldirektor</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>director_técnico</l><r>technisch_Direktor</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- TODO split + gender -->
    <e><p><l>empresa_privada</l><r>Privatunternehmen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>exceso_de_velocidad</l><r>Geschwindigkeitsüberschreitung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>gobierno_central</l><r>Zentralregierung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>grupo_de_trabajo</l><r>Arbeitsgruppe</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>iniciativa_legislativa</l><r>Parlamentsinitiative</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>libertad_de_expresión</l><r>Redefreiheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>local_comercial</l><r>Geschäftsraum</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>medio_ambiente</l><r>Umwelt</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>medios_de_comunicación</l><r>Medien</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>organización_social</l><r>sozial_Einrichtung</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- TODO split -->
    <e><p><l>partido_político</l><r>Partei</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>patrimonio_cultural</l><r>Kulturgut</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>personal_docente</l><r>Lehrpersonal</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>presidencia_del_gobierno</l><r>Kanzleramt</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- Deutschland; kein Plural -->
    <e><p><l>procedimiento_administrativo</l><r>Verwaltungsverfahren</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>proyecto_de_ley</l><r>Gesetzesentwurf</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>punto_de_partida</l><r>Ausgangslage</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>recursos_hídricos</l><r>Wasserressourcen</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>recursos_públicos</l><r>öffentliche Mittel</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- plural -->
    <e><p><l>representante_del_gobierno</l><r>Regierungsvertreter</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>servicio_público</l><r>öffentlich_Amt</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- split -->
+   <e><p><l>servicio_público</l><r>Staatsdienst</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>situación_económica</l><r>Wirtschaftslage</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>situación_de_emergencia</l><r>Notfall</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>situación_de_emergencia</l><r>Notlage</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>terreno_de_juego</l><r>Spielplatz</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>trabajo_de_campo</l><r>Feldarbeit</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>violencia_familiar</l><r>häuslich_Gewalt</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- split -->
 </section>
 <section id="BabelNet-mOLIFde-Adjectives" type="standard">
    <e><p><l>abisal</l><r>abyssal</r></p><par n='AQ_ADJ'/></e>
@@ -4134,6 +4187,7 @@
    <e><p><l>desenfreno</l><r>Widerspenstigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desenfreno</l><r>Zügellosigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desengrase</l><r>Entfettung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>desenlace</l><r>Lösung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desensibilización</l><r>Desensibilisierung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desertificación</l><r>Desertifikation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>desertificación</l><r>Wüstenbildung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -26680,6 +26734,7 @@
    <e><p><l>profesión</l><r>Beruf</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>profesor</l><r>Lehrer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>profesor</l><r>Professor</r></p><par n='NC_N_GENTRY_ORIN'/></e>	<!-- gender -->
+   <e><p><l>profesorado</l><r>Lehrerschaft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>profeta</l><r>Prophet</r></p><par n='NC_N_75_STUDENT'/></e>	<!-- gender -->
    <e><p><l>profetisa</l><r>Prophetin</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>profiláctico</l><r>Kondom</r></p><par n='NC_N_56_TISCH'/></e>
@@ -30165,16 +30220,16 @@ undécimo
 	until then, it is better to have the digits printed out -->
    <!-- this doesn't work as the system analyses the numbers as Z and not AO
 	<e><re>[0-9]+</re><p><l>ª</l><r>x.</r></p><par n='AO_ADJ'/></e> --> 
-<!--   <e><p><l>antepenúltimo</l><r>drittletzt</r></p><par n='AO_ADJ'/></e> 
-   <e><p><l>enésimo</l><r>x-te</r></p><par n='AO_ADJ'/></e> 
-   <e><p><l>infinitésimo</l><r>unendlichst</r></p><par n='AO_ADJ'/></e> 
-   <e><p><l>enésimo</l><r>zigst</r></p><par n='AO_ADJ'/></e> 
-   <e><p><l>penúltimo</l><r>vorletzt</r></p><par n='AO_ADJ'/></e> 
-   <e><p><l>penúltimo</l><r>zweitletzt</r></p><par n='AO_ADJ'/></e> 
- from FL_AO.list
+<!-- from FL_AO.list
 veintitantos
 veintitodos
 -->
+   <e><p><l>antepenúltimo</l><r>drittletzt</r></p><par n='AO_ADJ'/></e> 
+   <e><p><l>enésimo</l><r>x-te</r></p><par n='AO_ADJ'/></e> 
+   <e><p><l>enésimo</l><r>zigst</r></p><par n='AO_ADJ'/></e> 
+   <e><p><l>infinitésimo</l><r>unendlichst</r></p><par n='AO_ADJ'/></e> 
+   <e><p><l>penúltimo</l><r>vorletzt</r></p><par n='AO_ADJ'/></e> 
+   <e><p><l>penúltimo</l><r>zweitletzt</r></p><par n='AO_ADJ'/></e> 
    <e><p><l>último</l><r>letzt</r></p><par n='AO_ADJ'/></e> 
 <!-- Verb past participles as adjectives: VMP00[PS][FM] => ADJ  TODO: paradigm with VMPP|AQ ? not possible for all verbs because of lemma form: abrir/abierto; but abulta(r|do) -->
    <e><p><l>abrir</l><r>offen<s n="molif"/>90</r></p><par n='VMPP_ADJ'/></e> 
@@ -36347,7 +36402,6 @@ de_cara_a	SPS00
 después_de	SPS00
 
 en_cuanto_a	SPS00
-en_favor_de	SPS00
 en_la_necesidad_de	SPS00
 en_las_cercanías_de	SPS00
 en_lugar_de	SPS00
@@ -36506,6 +36560,8 @@ sin_perjuicio_de	SPCMS
    <e><p><l>en_cuanto_a</l><r>betreffend_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>en_el_interior_de</l><r>im Innen<s n="cas"/>Gen</r></p><par n='PREP'/></e>
    <e><p><l>en_el_interior_de</l><r>im Innen_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>en_favor_de</l><r>zugunsten von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- zugunsten von, zu Gunsten von + Dat -->
+   <e><p><l>en_favor_de</l><r>zugunsten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>en_lugar_de</l><r>statt<s n="cas"/>Dat</r></p><par n='PREP'/></e>
    <e><p><l>en_lugar_de</l><r>statt_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>en_medio_de</l><r>mitten in<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- DE "multitoken" without "_" so that the whole prepositional expression is generated/printed; TODO change outputGerman/cleanup -->

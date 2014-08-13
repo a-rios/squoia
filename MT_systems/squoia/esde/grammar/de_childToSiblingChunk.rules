@@ -29,3 +29,16 @@ my.type=finVerb&&chunkparent.type=/subConj/			comment="finVerb from subConj"
 ###############################
 
 my.type=finVerb&&chunkparent.type=/NP-relpro/			comment="finVerb from NP-relpro"
+
+
+###############################
+# Preposition + Subordination #
+###############################
+
+my.type=/VP/&&my.subord=yes&&chunkparent.type=/PP/		comment="subord after preposition"
+
+###############################
+# Preposition + ZU Infinitive #
+###############################
+
+my.type=/VP/&&my.zu=yes&&chunkparent.type=/PP/			comment="zu+Inf after preposition"

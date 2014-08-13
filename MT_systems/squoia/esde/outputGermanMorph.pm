@@ -651,7 +651,7 @@ sub genMorphGenInput{
 	# closed classes without flexion
 	# Adverbs: ADV
 	# Conjunctions: KON, KOUS
-	# Prepositions: APPR; TODO: what about the contraction form APPRART?
+	# Prepositions: APPR; see above for the contraction forms: APPRART
 	# Pronouns: PWAV
 	# Punctuation signs: $. and $, and $(
 	# Separable verb prefix: PTKVZ
@@ -659,7 +659,15 @@ sub genMorphGenInput{
 	elsif ($pos =~ /ADV/) {		# TODO map the pos of closed classes from molif to smor? do we really need this?
 		$morphStr = &genADV($format,$lem);
 	}
-	elsif ($pos =~/ADV|KON|KOUS|APPR|\$\.|\$,|\$\(|PTKVZ|PWAV/) {
+	elsif ($pos =~ /APPR/) {
+		my $parentchunk = $node->parentNode;
+		if ($parentchunk->hasAttribute('prefix')) {
+			$morphStr =~ s/^([aeiouäöü])/r\1/;
+			$morphStr = $parentchunk->getAttribute('prefix') . $morphStr;
+			print STDERR "prefix added to preposition: $morphStr\n" if $verbose;
+		}
+	}
+	elsif ($pos =~/KON|KOUS|APPR|\$\.|\$,|\$\(|PTKVZ|PWAV/) {
 		#already lemma_pos
 	}
 	# Dates: [W] (not CARD nor NN because dates are automatically mapped to [W], the lemma written with digits and placeholders)

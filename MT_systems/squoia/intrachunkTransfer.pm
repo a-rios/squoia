@@ -47,7 +47,7 @@ sub main{
 	#			print STDERR "result $result\n" if $verbose;
 				if ($result) {
 					#find ancestor within chunk
-					#print STDERR "$descCond ++ $ancCond\n" if $verbose;
+					print STDERR "\n$descCond ++ $ancCond\n" if $verbose;
 					my @ancConditions = squoia::util::splitConditionsIntoArray($ancCond);
 					my $ancestor = $node;
 					my $found = 0;
@@ -63,8 +63,8 @@ sub main{
 	#					print STDERR $ancestor->nodeName."\n" if $verbose;
 						my $configline = $intraConditions{$condpair};
 						my ($descAttr,$ancAttr,$direction,$wmode) = split(/\t/,$configline);
-						#print STDERR "attr from to: $descAttr, $ancAttr\n\n" if $verbose;
-	#					print STDERR "direction $direction\n" if $verbose;
+						print STDERR "attr from to: $descAttr, $ancAttr\n" if $verbose;
+						print STDERR "direction $direction\n" if $verbose;
 						if ($direction eq "up") {
 							&propagateAttr($node,$descAttr,$ancestor,$ancAttr,$wmode,$verbose);
 						}
