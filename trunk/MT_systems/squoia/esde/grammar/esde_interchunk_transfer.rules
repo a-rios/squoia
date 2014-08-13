@@ -38,4 +38,15 @@ xpath{//CHUNK[@type="NP" and NODE[@pos="PRF"]]}		delete		xpath{//CHUNK[@type="VP
 #my.type=/PP/&&child.slem=por	agent			my.type=/VP/&&child.pos=/V.PP/		yes		parent		2to1		no-overwrite
 # --------------------------------------------------------------------------------------------------------------------------- #
 
+###############################
+# Preposition + Subordination #
+###############################
 
+# more general rule: PP dominates a VP (see below: prep + zuINF)
+#xpath{//CHUNK[@type="VP" and NODE/NODE[@pos=KOUS]]}	"da"	my.type=/PP/		prefix			parent		1to2		overwrite
+
+###############################
+# Preposition + ZU Infinitive #
+###############################
+# exception: preposition "para" is translated as "um ...zu+inf" and the preposition should stay "um" (and not "darum"!)
+my.type=/VP/			"da"			my.type=/PP/&&!(child.slem=para&&child.lem=um)		prefix			parent		1to2		overwrite
