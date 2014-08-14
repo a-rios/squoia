@@ -1062,6 +1062,12 @@
     </pardef>
 
   </pardefs>
+<section id="ahk-token-rules" type="standard">
+   <e><p><l>bimensualmente</l><r>alle zwei Monate</r></p><par n='RG_ADV'/></e> 
+   <e><p><l>principalmente</l><r>v. a.</r></p><par n='RG_ADV'/></e>
+   <e><p><l>principalmente</l><r>vor allem</r></p><par n='RG_ADV'/></e>
+   <e><p><l>trimestralmente</l><r>alle drei Monate</r></p><par n='RG_ADV'/></e> 
+</section>
 <section id="RGfromADJ-diariodelcusco" type="standard">
    <e><p><l>aparentemente</l><r>offensichtlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>aparentemente</l><r>scheinbar</r></p><par n='RG_ADJD'/></e>
@@ -35614,7 +35620,7 @@ aún_cuando	RG-->
    <e><p><l>tampoco</l><r>auch nicht</r></p><par n='RG_ADV'/></e> <!-- $$$ mwu ?-->
    <e><p><l>tanto</l><r>so viel<s n='compar'/>yes</r></p><par n='RG_ADV'/></e>	<!-- TODO compar -->
    <e><p><l>tan</l><r>so<s n='compar'/>yes</r></p><par n='RG_ADV'/></e>
-   <e><p><l>tarde</l><r>spät</r></p><par n='RG_ADV'/></e>
+   <e><p><l>tarde</l><r>spät</r></p><par n='RG_ADJD'/></e>
    <e><p><l>temprano</l><r>früh</r></p><par n='RG_ADV'/></e>
    <e><p><l>todavía</l><r>noch</r></p><par n='RG_ADV'/></e>
    <e><p><l>todo</l><r>völlig</r></p><par n='RG_ADV'/></e>
