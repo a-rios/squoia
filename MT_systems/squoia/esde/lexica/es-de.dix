@@ -35621,7 +35621,7 @@ aún_cuando	RG-->
    <e><p><l>tanto</l><r>so viel<s n='compar'/>yes</r></p><par n='RG_ADV'/></e>	<!-- TODO compar -->
    <e><p><l>tan</l><r>so<s n='compar'/>yes</r></p><par n='RG_ADV'/></e>
    <e><p><l>tarde</l><r>spät</r></p><par n='RG_ADJD'/></e>
-   <e><p><l>temprano</l><r>früh</r></p><par n='RG_ADV'/></e>
+   <e><p><l>temprano</l><r>früh</r></p><par n='RG_ADJD'/></e>
    <e><p><l>todavía</l><r>noch</r></p><par n='RG_ADV'/></e>
    <e><p><l>todo</l><r>völlig</r></p><par n='RG_ADV'/></e>
    <e><p><l>ya</l><r>mehr</r></p><par n='RG_ADV'/></e> <!-- ya no => nicht mehr -->
@@ -36150,6 +36150,7 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>por_tanto</l><r>deshalb</r></p><par n='CS_KOUS'/></e>
    <e><p><l>pues</l><r>da</r></p><par n='CS_KOUS'/></e> <!-- pues = da/denn ?-->
    <e><p><l>puesto_que</l><r>da</r></p><par n='CS_KOUS'/></e> 
+   <e><p><l>que</l><r>als</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>que</l><r>dass</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>según</l><r>je_nachdem_wie</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>si</l><r>wenn</r></p><par n='CS_KOUS'/></e> <!-- falls, wenn + subjuntivo=>konditional???-->

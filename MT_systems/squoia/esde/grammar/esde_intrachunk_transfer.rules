@@ -25,7 +25,7 @@ my.smi=/RN/		yes		my.type=/AVP/		neg		up		overwrite
 #my.smi=RG&&child.slem=que	compar		my.type=/AVP/		compar		up		overwrite
 
 my.smi=RG&&my.compar=yes	compar		my.type=/AVP/		compar		up		overwrite
-my.pos=ADJA			grad		xpath{//CHUNK[@type="AP" and CHUNK/NODE[@slem="más"]]}		Sup	down	overwrite
+my.pos=/ADJ/			grad		xpath{//CHUNK[(@type="AP" or @type="AVP") and CHUNK/NODE[@slem="más"]]}		Comp	down	overwrite
 my.smi=RG&&my.slem=más		delete		my.type=/AVP/		yes		down		overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
@@ -198,7 +198,7 @@ my.pos=/NN|ART|PPOSAT|PDAT|PIAT/	cas		my.type=/NP/&&my.si=cc&&my.cas=/./	cas		do
 
 # distinguish type of adjective: attribute (atr) to a predicate ADJD or modifier of a noun ADJA
 #my.pos=/ADJ/		pos			my.type=/NP|AP|PP/&&!(my.si=atr)		ADJA		down		overwrite
-my.pos=/ADJ/		pos			my.type=/NP/||(my.type=/VP/&&child.pos=/ADJ/)||(my.type=/C?AP/&&!(my.si=atr))	ADJA		down		overwrite
+my.pos=ADJ		pos			my.type=/NP/||(my.type=/VP/&&child.pos=/ADJ/)||(my.type=/C?AP/&&!(my.si=atr))	ADJA		down		overwrite
 
 # article/determiner/pronoun sets the flexion type of adjectives in the same chunk
 # overwrite for the case of "all/dies/jen"+possessive pronoun => like after possessive pronoun, i.e. mixed
