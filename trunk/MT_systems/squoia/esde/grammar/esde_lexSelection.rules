@@ -33,6 +33,9 @@ como	wie,als	k	xpath{self::NODE[@smi="CS" and ancestor::CHUNK[@type="CNP"]/CHUNK
 como	da	k	chunkparent.si=S
 como	als	d	chunkparent.type=VP
 
+que	dass	d	chunkparent.type=NP
+que	als	d	chunkparent.type=VP
+
 ################
 # Prepositions #
 ################
