@@ -572,7 +572,7 @@ $eslex{'preposition'}{'con_el_fin_de'}=[ '-paq'];
 $eslex{'preposition'}{'con_objeto_de'}=[ '-paq'];
 $eslex{'preposition'}{'con_el_objetivo_de'}=[ '-paq'];
 $eslex{'preposition'}{'con_lo_que_respecta_a'}=[ '-qa'];
-$eslex{'preposition'}{'de'}=[ '-pa', '-p', '-manta', '-man', '-ta', '-pi'];
+$eslex{'preposition'}{'de'}=[ '-pa', '-p', '-manta'];
 $eslex{'preposition'}{'de_al_lado_de'}=[ 'kinraynin'];
 $eslex{'preposition'}{'debajo_de'}=[ 'uran', 'uraynin'];
 $eslex{'preposition'}{'delante_de'}=[ 'ñawpa'];
@@ -630,37 +630,37 @@ $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 
 
 ##print hash:
-foreach my $section (keys %eslex){
-	print "sec: $section\n";
-	my $printed =0;
-	foreach my $lem (keys $eslex{$section}){
-		foreach my $quz (@{$eslex{$section}{$lem}} ){
-			if($quz =~ /^\+/){
-				print $lem."\t";
-				print "$quz, ";
-				$printed =1;
-			}
-			else{
-				$printed=0;
-			}
-			if($printed){print "\n";}
-		}
-	}
-}
-
-
-#print hash:
 #foreach my $section (keys %eslex){
 #	print "sec: $section\n";
-#	if($section eq 'conjunction'){
-#		foreach my $lem (keys $eslex{$section}){
-#			print $lem."\t";
-#			foreach my $quz (@{$eslex{$section}{$lem}} ){
+#	my $printed =0;
+#	foreach my $lem (keys $eslex{$section}){
+#		foreach my $quz (@{$eslex{$section}{$lem}} ){
+#			if($quz =~ /^\+/){
+#				print $lem."\t";
 #				print "$quz, ";
+#				$printed =1;
 #			}
-#			print "\n";
+#			else{
+#				$printed=0;
+#			}
+#			if($printed){print "\n";}
 #		}
 #	}
 #}
+
+
+#print hash:
+foreach my $section (keys %eslex){
+	print "sec: $section\n";
+	if($section eq 'adverb'){
+		foreach my $lem (keys $eslex{$section}){
+			print $lem."\t";
+			foreach my $quz (@{$eslex{$section}{$lem}} ){
+				print "$quz, ";
+			}
+			print "\n";
+		}
+	}
+}
 
 store \%eslex, 'lexicon-es-qu';
