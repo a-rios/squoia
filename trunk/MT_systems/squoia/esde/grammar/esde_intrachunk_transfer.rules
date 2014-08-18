@@ -184,6 +184,15 @@ my.smi=/D..FS/				"Fem.Sg"	my.smi=/NCFN/		mi		up	overwrite
 my.smi=/D..FS/&&parent.smi=/NCFN/	"Fem.Sg"	my.type=/NP|PP/		mi		up	overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
+#########
+# DATES #
+#########
+# el 27 de octubre => Am 27. Oktober
+my.pos=ART&&parent.smi=W	lem		my.type=date		am		down		overwrite
+my.smi=W&&my.slem=/\d+/&&child.pos=/ART/	sform		my.type=date		"."		down		concat
+
+my.pos=APPR&&chunkparent.type=PP	delete	my.type=PP&&chunkparent.type=date	yes		down		overwrite
+
 # --------------------------------------------------------------------------------------------------------------------------- #
 ## NOUNS ##
 # --------------------------------------------------------------------------------------------------------------------------- #
