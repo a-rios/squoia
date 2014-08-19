@@ -17,7 +17,8 @@
 #	Can be one of three, either:
 #	no-overwrite (do not overwrite previous information),
 #	overwrite (overwrite previous information),
-#	concat (concatenate information to any previously existing).
+#	concat (concatenate information to any previously existing; delimiter ",").
+#	concatnodelim (concatenate information to any previously existing without any delimiter).
 
 # 1			2		3		4		5		6
 # descendantCond	descendantAttr	ancestorCond	ancestorAttr	direction	writeMode
@@ -112,6 +113,16 @@ sub propagateAttr{
 			my $newVal = $trgNode->getAttribute($trgAttr).",".$srcVal;
 			$trgNode->setAttribute($trgAttr,$newVal);
 			#print STDERR "ATTRIBUTE...............$newVal\n" if $verbose;
+		}
+		else {
+			$trgNode->setAttribute($trgAttr,$srcVal);			
+		}
+	}
+	elsif ($wmode eq "concatnodelim") {
+		if ($trgNode->hasAttribute($trgAttr)) {
+			my $newVal = $trgNode->getAttribute($trgAttr) . $srcVal;
+			$trgNode->setAttribute($trgAttr,$newVal);
+			print STDERR "ATTRIBUTE $trgAttr = $newVal\n" if $verbose;
 		}
 		else {
 			$trgNode->setAttribute($trgAttr,$srcVal);			
