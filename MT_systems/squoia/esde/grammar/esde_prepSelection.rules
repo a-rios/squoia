@@ -13,6 +13,7 @@
 # A => UM
 # el partido empieza a las 9 y termina a medianoche => das Spiel faengt um 9 an und endet um Mitternacht
 a		cas=Akk,lem=um		xpath{self::NODE[parent::CHUNK[@si="cc" and CHUNK[@type="NP" and (NODE[@smi="Z" and NODE[@sform="las" or @sform="la"]] or NODE[@sform="medianoche" or @sform="mediodía"]) ] ] ]}	-
+a		cas=Akk,lem=um		xpath{//CHUNK[@si="cc" and CHUNK[@type="date" and NODE[@smi="W" and NODE[@sform="las" or @sform="la"]] ] ]/NODE}	-
 
 # veo a Juan (dobj) => ich sehe Hans (without preposition)
 a		cas=Akk,delete=yes	chunkparent.si=dobj||chunkgrandparent.si=dobj		-
@@ -71,6 +72,11 @@ con		lem=mit		-	+
 
 # = DE =
 # ======
+# at a given time
+# DE => AM ?
+# el partido empieza a las 9 de la tarde => das Spiel faengt um 9 Uhr am Abend an
+de		lem=an,cas=Dat		xpath{//CHUNK[@type="date"]/CHUNK[@type="PP"]/NODE}		-
+
 # keep the preposition when there is no determiner/specifier
 # la posibilidad de riego => die Moeglichkeit von Bewaesserung
 de		lem=von,cas=Dat		xpath{self::NODE[parent::CHUNK[@si="sp"]/CHUNK[contains(@type,"NP")]/NODE[@pos="NN" and count(NODE)=0]]}	-	# adpos is head of noun without child
@@ -102,7 +108,7 @@ del 		lem=von_d(er),cas=Dat,slem=del		chunkgrandparent.type=VP				-
 # Juan acaba de comer => Juan hat soeben gegessen
 de		delete=yes		chunkparent.type=VP&&lsibling.slem=/acabar/		-
 
-de 		lem=von,cas=Dat		chunkparent.type=//				+
+de 		lem=von,cas=Dat		-				+
 
 
 # = EN =

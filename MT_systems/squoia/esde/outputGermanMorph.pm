@@ -682,6 +682,10 @@ sub genMorphGenInput{
 		$morphStr = &outputGermanDate($date_record);
 		print STDERR "in German: $morphStr\n" if $verbose;
 	}
+	elsif ($pos eq "W") {
+		$morphStr = $node->getAttribute('sform');
+		print STDERR "German date (part): $morphStr\n" if $verbose;
+	}
 	# Numbers: [Z] (DeSR: CARD from DN...; FL: not CARD because numbers are automatically mapped to [Z], the lemma written with digits)
 	# TODO: mwu? slem="media_docena" smi="Z" pos="[Z]"
 	elsif ($pos =~/\[Z\]|CARD/) {

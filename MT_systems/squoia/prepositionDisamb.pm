@@ -67,10 +67,17 @@ sub main{
 		
 			#write specified attribute of the best translation into xml node
 			my $trgt = $FullSort[0][0];
+			if ($verbose){
+				print STDERR "prepdisamb rule: ";
+				for (my $i;$i<4;$i++) {
+					print STDERR $FullSort[0][$i]." ";
+				}
+				print STDERR "\n";
+			}
 			my @pairs = split(',',$trgt);
 			foreach my $pair (@pairs) {
 				my ($trgtattr, $trgtprep) = split('=',$pair);
-			#	print STDERR "preposition $trgtattr => $trgtprep\n" if $verbose;
+				print STDERR "preposition " . $wordnode->getAttribute('adpos') . " $trgtattr => $trgtprep\n" if $verbose;
 				$wordnode->setAttribute($trgtattr, $trgtprep);
 			}
 		}
