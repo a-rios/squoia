@@ -50,3 +50,13 @@ xpath{//CHUNK[@type="NP" and NODE[@pos="PRF"]]}		delete		xpath{//CHUNK[@type="VP
 ###############################
 # exception: preposition "para" is translated as "um ...zu+inf" and the preposition should stay "um" (and not "darum"!)
 my.type=/VP/			"da"			my.type=/PP/&&!(child.slem=para&&child.lem=um)		prefix			parent		1to2		overwrite
+
+###############
+# DATES/TIMES #
+###############
+# el 27 de octubre => am 27. Oktober
+# el jueves 27 de octubre => am Donnerstag 27. Oktober
+# el día 27 de octubre de 2008 => am 27. Oktober 2008
+# NP(el jueves|día) => date=yes && si=cc ?
+my.type=date			cct			my.type=/NP|PP/			si			parent		1to2		overwrite
+

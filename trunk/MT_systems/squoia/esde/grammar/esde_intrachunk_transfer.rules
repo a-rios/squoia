@@ -187,11 +187,29 @@ my.smi=/D..FS/&&parent.smi=/NCFN/	"Fem.Sg"	my.type=/NP|PP/		mi		up	overwrite
 #########
 # DATES #
 #########
-# el 27 de octubre => Am 27. Oktober
-my.pos=ART&&parent.smi=W	lem		my.type=date		am		down		overwrite
-my.smi=W&&my.slem=/\d+/&&child.pos=/ART/	sform		my.type=date		"."		down		concatnodelim
+# el 27 de octubre => am 27. Oktober
+# el jueves 27 de octubre => am Donnerstag 27. Oktober
+# el día 27 de octubre de 2008 => am 27. Oktober 2008
+# NP(el jueves|día) => type=date && si=cc ?
 
-my.pos=APPR&&chunkparent.type=PP	delete	my.type=PP&&chunkparent.type=date	yes		down		overwrite
+my.sform=el&&my.pos=ART&&parent.smi=W	lem	my.type=date				am		down		overwrite
+my.pos=ART&&parent.slem=/lunes|martes|miércoles|jueves|viernes|sábado|domingo|día/	lem		my.type=NP&&chunkchild.type=date	am		down		overwrite
+my.slem=día			delete		my.type=NP&&chunkchild.type=date	yes		down		overwrite
+
+my.smi=W&&my.slem=/\d+/&&child.sform=el		sform		my.type=date			"."		down		concatnodelim
+my.smi=W&&my.slem=/\d+/				sform		my.type=date&&parent.type=NP	"."		down		concatnodelim
+
+my.sform=de&&my.pos=APPR&&chunkparent.type=PP	delete	my.type=PP&&chunkparent.type=date&&chunkchild.type=date	yes		down		overwrite
+
+#########
+# TIMES #
+#########
+# a las tres de la tarde => um 3 am Nachmittag / um 3 Uhr nachmittags/abends?
+# a la una y media => um halb zwei!!! TODO
+my.sform=a&&my.pos=APPR			lem		my.type=PP&&chunkchild.type=date	um		down		overwrite
+
+my.sform=/las?/&&my.pos=ART&&parent.smi=W	delete		my.type=date		yes		down		overwrite
+
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 ## NOUNS ##

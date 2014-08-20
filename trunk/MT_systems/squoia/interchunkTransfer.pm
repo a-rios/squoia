@@ -79,7 +79,7 @@ sub transferSyntInformation{
 	my $verbose = $_[3];
 
 	my ($chunk1Attr,$chunk2Attr,$direction,$wmode) = split(/\t/,$configline);
-	#print STDERR "direction $direction\n";
+	print STDERR "$configline\n" if $verbose;
 	if ($direction eq "1to2") {
 		&propagateAttr($chunk1,$chunk1Attr,$chunk2,$chunk2Attr,$wmode,$verbose);
 	}

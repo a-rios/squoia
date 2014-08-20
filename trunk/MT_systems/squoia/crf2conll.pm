@@ -400,7 +400,7 @@ sub printDateToken{
 		$subOutLine .= "$date\t$date\tn\tnc\tgen=m|num=s\t_\t_\t_\t_\n";
 	}
 	elsif($date =~ /^de$|^a$/){
-		$subOutLine .=  "de\tde\ts\tsp\tgen=c|num=c|for=s\t_\t_\t_\t_\n";
+		$subOutLine .=  "$date\t$date\ts\tsp\tgen=c|num=c|for=s\t_\t_\t_\t_\n";
 	}
 	elsif($date eq 'del'){
 		$subOutLine .=  "de\tde\ts\tsp\tgen=m|num=s|for=c\t_\t_\t_\t_\n";
