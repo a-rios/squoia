@@ -57,6 +57,11 @@
 | [ {estancia} "["  "NRootES"  "]" ] :   {istansya}
 | [ {igual} "["  "NRootES"  "]" ] :   {iwal}
 | [ {eucalipto} "["  "NRootES"  "]" ] :   {iwkaliktu}
+| [ {café} "["  "NRootES"  "]" ] :   {kaphi}
+| [ {cacao} "["  "NRootES"  "]" ] :   {kakaw}
+| [ {queso} "["  "NRootES"  "]" ] :   {kisu}
+| [ {liebre} "["  "NRootES"  "]" ] :   {liwri}
+| [ {liebre} "["  "NRootES"  "]" ] :   {liwli}
 | [ {feo} "["  "NRootES"  "]" ] :   {fiyu}
 | [ {feria} "["  "NRootES"  "]" ] :   {firiya}
 | [ {fiesta} "["  "NRootES"  "]" ] :   {fiyista}
@@ -126,6 +131,8 @@
 | [ {noviembre} "["  "NRootES"  "]" ] :   {nuvimbri}
 | [ {novio} "["  "NRootES"  "]" ] :   {nubiyu}
 | [ {papito} "["  "NRootES"  "]" ] :   {papito}
+| [ {pares} "["  "NRootES"  "]" ] :   {pares}
+| [ {pares} "["  "NRootES"  "]" ] :   {paris}
 | [ {periódico} "["  "NRootES"  "]" ] :   {pirudiku}
 | [ {octobre} "["  "NRootES"  "]" ] :   {utupri}
 | [ {ojalá} "["  "NRootES"  "]" ] :   {uhalá}
@@ -133,6 +140,8 @@
 | [ {oveja} "["  "NRootES"  "]" ] :   {ubiha}
 | [ {oveja} "["  "NRootES"  "]" ] :   {uwiha}
 | [ {raíz} "["  "NRootES"  "]" ] :   {rayis}
+| [ {repollo} "["  "NRootES"  "]" ] :   {ripuyllu}
+| [ {repollo} "["  "NRootES"  "]" ] :   {ripuwllu}
 | [ {reunión} "["  "NRootES"  "]" ] :   {riyunyun}
 | [ {durazno} "["  "NRootES"  "]" ] :   {rurasnu}
 | [ {rueda} "["  "NRootES"  "]" ] :   {ruyda}

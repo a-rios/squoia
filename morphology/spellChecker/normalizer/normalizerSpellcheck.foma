@@ -49,6 +49,7 @@
 
       define Allophone [Allophone1 .o. Allophone2 ] ;
       define AllophoneBeforeCleanUp [ m (->) n || \"@MPA" _ p ];
+      define Apo [' (->) ’];
 
        define QuechuaOrtho Allophone;
 
@@ -538,7 +539,7 @@ define NITAQ [ {nitaq} : {nitaq} ] .o. UpperCase;
 
 ######################################################################################
 
-define preWord LexRestr .o. [[Noun|Verb|Prn|Particles|HAKU|HAKUPL] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase;
+define preWord LexRestr .o. [[Noun|Verb|Prn|Particles|HAKU|HAKUPL] (AS)] .o. NounRules  .o. AmbiRules .o. UpperCase .o. Apo;
 define Word  FeatRestr .o. NounRulesUpper .o. [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 #define Word  [preWord|OTAQ|NITAQ] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
 
