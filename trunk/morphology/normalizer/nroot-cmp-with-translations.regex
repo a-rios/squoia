@@ -87,7 +87,6 @@
 | [ {k'allma} "[" "NRoot" "]" "[" "=rama" "]" ] :  {k'allma}
 | [ {kallpa} "[" "NRoot" "]" "[" "=fuerte" "]" ] :  {kallpa}
 | [ {kamachi} "[" "NRoot" "]" "[" "=ley" "]" ] :  {kamachi}
-| [ {kamari} "[" "NRoot" "]" "[" "=regalo" "]" ] :  {kamari}
 | [ {kamayuq} "[" "NRoot" "]" "[" "=especialista" "]" ] :  {kamayuq}
 | [ {k'ancha} "[" "NRoot" "]" "[" "=brillo" "]" ] :  {k'ancha}
 | [ {k'apra} "[" "NRoot" "]" "[" "=cerámica" "]" ] :  {k'aphra}

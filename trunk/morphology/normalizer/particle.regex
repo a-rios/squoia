@@ -6,4 +6,6 @@
 | [ {si} "["  "Part_Cond" "]" ] :  {si}
 | [ {maski} "["  "Part_Conec" "]" ] :  {maski}
 | [ {anri} "["  "Part_Affir" "]" ] :  {anri}
+| [ {mayninchaynin} "["  "NRoot" "]" "["  "=de_vez_en_cuando" "]" ] :  {mayninchaynin}
+| [ {mayninchaynin} "["  "NRoot" "]" "["  "=de_vez_en_cuando" "]" ] :  {maynichaynin}
 ;
