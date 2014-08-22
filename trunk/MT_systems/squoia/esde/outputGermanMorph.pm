@@ -683,7 +683,7 @@ sub genMorphGenInput{
 		print STDERR "in German: $morphStr\n" if $verbose;
 	}
 	elsif ($pos eq "W") {
-		$morphStr = $node->getAttribute('sform');
+		#$morphStr = $node->getAttribute('sform');
 		print STDERR "German date (part): $morphStr\n" if $verbose;
 	}
 	# Numbers: [Z] (DeSR: CARD from DN...; FL: not CARD because numbers are automatically mapped to [Z], the lemma written with digits)
@@ -709,7 +709,7 @@ sub genMorphGenInput{
 sub main{
 	my $dom = ${$_[0]};
 	my $tmpfile = $_[1];
-	my $verbose = $_[2];
+	$verbose = $_[2];
 	
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
@@ -761,7 +761,7 @@ sub main{
 					if ($node->hasAttribute('sform')) {
 						$unknownStr = "*".$node->getAttribute('sform');
 					}
-					print STDERR "unknown $unknownStr\n" if $verbose;
+					print STDERR "UNK$unknownStr\n" if $verbose;
 					print OUTFILE "$unknownStr\n";
 				}
 				else {
@@ -896,7 +896,7 @@ sub cleanFstOutput{
 			}
 			else {
 				print STDERR "$infst " if $verbose;
-				my ($lemma,$rest) = split(/$POSre|_VMPP/,$infst);
+				my ($lemma,$rest) = split(/$POSre|_VMPP|_W/,$infst);
 				print STDERR "with lemma $lemma\n" if $verbose;
 	 			#my ($lemma,$pos) = split(/_/,$infst); # TODO: Named entities have also underscores; check this before cutting only the first part of the NE!
 				$lemma =~ s/\|//g;	# eliminate the separable verb prefix mark "|" still present in infinitive forms

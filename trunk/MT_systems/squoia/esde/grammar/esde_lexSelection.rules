@@ -36,6 +36,8 @@ como	als	d	chunkparent.type=VP
 que	dass	d	chunkparent.type=NP
 que	als	d	chunkparent.type=VP
 
+si	ob	d	!(xpath{//CHUNK[@type="VP" and NODE[(@slem="saber" or @slem="preguntar")]]/CHUNK[@type="VP" and @si="S"]/NODE/NODE[@smi="CS"]})
+
 ################
 # Prepositions #
 ################

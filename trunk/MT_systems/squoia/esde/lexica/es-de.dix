@@ -36210,6 +36210,7 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
    <e><p><l>que</l><r>als</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>que</l><r>dass</r></p><par n='CS_KOUS'/></e> 
    <e><p><l>según</l><r>je_nachdem_wie</r></p><par n='CS_KOUS'/></e> 
+   <e><p><l>si</l><r>ob</r></p><par n='CS_KOUS'/></e> <!-- indirekter Fragensatz -->
    <e><p><l>si</l><r>wenn</r></p><par n='CS_KOUS'/></e> <!-- falls, wenn + subjuntivo=>konditional???-->
    <e><p><l>si_bien</l><r>wenngleich</r></p><par n='CS_KOUS'/></e>
    <e><p><l>si_bien_que</l><r>obwohl</r></p><par n='CS_KOUS'/></e>
