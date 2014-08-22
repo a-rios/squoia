@@ -196,10 +196,11 @@ my.sform=el&&my.pos=ART&&parent.smi=W	lem	my.type=date				am		down		overwrite
 my.pos=ART&&parent.slem=/lunes|martes|miércoles|jueves|viernes|sábado|domingo|día/	lem		my.type=NP&&chunkchild.type=date	am		down		overwrite
 my.slem=día			delete		my.type=NP&&chunkchild.type=date	yes		down		overwrite
 
-my.smi=W&&my.slem=/\d+/&&child.sform=el		sform		my.type=date			"."		down		concatnodelim
-my.smi=W&&my.slem=/\d+/				sform		my.type=date&&parent.type=NP	"."		down		concatnodelim
+my.smi=W&&my.slem=/\d+/&&child.sform=el		lem		my.type=date			"."		down		concatnodelim	# el 27
+my.smi=W&&my.slem=/\d+/				lem		my.type=date&&parent.type=NP	"."		down		concatnodelim	# el dia/jueves 27
 
-my.sform=de&&my.pos=APPR&&chunkparent.type=PP	delete	my.type=PP&&chunkparent.type=date&&chunkchild.type=date	yes		down		overwrite
+my.sform=de&&my.pos=APPR&&chunkparent.type=PP	delete	my.type=PP&&chunkparent.type=date&&chunkchild.type=date	yes		down		overwrite	# de 2008
+my.sform=de&&my.pos=APPR&&chunkparent.type=PP	delete	xpath{//CHUNK[@type="date"]/CHUNK[@type="PP" and CHUNK[@type="NP"]/NODE[@slem="octubre"]]}	yes		down		overwrite	# de octubre
 
 #########
 # TIMES #
@@ -210,6 +211,7 @@ my.sform=a&&my.pos=APPR			lem		my.type=PP&&chunkchild.type=date	um		down		overwr
 
 my.sform=/las?/&&my.pos=ART&&parent.smi=W	delete		my.type=date		yes		down		overwrite
 
+my.smi=W&&child.sform=/las?/		lem		my.type=date&&chunkparent.type=PP	" Uhr"		down		concatnodelim	# la una / las 3 / las tres
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 ## NOUNS ##

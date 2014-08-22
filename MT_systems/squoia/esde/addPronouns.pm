@@ -23,16 +23,27 @@ sub main{
 	foreach my $node (@specialnodes) {
 		my $parentChunk = squoia::util::getParentChunk($node);	# VP chunk
 		if ($parentChunk->getAttribute('si') =~ /^S|sn/) {	# TODO other possibilities?
-			# do not add any pronoun in a relative clause TODO if it is the subject, but it could be the object!!!
-			print STDERR "relative clause does not need any extra pronoun\n" if $verbose;
-			# get person of finite verb
-			my $finverb = @{$node->findnodes('descendant-or-self::NODE[contains(@pos,"FIN") or contains(@spos,"FIN")]')}[0];
-			if ($finverb and $finverb->getAttribute('mi') =~ /^3\./) {
-				# TODO: the verb is in 3rd person; relative could be the object...
-				print STDERR "verb in 3rd person; relpronoun could still be the object...\n" if $verbose;
-				next;
-			} # else the finite verb has no explicit subject but has the form of a 1st or 2nd person => add pronoun
-			print STDERR "add subject pronoun anyway!\n" if $verbose;
+			if ($node->exists('./NODE[@smi="CS" and @pos="KOUS"]')) {
+				print STDERR "subordinated clause needs an extra pronoun\n" if $verbose;
+			}
+			else {
+				# do not add any pronoun in a relative clause TODO if it is the subject, but it could be the object!!!
+				print STDERR "relative clause does not necessarily need any extra pronoun\n" if $verbose;
+				# get person of finite verb
+				my $finverb = @{$node->findnodes('descendant-or-self::NODE[contains(@pos,"FIN") or contains(@spos,"FIN")]')}[0];
+				if ($finverb and $finverb->getAttribute('mi') =~ /^3\.(Sg|Pl)/) {
+					my $verbperson = $1;
+					print STDERR "verb in 3rd person $verbperson...\n" if $verbose;
+					# TODO: the verb is in 3rd person; relative could be the object...CHECK antecedent: la casa que tienen : mismatch Sg/Pl => add pronoun
+					my $antecedent = squoia::util::getParentChunk($parentChunk);
+					print STDERR "antecedent: ". ${$antecedent->findnodes('NODE')}[0]->getAttribute('slem') ."\n" if $verbose;
+					if ($antecedent->getAttribute('mi') =~ /\.$verbperson/) {
+						print STDERR "antecedent of relative clause also $verbperson; relpronoun could still be the object...\n" if $verbose;
+						next;
+					}
+				} # else the finite verb has no explicit subject but has the form of a 1st or 2nd person => add pronoun
+				print STDERR "add subject pronoun anyway!\n" if $verbose;
+			}
 		}
 		my $pronounChunk = XML::LibXML::Element->new('CHUNK');
 		$maxChunkRef++;
