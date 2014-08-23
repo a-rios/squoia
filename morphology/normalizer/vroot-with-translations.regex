@@ -1369,8 +1369,8 @@
 | [ {rikch'a} "[" "VRoot" "]" "[" "=parecer" "]" ] :  {riqch'a}
 | [ {rikhu} "[" "VRoot" "]" "[" "=aparecer,ver" "]" ] :  {rikhu}
 | [ {rikhu} "[" "VRoot" "]" "[" "=aparecer,ver" "]" ] :  {rihu}
+| [ {rikhu} "[" "VRoot" "]" "[" "=aparecer,ver" "]" ] :  {riku}
 | [ {rikra} "[" "VRoot" "]" "[" "=llevar_sobre_el_hombro" "]" ] :  {rikra}
-| [ {rikhu} "[" "VRoot" "]" "[" "=ver,aparecer" "]" ] :  {riku}
 | [ {rima} "[" "VRoot" "]" "[" "=hablar" "]" ] :  {rima}
 | [ {riqhi} "[" "VRoot" "]" "[" "=dibujar" "]" ] :  {riqhi}
 | [ {riqhi} "[" "VRoot" "]" "[" "=dibujar" "]" ] :  {riqi}
