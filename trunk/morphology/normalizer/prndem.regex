@@ -4,6 +4,7 @@
 | [{wak} "[" "PrnDem" "]"] : {waq}
 | [{wak} "[" "PrnDem" "]"] : {waj}
 | [{wakna} "[" "PrnDem" "]"] : {wakna}
+| [{akna} "[" "PrnDem" "]"] : {akna}
 | [{wakna} "[" "PrnDem" "]"] : {waqna}
 | [{wakna} "[" "PrnDem" "]"] : {wajna}
 | [{chay} "[" "PrnDem" "]"] : {chay}
@@ -14,6 +15,8 @@
 | [{chayna} "[" "PrnDem" "]"] : {sayna}
 | [{anchay} "[" "PrnDem" "]"] : {anchay}
 | [{anchay} "[" "PrnDem" "]"] : {anchhay}
+| [{anchayna} "[" "PrnDem" "]"] : {anchayna}
+| [{anchayna} "[" "PrnDem" "]"] : {anchhayna}
 | [{kay} "[" "PrnDem" "]"] : {kay}
 | [{kayna} "[" "PrnDem" "]"] : {kayna}
 | [{kay} "[" "PrnDem" "]"] : {khay}
