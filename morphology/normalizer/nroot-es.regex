@@ -14,6 +14,7 @@
 | [ {auto} "["  "NRootES"  "]" ] :   {awtu}
 | [ {auto} "["  "NRootES"  "]" ] :   {awtukarril}
 | [ {auto} "["  "NRootES"  "]" ] :   {autukarril}
+| [ {ahijado} "["  "NRootES"  "]" ] :   {ayhadu}
 | [ {bautizo} "["  "NRootES"  "]" ] :   {bawtisu}
 | [ {bendicón} "["  "NRootES"  "]" ] :   {bindisyun}
 | [ {bueno} "["  "NRootES"  "]" ] :   {wenu}
@@ -156,6 +157,7 @@
 | [ {horas} "["  "NRootES"  "]" ] :   {uras}
 | [ {vaca} "["  "NRootES"  "]" ] :   {waka}
 | [ {velorio} "["  "NRootES"  "]" ] :   {biluryu}
+| [ {vela} "["  "NRootES"  "]" ] :   {bila}
 | [ {vieja} "["  "NRootES"  "]" ] :   {biha}
 | [ {viejo} "["  "NRootES"  "]" ] :   {bihu}
 | [ {viento} "["  "NRootES"  "]" ] :   {bintu}

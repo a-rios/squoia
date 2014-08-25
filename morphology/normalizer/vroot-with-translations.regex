@@ -21,6 +21,7 @@
 | [ {aka} "[" "VRoot" "]" "[" "=defecar" "]" ] :  {aka}
 | [ {aklla} "[" "VRoot" "]" "[" "=escoger" "]" ] :  {aklla}
 | [ {akllu} "[" "VRoot" "]" "[" "=enmudecer" "]" ] :  {akllu}
+| [ {akna} "[" "VRoot" "]" "[" "=ser_así" "]" ] :  {akna}
 | [ {akñi} "[" "VRoot" "]" "[" "=eructar" "]" ] :  {akñi}
 | [ {akti} "[" "VRoot" "]" "[" "=extraer" "]" ] :  {akti}
 | [ {aku} "[" "VRoot" "]" "[" "=cultivar_coca,masticar_coca" "]" ] :  {aku}
@@ -145,6 +146,7 @@
 | [ {chaku} "[" "VRoot" "]" "[" "=cazar,desmontar" "]" ] :  {chaku}
 | [ {chhala} "[" "VRoot" "]" "[" "=trocar" "]" ] :  {chala}
 | [ {ch'alla} "[" "VRoot" "]" "[" "=hervir,rociar" "]" ] :  {ch'alla}
+| [ {chhallcha} "[" "VRoot" "]" "[" "=desgastar_borde_de_la_ropa" "]" ] :  {chhallcha}
 | [ {ch'alli} "[" "VRoot" "]" "[" "=combinar" "]" ] :  {ch'alli}
 | [ {ch'allpa} "[" "VRoot" "]" "[" "=matar,salpicar" "]" ] :  {ch'allpa}
 | [ {ch'allpa} "[" "VRoot" "]" "[" "=matar,salpicar" "]" ] :  {challpa}
@@ -233,6 +235,7 @@
 | [ {ch'ikchi} "[" "VRoot" "]" "[" "=brotar" "]" ] :  {ch'ikchi}
 | [ {chikchi} "[" "VRoot" "]" "[" "=granizar" "]" ] :  {chikchi}
 | [ {chiki} "[" "VRoot" "]" "[" "=odiar" "]" ] :  {chiki}
+| [ {chiki} "[" "VRoot" "]" "[" "=odiar" "]" ] :  {ch'iki}
 | [ {chiklla} "[" "VRoot" "]" "[" "=escoger" "]" ] :  {chiklla}
 | [ {chiklli} "[" "VRoot" "]" "[" "=brotar" "]" ] :  {chiklli}
 | [ {chiklli} "[" "VRoot" "]" "[" "=brotar" "]" ] :  {ch'iklli}
@@ -279,6 +282,8 @@
 | [ {ch'iqta} "[" "VRoot" "]" "[" "=dividir" "]" ] :  {chiqta}
 | [ {ch'iqu} "[" "VRoot" "]" "[" "=tallar" "]" ] :  {ch'iqu}
 | [ {ch'iqu} "[" "VRoot" "]" "[" "=tallar" "]" ] :  {chiqu}
+| [ {ch'iqullu} "[" "VRoot" "]" "[" "=ruiseñor" "]" ] :  {chiqullu}
+| [ {ch'iqullu} "[" "VRoot" "]" "[" "=ruiseñor" "]" ] :  {ch'iqullu}
 | [ {chirapa} "[" "VRoot" "]" "[" "=lloviznar_con_sol" "]" ] :  {chirapa}
 | [ {chiri} "[" "VRoot" "]" "[" "=estar_frío" "]" ] :  {chiri}
 | [ {chirma} "[" "VRoot" "]" "[" "=dañar" "]" ] :  {chirma}
@@ -288,6 +293,8 @@
 | [ {ch'isi} "[" "VRoot" "]" "[" "=tardecer" "]" ] :  {chisi}
 | [ {ch'ita} "[" "VRoot" "]" "[" "=abrochar" "]" ] :  {ch'ita}
 | [ {chita} "[" "VRoot" "]" "[" "=favorecer" "]" ] :  {chita}
+| [ {ch'iwka} "[" "VRoot" "]" "[" "=jugar_chiwka" "]" ] :  {ch'iwka}
+| [ {ch'iwka} "[" "VRoot" "]" "[" "=jugar_chiwka" "]" ] :  {chiwka}
 | [ {ch'iwa} "[" "VRoot" "]" "[" "=escurrir" "]" ] :  {ch'iwa}
 | [ {chiwa} "[" "VRoot" "]" "[" "=copular_los_aves" "]" ] :  {chiwa}
 | [ {chiwni} "[" "VRoot" "]" "[" "=piar" "]" ] :  {chiwni}
@@ -504,6 +511,7 @@
 | [ {iru} "[" "VRoot" "]" "[" "=girar" "]" ] :  {iru}
 # iskayay->iskay-ya-y (dudar)
 | [ {iskay} "[" "NRootNUM" "]"  "[" "--" "]" {ya} "[" "VS" "]" "[" "+Trs" "]" ] :  {iskaya}
+| [ {iskay} "[" "NRootNUM" "]"  "[" "--" "]" {ya} "[" "VS" "]" "[" "+Trs" "]" ] :  {ishkaya}
 | [ {iski} "[" "VRoot" "]" "[" "=anudar" "]" ] :  {iski}
 | [ {isku} "[" "VRoot" "]" "[" "=desgranar" "]" ] :  {isku}
 | [ {isma} "[" "VRoot" "]" "[" "=defecar" "]" ] :  {isma}
@@ -1872,7 +1880,7 @@
 | [ {achhala} "[" "VRoot" "]" "[" "=acicalar,adornar,correar,engalanar,ornamentar" "]" ] : {achhala} 
 | [ {achikwa} "[" "VRoot" "]" "[" "=centellear" "]" ] : {achikwa} 
 | [ {achini} "[" "VRoot" "]" "[" "=descubrir" "]" ] : {achini} 
-| [ {akulli} "[" "VRoot" "]" "[" "=comer_coca" "]" ] : {akulli} 
+| [ {akulli} "[" "VRoot" "]" "[" "=masticar_coca" "]" ] : {akulli} 
 | [ {amata} "[" "VRoot" "]" "[" "=prohibir" "]" ] : {amata} 
 | [ {ami} "[" "VRoot" "]" "[" "=detestar,empalagar,hastiar" "]" ] : {ami} 
 | [ {ankalli} "[" "VRoot" "]" "[" "=rebelar" "]" ] : {ankalli} 
@@ -1911,6 +1919,8 @@
 | [ {chhaphchi} "[" "VRoot" "]" "[" "=agitar" "]" ] : {chhaphchi} 
 | [ {chhaqru} "[" "VRoot" "]" "[" "=combinar,inmiscuir,mezclar,mixturar" "]" ] : {chhaqru} 
 | [ {chharqu} "[" "VRoot" "]" "[" "=desordenar" "]" ] : {chharqu} 
+| [ {chhasa} "[" "VRoot" "]" "[" "=tirar_pedos" "]" ] : {chhasa} 
+| [ {chhasa} "[" "VRoot" "]" "[" "=tirar_pedos" "]" ] : {thasa} 
 | [ {chhata} "[" "VRoot" "]" "[" "=permutar" "]" ] : {chhata} 
 | [ {ch'ichi} "[" "VRoot" "]" "[" "=brotar_del_tallo,retoñar,vegetar" "]" ] : {ch'ichi} 
 | [ {ch'ikikiki} "[" "VRoot" "]" "[" "=rechinar" "]" ] : {ch'ikikiki} 

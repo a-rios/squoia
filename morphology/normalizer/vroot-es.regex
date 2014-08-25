@@ -5,8 +5,10 @@
 | [ {arrea} "[" "VRootES" "]" ] :  {arriya}
 | [ {arrienda} "[" "VRootES" "]" ] :  {arrinda}
 | [ {atende} "[" "VRootES" "]" ] :  {atiende}
+| [ {acepta} "[" "VRootES" "]" ] :  {asekta}
 | [ {aguanta} "[" "VRootES" "]" ] :  {awanta}
 | [ {bendeci} "[" "VRootES" "]" ] :  {bindisi}
+| [ {vende} "[" "VRootES" "]" ] :  {bindi}
 | [ {cambia} "[" "VRootES" "]" ] :  {kambiya}
 | [ {cargona} "[" "VRootES" "]" ] :  {cargona}
 | [ {celosa} "[" "VRootES" "]" ] :  {celosa}
@@ -36,6 +38,9 @@
 | [ {perde} "[" "VRootES" "]" ] :  {pierde}
 | [ {freí} "[" "VRootES" "]" ] :  {friyi}
 | [ {invita} "[" "VRootES" "]" ] :  {imbita}
+| [ {escapa} "[" "VRootES" "]" ] :  {ishkapa}
+| [ {esceleto} "[" "VRootES" "]" ] :  {iskilitu}
+| [ {espuelas} "[" "VRootES" "]" ] :  {ispuylas}
 | [ {kasu} "[" "VRootES" "]" ] :  {kasu}
 | [ {queda} "[" "VRootES" "]" ] :  {keda}
 | [ {lee} "[" "VRootES" "]" ] :  {liyi}
@@ -51,5 +56,6 @@
 | [ {vela} "[" "VRootES" "]" ] :  {bila}
 | [ {vale} "[" "VRootES" "]" ] :  {bali}
 | [ {vence} "[" "VRootES" "]" ] :  {binsi}
+| [ {voltea} "[" "VRootES" "]" ] :  {bolteya}
 | [ {agradece} "[" "VRootES" "]" ] :  {ulpaycha}
 ;
