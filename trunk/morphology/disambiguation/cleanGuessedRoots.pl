@@ -135,6 +135,12 @@ foreach my $word (@words){
 				#print STDERR "deleted analysis: $string \n";
 			}			
 			
+			# if both analysis as -pata and -pa -ta -> delete -pa -ta
+			if( $string =~ /\Q]pa[Cas][+Gen][^DB][--]ta[Cas][+Acc]\E/ && scalar(@$analyses)>1 && &hasPata($analyses) ){
+				splice (@{$analyses},$j,1);	
+				$j--;
+			}
+			
 			my ($root) = ($string =~ m/([A-Za-zñéóúíáüÑ']+?)\[/ );
 			my ($rootPos) = ($string =~ m/\[(.*?Root.*?)\]/ );
 #			if($root =~ /iento$/){
@@ -284,6 +290,15 @@ foreach my $word (@words){
 
 }
 
+sub hasPata{
+	my $analyses = $_[0];
+	foreach my $analysis (@$analyses){
+		if($analysis->{'string'} =~ /--\]pata\[NRoot/){
+			return 1;
+		}
+	}
+	return 0;
+}
 	
 	foreach my $word (@words){
 		my $analyses = @$word[1];
@@ -292,5 +307,4 @@ foreach my $word (@words){
 		}
 		print "\n";
 	}
-	
 	
