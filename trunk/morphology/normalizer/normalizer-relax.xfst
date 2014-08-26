@@ -671,9 +671,8 @@ define AMBROOTS2 [~$[ "=gobernar,mandar,crear"%] %["--"%] {yku} "+yu+" %["VDeriv
 # other ambiguous roots: ñiqin -> not ni -qi -n, yanapa -> not yana pa (rgr_iprs), should be rep, same with atipa, kuchus (=codo), not kuchu -s, apulli not apu-lli, qullana, not qulla -na, hukllawa- not huklla-wa, kasu- hacer caso, not ka -su (2.Obj), maychika- cuánto, no may -chika, liqichu, not liqi-chu, mamita, not mami-ta, pachakuti ->volver, not vez
 define AMBROOTS3 [~$[ {ni} %["VRoot"%] %["=decir"%] (%["^DB"%]) %["--"%] {qi} %[ | {ñiqi} %["VRoot"%] %["=abollar"%] %["^DB"%] %["--"%] n %[ | ["=servir,ayudar"|"=poder,vencer"] %] %["--"%] {pa} "+pu+" | {kuchu} %["NRoot"%] %["=corte,cortadura"%] %["^DB"%] %["--"%] s%[ | "=antepasado,abuelo,dios_montano,poderoso"%] %["--"%] {lli}%[ |  "=majestuoso"%] %["--"%] {na} %["VS"%] %["+Reub" | {huklla} %["VRoot"%] %["=anexar"%] %["^DB"%] %["--"%] {wa}%[ | "^DB"%] %["--"%] {su} %["VPers"%] %["+2.Obj" | "=dónde"%] %["--"%] [{chika}|{chikan}] %["NDeriv" | {liqi}%["NRoot"%] %["=centinela"%] %["^DB"%] %["--"%] {chu} %[ | {mami}%["NRoot"%] %["=mami"%] %["^DB"%] %["--"%] {ta}%[ | "=mundo,tiempo"%] %["^DB"%] %["--"%] {kuti} %["NRoot" ]];
 
-#more ambiguous roots: mirkulis, not mirku-li-s
-define AMBROOTS4 [~$[ {mirku}%["NRoot"%] %["=géminis"%] %["--"%] {li} %[ ]];
-
+#more ambiguous roots: mirkulis, not mirku-li-s, chiqas -> not chiqakuna, akulli- not aku-lli
+define AMBROOTS4 [~$[ {mirku}%["NRoot"%] %["=géminis"%] %["--"%] {li} %[ | "@CHIQA" %["--"%] {kuna} %["Num"%] %["+Pl"%] "@PLbol" | "=cultivar_coca,masticar_coca"%] %["--"%] {lli}%[ | "=coca"%] %["--"%] {lli} %[  ]];
 
 define LexRestr [ASWANALLIN .o. HATUNPAQARIN .o. KACHARIKU  .o. YROOTS .o. IMANAWAQAYCHALLALLA .o. COMPOUNDS .o. AQROOTS .o. nROOTS .o. AMBROOTS1 .o. AMBROOTS2 .o. AMBROOTS3 .o. AMBROOTS4];
 
