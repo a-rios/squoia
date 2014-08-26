@@ -180,6 +180,9 @@
 | [ {p'unchaw} "[" "NRoot" "]" "[" "=día" "]" ] :  {punchay}
 | [ {punqu} "[" "NRoot" "]" "[" "=esclavo,pongo" "]" ] :  {punqu}
 | [ {p'unqu} "[" "NRoot" "]" "[" "=pozo" "]" ] :  {p'unqu}
+| [ {qañiwa} "[" "NRoot" "]" "[" "=cañihua" "]" ] :  {qañiwa}
+| [ {qañiwa} "[" "NRoot" "]" "[" "=cañihua" "]" ] :  {qañawa}
+| [ {qañiwa} "[" "NRoot" "]" "[" "=cañihua" "]" ] :  {kañiwa}
 | [ {harawi} "[" "NRoot" "]" "[" "=harawi" "]" ] :  {qarawi}
 | [ {qata} "[" "NRoot" "]" "[" "=techo,cubierta" "]" ] :  {qata}
 | [ {q'aytu} "[" "NRoot" "]" "[" "=hilo,nervio" "]" ] :  {q'aytu}

@@ -19,6 +19,7 @@
 | [ {confisa} "[" "VRootES" "]" ] :  {kunfisa}
 | [ {conseja} "[" "VRootES" "]" ] :  {kunsiha}
 | [ {conta} "[" "VRootES" "]" ] :  {kwinta}
+| [ {contesta} "[" "VRootES" "]" ] :  {kundesta}
 | [ {convida} "[" "VRootES" "]" ] :  {kumbida}
 | [ {corregi} "[" "VRootES" "]" ] :  {kurrihi}
 | [ {corre} "[" "VRootES" "]" ] :  {kurri}
@@ -30,6 +31,7 @@
 | [ {deja} "[" "VRootES" "]" ] :  {diha}
 | [ {desea} "[" "VRootES" "]" ] :  {disya}
 | [ {destrui} "[" "VRootES" "]" ] :  {distruwi}
+| [ {destrui} "[" "VRootES" "]" ] :  {destruiya}
 | [ {entiende} "[" "VRootES" "]" ] :  {entiende}
 | [ {festeja} "[" "VRootES" "]" ] :  {fiyista}
 | [ {festeja} "[" "VRootES" "]" ] :  {phista}

@@ -30,6 +30,7 @@
 | [ {condicional} "["  "NRootES"  "]" ] :   {kundisiyunal}
 | [ {cristiano} "["  "NRootES"  "]" ] :   {kristiyanu}
 | [ {condenado} "["  "NRootES"  "]" ] :   {kondenaw}
+| [ {gundinaru} "["  "NRootES"  "]" ] :   {gundinaru}
 | [ {dañado} "["  "NRootES"  "]" ] :   {dañaw}
 | [ {dedo} "["  "NRootES"  "]" ] :   {riru}
 | [ {trigo} "["  "NRootES"  "]" ] :   {riwu}
@@ -54,6 +55,7 @@
 | [ {escuela} "["  "NRootES"  "]" ] :   {iskila}
 | [ {escolero} "["  "NRootES"  "]" ] :   {iskuyliru}
 | [ {esquina} "["  "NRootES"  "]" ] :   {iskina}
+| [ {esqueleto} "["  "NRootES"  "]" ] :   {iskilitu}
 | [ {estación} "["  "NRootES"  "]" ] :   {istasyun}
 | [ {estancia} "["  "NRootES"  "]" ] :   {istansya}
 | [ {igual} "["  "NRootES"  "]" ] :   {iwal}
@@ -100,6 +102,7 @@
 | [ {italiano} "["  "NRootES"  "]" ] :   {italyanu}
 | [ {jarra} "["  "NRootES"  "]" ] :   {harra}
 | [ {jeuz} "["  "NRootES"  "]" ] :   {huwis}
+| [ {judío} "["  "NRootES"  "]" ] :   {judiyo}
 | [ {julio} "["  "NRootES"  "]" ] :   {hulyu}
 | [ {junio} "["  "NRootES"  "]" ] :   {hunyu} 
 | [ {carretera} "["  "NRootES"  "]" ] :   {karetera} 
@@ -115,6 +118,9 @@
 | [ {plaza} "["  "NRootES"  "]" ] :   {lasa}
 | [ {plástico} "["  "NRootES"  "]" ] :   {lastiku}
 | [ {plátano} "["  "NRootES"  "]" ] :   {latanu}
+| [ {primer} "["  "NRootES"  "]" ] :   {primir}
+| [ {campana} "["  "NRootES"  "]" ] :   {kanpana}
+| [ {caballo} "["  "NRootES"  "]" ] :   {kawallu}
 | [ {cuerpo} "["  "NRootES"  "]" ] :   {kurpu}
 | [ {cuerpo} "["  "NRootES"  "]" ] :   {werpo}
 | [ {maquina} "["  "NRootES"  "]" ] :   {makina}
@@ -146,6 +152,7 @@
 | [ {reunión} "["  "NRootES"  "]" ] :   {riyunyun}
 | [ {durazno} "["  "NRootES"  "]" ] :   {rurasnu}
 | [ {rueda} "["  "NRootES"  "]" ] :   {ruyda}
+| [ {sicuaneño} "["  "NRootES"  "]" ] :   {sikuwaniñu}
 | [ {cebada} "["  "NRootES"  "]" ] :   {siwara}
 | [ {cierto} "["  "NRootES"  "]" ] :   {sirtu}
 | [ {soles} "["  "NRootES"  "]" ] :   {soles}
