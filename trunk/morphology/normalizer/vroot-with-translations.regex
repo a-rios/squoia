@@ -1376,6 +1376,7 @@
 | [ {rikch'a} "[" "VRoot" "]" "[" "=parecer" "]" ] :  {rikcha}
 | [ {rikch'a} "[" "VRoot" "]" "[" "=parecer" "]" ] :  {riqch'a}
 | [ {rikhu} "[" "VRoot" "]" "[" "=aparecer,ver" "]" ] :  {rikhu}
+| [ {rikhu} "[" "VRoot" "]" "[" "=aparecer,ver" "]" ] :  {ikhu}
 | [ {rikhu} "[" "VRoot" "]" "[" "=aparecer,ver" "]" ] :  {rihu}
 | [ {rikhu} "[" "VRoot" "]" "[" "=aparecer,ver" "]" ] :  {riku}
 | [ {rikra} "[" "VRoot" "]" "[" "=llevar_sobre_el_hombro" "]" ] :  {rikra}
@@ -1484,6 +1485,7 @@
 | [ {suku} "[" "VRoot" "]" "[" "=cubrir" "]" ] :  {suku}
 | [ {sullu} "[" "VRoot" "]" "[" "=abortar" "]" ] :  {sullu}
 | [ {sullwa} "[" "VRoot" "]" "[" "=resbalar" "]" ] :  {sullwa}
+| [ {sulpa} "[" "VRoot" "]" "[" "=agradecer" "]" ] :  {sulpa}
 | [ {suña} "[" "VRoot" "]" "[" "=regalar" "]" ] :  {suña}
 | [ {sunqupa} "[" "VRoot" "]" "[" "=tener_piedad" "]" ] :  {sunqupa}
 | [ {suntu} "[" "VRoot" "]" "[" "=amontonar" "]" ] :  {suntu}
