@@ -48,5 +48,5 @@
 | [ "[" "--" "]" {t'a} "[" "VDeriv" "]" "[" "+Mom" "]" ] : {t'a}
 # aspect: acción única, momentánea y breve
 # -qi: sufijo que aparece en voces onomatopeyicas, p.e. phuqchiqi-, q'aqyaqi-, qhulluqi- (<Aymara?)
-| [ "[" "--" "]" {qi}  "[" "VS" "]" "[" "+Onom" "]"] : {qi}
+| [ "[" "--" "]" {qi}  "[" "VDeriv" "]" "[" "+Onom" "]"] : {qi}
 ;
