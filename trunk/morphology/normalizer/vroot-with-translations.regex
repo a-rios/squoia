@@ -4,7 +4,6 @@
 | [ {acha} "[" "VRoot" "]" "[" "=hacer_calor" "]" ] :  {acha}
 | [ {achhi} "[" "VRoot" "]" "[" "=estornudar" "]" ] :  {achhi}
 | [ {achhu} "[" "VRoot" "]" "[" "=postergar,retrasar,acercarse" "]" ] :  {achhu}
-| [ {achhu} "[" "VRoot" "]" "[" "=postergar,retrasar,acercarse" "]" ] :  {anchhu}
 | [ {achikya} "[" "VRoot" "]" "[" "=alumbrar,iluminar" "]" ] :  {achikya}
 | [ {achikya} "[" "VRoot" "]" "[" "=alumbrar,iluminar" "]" ] :  {achikha}
 | [ {achiusa} "[" "VRoot" "]" "[" "=estornudar" "]" ] :  {achiusa}
@@ -52,7 +51,8 @@
 | [ {aña} "[" "VRoot" "]" "[" "=dar_gracias" "]" ] :  {aña}
 | [ {ana} "[" "VRoot" "]" "[" "=ser_duro" "]" ] :  {ana}
 | [ {anchi} "[" "VRoot" "]" "[" "=suspirar" "]" ] :  {anchi}
-| [ {anchu} "[" "VRoot" "]" "[" "=apartar" "]" ] :  {anchu}
+| [ {anchu} "[" "VRoot" "]" "[" "=apartar,alejarse" "]" ] :  {anchu}
+| [ {anchu} "[" "VRoot" "]" "[" "=apartar,alejarse" "]" ] :  {anchhu}
 | [ {añi} "[" "VRoot" "]" "[" "=aceptar" "]" ] :  {añi}
 | [ {ankalla} "[" "VRoot" "]" "[" "=tropezar" "]" ] :  {ankalla}
 | [ {ankhi} "[" "VRoot" "]" "[" "=corroer" "]" ] :  {ankhi}

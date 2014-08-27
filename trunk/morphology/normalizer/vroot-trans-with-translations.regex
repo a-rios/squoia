@@ -204,7 +204,6 @@
 | [{maña} "[" "VRoot" "]" "[" "=pedir" "]" ] :  {maña} 
 | [{maqa} "[" "VRoot" "]" "[" "=pegar" "]" ] :  {maqa} 
 | [{maqchi} "[" "VRoot" "]" "[" "=lavar" "]" ] :  {maqchi} 
-| [{mara} "[" "VRoot" "]" "[" "=derribar" "]" ] :  {mara} 
 | [{maru} "[" "VRoot" "]" "[" "=desterronar" "]" ] :  {maru} 
 | [{masa} "[" "VRoot" "]" "[" "=extender" "]" ] :  {masa} 
 | [{maskha} "[" "VRoot" "]" "[" "=buscar" "]" ] :  {maskha} 

@@ -1511,6 +1511,7 @@
 | [ {p'api} "[" "NRoot" "]" "["  "=húmedo" "]" ] : {p'api}
 | [ {p'api} "[" "NRoot" "]" "["  "=húmedo" "]" ] : {papi}
 | [ {phapatu} "[" "NRoot" "]" "["  "=pezuña" "]" ] : {phapatu}
+| [ {paqar} "[" "NRoot" "]" "["  "=alba" "]" ] : {paqar}
 | [ {paqarin} "[" "NRoot" "]" "["  "=mañana" "]" ] : {paqarin}
 | [ {paqarin} "[" "NRoot" "]" "["  "=mañana" "]" ] : {paqaris}
 | [ {paqpa} "[" "NRoot" "]" "["  "=agave" "]" ] : {paqpa}
