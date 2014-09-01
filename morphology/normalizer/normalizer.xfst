@@ -576,8 +576,8 @@ define Particles VerbRulesUpper .o. [[Particle|ParticleBasic|ParticleVerb|Partic
 #define AccGen [  %["^DB"%] ("@GENq") %["--"%] [{p}|{pa}] %["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%]{ta}%["Cas"%]  => "@HUM" ?* _  ];
 define AccGen [  %["^DB"%] ("@GENq") %["--"%] {p} %["Cas"%] %["+Gen"%] "@PA" %["^DB"%] %["--"%]{ta}%["Cas"%]  => "@HUM" ?* _  ];
        
-# naya/sun,  -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj, naya/paya/raya: not -rqa -yka, pasaq -> pa-saq, not pasa -q
-define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] | {rqa}"+ru+" %["VDeriv"%] %["+Rptn"%] "@RQU" %["--"%]{yka}"+yu+" | ["+Rzpr"|"+Reub"] %] %["--"%] {yka} "+yu+"| "+Rep"%] %["--"%] {yka} "+yu+" | "+Desesp"%] %["^DB"%] %["--"%] {q} %["NS"%] %["+Ag" ]] ; 
+# naya/sun,  -sun -> 1.Pl.Incl.Fut/Imp, but not 2.Obj,3.Subj, naya/paya/raya: not -rqa -yka, pasaq -> pa-saq, not pasa -q, sunman-> not sun not Imp/Fut!
+define NAYASUN [~$["+Obl"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VS"%] %["+Trs" | "+Reub"%] %["--"%] {ya} %["VDeriv"%] %["+Aff" | "+2.Obj"?*"+3.Sg.Subj" | "+Aug"%] %["^DB"%] %["--"%] [n|m] %[["NPers"|"Amb"] | {rqa}"+ru+" %["VDeriv"%] %["+Rptn"%] "@RQU" %["--"%]{yka}"+yu+" | ["+Rzpr"|"+Reub"] %] %["--"%] {yka} "+yu+"| "+Rep"%] %["--"%] {yka} "+yu+" | "+Desesp"%] %["^DB"%] %["--"%] {q} %["NS"%] %["+Ag" | ["+1.Pl.Incl.Subj.Fut"|"+1.Pl.Incl.Subj.Imp"] %] %["--"%] {man} %["Mod"  ]] ; 
 
 # case suffixes:  tapi, pita, manta, tamanta, mantaq, ntin, paq, tata (false double accusatives: contratatan -> not contra-ta-ta!), -spa: only as SS, not as -s plural + genitive, -niray -> not nira -y (poss), nkaman -> not -nka-man but n-kama-n
 define CASE [~$[ ["@TA"|"+Loc"%] ] %["^DB"%] %["--"%] [{pi}|{ta}]%[ | "+Dat_Ill"%] %["^DB"%] %["--"%] {ta}%[ | "@TA" %["^DB"%] %["--"%]{manta}%[ | "+Abl"%] %["^DB"%] "@GENq" | [{ntin}|{nti}] %["Cas"%] %["+Iclsv"%] %["^DB"%] %["--"%] [n|m|{nka}] %[ | "+Gen"%] "@PA" %["^DB"%] "@GENq" | "+Posi"%] %["^DB"%] ["@GENq"| %["--"%] {ta} %[ ] | "@PLbol" ?* "@PA" | {nira}%["NDeriv"%] %["+Sim"%] %["^DB"%] %["--"%] {y}%[ | {nka}%["Cas"%] %["+Distr"%] %["^DB"%] %["--"%]{man}%[ ] ];
@@ -677,6 +677,6 @@ read regex Cleanup2 .o. LexRestr .o. Word;
 
 ### for quick compiling (debugging)
 #define Word NounRulesUpper .o. [preWord|SpecialWord|OTAQ|NITAQ|properNames] .o. AllophoneBeforeCleanUp .o. Cleanup1  .o. Allophone .o. Accent;
-#read regex AMBROOTS4 .o. Word;
+#read regex  Word;
 
 save stack normalizer.fst

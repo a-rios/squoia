@@ -3186,8 +3186,7 @@
 | [ {wallata} "[" "NRoot" "]" "[" "=ganso,pato" "]" ] : {wallata} 
 | [ {wallawisa} "[" "NRoot" "]" "[" "=guerrero,militar" "]" ] : {wallawisa} 
 | [ {wallch'a} "[" "NRoot" "]" "[" "=ola" "]" ] : {wallch'a} 
-| [ {wallwa} "[" "NRoot" "]" "[" "=culén" "]" ] : {wallwa} 
-| [ {wallwak'u} "[" "NRoot" "]" "[" "=sobaco" "]" ] : {wallwak'u} 
+| [ {wallwa} "[" "NRoot" "]" "[" "=culén" "]" ] : {wallwa}  
 | [ {waman} "[" "NRoot" "]" "[" "=halcón" "]" ] : {waman} 
 | [ {wamink'a} "[" "NRoot" "]" "[" "=general" "]" ] : {wamink'a} 
 | [ {wankari} "[" "NRoot" "]" "[" "=mojinete" "]" ] : {wankari} 
