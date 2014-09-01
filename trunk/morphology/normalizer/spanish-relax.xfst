@@ -515,8 +515,8 @@ define TRANS  [~$["+1.Obj" ?* ["@INTR"|"@TRAN"] | "+2.Obj" ?* ["@INTR"|"@INTRsu"
 # restrict evidential -cha to cases where there is a case, possessive or plural suffix to the left, (has to be applied on the upper side, can therefore not be included in AmbiRules)
 define CHA3 [ {cha}%["Amb"%] %["+Asmp" %] "@CHA" => ["Cas"|"Num"|"NPers"] ?*  _  ];
 
-# botella -> not bote-lla, cosechan -> not cose-cha-n
-define LexRestr [~$[ {bote} %["NRootES"%] %["^DB"%] %["--"%]{lla}%[ | {cose} %["VRootES"%] %["--"%] {cha} %[ ]];
+# botella -> not bote-lla, cosechan -> not cose-cha-n, paloma, not palo-má
+define LexRestr [~$[ {bote} %["NRootES"%] %["^DB"%] %["--"%]{lla}%[ | {cose} %["VRootES"%] %["--"%] {cha} %[ | {palo}%["NRootES"%] %["^DB"%] %["--"%] {má} ]];
 
 define FeatRestr [NAYASUN  .o. CASE .o. VERBMORPHS.o. VERBMORPHS2 .o. INDEP .o. TRANS .o. CHA3 .o. LexRestr];
 
