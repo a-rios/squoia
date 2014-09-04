@@ -1028,14 +1028,14 @@ sub mapEaglesTagToQuechuaMorph{
 			my (@words) = split('_',$sform);
 			for(my $i=0;$i<scalar(@words)-1;$i++)
 			{
-				print OUTFILE @words[$i]."\n";
+				print OUTFILE @words[$i]."_NP:\n";
 			}
 			if(scalar(@words)==0 )
 			{
 			  push(@words, $sform);
 			}
 			#print STDOUT @words[-1];
-			$EagleMorphs = $EagleMorphs.@words[-1].":";
+			$EagleMorphs = $EagleMorphs.@words[-1]."_NP:";
 		}
 		# other proper name
 		elsif($type eq 'P')
@@ -1044,9 +1044,9 @@ sub mapEaglesTagToQuechuaMorph{
 			my (@words) = split('_',$sform);
 			for(my $i=0;$i<scalar(@words)-1;$i++)
 			{
-				print OUTFILE @words[$i]."\n";
+				print OUTFILE @words[$i]."_NP:\n";
 			}
-			print OUTFILE @words[-1]."\n";
+			print OUTFILE @words[-1]."_NP:\n";
 			#print STDOUT "ni:VRoot+Perf";
 			$EagleMorphs = $EagleMorphs."ni:VRoot+Perf";
 			if( $number eq 'P')

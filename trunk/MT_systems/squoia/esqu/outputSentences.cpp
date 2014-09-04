@@ -79,7 +79,7 @@ void printSents(std::map< int, std::map< int, std::string > >sentMatrix, std::ve
 						if(starts_with(word,"/")){
 							erase_head(word,1);
 						}
-						//std::wcout << word << std::endl;
+						//std::cout << word << std::endl;
 					}
 
 					if(i ==0){
@@ -142,6 +142,39 @@ void printSents(std::map< int, std::map< int, std::string > >sentMatrix, std::ve
 }
 
 
+void printSentsMorphs(std::map< int, std::map< int, std::string > >sentMatrix, std::vector<std::pair<float,int> > sortedOpts){
+	using namespace boost;
+	bool startedWithPunc=0;
+	std::string prev, prevPunc;
+
+	std::sort(sortedOpts.begin(), sortedOpts.end(), probCompare);
+	//for(int s=0;s<sortedOpts.size();s++){
+	for(int s=0;(s<CUTOFF and s<sortedOpts.size());s++){
+		//std::cerr << "i position: " << i << ", contains pair 1st el: " << sortedOpts[i].first << " second elem: " << sortedOpts[i].second << "\n";
+		int opt = sortedOpts[s].second;
+		//std::cout << opt << ": ";
+
+		std::map< int, std::string> sent = sentMatrix[opt];
+		for(int i=0;i<sent.size();i++){
+					//punctuation marks come with their mi tag, split
+					std::string word = sentMatrix[opt][i];
+
+					//no punctuation: delete leading '/' (marks ambiguous words)
+					if(starts_with(word,"/")){
+							erase_head(word,1);
+					}
+					std::cout << word << std::endl;
+		}
+			// if cutoff >1 print probability for this sentence, otherwise just a newline
+		(CUTOFF>1) ? std::cout << " p:" << sortedOpts[s].first << std::endl : std::cout << "\n";
+		(sortedOpts.size()>s+1 && CUTOFF > s+1) ? std::cout << " alternative Sentence:" << std::endl : std::cout << "\n";
+	}
+	// if cutoff > 1, print empty line between sentences
+	/*if(CUTOFF>1){
+		std::cout << "\n";
+	}*/
+}
+
 void getProbs(std::map< int, std::map< int, std::string > >& sentMatrix, const lm::ngram::Model &model){
 
 	std::vector<std::pair<float, int> > sortedOpts;
@@ -164,6 +197,9 @@ void getProbs(std::map< int, std::map< int, std::string > >& sentMatrix, const l
 				// alternatives start with '/' and punctuation end with -PUNC-tag -> delete tag and leading '/'
 				if(boost::starts_with(w,"/")){boost::erase_head(w,1);}
 				if(boost::contains(w,"-PUNC-")){w = w.substr(0,1);}
+				if(contains(w,"_NP:")){
+					//TODO replace _NP: with :
+				}
 				ret = model.FullScore(state, vocab.Index(w), out_state);
 			//	std::cerr << "tested word " << w << " ,full p: " << ret.prob << " == " <<vocab.Index(w) <<'\n';
 				total += ret.prob;
@@ -182,6 +218,7 @@ void getProbs(std::map< int, std::map< int, std::string > >& sentMatrix, const l
 void getProbsMorphs(std::map< int, std::map< int, std::string > >& sentMatrix, const lm::ngram::Model &model){
 
 	std::vector<std::pair<float, int> > sortedOpts;
+
 	for(int opt=0; opt<sentMatrix.size();opt++){
 			//std::cerr << opt << ": ";
 			std::map< int, std::string> sent = sentMatrix[opt];
@@ -198,30 +235,43 @@ void getProbsMorphs(std::map< int, std::map< int, std::string > >& sentMatrix, c
 			for(int i=0;i<sent.size();i++)
 			{
 				std::string w = sent[i];
+				//std::cerr << "word : "<< w << "sent size: "<< sent.size() << "\n";
 				// alternatives start with '/' and punctuation end with -PUNC-tag -> delete tag and leading '/'
 				if(boost::starts_with(w,"/")){boost::erase_head(w,1);}
+
 				if(boost::contains(w,"-PUNC-")){w = w.substr(0,1);}
+
+				// proper names are marked with _NP -> use only NP for getting probs
+				std::string newLem = "NP:";
+				boost::regex re("^.+_NP:");
+				if(boost::contains(w,"_NP:")){
+					w  = boost::regex_replace(w, re, newLem);
+				}
+
 				// split word into morphs and get probabilities
 				std::vector<std::string> strs;
 				boost::split(strs,w,boost::is_any_of(":"));
 				std::string lem = strs[0];
 				std::vector<std::string> morphs;
 				boost::regex morphrx("\\+[^\\+]+");
-				boost::find_all_regex(morphs, strs[1], morphrx);
+				if(strs.size() > 1){
+					boost::find_all_regex(morphs, strs[1], morphrx);
+				}
 
-//				std::cerr << "lemma: " << lem << "morph size " << morphs.size() <<"\n";
-//				for(int j=0;j<morphs.size();j++){
-//					std::cerr << "    morph: " << morphs[j] << "\n";
-//				}
+				//std::cerr << "lemma: " << lem << ", morph size " << morphs.size() <<"\n";
+				/*for(int j=0;j<morphs.size();j++){
+					std::cerr << "    morph: " << morphs[j] << "\n";
+				}*/
 
 				ret = model.FullScore(state, vocab.Index(lem), out_state);
-			//	std::cerr << "tested word " << w << " ,full p: " << ret.prob << " == " <<vocab.Index(w) <<'\n';
+				//std::cerr << "tested word " << w << " ,full p: " << ret.prob << " == " <<vocab.Index(w) << "\n";
 				total += ret.prob;
 				state = out_state;
 				// get Probs for morphs
 				for(int j=0;j<morphs.size();j++){
 					ret = model.FullScore(state, vocab.Index(morphs[j]), out_state);
 					total += ret.prob;
+					//std::cerr << "tested morph " <<  morphs[j] << " ,p: " << ret.prob << " == " <<vocab.Index(morphs[j]) << "\n";
 					state = out_state;
 				}
 
@@ -232,7 +282,7 @@ void getProbsMorphs(std::map< int, std::map< int, std::string > >& sentMatrix, c
 			std::pair<float,int> mypair (total, opt);
 			sortedOpts.push_back(mypair);
 		}
-	 printSents(sentMatrix,sortedOpts);
+	 printSentsMorphs(sentMatrix,sortedOpts);
 }
 
 void insertTransOpts(std::map< int, std::map< int, std::string > >&sentMatrix,int first,int last,std::vector< int > indexesOfAmbigWords){
@@ -294,9 +344,10 @@ void printLattice(std::map< int, std::vector<std::string> > &sentLattice, int nb
 		insertTransOpts(sentMatrix,first,last,indexesOfAmbigWords);
 	}
 
+	//printMatrix(sentMatrix);
 	morphProbs ? getProbsMorphs(sentMatrix,model) : getProbs(sentMatrix,model);
 	sentOpts=0;
-	//printMatrix(sentMatrix);
+
 	//printSents(sentMatrix);
 
 }
