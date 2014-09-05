@@ -6,6 +6,7 @@ use strict;
 #use warnings;
 
 my $verbose = '';
+my $with_morph_model;
 
 # use slots 1-20 for verbs
 # 21 for nominalizers
@@ -159,6 +160,7 @@ sub main{
 	my $dom = ${$_[0]};
 	my $tmpfile = $_[1];
 	$verbose = $_[2];
+	$with_morph_model = $_[3];
 
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
@@ -1028,14 +1030,14 @@ sub mapEaglesTagToQuechuaMorph{
 			my (@words) = split('_',$sform);
 			for(my $i=0;$i<scalar(@words)-1;$i++)
 			{
-				print OUTFILE @words[$i]."_NP:\n";
+				($with_morph_model) ?  print OUTFILE @words[$i]."_NP:\n" : print OUTFILE @words[$i].":\n";
 			}
 			if(scalar(@words)==0 )
 			{
 			  push(@words, $sform);
 			}
 			#print STDOUT @words[-1];
-			$EagleMorphs = $EagleMorphs.@words[-1]."_NP:";
+			 ($with_morph_model) ? $EagleMorphs = $EagleMorphs.@words[-1]."_NP:" :  $EagleMorphs = $EagleMorphs.@words[-1].":";
 		}
 		# other proper name
 		elsif($type eq 'P')
@@ -1044,9 +1046,9 @@ sub mapEaglesTagToQuechuaMorph{
 			my (@words) = split('_',$sform);
 			for(my $i=0;$i<scalar(@words)-1;$i++)
 			{
-				print OUTFILE @words[$i]."_NP:\n";
+				($with_morph_model) ? print OUTFILE @words[$i]."_NP:\n" :print OUTFILE @words[$i].":\n";
 			}
-			print OUTFILE @words[-1]."_NP:\n";
+			($with_morph_model) ?  print OUTFILE @words[-1]."_NP:\n" : print OUTFILE @words[-1].":\n";
 			#print STDOUT "ni:VRoot+Perf";
 			$EagleMorphs = $EagleMorphs."ni:VRoot+Perf";
 			if( $number eq 'P')
@@ -1122,6 +1124,8 @@ sub mapEaglesTagToQuechuaMorph{
 		#print STDER "slem: $slem";
 	}
 	$EagleMorphs = $EagleMorphs.&getMorphFromChunk($node,$chunk);
+	
+	#print STDERR "eaglemorphs $EagleMorphs\n";
 	return $EagleMorphs;
 }
 
@@ -1165,7 +1169,6 @@ sub adjustMorph{
 	}
 	$morphString =~ s/\+\+(\+)?/\+/g;
 	$morphString =~ s/,//g;
-	
 	
 	# if there's a +Fut tag that was added during the transfer:
 	# attach this to subj tag: 1.Sg.Subj+Fut = 1.Sg.Subj.Fut
