@@ -482,7 +482,7 @@ print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 
 if($startTrans<$mapInputFormats{'tagged'})	#4)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'tagged'} .") tagging\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'tagged'} .") [-o tagged] tagging\n";
 	### tagging: if input file given with --file or -f:
 	# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
 	if($matxin eq '' or $wapiti eq '' or $wapitiModel eq ''){
@@ -514,7 +514,7 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 }
 my $conllLines;
 if($startTrans<$mapInputFormats{'conll'}){	#5){
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'conll'} .") conll format\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'conll'} .")  [-o conll] conll format\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans==$mapInputFormats{'tagged'}){	#4){
 		if($file){
@@ -595,7 +595,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 
 	if($startTrans <$mapInputFormats{'parsed'})	#6)
 	{
-		print STDERR "* TRANS-STEP " . $mapInputFormats{'parsed'} .") parsing\n";
+		print STDERR "* TRANS-STEP " . $mapInputFormats{'parsed'} .")  [-o parsed] parsing\n";
 		### parse tagged text:
 		my $tmp2;
 		# if starting translation process from here, read file or stdin
@@ -627,7 +627,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 		}
 	}
 
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'conll2xml'} .") conll to xml format\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'conll2xml'} .")  [-o conll2xml] conll to xml format\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'parsed'}){	#6){
 		if($file ne ''){
@@ -720,7 +720,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 
 if($startTrans < $mapInputFormats{'rdisamb'})	#8)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'rdisamb'} .") relative clause disambiguation\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'rdisamb'} .")  [-o rdisamb] relative clause disambiguation\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'conll2xml'}){	#7){
 		if($file ne '' ){
@@ -745,7 +745,7 @@ if($startTrans < $mapInputFormats{'rdisamb'})	#8)
 
 if($startTrans < $mapInputFormats{'coref'})	#9)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'coref'} .") subject coreference resolution\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'coref'} .")  [-o coref] subject coreference resolution\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'rdisamb'}){	#8){
 		$dom = &readXML();
@@ -762,7 +762,7 @@ if($startTrans < $mapInputFormats{'coref'})	#9)
 
 if($startTrans < $mapInputFormats{'vdisamb'})	#10)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'vdisamb'} .") verb form disambiguation (rule-based)\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'vdisamb'} .")  [-o vdisamb] verb form disambiguation (rule-based)\n";
 	# check if evidentiality set
 	if($evidentiality ne 'direct' or $evidentiality eq 'indirect'){
 		print STDERR "Invalid value  '$evidentiality' for option --evidentiality, possible values are 'direct' or 'indirect'. Using default (=direct)\n";
@@ -786,7 +786,7 @@ if($startTrans < $mapInputFormats{'vdisamb'})	#10)
 
 if($startTrans<$mapInputFormats{'svm'})	# 11)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'svm'} .") verb form disambiguation (svm)\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'svm'} .")  [-o svm] verb form disambiguation (svm)\n";
 	# get verb lemma classes from word net for disambiguation with svm
 	my %verbLemClasses=();
 	
@@ -878,7 +878,7 @@ if($startTrans<$mapInputFormats{'svm'})	# 11)
 #### lexical transfer with matxin-xfer-lex
 if($startTrans <$mapInputFormats{'lextrans'})	#12)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'lextrans'} .") lexical transfer\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'lextrans'} .")  [-o lextrans] lexical transfer\n";
 	## check if $bidix is set
 	if($bidix eq ''){
 		eval{
@@ -936,7 +936,7 @@ if($startTrans <$mapInputFormats{'lextrans'})	#12)
 #### insert semantic tags: 
 if($startTrans <$mapInputFormats{'semtags'})	#13)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'semtags'} .") insert semantic tags\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'semtags'} .")  [-o semtags] insert semantic tags\n";
 ## if semantic dictionary or new config file given on commandline: read into %semanticLexicone
 	my %semanticLexicon =();
 	my $readrules=0;
@@ -988,7 +988,7 @@ if($startTrans <$mapInputFormats{'semtags'})	#13)
 ### lexical disambiguation, rule-based
 if($startTrans <$mapInputFormats{'lexdisamb'})	#14)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'lexdisamb'} .") lexical disambiguation, rule-based\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'lexdisamb'} .")  [-o lexdisamb] lexical disambiguation, rule-based\n";
 	my %lexSel =();
 	$readrules=0;
 	
@@ -1045,7 +1045,7 @@ if($startTrans <$mapInputFormats{'lexdisamb'})	#14)
 ### morphological disambiguation, rule-based
 if($startTrans <$mapInputFormats{'morphdisamb'})	#15)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'morphdisamb'} .") morphological disambiguation, rule-based\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'morphdisamb'} .")  [-o morphdisamb] morphological disambiguation, rule-based\n";
 	my %morphSel = ();
 	$readrules=0;
 	
@@ -1108,7 +1108,7 @@ if($direction eq 'esde')
 ### statistic lexical disambiguation
 if($startTrans <$mapInputFormats{'statlexdisamb'})
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'statlexdisamb'} .") statistical lexical disambiguation\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'statlexdisamb'} .")  [-o statlexdisamb] statistical lexical disambiguation\n";
 	my %bilexprobs = ();
 	$readrules =0;
 	if (not $noalt) {
@@ -1182,7 +1182,7 @@ if($startTrans <$mapInputFormats{'statlexdisamb'})
 ### preposition disambiguation, rule-based
 if($startTrans <$mapInputFormats{'prepdisamb'})	#16)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'prepdisamb'} .") preposition disambiguation, rule-based\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'prepdisamb'} .")  [-o prepdisamb] preposition disambiguation, rule-based\n";
 	my %prepSel = ();
 	$readrules =0;
 
@@ -1251,7 +1251,7 @@ if($direction eq 'esde')
 ### verb preposition disambiguation
 if($startTrans <$mapInputFormats{'vprepdisamb'})
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'vprepdisamb'} .") verb preposition disambiguation\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'vprepdisamb'} .")  [-o vprepdisamb] verb preposition disambiguation\n";
 	my %verbPrepSel = ();
 	$readrules =0;
 
@@ -1308,7 +1308,7 @@ if($startTrans <$mapInputFormats{'vprepdisamb'})
 ### split multi-words
 if($startTrans <$mapInputFormats{'mwsplit'})
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'mwsplit'} .") split multi-words\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'mwsplit'} .")  [-o mwsplit] split multi-words\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'vprepdisamb'}){
 		$dom = &readXML();
@@ -1324,7 +1324,7 @@ if($startTrans <$mapInputFormats{'mwsplit'})
 ### insert subject pronouns
 if($startTrans <$mapInputFormats{'pronoun'})
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'pronoun'} .") insert subject pronouns\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'pronoun'} .")  [-o pronoun] insert subject pronouns\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'mwsplit'}){
 		$dom = &readXML();
@@ -1340,7 +1340,7 @@ if($startTrans <$mapInputFormats{'pronoun'})
 ### insert future auxiliaries
 if($startTrans <$mapInputFormats{'future'})
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'future'} .") insert future auxiliaries\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'future'} .")  [-o future] insert future auxiliaries\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'pronoun'}){
 		$dom = &readXML();
@@ -1356,7 +1356,7 @@ if($startTrans <$mapInputFormats{'future'})
 ### split verb prefixes
 if($startTrans <$mapInputFormats{'vprefix'})
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'vprefix'} .") split verb prefixes\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'vprefix'} .")  [-o vprefix] split verb prefixes\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'future'}){
 		$dom = &readXML();
@@ -1375,7 +1375,7 @@ if($startTrans <$mapInputFormats{'vprefix'})
 ### syntactic transfer, intra-chunks (from nodes to chunks and vice versa)
 if($startTrans <$mapInputFormats{'intraTrans'})	#17)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'intraTrans'} .") syntactic transfer, intra-chunks\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'intraTrans'} .")  [-o intraTrans] syntactic transfer, intra-chunks\n";
 	my %intraConditions = ();
 	$readrules =0;
 	
@@ -1435,7 +1435,7 @@ if($startTrans <$mapInputFormats{'intraTrans'})	#17)
 ### syntactic transfer, inter-chunks (move/copy information between chunks)
 if($startTrans <$mapInputFormats{'interTrans'})	#18)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'interTrans'} .") syntactic transfer, inter-chunks\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'interTrans'} .")  [-o interTrans] syntactic transfer, inter-chunks\n";
 	my %interConditions =();
 	$readrules =0;
 	
@@ -1493,7 +1493,7 @@ if($startTrans <$mapInputFormats{'interTrans'})	#18)
 ### promote nodes to chunks, if necessary
 if($startTrans <$mapInputFormats{'node2chunk'})	#19)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'node2chunk'} .") promote nodes to chunks\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'node2chunk'} .")  [-o node2chunk] promote nodes to chunks\n";
 	my %targetAttributes;
 	my %sourceAttributes;
 	my @nodes2chunksRules;
@@ -1551,7 +1551,7 @@ if($startTrans <$mapInputFormats{'node2chunk'})	#19)
 ### rules to promote child chunks to siblings (necessary for ordering Quechua internally headed relative clauses)
 if($startTrans <$mapInputFormats{'child2sibling'})	#20)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'child2sibling'} .") promote child chunks to siblings\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'child2sibling'} .")  [-o child2sibling] promote child chunks to siblings\n";
 	my %targetAttributes;
 	$readrules =0;
 	
@@ -1603,7 +1603,7 @@ if($startTrans <$mapInputFormats{'child2sibling'})	#20)
 }
 if($startTrans <$mapInputFormats{'interOrder'})	#21)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'interOrder'} .") reorder the chunks, inter-chunks\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'interOrder'} .")  [-o interOrder] reorder the chunks, inter-chunks\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'child2sibling'}){	#20){
 		$dom = &readXML();
@@ -1674,7 +1674,7 @@ if($startTrans <$mapInputFormats{'interOrder'})	#21)
 
 if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'intraOrder'} .") reorder the nodes, intra-chunks\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'intraOrder'} .")  [-o intraOrder] reorder the nodes, intra-chunks\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'interOrder'}){	#21){
 		$dom = &readXML();
@@ -1752,7 +1752,7 @@ my $sentFile = "$path/tmp/tmp.words";
 my $morphfile = "$path/tmp/tmp.morph";
 if($startTrans < $mapInputFormats{'morph'})	#23)
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'morph'} .") morphological generation\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'morph'} .")  [-o morph] morphological generation\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'intraOrder'}){	#22)
 		$dom = &readXML();
@@ -1772,7 +1772,7 @@ if($startTrans < $mapInputFormats{'morph'})	#23)
 }
 if($startTrans< $mapInputFormats{'words'})
 {
-	print STDERR "* TRANS-STEP " . $mapInputFormats{'words'} .") word forms\n";
+	print STDERR "* TRANS-STEP " . $mapInputFormats{'words'} .")  [-o words] word forms\n";
 	## generate word forms with xfst
 	## check if $morphgenerator is set
 	if($morphgenerator eq ''){
@@ -1827,7 +1827,7 @@ if($startTrans< $mapInputFormats{'words'})
 
 ###-----------------------------------begin ranking (kenlm) ---------------------------------------------------------####
 ## use kenlm to print the n-best ($nbest) translations	
-print STDERR "* TRANS-STEP " . $mapInputFormats{'nbest'} .") n-best translations\n";
+print STDERR "* TRANS-STEP " . $mapInputFormats{'nbest'} .")  [-o nbest] n-best translations\n";
 if($direction eq 'esqu')
 {
 	# check if quModel is set
