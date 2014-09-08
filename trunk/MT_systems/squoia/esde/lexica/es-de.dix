@@ -1105,6 +1105,7 @@
    <e><p><l>institucionalmente</l><r>institutionell</r></p><par n='RG_ADJD'/></e>
    <e><p><l>intempestivamente</l><r>ungelegen</r></p><par n='RG_ADJD'/></e>
    <e><p><l>interinamente</l><r>vorläufig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>involuntariamente</l><r>unabsichtlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>irremediablemente</l><r>unheilbar</r></p><par n='RG_ADJD'/></e>
    <e><p><l>judicialmente</l><r>richterlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>lastimosamente</l><r>bedauernswert</r></p><par n='RG_ADJD'/></e>
@@ -1122,6 +1123,7 @@
    <e><p><l>progresivamente</l><r>fortschrittlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>propiamente</l><r>eigen</r></p><par n='RG_ADJD'/></e>
    <e><p><l>religiosamente</l><r>religiös</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>seguidamente</l><r>anschliessend</r></p><par n='RG_ADJD'/></e>
    <e><p><l>sencillamente</l><r>unkompliziert</r></p><par n='RG_ADJD'/></e>
    <e><p><l>seriamente</l><r>gesetzt</r></p><par n='RG_ADJD'/></e>
    <e><p><l>sexualmente</l><r>sexuell</r></p><par n='RG_ADJD'/></e>
@@ -1190,6 +1192,33 @@
    <e><p><l>sobre_todo</l><r>vor allem</r></p><par n='RG_ADV'/></e>
 </section>
 <section id="Adjectives-diariodelcusco" type="standard">
+   <e><p><l>alcanzado</l><r>erreicht</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>anotado</l><r>vermerkt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>asistencial</l><r>Unterstützungs-</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>capitalino</l><r>grossstädtisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>conducido</l><r>geleitet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>consignado</l><r>vermerkt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>coyuntural</l><r>konjunkturell</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ejercido</l><r>ausgeübt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>escrito</l><r>geschrieben</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>etílico</l><r>Ethyl-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>fundado</l><r>begründet</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>infundado</l><r>grundlos</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ininterrumpido</l><r>ununterbrochen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ocasionado</l><r>verursacht</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>partidario</l><r>parteiisch</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>postulante</l><r>bewerbend</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sacrificado</l><r>geopfert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>salarial</l><r>Lohn-</r></p><par n='AQ_TRUNC'/></e>
+   <e><p><l>salarial</l><r>lohngebunden</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>sindical</l><r>gewerkschaftlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>solicitado</l><r>gefragt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>supeditado</l><r>vorausgesetzt</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tenaz</l><r>ausdauernd</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tenaz</l><r>zäh</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>terco</l><r>trotzig</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>tesonero</l><r>hartnäckig</r></p><par n='AQ_ADJ'/></e>
+
    <e><p><l>turístico</l><r>turistisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>celeste</l><r>Himmel-</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>celeste</l><r>himmelblau</r></p><par n='AQ_ADJ'/></e>
@@ -1469,6 +1498,21 @@
    <e><p><l>vendido</l><r>verkauft</r></p><par n='AQ_ADJ'/></e>
 </section>
 <section id="Verbs-july-diariodelcusco" type="standard">
+   <e><p><l>auxiliar</l><r>helfen<s n="cas"/>Dat</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>coronar</l><r>krönen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>derrotar</l><r>besiegen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>desembalsar</l><r>entstauen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>desplegar</l><r>entfalten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>englobar</l><r>umfassen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>envidiar</l><r>beneiden</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>posesionar</l><r>an|eignen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>reincorporar</l><r>wieder auf|nehmen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>someter</l><r>vor|legen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>someter</l><r>unterwerfen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>velar</l><r>bewachen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>velar</l><r>verschleiern</r></p><par n='VM_VV_MAIN'/></e>
+</section>
+<section id="Verbs-july-diariodelcusco" type="standard">
    <e><p><l>agachar</l><r>beugen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>aplastar</l><r>quetschen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>apuntar</l><r>auf|schreiben</r></p><par n='VM_VV_MAIN'/></e>
@@ -1513,7 +1557,7 @@
 <section id="Verbs-30mostfreq-diariodelcusco" type="standard">
    <e><p><l>anotar</l><r>vermerken</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>asistir</l><r>besuchen</r></p><par n='VM_VV_MAIN'/></e>
-   <e><p><l>asistir</l><r>helfen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>asistir</l><r>helfen<s n="cas"/>Dat</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>asumir</l><r>an|nehmen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>asumir</l><r>übernehmen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>brindar</l><r>an|bieten</r></p><par n='VM_VV_MAIN'/></e>
@@ -1609,6 +1653,23 @@
    <e><p><l>responsable</l><r>Verantwortliche</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>viceministro</l><r>Vizeminister</r></p><par n='NC_N_GENTRY_ERIN'/></e>
 
+</section>
+<section id="Nouns-diario-july" type="standard">
+   <e><p><l>asegurado</l><r>Versicherte</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gentry? -->
+   <e><p><l>contratación_de_personal</l><r>Personalanstellung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>dato_personal</l><r>Personalien</r></p><par n='NC_N_NUM_NOUN'/></e> <!-- plural -->
+   <e><p><l>declaración_jurada</l><r>Aussage_unter_Eid</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- split? -->
+   <e><p><l>declaración_jurada</l><r>eidesstattliche_Erklärung</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- split? -->
+   <e><p><l>diagramación</l><r>Planung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>diplomado</l><r>Diplomierte</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gentry? -->
+   <e><p><l>dosaje</l><r>Dosierung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>enfermería</l><r>Krankenstation</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>enfermería</l><r>Krankenzimmer</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>ícono</l><r>Ikone</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>intervención_quirúrgica</l><r>chirurgisch_Eingriff</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- split? -->
+   <e><p><l>intervención_quirúrgica</l><r>Operation</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>pequeño</l><r>Klein</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>reapertura</l><r>Wiedereröffnung</r></p><par n='NC_N_NUM_FEM'/></e>
 </section>
 <section id="Nouns-diario-july" type="standard">
    <e><p><l>abastos</l><r>Proviant</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- abastos only in plural ? -->
@@ -19373,6 +19434,7 @@
    <e><p><l>eco</l><r>Hall</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>economía</l><r>Wirtschaft</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>economista</l><r>Ökonom</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
+   <e><p><l>economista</l><r>Wirtschaftler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>ectoplasma</l><r>Ektoplasma</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>ecuación</l><r>Gleichung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>ecuador</l><r>Äquator</r></p><par n='NC_N_112_TRAKTOR'/></e>
@@ -28833,8 +28895,8 @@
    <e><p><l>sitio_web</l><r>Homepage</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>sitio_web</l><r>Webpräsenz</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>sitio_web</l><r>Website</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>situación</l><r>Lage</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>situación</l><r>Situation</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>situación</l><r>Zustand</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>slalom</l><r>Slalom</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>slip</l><r>Slip</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>slip</l><r>Unterhose</r></p><par n='NC_N_NUM_FEM'/></e>
