@@ -105,6 +105,9 @@ capital	Kapital		k	my.smi=/NCM/
 colaborador	Mitarbeiterin	k	my.smi=/NCF/
 colaborador	Mitarbeiter	k	my.smi=/NCM/
 
+economista	Ökonomin,Wirtschaftlerin	k	child.smi=/D..F/
+economista	Ökonom,Wirtschaftler		k	child.smi=/D..M/
+
 editorial	Leitartikel	k	my.smi=/NCM/
 editorial	Verlag		k	my.smi=/NCF/
 
