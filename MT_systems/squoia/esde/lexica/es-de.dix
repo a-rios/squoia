@@ -13784,6 +13784,7 @@
    <e><p><l>ventosear</l><r>furzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>ver</l><r>sehen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>ver</l><r>sehen<s n="cmdverb"/>yes</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>vetar</l><r>ein_Veto_ein|legen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>viajar</l><r>reisen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>vigilar</l><r>überwachen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>violar</l><r>verletzen</r></p><par n="VM_VV_MAIN"/></e>
@@ -30256,13 +30257,13 @@
    <e><p><l>vicente</l><r>Vicente</r></p><par n='NPper_NE'/></e> 
 
 <!-- Named entities: organizations that are translated -->
-   <e><p><l>bolsas</l><r>Börsen</r></p><par n='NPorg_NE'/></e> 
+   <e><p><l>bolsas</l><r>Börsen<s n='mi'/>*.Pl</r></p><par n='NPorg_NE'/></e> 
    <e><p><l>instituto_austriaco_para_américa_latina</l><r>Lateinamerika-Institut<s n="mi"/>Neut.Sg</r></p><par n='NPorg_NE'/></e> 
    <e><p><l>lai</l><r>LAI<s n="mi"/>Neut.Sg</r></p><par n='NPorg_NE'/></e> 
-   <e><p><l>onu</l><r>UNO</r></p><par n='NPorg_NE'/></e> 
-   <e><p><l>parlamento</l><r>Parlament</r></p><par n='NPorg_NE'/></e>
-   <e><p><l>unión_europea</l><r>Europäische_Union</r></p><par n='NPorg_NE'/></e> 
-   <e><p><l>ue</l><r>EU</r></p><par n='NPorg_NE'/></e> <!-- TODO acronyms? -->
+   <e><p><l>onu</l><r>UNO<s n='mi'/>Fem.Sg</r></p><par n='NPorg_NE'/></e> 
+   <e><p><l>parlamento</l><r>Parlament<s n='mi'/>Neut.Sg</r></p><par n='NPorg_NE'/></e>
+   <e><p><l>unión_europea</l><r>Europäische_Union<s n='mi'/>Fem.Sg</r></p><par n='NPorg_NE'/></e> 
+   <e><p><l>ue</l><r>EU<s n='mi'/>Fem.Sg</r></p><par n='NPorg_NE'/></e> <!-- TODO acronyms? -->
 
 <!-- Named entities: "various" -->
    <e><p><l>internet</l><r>Internet</r></p><par n='NPvar_NE'/></e>
@@ -30606,6 +30607,7 @@ veintitodos
    <e><p><l>académico</l><r>akademisch<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>accesible</l><r>zugänglich<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>activo</l><r>aktiv<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
+   <e><p><l>actual</l><r>aktuell</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>actual</l><r>gegenwärtig<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>africano</l><r>afrikanisch<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>
    <e><p><l>agradable</l><r>behaglich<s n="molif"/>1</r></p><par n="AQ_ADJ"/></e>

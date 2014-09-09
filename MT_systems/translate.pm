@@ -1931,7 +1931,8 @@ elsif($direction eq 'esde'){
 			close(SENT);
 		}
 	}
-	system("$path/squoia/esde/outputSentences -m $deModel -n $nbest -i $sentFile");	# TODO: outputSentences for German...
+	#system("$path/squoia/esde/outputSentences -m $deModel -n $nbest -i $sentFile");	# TODO: outputSentences for German...
+	system("$path/squoia/esde/rankSentences.py -l $deModel -n $nbest < $sentFile 2>/dev/null");
 	
 }
 
