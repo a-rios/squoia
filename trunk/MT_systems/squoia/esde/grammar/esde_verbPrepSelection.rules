@@ -8,7 +8,9 @@ abogar		por	verteidigen	-	Akk
 acabar		en	enden		auf	Akk
 acabar		en	enden		mit	Dat
 advertir	de	hin|weisen	auf	Akk
+advertir	del	hin|weisen	auf_d(er)	Akk
 advertir	de	warnen		vor	Dat
+advertir	del	warnen		vor_d(er)	Dat
 basar		en	beruhen		auf	Dat
 centrar		en	konzentrieren	auf	Akk
 consistir	en	beruhen		auf	Dat
@@ -90,3 +92,4 @@ manipular	-	hantieren	mit	Dat
 #padecer	-	erleiden	-	Akk
 padecer		-	leiden		an	Dat
 
+vetar		-	ein_Veto_ein|legen	gegen	Akk

@@ -34,7 +34,9 @@ sub main{
 
 
 	# get all prepositional complement chunks
-	foreach my $prepchunk ( $dom->findnodes('//CHUNK[@si="'.$PREP_FUNC.'"]') ) {
+	#foreach my $prepchunk ( $dom->findnodes('//CHUNK[@si="'.$PREP_FUNC.'"]') ) {
+	# get all prepositional complement chunks and circunstancial complement with contracted preposition "del" or "al" (tagged as "SPCMS")
+	foreach my $prepchunk ( $dom->findnodes('//CHUNK[@si="'.$PREP_FUNC.'" or (@si="cc" and NODE[@smi="SPCMS"])]') ) {
 		my $prepnode = @{$prepchunk->findnodes('descendant::NODE[starts-with(@smi,"'.$SL_PREP_CPOS.'")]')}[0];
 		next if not $prepnode;
 		my $verbchunk = squoia::util::getParentChunk($prepchunk);
