@@ -42,3 +42,10 @@ my.type=/VP/&&my.subord=yes&&chunkparent.type=/PP/		comment="subord after prepos
 ###############################
 
 my.type=/VP/&&my.zu=yes&&chunkparent.type=/PP/			comment="zu+Inf after preposition"
+
+##########
+# Gerund #
+##########
+	
+my.type=gerundAdv&&chunkparent.type=subConj			comment="gerundAdv from subConj"
+

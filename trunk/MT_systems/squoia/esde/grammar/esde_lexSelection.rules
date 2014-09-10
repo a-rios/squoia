@@ -179,8 +179,8 @@ ser	werden	k	my.smi=/VS.+/ && (parent.smi=/VMP00[PS][FM]/ && chunkparent.type=/V
 
 # estar = sein: "El libro estaba en la mesa" => "Das Buch war auf dem Tisch"
 # estar + GERUND = gerade + FIN: "Estamos bebiendo vino" => "Wir trinken gerade Wein"
-estar	sein	k	!(parent.smi=/VMG/)
-estar	gerade	k	parent.smi=/VMG/
+estar	sein	k	!(parent.smi=/VMG/|| grandparent.smi=/VMG/)
+estar	gerade	k	parent.smi=/VMG/ || grandparent.smi=/VMG/
 
 # Main
 # acabar = beenden: "acaba el trabajo" => "er beendet die Arbeit"
