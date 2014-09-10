@@ -825,14 +825,24 @@ $apprart{"von"}{"dem"} = "vom";
 $apprart{"zu"}{"dem"} = "zum";
 $apprart{"zu"}{"der"} = "zur";
 
+my $GLUETAG = "_GLUE_";
+my $TRUNCTAG = "_TRUNC_";
+
 sub getWordForm{
 	my $outfst = $_[0];
+	my $prev_w = $_[1];
 
+	my $pretag = '';
+	print STDERR "previous word: $prev_w\n" if $verbose;
+	print STDERR "current word: $outfst\n" if $verbose;
+	if ($prev_w =~ /PTKVZ/ and $outfst =~ /VVFIN/) {
+		$pretag = $GLUETAG;
+	}
 	$outfst =~ s/<[^>]+>//g;	# get rid of the xml tags
 	$outfst =~ s/^_//g;		# word form is the first string between "_"
 	$outfst =~ s/_.*//g;		# eliminate the rest
 
-	return $outfst;	
+	return $pretag.$outfst;
 }
 
 sub printWordForms{
@@ -854,6 +864,8 @@ sub printWordForms{
 	$sentence =~ s/\bvon dem\b/vom/g;
 	$sentence =~ s/\bzu der\b/zur/g;
 	$sentence =~ s/\bzu dem\b/zum/g;
+	$sentence =~ s/ $GLUETAG//g;		# typically for verb prefix followed by finite verb form => glue together
+	$sentence =~ s/-$TRUNCTAG (.)/\l$1/g;
 
 	print $fh "$sentence";
 }
@@ -861,7 +873,7 @@ sub printWordForms{
 sub cleanFstOutput{
 	my $infile = $_[0];
         my $outfile = $_[1];
-	my $verbose = $_[2];
+	$verbose = $_[2];
 
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
@@ -872,10 +884,12 @@ sub cleanFstOutput{
 
 	my @outarray = ();
 	my $prev_infst = "";
+	my $prev_word = "";
 	my $wordForm = "";
 	while(<INFILE>) {
 		chomp;
 		if (/^$/) {	# flookup puts an empty line between words
+			$prev_word = $prev_infst;
 			$prev_infst="";
 			next;
 		}
@@ -887,7 +901,7 @@ sub cleanFstOutput{
 		}
 		elsif ($infst eq $prev_infst) {
 			# push further word form alternatives into array
-			$wordForm = &getWordForm($outfst);
+			$wordForm = &getWordForm($outfst,$prev_word);
 			push(@{$outarray[-1]},$wordForm);
 		}
 		elsif ($outfst =~ /\+\?/) {
@@ -900,11 +914,14 @@ sub cleanFstOutput{
 				print STDERR "with lemma $lemma\n" if $verbose;
 	 			#my ($lemma,$pos) = split(/_/,$infst); # TODO: Named entities have also underscores; check this before cutting only the first part of the NE!
 				$lemma =~ s/\|//g;	# eliminate the separable verb prefix mark "|" still present in infinitive forms
+				if ($infst =~ /TRUNC/) {
+					$lemma = $lemma.$TRUNCTAG;
+				}
 				push(@outarray,["$lemma"]);
 			}
 		}
 		else {
-			my $wordForm = &getWordForm($outfst);
+			my $wordForm = &getWordForm($outfst,$prev_word);
 			push(@outarray,["$wordForm"]);		
 		}
 		$prev_infst = $infst;

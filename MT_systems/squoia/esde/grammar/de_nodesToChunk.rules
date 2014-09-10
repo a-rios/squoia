@@ -37,6 +37,15 @@ my.pos=/V[AM]FIN/ && chunkparent.type=/subConj/&&chunkgrandparent.type=/VP/		fin
 my.pos=/V[AM]FIN/ && chunkparent.type=/NP-relpro/&&chunkgrandparent.type=/VP/		finVerb="no"	type=finVerb,comment="upgraded node"
 my.pos=/V[AM]FIN/ && parent.pos=ART && chunkparent.type=/VP/	finVerb="no"	type=finVerb,comment="upgraded oblique node"
 
+##########
+# Gerund #
+##########
+	# put embedded "estar" node under a subordinating conjunction in a separate chunk
+	# example: porque estoy fregando => weil ich gerade schrubbe
+	# parent: CHUNK(type=subConj) > NODE(pos=KOUS) > NODE(pos=ADV lem=gerade)
+	
+my.pos=/ADV/&&my.lem=gerade && chunkparent.type=/subConj/		gerundAdv="gerade"	type=gerundAdv,comment="upgraded node"
+
 # verb periphrase #
 #-----------------#
 	# empezar a + INF
