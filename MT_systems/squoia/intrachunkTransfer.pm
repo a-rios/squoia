@@ -34,10 +34,10 @@ sub main{
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
-	#	print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n" if $verbose;
+		print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n" if $verbose;
 		my @intranodes = squoia::util::getNodesOfSingleChunk($chunk);
 		foreach my $node (@intranodes) {
-			#print STDERR "  node ". $node->getAttribute('ref'). " ".$node->getAttribute('sform'). "\n" if $verbose;
+			print STDERR "  node ". $node->getAttribute('ref'). " ".$node->getAttribute('sform'). "\n" if $verbose;
 			foreach my $condpair (keys %intraConditions) {
 				my ($descCond,$ancCond) = split( /\t/, $condpair);
 	#			print STDERR "$descCond ++ $ancCond\n" if $verbose;

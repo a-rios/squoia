@@ -384,7 +384,8 @@ my %mapNodeHash =	(
 	'lsibling'	=> 'preceding-sibling::NODE',
 	'rsibling'	=> 'following-sibling::NODE',
 	'chunkchild'	=> 'child::CHUNK',
-	'chunkparent'	=> 'ancestor::CHUNK[1]'
+	'chunkparent'	=> 'ancestor::CHUNK[1]',
+	'chunkgrandparent'	=> 'ancestor::CHUNK[2]'
 		);
 
 my %mapChunkHash =	(
@@ -486,6 +487,10 @@ sub getTargetNode{
 		# first chunk above NODE is chunkparent
 		elsif ( $pathStep eq 'chunkparent' ) { 
 			$trgNode = @{$srcNode->findnodes('ancestor::CHUNK[1]')}[0];
+		}	
+		# second chunk above NODE is chunkgrandparent
+		elsif ( $pathStep eq 'chunkgrandparent' ) { 
+			$trgNode = @{$srcNode->findnodes('ancestor::CHUNK[2]')}[0];
 		}	
 		else
 		{

@@ -149,10 +149,12 @@ my.pos=/PRF/		delete		xpath{//CHUNK[@type="VP" and NODE[@irrefl="yes"]]/CHUNK[@t
 # case of the 1st/2nd person pronoun clitic form is ambiguous, depends also on the verb: direct object "te veo" vs indirect "te doy algo"
 #my.smi=/PP[12]C/	Akk			my.type=VP			cas			up		overwrite
 my.smi=/PP[12]C/	cas			my.type=VP&&my.dobjcas=/./	dobjcas			down	overwrite
+my.smi=/PP[12]C/	cas			my.type=NP&&chunkparent.type=/VP/&&chunkparent.dobjcas=/./	chunkparent.dobjcas			down	overwrite
 
 # 3rd person direct object: la/las/lo/los with parol=smi=/PP3[F|M][S|P]A00/ => cas=Akk
 # already in dix!... but may depend on verb case
 my.smi=/PP3..A00/	cas			my.type=VP&&my.dobjcas=/./	dobjcas			down	overwrite
+my.smi=/PP3..A00/	cas			my.type=NP&&chunkparent.type=VP&&chunkparent.dobjcas=/./	chunkparent.dobjcas			down	overwrite
 
 # 3rd person indirect object: le/les with parol=smi=/PP3C[S|P]D00/ => cas=Dat
 # already in dix!...
@@ -249,8 +251,10 @@ my.pos=/ADJ/		cas			my.type=/C?AP/&&chunkgrandparent.si=/cd|cd-a/	Akk		down		no-
 
 
 # set case of direct objects to Akk (or another case like Dat given by the head verb)
-my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&my.si=/cd|cd-a/&&chunkparent.dobjcas=/./	chunkparent.dobjcas	down		no-overwrite
-my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&(my.si=/cd|cd-a/||chunkparent.si=/cd|cd-a/)&&!(chunkparent.dobjcas=/./)	Akk			down		no-overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP/&&my.si=/cd|cd-a/&&chunkparent.dobjcas=/./	chunkparent.dobjcas	down		no-overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP/&&chunkparent.type=/PP/&&chunkparent.si=/cd|cd-a/&&chunkgrandparent.dobjcas=/./	chunkgrandparent.dobjcas	down		no-overwrite
+#my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP|PP/&&(my.si=/cd|cd-a/||chunkparent.si=/cd|cd-a/)&&!(chunkparent.dobjcas=/./)	Akk			down		no-overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP/&&my.si=/cd|cd-a/&&!(chunkparent.dobjcas=/./)	Akk			down		no-overwrite
 
 # set case of subjects and attributives to Nom
 my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=NP&&my.si=/atr|suj|suj-a/	Nom			down		overwrite
@@ -264,12 +268,14 @@ my.pos=/V.FIN/		subjnum		xpath{//CHUNK[@type="VP" and CHUNK[(@si="suj" or @si="s
 #my.pos=/ADJ/				cas		my.type=/AP/&&chunkgrandparent.cas=Dat	Dat		down		no-overwrite
 my.pos=/NN|ART|PPOSAT|PDAT|PIAT|PPER/		cas		my.type=/NP/&&chunkparent.cas=/./	chunkparent.cas		down		no-overwrite
 my.pos=/NN/&&my.cas=/./				cas		my.type=/C?NP/				cas			up		no-overwrite
-#my.pos=/ADJ/				cas		my.type=/C?AP/&&chunkgrandparent.cas=/./	chunkparent.chunkparent.cas		down		no-overwrite
+my.pos=/ADJ/				cas		my.type=/C?AP/&&chunkgrandparent.cas=/./	chunkgrandparent.cas		down		no-overwrite
 
 # set case of adjective depending on its parent/ancestor's case
-my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Dat"]/descendant::CHUNK[(@type="CAP" or @type="AP") or NODE[@pos="ADJA"]]}	"Dat"		down	no-overwrite
-my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Gen"]/descendant::CHUNK[(@type="CAP" or @type="AP") or NODE[@pos="ADJA"]]}	"Gen"		down	no-overwrite
-my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Akk"]/descendant::CHUNK[(@type="CAP" or @type="AP") or NODE[@pos="ADJA"]]}	"Akk"		down	no-overwrite
+#my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Dat"]/descendant::CHUNK[(@type="CAP" or @type="AP") and NODE[@pos="ADJA"]]}	"Dat"		down	no-overwrite
+#my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Gen"]/descendant::CHUNK[(@type="CAP" or @type="AP") and NODE[@pos="ADJA"]]}	"Gen"		down	no-overwrite
+#my.pos=/ADJ/				cas		xpath{//CHUNK[@cas="Akk"]/descendant::CHUNK[(@type="CAP" or @type="AP") and NODE[@pos="ADJA"]]}	"Akk"		down	no-overwrite
+# set case of determiners under nominalized adjectives
+my.pos=/ART|PDAT/	cas		my.type=/AP/&&chunkparent.cas=/./	chunkparent.cas		down	no-overwrite
 
 # set gender (and number) of ADJ if head noun is singular
 my.pos=/ADJ/			mi		my.type=/NP|PP/&&my.mi=/Sg/			mi				down		overwrite

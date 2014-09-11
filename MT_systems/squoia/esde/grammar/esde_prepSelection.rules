@@ -15,10 +15,10 @@
 a		cas=Akk,lem=um		xpath{self::NODE[parent::CHUNK[@si="cc" and CHUNK[@type="NP" and (NODE[@smi="Z" and NODE[@sform="las" or @sform="la"]] or NODE[@sform="medianoche" or @sform="mediodía"]) ] ] ]}	-
 a		cas=Akk,lem=um		xpath{//CHUNK[@si="cc" and CHUNK[@type="date" and NODE[@smi="W" and NODE[@sform="las" or @sform="la"]] ] ]/NODE}	-
 
-# veo a Juan (dobj) => ich sehe Hans (without preposition)
-a		cas=Akk,delete=yes	chunkparent.si=dobj||chunkgrandparent.si=dobj		-
-# doy el libro a mi padre (iobj) => ich gebe meinem Vater das Buch
-a		cas=Dat,delete=yes	chunkparent.si=iobj					+
+# veo a Juan (cd) => ich sehe Hans (without preposition)
+a		cas=Akk,delete=yes	chunkparent.si=/cd|cd-a/||chunkgrandparent.si=/cd|cd-a/		-
+# doy el libro a mi padre (ci) => ich gebe meinem Vater das Buch
+a		cas=Dat,delete=yes	chunkparent.si=ci					+
 
 # with verbs of movement
 # A => AN: an|kommen
