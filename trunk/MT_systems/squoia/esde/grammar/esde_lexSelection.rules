@@ -72,9 +72,9 @@ os	ihr_PRF		k	xpath{//NODE[starts-with(@smi,"PP2CP") and parent::CHUNK[preceding
 #se	sie		k	!(xpath{//CHUNK[@type="NP" and @si="morfema.pronominal"]/NODE[@smi="PP3CN000"]})
 #se	sie_PRF		k	xpath{//CHUNK[@type="NP" and @si="morfema.pronominal"]/NODE[@smi="PP3CN000"]}
 #irreflexive
-se	sie		k	!(xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"3")]]]]})
+#se	sie		k	!(xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"3")]]]]})
 #reflexive
-se	sie_PRF		k	xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and starts-with(@mi,"3")]]]]}
+se	sie_PRF		d	xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding-sibling::NODE[starts-with(@pos,"VV") and descendant-or-self::NODE[starts-with(@smi,"V") and (starts-with(@mi,"1")or starts-with(@mi,"2"))]]]]}
 
 ##############
 # Adjectives #

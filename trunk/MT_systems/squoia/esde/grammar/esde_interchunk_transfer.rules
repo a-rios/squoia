@@ -49,7 +49,7 @@ xpath{//CHUNK[@type="NP" and NODE[@pos="PRF"]]}		delete		xpath{//CHUNK[@type="VP
 # Preposition + ZU Infinitive #
 ###############################
 # exception: preposition "para" is translated as "um ...zu+inf" and the preposition should stay "um" (and not "darum"!)
-my.type=/VP/			"da"			my.type=/PP/&&!(child.slem=para&&child.lem=um)		prefix			parent		1to2		overwrite
+my.type=/VP/			"da"			my.type=/PP/&&!(child.slem=para&&child.lem=um)&&!(child.infconj=zu)		prefix			parent		1to2		overwrite
 
 ###############
 # DATES/TIMES #

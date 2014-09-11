@@ -30,6 +30,7 @@
     <sdef n="compar"	c="comparative marker for adjectives and adverbs"/>
     <sdef n="ling"	c="manually set (linguist) lexical preference"/>
     <sdef n="checked"	c="status of entry, if manually checked or not"/>
+    <sdef n="infconj"	c="Infinitivconjunction marker for German subordinated clause with zu+Inf"/>
   </sdefs>
 <!-- Paradigmas -->
   <pardefs>
@@ -11660,6 +11661,7 @@
    <e><p><l>liquidar</l><r>liquidieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>liquidar</l><r>um|legen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>liquidar</l><r>verflüssigen</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>llamar</l><r>an|rufen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llamar</l><r>berufen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>llamar</l><r>heißen<s n='irrefl'/>yes</r></p><par n="VM_VV_MAIN"/></e>	<!-- llamarse = heissen -->
    <e><p><l>llamar</l><r>nennen</r></p><par n="VM_VV_MAIN"/></e>
@@ -13848,11 +13850,13 @@
    <e><p><l>abedul</l><r>Birkenholz</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>abedul</l><r>Birke</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>abeja</l><r>Biene</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>abejar</l><r>Bienenkasten</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>abejar</l><r>Bienenkasten</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>abejar</l><r>Bienenstand</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>abejar</l><r>Bienenstock</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>abejarrón</l><r>Hummel</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abejaruco</l><r>Bienenfresser</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abejero</l><r>Imker</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>abejorro</l><r>Hummel</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>abejorro</l><r>Hummel</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>aberración</l><r>Aberration</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>aberración</l><r>Abweichung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>aberración</l><r>schwerer Irrtum</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -13867,7 +13871,8 @@
    <e><p><l>ablandamiento</l><r>Erweichen</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>ablativo</l><r>Ablativ</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>ablefaria</l><r>Ablepharie</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>ablución</l><r>Ablution</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>ablución</l><r>Ablution</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>ablución</l><r>Waschung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abnegación</l><r>Entsagung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abnegación</l><r>Verleugnung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>abobamiento</l><r>Verblöden</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -13900,7 +13905,8 @@
    <e><p><l>abrazo</l><r>Umarmung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>abrelatas</l><r>Dosenöffner</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>abrevadero</l><r>Tränke</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>abrevadero</l><r>Viehtränke</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>abrevadero</l><r>Viehtränke</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>abrevadero</l><r>Wasserstelle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abreviación</l><r>Abkürzung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>abreviamiento</l><r>Abkürzung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>abreviatura</l><r>Abkürzung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -13920,18 +13926,20 @@
    <e><p><l>abrochador</l><r>Knopfhaken</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abrochamiento</l><r>Zuknöpfen</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abrogación</l><r>Aufhebung</r></p><par n='NC_N_64_FRAU'/></e>
-   <e><p><l>abrojal</l><r>Distelfeld</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>abrojal</l><r>Distelfeld</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>absceso</l><r>Eiterbeule</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abscisa</l><r>Abszisse</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abscisión</l><r>Abschneiden</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>absenta</l><r>Absinth</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>absenta</l><r>Absinth</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>absentismo</l><r>Absentismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
-   <e><p><l>ábside</l><r>Apsis</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>ábside</l><r>Apsis</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>absolución</l><r>Absolution</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>absolución</l><r>Freisprechung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>absolución</l><r>Freispruch</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>absolución</l><r>Sündenerlaß</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>absolución</l><r>Sündenerlaß</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>absolución</l><r>Vergebung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>absolutismo</l><r>Absolutismus</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>absoluto</l><r>Absolute</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>absoluto</l><r>Absolute</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>absoluto</l><r>Absolutheit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>absolvente</l><r>Absolvent</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>abstemio</l><r>Antialkoholiker</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -13964,7 +13972,7 @@
    <e><p><l>académico</l><r>Akademiker</r></p><par n='NC_N_52_SPLITTER'/></e>	<!-- gender -->
    <e><p><l>acaecimiento</l><r>Ereignis</r></p><par n='NC_N_59_EREIGNIS'/></e>
    <e><p><l>acanalador</l><r>Nuthobel</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>acantilado</l><r>Felsenriff</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>acantilado</l><r>Felsenriff</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>acantilado</l><r>Kliff</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>acantilado</l><r>Klippe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>acanto</l><r>Akanthusgewächse</r></p><par n='NC_N_NUM_NOUN'/></e>
@@ -15026,7 +15034,8 @@
    <e><p><l>arrastre</l><r>Schleppen</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>arrayán</l><r>Brautmyrte</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>arrebato</l><r>Furore</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>arrecife</l><r>Riff</r></p><par n='NC_N_56_TISCH'/></e>
+   <e><p><l>arrecife</l><r>Felsenriff</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>arrecife</l><r>Riff</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>arreglo floral</l><r>Blumengesteck</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>arreglo</l><r>Abmachung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>arreglo</l><r>Reparatur</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -25472,7 +25481,7 @@
    <e><p><l>patinaje</l><r>Skaten</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>patinazo</l><r>Rutschen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>patinazo</l><r>Schleudern</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>patineta</l><r>Skateboard</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>patineta</l><r>Skateboard</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>patín</l><r>Bremsklotz</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>patín</l><r>Roller</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>patín</l><r>Rollschuh</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25491,7 +25500,7 @@
    <e><p><l>patrimonio</l><r>Erbe</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>patrimonio</l><r>Erbgut</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>patrimonio</l><r>Gut</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>patrimonio</l><r>Patrimonium</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>patrimonio</l><r>Patrimonium</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>patrimonio</l><r>Vermögen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>patriota</l><r>Patriot</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>patriotismo</l><r>Patriotismus</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25534,7 +25543,7 @@
    <e><p><l>pazguato</l><r>töricht</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>paz</l><r>Frieden</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>paz</l><r>Friede</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>paz</l><r>Ruhe</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>paz</l><r>Ruhe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>peaje</l><r>Maut</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>peaje</l><r>Straßengebühr</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>peatonal</l><r>Fußgängerzone</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -25545,7 +25554,7 @@
    <e><p><l>pecado original</l><r>Erbsünde</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pecador</l><r>Sünder</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>peca</l><r>Sommersprosse</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>pecarí</l><r>Nabelschwein</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pecarí</l><r>Nabelschwein</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pecera</l><r>Aquarium</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pecho</l><r>Brust</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pecho</l><r>Busen</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25570,7 +25579,7 @@
    <e><p><l>pediatra</l><r>Kinderärztin</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gender -->
    <e><p><l>pediatra</l><r>Kinderarzt</r></p><par n='NC_N_NUM_MASC'/></e>	<!-- gender -->
    <e><p><l>pediatría</l><r>Kinderheilkunde</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>pediatría</l><r>Pädiatrie</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pediatría</l><r>Pädiatrie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pedicura</l><r>Fußpflege</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pedicura</l><r>Pediküre</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pedicuro</l><r>Fußpfleger</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25580,7 +25589,7 @@
    <e><p><l>pedigrí</l><r>Stammbaum</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pedigüeño</l><r>Quengler</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pedigüeño</l><r>Schnorrer</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>pedofilia</l><r>Pädophilie</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pedofilia</l><r>Pädophilie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pedo</l><r>Furz</r></p><par n='NC_N_675_ANSCHLUSS'/></e>
    <e><p><l>pedrisco</l><r>Hagel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pedrisquero</l><r>Hagelschlag</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25624,7 +25633,7 @@
    <e><p><l>peltre</l><r>Hartzinn</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>peltre</l><r>Zinn</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>peluca</l><r>Perücke</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>peluca</l><r>Zweitfrisur</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>peluca</l><r>Zweitfrisur</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>peluche</l><r>Plüsch</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>peluche</l><r>Plüschtier</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>peludo</l><r>Gürteltier</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -25682,7 +25691,7 @@
    <e><p><l>penitenciaría</l><r>Zuchthaus</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>peñón</l><r>Felsblock</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pensador</l><r>Denker</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>pensamiento</l><r>Garten-Stiefmütterchen</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pensamiento</l><r>Garten-Stiefmütterchen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pensamiento</l><r>Gedanke</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pensamiento</l><r>Stiefmütterchen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pensionado</l><r>Rentner</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25693,7 +25702,9 @@
    <e><p><l>pensión</l><r>Rente</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>pentágono</l><r>Fünfeck</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pentagrama</l><r>Notenlinien</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>pentatlón</l><r>Fünfkampf</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pentagrama</l><r>Pentagramm</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>pentatlón</l><r>Fünfkampf</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>pentatlón</l><r>Pentathlon</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>penumbra</l><r>Halbdunkel</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>penuria</l><r>Mangel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>penuria</l><r>Not</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -31387,7 +31398,6 @@ veintitodos
    <e><p><l>caliente</l><r>erregt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caliente</l><r>hitzig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caliente</l><r>geil<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
-   <e><p><l>caliente</l><r>warm<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caliente</l><r>heiß<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calificable</l><r>qualifizierbar<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>calificador</l><r>qualifizierend<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
@@ -36435,7 +36445,7 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
         <e><p><l>durante</l><r>während<s n='cas'/>Dat</r></p><par n='PREP'/></e>
         <e><p><l>en</l><r><s n='adpos'/>en</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
         <e><p><l>entre</l><r>zwischen<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
-        <e><p><l>excepto</l><r>außer<s n='cas'/>Dat</r></p><par n='PREP'/></e> <!-- außer, ausser -->
+        <e><p><l>excepto</l><r>außer<s n='cas'/>Dat<s n='infconj'/>zu</r></p><par n='PREP'/></e> <!-- außer, ausser -->
         <e><p><l>hacia</l><r>nach<s n='cas'/>Dat</r></p><par n='PREP'/></e>
         <e><p><l>hasta</l><r>bis<s n='cas'/>Akk</r></p><par n='PREP'/></e>
         <e><p><l>mediante</l><r>durch<s n='cas'/>Akk</r></p><par n='PREP'/></e>
@@ -36446,7 +36456,7 @@ y/o => here the tokenization is the issue: analysed as two separate words "y" an
         <e><p><l>pro</l><r>pro<s n='adpos'/>pro</r></p><par n='PREP'/></e>
         <e><p><l>salvo</l><r>außer<s n='cas'/>Dat</r></p><par n='PREP'/></e> <!-- außer, ausser -->
         <e><p><l>según</l><r>gemäß<s n='cas'/>Dat</r></p><par n='PREP'/></e>
-        <e><p><l>sin</l><r>ohne<s n='cas'/>Akk</r></p><par n='PREP'/></e>
+        <e><p><l>sin</l><r>ohne<s n='cas'/>Akk<s n='infconj'/>zu</r></p><par n='PREP'/></e>
         <e><p><l>so</l><r>unter<s n='cas'/>Dat</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
         <e><p><l>sobre</l><r>auf<s n='cas'/>Dat<s n='adpos'/>sobre</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
         <e><p><l>sobre</l><r>über<s n='cas'/>Dat<s n='adpos'/>sobre</r></p><par n='PREP'/></e>	<!-- TODO: by movement could be Akk -->
@@ -36534,7 +36544,6 @@ después_de	SPS00
 en_cuanto_a	SPS00
 en_la_necesidad_de	SPS00
 en_las_cercanías_de	SPS00
-en_lugar_de	SPS00
 en_manos_de	SPS00
 en_materia_de	SPS00
 
@@ -36542,7 +36551,6 @@ en_parte_por	SPS00
 en_representación_de	SPS00
 en_tiempo_de	SPS00
 en_torno_a	SPS00
-en_vez_de	SPS00
 en_vías_de	SPS00
 en_virtud_de	SPS00
 en_vista_de	SPS00
@@ -36634,6 +36642,8 @@ sin_perjuicio_de	SPCMS
    <e><p><l>alrededor_de</l><r>um_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>antes_de</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>
    <e><p><l>antes_de</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>aparte_de</l><r>ausser<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>aparte_de</l><r>ausser_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_partir_de</l><r>ab<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- a_partir_de = ab/ TODO circum : von ... an ? -->
    <e><p><l>a_partir_de</l><r>ab_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>	<!-- a_partir_del -->
    <e><p><l>a_pesar_de</l><r>trotz<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- a_pesar_de = trotz + Gen -->
@@ -36692,8 +36702,8 @@ sin_perjuicio_de	SPCMS
    <e><p><l>en_el_interior_de</l><r>im Innen_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>en_favor_de</l><r>zugunsten von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- zugunsten von, zu Gunsten von + Dat -->
    <e><p><l>en_favor_de</l><r>zugunsten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
-   <e><p><l>en_lugar_de</l><r>statt<s n="cas"/>Dat</r></p><par n='PREP'/></e>
-   <e><p><l>en_lugar_de</l><r>statt_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_lugar_de</l><r>statt<s n="cas"/>Dat<s n='infconj'/>zu</r></p><par n='PREP'/></e>
+   <e><p><l>en_lugar_de</l><r>statt_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>	<!-- infconj not applicable: no infinitive form after "del" -->
    <e><p><l>en_medio_de</l><r>mitten in<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- DE "multitoken" without "_" so that the whole prepositional expression is generated/printed; TODO change outputGerman/cleanup -->
    <e><p><l>en_medio_de</l><r>mitten in_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>en_nombre_de</l><r>im Namen von<s n="cas"/>Dat</r></p><par n='PREP'/></e>
@@ -36702,6 +36712,8 @@ sin_perjuicio_de	SPCMS
    <e><p><l>en_pos_de</l><r>hinter_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>en_torno_a</l><r>um<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- en torno a = um ... herum, ueber -->
    <e><p><l>en_torno_a</l><r>um_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>en_vez_de</l><r>anstatt<s n="cas"/>Gen<s n='infconj'/>zu</r></p><par n='PREP'/></e>
+   <e><p><l>en_vez_de</l><r>anstatt_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>frente_a</l><r>angesichts<s n="cas"/>Gen</r></p><par n='PREP'/></e>
    <e><p><l>frente_a</l><r>angesichts_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>frente_a</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>
