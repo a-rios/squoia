@@ -163,6 +163,13 @@ my.smi=/PP3..A00/	cas			my.type=NP&&chunkparent.type=VP&&chunkparent.dobjcas=/./
 #my.cas=/./		cas			my.type=VP||my.type=PP-von	cas			up		concat
 my.lem=/./		lem			my.type=VP			headlem			up		no-overwrite
 
+##########
+# Clitic #
+##########
+	# example: "No trabajas porque sigues comiendolas" => du arbeitest nicht, weil du sie noch isst
+	#	"Ahora trabaja pues ya no las esta comiendo" => er arbeitet jetzt da er sie nicht mehr isst
+
+my.pos=/PRF|PPER/	yes		my.type=NP && chunkparent.type=/VP/	clitic		up		overwrite
 
 # --------------------------------------------------------------------------------------------------------------------------- #
 # head preposition node of PP chunk sets the case of the whole chunk

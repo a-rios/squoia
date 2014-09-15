@@ -326,6 +326,12 @@
     </pardef>
 
     <!-- Noun OLIF classes -->
+    <pardef n="NC_N_ADJ_NOUN">
+      <e><p><l></l><r><s n='pos'/>NN</r></p><par n='NC_NN'/></e>	<!-- no morph info here: it depends on the determiner, e.g. "del responsable" => "des Verantwortlichen": Masc.Sg.Gen -->
+    </pardef>
+    <pardef n="NC_N_PLURAL_NOUN">
+      <e><p><l></l><r><s n='pos'/>NN<s n='mi'/>*</r></p><par n='NC_NN'/></e>	<!-- TODO mark German side as plural? -->
+    </pardef>
     <pardef n="NC_N_NUM_NOUN">
       <e><p><l></l><r><s n='molif'/>num<s n='pos'/>NN<s n='mi'/>Masc</r></p><par n='NC_NN'/></e>
     </pardef>
@@ -1651,18 +1657,18 @@
    <e><p><l>quinoa</l><r>Quinoa</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>quinua</l><r>Quinoa</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>reasignación</l><r>Wiederzuweisung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>responsable</l><r>Verantwortliche</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>responsable</l><r>Verantwortliche</r></p><par n='NC_N_ADJ_NOUN'/></e>
    <e><p><l>viceministro</l><r>Vizeminister</r></p><par n='NC_N_GENTRY_ERIN'/></e>
 
 </section>
 <section id="Nouns-diario-july" type="standard">
-   <e><p><l>asegurado</l><r>Versicherte</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gentry? -->
+   <e><p><l>asegurado</l><r>Versicherte</r></p><par n='NC_N_ADJ_NOUN'/></e>	<!-- TODO: same as molif class SCHOENE ? -->
    <e><p><l>contratación_de_personal</l><r>Personalanstellung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>dato_personal</l><r>Personalien</r></p><par n='NC_N_NUM_NOUN'/></e> <!-- plural -->
+   <e><p><l>dato_personal</l><r>Personalien</r></p><par n='NC_N_PLURAL_NOUN'/></e>
    <e><p><l>declaración_jurada</l><r>Aussage_unter_Eid</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- split? -->
    <e><p><l>declaración_jurada</l><r>eidesstattliche_Erklärung</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- split? -->
    <e><p><l>diagramación</l><r>Planung</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>diplomado</l><r>Diplomierte</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- gentry? -->
+   <e><p><l>diplomado</l><r>Diplomierte</r></p><par n='NC_N_ADJ_NOUN'/></e>
    <e><p><l>dosaje</l><r>Dosierung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>enfermería</l><r>Krankenstation</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>enfermería</l><r>Krankenzimmer</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -1675,12 +1681,12 @@
 <section id="Nouns-diario-july" type="standard">
    <e><p><l>abastos</l><r>Proviant</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- abastos only in plural ? -->
    <e><p><l>anchoveta</l><r>peruanisch Sardelle</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>beneficiario</l><r>Begünstigte</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>beneficiario</l><r>Begünstigte</r></p><par n='NC_N_ADJ_NOUN'/></e>
    <e><p><l>calamina</l><r>Ölkohle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>calamina</l><r>Wellblech</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>calamina</l><r>Zinkspat</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>casona</l><r>alte Villa</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>comicio</l><r>Wahlen</r></p><par n='NC_N_NUM_NOUN'/></e> <!-- plural -->
+   <e><p><l>comicio</l><r>Wahlen</r></p><par n='NC_N_PLURAL_NOUN'/></e>
    <e><p><l>concretización</l><r>Konkretisierung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>consejería</l><r>Rat</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>cusqueño</l><r>Person aus Cusco</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -1700,7 +1706,7 @@
    <e><p><l>penal</l><r>Strafanstalt</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>penal</l><r>Strafe</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>penal</l><r>Strafstoss</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>perjudicado</l><r>Geschädigte</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>perjudicado</l><r>Geschädigte</r></p><par n='NC_N_ADJ_NOUN'/></e>
    <e><p><l>pleno</l><r>Plenum</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>priorización</l><r>Priorisierung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>quema</l><r>Brennen</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -1720,7 +1726,7 @@
    <e><p><l>cadena_perpetua</l><r>lebenslänglich_Zuchthaus</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>calidad_de_vida</l><r>Lebensqualität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>campo_de_juego</l><r>Spielfeld</r></p><par n='NC_N_NUM_NEUT'/></e>
-   <e><p><l>director_general</l><r>Generaldirektor</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>director_general</l><r>Generaldirektor</r></p><par n='NC_N_GENTRY_ORIN'/></e>
    <e><p><l>director_técnico</l><r>technisch_Direktor</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- TODO split + gender -->
    <e><p><l>empresa_privada</l><r>Privatunternehmen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>exceso_de_velocidad</l><r>Geschwindigkeitsüberschreitung</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -1730,7 +1736,7 @@
    <e><p><l>libertad_de_expresión</l><r>Redefreiheit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>local_comercial</l><r>Geschäftsraum</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>medio_ambiente</l><r>Umwelt</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>medios_de_comunicación</l><r>Medien</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>medios_de_comunicación</l><r>Medien</r></p><par n='NC_N_PLURAL_NOUN'/></e>
    <e><p><l>organización_social</l><r>sozial_Einrichtung</r></p><par n='NC_N_NUM_FEM'/></e>	<!-- TODO split -->
    <e><p><l>partido_político</l><r>Partei</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>patrimonio_cultural</l><r>Kulturgut</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -1739,9 +1745,9 @@
    <e><p><l>procedimiento_administrativo</l><r>Verwaltungsverfahren</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>proyecto_de_ley</l><r>Gesetzesentwurf</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>punto_de_partida</l><r>Ausgangslage</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>recursos_hídricos</l><r>Wasserressourcen</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>recursos_públicos</l><r>öffentliche Mittel</r></p><par n='NC_N_NUM_NOUN'/></e>	<!-- plural -->
-   <e><p><l>representante_del_gobierno</l><r>Regierungsvertreter</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>recursos_hídricos</l><r>Wasserressourcen</r></p><par n='NC_N_PLURAL_NOUN'/></e>
+   <e><p><l>recursos_públicos</l><r>öffentliche Mittel</r></p><par n='NC_N_PLURAL_NOUN'/></e>
+   <e><p><l>representante_del_gobierno</l><r>Regierungsvertreter</r></p><par n='NC_N_GENTRY_ERIN'/></e>
    <e><p><l>servicio_público</l><r>öffentlich_Amt</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- split -->
    <e><p><l>servicio_público</l><r>Staatsdienst</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>situación_económica</l><r>Wirtschaftslage</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -13820,7 +13826,7 @@
    <e><p><l>ababol</l><r>Mohn</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>abacá</l><r>Abaka</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abacería</l><r>Greisslerei</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>abacero</l><r>Lebensmittelhändler</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>abacero</l><r>Lebensmittelhändler</r></p><par n='NC_N_GENTRY_ERIN'/></e>
    <e><p><l>ábaco</l><r>Abakus</r></p><par n='NC_N_77_ABAKUS'/></e>
    <e><p><l>abada</l><r>Nashorn</r></p><par n='NC_N_61_BUCH'/></e>
    <e><p><l>abadejo</l><r>Köhler</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -13830,7 +13836,7 @@
    <e><p><l>abadía</l><r>Kloster</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>abadiato</l><r>Abtei</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>abad</l><r>Abt</r></p><par n='NC_N_55_WUNSCH'/></e>
-   <e><p><l>abalorio</l><r>Glasperle</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>abalorio</l><r>Glasperle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abandono</l><r>Aufgabe</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>abandono</l><r>Verwahrlosung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abanico</l><r>Fächer</r></p><par n='NC_N_52_SPLITTER'/></e>
@@ -13913,7 +13919,7 @@
    <e><p><l>abridor</l><r>Flaschenöffner</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>abridor</l><r>Öffner</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>abridor</l><r>Pfropfmesser</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>abrigadero</l><r>Zufluchtsstätte</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>abrigadero</l><r>Zufluchtsstätte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>abrigaño</l><r>Schutzwehr</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>abrigo de pieles</l><r>Pelzmantel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>abrigo</l><r>Jacke</r></p><par n='NC_N_76_FEDER'/></e>
@@ -25180,15 +25186,14 @@
    <e><p><l>pantalón vaquero</l><r>Jeans</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pantano</l><r>Moor</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pantano</l><r>Sumpf</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>panteísmo</l><r>Pantheismus</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>panteísmo</l><r>Pantheismus</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>panteísta</l><r>Pantheist</r></p><par n='NC_N_75_STUDENT'/></e>
    <e><p><l>panteón</l><r>Gruft</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pantera</l><r>Panther</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>pantografía</l><r>Pantographie</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>pantorrilla</l><r>Wade</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pantufla</l><r>Pantoffel</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>pantuflo</l><r>Pantoffel</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>panty</l><r>Strumpfhosen</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>pantuflo</l><r>Pantoffel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>panty</l><r>Strumpfhose</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pañuelo</l><r>Halstuch</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pañuelo</l><r>Kopftuch</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -25207,15 +25212,16 @@
    <e><p><l>papel de lija</l><r>Schleifpapier</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>papel de lija</l><r>Schmirgelpapier</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>papelera</l><r>Papierkorb</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>papelería</l><r>Schreibwaren</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>papelería</l><r>Papierwaren</r></p><par n='NC_N_PLURAL_NOUN'/></e>
+   <e><p><l>papelería</l><r>Schreibwarengeschäft</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>papel</l><r>Blatt</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>papel</l><r>Papier</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>papel</l><r>Rolle</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>papel</l><r>Schriftstück</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>papel</l><r>Tapete</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>papel</l><r>Zettel</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>papiamento</l><r>Papiamentu</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>papilionácea</l><r>Schmetterlingsblütler</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>papiamento</l><r>Papiamento</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>papilionácea</l><r>Schmetterlingsblütler</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>papilla</l><r>Brei</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>papi</l><r>Vati</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>papiro</l><r>Papyrus</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25243,16 +25249,17 @@
    <e><p><l>parado</l><r>Arbeitsloser</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>parafina</l><r>Paraffin</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>paráfrasis</l><r>Paraphrase</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>paragoge</l><r>Paragoge</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>paragoge</l><r>Buchstabenanfügung</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>paragoge</l><r>Paragoge</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paraguas</l><r>Regenschirm</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>paraguayo</l><r>Weinbergpfirsich</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>paraguayo</l><r>Weinbergpfirsich</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>parahúso</l><r>Schrimständer</r></p><par n='NC_N_NUM_NOUN'/></e>
    <e><p><l>paraíso</l><r>Paradies</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>paraje</l><r>Ort</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>paraje</l><r>Stätte</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paralela</l><r>Parallele</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paralelogramo</l><r>Parallelogramm</r></p><par n='NC_N_68_ZIEL'/></e>
-   <e><p><l>paralelo</l><r>Breitenkreis</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>paralelo</l><r>Breitenkreis</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>parálisis</l><r>Lähmung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paralización</l><r>Lähmung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paralización</l><r>Stagnation</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -25264,15 +25271,16 @@
    <e><p><l>parapente</l><r>Gleitschirmfliegen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>parapente</l><r>Gleitschirm</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>parapente</l><r>Paraglider</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>paraplejía</l><r>Querschnittlähmung</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>paraplejía</l><r>Querschnittlähmung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pararrayos</l><r>Blitzableiter</r></p><par n='NC_N_52_SPLITTER'/></e>
    <e><p><l>parasitismo</l><r>Parasitismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
-   <e><p><l>parasitología</l><r>Parasitologie</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>parasitología</l><r>Parasitenkunde</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>parasitología</l><r>Parasitologie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>parásito</l><r>Parasit</r></p><par n='NC_N_75_STUDENT'/></e>
    <e><p><l>parásito</l><r>Schädling</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>parásito</l><r>Schmarotzer</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>parasol</l><r>Sonnenschirm</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>parcela</l><r>Grundstück</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>parcela</l><r>Grundstück</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>parcela</l><r>Parzelle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>parche</l><r>Flicken</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>parche</l><r>Pflaster</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -25311,8 +25319,8 @@
    <e><p><l>paro forzoso</l><r>Arbeitslosigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paro</l><r>Arbeitslosigkeit</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paro</l><r>Stillstand</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>parónimo</l><r>Paronym</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>paroxismo</l><r>Paroxysmus</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>parónimo</l><r>Paronymon</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>paroxismo</l><r>Paroxysmus</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>parpadeo</l><r>Blinzeln</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>párpado</l><r>Augenlid</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>párpado</l><r>Lid</r></p><par n='NC_N_NUM_NEUT'/></e>
@@ -25368,7 +25376,7 @@
    <e><p><l>parto</l><r>Geburt</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>parvularia</l><r>Kindergärtnerin</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>parvulario</l><r>Kindergarten</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>pasacalle</l><r>Passacaglia</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pasacalle</l><r>Passacaglia</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pasada</l><r>Durchgang</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pasado</l><r>Vergangenheit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>pasador</l><r>Bolzen</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25387,6 +25395,7 @@
    <e><p><l>pasamano</l><r>Geländer</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pasamano</l><r>Handlauf</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pasamontañas</l><r>Balaklava</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pasamontañas</l><r>Kopfschützer</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>pasante</l><r>Praktikant</r></p><par n='NC_N_GENTRY_TIN'/></e>	<!-- gender -->
    <e><p><l>pasantía</l><r>Praktikum</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>pasantía</l><r>Probezeit</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -25426,7 +25435,8 @@
    <e><p><l>paso</l><r>Vorfahrt</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>paso</l><r>Vortritt</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>paso peatonal</l><r>Fußgängerübergang</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>pasquín</l><r>Käseblatt</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pasquín</l><r>Käseblatt</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>pasquín</l><r>Schmähschrift</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pasta de dientes</l><r>Zahnpasta</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pasta</l><r>Nudeln</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pasta</l><r>Pasta</r></p><par n='NC_N_NUM_FEM'/></e>
