@@ -103,7 +103,8 @@ my.smi=/^D/&&(parent.pos=/NN/||parent.unknown="transfer"&&parent.smi=/^NC/) && c
 	# example: "No trabajas porque sigues comiendolas" => du arbeitest nicht, weil du sie noch isst
 	#	"Ahora trabaja pues ya no las esta comiendo" => er arbeitet jetzt da er sie nicht mehr isst
 
-my.pos=/PRF|PPER/ && parent.pos=/V[AMV]INF|V[AMV]PP|V[AMV]FIN/		clitics="no"	type=cliticPRON,comment="clitics"
+# old:
+# my.pos=/PRF|PPER/ && parent.pos=/V[AMV]INF|V[AMV]PP|V[AMV]FIN/		clitics="no"	type=cliticPRON,comment="clitics"
 
 ###########
 # Flat PP #	TODO: check if still needed
