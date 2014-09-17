@@ -511,7 +511,8 @@ sub main{
 	 					if($headVerbCHunk)
 	 					{
 	 						my $headlem = squoia::util::getMainVerb($headVerbCHunk);
-	 						if($headlem =~ /gustar|molestar|ser|dar_lo_mismo|dar_igual|importar|impresionar|decepcionar|parecer|joder|cansar|enervar/)
+	 					#	print STDERR "headlem: $headlem\n";
+	 						if($headlem =~ /^gustar|molestar|ser|dar_lo_mismo|dar_igual|importar|impresionar|decepcionar|parecer|joder|cansar|enervar$/)
 	 						{
 		 						$verbChunk->setAttribute('verbform', 'infinitive');
 		 						my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
