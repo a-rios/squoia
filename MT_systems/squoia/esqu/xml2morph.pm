@@ -156,6 +156,9 @@ my %mapEaglesPersonToTags = (
 	'3P'		=> '+3.Pl.Subj'
 	);
 
+
+
+
 sub main{
 	my $dom = ${$_[0]};
 	my $tmpfile = $_[1];
@@ -895,7 +898,8 @@ sub deleteUnusedTags{
 	my $morphString = $_[0];
 	my $chunk = $_[1];
 	my $deleteMorph = $chunk->getAttribute('deleteMorph');
-	#print STDERR "to delete: $deleteMorph\n" if $verbose;
+	#print STDERR $chunk->toString."\n";
+	#print STDERR "to delete: $deleteMorph\n"; #if $verbose;
 	my @morphsToDelete = split(',',$deleteMorph);
 	foreach my $del (@morphsToDelete)
 	{$morphString =~ s/\Q$del\E//;}
@@ -1205,6 +1209,16 @@ sub adjustMorph{
 	{
   		$sortedMorphString= $sortedMorphString.$tag;
 	}
+	# try to fix position of -lla (complicated!) -> in verbs: should be after 12 (Prog)
+	# Nouns: after derivation (30) (?)
+	if($sortedMorphString =~ /\+Lim(\+(Perdur|Rem|Desesp|Int|Multi|Intrup|VCont|Vdim|Autotrs|MRep|Des|Ass|Rep|Aff|Inch|Caus|Rzpr|Rflx|Iprs|Cis|Obj|Prog))+/){
+		#print STDERR "Lim found in wrong position: $sortedMorphString\n";
+		$sortedMorphString =~ s/(\+Lim)((\+(Perdur|Rem|Desesp|Int|Multi|Intrup|VCont|Vdim|Autotrs|MRep|Des|Ass|Rep|Aff|Inch|Caus|Rzpr|Rflx|Iprs|Cis|Obj|Prog))+)/\2\1/ ;
+		#print STDERR "Lim reorderd: $sortedMorphString\n";
+	}
+	
+
+	
 	#print STDERR "unsorted morph: $morphString\n" if $verbose;
 	#print STDERR "sorted morph: $sortedMorphString\n" if $verbose;
 	return $sortedMorphString;
@@ -1232,6 +1246,9 @@ sub cleanVerbMi{
 	my ($subjprs,$inclExcl) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Subj/ );
 	my ($objprs) = ($verbmi =~ m/\+([12]\.[PS][lg])(\.Incl|\.Excl)?\.Obj/ );
 	my ($subjprsPoss,$inclExclPoss) = ($verbmi =~ m/\+([123]\.[PS][lg])(\.Incl|\.Excl)?\.Poss/ );
+	
+	# if tags have been marked to delete during transfer: delete those first ('deleteMorph')
+	$verbmi = &deleteUnusedTags($verbmi,$chunk);
 	
 	# check if subj and obj are same person, if so, change obj to reflexive
 	if($subjprs ne '' && $verbmi =~ $subjprs."Obj")
