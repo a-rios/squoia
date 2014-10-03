@@ -107,7 +107,7 @@ sub main{
 							}
 						}
 						my @inputSequence = uniq(@inputSequenceFull);
-						print STDERR "sentence nr:" . $sentence->getAttribute('ref') ."\n" if $verbose;
+						print STDERR " sentence nr:" . $sentence->getAttribute('ref') ."\n" if $verbose;
 							
 						# @inputSequence = original sequence of nodes (by variables),
 						# @variablesWithNewPositions = new sequence of nodes as defined in grammar file
