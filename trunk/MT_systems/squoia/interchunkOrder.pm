@@ -70,11 +70,11 @@ sub main{
 									#replace double colon within xpath with special string so it will not get split
 									#$childCond =~ s/(xpath{[^}]+)::([^}]+})/\1XPATHDOUBLECOLON\2/g;
 									$childCond =~ s/::/XPATHDOUBLECOLON/g;
-									#print STDERR "child chunk escaped cond: $childCond\n" if $verbose;
+									print STDERR "child chunk with ref ".$child->getAttribute('ref')." escaped cond: $childCond\n" if $verbose;
 									my ($variable, $childChunkCondition) =  split( ':', $childCond);
 									#put the double colon back
 									$childChunkCondition =~ s/XPATHDOUBLECOLON/::/g;
-									#print STDERR "child chunk cond: $childChunkCondition \n" if $verbose;
+									print STDERR "child chunk cond: $childChunkCondition \n" if $verbose;
 									my @singleChildChunkConditionsforEvaluation = squoia::util::splitConditionsIntoArray($childChunkCondition);
 									#print STDERR "single child chunk cond: @singleChildChunkConditionsforEvaluation \n" if $verbose;
 									if(squoia::util::evalConditions(\@singleChildChunkConditionsforEvaluation,$child))
