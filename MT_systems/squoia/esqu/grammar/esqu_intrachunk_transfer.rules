@@ -145,7 +145,7 @@ my.slem=soler && my.smi=/3P/ && my.smi=/^...[IS]/ 				"yes"				my.type=/grup-ver
 # also:
 # subordinated participle -> subieron ascendiendo, se fue riendo, entra flotando, etc.
 # -> finite: printAuxVerb=yes
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|comenzar|soler|continuar/) && !(my.lem=/\+\+/) 				"yes"				my.type=/grup-verb|coor-v/		printAuxVerb			up		overwrite
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|comenzar|soler|continuar|ir/) && !(my.lem=/\+\+/) 				"yes"				my.type=/grup-verb|coor-v/		printAuxVerb			up		overwrite
 my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{ancestor::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)  && !(my.slem=/poner|empezar|ir|comenzar|llegar|soler|continuar/) && !(my.lem=/\+\+/)  				"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
 
 # llegar/empezar/poner(se)/comenzar a +Inf:
@@ -224,8 +224,8 @@ xpath{descendant::NODE[@slem="haber" and contains(@smi, "3S") and contains(@verb
 # IR A + INFINITIVE
 # copy attribute 'verbmi' from 'ir' (if finite) to verbmi in chunk
 # and insert +Fut in verbmi of chunk
-my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && parent.smi=VMN0000		"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up	overwrite
-my.slem=ir && parent.smi=VMN0000		"+Fut"				my.type=/grup-verb|coor-v/			addverbmi			up 		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && xpath{parent::NODE[@smi="VMN0000" or parent::NODE[@smi="VMN0000"]]}		"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up	overwrite
+my.slem=ir && xpath{parent::NODE[@smi="VMN0000" or parent::NODE[@smi="VMN0000"]]}		"+Fut"				my.type=/grup-verb|coor-v/			addverbmi			up 		concat
 #-------------------------------------------------
 
 #-------------------------------------------------
