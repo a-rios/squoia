@@ -384,8 +384,8 @@ GetOptions(
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
 \t child2sibling: xml after promtion of child chunks to siblings
-\t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
+\t intraOrder: xml after intrachunk syntactic ordering
 \t morph: input for morphological generation
 \t words: output of morphological generation (for esqu: only if useMorphModel=0)
 \t nbest: nbest translation options = default";
@@ -424,8 +424,8 @@ GetOptions(
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
 \t child2sibling: xml after promtion of child chunks to siblings
-\t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
+\t intraOrder: xml after intrachunk syntactic ordering
 \t morph: input for morphological generation
 \t words: output of morphological generation (for esqu: only if useMorphModel=0) \n";
 	}

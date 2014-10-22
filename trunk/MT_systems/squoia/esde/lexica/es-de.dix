@@ -1083,6 +1083,8 @@
    <e><p><l>trimestralmente</l><r>alle drei Monate</r></p><par n='RG_ADV'/></e> 
 </section>
 <section id="RGfromADJ-diariodelcusco" type="standard">
+   <e><p><l>administrativamente</l><r>behördlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>analíticamente</l><r>analytisch</r></p><par n='RG_ADJD'/></e>
    <e><p><l>aparentemente</l><r>offensichtlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>aparentemente</l><r>scheinbar</r></p><par n='RG_ADJD'/></e>
    <e><p><l>circunstancialmente</l><r>umstandsbedingt</r></p><par n='RG_ADJD'/></e>
@@ -1104,6 +1106,7 @@
    <e><p><l>ilícitamente</l><r>unerlaubt</r></p><par n='RG_ADJD'/></e>
    <e><p><l>incansablemente</l><r>unermüdlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>indebidamente</l><r>unberechtigt</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>indefectiblemente</l><r>unausbleiblich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>indeterminadamente</l><r>unschlüssig</r></p><par n='RG_ADJD'/></e>
    <e><p><l>indirectamente</l><r>indirekt</r></p><par n='RG_ADJD'/></e>
    <e><p><l>indudablemente</l><r>zweifellos</r></p><par n='RG_ADJD'/></e>
@@ -1121,12 +1124,18 @@
    <e><p><l>negativamente</l><r>verneinend</r></p><par n='RG_ADJD'/></e>
    <e><p><l>netamente</l><r>sauber</r></p><par n='RG_ADJD'/></e>
    <e><p><l>obviamente</l><r>offensichtlich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>oportunamente</l><r>passend</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>oportunamente</l><r>zu gelegener Zeit</r></p><par n='RG_ADV'/></e>
    <e><p><l>originalmente</l><r>originell</r></p><par n='RG_ADJD'/></e>
    <e><p><l>pasivamente</l><r>untätig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>paulatinamente</l><r>allmählich</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>paulatinamente</l><r>nach und nach</r></p><par n='RG_ADV'/></e>
    <e><p><l>penalmente</l><r>strafrechtlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>periodísticamente</l><r>journalistisch</r></p><par n='RG_ADJD'/></e>
    <e><p><l>políticamente</l><r>politisch</r></p><par n='RG_ADJD'/></e>
    <e><p><l>precariamente</l><r>prekär</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>primeramente</l><r>erst</r></p><par n='RG_ADV'/></e>
+   <e><p><l>primeramente</l><r>zuerst</r></p><par n='RG_ADV'/></e>
    <e><p><l>progresivamente</l><r>fortschrittlich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>propiamente</l><r>eigen</r></p><par n='RG_ADJD'/></e>
    <e><p><l>religiosamente</l><r>religiös</r></p><par n='RG_ADJD'/></e>
@@ -1142,6 +1151,11 @@
    <e><p><l>verdaderamente</l><r>wahr</r></p><par n='RG_ADJD'/></e>
 </section>
 <section id="Adverbs-diariodelcusco" type="standard">
+   <e><p><l>ahora_bien</l><r>nun gut</r></p><par n='RG_ADV'/></e>
+   <e><p><l>al_azar</l><r>zufällig</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>de_primera_intención</l><r>aus erster Absicht</r></p><par n='RG_ADV'/></e>
+   <e><p><l>de_reserva</l><r>auf Reserve</r></p><par n='RG_ADV'/></e>
+
    <e><p><l>con_las_manos_vacías</l><r>mit leeren Haenden</r></p><par n='RG_ADV'/></e>
    <e><p><l>de_cuerpo_presente</l><r>anwesend</r></p><par n='RG_ADJD'/></e>
    <e><p><l>de_mal_vivir</l><r>von schlechtem Leben</r></p><par n='RG_ADV'/></e>	<!-- de mal vivir = de mala vida = ? -->
@@ -1504,7 +1518,7 @@
    <e><p><l>vencido</l><r>überwunden</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vendido</l><r>verkauft</r></p><par n='AQ_ADJ'/></e>
 </section>
-<section id="Verbs-july-diariodelcusco" type="standard">
+<section id="Verbs-august-diariodelcusco" type="standard">
    <e><p><l>auxiliar</l><r>helfen<s n="cas"/>Dat</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>coronar</l><r>krönen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>derrotar</l><r>besiegen</r></p><par n='VM_VV_MAIN'/></e>
@@ -1661,7 +1675,7 @@
    <e><p><l>viceministro</l><r>Vizeminister</r></p><par n='NC_N_GENTRY_ERIN'/></e>
 
 </section>
-<section id="Nouns-diario-july" type="standard">
+<section id="Nouns-diario-august" type="standard">
    <e><p><l>asegurado</l><r>Versicherte</r></p><par n='NC_N_ADJ_NOUN'/></e>	<!-- TODO: same as molif class SCHOENE ? -->
    <e><p><l>contratación_de_personal</l><r>Personalanstellung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>dato_personal</l><r>Personalien</r></p><par n='NC_N_PLURAL_NOUN'/></e>
@@ -25798,7 +25812,7 @@
    <e><p><l>perfume</l><r>Duft</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>perfume</l><r>Parfüm</r></p><par n='NC_N_71_AUTO'/></e>
    <e><p><l>perfumería</l><r>Parfümerie</r></p><par n='NC_N_76_FEDER'/></e>
-   <e><p><l>perfusión</l><r>Durchströmung</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>perfusión</l><r>Durchströmung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pergamino</l><r>Pergament</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>perico</l><r>Sittich</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>periferia</l><r>Kreisumfang</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -25809,8 +25823,10 @@
    <e><p><l>perilla</l><r>Kinnbart</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>perímetro</l><r>Umfang</r></p><par n='NC_N_55_WUNSCH'/></e>
    <e><p><l>perímetro</l><r>Umkreis</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>periné</l><r>Perineum</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>perineo</l><r>Perineum</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>periné</l><r>Damm</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>periné</l><r>Perineum</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>perineo</l><r>Damm</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>perineo</l><r>Perineum</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>periodicidad</l><r>Periodizität</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>periódico</l><r>Zeitung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>periodismo</l><r>Journalismus</r></p><par n='NC_N_82_ZYKLUS'/></e>
@@ -25821,15 +25837,15 @@
    <e><p><l>periodo</l><r>Periode</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>período</l><r>Periode</r></p><par n='NC_N_76_FEDER'/></e>
    <e><p><l>período</l><r>Zeitraum</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>periplo</l><r>Periplus</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>periplo</l><r>Schiffsreise</r></p><par n='NC_N_NUM_FEM'/></e>
+   <e><p><l>periplo</l><r>Umsegelung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>periquito</l><r>Wellensittich</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>perista</l><r>Hehler</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>peritaje</l><r>Expertise</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>peritaje</l><r>Gutachten</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>perito</l><r>Fachmann</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>perito</l><r>Gutachter</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>perito</l><r>Sachverständige</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>perito</l><r>Sachverständiger</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>perito</l><r>Sachverständige</r></p><par n='NC_N_ADJ_NOUN'/></e>
    <e><p><l>peritonitis</l><r>Bauchfellentzündung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>perjurio</l><r>Meineid</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>perla</l><r>Perle</r></p><par n='NC_N_NUM_FEM'/></e>
@@ -25843,8 +25859,9 @@
    <e><p><l>pernil</l><r>Keule</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>pernil</l><r>Schlegel</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>perno</l><r>Bolzen</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>pero</l><r>aber</r></p><par n='NC_N_NUM_NOUN'/></e>
-   <e><p><l>peroné</l><r>Wadenbein</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>pero</l><r>Aber</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>pero</l><r>Widerspruch</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>peroné</l><r>Wadenbein</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>perpetuación</l><r>Verewigung</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>perpetuidad</l><r>Ewigkeit</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>perplejidad</l><r>Verwirrung</r></p><par n='NC_N_64_FRAU'/></e>
@@ -25855,10 +25872,11 @@
    <e><p><l>perro careador</l><r>Hirtenhund</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>perro</l><r>Hund</r></p><par n='NC_N_56_TISCH'/></e>
    <e><p><l>perro policía</l><r>Polizeihund</r></p><par n='NC_N_NUM_MASC'/></e>
-   <e><p><l>persa</l><r>Persisch</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>persa</l><r>Perser</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gentry -->
+   <e><p><l>persa</l><r>Persisch</r></p><par n='NC_N_NUM_NEUT'/></e>	<!-- lang. -->
    <e><p><l>persecución</l><r>Verfolgung</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>perseverancia</l><r>Beharrlichkeit</r></p><par n='NC_N_NUM_FEM'/></e>
-   <e><p><l>perseverancia</l><r>Persistenz</r></p><par n='NC_N_NUM_NOUN'/></e>
+   <e><p><l>perseverancia</l><r>Persistenz</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>persiana</l><r>Jalousie</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>persiana</l><r>Rollade</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>persiana</l><r>Rollo</r></p><par n='NC_N_NUM_NEUT'/></e>
