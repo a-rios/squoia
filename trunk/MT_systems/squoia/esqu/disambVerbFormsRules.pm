@@ -566,7 +566,8 @@ sub main{
 					}
 					# if this is a main clause, or a coordinated verbform of a main clause, set verbform to 'main'
 					# also: if this is not the top chunk, but there's no other verb chunk above this one, set verb form to main (probably a parser error)
-	 				elsif( ($verbChunk->exists('self::CHUNK[@si="top"]') ||  $verbChunk->exists('parent::CHUNK[@si="top" and @type="coor-v"]')) && !$verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]') || !$verbChunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]') )
+					# change: if a clear subordination (CS) -> don't assign finite, unless CS is 'que' -> in that case, probably an imperative ('que te vayas!')
+	 				elsif( ($verbChunk->exists('self::CHUNK[@si="top"]') ||  $verbChunk->exists('parent::CHUNK[@si="top" and @type="coor-v"]')) && !$verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]') || (!$verbChunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]') && (!$verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="cs"]') || $verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="que"]') )   ) )
 	 				{
 	 					$nbrOfFiniteForms++;
 	 					$verbChunk->setAttribute('verbform', 'main');
