@@ -1,0 +1,7 @@
+#Slot3 -Ambivalente Suffixe
+
+define AS=3 [
+ "+Add" :{pas}
+| "+Cont" : {raq}
+| "+Disc" : {ña}
+];

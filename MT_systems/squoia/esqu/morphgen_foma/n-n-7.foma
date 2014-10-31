@@ -1,0 +1,8 @@
+#Slot7 Casus
+
+define N=N=7 [
+ "+Dist" : {kama}
+|"+Kaus" : {rayku}
+|"+Instr" : {wan}
+|"+Soc" : {puwan}
+];

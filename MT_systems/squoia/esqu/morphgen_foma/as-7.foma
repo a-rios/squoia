@@ -1,0 +1,9 @@
+#Slot9 -Ambivalente Suffixe
+
+define AS=7 [
+ "+Res"
+|"+Emph" : {yá}
+|"+DirEemph" : {má}
+|"+IndEemph" :  {sá}
+|"+Asmpemph" :{chá}
+];

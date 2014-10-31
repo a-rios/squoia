@@ -1,0 +1,7 @@
+# SLOT 2
+
+define N=N=2 [
+"+MPoss" : {sapa}
+|"+Poss" : {%yuq}
+|"+Abss" : {nnaq}
+];

@@ -1,0 +1,11 @@
+# Mit Bedeutungsangaben immer "[="
+
+define NtoV [
+  "+Autotrs" : {lli}
+| "+Des" : {naya}
+| "+Reub" : {na}
+| "+Fact" : {cha}
+| "+Char" : {raya}
+| "+Trs" : {ya}
+| "+Sml"
+];

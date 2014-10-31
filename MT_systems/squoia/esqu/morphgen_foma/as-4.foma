@@ -1,0 +1,6 @@
+#Slot6 -Ambivalente Suffixe
+
+define AS=4 [
+ "+Intr" : {taq}
+|  "+Lim_Intr" : {llataq}
+];

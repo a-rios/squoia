@@ -1,0 +1,459 @@
+#set char-encoding UTF-8
+
+# Alle Tags und Worttrenner auf Wortformenebene löschen!
+define Cleanup [ [ "[" ] ?* "]" @> 0 ] ;
+
+
+#Vowels and Consonants
+define Voc [a|i|u|o|e];
+define Cons [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|y|z|'|’];
+
+# symbols that may ocurr in a root (note that the root might be Spanish or something else, if it couldn't be translated!)
+define VocRoot 	[a|e|i|o|u|á|é|í|ó|ú|ü];
+define ConsRoot [b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|s|t|v|w|x|y|z|'|’];
+define UPPER 	[A|B|C|D|E|F|G|H|I|J|K|L|M|N|Ñ|O|P|Q|R|S|T|U|V|W|X|Y|Z|Á|É|Í|Ó|Ú|Ü];
+define LOWER	[a|e|i|o|u|b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]; # only needed for punctuation tags -> ASCII suffices
+define Numbers [%0|1|2|3|4|5|6|7|8|9|%,|%.|%'];
+# should be able to generate quantities recognized by FreeLing (see quantities.dat in Freeling's grammar)
+define Quantity   [Numbers* [","|'|"."] Numbers* (" ")["%"|"$"|"£"|"€"|"¥"|"Å"|"ºc"|"ºf"|"ºk"]* [VocRoot|ConsRoot|UPPER]* (2|3)  ];
+
+
+#######################################################################
+#######################################################################
+
+       #############################
+       #                           #
+       # PHONETISCHE RESTRIKTIONEN #
+       #                           #
+       #############################
+
+       #----------------------#
+       # Ambivalente Suffixe: #
+       #----------------------#
+
+       #  -mi nach Konsonant, -m nach Vokal
+       define MI [ "+DirE" -> {m} || Voc _  ];
+       define MI2 [ "+DirE" -> {mi} || Cons _  ];
+       
+       #  -si nach Konsonant, -s nach Vokal
+       define SI [ "+IndE" -> {s} || Voc _  ];
+       define SI2 [ "+IndE" -> {si} || Cons _  ];
+
+       # -cha nach Konsonant, -ch nach Vokal
+       define CHA [ "+Asmp" -> {ch} || Voc _  ];
+       define CHA2 [ "+Asmp" -> {cha} || Cons _  ];
+
+       # -iki -> -miki,-siki,-chiki falls mit Evidentialsuffixen, sonst -riki
+       define IKI [ "+Res" -> {iki} || ["+DirE"|"+IndE"|"+Asmp"] _  ];
+       define IKI2 [ "+Res" -> {riki} || ~$["+DirE"|"+IndE"|"+Asmp"] _  ];
+
+define ASphon [IKI .o. IKI2 .o. MI .o. MI2 .o. SI .o. SI2 .o. CHA .o. CHA2];
+       
+    #################################################
+
+       #-------------------------#
+       # Verbalisierende Suffixe #
+       #-------------------------#    
+
+       #------------------------------------------#
+       # -kacha nach i, -ykacha sonst (Simulativ) #
+       #------------------------------------------#
+           define SML ["+Sml" -> {kacha} || i _ ];
+           define SML2 ["+Sml" -> {ykacha} || ~${i} _ ];
+
+define NzuV [SML .o. SML2];
+
+
+   ##################################################
+   
+       #--------------------------#
+       # Verbale Derivation (v-v) #
+       #--------------------------#
+       
+       #-----------------------------------------------------#
+       # -kacha/-ykacha , selbe Regel wie oben (Interruptiv) #
+       #-----------------------------------------------------#
+           define KACHA ["+Intrup" -> {kacha} || i _ ];
+           define KACHA2 ["+Intrup" -> {ykacha} || ~$[i] _ ];
+
+
+       #-------------------------------------------------------#
+       # -yku wird zu -yka vor -mu, -pu, -ysi, -chi, -ri, -cha #
+       # und -na. -mu hat selbst eine variable Form,           #
+       # und kann daher auch als +Cis bzw. -mpu erscheinen #
+       #-------------------------------------------------------#
+           define trigger [{mu}|{mpu}|"+Cis"|{pu}|{ysi}|{chi}|{ri}|{cha}|{na}|"+Iprs"];
+           define YKU ["+Aff" -> {yka} || _ trigger ];
+           define YKU2 ["+Aff" -> {yku} || _ ~$[trigger]];
+     
+       #----------------------------------------------------#
+       # -rqu wird zu -rqa vor -mu, -pu, -ysi, -ri und -chi #
+       #----------------------------------------------------#
+           define trigger2 [{mu}|{mpu}|"+Cis"|{pu}|{ysi}|{chi}|{ri}|"+Iprs"];
+           define RQU ["+Rptn" -> {rqa} || _ trigger2 ];
+           define RQU2 ["+Rptn" -> {rqu} || _ ~$[trigger2]];
+
+       #------------------------#
+       # -mu wird zu -m vor -pu #
+       #------------------------#
+           define MU ["+Cis" -> m || _ [{pu}|"+Iprs"]];
+           define MU2 ["+Cis" -> {mu} || _ ~$[[{pu}|"+Iprs"]]];
+
+       #-------------------------------------------#
+       # -ku wird zu -ka vor -chi und  -mu         #
+       #-------------------------------------------#
+           define trigger3 [{chi}|{mu}|{mpu}];
+           define KU ["+Rflx" -> {ka} || _ trigger3, _ "+Cis"];
+           define KU2 ["+Rflx" -> {ku} || _ ~$[trigger3]];
+
+       #-------------------------------------------#
+       # -pu wird zu -pa vor -ku und  -mu          #
+       #-------------------------------------------#
+           define trigger4 [{ku}|{mu}|"+Rflx"|"+Cis"];
+           define PU ["+Iprs" -> {pa} || _ trigger4];
+           define PU2 ["+Iprs" -> {pu} || _ ~$[trigger4]];
+
+define PHON [KACHA .o. KACHA2 .o. YKU .o. YKU2 .o. RQU .o. RQU2 .o. KU .o. KU2 .o. MU .o. MU2 .o. PU .o. PU2];
+
+
+   ###################################################
+
+       #-------------------#
+       # Verbal Inflection #
+       #-------------------#     
+
+       #-----------------------------------------------------------------------#
+       # spezielle Past-Formen der 3.Person                                    #
+       # mit -rqa und -sqa -> 3.Person ohne "n" -rqan -> -rqa/ -rqanku ->rqaku #
+       #-----------------------------------------------------------------------#
+           define PST [{rqa}|{sqa}];
+           define 3SGPST [ "+3.Sg.Subj" -> "" || PST _ ];
+           define 3PLPST [ "+3.Pl.Subj" -> {ku} || PST _ ];
+           define 3PLhab [ "+3.Pl.Subj" -> {qku} || _ "@HAB" ] .o. ["@HAB" -> "" ];
+           define PAST [3SGPST .o. 3PLPST .o. 3PLhab];
+
+       #---------------------------------------------------#
+       # forms with 2 participants (only irregular forms): #
+       #---------------------------------------------------#
+           
+       #--------------------------------------#
+       # 1.Sg > 2.Sg -> -yki                  #
+       #--------------------------------------#
+           define 1SGon2SGprs ["+2.Sg.Obj" -> "++" || _ $["+1.Sg.Subj"]] .o. [ "+1.Sg.Subj" -> {yki} || $["++"] _] .o. ["++" -> "" ];
+           define 1SGon2SGfut ["+2.Sg.Obj" -> "++" || _ $["+1.Sg.Subj.Fut"]] .o. [ "+1.Sg.Subj.Fut" -> {sqayki} || $["++"] _] .o. ["++" -> "" ];
+           define 1SGon2SGpot ["+2.Sg.Obj" -> "++" || _ $["+1.Sg.Subj.Pot"]] .o. [ "+1.Sg.Subj.Pot" -> {ykiman} || $["++"] _] .o. ["++" -> "" ];
+           define 1SGon2SG [1SGon2SGfut .o. 1SGon2SGpot .o. 1SGon2SGprs  ];
+
+       #--------------------------------------#
+       # 1.Sg > 2.Pl -> -ykichis              #
+       #--------------------------------------#
+           define 1SGon2PLprs ["+2.Pl.Obj" -> "++" || _  $["+1.Sg.Subj"]] .o. ["+1.Sg.Subj" -> {ykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1SGon2PLfut ["+2.Pl.Obj" -> "++" || _  $["+1.Sg.Subj.Fut"]] .o. ["+1.Sg.Subj.Fut" -> {sqaykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1SGon2PLpot ["+2.Pl.Obj" -> "++" || _  $["+1.Sg.Subj.Pot"]] .o. ["+1.Sg.Subj.Pot" -> {ykichikman} || $["++"] _ ] .o. ["++" -> ""];
+           define 1SGon2PL [1SGon2PLprs .o. 1SGon2PLfut .o. 1SGon2PLpot];
+
+       #--------------------------------------#
+       # 1.Pl.Excl > 2.Sg  -> -ykiku          #
+       #--------------------------------------#
+           define 1PLon2SGprs ["+2.Sg.Obj" -> "++" || _  $["+1.Pl.Excl.Subj"]] .o. ["+1.Pl.Excl.Subj" -> {ykiku} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2SGfut ["+2.Sg.Obj" -> "++" || _  $["+1.Pl.Excl.Subj.Fut"]] .o. ["+1.Pl.Excl.Subj.Fut" -> {sqaykiku} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2SGpot ["+2.Sg.Obj" -> "++" || _  $["+1.Pl.Excl.Subj.Pot"]] .o. ["+1.Pl.Excl.Subj.Pot" -> {ykikuman} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2SG [1PLon2SGprs .o. 1PLon2SGfut .o. 1PLon2SGpot];
+ 
+       #-------------------------------------------------#
+       # 1.Pl.Excl > 2.Pl  -> -ykichik    TODO: check !! #
+       #-------------------------------------------------#  
+           define 1PLon2PLprs ["+2.Pl.Obj" -> "++" || _  $["+1.Pl.Excl.Subj"]] .o. ["+1.Pl.Excl.Subj" -> {ykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2PLfut ["+2.Pl.Obj" -> "++" || _  $["+1.Pl.Excl.Subj.Fut"]] .o. ["+1.Pl.Excl.Subj.Fut" -> {sqaykichik} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2PLpot ["+2.Pl.Obj" -> "++" || _  $["+1.Pl.Excl.Subj.Pot"]] .o. ["+1.Pl.Excl.Subj.Pot" -> {ykichikman} || $["++"] _ ] .o. ["++" -> ""];
+           define 1PLon2PL [1PLon2PLprs .o. 1PLon2PLfut .o. 1PLon2PLpot];
+   define 1on2 [1SGon2SG .o. 1SGon2PL .o. 1PLon2SG .o. 1PLon2PL];
+
+       #--------------------------------------#
+       # 2.Sg > 1.Pl.Excl -> -wankiku         #
+       # 2.Sg > 1.Pl.Excl & Imp -> -wayku     #
+       #--------------------------------------#
+           define 2SGon1PLexc ["+2.Sg.Subj" -> {nkiku} || $["+1.Pl.Excl.Obj"] _  ];
+           define 2SGon1PLexcImp ["+2.Sg.Subj.Imp" -> {yku} || $["+1.Pl.Excl.Obj"] _  ];
+           define 2SGon1PLexcFut ["+2.Sg.Subj.Fut" -> {nkiku} || $["+1.Pl.Excl.Obj"] _  ];
+           define 2SGon1PLexcPot ["+2.Sg.Subj.Pot" -> {nkikuman} || $["+1.Pl.Excl.Obj"] _  ];
+           
+   define 2on1 [ 2SGon1PLexc .o. 2SGon1PLexcImp .o. 2SGon1PLexcFut .o. 2SGon1PLexcPot];
+
+       #--------------------------------------#
+       # 3.Sg > 2.Sg -> -sunki                #
+       # 3.Sg > 2.Pl -> -sunkichik            #
+       # 3.Pl > 2.Sg -> -sunkiku	      #
+       # 3.Pl > 2.Pl -> -sunkichik ?? TODO: check #
+       #--------------------------------------#
+       
+           define 3SGon2SG ["+3.Sg.Subj" -> {nki} || $["+2.Sg.Obj"] _ ];
+           define 3SGon2SGfut ["+3.Sg.Subj.Fut" -> {nki}  || $["+2.Sg.Obj"] _ ];          
+           define 3SGon2SGpot ["+3.Sg.Subj.Pot" -> {nkiman}  || $["+2.Sg.Obj"] _ ];
+           
+           define 3SGon2PL ["+3.Sg.Subj" -> {nkichik} || $["+2.Pl.Obj"] _ ];
+           define 3SGon2PLfut ["+3.Sg.Subj.Fut" -> {nkichik}  || $["+2.Pl.Obj"] _ ];
+           define 3SGon2PLpot ["+3.Sg.Subj.Pot" -> {nkichikman}  || $["+2.Pl.Obj"] _ ];
+           
+           define 3PLon2SG ["+3.Pl.Subj" -> {nkiku} || $["+2.Sg.Obj"] _ ];
+           define 3PLon2SGfut ["+3.Pl.Subj.Fut" -> {nkiku}  || $["+2.Sg.Obj"] _ ];          
+           define 3PLon2SGpot ["+3.Pl.Subj.Pot" -> {nkikuman}  || $["+2.Sg.Obj"] _ ];
+           
+           define 3PLon2PL ["+3.Pl.Subj" -> {nkichik} || $["+2.Pl.Obj"] _ ];
+           define 3PLon2PLfut ["+3.Pl.Subj.Fut" -> {nkichik}  || $["+2.Pl.Obj"] _ ];
+           define 3PLon2PLpot ["+3.Pl.Subj.Pot" -> {nkichikman}  || $["+2.Pl.Obj"] _ ];
+           
+   define 3on2 [3SGon2SG .o. 3SGon2SGfut .o. 3SGon2SGpot .o. 3SGon2PL .o. 3SGon2PLfut .o. 3SGon2PLpot .o. 3PLon2SG .o. 3PLon2SGfut .o. 3PLon2SGpot .o. 3PLon2PL .o. 3PLon2PLfut .o. 3PLon2PLpot];
+
+       #-----------------------------------------------------#
+       # 3.Sg/Pl > 1.Pl.Incl > -wa -nchik                    #
+       # 3.Sg/Pl > 1.Pl.Incl & Fut -> -wa -sun               #
+       # 3.Sg/Pl > 1.Pl.Incl & Pot -> -wa -sunman (-chwan)   #
+       # 3.Sg/Pl > 1.Pl.Excl > -wa -nku                      #
+       # 3.Sg/Pl > 1.Pl.Excl & Fut-> -wa -nqaku              #
+       # 3.Sg/Pl > 1.Pl.Excl & Pott-> -wa -nkuman ?? TODO: check !!  #
+       # 3.Pl > 1.Sg -> -wa -n (not -wanku)                  #
+       # 3.Pl > 1.Sg & Fut -> -wa -nqa (not -wanqaku)        #
+       # 3.Pl > 1.Sg & Pot -> -wa -nkuman                    #
+       #-----------------------------------------------------#
+           define 3on1PLinc    ["+3.Sg.Subj" -> {nchik} , "+3.Pl.Subj" -> {nchik} || $["+1.Pl.Incl.Obj"] _ ];
+           define 3on1PLincFUT ["+3.Sg.Subj.Fut" -> {sun} , "+3.Pl.Subj.Fut" -> {sun}  || $["+1.Pl.Incl.Obj"] _ ];
+           define 3on1PLincPOT ["+3.Sg.Subj.Pot" -> {sunman} , "+3.Pl.Subj.Pot" -> {sunman}  || $["+1.Pl.Incl.Obj"] _ ];
+           
+           define 3SGon1PLexc    ["+3.Sg.Subj" -> {nku} , "+3.Pl.Subj" -> {nku} || $["+1.Pl.Excl.Obj"]  _ ];
+           define 3SGon1PLexcFUT ["+3.Sg.Subj.Fut" -> {nqaku} , "+3.Pl.Subj.Fut" -> {nqaku} || $["+1.Pl.Excl.Obj"]  _ ];
+           define 3SGon1PLexcPOT ["+3.Sg.Subj.Pot" -> {nkuman} , "+3.Pl.Subj.Pot" -> {nkuman} || $["+1.Pl.Excl.Obj"]  _ ];
+           
+           define 3PLon1SG    ["+3.Pl.Subj" -> {n} || $["+1.Sg.Obj"] _ ];
+           define 3PLon1SGfut ["+3.Pl.Subj.Fut" -> {nqa} || $["+1.Sg.Obj"] _ ];
+           define 3PLon1SGpot ["+3.Pl.Subj.Pot" -> {nkuman} || $["+1.Sg.Obj"] _ ];
+           
+
+   define 3on1 [3on1PLinc .o. 3on1PLincFUT .o. 3on1PLincPOT.o.  3SGon1PLexc .o. 3SGon1PLexcFUT .o.3SGon1PLexcPOT.o. 3PLon1SG .o. 3PLon1SGfut .o. 3PLon1SGpot];   
+define SubjObj [1on2 .o. 2on1 .o. 3on2 .o. 3on1];
+
+       #--------------------------#
+       # Default Personalsuffixe: #
+       #--------------------------#
+           define 1SGPERS ["+1.Sg.Subj" -> {ni} , "+1.Sg.Subj.Fut" -> {saq}, "+1.Sg.Subj.Pot" -> {yman} ];
+           define 2SGPERS ["+2.Sg.Subj" -> {nki}, "+2.Sg.Subj.Fut" -> {nki} , "+2.Sg.Subj.Pot" -> {waq}, "+2.Sg.Subj.Imp" -> {y}];
+           define 3SGPERS [ "+3.Sg.Subj" -> {n}, "+3.Sg.Subj.Fut" -> {nqa}, "+3.Sg.Subj.Pot" -> {nman}, "+3.Sg.Subj.Imp" -> {chun} || ~$[PST] _ ];
+           define 1PLincPERS [ "+1.Pl.Incl.Subj" -> {nchik}, "+1.Pl.Incl.Subj.Fut" -> {sun}, "+1.Pl.Incl.Subj.Pot" -> {chwan}, "+1.Pl.Incl.Subj.Imp" -> {sun} ];
+           define 1PLexcPERS [ "+1.Pl.Excl.Subj" -> {yku}, "+1.Pl.Excl.Subj.Fut" -> {saqku}, "+1.Pl.Excl.Subj.Pot" -> {ykuman} ];
+           define 2PLPERS ["+2.Pl.Subj" -> {nkichik} , "+2.Pl.Subj.Fut" -> {nkichik}, "+2.Pl.Subj.Pot" -> {waqchik}, "+2.Pl.Subj.Imp" -> {ykichik}    ];
+           define 3PLPERS [ "+3.Pl.Subj" -> {nku} , "+3.Pl.Subj.Fut" -> {nqaku}, "+3.Pl.Subj.Pot" -> {nkuman}, "+3.Pl.Subj.Imp" -> {chunku} , "+3.Pl.Subj.Hab" -> {qku}   ];
+
+           define 1SGPERSobj ["+1.Sg.Obj" -> {wa}];
+           define 2SGPERSobj ["+2.Sg.Obj" -> {su}];
+           define 1PLincPERSobj [ "+1.Pl.Incl.Obj" -> {wa}];
+           define 1PLexcPERSobj [ "+1.Pl.Excl.Obj" -> {wa}];
+           define 2PLPERSobj ["+2.Pl.Obj" -> {su} ];
+
+define PERS [1SGPERS .o. 2SGPERS .o. 3SGPERS .o. 1PLincPERS .o. 1PLexcPERS .o. 2PLPERS .o. 3PLPERS .o. 1SGPERSobj .o. 2SGPERSobj .o. 1PLincPERSobj .o. 1PLexcPERSobj .o. 2PLPERSobj];
+
+define VDERIV [PHON .o. PAST .o. SubjObj .o. PERS];
+
+   ###################################################
+
+       #------------------#
+       # Nominale Flexion #
+       #  und Derivation  #
+       #------------------#
+
+       #-------------------------#     
+       # Genitiv: -q nach Vokal, # 
+       #  -pa nach Konsonant     #
+       #-------------------------#
+           define GEN1 ["+Gen" -> {pa} || Cons _];
+           define GEN2 ["+Gen" -> {p} || Voc _];
+           define defaultGEN ["+Gen" -> {pa}];
+       define GEN [GEN1 .o. GEN2 .o. defaultGEN];
+
+       #---------------------------------------#
+       # Epenthese von -ni bei Possessiv- und  #
+       # davon abgeleiteten Suffixen           #
+       # (betreffende Suffixe im Lexikon mit % #
+       #---------------------------------------#
+           define POSS [{y}|{yki}|{n}|{nchik}|{yku}|{ykichik}|{nku}|{ntin}|{nta}|{yuq}];
+           define NI1 [ "%" -> {ni} || Cons _ ];
+           define NI2 [ "%" -> "" || Voc _ ];
+       define NI [NI1 .o. NI2];
+
+       #-----------------------------------------#
+       # Possessivsuffix auf -ku + Plural -kuna: #
+       # -ku -kuna -> kuna, also z .B. nicht     #
+       # wasi -yku -kuna, sondern wasiykuna      #
+       # (kuna im Lexikon als "=na")             #
+       #-----------------------------------------#
+           define KUNA1 [ {=na} -> {na} || {%yku} _ , {%nku} _  ];
+           define KUNA2 [ {=na} -> {kuna} || ~$[{%yku}|{nku}] _ ];
+       define KUNA [KUNA1 .o. KUNA2];
+
+define NDERIV [GEN .o. KUNA .o. NI];
+
+######################################################################
+######################################################################
+
+       #######################
+       #                     #
+       # Ambivalente Suffixe #
+       #                     #
+       #######################
+
+source as-1.foma
+source as-2.foma
+source as-3.foma
+source as-4.foma
+source as-5.foma
+source as-6.foma
+source as-7.foma
+
+source lim.foma
+
+define AS [(HonAff) (AS=1) (HonAff) (AS=2) (AS=3)^{0,2} (HonAff) (AS=4)(HonAff) (AS=5) (AS=6) (AS=7)];
+
+
+######################################################################
+######################################################################
+
+       ##########
+       #        #
+       # Roots  #
+       #        #
+       ##########
+       
+       # alternatives: '/', note if lemmas were ambiguous in tagging, there may be 2 roots separated with /
+       define Root [ ("/") [VocRoot|ConsRoot|Numbers|UPPER|%_|"-"|" "|"&"|"/"|"%"]* (":"):0];
+
+######################################################################
+######################################################################
+
+       ##########
+       #        #
+       # Verben #
+       #        #
+       ##########
+
+
+source v-v-1.foma
+source v-v-2.foma
+source v-v-3.foma
+source v-v-4.foma
+source v-v-5.foma
+source v-v-6.foma
+source v-v-7.foma
+
+
+define VerbSuffixes [(HonAff) V=V=1^{0,2} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4)(HonAff) (V=V=5) (HonAff) V=V=6 (V=V=7) (AS)];
+
+
+#########################################################################
+#########################################################################
+
+       #########
+       #       #
+       # Nomen #
+       #       #
+       #########
+
+
+source n-n-1.foma
+source n-n-2.foma
+source n-n-3.foma
+source n-n-4.foma
+source n-n-5.foma
+source n-n-6.foma
+source n-n-7.foma
+
+define NounSuffixes [(N=N=1) (HonAff) (N=N=2)^{0,2} (N=N=3) (N=N=4) (N=N=5)^{0,2} (HonAff) N=N=6^{0,3} N=N=7^{0,2} (HonAff) (AS)];
+
+
+#########################################################################
+#########################################################################
+
+       ###############################
+       #                             # 
+       # DERVIERTE VERBEN  UND NOMEN #
+       #                             #
+       ###############################
+
+       #----------------------#
+       # Derivationssuffixe : #
+       # N -> V = NtoV        #
+       # V -> N = VtoN        #
+       #----------------------#
+       source n-v.foma 
+       source v-n.foma 
+       #mit diesen Suffixen nominalisierte Verben können nicht wieder verbalisiert werden
+       source v-n-final.foma  
+       define Relational "+Rel" : {n};
+       define VerbalSuffixesBeforeNS  [V=V=1^{0,3} (HonAff) V=V=2^{0,3} (HonAff) (V=V=1) (HonAff) (V=V=3) (HonAff) (V=V=4) (HonAff)] ;
+
+       #------------------------#
+       # nominalisierte Verben: #
+       # VRoot + VtoN = NDeriv1 #
+       # "taki-qti", "taki-y"   #
+       #------------------------#
+       define NDeriv1 [Root VerbalSuffixesBeforeNS VtoN];
+       define NDeriv1final [Root VerbalSuffixesBeforeNS VtoNfinal];
+
+       #----------------------------#
+       # verbalisierte Nomen:       #
+       # NRoot + NtoV = VDeriv1     #
+       # "wasi-n-cha-", "hatun-ya-" #
+       # NzuV: -ykacha/kacha als    #
+       # verbalisierndes Suffix     #
+       #----------------------------#
+       define VDeriv1 [Root (Relational) (HonAff) NtoV] .o. NzuV;
+
+       #--------------------------------#
+       # nominalisierte Verben Nr.2:    #
+       # NRoot + NtoV + VtoN = NDeriv2  #
+       # "wasi-n-cha-y", "hatun-ya-sqa" #
+       #--------------------------------#
+       define NDeriv2 [VDeriv1 VerbalSuffixesBeforeNS VtoN];
+       define NDeriv2final [VDeriv1 VerbalSuffixesBeforeNS VtoNfinal];
+
+       #--------------------------------#
+       # verbalisierte Nomen Nr.2:      #
+       # VRoot + VtoN + NtoV = VDeriv1  #
+       # "yaku-naya-q"                  #
+       #--------------------------------#
+       define VDeriv2 [NDeriv1 NtoV] .o. NzuV;
+
+       #-------------------------------------#
+       # nominalisierte Verben Nr.3:         #
+       # VRoot + VtoN + NtoV +VtoN = NDeriv3 #
+       # "yuya-y-cha-ku-y"                   #
+       #-------------------------------------#
+       define NDeriv3 [VDeriv2 VerbalSuffixesBeforeNS VtoN];
+       define NDeriv3final [VDeriv2 VerbalSuffixesBeforeNS VtoNfinal];
+
+define NDeriv [NDeriv1|NDeriv1final|NDeriv2|NDeriv2final|NDeriv3|NDeriv3final];
+define VDeriv [VDeriv|VDeriv1|VDeriv2];
+
+define Noun [[Root|NDeriv] NounSuffixes ].o. VDERIV .o. NDERIV; 
+define Verb [[Root|VDeriv] VerbSuffixes ] .o. VDERIV;
+
+#########################################################################
+
+ 
+#########################################################################
+
+       #-------------#
+       # Satzzeichen #
+       #-------------#
+       
+       define punc [%,|%،|%、|%.|%…|"%"|'|%;|%/|%⁄|"-"|%‒|%–|%—|%―|%!|%?|%+|%(|%)|%[|%]|%:|"&"|%"|%\|%^|%~|%`|%°|%§|%¿|%¡|%»|%«|%’|%@|%#|%*|%=|%}|%{|%_|%<|%>|%—|"..."|"``"|"‘"|%"|"''"|%“|"<<"|">>"|%„|%”|’];
+       define puncWord [punc "-PUNC-" UPPER+ (LOWER) ];
+          
+
+#########################################################################
+
+
+define generator1 [Noun|Verb|puncWord|Quantity|"#EOS"] .o. ASphon ;
+#.o. ["-" -> "" ] ; 
+
+read regex generator1 .i;
+
+save stack unificadoTransfer.fst

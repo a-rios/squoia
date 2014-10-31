@@ -1,0 +1,7 @@
+#Slot5
+
+define V=V=5 [
+"+NPst" : {rqa}
+|"+IPst" : {sqa}
+|"+Fut"
+];

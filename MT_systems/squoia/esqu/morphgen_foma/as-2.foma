@@ -1,0 +1,5 @@
+#Slot2-Ambivalente Suffixe
+
+define AS=2 [
+ "+Def" :  {puni}
+];

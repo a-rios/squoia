@@ -1,0 +1,5 @@
+#Slot7 -Ambivalente Suffixe
+
+define AS=5 [
+"+Neg" : {chu}
+];
