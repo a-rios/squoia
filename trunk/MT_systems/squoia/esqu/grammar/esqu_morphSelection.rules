@@ -160,6 +160,8 @@ my.smi=/^VMIS/		agentive,perfect,SS,DS,obligative	d	chunkparent.verbform=main
 
 # indicative future
 my.smi=/^VMIF/		future				k	chunkparent.verbform=main
+my.smi=/^VMIF/		SS				k	chunkparent.verbform=SS
+my.smi=/^VMIF/		DS				k	chunkparent.verbform=DS
 my.smi=/^VMIF/		obligative			k	chunkparent.verbform=/obligative|rel:not\.agentive/
 
 # conditional present, TODO: relative clauses in conditional?
