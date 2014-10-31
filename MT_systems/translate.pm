@@ -453,7 +453,7 @@ print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 				$freelingConf = $config{'freelingConf'};
 			} or die  "Could not start tagging, no freelingConf given\n";
 		}
-		my $analyzerRunning = `ps ax | grep -v grep | grep "squoia_analyzer.*$freelingConf.*port=$freelingPort"` ;
+		my $analyzerRunning = `ps ax | grep -v grep | grep "squoia_analyzer.*port=$freelingPort"` ;
 		if($analyzerRunning eq ''){
 			print STDERR "no instance of squoia_analyzer server running on port $freelingPort with config $freelingConf\n";
 			print STDERR "starting squoia_analyzer server on port $freelingPort with config $freelingConf, logging to $path/logs/logcrfmorf...\n";
@@ -570,7 +570,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 				$desrModel1 = $config{'desrModel1'};
 			} or die  "Could not start parsing, no desrModel1 given\n";
 		}
-		my $desr1Running = `ps ax | grep -v grep | grep "desr_server.*$desrModel1.*--port $desrPort1"` ;
+		my $desr1Running = `ps ax | grep -v grep | grep "desr_server.*--port $desrPort1"` ;
 		if($desr1Running eq ''){
 			print STDERR "no instance of desr_server running on port $desrPort1 with model $desrModel1\n";
 			print STDERR "starting desr_server on port $desrPort1 with model $desrModel1, logging to $path/logs/logdesr_1...\n";
@@ -593,7 +593,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 				$desrModel2 = $config{'desrModel2'};
 			} or die  "Could not start parsing, no desrModel2 given\n";
 		}
-		my $desr2Running = `ps ax | grep -v grep | grep "desr_server.*$desrModel2.*--port $desrPort2"` ;
+		my $desr2Running = `ps ax | grep -v grep | grep "desr_server.*--port $desrPort2"` ;
 		if($desr2Running eq ''){
 			print STDERR "no instance of desr_server running on port $desrPort2 with model $desrModel2\n";
 			print STDERR "starting desr_server on port $desrPort2 with model $desrModel2, logging to $path/logs/logdesr_2...\n";
