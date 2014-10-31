@@ -1,0 +1,8 @@
+#nominalisierende Suffixe, die nicht wieder zu verbalisieren sind
+
+define VtoNfinal [
+"+Perf" : {sqa}
+|"+DS" : {pti}
+|"+SSsim" : {stin}
+|"+SS" : {spa}
+];

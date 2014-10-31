@@ -1,0 +1,7 @@
+#Slot7
+
+define V=V=7 [
+"+Pot"
+|"+Imp" 
+|"+Hab" :"@HAB" 
+];

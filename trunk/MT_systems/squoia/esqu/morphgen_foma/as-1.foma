@@ -1,0 +1,6 @@
+#Slot 1 Ambivalente Suffixe
+
+define AS=1 [
+ "+Sim" : {hina}
+|"+Abtmp" : {pacha}
+];

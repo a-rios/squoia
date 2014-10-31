@@ -1,0 +1,13 @@
+#Slot3
+
+define N=N=3 [
+"+1.Sg.Poss" : {%y}
+|"+2.Sg.Poss" : {%yki}
+|"+3.Sg.Poss" : {%n}
+|"+1.Pl.Incl.Poss" : {%nchik}
+|"+1.Pl.Excl.Poss" : {%yku}
+|"+2.Pl.Poss" : {%ykichik}
+|"+3.Pl.Poss" : {%nku}
+# in case --Poss from MT wasn't filled: generate as 3 sg 
+|"--Poss" : {%n}
+];

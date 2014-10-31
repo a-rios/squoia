@@ -1,0 +1,10 @@
+#Slot8 -Ambivalente Suffixe
+
+define AS=6 [
+"+DirE" 
+| "+IndE" 
+| "+Asmp"
+| "+Top" : {qa}
+| "+QTop" : {ri}
+| "+Dub" : {suna}
+];

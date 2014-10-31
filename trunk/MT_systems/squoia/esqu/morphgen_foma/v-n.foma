@@ -1,0 +1,12 @@
+#Nominalisierende Suffixe
+
+
+
+define VtoN [
+"+Inf" : {y}
+|"+Char" : {li} 
+|"+Obl" : {na}
+#|"+Obl_Lim" : {nalla}
+|"+Ag" : {q}
+|"+Posi" : {mpa}
+];
