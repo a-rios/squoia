@@ -294,6 +294,7 @@ sub main{
 			 			for (my $i=0; $i<scalar(@SYNnodes);$i++)
 			 			{
 			 				my $syn = @SYNnodes[$i];
+			 				#print STDERR $syn->toString()."\n";
 			 				# addverbmi: mi that is needed by ALL synonyms (chunk level)
 			 				# vs. verbmi + add_mi in synnodes: mi that is needed only by this syn node
 			 				my $addverbmi = $chunk->getAttribute('addverbmi');
@@ -460,7 +461,7 @@ sub main{
 			 			if($auxOrLem2toprint==1)
 			 			{
 			 				 # get auxes (note: not true auxilaries, -> VM)
-			 				 if($chunk->getAttribute('printAuxVerb') eq 'yes')
+			 				 if($chunk->getAttribute('printAuxVerb') eq 'yes' && !$chunk->getAttribute('deletefiniteMiInAux') eq "1")
 			 				 {
 			 				 	my @auxverbmis;
 			 					my @auxSYNs = $chunk->findnodes('child::NODE/descendant::NODE[starts-with(@smi,"VM")]/SYN');

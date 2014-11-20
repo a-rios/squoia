@@ -145,8 +145,8 @@ my.slem=soler && my.smi=/3P/ && my.smi=/^...[IS]/ 				"yes"				my.type=/grup-ver
 # also:
 # subordinated participle -> subieron ascendiendo, se fue riendo, entra flotando, etc.
 # -> finite: printAuxVerb=yes
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|comenzar|soler|continuar|ir/) && !(my.lem=/\+\+/) 				"yes"				my.type=/grup-verb|coor-v/		printAuxVerb			up		overwrite
-my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && rsibling.slem=que) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{ancestor::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)  && !(my.slem=/poner|empezar|ir|comenzar|llegar|soler|continuar/) && !(my.lem=/\+\+/)  				"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && (rsibling.slem=que || parent.slem=que || child.slem=que  )) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && !(xpath{self::NODE[starts-with(@smi,"VA")]}) && (xpath{ancestor::NODE[@mi="infinitive"]} || ( xpath{ancestor::NODE[@smi="VMG0000"]} && !(my.slem=estar) ) ) && !(my.slem=/poner|llegar|empezar|comenzar|soler|continuar|ir/) && !(my.lem=/\+\+/) 				"yes"				my.type=/grup-verb|coor-v/		printAuxVerb			up		overwrite
+my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && (rsibling.slem=que || parent.slem=que || child.slem=que  )) && !(my.slem=ir && parent.smi=VMN0000) && !(my.slem=deber) && xpath{ancestor::NODE[@mi="infinitive"]} && !(my.smi=/^VA/)  && !(my.slem=/poner|empezar|ir|comenzar|llegar|soler|continuar/) && !(my.lem=/\+\+/)  				"+Inf+Acc"			my.type=/grup-verb|coor-v/		addverbmi		up		concat
 
 # llegar/empezar/poner(se)/comenzar a +Inf:
 # lem = lem of infinitive, verbmi = mi of finite verb +Inch
@@ -271,7 +271,7 @@ my.iobjCase=/.+/				iobjCase		my.type=/grup-verb|coor-v/		iobjCase	up			overwrit
 # -> add possessive suffix of subject person to (nominal) verbform if the rel.clause is not.agentive
 # also: -> add genitive suffix to subject (in STinterchunk.rules!)
 my.verbmi=/.+/ && my.smi=/1S/		"+1.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
-my.verbmi=/.+/ && my.smi=/1P/		"+1.Incl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
+my.verbmi=/.+/ && my.smi=/1P/		"+1.Pl.Incl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
 #my.verbmi=/.+/ && my.smi=/1P/		"+1.Excl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
 my.verbmi=/.+/ && my.smi=/2S/		"+2.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
 my.verbmi=/.+/ && my.smi=/2P/		"+2.Pl.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat

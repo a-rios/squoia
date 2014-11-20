@@ -522,7 +522,7 @@ sub main{
 		 						if($mi =~ '1S'){$verbChunk->setAttribute('infverbmi','+Inf+1.Sg.Poss')};
 		 						if($mi =~ '2S'){$verbChunk->setAttribute('infverbmi','+Inf+2.Sg.Poss')};
 		 						if($mi =~ '3S'){$verbChunk->setAttribute('infverbmi','+Inf+3.Sg.Poss')};
-		 						if($mi =~ '1P'){$verbChunk->setAttribute('infverbmi','+Inf+1.Incl.Pl.Poss')};
+		 						if($mi =~ '1P'){$verbChunk->setAttribute('infverbmi','+Inf+1.Pl.Incl.Poss')};
 		 						if($mi =~ '2P'){$verbChunk->setAttribute('infverbmi','+Inf+2.Pl.Poss')};
 		 						if($mi =~ '3P'){$verbChunk->setAttribute('infverbmi','+Inf+3.Pl.Poss')};
 		 						}

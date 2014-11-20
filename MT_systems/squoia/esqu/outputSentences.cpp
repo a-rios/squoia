@@ -23,13 +23,16 @@ bool morphProbs=0;
 //std::map< int, std::vector<std::wstring> > sentLattice;
 std::map< int, std::vector<std::string> > sentLattice;
 //lm::ngram::Model model("test.binary");
-std::string usagestring = "Usage: outputSentences -m model (-n n-best, default n=3) -i input file -h help";
+std::string usagestring = "Usage: outputSentences -m model (-n n-best, default n=3) -i input file -f foma transducer -t print morphemes for testing -h help";
 std::string helpstring=	"Reads output data from MT system on stdin or from file and prints out n-best sentences\n"
 		"-h\t\tprint help\n"
 		"-m\t\tkenlm language model (binary!)\n"
 		"-i\t\tinput file with generated word forms (optional, if no file given, reads data from stdin)\n"
 		"-n\t\tprint n-best (optional, default is 3)\n"
-		"-l\t\tuse lemma and morphemes to calculate sentence probability instead of whole words\n";
+		"-l\t\tuse lemma and morphemes to calculate sentence probability instead of whole words\n"
+		"-f\t\tfoma transducer for generation\n"
+		"-t\t\tprint output in lemma/tag sequences (for testing only)\n"
+		;
 static int  CUTOFF = 3;
 
 void printMatrix(std::map< int, std::map< int, std::string > >sentMatrix);
@@ -38,12 +41,13 @@ bool probCompare(const std::pair<float, int>& firstElem, const std::pair<float, 
 void printTest(std::vector<std::pair<float,int> > sortedOpts);
 void printSents(std::map< int, std::map< int, std::string > >sentMatrix, std::vector<std::pair<float,int> > sortedOpts);
 void printSentsMorphGen(std::map< int, std::map< int, std::string > >sentMatrix, std::vector<std::pair<float,int> > sortedOpts);
-void printSentsMorphs(std::map< int, std::map< int, std::string > >sentMatrix, std::vector<std::pair<float,int> > sortedOpts);
+void printTestMorphs(std::map< int, std::map< int, std::string > >sentMatrix, std::vector<std::pair<float,int> > sortedOpts);
 void getProbs(std::map< int, std::map< int, std::string > >& sentMatrix, const lm::ngram::Model &model);
 void getProbsMorphs(std::map< int, std::map< int, std::string > >& sentMatrix, const lm::ngram::Model &model);
 void insertTransOpts(std::map< int, std::map< int, std::string > >&sentMatrix,int first,int last,std::vector< int > indexesOfAmbigWords);
 static struct apply_handle *ah;
 const char *modelfile = NULL;
+bool print_test_morph=0;
 
 int main(int argc, char *argv[]) {
 	//	std::setlocale(LC_ALL, "en_US.utf8");
@@ -58,7 +62,7 @@ int main(int argc, char *argv[]) {
 		//static char *(*applyer)() = &apply_up;
 
 
-		while ((opt = getopt(argc, argv, "m:n:i:f:hl")) != -1) {
+		while ((opt = getopt(argc, argv, "m:n:i:f:hlt")) != -1) {
 		      switch(opt) {
 		        case 'm':
 		        	//std::cerr << optarg<< "\n";
@@ -73,6 +77,9 @@ int main(int argc, char *argv[]) {
 		        	break;
 		        case 'l':
 		       		morphProbs = 1;
+		       		break;
+		        case 't':
+		       		print_test_morph = 1;
 		       		break;
 		        case 'h':
 		        	std::cerr << usagestring << '\n';
@@ -433,7 +440,7 @@ void printSentsMorphGen(std::map< int, std::map< int, std::string > >sentMatrix,
 }
 
 
-void printSentsMorphs(std::map< int, std::map< int, std::string > >sentMatrix, std::vector<std::pair<float,int> > sortedOpts){
+void printTestMorphs(std::map< int, std::map< int, std::string > >sentMatrix, std::vector<std::pair<float,int> > sortedOpts){
 	using namespace boost;
 	bool startedWithPunc=0;
 	std::string prev, prevPunc;
@@ -448,22 +455,51 @@ void printSentsMorphs(std::map< int, std::map< int, std::string > >sentMatrix, s
 		std::map< int, std::string> sent = sentMatrix[opt];
 		for(int i=0;i<sent.size();i++){
 					//punctuation marks come with their mi tag, split
-					std::string word = sentMatrix[opt][i];
+					std::string line = sentMatrix[opt][i];
+					std::vector<std::string> puncs (2);
+					algorithm::split_regex(puncs, line,regex("-PUNC-") );
+					std::string word = puncs.at(0);
+					std::string pmi;
+					//std::cout << word << std::endl;
 
-					//no punctuation: delete leading '/' (marks ambiguous words)
-					if(starts_with(word,"/")){
-							erase_head(word,1);
+					if(puncs.size()>1){
+						pmi = puncs.at(1);
 					}
-					std::cout << word << std::endl;
-		}
+					else{
+						//no punctuation: delete leading '/' (marks ambiguous words)
+						if(starts_with(word,"/")){
+							erase_head(word,1);
+						}
+						//std::cout << word << std::endl;
+					}
+
+					if(i ==0){
+						// uppercase first word in sentence
+						//	#TODO
+						word[0] = std::toupper(word[0]);
+					}
+					//std::cout << word<< std::endl;
+					std::vector<std::string> strs;
+					boost::split(strs,word,boost::is_any_of(":"));
+					std::string lem = strs[0];
+					std::cout << lem << " ";
+					std::vector<std::string> morphs;
+					boost::regex morphrx("\\+[^\\+]+");
+					if(strs.size() > 1){
+						boost::find_all_regex(morphs, strs[1], morphrx);
+					}
+					for(int j=0;j<morphs.size();j++){
+						std::cout << morphs[j] << " ";
+					}
+
+			}
 			// if cutoff >1 print probability for this sentence, otherwise just a newline
-		(CUTOFF>1) ? std::cout << " p:" << sortedOpts[s].first << std::endl : std::cout << "\n";
-		(sortedOpts.size()>s+1 && CUTOFF > s+1) ? std::cout << " alternative Sentence:" << std::endl : std::cout << "\n";
+		    (CUTOFF>1) ? std::cout << " p:" << sortedOpts[s].first << std::endl : std::cout << "\n";
 	}
 	// if cutoff > 1, print empty line between sentences
-	/*if(CUTOFF>1){
+	if(CUTOFF>1){
 		std::cout << "\n";
-	}*/
+	}
 }
 
 void getProbs(std::map< int, std::map< int, std::string > >& sentMatrix, const lm::ngram::Model &model){
@@ -573,8 +609,13 @@ void getProbsMorphs(std::map< int, std::map< int, std::string > >& sentMatrix, c
 			std::pair<float,int> mypair (total, opt);
 			sortedOpts.push_back(mypair);
 		}
-	 printSentsMorphGen(sentMatrix,sortedOpts);
+	 if(print_test_morph ==1){
+		 printTestMorphs(sentMatrix,sortedOpts);
+	 }
+	 else{
+		 printSentsMorphGen(sentMatrix,sortedOpts);
 	//std::cerr << "\n";
+	 }
 }
 
 void insertTransOpts(std::map< int, std::map< int, std::string > >&sentMatrix,int first,int last,std::vector< int > indexesOfAmbigWords){
