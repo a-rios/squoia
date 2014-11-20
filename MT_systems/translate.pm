@@ -675,7 +675,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 	my %nounLex = (); my %verbLex = ();
 	if($nounlex ne ''){
 		open (NOUNS, "<:encoding(UTF-8)", $nounlex) or die "Can't open $nounlex : $!";
-		print STDERR "reading semantic noun lexicon form $nounlex...\n";
+		print STDERR "reading semantic noun lexicon from $nounlex...\n";
 		while(<NOUNS>){
 		s/#.*//;     # no comments
 		(my $lemma, my $semTag) = split(/:/,$_);
@@ -798,8 +798,15 @@ if($startTrans<$mapInputFormats{'svm'})	# 11)
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'svm'} .")  [-o svm] verb form disambiguation (svm)\n";
 	# get verb lemma classes from word net for disambiguation with svm
 	my %verbLemClasses=();
+	if($wordnet eq ''){
+		eval{
+			$wordnet = $config{'wordnet'};
+		}
+		or die "Lexical transfer failed, location of wordnet not indicated (set option wordnet in config or use --wordnet on commandline)!\n";
+	}
 	
 	if($wordnet ne ''){
+		print STDERR "reading wordnet from file specified in $config: ".$config{$wordnet}."\n";
 		my $spa2ilimap = "$wordnet/spaWN/wei_spa-30_to_ili.tsv";
 		my $ilirecord = "$wordnet/data/wei_ili_record.tsv";
 		my $variant = "$wordnet/spaWN/wei_spa-30_variant.tsv";
@@ -893,7 +900,7 @@ if($startTrans <$mapInputFormats{'lextrans'})	#12)
 		eval{
 			$bidix = $config{'bidix'};
 		}
-		or die "Lexical transfer failed, location of bilingual dictionary not indicated (set option bidix in confix or use --bidix on commandline)!\n";
+		or die "Lexical transfer failed, location of bilingual dictionary not indicated (set option bidix in config or use --bidix on commandline)!\n";
 	}
 	
 	# if starting translation process from here, read file or stdin
@@ -1796,7 +1803,7 @@ if($startTrans< $mapInputFormats{'words'})
 		eval{
 			$morphgenerator = $config{'morphgenerator'};
 		}
-		or die "Morphological generation failed, location of xfst generator not indicated (set option morphgenerator in confix or use --morphgenerator on commandline)!\n";
+		or die "Morphological generation failed, location of xfst generator not indicated (set option morphgenerator in config or use --morphgenerator on commandline)!\n";
 	}
 	# if starting with a morph file: take file as input or stdin 
 	if($startTrans == $mapInputFormats{'morph'}){	#23 
@@ -1892,7 +1899,7 @@ elsif($direction eq 'esqu' && $useMorphModel==1)
 		eval{
 			$fomaFST = $config{'fomaFST'};
 		}
-		or die "Morphological generation failed, location of foma generator not indicated (set option fomaFST in confix or use --fomaFST on commandline)!\n";
+		or die "Morphological generation failed, location of foma generator not indicated (set option fomaFST in config or use --fomaFST on commandline)!\n";
 	}
 	
 	# if starting translation process from here, read file or stdin
@@ -1917,7 +1924,7 @@ elsif($direction eq 'esde'){
 		eval{
 			$deModel = $config{'deModel'};
 		}
-		or die "Ranking failed, location of German language model not indicated (set option deModel in confix or use --deModel on commandline)!\n";
+		or die "Ranking failed, location of German language model not indicated (set option deModel in config or use --deModel on commandline)!\n";
 	}
 	
 	# if starting translation process from here, read file or stdin
