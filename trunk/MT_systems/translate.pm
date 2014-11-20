@@ -672,6 +672,19 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 {
 	# retrieve semantic verb and noun lexica for verb disambiguation
+	if($nounlex eq ''){
+		eval{
+			$nounlex = $config{'nounlex'};
+		}
+		or die "Verb disambiguation failed, location of nounlex not indicated (set option nounlex in config or use --nounlex on commandline)!\n";
+	}
+	if($verblex eq ''){
+		eval{
+			$verblex = $config{'verblex'};
+		}
+		or die "Verb disambiguation failed, location of verblex not indicated (set option verblex in config or use --verblex on commandline)!\n";
+	}
+	
 	my %nounLex = (); my %verbLex = ();
 	if($nounlex ne ''){
 		open (NOUNS, "<:encoding(UTF-8)", $nounlex) or die "Can't open $nounlex : $!";

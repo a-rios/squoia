@@ -27109,6 +27109,7 @@
    <e><p><l>puerta</l><r>Tür</r></p><par n='NC_N_64_FRAU'/></e>
    <e><p><l>puerta principal</l><r>Haupteingang</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>puerto</l><r>Hafen</r></p><par n='NC_N_NUM_MASC'/></e>
+   <e><p><l>puerto</l><r>Pass</r></p><par n='NC_N_NUM_MASC'/></e>
    <e><p><l>puesta</l><r>Gelege</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>puesta</l><r>Setzen</r></p><par n='NC_N_NUM_NEUT'/></e>
    <e><p><l>puesta</l><r>Setzung</r></p><par n='NC_N_NUM_FEM'/></e>
