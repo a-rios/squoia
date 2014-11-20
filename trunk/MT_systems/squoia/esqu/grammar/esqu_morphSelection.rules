@@ -228,7 +228,7 @@ my.smi=/^VAIS/ && my.slem=haber		SS,DS,agentive,perfect,obligative		d		chunkpare
 # indicative present TODO: main clause, he hecho-> ruwani or ruwarani?
 my.smi=/^VAIP/ && my.slem=haber		perfect			k		chunkparent.verbform=/rel:not\.agentive|perfect/
 my.smi=/^VAIP/ && my.slem=haber		obligative		k		chunkparent.verbform=obligative
-my.smi=/^VAIP/ && my.slem=haber		present			k		chunkparent.verbform=main
+my.smi=/^VAIP/ && my.slem=haber		present,indirectpast,directpast			k		chunkparent.verbform=main
 
 # subjuntivo hubiésemos/hubiéramos hecho, TODO: relative clauses??
 my.smi=/^VASI/ && my.slem=haber		obligative		k		chunkparent.verbform=obligative
