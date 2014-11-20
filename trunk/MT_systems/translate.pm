@@ -123,6 +123,7 @@ my $maxalt = 2;	# default maximum 2 lemma alternatives; if maxalt==0 then no sta
 my $noalt = ''; # default is false; flag to switch statistical disambiguation and sentence alternatives off
 my $verbPrep;
 my $deModel;
+my $configIsSet=0;
 
 my $helpstring = "Usage: $0 [options]
 available options are:
@@ -310,6 +311,7 @@ GetOptions(
 
 	if($help){ print STDERR $helpstring; exit;}
 	if($config ne ''){
+		$configIsSet =1;
 		print STDERR "reading config file: $config\n";
 		open (CONFIG, "<:encoding(UTF-8)", $config) or die "Can't open configuration file $config: $!\n";
 		while (<CONFIG>) {
@@ -672,18 +674,18 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 {
 	# retrieve semantic verb and noun lexica for verb disambiguation
-	if($nounlex eq ''){
+	if($configIsSet){
 		eval{
 			$nounlex = $config{'nounlex'};
 		}
 		or die "Verb disambiguation failed, location of nounlex not indicated (set option nounlex in config or use --nounlex on commandline)!\n";
-	}
-	if($verblex eq ''){
 		eval{
 			$verblex = $config{'verblex'};
 		}
 		or die "Verb disambiguation failed, location of verblex not indicated (set option verblex in config or use --verblex on commandline)!\n";
 	}
+
+		
 	
 	my %nounLex = (); my %verbLex = ();
 	if($nounlex ne ''){
@@ -811,13 +813,12 @@ if($startTrans<$mapInputFormats{'svm'})	# 11)
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'svm'} .")  [-o svm] verb form disambiguation (svm)\n";
 	# get verb lemma classes from word net for disambiguation with svm
 	my %verbLemClasses=();
-	if($wordnet eq ''){
+	if($configIsSet){
 		eval{
 			$wordnet = $config{'wordnet'};
 		}
 		or die "Lexical transfer failed, location of wordnet not indicated (set option wordnet in config or use --wordnet on commandline)!\n";
 	}
-	
 	if($wordnet ne ''){
 		print STDERR "reading wordnet from file specified in $config: ".$config{$wordnet}."\n";
 		my $spa2ilimap = "$wordnet/spaWN/wei_spa-30_to_ili.tsv";
