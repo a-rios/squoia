@@ -23,7 +23,7 @@ bool morphProbs=0;
 //std::map< int, std::vector<std::wstring> > sentLattice;
 std::map< int, std::vector<std::string> > sentLattice;
 //lm::ngram::Model model("test.binary");
-std::string usagestring = "Usage: outputSentences -m model (-n n-best, default n=3) -i input file -f foma transducer -t print morphemes for testing -h help";
+std::string usagestring = "Usage: outputSentences -m model (-n n-best, default n=3) -i input file (-l) -f foma transducer (-t) print morphemes for testing -h help";
 std::string helpstring=	"Reads output data from MT system on stdin or from file and prints out n-best sentences\n"
 		"-h\t\tprint help\n"
 		"-m\t\tkenlm language model (binary!)\n"
