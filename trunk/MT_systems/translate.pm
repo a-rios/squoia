@@ -970,12 +970,14 @@ if($startTrans <$mapInputFormats{'semtags'})	#13)
 ## if semantic dictionary or new config file given on commandline: read into %semanticLexicone
 	my %semanticLexicon =();
 	my $readrules=0;
+	
+	
 	if($semlex ne ''){
 		$readrules =1;
 		print STDERR "reading semantic lexicon from $semlex\n";
 		open (SEMFILE, "<:encoding(UTF-8)", $semlex) or die "Can't open $semlex : $!";
 	}
-	elsif($config ne ''){
+	elsif($configIsSet){
 		$readrules =1;
 		$semlex= $config{"SemLex"} or die "Semantic dictionary not specified in config, insert SemLex='path to semantic lexicon' or use option --semlex!";
 		print STDERR "reading semantic lexicon from file specified in $config: $semlex\n";
