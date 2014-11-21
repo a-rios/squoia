@@ -496,12 +496,10 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'tagged'} .") [-o tagged] tagging\n";
 	### tagging: if input file given with --file or -f:
 	# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
-	if($matxin eq '' or $wapiti eq '' or $wapitiModel eq ''){
-		eval{
-			$matxin = $config{'matxin'}; $wapiti = $config{'wapiti'}; $wapitiModel = $config{'wapitiModel'}; $wapitiPort = $config{'wapitiPort'};
-		}
-		or die "Tagging failed, location of matxin, wapiti or wapiti model or port not indicated!\n";;
+	eval{
+		$matxin = $config{'matxin'} unless $matxin; $wapiti = $config{'wapiti'} unless $wapiti; $wapitiModel = $config{'wapitiModel'} unless $wapitiModel; $wapitiPort = $config{'wapitiPort'} unless $wapitiPort;
 	}
+	or die "Tagging failed, location of matxin, wapiti or wapiti model or port not indicated!\n";;
 	if($file ne ''){
 		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
 #		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
