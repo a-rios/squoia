@@ -1093,6 +1093,7 @@
    <e><p><l>diariamente</l><r>täglich</r></p><par n='RG_ADJD'/></e>
    <e><p><l>documentadamente</l><r>dokumentiert</r></p><par n='RG_ADJD'/></e>
    <e><p><l>drásticamente</l><r>drastisch</r></p><par n='RG_ADJD'/></e>
+   <e><p><l>enormemente</l><r>enorm</r></p><par n='RG_ADJD'/></e>
    <e><p><l>escuetamente</l><r>knapp</r></p><par n='RG_ADJD'/></e>
    <e><p><l>estrictamente</l><r>streng</r></p><par n='RG_ADJD'/></e>
    <e><p><l>expresamente</l><r>ausdrücklich</r></p><par n='RG_ADJD'/></e>
@@ -1397,6 +1398,10 @@
    <e><p><l>uruguayo</l><r>uruguayisch</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>villanesco</l><r>Volks-</r></p><par n='AQ_TRUNC'/></e>
    <e><p><l>virtual</l><r>virtuell</r></p><par n='AQ_ADJ'/></e>
+
+   <e><p><l>deportista</l><r>sportlich</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>liberiano</l><r>aus Liberia</r></p><par n='AQ_PROV'/></e>
+   <e><p><l>superior</l><r>höchst</r></p><par n='AQ_ADJ'/></e>	<!-- hoch superlativ? -->
 </section>
 <section id="ParticipleAdjectives-diariodelcusco" type="standard">
    <e><p><l>acariciado</l><r>gestreichelt</r></p><par n='AQ_ADJ'/></e>
@@ -36565,8 +36570,6 @@ dentro $$$ dentro is an adverb, the preposition is "dentro de" = innerhalb
 con_excepción_de	SPS00
 conforme_a	SPS00
 
-con_ocasión_de	SPS00
-
 de_cara_a	SPS00
 después_de	SPS00
 
@@ -36590,14 +36593,11 @@ pese_a	SPS00
 posteriormente_a	SPS00
 sin_contar_con	SPS00
 
-a_mediados_de
-a_principios_de
 
 a_cerca_de	SPS00
 a_efectos_de	SPS00
 a_espaldas_de	SPCMS
 a_excepción_de	SPS00
-a_falta_de	SPS00
 a_finales_de	SPS00
 a_fines_de	SPCMS
 a_la_espera_de	SPS00
@@ -36659,6 +36659,8 @@ sin_perjuicio_de	SPCMS
    <e><p><l>a_diferencia_de</l><r>im Gegensatz zu_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_expensas_de</l><r>auf Kosten<s n="cas"/>Gen</r></p><par n='PREP'/></e>
    <e><p><l>a_expensas_de</l><r>auf Kosten_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>a_falta_de</l><r>mangels<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>a_falta_de</l><r>mangels_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>a_favor_de</l><r>zugunsten von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- zugunsten von, zu Gunsten von + Dat -->
    <e><p><l>a_favor_de</l><r>zugunsten von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>a_fin_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- prep or only conjunction "a fin de que" ? -->
@@ -36669,6 +36671,8 @@ sin_perjuicio_de	SPCMS
    <e><p><l>al_interior_de</l><r>in_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>	<!-- motion verb: Akk; state: Dat -->
    <e><p><l>alrededor_de</l><r>um<s n="cas"/>Akk</r></p><par n='PREP'/></e>
    <e><p><l>alrededor_de</l><r>um_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>a_mediados_de</l><r>Mitte<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>a_mediados_de</l><r>Mitte_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>antes_de</l><r>vor<s n="cas"/>Dat</r></p><par n='PREP'/></e>
    <e><p><l>antes_de</l><r>vor_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>aparte_de</l><r>ausser<s n="cas"/>Dat</r></p><par n='PREP'/></e>
@@ -36679,6 +36683,8 @@ sin_perjuicio_de	SPCMS
    <e><p><l>a_pesar_de</l><r>trotz_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>	<!-- a_pesar_de = trotz + Gen -->
    <e><p><l>a_petición_de</l><r>auf Anfrage von<s n="cas"/>Dat</r></p><par n='PREP'/></e>	<!-- auf Wunsch von -->
    <e><p><l>a_petición_de</l><r>auf Anfrage von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>a_principios_de</l><r>Anfang<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>a_principios_de</l><r>Anfang_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>a_propósito_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>a_punto_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
    <e><p><l>a_raíz_de</l><r>bla<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!--  -->
@@ -36693,6 +36699,12 @@ sin_perjuicio_de	SPCMS
    <e><p><l>con_el_objetivo_de</l><r>um<s n="cas"/>Akk</r></p><par n='PREP'/></e>	<!-- con el objetivo de = um ... zu...? -->
    <e><p><l>con_miras_a</l><r>im Hinblick auf<s n="cas"/>Akk</r></p><par n='PREP'/></e>
    <e><p><l>con_miras_a</l><r>im Hinblick auf_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
+   <e><p><l>con_motivo_de</l><r>anlässlich<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>con_motivo_de</l><r>anlässlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>con_ocasión_de</l><r>anlässlich<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>con_ocasión_de</l><r>anlässlich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
+   <e><p><l>con_ocasión_de</l><r>wegen<s n="cas"/>Gen</r></p><par n='PREP'/></e>
+   <e><p><l>con_ocasión_de</l><r>wegen_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>con_respecto_a</l><r>bezüglich<s n="cas"/>Gen</r></p><par n='PREP'/></e>	<!-- bezüglich, hinsichtlich + Gen -->
    <e><p><l>con_respecto_a</l><r>bezüglich_d(er)<s n="cas"/>Gen</r></p><par n='PREPART'/></e>
    <e><p><l>de_acuerdo_con</l><r>gemäß<s n="cas"/>Dat</r></p><par n='PREP'/></e>
@@ -36723,6 +36735,8 @@ sin_perjuicio_de	SPCMS
    <e><p><l>encima_de</l><r>auf_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>en_busca_de</l><r>auf der Suche nach<s n="cas"/>Dat</r></p><par n='PREP'/></e>
    <e><p><l>en_busca_de</l><r>auf der Suche nach_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
+   <e><p><l>en_compañía_de</l><r>in Begleitung von_<s n="cas"/>Dat</r></p><par n='PREP'/></e>
+   <e><p><l>en_compañía_de</l><r>in Begleitung von_d(er)<s n="cas"/>Dat</r></p><par n='PREPART'/></e>
    <e><p><l>en_contra_de</l><r>gegen<s n="cas"/>Akk</r></p><par n='PREP'/></e>
    <e><p><l>en_contra_de</l><r>gegen_d(er)<s n="cas"/>Akk</r></p><par n='PREPART'/></e>
    <e><p><l>en_cuanto_a</l><r>betreffend<s n="cas"/>Akk</r></p><par n='PREP'/></e>
