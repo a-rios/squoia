@@ -1028,8 +1028,8 @@ sub mapEaglesTagToQuechuaMorph{
 		my $grade = substr($eaglesTag,6,1);
 		
 		# note that proper names can contain several words in slem 'Juan_Perez', or 'Universidad_Nacional'
-		#person
-		if($eaglesTag =~ /SP/)
+		#person and geographic proper names: no nisqa
+		if($eaglesTag =~ /SP/ or $eaglesTag eq "NP00G00")
 		{
 			# multitoken names
 			my (@words) = split('_',$sform);
