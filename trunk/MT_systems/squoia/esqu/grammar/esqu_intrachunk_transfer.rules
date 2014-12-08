@@ -90,7 +90,8 @@ my.slem=se				"yes"				my.type=/sn|coor-n/		delete		up		overwrite
 # NOTE: no accusative in nominal verb chunks! 
 # -> Maria vio que yo hice una casa = Mariya ñuqap wasi rurasqayta rikurqan (no wasiTA)
 # another special case: nominal head of internally headed relative clause: will be moved into rel-clause, don't insert case markers!
-parent.type=sn					"+Acc"				my.si=/cd/ && !(chunkparent.verbform=/perfect|obligative|^rel/) && !(chunkchild.IHRC=yes)			case			up		concat
+parent.type=sn					"+Acc"				my.si=/cd/ && !(chunkparent.verbform=/perfect|obligative|^rel/) && !(chunkchild.IHRC=yes)&& !(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/child::NODE/descendant::NODE[@slem="tener"]} && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/child::NODE/descendant::NODE[@slem="que"]} )			case			up		concat
+
 
 # if sn chunk and si=ci -> set mi=+Dat
 parent.type=sn					"+Dat"				my.si=ci					case			up		concat
@@ -129,7 +130,7 @@ my.auxverbmi=/.+/ && !(my.slem=haber && my.smi=/3S/ && xpath{descendant::NODE[@s
 # special case: habitual past with soler + "pasado simple" or "indefinido": 
 # if 1. or 2. person: main verb -q +ka +finite ending
 my.slem=soler && my.smi=/1|2|3S/ && my.smi=/^...[IS]/				"ka"				my.type=/grup-verb|coor-v/		auxlem					up	overwrite
-my.smi=/^...[IS]/ && my.slem=soler  && my.smi=/1|2|3S/ 				verbmi				my.type=/grup-verb|coor-v/		auxverbmi				up	concat
+my.smi=/^...[IS]/ && my.slem=soler  && my.smi=/1|2|3S/ 				auxverbmi			my.type=/grup-verb|coor-v/		auxverbmi				up	concat
 my.slem=soler && my.smi=/^...[IS]/ && my.smi=/1|2|3S/				"+Ag"				my.type=/grup-verb|coor-v/		addverbmi				up	concat
 
 # if 3. plural: verbform -qku -> 3.Pl.Subj.Hab -> (not necessary, already in dix and through morphdisamb!) 
