@@ -36,6 +36,7 @@ sub main{
 			#print STDERR "Disambiguating morphological translation options in sentence: ".$node->findvalue('ancestor::SENTENCE/@ref')."\n" if $verbose;
 			foreach my $ruleskey (@allNodeConditions)
 				{				
+					#print STDERR "rules key: $ruleskey\n";
 					my ($nodeCond, $trgtMI) = split('---',$ruleskey);		  
 					my @nodeConditions = squoia::util::splitConditionsIntoArray($nodeCond);
 
@@ -61,28 +62,27 @@ sub main{
 								foreach my $trgt (@targetMIs)
 								{
 										# create xpath string to find matching synonyms:
-										# NOTE: as this may not be the first rule to be applied, its possible that the values in $node belong to a SYN that has already been deleted,
-										# if this was a rule with 'k' -> check also if node itself matches!
+										# NOTE: if already a rule with 'k' matched: SYN will still be there, no need to check contents of NODE itself, just match SYNs
 										my $xpathstring;
 										my $selfXpathString;
 										if($trgt !~ /=/)
 										{ 
 											$xpathstring= 'child::SYN[@mi="'.$trgt.'"]';
-											$selfXpathString = 'self::NODE[@mi="'.$trgt.'"]';
+											#$selfXpathString = 'self::NODE[@mi="'.$trgt.'"]';
 										}
 										#if other attribute than mi should be used for disambiguation
 										else
 										{ 
 											my ($attr,$value) = split('=',$trgt);
 											$xpathstring= 'child::SYN[@'.$attr.'="'.$value.'"]';
-											$selfXpathString= 'self::NODE[@'.$attr.'="'.$value.'"]';
+											#$selfXpathString= 'self::NODE[@'.$attr.'="'.$value.'"]';
 										}
 										#print STDERR "xpath: $xpathstring\n" if $verbose;
 										# find synnode with this 'mi', can be more than one
 										my @matchingSynsCand = $node->findnodes($xpathstring);
-										my @matchingSynsCand2 = $node->findnodes($selfXpathString);
+										#my @matchingSynsCand2 = $node->findnodes($selfXpathString);
 										push(@matchingSyns,@matchingSynsCand);
-										push(@matchingSyns,@matchingSynsCand2);
+										#push(@matchingSyns,@matchingSynsCand2);
 										
 									}
 									if(scalar(@matchingSyns)>0)
@@ -121,6 +121,7 @@ sub main{
 								    					$node->removeChild($syn);
 								    				}
 								    			}
+								    			#print STDERR "after keep : ".$dom->toString()."\n";
 								    			#delete SYN node whose attributes have been copied to node
 								    			#$node->removeChild($matchingtranslation);
 								   			}
@@ -132,9 +133,9 @@ sub main{
 								   				# note: this is the morphological disambiuation -> keep sem attribute (no lexical differences in SYN's disambiguated here!)
 													my @synattrlist = $node->attributes();
 													foreach my $synattr (@synattrlist)
-													{#print "attribute to remove in node ".$synattr->nodeName."\n";
+													{ #print STDERR "attribute to remove in node ".$synattr->nodeName."\n";
 														unless($synattr->nodeName =~ /^ref|slem|smi|sform|UpCase|sem/)
-														{#print "removed attribute ".$synattr->nodeName."\n";
+														{#print STDERR "removed attribute ".$synattr->nodeName."\n";
 															$node->removeAttribute($synattr->nodeName);
 														}
 													}
@@ -144,6 +145,7 @@ sub main{
 								    				{
 								    					if(!grep( $_ == $syn, @matchingSyns ) or $syn == @SYNnodes[-1])
 								    					{ #print STDERR "inserted in node:".$syn->toString."\n" if $verbose;
+								    						#print STDERR "mnbr matching syns: ".scalar(@matchingSyns)."\n";
 								    						my @Attributes = $syn->attributes();
 								    						foreach my $synattr (@Attributes)
 								    						{
@@ -151,6 +153,7 @@ sub main{
 								    							my $attr =	$synattr->nodeName;
 								    							$node->setAttribute($attr, $value);
 								    						}
+								    						#print STDERR "new node: ".$node->toString()."\n";
 								    						last;
 								    					}
 								    				}
@@ -164,6 +167,7 @@ sub main{
 										   					$node->removeChild($matchingtranslation);
 										   				}
 								    				}
+								    				#print  STDERR "xml: ".$dom->toString()."\n";
 								    		}
 								   			else
 								   			{
