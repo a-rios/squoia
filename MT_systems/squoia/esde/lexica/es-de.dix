@@ -1413,6 +1413,8 @@
    <e><p><l>adoptado</l><r>angenommen</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>agrupado</l><r>gruppiert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>alargado</l><r>verlängert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>aliado</l><r>alliiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>aliado</l><r>verbündet</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>amparado</l><r>geschützt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>anunciado</l><r>angekündigt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>arreglado</l><r>repariert</r></p><par n='AQ_ADJ'/></e>
@@ -1422,10 +1424,14 @@
    <e><p><l>bañado</l><r>gebadet</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>canalizado</l><r>kanalisiert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>caracterizado</l><r>charakterisiert</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>catalogado</l><r>eingestuft</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>catalogado</l><r>katalogisiert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>celebrado</l><r>gefeiert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cerrado</l><r>geschlossen</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>cobrado</l><r>bezahlt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>cometido</l><r>begangen</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>comprobado</l><r>überprüft</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>concelebrado</l><r>mitgefeiert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>concluido</l><r>gefolgert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>confirmado</l><r>bestätigt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>consolidado</l><r>konsolidiert</r></p><par n='AQ_ADJ'/></e>
@@ -1456,6 +1462,8 @@
    <e><p><l>dividido</l><r>verteilt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>edificado</l><r>gebaut</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>emitido</l><r>gegeben</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>enmarcado</l><r>eingefasst</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>enmarcado</l><r>eingerahmt</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>favorecido</l><r>gefördert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>formulado</l><r>formuliert</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ganado</l><r>verdient</r></p><par n='AQ_ADJ'/></e>
@@ -1522,6 +1530,29 @@
    <e><p><l>unido</l><r>vereint</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vencido</l><r>überwunden</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>vendido</l><r>verkauft</r></p><par n='AQ_ADJ'/></e>
+</section>
+<section id="Verbs-octubre-diariodelcusco" type="standard">
+   <e><p><l>apelar</l><r>helfen<s n="cas"/>Dat</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>ceder</l><r>nach|geben</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>contagiar</l><r>an|stecken</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>decretar</l><r>an|ordnen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>decretar</l><r>dekretieren</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>descontar</l><r>ab|rechnen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>descontar</l><r>ab|ziehen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>descontar</l><r>ermässigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>empatar</l><r>aus|gleichen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>escalar</l><r>besteigen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>escalar</l><r>erklimmen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>estimar</l><r>schätzen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>evidenciar</l><r>beweisen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>evidenciar</l><r>erweisen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>instar</l><r>bitten</r></p><par n='VM_VV_MAIN'/></e> <!-- bitten um -->
+   <e><p><l>instar</l><r>drängen</r></p><par n='VM_VV_MAIN'/></e>	<!-- instar a alguien a algo = jmdn zu etwas (Dat) draengen -->
+   <e><p><l>revalorar</l><r>neu bewerten</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>saludar</l><r>begrüssen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>triunfar</l><r>auf|trumpfen</r></p><par n='VM_VV_MAIN'/></e>
+   <e><p><l>triunfar</l><r>gewinnen</r></p><par n='VM_VV_MAIN'/></e>	<!-- triunfar en algo = in etwas (Dat) gewinnen -->
+   <e><p><l>triunfar</l><r>obsiegen</r></p><par n='VM_VV_MAIN'/></e>
 </section>
 <section id="Verbs-august-diariodelcusco" type="standard">
    <e><p><l>auxiliar</l><r>helfen<s n="cas"/>Dat</r></p><par n='VM_VV_MAIN'/></e>
@@ -24388,6 +24419,8 @@
    <e><p><l>navegante</l><r>Seefahrer</r></p><par n='NC_N_GENTRY_ERIN'/></e>	<!-- gender -->
    <e><p><l>nave</l><r>Halle</r></p><par n='NC_N_NUM_FEM'/></e>
    <e><p><l>nave</l><r>Schiff</r></p><par n='NC_N_68_ZIEL'/></e>
+   <e><p><l>navidad</l><r>Weihnachten</r></p><par n='NC_N_NUM_NEUT'/></e>
+   <e><p><l>navidad</l><r>Weihnachten</r></p><par n='NPvar_NE'/></e>
    <e><p><l>navío</l><r>Schiff</r></p><par n='NC_N_68_ZIEL'/></e>
    <e><p><l>nazi</l><r>Nazi</r></p><par n='NC_N_84_CODE'/></e>
    <e><p><l>nazismo</l><r>Nazismus</r></p><par n='NC_N_NUM_MASC'/></e>
@@ -35593,6 +35626,27 @@ octubre [??:??/10/??:??.??:??] W 1
 septiembre [??:??/9/??:??.??:??] W 1
 viernes [V:??/??/??:??.??:??] W 1
 -->
+   <e><p><l>lunes</l><r>Montag</r></p><par n='W_W'/></e>
+   <e><p><l>martes</l><r>Dienstag</r></p><par n='W_W'/></e>
+   <e><p><l>miércoles</l><r>Mittwoch</r></p><par n='W_W'/></e>
+   <e><p><l>jueves</l><r>Donnerstag</r></p><par n='W_W'/></e>
+   <e><p><l>viernes</l><r>Freitag</r></p><par n='W_W'/></e>
+   <e><p><l>sábado</l><r>Samstag</r></p><par n='W_W'/></e>
+   <e><p><l>domingo</l><r>Sonntag</r></p><par n='W_W'/></e>
+
+   <e><p><l>enero</l><r>Januar</r></p><par n='W_W'/></e>
+   <e><p><l>febrero</l><r>Februar</r></p><par n='W_W'/></e>
+   <e><p><l>marzo</l><r>März</r></p><par n='W_W'/></e>
+   <e><p><l>abril</l><r>April</r></p><par n='W_W'/></e>
+   <e><p><l>mayo</l><r>Mai</r></p><par n='W_W'/></e>
+   <e><p><l>junio</l><r>Juni</r></p><par n='W_W'/></e>
+   <e><p><l>julio</l><r>Juli</r></p><par n='W_W'/></e>
+   <e><p><l>agosto</l><r>August</r></p><par n='W_W'/></e>
+   <e><p><l>septiembre</l><r>September</r></p><par n='W_W'/></e>
+   <e><p><l>octubre</l><r>Oktober</r></p><par n='W_W'/></e>
+   <e><p><l>noviembre</l><r>November</r></p><par n='W_W'/></e>
+   <e><p><l>diciembre</l><r>Dezember</r></p><par n='W_W'/></e>
+
    <e><p><l>1</l><r>1</r></p><par n='W_W'/></e>
    <e><p><l>2</l><r>2</r></p><par n='W_W'/></e>
    <e><p><l>3</l><r>3</r></p><par n='W_W'/></e>
