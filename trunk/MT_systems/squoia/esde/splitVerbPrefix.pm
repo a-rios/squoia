@@ -19,11 +19,12 @@ sub main{
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	my $maxChunkRef = squoia::util::getMaxChunkRef($dom);
-	my $xpathexpr = '//CHUNK[@type="VP" or @type="CVP"]/descendant-or-self::NODE[contains(@lem,"|") and (@pos="VVFIN" or @pos="VVIMP")]';
+	my $xpathexpr = '//CHUNK[@type="VP" or @type="CVP"]/descendant-or-self::NODE[contains(@lem,"|") and (@pos="VVFIN" or @pos="VVIMP" or (@pos="VV" and (@spos="VVFIN" or @spos="VVIMP" ) ))]';
 	my @verbPrefNodes = $dom->findnodes($xpathexpr);
 	foreach my $node (@verbPrefNodes) {
 		my $lemma = $node->getAttribute('lem');
 		my ($vpref,$vlem) = split(/\|/,$lemma);
+		print STDERR "$lemma:\tverb prefix \"$vpref\" split from verb base \"$vlem\"\n" if $verbose;
 		# replace complete verb lemma with root lemma only 
 		$node->setAttribute('lem',$vlem);
 		# create a new chunk (with embedded node) for separable verb prefix

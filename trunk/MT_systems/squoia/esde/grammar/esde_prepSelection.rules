@@ -138,7 +138,7 @@ por		lem=durch,cas=Akk	xpath{//CHUNK[contains(@type,"VP") and NODE[@pos="VVPP" a
 por		lem=pro,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) && xpath{ancestor::CHUNK[@type="PP" and preceding-sibling::CHUNK[NODE[@slem="vez"]]]}	-
 
 # por = fuer
-#por		lem=für,cas=Akk		chunkparent.type=PP && !(chunkgrandparent.type=V-pas) 		-
+por		lem=für,cas=Akk		xpath{//NODE[parent::CHUNK[@si="cc" and @type="PP"] and following-sibling::CHUNK/NODE[@slem="paz"] ]} 		-
 
 # TODO verb periphrases with "por"
 # Acabamos por escribirle un mensaje => Wir schreiben ihm schliesslich eine Nachricht
@@ -151,7 +151,7 @@ por		delete=yes		chunkparent.type=VZ-inf && chunkparent.lsibling.slem=/acabar/	-
 # por la noche => am Abend, in der Nacht
 
 # por = in (default?)
-por		lem=in,cas=Dat		chunkparent.type=PP && chunkparent.si=cc && !(xpath{//CHUNK[@type="PP" and parent::CHUNK[contains(@type,"VP") and NODE[@pos="VVPP" and count(NODE[@pos="VAFIN"])=0]]]/NODE})	+
+por		lem=in,cas=Dat		chunkparent.type=PP && chunkparent.si=cc && !(xpath{//CHUNK[@type="PP" and parent::CHUNK[contains(@type,"VP") and NODE[@pos="VVPP" and count(NODE[@pos="VAFIN"])=0]]]/NODE})	-
 
 # = PARA =
 # ========

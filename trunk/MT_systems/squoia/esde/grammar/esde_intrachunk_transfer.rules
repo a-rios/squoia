@@ -141,9 +141,23 @@ my.spos=/VVFIN/&&my.pos=/VV/&&my.refl=/yes/	pos	my.type=/VP/	"VVFIN"		down	overw
 my.spos=/VVPP/&&my.pos=/VV/&&my.refl=/yes/	pos	my.type=/VP/	"VVPP"		down	overwrite
 my.spos=/VVINF/&&my.pos=/VV/&&my.refl=/yes/	pos	my.type=/VP/	"VVINF"		down	overwrite
 
+# ES irreflexive => DE reflexive verbs: set the lemma corresponding to the morph info of the reflexive verb pronoun
+my.spos=/VVFIN/&&my.pos=/PRF/&&my.mi=/1.Sg/	lem	my.type=/VP/	"ich_PRF"	down	overwrite	
+my.pos=/PRF/&&my.mi=/1.Sg/			mi	my.type=/VP/	"1.Sg"		down	overwrite	
+my.spos=/VVFIN/&&my.pos=/PRF/&&my.mi=/2.Sg/	lem	my.type=/VP/	"du_PRF"	down	overwrite	
+my.pos=/PRF/&&my.mi=/2.Sg/			mi	my.type=/VP/	"2.Sg"		down	overwrite	
+my.spos=/VVFIN/&&my.pos=/PRF/&&my.mi=/1.Pl/	lem	my.type=/VP/	"wir_PRF"	down	overwrite	
+my.pos=/PRF/&&my.mi=/1.Pl/			mi	my.type=/VP/	"1.Pl"		down	overwrite	
+my.spos=/VVFIN/&&my.pos=/PRF/&&my.mi=/2.Pl/	lem	my.type=/VP/	"ihr_PRF"	down	overwrite	
+my.pos=/PRF/&&my.mi=/2.Pl/			mi	my.type=/VP/	"2.Pl"		down	overwrite
+# sie_PRF_*.*.*	=> sich
+my.spos=/VVFIN/&&my.pos=/PRF/&&(my.mi=/3.Pl/||my.mi="*.*.*")	lem	my.type=/VP/	"sie_PRF"	down	overwrite	
+my.pos=/PRF/&&my.mi=/3.Pl)/		mi	my.type=/VP/	"*.*.*"		down	overwrite	
+
 ##Pronouns/Clitics
 # ES reflexive verbs => DE irreflexive verbs: delete reflexive pronoun
 my.pos=/PRF/		delete		xpath{//CHUNK[@type="VP" and NODE[@irrefl="yes"]]/CHUNK[@type="NP"]}	yes		down		overwrite
+
 
 # pronoun directly dependent of the verb (clitic) TODO: with 3rd person or separate?
 # case of the 1st/2nd person pronoun clitic form is ambiguous, depends also on the verb: direct object "te veo" vs indirect "te doy algo"
@@ -232,7 +246,7 @@ my.mi=/./&&my.pos=/PPOSS|PWS/	mi			my.type=/NP|PP/			mi			up		no-overwrite
 
 # set case of circunstancial complements to Akk
 my.pos=/NN/				Akk		my.type=/NP/&&my.si=cc			cas		up		no-overwrite
-my.pos=/NN|ART|PPOSAT|PDAT|PIAT/	cas		my.type=/NP/&&my.si=cc&&my.cas=/./	cas		down		overwrite
+my.pos=/NN|ART|PPOSAT|PDAT|PIAT|ADJ/	cas		my.type=/NP/&&my.si=cc&&my.cas=/./	cas		down		overwrite
 
 # distinguish type of adjective: attribute (atr) to a predicate ADJD or modifier of a noun ADJA
 #my.pos=/ADJ/		pos			my.type=/NP|AP|PP/&&!(my.si=atr)		ADJA		down		overwrite

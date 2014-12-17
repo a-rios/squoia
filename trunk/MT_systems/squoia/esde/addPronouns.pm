@@ -55,7 +55,8 @@ sub main{
 		$pronounNode->setAttribute('pos','PPER');
 		$pronounNode->setAttribute('cas','Nom');
 		my $finVerb;
-		if ($node->getAttribute('pos') =~ m/FIN/) {
+		if ($node->getAttribute('pos') =~ m/FIN/ or ($node->getAttribute('pos') =~ m/VV/ and $node->hasAttribute('spos') and $node->getAttribute('spos')=~ m/VVFIN/) ) {
+		# "spos" for reflexiv German verbs; example: charlar -> unterhalten_sich, where VP-CHUNK has 2 children that are sibling nodes after split
 			$finVerb = $node;
 		}
 		else {
