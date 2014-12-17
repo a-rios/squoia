@@ -106,6 +106,10 @@ my.smi=/^D/&&(parent.pos=/NN/||parent.unknown="transfer"&&parent.smi=/^NC/) && c
 # old:
 # my.pos=/PRF|PPER/ && parent.pos=/V[AMV]INF|V[AMV]PP|V[AMV]FIN/		clitics="no"	type=cliticPRON,comment="clitics"
 
+# reflexive pronoun split from verb
+my.pos=/PRF/ && my.spos=/VV/ && !(my.cas=Dat)	reflPron="yes"	type=NP,si=cd-rfl,comment="reflexive pronoun only in German"
+my.pos=/PRF/ && my.spos=/VV/ && my.cas=Dat	reflPron="yes"	type=NP,si=ci-rfl,comment="reflexive pronoun only in German"
+
 ###########
 # Flat PP #	TODO: check if still needed
 ###########

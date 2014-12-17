@@ -585,7 +585,7 @@ sub genMorphGenInput{
 			$morphInfo = $mi.".Akk";
 		}
 		#lem already lemma_pos
-		$morphStr = $lem."_".$morphInfo;
+		$morphStr = $lem."_".$morphInfo;	# note: lemma already contains "_PRF"
 		# TODO maybe do something for the Dat case?
 	}	
 	# TRUNC

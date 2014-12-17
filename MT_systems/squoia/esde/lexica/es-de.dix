@@ -225,7 +225,7 @@
     </pardef>
     <!-- Main verbs with reflexive pronoun -->
     <pardef n='VM_VV_REFL'>
-      <e><p><l><s n="parol"/>VM</l><r><s n='refl'/>yes<s n='split'/>yes<s n='complex_pos'/>PRF_VV<s n="aux"/>haben<s n="spos"/>VV</r></p><par n="Verb"/></e>
+      <e><p><l><s n="parol"/>VM</l><r><s n='refl'/>yes<s n='split'/>yes<s n='complex_pos'/>VV_PRF<s n="aux"/>haben<s n="spos"/>VV</r></p><par n="Verb"/></e>
     </pardef>
     <!-- Past participles as adjective -->
     <pardef n='VMPP_ADJ'>
@@ -10073,7 +10073,7 @@
    <e><p><l>atropellar</l><r>um|fahren</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>aullar</l><r>heulen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>aumentar</l><r>erhöhen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>aumentar</l><r>sich_vergrössern</r></p><par n="VM_VV_REFL"/></e>	<!-- aumentar [intransitiv] => sich vergrössern -->
+   <e><p><l>aumentar</l><r>vergrössern_sich</r></p><par n="VM_VV_REFL"/></e>	<!-- aumentar [intransitiv] => sich vergrössern -->
    <!--e><p><l>aumentar</l><r>sich_vergrössern<s n='split'/>yes<s n='complex_pos'/>PR_VV</r></p><par n="VM_VV_MAIN"/></e-->	<!-- aumentar [intransitiv] => sich vergrössern -->
    <e><p><l>aumentar</l><r>vergrößern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>aumentar</l><r>vermehren</r></p><par n="VM_VV_MAIN"/></e>		<!-- aumentar algo [transitiv] => erhöhen/vermehren/vergrössern -->
@@ -10120,7 +10120,7 @@
    <e><p><l>borrar</l><r>aus|radieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>bostezar</l><r>gähnen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>bramar</l><r>brüllen</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>bregar</l><r>sich_durch|beißen</r></p><par n="VM_VV_REFL"/></e>
+   <e><p><l>bregar</l><r>durch|beißen_sich</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>bromear</l><r>scherzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>broncear</l><r>bräunen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>bucear</l><r>ein|tauchen</r></p><par n="VM_VV_MAIN"/></e>
@@ -10174,7 +10174,7 @@
    <e><p><l>chantajear</l><r>erpressen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>chapecar</l><r>flechten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>chapotear</l><r>plätschern</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>charlar</l><r>sich_unterhalten</r></p><par n="VM_VV_REFL"/></e>
+   <e><p><l>charlar</l><r>unterhalten_sich</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>chillar</l><r>kreischen</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>chillar</l><r>schreien</r></p><par n='VM_VV_MAIN'/></e>
    <e><p><l>chirriar</l><r>quietschen</r></p><par n="VM_VV_MAIN"/></e>
@@ -11892,7 +11892,7 @@
    <e><p><l>mezclar</l><r>vermischen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>migrar</l><r>migrieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>migrar</l><r>wandern</r></p><par n="VM_VV_MAIN_BE"/></e>
-   <e><p><l>militar</l><r>sich_ein|setzen</r></p><par n="VM_VV_REFL"/></e>
+   <e><p><l>militar</l><r>ein|setzen_sich</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>mimar</l><r>bemuttern</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mimar</l><r>hätscheln</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>mimar</l><r>verpäppeln</r></p><par n="VM_VV_MAIN"/></e>
@@ -12438,7 +12438,7 @@
    <e><p><l>plantear</l><r>versetzen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>plastificar</l><r>in Plastikfolie einschweißen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>plastificar</l><r>plastifizieren</r></p><par n="VM_VV_MAIN"/></e>
-   <e><p><l>platicar</l><r>sich_unterhalten</r></p><par n="VM_VV_REFL"/></e>
+   <e><p><l>platicar</l><r>unterhalten_sich</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>plegar</l><r>falten</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>pleitear</l><r>prozessieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>poblar</l><r>an|füllen</r></p><par n="VM_VV_MAIN"/></e>
@@ -12675,7 +12675,7 @@
    <e><p><l>programar</l><r>programmieren</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>programar</l><r>vor|nehmen</r></p><par n="VM_VV_MAIN"/></e>
    <e><p><l>progresar</l><r>fort|schreiten</r></p><par n="VM_VV_MAIN_BE"/></e>
-   <e><p><l>progresar</l><r>sich entwickeln</r></p><par n="VM_VV_MAIN"/></e>
+   <e><p><l>progresar</l><r>entwickeln_sich</r></p><par n="VM_VV_REFL"/></e>
    <e><p><l>progresar</l><r>voran|gehen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>progresar</l><r>voran|kommen</r></p><par n="VM_VV_MAIN_BE"/></e>
    <e><p><l>progresar</l><r>vorwärts|kommen</r></p><par n="VM_VV_MAIN_BE"/></e>

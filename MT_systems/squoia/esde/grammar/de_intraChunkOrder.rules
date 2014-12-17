@@ -2,6 +2,12 @@
 # --------------------------------------------------------------------------------------------------------------------------- #
 #only NODE, no chunk (may be addressed through "chunkparent")
 
+###############
+# Determiners #
+###############
+# invert the order within the specNoun CHUNK: toda la [noche] => die ganze [Nacht]
+chunkparent.type=nounSpec&&my.pos=ART	xADJ:my.pos=ADJA	head +xADJ
+
 # --------------------------------------------------------------------------------------------------------------------------- #
 # Nouns
 # directly under NP, head is the noun NN

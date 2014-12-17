@@ -31,10 +31,7 @@ insistir	en	bestehen	auf	Akk
 insistir	en	beharren	auf	Akk
 insistir	en	drängen		auf	Akk
 insistir	en	insistieren	auf	Akk
-#reírse de = lachen ueber = jmdn auslachen
-reír		de	lachen		über	Akk
-reír		de	belachen	-	Akk
-reír		de	aus|lachen	-	Akk
+militar		por	ein|setzen_sich	für	Akk
 pensar		en	denken		an	Akk
 pensar		en	nach|denken	über	Akk
 persistir	en	bestehen	auf	Dat
@@ -53,6 +50,10 @@ quejar		de	beschweren	über	Akk
 quejar		del	beschweren	über_d(er)	Akk
 quejar		de	jammern		über	Akk
 quejar		del	jammern		über_d(er)	Akk
+#reírse de = lachen ueber = jmdn auslachen
+reír		de	lachen		über	Akk
+reír		de	belachen	-	Akk
+reír		de	aus|lachen	-	Akk
 renegar		de	los|sagen	von	Dat
 renunciar	a	ab|sehen	von	Dat
 renunciar	a	verzichten	auf	Akk

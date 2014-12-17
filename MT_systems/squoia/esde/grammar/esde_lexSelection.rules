@@ -83,6 +83,12 @@ se	sie_PRF		d	xpath{//NODE[starts-with(@smi,"PP3CN") and parent::CHUNK[preceding
 político	Schwieger-	d	!(xpath{//NODE[parent::CHUNK[preceding-sibling::NODE[@slem="familia"]]]})
 
 
+###############
+# Determiners #
+###############
+todo	ganz	k	parent.smi=/DA0.S./	# toda la noche => die ganze Nacht
+todo	all	k	parent.smi=/DA0.P./	# todas las noches => all die/alle Naechte (jede Nacht?)
+
 #########
 # Nouns #
 #########
