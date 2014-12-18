@@ -794,9 +794,9 @@ sub generateMorphWord{
 			my ($pref,$verb) = split /\|/;
 			print STDERR "Prefix: $pref ; verb: $verb\n" if $verbose;
 			my $morph = `echo "$verb" | $generator `;
+			$pref = `echo "$pref" `;chomp($pref);
 			if ($morph !~ /\+\?/) {
 				my ($stts,$form) = split(/\t/,$morph);
-				chomp($morph);
 				print OUTFILE $pref."|".$stts."\t".$pref.$form;
 			}
 			else {
@@ -878,7 +878,7 @@ sub cleanFstOutput{
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
         open (INFILE, "<:encoding(UTF-8)", $infile) or die "Can't open $infile : $!";
-        binmode INFILE, ':utf8';
+        #binmode INFILE, ':utf8';
         open (my $out_fh, ">:encoding(UTF-8)", $outfile) or die "Can't open $outfile : $!";
         binmode $out_fh, ':utf8';
 

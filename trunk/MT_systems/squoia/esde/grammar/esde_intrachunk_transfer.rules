@@ -151,8 +151,20 @@ my.pos=/PRF/&&my.mi=/1.Pl/			mi	my.type=/VP/	"1.Pl"		down	overwrite
 my.spos=/VVFIN/&&my.pos=/PRF/&&my.mi=/2.Pl/	lem	my.type=/VP/	"ihr_PRF"	down	overwrite	
 my.pos=/PRF/&&my.mi=/2.Pl/			mi	my.type=/VP/	"2.Pl"		down	overwrite
 # sie_PRF_*.*.*	=> sich
-my.spos=/VVFIN/&&my.pos=/PRF/&&(my.mi=/3.Pl/||my.mi="*.*.*")	lem	my.type=/VP/	"sie_PRF"	down	overwrite	
-my.pos=/PRF/&&my.mi=/3.Pl)/		mi	my.type=/VP/	"*.*.*"		down	overwrite	
+my.spos=/VVFIN/&&my.pos=/PRF/&&(my.mi=/3.Pl|3.Sg/||my.mi="*.*.*")	lem	my.type=/VP/	"sie_PRF"	down	overwrite	
+my.pos=/PRF/&&my.mi=/3.Pl|3.Sg)/		mi	my.type=/VP/	"*.*.*"		down	overwrite	
+my.spos=/VVPP/&&my.pos=/PRF/&&(my.mi="*.*.*"||lsibling.child.mi=/3.Sg/)	lem	my.type=/VP/	"sie_PRF"	down	overwrite
+# also for VVPP
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"1.Sg")]]]/NODE[@spos="VVPP" and @pos="PRF"]}	lem	my.type=/VP/	"ich_PRF"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"1.Sg")]]]/NODE[@pos="PRF"]}	mi	my.type=/VP/	"1.Sg"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"1.Pl")]]]/NODE[@spos="VVPP" and @pos="PRF"]}	lem	my.type=/VP/	"wir_PRF"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"1.Pl")]]]/NODE[@pos="PRF"]}	mi	my.type=/VP/	"1.Pl"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"2.Sg")]]]/NODE[@spos="VVPP" and @pos="PRF"]}	lem	my.type=/VP/	"du_PRF"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"2.Sg")]]]/NODE[@pos="PRF"]}	mi	my.type=/VP/	"2.Sg"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"2.Pl")]]]/NODE[@spos="VVPP" and @pos="PRF"]}	lem	my.type=/VP/	"ihr_PRF"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"2.Pl")]]]/NODE[@pos="PRF"]}	mi	my.type=/VP/	"2.Pl"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"3.")]]]/NODE[@spos="VVPP" and @pos="PRF"]}	lem	my.type=/VP/	"sie_PRF"	down	overwrite
+xpath{//CHUNK[NODE[NODE[starts-with(@mi,"3.")]]]/NODE[@pos="PRF"]}	mi	my.type=/VP/	"*.*.*"	down	overwrite
 
 ##Pronouns/Clitics
 # ES reflexive verbs => DE irreflexive verbs: delete reflexive pronoun
