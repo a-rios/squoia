@@ -12,6 +12,7 @@ use XML::LibXML;
 #read xml from STDIN
 #my $parser = XML::LibXML->new({encoding => 'utf-8'});
 my $dom    = XML::LibXML->load_xml( IO => *STDIN);
+$dom->documentElement()->setAttribute( 'xmlns' , '' );
 
 # conll: 
 # number wordform  lemma cpos pos morphology head edgelabel
@@ -22,25 +23,44 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN);
 foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
 
-   my $hasDummy = 0;
+  # print $sentence->getAttribute('id')."\n";
    # if dummy KAN -> delete and hang children to either 'pred', 'hab', oblg
    if($sentence->exists('descendant::terminal[word[text()="KAN"] and pos[text()="DUMMY"] ]') )
    {
-      $hasDummy=1;
+     
       my @KANs = $sentence->findnodes('descendant::terminal[word[text()="KAN"] and pos[text()="DUMMY"] ]');
       
       foreach my $KAN (@KANs){
 
 	  my $pred_hab_oblg = @{$KAN->findnodes('child::children/terminal[label[text()="pred" or text()="oblg" or text()="hab"]]')}[0];   
+	  # set label to pred_KAN, hab_KAN or oblg_KAN
 	  my $parent = @{$KAN->findnodes('parent::children/parent::*[1]/children')}[0];
 	  
+	  if(!$parent){
+	    print STDERR "no parent found to node: \n";
+	   # print STDERR $KAN->toString()."\n\n";
+	   print STDERR $sentence->toString()."\n\n";
+	    exit(-1);
+	  }
+	  
 	  # if hab, pred or oblg: make this node the head
-	  if($pred_hab_oblg){
+	  elsif($pred_hab_oblg){
+	      my $labelstring = $pred_hab_oblg->findvalue('label/text()')."_KAN";
+	      &setLabel($pred_hab_oblg, $labelstring); 
 	      $parent->appendChild($pred_hab_oblg);
 	  
 	      my @children = $KAN->findnodes('child::children/terminal');
+	      my $pred_hab_oblg_children = @{$pred_hab_oblg->findnodes('children')}[0];
+	      
+	      # no children yet, create node
+	      if(!$pred_hab_oblg_children){
+		 my $newChildrenNode = XML::LibXML::Element->new( 'children' );
+		$pred_hab_oblg->appendChild($newChildrenNode);
+		$pred_hab_oblg_children = $newChildrenNode;
+	      }
+	      
 	      foreach my $child (@children){
-		  $pred_hab_oblg->appendChild($child);
+		    $pred_hab_oblg_children->appendChild($child);
 	      }
 	      $parent->removeChild($KAN);
 	  }
@@ -65,9 +85,10 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
   # print $sentence->toString()."\n\n";
    
    my @terminals = $sentence->findnodes('descendant::terminal') ;
-   foreach my $terminal (sort order_sort  @terminals){
+   my $count =1;
    
-      my $ord = $terminal->findvalue('child::order/text()');
+   foreach my $terminal (sort order_sort  @terminals){
+      
       my $wordform = $terminal->findvalue('child::word/text()');
       my $translation = $terminal->findvalue('child::translation/text()');
       my $pos = $terminal->findvalue('child::pos/text()');
@@ -98,17 +119,17 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
       
       my $label = $terminal->findvalue('child::label/text()');
    
-      print "$ord\t$wordform\t$translation\t$pos\t_\t$morphstring\t$head\t$label\n";
+      print "$count\t$wordform\t$translation\t$pos\t_\t$morphstring\t$head\t$label\t_\t_\n";
    
 #     print $terminal->toString."\n";
 #     print "--------------------------------------\n";
-   
+      $count++;
    }
 
- print  (scalar(@terminals)+1);
+# print  (scalar(@terminals)+1);
  
  
- print "\tVROOT\t_\t_\t_\t_\t0\tsentence\n\n";
+ print "$count\tVROOT\t_\t_\t_\t_\t0\tsentence\t_\t_\n\n";
 }
 
 

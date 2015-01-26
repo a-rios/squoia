@@ -53,7 +53,7 @@ my %mapTagsToSuffixFormsNormalized = (
      '+Des'         => 'naya',
      '+Desesp'         => 'pasa',
      '+Dim'         => 'cha',
-     '+Dir'         => 'rk[ua]',
+     '+Dir'         => 'rk[ua]|rp[ua]|tata|thapi|kipa|kata|qa',
      '+DirE'         => 'm(i)?',
      '+DirE_Emph'         => 'má',
      '+Disc'         => 'ña',
@@ -77,7 +77,7 @@ my %mapTagsToSuffixFormsNormalized = (
      '+Lim_Aff'         => 'lla',
      '+Loc'         => 'pi',
      '+MPoss'         => 'sapa',
-     '+MRep'         => 'paya',
+     '+MRep'         => '(r)?paya',
      '+Multi'         => 'rqari',
      '+NPst'         => 'rqa',
      '+Neg'         => 'chu',
@@ -164,7 +164,7 @@ my %mapTagsToSuffixFormsNormalized = (
      '+3.Subj_1.Pl.Incl.Obj'         => 'nchik',
      '+3.Subj_1.Pl.Incl.Obj.Fut'         => 'sunchik',
      '+3.Subj_2.Pl.Obj'         => 'ykichik',
-     '+3.Subj_2.Sg.Obj'         => 'sunki',
+     '+3.Subj_2.Sg.Obj'         => 'sunki|nki',
 	);
 
 
@@ -194,7 +194,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+Des'         => 'naya',
      '+Desesp'         => 'pasa',
      '+Dim'         => 'cha|ka',
-     '+Dir'         => 'rk[ua]',
+     '+Dir'         => 'rk[ua]|rp[ua]|tata|thapi|kipa|kata|qa',
      '+DirE'         => 'm(i)?|n',
      '+DirE_Emph'         => 'má',
      '+Disc'         => 'ña',
@@ -218,7 +218,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+Lim_Aff'         => 'lla',
      '+Loc'         => 'pi',
      '+MPoss'         => 'sapa',
-     '+MRep'         => 'paya',
+     '+MRep'         => '(r)?paya',
      '+Multi'         => 'rqari',
      '+NPst'         => 'r(q)?a',
      '+Neg'         => 'chu',
@@ -305,7 +305,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+3.Subj_1.Pl.Incl.Obj'         => 'nchi[ksqj]',
      '+3.Subj_1.Pl.Incl.Obj.Fut'         => 'sunchi[ksqj]',
      '+3.Subj_2.Pl.Obj'         => 'ykichi[ksqj]',
-     '+3.Subj_2.Sg.Obj'         => 'sunki',
+     '+3.Subj_2.Sg.Obj'         => 'sunki|nki',
 	);
 
 
@@ -405,7 +405,7 @@ sub getAnalysis{
 				print STDERR "root: could not find $morphformregex for $morphtag in $token\n";
 				exit;
 			}
-			$token =~ s/$morphform$//;
+			$token =~ s/$morphform$//i;
 			
 			if($i<scalar(@pos)-1){
 				$analysis = $morphform."[".$p."][".@tags[$i]->textContent."][--]".$analysis;
@@ -448,7 +448,7 @@ sub getAnalysis{
 					print STDERR "could not find $morphformregex for $morphtag in $token, at $i, id: ".$terminal->getAttribute('id')."\n";
 					exit;
 				}
-				$token =~ s/^$morphform//;
+				$token =~ s/^$morphform//i;
 				if($i<scalar(@pos)-1){
 					$analysis .= $morphform."[".$p."][".$morphtag."][--]";
 				}
