@@ -5891,6 +5891,7 @@
                         </terminal>
                         <terminal id="s20_1">
                           <order>1</order>
+                          <label>mod</label>
                           <word>Phutu</word>
                           <secedges>
                           </secedges>
@@ -7846,6 +7847,7 @@
                 </terminal>
                 <terminal id="s25_1">
                   <order>1</order>
+                  <label>punc</label>
                   <word>...</word>
                   <secedges>
                   </secedges>
@@ -8952,6 +8954,7 @@
             </terminal>
             <terminal id="s30_30">
               <order>30</order>
+              <label>sntc</label>
               <word>ati</word>
               <secedges>
               </secedges>
@@ -9386,6 +9389,7 @@
                 </terminal>
                 <terminal id="s31_1">
                   <order>1</order>
+                  <label>punc</label>
                   <word>...</word>
                   <secedges>
                   </secedges>
@@ -15897,6 +15901,7 @@
                   <children>
                     <terminal id="s48_21">
                       <order>21</order>
+                      <label>s.arg</label>
                       <word>wapsi</word>
                       <secedges>
                       </secedges>
@@ -18383,6 +18388,7 @@
             </terminal>
             <terminal id="s56_31">
               <order>31</order>
+              <label>sntc</label>
               <word>sasacha</word>
               <secedges>
               </secedges>
@@ -18428,6 +18434,7 @@
                   <children>
                     <terminal id="s56_11">
                       <order>11</order>
+                      <label>co</label>
                       <word>-man</word>
                       <secedges>
                       </secedges>
@@ -20063,6 +20070,7 @@
                                   <children>
                                     <terminal id="s58_78">
                                       <order>78</order>
+                                      <label>s.arg.claus</label>
                                       <word>ka</word>
                                       <secedges>
                                       </secedges>
@@ -21669,6 +21677,7 @@
                     </terminal>
                     <terminal id="s60_49">
                       <order>49</order>
+                      <label>co</label>
                       <word>yapa</word>
                       <secedges>
                       </secedges>
@@ -21894,345 +21903,6 @@
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal id="s61_28">
-              <order>28</order>
-              <word>pisiya</word>
-              <secedges>
-              </secedges>
-              <pos>Root_VS</pos>
-              <translation>=poco</translation>
-              <morph>
-                <tag>NRoot</tag>
-                <tag>+Trs</tag>
-              </morph>
-              <discourse>FOCUS</discourse>
-              <children>
-                <terminal id="s61_5">
-                  <order>5</order>
-                  <label>mod</label>
-                  <word>-paq</word>
-                  <secedges>
-                  </secedges>
-                  <pos>Cas</pos>
-                  <morph>
-                    <tag>+Ben</tag>
-                  </morph>
-                  <discourse>TOPIC</discourse>
-                  <children>
-                    <terminal id="s61_1">
-                      <order>1</order>
-                      <label>s.arg.claus</label>
-                      <word>Watu</word>
-                      <pos>Root</pos>
-                      <translation>=adivinar,hechizar</translation>
-                      <morph>
-                        <tag>VRoot</tag>
-                      </morph>
-                      <children>
-                        <terminal id="s61_6">
-                          <order>6</order>
-                          <label>topic</label>
-                          <word>-qa</word>
-                          <pos>Amb</pos>
-                          <morph>
-                            <tag>+Top</tag>
-                          </morph>
-                        </terminal>
-                        <terminal id="s61_4">
-                          <order>4</order>
-                          <label>ns</label>
-                          <word>-ykuna</word>
-                          <pos>NS_Num</pos>
-                          <morph>
-                            <tag>+Inf</tag>
-                            <tag>+Pl</tag>
-                          </morph>
-                        </terminal>
-                        <terminal id="s61_2">
-                          <order>2</order>
-                          <label>mod</label>
-                          <word>-chi</word>
-                          <pos>VDeriv</pos>
-                          <morph>
-                            <tag>+Caus</tag>
-                          </morph>
-                        </terminal>
-                        <terminal id="s61_3">
-                          <order>3</order>
-                          <label>mod</label>
-                          <word>-ku</word>
-                          <pos>VDeriv</pos>
-                          <morph>
-                            <tag>+Rflx_Int</tag>
-                          </morph>
-                        </terminal>
-                      </children>
-                    </terminal>
-                  </children>
-                </terminal>
-                <terminal id="s61_14">
-                  <order>14</order>
-                  <label>sub</label>
-                  <word>yapa</word>
-                  <secedges>
-                  </secedges>
-                  <pos>Root</pos>
-                  <translation>=añadir</translation>
-                  <morph>
-                    <tag>VRoot</tag>
-                  </morph>
-                  <children>
-                    <terminal id="s61_9">
-                      <order>9</order>
-                      <label>mod</label>
-                      <word>kuti</word>
-                      <pos>Root</pos>
-                      <translation>=vez,apto</translation>
-                      <morph>
-                        <tag>NRoot</tag>
-                      </morph>
-                      <children>
-                        <terminal id="s61_8">
-                          <order>8</order>
-                          <label>mod</label>
-                          <word>sapa</word>
-                          <pos>Root</pos>
-                          <translation>=cada,solo</translation>
-                          <morph>
-                            <tag>NRoot</tag>
-                          </morph>
-                        </terminal>
-                      </children>
-                    </terminal>
-                    <terminal id="s61_12">
-                      <order>12</order>
-                      <label>subj</label>
-                      <word>lluqllakuna</word>
-                      <pos>Root_Num</pos>
-                      <translation>=avalancha</translation>
-                      <morph>
-                        <tag>NRoot</tag>
-                        <tag>+Pl</tag>
-                      </morph>
-                      <children>
-                        <terminal id="s61_10">
-                          <order>10</order>
-                          <label>co</label>
-                          <word>ch'akiri</word>
-                          <pos>Root_VDeriv</pos>
-                          <translation>=secar,tener_sed</translation>
-                          <morph>
-                            <tag>VRoot</tag>
-                            <tag>+Inch</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s61_11">
-                              <order>11</order>
-                              <label>ns</label>
-                              <word>-ykuna</word>
-                              <pos>NS_Num</pos>
-                              <morph>
-                                <tag>+Inf</tag>
-                                <tag>+Pl</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal id="s61_13">
-                          <order>13</order>
-                          <label>linker</label>
-                          <word>ima</word>
-                          <pos>Root</pos>
-                          <morph>
-                            <tag>Part_Conec</tag>
-                          </morph>
-                        </terminal>
-                      </children>
-                    </terminal>
-                    <terminal id="s61_15">
-                      <order>15</order>
-                      <label>mod</label>
-                      <word>-ku</word>
-                      <pos>VDeriv</pos>
-                      <morph>
-                        <tag>+Rflx_Int</tag>
-                      </morph>
-                    </terminal>
-                    <terminal id="s61_16">
-                      <order>16</order>
-                      <label>s.subj</label>
-                      <word>-nqa</word>
-                      <pos>VPers</pos>
-                      <morph>
-                        <tag>+3.Sg.Subj.Fut</tag>
-                      </morph>
-                    </terminal>
-                    <terminal id="s61_17">
-                      <order>17</order>
-                      <label>linker</label>
-                      <word>chay</word>
-                      <secedges>
-                      </secedges>
-                      <pos>Root</pos>
-                      <morph>
-                        <tag>PrnDem</tag>
-                      </morph>
-                      <discourse>TOPIC</discourse>
-                      <children>
-                        <terminal id="s61_18">
-                          <order>18</order>
-                          <label>topic</label>
-                          <word>-qa</word>
-                          <pos>Amb</pos>
-                          <morph>
-                            <tag>+Top</tag>
-                          </morph>
-                        </terminal>
-                      </children>
-                    </terminal>
-                  </children>
-                </terminal>
-                <terminal id="s61_27">
-                  <order>27</order>
-                  <label>obj</label>
-                  <word>-ta</word>
-                  <secedges>
-                    <secedge>
-                      <idref>s61_54</idref>
-                      <secedgelabel>obj</secedgelabel>
-                    </secedge>
-                  </secedges>
-                  <pos>Cas</pos>
-                  <morph>
-                    <tag>+Acc</tag>
-                  </morph>
-                  <children>
-                    <terminal id="s61_24">
-                      <order>24</order>
-                      <label>s.arg.claus</label>
-                      <word>ruru</word>
-                      <pos>Root</pos>
-                      <translation>=fructificar</translation>
-                      <morph>
-                        <tag>VRoot</tag>
-                      </morph>
-                      <children>
-                        <terminal id="s61_22">
-                          <order>22</order>
-                          <label>sub</label>
-                          <word>llamk'a</word>
-                          <secedges>
-                          </secedges>
-                          <pos>Root</pos>
-                          <translation>=trabajar</translation>
-                          <morph>
-                            <tag>VRoot</tag>
-                          </morph>
-                          <children>
-                            <terminal id="s61_21">
-                              <order>21</order>
-                              <label>obj</label>
-                              <word>-ta</word>
-                              <secedges>
-                              </secedges>
-                              <pos>Cas</pos>
-                              <morph>
-                                <tag>+Acc</tag>
-                              </morph>
-                              <children>
-                                <terminal id="s61_20">
-                                  <order>20</order>
-                                  <label>s.arg</label>
-                                  <word>chakra</word>
-                                  <secedges>
-                                  </secedges>
-                                  <pos>Root</pos>
-                                  <translation>=chacra</translation>
-                                  <morph>
-                                    <tag>NRoot</tag>
-                                  </morph>
-                                </terminal>
-                              </children>
-                            </terminal>
-                            <terminal id="s61_23">
-                              <order>23</order>
-                              <label>ns</label>
-                              <word>-spa</word>
-                              <secedges>
-                              </secedges>
-                              <pos>NS</pos>
-                              <morph>
-                                <tag>+SS</tag>
-                              </morph>
-                            </terminal>
-                          </children>
-                        </terminal>
-                        <terminal id="s61_25">
-                          <order>25</order>
-                          <label>mod</label>
-                          <word>-chi</word>
-                          <secedges>
-                          </secedges>
-                          <pos>VDeriv</pos>
-                          <morph>
-                            <tag>+Caus</tag>
-                          </morph>
-                        </terminal>
-                        <terminal id="s61_26">
-                          <order>26</order>
-                          <label>ns</label>
-                          <word>-y</word>
-                          <pos>NS</pos>
-                          <morph>
-                            <tag>+Inf</tag>
-                          </morph>
-                        </terminal>
-                      </children>
-                    </terminal>
-                  </children>
-                </terminal>
-                <terminal id="s61_29">
-                  <order>29</order>
-                  <label>mod</label>
-                  <word>-chipu</word>
-                  <secedges>
-                    <secedge>
-                      <idref>s61_54</idref>
-                      <secedgelabel>mod</secedgelabel>
-                    </secedge>
-                  </secedges>
-                  <pos>VDeriv_VDeriv</pos>
-                  <morph>
-                    <tag>+Caus</tag>
-                    <tag>+Rgr_Iprs</tag>
-                  </morph>
-                </terminal>
-                <terminal id="s61_30">
-                  <order>30</order>
-                  <label>s.subj</label>
-                  <word>-nqa</word>
-                  <secedges>
-                    <secedge>
-                      <idref>s61_54</idref>
-                      <secedgelabel>s.subj</secedgelabel>
-                    </secedge>
-                  </secedges>
-                  <pos>VPers</pos>
-                  <morph>
-                    <tag>+3.Sg.Subj.Fut</tag>
-                  </morph>
-                </terminal>
-                <terminal id="s61_31">
-                  <order>31</order>
-                  <label>ev</label>
-                  <word>-m</word>
-                  <pos>Amb</pos>
-                  <morph>
-                    <tag>+DirE</tag>
-                  </morph>
-                </terminal>
-              </children>
-            </terminal>
             <terminal id="s61_32">
               <order>32</order>
               <label>punc</label>
@@ -22241,6 +21911,7 @@
             </terminal>
             <terminal id="s61_54">
               <order>54</order>
+              <label>sntc</label>
               <word>PISIYA</word>
               <secedges>
               </secedges>
@@ -22248,6 +21919,346 @@
               <morph>
               </morph>
               <children>
+                <terminal id="s61_28">
+                  <order>28</order>
+                  <label>co</label>
+                  <word>pisiya</word>
+                  <secedges>
+                  </secedges>
+                  <pos>Root_VS</pos>
+                  <translation>=poco</translation>
+                  <morph>
+                    <tag>NRoot</tag>
+                    <tag>+Trs</tag>
+                  </morph>
+                  <discourse>FOCUS</discourse>
+                  <children>
+                    <terminal id="s61_5">
+                      <order>5</order>
+                      <label>mod</label>
+                      <word>-paq</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Cas</pos>
+                      <morph>
+                        <tag>+Ben</tag>
+                      </morph>
+                      <discourse>TOPIC</discourse>
+                      <children>
+                        <terminal id="s61_1">
+                          <order>1</order>
+                          <label>s.arg.claus</label>
+                          <word>Watu</word>
+                          <pos>Root</pos>
+                          <translation>=adivinar,hechizar</translation>
+                          <morph>
+                            <tag>VRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s61_6">
+                              <order>6</order>
+                              <label>topic</label>
+                              <word>-qa</word>
+                              <pos>Amb</pos>
+                              <morph>
+                                <tag>+Top</tag>
+                              </morph>
+                            </terminal>
+                            <terminal id="s61_4">
+                              <order>4</order>
+                              <label>ns</label>
+                              <word>-ykuna</word>
+                              <pos>NS_Num</pos>
+                              <morph>
+                                <tag>+Inf</tag>
+                                <tag>+Pl</tag>
+                              </morph>
+                            </terminal>
+                            <terminal id="s61_2">
+                              <order>2</order>
+                              <label>mod</label>
+                              <word>-chi</word>
+                              <pos>VDeriv</pos>
+                              <morph>
+                                <tag>+Caus</tag>
+                              </morph>
+                            </terminal>
+                            <terminal id="s61_3">
+                              <order>3</order>
+                              <label>mod</label>
+                              <word>-ku</word>
+                              <pos>VDeriv</pos>
+                              <morph>
+                                <tag>+Rflx_Int</tag>
+                              </morph>
+                            </terminal>
+                          </children>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal id="s61_14">
+                      <order>14</order>
+                      <label>sub</label>
+                      <word>yapa</word>
+                      <secedges>
+                      </secedges>
+                      <pos>Root</pos>
+                      <translation>=añadir</translation>
+                      <morph>
+                        <tag>VRoot</tag>
+                      </morph>
+                      <children>
+                        <terminal id="s61_9">
+                          <order>9</order>
+                          <label>mod</label>
+                          <word>kuti</word>
+                          <pos>Root</pos>
+                          <translation>=vez,apto</translation>
+                          <morph>
+                            <tag>NRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s61_8">
+                              <order>8</order>
+                              <label>mod</label>
+                              <word>sapa</word>
+                              <pos>Root</pos>
+                              <translation>=cada,solo</translation>
+                              <morph>
+                                <tag>NRoot</tag>
+                              </morph>
+                            </terminal>
+                          </children>
+                        </terminal>
+                        <terminal id="s61_12">
+                          <order>12</order>
+                          <label>subj</label>
+                          <word>lluqllakuna</word>
+                          <pos>Root_Num</pos>
+                          <translation>=avalancha</translation>
+                          <morph>
+                            <tag>NRoot</tag>
+                            <tag>+Pl</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s61_10">
+                              <order>10</order>
+                              <label>co</label>
+                              <word>ch'akiri</word>
+                              <pos>Root_VDeriv</pos>
+                              <translation>=secar,tener_sed</translation>
+                              <morph>
+                                <tag>VRoot</tag>
+                                <tag>+Inch</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s61_11">
+                                  <order>11</order>
+                                  <label>ns</label>
+                                  <word>-ykuna</word>
+                                  <pos>NS_Num</pos>
+                                  <morph>
+                                    <tag>+Inf</tag>
+                                    <tag>+Pl</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal id="s61_13">
+                              <order>13</order>
+                              <label>linker</label>
+                              <word>ima</word>
+                              <pos>Root</pos>
+                              <morph>
+                                <tag>Part_Conec</tag>
+                              </morph>
+                            </terminal>
+                          </children>
+                        </terminal>
+                        <terminal id="s61_15">
+                          <order>15</order>
+                          <label>mod</label>
+                          <word>-ku</word>
+                          <pos>VDeriv</pos>
+                          <morph>
+                            <tag>+Rflx_Int</tag>
+                          </morph>
+                        </terminal>
+                        <terminal id="s61_16">
+                          <order>16</order>
+                          <label>s.subj</label>
+                          <word>-nqa</word>
+                          <pos>VPers</pos>
+                          <morph>
+                            <tag>+3.Sg.Subj.Fut</tag>
+                          </morph>
+                        </terminal>
+                        <terminal id="s61_17">
+                          <order>17</order>
+                          <label>linker</label>
+                          <word>chay</word>
+                          <secedges>
+                          </secedges>
+                          <pos>Root</pos>
+                          <morph>
+                            <tag>PrnDem</tag>
+                          </morph>
+                          <discourse>TOPIC</discourse>
+                          <children>
+                            <terminal id="s61_18">
+                              <order>18</order>
+                              <label>topic</label>
+                              <word>-qa</word>
+                              <pos>Amb</pos>
+                              <morph>
+                                <tag>+Top</tag>
+                              </morph>
+                            </terminal>
+                          </children>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal id="s61_27">
+                      <order>27</order>
+                      <label>obj</label>
+                      <word>-ta</word>
+                      <secedges>
+                        <secedge>
+                          <idref>s61_54</idref>
+                          <secedgelabel>obj</secedgelabel>
+                        </secedge>
+                      </secedges>
+                      <pos>Cas</pos>
+                      <morph>
+                        <tag>+Acc</tag>
+                      </morph>
+                      <children>
+                        <terminal id="s61_24">
+                          <order>24</order>
+                          <label>s.arg.claus</label>
+                          <word>ruru</word>
+                          <pos>Root</pos>
+                          <translation>=fructificar</translation>
+                          <morph>
+                            <tag>VRoot</tag>
+                          </morph>
+                          <children>
+                            <terminal id="s61_22">
+                              <order>22</order>
+                              <label>sub</label>
+                              <word>llamk'a</word>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <translation>=trabajar</translation>
+                              <morph>
+                                <tag>VRoot</tag>
+                              </morph>
+                              <children>
+                                <terminal id="s61_21">
+                                  <order>21</order>
+                                  <label>obj</label>
+                                  <word>-ta</word>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>Cas</pos>
+                                  <morph>
+                                    <tag>+Acc</tag>
+                                  </morph>
+                                  <children>
+                                    <terminal id="s61_20">
+                                      <order>20</order>
+                                      <label>s.arg</label>
+                                      <word>chakra</word>
+                                      <secedges>
+                                      </secedges>
+                                      <pos>Root</pos>
+                                      <translation>=chacra</translation>
+                                      <morph>
+                                        <tag>NRoot</tag>
+                                      </morph>
+                                    </terminal>
+                                  </children>
+                                </terminal>
+                                <terminal id="s61_23">
+                                  <order>23</order>
+                                  <label>ns</label>
+                                  <word>-spa</word>
+                                  <secedges>
+                                  </secedges>
+                                  <pos>NS</pos>
+                                  <morph>
+                                    <tag>+SS</tag>
+                                  </morph>
+                                </terminal>
+                              </children>
+                            </terminal>
+                            <terminal id="s61_25">
+                              <order>25</order>
+                              <label>mod</label>
+                              <word>-chi</word>
+                              <secedges>
+                              </secedges>
+                              <pos>VDeriv</pos>
+                              <morph>
+                                <tag>+Caus</tag>
+                              </morph>
+                            </terminal>
+                            <terminal id="s61_26">
+                              <order>26</order>
+                              <label>ns</label>
+                              <word>-y</word>
+                              <pos>NS</pos>
+                              <morph>
+                                <tag>+Inf</tag>
+                              </morph>
+                            </terminal>
+                          </children>
+                        </terminal>
+                      </children>
+                    </terminal>
+                    <terminal id="s61_29">
+                      <order>29</order>
+                      <label>mod</label>
+                      <word>-chipu</word>
+                      <secedges>
+                        <secedge>
+                          <idref>s61_54</idref>
+                          <secedgelabel>mod</secedgelabel>
+                        </secedge>
+                      </secedges>
+                      <pos>VDeriv_VDeriv</pos>
+                      <morph>
+                        <tag>+Caus</tag>
+                        <tag>+Rgr_Iprs</tag>
+                      </morph>
+                    </terminal>
+                    <terminal id="s61_30">
+                      <order>30</order>
+                      <label>s.subj</label>
+                      <word>-nqa</word>
+                      <secedges>
+                        <secedge>
+                          <idref>s61_54</idref>
+                          <secedgelabel>s.subj</secedgelabel>
+                        </secedge>
+                      </secedges>
+                      <pos>VPers</pos>
+                      <morph>
+                        <tag>+3.Sg.Subj.Fut</tag>
+                      </morph>
+                    </terminal>
+                    <terminal id="s61_31">
+                      <order>31</order>
+                      <label>ev</label>
+                      <word>-m</word>
+                      <pos>Amb</pos>
+                      <morph>
+                        <tag>+DirE</tag>
+                      </morph>
+                    </terminal>
+                  </children>
+                </terminal>
                 <terminal id="s61_35">
                   <order>35</order>
                   <label>adv</label>
@@ -23528,6 +23539,7 @@
                   <children>
                     <terminal id="s64_20">
                       <order>20</order>
+                      <label>co</label>
                       <word>-manta</word>
                       <secedges>
                       </secedges>
@@ -27490,6 +27502,7 @@
                   <children>
                     <terminal id="s75_27">
                       <order>27</order>
+                      <label>s.arg.claus</label>
                       <word>yacha</word>
                       <secedges>
                       </secedges>
@@ -34432,6 +34445,7 @@
                           <children>
                             <terminal id="s96_42">
                               <order>42</order>
+                              <label>s.arg.claus</label>
                               <word>imana</word>
                               <secedges>
                               </secedges>
@@ -36438,6 +36452,7 @@
                                   <children>
                                     <terminal id="s102_6">
                                       <order>6</order>
+                                      <label>ns</label>
                                       <word>-ykuna</word>
                                       <secedges>
                                       </secedges>
@@ -39425,6 +39440,7 @@
                   <children>
                     <terminal id="s111_60">
                       <order>60</order>
+                      <label>s.arg</label>
                       <word>chay</word>
                       <secedges>
                       </secedges>
@@ -60919,6 +60935,7 @@
             </terminal>
             <terminal id="s175_25">
               <order>25</order>
+              <label>sntc</label>
               <word>ati</word>
               <secedges>
               </secedges>
@@ -80292,7 +80309,10 @@
           <children>
             <terminal id="s225_5">
               <order>5</order>
+              <label>sntc</label>
               <word>ñan</word>
+              <secedges>
+              </secedges>
               <pos>Root</pos>
               <translation>=camino</translation>
               <morph>
