@@ -1878,6 +1878,7 @@
 | [ {yupa} "[" "VRoot" "]" "[" "=contar" "]" ] :  {yupa}
 | [ {yuri} "[" "VRoot" "]" "[" "=aparecer" "]" ] :  {yuri}
 | [ {yuya} "[" "VRoot" "]" "[" "=recordar,pensar" "]" ] :  {yuya}
+| [ {yuya} "[" "VRoot" "]" "[" "=recordar,pensar" "]" ] :  {yuwa}
 ## verbs from es-quz.dix
 | [ {achhala} "[" "VRoot" "]" "[" "=acicalar,adornar,correar,engalanar,ornamentar" "]" ] : {achhala} 
 | [ {achikwa} "[" "VRoot" "]" "[" "=centellear" "]" ] : {achikwa} 
