@@ -19,6 +19,8 @@ $dom->documentElement()->setAttribute( 'xmlns' , '' );
 # number wordform  lemma        cpos   pos  morphology head edgelabel
 # quechua conll
 # number word      translation/-  pos  _    morphtags  head edgelabel
+# new: use morphgroup-form as lemma, 
+# number word      translation/-  pos  _    morphtags  head edgelabel
 
 
 foreach my $sentence  ( $dom->getElementsByTagName('s'))
@@ -135,7 +137,8 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	      my $label = $terminal->findvalue('child::label/text()');
 	      my $order = $terminal->findvalue('child::order/text()');
 	   
-	      print "$order\t$wordform\t$translation\t$pos\t_\t$morphstring\t$head\t$label\t_\t_\n";
+	      #print "$order\t$wordform\t$translation\t$pos\t_\t$morphstring\t$head\t$label\t_\t_\n";
+	      print "$order\t$wordform\t$wordform\t$pos\t_\t$morphstring\t$head\t$label\t_\t_\n";
 	   
 	#     print $terminal->toString."\n";
 	#     print "--------------------------------------\n";
