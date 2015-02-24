@@ -54,8 +54,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 		  }
 		  
 		  # if hab, pred or oblg: make this node the head
+		  # test without KAN, if oblg, hab or subj head of sentence -> clear that kan needs to be inserted
 		  elsif($pred_hab_oblg){
-		      my $labelstring = $pred_hab_oblg->findvalue('label/text()')."_KAN";
+		      my $labelstring = $pred_hab_oblg->findvalue('label/text()'); # ."_KAN";
 		      &setLabel($pred_hab_oblg, $labelstring); 
 		      $parent->appendChild($pred_hab_oblg);
 		  
@@ -83,7 +84,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 			  $parent->appendChild($child);
 		      }
 		      $parent->removeChild($KAN);
-		      &setLabel($subj, 'subj_KAN');
+		      #&setLabel($subj, 'subj_KAN');
 		  }
 	      }
 		  
@@ -104,27 +105,36 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	   }
 	   
 	   
-	   foreach my $terminal (sort order_sort  @terminals){
-	      
+	   
+	   my @terminals_sorted = sort order_sort  @terminals;
+	  # foreach my $terminal (sort order_sort  @terminals){
+	  for (my $i=0; $i< scalar(@terminals_sorted);$i++){
+	  	  my $terminal = @terminals_sorted[$i];
 	      my $wordform = $terminal->findvalue('child::word/text()');
-	      my $translation =  ($terminal->findvalue('child::translation/text()') =~ /.+/) ?  $terminal->findvalue('child::translation/text()') : "_";
+	      my $translation =  ($terminal->findvalue('child::translation/text()') =~ /=(.+)/) ?  $terminal->findvalue('child::translation/text()') : "_";
+	      $translation =~ s/^=//g;
 	      my $pos = $terminal->findvalue('child::pos/text()');
 	      my $morphstring;
 	      my @poses= split('_',$pos);
 	      my @morphtags = $terminal->findnodes('child::morph/tag');
 	      if(scalar(@morphtags)>0){
-		  for(my $i=0;$i<scalar(@morphtags);$i++){
-		      my $tag = @morphtags[$i];
-		      if($i==0){
-			$morphstring .= @poses[$i]."=".$tag->textContent;
-		      }
-		      else{
-			$morphstring .= "|".@poses[$i]."=".$tag->textContent;
-			}
-		  }
+			  for(my $i=0;$i<scalar(@morphtags);$i++)
+			  {
+			      my $tag = @morphtags[$i];
+			      if($i==0){
+				$morphstring .= @poses[$i]."=".$tag->textContent;
+			      }
+			      else{
+				$morphstring .= "|".@poses[$i]."=".$tag->textContent;
+				}
+			  }
+			  # add translation if present
+			  if($translation ne '_'){
+			  	$morphstring .= '|trans='.$translation;
+			  }
 	      }
 	      else{
-		  $morphstring = "_";
+	        $morphstring =  ($translation eq '_') ?  "_" : "trans=".$translation;
 	      }
 	      my $head;
 	      if($terminal->exists('parent::children/parent::terminal')){
@@ -137,18 +147,23 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	      my $label = $terminal->findvalue('child::label/text()');
 	      my $order = $terminal->findvalue('child::order/text()');
 	   
+	      # if no artificial root:
+	   	  if($terminal->exists('parent::children/preceding-sibling::cat')){
+	   	  	$head=0;
+	   	  }
+	   	  
 	      #print "$order\t$wordform\t$translation\t$pos\t_\t$morphstring\t$head\t$label\t_\t_\n";
-	      print "$order\t$wordform\t$wordform\t$pos\t_\t$morphstring\t$head\t$label\t_\t_\n";
+	      print "$order\t$wordform\t_\t$pos\t$pos\t$morphstring\t$head\t$label\t_\t_\n";
 	   
 	#     print $terminal->toString."\n";
 	#     print "--------------------------------------\n";
 	     # $count++;
 	   }
 	
-	# print  (scalar(@terminals)+1);
-	   my $order = 
-	 
-	 print "$count\tVROOT\t_\t_\t_\t_\t0\tsentence\t_\t_\n\n";
+	 # if no artificial root:
+	 print "\n";
+	 # else, with artificial root:
+	 #print "$count\tVROOT\t_\t_\t_\t_\t0\tsentence\t_\t_\n\n";
    }
 }
 
