@@ -148,9 +148,9 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	      my $order = $terminal->findvalue('child::order/text()');
 	   
 	      # if no artificial root:
-	   	  if($terminal->exists('parent::children/preceding-sibling::cat')){
-	   	  	$head=0;
-	   	  }
+#	   	  if($terminal->exists('parent::children/preceding-sibling::cat')){
+#	   	  	$head=0;
+#	   	  }
 	   	  
 	      #print "$order\t$wordform\t$translation\t$pos\t_\t$morphstring\t$head\t$label\t_\t_\n";
 	      print "$order\t$wordform\t_\t$pos\t$pos\t$morphstring\t$head\t$label\t_\t_\n";
@@ -161,9 +161,10 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	   }
 	
 	 # if no artificial root:
-	 print "\n";
+	 #print "\n";
+	 
 	 # else, with artificial root:
-	 #print "$count\tVROOT\t_\t_\t_\t_\t0\tsentence\t_\t_\n\n";
+	 print "$count\tVROOT\t_\t_\t_\t_\t0\tsentence\t_\t_\n\n";
    }
 }
 
