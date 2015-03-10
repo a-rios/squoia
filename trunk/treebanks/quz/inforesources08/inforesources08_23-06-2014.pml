@@ -685,20 +685,20 @@
         <nonterminal id="s6_VROOT">
           <cat>VROOT</cat>
           <children>
-            <terminal id="s6_12">
-              <order>12</order>
+            <terminal id="s6_11">
+              <order>11</order>
               <label>punc</label>
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal id="s6_22">
-              <order>22</order>
+            <terminal id="s6_21">
+              <order>21</order>
               <label>punc</label>
               <word>,</word>
               <pos>$.</pos>
             </terminal>
-            <terminal id="s6_36">
-              <order>36</order>
+            <terminal id="s6_35">
+              <order>35</order>
               <label>sntc</label>
               <word>waqlliyka</word>
               <secedges>
@@ -710,8 +710,8 @@
                 <tag>+Aff</tag>
               </morph>
               <children>
-                <terminal id="s6_11">
-                  <order>11</order>
+                <terminal id="s6_10">
+                  <order>10</order>
                   <label>co</label>
                   <word>KAN</word>
                   <secedges>
@@ -752,8 +752,8 @@
                         </terminal>
                       </children>
                     </terminal>
-                    <terminal id="s6_9">
-                      <order>9</order>
+                    <terminal id="s6_8">
+                      <order>8</order>
                       <label>subj</label>
                       <word>rit'i</word>
                       <pos>Root</pos>
@@ -762,8 +762,8 @@
                         <tag>VRoot</tag>
                       </morph>
                       <children>
-                        <terminal id="s6_7">
-                          <order>7</order>
+                        <terminal id="s6_6">
+                          <order>6</order>
                           <label>mod</label>
                           <word>riku</word>
                           <pos>Root</pos>
@@ -772,40 +772,31 @@
                             <tag>VRoot</tag>
                           </morph>
                           <children>
-                            <terminal id="s6_6">
-                              <order>6</order>
-                              <label>tmp</label>
-                              <word>-p</word>
-                              <pos>Cas</pos>
+                            <terminal id="s6_5">
+                              <order>5</order>
+                              <label>s.arg</label>
+                              <word>hayk'ap</word>
+                              <secedges>
+                              </secedges>
+                              <pos>Root</pos>
+                              <translation>=cuándo</translation>
                               <morph>
-                                <tag>+Gen</tag>
+                                <tag>PrnInterr</tag>
                               </morph>
                               <children>
-                                <terminal id="s6_5">
-                                  <order>5</order>
-                                  <label>s.arg</label>
-                                  <word>hayk'a</word>
+                                <terminal id="s6_4">
+                                  <order>4</order>
+                                  <label>neg</label>
+                                  <word>mana</word>
                                   <pos>Root</pos>
-                                  <translation>=cuándo</translation>
                                   <morph>
-                                    <tag>PrnInterr</tag>
+                                    <tag>Part_Neg</tag>
                                   </morph>
-                                  <children>
-                                    <terminal id="s6_4">
-                                      <order>4</order>
-                                      <label>neg</label>
-                                      <word>mana</word>
-                                      <pos>Root</pos>
-                                      <morph>
-                                        <tag>Part_Neg</tag>
-                                      </morph>
-                                    </terminal>
-                                  </children>
                                 </terminal>
                               </children>
                             </terminal>
-                            <terminal id="s6_8">
-                              <order>8</order>
+                            <terminal id="s6_7">
+                              <order>7</order>
                               <label>ns</label>
                               <word>-sqa</word>
                               <pos>NS</pos>
@@ -815,8 +806,8 @@
                             </terminal>
                           </children>
                         </terminal>
-                        <terminal id="s6_10">
-                          <order>10</order>
+                        <terminal id="s6_9">
+                          <order>9</order>
                           <label>ns</label>
                           <word>-y</word>
                           <pos>NS</pos>
@@ -828,8 +819,8 @@
                     </terminal>
                   </children>
                 </terminal>
-                <terminal id="s6_21">
-                  <order>21</order>
+                <terminal id="s6_20">
+                  <order>20</order>
                   <label>co</label>
                   <word>KAN</word>
                   <secedges>
@@ -838,8 +829,8 @@
                   <morph>
                   </morph>
                   <children>
-                    <terminal id="s6_18">
-                      <order>18</order>
+                    <terminal id="s6_17">
+                      <order>17</order>
                       <label>hab</label>
                       <word>chaya</word>
                       <pos>Root</pos>
@@ -848,8 +839,8 @@
                         <tag>VRoot</tag>
                       </morph>
                       <children>
-                        <terminal id="s6_15">
-                          <order>15</order>
+                        <terminal id="s6_14">
+                          <order>14</order>
                           <label>tmp</label>
                           <word>-pi</word>
                           <pos>Cas</pos>
@@ -857,8 +848,8 @@
                             <tag>+Loc</tag>
                           </morph>
                           <children>
-                            <terminal id="s6_14">
-                              <order>14</order>
+                            <terminal id="s6_13">
+                              <order>13</order>
                               <label>s.arg</label>
                               <word>-pacha</word>
                               <pos>Root</pos>
@@ -867,8 +858,8 @@
                                 <tag>NRoot</tag>
                               </morph>
                               <children>
-                                <terminal id="s6_13">
-                                  <order>13</order>
+                                <terminal id="s6_12">
+                                  <order>12</order>
                                   <label>mod</label>
                                   <word>q'uñi</word>
                                   <pos>Root</pos>
@@ -881,8 +872,8 @@
                             </terminal>
                           </children>
                         </terminal>
-                        <terminal id="s6_16">
-                          <order>16</order>
+                        <terminal id="s6_15">
+                          <order>15</order>
                           <label>subj</label>
                           <word>chikchi</word>
                           <pos>Root</pos>
@@ -891,8 +882,8 @@
                             <tag>NRoot</tag>
                           </morph>
                         </terminal>
-                        <terminal id="s6_17">
-                          <order>17</order>
+                        <terminal id="s6_16">
+                          <order>16</order>
                           <label>neg</label>
                           <word>mana</word>
                           <pos>Root</pos>
@@ -900,8 +891,8 @@
                             <tag>Part_Neg</tag>
                           </morph>
                         </terminal>
-                        <terminal id="s6_20">
-                          <order>20</order>
+                        <terminal id="s6_19">
+                          <order>19</order>
                           <label>s.co</label>
                           <word>-pas</word>
                           <pos>Amb</pos>
@@ -909,8 +900,8 @@
                             <tag>+Add</tag>
                           </morph>
                         </terminal>
-                        <terminal id="s6_19">
-                          <order>19</order>
+                        <terminal id="s6_18">
+                          <order>18</order>
                           <label>ns</label>
                           <word>-q</word>
                           <pos>NS</pos>
@@ -922,8 +913,8 @@
                     </terminal>
                   </children>
                 </terminal>
-                <terminal id="s6_23">
-                  <order>23</order>
+                <terminal id="s6_22">
+                  <order>22</order>
                   <label>mod</label>
                   <word>yaqa</word>
                   <pos>Root</pos>
@@ -932,8 +923,8 @@
                     <tag>NRoot</tag>
                   </morph>
                   <children>
-                    <terminal id="s6_24">
-                      <order>24</order>
+                    <terminal id="s6_23">
+                      <order>23</order>
                       <label>mod</label>
                       <word>-pas</word>
                       <pos>Amb</pos>
@@ -943,8 +934,8 @@
                     </terminal>
                   </children>
                 </terminal>
-                <terminal id="s6_27">
-                  <order>27</order>
+                <terminal id="s6_26">
+                  <order>26</order>
                   <label>mod</label>
                   <word>-pi</word>
                   <secedges>
@@ -955,8 +946,8 @@
                   </morph>
                   <discourse>FOCUS</discourse>
                   <children>
-                    <terminal id="s6_26">
-                      <order>26</order>
+                    <terminal id="s6_25">
+                      <order>25</order>
                       <label>s.arg</label>
                       <word>kuti</word>
                       <pos>Root</pos>
@@ -965,8 +956,8 @@
                         <tag>NRoot</tag>
                       </morph>
                       <children>
-                        <terminal id="s6_25">
-                          <order>25</order>
+                        <terminal id="s6_24">
+                          <order>24</order>
                           <label>qnt</label>
                           <word>iskay</word>
                           <pos>Root</pos>
@@ -978,8 +969,8 @@
                     </terminal>
                   </children>
                 </terminal>
-                <terminal id="s6_28">
-                  <order>28</order>
+                <terminal id="s6_27">
+                  <order>27</order>
                   <label>ev</label>
                   <word>-m</word>
                   <pos>Amb</pos>
@@ -987,8 +978,8 @@
                     <tag>+DirE</tag>
                   </morph>
                 </terminal>
-                <terminal id="s6_34">
-                  <order>34</order>
+                <terminal id="s6_33">
+                  <order>33</order>
                   <label>obj</label>
                   <word>-ta</word>
                   <secedges>
@@ -999,8 +990,8 @@
                   </morph>
                   <discourse>TOPIC</discourse>
                   <children>
-                    <terminal id="s6_31">
-                      <order>31</order>
+                    <terminal id="s6_30">
+                      <order>30</order>
                       <label>s.arg.claus</label>
                       <word>aymura</word>
                       <pos>Root</pos>
@@ -1009,8 +1000,8 @@
                         <tag>VRoot</tag>
                       </morph>
                       <children>
-                        <terminal id="s6_29">
-                          <order>29</order>
+                        <terminal id="s6_28">
+                          <order>28</order>
                           <label>mod</label>
                           <word>llapa</word>
                           <pos>Root</pos>
@@ -1019,8 +1010,8 @@
                             <tag>NRoot</tag>
                           </morph>
                           <children>
-                            <terminal id="s6_30">
-                              <order>30</order>
+                            <terminal id="s6_29">
+                              <order>29</order>
                               <label>s.poss</label>
                               <word>-n</word>
                               <pos>NPers</pos>
@@ -1030,8 +1021,8 @@
                             </terminal>
                           </children>
                         </terminal>
-                        <terminal id="s6_35">
-                          <order>35</order>
+                        <terminal id="s6_34">
+                          <order>34</order>
                           <label>topic</label>
                           <word>-qa</word>
                           <pos>Amb</pos>
@@ -1039,8 +1030,8 @@
                             <tag>+Top</tag>
                           </morph>
                         </terminal>
-                        <terminal id="s6_32">
-                          <order>32</order>
+                        <terminal id="s6_31">
+                          <order>31</order>
                           <label>ns</label>
                           <word>-y</word>
                           <pos>NS</pos>
@@ -1048,8 +1039,8 @@
                             <tag>+Inf</tag>
                           </morph>
                           <children>
-                            <terminal id="s6_33">
-                              <order>33</order>
+                            <terminal id="s6_32">
+                              <order>32</order>
                               <label>s.poss.subj</label>
                               <word>-nin</word>
                               <pos>NPers</pos>
@@ -1063,8 +1054,8 @@
                     </terminal>
                   </children>
                 </terminal>
-                <terminal id="s6_37">
-                  <order>37</order>
+                <terminal id="s6_36">
+                  <order>36</order>
                   <label>mod</label>
                   <word>-chipu</word>
                   <pos>VDeriv_VDeriv</pos>
@@ -1073,8 +1064,8 @@
                     <tag>+Rgr_Iprs</tag>
                   </morph>
                 </terminal>
-                <terminal id="s6_38">
-                  <order>38</order>
+                <terminal id="s6_37">
+                  <order>37</order>
                   <label>s.subj</label>
                   <word>-n</word>
                   <pos>VPers</pos>
@@ -1084,8 +1075,8 @@
                 </terminal>
               </children>
             </terminal>
-            <terminal id="s6_39">
-              <order>39</order>
+            <terminal id="s6_38">
+              <order>38</order>
               <label>punc</label>
               <word>.</word>
               <pos>$.</pos>
