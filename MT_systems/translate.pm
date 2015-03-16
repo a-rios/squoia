@@ -786,7 +786,7 @@ if($startTrans < $mapInputFormats{'vdisamb'})	#10)
 {
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'vdisamb'} .")  [-o vdisamb] verb form disambiguation (rule-based)\n";
 	# check if evidentiality set
-	if($evidentiality ne 'direct' or $evidentiality eq 'indirect'){
+	if($evidentiality ne 'direct' and $evidentiality ne 'indirect'){
 		print STDERR "Invalid value  '$evidentiality' for option --evidentiality, possible values are 'direct' or 'indirect'. Using default (=direct)\n";
 		$evidentiality = 'direct';
 	}

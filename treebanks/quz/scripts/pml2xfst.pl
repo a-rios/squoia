@@ -401,6 +401,7 @@ sub getAnalysis{
 			my $morphform;
 			
 			($morphform) = lc($token) =~ m/($morphformregex)\E$/;
+			
 			if(!$morphform){
 				print STDERR "root: could not find $morphformregex for $morphtag in $token\n";
 				exit;
@@ -408,6 +409,7 @@ sub getAnalysis{
 			$token =~ s/$morphform$//i;
 			
 			if($i<scalar(@pos)-1){
+				#print "here: ".$morphform."[".$p."][".@tags[$i]->textContent."][--]".$analysis."\n";
 				$analysis = $morphform."[".$p."][".@tags[$i]->textContent."][--]".$analysis;
 			}
 			# last suffix in terminal -> DB
@@ -420,8 +422,16 @@ sub getAnalysis{
 			$analysis = ($analysis ne '') ? $token."[".@tags[0]->textContent."][$translation][--]".$analysis : $token."[".@tags[0]->textContent."][$translation][^DB][--]" ;
 		}
 		else{
-			$analysis = ($analysis ne '') ? $analysis = $token."[".@tags[0]->textContent."][--]".$analysis : $analysis = $token."[".@tags[0]->textContent."][^DB][--]";
+						
+			if($analysis ne ''){
+				$analysis = $token."[".@tags[0]->textContent."][--]".$analysis;
+			}
+			else{
+				$analysis = $token."[".@tags[0]->textContent."][^DB][--]";
+			}
+		#	$analysis = ($analysis ne '') ? $analysis = $token."[".@tags[0]->textContent."][--]".$analysis : $analysis = $token."[".@tags[0]->textContent."][^DB][--]";		    
 			#$analysis = $token."[".@tags[0]->textContent."][--]".$analysis; 
+
 		}
 		
 	}
