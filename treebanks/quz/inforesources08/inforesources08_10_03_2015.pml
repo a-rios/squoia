@@ -12039,10 +12039,6 @@
                       <label>s.arg</label>
                       <word>rit'iya</word>
                       <secedges>
-                        <secedge>
-                          <idref>s39_30</idref>
-                          <secedgelabel>mod</secedgelabel>
-                        </secedge>
                       </secedges>
                       <pos>Root_VS</pos>
                       <translation>=nieve</translation>
