@@ -124,6 +124,7 @@ en_el_otro_lado_de	postpos=huk kinrayninpi,nouncase=+Gen
 en_las_proximidades_de	postpos=sichpan,nouncase=+Gen
 en_la_temporada_de	postpos=pachapi
 en_lo_concerniente_a	postpos=+Top
+en_lo_que_concierna	postpos=+Top
 en_memoria_de		postpos=yuyaspa
 en_mitad_de		postpos=chawpinpi,nouncase=+Gen
 en_recuerdo_de		postpos=yuyaspa

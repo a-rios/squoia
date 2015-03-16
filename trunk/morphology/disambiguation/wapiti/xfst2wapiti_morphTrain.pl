@@ -13,7 +13,7 @@ use Storable;
 # -test (input to be disambiguated, leave last row empty)
 
 my $num_args = $#ARGV + 2;
-if ($num_args != 3) {
+if ($num_args !=3) {
   print STDERR "\nUsage:  perl xfst2wapiti_morphTrain.pl -1/-2/-3 -train/-gold\n";	
   print STDERR "-1: NS/VS, -2: nominal+verbal morph disamb, 3: independent suffixes disamb\n";	
   print STDERR "-train: use 'PossibleRoots/Lemmas/MorphsForTrain, -gold use 'PossibleRoots/Lemmas/MorphsForGold (with xfst analyzed words from gold standard) \n";
@@ -37,6 +37,7 @@ unless($trainOrGold eq '-train' or $trainOrGold eq '-gold' or !$trainOrGold){
 }
 
 
+
 my @words;
 my $newWord=1;
 my $index=0;
@@ -46,6 +47,7 @@ my $xfstWordsRefLem;
 my $xfstWordsRefMorph;
 my $xfstWordsRefPos;	
 my $xfstWordsRef;
+
 
 if($trainOrGold eq '-train'){
 	$xfstWordsRefLem = retrieve('../PossibleLemmasForTrain');

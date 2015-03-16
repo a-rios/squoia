@@ -28,6 +28,7 @@ sub main{
 	my $corpus = @{$dom->getElementsByTagName('corpus')}[0];
 	if($corpus){
 		$corpus->setAttribute('evidentiality',$evid);
+		#print STDERR "evid set to $evid\n";
 	}
 	
 	my @sentenceList = $dom->getElementsByTagName('SENTENCE');

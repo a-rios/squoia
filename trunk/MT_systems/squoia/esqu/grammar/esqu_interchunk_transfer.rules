@@ -110,5 +110,6 @@ my.si=/cd/    	deleteMorph			child.slem=haber && child.smi=/3S/  && !(xpath{chil
 
 # in sentence with 3rd sg present copula -> kan is set to be deleted, in this case, insert -mi/si in cpred/atr
 # -> sólo si no hay negación.., con negación -> manam .. kanchu
-my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]})		"+DirE"		parent		2to1		concat
+my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="direct"]}		"+DirE"		parent		2to1		concat
+my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="indirect"]}	"+IndE"		parent		2to1		concat
 
