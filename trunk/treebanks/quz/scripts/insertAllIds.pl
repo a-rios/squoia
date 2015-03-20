@@ -43,6 +43,15 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	    $ord->removeChildNodes();
 	    $ord->appendText($wcount);
 	    $wcount++;
+	    #if secedge-> adapt idref
+	    if($terminal->exists('child::secedges/secedge/idref')){
+	    	my @idrefs = $terminal->findnodes('child::secedges/secedge/idref');
+	    	foreach my $idref (@idrefs){
+	    		my $refnode = $idref->textContent;
+	    		$refnode =~ s/^s\d+\_/s$counter\_/;
+	    		#print STDERR "sent id of ref node: $refnode\n";
+	    	}
+	    }
 	}
 	
     	$counter++;
