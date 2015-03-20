@@ -28,12 +28,13 @@ my $dom = XML::LibXML->createDocument ('1.0', 'UTF-8');
 my $book = $dom->createElementNS( "", "book" );
 $book->setAttribute('id', $bookID);
 $dom->setDocumentElement( $book );
-
+my $allInOneChapter =1;
 
 
 while(<XFST>){
-	if(/^[XIV]+\t/){ # for chapters in gregorio..
+	#if(/^[XIV]+\t/){ # for chapters in gregorio..
 	#if(/^newChapter/){ # other texts
+	if($allInOneChapter){ # texts with no chapter
 		$article = XML::LibXML::Element->new( 'article' );
 		$book->appendChild($article);
 		#undef $article;
@@ -46,7 +47,7 @@ while(<XFST>){
 			$article->appendChild($tocEntry);
 		};
 		$sentence_count=1;
-		
+		$allInOneChapter =0; # texts without chapters -> treat all as same chapter
 	}
 	elsif(/#EOS/){
 		 # append prev sentence

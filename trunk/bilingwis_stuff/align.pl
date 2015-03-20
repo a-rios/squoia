@@ -66,6 +66,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 			my $sentIDes = $s_es->getAttribute('id');
 			my $xpathToSentes = 'descendant::s[@Intertext_id="'.$sentIDes.'"]';
 			my ($s_es_in_xml) = $dom_es->findnodes($xpathToSentes);
+			#print "xpath $xpathToSentes\n";
 			# get words
 			foreach my $w_es ($s_es_in_xml->findnodes('child::t')){
 				my $wordform_es = lc($w_es->textContent());					
@@ -105,7 +106,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 								unless($quz_already_aligned{$cand->getAttribute('n')} ==1){
 									$quz_already_aligned{$cand->getAttribute('n')} =1;
 									if(exists($alignments{$tokenID_es})){
-										push($alignments{$tokenID_es}, $cand->getAttribute('n')."-1" );
+										push(@{$alignments{$tokenID_es}}, $cand->getAttribute('n')."-1" );
 									}
 									else{
 										$alignments{$tokenID_es} = [ $cand->getAttribute('n')."-1"];
@@ -136,7 +137,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 #									print "not aligned".$cand->getAttribute('n')."\n";
 									$quz_already_aligned{$cand->getAttribute('n')} =1;
 									if(exists($alignments{$tokenID_es})){
-										push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+										push(@{$alignments{$tokenID_es}}, $cand->getAttribute('n') );
 									}
 									else{
 										$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
@@ -249,11 +250,11 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 																#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
 																# align whole token or only root? 
 																#push($alignments{$tokenID_es}, $id );
-																push($alignments{$tokenID_es}, $id."-1" );
-																foreach my $preID (keys $cand_ids{$id}){
+																push(@{$alignments{$tokenID_es}}, $id."-1" );
+																foreach my $preID (keys %{$cand_ids{$id}}){
 																	#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
 																	#push($alignments{$tokenID_es}, $preID );
-																	push($alignments{$tokenID_es}, $preID."-1" );
+																	push(@{$alignments{$tokenID_es}}, $preID."-1" );
 																}
 																$quz_already_aligned{$id} =1;
 																last;
@@ -266,9 +267,9 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 																#align token or only root?
 																$alignments{$tokenID_es} = [$id."-1"];
 																#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
-																foreach my $preID (keys $cand_ids{$id}){
+																foreach my $preID (keys %{$cand_ids{$id}}){
 																	#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
-																	push($alignments{$tokenID_es}, $preID."-1" );
+																	push(@{$alignments{$tokenID_es}}, $preID."-1" );
 																}
 																$quz_already_aligned{$id} =1;
 																last;
@@ -301,7 +302,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 											}
 											if(exists($alignments{$tokenID_es})){
 												#	print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
-													push($alignments{$tokenID_es}, $aligned_id );
+													push(@{$alignments{$tokenID_es}}, $aligned_id );
 												}
 												else{
 													$alignments{$tokenID_es} = [ $aligned_id];
@@ -312,7 +313,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 											unless($quz_already_aligned{$cand->getAttribute('n')} ==1){
 												if(exists($alignments{$tokenID_es})){
 												#	print "aligned: $wordform_es id: $tokenID_es ---- $mainword, id: ".$cand->getAttribute('n')."\n";
-													push($alignments{$tokenID_es}, $cand->getAttribute('n')."-1" );
+													push(@{$alignments{$tokenID_es}}, $cand->getAttribute('n')."-1" );
 												}
 												else{
 													$alignments{$tokenID_es} = [ $cand->getAttribute('n')."-1"];
@@ -360,10 +361,10 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 														if(exists($alignments{$tokenID_es})){
 															foreach my $id (keys %cand_ids){
 																#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$id."\n";
-																push($alignments{$tokenID_es}, $id );
-																foreach my $tagID (keys $cand_ids{$id}){
+																push(@{$alignments{$tokenID_es}}, $id );
+																foreach my $tagID (keys %{$cand_ids{$id}}){
 																	#print "aligned preform: $wordform_es id: $tokenID_es ----  preid: ".$preID."\n";
-																	push($alignments{$tokenID_es}, $tagID );
+																	push(@{$alignments{$tokenID_es}}, $tagID );
 																}
 															}
 														}
@@ -371,9 +372,9 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 															foreach my $id (keys %cand_ids){
 																$alignments{$tokenID_es} = [$id];
 															#	print "aligned: $wordform_es id: $tokenID_es ----  tagid: ".$id."\n";
-																foreach my $tagID (keys $cand_ids{$id}){
+																foreach my $tagID (keys %{$cand_ids{$id}}){
 																	#print "aligned tag: $wordform_es id: $tokenID_es ----  tagid: ".$tagID."\n";
-																	push($alignments{$tokenID_es}, $tagID );
+																	push(@{$alignments{$tokenID_es}}, $tagID );
 																}
 															}
 														}
@@ -383,7 +384,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 												foreach my $cand (@cands){
 													if(exists($alignments{$tokenID_es})){
 														#print "aligned: $wordform_es id: $tokenID_es ---- , id: ".$cand->getAttribute('n')."\n";
-														push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+														push(@{$alignments{$tokenID_es}}, $cand->getAttribute('n') );
 													}
 													else{
 														$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
@@ -415,7 +416,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 									if(exists($alignments{$tokenID_es})){
 										#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$cand->getAttribute('n')."-1 \n";
 										# align whole token or only root? 
-										push($alignments{$tokenID_es}, $cand->getAttribute('n')."-1" );
+										push(@{$alignments{$tokenID_es}}, $cand->getAttribute('n')."-1" );
 									}else{	#align token or only root?
 										$alignments{$tokenID_es} = [ $cand->getAttribute('n')."-1" ];
 										#print "aligned: $wordform_es id: $tokenID_es ----  id: ".$cand->getAttribute('n')."-1 \n";
@@ -535,7 +536,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 										if($quz_class eq 'prspronoun' and $cand->nodeName eq 't'){
 											if(exists($alignments{$tokenID_es})){
 												#print "aligned: $wordform_es id: $tokenID_es ---- $wordform_es, id: ".$cand->getAttribute('n')."\n";
-												push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+												push(@{$alignments{$tokenID_es}}, $cand->getAttribute('n') );
 											}
 											else{
 												$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
@@ -548,7 +549,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 												if($firstLeftVerb_alignments and grep {$_ =~ /^\Q$quz_w_id\E$|^\Q$quz_w_id\E-1$/} @$firstLeftVerb_alignments){
 													if(exists($alignments{$tokenID_es})){
 														#print "aligned: $wordform_es id: $tokenID_es ---- $wordform_es, id: ".$cand->getAttribute('n')."\n";
-														push($alignments{$tokenID_es}, $cand->getAttribute('n') );
+														push(@{$alignments{$tokenID_es}}, $cand->getAttribute('n') );
 													}
 													else{
 														$alignments{$tokenID_es} = [ $cand->getAttribute('n')];
@@ -613,7 +614,7 @@ foreach my $segment_es ($dom_sent_es->getElementsByTagName('seg')){
 	}# if $quz_segment
 } # foreach $segment_es
 
-#### FOR DEBUGGING, print aligned words
+##### FOR DEBUGGING, print aligned words
 #print "################################################\n";
 #foreach my $es_id (sort id_sort keys %alignments){
 #	my $xpath_to_es_w = 'descendant::t[@n="'.$es_id.'"]';

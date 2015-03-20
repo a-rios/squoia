@@ -236,7 +236,7 @@ foreach my $e (@nounentries){
 	
 	if($s_pos ne 'adj'){
 		if(exists($eslex{'noun'}{$eslem})){
-			push($eslex{'noun'}{$eslem}, $quMainLem."#$preform");
+			push(@{$eslex{'noun'}{$eslem}}, $quMainLem."#$preform");
 		}
 		else{
 			$eslex{'noun'}{$eslem} = [$quMainLem."#$preform"];
@@ -245,7 +245,7 @@ foreach my $e (@nounentries){
 	}
 	else{
 		if(exists($eslex{'adjective'}{$eslem})){
-			push($eslex{'adjective'}{$eslem}, $quMainLem."#$preform");
+			push(@{$eslex{'adjective'}{$eslem}}, $quMainLem."#$preform");
 		}
 		else{
 			$eslex{'adjective'}{$eslem} = [$quMainLem."#$preform"];
@@ -280,14 +280,14 @@ foreach my $e (@verbentries){
 		#print "$add_mi\n";
 	}
 	if(exists($eslex{'verb'}{$eslem})){
-			push($eslex{'verb'}{$eslem}, $quMainLem."#$preform");
+			push(@{$eslex{'verb'}{$eslem}}, $quMainLem."#$preform");
 	}else{
 		$eslex{'verb'}{$eslem} = [$quMainLem."#$preform"];
 	}
 	
 	if($quMainLem2 ne ''){
 		if(exists($eslex{'verb'}{$eslem})){
-			push($eslex{'verb'}{$eslem}, $quMainLem2."#$preform");
+			push(@{$eslex{'verb'}{$eslem}}, $quMainLem2."#$preform");
 		}else{
 			$eslex{'verb'}{$eslem} = [$quMainLem2."#$preform"];
 		}
@@ -305,7 +305,7 @@ foreach my $e (@numberentries){
 	
 	
 	if(exists($eslex{'number'}{$eslem})){
-			push($eslex{'number'}{$eslem}, $quMainLem."#$preform");
+			push(@{$eslex{'number'}{$eslem}}, $quMainLem."#$preform");
 	}else{
 		$eslex{'number'}{$eslem} = [$quMainLem."#$preform"];
 	}
@@ -322,7 +322,7 @@ foreach my $e (@interjectionsentries){
 	
 	
 	if(exists($eslex{'interjection'}{$eslem})){
-			push($eslex{'interjection'}{$eslem}, $quMainLem);
+			push(@{$eslex{'interjection'}{$eslem}}, $quMainLem);
 	}else{
 		$eslex{'interjection'}{$eslem} = [$quMainLem];
 	}
@@ -389,7 +389,7 @@ foreach my $e (@otherpronounsentries){
 		#print "lem: $quMainLem: ".$add_mi."\n";
 	}
 	if(exists($eslex{'otherpronoun'}{$eslem})){
-			push($eslex{'otherpronoun'}{$eslem}, $quMainLem."#$preform");
+			push(@{$eslex{'otherpronoun'}{$eslem}}, $quMainLem."#$preform");
 		}
 		else{
 			$eslex{'otherpronoun'}{$eslem} = [$quMainLem."#$preform"];
@@ -432,7 +432,7 @@ foreach my $e (@conjunctionsentries){
 		$quMainLem = ($xfst_mi)	? $xfst_mi:	$mi;
 	}
 	if(exists($eslex{'conjunction'}{$eslem})){
-			push($eslex{'conjunction'}{$eslem}, $quMainLem);
+			push(@{$eslex{'conjunction'}{$eslem}}, $quMainLem);
 		}
 		else{
 			$eslex{'conjunction'}{$eslem} = [$quMainLem];
@@ -475,7 +475,7 @@ foreach my $e (@determinerentries){
 		#print "lem: $quMainLem: ".$add_mi."\n";
 	}
 	if(exists($eslex{'determiner'}{$eslem})){
-		push($eslex{'determiner'}{$eslem}, $quMainLem."#$preform");
+		push(@{$eslex{'determiner'}{$eslem}}, $quMainLem."#$preform");
 	}
 	else{
 		$eslex{'determiner'}{$eslem} = [$quMainLem."#$preform"];
@@ -519,7 +519,7 @@ foreach my $e (@adverbssentries){
 		$quMainLem = ($xfst_mi)	? $xfst_mi:	$mi;
 	}
 	if(exists($eslex{'adverb'}{$eslem})){
-			push($eslex{'adverb'}{$eslem}, $quMainLem."#$preform");
+			push(@{$eslex{'adverb'}{$eslem}}, $quMainLem."#$preform");
 		}
 		else{
 			$eslex{'adverb'}{$eslem} = [$quMainLem."#$preform"];
@@ -653,7 +653,7 @@ $eslex{'preposition'}{'tras'}=[ 'qhipa'];
 foreach my $section (keys %eslex){
 	print "sec: $section\n";
 	if($section eq 'adverb'){
-		foreach my $lem (keys $eslex{$section}){
+		foreach my $lem (keys %{$eslex{$section}}){
 			print $lem."\t";
 			foreach my $quz (@{$eslex{$section}{$lem}} ){
 				print "$quz, ";
