@@ -584,7 +584,12 @@ sub main{
 	 			{
 	 				print OUTFILE $chunk->getAttribute('conj')."\n";
 	 			}
-	 			print OUTFILE $chunk->getAttribute('spform')."\n";
+	 			print OUTFILE $chunk->getAttribute('spform');
+	 			if($chunk->getAttribute('chunkmi') ne ''){
+	 				print OUTFILE &adjustMorph($chunk->getAttribute('chunkmi'),\%mapTagsToSlots);
+	 			}
+	 			print OUTFILE "\n";
+	 			
 	 			
 	 		}
 	 		## pp-chunk that contains only a number/numbers, no sn-chunk, just node +Case:
@@ -602,8 +607,11 @@ sub main{
 	 			# get case/postposition, if any
 	 			my $case = $chunk->getAttribute('case');
 	 			my $postpos = $chunk->findvalue('child::NODE/@postpos');
-	 			if($case ne ''){print OUTFILE "$case\n";}
-	 			elsif($postpos ne ''){print OUTFILE "\n$postpos\n";}
+	 			if($case ne ''){print OUTFILE "$case";}
+	 			elsif($postpos ne ''){print OUTFILE "\n$postpos";}
+	 			if($chunk->getAttribute('chunkmi') ne ''){
+	 				print OUTFILE &adjustMorph($chunk->getAttribute('chunkmi'),\%mapTagsToSlots)."\n";
+	 			}
 	 			else{print OUTFILE "\n";}
 	 		}
 	 		# no syns in prepositinal chunks (all prep's have a 'default' translation, maybe change? TODO) 
@@ -615,7 +623,6 @@ sub main{
 	 				print OUTFILE $chunk->getAttribute('conj')."\n";
 	 			}
 	 			my $postpos = @{$chunk->findnodes('child::NODE[starts-with(@smi,"SP")]')}[0];
-	 			
 	 			&printNode($postpos,$chunk);
 	 			print OUTFILE "\n";
 	 		}

@@ -133,7 +133,7 @@ for (my $i=0; $i < scalar(@words); $i++){
 			$needspace =1;
 		}
 		# numbers
-		elsif($firstanalysis =~ /\[CARD/  ) {
+		elsif($firstanalysis =~ /\[CARD/ or $firstanalysis=~ /[0-9,\.]+.*NRootNUM/  ) {
 			$firstanalysis =~ s/\@mMI//g;
 			my ($lem) = ($firstanalysis =~ m/([0-9,\.]+?)\[/g );
 			my $outWordForm =$lem;
@@ -154,7 +154,7 @@ for (my $i=0; $i < scalar(@words); $i++){
 			$firstanalysis =~ s/\@mMI//g;
 			
 			my $outWordForm ="";
-			my @morphs = ($firstanalysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
+			my @morphs = ($firstanalysis =~ m/([A-Za-zñéóúíáÑÁÉÍÓÚäöüÄÖÜ']+?)\[/g );
 			unless($needspace==0){
 				print " ";}
 			#if(scalar(@morphs)>0){
@@ -189,7 +189,7 @@ for (my $i=0; $i < scalar(@words); $i++){
 				{
 					my $nextanalysis = @$analyses[$j];
 					$nextanalysis =~ s/\@mMI//g;
-					my @morphs = ($nextanalysis =~ m/([A-Za-zñéóúíáüÑ']+?)\[/g );
+					my @morphs = ($nextanalysis =~ m/([A-Za-zñéóúíáÑÁÉÍÓÚäöüÄÖÜ']+?)\[/g );
 					# check if first letter should be uppercase
 					my $upper = 0;
 					my $firstletter = substr($form,0,1);

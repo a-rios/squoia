@@ -322,17 +322,34 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 
 	my $wordform = '';
 	my $analysis ='';
-
+	
+	my $lastToken = scalar(@sorted)-1;
+	
 	for(my $i=0; $i<scalar(@sorted); $i++)
 	{	
 		my $terminal = @sorted[$i];
 		my $posNode = @{$terminal->findnodes('pos')}[0];
-		# do not print DUMMY's
-		unless( $posNode && $posNode->textContent eq 'DUMMY')
+		# do not print DUMMY's, take away Dummy from array
+		if( $posNode && $posNode->textContent eq 'DUMMY'){
+			#if this dummy is the last token in the sentence: print previous token
+			if($i== $lastToken){
+				# delete [^DB] after last suffix
+				$analysis =~ s/(\[\^DB\])?\[--\]$//;
+				#print "w $i: $wordform\t$analysis";
+				print "$wordform\t$analysis";
+				print "\n\n";
+			}
+			else{
+				splice(@sorted, $i, 1);
+				$lastToken--;
+			}
+		}
+		else
 		{
 			my $token = @{$terminal->findnodes('word')}[0]->textContent;
 			#print STDERR "terminal: ".@{$t->findnodes('word')}[0]->textContent."  ".@{$t->findnodes('order')}[0]->textContent."\n";
 			#print "acutal token: $token \n";
+			#print "i= $i, of ".scalar(@sorted)."\n";
 			if( &isNewWord($token) and $i != scalar(@sorted)-1 and $i>0 ){
 				# delete [^DB] after last suffix
 				$analysis =~ s/(\[\^DB\])?\[--\]$//;
@@ -340,11 +357,12 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 				print "$wordform\t$analysis";
 				print "\n\n";
 				
-				$wordform = $token; 
+				$wordform = $token;
 				$analysis =	&getAnalysis($terminal);
+				#print "kkkk $analysis $wordform $token\n";
 			}
 			# last token: print
-			elsif($i == scalar(@sorted)-1 ){
+			elsif($i == $lastToken ){
 				# new word: print last word, then print this
 				if(&isNewWord($token)){
 					# delete [^DB] after last suffix
@@ -480,7 +498,7 @@ sub getAnalysis{
 
 sub isNewWord{
 	my $string = $_[0];
-	#print STDERR "returning $string".($string !~ /^-.+/)."\n";
+	#print STDERR "returning $string: ".($string !~ /^-.+/)."\n";
 	return ($string !~ /^-.+/)
 }
 

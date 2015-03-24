@@ -274,7 +274,7 @@ sub main{
 		 					{
 		 						$verbChunk->setAttribute('postpos', 'ima');
 		 					}
-		 					elsif($conjunction->getAttribute('lem') =~ /entonces|pues|puesto_que/ )
+		 					elsif($conjunction->getAttribute('lem') =~ /entonces|pues|puesto_que|dado_que/ )
 		 					{
 		 						$verbChunk->setAttribute('conj', 'hinaspaqa');
 		 					}

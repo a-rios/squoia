@@ -113,3 +113,9 @@ my.si=/cd/    	deleteMorph			child.slem=haber && child.smi=/3S/  && !(xpath{chil
 my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="direct"]}		"+DirE"		parent		2to1		concat
 my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="indirect"]}	"+IndE"		parent		2to1		concat
 
+
+my.type=/sn|coor-n/ && parent.si=/cpred|^atr/ && parent.type=/grup-sp|coor-sp/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="direct"]}		"+DirE"		ancestor		2to1		concat
+my.type=/sn|coor-n/ && parent.si=/cpred|^atr/ && parent.type=/grup-sp|coor-sp/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="indirect"]}	"+IndE"		ancestor		2to1		concat
+
+# subject of copula in equational clauses (Pedro es de Lima) -> -qa 
+TODO
