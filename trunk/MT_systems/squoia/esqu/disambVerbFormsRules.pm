@@ -189,7 +189,7 @@ sub main{
 	 					#check if same subject 
 	 					$verbChunk->setAttribute('verbform', 'main');
 	 					$verbChunk->setAttribute('conj', 'sichus');
-	 					$verbChunk->setAttribute('conjHere', 'yes');
+	 					#$verbChunk->setAttribute('conjHere', 'yes');
 	 					$verbChunk->setAttribute('conjLast', 'chayqa');
 	 				}
 	 				# if this is a subordinated clause with 'sin_que..'-> DS form 
