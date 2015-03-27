@@ -187,6 +187,7 @@ sub main{
 	 				{
 	 					$vchunk->setAttribute('conjHere','yes')."\n";
 	 				}
+	 				#print STDERR "hieer: \n".$vchunk."\n";
 	
 	}
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
