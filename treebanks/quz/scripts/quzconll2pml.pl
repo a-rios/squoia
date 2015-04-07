@@ -109,12 +109,17 @@ while(<>){
 		 
 		 $ordernode->appendText($order);
 		 $wordnode->appendText($wordform);
-		 $posnode->appendText($pos);
+		 unless($pos eq '_'){
+		 	$posnode->appendText($pos);
+			$terminal->appendChild($posnode);
+		 }
+		 if($label eq 'sentence'){
+		 	$label = "sntc";
+		 }
 		 $labelnode->appendText($label);
 		 
 		 $terminal->appendChild($ordernode);
 		 $terminal->appendChild($wordnode);
-		 $terminal->appendChild($posnode);
 		 $terminal->appendChild($labelnode);
 		 
 		 
@@ -155,7 +160,16 @@ while(<>){
 	     
 	     }
 }
-	
+
+#for debugging:
+#$root->setAttribute('id', $name);
+#my $docstring = $dom->toString(1);
+#my ($testS) = $dom->findnodes('descendant::s[@id="s61"]');
+#print STDOUT $testS->toString(1);
+
+#my $docstring = $dom->toString(1);
+#print STDOUT $docstring;
+#print "##########################################################\n";
 	
 # build dependencies:
 foreach my $sentence ($dom->getElementsByTagName('s')){
@@ -170,11 +184,22 @@ foreach my $sentence ($dom->getElementsByTagName('s')){
 	foreach my $terminal (@terminals){
 		my $id = $terminal->getAttribute('id');
 		my $head = $terminal->getAttribute('head');
+		if($head == 0 and $id !~ /_$headnodenumber/){
+			$head = $headnodenumber;
+		}
+
 		$terminal->removeAttribute('head');
 		unless($head == $headnodenumber)
 		{
 			my $head_id=$s_id."_$head";
+			#print "head id: $head_id\n";
+			#print "my id: $id\n";
 			my $parent = $docHash{$head_id};
+			if(!$parent){
+				print STDERR "no parent node with $head_id, for node $id\n";
+				print STDERR $sentence->toString(1)."\n";
+				exit;
+			}
 			
 			my $parent_children;
 			if(!$parent->exists('children')){
