@@ -100,18 +100,18 @@ my @sentences = $dom->getElementsByTagName('s');
 		
 		# verb frames:
 		# 55-78
-		print STDOUT "A11,A12,A13,A21,A22,A23,A31,A32,A33,A34,A35,B11,B12,B21,B22,B23,C11,C21,C31,C41,C42,D11,D21,D31,";
+		#print STDOUT "A11,A12,A13,A21,A22,A23,A31,A32,A33,A34,A35,B11,B12,B21,B22,B23,C11,C21,C31,C41,C42,D11,D21,D31,";
 		
 		# verb: thematic roles of subject
-		# 79-86
+		# 79-86, new: 55-62
 		print STDOUT "agt,cau,exp,ins,vloc,pat,src,tem,";
 		
 		# morphs
-		# 87-126
+		# 87-126, new: 63-98
 		print STDOUT "NP,NRoot,NRootCMP,NRootES,NRootNUM,PrnDem,PrnInterr,PrnPers,VRoot,VRootES,+Aff,+Ass,+Aug,+Autotrs,+Cis_Trs,+Cont,+Des,+Dim,+Dir,+Fact,+Inch,+Int,+Intrup,+Multi,+NumOrd,+Perdur,+Pl,+Rep,+Res,+Rgr_Iprs,+Rptn,+Rzpr,+Sml,+Stat_Multi,+Trs,+Vdim,";
 		
 		# last features
-		print "occursInPrevSentence,isPronoun,isTopic";
+		print "occursInPrevSentence,isPronoun,hasDet,Discourse";
 		
 		print "\n";
 		
@@ -136,26 +136,26 @@ my %mapNsem2ToVec = ( 'nSem03' => 14, 'nSem04' => 15, 'nSem05' => 16, 'nSem06' =
 my %mapVsemToVec = ( 'Sem29' => 40, 'Sem30' => 41, 'Sem31' => 42, 'Sem32' => 43, 'Sem33' => 44, 'Sem34' => 45, 'Sem35' => 46, 'Sem36' => 47, 'Sem37' => 48, 'Sem38' => 49, 
 'Sem39' => 50, 'Sem40' => 51, 'Sem41' => 52, 'Sem42' => 53, 'Sem43' => 54
 );
-my %mapFramesToVec = (
-	'A11'	=> 55, 'A12'	=> 56, 'A13'	=> 57, 'A21'	=> 58, 'A22'	=> 59, 'A23'	=> 60, 'A31'	=> 61, 'A32'	=> 62, 'A33'	=> 63, 'A34'	=> 64, 'A35'	=> 65,
-	'B11'	=> 66, 'B12'	=> 67, 'B21'	=> 68, 'B22'	=> 69, 'B23'	=> 70,
-	'C11'	=> 71, 'C21'	=> 72, 'C31'	=> 73, 'C41'	=> 74, 'B42'	=> 75,
-	'D11'	=> 76, 'D21'	=> 77, 'D31'	=> 78
-);
+#my %mapFramesToVec = (
+#	'A11'	=> 55, 'A12'	=> 56, 'A13'	=> 57, 'A21'	=> 58, 'A22'	=> 59, 'A23'	=> 60, 'A31'	=> 61, 'A32'	=> 62, 'A33'	=> 63, 'A34'	=> 64, 'A35'	=> 65,
+#	'B11'	=> 66, 'B12'	=> 67, 'B21'	=> 68, 'B22'	=> 69, 'B23'	=> 70,
+#	'C11'	=> 71, 'C21'	=> 72, 'C31'	=> 73, 'C41'	=> 74, 'B42'	=> 75,
+#	'D11'	=> 76, 'D21'	=> 77, 'D31'	=> 78
+#);
 
-my %mapRolesToVec = ( 'agt' => 79, 'cau' => 80 ,'exp' => 81 , 'ins' => 82 , 'vloc' => 83 , 'pat' => 84, 'src' => 85, 'tem' =>86 );
+my %mapRolesToVec = ( 'agt' => 55, 'cau' => 56 ,'exp' => 57 , 'ins' => 58 , 'vloc' => 59 , 'pat' => 60, 'src' => 61, 'tem' => 62 );
 
-my %mapMorphsToVec = ('NP' => 87, 'NRoot' => 88, 'NRootCMP' => 89, 'NRootES' => 90, 'NRootNUM' => 91, 'PrnDem' => 92, 'PrnInterr' => 93, 'PrnPers' => 94, 
-'VRoot' => 95, 'VRootES' => 96, '+Aff' => 97, '+Ass' => 98, '+Aug' => 99, 
-'+Autotrs' => 100, '+Cis_Trs' => 101, '+Cont' => 102, '+Des' => 103, '+Dim' => 104, '+Dir' => 105, '+Fact' => 106, '+Inch' => 107, '+Int' => 108, '+Intrup' => 109, '+Multi' => 110, 
-'+NumOrd' => 111, '+Perdur' => 112, '+Pl' => 113, '+Rep' => 114, '+Res' => 115, '+Rgr_Iprs' => 116, '+Rptn' => 117, '+Rzpr' => 118, '+Sml' => 119, '+Stat_Multi' => 120, 
-'+Trs' => 121, '+Vdim' =>122 );
+my %mapMorphsToVec = ('NP' => 63, 'NRoot' => 64, 'NRootCMP' => 65, 'NRootES' => 66, 'NRootNUM' => 67, 'PrnDem' => 68, 'PrnInterr' => 69, 'PrnPers' => 70, 
+'VRoot' => 71, 'VRootES' => 72, '+Aff' => 73, '+Ass' => 74, '+Aug' => 75, 
+'+Autotrs' => 76, '+Cis_Trs' => 77, '+Cont' => 78, '+Des' => 79, '+Dim' => 80, '+Dir' => 81, '+Fact' => 82, '+Inch' => 83, '+Int' => 84, '+Intrup' => 85, '+Multi' => 86, 
+'+NumOrd' => 87, '+Perdur' => 88, '+Pl' => 89, '+Rep' => 90, '+Res' => 91, '+Rgr_Iprs' => 92, '+Rptn' => 93, '+Rzpr' => 94, '+Sml' => 95, '+Stat_Multi' => 96, 
+'+Trs' => 97, '+Vdim' =>98 );
 
 my @length; $length[14] = undef;
 my $i =40; # values verb (word net) Sem29-Sem43 -> map to values for slots 40-54
 my $j=29; 
 my %mapSemsToVec =  map { $j++ => $i++; } @length;					
-my @vec = map { 0 } 0..122;
+my @vec = map { 0 } 0..98;
 
 
 for(my $i=0;$i<scalar(@sentences);$i++)
@@ -163,20 +163,45 @@ for(my $i=0;$i<scalar(@sentences);$i++)
 	my $sentence = @sentences[$i];
 	
 	my @subjects = $sentence->findnodes('descendant::terminal[label[text()="sntc"] or label[text()="co"] ]/children/terminal[label[text()="subj"] and not(pos[text()="DUMMY" ]) ] ');
+	my @terminal_nodes = $sentence->findnodes('descendant::terminal');
+	my @sorted_terminals = sort order_sort @terminal_nodes;
+	#insert placeholder element at beginning, so that order corresponds to index in array
+	unshift(@sorted_terminals, 'null' );
    
     my @sorted_subjs = sort order_sort  @subjects;
    	foreach my $subj (@sorted_subjs){
 		
 		# for testing:
    		#print "subj ".$subj->getAttribute('id').":\t";
-		
+   		my $translation;
+   		my @morphtags;
    		my $lemma = $subj->findvalue('word');
-   		
-   		my $translation = $subj->findvalue('translation');
-   		my @morphtags = $subj->findnodes('morph/tag');
+		
+   		if($lemma =~ /^-/){
+   			my $root;
+   			my $order = $subj->findvalue('order');
+   			for(my $k=($order-1);$k>=0;$k--){
+   				my $preterminal = @sorted_terminals[$k];
+   				my $preword = $preterminal->findvalue('word');
+   				if($preword !~ /^-/){
+   					$root=$preterminal;
+   					last;
+   				}
+   			}
+   			$lemma = $root->findvalue('word');
+   			$translation = $root->findvalue('translation');
+   			@morphtags = $root->findnodes('morph/tag');
+   		}
+   		else{
+   			
+   			$translation = $subj->findvalue('translation');
+   			@morphtags = $subj->findnodes('morph/tag');
+   		}
   		if(scalar(@morphtags)>5){ print STDERR "More than 5 morphtags in word ".$subj->getAttribute('id')."\n...aborting\n"; exit(0);}
   		
   		my @spanish_lems = split(',',$translation);
+  		
+  		#print STDERR "word: $lemma, morph: @morphtags, trans: $translation\n";
   		
   		
 #  		my %verbLabels = map { $_ => 0; } qw(A11 A12 A13 A21 A22 A23 A31 A32 A33 A34 A35 B11 B12 B21 B22 B23 C11 C21 C31 C41 C42 D11 D21 D31);
@@ -218,44 +243,89 @@ for(my $i=0;$i<scalar(@sentences);$i++)
 				}
 			}
   		}
-  		elsif(@morphtags[0] =~ /VRoot/)
-  		{
-  			my $verblem = @spanish_lems[0];
-  			$verblem =~ s/=//;
-  			#print "verb: $verblem\n";
-  			#get semantic class main verb
-			if($verbLemClasses{$verblem})
-			{
-					foreach my $class (keys %{$verbLemClasses{$verblem}})
-					{
-						#print STDERR "$verblem: $class position:".$mapSemsToVec{$class}."\n";
-						@vec[$mapSemsToVec{$class}]=1;
-					}
+  		
+#  		elsif(@morphtags[0] =~ /VRoot/)
+#  		{
+#  			my $verblem = @spanish_lems[0];
+#  			$verblem =~ s/=//;
+#  			#print "verb: $verblem\n";
+#  			#get semantic class main verb
+#			if($verbLemClasses{$verblem})
+#			{
+#					foreach my $class (keys %{$verbLemClasses{$verblem}})
+#					{
+#						#print STDERR "$verblem: $class position:".$mapSemsToVec{$class}."\n";
+#						@vec[$mapSemsToVec{$class}]=1;
+#					}
+#			}
+#			# get frames verb
+#			my $mainFrames = $verbLexWithFrames{$verblem};
+#			if($mainFrames)
+#			{
+#					#print "main: $main ";
+#					foreach my $f (@$mainFrames){
+#						my ($label) = ($f =~ m/^(.\d\d)/);
+#						my ($role) = ($f =~ m/##(.+)/);
+#						# some errors in Ancora dix! skip those... (e.g. 'dar' has a frame 'a3'?!)
+#						unless($label eq ''){
+#							#	print STDERR "$label  $f position: ".$mapFramesToVec{$label}."\n" if $verbose;
+#								@vec[$mapFramesToVec{$label}]=1;
+#						}
+#						unless($role eq''){
+#								#print STDERR $role."\n";
+#								# fix erroneous tag
+#								if($role eq 'caucau'){
+#										$role = 'cau';
+#								}
+#								@vec[$mapRolesToVec{$role}]=1;
+#								}
+#					}
+#			}
+#  		}
+		# take semantics from head verb to test
+		my $headverb = $subj->findvalue('parent::children/parent::terminal/translation');
+		my @spanish_vlems = split(',',$headverb);
+		#print "test:  verb of subj $lemma is ".@spanish_vlems[0]."\n";
+		
+		my $verblem = @spanish_vlems[0];
+  		$verblem =~ s/=//;
+
+  		#get semantic class main verb
+		if($verbLemClasses{$verblem})
+		{
+			foreach my $class (keys %{$verbLemClasses{$verblem}}){
+					#print STDERR "$verblem: $class position:".$mapSemsToVec{$class}."\n";
+					@vec[$mapSemsToVec{$class}]=1;
 			}
-			# get frames verb
-			my $mainFrames = $verbLexWithFrames{$verblem};
-			if($mainFrames)
+		}
+		# get frames verb
+		my $mainFrames = $verbLexWithFrames{$verblem};
+		if($mainFrames)
+		{
+			#print "main: $main ";
+			foreach my $f (@$mainFrames)
 			{
-					#print "main: $main ";
-					foreach my $f (@$mainFrames){
-						my ($label) = ($f =~ m/^(.\d\d)/);
-						my ($role) = ($f =~ m/##(.+)/);
-						# some errors in Ancora dix! skip those... (e.g. 'dar' has a frame 'a3'?!)
-						unless($label eq ''){
-							#	print STDERR "$label  $f position: ".$mapFramesToVec{$label}."\n" if $verbose;
-								@vec[$mapFramesToVec{$label}]=1;
-						}
-						unless($role eq''){
-								#print STDERR $role."\n";
-								# fix erroneous tag
-								if($role eq 'caucau'){
-										$role = 'cau';
-								}
-								@vec[$mapRolesToVec{$role}]=1;
-								}
-					}
+				my ($label) = ($f =~ m/^(.\d\d)/);
+				my ($role) = ($f =~ m/##(.+)/);
+				# some errors in Ancora dix! skip those... (e.g. 'dar' has a frame 'a3'?!)
+				unless($label eq ''){
+				#	print STDERR "$label  $f position: ".$mapFramesToVec{$label}."\n" if $verbose;
+				#@vec[$mapFramesToVec{$label}]=1;
 			}
-  		}
+			unless($role eq''){
+					#print STDERR $role."\n";
+					# fix erroneous tag
+					if($role eq 'caucau'){
+						$role = 'cau';
+					}
+					@vec[$mapRolesToVec{$role}]=1;
+				}
+			}
+		}
+  		
+		
+		
+		
   		# map morph tags to vector
   		foreach my $tag (@morphtags){
   			if($tag =~ /^PrnPers/){
@@ -285,10 +355,60 @@ for(my $i=0;$i<scalar(@sentences);$i++)
 		my $isPronoun = ($subj->findvalue('morph/tag') =~ /^Prn/) ? 1:0;
 		print "$isPronoun,";   		
    		
+   		#has det
+   		my $hasDet = ($subj->exists('descendant::terminal[label[text()="det"]]') ) ? 1:0;
+   		print "$hasDet,";
+   		
    		#my $discourse = $subj->findvalue('discourse');
-   		my $isTopic = ($subj->findvalue('discourse') eq 'TOPIC') ? 1:0;
+   		# for treebank material
+   		#my $isTopic = ($subj->findvalue('discourse') eq 'TOPIC') ? 1:0;
+   		
+   		# for parsed material: check if -qa in this word to the right
+#   		my ($qa) = $subj->findnodes('descendant::terminal[label[text()="topic"] and word[text()="-qa"]][1]'); 
+#   		my $isTopic =  ($qa) ? 1:0;
+#
+#  		print "$isTopic\n";
 
-   		print "$isTopic\n";
+		# alternative: 3 options, 0:neither topic nor focus, 1 topic, 2 focus
+		my $discourse =0;
+		# for treebanks:
+#   		my $discourselabel = $subj->findvalue('discourse');
+#   		if($discourselabel eq 'TOPIC'){$discourse = 1;}
+#   		elsif($discourselabel eq 'FOCUS'){$discourse =2;}
+#   		print "$discourse\n";
+   		
+   		#for parsed texts:
+   		my ($qa) = $subj->findnodes('descendant::terminal[label[text()="topic"] and word[text()="-qa"]][1]');
+   		my $foc =0;
+   		my $order = $subj->findvalue('order');
+   		#print STDERR "subj order : $order for word ".$subj->findvalue('word')."  ";
+   		for(my $k=($order+1);$k>=0;$k++)
+   		{
+   				my $postterminal = @sorted_terminals[$k];
+   				my $postword = $postterminal->findvalue('word');
+   				#print STDERR "post word: $postword at order $k\n";
+   				if($postword =~ /^-.+/){
+   				  # if -chu and mana to the left-> this is focus
+   				  if($postword =~ /^-chu/ && $postterminal->findvalue('child::label') eq 's.neg' ){
+   				  	$foc =1;
+   				  	last;
+   				  }
+   				  elsif($postterminal->find('child::label') eq 'ev' ){
+   				  	$foc =1;
+   				  	last;
+   				  }
+   				}
+   				else{
+   					last;
+   				}
+   			}
+   		
+   		if($qa){$discourse = 1;}
+   		elsif($foc){$discourse =2;}
+   		print "$discourse\n";
+   		
+   		#for debbuging:
+   		#print "id:".$subj->getAttribute('id')."\n";
    }
 
 }
@@ -325,6 +445,13 @@ sub setOrder{
 	my $order= @{$node->getChildrenByLocalName('order')}[0];
 	$order->removeChildNodes();
 	$order->appendText($ordertext);
+}
+
+sub getEvidential{
+	my $subj = $_[0];
+	my $order = $subj->findvalue->('child::order');
+	
+	
 }
 
 #print "Lemma,morph1,morph2,morph3,morph4,morph5,occursInPrevSentence,isPronoun,isTopic\n";
