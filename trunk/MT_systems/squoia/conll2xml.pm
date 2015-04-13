@@ -759,7 +759,8 @@ sub main{
 					 $docHash{$idKey}= $verbchunk;
 				}
 				# if this is a noun, a personal or a demonstrative pronoun, or a number, make a nominal chunk (sn)
-				elsif ($node->exists('self::NODE[@cpos="n" or @pos="pp" or @pos="pd" or @pos="pi" or @pos="Z" ]'))
+				# change 13.04.2015: put PT (interrogative non-attributive pronouns) in their own chunk, so they can be moved independently of the verb
+				elsif ($node->exists('self::NODE[@cpos="n" or @pos="pp" or @pos="pd" or @pos="pi" or @pos="Z" or @pos="pt"]'))
 				{
 					 my $nounchunk = XML::LibXML::Element->new( 'CHUNK' );
 					 #if this node is parent of a coordination

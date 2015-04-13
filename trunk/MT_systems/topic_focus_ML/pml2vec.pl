@@ -108,10 +108,11 @@ my @sentences = $dom->getElementsByTagName('s');
 		
 		# morphs
 		# 87-126, new: 63-98
-		print STDOUT "NP,NRoot,NRootCMP,NRootES,NRootNUM,PrnDem,PrnInterr,PrnPers,VRoot,VRootES,+Aff,+Ass,+Aug,+Autotrs,+Cis_Trs,+Cont,+Des,+Dim,+Dir,+Fact,+Inch,+Int,+Intrup,+Multi,+NumOrd,+Perdur,+Pl,+Rep,+Res,+Rgr_Iprs,+Rptn,+Rzpr,+Sml,+Stat_Multi,+Trs,+Vdim,";
+		#print STDOUT "NP,NRoot,NRootCMP,NRootES,NRootNUM,PrnDem,PrnInterr,PrnPers,VRoot,VRootES,+Aff,+Ass,+Aug,+Autotrs,+Cis_Trs,+Cont,+Des,+Dim,+Dir,+Fact,+Inch,+Int,+Intrup,+Multi,+NumOrd,+Perdur,+Pl,+Rep,+Res,+Rgr_Iprs,+Rptn,+Rzpr,+Sml,+Stat_Multi,+Trs,+Vdim,";
+		print STDOUT "NomRoot,VerbRoot,NP,";
 		
 		# last features
-		print "occursInPrevSentence,isPronoun,hasDet,Discourse";
+		print "isUpperCase,occursInPrevSentence,isPronoun,hasDet,occursInNextSentence,occursMoreThanOnce,Discourse";
 		
 		print "\n";
 		
@@ -145,24 +146,27 @@ my %mapVsemToVec = ( 'Sem29' => 40, 'Sem30' => 41, 'Sem31' => 42, 'Sem32' => 43,
 
 my %mapRolesToVec = ( 'agt' => 55, 'cau' => 56 ,'exp' => 57 , 'ins' => 58 , 'vloc' => 59 , 'pat' => 60, 'src' => 61, 'tem' => 62 );
 
-my %mapMorphsToVec = ('NP' => 63, 'NRoot' => 64, 'NRootCMP' => 65, 'NRootES' => 66, 'NRootNUM' => 67, 'PrnDem' => 68, 'PrnInterr' => 69, 'PrnPers' => 70, 
-'VRoot' => 71, 'VRootES' => 72, '+Aff' => 73, '+Ass' => 74, '+Aug' => 75, 
-'+Autotrs' => 76, '+Cis_Trs' => 77, '+Cont' => 78, '+Des' => 79, '+Dim' => 80, '+Dir' => 81, '+Fact' => 82, '+Inch' => 83, '+Int' => 84, '+Intrup' => 85, '+Multi' => 86, 
-'+NumOrd' => 87, '+Perdur' => 88, '+Pl' => 89, '+Rep' => 90, '+Res' => 91, '+Rgr_Iprs' => 92, '+Rptn' => 93, '+Rzpr' => 94, '+Sml' => 95, '+Stat_Multi' => 96, 
-'+Trs' => 97, '+Vdim' =>98 );
+#my %mapMorphsToVec = ('NP' => 63, 'NRoot' => 64, 'NRootCMP' => 65, 'NRootES' => 66, 'NRootNUM' => 67, 'PrnDem' => 68, 'PrnInterr' => 69, 'PrnPers' => 70, 
+#'VRoot' => 71, 'VRootES' => 72, '+Aff' => 73, '+Ass' => 74, '+Aug' => 75, 
+#'+Autotrs' => 76, '+Cis_Trs' => 77, '+Cont' => 78, '+Des' => 79, '+Dim' => 80, '+Dir' => 81, '+Fact' => 82, '+Inch' => 83, '+Int' => 84, '+Intrup' => 85, '+Multi' => 86, 
+#'+NumOrd' => 87, '+Perdur' => 88, '+Pl' => 89, '+Rep' => 90, '+Res' => 91, '+Rgr_Iprs' => 92, '+Rptn' => 93, '+Rzpr' => 94, '+Sml' => 95, '+Stat_Multi' => 96, 
+#'+Trs' => 97, '+Vdim' =>98 );
 
 my @length; $length[14] = undef;
 my $i =40; # values verb (word net) Sem29-Sem43 -> map to values for slots 40-54
 my $j=29; 
 my %mapSemsToVec =  map { $j++ => $i++; } @length;					
-my @vec = map { 0 } 0..98;
+my @vec = map { 0 } 0..62;
 
+# for testing
+my $numberOfsubjs =0;
 
 for(my $i=0;$i<scalar(@sentences);$i++)
 {
 	my $sentence = @sentences[$i];
 	
 	my @subjects = $sentence->findnodes('descendant::terminal[label[text()="sntc"] or label[text()="co"] ]/children/terminal[label[text()="subj"] and not(pos[text()="DUMMY" ]) ] ');
+	$numberOfsubjs += scalar(@subjects);
 	my @terminal_nodes = $sentence->findnodes('descendant::terminal');
 	my @sorted_terminals = sort order_sort @terminal_nodes;
 	#insert placeholder element at beginning, so that order corresponds to index in array
@@ -203,15 +207,7 @@ for(my $i=0;$i<scalar(@sentences);$i++)
   		
   		#print STDERR "word: $lemma, morph: @morphtags, trans: $translation\n";
   		
-  		
-#  		my %verbLabels = map { $_ => 0; } qw(A11 A12 A13 A21 A22 A23 A31 A32 A33 A34 A35 B11 B12 B21 B22 B23 C11 C21 C31 C41 C42 D11 D21 D31);
-#		my %verbClasses = map { $_ => 0; } qw(Sem29 Sem30 Sem31 Sem32 Sem33 Sem34 Sem35 Sem36 Sem37 Sem38 Sem39 Sem40 Sem41 Sem42 Sem43);
-#		my %verbSubjRoles = map { $_ => 0; } qw(agt cau exp ins loc pat src tem);
-#  		
-#  		my %nounSemLabels = map { $_ => 0; } qw(abs ani bpart cnc hum loc mat mea plant pot sem soc tmp unit);
-#		my %nounSemClassWN = map { $_ => 0; } qw(nSem03 nSem04 nSem05 nSem06 nSem07 nSem08 nSem09 nSem10 nSem11 nSem12 nSem13 nSem14 nSem15 nSem16 nSem17 nSem18 nSem19 nSem20 nSem21 nSem22 nSem23 nSem24 nSem25 nSem26 nSem27 nSem28);
-#  			 
-  		
+  	 		
   		#print "sp lems @spanish_lems\n";
   		if(@morphtags[0] =~ /NRoot/)
   		{
@@ -327,12 +323,12 @@ for(my $i=0;$i<scalar(@sentences);$i++)
 		
 		
   		# map morph tags to vector
-  		foreach my $tag (@morphtags){
-  			if($tag =~ /^PrnPers/){
-  				$tag = "PrnPers";
-  			}
-  			@vec[$mapMorphsToVec{$tag}]=1;
-  		}
+#  		foreach my $tag (@morphtags){
+#  			if($tag =~ /^PrnPers/){
+#  				$tag = "PrnPers";
+#  			}
+#  			@vec[$mapMorphsToVec{$tag}]=1;
+#  		}
 
    		
    		foreach my $feature (@vec){
@@ -340,12 +336,25 @@ for(my $i=0;$i<scalar(@sentences);$i++)
    		}
    		#print "length: ".scalar(@vec)."\n";
    		
+   		# "NomRoot,VerbRoot,NP,";
+   		my $NomRoot = (@morphtags[0] =~ /NRoot/) ? 1:0;
+   		my $VerbRoot = (@morphtags[0] =~ /VRoot/) ? 1:0;
+   		my $NP = (@morphtags[0] =~ '>NP<') ? 1:0;
    		
+   		#print STDERR "NP is: $NP because ".@morphtags[0]."\n";
+   		
+   		print STDOUT "$NomRoot,$VerbRoot,$NP,";
+   		
+   		#is upper case
+   		my $isUpperCase = ($lemma eq ucfirst($lemma)) ? 1:0;
+   		print "$isUpperCase,";
+   		
+   		$lemma = lc($lemma);
    		my $occursinPrevSentence=0;
    		unless($i==0){
 		   		#occurs in previous sentence
 		   		my $prevSentence = @sentences[$i-1];
-		   		my $xpath = 'descendant::terminal/word[text()="'.$lemma.'"]';
+		   		my $xpath = 'descendant::terminal/word[translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$lemma.'"]';
 		   		$occursinPrevSentence =  $prevSentence->exists($xpath);
 		 }
 		 print "$occursinPrevSentence,";
@@ -359,6 +368,27 @@ for(my $i=0;$i<scalar(@sentences);$i++)
    		my $hasDet = ($subj->exists('descendant::terminal[label[text()="det"]]') ) ? 1:0;
    		print "$hasDet,";
    		
+   		#occursInNextSentence
+   		my $occursinNextSentence=0;
+   		unless($i == scalar(@sentences)-1){
+   			my $xpath = 'descendant::terminal/word[translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$lemma.'"]';
+   		#	$xpath_to_quz_cand = 'descendant::t[w[starts-with( translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü"),"'.$wordform_es.'")]]';
+   			$occursinNextSentence = ($sentences[$i+1]->exists($xpath) ) ? 1:0;
+   		}
+   		print "$occursinNextSentence," ;
+   		
+   		
+   		#occursMoreThanOnce
+   		my $occursMoreThanOnce=0;
+   		unless($lemma eq 'ka'){
+   			my $xpath = 'descendant::terminal/word[translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZÑÁÉÍÓÚÜ", "abcdefghijklmnopqrstuvwxyzñáéíóúü")="'.$lemma.'"]';
+   			my @sameLemmas = $sentence->findnodes($xpath);
+   			$occursMoreThanOnce = (scalar(@sameLemmas)>1) ? 1:0;
+   		}
+   		print "$occursMoreThanOnce," ;
+   		
+   		
+   		
    		#my $discourse = $subj->findvalue('discourse');
    		# for treebank material
    		#my $isTopic = ($subj->findvalue('discourse') eq 'TOPIC') ? 1:0;
@@ -370,42 +400,48 @@ for(my $i=0;$i<scalar(@sentences);$i++)
 #  		print "$isTopic\n";
 
 		# alternative: 3 options, 0:neither topic nor focus, 1 topic, 2 focus
-		my $discourse =0;
+		my $discourse = 'none';
 		# for treebanks:
-#   		my $discourselabel = $subj->findvalue('discourse');
-#   		if($discourselabel eq 'TOPIC'){$discourse = 1;}
-#   		elsif($discourselabel eq 'FOCUS'){$discourse =2;}
-#   		print "$discourse\n";
+   		my $discourselabel = $subj->findvalue('discourse');
+   		if($discourselabel =~ 'TOPIC'){$discourse = 'topic';}
    		
-   		#for parsed texts:
-   		my ($qa) = $subj->findnodes('descendant::terminal[label[text()="topic"] and word[text()="-qa"]][1]');
-   		my $foc =0;
-   		my $order = $subj->findvalue('order');
-   		#print STDERR "subj order : $order for word ".$subj->findvalue('word')."  ";
-   		for(my $k=($order+1);$k>=0;$k++)
-   		{
-   				my $postterminal = @sorted_terminals[$k];
-   				my $postword = $postterminal->findvalue('word');
-   				#print STDERR "post word: $postword at order $k\n";
-   				if($postword =~ /^-.+/){
-   				  # if -chu and mana to the left-> this is focus
-   				  if($postword =~ /^-chu/ && $postterminal->findvalue('child::label') eq 's.neg' ){
-   				  	$foc =1;
-   				  	last;
-   				  }
-   				  elsif($postterminal->find('child::label') eq 'ev' ){
-   				  	$foc =1;
-   				  	last;
-   				  }
-   				}
-   				else{
-   					last;
-   				}
-   			}
+   		# zu wenig.... (nur 180 subj+Fcous in allen treebanks)
+   		elsif($discourselabel =~ 'FOCUS'){$discourse ='focus';}
    		
-   		if($qa){$discourse = 1;}
-   		elsif($foc){$discourse =2;}
+   		
+ 		#for parsed texts:
+   		#my ($qa) = $subj->findnodes('descendant::terminal[label[text()="topic"] and word[text()="-qa"]][1]');
+   		#if($qa){$discourse = 'topic';}
+   		
    		print "$discourse\n";
+   		
+#   		my $foc =0;
+#   		my $order = $subj->findvalue('order');
+#   		#print STDERR "subj order : $order for word ".$subj->findvalue('word')."  ";
+#   		for(my $k=($order+1);$k>=0;$k++)
+#   		{
+#   				my $postterminal = @sorted_terminals[$k];
+#   				my $postword = $postterminal->findvalue('word');
+#   				#print STDERR "post word: $postword at order $k\n";
+#   				if($postword =~ /^-.+/){
+#   				  # if -chu and mana to the left-> this is focus
+#   				  if($postword =~ /^-chu/ && $postterminal->findvalue('child::label') eq 's.neg' ){
+#   				  	$foc =1;
+#   				  	last;
+#   				  }
+#   				  elsif($postterminal->find('child::label') eq 'ev' ){
+#   				  	$foc =1;
+#   				  	last;
+#   				  }
+#   				}
+#   				else{
+#   					last;
+#   				}
+#   			}
+#   		
+#   		if($qa){$discourse = 1;}
+#   		elsif($foc){$discourse =2;}
+#   		print "$discourse\n";
    		
    		#for debbuging:
    		#print "id:".$subj->getAttribute('id')."\n";
@@ -413,6 +449,7 @@ for(my $i=0;$i<scalar(@sentences);$i++)
 
 }
 
+print  STDERR "total number of subjects: $numberOfsubjs\n";
 
 # $a,$b -> terminal nodes
 sub order_sort {
