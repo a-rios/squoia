@@ -248,8 +248,11 @@ my.mi=/\+\+.+Obj|\+\+Rflx/	mi			my.type=/sn|coor-n/			addverbmi			up		concat
 #my.slem=donde && my.smi=/^PR/				"+Loc"			my.verbform=/^rel:/				addverbmi			up		concat
 
 # set 3.Sg of copula (kan) to be deleted
-# only if no negation
-my.lem=ka && my.verbmi=Copula+3.Sg.Subj && my.mi=present 				"yes"			my.type=/grup-verb|coor-v/ && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]})			delete		up		overwrite
+# only if no negation, and not a question
+# -> es bonito -> sumaqmi kanchu?
+my.lem=ka && my.verbmi=Copula+3.Sg.Subj && my.mi=present 				"yes"				my.type=/grup-verb|coor-v/ && child.lem=ka && !(xpath{descendant::NODE[@smi="RN" or starts-with(@smi,"FI")]})			delete		up		overwrite
+my.lem=ka && my.mi=present && my.verbmi=Copula+3.Sg.Subj				"question"			my.type=/grup-verb|coor-v/ && child.lem=ka && xpath{descendant::NODE[starts-with(@smi,"FI")]}			copula		up		overwrite
+
 
 # special case: imperative 1.pl of 'ir/marchar' -> irregular form 'haku'
 my.slem=/^ir$|marchar/ && my.mi=imperative && my.smi=/VMM01P0|VMSP1P0/	"haku"		my.type=/grup-verb|coor-v/	lem		up	overwrite
@@ -397,7 +400,12 @@ my.add_mi=/\-\-Poss/ && ( !(xpath{ancestor::CHUNK[@type="sn"]/NODE[starts-with(@
 # Negation
 # in imperatives: overwrite 'mana' with 'ama'!
 my.slem=no			"yes"				my.type=sadv && xpath{ancestor::CHUNK[@type="coor-v" or @type="grup-verb"][1]/NODE[starts-with(@smi,"V")]/descendant-or-self::NODE[@mi="imperative"] }		possibleImp				up			overwrite
-my.slem=no			"+Neg"				my.type=sadv					deleteMorph		up 		concat
+# delete -chu from mana, except in questions:
+# ¿no comes? -> manachu mikunki? not: *manam mikunchu?
+my.slem=no			"+Neg"				my.type=sadv && !(xpath{parent::CHUNK/CHUNK[@type="F-term"]/NODE[starts-with(@smi,"FI")]})					deleteMorph		up 		concat
+# in declarative clauses: manam/s -> insert evidential
+my.slem=no			"+DirE"				my.type=sadv && !(xpath{parent::CHUNK/CHUNK[@type="F-term"]/NODE[starts-with(@smi,"FI")]}) && xpath{ancestor::corpus[@evidentiality="direct"]}			chunkmi		up 		concat
+my.slem=no			"+IndE"				my.type=sadv && !(xpath{parent::CHUNK/CHUNK[@type="F-term"]/NODE[starts-with(@smi,"FI")]}) && xpath{ancestor::corpus[@evidentiality="indirect"]}		chunkmi		up 		concat
 
 my.slem=/incluso|sólo|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento/ && my.mi=/^\+\+/			mi			my.type=/.+/		chunkmi		up	concat
 my.mi=/^\+\+/ && my.slem=/incluso|sólo|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento/ 		"yes"			my.type=/.+/		delete		up	concat

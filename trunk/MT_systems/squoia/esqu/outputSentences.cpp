@@ -376,6 +376,7 @@ void printSentsMorphGen(std::map< int, std::map< int, std::string > >sentMatrix,
 						else if( regex_search(pmi,startpuncrx)){
 							std::cout << word ;
 							startedWithPunc =1;
+							prevPunc=pmi;
 							//std::cout << "matched " <<pmi << " word " << word << std::endl;
 						}
 						else
@@ -434,6 +435,7 @@ void printSentsMorphGen(std::map< int, std::map< int, std::string > >sentMatrix,
 
 							if( (!equals(pmi,"") and ends_with(pmi,"T")) or regex_search(pmi,rx) ||  equals(pmi, "FH") ){
 								std::cout << result;
+								//std::cout << "matched pmi: " << pmi << "  ";
 								prevPunc =pmi;
 								prev = word;
 							}

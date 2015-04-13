@@ -30,7 +30,10 @@ my.addverbmi=/.+/ && my.type=/sn|coor-n/			addverbmi				xpath{self::CHUNK[@type=
 
 
 # copy chunkmi from sadv (negation) to chunk above, be it nominal or verbal (independent suffixes)
-my.type=/sadv/ && my.chunkmi=/.+/			chunkmi				my.type=/grup-verb|coor-v/		chunkmi			parent				1to2		concat
+# excpetion: if this is a negated question, -chu attaches to mana
+# ¿no comes? -> manachu mikunki? not: *manam mikunchu?
+# also: not in negated ecuational clauses: la casa no es grande -> wasiqa manam hatunchu (kan), not *manam hatun kanchu
+my.type=/sadv/ && my.chunkmi=/.+/			"+Neg"				my.type=/grup-verb|coor-v/ &&!(xpath{descendant::CHUNK[@type="F-term"]/NODE[starts-with(@smi,"FI")]}) && !(child.lem=ka)		chunkmi			parent				1to2		concat
 
 # copy chunkmi=+Inst / +Add  in coordination from head to child (from coor-n to sn)
 my.type=coor-n && my.chunkmi=/\+Instr|\+Add/		chunkmi				my.type=sn				chunkmi			child				1to2		concat	
@@ -109,21 +112,30 @@ my.si=/ci/ 		case				 my.type=/grup-verb|coor-v/ && my.iobjCase=/.+/ 		iobjCase	
 my.si=/cd/    	deleteMorph			child.slem=haber && child.smi=/3S/  && !(xpath{child::NODE[@slem="haber"]/descendant::NODE[starts-with(@smi,"V") or @slem="que"]})		"+Acc"			parent		2to1	concat					
 
 # in sentence with 3rd sg present copula -> kan is set to be deleted, in this case, insert -mi/si in cpred/atr
-# -> sólo si no hay negación.., con negación -> manam .. kanchu
-my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="direct"]}		"+DirE"		parent		2to1		concat
-my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="indirect"]}	"+IndE"		parent		2to1		concat
+# -> sólo si no hay negación.., con negación -> manam .. verb-chu
+# note: with negated ecuational clause: -chu attaches to cpred/atr
+my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && (my.delete=yes || my.copula=question) && child.lem=ka && ( !(xpath{descendant::NODE[@smi="RN"]}) || my.copula=question) & xpath{ancestor::corpus[@evidentiality="direct"]}		"+DirE"		parent		2to1		concat
+my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && (my.delete=yes || my.copula=question) && child.lem=ka && ( !(xpath{descendant::NODE[@smi="RN"]}) || my.copula=question) & xpath{ancestor::corpus[@evidentiality="indirect"]}	"+IndE"		parent		2to1		concat
 
-
+# for prepositional chunks that are 'cpred' or 'atr' with deleted copula, insert -m/-s
 my.type=/sn|coor-n/ && parent.si=/cpred|^atr/ && parent.type=/grup-sp|coor-sp/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="direct"]}		"+DirE"		ancestor		2to1		concat
 my.type=/sn|coor-n/ && parent.si=/cpred|^atr/ && parent.type=/grup-sp|coor-sp/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="indirect"]}	"+IndE"		ancestor		2to1		concat
+
+# attach -chu to cpred/atr in ecuational negated clauses
+my.si=/cpred|^atr/ && my.type=/^sa|coor-sa/		chunkmi		my.type=grup-verb && child.lem=ka && (xpath{descendant::NODE[@smi="RN"]}) 	"+Neg"		parent		2to1		concat
+
+# for prepositional chunks that are 'cpred' or 'atr' with deleted copula, insert -m/-s
+my.type=/sn|coor-n/ && parent.si=/cpred|^atr/ && parent.type=/grup-sp|coor-sp/		chunkmi		my.type=grup-verb && my.delete=yes && child.lem=ka && !(xpath{descendant::NODE[@smi="RN"]}) & xpath{ancestor::corpus[@evidentiality="direct"]}		"+DirE"		ancestor		2to1		concat
+
+
 
 # subject of copula in equational clauses (Pedro es de Lima) -> -qa 
 my.si=suj && my.type=sn			chunkmi			      my.type=grup-verb && child.lem=ka && xpath{child::CHUNK[@si="cpred" or @si="atr"]} 		"+Top"				parent		2to1		concat
 
-# yes-no questions: insert -chu
+# yes-no questions: insert -chu, unless negative question..then leave -chu at mana
 # should be attached to focalized chunk... for lack of better options, attach to head of sentence
 # note: tag +Neg= -chu, for simplicity, even though it functions as interrogative here, not negation
-my.type=F-term && child.smi=/FIT|FIA/			"+Neg"		!(my.type=F-term) && !(xpath{descendant::NODE[starts-with(@smi,"PT")]})			chunkmi			parent				1to2		concat
+my.type=F-term && child.smi=/FIT|FIA/			"+Neg"		!(my.type=F-term) && !(xpath{descendant::NODE[starts-with(@smi,"PT")]}) && !(xpath{child::CHUNK/NODE[@slem="no"]})			chunkmi			parent				1to2		concat
 
 
 
