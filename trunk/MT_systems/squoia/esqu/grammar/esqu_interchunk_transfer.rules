@@ -120,7 +120,10 @@ my.type=/sn|coor-n/ && parent.si=/cpred|^atr/ && parent.type=/grup-sp|coor-sp/		
 # subject of copula in equational clauses (Pedro es de Lima) -> -qa 
 my.si=suj && my.type=sn			chunkmi			      my.type=grup-verb && child.lem=ka && xpath{child::CHUNK[@si="cpred" or @si="atr"]} 		"+Top"				parent		2to1		concat
 
-
+# yes-no questions: insert -chu
+# should be attached to focalized chunk... for lack of better options, attach to head of sentence
+# note: tag +Neg= -chu, for simplicity, even though it functions as interrogative here, not negation
+my.type=F-term && child.smi=/FIT|FIA/			"+Neg"		!(my.type=F-term) && !(xpath{descendant::NODE[starts-with(@smi,"PT")]})			chunkmi			parent				1to2		concat
 
 
 
