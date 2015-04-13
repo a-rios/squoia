@@ -1,8 +1,7 @@
 // compile with:
 // g++ -o outputSentences outputSentences.cpp -I/path-to-kenlm -DKENLM_MAX_ORDER=6 -L/path-to-kenlm/lib/ -lkenlm
 // g++ -o outputSentences outputSentences.cpp -I/home/clsquoia/kenlm-master/ -DKENLM_MAX_ORDER=6 -L/home/clsquoia/kenlm-master/lib/ -lkenlm -lboost_regex
-//g++ -o outputSentences outputSentences.cpp -I/home/clsquoia/kenlm-master/ -I/opt/matxin/local/include -DKENLM_MAX_ORDER=6 -L/home/clsquoia/kenlm-master/lib/ -lkenlm -lboost_regex /opt/matxin/local/lib/libfoma.a -lz
-
+// en hex: g++ -o outputSentences outputSentences.cpp -I/mnt/storage/hex/projects/clsquoia/kenlm-master/ -I/opt/matxin/local/include -DKENLM_MAX_ORDER=6 -L/mnt/storage/hex/projects/clsquoia/kenlm-master/lib/ -lkenlm -lboost_regex /opt/matxin/local/lib/libfoma.a -lz
 
 #include <iostream>
 #include <fstream>
@@ -247,8 +246,15 @@ void printSents(std::map< int, std::map< int, std::string > >sentMatrix, std::ve
 					if(i ==0){
 						// uppercase first word in sentence
 						//	#TODO
-						if( equals(word, ",") or ends_with(pmi,"T")   ){
+						regex startpuncrx("FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA");
+						if( equals(word, ",") or ends_with(pmi,"T") ){
 							startedWithPunc =1;
+						}
+						// starts with correct opening punctuation (¡ or ¿ or " etc)
+						else if( regex_search(pmi,startpuncrx)){
+								std::cout << word ;
+								startedWithPunc =1;
+								//std::cout << "matched " <<pmi << " word " << word << std::endl;
 						}
 						else
 						{
@@ -273,6 +279,12 @@ void printSents(std::map< int, std::map< int, std::string > >sentMatrix, std::ve
 //							if(regex_search(pmi,rx)){
 //									std::wcout << L"matched " <<pmi << std::endl;
 //							}
+							//if sentence started with opening punctuation, uppercase first word
+							if(startedWithPunc==1){
+									word[0] =std::toupper(word[0]);
+									startedWithPunc=0;
+							}
+
 							if( (!equals(pmi,"") and ends_with(pmi,"T")) or regex_search(pmi,rx) ||  equals(pmi, "FH") ){
 								std::cout << word;
 								prevPunc =pmi;
@@ -355,9 +367,16 @@ void printSentsMorphGen(std::map< int, std::map< int, std::string > >sentMatrix,
 
 					if(i ==0){
 						// uppercase first word in sentence
-						//	#TODO
-						if( equals(word, ",") or ends_with(pmi,"T")   ){
+						regex startpuncrx("FAA|FEA|FIA|FCA|FG|FLA|FPA|FRA");
+						// starts with wrong punctuation: don't print punctuation but remember to uppercase next word
+						if( equals(word, ",") or ends_with(pmi,"T") ){
 							startedWithPunc =1;
+						}
+						// starts with correct opening punctuation (¡ or ¿ or " etc)
+						else if( regex_search(pmi,startpuncrx)){
+							std::cout << word ;
+							startedWithPunc =1;
+							//std::cout << "matched " <<pmi << " word " << word << std::endl;
 						}
 						else
 						{
@@ -397,6 +416,12 @@ void printSentsMorphGen(std::map< int, std::map< int, std::string > >sentMatrix,
 //									std::wcout << L"matched " <<pmi << std::endl;
 //							}
 
+							//if sentence started with opening punctuation, uppercase first word
+							if(startedWithPunc==1){
+									writable[0] =std::toupper(writable[0]);
+									startedWithPunc=0;
+							}
+
 							// generate word form
 							if(word[0] != '\0'){
 								/* Apply analyzer.bin */
@@ -427,7 +452,7 @@ void printSentsMorphGen(std::map< int, std::map< int, std::string > >sentMatrix,
 							}
 						}
 					}
-					// don't forget to free the string after finished using it
+					// free the string after finished using it
 					delete[] writable;
 			}
 			// if cutoff >1 print probability for this sentence, otherwise just a newline
@@ -475,7 +500,6 @@ void printTestMorphs(std::map< int, std::map< int, std::string > >sentMatrix, st
 
 					if(i ==0){
 						// uppercase first word in sentence
-						//	#TODO
 						word[0] = std::toupper(word[0]);
 					}
 					//std::cout << word<< std::endl;

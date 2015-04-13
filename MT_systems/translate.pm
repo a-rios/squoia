@@ -191,7 +191,7 @@ available options are:
 \t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
 \t morph: input for morphological generation
-\t words: output of morphological generation (only with useMorphModel=false)
+\t words: output of morphological generation (only with useMorphModel=0)
 Options for tagging:
 --wapiti: path to wapiti executables
 --wapitiModel: path to wapiti model (for tagging)
