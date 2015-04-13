@@ -847,7 +847,7 @@ sub printNode{
  			if($add_mi ne '')
  			{ 
  			 	my ($correctroot,$addmorph) = ($add_mi =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)?(.*)/ ) ;
- 				#print STDERR "add_mi: $add_mi,....$add_morph\n" if $verbose; 
+ 				#print STDERR "add_mi: $add_mi,....$addmorph\n" if $verbose; 
  				if($correctroot ne '' )
  				{
  					#print STDOUT ":$correctroot$addmorph$morph";
@@ -858,6 +858,7 @@ sub printNode{
  					#print STDOUT ":$root$addmorph$morph";
  					$nodeString = $nodeString."$root$addmorph$morph";
  				}
+ 				#print STDERR "nodestring: $nodeString, addmorph: $addmorph\n" if $verbose; 
  			}
  			else
  			{
@@ -948,12 +949,13 @@ sub getMorphFromChunk{
  		}
  		# if this is 'mana' and negation has scope over verb (note that this is always the case, 
  		# because lexical negation (nada - mana imapas) is already handled in the lexicon)
- 		elsif($node->getAttribute('smi') eq 'RN')
- 		{
- 			#print STDOUT "+DirE#mana:Part+IndE";
- 			#$morphString = $morphString."+DirE#mana:Part+IndE";
- 			$morphString = $morphString."+DirE";
- 		}
+ 		# handled in intraTransfer rules file!
+# 		elsif($node->getAttribute('smi') eq 'RN')
+# 		{
+# 			#print STDOUT "+DirE#mana:Part+IndE";
+# 			#$morphString = $morphString."+DirE#mana:Part+IndE";
+# 			$morphString = $morphString."+DirE";
+# 		}
  		# if this is a 'det' chunk: as this node has been created AFTER intrachunk movement: check if function is cd or ci
  		# and add case suffix if necessary
  		elsif($chunk->getAttribute('type') eq 'det')
@@ -1173,6 +1175,7 @@ sub getFirstChild{
 sub adjustMorph{
 	my $morphString = $_[0];
 	my $mapTagsToSlotsRef = $_[1];
+	print STDERR "before adjust: $morphString\n" if $verbose;
 	
 	#extract root: 
 	my ($roottag) = ($morphString =~ m/(NRootNUM|NRoot|Noun|VRoot|Verb|Copula|Part|PrnDem|PrnInterr|PrnPers)/ ) ;
@@ -1222,14 +1225,17 @@ sub adjustMorph{
 	# Nouns: after derivation (30) (?)
 	if($sortedMorphString =~ /\+Lim(\+(Perdur|Rem|Desesp|Int|Multi|Intrup|VCont|Vdim|Autotrs|MRep|Des|Ass|Rep|Aff|Inch|Caus|Rzpr|Rflx|Iprs|Cis|Obj|Prog))+/){
 		#print STDERR "Lim found in wrong position: $sortedMorphString\n";
+		# to avoid confusion of +Int and +Intr -> change +Intr -> +INTR for match
+		$sortedMorphString =~ s/\+Intr/\+INTR/g;
 		$sortedMorphString =~ s/(\+Lim)((\+(Perdur|Rem|Desesp|Int|Multi|Intrup|VCont|Vdim|Autotrs|MRep|Des|Ass|Rep|Aff|Inch|Caus|Rzpr|Rflx|Iprs|Cis|Obj|Prog))+)/\2\1/ ;
-		#print STDERR "Lim reorderd: $sortedMorphString\n";
+		$sortedMorphString =~ s/\+INTR/\+Intr/g ;
+		print STDERR "Lim reorderd: $sortedMorphString\n" if $verbose;
 	}
 	
 
 	
-	#print STDERR "unsorted morph: $morphString\n" if $verbose;
-	#print STDERR "sorted morph: $sortedMorphString\n" if $verbose;
+	print STDERR "unsorted morph: $morphString\n" if $verbose;
+	print STDERR "sorted morph: $sortedMorphString\n" if $verbose;
 	return $sortedMorphString;
 }
 
