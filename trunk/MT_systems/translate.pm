@@ -50,6 +50,7 @@ BEGIN{
 	use squoia::esqu::disambVerbFormsRules;
 	use squoia::esqu::svm;
 	use squoia::esqu::xml2morph;
+	use squoia::esqu::topicsvm;
 	
 	
 	## esde modules	
@@ -124,6 +125,7 @@ my $noalt = ''; # default is false; flag to switch statistical disambiguation an
 my $verbPrep;
 my $deModel;
 my $configIsSet=0;
+my $predictTopic=0;
 
 my $helpstring = "Usage: $0 [options]
 available options are:
@@ -229,7 +231,8 @@ Options for translation, es-quz:
 --fomaFST: path to foma morphological generation binary (if useMorphModel=1)
 --quModel: Quechua language model (words)
 --quMorphModel: Quechua language model (morphemes)
---useMorphModel: use language model on morphemes instead of words
+--useMorphModel (0,1): use language model on morphemes instead of words
+--predictTopic (0,1): predict topic on subjects in finite clauses
 Options for translation, es-de:
 --chunkMap: mapping of chunk names (for lexical transfer)
 --bilexprob: bilingual lexical probabilities (for statistical disambiguation)
@@ -299,6 +302,7 @@ GetOptions(
     'quModel=s' => \$quModel,
     'quMorphModel=s' => \$quMorphModel,
     'useMorphModel=i' => \$useMorphModel,
+    'predictTopic=i' => \$predictTopic,
     # options for es-de
     'chunkMap=s' => \$chunkMap,
     'bilexprob=s' => \$biLexProb,
@@ -1767,6 +1771,32 @@ if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 		squoia::intrachunkOrder::main(\$dom, \%intraOrderRules, $verbose);
 	}
 	
+	#only Quechua: predict topic on subjects in finite clauses:
+	if($direction eq 'esqu' && $predictTopic ==1){
+		my %nounLex = ();
+		if($nounlex ne '' && $startTrans > $mapInputFormats{'svm'})	#11)
+		{
+			open (NOUNS, "<:encoding(UTF-8)", $nounlex) or die "Can't open $nounlex : $!";
+			print STDERR "reading semantic noun lexicon from $nounlex...\n";
+			while(<NOUNS>){
+			s/#.*//;     # no comments
+			(my $lemma, my $semTag) = split(/:/,$_);
+			$nounLex{$lemma} = $semTag;
+			}
+			store \%nounLex, "$path/storage/NounLex";
+			close(NOUNS);
+		}
+		else{
+			## retrieve from disk
+			eval {
+				my $hashref = Storable::retrieve("$path/storage/NounLex");
+			} or die "No NounLex in $path/storage found! specify --nounlex=path to read in the Spanish noun lexicon!";
+			%nounLex = %{ Storable::retrieve("$path/storage/NounLex") };
+		}
+		
+		squoia::esqu::topicsvm::main(\$dom, \%nounLex, $verbose);
+	}
+	
 	## if output format is 'intraOrder': print and exit
 	if($outformat eq 'intraOrder'){
 		my $docstring = $dom->toString(3);
@@ -1774,6 +1804,7 @@ if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 		exit;
 	}
 }
+
 
 ###-----------------------------------end translation ---------------------------------------------------------####
 

@@ -286,13 +286,14 @@ sub main{
 		 					{
 		 						$verbChunk->setAttribute('conj', 'hinaqa');
 		 					}
-		 					elsif($conjunction->getAttribute('lem') =~ /aún|aun$/ )
+		 					elsif($conjunction->getAttribute('lem') =~ /aún$|aun$/ )
 		 					{
 		 						$verbChunk->setAttribute('conj', 'chayraq');
 		 					}
 		 					elsif($conjunction->getAttribute('lem') =~ /aún_no|aun_no/ )
 		 					{
 		 						$verbChunk->setAttribute('conj', 'manaraq');
+		 						$verbChunk->setAttribute('chunkmi', '+Neg');
 		 					}
 	 					}
 	 				}
@@ -608,6 +609,12 @@ sub main{
 						$nbrOfAmbigousClauses++;
 						$verbChunk->setAttribute('verbform', 'ambiguous');
 					}
+					# clean up:
+					# if conj inserted: set conjunction chunk (if exists) to delete
+			 		if($conjunction && $conjunction->exists('parent::CHUNK[@type="sadv"]') && $verbChunk->hasAttribute('conj')){
+			 				 my $conjChunk = $conjunction->parentNode();
+			 				 $conjChunk->setAttribute('delete', 'yes');
+			 		}
 	 			}
 				elsif(squoia::util::isRelClause($verbChunk))
 				{

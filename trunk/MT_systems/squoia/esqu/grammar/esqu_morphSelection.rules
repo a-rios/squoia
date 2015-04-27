@@ -32,6 +32,7 @@ my.slem=ahí		PrnDem+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coo
 my.slem=allá		PrnDem+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
 my.slem=allá		PrnDem+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
 
+
 # conmigo vs mí -> same tag, disambiguate here:
 # a mí -> ++1.Sg.Obj, para/por mí -> ñuqapaq /wan etc
 # note: PP1CSO00,PP2CSO00 -> not 3x zero, but 'o00' (o=oblique case!)
