@@ -299,7 +299,7 @@ my.slem=e || my.slem=y				"+Add"				my.type=/sn|coor-n/ && !(child.sem=/\+Fem|\+
 my.slem=e || my.slem=y				"+Intr"				my.type=/grup-verb|coor-v/												chunkmi			up		concat
 
 my.slem=/tal_vez|quizás|posiblemente/		"+Asmpemph"				my.type=/.+/					chunkmi			up		concat
-my.slem=/también/				"++Add"				my.type=/.+/					chunkmi			up		concat
+my.slem=/también/				"++Add"					my.type=/.+/					chunkmi			up		concat
 my.slem=/también|tal_vez|quizás|posiblemente/	"yes"				my.type=/.+/					delete			up		concat
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -407,8 +407,8 @@ my.slem=no			"+Neg"				my.type=sadv && !(xpath{parent::CHUNK/CHUNK[@type="F-term
 my.slem=no			"+DirE"				my.type=sadv && !(xpath{parent::CHUNK/CHUNK[@type="F-term"]/NODE[starts-with(@smi,"FI")]}) && xpath{ancestor::corpus[@evidentiality="direct"]}			chunkmi		up 		concat
 my.slem=no			"+IndE"				my.type=sadv && !(xpath{parent::CHUNK/CHUNK[@type="F-term"]/NODE[starts-with(@smi,"FI")]}) && xpath{ancestor::corpus[@evidentiality="indirect"]}		chunkmi		up 		concat
 
-my.slem=/incluso|sólo|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento/ && my.mi=/^\+\+/			mi			my.type=/.+/		chunkmi		up	concat
-my.mi=/^\+\+/ && my.slem=/incluso|sólo|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento/ 		"yes"			my.type=/.+/		delete		up	concat
+my.slem=/incluso|sólo|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento|todavía/ && my.mi=/^\+\+/		mi			my.type=/.+/		chunkmi		up	concat
+my.mi=/^\+\+/ && my.slem=/incluso|sólo|a_cada_rato|a_cada_paso|a_cada_instante|a_cada_momento|todavía/ 		"yes"			my.type=/.+/		delete		up	concat
 
 
 

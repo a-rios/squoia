@@ -112,7 +112,7 @@ my @sentences = $dom->getElementsByTagName('s');
 		print STDOUT "NomRoot,VerbRoot,NP,";
 		
 		# last features
-		print "isUpperCase,occursInPrevSentence,isPronoun,hasDet,occursInNextSentence,occursMoreThanOnce,Discourse";
+		print "isUpperCase,occursInPrevSentence,isPronoun,hasDet,occursInNextSentence,occursMoreThanOnce,PreceedsVerb,Discourse";
 		
 		print "\n";
 		
@@ -387,7 +387,14 @@ for(my $i=0;$i<scalar(@sentences);$i++)
    		}
    		print "$occursMoreThanOnce," ;
    		
+   		# position, durschnittl. Satzlänge -> 25.86
+   		#relative position to verb
+   		my ($verb) = $subj->findnodes('parent::children/parent::terminal');
+   		my $verb_ord = $verb->findvalue('order');
+   		my $subj_ord = $subj->findvalue('order');
+   		my $preceedsVerb = ($subj_ord< $verb_ord )? 1:0;
    		
+   		print "$preceedsVerb,";
    		
    		#my $discourse = $subj->findvalue('discourse');
    		# for treebank material
@@ -405,8 +412,8 @@ for(my $i=0;$i<scalar(@sentences);$i++)
    		my $discourselabel = $subj->findvalue('discourse');
    		if($discourselabel =~ 'TOPIC'){$discourse = 'topic';}
    		
-   		# zu wenig.... (nur 180 subj+Fcous in allen treebanks)
-   		elsif($discourselabel =~ 'FOCUS'){$discourse ='focus';}
+   		# zu wenig.... (nur 198 subj+Fcous in allen treebanks)
+   		#elsif($discourselabel =~ 'FOCUS'){$discourse ='focus';}
    		
    		
  		#for parsed texts:
