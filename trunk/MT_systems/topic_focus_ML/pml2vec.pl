@@ -409,16 +409,16 @@ for(my $i=0;$i<scalar(@sentences);$i++)
 		# alternative: 3 options, 0:neither topic nor focus, 1 topic, 2 focus
 		my $discourse = 'none';
 		# for treebanks:
-   		my $discourselabel = $subj->findvalue('discourse');
-   		if($discourselabel =~ 'TOPIC'){$discourse = 'topic';}
+   		#my $discourselabel = $subj->findvalue('discourse');
+   		#if($discourselabel =~ 'TOPIC'){$discourse = 'topic';}
    		
    		# zu wenig.... (nur 198 subj+Fcous in allen treebanks)
    		#elsif($discourselabel =~ 'FOCUS'){$discourse ='focus';}
    		
    		
  		#for parsed texts:
-   		#my ($qa) = $subj->findnodes('descendant::terminal[label[text()="topic"] and word[text()="-qa"]][1]');
-   		#if($qa){$discourse = 'topic';}
+   		my ($qa) = $subj->findnodes('descendant::terminal[label[text()="topic"] and word[text()="-qa"]][1]');
+   		if($qa){$discourse = 'topic';}
    		
    		print "$discourse\n";
    		

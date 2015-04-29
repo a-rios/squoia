@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export XFST_DIR=/home/clsquoia/google_squoia/morphology/normalizer
+export XFST_DIR=/mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer
 
 export TOKENIZER=$XFST_DIR/tokenize.pl
 
