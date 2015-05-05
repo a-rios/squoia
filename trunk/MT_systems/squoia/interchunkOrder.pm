@@ -142,7 +142,7 @@ sub main{
 						# order is defined by the index of the variable @outputSequence
 						# (can be different from actual index though, as one variable might)
 						# refer to more than one chunk (if the condition evaluated to true for more
-						# than one chunk)
+						# than one chunk) !! TODO: doesnt work!
 						# retrieve the chunks from the hash (by variablename)
 						my $orderIndex = 0;
 							

@@ -1203,6 +1203,48 @@ sub main{
 				 }
 			}
 		}
+		my ($speechverb) = $sentence->findnodes('descendant::CHUNK[count(descendant::CHUNK[@si="suj"] )=0]/NODE[@lem="hablar" or @lem="contestar" or @lem="decir"]');
+		# X le habla/contesta/dice -> parser NEVER labels X as suj, but instead as cc or cd.. if no complement clause with que -> automatically make suj
+		if($speechverb){
+			my @potentialsubjs = $speechverb->findnodes('parent::CHUNK/CHUNK[(@type="sn" or @type="coor-n")  and (@si="cc" or @si="cd")]');
+			if(scalar(@potentialsubjs)>0){
+				# find le/les
+				my ($clitic) = $speechverb->findnodes('parent::CHUNK/CHUNK[@type="sn"]/NODE[@lem="le" and @pos="pp"]');
+				if($clitic){
+					my $cliticOrd = $clitic->getAttribute('ord');
+					foreach my $potsub (@potentialsubjs){
+						my $subjOrd= $potsub->getAttribute('ord');
+						if($cliticOrd-1 == $subjOrd){
+							$potsub->setAttribute('si', 'suj-a');
+							last;
+						}
+					} 
+				}
+			}
+		}
+		# very rare, but possible: sentence has 2 top chunks (e.g. Autor: Braddy Romero Ricalde)
+#		  <SENTENCE ord="1">
+#			    <CHUNK type="sn" si="top" ord="1">
+#			      <NODE ord="1" form="Autor" lem="autor" pos="nc" cpos="n" rel="sentence" mi="NCMS000"/>
+#			      <CHUNK type="F-term" si="term" ord="2">
+#			        <NODE ord="2" form=":" lem=":" pos="Fd" cpos="F" mi="FD"/>
+#			      </CHUNK>
+#			    </CHUNK>
+#			    <CHUNK type="sn" si="top" ord="3">
+#			      <NODE ord="3" form="Braddy_romero_ricalde" lem="braddy_romero_ricalde" pos="np" cpos="n" rel="sentence" mi="NP00SP0"/>
+#			    </CHUNK>
+#			  </SENTENCE>
+# 			---> attach second top chunk as child of first top chunk: otherwise, ordering will make them both ord=0 
+		my @topChunks = $sentence->findnodes('child::CHUNK');
+		if(scalar(@topChunks)>1){
+			my $firstTopChunk = @topChunks[0];
+			for(my $i=1;$i<scalar(@topChunks);$i++){
+				my $chunk = @topChunks[$i];
+				$firstTopChunk->appendChild($chunk);
+			}
+		}
+		
+		
 		# check if this sentence contains a verb chunk with more than one finite verb in it
 		# -> make two chunks 
 		my @verbchunksWithTwoFiniteVerbs =  $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v" and child::NODE/descendant-or-self::NODE[@cpos="v" and ( contains(@mi,"1") or contains(@mi,"2") or contains(@mi,"3") )]/descendant::NODE[@cpos="v" and ( contains(@mi,"1") or contains(@mi,"2") or contains(@mi,"3"))] ]' );
@@ -1570,6 +1612,10 @@ sub isCongruent{
 					return 1;
 				}
 			}
+		}
+		#interrogative pronouns: no person (quién eres, quién soy..)
+		elsif($subjMI =~ /^PT/){
+			return 1;
 		}
 		else
 		{

@@ -7,7 +7,7 @@ cd $FREELING_SRC
 make
 make install
 
-# compile and link the squoia_analyzer server:
+# compile and link the squoia_server_analyzer server:
 cd $SQUOIAHOME/FreeLingModules/
 
 # copy all headers from the sample analyzer in the freeling sources to $FREELING/include
@@ -15,6 +15,7 @@ cp $FREELING_SRC/trunk/src/main/sample_analyzer/*.h $FREELING/include
 
 # copy special "squoia" configuration file
 cp config_squoia/config.h $FREELING/include/
+cp config_squoia/analyzer.h $FREELING/include/
 
 # compile the output part (output_squoia):
 g++ -c -o output_squoia.o output_squoia.cc -I$FREELING/include/
@@ -22,16 +23,17 @@ g++ -c -o output_squoia.o output_squoia.cc -I$FREELING/include/
 # compile the analyzer part (analyzer_squoia):
 g++ -c -o analyzer_squoia.o analyzer_squoia.cc -I$FREELING/include/
 
-# compile the analyzer server (squoia_analyzer):
-g++ -c -o squoia_analyzer.o squoia_analyzer.cc -I$FREELING/include/
+# compile the analyzer server (squoia_server_analyzer):
+g++ -c -o squoia_server_analyzer.o squoia_server_analyzer.cc -I$FREELING/include/
 
 
 # link the different parts to create the server executable:
-#/bin/bash $FREELING_SRC/libtool --tag=CXX --mode=link g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o $FREELING_SRC/src/main/analyzer.o output_squoia.o -L$FREELING/lib -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
-g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o analyzer_squoia.o output_squoia.o -L/opt/matxin/local/lib -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
+g++ -O3 -Wall -o squoia_server_analyzer squoia_server_analyzer.o analyzer_squoia.o output_squoia.o -L/opt/matxin/local/lib -lfreeling -lboost_program_options -lboost_system -lboost_filesystem -lpthread
+
+
 
 # install program
-cp squoia_analyzer $FREELING/bin/
+cp squoia_server_analyzer $FREELING/bin/
 
 # add Freeling binaries ($FREELING/bin) to PATH (in bash_profile or .bashrc)
 # note: you have to log into a new bash for this change to be effective
@@ -39,7 +41,7 @@ cp squoia_analyzer $FREELING/bin/
 # adjust the paths in $SQUOIAHOME/FreeLingModules/example.conf 
 
 # start the server
-squoia_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
+squoia_server_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
 
 # wait a bit and call the client to analyze some new text
 echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
