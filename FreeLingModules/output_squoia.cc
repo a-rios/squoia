@@ -278,8 +278,9 @@ void output::PrintWordCRFMorf (wostream &sout, const word &w, bool first_nonpunc
 	break;
       }
       std::size_t imperative = ait->get_tag().find(ViMperative);
-      if (imperative == 0) {
-        wcerr << ait->get_lemma() << L" is an imperative form\n";
+      if ((imperative == 0)) {
+      //if (imperative!= std::string::npos) {
+        wcerr << ait->get_lemma() << L" is an imperative form found at position"<< imperative << L"\n";
         sout << sep << ait->get_lemma() << sep << ait->get_tag();
         i++;
         break;
