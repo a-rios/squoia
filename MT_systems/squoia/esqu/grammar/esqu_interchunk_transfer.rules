@@ -142,8 +142,15 @@ my.si=suj && my.type=sn			chunkmi			      my.type=grup-verb && child.lem=ka && x
 # note: tag +Neg= -chu, for simplicity, even though it functions as interrogative here, not negation
 my.type=F-term && child.smi=/FIT|FIA/			"+Neg"		!(my.type=F-term) && !(xpath{descendant::NODE[starts-with(@smi,"PT")]}) && !(xpath{child::CHUNK/NODE[@slem="no"]}) && !(my.copula=question)			chunkmi			parent				1to2		concat
 
+# special case: sin .. nada -> 
+#<CHUNK ref="3" type="grup-sp" si="cc" prepos="mana" nouncase="+Instr">
+#<NODE ref="3" alloc="" slem="sin" smi="SPS00" sform="sin" UpCase="none" lem="" adpos="sin" prepos="mana" nouncase="+Instr"/>
+#<CHUNK ref="4" type="sn" si="sn">
+#<NODE ref="4" alloc="" slem="nada" smi="PI0CS000" sform="nada" UpCase="none" lem="ima" add_mi="+Add" preform="#mana" mi="PrnInterr+Add"/>
+#</CHUNK>
+# --> delete one 'mana'
 
-
+my.type=grup-sp && child.slem=sin && my.prepos=mana		prepos		my.type=sn && child.slem=nada			""			child			2to1			overwrite
 
 
 

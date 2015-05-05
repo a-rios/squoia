@@ -49,7 +49,7 @@ sub main{
 		# get all verb chunks and check if they have an overt subject, 
 		# if they don't have an overt subject and precede the main clause -> look for subject in preceding sentence
 		# if they don't have an overt subject and follow the main clause, and the main clause has an overt subject, this is the subject of the subordinated chunk
-		#print STDERR "Disambiguating verb form in sentence: ".$sentence->getAttribute('ord')."\n" if $verbose;
+		print STDERR "Disambiguating verb form in sentence: ".$sentence->getAttribute('ord')."\n" if $verbose;
 		
 	 	
 	 	# consider linear sequence in sentence; in xml the verb of the main clause comes always first, but in this case the subject of a preceding subordinated clause is probably coreferent with the subject of the preceding clause
@@ -82,8 +82,8 @@ sub main{
 	 					($conjunction) = $verbChunk->findnodes('child::CHUNK/NODE[@lem="mientras" or @lem="aun_no" or @lem="aún_no"][1]');
 	 				}
 	 				if($conjunction){
-	 					#print STDERR "conj in ".$verbChunk->getAttribute('ord').": ".$conjunction->toString()."\n" if $verbose;
-	 					#print STDERR "lem: ".$conjunction->getAttribute('lem')."\n" if $verbose;
+	 					print STDERR "conj in ".$verbChunk->getAttribute('ord').": ".$conjunction->toString()."\n" if $verbose;
+	 					print STDERR "lem: ".$conjunction->getAttribute('lem')."\n" if $verbose;
 	 				}
 	 				
 	 				#if this is a coordinated verb to a relative clause that somehow has no verbform yet, just copy verbform from head to this chunk
@@ -425,7 +425,7 @@ sub main{
 	 						}
 	 					}
 	 				}
-	 			    # if this is a complement clause of a speech verb, no linker needed!
+	 			    # if this is a complement clause of a speech verb, no linker needed... but then this is already direct speech, so no coreference resolution needed (?)
 	 				elsif(!$conjunction && $verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd" or @si="CONCAT" or @si="S"]') && $verbChunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]') ) 
 	 				{ 
 	 					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
@@ -435,52 +435,16 @@ sub main{
 	 					{ 
 	 						my $headVerb = squoia::util::getMainVerb($headVerbCHunk);
 	 						push(@coordVerbChunks,$verbChunk);
-	 						# if this is a complement of a speech verb -> use direct speech, finite form, insert 'nispa' in head chunk
+	 						# if this is direct speech
 	 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|comentar|confiar|confesar|contestar|decir|declarar|enfatizar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|señalar|sostener|subrayar|testificar|testimoniar/)
-	 						#if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|aseverar|confesar|comentar|decir|declarar|enfatizar|expresar|hablar|mencionar|responder/)
-	 						{
-	 							# check if subject of complement clause is the same as in the head clause, if so, person of verb should be 1st
-								# e.g. Pedro dice que se va mañana - paqarin risaq, Pedro nispa nin.
-								# note: if compareSubjects gives 'switch', this means that both verbs are 3rd persons and have the same number, but at least
-								#  one of the clauses has no overt subject. It is safe to assume that in this case the subjects are coreferential with a say verb in the main clause
-								# NOTE: only with indirect speech, do not alter direct speech (when there's no 'que')
-								# do this also for coordinated verb forms!
+	 						{	# NOTE: with direct speech, do not alter person (when there's no 'que')
 								foreach my $vChunk (@coordVerbChunks)
 								{
-									&compareSubjectsDirectSpeech($vChunk);
-									#print "\ncoords: ".$vChunk->getAttribute('ord')."\n";
-									#if(($vChunk->getAttribute('verbform') eq 'SS' || $vChunk->getAttribute('verbform') eq 'switch') && &isSingular($vChunk))
-									# better: default not SS
-									if($vChunk->getAttribute('verbform') eq 'SS'  && &isSingular($vChunk) && !$vChunk->exists('descendant::NODE[@form="se" or @form="Se"]'))
-									{
-										$vChunk->setAttribute('verbprs', '+1.Sg.Subj')
-									}
-									elsif($vChunk->getAttribute('verbform') eq 'SS' && !&isSingular($vChunk))
-									{
-										$vChunk->setAttribute('verbprs', '+1.Pl.Excl.Subj')
-									}
 									# set both this verb and the head verb to 'main'
 									$vChunk->setAttribute('verbform', 'main');
-									
-									# indirect question with 'si' -> add -chu to (now direct speech) verbchunk
-									if($conjunction && $conjunction->getAttribute('lem') eq 'si')
-									{
-										$vChunk->setAttribute('chunkmi', '+Neg');
-									}
-									$nbrOfFiniteForms++;
-									$nbrOfSwitchForms--;
-								}
-								$nbrOfFiniteForms++;
-								$nbrOfSwitchForms--;
-	 						}
-	 						# titular: finite verb form, like direct speech, but no co-reference resolution needed
-	 						elsif($headVerb && $headVerb->getAttribute('lem') =~ /titular/)
-	 						{ 
-	 							foreach my $vChunk (@coordVerbChunks)
-								{ 
-									$vChunk->setAttribute('verbform', 'main');
 									$nbrOfFiniteForms++;
 								}
+								
 	 						}
 	 						else
 	 						{ 

@@ -545,7 +545,7 @@ sub main{
 	 		# if this is a noun chunk, but NOT a pronoun (note, pronouns have an attribute  verbmi that has been copied to their verb,
 	 		# pronouns are realized as suffixes: we don't need to process them here)
 	 		elsif($chunk->exists('self::CHUNK[@type="sn" or @type="coor-n"]') && !$chunk->hasAttribute('verbmi') && !$chunk->exists('parent::CHUNK[@type="grup-sp" or @type="coor-sp"]/@spform') && !$chunk->hasAttribute('delete') )
-	 		{	
+	 		{
 	 			# if there's a conjunction to be inserted and this is the first node in the clause
 	 			if($chunk->hasAttribute('conj'))
 	 			{
@@ -630,7 +630,7 @@ sub main{
 	 		# if there's a preform (e.g. mana) print this first
 	 		# NOTE: not really prepositions, just something that needs to appear to the left of the noun
 	 		# print just preform, not node
-	 		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]')&& $chunk->hasAttribute('prepos') && !$chunk->hasAttribute('delete')  )
+	 		elsif($chunk->exists('self::CHUNK[@type="grup-sp" or @type="coor-sp"]')&& $chunk->getAttribute('prepos') =~ /.+/ && !$chunk->hasAttribute('delete')  )
 	 		{
 	 				print OUTFILE $chunk->getAttribute('prepos')."\n";
 	 		}
@@ -650,7 +650,7 @@ sub main{
 	 			}
 	 		}
 	 		# adverbs: RN 'no' -> print only if without 'nada,nunca or jamás', in those cases -> no is already contained in the suffix -chu in the verb chunk
-	 		elsif($chunk->exists('self::CHUNK[@type="sadv" or @type="coor-sadv"]') && !($chunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/descendant::NODE[@slem="nada" or @slem="nunca" or @slem="jamás"]') && $chunk->exists('child::NODE[@smi="RN"]') ) && !$chunk->hasAttribute('delete') )      
+	 		elsif($chunk->exists('self::CHUNK[@type="sadv" or @type="coor-sadv"]') && !($chunk->exists('ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/descendant::NODE[@slem="nada" or @slem="nunca" or @slem="jamás" or @slem="nadie"]') && $chunk->exists('child::NODE[@smi="RN"]') ) && !$chunk->hasAttribute('delete') )      
 	 		{
 	 			# if there's a conjunction to be inserted and this is the first node in the clause
 	 			if($chunk->hasAttribute('conj'))

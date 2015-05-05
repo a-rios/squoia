@@ -198,8 +198,8 @@ Options for tagging:
 --wapiti: path to wapiti executables
 --wapitiModel: path to wapiti model (for tagging)
 --wapitiPort: port for wapiti_server (for tagging)
---freelingPort: port for squoia_analyzer (morphological analysis)
---freelingConf: path to FreeLing config, only needed if squoia_analyzer should be restartet (morphological analysis)
+--freelingPort: port for squoia_server_analyzer (morphological analysis)
+--freelingConf: path to FreeLing config, only needed if squoia_server_analyzer should be restartet (morphological analysis)
 Options for parsing:
 --desrPort1: port for desr_server with model 1
 --desrPort2: port for desr_server with model 2
@@ -444,7 +444,7 @@ print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 		
 	
 		## TODO check if freeling and desr are running on indicated ports (for desr: further below, before parsing starts)
-		# #test if squoia_analyzer is already listening
+		# #test if squoia_server_analyzer is already listening
 		# set freeling parameters
 		if($freelingPort eq ''){
 			eval{
@@ -459,16 +459,16 @@ print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 				$freelingConf = $config{'freelingConf'};
 			} or die  "Could not start tagging, no freelingConf given\n";
 		}
-		my $analyzerRunning = `ps ax | grep -v grep | grep "squoia_analyzer.*port=$freelingPort"` ;
+		my $analyzerRunning = `ps ax | grep -v grep | grep "squoia_server_analyzer.*port=$freelingPort"` ;
 		if($analyzerRunning eq ''){
-			print STDERR "no instance of squoia_analyzer server running on port $freelingPort with config $freelingConf\n";
-			print STDERR "starting squoia_analyzer server on port $freelingPort with config $freelingConf, logging to $path/logs/logcrfmorf...\n";
-			system("squoia_analyzer -f $freelingConf --outf=crfmorf --server --port=$freelingPort 2> $path/logs/logcrfmorf &");
+			print STDERR "no instance of squoia_server_analyzer running on port $freelingPort with config $freelingConf\n";
+			print STDERR "starting squoia_server_analyzer on port $freelingPort with config $freelingConf, logging to $path/logs/logcrfmorf...\n";
+			system("squoia_server_analyzer -f $freelingConf --outf=crfmorf --server --port=$freelingPort 2> $path/logs/logcrfmorf &");
 			while(`echo "test" | analyzer_client "$freelingPort" 2>/dev/null` eq ''){
-				print STDERR "starting squoia_analyzer, please wait...\n";
+				print STDERR "starting squoia_server_analyzer, please wait...\n";
 				sleep 10;
 			}
-			print STDERR "squoia_analyzer now ready\n";
+			print STDERR "squoia_server_analyzer now ready\n";
 		}
 #		if($wapitiModel eq '' or $wapitiPort eq ''){
 #			eval{

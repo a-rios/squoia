@@ -433,9 +433,10 @@ void printSentsMorphGen(std::map< int, std::map< int, std::string > >sentMatrix,
 								}
 							}
 
-							if( (!equals(pmi,"") and ends_with(pmi,"T")) or regex_search(pmi,rx) ||  equals(pmi, "FH") ){
-								std::cout << result;
-								//std::cout << "matched pmi: " << pmi << "  ";
+							if( (!equals(pmi,"") and ends_with(pmi,"T")) or regex_search(pmi,rx) or  equals(pmi, "FH") ){
+								//std::cout << result; --> for unknown reasons, foma return punctuation with newline after certain marks (e.g. ':')... not clear why. just print writable instead of result.
+								std::cout << writable;
+								//std::cout << "...matched pmi: " << pmi << "  result -" << writable;
 								prevPunc =pmi;
 								prev = word;
 							}

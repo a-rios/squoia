@@ -55,9 +55,9 @@ sub main{
 					# find the first candidate related chunk that satisfies the conditions
 					foreach my $cand (@candidates) {
 						my $result = squoia::util::evalConditions(\@chunk2Conditions,$cand);
-						#print STDERR "result $result for candidate ". $cand->getAttribute('ref')."\n" if $verbose;
+						print STDERR "result $result for candidate ". $cand->getAttribute('ref')."\n" if $verbose;
 						if ($result) {
-						#	print STDERR "found\n" if $verbose;
+							print STDERR "found\n" if $verbose;
 							my $configline = $interConditions{$condpair};
 							&transferSyntInformation($configline,$chunk,$cand,$verbose);
 						}
