@@ -405,7 +405,7 @@ sub printDateToken{
 	elsif($date eq 'del'){
 		$subOutLine .=  "de\tde\ts\tsp\tgen=m|num=s|for=c\t_\t_\t_\t_\n";
 	}
-	elsif($date =~ /madrugada|mañana|tarde|noche/){
+	elsif($date =~ /madrugada|mañana|tarde|noche|hora|media/){
 		$subOutLine .=  "$date\t$date\tn\tnc\tgen=f|num=s\t_\t_\t_\t_\n";
 	}
 	elsif($date =~ /^el$/){

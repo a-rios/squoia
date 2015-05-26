@@ -135,7 +135,11 @@ my.type=/sn|coor-n/ && parent.si=/cpred|^atr/ && parent.type=/grup-sp|coor-sp/		
 
 
 # subject of copula in equational clauses (Pedro es de Lima) -> -qa 
-my.si=suj && my.type=sn			chunkmi			      my.type=grup-verb && child.lem=ka && xpath{child::CHUNK[@si="cpred" or @si="atr"]} 		"+Top"				parent		2to1		concat
+# unless IHRC -> in that case, nominalized verb of rel-clause -> -qa
+(my.si=suj && my.type=sn) && !(xpath{child::CHUNK[@IHRC="yes"]})			chunkmi			      my.type=grup-verb && child.lem=ka && xpath{child::CHUNK[@si="cpred" or @si="atr"]} 		"+Top"				parent		2to1		concat
+my.IHRC=yes							chunkmi			      my.type=grup-verb && child.lem=ka && xpath{child::CHUNK[@si="cpred" or @si="atr"]} 		"+Top"				chunkgrandparent		2to1		concat
+
+
 
 # yes-no questions: insert -chu, unless negative question..then leave -chu at mana
 # should be attached to focalized chunk... for lack of better options, attach to head of sentence
@@ -150,7 +154,7 @@ my.type=F-term && child.smi=/FIT|FIA/			"+Neg"		!(my.type=F-term) && !(xpath{des
 #</CHUNK>
 # --> delete one 'mana'
 
-my.type=grup-sp && child.slem=sin && my.prepos=mana		prepos		my.type=sn && child.slem=nada			""			child			2to1			overwrite
+my.type=grup-sp && child.slem=sin && my.prepos=mana		prepos		(my.type=sn && child.slem=nada) || xpath{self::CHUNK[@type="grup-verb" and NODE[@smi="VMN0000"]]/CHUNK[@type="sn"]/NODE[@slem="nada"]}		""			child			2to1			overwrite
 
 
 
