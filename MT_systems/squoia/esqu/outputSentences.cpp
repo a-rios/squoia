@@ -79,6 +79,7 @@ int main(int argc, char *argv[]) {
 		       		break;
 		        case 't':
 		       		print_test_morph = 1;
+		       		morphProbs = 1;
 		       		break;
 		        case 'h':
 		        	std::cerr << usagestring << '\n';
@@ -472,6 +473,7 @@ void printTestMorphs(std::map< int, std::map< int, std::string > >sentMatrix, st
 	using namespace boost;
 	bool startedWithPunc=0;
 	std::string prev, prevPunc;
+	//std::cerr << "printing test morphs" << std::endl;
 
 	std::sort(sortedOpts.begin(), sortedOpts.end(), probCompare);
 	//for(int s=0;s<sortedOpts.size();s++){
@@ -637,10 +639,12 @@ void getProbsMorphs(std::map< int, std::map< int, std::string > >& sentMatrix, c
 			sortedOpts.push_back(mypair);
 		}
 	 if(print_test_morph ==1){
+		// std::cerr << "printing test morphs" << std::endl;
 		 printTestMorphs(sentMatrix,sortedOpts);
 	 }
 	 else{
 		 printSentsMorphGen(sentMatrix,sortedOpts);
+		// std::cerr << "printing generated words" << std::endl;
 	//std::cerr << "\n";
 	 }
 }
