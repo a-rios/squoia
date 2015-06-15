@@ -25,12 +25,12 @@ my.smi=/^A/	s_pos=noun	d	my.smi=/^A/
 
 
 # aqui, ahí, allá: kay, chay, haqay +Loc if static, +Dat with movement verbs
-my.slem=aquí		PrnDem+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
-my.slem=aquí		PrnDem+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
-my.slem=ahí		PrnDem+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
-my.slem=ahí		PrnDem+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
-my.slem=allá		PrnDem+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]})
-my.slem=allá		PrnDem+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@sem="[+Mov]"]}
+my.slem=aquí		+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]})
+my.slem=aquí		+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]}
+my.slem=ahí		+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]})
+my.slem=ahí		+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]}
+my.slem=allá		+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")})
+my.slem=allá		+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]}
 
 
 # conmigo vs mí -> same tag, disambiguate here:

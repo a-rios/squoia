@@ -2082,7 +2082,6 @@ guerra_civil_española guerra_civil_española NCFS000 I
 <hacer>_el_longuiso hacer_el_longuis $1:VM I
 <hacer>_<el>_<sueco> hacer_el_sueco $1:VM I
 <hacer>_falta hacer_falta $1:VM I
-<hacer>_falta_que hacer_falta_que $1:VM I
 <hacer>_frente hacer_frente $1:VM I
 <hacer>_la_cusca hacer_la_cusca $1:VM I
 <hacer>_referencia hacer_referencia $1:VM I
