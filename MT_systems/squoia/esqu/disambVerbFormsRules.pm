@@ -96,7 +96,7 @@ sub main{
 							if($guessed){$verbChunk->setAttribute('guessed', '1');}
 	 					}	
 	 				}
-	 				# if this verb has a 'tener que' part or deber +inf -> obligative, TODO: hay que?
+	 				# if this verb has a 'tener que' part or deber +inf -> obligative, NOTE: tener que + hay de/que --> if parsed correctly, handled in intrachunk_transfer.rules
 	 				elsif($verbChunk->exists('child::NODE[@cpos="v"]/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || $verbChunk->exists('child::NODE[@cpos="v"]/NODE/NODE[@lem="tener"]/NODE[@lem="que" and @pos="cs"]') || ($verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="tener"]') && $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="que"]') ) || $verbChunk->exists('child::NODE[@mi="VMN0000"]/NODE[@lem="deber"]')  )
 	 				{
 	 					$nbrOfFinalClauses++;
@@ -476,9 +476,9 @@ sub main{
 	 					my $headVerbCHunk = @{$verbChunk->findnodes('parent::CHUNK[@type="grup-verb" or @type="coor-v"]')}[0];
 	 					if($headVerbCHunk)
 	 					{
-	 						my $headlem = squoia::util::getMainVerb($headVerbCHunk);
-	 					#	print STDERR "headlem: $headlem\n";
-	 						if($headlem =~ /^gustar|molestar|ser|dar_lo_mismo|dar_igual|importar|impresionar|decepcionar|parecer|joder|cansar|enervar$/)
+	 						my $headverb = squoia::util::getMainVerb($headVerbCHunk);
+	 					#	print STDERR "headverb: $headverb\n";
+	 						if($headverb->getAttribute('lem') =~ /^gustar|molestar|ser|dar_lo_mismo|dar_igual|importar|impresionar|decepcionar|parecer|joder|cansar|enervar$/)
 	 						{
 		 						$verbChunk->setAttribute('verbform', 'infinitive');
 		 						my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
@@ -519,7 +519,7 @@ sub main{
 					# special case: hace falta que + subjuntivo -> 'hace falta que' -> kan, subj.-verb: +-na 
 					# hace falta que te vayas -> ripunayki kan
 					# also: hace falta comprar pan -> t'anta rantinan kan
-					elsif($verbChunk->exists('child::NODE[ @lem="hacer_falta" or @lem="hacer_falta_que"]') )
+					elsif($verbChunk->exists('child::NODE[ @lem="hacer_falta"]') )
 					{
 						$nbrOfFiniteForms++;
 						$verbChunk->setAttribute('verbform', 'main');

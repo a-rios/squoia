@@ -127,10 +127,11 @@ define PHON [KACHA .o. KACHA2 .o. YKU .o. YKU2 .o. RQU .o. RQU2 .o. KU .o. KU2 .
        # mit -rqa und -sqa -> 3.Person ohne "n" -rqan -> -rqa/ -rqanku ->rqaku #
        #-----------------------------------------------------------------------#
            define PST [{rqa}|{sqa}];
-           define 3SGPST [ "+3.Sg.Subj" -> "" || PST _ ];
+          #define 3SGPST [ "+3.Sg.Subj" -> "" || PST _ ];
            define 3PLPST [ "+3.Pl.Subj" -> {ku} || PST _ ];
            define 3PLhab [ "+3.Pl.Subj" -> {qku} || _ "@HAB" ] .o. ["@HAB" -> "" ];
-           define PAST [3SGPST .o. 3PLPST .o. 3PLhab];
+          # define PAST [3SGPST .o. 3PLPST .o. 3PLhab];
+           define PAST [3PLPST .o. 3PLhab];
 
        #---------------------------------------------------#
        # forms with 2 participants (only irregular forms): #

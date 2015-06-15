@@ -3,7 +3,6 @@
 
 use strict;
 use utf8;
-use XML::LibXML;
 binmode STDIN, ':utf8';
 #binmode STDOUT, ':utf8';
 #binmode (STDERR);
@@ -75,47 +74,9 @@ while(<ANCORA>){
 			# remove elliptic tokens in ancora and adapt tokennr
 			my ($linenr,$word_a,$lem_a,$cpos_a,$pos_a,$morphs,$head,$dep,$x,$y) = split('\t',$_);
 			
-			# percentage: split: 	65%	65/100	z	Zp	postype=percentage|ne=number	30	sn	_	_
-			# numer depends on %, and number wont be head of anything, we dont need to include it in headdix thus
-#			if($word_a =~ /%$/){
-#				my ($num) = ($word_a =~ /^(\d+)/);
-#				#print STDERR "num: $num in perc $word_a\n";
-#				my %numword = ( tokid => $linenr,
-#							 word => $num,
-#							 lem => $num,
-#							 cpos => 'z',
-#							 pos => 'Z',
-#							 morphs => '_',
-#							 head => ($linenr+1),
-#							 dep => 'spec'
-#				);
-#				$sents_ancora{$count_sent_a}{$count_word_a} = \%numword;
-#				$count_word_a++;
-#				$linenr++;
-#				#save original tokid with word -> tokid of word will be the actual id
-#				my $headkey = "s".$count_sent_a.":".$linenr;			
-#				
-#				$linenr = $linenr-$prevelliptic;
-#				
-#				my %word = ( tokid => $linenr,
-#							 word => '%',
-#							 lem => '%',
-#							 cpos => "f",
-#							 pos => "Ft",
-#							 morphs => "_",
-#							 head => $head,
-#							 dep => $dep
-#				);
-#				#print STDERR "saved: $word_a, tokid: $linenr, with head $head, linenr was $linenr, prev elliptic was $prevelliptic with key $headkey\n";
-#				
-#				$headdix{$headkey} = \%word;
-#				$sents_ancora{$count_sent_a}{$count_word_a} = \%word;
-#				$count_word_a++;
-#				
-#			}
-#			else{
 				#save original tokid with word -> tokid of word will be the acutal id
-				my $headkey = "s".$count_sent_a.":".$linenr;			
+				my $headkey = "s".$count_sent_a.":".$linenr;
+				my $originallinenr = $linenr;			
 				
 				$linenr = $linenr-$prevelliptic;
 				
@@ -126,14 +87,15 @@ while(<ANCORA>){
 							 pos => $pos_a,
 							 morphs => $morphs,
 							 head => $head,
-							 dep => $dep
+							 dep => $dep,
+							 originaltokid=> $originallinenr
 				);
+				
 				#print STDERR "saved: $word_a, tokid: $linenr, with head $head, linenr was $linenr, prev elliptic was $prevelliptic with key $headkey\n";
 				
 				$headdix{$headkey} = \%word;
 				$sents_ancora{$count_sent_a}{$count_word_a} = \%word;
 				$count_word_a++;
-#			}
 
 		}
 	}
@@ -144,7 +106,7 @@ while(<ANCORA>){
 #	my $ancora_sentence = $sents_ancora{$s};
 #	foreach my $linenr (sort {$a <=> $b} keys %{$ancora_sentence}){
 #		my $word = $ancora_sentence->{$linenr};
-#		print "tokid: ".$word->{tokid}.", word: ".$word->{word}."\n";
+#		print STDERR "tokid: ".$word->{tokid}.", word: ".$word->{word}."\n";
 #	}
 #}
 
@@ -185,7 +147,8 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 		my $retok_line = $retok_sentence->{$j};
 		chomp($retok_line);
 		my ($word_r,$lem_r,$cpos_r,$pos_r) = split('\t',$retok_line);
-		#print STDERR "w: $word_r,lem: $lem_r,cpos: $cpos_r, pos: $pos_r\n";
+		#print STDERR "w: $word_r,lem: $lem_r,cpos: $cpos_r, pos: $pos_r\n"; 
+		#print STDERR "ancora line: $ancora_linenr\n";
 		
 		my $word_a =  $ancora_word->{word};
 		my %merged_token =();
@@ -213,18 +176,28 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 			my $morphstring = &eaglesToMorph($pos_r);
 			$merged_token{morphs}= $morphstring;
 			
-			# find acutal head, in case there was an elliptic token
 			my $headid = $ancora_word->{head};
-			
+			#print STDERR "head: $headid\n";
 			if($headid ne '0'){
-				my $headkey = "s".$i.":".$headid;
-				my $headword = $headdix{$headkey};
-				$headid = $headword->{tokid};
 				$merged_token{head}= $headid;
 			}
 			else{
 				$merged_token{head}= '0';
 			}
+			
+			
+			# find acutal head, in case there was an elliptic token
+#			my $headid = $ancora_word->{head};
+#			
+#			if($headid ne '0'){
+#				my $headkey = "s".$i.":".$headid;
+#				my $headword = $headdix{$headkey};
+#				$headid = $headword->{tokid};
+#				$merged_token{head}= $headid;
+#			}
+#			else{
+#				$merged_token{head}= '0';
+#			}
 			
 			
 			#print STDERR "merged $j, $word_r, $lem_r, $cpos_r, $pos_r, ".$ancora_word->{dep}." $morphstring\n";
@@ -237,7 +210,7 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 		}
 		elsif($word_r =~ /\Q$word_a\E/)
 		{
-			#print STDERR "multiword: $word_r, $word_a\n";
+			#print STDERR "\nmultiword: $word_r, $word_a\n";
 			#get number of contracted tokens in ancora
 			my $multi_word_end=$ancora_linenr+1;
 			my ($next_word_r,$rest) = split('\t', $retok_sentence->{$j+1});
@@ -250,17 +223,17 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 			}
 			# we stopped at beginning of next word -> -1
 			$multi_word_end -=1;
-		#	print "multi word ends at: $multi_word_end\n";
+			my $length_multi_token = $multi_word_end-$ancora_linenr;
+			#print STDERR "multi word ends at: $multi_word_end, $next_word_a -1\n";
+			
 			# get the head: head is the one with a head relation to a token id outside the multi-word
 			my $ancora_headid = $ancora_word->{head};
 			#get acutal head, in case there was an elliptic token
-			my $headkey = "s".$i.":".$ancora_headid;
-			my $headword = $headdix{$headkey};
-			my $multi_headid = $headword->{tokid};
-			#print STDERR "multi_headid: $multi_headid, ancora_linenr: $ancora_linenr,  multi_word_end: $multi_word_end \n";
 
-				
 			my $found=0;
+			my $real_start = $ancora_word->{tokid};
+			my $real_end =  $ancora_sentence->{$multi_word_end}->{tokid};
+			
 			my $headword_in_multi_word;
 			for(my $multi_token_id_in_ancora= $ancora_linenr; $multi_token_id_in_ancora<= $multi_word_end; $multi_token_id_in_ancora++){
 				my $thisword =  $ancora_sentence->{$multi_token_id_in_ancora};
@@ -270,11 +243,15 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 				my $headkey = "s".$i.":".$multi_headid;
 				my $headword = $headdix{$headkey};
 				$multi_headid = $headword->{tokid};
-				#print STDERR "testing token ".$thisword->{word}." with head: $multi_headid  ".$thisword->{head}."with headkey: $headkey\n";
-				#print STDERR "tokid of multi word head: $multi_headid, -- $ancora_linenr, -- $multi_word_end\n";
-				if($multi_headid<$ancora_linenr || $multi_headid > $multi_word_end ){
+
+				
+				#print STDERR "testing token ".$thisword->{word}." with head: $multi_headid  ".$thisword->{head}." with headkey: $headkey\n";
+				#print STDERR "tokid of multi word head: $multi_headid, -- real start: $real_start, -- real end: $real_end\n";
+
+				
+				if($multi_headid<$real_start || $multi_headid > $real_end ){
 					
-					#print STDERR "eval true: for testing token ".$thisword->{word}." with head: $multi_headid  ".$thisword->{head}."with headkey: $headkey\n";
+					#print STDERR "eval true: for testing token ".$thisword->{word}." with head from dix: $multi_headid, original head ".$thisword->{head}." with headkey: $headkey\n";
 #					print STDERR "multihead_id = $multi_headid, j: $j\n";
 #					print STDERR "1multi token id in ancora: $multi_token_id_in_ancora\n";
 					$found=1;
@@ -298,6 +275,7 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 				next;
 				#exit(0);
 			}	
+			
 			#print "2multi token id in ancora: $headword_in_multi_word\n";
 			# multi_token_id = id of token that is the head of the new multitoken -> get morphs, dep, head form this token
 			#print "head of multi token is $multi_token_id_in_ancora, ancora line nr $ancora_linenr\n";
@@ -309,44 +287,43 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 			$merged_token{pos}= $pos_r;
 			my $morphstring = &eaglesToMorph($pos_r);
 			$merged_token{morphs}= $morphstring;
-		
-			#get acutal head, in case there was an elliptic token
-			my $multi_headid = $ancora_head_word->{head};
-			if($multi_headid ne '0'){
-				my $headkey = "s".$i.":".$multi_headid;
-				my $headword = $headdix{$headkey};
-				$multi_headid = $headword->{tokid};
-				$merged_token{head}= $multi_headid;
-			}
-			else{
-				$merged_token{head}= '0';
-			}
 			$merged_token{dep}= $ancora_head_word->{dep};
-
-			my $length_multi_token = $multi_word_end-$ancora_linenr;
-			$ancora_linenr += $length_multi_token;
-			
+			my $multi_headid = $ancora_head_word->{head};
+			$merged_token{head}= $multi_headid;
+			#print STDERR "assigned head $multi_headid to multi word $word_r, ancora word: ".$ancora_sentence->{$headword_in_multi_word}->{word}."\n";
+			#print STDERR "word s:19->".$headdix{"s1:19"}->{word}."with tokid ".$headdix{"s1:19"}->{tokid}."\n";
+		
+		
 			# set all headkeys of tokens in multiword to this token
-			for(my $tokennr=$j;$tokennr<= $multi_word_end;$tokennr++){
+			my $originallinenr_start = $ancora_word->{originaltokid};
+			my $originallinenr_end = $ancora_head_word->{originaltokid};
+			for(my $tokennr= $originallinenr_start ;$tokennr<= $originallinenr_end;$tokennr++){
+				#print STDERR "adapting headkeys to multitoken:  $tokennr\n";
 				my $headkey = "s".$i.":".$tokennr;
 				$headdix{$headkey} = \%merged_token;
+				#print STDERR "headkey $headkey now points to merged: ".$merged_token{word}." with tokid ".$merged_token{tokid}."\n";
 			}
 			
 			# all following heads -= length of multi word token
+			
+			#print STDERR "ancora line nr: before multi $ancora_linenr, length multi $length_multi_token\n";
+			$ancora_linenr += $length_multi_token;
+			#print STDERR "ancora line nr: after multi $ancora_linenr\n";
 			my $deleted = $length_multi_token;
 			my @sorted_ancora_keys = sort id_sort keys %headdix;
 			#print "after multi word $word_r\n\n";
-			for(my $ancora_word_key_nr= ($multi_word_end+1); $ancora_word_key_nr<scalar(@sorted_ancora_keys); $ancora_word_key_nr++ ){
+			#print STDERR "adapting keys from s".$i.":".($multi_word_end+1)." to ".scalar(@sorted_ancora_keys)."\n";
+			
+			for(my $ancora_word_key_nr= ($originallinenr_end+1); $ancora_word_key_nr<=scalar(@sorted_ancora_keys); $ancora_word_key_nr++ ){
 				my $ancora_word_key = "s".$i.":".$ancora_word_key_nr;
 				my $ancora_word = $headdix{$ancora_word_key};
-			#	print "ancora word $ancora_word_key: ".$ancora_word->{word}." tokid ".$ancora_word->{tokid}." deleted: $deleted, length multitoken: $length_multi_token\n";
+				#print STDERR "ancora word $ancora_word_key: ".$ancora_word->{word}." tokid ".$ancora_word->{tokid}." deleted: $deleted, length multitoken: $length_multi_token\n";
 				my $new_tokid = ($ancora_word->{tokid}-$deleted );
 				$ancora_word->{tokid} = $new_tokid;
-			#	print "new ancora word $ancora_word_key: ".$ancora_word->{word}." tokid ".$ancora_word->{tokid}."\n";
+				#print STDERR "new ancora word $ancora_word_key: ".$ancora_word->{word}." tokid ".$ancora_word->{tokid}."\n";
 				
 				
 			}
-			
 			
 		}
 		$ancora_linenr++;
@@ -359,11 +336,17 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 		my $merged_token = $merged_sentence{$key};
 		
 		
-#		my $headid = $merged_token->{head};
-#		#get acutal head, in case there was an elliptic token
-#		my $headkey = "s".$i.":".$headid;
-#		my $headword = $headdix{$headkey};
-#		$headid = $headword->{tokid};
+		my $headid = $merged_token->{head};
+		unless($headid eq '0'){
+	#		#get acutal head, in case there was an elliptic token
+			my $headkey = "s".$i.":".$headid;
+			my $headword = $headdix{$headkey};
+			$headid = $headword->{tokid};
+			#my $test = $headdix{"s1:19"};
+		    #print STDERR "prep a tokid: ".$test->{tokid}." word: ".$test->{word}."\n";
+			#print STDERR "word: ".$merged_token->{word}." has head with headkey $headkey id from dix ".$headid."\n";
+		}
+
 		
 		#print STDERR "head id: ".$merged_token->{head}." for word ".$merged_token->{word}."\n";
 		# head of sentence -> =0, doesnt have one now since no s_:0 token in headdix-> set here
@@ -386,7 +369,7 @@ for(my $i=1;$i<=$count_sent_a;$i++){
 				print STDERR "\n------------------------------------\n";
 			exit(0);
 		}
-		print $merged_token->{tokid}."\t".$merged_token->{word}."\t".$merged_token->{lem}."\t".$merged_token->{cpos}."\t".$pos."\t".$merged_token->{morphs}."\t".$merged_token->{head}."\t".$merged_token->{dep}."\t_\t_"."\n";
+		print $merged_token->{tokid}."\t".$merged_token->{word}."\t".$merged_token->{lem}."\t".$merged_token->{cpos}."\t".$pos."\t".$merged_token->{morphs}."\t".$headid."\t".$merged_token->{dep}."\t_\t_"."\n";
 		
 
 	}
@@ -432,7 +415,7 @@ sub eaglesToMorph{
 		$postype = "postype=demonstrative" if($eaglesTag =~ /^DD/);
 		$postype = "postype=indefinite" if($eaglesTag =~ /^DI/);
 		$postype = "postype=exclamative" if($eaglesTag =~ /^DE/);
-		$postype = "postype=indefinite" if($eaglesTag =~ /^DA/);
+		$postype = "postype=interrogative" if($eaglesTag =~ /^DT/);
 		$postype = "postype=numeral" if($eaglesTag =~ /^DN/);
 		
 		my $person = substr($eaglesTag,3,1);

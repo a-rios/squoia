@@ -127,15 +127,15 @@ sub main{
 		}
 			
 		# headless relclauses: only with 'quien', 'el/los que', 'la/las que', ('aquel/aquella que' ??)
-		# 'Quién está informado vive mejor', 'Los que trabajan, comen'
+		# 'Quien está informado vive mejor', 'Los que trabajan, comen'
 		# -> always agentive form (?) 'YACHAQqa aswan allinta kawsan. LLAMK'AQKUNA mikhunku'
 		# also: lo que, el que -> insert topic suffix in this chunk! 
 		my @headlessRelClauses = $sentence->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v")]/NODE[@cpos="v"]/NODE[(@lem="quien" and @rel="suj") or (@pos="da" and @rel="spec")]');
 		foreach my $subjOfheadlessRelclause (@headlessRelClauses)
 		{  
 			# check if parent of potential subject has a relative pronoun in chunk: otherwise, not a rel clause
-			if($subjOfheadlessRelclause->exists('parent::NODE/descendant::NODE[@pos="pr"]'))
-			{ 
+			if($subjOfheadlessRelclause->exists('parent::NODE/descendant::NODE[@pos="pr"]') && !$subjOfheadlessRelclause->exists('ancestor::CHUNK[1]/parent::CHUNK[@type="grup-sp" or @type="coor-sp"]'))
+			{
 				# check if there's really no head or prepositinal phrase ('diferencia fuertemente de lo que conocen')
 				# el que, la que -> agentive (else a la que, al que..), but 'lo que' -> ambigous
 				# Lo que me molesta es tu actitud -> subj (but not agentive?)// Lo que dicen, me molesta -> cd
@@ -163,6 +163,7 @@ sub main{
 									$verbchunk->setAttribute('chunkmi', '+Top');
 									$verbchunk->setAttribute('HLRC', 'yes');
 								}
+								#else: if no cd: los/lo can be suj or obj, no way of knowing (los que trabajan comen vs. lo que se ve aqui es ..) -> rule-based vdisamb will assign rel: -> both options
 							}
 							else
 							{
