@@ -29,7 +29,7 @@ my.slem=aquí		+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v
 my.slem=aquí		+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]}
 my.slem=ahí		+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]})
 my.slem=ahí		+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]}
-my.slem=allá		+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")})
+my.slem=allá		+Loc	k	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]})
 my.slem=allá		+Dat	k	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]}
 
 
