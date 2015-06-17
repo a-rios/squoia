@@ -27,7 +27,8 @@ BEGIN{
 	## general squoia modules
 	use squoia::util;
 	use squoia::conll2xml;
-	use squoia::crf2conll;
+	#use squoia::crf2conll;
+	use squoia::crf2conll_malt;
 	use squoia::insertSemanticTags;
 	use squoia::semanticDisamb;
 	use squoia::morphDisamb;
@@ -532,19 +533,19 @@ if($startTrans<$mapInputFormats{'conll'}){	#5){
 	if($startTrans==$mapInputFormats{'tagged'}){	#4){
 		if($file){
 			open (FILE, "<", $file) or die "Can't open input file \"$file\" to translate: $!\n";
-			$conllLines = squoia::crf2conll::main(\*FILE,$verbose);
+			$conllLines = squoia::crf2conll_malt::main(\*FILE,$verbose);
 			close(FILE);
 		}
 		else{
 			#### convert from wapiti crf to conll for desr parser
 			binmode(STDIN);
-			$conllLines = squoia::crf2conll::main(\*STDIN,$verbose);
+			$conllLines = squoia::crf2conll_malt::main(\*STDIN,$verbose);
 		}
 
 	}
 	else{
 		#### convert from wapiti crf to conll for desr parser
-		$conllLines = squoia::crf2conll::main(\*CONLL,$verbose);
+		$conllLines = squoia::crf2conll_malt::main(\*CONLL,$verbose);
 		close(CONLL);
 	}
 	
