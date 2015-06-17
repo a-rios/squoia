@@ -11,42 +11,41 @@ import java.net.Socket;
 
 public class MPClient {
   public static void main(String[] args) throws Exception {
-	if (args.length != 4) {
-		System.err.println("Usage: java MPClient <hostName> <portNumber> <unparsedConllFile> <parsedConllFile>");
+	if (args.length != 3) {
+		System.err.println("Usage: java MPClient <hostName> <portNumber> <unparsedConllFile>");
 		System.exit(1);
 	}
 	// declaration and initialization
     String hostName = args[0];
     int portNumber = Integer.parseInt(args[1]);
-	System.out.println("Reading data from file");
+	System.err.println("Reading data from file");
 	File unparsedFile = new File(args[2]);
-	File parsedFile = new File(args[3]);
 	byte[] unparsedbytearray = new byte[(int) unparsedFile.length()];
-	System.out.println(unparsedFile.length() + " bytes of data read");
+	System.err.println(unparsedFile.length() + " bytes of data read");
 	BufferedInputStream unparsedbis = new BufferedInputStream(new FileInputStream(unparsedFile));
 	unparsedbis.read(unparsedbytearray, 0, unparsedbytearray.length);
-	System.out.println("Connecting to server...");
+	System.err.println("Connecting to server...");
 	Socket sock = new Socket(hostName, portNumber);
-	System.out.println("Sending data to server...");
+	System.err.println("Sending data to server...");
 	OutputStream os = sock.getOutputStream();
 	os.write(unparsedbytearray, 0, unparsedbytearray.length);
 	//os.flush();
-	System.out.println("Data sent ");
+	//System.err.println("Data sent ");
 
     byte[] mybytearray = new byte[1024];
     InputStream is = sock.getInputStream();
     BufferedInputStream bis = new BufferedInputStream(is);
     //wait for server to send the parsed file
-    System.out.println("Waiting for server to send data...");
+    System.err.println("Waiting for server to send data...");
     int attempts = 0;
     while(bis.available() == 0 && attempts < 1000)
     {
             attempts++;
             Thread.sleep(10);
     }
-    FileOutputStream fos = new FileOutputStream(parsedFile);
-    BufferedOutputStream bos = new BufferedOutputStream(fos);
-    System.out.println("Reading data from server...");
+  //  FileOutputStream fos = new FileOutputStream(parsedFile);
+    BufferedOutputStream bos = new BufferedOutputStream(System.out);
+    System.err.println("Reading data from server...");
 	int totalBytes = 0;
 	while(true){
 		int bytesRead = bis.read(mybytearray, 0, mybytearray.length);
@@ -54,12 +53,12 @@ public class MPClient {
 			bos.flush();
 			break;
 		}
-		System.out.println(bytesRead + " bytes of data read");
-		System.out.println("and writing it to file");
+//		System.err.println(bytesRead + " bytes of data read");
+//		System.err.println("and writing it to file");
 		bos.write(mybytearray, 0, bytesRead);
-		totalBytes += bytesRead;
+//		totalBytes += bytesRead;
 	}
-	System.out.println("Total bytes " + totalBytes);
+	//System.err.println("Total bytes " + totalBytes);
 	sock.close();
 //	try{
 //		while(true){
