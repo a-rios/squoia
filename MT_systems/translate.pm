@@ -88,10 +88,13 @@ my $freelingPort;
 my $freelingConf;
 my $matxin;
 # options for parsing
-my $desrPort1;	# TODO set default values here ? my $desrPort1 = 5678;
-my $desrPort2;	# my $desrPort2 = 1234;
-my $desrModel1;
-my $desrModel2;
+#my $desrPort1;	# TODO set default values here ? my $desrPort1 = 5678;
+#my $desrPort2;	# my $desrPort2 = 1234;
+#my $desrModel1;
+#my $desrModel2;
+my $maltPort;
+my $maltModel;
+my $maltPath;
 # options for lexical transfer
 my $bidix;
 # general options for translation
@@ -170,7 +173,7 @@ available options are:
 \t senttok: plain text, one sentence per line (=default)
 \t tagged: wapiti crf
 \t conll: tagged conll
-\t parsed: desr output (conll)
+\t parsed: malt output (conll)
 \t conll2xml: xml created from parsing
 \t rdisamb: xml disambiguated relative clauses, only with direction esqu
 \t coref: xml after coreference resolution for subjects, only with direction esqu
@@ -202,10 +205,8 @@ Options for tagging:
 --freelingPort: port for squoia_server_analyzer (morphological analysis)
 --freelingConf: path to FreeLing config, only needed if squoia_server_analyzer should be restartet (morphological analysis)
 Options for parsing:
---desrPort1: port for desr_server with model 1
---desrPort2: port for desr_server with model 2
---desrModel1: model 1 for desr_server
---desrModel2: model 2 for desr_server
+--maltPort1: port for maltparser server
+--maltModel: model 1 for maltparser server
 Options for lexical transfer:
 --bidix: bilingual dictionary for lexical transfer
 --matxin: path to maxtin executables
@@ -273,10 +274,9 @@ GetOptions(
 	'freelingConf=s'    => \$freelingConf,
 	'matxin=s'    => \$matxin,
 	# options for parsing
-	'desrPort1=i'	=> \$desrPort1,
-	'desrPort2=i'	=> \$desrPort2,
-	'desrModel1=s'	=> \$desrModel1,
-	'desrModel2=s'	=> \$desrModel2,
+	'maltPort=i'	=> \$maltPort,
+	'maltModel=s'	=> \$maltModel,
+	'maltPath=s'	=> \$maltPath,
 	# options for lexical transfer
 	'bidix=s'	=> \$bidix,
      # translation options
@@ -370,7 +370,7 @@ GetOptions(
 \t senttok: plain text, one sentence per line
 \t tagged: wapiti crf
 \t conll: tagged conll
-\t parsed: desr output (conll)
+\t parsed: maltparser output (conll)
 \t conll2xml: xml created from parsing
 \t rdisamb: xml disambiguated relative clauses, only with direction esqu
 \t coref: xml after coreference resolution for subjects, only with direction esqu
@@ -410,7 +410,7 @@ GetOptions(
 \t crf: crf instances, freeling output (morphological analysis)
 \t tagged: wapiti crf
 \t conll: tagged conll
-\t parsed: desr output (conll)
+\t parsed: maltparser output (conll)
 \t conll2xml: xml created from parsing
 \t rdisamb: xml disambiguated relative clauses, only with direction esqu
 \t coref: xml after coreference resolution for subjects, only with direction esqu
@@ -559,54 +559,36 @@ if($startTrans<$mapInputFormats{'conll'}){	#5){
 my $dom;
 if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 {
-	#### Check if parser servers are already running (2 instances with different models)
-	# first instance
-	# set desr parameters
-		if($desrPort1 eq ''){
+	#### Check if parser server are already running
+	# set maltparser parameters
+		if($maltPort eq ''){
 			eval{
-				$desrPort1 = $config{'desrPort1'};
-			} or warn  "no desrPort1 given, using default 5678\n";
-			if($desrPort1 eq ''){
-				$desrPort1 = 5678; 
+				$maltPort = $config{'maltPort'};
+			} or warn  "no maltPort given, using default 1234\n";
+			if($maltPort eq ''){
+				$maltPort = 1234; 
 			}
 		}
-		if($desrModel1 eq ''){
+		if($maltModel eq ''){
 			eval{
-				$desrModel1 = $config{'desrModel1'};
-			} or die  "Could not start parsing, no desrModel1 given\n";
+				$maltModel = $config{'maltModel'};
+			} or die  "Could not start parsing, no maltModel given\n";
 		}
-		my $desr1Running = `ps ax | grep -v grep | grep "desr_server.*--port $desrPort1"` ;
-		if($desr1Running eq ''){
-			print STDERR "no instance of desr_server running on port $desrPort1 with model $desrModel1\n";
-			print STDERR "starting desr_server on port $desrPort1 with model $desrModel1, logging to $path/logs/logdesr_1...\n";
-			system("desr_server -m $desrModel1 --port $desrPort1 2> $path/logs/logdesr_1 &");
-			print STDERR "desr_server with model 1 = $desrModel1 started on port $desrPort1...\n";
+		if($maltPath eq ''){
+			eval{
+				$maltPath = $config{'maltPath'};
+			} or die  "Could not start parsing, no path to maltparser.jar (option: maltPath) given\n";
+		}
+		my $maltRunning = `ps ax | grep -v grep | grep "MaltParserServer.*$maltPort"` ;
+		if($maltRunning eq ''){
+			print STDERR "no instance of MaltParserServer running on port $maltPort with model $maltModel\n";
+			print STDERR "starting MaltParserServer on port $maltPort with model $maltModel, logging to $path/logs/log.malt...\n";
+			system(" java -cp $maltPath:$path/maltparser_tools MaltParserServer $maltPort  $maltModel 2> $path/logs/log.malt &");
+			print STDERR "MaltParserServer with model = $maltModel started on port $maltPort...\n";
 			sleep 1;
 		}
 		
-		# same for 2nd instance
-		if($desrPort2 eq ''){
-			eval{
-				$desrPort2 = $config{'desrPort2'};
-			} or warn  "no desrPort2 given, using default 1234\n";
-			if($desrPort2 eq ''){
-				$desrPort2 = 1234; 
-			}
-		}
-		if($desrModel2 eq ''){
-			eval{
-				$desrModel2 = $config{'desrModel2'};
-			} or die  "Could not start parsing, no desrModel2 given\n";
-		}
-		my $desr2Running = `ps ax | grep -v grep | grep "desr_server.*--port $desrPort2"` ;
-		if($desr2Running eq ''){
-			print STDERR "no instance of desr_server running on port $desrPort2 with model $desrModel2\n";
-			print STDERR "starting desr_server on port $desrPort2 with model $desrModel2, logging to $path/logs/logdesr_2...\n";
-			system("desr_server -m $desrModel2 --port $desrPort2 2> $path/logs/logdesr_2 &");
-			print STDERR "desr_server with model 2 = $desrModel2 started on port $desrPort2...\n";
-			sleep 1;
-		}
-
+		
 	if($startTrans <$mapInputFormats{'parsed'})	#6)
 	{
 		print STDERR "* TRANS-STEP " . $mapInputFormats{'parsed'} .")  [-o parsed] parsing\n";
@@ -630,7 +612,8 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 				foreach my $l (@$conllLines){print TMP2 $l;}
 			}
 		}
-		open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort1"  ) || die "parsing failed: $!\n";
+		#open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort1"  ) || die "parsing failed: $!\n";
+		open(CONLL2,"-|" ,"java -cp $path/maltparser_tools MPClient localhost $maltPort $tmp2 "  ) || die "parsing failed: $!\n";
 		close(TMP2);
 		
 		## if output format is 'conll': print and exit
@@ -642,7 +625,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 	}
 
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'conll2xml'} .")  [-o conll2xml] conll to xml format\n";
-	# if starting translation process from here, read file or stdin
+	# if starting translation procesp s from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'parsed'}){	#6){
 		if($file ne ''){
 			open (FILE, "<", $file) or die "Can't open input file \"$file\" to translate: $!\n";

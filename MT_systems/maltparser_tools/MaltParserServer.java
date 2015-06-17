@@ -35,15 +35,15 @@ public class MaltParserServer {
 		while (true) {
 			// Reads a sentence from the input file
 			String[] inputTokens = ConcurrentUtils.readSentence(reader);
-			System.out.println(inputTokens.length + " tokens to parse");
+			//System.err.println(inputTokens.length + " tokens to parse");
 			// If there are no tokens then we have reach the end of file
 			if (inputTokens.length == 0) {
-				System.out.println("EOF reached");
+				System.err.println("EOF reached");
 				break;
 			}
 			// Parse the sentence
 			String[] parsedTokens = model.parseTokens(inputTokens);
-			System.out.println(parsedTokens.length + " tokens parsed");
+			//System.err.println(parsedTokens.length + " tokens parsed");
 			ConcurrentUtils.printTokens(parsedTokens);
 			ConcurrentUtils.writeSentence(parsedTokens, writer);
 //	    	for (int i = 0; i < parsedTokens.length; i++) {
@@ -54,7 +54,7 @@ public class MaltParserServer {
 //	    	writer.flush();
 			sentenceCount++;
 		}
-		System.out.println("Parsed " + sentenceCount +" sentences");
+		System.err.println("Parsed " + sentenceCount +" sentences");
     } catch (Exception e) {
 	e.printStackTrace();
 	//System.exit(1);
@@ -91,25 +91,25 @@ public class MaltParserServer {
 	loadModel(modelFile);
 
 	// Start the server
-	System.out.println("Starting MaltParser server...");
+	System.err.println("Starting MaltParser server...");
 	// try to open a server socket
 	try { 
 		serverSocket = new ServerSocket(portNumber);
 		while (true) {
-			System.out.println("Waiting for a client...");
+			System.err.println("Waiting for a client...");
 			Socket sock = serverSocket.accept();
-			System.out.println("Connection accepted");
-			System.out.println("Reading data from client...");
+			System.err.println("Connection accepted");
+			System.err.println("Reading data from client...");
 			InputStream is = sock.getInputStream();
 			OutputStream os = sock.getOutputStream();
-			System.out.println("Parsing and sending it back to client...");
+			System.err.println("Parsing and sending it back to client...");
 			parseSentences(is, os);
-			System.out.println("Data sent");
+			System.err.println("Data sent");
 			sock.close();
 		}
 	}
 	catch (IOException e) {
-		System.out.println(e);
+		System.err.println(e);
 	}
   }
 }
