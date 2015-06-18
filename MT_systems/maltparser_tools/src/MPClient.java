@@ -1,13 +1,5 @@
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.Socket;
+import java.io.*;
+import java.net.*;
 
 public class MPClient {
   public static void main(String[] args) throws Exception {
@@ -44,8 +36,8 @@ public class MPClient {
             Thread.sleep(10);
     }
   //  FileOutputStream fos = new FileOutputStream(parsedFile);
-   // BufferedOutputStream bos = new BufferedOutputStream(System.out);
-    BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
+    BufferedOutputStream out = new BufferedOutputStream(System.out);
+   // BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
     System.err.println("Reading data from server...");
 	int totalBytes = 0;
 	while(true){
