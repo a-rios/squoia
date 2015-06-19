@@ -585,7 +585,11 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 			print STDERR "starting MaltParserServer on port $maltPort with model $maltModel, logging to $path/logs/log.malt...\n";
 			system(" java -cp $maltPath:$path/maltparser_tools/bin MaltParserServer $maltPort  $maltModel 2> $path/logs/log.malt &");
 			print STDERR "MaltParserServer with model = $maltModel started on port $maltPort...\n";
-			sleep 1;
+			while(`echo "test" |java -cp $path/maltparser_tools/bin MPClient localhost $maltPort 2>&1 | grep "Connection established"`  eq ''){
+				print STDERR "starting MaltParserServer, please wait...\n";
+				sleep 1;
+			}
+			print STDERR "MaltParserServer now ready\n";
 		}
 		
 		
@@ -613,7 +617,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 			}
 		}
 		#open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort1"  ) || die "parsing failed: $!\n";
-		open(CONLL2,"-|" ,"java -cp $path/maltparser_tools/bin MPClient localhost $maltPort $tmp2 "  ) || die "parsing failed: $!\n";
+		open(CONLL2,"-|" ,"cat $tmp2 | java -cp $path/maltparser_tools/bin MPClient localhost $maltPort "  ) || die "parsing failed: $!\n";
 		close(TMP2);
 		
 		## if output format is 'conll': print and exit
