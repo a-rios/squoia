@@ -510,7 +510,17 @@ sub main{
 						 {
 					 		$ppchunk->setAttribute('type', 'grup-sp');
 						 }
-						 $ppchunk->setAttribute('si', $node->getAttribute('rel'));
+						 my $rel = $node->getAttribute('rel');
+						 # check if preposition has been labeled as subject -> happens in dates since maltparser hasnt learned how to parse those splitted (multitokens in ancora)
+						 # -> change label to atr
+						 if($rel eq 'suj'){
+						 	$rel = 'atr';
+						 }
+						 elsif($rel eq 'cd' && $node->getAttribute('lem') ne 'a'){
+						 	$rel = 'cc';
+						 }
+						
+						 $ppchunk->setAttribute('si', $rel);
 						 $ppchunk->setAttribute('ord', $node->getAttribute('ord'));
 						 #$node->removeAttribute('rel');
 						 $node->removeAttribute('head');
