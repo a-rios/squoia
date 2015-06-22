@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 
-package squoia::conllmalt2xml;
+package squoia::conll2xml;
 
 # TODO: dates.. freeling tokenisiert->zusammen, parser modell zusammen, werden aber im Moment noch gesplittet in crf2conll -> parser kennt das nicht
 use strict;
 use utf8;
-use XML::LibXML;
+#use XML::LibXML;
 #binmode STDIN, ':utf8';
 #binmode STDOUT, ':utf8';
 #binmode (STDERR);
@@ -56,16 +56,15 @@ my $openBar=1;
 
 my $verbose = '';
 
-#sub main{
-#	my $InputLines = $_[0];
-#	binmode($InputLines, ':utf8');
-#	my $desrPort2 = $_[1]; 	# port where desr_server with model2 runs
-#	$verbose = $_[2];
-#
-#	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
-#
-#	while(<$InputLines>)
-while(<>)
+sub main{
+	my $InputLines = $_[0];
+	binmode($InputLines, ':utf8');
+	$verbose = $_[1];
+
+	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+
+	while(<$InputLines>)
+
 	{
 		my $line = $_;
 #	  	print $line;
@@ -945,9 +944,12 @@ while(<>)
 		}
 	
 	}
-## print new xml to stdout
-my $docstring = $dom->toString(3);
-print STDOUT $docstring;
+	## print new xml to stdout
+	#my $docstring = $dom->toString(3);
+	#print STDOUT $docstring;
+
+	return $dom;
+}
 
 
 
@@ -1745,4 +1747,4 @@ sub preceedNoVerbinBetween{
 }
 
 
-#1;
+1;

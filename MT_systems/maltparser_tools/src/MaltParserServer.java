@@ -6,6 +6,7 @@ import org.maltparser.concurrent.ConcurrentMaltParserModel;
 import org.maltparser.concurrent.ConcurrentMaltParserService;
 import org.maltparser.concurrent.ConcurrentUtils;
 import org.maltparser.concurrent.graph.ConcurrentDependencyGraph;
+import org.maltparser.core.options.OptionManager;
 
 
 // compile: javac -cp /mnt/storage/hex/projects/clsquoia/parser/maltparser-1.8/maltparser-1.8.jar MaltParserServer.java 
@@ -21,6 +22,9 @@ public class MaltParserServer {
   private static void loadModel(URL modelFile) {
 	// load parser model
 	try {
+		OptionManager.instance().loadOptionDescriptionFile();
+		OptionManager.instance().generateMaps();
+		OptionManager.instance().parseCommandLine("-nt true", 0); //enforce output to be a tree, otherwise we can't convert this to xml
 		model = ConcurrentMaltParserService.initializeParserModel(modelFile);
 	} catch (Exception e) {
 		System.err.println("Cannot load the parser model "+ modelFile.toString());

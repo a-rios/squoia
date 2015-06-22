@@ -1,12 +1,13 @@
 #!/usr/bin/perl
 
-package squoia::crf2conll_malt;
+package squoia::crf2conll;
 
 use strict;
 #use utf8;
 #use utf8;
-binmode STDIN, ':utf8';
-binmode STDOUT, ':utf8';
+#binmode STDIN, ':utf8';
+#binmode STDOUT, ':utf8';
+#binmode STDERR, ':utf8';
 
 sub main{
 	my $inputLines = $_[0];
@@ -43,9 +44,6 @@ sub main{
 	    	#print dates:
 	    	if (@rows[-1] =~ /^W/)
 	    	{	#   dates: 24_de_junio     [??:24/6/??:??.??:??] -> 
-				# 6	24	24	w	w	_	3	cc	_	_
-				# 7	de	de	s	sp	gen=c|num=c|for=s	6	CONCAT	_	_
-				# 8	junio	junio	n	nc	gen=m|num=s	7	CONCAT	_	_
 		        my $date = @rows[0];
 		        my @tokens = split(/\_/,$date);
 
@@ -55,6 +53,7 @@ sub main{
 		  			if($token eq @tokens[0]){
 		  				#print "$token\tFILL_IN\n";
 		  				$outLine .= &printDateToken($token);
+		  				print STDERR "printed first date token $token, $outLine\n" if $verbose;
 		  			}
 		  			else{
 		  				$wordCount++;
@@ -62,6 +61,7 @@ sub main{
 		  				#print "$wordCount\t";
 		  				$outLine .= "$wordCount\t";
 		  				$outLine .= &printDateToken($token);
+		  				print STDERR "printed date token $token, $outLine\n" if $verbose;
 		  			}
 		  		}
 			  	push(@outputLines, $outLine);
@@ -95,7 +95,8 @@ sub main{
 		    	# if exactly one lemma associated with this tag, print it (at index-1 in rows)
 		    	if(scalar(@indexes) == 1){
 		    		#print $rows[@indexes[0]-1]."\t";
-		    		$outLine .=$rows[@indexes[0]-1]."\t";  		
+		    		$outLine .=$rows[@indexes[0]-1]."\t";
+		    		#print STDERR "heeeere: $outLine\n";  		
 		    	}
 		    	elsif(scalar(@indexes)>1){
 		    		# if more than one lemma associated with this tag: write lemma1/lemma2 (but check if they're the same!)
@@ -243,12 +244,10 @@ sub main{
 		    	#print "$cpos\t$shortpos\t";
 		    	$outLine .= "$cpos\t$shortpos\t";
 		    	
-		    	
 		    	# print morphology
 		    	my $features = &eaglesToMorph($tag);
 		    	
 		  		#$features.="\t_\t_\t_\t_";
-			
 			  	$outLine .= "$features\n";
 			  	push(@outputLines, $outLine);
 		     } 
@@ -264,35 +263,38 @@ sub printDateToken{
 	my $date = $_[0];
 	my $subOutLine="";
 	
-	if($date =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo|día|mes|año|siglo/){
-		$subOutLine .= "$date\t$date\tn\tnc\tgen=m|num=s\t_\t_\t_\t_\n";
+	if($date =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo/){
+		$subOutLine .= "$date\t$date\tn\tnc\tne=date|eagles=W\n";
+	}
+	elsif($date =~ /día|mes|año|siglo/){
+		$subOutLine .= "$date\t$date\tn\tnc\tgen=m|num=s|postype=common|eagles=NCMS000\n";
 	}
 	elsif($date =~ /^de$|^a$/){
-		$subOutLine .=  "$date\t$date\ts\tsp\tgen=c|num=c|for=s\t_\t_\t_\t_\n";
+		$subOutLine .=  "$date\t$date\ts\tsp\tpostype=preposition|eagles=SPS00\n";
 	}
 	elsif($date eq 'del'){
-		$subOutLine .=  "de\tde\ts\tsp\tgen=m|num=s|for=c\t_\t_\t_\t_\n";
+		$subOutLine .=  "de\tde\ts\tsp\tgen=c|num=m|postype=preposition|contracted=yes|eagles=SPCMS\n";
 	}
 	elsif($date =~ /madrugada|mañana|tarde|noche|hora|media/){
-		$subOutLine .=  "$date\t$date\tn\tnc\tgen=f|num=s\t_\t_\t_\t_\n";
+		$subOutLine .=  "$date\t$date\tn\tnc\tgen=f|num=s|postype=common|eagles=NCFS000\n";
 	}
 	elsif($date =~ /^el$/){
-		$subOutLine .= "$date\tel\td\tda\tgen=m|num=s\t_\t_\t_\t_\n";
+		$subOutLine .= "$date\tel\td\tda\tgen=m|num=s|postype=article|eagles=DA0MS0\n";
 	}
 	elsif($date =~ /^los$/){
-		$subOutLine .=  "$date\tel\td\tda\tgen=m|num=s\t_\t_\t_\t_\n";
+		$subOutLine .=  "$date\tel\td\tda\tgen=m|num=p|postype=article|eagles=DA0MP0\n";
 	}
 	elsif($date =~ /^la$/){
-		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=s\t_\t_\t_\t_\n";
+		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=s|postype=article|eagles=DA0FS0\n";
 	}
 	elsif($date =~ /^las$/){
-		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=p\t_\t_\t_\t_\n";
+		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=p|postype=article|eagles=DA0FP0\n";
 	}
 	elsif($date =~ /^\d+$|^[0-2]?\d:[0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta|^(y|menos)$/){
-		$subOutLine .=  "$date\t$date\tw\tw\t_\t_\t_\t_\t_\n";
+		$subOutLine .=  "$date\t$date\tW\tW\tne=date|eagles=W\n";
 	}
 	elsif($date =~ /pasado|próximo/){
-		$subOutLine .=  "$date\t$date\ta\taq\tgen=m|num=s\t_\t_\t_\t_\n";
+		$subOutLine .=  "$date\t$date\ta\taq\tgen=m|num=s|postype=qualificative|eagles=AQ0MSP\n";
 	}
 	else{
 		$subOutLine .=  "$date\tFILL_IN\n";
@@ -517,7 +519,7 @@ sub eaglesToMorph{
 		$morphstring = "_";
 	}
 	
-	#print STDERR "$eaglesTag, $morphstring\n";
+	#print STDERR "heeere $eaglesTag, $morphstring\n";
 	return $morphstring;
 	
 	
