@@ -9,6 +9,29 @@ use strict;
 #binmode STDOUT, ':utf8';
 #binmode STDERR, ':utf8';
 
+
+my %mapMonthsDays = ( 
+	'enero' => "[??:??/01/??:??.??]",
+	'febrero' => "[??:??/02/??:??.??]",
+	'marzo' => "[??:??/03/??:??.??]",
+	'abril' => "[??:??/04/??:??.??]",
+	'mayo' => "[??:??/05/??:??.??]",
+	'junio' => "[??:??/06/??:??.??]",
+	'julio' => "[??:??/07/??:??.??]",
+	'agosto' => "[??:??/08/??:??.??]",
+	'septiembre' => "[??:??/09/??:??.??]",
+	'octubre' => "[??:??/10/??:??.??]",
+	'noviembre' => "[??:??/11/??:??.??]",
+	'diciembre' => "[??:??/12/??:??.??]",
+	'lunes' => "[lunes:??/??/??:??.??]",
+	'martes' => "[martes:??/??/??:??.??]",
+	'miércoles' => "[miércoles:??/??/??:??.??]",
+	'jueves' => "[jueves:??/??/??:??.??]",
+	'viernes' => "[viernes:??/??/??:??.??]",
+	'sábado' => "[sábado:??/??/??:??.??]",
+	'domingo' => "[domingo:??/??/??:??.??]"
+);
+
 sub main{
 	my $inputLines = $_[0];
 	my $verbose = $_[1];
@@ -263,38 +286,44 @@ sub printDateToken{
 	my $date = $_[0];
 	my $subOutLine="";
 	
-	if($date =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo/){
-		$subOutLine .= "$date\t$date\tn\tnc\tne=date|eagles=W\n";
+	if(lc($date) =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo/){
+		$subOutLine .= "$date\t".$mapMonthsDays{lc($date)}."\tw\tW\tne=date|eagles=W\n";
 	}
-	elsif($date =~ /día|mes|año|siglo/){
-		$subOutLine .= "$date\t$date\tn\tnc\tgen=m|num=s|postype=common|eagles=NCMS000\n";
+	elsif(lc($date) =~ /día|mes|año|siglo/){
+		$subOutLine .= "$date\t".lc($date)."\tn\tnc\tgen=m|num=s|postype=common|eagles=NCMS000\n";
 	}
-	elsif($date =~ /^de$|^a$/){
+	elsif(lc($date) =~ /^de$|^a$/){
 		$subOutLine .=  "$date\t$date\ts\tsp\tpostype=preposition|eagles=SPS00\n";
 	}
-	elsif($date eq 'del'){
+	elsif(lc($date) eq 'del'){
 		$subOutLine .=  "de\tde\ts\tsp\tgen=c|num=m|postype=preposition|contracted=yes|eagles=SPCMS\n";
 	}
-	elsif($date =~ /madrugada|mañana|tarde|noche|hora|media/){
-		$subOutLine .=  "$date\t$date\tn\tnc\tgen=f|num=s|postype=common|eagles=NCFS000\n";
+	elsif(lc($date) =~ /madrugada|mañana|tarde|noche|hora|media/){
+		$subOutLine .=  "$date\t".lc($date)."\tn\tnc\tgen=f|num=s|postype=common|eagles=NCFS000\n";
 	}
-	elsif($date =~ /^el$/){
+	elsif(lc($date) =~ /^el$/){
 		$subOutLine .= "$date\tel\td\tda\tgen=m|num=s|postype=article|eagles=DA0MS0\n";
 	}
-	elsif($date =~ /^los$/){
+	elsif(lc($date) =~ /^los$/){
 		$subOutLine .=  "$date\tel\td\tda\tgen=m|num=p|postype=article|eagles=DA0MP0\n";
 	}
-	elsif($date =~ /^la$/){
+	elsif(lc($date) =~ /^la$/){
 		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=s|postype=article|eagles=DA0FS0\n";
 	}
-	elsif($date =~ /^las$/){
+	elsif(lc($date) =~ /^las$/){
 		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=p|postype=article|eagles=DA0FP0\n";
 	}
-	elsif($date =~ /^\d+$|^[0-2]?\d:[0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta|^(y|menos)$/){
-		$subOutLine .=  "$date\t$date\tW\tW\tne=date|eagles=W\n";
+	elsif(lc($date) =~ /^\d+$|^[0-2]?\d[:\.][0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta/){
+		$subOutLine .=  "$date\t$date\tz\tZ\tne=number|eagles=Z\n";
 	}
-	elsif($date =~ /pasado|próximo/){
-		$subOutLine .=  "$date\t$date\ta\taq\tgen=m|num=s|postype=qualificative|eagles=AQ0MSP\n";
+	elsif(lc($date) eq 'y'){
+		$subOutLine .=  "$date\ty\tc\tCC\tpostype=coordinating|eagles=CC\n";
+	}
+	elsif(lc($date) eq 'menos'){
+		$subOutLine .=  "$date\tmenos\tr\tRG\t_\n";
+	}
+	elsif(lc($date) =~ /pasado|próximo/){
+		$subOutLine .=  "$date\t".lc($date)."\ta\taq\tgen=m|num=s|postype=qualificative|eagles=AQ0MSP\n";
 	}
 	else{
 		$subOutLine .=  "$date\tFILL_IN\n";

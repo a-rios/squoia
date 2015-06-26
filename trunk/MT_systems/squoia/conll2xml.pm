@@ -1757,4 +1757,49 @@ sub preceedNoVerbinBetween{
 }
 
 
+#sub convertDate{
+#	my $date = $_[0];
+#	
+#	my @tokens = split(/\_/,$date);
+#	
+#	
+#	
+#	if($date =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo/){
+#		$subOutLine .= "$date\t$date\tn\tnc\tne=date|eagles=W\n";
+#	}
+#	elsif($date =~ /día|mes|año|siglo/){
+#		$subOutLine .= "$date\t$date\tn\tnc\tgen=m|num=s|postype=common|eagles=NCMS000\n";
+#	}
+#	elsif($date =~ /^de$|^a$/){
+#		$subOutLine .=  "$date\t$date\ts\tsp\tpostype=preposition|eagles=SPS00\n";
+#	}
+#	elsif($date eq 'del'){
+#		$subOutLine .=  "de\tde\ts\tsp\tgen=c|num=m|postype=preposition|contracted=yes|eagles=SPCMS\n";
+#	}
+#	elsif($date =~ /madrugada|mañana|tarde|noche|hora|media/){
+#		$subOutLine .=  "$date\t$date\tn\tnc\tgen=f|num=s|postype=common|eagles=NCFS000\n";
+#	}
+#	elsif($date =~ /^el$/){
+#		$subOutLine .= "$date\tel\td\tda\tgen=m|num=s|postype=article|eagles=DA0MS0\n";
+#	}
+#	elsif($date =~ /^los$/){
+#		$subOutLine .=  "$date\tel\td\tda\tgen=m|num=p|postype=article|eagles=DA0MP0\n";
+#	}
+#	elsif($date =~ /^la$/){
+#		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=s|postype=article|eagles=DA0FS0\n";
+#	}
+#	elsif($date =~ /^las$/){
+#		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=p|postype=article|eagles=DA0FP0\n";
+#	}
+#	elsif($date =~ /^\d+$|^[0-2]?\d:[0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta|^(y|menos)$/){
+#		$subOutLine .=  "$date\t$date\tW\tW\tne=date|eagles=W\n";
+#	}
+#	elsif($date =~ /pasado|próximo/){
+#		$subOutLine .=  "$date\t$date\ta\taq\tgen=m|num=s|postype=qualificative|eagles=AQ0MSP\n";
+#	}
+#	else{
+#		$subOutLine .=  "$date\tFILL_IN\n";
+#	}
+#}
+
 1;
