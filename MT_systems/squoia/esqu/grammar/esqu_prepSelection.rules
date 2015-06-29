@@ -168,7 +168,7 @@ para		case=+Ben	-
 perteneciente_a		case=+Gen
 perteneciencia_a	case=+Gen,postpos=kaq
 
-por		case=+Proloc	xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]}	-  # TODO: maybe exception: venir/ir por.. obligantive?
+por		case=+Proloc	xpath{parent::CHUNK[@type="grup-sp"]/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[contains(@sem,"+Mov")]}	-  # TODO: maybe exception: venir/ir por.. obligative?
 por		case=+Kaus	-	+ # which one should be default?? rules for +Inst/+Kaus??
 por		case=+Instr	-	-  # TODO causee in causative constructions
 por		case=+Loc	xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sadv"]/NODE[@slem="abajo" or @slem="arriba" or @slem="fuera" or @slem="dentro" or @slem="ahí" or @slem="allá" or @slem="aquí" ]}	-

@@ -238,12 +238,12 @@ sub main{
 #	my $docstring = $dom->toString(3);
 #	print STDERR $docstring;
 	
-
-#	#my $docstring = $dom->toString(3);
-#	#print STDERR $docstring if $verbose;
-#	#print STDERR "------------------------------------------------\n" if $verbose;
-#	#print STDERR "------------------------------------------------\n" if $verbose;
-#	
+    if($verbose){
+		my $docstring = $dom->toString(3);
+		print STDERR $docstring if $verbose;
+		print STDERR "------------------------------------------------\n";
+		print STDERR "------------------------------------------------\n";
+	}
 #	# insert chunks
 #	
 	foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
@@ -263,6 +263,7 @@ sub main{
 			my $head = $node->getAttribute('head');
 			my $headKey = "$sentenceId:$head";
 			my $word = $node->getAttribute('form');
+			#print STDERR "node at $i: ".$node->toString()."\n" if $verbose;
 			if ($head ne '0')
 			{
 				#print "$word= $headKey\n";
@@ -656,7 +657,7 @@ sub main{
 					 $docHash{$idKey}= $fpchunk;
 				}
 				# if this is a date
-				elsif ($node->exists('self::NODE[@mi="W"]'))
+				elsif ($node->exists('self::NODE[@mi="W"]') or ( $node->exists('self::NODE[@mi="Z"]') && &numberIsPartOfDate($node)  ) )
 				{
 					 my $datechunk = XML::LibXML::Element->new( 'CHUNK' );
 					 $datechunk->setAttribute('type', 'date');
@@ -1439,97 +1440,7 @@ sub attachNewChunkUnderChunk{
     	print STDERR "failed to attach node to new chunk \n";
     }
 }
-#
-#sub model2{
-#	my $sentence =  $_[0];
-#	my $desrPort2= $_[1];
-#	if($sentence)
-#	{
-#		$sentence->removeChildNodes();
-#		my $sentenceId = $sentence->getAttribute('ord');
-#		my $path = File::Basename::dirname(File::Spec::Functions::rel2abs($0));
-#		my $tmp = $path."/tmp/tmp2.conll";
-#		
-#		open (TMP, ">:encoding(UTF-8)", $tmp);
-#		print TMP $conllHash{$sentenceId};		
-#		open(DESR,"-|" ,"cat $tmp | desr_client $desrPort2"  ) || die "parsing failed: $!\n";
-#
-#		while (<DESR>)
-#		{
-#			#print STDERR "bla".$_;
-#			unless(/^\s*$/)
-#			{
-#	   			# create a new word node and attach it to sentence
-#   				my $wordNode = XML::LibXML::Element->new( 'NODE' );
-#  				$sentence->appendChild($wordNode);
-#  				my ($id, $word, $lem, $cpos, $pos, $info, $head, $rel, $phead, $prel) = split (/\t|\s/);	 
-#     
-#   			 	# special case with estar (needs to be vm for desr and form instead of lemma -> set lemma back to 'estar')
-#  				 if($pos =~ /vm|va/ && $lem =~ /^est/ && $lem !~ /r$/)
-# 			 	 {
-# 				 	  $lem = "estar";
-#     				  #$pos = "va";
-#    		 	 }
-# 			 	my $eaglesTag = &toEaglesTag($pos, $info);
-#				# if verb (gerund,infinitve or imperative form) has clitic(s) then make new node(s)
-#				# exclude certain words that may occur at the end of the lemma in locutions (e.g. echar_de_menos) -> we don't want to split -os in this case!
-#				if($eaglesTag =~ /^V.[GNM]/ and $word !~ /parte|frente|adelante|base|menos$/ and $word =~ /(me|te|nos|os|se|[^l](la|las|lo|los|le|les))$/ and $word != /_/)
-#				{
-#					print STDERR "clitics in verb $lem: $word\n" if $verbose;
-#					my $clstr = splitCliticsFromVerb($word,$eaglesTag,$lem);
-#					if ($clstr !~ /^$/)	# some imperative forms may end on "me|te|se|la|le" and not contain any clitic
-#					{
-#						&createAppendCliticNodes($sentence,$sentenceId,$id,$clstr);
-#					}
-#				}
-#   				 if($eaglesTag =~ /^NP/)
-#   				 {
-#  		 	 		$pos="np";
-# 				 }
-# 				 # often: 'se fue' -> fue tagged as 'ser', VSIS3S0 -> change to VMIS3S0, set lemma to 'ir'
-#			     if($eaglesTag =~ /VSIS[123][SP]0/ && $lem eq 'ser'){
-#			     	my $precedingWord = $docHash{$sentenceId.":".($id-1)};
-#			     	#print STDERR "preceding of fue: ".$precedingWord->getAttribute('lem')."\n" if $verbose;
-#			     	if($precedingWord && $precedingWord->getAttribute('lem') eq 'se'){
-#			     		$eaglesTag =~ s/^VS/VM/ ;
-#			     		#print STDERR "new tag: $eaglesTag\n" if $verbose;
-#			     		$lem = 'ir';
-#			     	}
-#			     }
-#			     if($lem =~ /\/reir/){
-#			     	$lem = 'reír';
-#			     }
-#				   	 $wordNode->setAttribute( 'ord', $id );
-# 					 $wordNode->setAttribute( 'form', $word );
-# 	   				 $wordNode->setAttribute( 'lem', $lem );
-#				  	 $wordNode->setAttribute( 'pos', $pos );
-#				  	 $wordNode->setAttribute( 'cpos', $cpos );
-#				  	 $wordNode->setAttribute( 'head', $head );
-#  				     $wordNode->setAttribute( 'rel', $rel );
-# 				     $wordNode->setAttribute( 'mi', $eaglesTag );
-#					 # print "$eaglesTag\n";
-#  					 # store node in hash, key sentenceId:wordId, in order to resolve dependencies
-#    				 my $key = "$sentenceId:$id";
-#    				 $docHash{$key}= $wordNode;
-#    				 
-##    				 print STDERR "\n##################\n";
-##    				 foreach my $key (keys %docHash){print STDERR "key $key $docHash{$key}\n";}
-##    				  print STDERR "\n##################\n";
-#    				 # print $sentence->toString();
-#    				  # print "\n\n";
-#				}
-#			}
-#		close TMP;
-#		close DESR;
-#		#unlink("tmp.conll");
-#	}
-#	# this should not happen!
-#	else
-#	{
-#		print STDERR "failed to parse sentence!\n";
-#	}
-#}
-#
+
 # clitics stuff
 # freeling could retokenize the enclitics but we don't split the verb forms before parsing
 # because desr parser was apparently not trained on data with separate clitics
@@ -1756,50 +1667,25 @@ sub preceedNoVerbinBetween{
 	return $foundverb;
 }
 
-
-#sub convertDate{
-#	my $date = $_[0];
-#	
-#	my @tokens = split(/\_/,$date);
-#	
-#	
-#	
-#	if($date =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo/){
-#		$subOutLine .= "$date\t$date\tn\tnc\tne=date|eagles=W\n";
-#	}
-#	elsif($date =~ /día|mes|año|siglo/){
-#		$subOutLine .= "$date\t$date\tn\tnc\tgen=m|num=s|postype=common|eagles=NCMS000\n";
-#	}
-#	elsif($date =~ /^de$|^a$/){
-#		$subOutLine .=  "$date\t$date\ts\tsp\tpostype=preposition|eagles=SPS00\n";
-#	}
-#	elsif($date eq 'del'){
-#		$subOutLine .=  "de\tde\ts\tsp\tgen=c|num=m|postype=preposition|contracted=yes|eagles=SPCMS\n";
-#	}
-#	elsif($date =~ /madrugada|mañana|tarde|noche|hora|media/){
-#		$subOutLine .=  "$date\t$date\tn\tnc\tgen=f|num=s|postype=common|eagles=NCFS000\n";
-#	}
-#	elsif($date =~ /^el$/){
-#		$subOutLine .= "$date\tel\td\tda\tgen=m|num=s|postype=article|eagles=DA0MS0\n";
-#	}
-#	elsif($date =~ /^los$/){
-#		$subOutLine .=  "$date\tel\td\tda\tgen=m|num=p|postype=article|eagles=DA0MP0\n";
-#	}
-#	elsif($date =~ /^la$/){
-#		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=s|postype=article|eagles=DA0FS0\n";
-#	}
-#	elsif($date =~ /^las$/){
-#		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=p|postype=article|eagles=DA0FP0\n";
-#	}
-#	elsif($date =~ /^\d+$|^[0-2]?\d:[0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta|^(y|menos)$/){
-#		$subOutLine .=  "$date\t$date\tW\tW\tne=date|eagles=W\n";
-#	}
-#	elsif($date =~ /pasado|próximo/){
-#		$subOutLine .=  "$date\t$date\ta\taq\tgen=m|num=s|postype=qualificative|eagles=AQ0MSP\n";
-#	}
-#	else{
-#		$subOutLine .=  "$date\tFILL_IN\n";
-#	}
-#}
-
+# el 12 de diciembre -> 12 own chunk
+sub numberIsPartOfDate{
+	my $number = $_[0];
+	my $ord = $number->getAttribute('ord');
+	
+	my $de_xpath = 'ancestor::SENTENCE/descendant::NODE[@ord="'.($ord+1).'"]';
+	my $month_xpath = 'ancestor::SENTENCE/descendant::NODE[@ord="'.($ord+2).'"]';
+	
+	my ($de) = $number->findnodes($de_xpath);
+	my ($month) = $number->findnodes($month_xpath);
+	
+	my $isDate=0;
+	if($de && $month){
+		#print STDERR "node de: ".$de->toString()."\n" if $verbose;
+		#print STDERR "node month: ".$month->toString()."\n" if $verbose;
+		if(lc($month->getAttribute('form')) =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre/  &&  $de->getAttribute('lem') eq 'de'  ){
+			$isDate =1;
+		}
+	}
+	return $isDate;
+}
 1;

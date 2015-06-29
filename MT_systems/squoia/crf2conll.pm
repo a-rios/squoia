@@ -71,26 +71,28 @@ sub main{
 		        my @tokens = split(/\_/,$date);
 
 	  		if(scalar(@tokens)>1){
-		  		foreach my $token (@tokens)
-		  		{
-		  			if($token eq @tokens[0]){
-		  				#print "$token\tFILL_IN\n";
-		  				$outLine .= &printDateToken($token);
-		  				print STDERR "printed first date token $token, $outLine\n" if $verbose;
-		  			}
-		  			else{
-		  				$wordCount++;
-		  				#print "$wordCount\t$token\tFILL_IN\n";
-		  				#print "$wordCount\t";
-		  				$outLine .= "$wordCount\t";
-		  				$outLine .= &printDateToken($token);
-		  				print STDERR "printed date token $token, $outLine\n" if $verbose;
-		  			}
-		  		}
-			  	push(@outputLines, $outLine);
+	  			my $dateOutlines = &printDateToken(\@tokens,$wordCount);
+#		  		foreach my $token (@tokens)
+#		  		{
+#		  			if($token eq @tokens[0]){
+#		  				#print "$token\tFILL_IN\n";
+#		  				$outLine .= &printDateToken($token);
+#		  				print STDERR "printed first date token $token, $outLine\n" if $verbose;
+#		  			}
+#		  			else{
+#		  				$wordCount++;
+#		  				#print "$wordCount\t$token\tFILL_IN\n";
+#		  				#print "$wordCount\t";
+#		  				$outLine .= "$wordCount\t";
+#		  				$outLine .= &printDateToken($token);
+#		  				print STDERR "printed date token $token, $outLine\n" if $verbose;
+#		  			}
+#		  		}
+			  	push(@outputLines, @$dateOutlines);
+			  	$wordCount += scalar(@tokens)-1;
 	  		}
 	  		else{
-	  			push(@outputLines, "$wordCount\t$date\t$date\tw\tw\t_\t_\t_\t_\t_\n");
+	  			push(@outputLines, "$wordCount\t$date\t$date\tw\tW\t_\t_\t_\t_\t_\n");
 	  		}
 		}
 		else
@@ -282,53 +284,90 @@ sub main{
 	return \@outputLines;
 }
 
+#		  		foreach my $token (@tokens)
+#		  		{
+#		  			if($token eq @tokens[0]){
+#		  				#print "$token\tFILL_IN\n";
+#		  				$outLine .= &printDateToken($token);
+#		  				print STDERR "printed first date token $token, $outLine\n" if $verbose;
+#		  			}
+#		  			else{
+#		  				$wordCount++;
+#		  				#print "$wordCount\t$token\tFILL_IN\n";
+#		  				#print "$wordCount\t";
+#		  				$outLine .= "$wordCount\t";
+#		  				$outLine .= &printDateToken($token);
+#		  				print STDERR "printed date token $token, $outLine\n" if $verbose;
+#		  			}
+#		  		}
+
 sub printDateToken{
-	my $date = $_[0];
-	my $subOutLine="";
+	my $dateTokens = $_[0];
+	my $actualWordCount = $_[1];
+	my @dateOutlines;
 	
-	if(lc($date) =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo/){
-		$subOutLine .= "$date\t".$mapMonthsDays{lc($date)}."\tw\tW\tne=date|eagles=W\n";
+	
+
+	
+	for (my $i=0;$i<scalar(@$dateTokens);$i++)
+	{
+		my $date = @$dateTokens[$i];
+		my $subOutLine = "$actualWordCount\t";
+		if(lc($date) =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo/){
+			$subOutLine .= "$date\t".$mapMonthsDays{lc($date)}."\tw\tW\tne=date|eagles=W\n";
+		}
+		elsif(lc($date) =~ /día|mes|año|siglo/){
+			$subOutLine .= "$date\t".lc($date)."\tn\tNC\tgen=m|num=s|postype=common|eagles=NCMS000\n";
+		}
+		elsif(lc($date) =~ /^de$|^a$/){
+			$subOutLine .=  "$date\t$date\ts\tSP\tpostype=preposition|eagles=SPS00\n";
+		}
+		elsif(lc($date) eq 'del'){
+			$subOutLine .=  "$date\tde\ts\tSP\tgen=c|num=m|postype=preposition|contracted=yes|eagles=SPCMS\n";
+		}
+		elsif(lc($date) =~ /madrugada|mañana|tarde|noche|hora|media/){
+			$subOutLine .=  "$date\t".lc($date)."\tn\tNC\tgen=f|num=s|postype=common|eagles=NCFS000\n";
+		}
+		elsif(lc($date) =~ /^el$/){
+			$subOutLine .= "$date\tel\td\tDA\tgen=m|num=s|postype=article|eagles=DA0MS0\n";
+		}
+		elsif(lc($date) =~ /^los$/){
+			$subOutLine .=  "$date\tel\td\tDA\tgen=m|num=p|postype=article|eagles=DA0MP0\n";
+		}
+		elsif(lc($date) =~ /^la$/){
+			$subOutLine .=  "$date\tel\td\tDA\tgen=f|num=s|postype=article|eagles=DA0FS0\n";
+		}
+		elsif(lc($date) =~ /^las$/){
+			$subOutLine .=  "$date\tel\td\tDA\tgen=f|num=p|postype=article|eagles=DA0FP0\n";
+		}
+		elsif(lc($date) =~ /^\d+$|^[0-2]?\d[:\.][0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta/){
+			if(lc(@$dateTokens[$i-1]) =~ /^año/){
+				$subOutLine .=  "$date\t$date\tw\tW\tne=date|eagles=W\n";
+			}
+			elsif(lc(@$dateTokens[$i-2]) =~ /^enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre/ && lc(@$dateTokens[$i-1]) =~ /^de/ ){
+				$subOutLine .=  "$date\t$date\tw\tW\tne=date|eagles=W\n";
+			}
+			else{
+				$subOutLine .=  "$date\t$date\tz\tZ\tne=number|eagles=Z\n";
+			}
+		}
+		elsif(lc($date) eq 'y'){
+			$subOutLine .=  "$date\ty\tc\tCC\tpostype=coordinating|eagles=CC\n";
+		}
+		elsif(lc($date) eq 'menos'){
+			$subOutLine .=  "$date\tmenos\tr\tRG\t_\n";
+		}
+		elsif(lc($date) =~ /pasado|próximo/){
+			$subOutLine .=  "$date\t".lc($date)."\ta\tAQ\tgen=m|num=s|postype=qualificative|eagles=AQ0MSP\n";
+		}
+		else{
+			$subOutLine .=  "$date\tFILL_IN\n";
+		}
+		
+		push(@dateOutlines, $subOutLine);
+		$actualWordCount++;
 	}
-	elsif(lc($date) =~ /día|mes|año|siglo/){
-		$subOutLine .= "$date\t".lc($date)."\tn\tnc\tgen=m|num=s|postype=common|eagles=NCMS000\n";
-	}
-	elsif(lc($date) =~ /^de$|^a$/){
-		$subOutLine .=  "$date\t$date\ts\tsp\tpostype=preposition|eagles=SPS00\n";
-	}
-	elsif(lc($date) eq 'del'){
-		$subOutLine .=  "de\tde\ts\tsp\tgen=c|num=m|postype=preposition|contracted=yes|eagles=SPCMS\n";
-	}
-	elsif(lc($date) =~ /madrugada|mañana|tarde|noche|hora|media/){
-		$subOutLine .=  "$date\t".lc($date)."\tn\tnc\tgen=f|num=s|postype=common|eagles=NCFS000\n";
-	}
-	elsif(lc($date) =~ /^el$/){
-		$subOutLine .= "$date\tel\td\tda\tgen=m|num=s|postype=article|eagles=DA0MS0\n";
-	}
-	elsif(lc($date) =~ /^los$/){
-		$subOutLine .=  "$date\tel\td\tda\tgen=m|num=p|postype=article|eagles=DA0MP0\n";
-	}
-	elsif(lc($date) =~ /^la$/){
-		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=s|postype=article|eagles=DA0FS0\n";
-	}
-	elsif(lc($date) =~ /^las$/){
-		$subOutLine .=  "$date\tel\td\tda\tgen=f|num=p|postype=article|eagles=DA0FP0\n";
-	}
-	elsif(lc($date) =~ /^\d+$|^[0-2]?\d[:\.][0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta/){
-		$subOutLine .=  "$date\t$date\tz\tZ\tne=number|eagles=Z\n";
-	}
-	elsif(lc($date) eq 'y'){
-		$subOutLine .=  "$date\ty\tc\tCC\tpostype=coordinating|eagles=CC\n";
-	}
-	elsif(lc($date) eq 'menos'){
-		$subOutLine .=  "$date\tmenos\tr\tRG\t_\n";
-	}
-	elsif(lc($date) =~ /pasado|próximo/){
-		$subOutLine .=  "$date\t".lc($date)."\ta\taq\tgen=m|num=s|postype=qualificative|eagles=AQ0MSP\n";
-	}
-	else{
-		$subOutLine .=  "$date\tFILL_IN\n";
-	}
-	return $subOutLine;
+	return \@dateOutlines;
 }
 
 sub eaglesToMorph{
