@@ -731,6 +731,7 @@ sub main{
 	 			}
 	 		}
 	 		# dates: print as is (only numbers are in a date-chunk)
+	 		# change MaltParser: numbers, days and months are in date chunks
 	 		elsif($chunk->exists('self::CHUNK[@type="date"]') && !$chunk->hasAttribute('delete') )
 	 		{
 	 			# if there's a conjunction to be inserted and this is the first node in the clause
@@ -738,7 +739,7 @@ sub main{
 	 			{
 	 				print OUTFILE $chunk->getAttribute('conj')."\n";
 	 			}
-	 			my $date = @{$chunk->findnodes('child::NODE[@smi="W"]')}[0];
+	 			my $date = @{$chunk->findnodes('child::NODE[@smi="W" or @smi="Z"]')}[0];
 	 			&printNode($date,$chunk);
 	 			print OUTFILE "\n";
 	 			# need to print p'unchaw?
