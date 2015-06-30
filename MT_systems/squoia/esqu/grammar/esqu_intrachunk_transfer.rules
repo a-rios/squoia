@@ -55,7 +55,7 @@ my.smi=/^A/ && xpath{parent::CHUNK/ancestor::CHUNK/NODE[@lemInCpred="yes" and no
     #########
 # el 4 de diciembre -> 4 p'unchaw qhapaq raymi killapi -> insert p'unchaw!
 my.smi=/^W|^Z/ && parent.type=date && xpath{../CHUNK[@type="grup-sp" and NODE[@slem="de"]]/CHUNK/NODE[@lem="killa"] }		"p'unchaw"			my.type=date		postform	up	overwrite
-   
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
     #########
@@ -174,7 +174,7 @@ my.mi=infinitive && xpath{child::NODE[starts-with(@lem,"++")]}		"yes"		my.type=/
 
 # if infinitive or participle with VA (aux): get finite mi from aux 
 # gerunds: see below
-my.smi=/1|2|3/  && my.smi=/^VA/  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) && xpath{ancestor::NODE} && !(my.slem=haber && my.smi=/3S/ && xpath{descendant::NODE[@slem="que" and @smi="CS"]} )		"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	overwrite
+my.smi=/1|2|3/  && my.smi=/^VA/  && ( my.slem=estar || !(xpath{ancestor::NODE[@smi="VMG0000"]})) && xpath{ancestor::NODE} && !(my.slem=haber && my.smi=/3S/ && xpath{descendant::NODE[@slem="que" and @smi="CS"]} ) && !(my.slem=haber && my.smi=/3S/ && xpath{parent::NODE[@slem="que" and @smi="CS"]} )		"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux	up	overwrite
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk
@@ -228,7 +228,7 @@ xpath{descendant::NODE[@slem="haber" and contains(@smi, "3S") and contains(@verb
 my.verbmi=/.+/ && my.smi=/1|2|3/ && my.slem=ir && xpath{parent::NODE[@smi="VMN0000" or parent::NODE[@smi="VMN0000"]]}		"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up	overwrite
 my.slem=ir && xpath{parent::NODE[@smi="VMN0000" or parent::NODE[@smi="VMN0000"]]}		"+Fut"				my.type=/grup-verb|coor-v/			addverbmi			up 		concat
 #-------------------------------------------------
-
+### TODO check from here
 #-------------------------------------------------
 # FINITE VERB UNKNOWN
 # if finite verb is unknown in complex verb chunk, copy verbmi of (non-finite) main verb

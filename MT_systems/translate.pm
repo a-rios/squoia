@@ -195,8 +195,8 @@ available options are:
 \t interTrans: xml after interchunk syntactic transfer
 \t node2chunk: xml after promotion of nodes to chunks
 \t child2sibling: xml after promotion of child chunks to siblings
-\t intraOrder: xml after intrachunk syntactic ordering
 \t interOrder: xml after interchunk syntactic ordering
+\t intraOrder: xml after intrachunk syntactic ordering
 \t morph: input for morphological generation
 \t words: output of morphological generation (only with useMorphModel=0)
 Options for tagging:
