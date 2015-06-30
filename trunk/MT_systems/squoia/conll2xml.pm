@@ -237,6 +237,8 @@ sub main{
 
 #	my $docstring = $dom->toString(3);
 #	print STDERR $docstring;
+
+
 	
     if($verbose){
 		my $docstring = $dom->toString(3);
@@ -257,7 +259,7 @@ sub main{
 		my $nonewChunk = 0;
 		
 		for(my $i=0; $i<scalar(@nodes); $i++)
-		{ #print "\n ord chunk: $chunkCount\n";
+		{ 
 			#my $docstring = $dom->toString(3);
 			my $node = @nodes[$i];
 			my $head = $node->getAttribute('head');
@@ -297,6 +299,8 @@ sub main{
 					 {
 					 	$verbchunk->setAttribute('type', 'grup-verb');
 					 }
+					 
+
 					 
 					 # if this is the main verb in the chunk labeled as VA, change pos to VM
 					 if($node->getAttribute('pos') eq 'va' && !$node->exists('child::NODE[@pos="vm"]'))
@@ -380,9 +384,6 @@ sub main{
 #      <NODE ord="10" form="." lem="." pos="fp" cpos="F" head="8" rel="f" mi="Fp"/>
 #    </NODE>
 #  </SENTENCE>
-
-
-
 
 
 
@@ -718,6 +719,116 @@ sub main{
 		{
 			&moveTopNodeUnderChunk($sentence);
 		}
+		# soler+inf -> inf as cd -> change			
+#						  <SENTENCE ord="1">
+#						    <CHUNK type="grup-verb" si="top" ord="1">
+#						      <NODE ord="1" form="Solían" lem="soler" pos="vm" cpos="v" rel="sentence" mi="VMII3P0"/>
+#						      <CHUNK type="grup-verb" si="cd" ord="2">
+#						        <NODE ord="2" form="dormir" lem="dormir" pos="vm" cpos="v" rel="cd" mi="VMN0000"/>
+#						        <CHUNK type="sadv" si="cc" ord="3">
+#						          <NODE ord="3" form="temprano" lem="temprano" pos="rg" cpos="r" rel="cc" mi="RG"/>
+#						        </CHUNK>
+#						      </CHUNK>
+#						      <CHUNK type="F-term" si="term" ord="4">
+#						        <NODE ord="4" form="." lem="." pos="fp" cpos="F" mi="Fp"/>
+#						      </CHUNK>
+#						    </CHUNK>
+#						  </SENTENCE>
+						
+				my @solerswithCD = $sentence->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v") and NODE[@lem="soler"] and CHUNK[(@type="grup-verb" or @type="coor-v") and @si="cd"]/NODE[@mi="VMN0000"] ]');
+				if(scalar(@solerswithCD)>0){
+					foreach my $solerchunk (@solerswithCD){
+						my ($inf) = $solerchunk->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v") and @si="cd" and NODE[@mi="VMN0000"] ]');
+						if($inf){
+							my $inford = $inf->findvalue('child::NODE[@mi="VMN0000"]/@ord');
+							my $solerord = $solerchunk->findvalue('child::NODE[@lem="soler"]/@ord');
+							if($solerord+1 == $inford){
+								my $solerparent = $solerchunk->parentNode();
+								my ($solernode) = $solerchunk->findnodes('child::NODE[@lem="soler"]');
+								my ($infnode) = $inf->findnodes('child::NODE[@mi="VMN0000"]');
+								
+								if($solerparent && $solernode && $infnode){
+									$infnode->appendChild($solernode);
+									$solernode->setAttribute('rel', 'v');
+									$solerparent->appendChild($inf);
+									my @solerchildren = $solerchunk->childNodes();
+							
+									foreach my $solerchild(@solerchildren){
+										$inf->appendChild($solerchild);
+									}
+									
+									$inf->setAttribute('si', $solerchunk->getAttribute('si'));
+									$solerparent->removeChild($solerchunk);
+								}
+								
+								
+								
+							}
+							
+							print STDERR "ord soler $solerord, ord inf: $inford\n";
+						}
+					}
+				}
+				
+				# if there is a main verb in the chunk labeled as VA with a child node  VMG -> make gerund head!
+				my @falseAux = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v" and NODE[@lem="estar" and @pos="va"] and CHUNK[NODE[@mi="VMG0000"]] ]');
+				if(scalar(@falseAux) > 0)
+				{
+					foreach my $aux (@falseAux)
+					{
+							my ($gerund) = $aux->findnodes('child::CHUNK[NODE[@mi="VMG0000"]][1]');
+							if($gerund)
+							{
+								my ($gerundnode) = $gerund->findnodes('child::NODE[@mi="VMG0000"][1]');
+						 		my ($auxnode) = $aux->findnodes('child::NODE[@lem="estar"]');
+						 		my $parent = $aux->parentNode();
+						 		$parent->appendChild($gerund);
+						 		my @auxchildren = $aux->childNodes();
+						 		$parent->removeChild($aux);
+						 		
+						 		foreach my $child(@auxchildren){
+					 				$gerund->appendChild($child);
+					 			}
+						 		$gerundnode->appendChild($auxnode);	
+						 		$auxnode->setAttribute('rel', 'v');
+						 		$gerund->setAttribute('si', $aux->getAttribute('si'));
+					 		}
+					}
+
+				}
+				# ir a +infinitive 
+#				<CHUNK type="grup-verb" si="top" ord="1">
+#			      <NODE ord="1" form="Van" lem="ir" pos="vm" cpos="v" rel="sentence" mi="VMIP3P0"/>
+#			      <CHUNK type="grup-verb" si="S" ord="3">
+#			        <NODE ord="3" form="pensarlo" lem="pensar" pos="vm" cpos="v" rel="S" mi="VMN0000">
+#			          <NODE ord="2" form="a" lem="a" pos="sp" cpos="s" head="3" rel="s" mi="SPS00"/>
+#			        </NODE>
+				my @irAinf = $sentence->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v") and NODE[@lem="ir"] and CHUNK[(@type="grup-verb" or @type="coor-v") and NODE[@mi="VMN0000" and NODE[@lem="a"]  ]  ] ]');
+				if(scalar(@irAinf)>0){
+					print STDERR "jssfsdfsdfsfhsfhdf\n";
+					foreach my $ir (@irAinf){
+						my ($inf) = $ir->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v") and NODE[@mi="VMN0000" and NODE[@lem="a"]] ]');
+						if($inf){
+							my $parent = $ir->parentNode();
+							my ($irnode) = $ir->findnodes('child::NODE[@lem="ir"][1]');
+							my ($infnode) = $inf->findnodes('child::NODE[@mi="VMN0000"][1]');
+							
+							$parent->appendChild($inf);
+							my @irchildren = $ir->childNodes();
+							$parent->removeChild($ir);
+							foreach my $irchild (@irchildren){
+								$infnode->appendChild($irchild);
+								
+							}
+							$infnode->appendChild($irnode);
+							
+						} 
+
+						
+					}
+				}
+		
+		
 		# check if main verb is in fact a subordinated clause, if so, make second grup-verb head
 		# if coordinated vp: don't take first child grup-verb (this is the coordinated vp), take the last
 		# note: if parser made something else head of sentence, the top verb might not have si=top
@@ -953,7 +1064,9 @@ sub main{
 			
 			}
 		}
-	
+		
+
+				
 	}
 	## print new xml to stdout
 	#my $docstring = $dom->toString(3);

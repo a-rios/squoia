@@ -156,7 +156,9 @@ my.type=F-term && child.smi=/FIT|FIA/			"+Neg"		!(my.type=F-term) && !(xpath{des
 
 my.type=grup-sp && child.slem=sin && my.prepos=mana		prepos		(my.type=sn && child.slem=nada) || xpath{self::CHUNK[@type="grup-verb" and NODE[@smi="VMN0000"]]/CHUNK[@type="sn"]/NODE[@slem="nada"]}		""			child			2to1			overwrite
 
-
+# dates
+# el día 2 de diciembre -> set día to delete, else doubled
+my.postform=p'unchaw			"yes"		child.slem=día && my.type=sn && xpath{child::CHUNK[@type="date" and @postform="p'unchaw"]}		delete		parent		1to2		overwrite
 
 
 

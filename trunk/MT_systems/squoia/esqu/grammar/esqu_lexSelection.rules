@@ -19,13 +19,13 @@
 
 
 #gender related ambiguities
-viejo		paya		k	(my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]}) || my.smi=/NCF/
-viejo		machu		k	(my.smi=/AQ.M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/
-viejo		mawk'a		k	!( (my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} ) || my.smi=/NCF/) && !((my.smi=/AQ0M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/)
+viejo		paya		k	(my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]}) || my.smi=/NCF/ || (xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK[@si="suj"]/NODE[@sem="[+Fem]"]} && parent.si=atr ) 
+viejo		machu		k	(my.smi=/AQ.M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/ || (xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK[@si="suj"]/NODE[@sem="[+Masc]"]} && parent.si=atr ) 
+viejo		mawk'a		k	!( (my.smi=/AQ.F/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} ) || my.smi=/NCF/) && !((my.smi=/AQ0M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/) && !(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK[@si="suj"]/NODE[@sem="[+Fem]" or @sem="[+Masc]"]} && parent.si=atr ) 
 
-anciano		paya		k	(my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} ) || my.smi=/NCF/
-anciano		machu		k	(my.smi=/AQ.M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/
-anciano		yuyaq		k	!(my.smi=/AQ.M/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}) && !(my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]})
+anciano		paya		k	(my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} ) || my.smi=/NCF/ ||(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK[@si="suj"]/NODE[@sem="[+Fem]"]} && parent.si=atr ) 
+anciano		machu		k	(my.smi=/AQ.M/ && xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]})  || my.smi=/NCM/ || (xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK[@si="suj"]/NODE[@sem="[+Masc]"]} && parent.si=atr ) 
+anciano		yuyaq		k	!(my.smi=/AQ.M/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Masc]"]}) && !(my.smi=/AQ.F/ || xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]}) && !(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/CHUNK[@si="suj"]/NODE[@sem="[+Fem]" or @sem="[+Masc]"]} && parent.si=atr ) 
 
 #adolescente-> smi=NCC, need to check if head noun is masc/fem or if used as noun, if fem/masc article present
 adolescente	t'asqi		k	xpath{parent::CHUNK/parent::CHUNK/NODE[@sem="[+Fem]"]} || child.smi=/D..F../
