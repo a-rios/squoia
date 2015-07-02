@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quechua_corpus xmlns="http://ufal.mff.cuni.cz/pdt/pml/" id="focus_qu">
   <head>
-    <schema href="../qu_schema.xml" />
+    <schema href="../quz_schema.xml" />
   </head>
+  <meta>
+    <name>SMULTRON_QUZ_SQUOIA_FOCUS</name>
+    <author>Roger Gonzalo Segura, Annette Rios</author>
+    <date>2015-07-02</date>
+    <description>SQUOIA-FOCUS: Information Resources for Development Cooperation – Part of SMULTRON v4.0 – The Stockholm MULtilingual parallel TReebank. See http://www.cl.uzh.ch/research/parallelcorpora/paralleltreebanks/smultron_en.html</description>
+    <history>Source Texts: Focus No 1/08: La papa y el cambio climático - Papawan llaphi t'ikraywan, translation by Irma Álvarez Ccoscco and César Morante Luna</history>
+  </meta>
   <body>
     <s id="s1">
       <saphi>
