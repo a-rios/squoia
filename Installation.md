@@ -1,0 +1,262 @@
+NEW: Alex Rudnick set up some build scripts that make this install process much easier, you can find them here:
+
+https://github.com/alexrudnick/squoia_environment
+
+Step-by-step installation instructions for the MT system, including dependencies.
+
+
+Installation:
+
+  1. Checkout the squoia repository.
+  1. Install FreeLing from:
+    * http://nlp.lsi.upc.edu/freeling]
+    * for installation instructions, see: http://nlp.lsi.upc.edu/freeling/doc/userman/html/node10.html
+  1. Install compile the squoia analyzer server (it's a freeling analyzer server with "desr" output format option, i.e. prints out conll):
+    * set paths:
+```
+$ export FREELING= path-to-your-freeling-installation
+$ export FREELING_SRC= path-to-your-freeling-sources (trunk from svn)
+```
+  1. compilation and installation of FreeLing:
+```
+$ cd $FREELING_SRC
+$ make
+$ make install
+```
+  1. compile and link the squoia\_analyzer server:
+    1. copy all headers from the sample analyzer in the freeling sources to
+```
+$ cp $FREELING_SRC/src/main/sample_analyzer/*.h $FREELING/include
+```
+    1. copy special "squoia" configuration file to freeling
+```
+$ cp config_squoia/config.h $FREELING/include/
+```
+    1. compile the output part (output\_squoia):
+```
+$ g++ -c -o output_squoia.o output_squoia.cc -I$FREELING/include/
+```
+    1. compile the analyzer server (squoia\_analyzer):
+```
+$ g++ -c -o squoia_analyzer.o squoia_analyzer.cc -I$FREELING/include/
+```
+    1. link the different parts to create the server executable:
+```
+$ /bin/bash $FREELING_SRC/libtool --tag=CXX --mode=link g++ -O3 -Wall -o squoia_analyzer squoia_analyzer.o $FREELING_SRC/src/main/analyzer.o output_squoia.o -L$FREELING/lib -lfreeling -lboost_program_options-mt -lboost_system -lboost_filesystem-mt
+```
+    1. install program
+```
+$ cp squoia_analyzer $FREELING/bin/
+```
+    1. add Freeling binaries ($FREELING/bin) to PATH (in bash\_profile or .bashrc)
+    1. note: you have to log into a new bash for this change to be effective
+    1. adjust the paths in $SQUOIAHOME/FreeLingModules/example.conf
+    1. start the server
+```
+$ squoia_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
+```
+    1. wait a bit and call the client to analyze some text
+```
+$ echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
+```
+  1. Download and install the dependency parser desr from:
+    * http://sourceforge.net/projects/desr/?source=dlp]
+    * for installation instructions, see: https://sites.google.com/site/desrparser/installation
+    * note: desr looks for doxygen in /usr/local/bin, if your doxygen binary is in /usr/bin, create a symbolic link:
+```
+$ ln -s /usr/bin/doxygen /usr/local/bin/doxygen
+```
+  1. get the spanish model and conf file from:
+    * https://sites.google.com/site/desrparser/models]
+    * get also this model: http://medialab.di.unipi.it/Project/QA/Parser/models/spanish_es4.MLP
+    * save them in the directory of your desr installation
+  1. compile desr server/client:
+```
+$ export FREELING= path-to-your-freeling-installation
+$ export FREELING_SRC= path-to-your-freeling-sources ( trunk from svn)
+$ export DESRHOME=path-to-your-desr-installation
+```
+  1. compile parser client: desr\_client
+```
+$ g++ -c -o desr_client.o desr_client.cc -I$FREELING/include/
+```
+  1. link parser client:
+```
+$ g++ -O3 -Wall -o desr_client desr_client.o
+```
+  1. compile parser server:
+```
+$ g++ -c -o desr_server.o desr_server.cc -std=gnu++0x -I$FREELING/include/ -I$DESRHOME/src/ -I/usr/include/python2.7/ -I$DESRHOME -I$DESRHOME/ixe/ -I$DESRHOME/classifier/
+```
+  1. link parser server:
+```
+$ g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so  $DESRHOME/ixe/libixe.a
+```
+  1. copy the executables desr\_client and desr\_server to some place in your PATH (e.g. /usr/local/bin), or add the desrModules directory to your PATH, e.g in your bashrc.
+    * either:
+```
+$ cp desr_client /usr/local/bin
+$ cp desr_server /usr/local/bin
+```
+    * or open .bashrc and add:
+```
+export PATH="path-to-your-squoia-repo/desrModules:$PATH";
+```
+  1. start two servers (one for each model):
+```
+$ desr_server -m $DESRHOME/spanish_es4.MLP --port 5678 2> logdesr_es4 &
+$ desr_server -m $DESRHOME/spanish.MLP --port 1234 2> logdesr_model2 &
+```
+  1. use the client to tag (FreeLing) and parse sentences:
+```
+$ echo "la madre se va. El padre se queda. El hijo duerme." | analyzer_client 8866 | ./desr_client 5678
+```
+  1. download and install lttoolbox from Apertium (see lttoolbox/README for installation instructions):
+```
+$ svn co https://svn.code.sf.net/p/apertium/svn/trunk/lttoolbox
+```
+  1. download branches from the matxin repo (do not compile yet):
+```
+$ svn co https://svn.code.sf.net/p/matxin/code/branches
+```
+    * copy the (adapted) lexical transfer module from squoia to matxin:
+```
+$ cd path-to-your-matxin-branches/matxin
+$ cp $SQUOIAHOME/MT_systems/matxin-lex/matxin_xfer_lex.cc src/
+```
+    * open src/Makefile.am in an editor and comment out these two lines with a '#':
+```
+matxin_destxt_SOURCES = txt-deformat.cc
+matxin_deshtml_SOURCES = html-deformat.cc
+```
+    * also, delete 'matxin-destxt matxin-deshtml' in this line (same Makefile.am):
+```
+change
+bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-prep matxin-gen-inter matxin-gen-intra \
+	       matxin-gen-morph matxin-xfer-verb \
+               matxin-reformat matxin-destxt matxin-deshtml
+to
+bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-prep matxin-gen-inter matxin-gen-intra \
+	       matxin-gen-morph matxin-xfer-verb \
+               matxin-reformat
+```
+    * compile matxin following the instructions in the matxin README
+```
+$ ./autogen.sh --prefix=<path-to-install>
+$ make
+$ make install
+```
+      * if configure complains that it can't find lttoolbox, set MATXIN\_CFLAGS and MATXIN\_LIBS
+```
+$ export MATXIN_LIBS="-L/path-to-your-lttoolbox/lib -llttoolbox3 -lxml2 -lpcre"
+$ export MATXIN_CFLAGS="-I/path-to-your-lttoolbox/include/lttoolbox-3.2/ -I/path-to-your-lttoolbox/include/lttoolbox-3.2/include -I/usr/include/libxml2"
+```
+  1. install these Perl modules:
+    * XML::LibXML
+    * Storable
+    * File::Basename
+    * File::Spec::Functions
+    * List::MoreUtils
+    * AI::NaiveBayes1
+      * e.g. with cpan:
+```
+$ cpan XML::LibXML
+```
+    * one of the files needs a little change. Open AI::NaiveBayes1 and insert at the beginning:
+```
+require YAML;
+```
+  1. compile the bilingual dictionaries:
+```
+$ cd path-to-your-squoia-repo/MT_systems/esqu/lexica
+$ lt-comp lr es-quz.dix es-quz.bin
+$ cd path-to-your-squoia-repo/MT_systems/esde/lexica
+$ lt-comp lr es-de.dix es-de.bin
+```
+  1. get the Spanish semantic resources (only necessary for the es-quz system, if you want to use only es-de, you don't need to install these resources)
+    * get the Ancora verb frames lexicon from: http://clic.ub.edu/corpus/en/ancora-descarregues
+      * note: you have to register in order to download this lexicon
+    * write all single xml files into one xml file, e.g. like this:
+```
+$ cd path-to-your-AnCora-Lexicon/
+$ cat *.xml > path-to-your-squoia-repo/MT_systems/allVerbs.xml
+```
+    * read the semantic lexica into hashes:
+```
+$ cd path-to-your-squoia-repo/MT_systems
+$ perl readInSemanticDix.pl allVerbs.xml noun_semantics.txt
+```
+    * adapt the path in the config file(s):
+      * open esqu/example-es-quz.cfg and esde/example-es-de.cfg
+      * set GRAMMAR\_DIR to your squoia installation
+      * save as es-quz.cfg and es-de.cfg
+
+  * read config parameters (either es-quz or es-de, can't use both at the same time):
+    * for spanish-quechua:
+```
+perl readConfig.pl esqu/es-quz.cfg
+```
+    * for spanish-german:
+```
+perl readConfig.pl esde/es-de.cfg
+```
+  * adapt the paths in the example shell scripts to use the MT system:
+    * open run\_esqu\_xml\_example.sh (in the MT\_systems folder of your squoia repo)
+    * adapt all the necessery paths to your installation. You should at least change:
+      * MATXIN\_BIN
+      * PROJECT\_DIR
+      * DESR\_DIR
+    * save this adapted shell script to run\_esqu\_xml.sh
+  * do the same with run\_esqu\_full\_example.sh, save as run\_esqu\_full.sh
+  * make all the shell scripts executable:
+```
+$ chmod +x run_esqu_xml.sh
+$ chmod +x run_esqu_full.sh
+$ chmod +x conll2xml/model2_desr.sh
+```
+  1. you should now be able to use run\_esqu\_xml.sh:
+```
+$ echo 'la casa es bonita' | ./run_esqu_xml.sh 
+```
+    * output is xml and should look like this:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<corpus evidentiality="direct">
+  <SENTENCE ref="1">
+    <CHUNK ref="3" type="grup-verb" si="top" verbform="main" lem="ka" verbmi="Copula+3.Sg.Subj" p_ord="2" ord="2">
+      <NODE ref="3" slem="ser" smi="VSIP3S0" UpCase="none" lem="ka" mi="present" verbmi="Copula+3.Sg.Subj">
+</NODE>
+      <CHUNK ref="2" type="sn" si="suj" p_ord="0" c_ord="0" ord="0">
+        <NODE ref="2" alloc="" slem="casa" smi="NCFS000" UpCase="none" lem="wasi" mi="NRoot" ord="1">
+          <NODE ref="1" alloc="" slem="el" smi="DA0FS0" UpCase="none" ord="0"/>
+        </NODE>
+      </CHUNK>
+      <CHUNK ref="4" type="sa" si="atr" func="attributive" p_ord="0" c_ord="1" ord="1">
+        <NODE ref="4" alloc="" slem="bonito" smi="AQ0FS0" UpCase="none" lem="sumaq" func="attributive" mi="NRoot"/>
+      </CHUNK>
+    </CHUNK>
+  </SENTENCE>
+</corpus>
+```
+  1. in order to use run\_esqu\_full.sh, you need to compile the xfst generator:
+    * get xfst from here: http://www.stanford.edu/~laurik/.book2software/
+    * compile the morphological generator:
+```
+$ cd path-to-your-squoia-repo/morphology/transfer_generator
+$ xfst -f unificadoTransfer.xfst
+```
+  1. run the full MT system:
+```
+$ echo 'la casa es bonita' | ./run_esqu_full.sh
+```
+    * output should be:
+```
+Wasi sumaq kan
+```
+    * translate whole files:
+      * IMPORTANT: the FreeLing tagger expects input as one sentence per line
+      * if you want to use automatic sentence splitting, there's a script you can use in /MT\_systems:
+```
+$ cat your-text | perl splitSentences.pl > your-text.tok
+```
+  1. instruction for spanish-german: coming soon...
