@@ -6,7 +6,7 @@ use utf8;
 #use open ':utf8';
 #binmode STDIN, ':utf8';
 #binmode(STDOUT, ":utf8");
-binmode(STDERR, ":utf8");
+#binmode(STDERR, ":utf8");
 #use XML::LibXML;
 use strict;
 #use AI::NaiveBayes1;
