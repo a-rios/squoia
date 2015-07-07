@@ -34645,6 +34645,7 @@ veintitodos
    <e><p><l>polvoriento</l><r>staubig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>polvoroso</l><r>staubig<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>ponderado</l><r>ausgewogen<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
+   <e><p><l>ponente</l><r>vortragend</r></p><par n='AQ_ADJ'/></e>	<!-- TODO AQ_NN (Referent NC_N_GENTRY_TIN) -->
    <e><p><l>popular</l><r>beliebt<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>popular</l><r>populär<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>
    <e><p><l>populista</l><r>populistisch<s n="molif"/>1</r></p><par n='AQ_ADJ'/></e>

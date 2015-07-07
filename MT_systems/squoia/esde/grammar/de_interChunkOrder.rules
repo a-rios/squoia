@@ -22,7 +22,10 @@ my.type=/CVP/&&my.finVerb=no		xSU:my.si=/suj|suj-a/, xCOCONJ:my.type=coConj, xCO
 #############
 # Adjective #
 #############
-my.type=AP		xPP:my.type=/PP/, xAVP:my.type=AVP	xPP .xAVP .head
+# nominalized adjective
+my.type=AP&&!(parent.type=/NP/)		xPPGen:my.type=/PP/&&my.cas=Gen&&child.delete=yes, xPP:my.type=/PP/&&!(my.cas=Gen), xAVP:my.type=AVP	xPP .xAVP .head .xPPGen
+# attributive adjective
+my.type=AP&&parent.type=/NP/		xPP:my.type=/PP/, xAVP:my.type=AVP	xPP .xAVP .head
 
 ########
 # Noun #
