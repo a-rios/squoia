@@ -41,8 +41,12 @@ The folder FreeLingModules contains some adapted files to be used with FreeLing 
  - an adapted dictionary
  - an adapted constraint grammar to fine tune the tagger
 
+ MaltParser
+-----------
+MaltParser is a system for data-driven dependency parsing developed by Johan Hall, Jens Nilsson and Joakim Nivre at Växjö University and Uppsala University, Sweden.
+See: http://maltparser.org/
  
- DeSR Parser
+ DeSR Parser ("obsolete", replaced by the MaltParser)
 ------------
 A statistical dependency parser from Giuseppe Attardi (University of Pisa), available here:
 https://sites.google.com/site/desrparser/
@@ -65,7 +69,7 @@ G. Attardi, F. Dell'Orletta.
  https://files.ifi.uzh.ch/cl/siclemat/sprachanalyse/molif/
  
  
- TeEd - Tree Editor
+ TrEd - Tree Editor
 ---------------------
 Tool used for the annotation of the Quechua treebank, available from:
  http://ufal.mff.cuni.cz/tred/
