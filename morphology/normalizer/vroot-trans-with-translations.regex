@@ -267,7 +267,7 @@
 | [{ranti} "[" "VRoot" "]" "[" "=comprar" "]" ] :  {ranti} 
 | [{rikch'a} "[" "VRoot" "]" "[" "=parecer" "]" ] :  {rikch'a} 
 | [{rikch'a} "[" "VRoot" "]" "[" "=parecer" "]" ] :  {rikcha} 
-| [{rikhu} "[" "VRoot" "]" "[" "=reparar" "]" ] :  {rikhu} 
+| [{riku} "[" "VRoot" "]" "[" "=reparar,mirar" "]" ] :  {rikhu} 
 | [{rima} "[" "VRoot" "]" "[" "=hablar" "]" ] :  {rima} 
 | [{ruk'a} "[" "VRoot" "]" "[" "=ejecutar" "]" ] :  {ruk'a} 
 | [{ruqu} "[" "VRoot" "]" "[" "=cortar" "]" ] :  {ruqu} 

@@ -2433,6 +2433,7 @@
 | [ {unchuchukuy} "[" "NRoot" "]" "["  "=comadreja" "]" ] : {unchuchukuy}
 | [ {unkhu} "[" "NRoot" "]" "["  "=prenda" "]" ] : {unkhu}
 | [ {unkhu} "[" "NRoot" "]" "["  "=prenda" "]" ] : {unku}
+| [ {unkuña} "[" "NRoot" "]" "["  "=unkuña" "]" ] : {unkuña}
 | [ {unqu} "[" "NRoot" "]" "["  "=enfermo" "]" ] : {unqu}
 | [ {untu} "[" "NRoot" "]" "["  "=manteca" "]" ] : {untu}
 | [ {unu} "[" "NRoot" "]" "["  "=agua,millón" "]" ] : {unu}
