@@ -659,8 +659,8 @@ define LexRestr [ASWANALLIN .o. HATUNPAQARIN .o. KACHARIKU  .o. YROOTS .o. nROOT
 
 # the only irregular verb form: haku - come!
 
-define HAKU  [{haku} "[" "VRoot" "]" "[" "=venir" "]" "[" "+2.Sg.Subj.Imp" "]" ] : {haku};
-define HAKUPL  [{hakuchik} "[" "VRoot" "]" "[" "=venir" "]" "[" "+2.Pl.Subj.Imp" "]" ] : [{hakuchik}|{hakuchis}|{hakuchiq}|{hakuchi}];
+define HAKU  [{haku} "[" "VRoot" "]" "[" "=venir" "]" "[" "VPers" "]" "[" "+2.Sg.Subj.Imp" "]" ] : {haku};
+define HAKUPL  [{hakuchik} "[" "VRoot" "]" "[" "=venir" "]" "[" "VPers" "]"  "[" "+2.Pl.Subj.Imp" "]" ] : [{hakuchik}|{hakuchis}|{hakuchiq}|{hakuchi}];
 
 # otaq/nitaq
 
