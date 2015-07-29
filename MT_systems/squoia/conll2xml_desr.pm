@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-package squoia::conll2xml;
+package squoia::conll2xml_desr;
 
 use strict;
 use utf8;

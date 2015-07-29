@@ -164,6 +164,9 @@ sub main{
 									$verbchunk->setAttribute('HLRC', 'yes');
 								}
 								#else: if no cd: los/lo can be suj or obj, no way of knowing (los que trabajan comen vs. lo que se ve aqui es ..) -> rule-based vdisamb will assign rel: -> both options
+								else{
+									$verbform->setAttribute('verbform', 'rel:');
+								}
 							}
 							else
 							{

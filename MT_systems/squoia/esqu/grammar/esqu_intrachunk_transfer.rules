@@ -178,8 +178,10 @@ my.smi=/1|2|3/  && my.smi=/^VA/  && ( my.slem=estar || !(xpath{ancestor::NODE[@s
 
 # Gerunds:
 # copy mi from gerund to verbmi of chunk
-my.smi=/VMG0000|VSG0000/ && my.mi=/.+/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer" ]})  		mi			my.type=/grup-verb|coor-v/		addverbmi		up		concat
-my.smi=/VMG0000|VSG0000/ && xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer" ]}				"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up		overwrite
+my.smi=/VMG0000|VSG0000/ && my.mi=/.+/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer" or @slem="ser"]})  		mi			my.type=/grup-verb|coor-v/ && !(my.verbform=/obligative|perfect|rel:|agentive/) 		addverbmi		up		concat
+my.smi=/VMG0000|VSG0000/ && my.mi=/.+/ && !(xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer" or @slem="ser"]})  		"yes"			my.type=/grup-verb|coor-v/ && my.verbform=/obligative|perfect|rel:|agentive/ 			finiteMiInAux		up		concat
+
+my.smi=/VMG0000|VSG0000/ && xpath{descendant::NODE[@slem="estar" or @slem="seguir" or @slem="continuar" or @slem="comenzar" or @slem="permanecer" or @slem="ser"]}				"yes"			my.type=/grup-verb|coor-v/		finiteMiInAux		up		overwrite
 my.smi=/VMG0000|VSG0000/ && xpath{descendant::NODE[@slem="continuar"]}														"+Perdur"		my.type=/grup-verb|coor-v/		addverbmi		up		concat
 
 # additional rule for 'estar', should be disambiguated by morphSelection, based on tag (VA as progressive, VM otherwise), but tagger gets it wrong quite often

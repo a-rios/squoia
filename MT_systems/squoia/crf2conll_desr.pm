@@ -1,22 +1,23 @@
 #!/usr/bin/perl
 
-package squoia::crf2conll;
+#package squoia::crf2conll_desr;
 
 use strict;
 #use utf8;
 
-sub main{
-	my $inputLines = $_[0];
-	my $verbose = $_[1];
-
-	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
+#sub main{
+#	my $inputLines = $_[0];
+#	my $verbose = $_[1];
+#
+#	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
 	my @outputLines;
 	my $newSent =1;
 	my $wordCount;
 	
 	#foreach my $line (@$inputLines){
-	while(<$inputLines>){
+	#while(<$inputLines>){
+	while(<>){
 		my $line = $_;
 		if($line =~ /^\s*$/){
 	         #print "\n";
@@ -389,8 +390,12 @@ sub main{
 		     } 
 	    }
 	}
-	return \@outputLines;
-}
+	#return \@outputLines;
+	
+	foreach my $line (@outputLines){
+		print $line;
+	}
+
 
 sub printDateToken{
 	my $date = $_[0];
@@ -432,4 +437,4 @@ sub printDateToken{
 	return $subOutLine;
 }
 
-1;
+#1;

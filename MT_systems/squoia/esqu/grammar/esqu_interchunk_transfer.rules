@@ -49,6 +49,11 @@ my.type=sn && chunkparent.type=coor-n 			case			my.type=/grup-sp|coor-sp/ && my.
 # headless relative clause with preposition -> copy case from preposition ('por lo que he visto' -> rikusqay-rayku)
 my.type=grup-sp && my.case=/.+/ && !(xpath{../child::CHUNK[@type="sn" or @type="coor-n"]})			case					my.type=/grup-verb|coor-v/ && my.HLRC=yes		chunkmi			chunkparent			1to2	concat
 
+#TODO funktioniert nicht!!
+# headless relative clause with si=cd -> add +Acc
+#my.type=/grup-verb|coor-v/					"+Acc"					my.type=/grup-verb|coor-v/ && my.HLRC=yes && my.si=/cd/			chunkmi			parent			1to2		concat
+
+
 # subject in nominal verb chunk: add genitive
 # TODO check if thats correct: 
 # ella sabe que tú te has ido -> qam(pa?) rikusqaykita yachan

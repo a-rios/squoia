@@ -88,7 +88,7 @@ sub main{
 	 				
 	 				#if this is a coordinated verb to a relative clause that somehow has no verbform yet, just copy verbform from head to this chunk
 	 				if($verbChunk->exists('parent::CHUNK[@type="coor-v"]/NODE[starts-with(@verbform,"rel")]') && $verbChunk->exists('descendant::NODE[@pos="pr"]') )
-	 				{
+	 				{ 
 	 					my $parent = $verbChunk->parentNode();
 	 					if($parent){
 	 						$verbChunk->setAttribute('verbform', $parent->getAttribute('verbform'));
@@ -129,7 +129,7 @@ sub main{
 	 				} 			
 	 				# if this is a passive clause with 'ser'/'estar'
 	 				elsif($verbChunk->exists('child::NODE[starts-with(@mi,"VMP")]/NODE[@lem="ser" or @lem="estar"]'))
-	 				{#
+	 				{
 	 					$verbChunk->setAttribute('verbform', 'passive');
 	 				}
 	 				# if this is a topicalization with 'ser' -> delete verb, but insert a topic marker
@@ -314,15 +314,17 @@ sub main{
 	 					$verbChunk->setAttribute('conjLast', 'hina');
 	 				}
 	 				# según -> -sqaman hina, según que (?)
-	 				elsif($conjunction && $conjunction->getAttribute('lem') =~ /^según$|según_que/){
+	 				elsif($conjunction && $conjunction->getAttribute('lem') =~ /^según$|según_que/)
+	 				{
 	 					$nbrOfNominalForms++;
 	 					$verbChunk->setAttribute('verbform', 'perfect');
 	 					$verbChunk->setAttribute('conjLast', 'hina');
 	 					$verbChunk->setAttribute('chunkmi', '+Dat');
 	 				}
-	 				# if this is a final clause,  -na?
-					elsif($conjunction && $conjunction->getAttribute('lem') =~ /^a_que$|al_tiempo_que|con_el_fin_de_que|con_fin_de_que|a_fin_de_que|con_objeto_de_que|con_objeto_que|al_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
-					{ 
+	 				# if this is a final clause,  -na? (change: doesnt need to be subjunctive)
+					#if($conjunction && $conjunction->getAttribute('lem') =~ /^a_que$|al_tiempo_que|con_el_fin_de_que|con_fin_de_que|a_fin_de_que|con_objeto_de_que|con_objeto_que|al_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ && &isSubjunctive($verbChunk))
+					elsif($conjunction && $conjunction->getAttribute('lem') =~ /^a_que$|al_tiempo_que|con_el_fin_de_que|con_fin_de_que|a_fin_de_que|con_objeto_de_que|con_objeto_que|al_objeto_de_que|conque|con_que|para_que|mientras|mientras_que|hasta_que/ )
+					{
 						$nbrOfFinalClauses++;
 						$verbChunk->setAttribute('verbform', 'obligative');
 						if($conjunction->getAttribute('lem') =~ /mientras|hasta_que|al_tiempo_que/)
