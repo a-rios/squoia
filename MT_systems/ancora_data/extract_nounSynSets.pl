@@ -89,12 +89,12 @@ foreach my $lem (keys %NounSem){
 
 # nouns: 
 store \%nounLemClasses, 'nounLemClasses';
-
-print "cambio: ";
-foreach my $class (keys $nounLemClasses{'cambio'}){
-    print $class.",";
-}
-print "\n";
+#
+#print "cambio: ";
+#foreach my $class (keys $nounLemClasses{'cambio'}){
+#    print $class.",";
+#}
+#print "\n";
 #print keys($nounLemClasses{'falta'})."\n";
 # foreach my $lem (keys %nounLemClasses){
 #     foreach my $class (keys $nounLemClasses{$lem}){

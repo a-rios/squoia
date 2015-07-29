@@ -765,22 +765,22 @@ sub main{
 								
 							}
 							
-							print STDERR "ord soler $solerord, ord inf: $inford\n";
+							#print STDERR "ord soler $solerord, ord inf: $inford\n";
 						}
 					}
 				}
-				
+
 				# if there is a main verb in the chunk labeled as VA with a child node  VMG -> make gerund head!
-				my @falseAux = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v" and NODE[@lem="estar" and @pos="va"] and CHUNK[NODE[@mi="VMG0000"]] ]');
+				my @falseAux = $sentence->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v") and NODE[(@lem="estar" and @pos="va") or @lem="ser"] and CHUNK[NODE[@mi="VMG0000"]] ]');
 				if(scalar(@falseAux) > 0)
-				{
+				{ 
 					foreach my $aux (@falseAux)
 					{
 							my ($gerund) = $aux->findnodes('child::CHUNK[NODE[@mi="VMG0000"]][1]');
 							if($gerund)
 							{
 								my ($gerundnode) = $gerund->findnodes('child::NODE[@mi="VMG0000"][1]');
-						 		my ($auxnode) = $aux->findnodes('child::NODE[@lem="estar"]');
+						 		my ($auxnode) = $aux->findnodes('child::NODE[@lem="estar" or @lem="ser"]');
 						 		my $parent = $aux->parentNode();
 						 		$parent->appendChild($gerund);
 						 		my @auxchildren = $aux->childNodes();

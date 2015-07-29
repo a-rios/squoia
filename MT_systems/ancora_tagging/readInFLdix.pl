@@ -107,11 +107,11 @@ while (<>)
 #       print "\n";
 #}
 
-print "analysis for salir: ";
-foreach my $s (keys $forms{'salir'}){
-	print " $s ";
-}
-print "\n";
+#print "analysis for salir: ";
+#foreach my $s (keys $forms{'salir'}){
+#	print " $s ";
+#}
+#print "\n";
 
 print STDERR "max nbr of entries: $maxNBofEntries\n";
 print STDERR "max nbr of lems: $maxNBofLems\n";
