@@ -27,6 +27,7 @@ my $mode = $ARGV[0];
 
 #print $dom->documentElement();
 
+
 my %mapTagsToSuffixFormsNormalized = (	
   	'+Abl'         => 'manta',
      '+Abtmp'         => 'pacha',
@@ -122,7 +123,7 @@ my %mapTagsToSuffixFormsNormalized = (
      '+1.Pl.Incl.Subj'         => 'nchik',
      '+1.Pl.Incl.Subj.Fut'         => 'sun(chik)?',
      '+1.Pl.Incl.Subj.Pot'         => 'chwanchik|waqninchik',
-     '+1.Pl.Incl.Subj.Imp'         => 'sun',
+     '+1.Pl.Incl.Subj.Imp'         => 'sun(chik)?',
      '+1.Sg.Poss'         => '(ni)?y',
      '+1.Sg.Subj'         => 'ni',
      '+1.Sg.Subj.Fut'         => 'saq',
@@ -263,7 +264,7 @@ my %mapTagsToSuffixFormsNotNormalized = (
      '+1.Pl.Incl.Subj'         => 'nchi[ksqj]',
      '+1.Pl.Incl.Subj.Fut'         => 'sun(chi[ksqj])?',
      '+1.Pl.Incl.Subj.Pot'         => 'chwanchi[ksqj]|waqninchi[ksqj]',
-     '+1.Pl.Incl.Subj.Imp'         => 'sun',
+     '+1.Pl.Incl.Subj.Imp'         => 'sun(chi[ksqj])?',
      '+1.Sg.Poss'         => '([nñ]i)?y',
      '+1.Sg.Subj'         => 'ni',
      '+1.Sg.Subj.Fut'         => 'saq',
@@ -319,20 +320,25 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	
 	# sort by order
 	my @sorted = sort { @{$a->findnodes('order')}[0]->textContent <=> @{$b->findnodes('order')}[0]->textContent } @terminals;
+	
+#	foreach my $w (@sorted){
+#		print STDERR "w: ".$w->findvalue('word')." order: ".$w->findvalue('order')."\n";
+#	}
 
 	my $wordform = '';
 	my $analysis ='';
 	
-	my $lastToken = scalar(@sorted)-1;
+	#my $lastToken = scalar(@sorted)-1;
 	
 	for(my $i=0; $i<scalar(@sorted); $i++)
 	{	
 		my $terminal = @sorted[$i];
 		my $posNode = @{$terminal->findnodes('pos')}[0];
+			#print STDERR "printing node at $i: ".$terminal->findvalue('word')." with pos = ".$posNode->textContent()."\n";
 		# do not print DUMMY's, take away Dummy from array
 		if( $posNode && $posNode->textContent eq 'DUMMY'){
 			#if this dummy is the last token in the sentence: print previous token
-			if($i== $lastToken){
+			if($i== scalar(@sorted)-1){
 				# delete [^DB] after last suffix
 				$analysis =~ s/(\[\^DB\])?\[--\]$//;
 				#print "w $i: $wordform\t$analysis";
@@ -340,16 +346,18 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 				print "\n\n";
 			}
 			else{
+				#print STDERR "spliced at position $i: ".@sorted[$i]->findvalue('word')."\n";
 				splice(@sorted, $i, 1);
-				$lastToken--;
+				#$lastToken--;
+				$i--;
 			}
 		}
 		else
 		{
 			my $token = @{$terminal->findnodes('word')}[0]->textContent;
 			#print STDERR "terminal: ".@{$t->findnodes('word')}[0]->textContent."  ".@{$t->findnodes('order')}[0]->textContent."\n";
-			#print "acutal token: $token \n";
-			#print "i= $i, of ".scalar(@sorted)."\n";
+			#print STDERR "acutal token: $token \n";
+			#print STDERR "i= $i, of ".scalar(@sorted)."\n";
 			if( &isNewWord($token) and $i != scalar(@sorted)-1 and $i>0 ){
 				# delete [^DB] after last suffix
 				$analysis =~ s/(\[\^DB\])?\[--\]$//;
@@ -362,7 +370,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 				#print "kkkk $analysis $wordform $token\n";
 			}
 			# last token: print
-			elsif($i == $lastToken ){
+			elsif($i == scalar(@sorted)-1 ){
 				# new word: print last word, then print this
 				if(&isNewWord($token)){
 					# delete [^DB] after last suffix
@@ -370,10 +378,11 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 					print "$wordform\t$analysis\n\n";
 					$wordform = $token;
 					$analysis = &getAnalysis($terminal);
+					$analysis =~ s/(\[\^DB\])?\[--\]$//;
 					print "$wordform\t$analysis\n\n";
 				}
 				#if part of the previous word:
-				else{
+				else{ 
 					# delete '-' in morphemes
 					$token =~ s/^-(.)/\1/;
 					$wordform .= $token;
@@ -421,8 +430,15 @@ sub getAnalysis{
 			($morphform) = lc($token) =~ m/($morphformregex)\E$/;
 			
 			if(!$morphform){
-				print STDERR "root: could not find $morphformregex for $morphtag in $token\n";
-				exit;
+				#check if this is haku
+				if(lc($token) eq 'haku'){
+					$analysis = "[VPers][+2.Sg.Subj.Imp][^DB][--]";
+					next;
+				}
+				else{
+					print STDERR "root: could not find $morphformregex for $morphtag in $token\n";
+					exit;
+				}
 			}
 			$token =~ s/$morphform$//i;
 			
@@ -453,8 +469,8 @@ sub getAnalysis{
 		}
 		
 	}
-	elsif($pos eq 'SP'){
-		$analysis .= "[SP]";
+	elsif($pos =~ /^SP|FLM$/){
+		$analysis = $token."[".$pos."][^DB][--]";
 	}
 	else{
 		for(my $i=0; $i<scalar(@pos);$i++)

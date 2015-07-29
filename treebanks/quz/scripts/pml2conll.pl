@@ -121,12 +121,20 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 			  for(my $i=0;$i<scalar(@morphtags);$i++)
 			  {
 			      my $tag = @morphtags[$i];
+			      #portmantau: pos should be Tns_VPers
+			      if($tag->textContent =~ /Subj\.[NI]Pst/){
+			      	@poses[$i] = "Tns_VPers";
+			      	if(@poses[$i+1] eq 'VPers'){
+			      		splice(@poses, $i+1, 1);
+			      	}
+			      }
+			      
 			      if($i==0){
-				$morphstring .= @poses[$i]."=".$tag->textContent;
+						$morphstring .= @poses[$i]."=".$tag->textContent;
 			      }
 			      else{
-				$morphstring .= "|".@poses[$i]."=".$tag->textContent;
-				}
+						$morphstring .= "|".@poses[$i]."=".$tag->textContent;
+				  }
 			  }
 			  # add translation if present
 			  if($translation ne '_'){
@@ -138,10 +146,10 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	      }
 	      my $head;
 	      if($terminal->exists('parent::children/parent::terminal')){
-		$head =  $terminal->findvalue('parent::children/parent::terminal/order/text()');
-		}
+				$head =  $terminal->findvalue('parent::children/parent::terminal/order/text()');
+		  }
 	      else{
-		$head = scalar(@terminals)+1;
+				$head = scalar(@terminals)+1;
 	      }
 	      
 	      my $label = $terminal->findvalue('child::label/text()');

@@ -15020,6 +15020,7 @@
                   </secedges>
                   <pos>Amb</pos>
                   <morph>
+                    <tag>+DirE</tag>
                   </morph>
                 </terminal>
               </children>
@@ -18900,7 +18901,7 @@
                       <word>t'ikrayku</word>
                       <secedges>
                       </secedges>
-                      <pos>Root</pos>
+                      <pos>Root_VDeriv</pos>
                       <translation>=volver</translation>
                       <morph>
                         <tag>VRoot</tag>
@@ -30174,6 +30175,7 @@
                   </secedges>
                   <pos>Amb</pos>
                   <morph>
+                    <tag>+DirE</tag>
                   </morph>
                 </terminal>
                 <terminal id="s83_13">
@@ -54932,7 +54934,7 @@
                   <word>apamu</word>
                   <secedges>
                   </secedges>
-                  <pos>Root</pos>
+                  <pos>Root_VDeriv</pos>
                   <translation>=traer</translation>
                   <morph>
                     <tag>VRoot</tag>
@@ -73811,9 +73813,9 @@
                       <order>3</order>
                       <label>s.subj</label>
                       <word>-sqa</word>
-                      <pos>Tns_VPers</pos>
+                      <pos>NS</pos>
                       <morph>
-                        <tag>+3.Sg.Subj.IPst</tag>
+                        <tag>+Perf</tag>
                       </morph>
                     </terminal>
                   </children>
