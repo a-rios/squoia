@@ -1,0 +1,4 @@
+source normalizer.xfst
+source normalizer-relax.xfst
+source spanish.xfst
+source spanish-relax.xfst
