@@ -21,43 +21,38 @@ http://clic.ub.edu/corpus/en/ancora-descarregues
 
 see also:
 Taulé, M., M.A. Martí, M. Recasens (2009). 
-  AnCora: Multilevel Annotated Corpora for Catalan and Spanish, Proceedings of 6th International Conference on language Resources and Evaluation.
+  AnCora: Multilevel Annotated Corpora for Catalan and Spanish. Proceedings of 6th International Conference on language Resources and Evaluation.
   
 Unfortunately, Ancora is not freely available, you have to register to download the resource. 
 Every verb comes in its own xml file, in order to read them into a hash, paste them all in one file, e.g. like this:
 
 $ cat *.xml > allVerbs.xml
 
-and then use readInSemanticDix.pl to store it as hash to a file.
+and then use MT_systems/utilities/readInSemanticDix.pl to store it as hash to a file.
 
  FreeLing 3
 -----------
 squoia_analyzer needs the FreeLing library for Spanish to be installed, available here:
 http://nlp.lsi.upc.edu/freeling/
 
-FreeLing is used for tokenization, tagging and named entity recognition and named entity classification. 
+FreeLing is used for tokenization, morphological analysis and named entity recognition and classification. 
 The folder FreeLingModules contains some adapted files to be used with FreeLing among others:
- - an adapted analyzer that return the tagged text in conll format
+ - an adapted analyzer module that returns the morphologically analyzed text in crf format
  - an adapted dictionary
- - an adapted constraint grammar to fine tune the tagger
+ 
+ Wapiti
+-----------
+Toolkit for sequence labeling, used for tagging the Spanish input sentences in the translation system.
+Wapiti is freely available from: https://wapiti.limsi.fr/
+
+Lavergne, T., O. Cappé, F. Yvon (2010).
+Practical Very Large Scale CRFs. Proceedings the 48th Annual Meeting of the Association for Computational Linguistics (ACL). Pp. 504–513, Uppsala, Sweden. Association for Computational Linguistics.
 
  MaltParser
 -----------
 MaltParser is a system for data-driven dependency parsing developed by Johan Hall, Jens Nilsson and Joakim Nivre at Växjö University and Uppsala University, Sweden.
 See: http://maltparser.org/
  
- DeSR Parser ("obsolete", replaced by the MaltParser)
-------------
-A statistical dependency parser from Giuseppe Attardi (University of Pisa), available here:
-https://sites.google.com/site/desrparser/
-
-It can also be tested online:
-http://paleo.di.unipi.it/es/parse
-
-G. Attardi, F. Dell'Orletta. 
-2009. Reverse Revision and Linear Tree Combination for Dependency Parsing. In Proc. of the North American Chapter of the Association for Computational Linguistics - Human Language Technologies short papers (NAACL HLT) 2009 conference, Boulder, Colorado.
- 
-
  matxin-xfer-lex
 --------------------- 
  Lexical transfer module from Matxin (branches), available from:
