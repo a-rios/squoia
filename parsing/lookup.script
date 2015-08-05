@@ -1,0 +1,11 @@
+main /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/normalizer.fst
+spanish /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/spanish.fst
+main2 /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/normalizer-relax.fst
+spanish2 /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/spanish-relax.fst
+guesser /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/guesser.fst
+
+main
+spanish
+main2
+spanish2
+guesser

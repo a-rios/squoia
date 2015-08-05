@@ -1,0 +1,23 @@
+README
+
+
+pml:
+-------
+You can view the annotated treebank pml files with the tree editor TrEd, download from:
+
+https://ufal.mff.cuni.cz/tred/
+
+qu_schema.xml is the schema file.
+
+tred_macros contains an extension to TrEd with some additional functions to view the Quechua trees.
+Copy the folder quechua in tred_macros to YOUR_HOME/.tred.d/extensions and add 'quechua' to the file YOUR_HOME/.tred.d/extensions/extensions.lst
+
+conll:
+--------
+contains the treebanks in conll format
+
+
+scripts:  
+---------
+quzconll2pml.pl  converts conll to pml
+pml2conll.pml    converts pml to conll
