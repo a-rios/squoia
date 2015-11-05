@@ -45,3 +45,40 @@ squoia_server_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=des
 
 # wait a bit and call the client to analyze some new text
 echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
+
+
+
+
+### neu test:
+
+g++ -c -o output_crf.o output_crf.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/
+g++ -c -o analyzer_client.o analyzer_client.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/ 
+g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/squoia/lib
+g++ -O3 -Wall -o server_squoia server_squoia.o output_crf.o -L/opt/squoia/lib -lfreeling -lboost_program_options -lboost_system -lboost_filesystem -lpthread 
+
+für analyzer_client
+g++ -O3 -Wall -o analyzer_client analyzer_client.o -L /opt/squoia/lib -lfreeling
+
+export FREELINGSHARE=/opt/squoia/share/freeling/
+
+# start the server
+./server_squoia -f /opt/squoia/squoia/FreeLingModules/es_squoia.cfg  --server --port=8844 2> logtagging &
+
+echo "eso  es mi test" |./analyzer_client 8844 
+
+
+zu committen:
+server_squoia.cc
+analyzer_client.cc
+output_crf*
+
+in squoia_config: analyzer_squoia.h, config_squoia.h, evt socket/stats (original aus sample_analyzer)
+
+
+TODO check
+in dicc: LemmaPreferences
+in locations: syntax
+
+
