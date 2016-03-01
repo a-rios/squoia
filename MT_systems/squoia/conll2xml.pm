@@ -2,7 +2,7 @@
 
 package squoia::conll2xml;
 
-# TODO: dates.. freeling tokenisiert->zusammen, parser modell zusammen, werden aber im Moment noch gesplittet in crf2conll -> parser kennt das nicht
+
 use strict;
 use utf8;
 #use XML::LibXML;
@@ -60,9 +60,12 @@ sub main{
 	my $InputLines = $_[0];
 	binmode($InputLines, ':utf8');
 	$verbose = $_[1];
+	my $withCorzu=$_[2];
 
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
+	my $articleID ="";	
+	my $sentInArticleID =1;
 	while(<$InputLines>)
 
 	{
@@ -79,20 +82,39 @@ sub main{
 	      $scount++;
 	      undef $sentence;
 	    }
+	    # begin/end of document in conll: skip
+	    elsif($line=~ /^#(begin|end) document/){
+	    	#only for evaluation
+	    	 if(/\#begin document/){
+     			 ($articleID) = ($_ =~ /\#begin document ([^\s]+)\.tbf/);
+	    	 }
+	    	 elsif(/\#end document/){
+	    	 	$articleID = "";
+	    	 	$sentInArticleID =1;
+	    	 }
+			next;
+	    }
+	    
 	    # word with analysis
 	    else
 	    {
 	     #create a new sentence node 
 	     if(!$sentence) 
 	     {
-	     $sentence = XML::LibXML::Element->new( 'SENTENCE' );
-	     $sentence->setAttribute( 'ord', $scount );
-	     $root->appendChild($sentence);
+		     $sentence = XML::LibXML::Element->new( 'SENTENCE' );
+		     $sentence->setAttribute( 'ord', $scount );
+		     $root->appendChild($sentence);
+		     $sentence->setAttribute( 'articleID', $articleID );
+		     $sentence->setAttribute( 'sentInArticleID', $sentInArticleID );
+		     $sentInArticleID++;
 	     }
 	     # create a new word node and attach it to sentence
 	     my $wordNode = XML::LibXML::Element->new( 'NODE' );
 	     $sentence->appendChild($wordNode);
-	     my ($id, $word, $lem, $cpos, $pos, $info, $head, $rel, $phead, $prel) = split (/\t|\s/, $line);	 
+	     my ($id, $word, $lem, $cpos, $pos, $info, $head, $rel, $rest) = split (/\t|\s/, $line);
+	     # entity: always last, but can be 9 or 10 columns -> just take last one
+	     my @rows = split (/\t|\s/, $line);
+	     my $entity = @rows[-1];
 	    # print STDERR "line: $id, $word, $lem, $cpos, $pos, $info, $head, $rel, $phead, $prel\n";
 	     
 	     
@@ -171,6 +193,9 @@ sub main{
 		 }
 		 else{
 	    	 $wordNode->setAttribute( 'mi', $eaglesTag );
+		 }
+		 unless($entity eq '_' or $entity eq ''){
+		    	 $wordNode->setAttribute('entityTokenLevel', $entity);
 		 }
 	
 	    # print "$eaglesTag\n";
@@ -450,7 +475,7 @@ sub main{
 					 #print STDERR "node: ".$node->getAttribute('lem')." ,parent: ".$parent->toString."\n" if $verbose;
 					 # if this is suj -> check if congruent with finite verb, check also if parent is a verbchunk
 					 if($node->getAttribute('rel') eq 'suj' && $parent->exists('self::*[@type="grup-verb" or @cpos="v" or @type="coor-v"]') && &isCongruent($node, $parent) == 0)
-					 {
+					 { #print STDERR "dom: ".$dom->toString(2)."\n";
 					 		$node->setAttribute('rel', 'cd-a');
 					 }
 					 # if this is 'lo/la' and pp-> change to cd
@@ -805,7 +830,6 @@ sub main{
 #			        </NODE>
 				my @irAinf = $sentence->findnodes('descendant::CHUNK[(@type="grup-verb" or @type="coor-v") and NODE[@lem="ir"] and CHUNK[(@type="grup-verb" or @type="coor-v") and NODE[@mi="VMN0000" and NODE[@lem="a"]  ]  ] ]');
 				if(scalar(@irAinf)>0){
-					print STDERR "jssfsdfsdfsfhsfhdf\n";
 					foreach my $ir (@irAinf){
 						my ($inf) = $ir->findnodes('child::CHUNK[(@type="grup-verb" or @type="coor-v") and NODE[@mi="VMN0000" and NODE[@lem="a"]] ]');
 						if($inf){
@@ -1068,6 +1092,136 @@ sub main{
 
 				
 	}
+	
+	#insert entites if annotated with Corzu
+	if($withCorzu)
+	{
+		foreach my $sentence ($dom->getElementsByTagName('SENTENCE')){
+			print STDERR "inserting entities in sentence ".$sentence->getAttribute('article')." ".$sentence->getAttribute('conllsentnr')."\n" if $verbose;
+			# consider linear sequence in sentence; 
+			my @nodes = $sentence->findnodes('descendant::NODE[@entityTokenLevel]');
+			 	
+			 	my %nodeSequence =();
+			 	
+			 	foreach my $node (@nodes)
+			 	{
+			 		# note: 'ord' 
+			 		my $idref = $node->getAttribute('ord');
+			 		$nodeSequence{$idref}= $node;
+			 	}
+			 	
+			 	my @sortedEntityNodes = sort {$a<=>$b} keys (%nodeSequence);
+			
+			 	# iterate through verb chunks in their original sequence
+		 		# take only 'outer' entites into account for this: if nested entities, like:
+		 		# a (1
+		 		# b 
+		 		# c (1
+		 		# d 1)
+		 		# e 1)
+		 		# -> only annotate only 'outer' entity (from a-e)
+			 	for(my $i=0; $i<scalar(@sortedEntityNodes);$i++)
+			 	{
+			 		my $idref = $sortedEntityNodes[$i];
+			 		my $node = $nodeSequence{$idref};
+			 		#my $depth = &getDepth($node);
+			 		#print "node ".$node->getAttribute('form')." with ord $idref has depth: $depth\n";
+			 		
+			 		my $entity = $node->getAttribute('entityTokenLevel');
+			 		#my $entityRef = $entity =~ m/(d+)/;
+			 		
+			 		
+			 		# this node is an entity of its own
+			 		if($entity =~ /\([\d\+]+\)/){
+			 			my $chunkparent = $node->parentNode();
+			 			my ($entityannotation) = ($node->getAttribute('entityTokenLevel') =~ m/\(([\d\+]+)\)/ );
+			 			if($chunkparent->nodeName() eq 'CHUNK'){
+			 				#$chunkparent->setAttribute('entity', $node->getAttribute('entityTokenLevel'));
+			 				$chunkparent->setAttribute('entity', $entityannotation);
+			 			}
+			 			else{
+			 				# e.g. relative pronouns.. leave them annotated at token level? or better whole rel-clause chunk?
+			 				if($node->getAttribute('pos') eq 'PR'){
+			 					$node->setAttribute('entity', $entityannotation);
+			 				}
+			 				# pronoun or finite verb in verb chunk -> subject
+			 				elsif( ($node->getAttribute('pos') eq 'VM' and $node->getAttribute('mi') =~  /1|2|3/ ) ){
+								$node->setAttribute('entity', $entityannotation);
+			 				}
+			 				else{
+			 					print STDERR "parent of single token entity in node \n".$node->toString()."\n was not a chunk: \n" if $verbose;
+			 					print STDERR $chunkparent->toString()."\n\n" if $verbose;
+			 				}
+		
+			 			}
+			 		}
+			 		# start of an entity
+			 		elsif($entity =~ /\(\d+$|\(\d+\|/)
+			 		{
+			 			   # print STDERR "start of an entity $entity at node \n";
+			 			   # print STDERR $node->toString()."\n";
+			 			    
+			 			    my $start = $node;
+			 				#my ($entityRefs) = ($entity =~ m/\((\d+)/g);
+			 				#note: entity annotation can consist of more than one entity (2+3)|6)
+			 				my @entityRefs = ($entity =~ m/\(([\d\+]+)/g);
+			 				#print STDERR "entity refs @entityRefs\n";
+			 				foreach my $entityRef (@entityRefs)
+			 				{	
+			 					my $doubleEntity=0;
+			 					print STDERR "searching span of entity $entityRef\n" if $verbose;
+			 					my $end;
+			 					
+				 				for(my $j=($i+1);$j<scalar(@sortedEntityNodes);$j++)
+				 				{
+				 					my $idrefnext = $sortedEntityNodes[$j];
+				 					my $nextnode = $nodeSequence{$idrefnext};
+				 					my $nextEntity = $nextnode->getAttribute('entityTokenLevel');
+				 					#my @nextEntityRef = ($nextEntity =~ m/(d+)/g);
+				 					
+				 					if($nextEntity =~ /\b\Q$entityRef\E\b/){
+				 				#	print STDERR "$nextEntity contains $entityRef\n";
+				 						
+				 					   # found closing bracket
+					 					if($nextEntity =~ /\b\Q$entityRef\E\)/){
+					 						print STDERR "found closing bracket: $nextEntity\n" if $verbose;
+					 						my @matches = $nextEntity =~ /\b\Q$entityRef\E\)/g;
+					 						print STDERR "number of matches ".scalar(@matches)."\n" if $verbose;
+					 						
+					 						# if this is a closing bracket of a nested entity: IGNORE (?), but set $doubleEntity back to 0
+					 						if($doubleEntity and scalar(@matches)==1){
+					 							print STDERR "closing bracket of a nested entity at ".$nextnode->toString() if $verbose;
+					 							$doubleEntity=0;
+					 						}
+					 						# if no nested entity, OR closing bracket of nested entity of same type, e.g. 1)|1)
+					 						elsif(!$doubleEntity or scalar(@matches)>1 ) {
+					 							print STDERR "end node is \n".$nextnode->toString()."\n" if $verbose;
+					 							$end=$nextnode;
+					 							$doubleEntity=0;
+					 							# done here, jump to next entityRef, if there is one
+					 							last;
+					 						}
+					 					}
+					 					#found another opening bracket of the same entity
+					 					elsif($nextEntity =~ /\(\Q$entityRef\E\b/ and !($nextEntity =~ /\(\Q$entityRef\E\+/) ){
+					 						print STDERR "found another opening bracket: $nextEntity\n" if $verbose;
+					 						$doubleEntity=1;
+					 					}
+				 					}
+				 				}
+				 				print STDERR "\nentity spans from \n" if $verbose;
+				 				unless($end){
+				 					die "no end node of entity $entityRef in article ".$sentence->getAttribute('ord')."\n\t".$sentence->toString()."\n";
+				 				}
+				 				print STDERR $start->toString."\n--to--\n".$end->toString()."\n\n" if $verbose;
+				 				&insertEntityInSpan($start,$end,$sentence,$entityRef);
+			 				}
+			 		}
+			 	}
+		}
+	}
+	
+	
 	## print new xml to stdout
 	#my $docstring = $dom->toString(3);
 	#print STDOUT $docstring;
@@ -1076,10 +1230,64 @@ sub main{
 }
 
 
+sub insertEntityInSpan{
+	my ($startnode,$endnode,$sentence,$entityRef) = @_;
+	
+	my $start = $startnode->getAttribute('ord');
+	my $end = $endnode->getAttribute('ord');
+
+	print STDERR "nodes in span from $start to $end:\n" if $verbose;
+	my $lowestDepth = &getDepth($startnode);
+	my $highestNode = $startnode;
+	
+	for(my $i=($start+1);$i<=$end;$i++){
+		my $xpath = 'descendant::NODE[@ord="'.$i.'"]';
+		#print STDERR "xpath is $xpath\n";
+		my ($node) = $sentence->findnodes($xpath);
+		if($node){
+			my $ord = $node->getAttribute('ord');
+			my $depth = &getDepth($node);
+			print STDERR "node: $ord, depth: $depth, lowestDepth: $lowestDepth\n" if $verbose;
+			if($depth< $lowestDepth){
+				$lowestDepth = $depth;
+				$highestNode = $node;
+			}
+			
+		}
+		else{
+			print STDERR "something went wrong, no NODE found with ord=$i in sentence \n" if $verbose;
+			print STDERR $sentence->toString() if $verbose;
+		}
+	}
+	
+	print STDERR "highest node in this span with depth $lowestDepth is ".$highestNode->toString()."\n" if $verbose;
+	
+	# insert entity annotation to chunk parent of highest node in the span
+	my $chunkparent = $highestNode->parentNode();
+	if($chunkparent->nodeName eq 'CHUNK'){
+		$chunkparent->setAttribute('entity', $entityRef);
+	}
+	else{
+		print STDERR "highest node in span from $start to $end was ".$highestNode->toString()."\n" if $verbose;
+		print STDERR "with depth= $lowestDepth, but parent is not a CHUNK in sentence: \n".$sentence->toString()."\n" if $verbose;
+	}
+	
+}
+
+sub getDepth{
+	my $node = $_[0];
+	my @ancestors = $node->findnodes('ancestor::*'); 
+
+	return scalar(@ancestors);
+	
+}
 
 sub isCongruent{
 	my $subjNode =$_[0];
 	my $parentNode = $_[1];
+	
+	#print STDERR "node: $subjNode\n";
+	#print STDERR "parent :\t $parentNode\n\n";
 	
 	if($parentNode && $subjNode)
 	{
@@ -1116,6 +1324,7 @@ sub isCongruent{
 		my $nounPerson;
 		my $nounNumber;
 	
+		
 		# no need to disambiguate false 1/2 person subjects (parser gets those right, as they are marked with 'a' if cd)
 		# but sometimes 'me, te, nos..' are labeled as 'suj' -> cd-a
 		if($subjNode->getAttribute('pos') eq 'pp')
@@ -1199,6 +1408,12 @@ sub isCongruent{
 					$parentNode->setAttribute('mi', $verbMI);
 					return 1;
 				}
+				# special case: usted/es -> verb is 3.sg/pl, pp is 2.sg/pl
+				elsif($subjNode->getAttribute('form') =~ /[uU]sted/ && $verbMI =~ /3/){
+					return 1 if($subjNode->getAttribute('mi') eq 'PP2CS00P' and $verbMI =~ /3S/);
+					return 1 if($subjNode->getAttribute('mi') eq 'PP2CP00P' and $verbMI =~ /3P/);
+					return 0;
+				}
 			}
 		}
 		#interrogative pronouns: no person (quién eres, quién soy..)
@@ -1237,8 +1452,9 @@ sub isCongruent{
 				else
 				{
 					$nounNumber = substr ($subjMI, 3, 1);
+					#print STDERR "compare $verbMI to $subjMI,nmb $nounNumber\n";
 					# proper names have no number, assume singular
-					if($nounNumber eq '0')
+					if($nounNumber eq '0' or $nounNumber eq 'N')
 					{
 						#if number unknown, leave as is
 						return 1;
@@ -1776,7 +1992,7 @@ sub preceedNoVerbinBetween{
 			last;
 		}
 	}
-	print STDERR "returning no verb in between = $foundverb\n";
+	print STDERR "returning no verb in between = $foundverb\n" if $verbose;
 	return $foundverb;
 }
 

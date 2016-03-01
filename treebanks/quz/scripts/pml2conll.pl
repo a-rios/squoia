@@ -1,33 +1,22 @@
 #!/usr/bin/perl
 
 use utf8;                  # Source code is UTF-8
-#use open ':utf8';
 
-#binmode STDIN, ':utf8';
 binmode STDOUT, ':utf8';
 use strict;
 use XML::LibXML;
  use Error qw(:try);
 
 #read xml from STDIN
-#my $parser = XML::LibXML->new({encoding => 'utf-8'});
+
 my $dom    = XML::LibXML->load_xml( IO => *STDIN);
 $dom->documentElement()->setAttribute( 'xmlns' , '' );
-
-# conll: 
-# 1      casa      casa         n      nc   gen=f|num=s     _       _       _       _
-# number wordform  lemma        cpos   pos  morphology head edgelabel
-# quechua conll
-# number word      translation/-  pos  _    morphtags  head edgelabel
-# new: use morphgroup-form as lemma, 
-# number word      translation/-  pos  _    morphtags  head edgelabel
 
 
 foreach my $sentence  ( $dom->getElementsByTagName('s'))
 {
 
-	#my %sentHash =();
-   #print $sentence->getAttribute('id')."\n";
+   #print STDERR $sentence->getAttribute('id')."\n";
    
    # discard sentences with internally headed relative clauses.. no way to represent this in conll
    unless($sentence->exists('descendant::terminal/extHead[text() ]') or $sentence->exists('descendant::terminal[word[text() and not(text()="KAN") ] and pos[text()="DUMMY"] ]'))
@@ -48,7 +37,6 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 		  
 		  if(!$parent){
 		    print STDERR "no parent found to node: \n";
-		   # print STDERR $KAN->toString()."\n\n";
 		   print STDERR $sentence->toString()."\n\n";
 		    exit(-1);
 		  }
@@ -92,8 +80,6 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	      
 	      
 	   }
-	   
-	  # print $sentence->toString()."\n\n";
 	   
 	   my @terminals = $sentence->findnodes('descendant::terminal') ;
 	   my $count =1;
@@ -163,13 +149,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('s'))
 	      #print "$order\t$wordform\t$translation\t$pos\t_\t$morphstring\t$head\t$label\t_\t_\n";
 	      print "$order\t$wordform\t_\t$pos\t$pos\t$morphstring\t$head\t$label\t_\t_\n";
 	   
-	#     print $terminal->toString."\n";
-	#     print "--------------------------------------\n";
-	     # $count++;
 	   }
-	
-	 # if no artificial root:
-	 #print "\n";
 	 
 	 # else, with artificial root:
 	 print "$count\tVROOT\t_\t_\t_\t_\t0\tsentence\t_\t_\n\n";

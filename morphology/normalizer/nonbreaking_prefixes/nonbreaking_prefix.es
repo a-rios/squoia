@@ -1,8 +1,9 @@
-############################################################################
-# This file is taken from the Moses toolkit published under the LPGL, see  #
-# http://www.statmt.org/moses/                                             #
-# for more details.                                                        #
-############################################################################
+##########################################################################################################################
+#                                                                                                                        #
+#   ORIGINAL FILE from Moses: https://github.com/moses-smt/mosesdecoder/tree/master/scripts/share/nonbreaking_prefixes   #
+#   adapted by SQUOIA                                                                                                    #
+#                                                                                                                        #
+##########################################################################################################################
 
 #Anything in this file, followed by a period (and an upper-case word), does NOT indicate an end-of-sentence marker.
 #Special cases are included for prefixes that ONLY appear before 0-9 numbers.

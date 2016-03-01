@@ -22,6 +22,7 @@ sub main{
 	my $evid = $_[1];
 	%nounLexicon = %{$_[2]};
 	$verbose = $_[3];
+	my $withCorzu=$_[4];
 
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
@@ -55,6 +56,7 @@ sub main{
 	 	# consider linear sequence in sentence; in xml the verb of the main clause comes always first, but in this case the subject of a preceding subordinated clause is probably coreferent with the subject of the preceding clause
 	 	my @verbChunks = $sentence->findnodes('descendant::CHUNK[@type="grup-verb" or @type="coor-v"]');
 	 	$nbrOfVerbChunks = $nbrOfVerbChunks+scalar(@verbChunks);
+	 	my $sentenceID = $sentence->getAttribute('ord');
 	 	#print STDERR "$nbrOfVerbChunks\n" if $verbose;
 	 	
 	 	foreach my $verbChunk (@verbChunks)
@@ -108,7 +110,6 @@ sub main{
 	 				{ 
 	 					$nbrOfFiniteForms++;
 	 					$verbChunk->setAttribute('verbform','main');
-	 					hunk->setAttribute('verbform','main');
 	 					#$verbChunk->setAttribute('delete','yes');
 	 					# get infintive of main verb and set this form to obligative
 	 					my $infinitiveWithQUE = @{$verbChunk->findnodes('child::CHUNK[NODE[@mi="VMN0000"]/NODE[@lem="que"]][1]')}[0];
@@ -154,7 +155,7 @@ sub main{
 	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^cuando$|aún_cuando|aun_cuando|aunque|a_pesar_de_que|porque|con_tal_que|con_tal_de_que|en_cuanto|tan_pronto_como|una_vez_que|después_de_que|después_que/ )
 	 				{ 
 	 					#check if same subject 
-	 					&compareSubjects($verbChunk);
+	 					&compareSubjects($verbChunk,$withCorzu);
 	 					if($conjunction->getAttribute('lem') =~ /porque|con_tal_que|con_tal_de_que/ )
 	 					{
 	 						$nbrOfSwitchForms++;
@@ -179,7 +180,7 @@ sub main{
 	 				elsif( $conjunction && $conjunction->getAttribute('lem') =~ /^conque$/ )
 	 				{
 	 					#check if same subject 
-	 					&compareSubjects($verbChunk);
+	 					&compareSubjects($verbChunk,$withCorzu);
 	 					$nbrOfSwitchForms++;
 	 					$verbChunk->setAttribute('chunkmi', '+Top');
 	 				}
@@ -188,7 +189,8 @@ sub main{
 	 				{
 	 					#check if same subject 
 	 					$verbChunk->setAttribute('verbform', 'main');
-	 					$verbChunk->setAttribute('conj', 'sichus');
+	 					# only chayqa, more natural (53 cases in treebank vs. 7 with sichus)
+	 					#$verbChunk->setAttribute('conj', 'sichus');
 	 					#$verbChunk->setAttribute('conjHere', 'yes');
 	 					$verbChunk->setAttribute('conjLast', 'chayqa');
 	 				}
@@ -368,7 +370,7 @@ sub main{
 								# do this also for coordinated verb forms!
 								foreach my $vChunk (@coordVerbChunks)
 								{
-									&compareSubjectsDirectSpeech($vChunk);
+									&compareSubjects($vChunk,$withCorzu,1);
 									#print STDERR "\ncoords: ".$vChunk->getAttribute('ord')."\n" if $verbose;
 									# better default not SS
 									# if(($vChunk->getAttribute('verbform') eq 'SS' || $vChunk->getAttribute('verbform') eq 'switch') && &isSingular($vChunk))
@@ -437,6 +439,7 @@ sub main{
 	 					{ 
 	 						my $headVerb = squoia::util::getMainVerb($headVerbCHunk);
 	 						push(@coordVerbChunks,$verbChunk);
+	 						#print STDERR "sent: $sentenceID, headv: $headVerb, head verb chunk $headVerbCHunk\n" if ($headVerb);
 	 						# if this is direct speech
 	 						if($headVerb && $headVerb->getAttribute('lem') =~ /admitir|advertir|afirmar|alegar|argumentar|aseverar|atestiguar|comentar|confiar|confesar|contestar|decir|declarar|enfatizar|expresar|hablar|indicar|interrogar|manifestar|mencionar|oficiar|opinar|preguntar|proclamar|proponer|razonar|recalcar|revelar|responder|rogar|señalar|sostener|subrayar|testificar|testimoniar/)
 	 						{	# NOTE: with direct speech, do not alter person (when there's no 'que')
@@ -662,14 +665,19 @@ sub main{
 
 sub compareSubjects{
 	my $verbChunk = $_[0];
+	my $withCorzu= $_[1];
+	my $isSpeech = $_[2];
 	my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
-	print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n" if $verbose;
+	#print STDERR "compare subjs in chunk:".$verbChunk->toString."\n" ;
 	#subject of main clause
-	my $mainverb = &getVerbMainClause($verbChunk);
+	my $mainverb = &getVerbMainClause($verbChunk,1);
+	
+	#print STDERR "main verb $mainverb, finite verb this chunk $finiteVerb\n";
+	
 	if($mainverb && $finiteVerb)
-	{
+	{ 
 		my $finiteMainVerb = squoia::util::getFiniteVerb($mainverb);
-		#print STDERR $finiteMainVerb->toString if $verbose;
+		#print STDERR "finite verb ".$finiteMainVerb->toString if $verbose;
 		#compare person & number
 		if($finiteMainVerb  && $finiteVerb->getAttribute('mi') =~ /1|2/ )
 		{
@@ -710,47 +718,127 @@ sub compareSubjects{
 		  		my $verbNumberMain = substr ($finiteMainVerb->getAttribute('mi'), 5, 1);
 		  		my $verbNumber = substr ($finiteVerb->getAttribute('mi'), 5, 1);
 		  	
-		 	 	#print STDERR $finiteMainVerb ->getAttribute('lem').": ".$finiteMainVerb->getAttribute('mi')."\n" if $verbose;
-				#print STDERR $finiteVerb->getAttribute('lem').": ".$finiteVerb->getAttribute('mi')."\n" if $verbose;
+		 	 	print STDERR "finite main verb: ".$finiteMainVerb ->getAttribute('lem').": ".$finiteMainVerb->getAttribute('mi')."\n" if $verbose;
+				print STDERR "finite verb this chunk: ".$finiteVerb->getAttribute('lem').": ".$finiteVerb->getAttribute('mi')."\n" if $verbose;
 		  	
 			  	if($verbNumber ne $verbNumberMain)
 			  	{
 			  		$nbrOfSwitchForms++;
 		  			$verbChunk->setAttribute('verbform', 'DS');
 		  		}
+		  		# special case: hace tiempo, días, meses, años, hace frío, calor...--> always DS
+ 		  		elsif($verbChunk->getAttribute('pleonastic') eq 'yes'){
+				      $nbrOfSwitchForms++;	
+				      $verbChunk->setAttribute('verbform', 'DS');
+ 		  		}
 		  		# else, if both 3rd and same number: check coref
 		  		else
 		  		{
-					# subject of this (subordinate) clause
-					my ($subjNoun, $subjMI ) = &getSubjectNoun($verbChunk);
-					my ($subjNounMain,$subjMIMain ) =  &getSubjectNoun($mainverb);
-		
-				# if subjects of main and subord clause found, check if they're the same
-				if($subjNounMain,$subjNoun,$subjMIMain,$subjMI)
-				{
-					#print STDERR "main: $subjNounMain $subjMIMain | sub: $subjNoun $subjMI\n" if $verbose;
-					if($subjNounMain eq $subjNoun && $subjMIMain eq $subjMI)
-					{
-						$nbrOfSwitchForms++;
-						$verbChunk->setAttribute('verbform', 'SS');
-					}
-					else
-					{
-						$nbrOfSwitchForms++;
-						$verbChunk->setAttribute('verbform', 'DS');
-					}
+		  				# subject of this (subordinate) clause
+						my ($subjNoun, $subjMI,$subjEntity) = &getSubjectNoun($verbChunk,$withCorzu);
+						my ($subjNounMain,$subjMIMain, $mainSubjEntity) =  &getSubjectNoun($mainverb,$withCorzu,$isSpeech);
+			
+						# if subjects of main and subord clause found, check if they're the same
+						if($subjNounMain ne '' and $subjNoun ne '' and $subjMIMain ne '' and $subjMI ne '')
+						{
+							print STDERR "main: $subjNounMain $subjMIMain, $mainSubjEntity | sub: $subjNoun $subjMI, $subjEntity\n"  if $verbose;
+							if($subjNounMain eq $subjNoun && $subjMIMain eq $subjMI)
+							{
+								$nbrOfSwitchForms++;
+								$verbChunk->setAttribute('verbform', 'SS');
+							}
+							#check co-reference:
+							elsif($subjEntity eq $mainSubjEntity and $subjEntity ne ''){
+								$nbrOfSwitchForms++;
+								#$verbChunk->setAttribute('verbform', 'SSentity');
+								$verbChunk->setAttribute('verbform', 'SS');
+							}
+							else
+							{
+								$nbrOfSwitchForms++;
+								#$verbChunk->setAttribute('verbform', 'DSentity') if $withCorzu;
+								#$verbChunk->setAttribute('verbform', 'DStest') if !$withCorzu;
+								$verbChunk->setAttribute('verbform', 'DS') if $withCorzu;
+								$verbChunk->setAttribute('verbform', 'DS') if !$withCorzu;
+							}
+						}
+						# if with corzu, and either $subjNounMain or $subjNoun was not found: check entities
+						# TODO: test!!!!
+						elsif($withCorzu){
+							#no subject in main clause nor this clause: compare entities
+							#if(!$mainverb->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]') && !$verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]')){
+							if(!$subjNoun and !$subjNounMain){
+								#$mainSubjEntity = $mainverb->getAttribute('entity');
+								#$subjEntity = $verbChunk->getAttribute('entity');
+								$mainSubjEntity = $finiteMainVerb->getAttribute('entityTokenLevel') if !$mainSubjEntity;
+								$subjEntity = $finiteVerb->getAttribute('entityTokenLevel') if !$subjEntity;
+								
+							}
+							# subj in this clause, entity in main clause
+							#elsif(!$mainverb->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]') && $verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]')){
+							elsif($subjNoun and !$subjNounMain){
+								$subjEntity = $verbChunk->findvalue('child::CHUNK[@si="suj" or @si="suj-a"][1]/@entity') if !$subjEntity; #take entity returned from getSubjectNoun
+								$mainSubjEntity = $finiteMainVerb->getAttribute('entityTokenLevel')  if !$mainSubjEntity;
+							}
+							#subj in main clause, entity in this clause
+							#elsif($mainverb->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]') && !$verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]')){
+							elsif(!$subjNoun and $subjNounMain){	
+								# parsing error, if e.g. a conjunction came in between finite auxiliary and main verb: entity wont be in chunk
+								$subjEntity = $finiteVerb->getAttribute('entityTokenLevel') if !$subjEntity;
+								$mainSubjEntity = $mainverb->findvalue('child::CHUNK[@si="suj" or @si="suj-a"][1]/@entity') if !$mainSubjEntity; #take entity returned from getSubjectNoun
+							}
+							if($subjEntity && $mainSubjEntity){
+									#strip ( and ) from verbal entities
+									$subjEntity =~ s/\(//;
+									$subjEntity =~ s/\)//;
+									$mainSubjEntity =~ s/\(//; 
+									$mainSubjEntity =~ s/\)//;
+									
+									if($subjEntity == $mainSubjEntity){
+										$nbrOfSwitchForms++;
+										#$verbChunk->setAttribute('verbform', 'SSentity');
+										$verbChunk->setAttribute('verbform', 'SS');
+										
+									}
+									else{
+										$nbrOfSwitchForms++;
+										#$verbChunk->setAttribute('verbform', 'DSentity');
+										$verbChunk->setAttribute('verbform', 'DS');
+									}
+								}		
+								# sometimes: one of the verbs has an annotated entity as subject, and the other verb has an overt subject, but no entity.. in this case, assume DS
+								elsif(($subjEntity and !$mainSubjEntity) or (!$subjEntity and $mainSubjEntity) ){
+									$nbrOfSwitchForms++;
+									#$verbChunk->setAttribute('verbform', 'DStest');
+									$verbChunk->setAttribute('verbform', 'DS');
+								}
+								else{
+									# if one of the subjects is verbal: assign DS
+									if($subjNoun == -1 or $subjNounMain == -1){
+										#$verbChunk->setAttribute('verbform', 'DSvsubj');
+										$verbChunk->setAttribute('verbform', 'DS');
+									}
+									else{
+										print STDERR "no overt subject in main nor this clause, no entities annotated, cant determine form\n" if $verbose;
+										$verbChunk->setAttribute('verbform', 'entityFailed');
+										my $sentid = $verbChunk->findvalue('ancestor::SENTENCE/@ord');
+									#	print STDERR "no main verb subject/entity found in sentence $sentid in chunk ".$verbChunk->getAttribute('ord')."\n" if !$mainSubjEntity;
+									#	print STDERR "no verb subject/entity found in this chunk in sentence sentence $sentid in chunk ".$verbChunk->getAttribute('ord')."\n" if !$subjEntity;
+									}
+								}
+						}
+						elsif(!$withCorzu && (!$subjNounMain or !$subjNoun))
+						{
+							$nbrOfSwitchForms++;
+							#$verbChunk->setAttribute('verbform', 'SStest'); 
+							$verbChunk->setAttribute('verbform', 'SS'); 
+						}
+						else
+						{
+							$nbrOfAmbigousClauses++;
+							$verbChunk->setAttribute('verbform', 'switch'); # maybe better default=SS here?
+						}
 				}
-				elsif(!$subjNounMain && !$subjNoun)
-				{
-					$nbrOfSwitchForms++;
-					$verbChunk->setAttribute('verbform', 'SS'); 
-				}
-				else
-				{
-					$nbrOfAmbigousClauses++;
-					$verbChunk->setAttribute('verbform', 'switch'); # maybe better default=SS here?
-				}
-			}
 		  	}
 		}
 	}
@@ -761,103 +849,9 @@ sub compareSubjects{
 		$nbrOfAmbigousClauses++;
 		$verbChunk->setAttribute('verbform', 'switch');
 	}
-	#print STDERR $verbChunk->toString()."\n" if $verbose;
+	#print STDERR "inserted:               ".$verbChunk->toString()."\n" ;
 }
 
-sub compareSubjectsDirectSpeech{
-	my $verbChunk = $_[0];
-	my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
-	#print STDERR "compare subjs in chunk:".$verbChunk->getAttribute('ord')."\n" if $verbose;
-	#subject of main clause
-	my $mainverb = &getVerbMainClause($verbChunk);
-	if($mainverb && $finiteVerb)
-	{
-		my $finiteMainVerb = squoia::util::getFiniteVerb($mainverb);
-		#print STDERR $finiteMainVerb->toString if $verbose;
-		#compare person & number
-		if($finiteMainVerb  && $finiteVerb->getAttribute('mi') =~ /1|2/ )
-		{
-			my $verbMI = $finiteVerb->getAttribute('mi');
-			my $verbPerson = substr ($verbMI, 4, 1);
-			my $verbNumber = substr ($verbMI, 5, 1);
-	
-			my $verbMIMain = $finiteMainVerb->getAttribute('mi');
-			my $verbPersonMain = substr ($verbMIMain, 4, 1);
-			my $verbNumberMain = substr ($verbMIMain, 5, 1);
-		
-			#print STDERR $finiteMainVerb ->getAttribute('lem').": $verbMIMain\n" if $verbose;
-			#print STDERR $finiteVerb->getAttribute('lem').": $verbMI\n" if $verbose;
-		
-			if($verbPerson eq $verbPersonMain && $verbNumber eq $verbNumberMain)
-			{
-				$verbChunk->setAttribute('verbform', 'SS');
-			}
-			else
-			{
-				$verbChunk->setAttribute('verbform', 'DS');
-			}
-		}
-		# if 3rd person
-		elsif($finiteMainVerb  && $finiteVerb->getAttribute('mi') !~ /1|2/ )
-		{ 
-		 	 # if main verb SAP -> DS
-		  	 if($finiteMainVerb->getAttribute('mi') =~ /1|2/)
-		 	 {
-		  			$verbChunk->setAttribute('verbform', 'DS');
-		 	 }
-		 	 else
-		 	 {
-		  		#check number
-		  		my $verbNumberMain = substr ($finiteMainVerb->getAttribute('mi'), 5, 1);
-		  		my $verbNumber = substr ($finiteVerb->getAttribute('mi'), 5, 1);
-		  	
-		 	 	#print STDERR $finiteMainVerb ->getAttribute('lem').": ".$finiteMainVerb->getAttribute('mi')."\n" if $verbose;
-				#print STDERR $finiteVerb->getAttribute('lem').": ".$finiteVerb->getAttribute('mi')."\n" if $verbose;
-		  	
-			  	if($verbNumber ne $verbNumberMain)
-			  	{
-		  			$verbChunk->setAttribute('verbform', 'DS');
-		  		}
-		  		# else, if both 3rd and same number: check coref
-		  		else
-		  		{
-					# subject of this (subordinate) clause
-					my ($subjNoun, $subjMI ) = &getSubjectNounSpeech($verbChunk);
-					my ($subjNounMain,$subjMIMain ) =  &getSubjectNounSpeech($mainverb);
-					#print STDERR "main suj: $subjNounMain, sub suj: $subjNoun\n" if $verbose;
-		
-				# if subjects of main and subord clause found, check if they're the same
-				if($subjNounMain && $subjNoun && $subjMIMain && $subjMI)
-				{
-					#print STDERR "main: $subjNounMain $subjMIMain | sub: $subjNoun $subjMI\n" if $verbose;
-					if($subjNounMain eq $subjNoun && $subjMIMain eq $subjMI)
-					{
-						$verbChunk->setAttribute('verbform', 'SS');
-					}
-					else
-					{
-						$verbChunk->setAttribute('verbform', 'DS');
-					}
-				}
-				elsif(!$subjNounMain && !$subjNoun)
-				{
-					$verbChunk->setAttribute('verbform', 'DS'); 
-				}
-				else
-				{
-					$verbChunk->setAttribute('verbform', 'switch'); # maybe better default=SS here?
-				}
-			}
-		  	}
-		}
-	}
-	 # if no main verb found, set verbform to ambiguous
-	 # edit: set verb form to switch, as its probably either -spa or -pti
-	else
-	{
-		$verbChunk->setAttribute('verbform', 'switch');
-	}
-}
 
 sub isSubjunctive{
 	my $verbChunk = $_[0];
@@ -918,70 +912,61 @@ sub isConditional{
 
 sub getSubjectNoun{
 	my $verbChunk = $_[0];
-	my ($subjectNoun,$subjectNounMI);
+	my $withCorzu = $_[1];
+	my $speech = $_[2];
+	
+	my ($subjectNoun,$subjectNounMI,$subjEntity);
 	my ($subjectChunk) = $verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]');
 	
 	if($subjectChunk)
 	{
-			$subjectNoun = $subjectChunk->findvalue('NODE[@cpos="n" or @pos="pp"][1]/@lem');
-			$subjectNounMI = $subjectChunk->findvalue('NODE[@cpos="n" or @pos="pp"][1]/@mi');
-	}
-	# else if no overt subject, but coref
-	elsif($verbChunk->exists('self::CHUNK/@coref'))
-	{
-		$subjectNoun = $verbChunk->getAttribute('coref');
-		$subjectNounMI = $verbChunk->getAttribute('corefmi');
-	}
-	else
-	{
-		print STDERR "no subject, no coref in: " if $verbose;
-		print STDERR $verbChunk->getAttribute('ord') if $verbose;
-		print STDERR "\n" if $verbose;
-	}
-
-	my @subj = ($subjectNoun, $subjectNounMI);
-	#print STDERR "$subjectNoun:$subjectNounMI\n" if $verbose;
-	return @subj;
-}
-
-sub getSubjectNounSpeech{
-	my $verbChunk = $_[0];
-	my ($subjectNoun,$subjectNounMI);
-	my ($subjectChunk) = $verbChunk->findnodes('child::CHUNK[@si="suj" or @si="suj-a"][1]');
-	
-	if($subjectChunk)
-	{
-			$subjectNoun = $subjectChunk->findvalue('NODE[@cpos="n" or @pos="pp"][1]/@lem');
-			$subjectNounMI = $subjectChunk->findvalue('NODE[@cpos="n" or @pos="pp"][1]/@mi');
-	}
-	# else if no overt subject, but coref
-	elsif($verbChunk->exists('self::CHUNK/@coref'))
-	{
-		$subjectNoun = $verbChunk->getAttribute('coref');
-		$subjectNounMI = $verbChunk->getAttribute('corefmi');
-		my $semTag = $nounLexicon{$subjectNoun};
-		# unless suposed subject is human, a social group or a proper name -> no congruence (indirect speech should not made direct with 1st person, but 3rd)
-		unless($semTag =~ /hum|soc/ or $subjectNounMI =~ /^NP/){
-			$subjectNoun = "none";
-			$subjectNounMI="none";
+		$subjectNoun = $subjectChunk->findvalue('NODE[@cpos="n" or @pos="pp"][1]/@lem');
+		$subjectNounMI = $subjectChunk->findvalue('NODE[@cpos="n" or @pos="pp"][1]/@mi');
+		$subjEntity = $subjectChunk->getAttribute('entity');
+		if($subjectChunk->getAttribute('type') =~ /grup-verb|coor-v/){
+			return -1;
 		}
-		#print STDERR "sem: $semTag\n" if $verbose;
+	}
+	# else if no overt subject, but coref
+	elsif($verbChunk->exists('self::CHUNK/@coref') && !$withCorzu)
+	{
+		$subjectNoun = $verbChunk->getAttribute('coref');
+		$subjectNounMI = $verbChunk->getAttribute('corefmi');
+		if($speech ==1){
+		    my $semTag = $nounLexicon{$subjectNoun};
+		    # unless suposed subject is human, a social group or a proper name -> no congruence (indirect speech should not made direct with 1st person, but 3rd)
+		    unless($semTag =~ /hum|soc/ or $subjectNounMI =~ /^NP/){
+			    $subjectNoun = "";
+			    $subjectNounMI="";
+		    }
+		}
+	}
+	#if this is a relative clause with a relative pronoun labeled as suj and and entity: this entity = subject of verb
+	elsif($verbChunk->getAttribute('verbform') =~ /^rel:/ && $verbChunk->exists('child::NODE[@cpos="v"]/NODE[@pos="pr" and @rel="suj" and @entityTokenLevel]')){
+		$subjEntity = $verbChunk->findvalue('child::NODE[@cpos="v"]/NODE[@pos="pr" and @rel="suj"]/@entityTokenLevel');
+		$subjEntity =~ s/\(//;
+		$subjEntity =~ s/\)//;
+		#print STDERR "found entity $subjEntity\n";
 	}
 	else
 	{
-		print STDERR "no subject, no coref in: " if $verbose;
-		print STDERR $verbChunk->getAttribute('ord') if $verbose;
-		print STDERR "\n" if $verbose;
+		unless($withCorzu){
+			print STDERR "no subject, no coref in: " if $verbose;
+			print STDERR $verbChunk->getAttribute('ord') if $verbose;
+			print STDERR "\n" if $verbose;
+		}
 	}
 
-	my @subj = ($subjectNoun, $subjectNounMI);
-	#print STDERR "$subjectNoun:$subjectNounMI\n" if $verbose;
+	my @subj = ($subjectNoun, $subjectNounMI,$subjEntity);
+	print STDERR "subjNoun: $subjectNoun:$subjectNounMI\n" if $verbose;
 	return @subj;
 }
+
 
 
 sub getVerbMainClause{
 	my $subordVerbChunk= $_[0];
+	my $needFiniteVerb = $_[1];
 	my $headVerbChunk; 
 	
 	#if this subordinated clause is wrongly analysed as main clause
@@ -990,16 +975,31 @@ sub getVerbMainClause{
 		#print STDERR "subord verb chunk: ".$subordVerbChunk->toString()."\n" if $verbose;
 		$headVerbChunk = @{$subordVerbChunk->findnodes('child::CHUNK[@type="grup-verb" or @type="coor-v"][1]')}[0];
 	}
-	elsif($subordVerbChunk && $subordVerbChunk->exists('ancestor::SENTENCE/CHUNK[@si="top" and @type="grup-verb"]'))
+	elsif($subordVerbChunk)
 	{
-		$headVerbChunk = @{$subordVerbChunk->findnodes('ancestor::SENTENCE/CHUNK[@si="top" and @type="grup-verb"][1]')}[0];
+		#$headVerbChunk = @{$subordVerbChunk->findnodes('ancestor::SENTENCE/CHUNK[@si="top" and @type="grup-verb"][1]')}[0];
+		#take first ancestor, not necessarily the top verb!!
+		if($needFiniteVerb){
+			($headVerbChunk) = $subordVerbChunk->findnodes('ancestor::CHUNK[(@type="grup-verb" or @type="coor-v") and child::NODE/descendant-or-self::NODE[@cpos="v"  and contains(@mi, "1") or contains(@mi, "2") or contains(@mi, "3")]][1]');	
+			# careful with coor-v: if this is the second part of a coordinated subordination, we need the parent chunk of the parent chunk 
+			# e.g.  'pareció' in; Iba a subir el señor Cuadros en su pescante y empuñar las riendas , cuando el cazurro muchacho se rascó la cabeza y pareció recordar algo .
+			if($headVerbChunk && $headVerbChunk->exists('self::CHUNK[@type="coor-v"]/NODE[@cpos="v"]/descendant-or-self::NODE[@mi="CS" and @rel="conj"]')){
+			    my $grandparentVchunk = &getVerbMainClause($headVerbChunk,1);
+			 #   print STDERR "grand parent is $grandparentVchunk\n";
+			    $headVerbChunk = $grandparentVchunk if $grandparentVchunk;
+			}
+		}
+		else{
+			($headVerbChunk) = $subordVerbChunk->findnodes('ancestor::CHUNK[(@type="grup-verb" or @type="coor-v")][1]');	
+		}
+		
 	}
 	# if head of sentence is not a verb chunk -> wrong analysis or incomplete sentence (e.g. title)
 	# -> check if subord verb chunk has any verb chunks as ancestor
-	elsif($subordVerbChunk && $subordVerbChunk->exists('ancestor::SENTENCE/CHUNK[@si="top" and not(@type="grup-verb")]') )
-	{
-		$headVerbChunk = @{$subordVerbChunk->findnodes('ancestor::CHUNK[@type="grup-verb"][1]')}[0];
-	}
+# 	elsif($subordVerbChunk && $subordVerbChunk->exists('ancestor::SENTENCE/CHUNK[@si="top" and not(@type="grup-verb")]') )
+# 	{
+# 		$headVerbChunk = @{$subordVerbChunk->findnodes('ancestor::CHUNK[@type="grup-verb"][1]')}[0];
+# 	}
 	else
 	{
 		#get sentence id

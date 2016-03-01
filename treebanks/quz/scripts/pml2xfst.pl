@@ -427,7 +427,7 @@ sub getAnalysis{
 			#my ($morphform) = $token =~ m/(\Q$morphformregex\E)$/;
 			my $morphform;
 			
-			($morphform) = lc($token) =~ m/($morphformregex)\E$/;
+			($morphform) = lc($token) =~ m/\Q($morphformregex)\E$/;
 			
 			if(!$morphform){
 				#check if this is haku
@@ -486,7 +486,7 @@ sub getAnalysis{
 				}
 				my $morphformregex = ($mode eq '-norm')? $mapTagsToSuffixFormsNormalized{$morphtag} : $mapTagsToSuffixFormsNotNormalized{$morphtag};
 				my $morphform;
-				($morphform) = lc($token) =~ m/^($morphformregex)\E/;
+				($morphform) = lc($token) =~ m/^\Q($morphformregex)\E/;
 				
 				if(!$morphform){
 					print STDERR "could not find $morphformregex for $morphtag in $token, at $i, id: ".$terminal->getAttribute('id')."\n";

@@ -36,9 +36,11 @@ public class MaltParserServer {
   private static void parseSentences(InputStream is, OutputStream os) {
 
     BufferedReader reader = null;
-	BufferedWriter writer = null;
+    BufferedWriter writer = null;
+    
+    int sentenceCount = 0;
     try {
-		int sentenceCount = 0;
+		//int sentenceCount = 0;
 		reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 		writer = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
 		while (true) {
@@ -46,6 +48,7 @@ public class MaltParserServer {
 			//System.err.println("TEST");
 			//String[] inputTokens = ConcurrentUtils.readSentence(reader);
 			String[] inputTokens = readSentence(reader);
+			//System.err.println("input tokens: "+ inputTokens);
 			//System.err.println(inputTokens.length + " tokens to parse");
 			// If there are no tokens then we have reach the end of file
 			if (inputTokens.length == 0 ) {
@@ -75,6 +78,7 @@ public class MaltParserServer {
 		}
 		System.err.println("Parsed " + sentenceCount +" sentences");
     } catch (Exception e) {
+        System.err.println("in sentence nr " + sentenceCount);
 	e.printStackTrace();
 	//System.exit(1);
     } finally {

@@ -1,84 +1,51 @@
-SQUOIA (freeling) analyzer server with "desr" output format option
-$FREELING= path-to-your-freeling-installation
-$FREELING_SRC= path-to-your-freeling-sources ( trunk from svn)
-
-# compilation and installation of FreeLing:
-cd $FREELING_SRC
-make
-make install
-
-# compile and link the squoia_server_analyzer server:
-cd $SQUOIAHOME/FreeLingModules/
-
-# copy all headers from the sample analyzer in the freeling sources to $FREELING/include
-cp $FREELING_SRC/trunk/src/main/sample_analyzer/*.h $FREELING/include
-
-# copy special "squoia" configuration file
-cp config_squoia/config.h $FREELING/include/
-cp config_squoia/analyzer.h $FREELING/include/
-
-# compile the output part (output_squoia):
-g++ -c -o output_squoia.o output_squoia.cc -I$FREELING/include/
-
-# compile the analyzer part (analyzer_squoia):
-g++ -c -o analyzer_squoia.o analyzer_squoia.cc -I$FREELING/include/
-
-# compile the analyzer server (squoia_server_analyzer):
-g++ -c -o squoia_server_analyzer.o squoia_server_analyzer.cc -I$FREELING/include/
 
 
-# link the different parts to create the server executable:
-g++ -O3 -Wall -o squoia_server_analyzer squoia_server_analyzer.o analyzer_squoia.o output_squoia.o -L/opt/matxin/local/lib -lfreeling -lboost_program_options -lboost_system -lboost_filesystem -lpthread
-
-
-
-# install program
-cp squoia_server_analyzer $FREELING/bin/
-
-# add Freeling binaries ($FREELING/bin) to PATH (in bash_profile or .bashrc)
-# note: you have to log into a new bash for this change to be effective
-
-# adjust the paths in $SQUOIAHOME/FreeLingModules/example.conf 
-
-# start the server
-squoia_server_analyzer -f $SQUOIAHOME/FreeLingModules/your-config.cfg --outf=desrtag --server --port=8866 2> logdesrtag &
-
-# wait a bit and call the client to analyze some new text
-echo "Este ejemplo funciona perfectamente." | analyzer_client 8866
-
-
-
-
-### neu test:
-
+### Freeling analyzer with crf output format for wapiti:
+ local:
 g++ -c -o output_crf.o output_crf.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/
-g++ -c -o analyzer_client.o analyzer_client.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/ 
-g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/
+ kitt:
+g++ -c -o output_crf.o output_crf.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/
 
+
+lokal:
+g++ -c -o analyzer_client.o analyzer_client.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/ 
+kitt:
+g++ -c -o analyzer_client.o analyzer_client.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/
+
+lokal:
+g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/
+kitt:
+g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/
+
+lokal:
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/squoia/lib
 g++ -O3 -Wall -o server_squoia server_squoia.o output_crf.o -L/opt/squoia/lib -lfreeling -lboost_program_options -lboost_system -lboost_filesystem -lpthread 
+kitt:
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/matxin/local/lib
+g++ -O3 -Wall -o server_squoia server_squoia.o output_crf.o -L/opt/matxin/local/lib -lfreeling -lboost_program_options -lboost_system -lboost_filesystem -lpthread 
+
+
 
 für analyzer_client
+lokal:
 g++ -O3 -Wall -o analyzer_client analyzer_client.o -L /opt/squoia/lib -lfreeling
+kitt:
+g++ -O3 -Wall -o analyzer_client analyzer_client.o -L /opt/matxin/local/lib -lfreeling
+
 
 export FREELINGSHARE=/opt/squoia/share/freeling/
+export FREELINGSHARE=/opt/matxin/local/share/freeling/
 
 # start the server
 ./server_squoia -f /opt/squoia/squoia/FreeLingModules/es_squoia.cfg  --server --port=8844 2> logtagging &
 
 echo "eso  es mi test" |./analyzer_client 8844 
 
-
-zu committen:
-server_squoia.cc
-analyzer_client.cc
-output_crf*
-
-in squoia_config: analyzer_squoia.h, config_squoia.h, evt socket/stats (original aus sample_analyzer)
+link client and server in MT_systems/bin
+cd /mnt/storage/hex/projects/clsquoia/arios_squoia_git/MT_systems/bin
+ln -s ../../FreeLingModules/analyzer_client analyzer_client
+ln -s ../../FreeLingModules/server_squoia server_squoia
 
 
-TODO check
-in dicc: LemmaPreferences
-in locations: syntax
 
 

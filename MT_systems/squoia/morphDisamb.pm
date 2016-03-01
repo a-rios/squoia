@@ -51,10 +51,11 @@ sub main{
 							# get target conditions
 							my $trgtConds = @{ $morphSel{$ruleskey}}[0];
 							my @trgtConditions = squoia::util::splitConditionsIntoArray($trgtConds);
-							#print STDERR "target conds: @trgtConditions\n" if $verbose;
+							print STDERR "target conds: @trgtConditions\n" if $verbose;
 							
 							if(squoia::util::evalConditions(\@trgtConditions,$node))
 							{
+								print STDERR "\n node lem:".$node->getAttribute('slem')."\n" if $verbose;
 								#keep or delete?
 								my $keepOrDelete = @{ $morphSel{$ruleskey}}[1];
 								my @targetMIs = split(',',$trgtMI);
@@ -77,7 +78,7 @@ sub main{
 											$xpathstring= 'child::SYN[@'.$attr.'="'.$value.'"]';
 											#$selfXpathString= 'self::NODE[@'.$attr.'="'.$value.'"]';
 										}
-										#print STDERR "xpath: $xpathstring\n" if $verbose;
+										print STDERR "xpath: $xpathstring\n" if $verbose;
 										# find synnode with this 'mi', can be more than one
 										my @matchingSynsCand = $node->findnodes($xpathstring);
 										#my @matchingSynsCand2 = $node->findnodes($selfXpathString);
@@ -89,7 +90,7 @@ sub main{
 									{ 
 											my $matchingtranslation = @matchingSyns[0];
 											my @matchingtranslationAttributes = $matchingtranslation->attributes();
-											#foreach my $m (@matchingSyns){print STDERR "match for $ruleskey:".$m->toString()."\n" if $verbose;}
+											foreach my $m (@matchingSyns){print STDERR "match for $ruleskey:".$m->toString()."\n" if $verbose;}
 									
 								 		   	if($keepOrDelete eq 'k')
 								   			{

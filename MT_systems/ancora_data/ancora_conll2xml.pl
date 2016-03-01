@@ -167,7 +167,7 @@ foreach my $sentence  ( $dom->getElementsByTagName('SENTENCE'))
 # 				print STDERR $docstring;
 
 			}
-		        elsif($node->getAttribute('mi') =~ /elliptic/)
+		    elsif($node->getAttribute('mi') =~ /elliptic/)
 			{
 			    my @children = $node->childNodes();
 			    foreach my $child (@children)

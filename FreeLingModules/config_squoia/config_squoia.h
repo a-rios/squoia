@@ -29,7 +29,7 @@
 // codes for InputMode
 typedef enum {MODE_CORPUS,MODE_DOC} InputModes;
 // codes for OutputFormat
-typedef enum {OUT_FREELING,OUT_TRAIN,OUT_CONLL,OUT_CRF,OUT_XML,OUT_JSON,OUT_NAF} OutputFormats;
+typedef enum {OUT_FREELING,OUT_CRF,OUT_TRAIN,OUT_CONLL,OUT_XML,OUT_JSON,OUT_NAF} OutputFormats;
 // codes for InputFormat
 typedef enum {INP_TEXT, INP_FREELING, INP_CONLL} InputFormats;
 
@@ -417,12 +417,12 @@ class config {
     else if (OutputLv=="token") analyzer_invoke_options.OutputLevel = TOKEN;
     else if (OutputLv=="splitted") analyzer_invoke_options.OutputLevel = SPLITTED;
     else if (OutputLv=="morfo") analyzer_invoke_options.OutputLevel = MORFO;
+    else if (OutputLv=="crf") analyzer_invoke_options.OutputLevel = CRF;
     else if (OutputLv=="tagged") analyzer_invoke_options.OutputLevel = TAGGED;
     else if (OutputLv=="shallow") analyzer_invoke_options.OutputLevel = SHALLOW;
     else if (OutputLv=="parsed") analyzer_invoke_options.OutputLevel = PARSED;
     else if (OutputLv=="dep") analyzer_invoke_options.OutputLevel = DEP;
     else if (OutputLv=="coref") analyzer_invoke_options.OutputLevel = COREF;
-    else if (OutputLv=="crf") analyzer_invoke_options.OutputLevel = CRF;
     else if (OutputLv=="semgraph") analyzer_invoke_options.OutputLevel = SEMGRAPH;
     else { ERROR_CRASH(L"Unknown or invalid output analysis level: "+util::string2wstring(OutputLv));}
 
@@ -433,8 +433,8 @@ class config {
 
     // translate OutputF strings appropriate enum values.
     if (OutputF=="freeling") OutputFormat = OUT_FREELING;
-    else if (OutputF=="conll") OutputFormat = OUT_CONLL;
     else if (OutputF=="crf") OutputFormat = OUT_CRF;
+    else if (OutputF=="conll") OutputFormat = OUT_CONLL;
     else if (OutputF=="train") OutputFormat = OUT_TRAIN;
     else if (OutputF=="xml") OutputFormat = OUT_XML;
     else if (OutputF=="json") OutputFormat = OUT_JSON;

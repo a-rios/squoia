@@ -77,7 +77,7 @@ public class MPClient {
 			out.flush();
 			break;
 		}
-		System.err.println(bytesRead + " bytes of data read");
+		//System.err.println(bytesRead + " bytes of data read");
 	//	System.err.println("and writing it to stdout");
 		out.write(mybytearray, 0, bytesRead);
 		totalBytes += bytesRead;

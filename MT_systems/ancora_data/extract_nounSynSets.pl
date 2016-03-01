@@ -13,10 +13,10 @@ use open ':utf8';
 my %NounSem;
 my %synsets;
 
-my $spa2ilimap = "/home/ozli/squoia/mcr30/spaWN/wei_spa-30_to_ili.tsv";
-my $ilirecord = "/home/ozli/squoia/mcr30/data/wei_ili_record.tsv";
-my $lexnames = "/home/ozli/squoia/mcr30/data/wei_lexnames.tsv";
-my $variant = "/home/ozli/squoia/mcr30/spaWN/wei_spa-30_variant.tsv";
+my $spa2ilimap = "/mnt/storage/hex/projects/clsquoia/resources/mcr30/spaWN/wei_spa-30_to_ili.tsv";
+my $ilirecord = "/mnt/storage/hex/projects/clsquoia/resources/mcr30/data/wei_ili_record.tsv";
+my $lexnames = "/mnt/storage/hex/projects/clsquoia/resources/mcr30/data/wei_lexnames.tsv";
+my $variant = "/mnt/storage/hex/projects/clsquoia/resources/mcr30/spaWN/wei_spa-30_variant.tsv";
 
 open SPA2ILI, "< $spa2ilimap" or die "Can't open $spa2ilimap : $!";
 open ILIREC, "< $ilirecord" or die "Can't open $ilirecord : $!";
@@ -91,17 +91,75 @@ foreach my $lem (keys %NounSem){
 store \%nounLemClasses, 'nounLemClasses';
 #
 #print "cambio: ";
-#foreach my $class (keys $nounLemClasses{'cambio'}){
+#foreach my $class (keys %{$nounLemClasses{'tigre'}}){
 #    print $class.",";
 #}
 #print "\n";
+ 
+#my @test =  %{$nounLemClasses{'carro'}};
+#print "@test\n";
+
 #print keys($nounLemClasses{'falta'})."\n";
 # foreach my $lem (keys %nounLemClasses){
-#     foreach my $class (keys $nounLemClasses{$lem}){
+#     foreach my $class (keys %{$nounLemClasses{$lem}}){
 #         print $class."\n";
 #     }
 # }
+
+ foreach my $lem (keys %nounLemClasses){
+    
+   if(grep {/^14$/} keys %{$nounLemClasses{$lem}}){
+     print "is human: $lem\n";
+   }
+ }
+
+
 # -> classes: 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
+#00	all
+#01	pert
+#02	all
+#03	Tops
+#04	act
+#05	animal
+#06	artifact
+#07	attribute
+#08	body
+#09	cognition
+#10	communication
+#11	event
+#12	feeling
+#13	food
+#14	group
+#15	location
+#16	motive
+#17	object
+#18	person
+#19	phenomenon
+#20	plant
+#21	possession
+#22	process
+#23	quantity
+#24	relation
+#25	shape
+#26	state
+#27	substance
+#28	time
+#29	body
+#30	change
+#31	cognition
+#32	communication
+#33	competition
+#34	consumption
+#35	contact
+#36	creation
+#37	emotion
+#38	motion
+#39	perception
+#40	possession
+#41	social
+#42	stative
+#43	weather
+#44	ppl
 
 # max number of synsets per noun ?
 # my $maxlength=1;
@@ -122,7 +180,7 @@ store \%nounLemClasses, 'nounLemClasses';
 # }
 # 
 # foreach my $key (  sort { $nbrOfSynsets{$b} <=> $nbrOfSynsets{$a} } keys %nbrOfSynsets  ){
-#    # print "$key: ".$nbrOfSynsets{$key}.":\t";
+#     print "$key: ".$nbrOfSynsets{$key}.":\t";
 #     print $nbrOfSynsets{$key}.":\t";
 #     my @sorted = sort @{$NounSem{$key}};
 #     print  "@sorted \n";

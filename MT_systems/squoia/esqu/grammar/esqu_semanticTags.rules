@@ -117,6 +117,7 @@ winwi	[+Mov]	my.smi=/^V/
 # movement verbs, transitive
 asta	[+Mov]	my.smi=/^V/
 apa	[+Mov]	!(my.slem=/portátil|remitente/)
+chura	[+Mov]	my.smi=/^V/
 lluk'i	[+Mov]	my.smi=/^V/
 marq'a	[+Mov]	my.smi=/^V/
 pusa	[+Mov]	!(my.slem=/guía|acompañante/)

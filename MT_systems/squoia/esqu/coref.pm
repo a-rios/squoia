@@ -9,6 +9,7 @@ my $verbose = '';
 sub main{
 	my $dom = ${$_[0]};
 	my $verbose = $_[1];
+	#my $withCorzu=$_[2];
 
 	print STDERR "#VERBOSE ". (caller(0))[3]."\n" if $verbose;
 
@@ -50,20 +51,17 @@ sub main{
 	 	foreach my $idref (sort {$a<=>$b} (keys (%chunkSequence))) 
 	 	{
 	 		my $verbChunk = $chunkSequence{$idref};
-			#print STDERR "\nverb chunk idref: $idref: \n" if $verbose;
-	# 		print STDERR "verbchunk: \n".$verbChunk->toString()."\n" if $verbose;
-	#print STDERR "verb form: ".$verbChunk->findvalue('child::NODE[@cpos="vm"]/@lem')."\n" if $verbose;	
-	# 		print STDERR "\n\n" if $verbose;
 			
 	 		# only necessary for 3rd person subjects, no subjects of participle forms ('denominado Paltayoq' -> Paltayoq should not be Antecedent), also: ignore relative clauses, and ignore complement clauses 'dice que x se fue' -> x should not be antecedent
 	 		if( $verbChunk->exists('CHUNK[(@type="sn" or @type="date") and (@si="suj" or @si="suj-a")]' ) && !$verbChunk->exists('CHUNK[@type="sn" and (@si="suj" or @si="suj-a")]/NODE[@rel="suj" and (@pos="pd" or @pos="pi")]' ) && !&isLocalPerson($verbChunk) && !squoia::util::isRelClause($verbChunk) && !$verbChunk->exists('self::CHUNK[@si="sentence" or @si="cd"]/NODE/NODE[@pos="cs"]') )
 	 		{
+	 			
 	 			my $activeSubjCand = @{$verbChunk->findnodes('CHUNK[@type="sn" and (@si="suj" or @si="suj-a")]/NODE[@cpos="n"]')}[-1];
 	 			
 	 			# no time references as subject candidates!
 	 			if($activeSubjCand && $activeSubjCand->getAttribute('lem') !~ /día|noche|año|mes|hora|segundo|minuto|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre/ )
 	 			#if($activeSubjCand )
-	 			{	
+	 			{
 	 				$activeSubj = $activeSubjCand;
 	 				$coreflem = $activeSubj->findvalue('@lem');
 	 				$corefmi = $activeSubj->findvalue('@mi');
@@ -81,33 +79,40 @@ sub main{
 	 			undef $activeSubj;
 				$blockedBysubjPrn=1;
 	 		}
-	 		elsif($activeSubj && !$verbChunk->exists('child::*[@si="suj" or @rel="suj"]' ) && !&isLocalPerson($verbChunk) && !squoia::util::isRelClause($verbChunk) && !$verbChunk->exists('CHUNK[@type="sn" and @si="impers"]') && !$verbChunk->exists('child::NODE[@form="hay" or @form="Hay"]') )
-	 		{	
-	 			$nbrOfsubjectlessVerbChunks++;
-	 			#check if number is the same
-	 			my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
-	 			#print STDERR "finite verb in verb chunk nbr ".$verbChunk->getAttribute('ord').$finiteVerb->getAttribute('form')."\n" if $verbose;
-	 			if($finiteVerb && &checkNumberAndPerson($finiteVerb, $activeSubj,$corefmi))
-	 			{
-	 				$verbChunk->setAttribute('coref',$coreflem);
-	 				$verbChunk->setAttribute('corefmi',$corefmi);
-	 				#print STDERR "inserted coreflem: $coreflem $corefmi\n" if $verbose;
-	 				$nbrOfinsertedSubjs++;
-	 			}
-	 			elsif(!$finiteVerb)
-	 			{
-	 				$nbrOfsubjectlessVerbChunksWithoutFiniteVerb++;
-	 			}
-				else
-				{
-					$nbrOfsubjectlessVerbChunksWhereSubjNotInserted++;
-				}
-	 		}
-	 		elsif(!$activeSubj && $blockedBysubjPrn)
+	 		elsif(!&isHaceImpersonal($verbChunk) && !&isHay($verbChunk) && !&isConsta($verbChunk) )
 	 		{
-	 			$noActiveSubjDueToPrecedingPrn++;
-	 			#print STDERR "no subject inserted due to previous subj=pers-prn in verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n" if $verbose;
-	 		}
+			    #elsif($activeSubj && !$verbChunk->exists('child::*[@si="suj" or @rel="suj"]' ) && !&isLocalPerson($verbChunk) && !squoia::util::isRelClause($verbChunk) && !$verbChunk->exists('CHUNK[@type="sn" and @si="impers"]') && !$verbChunk->exists('child::NODE[@form="hay" or @form="Hay"]') )
+			    if($activeSubj && !$verbChunk->exists('child::*[@si="suj"]') && !&isLocalPerson($verbChunk) && !&isRelClause($verbChunk) && !$verbChunk->exists('child::NODE/descendant::NODE[(starts-with(@mi,"P") or @cpos="z")  and @rel="suj"]') && !$verbChunk->exists('descendant::CHUNK[@si="impers"]/NODE[@lem="se"]')  && !$verbChunk->exists('child::CHUNK[@si="cd/ci" and contains(@ord,".1") ]/NODE[@lem="se"]'))
+			    {	
+				    #print STDERR "heeeeere....!\n".$verbChunk->toString()."\n";
+				    $nbrOfsubjectlessVerbChunks++;
+				    #check if number is the same
+				    my $finiteVerb = squoia::util::getFiniteVerb($verbChunk);
+				    #print STDERR "finite verb: $finiteVerb\n";
+			    #	if($finiteVerb && !$finiteVerb->getAttribute('mi') =~ /^VMM/ && &checkNumberAndPerson($finiteVerb, $activeSubj,$corefmi))
+				    if($finiteVerb && !($finiteVerb->getAttribute('mi') =~ /^VMM/) && &checkNumberAndPerson($finiteVerb, $activeSubj,$corefmi) )
+				    {
+					    #print STDERR "finite verb in verb chunk nbr ".$verbChunk->getAttribute('ord').$finiteVerb->getAttribute('form')."\n" if $verbose;
+					    $verbChunk->setAttribute('coref',$coreflem);
+					    $verbChunk->setAttribute('corefmi',$corefmi);
+					    #print STDERR "inserted coreflem: $coreflem $corefmi\n" if $verbose;
+					    $nbrOfinsertedSubjs++;
+				    }
+				    elsif(!$finiteVerb)
+				    {
+					    $nbrOfsubjectlessVerbChunksWithoutFiniteVerb++;
+				    }
+				    else
+				    {
+					    $nbrOfsubjectlessVerbChunksWhereSubjNotInserted++;
+				    }
+			    }
+			    elsif(!$activeSubj && $blockedBysubjPrn)
+			    {
+				    $noActiveSubjDueToPrecedingPrn++;
+				    #print STDERR "no subject inserted due to previous subj=pers-prn in verb chunk nbr: ".$verbChunk->getAttribute('ord')."\n" if $verbose;
+			    }
+			 }
 	 	
 	 	} 
 		#print STDERR "\n---------------------\n" if $verbose;
@@ -126,6 +131,117 @@ sub main{
 #	#print $dom->actualEncoding();
 #	print STDOUT $docstring;
 #	return $dom;
+}
+
+sub isRelClause{
+	my $verbchunk = $_[0];
+	
+#	print STDERR "testing for rel clause : ".$verbchunk->toString()."\n";
+#	print STDERR "parent is of type:".$verbchunk->findvalue('parent::CHUNK/@type')."\n";
+	# normal case
+	return 1 if($verbchunk->exists('child::NODE/descendant::NODE[starts-with(@mi,"PR")]'));
+	#with preposition
+	return 1 if($verbchunk->exists('child::CHUNK[@type=grup-sp or @type="coor-sp"]/NODE[@pos="sp"]/descendant::NODE[starts-with(@mi,"PR")]'));
+	# second part of coordinated rel clause
+	return 1 if($verbchunk->exists('parent::CHUNK[@type="coor-v"]/NODE/descendant::NODE[starts-with(@mi,"PR")]'));
+	# less restrictive (but risky): if chunk is labeled as 'S' and has a nominal head, assume its a relative clause
+	if($verbchunk->getAttribute('si') eq 'S' && !$verbchunk->exists('child::NODE/descendant::NODE[@mi="CS"]') && $verbchunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/parent::CHUNK[@type="sn" or @type="coor-n"]') && $verbchunk->exists('parent::CHUNK[@type="grup-verb" or @type="coor-v"]/descendant::NODE[count(child::NODE[@pos="da"])=0]/NODE[starts-with(@mi,"PR")]') ){
+		#return 2;
+		return 1; # bit uncertain, but probably the second part of a coordinated relative clause
+	}
+	return 0;
+	
+}
+
+sub isHay{
+	my $verbchunk = $_[0];
+	
+	my ($topverb) = $verbchunk->findnodes('child::NODE[1]');
+	#print STDERR "found topverb $topverb in verb chunk \n";
+	
+	# if 'haber' is main verb (top directly under chunk)
+	if($topverb && $topverb->getAttribute('lem') eq 'haber'){
+		
+		# either: 3 singular, hay, había, hubo..
+		if($topverb->getAttribute('mi') =~ /3S/){
+			#print STDERR "found 3s haber top verb in \n\t".$topverb->toString()."\n";
+			$verbchunk->setAttribute('pleonastic', 'yes');
+			return 1;
+		}
+		# or: infinitive + modal verb, puede haber, debe haber
+		elsif($topverb->getAttribute('mi') =~ /^VMN0000|VAN0000/ && $topverb->exists('descendant::NODE[contains(@mi,"3S")]') ){
+			#print STDERR "found infinitive haber with 3s finite verb in \n\t".$topverb->toString()."\n";
+			$verbchunk->setAttribute('pleonastic', 'yes');
+			return 1;
+		}
+		# or: ha/había/habrá habido
+		elsif($topverb->getAttribute('form') =~ /^[Hh]abido/ && $topverb->exists('descendant::NODE[contains(@mi,"3S") and @lem="haber"]') ){
+			$verbchunk->setAttribute('pleonastic', 'yes');
+			return 1;
+		}	
+	}
+	
+	# exclude 'ha de +inf' and 'hay que +inf'
+	# maybe not 'ha de' ?
+	elsif($topverb->getAttribute('mi') =~ /^V[SM]N0000/ && $topverb->exists('descendant::NODE[@lem="haber" and contains(@mi,"3S")]') && $topverb->exists('descendant::NODE[@lem="que" or @lem="de"]')){
+		return 1;
+	}
+	# wrong parse with modal verb on top: TODO
+#	  <CHUNK type="grup-verb" si="top" ord="1">
+#      <NODE ord="1" form="puede" lem="poder" pos="vm" cpos="v" rel="sentence" mi="VMIP3S0"/>
+#      <CHUNK type="grup-verb" si="suj" ord="2">
+#        <NODE ord="2" form="haber" lem="haber" pos="vm" cpos="v" rel="suj" mi="VMN0000">
+	
+	
+	
+	
+	return 0;
+	
+}
+
+sub isConsta{
+	my ($verbchunk) = $_[0];
+	
+	my ($topverb) = $verbchunk->findnodes('child::NODE[1]');
+	
+	if($topverb and $topverb->getAttribute('form') =~ /^[Cc]onsta$/){
+		# consta que, or (me,te..) consta que
+		
+		#get next node in linear sequence
+		my $constaOrd = $topverb->getAttribute('ord');
+	#	print STDERR "consta ord: $constaOrd\n";
+		my $xpathstring = 'ancestor::SENTENCE/descendant::NODE[@ord="'.($constaOrd+1).'"]';
+		#print STDERR $xpathstring."\n";
+		my ($nextnode) = $verbchunk->findnodes($xpathstring);
+		if($nextnode && $nextnode->getAttribute('lem') eq 'que'){
+			$verbchunk->setAttribute('pleonastic', 'yes');
+			return 1;
+		}
+		# note: consta and que dont need to be adjacent, less reliable method: check verbchunk has a verbchunk child subordinated with que
+		elsif($verbchunk->exists('child::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE/descendant-or-self::NODE[@lem="que"]')){
+			$verbchunk->setAttribute('pleonastic', 'yes');
+			return 1;
+		}
+		
+		
+	}
+	return 0;
+}
+
+sub isHaceImpersonal{
+    my ($verbchunk) = $_[0];
+    
+    if($verbchunk->exists('child::NODE[@lem="hacer"]'))
+    {
+	  my ($cd) = $verbchunk->findnodes('child::CHUNK[@si="cd" or @si="cd-a" or @si="cc"]');
+	  if($cd and $cd->findvalue('child::NODE/@lem') =~ /día|mes|año|segundo|minuto|hora|tiempo|calor|frío|sol|lluvia|nieve|graniza|cálido|fresco/)
+	  { #TODO: insert special translation in dix & rules
+	      $verbchunk->setAttribute('pleonastic', 'yes');
+	      return 1;
+	  }
+    }
+    
+    return 0;
 }
 
 sub isLocalPerson{
@@ -237,6 +353,10 @@ sub checkNumberAndPerson {
 		print STDERR "failed to check congruence of finite verb possible antecedent\n";
 	}
 }
+
+
+
+
 
 1;
 

@@ -92,7 +92,7 @@ sub main{
 			  	$wordCount += scalar(@tokens)-1;
 	  		}
 	  		else{
-	  			push(@outputLines, "$wordCount\t$date\t$date\tw\tW\t_\t_\t_\t_\t_\n");
+	  			push(@outputLines, "$wordCount\t$date\t$date\tw\tW\t_\n");
 	  		}
 		}
 		else
@@ -339,6 +339,9 @@ sub printDateToken{
 		}
 		elsif(lc($date) =~ /^las$/){
 			$subOutLine .=  "$date\tel\td\tDA\tgen=f|num=p|postype=article|eagles=DA0FP0\n";
+		}
+		elsif(lc($date) =~ /^por$/){
+			$subOutLine .=  "$date\tpor\ts\tSP\tpostype=preposition|eagles=SPS00\n";
 		}
 		elsif(lc($date) =~ /^\d+$|^[0-2]?\d[:\.][0-5]\d$|^[xivXIV]+$|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta/){
 			if(lc(@$dateTokens[$i-1]) =~ /^año/){

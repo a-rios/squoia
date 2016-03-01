@@ -96,6 +96,8 @@ my $matxin;
 my $maltPort;
 my $maltModel;
 my $maltPath;
+# statistical co-reference resolution
+my $withCorzu;
 # options for lexical transfer
 my $bidix;
 # general options for translation
@@ -208,6 +210,8 @@ Options for tagging:
 Options for parsing:
 --maltPort1: port for maltparser server
 --maltModel: model 1 for maltparser server
+Options for statistical co-reference resolution:
+--withCorzu: conll is annotated with co-references
 Options for lexical transfer:
 --bidix: bilingual dictionary for lexical transfer
 --matxin: path to maxtin executables
@@ -278,6 +282,8 @@ GetOptions(
 	'maltPort=i'	=> \$maltPort,
 	'maltModel=s'	=> \$maltModel,
 	'maltPath=s'	=> \$maltPath,
+	# options for statistical co-reference resolution
+	'withCorzu' => \$withCorzu,
 	# options for lexical transfer
 	'bidix=s'	=> \$bidix,
      # translation options
@@ -461,16 +467,16 @@ print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 				$freelingConf = $config{'freelingConf'};
 			} or die  "Could not start tagging, no freelingConf given\n";
 		}
-		my $analyzerRunning = `ps ax | grep -v grep | grep "squoia_server_analyzer.*port=$freelingPort"` ;
+		my $analyzerRunning = `ps ax | grep -v grep | grep "server_squoia.*port=$freelingPort"` ;
 		if($analyzerRunning eq ''){
-			print STDERR "no instance of squoia_server_analyzer running on port $freelingPort with config $freelingConf\n";
-			print STDERR "starting squoia_server_analyzer on port $freelingPort with config $freelingConf, logging to $path/logs/logcrfmorf...\n";
-			system("squoia_server_analyzer -f $freelingConf --outf=crfmorf --server --port=$freelingPort 2> $path/logs/logcrfmorf &");
+			print STDERR "no instance of server_squoia running on port $freelingPort with config $freelingConf\n";
+			print STDERR "starting server_squoia on port $freelingPort with config $freelingConf, logging to $path/logs/logcrfmorf...\n";
+			system("server_squoia -f $freelingConf --server --port=$freelingPort 2> $path/logs/logcrfmorf &");
 			while(`echo "test" | analyzer_client "$freelingPort" 2>/dev/null` eq ''){
-				print STDERR "starting squoia_server_analyzer, please wait...\n";
+				print STDERR "starting server_squoia, please wait...\n";
 				sleep 10;
 			}
-			print STDERR "squoia_server_analyzer now ready\n";
+			print STDERR "server_squoia now ready\n";
 		}
 #		if($wapitiModel eq '' or $wapitiPort eq ''){
 #			eval{
@@ -500,12 +506,14 @@ print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
 if($startTrans<$mapInputFormats{'tagged'})	#4)
 {
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'tagged'} .") [-o tagged] tagging\n";
+
 	### tagging: if input file given with --file or -f:
 	# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
 	eval{
 		$matxin = $config{'matxin'} unless $matxin; $wapiti = $config{'wapiti'} unless $wapiti; $wapitiModel = $config{'wapitiModel'} unless $wapitiModel; $wapitiPort = $config{'wapitiPort'} unless $wapitiPort;
 	}
 	or die "Tagging failed, location of matxin, wapiti or wapiti model or port not indicated!\n";;
+		#print STDERR "wapiti set as $wapiti, model set as $wapitiModel\n";
 	if($file ne ''){
 		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
 #		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
@@ -634,17 +642,17 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 	if($startTrans ==$mapInputFormats{'parsed'}){	#6){
 		if($file ne ''){
 			open (FILE, "<", $file) or die "Can't open input file \"$file\" to translate: $!\n";
-			$dom = squoia::conll2xml::main(\*FILE,$verbose);
+			$dom = squoia::conll2xml::main(\*FILE,$verbose,$withCorzu);
 			close(FILE);
 		}
 		else{
 			binmode(STDIN);
-			$dom = squoia::conll2xml::main(\*STDIN,$verbose);
+			$dom = squoia::conll2xml::main(\*STDIN,$verbose,$withCorzu);
 		}
 	}
 	else{
 		#### create xml from conll
-		$dom = squoia::conll2xml::main(\*CONLL2,$verbose);
+		$dom = squoia::conll2xml::main(\*CONLL2,$verbose,$withCorzu);
 		close(CONLL2);
 		
 	}
@@ -789,7 +797,7 @@ if($startTrans < $mapInputFormats{'vdisamb'})	#10)
 		$dom = &readXML();
 	}
 	
-	squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex, $verbose);
+	squoia::esqu::disambVerbFormsRules::main(\$dom, $evidentiality, \%nounLex, $verbose, $withCorzu);
 
 	## if output format is 'vdisamb': print and exit
 	if($outformat eq 'vdisamb'){
@@ -936,10 +944,10 @@ if($startTrans <$mapInputFormats{'lextrans'})	#12)
 	}
 
 	if($chunkMap eq '' and $config{'chunkMap'} eq ''){
-		open(XFER,"-|" ,"cat $tmp3 | $matxin/matxin-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
+		open(XFER,"-|" ,"cat $tmp3 | $matxin/squoia-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
 	} else {
 		$chunkMap = $config{'chunkMap'} if ($chunkMap eq '');
-		open(XFER,"-|" ,"cat $tmp3 | $matxin/matxin-xfer-lex -c $chunkMap $bidix"  ) || die "lexical transfer failed: $!\n";
+		open(XFER,"-|" ,"cat $tmp3 | $matxin/squoia-xfer-lex -c $chunkMap $bidix"  ) || die "lexical transfer failed: $!\n";
 	}
 	close(TMP3);
 	
@@ -1663,7 +1671,7 @@ if($startTrans <$mapInputFormats{'interOrder'})	#21)
 						next if /^$/;	# skip if empty line
 						my ($parentchunk, $childchunks, $order ) = split( /\s*\t+\s*/, $_, 3 );
 						# split childchunks into array and remove empty fields resulted from split
-						$childchunks =~ s/(xpath{[^}]+),([^}]+})/\1XPATHCOMMA\2/g;	#replace comma within xpath with special string so it will not get split
+						$childchunks =~ s/(xpath{[^}]+),([^}]+})/\$1XPATHCOMMA\$2/g;	#replace comma within xpath with special string so it will not get split
 						my @childsWithEmptyFields = split( /\s*,\s*/, $childchunks);
 						foreach my $ch (@childsWithEmptyFields) {
 							$ch =~ s/XPATHCOMMA/,/g;	#replace comma back

@@ -42,29 +42,35 @@ al_derrededor_de	postpos=muyun,nouncase=+Gen
 al_inicio_de		postpos=qallariyninpi,nouncase=+Gen
 al_interior_de		postpos=ukhunman,nouncase=+Gen
 al_lado_de		postpos=kuska			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]}			- 	# al lado de una persona
-al_lado_de		postpos=kinraynin,nouncase=+Gen	!(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]})		-	# al lado de otra cosa
+al_lado_de		postpos=kinrayninpi,nouncase=+Gen	!(xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@smi="NP00SP0"]})		-	# al lado de otra cosa
 al_margen_de		postpos=patanpi,nouncase=+Gen
 al_modo_de		postpos=hina
 a_modo_de		postpos=hina
 al_objeto_de		case=+Ben
-a_la_derecha_de		postpos=pañan,nouncase=+Gen
-a_la_izquierda_de	postpos=lluq'in,nouncase=+Gen
+
+a_la_derecha_de		postpos=pañanpi,nouncase=+Gen	!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]})	+
+a_la_derecha_de		postpos=pañanman,nouncase=+Gen	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]}	-
+
+a_la_izquierda_de	postpos=lluq'in,nouncase=+Gen		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]})	+
+a_la_izquierda_de	postpos=lluq'inman,nouncase=+Gen	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]}	-
+
 a_la_manera_de		postpos=hina
 a_manera_de		postpos=hina
 a_partir_de		case=+Abl
 a_principios_de		postpos=qallariyninpi
 
-alrededor_de	postpos=muyun,nouncase=+Gen
+alrededor_de	postpos=muyunpi,nouncase=+Gen
 
 ante		postpos=ñawk'in,nouncase=+Gen		-	+
 
 antes_de		prepos=manaraq			xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="grup-verb"]/NODE[@mi="infinitive"]}
 a_pesar_de 		postpos=hinata
 
-arriba_de	postpos=hanaqnin,nouncase=+Gen		-	+
+arriba_de	postpos=hanaqnin,nouncase=+Gen		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]})	+
+arriba_de	postpos=hanaqnin,nouncase=+Gen		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]}	-
 
 bajo		postpos=uran,nouncase=+Gen
-cerca_de 	postpos=sichpan,nouncase=+Gen
+cerca_de 	postpos=sichpanpi,nouncase=+Gen
 como		postpos=hina			!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"])		+
 como		postpos=hina,nouncase=+Dat	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="ejercer"]		-
 
@@ -92,15 +98,16 @@ de	postpos=hina,nouncase=+Dat	xpath{ancestor::CHUNK[@type="grup-verb" or @type="
 de	postpos=chayqa,nouncase=+Abl	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[@slem="depender"]		-		 # eso depende de ti -> qammantam chayqa (kan).
 
 de_acuerdo_con		postpos=hina,nouncase=+Dat
-de_al_lado_de		postpos=kinraynin,nouncase=+Gen
+de_al_lado_de		postpos=kinrayninpi,nouncase=+Gen
 
-debajo_de	postpos=uran,nouncase=+Gen		-	+
+debajo_de	postpos=uranpi,nouncase=+Gen		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]})	+
+debajo_de	postpos=uranman,nouncase=+Gen		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]}	-
 
-delante_de	postpos=ñawpan,nouncase=+Gen		-	+
+delante_de	postpos=ñawpanpi,nouncase=+Gen		-	+
 
-dentro_de	postpos=ukhun,nouncase=+Gen		-	+
+dentro_de	postpos=ukhunpi,nouncase=+Gen		-	+
 
-detrás_de	postpos=qhipan,nouncase=+Gen	-		+
+detrás_de	postpos=qhipanpi,nouncase=+Gen	-		+
 
 desde		case=+Abl
 #después_de 	postpos=hawa TODO, really hawa? qhipa seems better (?)
@@ -113,15 +120,15 @@ en		case=+Acc		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="confiar" 
 en		case=+Dat		xpath{ancestor::CHUNK[@type="grup-verb"][1]/NODE[@slem="poner" or @slem="introducir" or @slem="meter" or @slem="insertar" or @slem="penetrar" or @slem="entrar" or @slem="enclavar" or @slem="colocar" or @slem="acoplar" or @slem="depositar" or @slem="convertir"]}	-
 
 en_busca_de		postpos=maskhaspa
-en_cercanías_de 	postpos=sichpan,nouncase=+Gen
+en_cercanías_de 	postpos=sichpanpi,nouncase=+Gen
 en_compañía_de		postpos=kuska
-en_derrededor_de	postpos=muyun,nouncase=+Gen
+en_derrededor_de	postpos=muyunpi,nouncase=+Gen
 en_el_centro_de		postpos=chawpinpi,nouncase=+Gen
-en_el_entorno_de	postpos=muyun,nouncase=+Gen
+en_el_entorno_de	postpos=muyunpi,nouncase=+Gen
 en_el_interior_de	postpos=ukhunpi,nouncase=+Gen
 en_el_otro_lado_de	postpos=huk kinrayninpi,nouncase=+Gen
 
-en_las_proximidades_de	postpos=sichpan,nouncase=+Gen
+en_las_proximidades_de	postpos=sichpanpi,nouncase=+Gen
 en_la_temporada_de	postpos=pachapi
 en_lo_concerniente_a	postpos=+Top
 en_lo_que_concierna	postpos=+Top
@@ -133,11 +140,12 @@ en_tiempo_de		postpos=pachapi
 en_virtud_de	case=+Instr
 encima		postpos=hanan		# adverb?!?
 
-encima_de	postpos=hanan,nouncase=+Gen	-	+
+encima_de	postpos=hananpi,nouncase=+Gen		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]})	+
+encima_de	postpos=hananman,nouncase=+Gen		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]}	-
 
 en_cuanto_a	case=+Top
 
-en_medio_de	postpos=chawpin,nouncase=+Gen
+en_medio_de	postpos=chawpinpi,nouncase=+Gen
 
 entre		case=+Intsoc		xpath{parent::CHUNK[@type="grup-sp"]/CHUNK[@type="sn"]/NODE[@sem="[+Masc]" or @sem="[+Fem]" or @sem="[+Hum]"]}	-
 #entre		postpos=ukhu		-	-	# TODO rule?
@@ -145,19 +153,24 @@ entre		postpos=chawpi		-	+
 
 excepto		prepos=mana,func=neg
 
-frente_a	postpos=chimpan,nouncase=+Gen		-	+
-al_frente_de	postpos=chimpan,nouncase=+Gen
-enfrente_de	postpos=chimpan,nouncase=+Gen
-en_frente_de	postpos=chimpan,nouncase=+Gen
+# disambiguate with +Mov/-Mov
+frente_a	postpos=chimpanpi,nouncase=+Gen		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]})	+
+frente_a	postpos=chimpanman,nouncase=+Gen	xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]}	-
 
-fuera_de	postpos=hawan,nouncase=+Gen	-	+
+al_frente_de	postpos=chimpanpi,nouncase=+Gen		!(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]})	+
+al_frente_de	postpos=chimpanman,nouncase=+Gen		xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/NODE[contains(@sem,"+Mov")]}	-
+
+enfrente_de	postpos=chimpanpi,nouncase=+Gen
+en_frente_de	postpos=chimpanpi,nouncase=+Gen
+
+fuera_de	postpos=hawanpi,nouncase=+Gen	-	+
 
 hacia		case=+Dat	-	+
 hasta		case=+Term	-	+
 
-lejos_de	postpos=karun,nouncase=+Gen	-	+
+lejos_de	postpos=karunpi,nouncase=+Gen	-	+
 
-junto_a		postpos=qayllan,nouncase=+Gen	-	+
+junto_a		postpos=qayllanpi,nouncase=+Gen	-	+
 
 luego_de	postpos=qhipa
 

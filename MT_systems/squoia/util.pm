@@ -787,10 +787,10 @@ sub isAncestor{
 	
 	
 sub getMainVerb{
-	my $relClause = $_[0];
+	my $verbchunk = $_[0];
 	
 	# main verb is always the first child of verb chunk	
-	my $verb = @{$relClause->findnodes('child::NODE[starts-with(@mi,"V")][1]')}[-1];
+	my ($verb) = $verbchunk->findnodes('child::NODE[starts-with(@mi,"V")][1]');
 	if($verb)
 	{
 		return $verb;
@@ -798,8 +798,8 @@ sub getMainVerb{
 	else
 	{
 		#get sentence id
-		my $sentenceID = $relClause->findvalue('ancestor::SENTENCE/@ord');
-#		print STDERR "main verb not found in sentence nr. $sentenceID: \n ";
+#		my $sentenceID = $verbchunk->findvalue('ancestor::SENTENCE/@ord');
+#		print STDERR "main verb not found in sentence nr. $sentenceID: \n "if $verbose;
 #		print STDERR $relClause->toString();
 #		print STDERR "\n";
 	}
