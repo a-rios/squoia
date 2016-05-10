@@ -72,22 +72,6 @@ sub main{
 
 	  		if(scalar(@tokens)>1){
 	  			my $dateOutlines = &printDateToken(\@tokens,$wordCount);
-#		  		foreach my $token (@tokens)
-#		  		{
-#		  			if($token eq @tokens[0]){
-#		  				#print "$token\tFILL_IN\n";
-#		  				$outLine .= &printDateToken($token);
-#		  				print STDERR "printed first date token $token, $outLine\n" if $verbose;
-#		  			}
-#		  			else{
-#		  				$wordCount++;
-#		  				#print "$wordCount\t$token\tFILL_IN\n";
-#		  				#print "$wordCount\t";
-#		  				$outLine .= "$wordCount\t";
-#		  				$outLine .= &printDateToken($token);
-#		  				print STDERR "printed date token $token, $outLine\n" if $verbose;
-#		  			}
-#		  		}
 			  	push(@outputLines, @$dateOutlines);
 			  	$wordCount += scalar(@tokens)-1;
 	  		}
@@ -314,7 +298,12 @@ sub printDateToken{
 		my $date = @$dateTokens[$i];
 		my $subOutLine = "$actualWordCount\t";
 		if(lc($date) =~ /enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|lunes|martes|miércoles|jueves|viernes|sábado|domingo/){
-			$subOutLine .= "$date\t".$mapMonthsDays{lc($date)}."\tw\tW\tne=date|eagles=W\n";
+			if(exists($mapMonthsDays{lc($date)})){
+				$subOutLine .= "$date\t".$mapMonthsDays{lc($date)}."\tw\tW\tne=date|eagles=W\n";
+			}
+			else{
+				$subOutLine .= "$date\t$date\tw\tW\tne=date|eagles=W\n";
+			}
 		}
 		elsif(lc($date) =~ /día|mes|año|siglo/){
 			$subOutLine .= "$date\t".lc($date)."\tn\tNC\tgen=m|num=s|postype=common|eagles=NCMS000\n";
@@ -363,8 +352,13 @@ sub printDateToken{
 		elsif(lc($date) =~ /pasado|próximo/){
 			$subOutLine .=  "$date\t".lc($date)."\ta\tAQ\tgen=m|num=s|postype=qualificative|eagles=AQ0MSP\n";
 		}
+		elsif($date eq ','){
+			$subOutLine .=  ",\t,\tF\tFc\tpunct=comma|eagles=Fc\n"
+		}
 		else{
-			$subOutLine .=  "$date\tFILL_IN\n";
+			# leads to crashes, can never cover all possible forms since freeling makes mistakes in the recognition of dates.. just fill in standard "\tw\tW\tne=date|eagles=W\n";
+			#$subOutLine .=  "$date\tFILL_IN\n";
+			$subOutLine .= "$date\t$date\tw\tW\tne=date|eagles=W\n";
 		}
 		
 		push(@dateOutlines, $subOutLine);
@@ -418,6 +412,7 @@ sub eaglesToMorph{
 		$type = "ne=location" if($eaglesTag =~ /G0.$/);
 		$type = "ne=person" if($eaglesTag =~ /SP.$/);
 		$type = "ne=other" if($eaglesTag =~ /V0.$/);
+		$type = "ne=unknown" if ($type eq '');
 		$morphstring = $postype."|".$type;
 		
 	}

@@ -330,6 +330,10 @@ config* load_config(int argc, char *argv[]) {
     cfg->analyzer_invoke_options.NEC_NEClassification = true;
     wcerr << L"NEC activated since coreference or semantic graph was requested."<<endl;
   }
+   if (cfg->analyzer_invoke_options.OutputLevel==CRF and not cfg->analyzer_invoke_options.NEC_NEClassification) {
+    cfg->analyzer_invoke_options.NEC_NEClassification = true;
+    wcerr << L"NEC activated since output=crf."<<endl;
+  }
   
   if (cfg->analyzer_invoke_options.OutputLevel>=COREF and cfg->analyzer_invoke_options.SENSE_WSD_which!=UKB) {
     cfg->analyzer_invoke_options.SENSE_WSD_which = UKB;
@@ -535,6 +539,12 @@ int main (int argc, char **argv) {
   // create lang ident or analyzer, depending on requested output
   lang_ident *ident=NULL;
   analyzer *anlz=NULL;
+ // nec *neclass=NULL;
+     
+/*  // NEC requested
+  if (not cfg->analyzer_config_options.NEC_NECFile.empty())
+	neclass = new nec(cfg->analyzer_config_options.NEC_NECFile);*/ 
+  
   if (cfg->analyzer_invoke_options.OutputLevel == IDENT) 
     ident = new lang_ident(cfg->IDENT_identFile);
   else {
@@ -585,6 +595,11 @@ int main (int argc, char **argv) {
         inp->input_document(text,doc);
         anlz->analyze(doc);
       }
+      
+//        if (cfg->OutputFormat == OUT_CRF) {
+// 	  wcerr <<  L" doing neclass\n";
+// 	  neclass->analyze(doc);
+// 	}
       
       // output results
       OutputDocument(*out,doc);

@@ -6,6 +6,7 @@
 # - atm: input needs to be 1 sentence per line: 
 #   --> for automatic sentence splitting, do we want to use FreeLing or the sentence splitter from the Lingua package?
 # -> freeling gseht besser us, erkennt titel...
+# TODO: new freeling version 3.1 -> outlvl=morfo -> no named entity classification -> need another server for nec after tagging!!
 
 package squoia::translate;
 our $path;
@@ -546,14 +547,14 @@ if($startTrans<$mapInputFormats{'conll'}){	#5){
 			close(FILE);
 		}
 		else{
-			#### convert from wapiti crf to conll for desr parser
+			#### convert from wapiti crf to conll for malt parser
 			binmode(STDIN);
 			$conllLines = squoia::crf2conll::main(\*STDIN,$verbose);
 		}
 
 	}
 	else{
-		#### convert from wapiti crf to conll for desr parser
+		#### convert from wapiti crf to conll for malt parser
 		$conllLines = squoia::crf2conll::main(\*CONLL,$verbose);
 		close(CONLL);
 	}
