@@ -30,7 +30,9 @@
 #include "freeling/output/output_naf.h"
 #include "freeling/output/input_conll.h"
 #include "freeling/output/input_freeling.h"
+#include "freeling/output/output_handler.h"
 #include "output_crf.h"
+//#include "input_crf.h"
 
 // Semaphores and stuff to handle children count in server mode
 #ifdef WIN32
@@ -196,7 +198,7 @@ void OutputTokens(const list<word> &av) {
 }
 
 //---- Output analysis result to output channel
-void OutputSentences(const output_handler &out, list<sentence> &ls) {
+void OutputSentences(const io::output_handler &out, list<sentence> &ls) {
 
   if (ServerMode) {
     if (ls.empty()) {
@@ -215,7 +217,7 @@ void OutputSentences(const output_handler &out, list<sentence> &ls) {
 
 
 //---- Output analysis result to output channel
-void OutputDocument(const output_handler &out, const document &doc) {
+void OutputDocument(const io::output_handler &out, const document &doc) {
 
   // not in server mode, print results to wcout
   if (not ServerMode) {
@@ -237,29 +239,29 @@ void OutputDocument(const output_handler &out, const document &doc) {
 
 
 //---- Create output handler for requested format
-output_handler* create_output_handler(config *cfg) {
+io::output_handler* create_output_handler(config *cfg) {
 
-  output_handler *out;
+  io::output_handler *out;
   if (cfg->OutputFormat==OUT_TRAIN) {
-    out = new output_train();
+    out = new io::output_train();
   }
   else if (cfg->OutputFormat==OUT_CRF) {
-    out = new output_crf();
+    out = new io::output_crf();
   }
   else if (cfg->OutputFormat==OUT_CONLL) {
-    out = new output_conll();
+    out = new io::output_conll();
     out->load_tagset(cfg->TAGSET_TagsetFile);
   }
   else if (cfg->OutputFormat==OUT_XML) {
-    out = new output_xml();
+    out = new io::output_xml();
     out->load_tagset(cfg->TAGSET_TagsetFile);
   }
   else if (cfg->OutputFormat==OUT_JSON)  {
-    out = new output_json();
+    out = new io::output_json();
     out->load_tagset(cfg->TAGSET_TagsetFile);
   }
   else if (cfg->OutputFormat==OUT_NAF)  {
-    output_naf *onaf = new output_naf();
+    io::output_naf *onaf = new io::output_naf();
     onaf->load_tagset(cfg->TAGSET_TagsetFile);
     onaf->set_language(cfg->analyzer_config_options.Lang);
 
@@ -276,7 +278,7 @@ output_handler* create_output_handler(config *cfg) {
     out = onaf;
   }
   else { //  default, cfg->OutputFormat==OUT_FREELING
-    output_freeling *ofl = new output_freeling();
+    io::output_freeling *ofl = new io::output_freeling();
     ofl->output_senses(cfg->analyzer_invoke_options.SENSE_WSD_which!=NO_WSD);
     ofl->output_all_senses(cfg->analyzer_invoke_options.SENSE_WSD_which!=MFS);
     ofl->output_phonetics(cfg->analyzer_invoke_options.PHON_Phonetics);
@@ -290,11 +292,12 @@ output_handler* create_output_handler(config *cfg) {
 
 
 //---- Create input handler for requested format
-input_handler* create_input_handler(config *cfg) {
+io::input_handler* create_input_handler(config *cfg) {
 
-  input_handler *inp;
-  if (cfg->InputFormat==INP_CONLL)  inp = new input_conll();
-  else if (cfg->InputFormat==INP_FREELING)  inp = new input_freeling();
+  io::input_handler *inp;
+  if (cfg->InputFormat==INP_CONLL)  inp = new io::input_conll();
+  else if (cfg->InputFormat==INP_FREELING)  inp = new io::input_freeling();
+  //else if (cfg->InputFormat==INP_CRF)  inp = new io::input_crf();
   else inp = NULL;
 
   return inp;
@@ -447,7 +450,7 @@ void load_document(wstring &text, ServerStats &stats) {
 // outputting results as soon as they are available
 //---------------------------------------------
 
-void process_text_incremental(analyzer &anlz, ServerStats &stats, const output_handler &out, bool flush) {
+void process_text_incremental(analyzer &anlz, ServerStats &stats, const io::output_handler &out, bool flush) {
 
   // read and analyze text incrementally
   list<sentence> ls;
@@ -482,7 +485,7 @@ void process_text_incremental(analyzer &anlz, ServerStats &stats, const output_h
 // outputting results as soon as they are available
 //---------------------------------------------
 
-void process_columns_incremental(const analyzer &anlz, ServerStats &stats, const input_handler &inp, const output_handler &out) {
+void process_columns_incremental(const analyzer &anlz, ServerStats &stats, const io::input_handler &inp, const io::output_handler &out) {
 
   // read and analyze text incrementally. Text is analyzed in some column format
   list<sentence> ls;
@@ -533,17 +536,17 @@ int main (int argc, char **argv) {
   util::init_locale(cfg->Locale);
 
   // create input/output handlers appropriate for requested type of input/output.
-  output_handler *out = create_output_handler(cfg);
-  input_handler *inp = create_input_handler(cfg);
+  io::output_handler *out = create_output_handler(cfg);
+  io::input_handler *inp = create_input_handler(cfg);
 
   // create lang ident or analyzer, depending on requested output
   lang_ident *ident=NULL;
   analyzer *anlz=NULL;
- // nec *neclass=NULL;
+  nec *neclass=NULL;
      
-/*  // NEC requested
+  // NEC requested
   if (not cfg->analyzer_config_options.NEC_NECFile.empty())
-	neclass = new nec(cfg->analyzer_config_options.NEC_NECFile);*/ 
+	neclass = new nec(cfg->analyzer_config_options.NEC_NECFile); 
   
   if (cfg->analyzer_invoke_options.OutputLevel == IDENT) 
     ident = new lang_ident(cfg->IDENT_identFile);

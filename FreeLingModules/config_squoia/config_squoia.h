@@ -31,7 +31,7 @@ typedef enum {MODE_CORPUS,MODE_DOC} InputModes;
 // codes for OutputFormat
 typedef enum {OUT_FREELING,OUT_CRF,OUT_TRAIN,OUT_CONLL,OUT_XML,OUT_JSON,OUT_NAF} OutputFormats;
 // codes for InputFormat
-typedef enum {INP_TEXT, INP_FREELING, INP_CONLL} InputFormats;
+typedef enum {INP_TEXT, INP_FREELING, INP_CONLL, INP_CRF} InputFormats;
 
 namespace po = boost::program_options;
 using namespace freeling;
@@ -445,6 +445,7 @@ class config {
     if (InputF=="text") InputFormat = INP_TEXT;
     else if (InputF=="freeling") InputFormat = INP_FREELING;
     else if (InputF=="conll") InputFormat = INP_CONLL;
+    else if (InputF=="crf") InputFormat = INP_CRF;
     else { ERROR_CRASH(L"Unknown or invalid input format: "+util::string2wstring(InputF));}
 
     // translate Tagger string to appropriate enum values.
@@ -492,7 +493,9 @@ class config {
     
   void SetBooleanOptionCL (const int pos, const int neg, bool &opt, const std::string &name) {
     if (pos && neg)  
+    {
       WARNING(L"Ambiguous specification for option --"+util::string2wstring(name)+L" in command line. Using default value.");
+    }
     else if (pos)
       opt=true;
     else if (neg)
