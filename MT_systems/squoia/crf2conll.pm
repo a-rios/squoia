@@ -94,12 +94,13 @@ sub main{
 		    	# get lemma(s) associated with tag (to the left of correct tag)
 		    	my $tag = @rows[-1];
 		    	chomp($tag);
-		    	if($tag =~ /^NP/){
-		    		# prelabeled & classified by FL -> take second last as tag if there is one!
-		    		if(@rows[-2] =~ /^NP/){
-		    				$tag = @rows[-2];
-		    		}
-		    	}
+		    	# no more with fl4
+# 		    	if($tag =~ /^NP/){
+# 		    		# prelabeled & classified by FL -> take second last as tag if there is one!
+# 		    		if(@rows[-2] =~ /^NP/){
+# 		    				$tag = @rows[-2];
+# 		    		}
+# 		    	}
 		    	my @indexes = grep { $rows[$_] eq $tag } 0..18;
 		    	# if exactly one lemma associated with this tag, print it (at index-1 in rows)
 		    	if(scalar(@indexes) == 1){
@@ -165,8 +166,11 @@ sub main{
 		    			# if proper name/common noun mismatch
 		    			if($tag =~ /^NP/){
 		    				# prelabeled & classified by FL -> take second last as tag if there is one!
-		    				if(@rows[-2] =~ /^NP/){
-		    					$tag = @rows[-2];
+# 		    				if(@rows[-2] =~ /^NP/){
+# 		    					$tag = @rows[-2];
+# 		    				}
+		    				if(@rows[-1] =~ /^NP/){
+		    					$tag = @rows[-1];
 		    				}
 		    				else{
 		    					@indexes = grep { $rows[$_] =~ 'NC' } 0..18;

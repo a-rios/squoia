@@ -88,6 +88,8 @@ my $wapitiModel;
 my $wapitiPort;
 my $freelingPort;
 my $freelingConf;
+my $nec;
+my $neccfg;
 my $matxin;
 # options for parsing
 #my $desrPort1;	# TODO set default values here ? my $desrPort1 = 5678;
@@ -208,6 +210,8 @@ Options for tagging:
 --wapitiPort: port for wapiti_server (for tagging)
 --freelingPort: port for squoia_server_analyzer (morphological analysis)
 --freelingConf: path to FreeLing config, only needed if squoia_server_analyzer should be restartet (morphological analysis)
+--nec: named entity classification
+--neccfg: configuration file for ne classification
 Options for parsing:
 --maltPort1: port for maltparser server
 --maltModel: model 1 for maltparser server
@@ -278,6 +282,8 @@ GetOptions(
 	'wapitiPort=i'    => \$wapitiPort,
 	'freelingPort=i'    => \$freelingPort,
 	'freelingConf=s'    => \$freelingConf,
+	'nec=s' => \$nec,
+	'neccfg=s' => \$neccfg,
 	'matxin=s'    => \$matxin,
 	# options for parsing
 	'maltPort=i'	=> \$maltPort,
@@ -511,12 +517,13 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 	### tagging: if input file given with --file or -f:
 	# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
 	eval{
-		$matxin = $config{'matxin'} unless $matxin; $wapiti = $config{'wapiti'} unless $wapiti; $wapitiModel = $config{'wapitiModel'} unless $wapitiModel; $wapitiPort = $config{'wapitiPort'} unless $wapitiPort;
+		$matxin = $config{'matxin'} unless $matxin; $wapiti = $config{'wapiti'} unless $wapiti; $wapitiModel = $config{'wapitiModel'} unless $wapitiModel; $wapitiPort = $config{'wapitiPort'} unless $wapitiPort; $nec = $config{'nec'} unless $nec; $neccfg = $config{'neccfg'} unless $neccfg;
 	}
-	or die "Tagging failed, location of matxin, wapiti or wapiti model or port not indicated!\n";;
+	or die "Tagging failed, location of matxin, wapiti or wapiti model or port not indicated!\n";
+	#print STDERR "necdir is $nec, nec cfg is $neccfg\n";
 		#print STDERR "wapiti set as $wapiti, model set as $wapitiModel\n";
 	if($file ne ''){
-		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel | $nec/nec $neccfg" ) || die "tagging failed: $!\n";
 #		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
 	}
 	# if no file given, expect input on stdin
@@ -525,7 +532,7 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 		my $tmp = $path."/tmp/tmp.txt";
 		open (TMP, ">:encoding(UTF-8)", $tmp) or die "Can't open temporary file \"$tmp\" to write: $!\n";
 		while(<>){print TMP $_;}
-		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel | $nec/nec $neccfg"  ) || die "tagging failed: $!\n";
 #		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
 		close(TMP);
 	}
