@@ -1,0 +1,24 @@
+##############################################################
+#                                                            #
+# Spanish lexicon based on dictionary from FreeLing,         #
+# see http"["  "PrepES"  "]" ] ://nlp.lsi.upc.edu/freeling/ for more information. #
+#                                                            #
+##############################################################
+
+  [ {ante} "["  "PrepES"  "]" ] : {ante}
+| [  {cabe} "["  "PrepES"  "]" ] : {cabe}
+| [  {como} "["  "PrepES"  "]" ] : {como}
+| [  {desde} "["  "PrepES"  "]" ] : {desde}
+| [  {desque} "["  "PrepES"  "]" ] : {desque}
+| [  {durante} "["  "PrepES"  "]" ] : {durante}
+| [  {entre} "["  "PrepES"  "]" ] : {entre}
+| [  {excepto} "["  "PrepES"  "]" ] : {excepto}
+| [  {hacia} "["  "PrepES"  "]" ] : {hacia}
+| [  {hasta} "["  "PrepES"  "]" ] : {hasta}
+| [  {mediante} "["  "PrepES"  "]" ] : {mediante}
+| [  {para} "["  "PrepES"  "]" ] : {para}
+| [  {según} "["  "PrepES"  "]" ] : {según}
+| [  {sobre} "["  "PrepES"  "]" ] : {sobre}
+| [  {tras} "["  "PrepES"  "]" ] : {tras}
+| [  {versus} "["  "PrepES"  "]" ] : {versus}
+;

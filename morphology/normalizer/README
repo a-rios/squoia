@@ -4,8 +4,14 @@ Installation/Usage
 1. get the xfst software for your system from: http://web.stanford.edu/~laurik/.book2software/
 
 
-2. compile with:
-   xfst -f compile.xfst
+2. on Unix/Linux, you can use the shell script compile.sh, on other systems compile with:
+xfst -f normalizer.xfst
+xfst -f normalizer-relax.xfst
+xfst -f spanish.xfst
+xfst -f spanish-relax.xfst
+xfst -f guesser.xfst
+
+
   
 3. analyse a Quechua text (on -nix systems):
 
