@@ -143,13 +143,18 @@ my $lastlineEmpty=0;
 my $ambigPos =0;
 my $ambigForms=0;
 
+my %xfstwordsLem;
+my %xfstwordsMorph;
+my %xfstwordsPos;
 
-my $xfstWordsRefLem = retrieve($path.'/../PossibleLemmasForTrain');
-my %xfstwordsLem = %$xfstWordsRefLem;
-my $xfstWordsRefMorph = retrieve($path.'/../PossibleMorphsForTrain');
-my %xfstwordsMorph = %$xfstWordsRefMorph;
-my $xfstWordsRefPos = retrieve($path.'/../PossibleRootsForTrain');
-my %xfstwordsPos = %$xfstWordsRefPos;
+if($mode eq '-train'){
+  my $xfstWordsRefLem = retrieve($path.'/../PossibleLemmasForTrain');
+   %xfstwordsLem = %$xfstWordsRefLem;
+  my $xfstWordsRefMorph = retrieve($path.'/../PossibleMorphsForTrain');
+  %xfstwordsMorph = %$xfstWordsRefMorph;
+  my $xfstWordsRefPos = retrieve($path.'/../PossibleRootsForTrain');
+  %xfstwordsPos = %$xfstWordsRefPos;
+}
 
 # check dialectal variations: 
 # -if direct evidential suffix occurs as -m -> delete all analyses of -n as DirE (can only be 3.Sg.Poss or 3.Sg.Subj)
