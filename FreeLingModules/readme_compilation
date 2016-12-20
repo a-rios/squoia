@@ -49,3 +49,4 @@ ln -s ../../FreeLingModules/server_squoia server_squoia
 
 
 
+g++ -std=gnu++11 -o nec nec.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/ -L/opt/matxin/local/lib -lfreeling -lboost_program_options -lboost_system -lboost_filesystem -lpthread

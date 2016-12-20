@@ -11,7 +11,7 @@ import org.maltparser.core.options.OptionManager;
 
 // compile: javac -cp /mnt/storage/hex/projects/clsquoia/parser/maltparser-1.8/maltparser-1.8.jar MaltParserServer.java 
 // auf kitt (default z.z. javac 1-9, nicht kompatibel): /usr/lib/jvm/java-7-openjdk-amd64/bin/javac -cp /mnt/storage/hex/projects/clsquoia/parser/maltparser-1.8/maltparser-1.8.jar ../src/MaltParserServer.java
-// aufruf: java -cp /mnt/storage/hex/projects/clsquoia/parser/maltparser-1.8/maltparser-1.8.jar:. MaltParserServer 9123  /mnt/storage/hex/projects/clsquoia/arios_squoia/MT_systems/models/model_large_training.mco
+// aufruf: java -cp /mnt/storage/hex/projects/clsquoia/parser/maltparser-1.8/maltparser-1.8.jar:. MaltParserServer 9123  /mnt/storage/hex/projects/clsquoia/arios_squoia/MT_systems/models/splitDatesModel.mco
 
 
 public class MaltParserServer {

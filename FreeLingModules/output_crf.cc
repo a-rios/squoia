@@ -144,14 +144,7 @@ void output_crf::freeling2crf(wostream &sout,  const freeling::sentence &s) cons
       wstring notNPtag = L"";
             
       sout << w->get_lc_form(); // lowercased word form
-    /*
-      if (first_nonpunct_word) {
-	sout << sep  << L"first";
-      }
-      else {
-	sout << sep  << L"follow";
-      }
-    */
+
       if (std::iswupper(w->get_form().c_str()[0])) {
 	sout << sep  << L"uc";
       }
@@ -165,37 +158,11 @@ void output_crf::freeling2crf(wostream &sout,  const freeling::sentence &s) cons
       a_beg = w->selected_begin();
       a_end = w->selected_end();
 
-      //int lem_i = 0;
-      //int tag_i = 0;
-      //const int MAXLEM = 5;
       int i = 0;
       const int MAXTAG = 8;
       int nptag = 0;
       for (ait = a_beg; ait != a_end; ait++) {
-// 	if (ait->is_retokenizable ()) {
-// 	  sout << L"(is retokenizable)";
-// 	  list <word> rtk = ait->get_retokenizable ();
-// 	  list <analysis> la=printRetokenizable(sout, rtk, rtk.begin(), L"", L"");
-// 	  for (list<analysis>::iterator x=la.begin(); x!=la.end(); x++) {
-// 	    sout << L" " << x->get_lemma() << L" " << x->get_tag();
-// 	    sout << L" " << ait->get_prob()/la.size();
-// 	  }
-// 	}
-// 	else 
-	//{
-	  //sout << L"not retokenizable";
-	  /*bool newlemma=true;
-	  word::const_iterator lemit;
-	  for (lemit = a_beg; lemit != ait; lemit++) {
-	    if (lemit->get_lemma().compare(ait->get_lemma()) == 0) { // same lemmas
-	      newlemma=false;
-	      break;
-	    }
-	  }
-	  if (newlemma) {
-	    sout << sep << ait->get_lemma();
-	    lem_i++;
-	  }
+
 	  //tags += sep + ait->get_tag();*/
 	  std::size_t gerundtag = ait->get_tag().find(VGtag);
 	  std::size_t gerundform1 = w->get_form().find(VarGform);
@@ -209,14 +176,15 @@ void output_crf::freeling2crf(wostream &sout,  const freeling::sentence &s) cons
 	    i++;
 	    break;
 	  }
-	  std::size_t imperative = ait->get_tag().find(ViMperative);
-	  if ((imperative == 0)) {
-	  //if (imperative!= std::string::npos) {
-	    wcerr << ait->get_lemma() << L" is an imperative form found at position"<< imperative << L"\n";
-	    sout << sep << ait->get_lemma() << sep << ait->get_tag();
-	    i++;
-	    break;
-	  }
+	  // do we really want this? always assume that imperative > subjuncitve?
+// 	  std::size_t imperative = ait->get_tag().find(ViMperative);
+// 	  if ((imperative == 0)) {
+// 	  //if (imperative!= std::string::npos) {
+// 	 //   wcerr << ait->get_lemma() << L" is an imperative form found at position"<< imperative << L"\n";
+// 	    sout << sep << ait->get_lemma() << sep << ait->get_tag();
+// 	    i++;
+// 	    break;
+// 	  }
 	  std::size_t found = ait->get_tag().find(NPtag);
 	  if ( first_nonpunct_word and (found==0) ) {	// found "NP" at beginning of tag
 	    nptag++;
@@ -251,6 +219,7 @@ void output_crf::freeling2crf(wostream &sout,  const freeling::sentence &s) cons
       }
       //sout << tags;
       sout << sep << bool(w->get_n_selected() > 1);
+    //  wcerr << w->get_form() << L"  has tags: " << w->get_n_selected() << L"\n";
       if (a_beg->get_tag().compare(L"Z") != 0) {	// don't print tag "Z", don't force it because maybe it's a "DN"
 	if (w->get_n_selected() == 1) {
 	  sout << sep << a_beg->get_tag();

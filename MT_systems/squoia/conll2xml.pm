@@ -617,7 +617,7 @@ sub main{
 					 $docHash{$idKey}= $sadvchunk;
 				}
 				# if this is a subordination (CS), check if attached to correct verb (gets often attached to main clause instead of subordinated verb)
-				elsif($node->getAttribute('pos') eq 'cs' && !$parent->exists('child::NODE[@pos="vs"]') )
+				elsif($node->getAttribute('pos') eq 'cs' && !$parent->exists('child::NODE[@cpos="v"]') )
 				{
 					&attachCSToCorrectHead($node, $sentence);
 				}
@@ -1408,6 +1408,10 @@ sub isCongruent{
 					$parentNode->setAttribute('mi', $verbMI);
 					return 1;
 				}
+				# XY y yo discutimos.. -> leave yo as subject
+				elsif($subjNode->exists('self::NODE[@lem="yo"]') && $verbMI =~ /1P/ ){
+					return 1;
+				}
 				# special case: usted/es -> verb is 3.sg/pl, pp is 2.sg/pl
 				elsif($subjNode->getAttribute('form') =~ /[uU]sted/ && $verbMI =~ /3/){
 					return 1 if($subjNode->getAttribute('mi') eq 'PP2CS00P' and $verbMI =~ /3S/);
@@ -1491,19 +1495,26 @@ sub getFiniteVerb{
 	}
 	else
 	{
-		@verb = $verbchunk->findnodes('NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]');
+		@verb = $verbchunk->findnodes('child::NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]');
 		if(scalar(@verb)>0)
 		{
 			return @verb[0];
 		}
 		else
 		{
-		#get sentence id
-		my $sentenceID = $verbchunk->findvalue('ancestor::SENTENCE/@ord');
-		print STDERR "finite verb not found in sentence nr. $sentenceID: \n " if $verbose;
-		print STDERR $verbchunk->toString() if $verbose;
-		print STDERR "\n" if $verbose;
-			return -1;
+		      @verb = $verbchunk->findnodes('child::NODE/NODE/NODE[starts-with(@mi,"V") and (contains(@mi,"3") or contains(@mi,"2") or contains(@mi,"1")) ][1]');
+		      if(scalar(@verb)>0)
+		      {
+			      return @verb[0];
+		      }
+		      else{
+			  #get sentence id
+			  my $sentenceID = $verbchunk->findvalue('ancestor::SENTENCE/@ord');
+			  print STDERR "finite verb not found in sentence nr. $sentenceID: \n " if $verbose;
+			  print STDERR $verbchunk->toString() if $verbose;
+			  print STDERR "\n" if $verbose;
+			  return -1;
+		      }
 		}
 	}
 }
@@ -1704,7 +1715,13 @@ sub attachCSToCorrectHead{
 				$currentParent->appendChild($headverb);
 				$headverb->appendChild($cs);
 				$cs->setAttribute('head', $headverb->getAttribute('ord'));
-				$headverb->setAttribute('head', $currentParent->getAttribute('ord'));
+				#$headverb->setAttribute('head', $currentParent->getAttribute('ord'));
+				if($currentParent->nodeName() eq 'SENTENCE'){
+				      $headverb->setAttribute('head', '0');
+				}
+				else{
+				  $headverb->setAttribute('head', $currentParent->getAttribute('ord'));
+				 }
 		
 				#append other children of cs to verb
 				my @otherChildren = $cs->childNodes();

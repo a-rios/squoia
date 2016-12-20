@@ -600,7 +600,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 		if($maltRunning eq ''){
 			print STDERR "no instance of MaltParserServer running on port $maltPort with model $maltModel\n";
 			print STDERR "starting MaltParserServer on port $maltPort with model $maltModel, logging to $path/logs/log.malt...\n";
-			system(" java -cp $maltPath:$path/maltparser_tools/bin MaltParserServer $maltPort  $maltModel 2> $path/logs/log.malt &");
+			system("java -cp $maltPath:$path/maltparser_tools/bin MaltParserServer $maltPort $maltModel 2> $path/logs/log.malt &");
 			print STDERR "MaltParserServer with model = $maltModel started on port $maltPort...\n";
 			while(`echo "test" |java -cp $path/maltparser_tools/bin MPClient localhost $maltPort 2>&1 | grep "Connection established"`  eq ''){
 				print STDERR "starting MaltParserServer, please wait...\n";

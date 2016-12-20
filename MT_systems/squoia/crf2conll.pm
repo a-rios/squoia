@@ -45,6 +45,7 @@ sub main{
 	
 	while(<$inputLines>){
 		my $line = $_;
+		$line =~ s/\n//;
 		if($line =~ /^\s*$/){
 	         #print "\n";
 	         push(@outputLines, "\n");
@@ -374,6 +375,7 @@ sub printDateToken{
 sub eaglesToMorph{
 	my $eaglesTag = $_[0];
 	my $morphstring ="";
+	#$eaglesTag =~ s/\n//; # remove new line in case this was the last column from input
 	
 	#adjectives
 	#AQ0CS0	gen=c|num=s|postype=qualificative
