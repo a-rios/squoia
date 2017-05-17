@@ -1,0 +1,25 @@
+ANALYZER: NE classification requires at least 'tagged' output analysis level.
+SERVER: Analyzers loaded.
+
+Launched server 31520 at port 8844
+
+You can now analyze text with the following command:
+  - From this computer: 
+      analyzer_client 8844 <input.txt >output.txt
+      analyzer_client localhost:8844 <input.txt >output.txt
+  - From any other computer: 
+      analyzer_client vigrid:8844 <input.txt >output.txt
+
+Stop the server with: 
+      analyze stop 31520
+
+SERVER.DISPATCHER: Waiting for a free worker slot
+SERVER.DISPATCHER: Waiting connections
+SERVER.DISPATCHER: Connection established. Forked worker 31527.
+SERVER.DISPATCHER: Waiting for a free worker slot
+SERVER.DISPATCHER: Waiting connections
+SERVER.WORKER: client ended. Closing connection.
+SERVER.DISPATCHER: Connection established. Forked worker 31533.
+SERVER.DISPATCHER: Waiting for a free worker slot
+SERVER.DISPATCHER: Waiting connections
+SERVER.WORKER: client ended. Closing connection.
