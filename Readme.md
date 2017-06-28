@@ -37,7 +37,7 @@ once compiled, you can test the server:
 echo "eso es una prueba" |./analyzer_client $PORT
 ```
 
-Link server_squoia, analyzer_client and nec to the /bin folder (optional, if you do not link them, change the paths in es.cfg):
+Link server_squoia, analyzer_client and nec to the /bin folder (optional, if you do not link them, change the paths in translate_example.cfg):
 
 ```
 cd $SQUOIA_DIR/bin
@@ -53,7 +53,7 @@ For system wide use, either link client and server to somewhere in your $PATH (e
 
 https://wapiti.limsi.fr/
 
-follow installation instructions, then adapt path to wapiti in es.cfg
+follow installation instructions, then adapt path to wapiti in FreeLingModules/example.cfg
 
 
 ## MaltParser
@@ -62,7 +62,7 @@ http://www.maltparser.org/download.html
 
 follow installation instructions, see http://www.maltparser.org/install.html
 
-set maltPath in es.cfg to your installation of maltparser
+set maltPath in translate_example.cfg to your installation of maltparser
 
 compile server-client modules ($MALTPARSER_DIR= path to your maltparser installtion):
 
