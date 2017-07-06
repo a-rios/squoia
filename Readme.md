@@ -82,6 +82,13 @@ https://www.csie.ntu.edu.tw/~cjlin/libsvm
 ## foma 
 https://bitbucket.org/mhulden/foma
 
+compile morphological generator:
+```
+cd $SQUOIA_DIR/MT_systems/squoia/esqu/morphgen_foma
+foma -f unificadoTransfer.foma
+```
+
+
 ## kenlm
 https://kheafield.com/code/kenlm
 
