@@ -695,7 +695,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 		
 	
 	my %nounLex = (); my %verbLex = ();
-	if($nounlex ne '' and $nounlex ne 'NounLex'){
+	if($nounlex ne '' and $nounlex ne 'storable'){
 		open (NOUNS, "<:encoding(UTF-8)", $nounlex) or die "Can't open $nounlex : $!";
 		print STDERR "reading semantic noun lexicon from $nounlex...\n";
 		while(<NOUNS>){
@@ -713,7 +713,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 		} or die "No NounLex in $path/storage found! specify --nounlex=path to read in the Spanish noun lexicon!";
 		%nounLex = %{ Storable::retrieve("$path/storage/NounLex") };
 	}
-	if($verblex ne '' and $verblex =~ /\.xml$/){
+	if($verblex ne '' and $verblex ne 'storable'/){
 		open VERBS, "< $verblex" or die "Can't open $verblex : $!";
 		print STDERR "reading verb frame lexicon form $verblex...\n";
 		my $verbdom    = XML::LibXML->load_xml( IO => *VERBS );
