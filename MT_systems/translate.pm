@@ -6,7 +6,7 @@
 # - atm: input needs to be 1 sentence per line: 
 #   --> for automatic sentence splitting, do we want to use FreeLing or the sentence splitter from the Lingua package?
 # -> freeling gseht besser us, erkennt titel...
-# TODO: new freeling version 3.1 -> outlvl=morfo -> no named entity classification -> need another server for nec after tagging!!
+# new freeling version 3.1 -> outlvl=morfo -> no named entity classification -> need another server for nec after tagging!!
 
 package squoia::translate;
 our $path;
@@ -826,7 +826,7 @@ if($startTrans<$mapInputFormats{'svm'})	# 11)
 		}
 		or die "Lexical transfer failed, location of wordnet not indicated (set option wordnet in config or use --wordnet on commandline)!\n";
 	}
-	if($wordnet ne ''){
+	if($wordnet ne '' and $wordnet ne 'storable' ){
 		print STDERR "reading wordnet from file specified in $config: ".$config{$wordnet}."\n";
 		my $spa2ilimap = "$wordnet/spaWN/wei_spa-30_to_ili.tsv";
 		my $ilirecord = "$wordnet/data/wei_ili_record.tsv";
