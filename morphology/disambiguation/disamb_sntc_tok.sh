@@ -1,4 +1,4 @@
-r#!/bin/bash
+#!/bin/bash
 
 export XFST_DIR=/mnt/storage/hex/projects/clsquoia/arios_squoia_git/morphology/normalizer
 
