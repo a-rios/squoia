@@ -79,7 +79,7 @@ class config {
   analyzer::invoke_options analyzer_invoke_options;
 
   /// constructor
-  config(int ac, char **av) {
+  config(int ac, char **av) : analyzer_config_options(), analyzer_invoke_options() {
 
     // Auxiliary variables to store options read as strings before they are converted
     // to their final enumerate/integer values 

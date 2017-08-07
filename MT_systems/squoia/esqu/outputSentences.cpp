@@ -106,7 +106,7 @@ int main(int argc, char *argv[]) {
 		}
 		// if infile given, read this, if not, read from stdin (default)
 		if (infile != "") {
-			inputFile.exceptions ( std::ifstream::failbit | std::ifstream::badbit );
+			inputFile.exceptions ( std::ifstream::badbit );
 			try{
 				inputFile.open(infile.c_str(), std::ifstream::in);
 				pCin = &inputFile;

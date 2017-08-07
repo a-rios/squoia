@@ -346,48 +346,48 @@ config* load_config(int argc, char *argv[]) {
   // ignore unneeded config files, to prevent analyer from loading modules we know we won't use  
   if (not cfg->analyzer_config_options.TOK_TokenizerFile.empty()
       and (cfg->analyzer_invoke_options.InputLevel>TOKEN 
-           or cfg->analyzer_invoke_options.OutputLevel<TOKEN))  cfg->analyzer_config_options.TOK_TokenizerFile = L"";
+           or cfg->analyzer_invoke_options.OutputLevel<TOKEN))  cfg->analyzer_config_options.TOK_TokenizerFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.SPLIT_SplitterFile.empty()
       and (cfg->analyzer_invoke_options.InputLevel>SPLITTED
-           or cfg->analyzer_invoke_options.OutputLevel<SPLITTED)) cfg->analyzer_config_options.SPLIT_SplitterFile = L"";
+           or cfg->analyzer_invoke_options.OutputLevel<SPLITTED)) cfg->analyzer_config_options.SPLIT_SplitterFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.TAGGER_HMMFile.empty() 
       and (cfg->analyzer_invoke_options.TAGGER_which!=HMM
            or (cfg->analyzer_invoke_options.InputLevel>TAGGED
-               or cfg->analyzer_invoke_options.OutputLevel<TAGGED))) cfg->analyzer_config_options.TAGGER_HMMFile = L"";
+               or cfg->analyzer_invoke_options.OutputLevel<TAGGED))) cfg->analyzer_config_options.TAGGER_HMMFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.TAGGER_RelaxFile.empty() 
       and (cfg->analyzer_invoke_options.TAGGER_which!=RELAX
            or (cfg->analyzer_invoke_options.InputLevel>TAGGED
-               or cfg->analyzer_invoke_options.OutputLevel<TAGGED))) cfg->analyzer_config_options.TAGGER_RelaxFile = L"";
+               or cfg->analyzer_invoke_options.OutputLevel<TAGGED))) cfg->analyzer_config_options.TAGGER_RelaxFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.PARSER_GrammarFile.empty() 
       and (cfg->analyzer_invoke_options.InputLevel>SHALLOW
            or cfg->analyzer_invoke_options.OutputLevel<SHALLOW)
       and (cfg->analyzer_invoke_options.InputLevel>DEP
-           or cfg->analyzer_invoke_options.OutputLevel<DEP)) cfg->analyzer_config_options.PARSER_GrammarFile = L"";
+           or cfg->analyzer_invoke_options.OutputLevel<DEP)) cfg->analyzer_config_options.PARSER_GrammarFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.DEP_TxalaFile.empty() 
       and ((cfg->analyzer_invoke_options.DEP_which!=TXALA and cfg->analyzer_invoke_options.OutputLevel<COREF)
            or (cfg->analyzer_invoke_options.InputLevel>DEP
-               or cfg->analyzer_invoke_options.OutputLevel<PARSED))) cfg->analyzer_config_options.DEP_TxalaFile = L"";
+               or cfg->analyzer_invoke_options.OutputLevel<PARSED))) cfg->analyzer_config_options.DEP_TxalaFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.DEP_TreelerFile.empty() 
       and ((cfg->analyzer_invoke_options.DEP_which!=TREELER and cfg->analyzer_invoke_options.OutputLevel<COREF)
            or (cfg->analyzer_invoke_options.InputLevel>DEP
-               or cfg->analyzer_invoke_options.OutputLevel<DEP))) cfg->analyzer_config_options.DEP_TreelerFile = L"";
+               or cfg->analyzer_invoke_options.OutputLevel<DEP))) cfg->analyzer_config_options.DEP_TreelerFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.COREF_CorefFile.empty()
       and (cfg->analyzer_invoke_options.InputLevel>=COREF 
-           or cfg->analyzer_invoke_options.OutputLevel<COREF)) cfg->analyzer_config_options.COREF_CorefFile = L"";
+           or cfg->analyzer_invoke_options.OutputLevel<COREF)) cfg->analyzer_config_options.COREF_CorefFile = std::wstring(L"");
 
   if (not cfg->analyzer_config_options.SEMGRAPH_SemGraphFile.empty()
       and (cfg->analyzer_invoke_options.InputLevel>=SEMGRAPH 
            or cfg->analyzer_invoke_options.OutputLevel<SEMGRAPH)) 
-    cfg->analyzer_config_options.SEMGRAPH_SemGraphFile = L"";
+    cfg->analyzer_config_options.SEMGRAPH_SemGraphFile = std::wstring(L"");
   
   if (not cfg->analyzer_config_options.PHON_PhoneticsFile.empty() and not cfg->analyzer_invoke_options.PHON_Phonetics)
-    cfg->analyzer_config_options.PHON_PhoneticsFile = L"";
+    cfg->analyzer_config_options.PHON_PhoneticsFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.NEC_NECFile.empty() and not cfg->analyzer_invoke_options.NEC_NEClassification)
-    cfg->analyzer_config_options.NEC_NECFile = L"";
+    cfg->analyzer_config_options.NEC_NECFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.SENSE_ConfigFile.empty() and cfg->analyzer_invoke_options.SENSE_WSD_which==NO_WSD)
-    cfg->analyzer_config_options.SENSE_ConfigFile = L"";
+    cfg->analyzer_config_options.SENSE_ConfigFile = std::wstring(L"");
   if (not cfg->analyzer_config_options.UKB_ConfigFile.empty() and cfg->analyzer_invoke_options.SENSE_WSD_which!=UKB)
-    cfg->analyzer_config_options.UKB_ConfigFile = L"";
+    cfg->analyzer_config_options.UKB_ConfigFile = std::wstring(L"");
   
   if (cfg->OutputFormat == OUT_NAF and cfg->InputMode != MODE_DOC) {
     cfg->InputMode = MODE_DOC;
