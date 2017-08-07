@@ -607,7 +607,7 @@ sub evalConditions{
 					# xpath is given
 					if ( $noderef =~ /^xpath/) {
 						my $boolean = 0;
-						my ($xpath,$xpathStr) = split('xpath{', $cond);
+						my ($xpath,$xpathStr) = split('xpath\{', $cond);
 						$xpathStr =~ s/\}//;
 						#print STDERR "xpath string: $xpathStr\n";
 						my @pathnodes = $wordnode->findnodes($xpathStr);

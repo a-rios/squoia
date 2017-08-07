@@ -9,16 +9,15 @@
 # new freeling version 3.1 -> outlvl=morfo -> no named entity classification -> need another server for nec after tagging!!
 
 package squoia::translate;
-our $path;
 use utf8;
+use warnings;
+
+use File::Spec::Functions qw(rel2abs);
+use File::Basename;
+$path = dirname(rel2abs($0));
+eval "use lib \$path";
 
 BEGIN{
-
-	use File::Spec::Functions qw(rel2abs);
-	use File::Basename;
-	$path = dirname(rel2abs($0));
-	use lib $path.".";
-
 	binmode STDIN, ':encoding(UTF-8)';
 	binmode STDERR, ':encoding(UTF-8)';
 	use XML::LibXML;
@@ -79,15 +78,15 @@ my $verbose = ''; # default is false; flag to switch verbose output on
 my $config;
 my $file;
 my $nbest = 3;
-my $direction;
+my $direction = '';
 my $outformat = 'nbest'; # default nbest: print nbest translations, other valid options are: tagged (wapiti), parsed (desr), conll2xml, rdisamb, coref, vdisamb, svm, lextrans, morphdisamb, prepdisamb, intraTrans, interTrans, intraOrder, interOrder, morph, words
 my $informat = 'senttok'; # TODO: default better be plain..?
 # options for tagging
 my $wapiti;
 my $wapitiModel;
 my $wapitiPort;
-my $freelingPort;
-my $freelingConf;
+my $freelingPort = '';
+my $freelingConf = '';
 my $nec;
 my $neccfg;
 my $matxin;
@@ -96,38 +95,38 @@ my $matxin;
 #my $desrPort2;	# my $desrPort2 = 1234;
 #my $desrModel1;
 #my $desrModel2;
-my $maltPort;
-my $maltModel;
-my $maltPath;
+my $maltPort = '';
+my $maltModel = '';
+my $maltPath = '';
 # statistical co-reference resolution
 my $withCorzu;
 # options for lexical transfer
-my $bidix;
+my $bidix = '';
 # general options for translation
-my $semlex;
-my $lexDisamb;
+my $semlex = '';
+my $lexDisamb = '';
 my $morphDisam;
-my $prepDisamb;
-my $intraTransfer;
-my $interTransfer;
-my $nodes2chunks;
-my $child2sibling;
+my $prepDisamb = '';
+my $intraTransfer = '';
+my $interTransfer = '';
+my $nodes2chunks = '';
+my $child2sibling = '';
 my $noreord = ''; # default is false; flag to switch reordering off
-my $interOrder;
-my $intraOrder;
+my $interOrder = '';
+my $intraOrder = '';
 # esqu options
 my $nounlex;
 my $verblex;
 my $evidentiality = "direct";
 my $svmtestfile;
-my $wordnet;
-my $morphgenerator;
-my $fomaFST; # TODO: consolidate, use only foma!!!
+my $wordnet = '';
+my $morphgenerator = '';
+my $fomaFST = ''; # TODO: consolidate, use only foma!!!
 my $quModel;
-my $quMorphModel;
-my $useMorphModel;
+my $quMorphModel = '';
+my $useMorphModel = '';
 # esde options
-my $chunkMap;	# TODO option for lexical transfer; put together with $bidix ?
+my $chunkMap = '';	# TODO option for lexical transfer; put together with $bidix ?
 my $biLexProb;
 my $deLemmaModel;
 my $maxalt = 2;	# default maximum 2 lemma alternatives; if maxalt==0 then no statistic lexical disambiguation, but all alternatives are produced
@@ -523,8 +522,8 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 	#print STDERR "necdir is $nec, nec cfg is $neccfg\n";
 		#print STDERR "wapiti set as $wapiti, model set as $wapitiModel\n";
 	if($file ne ''){
-		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel | $nec/nec $neccfg" ) || die "tagging failed: $!\n";
-#		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
+		open(CONLL,"-|" ,"cat $file | analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel | $nec/nec $neccfg" ) || die "tagging failed: $!\n";
+#		open(CONLL,"-|" ,"cat $file | analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
 	}
 	# if no file given, expect input on stdin
 	else{
@@ -532,8 +531,8 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 		my $tmp = $path."/tmp/tmp.txt";
 		open (TMP, ">:encoding(UTF-8)", $tmp) or die "Can't open temporary file \"$tmp\" to write: $!\n";
 		while(<>){print TMP $_;}
-		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel | $nec/nec $neccfg"  ) || die "tagging failed: $!\n";
-#		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
+		open(CONLL,"-|" ,"cat $tmp | analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel | $nec/nec $neccfg"  ) || die "tagging failed: $!\n";
+#		open(CONLL,"-|" ,"cat $tmp | analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
 		close(TMP);
 	}
 	## if output format is 'crf': print and exit
@@ -713,9 +712,9 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 		} or die "No NounLex in $path/storage found! specify --nounlex=path to read in the Spanish noun lexicon!";
 		%nounLex = %{ Storable::retrieve("$path/storage/NounLex") };
 	}
-	if($verblex ne '' and $verblex ne 'storable'/){
+	if($verblex ne '' and $verblex ne 'storable'){
 		open VERBS, "< $verblex" or die "Can't open $verblex : $!";
-		print STDERR "reading verb frame lexicon form $verblex...\n";
+		print STDERR "reading verb frame lexicon from $verblex...\n";
 		my $verbdom    = XML::LibXML->load_xml( IO => *VERBS );
 		my @lexEntriesList = $verbdom->getElementsByTagName('lexentry');
 		foreach my $lexentry (@lexEntriesList)
@@ -729,6 +728,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 				my $lss = $frame->getAttribute('lss');
 				my $type = $frame->getAttribute('type');
 				my $thematicRoleOfSubj = $frame->findvalue('child::argument[@function="suj"]/@thematicrole');
+				defined($lss) or $lss = '';
 		
 				# save frame as combination of lss (lexical semantic structure) & type (diathesis)
 				my $lsstype = "$lss#$type##$thematicRoleOfSubj";
@@ -951,7 +951,7 @@ if($startTrans <$mapInputFormats{'lextrans'})	#12)
 		}or die "Lexical failed, location of matxin-xfer-lex not indicated! Set option matxin in config or use --matxin on commandline\n";;
 	}
 
-	if($chunkMap eq '' and $config{'chunkMap'} eq ''){
+	if($chunkMap eq '' and ! $config{'chunkMap'}){
 		open(XFER,"-|" ,"cat $tmp3 | $matxin/squoia-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
 	} else {
 		$chunkMap = $config{'chunkMap'} if ($chunkMap eq '');
@@ -998,6 +998,7 @@ if($startTrans <$mapInputFormats{'semtags'})	#13)
 				s/^\s+//;    # no leading white
 				s/\s+$//;    # no trailing white
 				my ($lemma, $semTag ,$condition ) = split( /\s*\t+\s*/, $_, 3 );
+				next if !defined($lemma);
 				my @value = ($semTag, $condition);
 				$semanticLexicon{$lemma} = \@value;
 			}
@@ -1439,6 +1440,7 @@ if($startTrans <$mapInputFormats{'intraTrans'})	#17)
 			s/\s+$//;    # no trailing white
 			next if /^$/;   # skip if empty line
 			my ($descCond, $descAttr ,$ancCond, $ancAttr, $direction, $wmode ) = split( /\s*\t\s*/, $_, 6 );
+			next if !defined($wmode);
 		#	print STDERR "descendant condition: $descCond; descendant attribute: $descAttr;\nancestor condition: $ancCond; ancestor attribute: $ancAttr;\ndir: $direction; mode: $wmode\n\n";
 			$descCond =~ s/\s//g;
 			$ancCond =~ s/\s//g;
@@ -1679,7 +1681,7 @@ if($startTrans <$mapInputFormats{'interOrder'})	#21)
 						next if /^$/;	# skip if empty line
 						my ($parentchunk, $childchunks, $order ) = split( /\s*\t+\s*/, $_, 3 );
 						# split childchunks into array and remove empty fields resulted from split
-						$childchunks =~ s/(xpath{[^}]+),([^}]+})/\$1XPATHCOMMA\$2/g;	#replace comma within xpath with special string so it will not get split
+						$childchunks =~ s/(xpath\{[^}]+),([^}]+})/\$1XPATHCOMMA\$2/g;	#replace comma within xpath with special string so it will not get split
 						my @childsWithEmptyFields = split( /\s*,\s*/, $childchunks);
 						foreach my $ch (@childsWithEmptyFields) {
 							$ch =~ s/XPATHCOMMA/,/g;	#replace comma back
@@ -1881,7 +1883,7 @@ if($startTrans< $mapInputFormats{'words'})
 				close(XFST);
 				close(SENT);
 	}
-	elsif($direction eq 'esqu' && $useMorphModel ==1 && $outf eq 'words'){
+	elsif($direction eq 'esqu' && $useMorphModel == 1 && $outformat eq 'words'){
 		print STDERR "not possible to produce output format words with language model on morphemes (useMorphModel=1)!\n";
 		print STDERR "use translate.pm -h for available options\n";
 		#print STDERR $helpstring;
