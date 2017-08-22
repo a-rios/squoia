@@ -1,4 +1,4 @@
-#!/usr/bin/perl 
+#!/usr/bin/env perl
 
 ## IMPORTANT TODO's: 
 # - ambiguous lemmas from tagging... generate both forms? 
@@ -1933,6 +1933,7 @@ if($direction eq 'esqu' && $useMorphModel==0)
 			close(SENT);
 		}
 	}
+	print STDERR "\n";
 	system("$path/squoia/esqu/outputSentences -m $quModel -n $nbest -i $sentFile");
 }
 elsif($direction eq 'esqu' && $useMorphModel==1)
@@ -1967,6 +1968,7 @@ elsif($direction eq 'esqu' && $useMorphModel==1)
 			close(SENT);
 		}
 	}
+	print STDERR "\n";
 	system("$path/squoia/esqu/outputSentences -l -m $quMorphModel -n $nbest -i $sentFile -f $fomaFST");
 }
 ## de
