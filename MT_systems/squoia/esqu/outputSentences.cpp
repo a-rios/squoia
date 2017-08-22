@@ -172,7 +172,8 @@ int main(int argc, char *argv[]) {
 			    				}
 			    			}
 			    		}
-			    		inputFile.close();
+					if (infile != "")
+						inputFile.close();
 			    } else {
 			    	//model type not recognized: abort
 			    	std::cerr << "model type not recognized, check content of " << modelfile << "!" << std::endl;
