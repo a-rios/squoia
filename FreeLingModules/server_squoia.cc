@@ -91,7 +91,7 @@ void InitServer(config *cfg) {
   wcerr<<L"      analyzer_client "<<util::string2wstring(host)<<L":"<<cfg->Port<<L" <input.txt >output.txt"<<endl;
   wcerr<<endl;
   wcerr<<L"Stop the server with: "<<endl;
-  wcerr<<L"      analyze stop "<<myPID<<endl;
+  wcerr<<L"      kill -TERM "<<myPID<<endl;
   wcerr<<endl;
 
   // open sockets to listen for clients
