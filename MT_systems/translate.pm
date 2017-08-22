@@ -451,7 +451,7 @@ GetOptions(
 	}
 
 	my $startTrans = $mapInputFormats{$informat};
-print STDERR "start $startTrans\n"."end " . $mapInputFormats{$outformat}. "\n";
+print STDERR "start format $startTrans\n"."end format " . $mapInputFormats{$outformat}. "\n";
 	if($startTrans >= $mapInputFormats{$outformat}){
 		die "cannot process input from format=$informat to format=$outformat (wrong direction)!!\n";
 	}
