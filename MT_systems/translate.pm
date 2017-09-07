@@ -105,7 +105,7 @@ my $bidix = '';
 # general options for translation
 my $semlex = '';
 my $lexDisamb = '';
-my $morphDisam;
+my $morphDisamb = '';
 my $prepDisamb = '';
 my $intraTransfer = '';
 my $interTransfer = '';
@@ -1547,8 +1547,8 @@ if($startTrans <$mapInputFormats{'node2chunk'})	#19)
 	}
 	elsif($config ne ''){
 		$readrules =1;
-		$nodes2chunks = $config{"NodeChunkFile"} or die "node2chunks rules file not specified in config, insert NodeChunkFile='path to node2chunks rules' or use option --node2chunks!";
-		print STDERR "reading node2chunks rules from file specified in $config: $node2chunks\n";
+		$nodes2chunks = $config{"NodeChunkFile"} or die "node2chunk rules file not specified in config, insert NodeChunkFile='path to node2chunk rules' or use option --node2chunk!";
+		print STDERR "reading node2chunk rules from file specified in $config: $nodes2chunks\n";
 		open (NODES2CHUNKSFILE, "<:encoding(UTF-8)", $nodes2chunks) or die "Can't open $nodes2chunks as specified in config: $!";
 	}
 	if($readrules){
@@ -1569,10 +1569,10 @@ if($startTrans <$mapInputFormats{'node2chunk'})	#19)
 		close(NODES2CHUNKSFILE);
 	}
 	else{
-		## if neither --node2chunks nor --config given: check if node2chunks rules are already available in storage
+		## if neither --node2chunk nor --config given: check if node2chunk rules are already available in storage
 		eval{
 			retrieve("$path/storage/nodes2chunksRules");
-		} or print STDERR "Failed to retrieve node2chunks rules, set option NodeChunkFile=path in config or use --node2chunks path on commandline to indicate node2chunks rules!\n";
+		} or print STDERR "Failed to retrieve node2chunk rules, set option NodeChunkFile=path in config or use --node2chunk path on commandline to indicate node2chunk rules!\n";
 		@nodes2chunksRules = @{ retrieve("$path/storage/nodes2chunksRules") };
 	}
 	
