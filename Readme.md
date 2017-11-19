@@ -10,8 +10,8 @@ Installation (make sure to install from sources, headers are needed),  see: http
 
 compile Freeling analyzer with crf output format for wapiti:
 ```
-export $FREELING_INSTALLATION_DIR= path to you installation of FreeLing
-export $SQUOIA_DIR= path to this package
+export FREELING_INSTALLATION_DIR= path to you installation of FreeLing
+export SQUOIA_DIR= path to this package
 g++ -c -o output_crf.o output_crf.cc -I$FREELING_INSTALLATION_DIR/include -I$SQUOIA_DIR/FreeLingModules/config_squoia
 g++ -c -o analyzer_client.o analyzer_client.cc -I$FREELING_INSTALLATION_DIR/include -I$SQUOIA_DIR/FreeLingModules/config_squoia
 g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I$FREELING_INSTALLATION_DIR/include -I$SQUOIA_DIR/FreeLingModules/config_squoia
@@ -27,7 +27,7 @@ g++ -std=gnu++11 -o nec nec.cc -I$FREELING_INSTALLATION_DIR/include -I$SQUOIA_DI
 analyzer_client:
 
 ```
-g++ -O3 -Wall -o analyzer_client analyzer_client.o -L$FREELING_INSTALLATION_DIR/local/lib -lfreeling
+g++ -O3 -Wall -o analyzer_client analyzer_client.o -L$FREELING_INSTALLATION_DIR/lib -lfreeling
 export FREELINGSHARE=$FREELING_INSTALLATION_DIR/share/freeling
 ```
 
