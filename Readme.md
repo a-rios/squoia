@@ -67,7 +67,7 @@ set maltPath in translate_example.cfg to your installation of maltparser
 compile server-client modules ($MALTPARSER_DIR= path to your maltparser installtion):
 
 ```
-cd $SQUOIA_DIR/maltparser_tools/src 
+cd $SQUOIA_DIR/MT_systems/maltparser_tools/src 
 javac -cp $MALTPARSER_DIR/maltparser-1.8/maltparser-1.8.jar MPClient.java
 javac -cp $MALTPARSER_DIR/maltparser-1.8/maltparser-1.8.jar MaltParserServer.java
 ```
