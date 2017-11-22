@@ -75,6 +75,20 @@ javac -cp $MALTPARSER_DIR/maltparser-1.8/maltparser-1.8.jar MaltParserServer.jav
 move binaries to ../bin:
 `mv MaltParserServer.class MPClient.class ../bin/`
 
+## lttoolbox
+http://wiki.apertium.org/wiki/Lttoolbox
+
+If you're on Linux, lttoolbox may be part of your distribution, e.g. Debian, and can be installed through your package managment system (make sure to install the development package as well, something like lttoolbox-dev or lttoolbox-devel).
+To compile the lexical transfer module in squoia: 
+```
+cd $SQUOIA_DIR/MT_systems/matxin-lex
+make
+```
+To compile the bilingual dictionary, do (only necessary if you made changes to es-quz.dix):
+```
+cd $SQUOIA_DIR/MT_systems/squoia/esqu/lexica
+lt-comp lr es-quz.dix es-quz.bin
+```
 
 ## libsvm
 https://www.csie.ntu.edu.tw/~cjlin/libsvm
