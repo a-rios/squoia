@@ -10,8 +10,8 @@ Installation (make sure to install from sources, headers are needed),  see: http
 
 compile Freeling analyzer with crf output format for wapiti:
 ```
-export $FREELING_INSTALLATION_DIR= path to you installation of FreeLing
-export $SQUOIA_DIR= path to this package
+export FREELING_INSTALLATION_DIR= path to you installation of FreeLing
+export SQUOIA_DIR= path to this package
 g++ -c -o output_crf.o output_crf.cc -I$FREELING_INSTALLATION_DIR/include -I$SQUOIA_DIR/FreeLingModules/config_squoia
 g++ -c -o analyzer_client.o analyzer_client.cc -I$FREELING_INSTALLATION_DIR/include -I$SQUOIA_DIR/FreeLingModules/config_squoia
 g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I$FREELING_INSTALLATION_DIR/include -I$SQUOIA_DIR/FreeLingModules/config_squoia
@@ -27,7 +27,7 @@ g++ -std=gnu++11 -o nec nec.cc -I$FREELING_INSTALLATION_DIR/include -I$SQUOIA_DI
 analyzer_client:
 
 ```
-g++ -O3 -Wall -o analyzer_client analyzer_client.o -L$FREELING_INSTALLATION_DIR/local/lib -lfreeling
+g++ -O3 -Wall -o analyzer_client analyzer_client.o -L$FREELING_INSTALLATION_DIR/lib -lfreeling
 export FREELINGSHARE=$FREELING_INSTALLATION_DIR/share/freeling
 ```
 
@@ -67,7 +67,7 @@ set maltPath in translate_example.cfg to your installation of maltparser
 compile server-client modules ($MALTPARSER_DIR= path to your maltparser installtion):
 
 ```
-cd $SQUOIA_DIR/maltparser_tools/src 
+cd $SQUOIA_DIR/MT_systems/maltparser_tools/src 
 javac -cp $MALTPARSER_DIR/maltparser-1.8/maltparser-1.8.jar MPClient.java
 javac -cp $MALTPARSER_DIR/maltparser-1.8/maltparser-1.8.jar MaltParserServer.java
 ```
@@ -75,6 +75,20 @@ javac -cp $MALTPARSER_DIR/maltparser-1.8/maltparser-1.8.jar MaltParserServer.jav
 move binaries to ../bin:
 `mv MaltParserServer.class MPClient.class ../bin/`
 
+## lttoolbox
+http://wiki.apertium.org/wiki/Lttoolbox
+
+If you're on Linux, lttoolbox may be part of your distribution, e.g. Debian, and can be installed through your package managment system (make sure to install the development package as well, something like lttoolbox-dev or lttoolbox-devel).
+To compile the lexical transfer module in squoia: 
+```
+cd $SQUOIA_DIR/MT_systems/matxin-lex
+make
+```
+To compile the bilingual dictionary, do (only necessary if you made changes to es-quz.dix):
+```
+cd $SQUOIA_DIR/MT_systems/squoia/esqu/lexica
+lt-comp lr es-quz.dix es-quz.bin
+```
 
 ## libsvm
 https://www.csie.ntu.edu.tw/~cjlin/libsvm
