@@ -64,7 +64,9 @@ The config used is a binary form of translate_vm.cfg, if you change something in
 
 The first run will always take a bit longer because the tagging and parsing services need to be started. 
 
-IMPORTANT: RAM is currently set to 4 GB in the virtual machine, this is the lower limit. If you get an `out of memory` error during tagging, you can increase the RAM assigned to the VM in Virtualbox in Settings->System->Motherboard->Base Memory
+Input from a file instead of stdin can be passed with the option -f, check --help for more information about input and output formats. Encoding must be utf8.
+
+IMPORTANT: RAM is currently set to 4 GB in the virtual machine, this can be too low. If you get an `out of memory` error during tagging, you can increase the RAM assigned to the VM in Settings->System->Motherboard->Base Memory (the virtual machine must be powered off to do so).
 
 ### Installation 
 
