@@ -98,6 +98,7 @@ my $matxin;
 my $maltPort = '';
 my $maltModel = '';
 my $maltPath = '';
+my $maltBinPath = '';
 # statistical co-reference resolution
 my $withCorzu;
 # options for lexical transfer
@@ -147,8 +148,8 @@ available options are:
 \t senttok: plain text, one sentence per line
 \t tagged: wapiti crf
 \t conll: tagged conll
-\t parsed: desr output (conll)
-\t conll2xml: xml created from parsing
+\t parsed: maltparser output (conll)
+\t conll2xml: xml created from parsed conll
 \t rdisamb: xml disambiguated relative clauses, only with direction esqu
 \t coref: xml after coreference resolution for subjects, only with direction esqu
 \t vdisamb: xml disambiguated verb forms, rule-based, only with direction esqu
@@ -214,6 +215,7 @@ Options for tagging:
 Options for parsing:
 --maltPort1: port for maltparser server
 --maltModel: model 1 for maltparser server
+--maltBinPath: path to maltparser server and client
 Options for statistical co-reference resolution:
 --withCorzu: conll is annotated with co-references
 Options for lexical transfer:
@@ -234,7 +236,7 @@ Options for translation, general:
 --nbest|-n: print n-best translations
 Options for translation, es-quz:
 --evidentiality|-e: basic evidentiality (direct, indirect)
---svmtestfile: test file for svm module (only for debugging)
+--svmtestfile: test file for sMPCvm module (only for debugging)
 --nounlex: semantic noun lexicon
 --verblex: verbframe lexicon
 --wordnet: spanish wordnet (path to mcr30 directory of wordnet)
@@ -288,6 +290,7 @@ GetOptions(
 	'maltPort=i'	=> \$maltPort,
 	'maltModel=s'	=> \$maltModel,
 	'maltPath=s'	=> \$maltPath,
+	'maltBinPath=s'	=> \$maltBinPath,
 	# options for statistical co-reference resolution
 	'withCorzu' => \$withCorzu,
 	# options for lexical transfer
@@ -328,7 +331,7 @@ GetOptions(
 ) or die "Incorrect usage!\n $helpstring";
 
 	if($help){ print STDERR $helpstring; exit;}
-	if($config ne ''){
+	if($config){
 		$configIsSet =1;
 		print STDERR "reading config file: $config\n";
 		open (CONFIG, "<:encoding(UTF-8)", $config) or die "Can't open configuration file $config: $!\n";
@@ -346,7 +349,7 @@ GetOptions(
 				$value =~ s/\$SQUOIA_DIR/$squoiaPath/g;
 		
 			}
-			#print "$var=$value\n";
+			print "$var=$value\n";
 			$config{$var} = $value;
 		}
 		close CONFIG;
@@ -521,7 +524,7 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 	or die "Tagging failed, location of matxin, wapiti or wapiti model or port not indicated!\n";
 	#print STDERR "necdir is $nec, nec cfg is $neccfg\n";
 		#print STDERR "wapiti set as $wapiti, model set as $wapitiModel\n";
-	if($file ne ''){
+	if($file){
 		open(CONLL,"-|" ,"cat $file | analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel | $nec/nec $neccfg" ) || die "tagging failed: $!\n";
 #		open(CONLL,"-|" ,"cat $file | analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
 	}
@@ -595,13 +598,18 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 				$maltPath = $config{'maltPath'};
 			} or die  "Could not start parsing, no path to maltparser.jar (option: maltPath) given\n";
 		}
+		if($maltBinPath eq ''){
+			eval{
+				$maltBinPath = $config{'maltBinPath'};
+			} or die  "Could not start parsing, no path to MaltParserServer and MPClient (option: maltBinPath) given\n";
+		}
 		my $maltRunning = `ps ax | grep -v grep | grep "MaltParserServer.*$maltPort"` ;
 		if($maltRunning eq ''){
 			print STDERR "no instance of MaltParserServer running on port $maltPort with model $maltModel\n";
 			print STDERR "starting MaltParserServer on port $maltPort with model $maltModel, logging to $path/logs/log.malt...\n";
-			system("java -cp $maltPath:$path/maltparser_tools/bin MaltParserServer $maltPort $maltModel 2> $path/logs/log.malt &");
+			system("java -cp $maltPath:$maltBinPath MaltParserServer $maltPort $maltModel 2> $path/logs/log.malt &");
 			print STDERR "MaltParserServer with model = $maltModel started on port $maltPort...\n";
-			while(`echo "test" |java -cp $path/maltparser_tools/bin MPClient localhost $maltPort 2>&1 | grep "Connection established"`  eq ''){
+			while(`echo "test" |java -cp $maltBinPath MPClient localhost $maltPort 2>&1 | grep "Connection established"`  eq ''){
 				print STDERR "starting MaltParserServer, please wait...\n";
 				sleep 1;
 			}
@@ -615,7 +623,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 		### parse tagged text:
 		my $tmp2;
 		# if starting translation process from here, read file or stdin
-		if($startTrans ==$mapInputFormats{'conll'} && $file ne ''){	#5
+		if($startTrans ==$mapInputFormats{'conll'} && $file){	#5
 			$tmp2 = $file;
 		}
 		else{
@@ -633,7 +641,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 			}
 		}
 		#open(CONLL2,"-|" ,"cat $tmp2 | desr_client $desrPort1"  ) || die "parsing failed: $!\n";
-		open(CONLL2,"-|" ,"cat $tmp2 | java -cp $path/maltparser_tools/bin MPClient localhost $maltPort "  ) || die "parsing failed: $!\n";
+		open(CONLL2,"-|" ,"cat $tmp2 | java -cp $maltBinPath MPClient localhost $maltPort "  ) || die "parsing failed: $!\n";
 		close(TMP2);
 		
 		## if output format is 'conll': print and exit
@@ -647,7 +655,7 @@ if($startTrans <$mapInputFormats{'conll2xml'})	#7)
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'conll2xml'} .")  [-o conll2xml] conll to xml format\n";
 	# if starting translation procesp s from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'parsed'}){	#6){
-		if($file ne ''){
+		if($file){
 			open (FILE, "<", $file) or die "Can't open input file \"$file\" to translate: $!\n";
 			$dom = squoia::conll2xml::main(\*FILE,$verbose,$withCorzu);
 			close(FILE);
@@ -694,7 +702,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 		
 	
 	my %nounLex = (); my %verbLex = ();
-	if($nounlex ne '' and $nounlex ne 'storable'){
+	if($nounlex and $nounlex ne 'storable'){
 		open (NOUNS, "<:encoding(UTF-8)", $nounlex) or die "Can't open $nounlex : $!";
 		print STDERR "reading semantic noun lexicon from $nounlex...\n";
 		while(<NOUNS>){
@@ -712,7 +720,7 @@ if($direction eq 'esqu' && $startTrans < $mapInputFormats{'svm'})	#11)
 		} or die "No NounLex in $path/storage found! specify --nounlex=path to read in the Spanish noun lexicon!";
 		%nounLex = %{ Storable::retrieve("$path/storage/NounLex") };
 	}
-	if($verblex ne '' and $verblex ne 'storable'){
+	if($verblex and $verblex ne 'storable'){
 		open VERBS, "< $verblex" or die "Can't open $verblex : $!";
 		print STDERR "reading verb frame lexicon from $verblex...\n";
 		my $verbdom    = XML::LibXML->load_xml( IO => *VERBS );
@@ -754,7 +762,7 @@ if($startTrans < $mapInputFormats{'rdisamb'})	#8)
 	print STDERR "* TRANS-STEP " . $mapInputFormats{'rdisamb'} .")  [-o rdisamb] relative clause disambiguation\n";
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'conll2xml'}){	#7){
-		if($file ne '' ){
+		if($file ){
 				open (FILE, "<", $file)  or die "Can't open input file \"$file\" to translate: $!\n";
 				$dom  = XML::LibXML->load_xml( IO => *FILE );
 				close(FILE);
@@ -826,7 +834,7 @@ if($startTrans<$mapInputFormats{'svm'})	# 11)
 		}
 		or die "Lexical transfer failed, location of wordnet not indicated (set option wordnet in config or use --wordnet on commandline)!\n";
 	}
-	if($wordnet ne '' and $wordnet ne 'storable' ){
+	if($wordnet and $wordnet ne 'storable' ){
 		print STDERR "reading wordnet from file specified in $config: ".$config{$wordnet}."\n";
 		my $spa2ilimap = "$wordnet/spaWN/wei_spa-30_to_ili.tsv";
 		my $ilirecord = "$wordnet/data/wei_ili_record.tsv";
@@ -926,7 +934,7 @@ if($startTrans <$mapInputFormats{'lextrans'})	#12)
 	
 	# if starting translation process from here, read file or stdin
 	my $tmp3;
-	if($startTrans ==$mapInputFormats{'svm'} && $file ne ''){	#11
+	if($startTrans ==$mapInputFormats{'svm'} && $file){	#11
 		$tmp3 = $file;
 	}
 	else{
@@ -945,13 +953,13 @@ if($startTrans <$mapInputFormats{'lextrans'})	#12)
 		}
 	}
 	# check if $matxin is set, otherwise exit
-	if($matxin eq ''){
+	if(!$matxin){
 		eval{
 			$matxin = $config{'matxin'}; 
 		}or die "Lexical failed, location of matxin-xfer-lex not indicated! Set option matxin in config or use --matxin on commandline\n";;
 	}
 
-	if($chunkMap eq '' and ! $config{'chunkMap'}){
+	if(!$chunkMap and ! $config{'chunkMap'}){
 		open(XFER,"-|" ,"cat $tmp3 | $matxin/squoia-xfer-lex $bidix"  ) || die "lexical transfer failed: $!\n";
 	} else {
 		$chunkMap = $config{'chunkMap'} if ($chunkMap eq '');
@@ -979,7 +987,7 @@ if($startTrans <$mapInputFormats{'semtags'})	#13)
 	my $readrules=0;
 	
 	
-	if($semlex ne ''){
+	if($semlex){
 		$readrules =1;
 		print STDERR "reading semantic lexicon from $semlex\n";
 		open (SEMFILE, "<:encoding(UTF-8)", $semlex) or die "Can't open $semlex : $!";
@@ -1032,12 +1040,12 @@ if($startTrans <$mapInputFormats{'lexdisamb'})	#14)
 	my %lexSel =();
 	$readrules=0;
 	
-	if($lexDisamb ne ''){
+	if($lexDisamb){
 		$readrules =1;
 		print STDERR "reading lexical disambiguation rules from $lexDisamb\n";
 		open (LEXFILE, "<:encoding(UTF-8)", $lexDisamb) or die "Can't open $lexDisamb : $!";
 	}
-	elsif($config ne ''){
+	elsif($config){
 		$readrules =1;
 		$lexDisamb = $config{"LexSelFile"} or die "Lexical selection file not specified in config, insert LexSelFile='path to lexical disambiguation rules' or use option --lexDisamb!";
 		print STDERR "reading lexical selection rules from file specified in $config: $lexDisamb\n";
@@ -1089,12 +1097,12 @@ if($startTrans <$mapInputFormats{'morphdisamb'})	#15)
 	my %morphSel = ();
 	$readrules=0;
 	
-	if($morphDisamb ne ''){
+	if($morphDisamb){
 		$readrules =1;
 		print STDERR "reading morphological disambiguation rules from $morphDisamb\n";
 		open (MORPHFILE, "<:encoding(UTF-8)", $morphDisamb) or die "Can't open $morphDisamb : $!";
 	}
-	elsif($config ne ''){
+	elsif($config){
 		$readrules =1;
 		$morphDisamb = $config{"MorphSelFile"} or die "Morphological selection file not specified in config, insert MorphSelFile='path to morphological disambiguation rules' or use option --morphDisamb!";
 		print STDERR "reading morphological selection rules from file specified in $config: $morphDisamb\n";
@@ -1161,12 +1169,12 @@ if($startTrans <$mapInputFormats{'statlexdisamb'})
 				or die "Statistic lexical disambiguation failed, location of German lemma language model not indicated (set option deLemmaModel in config or use --deLemmaModel on commandline)!\n";
 			}
 	
-			if($biLexProb ne ''){
+			if($biLexProb){
 				$readrules =1;
 				print STDERR "reading bilingual lexical probabilities from $biLexProb\n";
 				open (BILEXPROBFILE, "<:encoding(UTF-8)", $biLexProb) or die "Can't open $biLexProb: $!";
 			}
-			elsif($config ne ''){
+			elsif($config){
 				$readrules =1;
 				$biLexProb = $config{"BilexProbFile"} or die "Bilingual lexical probability file not specified in config, insert BilexProbFile='path to bilingual lexical probabilities' or use option --bilexprob!";
 				print STDERR "reading bilingual lexical probabilities from file specified in $config: $biLexProb\n";
@@ -1226,12 +1234,12 @@ if($startTrans <$mapInputFormats{'prepdisamb'})	#16)
 	my %prepSel = ();
 	$readrules =0;
 
-	if($prepDisamb ne ''){
+	if($prepDisamb){
 		$readrules =1;
 		print STDERR "reading preposition disambiguation rules from $prepDisamb\n";
 		open (PREPFILE, "<:encoding(UTF-8)", $prepDisamb) or die "Can't open $prepDisamb: $!";
 	}
-	elsif($config ne ''){
+	elsif($config){
 		$readrules =1;
 		$prepDisamb = $config{"PrepFile"} or die "Preposition disambiguation file not specified in config, insert PrepFile='path to preposition disambiguation rules' or use option --prepDisamb!";
 		print STDERR "reading preposition disambiguation rules from file specified in $config: $prepDisamb\n";
@@ -1295,12 +1303,12 @@ if($startTrans <$mapInputFormats{'vprepdisamb'})
 	my %verbPrepSel = ();
 	$readrules =0;
 
-	if($verbPrep ne ''){
+	if($verbPrep){
 		$readrules =1;
 		print STDERR "reading verb preposition disambiguation rules from $verbPrep\n";
 		open (VERBPREPFILE, "<:encoding(UTF-8)", $verbPrep) or die "Can't open $verbPrep: $!";
 	}
-	elsif($config ne ''){
+	elsif($config){
 		$readrules =1;
 		$verbPrep = $config{"VerbPrepFile"} or die "Verb preposition disambiguation file not specified in config, insert VerbPrepFile='path to verb preposition disambiguation rules' or use option --verbPrep!";
 		print STDERR "reading verb preposition disambiguation rules from file specified in $config: $verbPrep\n";
@@ -1419,12 +1427,12 @@ if($startTrans <$mapInputFormats{'intraTrans'})	#17)
 	my %intraConditions = ();
 	$readrules =0;
 	
-	if($intraTransfer ne ''){
+	if($intraTransfer){
 		$readrules =1;
 		print STDERR "reading syntactic intrachunk transfer rules from $intraTransfer\n";
 		open (INTRAFILE, "<:encoding(UTF-8)", $intraTransfer) or die "Can't open $intraTransfer : $!";
 	}
-	elsif($config ne ''){
+	elsif($config){
 		$readrules =1;
 		$intraTransfer = $config{"IntraTransferFile"} or die "Syntactic intrachunk transfer rules file not specified in config, insert IntraTransferFile='path to syntactic intrachunk transfer rules' or use option --intraTransfer!";
 		print STDERR "reading syntactic intrachunk transfer rules from file specified in $config: $intraTransfer\n";
@@ -1480,12 +1488,12 @@ if($startTrans <$mapInputFormats{'interTrans'})	#18)
 	my %interConditions =();
 	$readrules =0;
 	
-	if($interTransfer ne ''){
+	if($interTransfer){
 		$readrules =1;
 		print STDERR "reading syntactic interchunk transfer rules from $interTransfer\n";
 		open (INTERFILE, "<:encoding(UTF-8)", $interTransfer) or die "Can't open $interTransfer : $!";
 	}
-	elsif($config ne ''){
+	elsif($config){
 		$readrules =1;
 		$interTransfer = $config{"InterTransferFile"} or die "Syntactic interchunk transfer rules file not specified in config, insert InterTransferFile='path to syntactic interchunk transfer rules' or use option --interTransfer!";
 		print STDERR "reading syntactic interchunk transfer rules from file specified in $config: $interTransfer\n";
@@ -1540,12 +1548,12 @@ if($startTrans <$mapInputFormats{'node2chunk'})	#19)
 	my @nodes2chunksRules;
 	$readrules =0;
 	
-	if($nodes2chunks ne ''){
+	if($nodes2chunks){
 		$readrules =1;
 		print STDERR "reading node2chunk rules from $nodes2chunks\n";
 		open (NODES2CHUNKSFILE, "<:encoding(UTF-8)", $nodes2chunks) or die "Can't open $nodes2chunks : $!";
 	}
-	elsif($config ne ''){
+	elsif($config){
 		$readrules =1;
 		$nodes2chunks = $config{"NodeChunkFile"} or die "node2chunk rules file not specified in config, insert NodeChunkFile='path to node2chunk rules' or use option --node2chunk!";
 		print STDERR "reading node2chunk rules from file specified in $config: $nodes2chunks\n";
@@ -1596,12 +1604,12 @@ if($startTrans <$mapInputFormats{'child2sibling'})	#20)
 	my %targetAttributes;
 	$readrules =0;
 	
-	if($child2sibling ne ''){
+	if($child2sibling){
 		$readrules =1;
 		print STDERR "reading child2sibling rules from $child2sibling\n";
 		open (CHILD2SIBLINGFILE, "<:encoding(UTF-8)", $child2sibling) or die "Can't open $child2sibling : $!";
 	}
-	elsif($config ne ''){
+	elsif($config){
 		$readrules =1;
 		$child2sibling= $config{"ChildToSiblingFile"} or die "child2sibling rules file not specified in config, insert NodeChunkFile='path to child2sibling rules' or use option --child2sibling!";
 		print STDERR "reading child2sibling rules from file specified in $config: $child2sibling\n";
@@ -1660,12 +1668,12 @@ if($startTrans <$mapInputFormats{'interOrder'})	#21)
 			my %interOrderRules = ();
 			$readrules=0;
 		
-			if($interOrder ne ''){
+			if($interOrder){
 				$readrules =1;
 				print STDERR "reading interchunk order rules from $interOrder\n";
 				open (INTERORDERFILE, "<:encoding(UTF-8)", $interOrder) or die "Can't open $interOrder : $!";
 			}
-			elsif($config ne ''){
+			elsif($config){
 				$readrules =1;
 				$interOrder= $config{"ChunkOrderFile"} or die "interchunk order rules file not specified in config, insert ChunkOrderFile='path to interchunk order rules' or use option --interOrder!";
 				print STDERR "reading interchunk order rules from file specified in $config: $interOrder\n";
@@ -1731,12 +1739,12 @@ if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 		my %intraOrderRules = ();
 			$readrules=0;
 		
-			if($intraOrder ne ''){
+			if($intraOrder){
 				$readrules =1;
 				print STDERR "reading intrachunk order rules from $intraOrder\n";
 				open (INTRAORDERFILE, "<:encoding(UTF-8)", $intraOrder) or die "Can't open $intraOrder : $!";
 			}
-			elsif($config ne ''){
+			elsif($config){
 				$readrules =1;
 				$intraOrder= $config{"NodeOrderFile"} or die "intrachunk order rules file not specified in config, insert NodeOrderFile='path to intrachunk order rules' or use option --intraOrder!";
 				print STDERR "reading intrachunk order rules from file specified in $config: $intraOrder\n";
@@ -1781,7 +1789,7 @@ if($startTrans <$mapInputFormats{'intraOrder'})	#22)
 	#only Quechua: predict topic on subjects in finite clauses:
 	if($direction eq 'esqu' && $predictTopic ==1){
 		my %nounLex = ();
-		if($nounlex ne '' && $startTrans > $mapInputFormats{'svm'})	#11)
+		if($nounlex && $startTrans > $mapInputFormats{'svm'})	#11)
 		{
 			open (NOUNS, "<:encoding(UTF-8)", $nounlex) or die "Can't open $nounlex : $!";
 			print STDERR "reading semantic noun lexicon from $nounlex...\n";
@@ -1859,7 +1867,7 @@ if($startTrans< $mapInputFormats{'words'})
 	}
 	# if starting with a morph file: take file as input or stdin 
 	if($startTrans == $mapInputFormats{'morph'}){	#23 
-		if($file ne ''){
+		if($file){
 			$morphfile = $file;
 		}
 		else{
@@ -1922,7 +1930,7 @@ if($direction eq 'esqu' && $useMorphModel==0)
 	
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'words'}){	#24)
-		if($file ne ''){
+		if($file){
 			$sentFile = $file;
 		}
 		else{
@@ -1957,7 +1965,7 @@ elsif($direction eq 'esqu' && $useMorphModel==1)
 	
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'morph'}){	#23)
-		if($file ne ''){
+		if($file){
 			$sentFile = $file;
 		}
 		else{
@@ -1983,7 +1991,7 @@ elsif($direction eq 'esde'){
 	
 	# if starting translation process from here, read file or stdin
 	if($startTrans ==$mapInputFormats{'words'}){
-		if($file ne ''){
+		if($file){
 			$sentFile = $file;
 		}
 		else{
@@ -2007,7 +2015,7 @@ END{
 
 
 sub readXML{
-	if($file ne '' ){
+	if($file){
 		open (FILE, "<", $file) or die "Can't open file \"$file\": $!\n";
 		$dom  = XML::LibXML->load_xml( IO => *FILE );
 		close(FILE);
