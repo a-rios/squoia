@@ -349,7 +349,7 @@ GetOptions(
 				$value =~ s/\$SQUOIA_DIR/$squoiaPath/g;
 		
 			}
-			print "$var=$value\n";
+			#print "$var=$value\n";
 			$config{$var} = $value;
 		}
 		close CONFIG;
