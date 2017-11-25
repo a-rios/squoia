@@ -1,4 +1,4 @@
-### VM
+### Virtual Machine (VirtualBox)
 You can find an image of a virtual machine with a running installation of the MT system here: https://pub.cl.uzh.ch/projects/squoia/squoia_1_1.ova
 
 In order to use it, you need to install VirtualBox: If you're running Linux, there is a good chance VirtualBox is available through your package management, otherwise see see https://www.virtualbox.org/wiki/Downloads
