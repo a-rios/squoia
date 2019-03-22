@@ -1,6 +1,76 @@
+### Virtual Machine (VirtualBox)
+You can find an image of a virtual machine with a running installation of the MT system here: https://pub.cl.uzh.ch/projects/squoia/squoia_1_1.ova
+
+In order to use it, you need to install VirtualBox: If you're running Linux, there is a good chance VirtualBox is available through your package management, otherwise see see https://www.virtualbox.org/wiki/Downloads
+
+To use the squoia VM, go to File->Import Appliance in your virtualbox and select the squoia_1_1.ova file. 
+Once installed, you can boot the virtual machine. 
+User is `squoia`, password is `quechua` (also for root).
+The source files of this repository are in `/home/squoia/squoia`, to use the translation, open a terminal (e.g. LXTerminal) and go to the MT folder:
+`squoia@squoiavm:~$ cd squoia/MT_systems`
+
+translate.pm is the perl script that handles the translation, for a detailed list of options use:
+`squoia@squoiavm:~/squoia/MT_systems$ ./translate.pm --help`
+
+test the system with a simple sentence, output should look like this: 
+```
+squoia@squoiavm:~/squoia/MT_systems$ echo "La casa azul es bonita." | ./translate.pm
+using saved config file /home/squoia/squoia/MT_systems/storage/config.bin
+start format 2
+end format 25
+no instance of server_squoia running on port 9001 with config ../FreeLingModules/vm.cfg
+starting server_squoia on port 9001 with config ../FreeLingModules/vm.cfg, logging to /home/squoia/squoia/MT_systems/logs/logcrfmorf...
+starting server_squoia, please wait...
+server_squoia now ready
+* TRANS-STEP 4) [-o tagged] tagging
+* TRANS-STEP 5)  [-o conll] conll format
+* Load model
+* Label sequences
+* Done
+no instance of MaltParserServer running on port 9002 with model ./models/splitDatesModel.mco
+starting MaltParserServer on port 9002 with model ./models/splitDatesModel.mco, logging to /home/squoia/squoia/MT_systems/logs/log.malt...
+MaltParserServer with model = ./models/splitDatesModel.mco started on port 9002...
+starting MaltParserServer, please wait...
+starting MaltParserServer, please wait...
+starting MaltParserServer, please wait...
+MaltParserServer now ready
+* TRANS-STEP 6)  [-o parsed] parsing
+* TRANS-STEP 7)  [-o conll2xml] conll to xml format
+Connecting to server...
+Connection established
+* TRANS-STEP 8)  [-o rdisamb] relative clause disambiguation
+* TRANS-STEP 9)  [-o coref] subject coreference resolution
+* TRANS-STEP 10)  [-o vdisamb] verb form disambiguation (rule-based)
+* TRANS-STEP 11)  [-o svm] verb form disambiguation (svm)
+* TRANS-STEP 12)  [-o lextrans] lexical transfer
+* TRANS-STEP 13)  [-o semtags] insert semantic tags
+* TRANS-STEP 14)  [-o lexdisamb] lexical disambiguation, rule-based
+* TRANS-STEP 15)  [-o morphdisamb] morphological disambiguation, rule-based
+* TRANS-STEP 16)  [-o prepdisamb] preposition disambiguation, rule-based
+* TRANS-STEP 17)  [-o intraTrans] syntactic transfer, intra-chunks
+* TRANS-STEP 18)  [-o interTrans] syntactic transfer, inter-chunks
+* TRANS-STEP 19)  [-o node2chunk] promote nodes to chunks
+* TRANS-STEP 20)  [-o child2sibling] promote child chunks to siblings
+* TRANS-STEP 21)  [-o interOrder] reorder the chunks, inter-chunks
+* TRANS-STEP 22)  [-o intraOrder] reorder the nodes, intra-chunks
+* TRANS-STEP 23)  [-o morph] morphological generation
+* TRANS-STEP 24)  [-o words] word forms
+* TRANS-STEP 25)  [-o nbest] n-best translations
+
+Q'umir wasiqa sumaqmi . p:-13.9964
+Q'umir wasiqa munaycham . p:-17.5069
+```
+The config used is a binary form of translate_vm.cfg, if you change something in translate_vm.cfg, call translate.pm with the option `-c translate_vm.cfg` to read it in, otherwise changes will not take effect.
+
+The first run will always take a bit longer because the tagging and parsing services need to be started. 
+
+Input from a file instead of stdin can be passed with the option -f, check --help for more information about input and output formats. Encoding must be utf8.
+
+IMPORTANT: RAM is currently set to 4 GB in the virtual machine, this can be too low. If you get an `out of memory` error during tagging, you can increase the RAM assigned to the VM in Settings->System->Motherboard->Base Memory (the virtual machine must be powered off to do so).
+
 ### Installation 
 
-Note: this code is not maintained.
+Note: this code is not maintained and the installation is cumbersome due to the large number of dependencies. 
 
 ## FreeLing
 
